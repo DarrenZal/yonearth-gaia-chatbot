@@ -5,12 +5,14 @@
 ### ✅ COMPLETED - Core System Deployed and Functional
 - ✅ **Full VPS Deployment**: Docker-based production deployment with nginx, Redis, FastAPI
 - ✅ **Web Interface**: Beautiful chat UI accessible via public IP address (`http://152.53.194.214`)
-- ✅ **Hybrid RAG System**: Keyword frequency + semantic search with proper episode citations
+- ✅ **RAG System**: semantic search with proper episode citations
 - ✅ **Gaia Character**: Warm, nurturing personality with conversation memory
 - ✅ **API Endpoints**: Complete REST API for chat, recommendations, and search
 - ✅ **Episode Processing**: 172 episodes processed with 1850 vector chunks
 - ✅ **Production Ready**: Auto-restart, health checks, rate limiting, CORS enabled
 - ✅ **Data Pipeline**: Automated episode ingestion and vector store creation
+- ✅ **Pinecone Vector Database**: Fully implemented with 100% production-ready setup
+- ✅ **BM25 Hybrid RAG**: Advanced hybrid system with BM25 + semantic search, RRF, and cross-encoder reranking
 
 ### 🚧 IN PROGRESS / PARTIALLY IMPLEMENTED
 - 🔄 **Advanced Reranking**: Using hybrid retrieval but can be enhanced with cross-encoders
@@ -25,6 +27,42 @@
 - ⏳ **WordPress Plugin**: Integration plugin for YonEarth website
 
 **Current Status**: ✅ **FULLY FUNCTIONAL MVP DEPLOYED** - Ready for public use!
+
+## 🚀 **NEW: BM25 Hybrid RAG System - IMPLEMENTED July 1, 2025**
+
+### Advanced Features Now Available:
+
+**🔥 State-of-the-Art Hybrid Search:**
+- **BM25 Keyword Search**: Fast, accurate keyword matching using `rank-bm25`
+- **Semantic Vector Search**: OpenAI embeddings with Pinecone vector database
+- **Reciprocal Rank Fusion (RRF)**: Intelligent combination of both search methods
+- **Cross-encoder Reranking**: MS-MARCO MiniLM model for improved relevance
+
+**🧠 Query-Adaptive Intelligence:**
+- Automatically detects query type and selects optimal search strategy
+- Technical terms → keyword-heavy search
+- Complex questions → semantic-heavy search
+- Episode references → keyword-optimized search
+
+**📊 A/B Testing & Comparison:**
+- Side-by-side comparison of original vs BM25 RAG chains
+- Performance metrics and detailed analytics
+- Search method comparison endpoints
+- Real-time performance monitoring
+
+**🛠 New API Endpoints:**
+- `/bm25/chat` - Chat with BM25 hybrid RAG
+- `/bm25/compare-methods` - Compare BM25, semantic, hybrid search
+- `/bm25/search` - Episode search with BM25 scoring
+- `/bm25/compare-chains` - Compare original vs BM25 RAG chains
+- `/bm25/health` - BM25 system health check
+- `/bm25/performance` - Performance statistics
+
+**⚡ Performance Benefits:**
+- Faster keyword matching for specific terms
+- Better handling of technical vocabulary
+- Improved episode citation accuracy
+- Reduced hallucination through cross-encoder validation
 
 ---
 

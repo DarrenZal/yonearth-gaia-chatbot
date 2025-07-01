@@ -85,7 +85,8 @@ IMPORTANT: Always cite your sources using this exact format:
         self, 
         user_input: str, 
         retrieved_docs: List[Any] = None,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        custom_prompt: Optional[str] = None
     ) -> Dict[str, Any]:
         """Generate Gaia's response to user input"""
         try:
@@ -95,12 +96,27 @@ IMPORTANT: Always cite your sources using this exact format:
             # Get conversation history
             chat_history = self.memory.chat_memory.messages
             
-            # Create the full prompt
-            full_prompt = self.prompt.format_messages(
-                context=context + self._create_citation_reminder(),
-                chat_history=chat_history,
-                input=user_input
-            )
+            # Create the prompt with custom or default personality
+            if custom_prompt:
+                # Use custom prompt instead of default personality
+                custom_chat_prompt = ChatPromptTemplate.from_messages([
+                    ("system", custom_prompt),
+                    ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
+                    MessagesPlaceholder(variable_name="chat_history"),
+                    ("human", "{input}")
+                ])
+                full_prompt = custom_chat_prompt.format_messages(
+                    context=context + self._create_citation_reminder(),
+                    chat_history=chat_history,
+                    input=user_input
+                )
+            else:
+                # Use default personality prompt
+                full_prompt = self.prompt.format_messages(
+                    context=context + self._create_citation_reminder(),
+                    chat_history=chat_history,
+                    input=user_input
+                )
             
             # Generate response
             response = self.llm(full_prompt)
@@ -171,19 +187,23 @@ IMPORTANT: Always cite your sources using this exact format:
         """Switch to a different personality variant"""
         from .gaia_personalities import get_available_personalities
         
-        if new_variant not in get_available_personalities():
+        # Allow 'custom' personality variant
+        if new_variant != 'custom' and new_variant not in get_available_personalities():
             raise ValueError(f"Unknown personality variant: {new_variant}")
         
         self.personality_variant = new_variant
-        self.personality_prompt = get_personality(new_variant)
         
-        # Update prompt template
-        self.prompt = ChatPromptTemplate.from_messages([
-            ("system", self.personality_prompt),
-            ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
-            MessagesPlaceholder(variable_name="chat_history"),
-            ("human", "{input}")
-        ])
+        # Don't update personality_prompt or template for custom - it will be handled in generate_response
+        if new_variant != 'custom':
+            self.personality_prompt = get_personality(new_variant)
+            
+            # Update prompt template
+            self.prompt = ChatPromptTemplate.from_messages([
+                ("system", self.personality_prompt),
+                ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
+                MessagesPlaceholder(variable_name="chat_history"),
+                ("human", "{input}")
+            ])
         
         logger.info(f"Switched to '{new_variant}' personality")
 

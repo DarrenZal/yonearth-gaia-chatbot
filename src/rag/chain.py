@@ -72,7 +72,8 @@ class YonEarthRAGChain:
         user_input: str,
         k: int = 5,
         session_id: Optional[str] = None,
-        personality_variant: Optional[str] = None
+        personality_variant: Optional[str] = None,
+        custom_prompt: Optional[str] = None
     ) -> Dict[str, Any]:
         """Process a user query through the complete RAG pipeline"""
         self.ensure_initialized()
@@ -89,15 +90,17 @@ class YonEarthRAGChain:
             docs = [doc for doc, score in retrieved_docs]
             scores = [score for doc, score in retrieved_docs]
             
-            # Step 2: Switch personality if requested
+            # Step 2: Switch personality if requested (but not for custom when custom_prompt is provided)
             if personality_variant and personality_variant != self.gaia.personality_variant:
-                self.gaia.switch_personality(personality_variant)
+                if personality_variant != 'custom' or custom_prompt is None:
+                    self.gaia.switch_personality(personality_variant)
             
             # Step 3: Generate response with Gaia
             response = self.gaia.generate_response(
                 user_input=user_input,
                 retrieved_docs=docs,
-                session_id=session_id
+                session_id=session_id,
+                custom_prompt=custom_prompt
             )
             
             # Step 4: Add retrieval metadata

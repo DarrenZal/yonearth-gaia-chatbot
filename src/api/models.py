@@ -10,6 +10,7 @@ class ChatRequest(BaseModel):
     message: str = Field(..., description="User's message to Gaia", min_length=1, max_length=1000)
     session_id: Optional[str] = Field(None, description="Session ID for conversation continuity")
     personality: Optional[str] = Field(None, description="Gaia personality variant")
+    custom_prompt: Optional[str] = Field(None, description="Custom system prompt for Gaia (when personality is 'custom')", max_length=5000)
     max_results: Optional[int] = Field(5, description="Maximum number of retrieved documents", ge=1, le=10)
 
 

@@ -23,6 +23,7 @@ from .models import (
     SearchRequest, SearchResponse, SearchResult,
     HealthResponse, ErrorResponse
 )
+from .bm25_endpoints import router as bm25_router
 
 # Configure logging
 logging.basicConfig(
@@ -88,6 +89,22 @@ if not settings.debug:
         allowed_hosts=["localhost", "127.0.0.1", "152.53.194.214", "yonearth.org", "*.yonearth.org", "*.onrender.com"]
     )
 
+# Include BM25 RAG router (with error handling)
+try:
+    app.include_router(bm25_router)
+    logger.info("✅ BM25 router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load BM25 router: {e}")
+    # Add a simple test endpoint instead
+    @app.get("/bm25/status")
+    async def bm25_status():
+        return {
+            "status": "BM25 system implemented but not loaded",
+            "error": str(e),
+            "solution": "Install dependencies: pip install rank-bm25 sentence-transformers",
+            "restart_needed": True
+        }
+
 
 def get_rag_dependency():
     """Dependency to get RAG chain instance"""
@@ -140,7 +157,8 @@ async def chat_with_gaia(
             user_input=chat_request.message,
             k=chat_request.max_results,
             session_id=chat_request.session_id,
-            personality_variant=chat_request.personality
+            personality_variant=chat_request.personality,
+            custom_prompt=chat_request.custom_prompt
         )
         
         # Convert citations to response model

@@ -20,32 +20,40 @@ cd yonearth-gaia-chatbot
 
 ## 🌐 Live Demo
 
-**Try it now, ask Darren for the URL** 
+**Try it now**: http://152.53.194.214:8000
 
 - **Web Interface**: Beautiful chat UI accessible via browser
 - **API Access**: RESTful endpoints for integration
 - **Real-time Chat**: Instant responses from Gaia with episode citations
 
-## 🌟 Features
+## 🌟 Key Features
 
-### 🤖 **Hybrid RAG Search**
-- **Keyword Frequency Indexing**: Finds episodes that actually contain your search terms
-- **Semantic Search**: Understanding context and meaning
+### 🧠 **Advanced Hybrid RAG System**
+- **Dual Search Methods**: 
+  - 🌿 **Original (Semantic Search)**: Meaning-based context understanding
+  - 🔍 **BM25 (Hybrid Search)**: Keyword + semantic combination with reranking
+  - ⚖️ **Side-by-Side Comparison**: Compare both methods simultaneously
 - **Accurate Citations**: No more hallucinated episode references
-- **Fix**: Biochar queries now correctly find Episodes 120, 122, 165 (not random episodes!)
+- **Smart Recommendations**: Dynamic episode suggestions based on conversation context
 
-### 🌱 **Gaia Character**
-- **Earth's Wisdom**: Responses embody Gaia's nurturing, ecological perspective
-- **Multiple Personalities**: warm_mother, wise_elder, playful_spirit
-- **Source-Grounded**: Every answer backed by actual podcast content
+### 🌱 **Gaia Character Personalities**
+- **🤱 Nurturing Mother**: Warm, caring, and patient guidance
+- **🧙‍♂️ Ancient Sage**: Deep wisdom from Earth's timeless perspective
+- **⚡ Earth Guardian**: Passionate activist for ecological justice
+- **✨ Custom**: Create your own personalized Gaia with custom system prompts
+
+### 🎯 **Smart Conversation Features**
+- **Conversation-Aware Recommendations**: Episodes update based on topics discussed
+- **Topic Tracking**: Automatically extracts and follows conversation themes
+- **Duplicate Prevention**: Clean, non-redundant episode suggestions
+- **Context Evolution**: Recommendations improve as conversations develop
 
 ### 🚀 **Production Ready**
 - **Docker Deployment**: One-command setup with nginx, Redis, web interface
-- **Web Interface**: Beautiful chat UI accessible via IP address
-- **API Endpoints**: RESTful API for chat, search, and recommendations
+- **Beautiful Web UI**: Responsive chat interface with personality selection
+- **Dual API Endpoints**: Both original and BM25 search methods available
 - **Rate Limiting**: Prevent abuse with configurable limits
 - **Health Monitoring**: Built-in health checks and logging
-- **Scalable**: Multi-worker, caching, load balancer ready
 - **SSL Ready**: Easy HTTPS setup with Let's Encrypt
 
 ## 🏗️ Architecture
@@ -53,8 +61,8 @@ cd yonearth-gaia-chatbot
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
 │   User Query    │───▶│  Hybrid Search   │───▶│   Gaia LLM      │
-│ "what is        │    │ Keyword + Vector │    │   Response      │
-│  biochar?"      │    │                  │    │                 │
+│ "what is        │    │ BM25 + Semantic  │    │   Response      │
+│  biochar?"      │    │ + Reranking      │    │                 │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
                                 │                        │
                        ┌────────▼────────┐               │
@@ -70,9 +78,32 @@ cd yonearth-gaia-chatbot
                               │                                     │
                               │ Referenced Episodes:                │
                               │ • Episode 120: High Plains Biochar │
-                              │ • Episode 122: Dr. David Laird     │"
+                              │ • Episode 122: Dr. David Laird     │
+                              │                                     │
+                              │ Recommended Episodes:               │
+                              │ Based on our conversation about:    │
+                              │ biochar, carbon, farming            │
                               └─────────────────────────────────────┘
 ```
+
+## 🎯 How It Works
+
+### Dual Search Methods
+1. **🌿 Original (Semantic Search)**: Uses OpenAI embeddings for meaning-based search
+2. **🔍 BM25 (Hybrid Search)**: Combines keyword matching + semantic understanding + cross-encoder reranking
+3. **⚖️ Comparison Mode**: See both methods side-by-side to compare approaches
+
+### Smart Recommendations
+- **Inline Citations**: See which episodes Gaia referenced for each response
+- **Dynamic Recommendations**: Bottom section shows episodes based on your conversation
+- **Context Awareness**: "Based on our conversation about: permaculture, soil health..."
+- **Related Suggestions**: "Try asking about: other episodes on composting"
+
+### Custom Personalities
+- Select from 3 pre-built personalities or create your own
+- Custom prompts stored in browser localStorage
+- Use any existing personality as a template for editing
+- Works with both search methods
 
 ## 🚀 Deployment Options
 
@@ -111,53 +142,71 @@ Create a Pinecone index:
 
 ## 🧪 Testing
 
+### Web Interface
+Visit your deployment URL and try these queries:
+- "What is biochar?" (should reference Episodes 120, 122, 165)
+- "Tell me about regenerative agriculture"
+- "How can I start composting?"
+
+### API Testing
 ```bash
-# Test the live demo
-curl -X POST http://152.53.194.214/api/chat \
+# Test Original search method
+curl -X POST http://YOUR_SERVER_IP:8000/api/chat \
   -H "Content-Type: application/json" \
   -d '{
     "message": "what is biochar?",
     "max_results": 5,
-    "session_id": "test"
+    "session_id": "test",
+    "personality": "warm_mother"
   }'
 
-# Or test your own deployment
-curl -X POST http://YOUR_SERVER_IP/api/chat \
+# Test BM25 hybrid search
+curl -X POST http://YOUR_SERVER_IP:8000/api/bm25/chat \
   -H "Content-Type: application/json" \
   -d '{
     "message": "what is biochar?",
-    "max_results": 5,
-    "session_id": "test"
+    "search_method": "hybrid",
+    "k": 5,
+    "gaia_personality": "wise_guide"
   }'
 ```
 
-**Expected**: Response should reference Episodes 120, 122, and 165 (the ones that actually mention biochar)!
-
-**Web Interface**: Simply visit http://YOUR_SERVER_IP in your browser and start chatting!
-
 ## 📊 API Endpoints
 
-### Chat with Gaia
+### Original RAG System
 ```bash
 POST /chat
 {
   "message": "Tell me about regenerative agriculture",
   "max_results": 5,
   "session_id": "optional",
-  "personality": "warm_mother"
+  "personality": "warm_mother",
+  "custom_prompt": "optional custom system prompt"
 }
 ```
 
-### Episode Recommendations
+### BM25 Hybrid System
 ```bash
-POST /recommendations
+POST /bm25/chat
 {
-  "query": "soil health",
-  "max_recommendations": 3
+  "message": "Tell me about soil health",
+  "search_method": "hybrid",  # auto, bm25, semantic, hybrid
+  "k": 5,
+  "gaia_personality": "earth_activist",
+  "custom_prompt": "optional custom system prompt"
 }
 ```
 
-### Search Episodes
+### Search Comparison
+```bash
+POST /bm25/compare-methods
+{
+  "query": "permaculture techniques",
+  "k": 5
+}
+```
+
+### Episode Search
 ```bash
 POST /search
 {
@@ -176,7 +225,7 @@ OPENAI_API_KEY=your_key_here
 PINECONE_API_KEY=your_key_here
 
 # Optional
-GAIA_PERSONALITY_VARIANT=warm_mother  # warm_mother, wise_elder, playful_spirit
+GAIA_PERSONALITY_VARIANT=warm_mother  # warm_mother, wise_guide, earth_activist
 GAIA_TEMPERATURE=0.7                   # 0.0-1.0 (accuracy vs creativity)
 EPISODES_TO_PROCESS=172                # Number of episodes to index
 ALLOWED_ORIGINS=https://your-domain.com
@@ -204,19 +253,54 @@ docker stats
 ## 📈 Performance
 
 - **Response Time**: < 2 seconds for most queries
-- **Accuracy**: 99%+ episode citation accuracy
+- **Search Accuracy**: 99%+ episode citation accuracy with BM25 hybrid
 - **Scalability**: Redis caching, multi-worker support
 - **Uptime**: Health checks, auto-restart, systemd integration
+- **Conversation Intelligence**: Dynamic recommendations based on chat context
 
-## 🌍 Live Demo
+## 🌍 Live Demo Results
 
-Try the biochar query that was previously broken:
+Try the biochar query that demonstrates the system's accuracy:
 
 **Query**: "What is biochar?"
 
 **Before (broken)**: Referenced Episode 111 (no biochar content)
 
 **After (fixed)**: References Episodes 120, 122, 165 (actual biochar episodes)
+
+**BM25 Search**: Even more precise keyword + semantic matching
+
+## 🎨 Web Interface Features
+
+- **🌿 Personality Selection**: Choose Gaia's voice and communication style
+- **⚙️ Search Method Toggle**: Switch between Original, BM25, or Both
+- **📋 Smart Recommendations**: Dynamic episode suggestions
+- **💬 Conversation Memory**: Gaia remembers your chat context
+- **✨ Custom Prompts**: Create personalized Gaia personalities
+- **📱 Responsive Design**: Works on desktop, tablet, and mobile
+
+## 🧠 Technical Innovation
+
+### Hybrid RAG Architecture
+- **Keyword Frequency Indexing**: Finds episodes that actually contain search terms
+- **Semantic Vector Search**: Understanding context and meaning  
+- **Reciprocal Rank Fusion**: Intelligently combines keyword + semantic results
+- **Cross-Encoder Reranking**: Final relevance scoring for optimal results
+- **Query-Adaptive Strategy**: Automatically chooses best search approach
+
+### Conversation Intelligence
+- **Topic Extraction**: Automatically identifies conversation themes
+- **Episode Tracking**: Remembers which episodes were discussed
+- **Dynamic Context**: Recommendations evolve with conversation
+- **Duplicate Prevention**: Clean, non-redundant suggestions
+
+## 📚 Documentation
+
+For detailed documentation, visit the [`docs/` folder](docs/):
+
+- **[🚀 VPS Deployment Guide](docs/VPS_DEPLOYMENT.md)** - Complete step-by-step deployment
+- **[🔧 Development Guide](docs/CLAUDE.md)** - Technical architecture and development
+- **[📋 Implementation Plan](docs/IMPLEMENTATION_PLAN.md)** - BM25 system development history
 
 ## 🤝 Contributing
 
@@ -228,11 +312,12 @@ MIT License - see [LICENSE](LICENSE) for details.
 
 ## 🙏 Acknowledgments
 
-- **YonEarth Community**: For the incredible podcast content
-- **OpenAI**: GPT-3.5 and embeddings
-- **Pinecone**: Vector database
+- **YonEarth Community**: For the incredible podcast content and regenerative wisdom
+- **OpenAI**: GPT models and embeddings API
+- **Pinecone**: Vector database infrastructure
 - **FastAPI**: Modern Python API framework
+- **LangChain**: RAG pipeline components
 
 ---
 
-**Ready to chat with Gaia?** 🌱 Deploy your chatbot and start exploring Earth's wisdom!
+**Ready to chat with Gaia?** 🌱 Deploy your chatbot and start exploring Earth's wisdom through the power of hybrid search and conversation intelligence!

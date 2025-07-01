@@ -26,7 +26,38 @@
                     <option value="warm_mother">Nurturing Mother</option>
                     <option value="wise_guide">Ancient Sage</option>
                     <option value="earth_activist">Earth Guardian</option>
+                    <option value="custom">Custom</option>
                 </select>
+                <a href="#" id="personalityDetails" class="details-link">details</a>
+            </div>
+            
+            <!-- Personality Details -->
+            <div id="personalityDetailsSection" class="personality-details" style="display: none;">
+                <div class="details-content">
+                    <h4 id="personalityTitle">About this Voice</h4>
+                    <div id="personalityPrompt" class="prompt-text"></div>
+                    <textarea id="customPromptEditor" class="custom-prompt-editor" style="display: none;" 
+                        placeholder="Enter your custom system prompt for Gaia here..."></textarea>
+                    <div id="customPromptActions" class="custom-prompt-actions" style="display: none;">
+                        <button id="saveCustomPrompt" class="save-button">Save Custom Prompt</button>
+                        <button id="resetCustomPrompt" class="reset-button">Reset to Default</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RAG Type Selector -->
+            <div class="rag-selector">
+                <div>
+                    <label for="ragType">Search Method:</label>
+                    <select id="ragType" title="Choose how Gaia searches through the podcast episodes">
+                        <option value="original">Original (Semantic Search)</option>
+                        <option value="bm25">BM25 (Keyword + Semantic)</option>
+                        <option value="both">Both (Side-by-side Comparison)</option>
+                    </select>
+                </div>
+                <div class="rag-description" id="ragDescription">
+                    <small>🌿 <span id="ragDescText">Original uses meaning-based search to find related concepts</span></small>
+                </div>
             </div>
         </header>
 
