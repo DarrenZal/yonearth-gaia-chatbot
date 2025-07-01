@@ -47,7 +47,7 @@ yonearth-gaia-chatbot/
 
 ## 🚀 Quick Links
 
-- **Live Demo**: http://152.53.194.214:8000
+- **Live Demo**: Deploy your own instance
 - **Deploy Your Own**: `git clone` → `./deploy.sh` → Add API keys
 - **API Docs**: Visit `/docs` on your deployment
 - **Issues & Contributing**: See main [README](../README.md#-contributing)

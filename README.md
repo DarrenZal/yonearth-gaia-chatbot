@@ -20,7 +20,7 @@ cd yonearth-gaia-chatbot
 
 ## 🌐 Live Demo
 
-**Try it now**: http://152.53.194.214:8000
+Deploy your own instance to try it out!
 
 - **Web Interface**: Beautiful chat UI accessible via browser
 - **API Access**: RESTful endpoints for integration

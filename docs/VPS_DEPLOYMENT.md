@@ -35,7 +35,7 @@ docker-compose restart
 
 ### Step 4: Access Your Chatbot
 Your chatbot is now accessible at:
-- **Web Interface**: `http://YOUR_SERVER_IP` (e.g., `http://152.53.194.214`)
+- **Web Interface**: `http://YOUR_SERVER_IP`
 - **API Endpoint**: `http://YOUR_SERVER_IP/api/chat`
 
 Replace `YOUR_SERVER_IP` with your actual server's public IP address.

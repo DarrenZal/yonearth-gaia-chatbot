@@ -4,7 +4,7 @@
 
 ### ✅ COMPLETED - Core System Deployed and Functional
 - ✅ **Full VPS Deployment**: Docker-based production deployment with nginx, Redis, FastAPI
-- ✅ **Web Interface**: Beautiful chat UI accessible via public IP address (`http://152.53.194.214`)
+- ✅ **Web Interface**: Beautiful chat UI accessible via public IP address
 - ✅ **RAG System**: semantic search with proper episode citations
 - ✅ **Gaia Character**: Warm, nurturing personality with conversation memory
 - ✅ **API Endpoints**: Complete REST API for chat, recommendations, and search
