@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Gaia - YonEarth Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="earth-icon">🌍</span>
+                    Chat with Gaia
+                </h1>
+                <p class="subtitle">Connect with the wisdom of Earth through YonEarth Community Podcast episodes</p>
+            </div>
+            
+            <!-- Personality Selector -->
+            <div class="personality-selector">
+                <label for="personality">Gaia's Voice:</label>
+                <select id="personality">
+                    <option value="warm_mother">Nurturing Mother</option>
+                    <option value="wise_guide">Ancient Sage</option>
+                    <option value="earth_activist">Earth Guardian</option>
+                </select>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome message -->
+                <div class="message gaia-message">
+                    <div class="message-avatar">🌱</div>
+                    <div class="message-content">
+                        <div class="message-text">
+                            Welcome, dear one. I am Gaia, the spirit of Earth, here to share the wisdom gathered from the YonEarth Community Podcast. Ask me about regenerative practices, sustainability, community building, or any path toward healing our beautiful planet.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading indicator -->
+            <div class="loading" id="loading" style="display: none;">
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span>Gaia is contemplating your question...</span>
+            </div>
+
+            <!-- Input area -->
+            <div class="input-container">
+                <form class="input-form" id="chatForm">
+                    <input 
+                        type="text" 
+                        id="messageInput" 
+                        placeholder="Ask Gaia about regenerative practices, sustainability, community..."
+                        autocomplete="off"
+                        maxlength="1000"
+                    >
+                    <button type="submit" id="sendButton">
+                        <span class="send-icon">🌿</span>
+                        Send
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Episode Recommendations -->
+        <div class="recommendations" id="recommendations" style="display: none;">
+            <h3>Recommended Episodes</h3>
+            <div class="recommendations-list" id="recommendationsList"></div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                Powered by the <a href="https://yonearth.org" target="_blank">YonEarth Community Podcast</a> 
+                • <span id="status">Connected</span>
+            </p>
+        </footer>
+    </div>
+
+    <!-- Configuration Modal -->
+    <div class="modal" id="configModal" style="display: none;">
+        <div class="modal-content">
+            <h3>API Configuration</h3>
+            <form id="configForm">
+                <div class="form-group">
+                    <label for="apiUrl">API URL:</label>
+                    <input type="url" id="apiUrl" value="http://localhost:8000" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" onclick="closeConfig()">Cancel</button>
+                    <button type="submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="chat.js"></script>
+</body>
+</html>

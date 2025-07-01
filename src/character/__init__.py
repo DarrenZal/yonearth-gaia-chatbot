@@ -1,0 +1,1 @@
+"""Character module for Gaia personality"""
