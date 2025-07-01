@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # Main application
+  app:
+    build: .
+    container_name: yonearth-gaia-chatbot
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      # OpenAI Configuration
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-3.5-turbo}
+      - OPENAI_EMBEDDING_MODEL=${OPENAI_EMBEDDING_MODEL:-text-embedding-3-small}
+      
+      # Pinecone Configuration
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - PINECONE_ENVIRONMENT=${PINECONE_ENVIRONMENT:-gcp-starter}
+      - PINECONE_INDEX_NAME=${PINECONE_INDEX_NAME:-yonearth-episodes}
+      
+      # API Configuration
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+      - API_RELOAD=false
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-https://yonearth.org}
+      - RATE_LIMIT_PER_MINUTE=${RATE_LIMIT_PER_MINUTE:-20}
+      
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      
+      # Gaia Character Settings
+      - GAIA_PERSONALITY_VARIANT=${GAIA_PERSONALITY_VARIANT:-warm_mother}
+      - GAIA_TEMPERATURE=${GAIA_TEMPERATURE:-0.7}
+      - GAIA_MAX_TOKENS=${GAIA_MAX_TOKENS:-1000}
+      
+      # Episode Processing
+      - EPISODES_TO_PROCESS=${EPISODES_TO_PROCESS:-172}
+      - CHUNK_SIZE=${CHUNK_SIZE:-500}
+      - CHUNK_OVERLAP=${CHUNK_OVERLAP:-50}
+      
+      # Production
+      - DEBUG=false
+      
+      # Redis connection
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - redis
+    volumes:
+      - app_data:/app/data
+    networks:
+      - yonearth_network
+
+  # Redis for caching (optional but recommended)
+  redis:
+    image: redis:7-alpine
+    container_name: yonearth-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - yonearth_network
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+
+  # Nginx reverse proxy with SSL
+  nginx:
+    image: nginx:alpine
+    container_name: yonearth-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - certbot_data:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+    depends_on:
+      - app
+    networks:
+      - yonearth_network
+
+  # Certbot for SSL certificates
+  certbot:
+    image: certbot/certbot
+    container_name: yonearth-certbot
+    volumes:
+      - certbot_data:/var/www/certbot
+      - certbot_conf:/etc/letsencrypt
+    command: echo "Skipping certificate generation. Run manually when ready."
+
+volumes:
+  app_data:
+  redis_data:
+  certbot_data:
+  certbot_conf:
+
+networks:
+  yonearth_network:
+    driver: bridge
