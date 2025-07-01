@@ -40,10 +40,15 @@ class Settings(BaseSettings):
     api_reload: bool = Field(default=True, description="Enable auto-reload for development")
     
     # CORS Settings
-    allowed_origins: List[str] = Field(
-        default=["http://localhost:3000", "http://localhost:8000", "https://yonearth.org"],
-        description="Allowed CORS origins"
+    allowed_origins: str = Field(
+        default="http://localhost:3000,http://localhost:8000,https://yonearth.org",
+        description="Allowed CORS origins (comma-separated)"
     )
+    
+    @property
+    def allowed_origins_list(self) -> List[str]:
+        """Parse comma-separated origins into a list"""
+        return [origin.strip() for origin in self.allowed_origins.split(",")]
     
     # Rate Limiting
     rate_limit_per_minute: int = Field(default=10, description="Rate limit per minute per IP")
