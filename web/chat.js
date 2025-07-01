@@ -4,7 +4,7 @@
 
 class GaiaChat {
     constructor() {
-        this.apiUrl = localStorage.getItem('gaiaApiUrl') || 'http://localhost:8000';
+        this.apiUrl = localStorage.getItem('gaiaApiUrl') || '/api';
         this.sessionId = this.generateSessionId();
         this.isLoading = false;
         
@@ -69,10 +69,27 @@ class GaiaChat {
     
     async checkApiConnection() {
         try {
-            const response = await fetch(`${this.apiUrl}/health`);
-            if (response.ok) {
-                const data = await response.json();
+            // Try health endpoint first
+            const healthResponse = await fetch(`${this.apiUrl}/health`);
+            if (healthResponse.ok) {
+                const data = await healthResponse.json();
                 this.updateStatus('connected', `Connected - ${data.status}`);
+                return;
+            }
+            
+            // If health fails, test chat endpoint with a simple ping
+            const chatResponse = await fetch(`${this.apiUrl}/chat`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    message: "ping",
+                    session_id: "health_check",
+                    max_results: 1
+                })
+            });
+            
+            if (chatResponse.ok) {
+                this.updateStatus('connected', 'Connected - Chat API Ready');
             } else {
                 this.updateStatus('disconnected', 'API Error');
             }

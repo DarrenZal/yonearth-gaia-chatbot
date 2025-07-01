@@ -16,7 +16,15 @@ cd yonearth-gaia-chatbot
 ./deploy.sh
 ```
 
-**That's it!** Your chatbot will be live with SSL, caching, and production-ready configuration.
+**That's it!** Your chatbot will be live with web interface, API access, and production-ready configuration.
+
+## 🌐 Live Demo
+
+**Try it now:** [http://152.53.194.214](http://152.53.194.214)
+
+- **Web Interface**: Beautiful chat UI accessible via browser
+- **API Access**: RESTful endpoints for integration
+- **Real-time Chat**: Instant responses from Gaia with episode citations
 
 ## 🌟 Features
 
@@ -32,10 +40,13 @@ cd yonearth-gaia-chatbot
 - **Source-Grounded**: Every answer backed by actual podcast content
 
 ### 🚀 **Production Ready**
-- **Docker Deployment**: One-command setup with nginx, Redis, SSL
+- **Docker Deployment**: One-command setup with nginx, Redis, web interface
+- **Web Interface**: Beautiful chat UI accessible via IP address
+- **API Endpoints**: RESTful API for chat, search, and recommendations
 - **Rate Limiting**: Prevent abuse with configurable limits
 - **Health Monitoring**: Built-in health checks and logging
 - **Scalable**: Multi-worker, caching, load balancer ready
+- **SSL Ready**: Easy HTTPS setup with Let's Encrypt
 
 ## 🏗️ Architecture
 
@@ -101,11 +112,17 @@ Create a Pinecone index:
 ## 🧪 Testing
 
 ```bash
-# Health check
-curl http://localhost/health
+# Test the live demo
+curl -X POST http://152.53.194.214/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "what is biochar?",
+    "max_results": 5,
+    "session_id": "test"
+  }'
 
-# Test the accuracy fix - biochar query
-curl -X POST http://localhost/chat \
+# Or test your own deployment
+curl -X POST http://YOUR_SERVER_IP/api/chat \
   -H "Content-Type: application/json" \
   -d '{
     "message": "what is biochar?",
@@ -115,6 +132,8 @@ curl -X POST http://localhost/chat \
 ```
 
 **Expected**: Response should reference Episodes 120, 122, and 165 (the ones that actually mention biochar)!
+
+**Web Interface**: Simply visit http://YOUR_SERVER_IP in your browser and start chatting!
 
 ## 📊 API Endpoints
 

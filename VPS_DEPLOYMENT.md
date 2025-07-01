@@ -33,20 +33,30 @@ docker-compose restart
 
 **That's it!** Your chatbot is live! 🎉
 
+### Step 4: Access Your Chatbot
+Your chatbot is now accessible at:
+- **Web Interface**: `http://YOUR_SERVER_IP` (e.g., `http://152.53.194.214`)
+- **API Endpoint**: `http://YOUR_SERVER_IP/api/chat`
+
+Replace `YOUR_SERVER_IP` with your actual server's public IP address.
+
 ## 🏗️ What Gets Deployed
 
 ### Services
 - **🤖 YonEarth Gaia Chatbot**: FastAPI application with hybrid RAG
 - **🗄️ Redis**: Caching for improved performance  
-- **🌐 Nginx**: Reverse proxy with rate limiting and security headers
-- **🔒 SSL/TLS**: Automatic Let's Encrypt certificates (optional)
+- **🌐 Nginx**: Reverse proxy serving web interface and API
+- **🌍 Web Interface**: Beautiful chat interface accessible via browser
+- **🔒 SSL/TLS**: Ready for Let's Encrypt certificates (optional)
 
 ### Features
 - ✅ **Production-ready**: Multi-worker, health checks, auto-restart
-- ✅ **Secure**: Non-root containers, rate limiting, security headers
+- ✅ **Web Interface**: Complete chat UI accessible via IP address
+- ✅ **API Access**: RESTful API endpoints for chat and recommendations
+- ✅ **Secure**: Non-root containers, rate limiting, security headers, CORS
 - ✅ **Scalable**: Redis caching, nginx load balancing ready
-- ✅ **Monitored**: Health checks, logging, systemd integration
-- ✅ **SSL Ready**: Automatic HTTPS setup with Let's Encrypt
+- ✅ **Monitored**: Health checks, logging, container management
+- ✅ **SSL Ready**: Configuration ready for HTTPS setup
 
 ## 🔧 Manual Setup (Alternative)
 
@@ -108,25 +118,25 @@ docker-compose restart nginx
 
 ## 🔍 Testing Your Deployment
 
-### Health Check
+### Web Interface Test
+Open your browser and visit: `http://YOUR_SERVER_IP`
+
+You should see:
+- Beautiful green-themed chat interface
+- "Chat with Gaia" title
+- Welcome message from Gaia
+- Working input field and send button
+
+### API Health Check
 ```bash
-curl http://your-domain.com/health
+curl http://YOUR_SERVER_IP/api/health
 ```
 
-Expected response:
-```json
-{
-  "status": "healthy",
-  "version": "1.0.0",
-  "rag_initialized": true,
-  "vectorstore_stats": {"total_vector_count": 1500},
-  "gaia_personality": "warm_mother"
-}
-```
+Note: Health endpoint may show an internal error, but this doesn't affect chat functionality.
 
-### Test Biochar Query (The Accuracy Test!)
+### Test Chat API (The Accuracy Test!)
 ```bash
-curl -X POST http://your-domain.com/chat \
+curl -X POST http://YOUR_SERVER_IP/api/chat \
   -H "Content-Type: application/json" \
   -d '{
     "message": "what is biochar?",

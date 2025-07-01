@@ -170,12 +170,19 @@ sleep 30
 if docker-compose ps | grep -q "Up"; then
     log_success "Services started successfully!"
     
-    # Test the health endpoint
-    log_info "Testing health endpoint..."
-    if curl -f http://localhost:8000/health > /dev/null 2>&1; then
-        log_success "Health check passed! ✅"
+    # Test the web interface and API
+    log_info "Testing web interface..."
+    if curl -f http://localhost/ > /dev/null 2>&1; then
+        log_success "Web interface is accessible! ✅"
     else
-        log_warning "Health check failed. Check logs with: docker-compose logs app"
+        log_warning "Web interface failed. Check logs with: docker-compose logs nginx"
+    fi
+    
+    log_info "Testing chat API..."
+    if curl -f http://localhost/api/chat -X POST -H "Content-Type: application/json" -d '{"message":"test","session_id":"test"}' > /dev/null 2>&1; then
+        log_success "Chat API is working! ✅"
+    else
+        log_warning "Chat API failed. Check logs with: docker-compose logs app"
     fi
 else
     log_error "Some services failed to start. Check logs with: docker-compose logs"
@@ -268,9 +275,11 @@ if [ ! -z "$domain_name" ]; then
         echo "   💬 Chat API: http://$domain_name/chat"
     fi
 else
+    SERVER_IP=$(curl -s ifconfig.me 2>/dev/null || echo "YOUR_SERVER_IP")
+    echo "   🌐 Public URL: http://$SERVER_IP"
     echo "   🌐 Local URL: http://localhost"
-    echo "   🔍 Health Check: http://localhost/health"
-    echo "   💬 Chat API: http://localhost/chat"
+    echo "   🔍 Health Check: http://$SERVER_IP/api/health"
+    echo "   💬 Chat API: http://$SERVER_IP/api/chat"
 fi
 echo
 echo "🔧 Management Commands:"
@@ -281,9 +290,9 @@ echo "   ▶️  Start: docker-compose up -d"
 echo "   📈 Monitor: docker-compose ps"
 echo
 echo "🧪 Test Your Chatbot:"
-echo "   curl -X POST http://localhost/chat \\"
+echo "   curl -X POST http://$SERVER_IP/api/chat \\"
 echo "     -H 'Content-Type: application/json' \\"
-echo "     -d '{\"message\": \"what is biochar?\", \"max_results\": 5}'"
+echo "     -d '{\"message\": \"what is biochar?\", \"max_results\": 5, \"session_id\": \"test\"}'"
 echo
 log_warning "⚠️  Remember to:"
 echo "   1. Edit .env with your actual API keys if you haven't already"

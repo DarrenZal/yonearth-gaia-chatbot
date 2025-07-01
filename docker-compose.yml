@@ -39,8 +39,8 @@ services:
       - CHUNK_SIZE=${CHUNK_SIZE:-500}
       - CHUNK_OVERLAP=${CHUNK_OVERLAP:-50}
       
-      # Production
-      - DEBUG=false
+      # Production  
+      - DEBUG=${DEBUG:-false}
       
       # Redis connection
       - REDIS_URL=redis://redis:6379
@@ -74,6 +74,7 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./web:/var/www/html:ro
       - ./ssl:/etc/nginx/ssl:ro
       - certbot_data:/var/www/certbot
       - certbot_conf:/etc/letsencrypt
