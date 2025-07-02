@@ -78,12 +78,12 @@ class Settings(BaseSettings):
     @property
     def data_dir(self) -> Path:
         """Get data directory path"""
-        return self.project_root.parent / "data"
+        return self.project_root / "data"
     
     @property
     def episodes_dir(self) -> Path:
         """Get episodes JSON directory"""
-        return self.data_dir / "json"
+        return self.data_dir / "transcripts"
     
     @property
     def processed_dir(self) -> Path:
