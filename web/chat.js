@@ -934,15 +934,31 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     }
     
     getUniqueEpisodes(episodes) {
-        const seen = new Set();
-        return episodes.filter(episode => {
-            const key = episode.episode_number || episode.episode_id || episode.title;
-            if (seen.has(key)) {
-                return false;
+        const seen = new Map(); // Use Map to store episode details
+        const uniqueEpisodes = [];
+        
+        episodes.forEach(episode => {
+            // Normalize the episode number (prioritize episode_number over episode_id)
+            const episodeNumber = episode.episode_number || episode.episode_id;
+            
+            if (!episodeNumber || episodeNumber === 'Unknown') {
+                // If no episode number, use title as fallback key
+                const titleKey = episode.title;
+                if (!seen.has(titleKey)) {
+                    seen.set(titleKey, true);
+                    uniqueEpisodes.push(episode);
+                }
+                return;
             }
-            seen.add(key);
-            return true;
+            
+            // Use episode number as primary key
+            if (!seen.has(episodeNumber)) {
+                seen.set(episodeNumber, true);
+                uniqueEpisodes.push(episode);
+            }
         });
+        
+        return uniqueEpisodes;
     }
     
     getUniqueCitations(citations) {

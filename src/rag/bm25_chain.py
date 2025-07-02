@@ -190,14 +190,23 @@ class BM25RAGChain:
         return documents
     
     def _format_sources(self, documents: List[Document]) -> List[Dict[str, Any]]:
-        """Format source citations from retrieved documents"""
+        """Format source citations from retrieved documents with deduplication by episode"""
         sources = []
+        seen_episodes = set()
         
         for doc in documents:
             metadata = getattr(doc, 'metadata', {})
+            episode_number = metadata.get('episode_number', 'Unknown')
+            
+            # Skip if we've already seen this episode
+            if episode_number in seen_episodes:
+                continue
+                
+            seen_episodes.add(episode_number)
+            
             source = {
                 'episode_id': metadata.get('episode_id', 'Unknown'),
-                'episode_number': metadata.get('episode_number', 'Unknown'),
+                'episode_number': episode_number,
                 'title': metadata.get('title', 'Unknown Title'),
                 'guest_name': metadata.get('guest_name', 'Unknown Guest'),
                 'url': metadata.get('url', ''),
@@ -213,6 +222,10 @@ class BM25RAGChain:
                 source['final_score'] = metadata['final_score']
             
             sources.append(source)
+            
+            # Limit to top 3 unique episodes
+            if len(sources) >= 3:
+                break
         
         return sources
     

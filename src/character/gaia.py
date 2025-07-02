@@ -152,20 +152,32 @@ IMPORTANT: Always cite your sources using this exact format:
             }
     
     def _extract_citations(self, retrieved_docs: List[Any]) -> List[Dict[str, Any]]:
-        """Extract citation information from retrieved documents"""
+        """Extract citation information from retrieved documents with deduplication by episode"""
         citations = []
+        seen_episodes = set()
         
-        for doc in retrieved_docs[:3]:  # Top 3 most relevant
+        for doc in retrieved_docs:  # Check all retrieved docs for unique episodes
             metadata = getattr(doc, 'metadata', {})
+            episode_number = metadata.get('episode_number', 'Unknown')
+            
+            # Skip if we've already seen this episode
+            if episode_number in seen_episodes:
+                continue
+                
+            seen_episodes.add(episode_number)
             
             citation = {
-                "episode_number": metadata.get('episode_number', 'Unknown'),
+                "episode_number": episode_number,
                 "title": metadata.get('title', 'Unknown Episode'),
                 "guest_name": metadata.get('guest_name', 'Guest'),
                 "url": metadata.get('url', ''),
                 "relevance": "High"  # Could add scoring later
             }
             citations.append(citation)
+            
+            # Limit to top 3 unique episodes
+            if len(citations) >= 3:
+                break
         
         return citations
     
