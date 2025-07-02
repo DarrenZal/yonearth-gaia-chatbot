@@ -58,11 +58,27 @@ data/indexes/*.pkl
 *.pkl
 *.cache
 
+# Large content files (PDFs, videos, audio)
+*.pdf
+*.PDF
+*.mp4
+*.MP4
+*.mp3
+*.MP3
+*.wav
+*.WAV
+data/books/**/*.pdf
+data/books/**/*.PDF
+
 # Temporary files
 *.tmp
 *.temp
 temp/
 tmp/
+
+# Debug and test files
+debug_*.py
+test_*.py
 
 # Jupyter Notebook
 .ipynb_checkpoints
