@@ -13,14 +13,27 @@ python scripts/start_local.py
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 
 # Current production server (simple_server.py on port 80)
-python3 simple_server.py
 # Web interface available at http://152.53.194.214/
 
-# Production server management
-python3 simple_server.py &           # Start in background
-ps aux | grep simple_server          # Check if running
-kill $(pgrep -f simple_server.py)    # Stop server
-# Or manually: kill <process_id>
+# Production server management (systemd service)
+sudo systemctl status yonearth-gaia      # Check status
+sudo systemctl start yonearth-gaia       # Start service
+sudo systemctl stop yonearth-gaia        # Stop service  
+sudo systemctl restart yonearth-gaia     # Restart service
+sudo systemctl enable yonearth-gaia      # Enable on boot
+
+# View logs
+sudo journalctl -u yonearth-gaia -f      # Follow logs
+sudo journalctl -u yonearth-gaia --since "1 hour ago"
+tail -f /var/log/yonearth-gaia.log       # Direct log file
+
+# Manual management (legacy method)
+python3 simple_server.py                 # Run in foreground
+python3 simple_server.py &               # Run in background (not recommended)
+
+# Service configuration
+# Location: /etc/systemd/system/yonearth-gaia.service
+# Health monitoring: Cron job runs every 5 minutes to check /health endpoint
 ```
 
 ### Testing

@@ -209,41 +209,66 @@ docker system df
 
 For direct Python server deployment (without Docker):
 
-#### Start Server
+#### Systemd Service Management (Recommended)
+
+The server is now managed as a systemd service for better reliability:
+
+##### Service Status & Control
 ```bash
-# Start in background
+# Check service status
+sudo systemctl status yonearth-gaia
+
+# Start the service
+sudo systemctl start yonearth-gaia
+
+# Stop the service
+sudo systemctl stop yonearth-gaia
+
+# Restart the service
+sudo systemctl restart yonearth-gaia
+
+# Enable auto-start on boot
+sudo systemctl enable yonearth-gaia
+
+# Disable auto-start on boot
+sudo systemctl disable yonearth-gaia
+```
+
+##### View Logs
+```bash
+# Follow logs in real-time
+sudo journalctl -u yonearth-gaia -f
+
+# View logs from the last hour
+sudo journalctl -u yonearth-gaia --since "1 hour ago"
+
+# View last 100 lines
+sudo journalctl -u yonearth-gaia -n 100
+
+# Direct log file
+tail -f /var/log/yonearth-gaia.log
+```
+
+##### Service Configuration
+The service is configured at `/etc/systemd/system/yonearth-gaia.service`:
+- Automatically restarts on failure
+- Starts on system boot
+- Logs to `/var/log/yonearth-gaia.log`
+- Health monitoring via cron job every 5 minutes
+
+##### Manual Management (Legacy)
+```bash
+# Start manually (not recommended)
+python3 simple_server.py
+
+# Start in background (not recommended - use systemd instead)
 python3 simple_server.py &
 
-# Or with nohup (survives terminal disconnect)
-nohup python3 simple_server.py > server.log 2>&1 &
-```
-
-#### Check Status
-```bash
-# Check if running
+# Check if running (manual process)
 ps aux | grep simple_server
 
-# Check port 80 usage
-netstat -tlnp | grep :80
-```
-
-#### Stop Server
-```bash
-# Stop gracefully
+# Stop manual process
 kill $(pgrep -f simple_server.py)
-
-# Or find process ID and kill
-ps aux | grep simple_server
-kill <process_id>
-
-# Force kill if needed
-pkill -9 -f simple_server.py
-```
-
-#### View Logs
-```bash
-# If started with nohup
-tail -f server.log
 
 # Real-time system logs
 journalctl -f | grep python
