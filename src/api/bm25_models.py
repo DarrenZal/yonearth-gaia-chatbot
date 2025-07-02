@@ -29,10 +29,21 @@ class BM25ChatRequest(BaseModel):
 
 class BM25Source(BaseModel):
     """Source citation with BM25 scores"""
-    episode_id: str
-    episode_number: str
-    title: str
+    content_type: Literal["episode", "book"] = "episode"
+    # Episode fields
+    episode_id: Optional[str] = None
+    episode_number: Optional[str] = None
+    guest_name: Optional[str] = None
     url: Optional[str] = None
+    # Book fields
+    book_id: Optional[str] = None
+    book_title: Optional[str] = None
+    author: Optional[str] = None
+    chapter_number: Optional[int] = None
+    chapter_title: Optional[str] = None
+    publication_year: Optional[int] = None
+    # Common fields
+    title: str
     content_preview: str
     keyword_score: Optional[float] = None
     semantic_score: Optional[float] = None
@@ -43,7 +54,7 @@ class BM25ChatResponse(BaseModel):
     """Response model for BM25 chat endpoint"""
     response: str
     sources: List[BM25Source] = []
-    episode_references: List[str] = []
+    episode_references: List[str] = []  # Now includes book references too
     search_method_used: str
     documents_retrieved: int
     bm25_stats: Dict[str, Any] = {}
@@ -61,8 +72,8 @@ class SearchMethodComparisonRequest(BaseModel):
 class SearchMethodResult(BaseModel):
     """Result for a single search method"""
     documents_count: int
-    episodes_referenced: List[str]
-    top_episodes: List[Dict[str, str]]
+    content_referenced: List[str]  # Episodes and books
+    top_results: List[Dict[str, Any]]
     error: Optional[str] = None
 
 
@@ -94,22 +105,31 @@ class BM25SearchRequest(BaseModel):
     )
 
 
-class EpisodeSearchResult(BaseModel):
-    """Episode search result with BM25 scoring"""
-    episode_id: str
-    episode_number: str
-    title: str
+class ContentSearchResult(BaseModel):
+    """Content search result with BM25 scoring (episodes or books)"""
+    content_type: Literal["episode", "book"] = "episode"
+    # Episode fields
+    episode_id: Optional[str] = None
+    episode_number: Optional[str] = None
     url: Optional[str] = None
+    # Book fields
+    content_id: Optional[str] = None  # For books: book_title_ch#
+    book_title: Optional[str] = None
+    author: Optional[str] = None
+    chapter_number: Optional[int] = None
+    chapter_title: Optional[str] = None
+    # Common fields
+    title: str
     chunks: List[Dict[str, Any]]
     max_score: float
     relevance_summary: Optional[str] = None
 
 
 class BM25SearchResponse(BaseModel):
-    """Response for BM25 episode search"""
+    """Response for BM25 content search"""
     query: str
     search_method: str
-    episodes: List[EpisodeSearchResult]
+    results: List[ContentSearchResult]
     total_found: int
     processing_time: Optional[float] = None
 
@@ -146,7 +166,7 @@ class RAGChainResult(BaseModel):
     """Result from a single RAG chain"""
     response: str
     sources_count: int
-    episodes_referenced: List[str]
+    content_referenced: List[str]  # Episodes and books
     processing_time: float
     method_used: str
     success: bool

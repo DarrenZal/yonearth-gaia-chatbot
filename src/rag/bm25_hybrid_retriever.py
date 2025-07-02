@@ -116,9 +116,33 @@ class BM25HybridRetriever:
             # load documents more efficiently or from a dedicated document store
             logger.info("Fetching documents from vectorstore...")
             
-            # Perform a broad search to get documents
-            broad_query = "regenerative sustainable permaculture agriculture farming"
-            search_results = self.vectorstore.similarity_search(broad_query, k=1000)
+            # Get ALL documents from vectorstore by using a very generic query
+            # We use multiple generic queries to ensure we capture all content types
+            all_documents = []
+            
+            # Query 1: Get episode-related content
+            episode_query = "episode podcast guest interview"
+            episode_results = self.vectorstore.similarity_search(episode_query, k=5000)
+            all_documents.extend(episode_results)
+            
+            # Query 2: Get book-related content
+            book_query = "chapter book viriditas healing nature"
+            book_results = self.vectorstore.similarity_search(book_query, k=5000)
+            all_documents.extend(book_results)
+            
+            # Query 3: Get any remaining content with generic terms
+            generic_query = "the and of to in is that with for on"
+            generic_results = self.vectorstore.similarity_search(generic_query, k=5000)
+            all_documents.extend(generic_results)
+            
+            # Remove duplicates based on page content
+            seen_content = set()
+            search_results = []
+            for doc in all_documents:
+                content_hash = hash(doc.page_content)
+                if content_hash not in seen_content:
+                    seen_content.add(content_hash)
+                    search_results.append(doc)
             
             if not search_results:
                 logger.warning("No documents found in vectorstore for BM25 indexing")

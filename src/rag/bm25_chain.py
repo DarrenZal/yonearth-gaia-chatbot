@@ -190,28 +190,65 @@ class BM25RAGChain:
         return documents
     
     def _format_sources(self, documents: List[Document]) -> List[Dict[str, Any]]:
-        """Format source citations from retrieved documents with deduplication by episode"""
+        """Format source citations from retrieved documents with deduplication by episode/book"""
         sources = []
-        seen_episodes = set()
+        seen_items = set()
         
         for doc in documents:
             metadata = getattr(doc, 'metadata', {})
-            episode_number = metadata.get('episode_number', 'Unknown')
+            content_type = metadata.get('content_type', 'episode')
             
-            # Skip if we've already seen this episode
-            if episode_number in seen_episodes:
+            # Create unique identifier based on content type
+            if content_type == 'book':
+                book_title = metadata.get('book_title', 'Unknown Book')
+                chapter_number = metadata.get('chapter_number', 0)
+                unique_id = f"book_{book_title}_ch{chapter_number}"
+            else:
+                episode_number = metadata.get('episode_number', 'Unknown')
+                unique_id = f"episode_{episode_number}"
+            
+            # Skip if we've already seen this item
+            if unique_id in seen_items:
                 continue
                 
-            seen_episodes.add(episode_number)
+            seen_items.add(unique_id)
             
-            source = {
-                'episode_id': metadata.get('episode_id', 'Unknown'),
-                'episode_number': episode_number,
-                'title': metadata.get('title', 'Unknown Title'),
-                'guest_name': metadata.get('guest_name', 'Unknown Guest'),
-                'url': metadata.get('url', ''),
-                'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content
-            }
+            # Format source based on content type
+            if content_type == 'book':
+                # Format book as episode-like structure for web compatibility
+                book_title = metadata.get('book_title', 'Unknown Book')
+                chapter_num = metadata.get('chapter_number', 'Unknown')
+                chapter_title = metadata.get('chapter_title', '')
+                author = metadata.get('author', 'Unknown Author')
+                
+                # Convert chapter_number to int for API compatibility
+                chapter_int = int(float(chapter_num)) if chapter_num and chapter_num != 'Unknown' else None
+                
+                # Create episode-compatible format
+                source = {
+                    'content_type': 'book',  # Keep internal distinction
+                    'episode_id': unique_id,
+                    'episode_number': f"Book: {book_title}",  # Show as book identifier
+                    'title': f"{book_title} - Chapter {chapter_num}: {chapter_title}" if chapter_title else f"{book_title} - Chapter {chapter_num}",
+                    'guest_name': f"Author: {author}",
+                    'url': '',  # Books don't have URLs
+                    'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content,
+                    # Keep book-specific fields for internal use
+                    'book_title': book_title,
+                    'author': author,
+                    'chapter_number': chapter_int,  # Convert to int for API
+                    'chapter_title': chapter_title
+                }
+            else:
+                source = {
+                    'content_type': 'episode',
+                    'episode_id': metadata.get('episode_id', 'Unknown'),
+                    'episode_number': metadata.get('episode_number', 'Unknown'),
+                    'title': metadata.get('title', 'Unknown Title'),
+                    'guest_name': metadata.get('guest_name', 'Unknown Guest'),
+                    'url': metadata.get('url', ''),
+                    'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content
+                }
             
             # Add BM25-specific scores if available
             if 'keyword_component' in metadata:
@@ -223,27 +260,36 @@ class BM25RAGChain:
             
             sources.append(source)
             
-            # Limit to top 3 unique episodes
+            # Limit to top 3 unique items
             if len(sources) >= 3:
                 break
         
         return sources
     
     def _extract_episode_references(self, documents: List[Document]) -> List[str]:
-        """Extract unique episode references from documents"""
-        episodes = set()
+        """Extract unique episode/book references from documents"""
+        references = set()
         
         for doc in documents:
             metadata = getattr(doc, 'metadata', {})
-            episode_id = metadata.get('episode_id')
-            episode_number = metadata.get('episode_number')
+            content_type = metadata.get('content_type', 'episode')
             
-            if episode_id:
-                episodes.add(str(episode_id))
-            elif episode_number:
-                episodes.add(str(episode_number))
+            if content_type == 'book':
+                book_title = metadata.get('book_title')
+                chapter_number = metadata.get('chapter_number')
+                if book_title:
+                    # Format as episode-compatible reference
+                    references.add(f"Book: {book_title} - Chapter {chapter_number}")
+            else:
+                episode_id = metadata.get('episode_id')
+                episode_number = metadata.get('episode_number')
+                
+                if episode_id:
+                    references.add(str(episode_id))
+                elif episode_number:
+                    references.add(str(episode_number))
         
-        return sorted(list(episodes))
+        return sorted(list(references))
     
     def search_episodes(
         self, 
@@ -267,41 +313,63 @@ class BM25RAGChain:
         
         documents = self._retrieve_documents(query, search_method, k)
         
-        # Group results by episode
-        episode_groups = {}
+        # Group results by episode or book
+        content_groups = {}
         for doc in documents:
             metadata = getattr(doc, 'metadata', {})
-            episode_id = metadata.get('episode_id', 'unknown')
+            content_type = metadata.get('content_type', 'episode')
             
-            if episode_id not in episode_groups:
-                episode_groups[episode_id] = {
-                    'episode_id': episode_id,
-                    'episode_number': metadata.get('episode_number', 'Unknown'),
-                    'title': metadata.get('title', 'Unknown Title'),
-                    'url': metadata.get('url', ''),
-                    'chunks': [],
-                    'max_score': 0
-                }
+            # Create unique ID based on content type
+            if content_type == 'book':
+                book_title = metadata.get('book_title', 'unknown')
+                chapter_number = metadata.get('chapter_number', 0)
+                content_id = f"book_{book_title}_ch{chapter_number}"
+            else:
+                content_id = metadata.get('episode_id', 'unknown')
+            
+            if content_id not in content_groups:
+                if content_type == 'book':
+                    content_groups[content_id] = {
+                        'content_type': 'book',
+                        'content_id': content_id,
+                        'book_title': metadata.get('book_title', 'Unknown Book'),
+                        'author': metadata.get('author', 'Unknown Author'),
+                        'chapter_number': metadata.get('chapter_number'),
+                        'chapter_title': metadata.get('chapter_title', ''),
+                        'title': f"{metadata.get('book_title', 'Unknown Book')} - Chapter {metadata.get('chapter_number', 'Unknown')}",
+                        'chunks': [],
+                        'max_score': 0
+                    }
+                else:
+                    content_groups[content_id] = {
+                        'content_type': 'episode',
+                        'episode_id': content_id,
+                        'episode_number': metadata.get('episode_number', 'Unknown'),
+                        'title': metadata.get('title', 'Unknown Title'),
+                        'url': metadata.get('url', ''),
+                        'chunks': [],
+                        'max_score': 0
+                    }
             
             chunk_info = {
                 'content': doc.page_content,
                 'score': metadata.get('final_score', 0)
             }
             
-            episode_groups[episode_id]['chunks'].append(chunk_info)
-            episode_groups[episode_id]['max_score'] = max(
-                episode_groups[episode_id]['max_score'], 
+            content_groups[content_id]['chunks'].append(chunk_info)
+            content_groups[content_id]['max_score'] = max(
+                content_groups[content_id]['max_score'], 
                 chunk_info['score']
             )
         
         # Sort by relevance score
-        episodes = sorted(
-            episode_groups.values(), 
+        results = sorted(
+            content_groups.values(), 
             key=lambda x: x['max_score'], 
             reverse=True
         )
         
-        return episodes
+        return results
     
     def get_performance_comparison(self) -> Dict[str, Any]:
         """Get performance statistics for comparison with original RAG"""
@@ -338,13 +406,9 @@ class BM25RAGChain:
                 
                 comparison['methods'][method] = {
                     'documents_count': len(documents),
-                    'episodes_referenced': self._extract_episode_references(documents),
-                    'top_episodes': [
-                        {
-                            'episode_id': getattr(doc, 'metadata', {}).get('episode_id', 'Unknown'),
-                            'title': getattr(doc, 'metadata', {}).get('title', 'Unknown'),
-                            'preview': doc.page_content[:100] + "..."
-                        }
+                    'content_referenced': self._extract_episode_references(documents),
+                    'top_results': [
+                        self._format_comparison_result(doc)
                         for doc in documents[:3]
                     ]
                 }
@@ -354,6 +418,27 @@ class BM25RAGChain:
                 }
         
         return comparison
+    
+    def _format_comparison_result(self, doc: Document) -> Dict[str, Any]:
+        """Format a document for comparison display"""
+        metadata = getattr(doc, 'metadata', {})
+        content_type = metadata.get('content_type', 'episode')
+        
+        if content_type == 'book':
+            return {
+                'content_type': 'book',
+                'id': f"book_{metadata.get('book_title', 'Unknown')}_ch{metadata.get('chapter_number', 0)}",
+                'title': f"{metadata.get('book_title', 'Unknown Book')} - Chapter {metadata.get('chapter_number', 'Unknown')}",
+                'author': metadata.get('author', 'Unknown Author'),
+                'preview': doc.page_content[:100] + "..."
+            }
+        else:
+            return {
+                'content_type': 'episode',
+                'episode_id': metadata.get('episode_id', 'Unknown'),
+                'title': metadata.get('title', 'Unknown'),
+                'preview': doc.page_content[:100] + "..."
+            }
     
     def health_check(self) -> Dict[str, Any]:
         """Check health status of BM25 RAG chain"""

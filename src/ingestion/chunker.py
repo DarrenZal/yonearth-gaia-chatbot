@@ -13,6 +13,63 @@ from .episode_processor import Episode
 logger = logging.getLogger(__name__)
 
 
+class DocumentChunker:
+    """Chunk book documents for vector storage"""
+    
+    def __init__(
+        self,
+        chunk_size: int = None,
+        chunk_overlap: int = None
+    ):
+        # Use larger chunks for books
+        self.chunk_size = chunk_size or (settings.chunk_size + 250)  # 750 tokens
+        self.chunk_overlap = chunk_overlap or (settings.chunk_overlap + 50)  # 100 tokens
+        
+        # Initialize text splitter optimized for books
+        self.text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=self.chunk_size,
+            chunk_overlap=self.chunk_overlap,
+            length_function=len,
+            separators=["\n\n\n", "\n\n", "\n", ". ", " ", ""]
+        )
+    
+    def chunk_documents(self, documents: List[Dict[str, Any]]) -> List[Document]:
+        """Chunk book documents into smaller pieces"""
+        all_documents = []
+        
+        for doc in documents:
+            try:
+                content = doc["page_content"]
+                metadata = doc["metadata"]
+                
+                # Split the content into chunks
+                chunks = self.text_splitter.split_text(content)
+                
+                # Create LangChain documents with metadata
+                for i, chunk in enumerate(chunks):
+                    chunk_metadata = metadata.copy()
+                    chunk_metadata.update({
+                        "chunk_index": i,
+                        "chunk_total": len(chunks),
+                        "chunk_type": "book_chapter"
+                    })
+                    
+                    langchain_doc = Document(
+                        page_content=chunk,
+                        metadata=chunk_metadata
+                    )
+                    all_documents.append(langchain_doc)
+                
+                logger.info(f"Created {len(chunks)} chunks for chapter {metadata.get('chapter_number', '?')} of {metadata.get('book_title', 'Unknown')}")
+                
+            except Exception as e:
+                logger.error(f"Error chunking document: {e}")
+                continue
+        
+        logger.info(f"Created {len(all_documents)} total chunks from {len(documents)} book documents")
+        return all_documents
+
+
 class TranscriptChunker:
     """Chunk episode transcripts for vector storage"""
     
@@ -134,6 +191,7 @@ class TranscriptChunker:
         for i, chunk in enumerate(chunks):
             metadata = episode.metadata.copy()
             metadata.update({
+                "content_type": "episode",  # Add content type for consistency with books
                 "chunk_index": i,
                 "chunk_total": len(chunks),
                 "chunk_type": "speaker_turn" if self.preserve_speaker_turns else "standard"

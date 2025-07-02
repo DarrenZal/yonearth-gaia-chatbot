@@ -6,7 +6,7 @@
 
 1. [Overview](#overview)
 2. [Podcast Episode Processing](#podcast-episode-processing)
-3. [Book Processing (Future)](#book-processing-future)
+3. [Book Processing](#book-processing)
 4. [Architecture & Data Flow](#architecture--data-flow)
 5. [Configuration & Setup](#configuration--setup)
 6. [Troubleshooting](#troubleshooting)
@@ -21,7 +21,7 @@ The YonEarth Gaia Chatbot uses a sophisticated content processing pipeline to tr
 | Content Type | Status | Input Format | Output |
 |--------------|--------|--------------|--------|
 | **Podcast Episodes** | ✅ Active | JSON transcripts | 14,475+ searchable chunks |
-| **Books** | 🔄 Coming Soon | PDF, EPUB, TXT | Structured chapters & sections |
+| **Books** | ✅ Active | PDF + JSON metadata | 2,029+ chapter-based chunks |
 | **Articles** | 📋 Planned | HTML, Markdown | Topic-based segments |
 | **Videos** | 📋 Planned | Transcript files | Time-stamped chunks |
 
@@ -176,17 +176,17 @@ print(get_index_stats())
 | **Storage Size** | ~50MB | Vector embeddings |
 | **Search Index Size** | ~5MB | BM25 keyword maps |
 
-## Book Processing (Future)
+## Book Processing
 
-### 🚀 Planned Implementation
+### ✅ Active Implementation
 
-The book processing pipeline will extend the current architecture to handle longer-form content with chapter-based organization.
+The book processing pipeline extends the current architecture to handle longer-form content with chapter-based organization. This system is now fully operational and integrated with the vector database.
 
 #### Supported Book Formats
-- **PDF**: Extract text using PyPDF2 or pdfplumber
-- **EPUB**: Parse with ebooklib for structured content
-- **TXT**: Direct text processing with chapter detection
-- **Markdown**: Structured processing with header-based sections
+- **PDF**: ✅ Extract text using pdfplumber (fully implemented)
+- **EPUB**: 📋 Parse with ebooklib for structured content (planned)
+- **TXT**: 📋 Direct text processing with chapter detection (planned)
+- **Markdown**: 📋 Structured processing with header-based sections (planned)
 
 #### Book Processing Pipeline Design
 
@@ -258,27 +258,41 @@ CHAPTER_BOUNDARY_RESPECT = True  # Don't split across chapters
 - Thematic clustering for related content discovery
 ```
 
-#### Book Processing Commands (Future)
+#### Book Processing Commands
 
-**Process Single Book:**
+**Process All Books:**
 ```bash
-# Process VIRIDITAS book
-python3 -m src.ingestion.process_books --file="data/books/VIRIDITAS.pdf"
+# Process all books with metadata.json files
+python3 -m src.ingestion.process_books
 ```
 
-**Process Book Library:**
+**Add Books to Vector Database:**
 ```bash
-# Process all books in directory
-export BOOKS_TO_PROCESS=all
-python3 -m src.ingestion.process_books --directory="data/books/"
+# Process and add books to vector database
+python3 -c "
+from src.ingestion.process_books import add_books_to_vectorstore
+add_books_to_vectorstore()
+"
 ```
 
 **Book-Specific Search:**
 ```bash
-# Search within specific book
-curl -X POST /api/search \
-  -d '{"query": "regenerative agriculture", "filters": {"book_title": "VIRIDITAS"}}'
+# Search within specific book using BM25 endpoint
+curl -X POST http://localhost:8000/bm25/chat \
+  -H "Content-Type: application/json" \
+  -d '{"message": "What does viriditas mean?", "search_method": "hybrid", "k": 5}'
 ```
+
+#### Current Book Processing Results
+
+**VIRIDITAS: THE GREAT HEALING** by Aaron William Perry:
+- **Pages Processed**: 568 pages (PDF extraction)
+- **Word Count**: 211,254 words
+- **Chapters Detected**: 313 chapters (automatic detection)
+- **Chunks Created**: 2,029 searchable chunks
+- **Vector Database**: Successfully added to Pinecone
+- **Processing Time**: ~2 minutes (PDF extraction + chunking)
+- **Topics**: viriditas, regenerative agriculture, healing, nature connection, earth healing, ecological restoration
 
 ## Architecture & Data Flow
 
@@ -335,17 +349,20 @@ curl -X POST /api/search \
 │   │   ├── episode_0.json
 │   │   ├── episode_1.json
 │   │   └── ...
-│   ├── books/                 # Future: Book files (PDF, EPUB)
-│   │   ├── VIRIDITAS.pdf
-│   │   └── ...
+│   ├── books/                 # Book files with metadata
+│   │   └── veriditas/
+│   │       ├── VIRIDITAS by AARON WILLIAM PERRY.pdf
+│   │       └── metadata.json
 │   └── processed/             # Generated processing outputs
 │       ├── episode_metadata.json      # Episode processing results
-│       ├── chunks_preview.json        # Chunk samples
-│       └── book_metadata.json         # Future: Book processing results
+│       ├── chunks_preview.json        # Episode chunk samples
+│       ├── book_metadata.json         # Book processing results
+│       └── book_chunks_preview.json   # Book chunk samples
 ├── src/
 │   ├── ingestion/             # Content processing pipeline
 │   │   ├── episode_processor.py       # Podcast episode processing
-│   │   ├── book_processor.py          # Future: Book processing
+│   │   ├── book_processor.py          # Book processing (PDF extraction, chapter detection)
+│   │   ├── process_books.py           # Main book processing pipeline
 │   │   ├── chunker.py                 # Text chunking logic
 │   │   └── process_episodes.py        # Main processing script
 │   ├── rag/                   # Retrieval system

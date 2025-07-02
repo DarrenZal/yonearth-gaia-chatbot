@@ -11,6 +11,10 @@ python scripts/start_local.py
 
 # Or manual startup
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
+
+# Current production server (simple_server.py on port 80)
+python3 simple_server.py
+# Web interface available at http://152.53.194.214/
 ```
 
 ### Testing
@@ -60,11 +64,37 @@ EPISODES_TO_PROCESS=20 python3 -m src.ingestion.process_episodes
 7. **Save metadata** to `/data/processed/episode_metadata.json`
 8. **Create BM25 index** for keyword-based search
 
+#### Book Processing Workflow
+
+**Process all books from PDF files:**
+```bash
+# Process all books in /data/books directory
+python3 -m src.ingestion.process_books
+
+# Individual book processing functions available:
+# process_books_for_ingestion() - Extract and chunk book content
+# add_books_to_vectorstore() - Add to Pinecone vector database
+```
+
+**Book Processing Pipeline:**
+1. **Load PDFs** from `/data/books/*/metadata.json` and corresponding PDF files
+2. **Extract text** using pdfplumber for clean PDF text extraction
+3. **Detect chapters** using intelligent regex patterns for various chapter formats
+4. **Extract metadata** (title, author, publication info from metadata.json)
+5. **Chunk content** into 750-token segments with 100-token overlap (larger than episodes)
+6. **Generate vector embeddings** using OpenAI
+7. **Store in Pinecone** vector database with book metadata (content_type: 'book')
+8. **Update BM25 index** to include book content for keyword-based search
+
 **Important Notes:**
-- **Transcript location**: Episodes must be in `/data/transcripts/` directory
-- **File format**: JSON files with `full_transcript` field
-- **Processing time**: ~172 episodes takes 5-10 minutes depending on API limits
-- **Output**: Creates 14,000+ text chunks ready for RAG search
+- **Episode location**: Episodes must be in `/data/transcripts/` directory  
+- **Episode format**: JSON files with `full_transcript` field
+- **Episode processing time**: ~172 episodes takes 5-10 minutes depending on API limits
+- **Episode output**: Creates 14,000+ text chunks ready for RAG search
+- **Book location**: Books must be in `/data/books/book_name/` directory structure
+- **Book format**: PDF files with corresponding `metadata.json` file
+- **Book processing time**: Depends on book size (~2,000 chunks for 568-page book)
+- **Book output**: Creates book chunks with chapter-level metadata for precise citations
 
 **Troubleshooting:**
 ```bash
@@ -73,6 +103,13 @@ find /root/yonearth-gaia-chatbot/data/transcripts -name "*.json" | wc -l
 
 # Verify processed episodes
 cat /root/yonearth-gaia-chatbot/data/processed/episode_metadata.json | jq '.episode_count'
+
+# Check book count and structure
+find /root/yonearth-gaia-chatbot/data/books -name "*.pdf" | wc -l
+find /root/yonearth-gaia-chatbot/data/books -name "metadata.json"
+
+# Verify vector database contains both episodes and books
+# Current total: 9,429 vectors (episodes + books combined)
 
 # Test specific components
 python scripts/test_api.py
@@ -85,7 +122,7 @@ python scripts/test_api.py
 
 ## Architecture Overview
 
-This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit of Earth) using knowledge from 172 YonEarth podcast episodes with two advanced search systems.
+This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit of Earth) using knowledge from 172 YonEarth podcast episodes and integrated books with two advanced search systems.
 
 ### Core Components
 
@@ -243,6 +280,15 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 - **Render**: Use `render.yaml` blueprint for cloud deployment  
 - **Local**: Use `scripts/start_local.py` for development
 
+### Current Production Status
+
+**Active Deployment**: `simple_server.py` running on port 80
+- **URL**: http://152.53.194.214/
+- **Purpose**: Workaround for Docker Pydantic validation issues
+- **Features**: Full web interface + working API endpoints (/chat, /api/chat, /api/bm25/chat)
+- **Vector Database**: 9,429 vectors (episodes + books combined)
+- **Book Integration**: VIRIDITAS book successfully processed and searchable
+
 ## Technical Innovation
 
 ### Hybrid RAG Accuracy
@@ -265,12 +311,12 @@ The web interface provides advanced conversation features:
 - **Template Editing**: Use existing personalities as starting points
 - **Persistent Storage**: Custom prompts saved in browser localStorage
 
-The system handles 172 podcast episodes with ~14,475 vectorized chunks and maintains high episode citation accuracy through both RAG approaches while providing an intelligent, conversation-aware user experience.
+The system handles 172 podcast episodes and integrated books with 9,429 total vectorized chunks, maintaining high citation accuracy through both RAG approaches while providing an intelligent, conversation-aware user experience that searches across both episodes and books simultaneously.
 
 ## Documentation References
 
 For comprehensive information about content processing and pipeline management:
 
-- **[Content Processing Pipeline](CONTENT_PROCESSING_PIPELINE.md)** - Complete guide to processing podcast episodes, future book integration, search index rebuilding, and troubleshooting
+- **[Content Processing Pipeline](CONTENT_PROCESSING_PIPELINE.md)** - Complete guide to processing podcast episodes, book integration, search index rebuilding, and troubleshooting
 - **[VPS Deployment Guide](VPS_DEPLOYMENT.md)** - Production deployment instructions
 - **[Implementation Plan](IMPLEMENTATION_PLAN.md)** - BM25 system development history

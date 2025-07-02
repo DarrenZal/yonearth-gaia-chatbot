@@ -1,6 +1,6 @@
 # YonEarth Gaia Chatbot 🌍
 
-> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes
+> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and integrated books
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
@@ -33,8 +33,9 @@ Deploy your own instance to try it out!
   - 🌿 **Original (Semantic Search)**: Meaning-based context understanding
   - 🔍 **BM25 (Hybrid Search)**: Keyword + semantic combination with reranking
   - ⚖️ **Side-by-Side Comparison**: Compare both methods simultaneously
+- **Multi-Content Integration**: Search across both podcast episodes AND books simultaneously
 - **Accurate Citations**: No more hallucinated episode references
-- **Smart Recommendations**: Dynamic episode suggestions based on conversation context
+- **Smart Recommendations**: Dynamic suggestions from episodes and books based on conversation context
 
 ### 🌱 **Gaia Character Personalities**
 - **🤱 Nurturing Mother**: Warm, caring, and patient guidance
@@ -105,6 +106,13 @@ Deploy your own instance to try it out!
 - Use any existing personality as a template for editing
 - Works with both search methods
 
+### Book Integration
+- **PDF Processing**: Automatically extracts and processes PDF books from `/data/books`
+- **Chapter Detection**: Intelligent parsing of chapter boundaries and titles
+- **Unified Search**: Books and podcast episodes searched together seamlessly
+- **Enhanced Citations**: Shows book title, author, and chapter information
+- **Optimized Chunking**: Larger chunks for books (750 tokens) vs episodes (500 tokens)
+
 ## 🚀 Deployment Options
 
 ### Option 1: VPS Docker Deployment (Recommended)
@@ -147,6 +155,7 @@ Visit your deployment URL and try these queries:
 - "What is biochar?" (should reference Episodes 120, 122, 165)
 - "Tell me about regenerative agriculture"
 - "How can I start composting?"
+- "What is the significance of chlorophyll and hemoglobin?" (should reference book content from VIRIDITAS)
 
 ### API Testing
 ```bash
@@ -230,6 +239,11 @@ GAIA_TEMPERATURE=0.7                   # 0.0-1.0 (accuracy vs creativity)
 EPISODES_TO_PROCESS=172                # Number of episodes to index
 ALLOWED_ORIGINS=https://your-domain.com
 RATE_LIMIT_PER_MINUTE=20
+
+# Book Processing
+CHUNK_SIZE=500                         # Base chunk size for episodes
+CHUNK_OVERLAP=50                       # Overlap between chunks
+# Books use CHUNK_SIZE + 250 (750 tokens) and CHUNK_OVERLAP + 50 (100 tokens)
 ```
 
 ## 🔧 Management
@@ -260,15 +274,16 @@ docker stats
 
 ## 🌍 Live Demo Results
 
-Try the biochar query that demonstrates the system's accuracy:
+Try these queries that demonstrate the system's accuracy:
 
 **Query**: "What is biochar?"
+- **Before (broken)**: Referenced Episode 111 (no biochar content)
+- **After (fixed)**: References Episodes 120, 122, 165 (actual biochar episodes)
+- **BM25 Search**: Even more precise keyword + semantic matching
 
-**Before (broken)**: Referenced Episode 111 (no biochar content)
-
-**After (fixed)**: References Episodes 120, 122, 165 (actual biochar episodes)
-
-**BM25 Search**: Even more precise keyword + semantic matching
+**Query**: "What is the significance of chlorophyll and hemoglobin?"
+- **Multi-Content Search**: References both podcast episodes AND book content from VIRIDITAS
+- **Book Integration**: Shows chapter-specific citations with author information
 
 ## 🎨 Web Interface Features
 
@@ -287,12 +302,21 @@ Try the biochar query that demonstrates the system's accuracy:
 - **Reciprocal Rank Fusion**: Intelligently combines keyword + semantic results
 - **Cross-Encoder Reranking**: Final relevance scoring for optimal results
 - **Query-Adaptive Strategy**: Automatically chooses best search approach
+- **Multi-Content Integration**: Seamlessly searches across podcast episodes AND books
+
+### Book Processing Pipeline
+- **PDF Text Extraction**: Advanced processing using pdfplumber for clean text extraction
+- **Chapter Detection**: Intelligent regex-based chapter boundary detection
+- **Optimized Chunking**: Larger chunks (750 tokens) for book content vs episodes (500 tokens)
+- **Metadata Preservation**: Author, title, chapter information maintained throughout pipeline
+- **Unified Vector Storage**: Books and episodes stored together in same vector database
 
 ### Conversation Intelligence
 - **Topic Extraction**: Automatically identifies conversation themes
 - **Episode Tracking**: Remembers which episodes were discussed
 - **Dynamic Context**: Recommendations evolve with conversation
 - **Duplicate Prevention**: Clean, non-redundant suggestions
+- **Cross-Content Citations**: References both podcast episodes and book chapters
 
 ## 📚 Documentation
 
