@@ -50,13 +50,13 @@
                 <div>
                     <label for="ragType">Search Method:</label>
                     <select id="ragType" title="Choose how Gaia searches through the podcast episodes">
+                        <option value="bm25" selected>BM25 (Keyword + Semantic)</option>
                         <option value="original">Original (Semantic Search)</option>
-                        <option value="bm25">BM25 (Keyword + Semantic)</option>
                         <option value="both">Both (Side-by-side Comparison)</option>
                     </select>
                 </div>
                 <div class="rag-description" id="ragDescription">
-                    <small>🌿 <span id="ragDescText">Original uses meaning-based search to find related concepts</span></small>
+                    <small>🔍 <span id="ragDescText">BM25 combines keyword matching with semantic understanding for precise results</span></small>
                 </div>
             </div>
         </header>
@@ -105,7 +105,7 @@
 
         <!-- Episode Recommendations -->
         <div class="recommendations" id="recommendations" style="display: none;">
-            <h3>Recommended Episodes</h3>
+            <h3>Recommended Content</h3>
             <div class="recommendations-list" id="recommendationsList"></div>
         </div>
 

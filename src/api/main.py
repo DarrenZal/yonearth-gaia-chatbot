@@ -20,6 +20,7 @@ from ..rag.chain import get_rag_chain
 from .models import (
     ChatRequest, ChatResponse, Citation,
     RecommendationsRequest, RecommendationsResponse, EpisodeRecommendation,
+    ConversationRecommendationsRequest, ConversationRecommendationsResponse,
     SearchRequest, SearchResponse, SearchResult,
     HealthResponse, ErrorResponse
 )
@@ -231,6 +232,62 @@ async def get_episode_recommendations(
     except Exception as e:
         logger.error(f"Error in recommendations endpoint: {e}")
         raise HTTPException(status_code=500, detail="Failed to get recommendations")
+
+
+@app.post("/conversation-recommendations", response_model=ConversationRecommendationsResponse)
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def get_conversation_recommendations(
+    request: Request,
+    conv_request: ConversationRecommendationsRequest,
+    rag: Any = Depends(get_rag_dependency)
+):
+    """Get content recommendations based on entire conversation history"""
+    try:
+        logger.info(f"Getting conversation recommendations for session: {conv_request.session_id}")
+        
+        # Extract all content from conversation
+        conversation_text = ""
+        all_citations = []
+        
+        for message in conv_request.conversation_history:
+            conversation_text += f"{message.role}: {message.content} "
+            if message.citations:
+                all_citations.extend(message.citations)
+        
+        # Extract topics using simple keyword matching
+        topic_keywords = [
+            'permaculture', 'regenerative', 'agriculture', 'sustainability', 'climate',
+            'composting', 'soil', 'biodiversity', 'water', 'energy', 'community',
+            'biochar', 'carbon', 'farming', 'garden', 'food', 'ecosystem', 'forest',
+            'organic', 'renewable', 'circular', 'waste', 'pollution', 'nature',
+            'ecology', 'conservation', 'restoration', 'healing', 'earth'
+        ]
+        
+        conversation_lower = conversation_text.lower()
+        extracted_topics = [topic for topic in topic_keywords if topic in conversation_lower]
+        
+        # Get unique content from all citations mentioned in conversation
+        unique_citations = []
+        seen_episodes = set()
+        
+        for citation in all_citations:
+            citation_key = f"{citation.episode_number}:{citation.title}"
+            if citation_key not in seen_episodes:
+                seen_episodes.add(citation_key)
+                unique_citations.append(citation)
+        
+        # Limit to max_recommendations
+        recommended_citations = unique_citations[:conv_request.max_recommendations]
+        
+        return ConversationRecommendationsResponse(
+            recommendations=recommended_citations,
+            conversation_topics=extracted_topics[:5],  # Limit topics
+            total_found=len(unique_citations)
+        )
+        
+    except Exception as e:
+        logger.error(f"Error in conversation recommendations endpoint: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get conversation recommendations")
 
 
 @app.post("/search", response_model=SearchResponse)

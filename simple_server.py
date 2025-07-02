@@ -9,6 +9,7 @@ import logging
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 import threading
+from openai import OpenAI
 
 sys.path.append('/root/yonearth-gaia-chatbot')
 
@@ -16,12 +17,16 @@ from src.rag.bm25_chain import BM25RAGChain
 
 class GaiaHTTPHandler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        # Initialize BM25 chain once
+        # Initialize BM25 chain and OpenAI client once
         if not hasattr(GaiaHTTPHandler, 'bm25_chain'):
             print("Initializing BM25 chain...")
             GaiaHTTPHandler.bm25_chain = BM25RAGChain()
             GaiaHTTPHandler.bm25_chain.initialize()
             print("BM25 chain ready!")
+            
+            # Initialize OpenAI client
+            GaiaHTTPHandler.openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+            print("OpenAI client ready!")
         super().__init__(*args, **kwargs)
     
     def do_GET(self):
@@ -43,6 +48,8 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path in ['/bm25/chat', '/chat', '/api/chat', '/api/bm25/chat']:
             self.handle_chat()
+        elif self.path in ['/conversation-recommendations', '/api/conversation-recommendations']:
+            self.handle_conversation_recommendations()
         else:
             self.send_error(404)
     
@@ -82,17 +89,15 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                     'content_type': source.get('content_type', 'episode')
                 }
                 
-                # For book content, enhance the display
+                # For book content, the bm25_chain already provides correct formatting
+                # Just pass through the correctly formatted values
                 if source.get('content_type') == 'book':
-                    book_title = source.get('book_title', 'Unknown Book')
-                    author = source.get('author', 'Unknown Author')
-                    chapter_num = source.get('chapter_number', 'Unknown')
-                    
-                    formatted_source.update({
-                        'episode_number': f"Book: {book_title}",
-                        'guest_name': f"Author: {author}",
-                        'title': source.get('title', f"{book_title} - Chapter {chapter_num}")
-                    })
+                    # bm25_chain.py already formats these correctly:
+                    # - title: f"Chapter {chapter_int}" 
+                    # - guest_name: author (without "Author:" prefix)
+                    # - episode_number: f"Book: {book_title}"
+                    # So we don't need to override them
+                    pass
                 
                 sources.append(formatted_source)
             
@@ -123,6 +128,238 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             self.end_headers()
             error_response = {'error': str(e), 'success': False}
             self.wfile.write(json.dumps(error_response).encode())
+    
+    def handle_conversation_recommendations(self):
+        try:
+            # Read request body
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+            request_data = json.loads(post_data.decode('utf-8'))
+            
+            # Extract parameters
+            conversation_history = request_data.get('conversation_history', [])
+            max_recommendations = request_data.get('max_recommendations', 4)
+            
+            print(f"Conversation recommendations request: {len(conversation_history)} messages")
+            
+            # Use LLM to intelligently analyze conversation and recommend content
+            recommended_citations, extracted_topics = self.get_llm_recommendations(
+                conversation_history, max_recommendations
+            )
+            
+            # Create response
+            response_data = {
+                'recommendations': recommended_citations,
+                'conversation_topics': extracted_topics[:5],  # Limit topics
+                'total_found': len(recommended_citations)  # Use recommended_citations length instead
+            }
+            
+            print(f"Returning {len(recommended_citations)} recommendations with {len(extracted_topics)} topics")
+            
+            # Send response
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(response_data).encode())
+            
+        except Exception as e:
+            print(f"Error handling conversation recommendations: {e}")
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            error_response = {'error': str(e), 'success': False}
+            self.wfile.write(json.dumps(error_response).encode())
+    
+    def get_llm_recommendations(self, conversation_history, max_recommendations):
+        """Use LLM to intelligently analyze conversation and recommend relevant content"""
+        unique_citations = []  # Initialize early to avoid NameError in exception handler
+        
+        try:
+            # Collect all available citations from the conversation
+            all_citations = []
+            conversation_summary = []
+            
+            for message in conversation_history:
+                role = message.get('role', '')
+                content = message.get('content', '')
+                conversation_summary.append(f"{role.title()}: {content}")
+                
+                if message.get('citations'):
+                    all_citations.extend(message['citations'])
+            
+            # Remove duplicates from citations
+            unique_citations = []
+            seen_keys = set()
+            for citation in all_citations:
+                key = f"{citation.get('episode_number', '')}:{citation.get('title', '')}"
+                if key not in seen_keys and key != ':':
+                    seen_keys.add(key)
+                    unique_citations.append(citation)
+            
+            if not unique_citations:
+                return [], []
+            
+            # Create LLM prompt for intelligent recommendation
+            conversation_text = "\n".join(conversation_summary[-6:])  # Last 6 messages for context
+            
+            # Format available content for LLM to choose from
+            content_options = []
+            for i, citation in enumerate(unique_citations):
+                episode_num = citation.get('episode_number', 'Unknown')
+                title = citation.get('title', 'Unknown')
+                guest = citation.get('guest_name', 'Unknown')
+                
+                if episode_num.startswith('Book:'):
+                    content_options.append(f"{i+1}. {title} (Book by {guest})")
+                else:
+                    content_options.append(f"{i+1}. Episode {episode_num}: {title} (with {guest})")
+            
+            prompt = f"""You are an AI assistant helping users discover relevant content from the YonEarth Community Podcast and related books. 
+
+Analyze this conversation between a user and Gaia (Earth's spirit):
+
+{conversation_text}
+
+Based on the conversation flow and the user's most recent interests, select the {max_recommendations} most relevant pieces of content from the following options:
+
+{chr(10).join(content_options)}
+
+Requirements:
+1. Prioritize content that matches the user's MOST RECENT questions and interests
+2. If the conversation has evolved to new topics, focus on those newer topics
+3. Aim for diversity - mix episodes and books when possible, but prioritize relevance
+4. Consider the natural progression of the conversation
+
+Respond with ONLY a JSON object in this format:
+{{
+    "selected_indices": [1, 3, 5],
+    "topics": ["topic1", "topic2", "topic3"],
+    "reasoning": "Brief explanation of why these recommendations are most relevant to the current conversation"
+}}
+
+The selected_indices should be the numbers (1-based) of the most relevant content pieces."""
+
+            # Call OpenAI API (with error handling for missing API key)
+            if not os.getenv('OPENAI_API_KEY'):
+                print("No OpenAI API key found, using smart fallback algorithm")
+                return self.smart_fallback_recommendations(unique_citations, conversation_history, max_recommendations)
+            
+            response = self.openai_client.chat.completions.create(
+                model="gpt-3.5-turbo",
+                messages=[{"role": "user", "content": prompt}],
+                temperature=0.3,
+                max_tokens=300
+            )
+            
+            # Parse LLM response
+            llm_response = response.choices[0].message.content.strip()
+            
+            try:
+                recommendation_data = json.loads(llm_response)
+                selected_indices = recommendation_data.get('selected_indices', [])
+                topics = recommendation_data.get('topics', [])
+                reasoning = recommendation_data.get('reasoning', '')
+                
+                print(f"LLM reasoning: {reasoning}")
+                
+                # Convert indices to actual citations (1-based to 0-based)
+                recommended_citations = []
+                for idx in selected_indices:
+                    if 1 <= idx <= len(unique_citations):
+                        recommended_citations.append(unique_citations[idx - 1])
+                
+                return recommended_citations[:max_recommendations], topics[:5]
+                
+            except json.JSONDecodeError:
+                print(f"Failed to parse LLM response: {llm_response}")
+                # Fallback: return most recent citations
+                return unique_citations[-max_recommendations:] if unique_citations else [], ["AI analysis failed"]
+        
+        except Exception as e:
+            print(f"Error in LLM recommendations: {e}")
+            import traceback
+            traceback.print_exc()
+            # Fallback: return most recent citations
+            all_citations = []
+            for message in conversation_history:
+                if message.get('citations'):
+                    all_citations.extend(message['citations'])
+            
+            # Simple deduplication and return recent ones
+            unique_citations = []
+            seen_keys = set()
+            for citation in reversed(all_citations):
+                key = f"{citation.get('episode_number', '')}:{citation.get('title', '')}"
+                if key not in seen_keys and key != ':':
+                    seen_keys.add(key)
+                    unique_citations.append(citation)
+            
+            return unique_citations[:max_recommendations], ["fallback"]
+    
+    def smart_fallback_recommendations(self, unique_citations, conversation_history, max_recommendations):
+        """Smart algorithm for recommendations when OpenAI API is not available"""
+        if not unique_citations:
+            return [], []
+        
+        # Extract recent topics from conversation
+        recent_keywords = set()
+        topic_keywords = [
+            'soil', 'biochar', 'compost', 'permaculture', 'regenerative', 'agriculture', 
+            'sustainability', 'climate', 'water', 'energy', 'community', 'carbon', 
+            'farming', 'garden', 'food', 'ecosystem', 'forest', 'organic'
+        ]
+        
+        # Focus on last 3 messages for recency
+        recent_messages = conversation_history[-3:] if len(conversation_history) > 3 else conversation_history
+        for message in recent_messages:
+            content = message.get('content', '').lower()
+            for keyword in topic_keywords:
+                if keyword in content:
+                    recent_keywords.add(keyword)
+        
+        # Score citations based on recency and relevance
+        citation_scores = []
+        for i, citation in enumerate(unique_citations):
+            score = 0
+            citation_text = f"{citation.get('title', '')} {citation.get('guest_name', '')}".lower()
+            
+            # Reverse order bonus (more recent = higher score)
+            score += (len(unique_citations) - i) * 2
+            
+            # Topic relevance bonus
+            for keyword in recent_keywords:
+                if keyword in citation_text:
+                    score += 3
+            
+            # Prefer episodes over books for diversity
+            if not citation.get('episode_number', '').startswith('Book:'):
+                score += 1
+            
+            citation_scores.append((citation, score))
+        
+        # Sort by score and take top recommendations
+        citation_scores.sort(key=lambda x: x[1], reverse=True)
+        
+        # Ensure diversity: max 2 books
+        recommended_citations = []
+        book_count = 0
+        
+        for citation, score in citation_scores:
+            is_book = citation.get('episode_number', '').startswith('Book:')
+            
+            if is_book and book_count >= 2:
+                continue
+                
+            recommended_citations.append(citation)
+            if is_book:
+                book_count += 1
+                
+            if len(recommended_citations) >= max_recommendations:
+                break
+        
+        return recommended_citations, list(recent_keywords)[:5]
     
     def do_OPTIONS(self):
         # Handle CORS preflight

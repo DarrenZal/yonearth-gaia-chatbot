@@ -92,6 +92,27 @@ class HealthResponse(BaseModel):
     gaia_personality: Optional[str] = None
 
 
+class ConversationMessage(BaseModel):
+    """Individual conversation message"""
+    role: str = Field(..., description="Role: 'user' or 'gaia'")
+    content: str = Field(..., description="Message content")
+    citations: Optional[List[Citation]] = Field(default_factory=list, description="Citations from response")
+
+
+class ConversationRecommendationsRequest(BaseModel):
+    """Request model for conversation-based recommendations"""
+    conversation_history: List[ConversationMessage] = Field(..., description="Full conversation history")
+    max_recommendations: Optional[int] = Field(4, description="Maximum recommendations", ge=1, le=10)
+    session_id: Optional[str] = Field(None, description="Session ID for context")
+
+
+class ConversationRecommendationsResponse(BaseModel):
+    """Response model for conversation-based recommendations"""
+    recommendations: List[Citation] = Field(..., description="Recommended content based on conversation")
+    conversation_topics: List[str] = Field(default_factory=list, description="Extracted topics from conversation")
+    total_found: int = Field(..., description="Total recommendations found")
+
+
 class ErrorResponse(BaseModel):
     """Error response model"""
     error: str

@@ -9,6 +9,7 @@ class GaiaChat {
         this.isLoading = false;
         this.conversationEpisodes = new Set(); // Track episodes mentioned in conversation
         this.conversationTopics = new Set();  // Track topics discussed
+        this.conversationHistory = []; // Track full conversation for recommendations
         
         this.initializeElements();
         this.setupEventListeners();
@@ -151,6 +152,14 @@ class GaiaChat {
         // Store last message for topic extraction
         this.lastUserMessage = message;
         
+        // Add user message to conversation history
+        this.conversationHistory.push({
+            role: 'user',
+            content: message,
+            citations: []
+        });
+        console.log('Added user message to conversation history. Total messages:', this.conversationHistory.length);
+        
         // Add user message to chat
         this.addMessage(message, 'user');
         
@@ -171,12 +180,31 @@ class GaiaChat {
             // Handle comparison mode
             if (response.comparison) {
                 this.addComparisonMessage(response);
+                
+                // Add both responses to conversation history for comparison mode
+                this.conversationHistory.push({
+                    role: 'gaia',
+                    content: response.original.response + ' ' + response.bm25.response,
+                    citations: [...(response.original.citations || response.original.sources || []), ...(response.bm25.sources || response.bm25.citations || [])]
+                });
+                
+                // Show smart recommendations based on conversation
+                await this.updateConversationRecommendations();
             } else {
+                // Add Gaia's response to conversation history
+                this.conversationHistory.push({
+                    role: 'gaia',
+                    content: response.response,
+                    citations: response.citations || response.sources || []
+                });
+                console.log('Added Gaia response to conversation history. Total messages:', this.conversationHistory.length);
+                console.log('Citations in response:', response.citations || response.sources || []);
+                
                 // Add Gaia's response WITH inline citations
                 this.addMessage(response.response, 'gaia', response.citations || response.sources);
                 
                 // Show smart recommendations based on conversation
-                this.updateSmartRecommendations(response);
+                await this.updateConversationRecommendations();
             }
             
         } catch (error) {
@@ -365,14 +393,33 @@ class GaiaChat {
             
             const titleDiv = document.createElement('div');
             titleDiv.className = 'citation-title';
-            titleDiv.textContent = `Episode ${citation.episode_number}: ${citation.title}`;
             
-            const guestDiv = document.createElement('div');
-            guestDiv.className = 'citation-guest';
-            guestDiv.textContent = `with ${citation.guest_name}`;
+            // Check if this is a book reference
+            if (citation.episode_number && citation.episode_number.toString().startsWith('Book:')) {
+                // Extract book title and clean up chapter info
+                const bookInfo = citation.episode_number.substring(5).trim(); // Remove "Book:" prefix
+                const chapterMatch = citation.title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
+                const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
+                titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
+            } else {
+                titleDiv.textContent = `Episode ${citation.episode_number}: ${citation.title}`;
+            }
             
             citationDiv.appendChild(titleDiv);
-            citationDiv.appendChild(guestDiv);
+            
+            // Only add guest info for episodes, not books
+            if (citation.guest_name && !citation.episode_number?.toString().startsWith('Book:')) {
+                const guestDiv = document.createElement('div');
+                guestDiv.className = 'citation-guest';
+                guestDiv.textContent = `with ${citation.guest_name}`;
+                citationDiv.appendChild(guestDiv);
+            } else if (citation.guest_name && citation.episode_number?.toString().startsWith('Book:')) {
+                // For books, show author instead
+                const authorDiv = document.createElement('div');
+                authorDiv.className = 'citation-guest';
+                authorDiv.textContent = `Author: ${citation.guest_name}`;
+                citationDiv.appendChild(authorDiv);
+            }
             
             if (citation.url) {
                 const linkDiv = document.createElement('div');
@@ -380,7 +427,9 @@ class GaiaChat {
                 link.href = citation.url;
                 link.target = '_blank';
                 link.className = 'citation-link';
-                link.textContent = 'Listen to Episode →';
+                // Check if this is a book to use appropriate link text
+                const isBook = citation.episode_number?.toString().startsWith('Book:');
+                link.textContent = isBook ? 'Listen to Audiobook →' : 'Listen to Episode →';
                 linkDiv.appendChild(link);
                 citationDiv.appendChild(linkDiv);
             }
@@ -448,15 +497,32 @@ class GaiaChat {
             titleDiv.className = 'recommendation-title';
             const episodeNum = citation.episode_number || citation.episode_id || 'Unknown';
             const title = citation.title || 'Unknown Episode';
-            titleDiv.textContent = `Episode ${episodeNum}: ${title}`;
             
-            const guestDiv = document.createElement('div');
-            guestDiv.className = 'recommendation-guest';
-            const guestName = citation.guest_name || citation.guest || 'Unknown Guest';
-            guestDiv.textContent = `with ${guestName}`;
+            // Check if this is a book reference
+            if (episodeNum.toString().startsWith('Book:')) {
+                const bookInfo = episodeNum.substring(5).trim();
+                const chapterMatch = title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
+                const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
+                titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
+            } else {
+                titleDiv.textContent = `Episode ${episodeNum}: ${title}`;
+            }
             
             recDiv.appendChild(titleDiv);
-            recDiv.appendChild(guestDiv);
+            
+            const guestName = citation.guest_name || citation.guest || 'Unknown Guest';
+            if (!episodeNum.toString().startsWith('Book:')) {
+                const guestDiv = document.createElement('div');
+                guestDiv.className = 'recommendation-guest';
+                guestDiv.textContent = `with ${guestName}`;
+                recDiv.appendChild(guestDiv);
+            } else {
+                // For books, show author
+                const authorDiv = document.createElement('div');
+                authorDiv.className = 'recommendation-guest';
+                authorDiv.textContent = `Author: ${guestName}`;
+                recDiv.appendChild(authorDiv);
+            }
             
             if (citation.url) {
                 const linkDiv = document.createElement('div');
@@ -464,7 +530,8 @@ class GaiaChat {
                 link.href = citation.url;
                 link.target = '_blank';
                 link.className = 'recommendation-link';
-                link.textContent = 'Listen Now →';
+                const isBook = episodeNum.toString().startsWith('Book:');
+                link.textContent = isBook ? 'Listen to Audiobook →' : 'Listen Now →';
                 linkDiv.appendChild(link);
                 recDiv.appendChild(linkDiv);
             }
@@ -772,6 +839,87 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         
         // Show smart recommendations (different episodes + related topics)
         this.showSmartRecommendations(currentEpisodes);
+    }
+    
+    async updateConversationRecommendations() {
+        // Only call recommendations if we have conversation history
+        if (this.conversationHistory.length === 0) {
+            console.log('No conversation history, hiding recommendations');
+            this.recommendations.style.display = 'none';
+            return;
+        }
+        
+        console.log('Calling conversation recommendations with history:', this.conversationHistory);
+        
+        try {
+            const response = await fetch(`${this.apiUrl}/conversation-recommendations`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    conversation_history: this.conversationHistory,
+                    max_recommendations: 4,
+                    session_id: this.sessionId
+                })
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+            
+            const data = await response.json();
+            console.log('Received recommendations data:', data);
+            
+            // Display the conversation-based recommendations
+            this.showConversationRecommendations(data);
+            
+        } catch (error) {
+            console.error('Error getting conversation recommendations:', error);
+            // Fallback to hiding recommendations
+            this.recommendations.style.display = 'none';
+        }
+    }
+    
+    showConversationRecommendations(data) {
+        if (!data.recommendations || data.recommendations.length === 0) {
+            this.recommendations.style.display = 'none';
+            return;
+        }
+        
+        // Clear previous recommendations
+        this.recommendationsList.innerHTML = '';
+        this.recommendationsList.className = 'recommendations-list';
+        
+        // Add conversation context header
+        const contextHeader = document.createElement('div');
+        contextHeader.className = 'recommendations-context';
+        contextHeader.innerHTML = `
+            <div style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--warm-gray);">
+                Based on our conversation about: ${data.conversation_topics.join(', ')}
+            </div>
+        `;
+        this.recommendationsList.appendChild(contextHeader);
+        
+        // Add recommendations
+        this.addRecommendationItems(this.recommendationsList, data.recommendations);
+        
+        // Add exploration suggestion if we have topics
+        if (data.conversation_topics.length > 0) {
+            const exploreMore = document.createElement('div');
+            exploreMore.className = 'explore-more';
+            exploreMore.innerHTML = `
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
+                    <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
+                    <div style="font-size: 0.9rem; color: var(--earth-green);">
+                        Try asking about: "other content on ${data.conversation_topics[0]}" or "what else about sustainable ${data.conversation_topics[1] || 'practices'}"
+                    </div>
+                </div>
+            `;
+            this.recommendationsList.appendChild(exploreMore);
+        }
+        
+        this.recommendations.style.display = 'block';
     }
     
     showSmartRecommendations(currentEpisodes) {
