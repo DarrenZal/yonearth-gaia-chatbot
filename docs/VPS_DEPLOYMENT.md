@@ -158,7 +158,9 @@ ab -n 100 -c 10 http://your-domain.com/health
 
 ## 📊 Management Commands
 
-### View Logs
+### Docker Deployment Management
+
+#### View Logs
 ```bash
 # All services
 docker-compose logs -f
@@ -201,6 +203,50 @@ htop
 
 # Disk usage
 docker system df
+```
+
+### Alternative: Simple Server Management
+
+For direct Python server deployment (without Docker):
+
+#### Start Server
+```bash
+# Start in background
+python3 simple_server.py &
+
+# Or with nohup (survives terminal disconnect)
+nohup python3 simple_server.py > server.log 2>&1 &
+```
+
+#### Check Status
+```bash
+# Check if running
+ps aux | grep simple_server
+
+# Check port 80 usage
+netstat -tlnp | grep :80
+```
+
+#### Stop Server
+```bash
+# Stop gracefully
+kill $(pgrep -f simple_server.py)
+
+# Or find process ID and kill
+ps aux | grep simple_server
+kill <process_id>
+
+# Force kill if needed
+pkill -9 -f simple_server.py
+```
+
+#### View Logs
+```bash
+# If started with nohup
+tail -f server.log
+
+# Real-time system logs
+journalctl -f | grep python
 ```
 
 ## 🔒 Security Considerations

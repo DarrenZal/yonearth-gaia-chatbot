@@ -15,6 +15,12 @@ uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 # Current production server (simple_server.py on port 80)
 python3 simple_server.py
 # Web interface available at http://152.53.194.214/
+
+# Production server management
+python3 simple_server.py &           # Start in background
+ps aux | grep simple_server          # Check if running
+kill $(pgrep -f simple_server.py)    # Stop server
+# Or manually: kill <process_id>
 ```
 
 ### Testing
