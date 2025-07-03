@@ -33,12 +33,18 @@ class GaiaChat {
         this.resetCustomPrompt = document.getElementById('resetCustomPrompt');
         this.ragTypeSelect = document.getElementById('ragType');
         this.ragDescText = document.getElementById('ragDescText');
+        this.modelTypeSelect = document.getElementById('modelType');
+        this.modelDescText = document.getElementById('modelDescText');
         this.recommendations = document.getElementById('recommendations');
         this.recommendationsList = document.getElementById('recommendationsList');
         this.status = document.getElementById('status');
         
         // Initialize personality prompts
         this.initializePersonalityPrompts();
+        
+        // Initialize descriptions
+        this.updateModelDescription();
+        this.updateRAGDescription();
     }
     
     setupEventListeners() {
@@ -73,6 +79,11 @@ class GaiaChat {
         // RAG type change
         this.ragTypeSelect.addEventListener('change', () => {
             this.updateRAGDescription();
+        });
+        
+        // Model type change
+        this.modelTypeSelect.addEventListener('change', () => {
+            this.updateModelDescription();
         });
         
         // Personality details toggle
@@ -177,8 +188,28 @@ class GaiaChat {
                 throw new Error(response.error);
             }
             
-            // Handle comparison mode
-            if (response.comparison) {
+            // Handle model comparison mode
+            if (response.modelComparison) {
+                console.log('Handling model comparison response:', response);
+                this.addModelComparisonMessage(response);
+                
+                // Add combined response to conversation history
+                const allResponses = Object.values(response.models).map(r => r.response).join(' ');
+                const allCitations = Object.values(response.models).flatMap(r => r.citations || []);
+                console.log('Combined responses for history:', allResponses.length, 'characters');
+                console.log('Combined citations:', allCitations.length, 'items');
+                
+                this.conversationHistory.push({
+                    role: 'gaia',
+                    content: allResponses,
+                    citations: allCitations
+                });
+                
+                // Show smart recommendations based on conversation
+                await this.updateConversationRecommendations();
+            } 
+            // Handle RAG comparison mode
+            else if (response.comparison) {
                 this.addComparisonMessage(response);
                 
                 // Add both responses to conversation history for comparison mode
@@ -222,8 +253,16 @@ class GaiaChat {
     
     async callChatAPI(message) {
         const ragType = this.ragTypeSelect.value;
+        const modelType = this.modelTypeSelect.value;
         
-        // Handle comparison mode
+        // Handle model comparison mode
+        if (modelType === 'compare') {
+            console.log('🤖 Model comparison mode selected!');
+            console.log('📊 Will compare 3 models: gpt-3.5-turbo, gpt-4o-mini, gpt-4');
+            return await this.callModelComparisonAPI(message);
+        }
+        
+        // Handle RAG comparison mode
         if (ragType === 'both') {
             return await this.callBothAPIs(message);
         }
@@ -235,7 +274,8 @@ class GaiaChat {
             message: message,
             session_id: this.sessionId,
             personality: this.personalitySelect.value,
-            max_results: 5
+            max_results: 5,
+            model: modelType !== 'compare' ? modelType : undefined
         };
         
         // Add custom prompt if custom personality is selected
@@ -278,6 +318,120 @@ class GaiaChat {
         return await response.json();
     }
     
+    async callModelComparisonAPI(message) {
+        console.log('callModelComparisonAPI called with message:', message);
+        
+        // Define the models to compare
+        const models = ['gpt-3.5-turbo', 'gpt-4o-mini', 'gpt-4'];
+        const results = {};
+        
+        // Track total processing time
+        const startTime = Date.now();
+        
+        // Make parallel API calls with different models
+        const promises = models.map(async (model) => {
+            console.log(`Calling API with model: ${model}`);
+            
+            try {
+                const requestBody = {
+                    message: message,
+                    session_id: this.sessionId,
+                    personality: this.personalitySelect.value,
+                    max_results: 5,
+                    model: model  // Specify the model explicitly
+                };
+                
+                // Add custom prompt if custom personality is selected
+                if (this.personalitySelect.value === 'custom') {
+                    const customPrompt = this.customPromptEditor.value.trim();
+                    if (customPrompt) {
+                        requestBody.custom_prompt = customPrompt;
+                    }
+                }
+                
+                // Determine which endpoint to use based on current RAG type
+                const ragType = this.ragTypeSelect.value;
+                const endpoint = ragType === 'original' ? '/chat' : '/bm25/chat';
+                
+                // Add BM25-specific parameters if using BM25
+                if (ragType !== 'original') {
+                    requestBody.search_method = 'hybrid';
+                    requestBody.k = 5;
+                    requestBody.include_sources = true;
+                    requestBody.gaia_personality = this.personalitySelect.value;
+                }
+                
+                console.log(`Sending request to ${endpoint} with model ${model}:`, requestBody);
+                
+                const response = await fetch(`${this.apiUrl}${endpoint}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    console.error(`Error with model ${model}:`, errorData);
+                    throw new Error(errorData.detail || `HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                console.log(`Response from model ${model}:`, data);
+                
+                // Format the response to match expected structure
+                return {
+                    model: model,
+                    data: {
+                        response: data.response,
+                        personality: data.personality || this.personalitySelect.value,
+                        citations: data.citations || data.sources || [],
+                        context_used: data.context_used || data.retrieval_count || 0,
+                        session_id: this.sessionId,
+                        retrieval_count: data.retrieval_count || 0,
+                        processing_time: data.processing_time || 0,
+                        model_used: model
+                    }
+                };
+            } catch (error) {
+                console.error(`Failed to get response from model ${model}:`, error);
+                return {
+                    model: model,
+                    data: {
+                        response: `Error with ${model}: ${error.message}`,
+                        personality: this.personalitySelect.value,
+                        citations: [],
+                        context_used: 0,
+                        session_id: this.sessionId,
+                        retrieval_count: 0,
+                        processing_time: 0,
+                        model_used: model
+                    }
+                };
+            }
+        });
+        
+        // Wait for all responses
+        const responses = await Promise.all(promises);
+        
+        // Build the results object
+        responses.forEach(({ model, data }) => {
+            results[model] = data;
+        });
+        
+        const totalProcessingTime = (Date.now() - startTime) / 1000;
+        console.log(`Model comparison completed in ${totalProcessingTime}s`);
+        console.log('All model results:', results);
+        
+        // Return in the expected format
+        return {
+            modelComparison: true,
+            models: results,
+            processing_time: totalProcessingTime
+        };
+    }
+
     async callBothAPIs(message) {
         // Call both APIs in parallel
         const [originalResponse, bm25Response] = await Promise.all([
@@ -718,6 +872,17 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         this.ragDescText.textContent = descriptions[this.ragTypeSelect.value] || descriptions['original'];
     }
     
+    updateModelDescription() {
+        const descriptions = {
+            'gpt-3.5-turbo': '🤖 GPT-3.5 Turbo: Fast, affordable, and great for most conversations',
+            'gpt-4o-mini': '🧠 GPT-4o Mini: Balanced performance with improved reasoning',
+            'gpt-4': '⭐ GPT-4: Highest quality responses with advanced reasoning',
+            'compare': '🔄 Compare All Models: See responses from all three models side-by-side'
+        };
+        
+        this.modelDescText.textContent = descriptions[this.modelTypeSelect.value] || descriptions['gpt-3.5-turbo'];
+    }
+    
     togglePersonalityDetails() {
         const isVisible = this.personalityDetailsSection.style.display !== 'none';
         this.personalityDetailsSection.style.display = isVisible ? 'none' : 'block';
@@ -967,6 +1132,118 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         this.recommendations.style.display = 'block';
     }
     
+    showModelComparisonRecommendations(response) {
+        // Combine episodes from all models
+        const allEpisodes = Object.values(response.models).flatMap(model => 
+            model.citations || []
+        );
+        
+        // Track episodes and update smart recommendations
+        allEpisodes.forEach(episode => {
+            if (episode.episode_number || episode.episode_id) {
+                this.conversationEpisodes.add(episode.episode_number || episode.episode_id);
+            }
+        });
+        
+        // Extract topics from all responses
+        const allResponses = Object.values(response.models).map(model => model.response || '').join(' ');
+        const userMessage = this.lastUserMessage || '';
+        const combinedText = (userMessage + ' ' + allResponses).toLowerCase();
+        
+        const topicKeywords = [
+            'permaculture', 'regenerative', 'agriculture', 'sustainability', 'climate',
+            'composting', 'soil', 'biodiversity', 'water', 'energy', 'community',
+            'biochar', 'carbon', 'farming', 'garden', 'food', 'ecosystem'
+        ];
+        
+        topicKeywords.forEach(topic => {
+            if (combinedText.includes(topic)) {
+                this.conversationTopics.add(topic);
+            }
+        });
+        
+        // Show smart recommendations with model comparison context
+        if (allEpisodes.length > 0) {
+            this.recommendationsList.innerHTML = '';
+            this.recommendationsList.className = 'recommendations-list';
+            
+            // Get unique episodes and limit to top 4
+            const uniqueEpisodes = this.getUniqueEpisodes(allEpisodes);
+            const episodesToShow = uniqueEpisodes.slice(0, 4);
+            
+            // Add comparison context header
+            const contextHeader = document.createElement('div');
+            contextHeader.className = 'recommendations-context';
+            contextHeader.innerHTML = `
+                <div style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--warm-gray);">
+                    🤖 Episodes found by all AI models about: ${Array.from(this.conversationTopics).slice(0, 3).join(', ')}
+                </div>
+            `;
+            this.recommendationsList.appendChild(contextHeader);
+            
+            // Add episode recommendations
+            this.addRecommendationItems(this.recommendationsList, episodesToShow);
+            
+            this.recommendations.style.display = 'block';
+        }
+    }
+    
+    addModelComparisonMessage(response) {
+        console.log('addModelComparisonMessage called with:', response);
+        
+        const comparisonDiv = document.createElement('div');
+        comparisonDiv.className = 'message gaia-message';
+        
+        const avatar = document.createElement('div');
+        avatar.className = 'message-avatar';
+        avatar.textContent = '🌱';
+        
+        const content = document.createElement('div');
+        content.className = 'message-content comparison-container model-comparison';
+        
+        // Create panels for each model
+        const modelNames = {
+            'gpt-3.5-turbo': '🤖 GPT-3.5 Turbo',
+            'gpt-4o-mini': '🧠 GPT-4o Mini', 
+            'gpt-4': '⭐ GPT-4'
+        };
+        
+        console.log('Creating panels for models:', Object.keys(response.models));
+        
+        Object.entries(response.models).forEach(([modelName, modelResponse]) => {
+            console.log(`Creating panel for ${modelName}:`, modelResponse);
+            
+            const panel = document.createElement('div');
+            panel.className = 'comparison-panel model-panel';
+            panel.innerHTML = `
+                <div class="comparison-header">${modelNames[modelName] || modelName}</div>
+                <div class="comparison-content">${modelResponse.response || 'No response available'}</div>
+                <div class="model-info">
+                    <small>⏱️ Model: ${modelResponse.model_used || modelName}</small>
+                </div>
+                ${this.formatComparisonCitations(modelResponse.citations || [], modelName)}
+            `;
+            content.appendChild(panel);
+        });
+        
+        // Add processing time info
+        const processingInfo = document.createElement('div');
+        processingInfo.className = 'processing-info';
+        processingInfo.innerHTML = `
+            <small>⏱️ Total processing time: ${response.processing_time?.toFixed(2) || 'N/A'}s</small>
+        `;
+        content.appendChild(processingInfo);
+        
+        comparisonDiv.appendChild(avatar);
+        comparisonDiv.appendChild(content);
+        
+        this.chatMessages.appendChild(comparisonDiv);
+        this.scrollToBottom();
+        
+        // Show smart recommendations combining all models
+        this.showModelComparisonRecommendations(response);
+    }
+
     addComparisonMessage(response) {
         const comparisonDiv = document.createElement('div');
         comparisonDiv.className = 'message gaia-message';

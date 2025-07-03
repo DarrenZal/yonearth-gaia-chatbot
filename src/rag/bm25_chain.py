@@ -3,6 +3,8 @@ Advanced BM25 Hybrid RAG Chain - New pipeline with BM25 integration
 Keeps existing RAG pipeline intact while adding state-of-the-art BM25 hybrid search
 """
 import logging
+import json
+import os
 from typing import List, Dict, Any, Optional, Tuple
 from langchain.schema import Document
 
@@ -13,6 +15,26 @@ from .bm25_hybrid_retriever import BM25HybridRetriever
 from ..ingestion.process_episodes import process_episodes_for_ingestion
 
 logger = logging.getLogger(__name__)
+
+
+def load_book_metadata() -> Dict[str, Dict[str, Any]]:
+    """Load book metadata from JSON files"""
+    book_metadata = {}
+    books_dir = "/root/yonearth-gaia-chatbot/data/books"
+    
+    if os.path.exists(books_dir):
+        for book_folder in os.listdir(books_dir):
+            metadata_path = os.path.join(books_dir, book_folder, "metadata.json")
+            if os.path.exists(metadata_path):
+                try:
+                    with open(metadata_path, 'r') as f:
+                        metadata = json.load(f)
+                        book_title = metadata.get('title', book_folder)
+                        book_metadata[book_title] = metadata
+                except Exception as e:
+                    logger.warning(f"Failed to load metadata for {book_folder}: {e}")
+    
+    return book_metadata
 
 
 class BM25RAGChain:
@@ -32,6 +54,7 @@ class BM25RAGChain:
         self.bm25_retriever = None
         self.gaia = None
         self.is_initialized = False
+        self.book_metadata = load_book_metadata()  # Load book metadata once
         self.search_stats = {
             'total_queries': 0,
             'bm25_queries': 0,
@@ -115,14 +138,25 @@ class BM25RAGChain:
             
             documents = self._retrieve_documents(message, search_method, k)
             
-            # Step 2: Switch personality if requested (but not for custom when custom_prompt is provided)
+            # Step 2: Handle model and personality selection
             personality_variant = kwargs.get('personality_variant')
-            if personality_variant and personality_variant != self.gaia.personality_variant:
+            model_name = kwargs.get('model_name')
+            
+            # Create appropriate Gaia instance
+            gaia_instance = self.gaia
+            if model_name and model_name != self.gaia.model_name:
+                # Create new Gaia instance with different model
+                logger.info(f"Creating new Gaia instance with model: {model_name}")
+                gaia_instance = GaiaCharacter(
+                    personality_variant=personality_variant or self.gaia.personality_variant,
+                    model_name=model_name
+                )
+            elif personality_variant and personality_variant != self.gaia.personality_variant:
                 if personality_variant != 'custom' or custom_prompt is None:
                     self.gaia.switch_personality(personality_variant)
             
             # Step 3: Generate response using Gaia
-            response_data = self.gaia.generate_response(
+            response_data = gaia_instance.generate_response(
                 user_input=message,
                 retrieved_docs=documents,
                 session_id=kwargs.get('session_id'),
@@ -134,6 +168,7 @@ class BM25RAGChain:
                 'search_method_used': search_method,
                 'documents_retrieved': len(documents),
                 'bm25_stats': self.bm25_retriever.get_stats(),
+                'model_used': model_name or self.gaia.model_name,
                 'performance_stats': self.search_stats.copy()
             })
             
@@ -198,11 +233,81 @@ class BM25RAGChain:
             metadata = getattr(doc, 'metadata', {})
             content_type = metadata.get('content_type', 'episode')
             
-            # Create unique identifier based on content type
+            # Initialize variables for both book and episode content
+            book_title = metadata.get('book_title', 'Unknown Book')
+            chapter_int = 1  # Default chapter
+            
+            # Determine unique ID and fix chapter numbers for books
             if content_type == 'book':
-                book_title = metadata.get('book_title', 'Unknown Book')
-                chapter_number = metadata.get('chapter_number', 0)
-                unique_id = f"book_{book_title}_ch{chapter_number}"
+                chapter_num = metadata.get('chapter_number', 'Unknown')
+                
+                # For VIRIDITAS book, map from chapter_number field which contains page numbers
+                if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_num != 'Unknown':
+                    # chapter_number field contains page numbers for VIRIDITAS book
+                    try:
+                        chunk_num = int(float(chapter_num))  # Convert page number to int
+                        
+                        # Map chunk numbers to actual chapters based on table of contents
+                        chapter_ranges = [
+                            (0, 10, 0),      # Prelude
+                            (11, 21, 1),     # Chapter 1: Urban Cacophony
+                            (22, 33, 2),     # Chapter 2: Terror: A Deadly Chase
+                            (34, 45, 3),     # Chapter 3: Taking Flight
+                            (46, 60, 4),     # Chapter 4: Temple of the Apocalypse
+                            (61, 71, 5),     # Chapter 5: Cresting the Horizon
+                            (72, 82, 6),     # Chapter 6: Rendezvous with a Stranger
+                            (83, 104, 7),    # Chapter 7: A Bizarre Sanctuary
+                            (105, 133, 8),   # Chapter 8: Alpine Village
+                            (134, 147, 9),   # Chapter 9: Securus Locus: Trust Nobody
+                            (148, 165, 10),  # Chapter 10: Mesa Laboratory
+                            (166, 170, 11),  # Chapter 11: A Mysterious Billionaire
+                            (171, 190, 12),  # Chapter 12: Airborne
+                            (191, 197, 13),  # Chapter 13: Billionaires & Bicycles
+                            (198, 208, 14),  # Chapter 14: Respite at the Farm
+                            (209, 216, 15),  # Chapter 15: The Garden
+                            (217, 236, 16),  # Chapter 16: What Is Really Possible?
+                            (237, 248, 17),  # Chapter 17: Superorganism
+                            (249, 254, 18),  # Chapter 18: Wi Magua
+                            (255, 267, 19),  # Chapter 19: The Great Darkness
+                            (268, 272, 20),  # Chapter 20: From the Ashes
+                            (273, 288, 21),  # Chapter 21: Spiral of No Return
+                            (289, 300, 22),  # Chapter 22: Into the Wilderness
+                            (301, 320, 23),  # Chapter 23: The Cave
+                            (321, 338, 24),  # Chapter 24: Winter Solitude—Pregnant at the Hearth
+                            (339, 351, 25),  # Chapter 25: Mountain Side Terror
+                            (352, 354, 26),  # Chapter 26: Otto Awakens
+                            (355, 391, 27),  # Chapter 27: A Walk Through History
+                            (392, 407, 28),  # Chapter 28: The Ubiquity
+                            (408, 428, 29),  # Chapter 29: Otto's Revelation
+                            (429, 493, 30),  # Chapter 30: Gaia Speaks
+                            (494, 495, 31),  # Chapter 31: A Joyful Journey
+                            (496, 520, 32),  # Chapter 32: Birthing a New World—Water of Life
+                            (521, 568, 33),  # Chapter 33: Weaving A New Culture Together
+                        ]
+                        
+                        # Find which chapter this chunk belongs to
+                        chapter_int = 1  # Default
+                        for start_page, end_page, chapter_num in chapter_ranges:
+                            if start_page <= chunk_num <= end_page:
+                                chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                break
+                        
+                        # If chunk number is very high, estimate based on position
+                        if chunk_num > 568:
+                            chapter_int = 33  # Last chapter
+                            
+                    except (ValueError, IndexError):
+                        chapter_int = 1  # Default to chapter 1 if parsing fails
+                else:
+                    # For non-VIRIDITAS books or if parsing fails, use original chapter number
+                    if chapter_num and chapter_num != 'Unknown':
+                        try:
+                            chapter_int = int(float(chapter_num))
+                        except (ValueError, TypeError):
+                            chapter_int = 1
+                
+                # Create unique ID with corrected chapter number
+                unique_id = f"book_{book_title}_ch{chapter_int}"
             else:
                 episode_number = metadata.get('episode_number', 'Unknown')
                 unique_id = f"episode_{episode_number}"
@@ -215,23 +320,24 @@ class BM25RAGChain:
             
             # Format source based on content type
             if content_type == 'book':
-                # Format book as episode-like structure for web compatibility
-                book_title = metadata.get('book_title', 'Unknown Book')
-                chapter_num = metadata.get('chapter_number', 'Unknown')
+                # Use variables already calculated in the deduplication section above
+                # book_title and chapter_int are already set
                 chapter_title = metadata.get('chapter_title', '')
                 author = metadata.get('author', 'Unknown Author')
                 
-                # Convert chapter_number to int for API compatibility
-                chapter_int = int(float(chapter_num)) if chapter_num and chapter_num != 'Unknown' else None
+                # Get audiobook URL from metadata
+                book_url = ''
+                if book_title in self.book_metadata:
+                    book_url = self.book_metadata[book_title].get('audiobook_url', '')
                 
                 # Create episode-compatible format
                 source = {
                     'content_type': 'book',  # Keep internal distinction
                     'episode_id': unique_id,
                     'episode_number': f"Book: {book_title}",  # Show as book identifier
-                    'title': f"{book_title} - Chapter {chapter_num}: {chapter_title}" if chapter_title else f"{book_title} - Chapter {chapter_num}",
-                    'guest_name': f"Author: {author}",
-                    'url': '',  # Books don't have URLs
+                    'title': f"Chapter {chapter_int}",
+                    'guest_name': author,
+                    'url': book_url,  # Use audiobook URL
                     'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content,
                     # Keep book-specific fields for internal use
                     'book_title': book_title,
@@ -278,8 +384,74 @@ class BM25RAGChain:
                 book_title = metadata.get('book_title')
                 chapter_number = metadata.get('chapter_number')
                 if book_title:
-                    # Format as episode-compatible reference
-                    references.add(f"Book: {book_title} - Chapter {chapter_number}")
+                    # Use the same chapter correction logic as _format_sources
+                    chapter_int = 1  # Default chapter
+                    
+                    # For VIRIDITAS book, map from chapter_number field which contains page numbers
+                    if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_number is not None:
+                        # chapter_number field contains page numbers for VIRIDITAS book
+                        try:
+                            chunk_num = int(float(chapter_number))  # Convert page number to int
+                            
+                            # Map chunk numbers to actual chapters based on table of contents
+                            chapter_ranges = [
+                                (0, 10, 0),      # Prelude
+                                (11, 21, 1),     # Chapter 1: Urban Cacophony
+                                (22, 33, 2),     # Chapter 2: Terror: A Deadly Chase
+                                (34, 45, 3),     # Chapter 3: Taking Flight
+                                (46, 60, 4),     # Chapter 4: Temple of the Apocalypse
+                                (61, 71, 5),     # Chapter 5: Cresting the Horizon
+                                (72, 82, 6),     # Chapter 6: Rendezvous with a Stranger
+                                (83, 104, 7),    # Chapter 7: A Bizarre Sanctuary
+                                (105, 133, 8),   # Chapter 8: Alpine Village
+                                (134, 147, 9),   # Chapter 9: Securus Locus: Trust Nobody
+                                (148, 165, 10),  # Chapter 10: Mesa Laboratory
+                                (166, 170, 11),  # Chapter 11: A Mysterious Billionaire
+                                (171, 190, 12),  # Chapter 12: Airborne
+                                (191, 197, 13),  # Chapter 13: Billionaires & Bicycles
+                                (198, 208, 14),  # Chapter 14: Respite at the Farm
+                                (209, 216, 15),  # Chapter 15: The Garden
+                                (217, 236, 16),  # Chapter 16: What Is Really Possible?
+                                (237, 248, 17),  # Chapter 17: Superorganism
+                                (249, 254, 18),  # Chapter 18: Wi Magua
+                                (255, 267, 19),  # Chapter 19: The Great Darkness
+                                (268, 272, 20),  # Chapter 20: From the Ashes
+                                (273, 288, 21),  # Chapter 21: Spiral of No Return
+                                (289, 300, 22),  # Chapter 22: Into the Wilderness
+                                (301, 320, 23),  # Chapter 23: The Cave
+                                (321, 338, 24),  # Chapter 24: Winter Solitude—Pregnant at the Hearth
+                                (339, 351, 25),  # Chapter 25: Mountain Side Terror
+                                (352, 354, 26),  # Chapter 26: Otto Awakens
+                                (355, 391, 27),  # Chapter 27: A Walk Through History
+                                (392, 407, 28),  # Chapter 28: The Ubiquity
+                                (408, 428, 29),  # Chapter 29: Otto's Revelation
+                                (429, 493, 30),  # Chapter 30: Gaia Speaks
+                                (494, 495, 31),  # Chapter 31: A Joyful Journey
+                                (496, 520, 32),  # Chapter 32: Birthing a New World—Water of Life
+                                (521, 568, 33),  # Chapter 33: Weaving A New Culture Together
+                            ]
+                            
+                            # Find which chapter this chunk belongs to
+                            for start_page, end_page, chapter_num in chapter_ranges:
+                                if start_page <= chunk_num <= end_page:
+                                    chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                    break
+                            
+                            # If chunk number is very high, estimate based on position
+                            if chunk_num > 568:
+                                chapter_int = 33  # Last chapter
+                                
+                        except (ValueError, IndexError):
+                            chapter_int = 1  # Default to chapter 1 if parsing fails
+                    else:
+                        # For non-VIRIDITAS books or if parsing fails, use original chapter number
+                        if chapter_number and chapter_number != 'Unknown':
+                            try:
+                                chapter_int = int(float(chapter_number))
+                            except (ValueError, TypeError):
+                                chapter_int = 1
+                    
+                    references.add(f"Book: {book_title} - Chapter {chapter_int}")
             else:
                 episode_id = metadata.get('episode_id')
                 episode_number = metadata.get('episode_number')
@@ -323,7 +495,73 @@ class BM25RAGChain:
             if content_type == 'book':
                 book_title = metadata.get('book_title', 'unknown')
                 chapter_number = metadata.get('chapter_number', 0)
-                content_id = f"book_{book_title}_ch{chapter_number}"
+                
+                # Apply chapter correction logic for VIRIDITAS book
+                chapter_int = 1  # Default chapter
+                if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_number is not None:
+                    # chapter_number field contains page numbers for VIRIDITAS book
+                    try:
+                        chunk_num = int(float(chapter_num))  # Convert page number to int
+                        
+                        # Map chunk numbers to actual chapters based on table of contents
+                        chapter_ranges = [
+                            (0, 10, 0),      # Prelude
+                            (11, 21, 1),     # Chapter 1: Urban Cacophony
+                            (22, 33, 2),     # Chapter 2: Terror: A Deadly Chase
+                            (34, 45, 3),     # Chapter 3: Taking Flight
+                            (46, 60, 4),     # Chapter 4: Temple of the Apocalypse
+                            (61, 71, 5),     # Chapter 5: Cresting the Horizon
+                            (72, 82, 6),     # Chapter 6: Rendezvous with a Stranger
+                            (83, 104, 7),    # Chapter 7: A Bizarre Sanctuary
+                            (105, 133, 8),   # Chapter 8: Alpine Village
+                            (134, 147, 9),   # Chapter 9: Securus Locus: Trust Nobody
+                            (148, 165, 10),  # Chapter 10: Mesa Laboratory
+                            (166, 170, 11),  # Chapter 11: A Mysterious Billionaire
+                            (171, 190, 12),  # Chapter 12: Airborne
+                            (191, 197, 13),  # Chapter 13: Billionaires & Bicycles
+                            (198, 208, 14),  # Chapter 14: Respite at the Farm
+                            (209, 216, 15),  # Chapter 15: The Garden
+                            (217, 236, 16),  # Chapter 16: What Is Really Possible?
+                            (237, 248, 17),  # Chapter 17: Superorganism
+                            (249, 254, 18),  # Chapter 18: Wi Magua
+                            (255, 267, 19),  # Chapter 19: The Great Darkness
+                            (268, 272, 20),  # Chapter 20: From the Ashes
+                            (273, 288, 21),  # Chapter 21: Spiral of No Return
+                            (289, 300, 22),  # Chapter 22: Into the Wilderness
+                            (301, 320, 23),  # Chapter 23: The Cave
+                            (321, 338, 24),  # Chapter 24: Winter Solitude—Pregnant at the Hearth
+                            (339, 351, 25),  # Chapter 25: Mountain Side Terror
+                            (352, 354, 26),  # Chapter 26: Otto Awakens
+                            (355, 391, 27),  # Chapter 27: A Walk Through History
+                            (392, 407, 28),  # Chapter 28: The Ubiquity
+                            (408, 428, 29),  # Chapter 29: Otto's Revelation
+                            (429, 493, 30),  # Chapter 30: Gaia Speaks
+                            (494, 495, 31),  # Chapter 31: A Joyful Journey
+                            (496, 520, 32),  # Chapter 32: Birthing a New World—Water of Life
+                            (521, 568, 33),  # Chapter 33: Weaving A New Culture Together
+                        ]
+                        
+                        # Find which chapter this chunk belongs to
+                        for start_page, end_page, chapter_num in chapter_ranges:
+                            if start_page <= chunk_num <= end_page:
+                                chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                break
+                        
+                        # If chunk number is very high, estimate based on position
+                        if chunk_num > 568:
+                            chapter_int = 33  # Last chapter
+                            
+                    except (ValueError, IndexError):
+                        chapter_int = 1  # Default to chapter 1 if parsing fails
+                else:
+                    # For non-VIRIDITAS books or if parsing fails, use original chapter number
+                    if chapter_num and chapter_num != 'Unknown':
+                        try:
+                            chapter_int = int(float(chapter_num))
+                        except (ValueError, TypeError):
+                            chapter_int = 1
+                
+                content_id = f"book_{book_title}_ch{chapter_int}"
             else:
                 content_id = metadata.get('episode_id', 'unknown')
             
@@ -334,9 +572,9 @@ class BM25RAGChain:
                         'content_id': content_id,
                         'book_title': metadata.get('book_title', 'Unknown Book'),
                         'author': metadata.get('author', 'Unknown Author'),
-                        'chapter_number': metadata.get('chapter_number'),
+                        'chapter_number': chapter_int,  # Use corrected chapter number
                         'chapter_title': metadata.get('chapter_title', ''),
-                        'title': f"{metadata.get('book_title', 'Unknown Book')} - Chapter {metadata.get('chapter_number', 'Unknown')}",
+                        'title': f"{metadata.get('book_title', 'Unknown Book')} - Chapter {chapter_int}",  # Use corrected chapter number
                         'chunks': [],
                         'max_score': 0
                     }
@@ -425,10 +663,78 @@ class BM25RAGChain:
         content_type = metadata.get('content_type', 'episode')
         
         if content_type == 'book':
+            book_title = metadata.get('book_title', 'Unknown')
+            chapter_number = metadata.get('chapter_number', 0)
+            
+            # Apply chapter correction logic for VIRIDITAS book
+            chapter_int = 1  # Default chapter
+            if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_number is not None:
+                # chapter_number field contains page numbers for VIRIDITAS book
+                try:
+                    chunk_num = int(float(chapter_number))  # Convert page number to int
+                    
+                    # Map chunk numbers to actual chapters based on table of contents
+                    chapter_ranges = [
+                        (0, 10, 0),      # Prelude
+                        (11, 21, 1),     # Chapter 1: Urban Cacophony
+                        (22, 33, 2),     # Chapter 2: Terror: A Deadly Chase
+                        (34, 45, 3),     # Chapter 3: Taking Flight
+                        (46, 60, 4),     # Chapter 4: Temple of the Apocalypse
+                        (61, 71, 5),     # Chapter 5: Cresting the Horizon
+                        (72, 82, 6),     # Chapter 6: Rendezvous with a Stranger
+                        (83, 104, 7),    # Chapter 7: A Bizarre Sanctuary
+                        (105, 133, 8),   # Chapter 8: Alpine Village
+                        (134, 147, 9),   # Chapter 9: Securus Locus: Trust Nobody
+                        (148, 165, 10),  # Chapter 10: Mesa Laboratory
+                        (166, 170, 11),  # Chapter 11: A Mysterious Billionaire
+                        (171, 190, 12),  # Chapter 12: Airborne
+                        (191, 197, 13),  # Chapter 13: Billionaires & Bicycles
+                        (198, 208, 14),  # Chapter 14: Respite at the Farm
+                        (209, 216, 15),  # Chapter 15: The Garden
+                        (217, 236, 16),  # Chapter 16: What Is Really Possible?
+                        (237, 248, 17),  # Chapter 17: Superorganism
+                        (249, 254, 18),  # Chapter 18: Wi Magua
+                        (255, 267, 19),  # Chapter 19: The Great Darkness
+                        (268, 272, 20),  # Chapter 20: From the Ashes
+                        (273, 288, 21),  # Chapter 21: Spiral of No Return
+                        (289, 300, 22),  # Chapter 22: Into the Wilderness
+                        (301, 320, 23),  # Chapter 23: The Cave
+                        (321, 338, 24),  # Chapter 24: Winter Solitude—Pregnant at the Hearth
+                        (339, 351, 25),  # Chapter 25: Mountain Side Terror
+                        (352, 354, 26),  # Chapter 26: Otto Awakens
+                        (355, 391, 27),  # Chapter 27: A Walk Through History
+                        (392, 407, 28),  # Chapter 28: The Ubiquity
+                        (408, 428, 29),  # Chapter 29: Otto's Revelation
+                        (429, 493, 30),  # Chapter 30: Gaia Speaks
+                        (494, 495, 31),  # Chapter 31: A Joyful Journey
+                        (496, 520, 32),  # Chapter 32: Birthing a New World—Water of Life
+                        (521, 568, 33),  # Chapter 33: Weaving A New Culture Together
+                    ]
+                    
+                    # Find which chapter this chunk belongs to
+                    for start_page, end_page, chapter_num in chapter_ranges:
+                        if start_page <= chunk_num <= end_page:
+                            chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                            break
+                    
+                    # If chunk number is very high, estimate based on position
+                    if chunk_num > 568:
+                        chapter_int = 33  # Last chapter
+                        
+                except (ValueError, IndexError):
+                    chapter_int = 1  # Default to chapter 1 if parsing fails
+            else:
+                # For non-VIRIDITAS books or if parsing fails, use original chapter number
+                if chapter_number and chapter_number != 'Unknown':
+                    try:
+                        chapter_int = int(float(chapter_number))
+                    except (ValueError, TypeError):
+                        chapter_int = 1
+            
             return {
                 'content_type': 'book',
-                'id': f"book_{metadata.get('book_title', 'Unknown')}_ch{metadata.get('chapter_number', 0)}",
-                'title': f"{metadata.get('book_title', 'Unknown Book')} - Chapter {metadata.get('chapter_number', 'Unknown')}",
+                'id': f"book_{book_title}_ch{chapter_int}",
+                'title': f"{book_title} - Chapter {chapter_int}",
                 'author': metadata.get('author', 'Unknown Author'),
                 'preview': doc.page_content[:100] + "..."
             }

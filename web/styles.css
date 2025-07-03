@@ -236,6 +236,57 @@ body {
     box-shadow: var(--shadow-light);
 }
 
+/* Model Selector */
+.model-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.model-selector > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.model-selector label {
+    font-weight: 500;
+    color: var(--earth-green);
+}
+
+.model-selector select {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--sage-green);
+    border-radius: 8px;
+    background: var(--soft-white);
+    color: var(--earth-green);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    min-width: 250px;
+}
+
+.model-selector select:focus {
+    outline: none;
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.model-description {
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.model-description small {
+    color: var(--warm-gray);
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 /* RAG Selector */
 .rag-selector {
     display: flex;
@@ -569,11 +620,36 @@ body {
     margin-bottom: 1rem;
 }
 
+.comparison-container.model-comparison {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+}
+
 .comparison-panel {
     background: var(--soft-white);
     border-radius: var(--border-radius);
     padding: 1rem;
     box-shadow: var(--shadow-light);
+}
+
+.model-panel {
+    position: relative;
+}
+
+.model-info {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.processing-info {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(135, 169, 107, 0.1);
+    border-radius: 8px;
+    margin-top: 0.5rem;
 }
 
 .comparison-header {
@@ -600,6 +676,15 @@ body {
 @media (max-width: 768px) {
     .comparison-container {
         grid-template-columns: 1fr;
+    }
+    
+    .comparison-container.model-comparison {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .model-selector select {
+        min-width: 200px;
     }
 }
 

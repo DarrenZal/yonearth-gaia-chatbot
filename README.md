@@ -326,6 +326,24 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 - **[🔧 Development Guide](docs/CLAUDE.md)** - Technical architecture and development
 - **[📋 Implementation Plan](docs/IMPLEMENTATION_PLAN.md)** - BM25 system development history
 
+## 🚧 Roadmap & Upcoming Features
+
+### High Priority
+- **🏷️ Content Categorization**: Implement categorization table for podcast episodes by topics (permaculture, renewable energy, soil health, etc.)
+- **📊 Recommended Content Alignment**: Ensure recommended episodes precisely match referenced sources
+- **📊 Cost Calculator**: Track and display response generation costs for budget management
+
+### Medium Priority  
+- **🎤 Voice Integration**: Add voice responses using 11Labs API for audio interactions
+- **🔗 Knowledge Graph Links**: Implement hyperlinks within responses linking to YonEarth resources and related content
+- **⚙️ Max References Setting**: Add configurable limit for maximum episode/book references per response
+
+### Long Term
+- **🧠 Advanced Knowledge Graph**: Create interconnected content relationships for deeper context discovery
+- **📱 Mobile App**: Native mobile application for better mobile experience
+- **🔍 Advanced Search Filters**: Filter by guest, topic, date range, and content type
+- **📈 Analytics Dashboard**: Usage statistics and popular topics tracking
+
 ## 🤝 Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.

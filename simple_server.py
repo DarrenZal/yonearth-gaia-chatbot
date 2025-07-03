@@ -48,6 +48,8 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path in ['/bm25/chat', '/chat', '/api/chat', '/api/bm25/chat']:
             self.handle_chat()
+        elif self.path in ['/chat/compare', '/api/chat/compare']:
+            self.handle_model_comparison()
         elif self.path in ['/conversation-recommendations', '/api/conversation-recommendations']:
             self.handle_conversation_recommendations()
         else:
@@ -64,15 +66,21 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             message = request_data.get('message', '')
             search_method = request_data.get('search_method', 'semantic')
             k = request_data.get('k', 3)
+            model = request_data.get('model')  # New: model selection
+            personality = request_data.get('personality', 'warm_mother')
+            custom_prompt = request_data.get('custom_prompt')
             
-            print(f"Chat request: {message[:50]}... (method: {search_method})")
+            print(f"Chat request: {message[:50]}... (method: {search_method}, model: {model})")
             
-            # Get response from BM25 chain
+            # Use BM25 chain and pass model parameter through kwargs
             result = self.bm25_chain.chat(
                 message=message,
                 search_method=search_method,
                 k=k,
-                include_sources=True
+                include_sources=True,
+                custom_prompt=custom_prompt,
+                model_name=model,
+                personality_variant=personality
             )
             
             # Format sources for web interface
@@ -107,6 +115,7 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 'sources': sources,
                 'episode_references': result.get('episode_references', []),
                 'search_method_used': result.get('search_method_used', search_method),
+                'model_used': model or 'gpt-3.5-turbo',  # Include which model was used
                 'success': True
             }
             
@@ -123,6 +132,116 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             
         except Exception as e:
             print(f"Error handling chat: {e}")
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            error_response = {'error': str(e), 'success': False}
+            self.wfile.write(json.dumps(error_response).encode())
+    
+    def handle_model_comparison(self):
+        try:
+            # Read request body
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+            request_data = json.loads(post_data.decode('utf-8'))
+            
+            # Extract parameters
+            message = request_data.get('message', '')
+            personality = request_data.get('personality', 'warm_mother')
+            custom_prompt = request_data.get('custom_prompt')
+            
+            print(f"Model comparison request: {message[:50]}...")
+            
+            # Define models to compare
+            models = ['gpt-3.5-turbo', 'gpt-4o-mini', 'gpt-4']
+            results = {}
+            
+            # Get response from each model
+            import time
+            start_time = time.time()
+            
+            for model in models:
+                try:
+                    # Create a Gaia instance with the specific model
+                    from src.character.gaia import GaiaCharacter
+                    gaia_instance = GaiaCharacter(
+                        personality_variant=personality,
+                        model_name=model
+                    )
+                    
+                    # Get search results using existing BM25 chain
+                    search_result = self.bm25_chain._retrieve_documents(
+                        query=message,
+                        search_method='hybrid',
+                        k=3
+                    )
+                    
+                    # Generate response with specific model
+                    response = gaia_instance.generate_response(
+                        user_input=message,
+                        retrieved_docs=search_result,  # Already just documents
+                        custom_prompt=custom_prompt
+                    )
+                    
+                    # Format citations
+                    citations = []
+                    for doc in search_result:
+                        metadata = getattr(doc, 'metadata', {})
+                        citation = {
+                            'episode_number': metadata.get('episode_number', 'Unknown'),
+                            'title': metadata.get('title', 'Unknown Title'),
+                            'guest_name': metadata.get('guest_name', 'Unknown Guest'),
+                            'url': metadata.get('url', ''),
+                            'relevance': 'High'
+                        }
+                        citations.append(citation)
+                    
+                    # Format result for this model
+                    results[model] = {
+                        'response': response.get('response', ''),
+                        'personality': personality,
+                        'citations': citations,
+                        'context_used': len(search_result),
+                        'session_id': request_data.get('session_id'),
+                        'retrieval_count': len(search_result),
+                        'processing_time': 0,
+                        'model_used': model
+                    }
+                    
+                except Exception as e:
+                    print(f"Error with model {model}: {e}")
+                    results[model] = {
+                        'response': f"Error with {model}: {str(e)}",
+                        'personality': personality,
+                        'citations': [],
+                        'context_used': 0,
+                        'session_id': request_data.get('session_id'),
+                        'retrieval_count': 0,
+                        'processing_time': 0,
+                        'model_used': model
+                    }
+            
+            processing_time = time.time() - start_time
+            
+            # Create response
+            response_data = {
+                'comparison': True,
+                'modelComparison': True,
+                'models': results,
+                'processing_time': processing_time
+            }
+            
+            print(f"Model comparison completed in {processing_time:.2f}s")
+            
+            # Send response
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(response_data).encode())
+            
+        except Exception as e:
+            print(f"Error handling model comparison: {e}")
             self.send_response(500)
             self.send_header('Content-type', 'application/json')
             self.end_headers()

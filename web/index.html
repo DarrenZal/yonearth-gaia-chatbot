@@ -45,6 +45,22 @@
                 </div>
             </div>
             
+            <!-- Model Selector -->
+            <div class="model-selector">
+                <div>
+                    <label for="modelType">AI Model:</label>
+                    <select id="modelType" title="Choose which OpenAI model Gaia uses to respond">
+                        <option value="gpt-3.5-turbo" selected>GPT-3.5 Turbo (Fast & Affordable)</option>
+                        <option value="gpt-4o-mini">GPT-4o Mini (Balanced)</option>
+                        <option value="gpt-4">GPT-4 (Highest Quality)</option>
+                        <option value="compare">Compare All Models</option>
+                    </select>
+                </div>
+                <div class="model-description" id="modelDescription">
+                    <small>🤖 <span id="modelDescText">GPT-3.5 Turbo: Fast, affordable, and great for most conversations</span></small>
+                </div>
+            </div>
+
             <!-- RAG Type Selector -->
             <div class="rag-selector">
                 <div>

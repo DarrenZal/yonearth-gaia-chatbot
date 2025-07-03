@@ -3,7 +3,7 @@ FastAPI main application for YonEarth Gaia chatbot
 """
 import time
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, List
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, HTTPException, Depends, Request
@@ -22,7 +22,7 @@ from .models import (
     RecommendationsRequest, RecommendationsResponse, EpisodeRecommendation,
     ConversationRecommendationsRequest, ConversationRecommendationsResponse,
     SearchRequest, SearchResponse, SearchResult,
-    HealthResponse, ErrorResponse
+    HealthResponse, ErrorResponse, ModelComparisonResponse
 )
 from .bm25_endpoints import router as bm25_router
 
@@ -159,7 +159,8 @@ async def chat_with_gaia(
             k=chat_request.max_results,
             session_id=chat_request.session_id,
             personality_variant=chat_request.personality,
-            custom_prompt=chat_request.custom_prompt
+            custom_prompt=chat_request.custom_prompt,
+            model_name=chat_request.model
         )
         
         # Convert citations to response model
@@ -183,7 +184,8 @@ async def chat_with_gaia(
             context_used=response.get("context_used", 0),
             session_id=chat_request.session_id,
             retrieval_count=response.get("retrieval_count", 0),
-            processing_time=processing_time
+            processing_time=processing_time,
+            model_used=chat_request.model or settings.openai_model
         )
         
     except Exception as e:
@@ -331,6 +333,95 @@ async def search_episodes(
     except Exception as e:
         logger.error(f"Error in search endpoint: {e}")
         raise HTTPException(status_code=500, detail="Search failed")
+
+
+@app.post("/chat/compare", response_model=ModelComparisonResponse)
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def compare_models(
+    request: Request,
+    chat_request: ChatRequest,
+    models: List[str] = ["gpt-3.5-turbo", "gpt-4o-mini", "gpt-4"],
+    rag: Any = Depends(get_rag_dependency)
+):
+    """Compare responses from multiple OpenAI models"""
+    start_time = time.time()
+    
+    try:
+        logger.info(f"Comparing models for: {chat_request.message[:50]}...")
+        
+        # Get responses from all models in parallel
+        import asyncio
+        from concurrent.futures import ThreadPoolExecutor
+        
+        async def get_model_response(model_name: str):
+            """Get response from a specific model"""
+            try:
+                response = rag.query(
+                    user_input=chat_request.message,
+                    k=chat_request.max_results,
+                    session_id=chat_request.session_id,
+                    personality_variant=chat_request.personality,
+                    custom_prompt=chat_request.custom_prompt,
+                    model_name=model_name
+                )
+                
+                # Convert citations
+                citations = [
+                    Citation(
+                        episode_number=cite["episode_number"],
+                        title=cite["title"],
+                        guest_name=cite["guest_name"],
+                        url=cite["url"],
+                        relevance=cite.get("relevance", "High")
+                    )
+                    for cite in response.get("citations", [])
+                ]
+                
+                return ChatResponse(
+                    response=response["response"],
+                    personality=response.get("personality", "warm_mother"),
+                    citations=citations,
+                    context_used=response.get("context_used", 0),
+                    session_id=chat_request.session_id,
+                    retrieval_count=response.get("retrieval_count", 0),
+                    processing_time=0,  # Individual time not calculated
+                    model_used=model_name
+                )
+            except Exception as e:
+                logger.error(f"Error with model {model_name}: {e}")
+                return ChatResponse(
+                    response=f"Error with {model_name}: {str(e)}",
+                    personality=chat_request.personality or "warm_mother",
+                    citations=[],
+                    context_used=0,
+                    session_id=chat_request.session_id,
+                    retrieval_count=0,
+                    processing_time=0,
+                    model_used=model_name
+                )
+        
+        # Get responses from all models
+        tasks = [get_model_response(model) for model in models[:3]]  # Limit to 3 models
+        model_responses = await asyncio.gather(*tasks)
+        
+        # Create response dict
+        responses_dict = {
+            model: response for model, response in zip(models[:3], model_responses)
+        }
+        
+        processing_time = time.time() - start_time
+        
+        return ModelComparisonResponse(
+            models=responses_dict,
+            processing_time=processing_time
+        )
+        
+    except Exception as e:
+        logger.error(f"Error in model comparison endpoint: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to compare models"
+        )
 
 
 @app.post("/reset-conversation")

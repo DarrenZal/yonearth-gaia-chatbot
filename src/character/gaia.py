@@ -17,12 +17,13 @@ logger = logging.getLogger(__name__)
 class GaiaCharacter:
     """Gaia character with personality, memory, and context awareness"""
     
-    def __init__(self, personality_variant: Optional[str] = None):
+    def __init__(self, personality_variant: Optional[str] = None, model_name: Optional[str] = None):
         self.personality_variant = personality_variant or settings.gaia_personality_variant
+        self.model_name = model_name or settings.openai_model
         
         # Initialize LLM
         self.llm = ChatOpenAI(
-            model_name=settings.openai_model,
+            model_name=self.model_name,
             temperature=settings.gaia_temperature,
             max_tokens=settings.gaia_max_tokens,
             openai_api_key=settings.openai_api_key

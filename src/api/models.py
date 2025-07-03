@@ -12,6 +12,7 @@ class ChatRequest(BaseModel):
     personality: Optional[str] = Field(None, description="Gaia personality variant")
     custom_prompt: Optional[str] = Field(None, description="Custom system prompt for Gaia (when personality is 'custom')", max_length=5000)
     max_results: Optional[int] = Field(5, description="Maximum number of retrieved documents", ge=1, le=10)
+    model: Optional[str] = Field(None, description="OpenAI model to use for response generation")
 
 
 class Citation(BaseModel):
@@ -32,6 +33,7 @@ class ChatResponse(BaseModel):
     session_id: Optional[str] = Field(None, description="Session ID")
     retrieval_count: int = Field(0, description="Number of documents retrieved")
     processing_time: Optional[float] = Field(None, description="Processing time in seconds")
+    model_used: Optional[str] = Field(None, description="OpenAI model used for response generation")
 
 
 class EpisodeRecommendation(BaseModel):
@@ -111,6 +113,13 @@ class ConversationRecommendationsResponse(BaseModel):
     recommendations: List[Citation] = Field(..., description="Recommended content based on conversation")
     conversation_topics: List[str] = Field(default_factory=list, description="Extracted topics from conversation")
     total_found: int = Field(..., description="Total recommendations found")
+
+
+class ModelComparisonResponse(BaseModel):
+    """Response model for model comparison endpoint"""
+    comparison: bool = Field(True, description="Indicates this is a comparison response")
+    models: Dict[str, ChatResponse] = Field(..., description="Responses from different models")
+    processing_time: float = Field(..., description="Total processing time for all models")
 
 
 class ErrorResponse(BaseModel):
