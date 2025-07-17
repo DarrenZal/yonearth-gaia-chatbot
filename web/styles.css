@@ -513,6 +513,24 @@ body {
     text-decoration: underline;
 }
 
+/* Inline citation links within response text */
+.inline-citation-link {
+    color: var(--forest-green);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.inline-citation-link:hover {
+    color: var(--earth-green);
+    text-decoration-style: solid;
+    background-color: rgba(74, 124, 89, 0.1);
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
 /* Loading */
 .loading {
     display: flex;
@@ -925,4 +943,181 @@ body {
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
     background: var(--forest-green);
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin-top: 1rem;
+    padding-top: 1rem;
+}
+
+.feedback-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(135, 169, 107, 0.3), transparent);
+    margin-bottom: 1rem;
+}
+
+.feedback-header {
+    font-size: 0.875rem;
+    color: var(--warm-gray);
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+}
+
+.feedback-thumbs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    align-items: center;
+}
+
+.feedback-thumb {
+    background: var(--soft-white);
+    border: 1px solid var(--sage-green);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.feedback-thumb:hover {
+    background: var(--light-green);
+    border-color: var(--forest-green);
+    transform: translateY(-1px);
+}
+
+.feedback-thumb:active {
+    transform: translateY(0);
+}
+
+.feedback-submitted {
+    color: var(--forest-green);
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feedback-expand {
+    font-size: 0.875rem;
+    color: var(--forest-green);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.feedback-expand:hover {
+    text-decoration: underline;
+}
+
+/* Detailed Feedback */
+.feedback-details {
+    background: var(--soft-white);
+    border: 1px solid rgba(135, 169, 107, 0.2);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    margin-top: 0.75rem;
+}
+
+.feedback-relevance {
+    margin-bottom: 1rem;
+}
+
+.feedback-relevance label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--warm-gray);
+    margin-bottom: 0.5rem;
+}
+
+.star-rating {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: var(--sage-green);
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+}
+
+.star:hover {
+    color: var(--forest-green);
+    transform: scale(1.1);
+}
+
+.feedback-episodes {
+    margin-bottom: 1rem;
+}
+
+.feedback-episodes label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--earth-green);
+    cursor: pointer;
+}
+
+.feedback-episodes input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--forest-green);
+}
+
+.feedback-text {
+    margin-bottom: 1rem;
+}
+
+.feedback-text label {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--warm-gray);
+    margin-bottom: 0.5rem;
+}
+
+.feedback-text textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--sage-green);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    font-size: 0.875rem;
+    resize: vertical;
+    background: white;
+}
+
+.feedback-text textarea:focus {
+    outline: none;
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 2px rgba(74, 124, 89, 0.1);
+}
+
+.feedback-submit {
+    background: var(--forest-green);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.feedback-submit:hover {
+    background: var(--earth-green);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-submit:active {
+    transform: translateY(0);
 }

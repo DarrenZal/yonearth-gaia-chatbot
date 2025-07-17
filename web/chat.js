@@ -517,6 +517,10 @@ class GaiaChat {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
         
+        // Generate unique message ID
+        const messageId = `msg-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+        messageDiv.id = messageId;
+        
         // Avatar
         const avatar = document.createElement('div');
         avatar.className = 'message-avatar';
@@ -533,7 +537,13 @@ class GaiaChat {
             messageText.style.background = 'linear-gradient(135deg, #ffebee, #ffcdd2)';
             messageText.style.borderLeft = '3px solid #f44336';
         }
-        messageText.textContent = text;
+        
+        // Add hyperlinks to response text if citations are available
+        if (sender === 'gaia' && citations && citations.length > 0) {
+            messageText.innerHTML = this.addHyperlinksToResponse(text, citations);
+        } else {
+            messageText.textContent = text;
+        }
         
         content.appendChild(messageText);
         
@@ -543,11 +553,324 @@ class GaiaChat {
             content.appendChild(citationsDiv);
         }
         
+        // Add feedback section for Gaia's messages (but not errors)
+        if (sender === 'gaia' && !isError && this.lastUserMessage) {
+            const feedbackDiv = this.createFeedbackDiv(messageId, this.lastUserMessage, text, citations);
+            content.appendChild(feedbackDiv);
+        }
+        
         messageDiv.appendChild(avatar);
         messageDiv.appendChild(content);
         
         this.chatMessages.appendChild(messageDiv);
         this.scrollToBottom();
+    }
+    
+    addHyperlinksToResponse(text, citations) {
+        // Escape HTML to prevent XSS
+        let htmlText = text.replace(/&/g, '&amp;')
+                           .replace(/</g, '&lt;')
+                           .replace(/>/g, '&gt;')
+                           .replace(/"/g, '&quot;')
+                           .replace(/'/g, '&#039;');
+        
+        // Create a map of episode numbers and book titles to their URLs
+        const citationMap = new Map();
+        
+        citations.forEach(citation => {
+            const isBook = citation.episode_number?.toString().startsWith('Book:');
+            
+            if (isBook) {
+                // Extract book title from episode_number
+                const bookTitle = citation.episode_number.substring(5).trim();
+                const bookUrl = citation.ebook_url || citation.url;
+                if (bookUrl) {
+                    // Store multiple variations of the book title for matching
+                    citationMap.set(bookTitle, bookUrl);
+                    citationMap.set(bookTitle.toLowerCase(), bookUrl);
+                    
+                    // Also store common variations
+                    if (bookTitle.includes('VIRIDITAS') || bookTitle.includes('Viriditas')) {
+                        citationMap.set('VIRIDITAS', bookUrl);
+                        citationMap.set('Viriditas', bookUrl);
+                        citationMap.set('VIRIDITAS: THE GREAT HEALING', bookUrl);
+                    } else if (bookTitle.includes('Soil Stewardship')) {
+                        citationMap.set('Soil Stewardship Handbook', bookUrl);
+                        citationMap.set('Soil Stewardship', bookUrl);
+                    } else if (bookTitle.includes('Y on Earth') || bookTitle.includes('Why on Earth')) {
+                        citationMap.set('Y on Earth', bookUrl);
+                        citationMap.set('Why on Earth', bookUrl);
+                        citationMap.set('Y on Earth: Get Smarter, Feel Better, Heal the Planet', bookUrl);
+                    }
+                }
+            } else {
+                // For episodes
+                const episodeNum = citation.episode_number || citation.episode_id;
+                if (episodeNum && citation.url) {
+                    citationMap.set(`Episode ${episodeNum}`, citation.url);
+                    citationMap.set(`episode ${episodeNum}`, citation.url);
+                    citationMap.set(`Ep ${episodeNum}`, citation.url);
+                    citationMap.set(`ep ${episodeNum}`, citation.url);
+                    citationMap.set(episodeNum.toString(), citation.url);
+                }
+            }
+        });
+        
+        // Replace episode mentions with links
+        // Match patterns like "Episode 115", "Episode 108: Ann Armbrecht", "Ep 120", etc.
+        htmlText = htmlText.replace(/\b(Episode|episode|Ep|ep)\s+(\d+)(?:\s*:\s*[^.!?,\n]*)?/g, (match, prefix, number) => {
+            const episodeKey = `Episode ${number}`;
+            const url = citationMap.get(episodeKey);
+            if (url) {
+                return `<a href="${url}" target="_blank" class="inline-citation-link">${match}</a>`;
+            }
+            return match;
+        });
+        
+        // Replace book mentions with links
+        // Look for book titles we know about
+        const bookPatterns = [
+            // VIRIDITAS variations
+            /\bVIRIDITAS(?:\s*:\s*THE\s+GREAT\s+HEALING)?\b/gi,
+            /\bViriditas(?:\s*:\s*The\s+Great\s+Healing)?\b/g,
+            
+            // Soil Stewardship variations
+            /\bSoil\s+Stewardship\s+Handbook\b/gi,
+            /\bSoil\s+Stewardship\b/gi,
+            
+            // Y on Earth variations
+            /\bY\s+on\s+Earth(?:\s*:\s*Get\s+Smarter,\s+Feel\s+Better,\s+Heal\s+the\s+Planet)?\b/gi,
+            /\bWhy\s+on\s+Earth\b/gi
+        ];
+        
+        bookPatterns.forEach(pattern => {
+            htmlText = htmlText.replace(pattern, (match) => {
+                // Try different variations to find the URL
+                let url = citationMap.get(match) || 
+                         citationMap.get(match.toLowerCase()) ||
+                         citationMap.get(match.toUpperCase());
+                
+                // Try simplified versions
+                if (!url) {
+                    if (match.toLowerCase().includes('viriditas')) {
+                        url = citationMap.get('VIRIDITAS') || citationMap.get('Viriditas');
+                    } else if (match.toLowerCase().includes('soil')) {
+                        url = citationMap.get('Soil Stewardship Handbook') || citationMap.get('Soil Stewardship');
+                    } else if (match.toLowerCase().includes('earth')) {
+                        url = citationMap.get('Y on Earth') || citationMap.get('Why on Earth');
+                    }
+                }
+                
+                if (url) {
+                    return `<a href="${url}" target="_blank" class="inline-citation-link">${match}</a>`;
+                }
+                return match;
+            });
+        });
+        
+        return htmlText;
+    }
+    
+    createFeedbackDiv(messageId, query, response, citations) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = 'feedback-section';
+        feedbackDiv.id = `feedback-${messageId}`;
+        
+        // Divider
+        const divider = document.createElement('div');
+        divider.className = 'feedback-divider';
+        feedbackDiv.appendChild(divider);
+        
+        // Header
+        const header = document.createElement('div');
+        header.className = 'feedback-header';
+        header.textContent = 'Was this response helpful?';
+        feedbackDiv.appendChild(header);
+        
+        // Thumbs up/down buttons
+        const thumbsContainer = document.createElement('div');
+        thumbsContainer.className = 'feedback-thumbs';
+        
+        const thumbsUp = document.createElement('button');
+        thumbsUp.className = 'feedback-thumb';
+        thumbsUp.innerHTML = '👍';
+        thumbsUp.title = 'Helpful';
+        thumbsUp.onclick = () => this.submitQuickFeedback(messageId, 'helpful', query, response, citations);
+        
+        const thumbsDown = document.createElement('button');
+        thumbsDown.className = 'feedback-thumb';
+        thumbsDown.innerHTML = '👎';
+        thumbsDown.title = 'Not helpful';
+        thumbsDown.onclick = () => this.submitQuickFeedback(messageId, 'not-helpful', query, response, citations);
+        
+        thumbsContainer.appendChild(thumbsUp);
+        thumbsContainer.appendChild(thumbsDown);
+        feedbackDiv.appendChild(thumbsContainer);
+        
+        // Expandable detailed feedback section
+        const detailsContainer = document.createElement('div');
+        detailsContainer.className = 'feedback-details';
+        detailsContainer.style.display = 'none';
+        
+        // Relevance rating
+        const relevanceDiv = document.createElement('div');
+        relevanceDiv.className = 'feedback-relevance';
+        relevanceDiv.innerHTML = `
+            <label>Relevance of response:</label>
+            <div class="star-rating" data-rating="0">
+                <span class="star" data-value="1">☆</span>
+                <span class="star" data-value="2">☆</span>
+                <span class="star" data-value="3">☆</span>
+                <span class="star" data-value="4">☆</span>
+                <span class="star" data-value="5">☆</span>
+            </div>
+        `;
+        
+        // Episodes checkbox
+        const episodesDiv = document.createElement('div');
+        episodesDiv.className = 'feedback-episodes';
+        episodesDiv.innerHTML = `
+            <label>
+                <input type="checkbox" id="episodes-correct-${messageId}">
+                Were the right episodes/books included?
+            </label>
+        `;
+        
+        // Detailed feedback text
+        const textDiv = document.createElement('div');
+        textDiv.className = 'feedback-text';
+        textDiv.innerHTML = `
+            <label for="feedback-text-${messageId}">Additional feedback (optional):</label>
+            <textarea id="feedback-text-${messageId}" rows="3" placeholder="What could be improved? What worked well?"></textarea>
+        `;
+        
+        // Submit button
+        const submitBtn = document.createElement('button');
+        submitBtn.className = 'feedback-submit';
+        submitBtn.textContent = 'Submit Detailed Feedback';
+        submitBtn.onclick = () => this.submitDetailedFeedback(messageId, query, response, citations);
+        
+        detailsContainer.appendChild(relevanceDiv);
+        detailsContainer.appendChild(episodesDiv);
+        detailsContainer.appendChild(textDiv);
+        detailsContainer.appendChild(submitBtn);
+        
+        feedbackDiv.appendChild(detailsContainer);
+        
+        // Expand details link
+        const expandLink = document.createElement('a');
+        expandLink.className = 'feedback-expand';
+        expandLink.href = '#';
+        expandLink.textContent = 'Provide detailed feedback';
+        expandLink.onclick = (e) => {
+            e.preventDefault();
+            detailsContainer.style.display = detailsContainer.style.display === 'none' ? 'block' : 'none';
+            expandLink.textContent = detailsContainer.style.display === 'none' ? 'Provide detailed feedback' : 'Hide detailed feedback';
+        };
+        feedbackDiv.appendChild(expandLink);
+        
+        // Setup star rating interaction
+        this.setupStarRating(feedbackDiv.querySelector('.star-rating'));
+        
+        return feedbackDiv;
+    }
+    
+    setupStarRating(ratingElement) {
+        const stars = ratingElement.querySelectorAll('.star');
+        stars.forEach((star, index) => {
+            star.onclick = () => {
+                const rating = index + 1;
+                ratingElement.setAttribute('data-rating', rating);
+                stars.forEach((s, i) => {
+                    s.textContent = i < rating ? '★' : '☆';
+                });
+            };
+        });
+    }
+    
+    async submitQuickFeedback(messageId, type, query, response, citations) {
+        const feedback = {
+            messageId: messageId,
+            timestamp: new Date().toISOString(),
+            type: type,
+            query: query,
+            response: response,
+            citations: citations,
+            sessionId: this.sessionId,
+            personality: this.personalitySelect.value,
+            ragType: this.ragTypeSelect.value,
+            modelType: this.modelTypeSelect.value
+        };
+        
+        await this.saveFeedback(feedback);
+        
+        // Update UI to show feedback was submitted
+        const feedbackSection = document.getElementById(`feedback-${messageId}`);
+        if (feedbackSection) {
+            const thumbsContainer = feedbackSection.querySelector('.feedback-thumbs');
+            thumbsContainer.innerHTML = '<span class="feedback-submitted">✓ Thank you for your feedback!</span>';
+        }
+    }
+    
+    async submitDetailedFeedback(messageId, query, response, citations) {
+        const feedbackSection = document.getElementById(`feedback-${messageId}`);
+        const starRating = feedbackSection.querySelector('.star-rating').getAttribute('data-rating');
+        const episodesCorrect = feedbackSection.querySelector(`#episodes-correct-${messageId}`).checked;
+        const detailedText = feedbackSection.querySelector(`#feedback-text-${messageId}`).value;
+        
+        const feedback = {
+            messageId: messageId,
+            timestamp: new Date().toISOString(),
+            type: 'detailed',
+            query: query,
+            response: response,
+            citations: citations,
+            sessionId: this.sessionId,
+            personality: this.personalitySelect.value,
+            ragType: this.ragTypeSelect.value,
+            modelType: this.modelTypeSelect.value,
+            relevanceRating: parseInt(starRating),
+            episodesCorrect: episodesCorrect,
+            detailedFeedback: detailedText
+        };
+        
+        await this.saveFeedback(feedback);
+        
+        // Update UI to show feedback was submitted
+        const detailsContainer = feedbackSection.querySelector('.feedback-details');
+        detailsContainer.innerHTML = '<span class="feedback-submitted">✓ Thank you for your detailed feedback!</span>';
+    }
+    
+    async saveFeedback(feedback) {
+        try {
+            // Send feedback to backend
+            const response = await fetch(`${this.apiUrl}/feedback`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(feedback)
+            });
+            
+            if (!response.ok) {
+                console.error('Failed to save feedback:', response.status);
+                // Still save locally even if backend fails
+            }
+        } catch (error) {
+            console.error('Error saving feedback to backend:', error);
+        }
+        
+        // Also save to localStorage for persistence
+        const existingFeedback = JSON.parse(localStorage.getItem('gaiaFeedback') || '[]');
+        existingFeedback.push(feedback);
+        
+        // Keep only last 100 feedback entries in localStorage
+        if (existingFeedback.length > 100) {
+            existingFeedback.splice(0, existingFeedback.length - 100);
+        }
+        
+        localStorage.setItem('gaiaFeedback', JSON.stringify(existingFeedback));
+        console.log('Feedback saved:', feedback);
     }
     
     createCitationsDiv(citations) {

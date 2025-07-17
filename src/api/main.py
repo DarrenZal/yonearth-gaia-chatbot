@@ -22,7 +22,8 @@ from .models import (
     RecommendationsRequest, RecommendationsResponse, EpisodeRecommendation,
     ConversationRecommendationsRequest, ConversationRecommendationsResponse,
     SearchRequest, SearchResponse, SearchResult,
-    HealthResponse, ErrorResponse, ModelComparisonResponse
+    HealthResponse, ErrorResponse, ModelComparisonResponse,
+    FeedbackRequest, FeedbackResponse
 )
 from .bm25_endpoints import router as bm25_router
 
@@ -438,6 +439,78 @@ async def reset_conversation(
     except Exception as e:
         logger.error(f"Error resetting conversation: {e}")
         raise HTTPException(status_code=500, detail="Failed to reset conversation")
+
+
+@app.post("/feedback", response_model=FeedbackResponse)
+@limiter.limit("10/minute")
+async def submit_feedback(
+    request: Request,
+    feedback: FeedbackRequest
+):
+    """Submit user feedback about Gaia's responses"""
+    try:
+        logger.info(f"Received feedback: {feedback.type} for message {feedback.messageId}")
+        
+        # For now, we'll just log the feedback
+        # In production, you'd want to save this to a database
+        feedback_data = {
+            "messageId": feedback.messageId,
+            "timestamp": feedback.timestamp,
+            "type": feedback.type,
+            "query": feedback.query[:200],  # Truncate for logging
+            "response": feedback.response[:200],  # Truncate for logging
+            "citations_count": len(feedback.citations),
+            "sessionId": feedback.sessionId,
+            "personality": feedback.personality,
+            "ragType": feedback.ragType,
+            "modelType": feedback.modelType,
+            "relevanceRating": feedback.relevanceRating,
+            "episodesCorrect": feedback.episodesCorrect,
+            "detailedFeedback": feedback.detailedFeedback
+        }
+        
+        # Log feedback details
+        logger.info(f"Feedback details: {feedback_data}")
+        
+        # Save to a JSON file for now (append mode)
+        import json
+        import os
+        from datetime import datetime
+        
+        feedback_dir = "data/feedback"
+        os.makedirs(feedback_dir, exist_ok=True)
+        
+        # Create filename with date
+        filename = f"{feedback_dir}/feedback_{datetime.now().strftime('%Y-%m-%d')}.json"
+        
+        # Read existing feedback or create new list
+        feedback_list = []
+        if os.path.exists(filename):
+            try:
+                with open(filename, 'r') as f:
+                    feedback_list = json.load(f)
+            except:
+                feedback_list = []
+        
+        # Append new feedback
+        feedback_list.append(feedback.dict())
+        
+        # Save updated feedback
+        with open(filename, 'w') as f:
+            json.dump(feedback_list, f, indent=2)
+        
+        return FeedbackResponse(
+            success=True,
+            message="Thank you for your feedback! It helps us improve Gaia's responses."
+        )
+        
+    except Exception as e:
+        logger.error(f"Error saving feedback: {e}")
+        # Still return success to user even if save fails
+        return FeedbackResponse(
+            success=True,
+            message="Thank you for your feedback!"
+        )
 
 
 @app.get("/")

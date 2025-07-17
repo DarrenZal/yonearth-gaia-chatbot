@@ -50,6 +50,7 @@ Deploy your own instance to try it out!
 - **Topic Tracking**: Automatically extracts and follows conversation themes
 - **Duplicate Prevention**: Clean, non-redundant episode suggestions
 - **Context Evolution**: Recommendations improve as conversations develop
+- **User Feedback System**: Collect feedback on response quality with ratings and detailed comments
 
 ### 🚀 **Production Ready**
 - **Docker Deployment**: One-command setup with nginx, Redis, web interface
@@ -108,6 +109,16 @@ Deploy your own instance to try it out!
 - Custom prompts stored in browser localStorage
 - Use any existing personality as a template for editing
 - Works with both search methods
+
+### 📝 User Feedback System
+- **Quick Feedback**: Simple thumbs up/down buttons for each response
+- **Detailed Feedback**: Optional detailed feedback with:
+  - 5-star relevance rating
+  - "Were the right episodes included?" checkbox
+  - Free-text feedback area
+- **Data Collection**: Feedback stored in JSON files for analysis
+- **Persistent Storage**: Saved both locally and on server
+- **Analysis Tools**: Script to view and analyze collected feedback
 
 ### 📚 Integrated Books
 Currently includes three books by Aaron William Perry:
@@ -227,6 +238,26 @@ POST /bm25/compare-methods
 {
   "query": "permaculture techniques",
   "k": 5
+}
+```
+
+### User Feedback
+```bash
+POST /feedback
+{
+  "messageId": "msg-123456789",
+  "timestamp": "2025-07-17T17:40:47.113Z",
+  "type": "detailed",  # helpful, not-helpful, detailed
+  "query": "what is biochar?",
+  "response": "Biochar is a carbon-rich material...",
+  "citations": [...],
+  "sessionId": "session_abc123",
+  "personality": "warm_mother",
+  "ragType": "bm25",
+  "modelType": "gpt-3.5-turbo",
+  "relevanceRating": 5,  # 1-5 stars
+  "episodesCorrect": true,
+  "detailedFeedback": "Great response with accurate citations!"
 }
 ```
 

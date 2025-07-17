@@ -127,3 +127,26 @@ class ErrorResponse(BaseModel):
     error: str
     detail: Optional[str] = None
     error_code: Optional[str] = None
+
+
+class FeedbackRequest(BaseModel):
+    """Request model for user feedback"""
+    messageId: str = Field(..., description="Unique message ID")
+    timestamp: str = Field(..., description="ISO timestamp of feedback")
+    type: str = Field(..., description="Feedback type: helpful, not-helpful, detailed")
+    query: str = Field(..., description="Original user query")
+    response: str = Field(..., description="Gaia's response")
+    citations: List[Citation] = Field(default_factory=list, description="Citations included in response")
+    sessionId: str = Field(..., description="Session ID")
+    personality: str = Field(..., description="Selected personality")
+    ragType: str = Field(..., description="RAG type used")
+    modelType: str = Field(..., description="Model type used")
+    relevanceRating: Optional[int] = Field(None, description="Relevance rating 1-5", ge=1, le=5)
+    episodesCorrect: Optional[bool] = Field(None, description="Were the right episodes included")
+    detailedFeedback: Optional[str] = Field(None, description="Detailed feedback text")
+
+
+class FeedbackResponse(BaseModel):
+    """Response model for feedback submission"""
+    success: bool = Field(..., description="Whether feedback was saved successfully")
+    message: str = Field(..., description="Response message")

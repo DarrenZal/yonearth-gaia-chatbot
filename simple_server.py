@@ -52,6 +52,8 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             self.handle_model_comparison()
         elif self.path in ['/conversation-recommendations', '/api/conversation-recommendations']:
             self.handle_conversation_recommendations()
+        elif self.path in ['/feedback', '/api/feedback']:
+            self.handle_feedback()
         else:
             self.send_error(404)
     
@@ -483,6 +485,65 @@ The selected_indices should be the numbers (1-based) of the most relevant conten
                 break
         
         return recommended_citations, list(recent_keywords)[:5]
+    
+    def handle_feedback(self):
+        """Handle feedback submission from web interface"""
+        try:
+            # Read request body
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+            feedback_data = json.loads(post_data.decode('utf-8'))
+            
+            print(f"Received feedback: {feedback_data.get('type')} for message {feedback_data.get('messageId')}")
+            
+            # Save to JSON file
+            from datetime import datetime
+            
+            feedback_dir = "data/feedback"
+            os.makedirs(feedback_dir, exist_ok=True)
+            
+            # Create filename with date
+            filename = f"{feedback_dir}/feedback_{datetime.now().strftime('%Y-%m-%d')}.json"
+            
+            # Read existing feedback or create new list
+            feedback_list = []
+            if os.path.exists(filename):
+                try:
+                    with open(filename, 'r') as f:
+                        feedback_list = json.load(f)
+                except:
+                    feedback_list = []
+            
+            # Append new feedback
+            feedback_list.append(feedback_data)
+            
+            # Save updated feedback
+            with open(filename, 'w') as f:
+                json.dump(feedback_list, f, indent=2)
+            
+            print(f"Feedback saved to {filename}")
+            
+            # Create response
+            response_data = {
+                'success': True,
+                'message': 'Thank you for your feedback! It helps us improve Gaia\'s responses.'
+            }
+            
+            # Send response
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(response_data).encode())
+            
+        except Exception as e:
+            print(f"Error handling feedback: {e}")
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            error_response = {'error': str(e), 'success': False}
+            self.wfile.write(json.dumps(error_response).encode())
     
     def do_OPTIONS(self):
         # Handle CORS preflight

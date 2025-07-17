@@ -350,6 +350,13 @@ The web interface provides advanced conversation features:
 - **Template Editing**: Use existing personalities as starting points
 - **Persistent Storage**: Custom prompts saved in browser localStorage
 
+### Feedback System
+- **Quick Feedback**: Thumbs up/down buttons for rapid feedback
+- **Detailed Feedback**: 5-star rating, episode correctness checkbox, and text comments
+- **Data Storage**: Feedback saved to `/data/feedback/feedback_YYYY-MM-DD.json`
+- **Analysis Tools**: `scripts/view_feedback.py` for reviewing collected feedback
+- **Frontend Integration**: Feedback UI appears below each Gaia response
+
 The system handles 172 podcast episodes and 3 integrated books with 18,764+ total vectorized chunks, maintaining high citation accuracy through both RAG approaches while providing an intelligent, conversation-aware user experience that searches across both episodes and books simultaneously.
 
 ## Current System Status
@@ -376,6 +383,7 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - ✅ Implemented multi-format book links (eBook, audiobook, print)
 - ✅ Fixed "References" label to replace "Referenced Episodes" when books included
 - ✅ Updated "Recommended Content" to show ALL references from entire conversation (2025-07-17)
+- ✅ Added user feedback system for quality improvement (2025-07-17)
 
 ## Known Issues & Planned Improvements
 
