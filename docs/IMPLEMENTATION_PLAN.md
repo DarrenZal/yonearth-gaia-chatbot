@@ -13,6 +13,7 @@
 - ✅ **Data Pipeline**: Automated episode ingestion and vector store creation
 - ✅ **Pinecone Vector Database**: Fully implemented with 100% production-ready setup
 - ✅ **BM25 Hybrid RAG**: Advanced hybrid system with BM25 + semantic search, RRF, and cross-encoder reranking
+- ✅ **Category-First RAG**: Episode categorization CSV as PRIMARY search guide (80% weight), guaranteeing category-matched episodes appear in results
 
 ### 🚧 IN PROGRESS / PARTIALLY IMPLEMENTED
 - 🔄 **Advanced Reranking**: Using hybrid retrieval but can be enhanced with cross-encoders
@@ -28,18 +29,25 @@
 
 **Current Status**: ✅ **FULLY FUNCTIONAL MVP DEPLOYED** - Ready for public use!
 
-## 🚀 **NEW: BM25 Hybrid RAG System - IMPLEMENTED July 1, 2025**
+## 🚀 **NEW: Category-First RAG System - IMPLEMENTED July 17, 2025**
 
-### Advanced Features Now Available:
+### Latest Update: Category-Primary Search Engine
 
-**🔥 State-of-the-Art Hybrid Search:**
+**🎯 Category-First Implementation:**
+- **Episode Categorization CSV**: 170 episodes categorized across 28 topics (herbal medicine, biochar, farming, etc.)
+- **Primary Category Weighting**: Category matching gets 80% weight for topic-specific queries
+- **Guaranteed Category Matches**: ALL episodes tagged with matching categories appear in results
+- **Category-First Fusion**: Category matches ranked first, then semantic/BM25 for secondary ranking
+
+**🔥 Advanced Hybrid Search Engine:**
 - **BM25 Keyword Search**: Fast, accurate keyword matching using `rank-bm25`
 - **Semantic Vector Search**: OpenAI embeddings with Pinecone vector database
-- **Reciprocal Rank Fusion (RRF)**: Intelligent combination of both search methods
+- **Episode Categorization**: CSV-driven topic classification as PRIMARY search guide
+- **Reciprocal Rank Fusion (RRF)**: Intelligent combination of all three search methods
 - **Cross-encoder Reranking**: MS-MARCO MiniLM model for improved relevance
 
 **🧠 Query-Adaptive Intelligence:**
-- Automatically detects query type and selects optimal search strategy
+- Category-heavy queries → 80% category + 15% semantic + 5% keyword
 - Technical terms → keyword-heavy search
 - Complex questions → semantic-heavy search
 - Episode references → keyword-optimized search

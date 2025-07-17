@@ -15,6 +15,7 @@ from langchain.schema import Document
 from sentence_transformers import CrossEncoder
 
 from .vectorstore import YonEarthVectorStore
+from .episode_categorizer import EpisodeCategorizer
 from ..config import settings
 
 logger = logging.getLogger(__name__)
@@ -45,15 +46,19 @@ class BM25HybridRetriever:
     def __init__(
         self,
         vectorstore: YonEarthVectorStore,
-        keyword_weight: float = 0.5,
-        semantic_weight: float = 0.5,
+        keyword_weight: float = 0.15,
+        semantic_weight: float = 0.25,
+        category_weight: float = 0.6,
         use_reranker: bool = True,
-        reranker_model: str = 'cross-encoder/ms-marco-MiniLM-L-6-v2'
+        reranker_model: str = 'cross-encoder/ms-marco-MiniLM-L-6-v2',
+        category_first_mode: bool = True
     ):
         self.vectorstore = vectorstore
         self.keyword_weight = keyword_weight
         self.semantic_weight = semantic_weight
+        self.category_weight = category_weight
         self.use_reranker = use_reranker
+        self.category_first_mode = category_first_mode
         
         # BM25 components
         self.bm25: Optional[BM25Okapi] = None
@@ -78,8 +83,21 @@ class BM25HybridRetriever:
             "climate", "soil", "farming", "agriculture", "garden"
         }
         
+        # Episode categorizer for enhanced search
+        self.categorizer: Optional[EpisodeCategorizer] = None
+        self._load_categorizer()
+        
         # Load or build BM25 index
         self._load_or_build_bm25_index()
+    
+    def _load_categorizer(self):
+        """Load episode categorizer for category-based search"""
+        try:
+            self.categorizer = EpisodeCategorizer()
+            logger.info(f"Loaded episode categorizer with {len(self.categorizer.episodes)} episodes")
+        except Exception as e:
+            logger.warning(f"Failed to load episode categorizer: {e}")
+            self.categorizer = None
     
     def _get_bm25_cache_path(self) -> Path:
         """Get path for BM25 index cache"""
@@ -211,7 +229,8 @@ class BM25HybridRetriever:
             'has_technical_terms': any(term in query_lower for term in self.technical_terms),
             'query_length': len(query.split()),
             'is_question': query.strip().endswith('?'),
-            'suggested_method': 'hybrid'  # default
+            'suggested_method': 'hybrid',  # default
+            'category_matches': self.categorizer.analyze_query_categories(query) if self.categorizer else {}
         }
         
         # Simple heuristics for search method
@@ -219,6 +238,8 @@ class BM25HybridRetriever:
             analysis['suggested_method'] = 'keyword_heavy'  # More weight on BM25
         elif analysis['query_length'] > 15:
             analysis['suggested_method'] = 'semantic_heavy'  # More weight on semantic
+        elif analysis['category_matches']:
+            analysis['suggested_method'] = 'category_heavy'  # More weight on categories
             
         return analysis
     
@@ -269,6 +290,166 @@ class BM25HybridRetriever:
             logger.error(f"Error in semantic search: {e}")
             return []
     
+    def category_search(self, query: str, k: int = 20) -> List[Tuple[Document, float]]:
+        """Perform category-based search using episode categorization data"""
+        if not self.categorizer:
+            logger.warning("Episode categorizer not available")
+            return []
+        
+        try:
+            # Get top episodes based on category matching
+            top_episodes = self.categorizer.get_top_episodes_for_query(query, k=k)
+            
+            if not top_episodes:
+                logger.info("No episodes found matching query categories")
+                return []
+            
+            # Convert episode IDs to documents
+            results = []
+            for episode_id, score in top_episodes:
+                # Find documents for this episode
+                episode_docs = self._find_documents_for_episode(episode_id)
+                
+                # Add all documents for this episode with the category score
+                for doc in episode_docs:
+                    results.append((doc, score))
+            
+            # Sort by score and limit results
+            results.sort(key=lambda x: x[1], reverse=True)
+            results = results[:k]
+            
+            logger.info(f"Category search returned {len(results)} results")
+            return results
+            
+        except Exception as e:
+            logger.error(f"Error in category search: {e}")
+            return []
+    
+    def _find_documents_for_episode(self, episode_id: int) -> List[Document]:
+        """Find all documents that belong to a specific episode"""
+        episode_docs = []
+        
+        for doc in self.documents:
+            metadata = getattr(doc, 'metadata', {})
+            doc_episode_id = metadata.get('episode_id')
+            
+            # Try to extract episode ID from metadata
+            if doc_episode_id:
+                try:
+                    if int(doc_episode_id) == episode_id:
+                        episode_docs.append(doc)
+                except (ValueError, TypeError):
+                    continue
+            
+            # Also check episode_number field
+            doc_episode_number = metadata.get('episode_number')
+            if doc_episode_number:
+                try:
+                    if int(doc_episode_number) == episode_id:
+                        episode_docs.append(doc)
+                except (ValueError, TypeError):
+                    continue
+            
+            # Fallback: check if episode mentioned in content
+            if f"episode {episode_id}" in doc.page_content.lower():
+                episode_docs.append(doc)
+        
+        # If no documents found, create a placeholder document for category scoring
+        if not episode_docs:
+            logger.debug(f"No documents found for episode {episode_id}, creating placeholder")
+            # Get episode info from categorizer
+            if self.categorizer:
+                episode_info = self.categorizer.get_episode_info(episode_id)
+                if episode_info:
+                    placeholder_content = f"Episode {episode_id}: {episode_info.guest_name} - {episode_info.guest_title}"
+                    placeholder_doc = Document(
+                        page_content=placeholder_content,
+                        metadata={
+                            'episode_id': str(episode_id),
+                            'episode_number': str(episode_id),
+                            'guest': episode_info.guest_name,
+                            'title': episode_info.guest_title,
+                            'content_type': 'episode',
+                            'placeholder': True
+                        }
+                    )
+                    episode_docs.append(placeholder_doc)
+        
+        return episode_docs
+    
+    def category_first_fusion(
+        self,
+        keyword_results: List[Tuple[Document, float]],
+        semantic_results: List[Tuple[Document, float]],
+        category_results: List[Tuple[Document, float]],
+        k: int = 60
+    ) -> List[Document]:
+        """
+        Category-first fusion: Prioritize category matches, then use semantic/BM25 for ranking
+        This ensures ALL category matches appear in results
+        """
+        logger.info(f"Using category-first fusion with {len(category_results)} category matches")
+        
+        # Step 1: Get all category-matched documents (these get priority)
+        category_docs = {self._get_document_id(doc): doc for doc, score in category_results}
+        
+        # Step 2: Create combined scoring for category matches
+        category_scores = {}
+        
+        # Score category matches with heavy category weighting
+        for rank, (doc, score) in enumerate(category_results):
+            doc_id = self._get_document_id(doc)
+            category_scores[doc_id] = self.category_weight * (1.0 / (k + rank + 1))
+        
+        # Add semantic scores for category matches
+        for rank, (doc, score) in enumerate(semantic_results):
+            doc_id = self._get_document_id(doc)
+            if doc_id in category_docs:  # Only for category matches
+                category_scores[doc_id] = category_scores.get(doc_id, 0) + self.semantic_weight * (1.0 / (k + rank + 1))
+        
+        # Add BM25 scores for category matches
+        for rank, (doc, score) in enumerate(keyword_results):
+            doc_id = self._get_document_id(doc)
+            if doc_id in category_docs:  # Only for category matches
+                category_scores[doc_id] = category_scores.get(doc_id, 0) + self.keyword_weight * (1.0 / (k + rank + 1))
+        
+        # Step 3: Sort category matches by combined score
+        sorted_category_ids = sorted(category_scores.keys(), key=lambda x: category_scores[x], reverse=True)
+        
+        # Step 4: Add non-category matches if we need more results
+        non_category_scores = {}
+        
+        # Score non-category documents with traditional weighting
+        for rank, (doc, score) in enumerate(semantic_results):
+            doc_id = self._get_document_id(doc)
+            if doc_id not in category_docs:
+                non_category_scores[doc_id] = self.semantic_weight * (1.0 / (k + rank + 1))
+        
+        for rank, (doc, score) in enumerate(keyword_results):
+            doc_id = self._get_document_id(doc)
+            if doc_id not in category_docs:
+                non_category_scores[doc_id] = non_category_scores.get(doc_id, 0) + self.keyword_weight * (1.0 / (k + rank + 1))
+        
+        # Sort non-category matches
+        sorted_non_category_ids = sorted(non_category_scores.keys(), key=lambda x: non_category_scores[x], reverse=True)
+        
+        # Step 5: Combine results with category matches first
+        final_order = sorted_category_ids + sorted_non_category_ids
+        
+        # Step 6: Convert to documents, avoiding duplicates
+        seen_content = set()
+        results = []
+        
+        for doc_id in final_order:
+            # Find the document
+            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results, category_results)
+            if doc and doc.page_content not in seen_content:
+                seen_content.add(doc.page_content)
+                results.append(doc)
+        
+        logger.info(f"Category-first fusion: {len(sorted_category_ids)} category matches + {len(sorted_non_category_ids)} other matches")
+        return results
+    
     def reciprocal_rank_fusion(
         self, 
         keyword_results: List[Tuple[Document, float]], 
@@ -300,7 +481,7 @@ class BM25HybridRetriever:
         
         for doc_id in sorted_ids:
             # Find the document
-            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results)
+            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results, category_results)
             if doc and doc.page_content not in seen_content:
                 seen_content.add(doc.page_content)
                 results.append(doc)
@@ -320,7 +501,8 @@ class BM25HybridRetriever:
         self, 
         doc_id: str, 
         keyword_results: List[Tuple[Document, float]], 
-        semantic_results: List[Tuple[Document, float]]
+        semantic_results: List[Tuple[Document, float]],
+        category_results: List[Tuple[Document, float]] = None
     ) -> Optional[Document]:
         """Helper to find document by ID from results"""
         for doc, _ in keyword_results:
@@ -367,16 +549,24 @@ class BM25HybridRetriever:
         query_analysis = self.analyze_query(query)
         logger.info(f"Query analysis: {query_analysis}")
         
-        # 2. Adjust weights based on query analysis
+        # 2. Adjust weights based on query analysis - Category is PRIMARY
         if query_analysis['suggested_method'] == 'keyword_heavy':
-            self.keyword_weight = 0.7
-            self.semantic_weight = 0.3
+            self.keyword_weight = 0.25
+            self.semantic_weight = 0.15
+            self.category_weight = 0.6
         elif query_analysis['suggested_method'] == 'semantic_heavy':
-            self.keyword_weight = 0.3
-            self.semantic_weight = 0.7
+            self.keyword_weight = 0.1
+            self.semantic_weight = 0.3
+            self.category_weight = 0.6
+        elif query_analysis['suggested_method'] == 'category_heavy' or query_analysis['category_matches']:
+            self.keyword_weight = 0.05
+            self.semantic_weight = 0.15
+            self.category_weight = 0.8
         else:
-            self.keyword_weight = 0.5
-            self.semantic_weight = 0.5
+            # Default: Category is still PRIMARY
+            self.keyword_weight = 0.15
+            self.semantic_weight = 0.25
+            self.category_weight = 0.6
         
         # 3. BM25 keyword search
         keyword_results = self.bm25_search(query, k=20)
@@ -384,10 +574,16 @@ class BM25HybridRetriever:
         # 4. Semantic search
         semantic_results = self.semantic_search(query, k=20)
         
-        # 5. Combine results using Reciprocal Rank Fusion
-        fused_results = self.reciprocal_rank_fusion(keyword_results, semantic_results)
+        # 5. Category search
+        category_results = self.category_search(query, k=20)
         
-        # 6. Rerank top candidates with cross-encoder
+        # 6. Combine results using Category-First or Reciprocal Rank Fusion
+        if self.category_first_mode and category_results:
+            fused_results = self.category_first_fusion(keyword_results, semantic_results, category_results)
+        else:
+            fused_results = self.reciprocal_rank_fusion(keyword_results, semantic_results, category_results)
+        
+        # 7. Rerank top candidates with cross-encoder
         if len(fused_results) > k and self.use_reranker:
             reranked = self.rerank_results(query, fused_results[:k*2])
             final_results = reranked[:k]
@@ -403,9 +599,13 @@ class BM25HybridRetriever:
             'bm25_available': self.bm25 is not None,
             'total_documents': len(self.documents),
             'reranker_available': self.reranker is not None,
+            'categorizer_available': self.categorizer is not None,
             'current_keyword_weight': self.keyword_weight,
             'current_semantic_weight': self.semantic_weight,
-            'technical_terms_count': len(self.technical_terms)
+            'current_category_weight': self.category_weight,
+            'technical_terms_count': len(self.technical_terms),
+            'total_episodes': len(self.categorizer.episodes) if self.categorizer else 0,
+            'category_first_mode': self.category_first_mode
         }
 
 

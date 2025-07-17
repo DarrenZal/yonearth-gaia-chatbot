@@ -28,11 +28,13 @@ Deploy your own instance to try it out!
 
 ## 🌟 Key Features
 
-### 🧠 **Advanced Hybrid RAG System**
+### 🧠 **Advanced Category-First RAG System**
+- **Category-Primary Search**: Episode categorization CSV drives primary search logic with 80% weight
 - **Dual Search Methods**: 
   - 🌿 **Original (Semantic Search)**: Meaning-based context understanding
-  - 🔍 **BM25 (Hybrid Search)**: Keyword + semantic combination with reranking
+  - 🔍 **BM25 (Category-First Hybrid)**: Category matching (80%) + semantic (15%) + keyword (5%)
   - ⚖️ **Side-by-Side Comparison**: Compare both methods simultaneously
+- **Guaranteed Category Matches**: ALL episodes tagged with matching categories appear in results
 - **Multi-Content Integration**: Search across both podcast episodes AND books simultaneously
 - **Accurate Citations**: No more hallucinated episode references
 - **Smart Recommendations**: Dynamic suggestions from episodes and books based on conversation context
@@ -91,7 +93,7 @@ Deploy your own instance to try it out!
 
 ### Dual Search Methods
 1. **🌿 Original (Semantic Search)**: Uses OpenAI embeddings for meaning-based search
-2. **🔍 BM25 (Hybrid Search)**: Combines keyword matching + semantic understanding + cross-encoder reranking
+2. **🔍 BM25 (Category-First Hybrid)**: Episode categorization table (80%) + semantic (15%) + keyword (5%) with cross-encoder reranking
 3. **⚖️ Comparison Mode**: See both methods side-by-side to compare approaches
 
 ### Smart Recommendations
@@ -151,11 +153,14 @@ Create a Pinecone index:
 ## 🧪 Testing
 
 ### Web Interface
-Visit your deployment URL and try these queries:
-- "What is biochar?" (should reference Episodes 120, 122, 165)
+Visit your deployment URL and try these category-first queries:
+- "What is biochar?" (should reference Episodes 120, 122, 165 - ALL BIOCHAR category episodes)
+- "herbal medicine" (should reference Episodes 19, 108, 90, 115, 98 - ALL HERBAL MEDICINE category episodes)
 - "Tell me about regenerative agriculture"
 - "How can I start composting?"
 - "What is the significance of chlorophyll and hemoglobin?" (should reference book content from VIRIDITAS)
+
+**🎯 Category Testing**: Use **🔍 BM25 Hybrid Search** mode to test category-first functionality
 
 ### API Testing
 ```bash
@@ -279,7 +284,12 @@ Try these queries that demonstrate the system's accuracy:
 **Query**: "What is biochar?"
 - **Before (broken)**: Referenced Episode 111 (no biochar content)
 - **After (fixed)**: References Episodes 120, 122, 165 (actual biochar episodes)
-- **BM25 Search**: Even more precise keyword + semantic matching
+- **Category-First Search**: Prioritizes ALL episodes tagged with BIOCHAR category (80% weight)
+
+**Query**: "herbal medicine"
+- **Category-First Results**: Episodes 19 (Brigitte Mars), 108 (Ann Armbrecht), 90 (Vera Herbals), 115 (Y on Earth), 98 (Biodynamic)
+- **Guaranteed Coverage**: ALL 18 episodes tagged with HERBAL MEDICINE category appear in results
+- **Smart Ranking**: Category matches (80%) + semantic relevance (15%) + keyword matching (5%)
 
 **Query**: "What is the significance of chlorophyll and hemoglobin?"
 - **Multi-Content Search**: References both podcast episodes AND book content from VIRIDITAS
@@ -296,10 +306,12 @@ Try these queries that demonstrate the system's accuracy:
 
 ## 🧠 Technical Innovation
 
-### Hybrid RAG Architecture
-- **Keyword Frequency Indexing**: Finds episodes that actually contain search terms
+### Category-First Hybrid RAG Architecture
+- **Episode Categorization**: CSV-driven topic classification as PRIMARY search guide (80% weight)
+- **Category-First Fusion**: Guarantees ALL category-matching episodes appear in results
+- **BM25 Keyword Search**: Finds episodes that actually contain search terms
 - **Semantic Vector Search**: Understanding context and meaning  
-- **Reciprocal Rank Fusion**: Intelligently combines keyword + semantic results
+- **Reciprocal Rank Fusion**: Intelligently combines category + keyword + semantic results
 - **Cross-Encoder Reranking**: Final relevance scoring for optimal results
 - **Query-Adaptive Strategy**: Automatically chooses best search approach
 - **Multi-Content Integration**: Seamlessly searches across podcast episodes AND books
@@ -329,7 +341,7 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 ## 🚧 Roadmap & Upcoming Features
 
 ### High Priority
-- **🏷️ Content Categorization**: Implement categorization table for podcast episodes by topics (permaculture, renewable energy, soil health, etc.)
+- **✅ Content Categorization**: ✅ COMPLETED - Category-first search with 170 episodes categorized across 28 topics
 - **📊 Recommended Content Alignment**: Ensure recommended episodes precisely match referenced sources
 - **📊 Cost Calculator**: Track and display response generation costs for budget management
 
