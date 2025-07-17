@@ -128,7 +128,7 @@ find /root/yonearth-gaia-chatbot/data/books -name "*.pdf" | wc -l
 find /root/yonearth-gaia-chatbot/data/books -name "metadata.json"
 
 # Verify vector database contains both episodes and books
-# Current total: 9,429 vectors (episodes + books combined)
+# Current total: 18,764+ vectors (episodes + books combined)
 
 # Test specific components
 python scripts/test_api.py
@@ -301,6 +301,8 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 - "composting techniques" → Should return composting-focused episodes
 - "what is the significance of chlorophyll and hemoglobin?" → Should return VIRIDITAS book content
 - "tell me about chapter 30 where Gaia speaks in VIRIDITAS" → Should correctly reference Chapter 30: Gaia Speaks
+- "what are soil building parties?" → Should return Soil Stewardship Handbook references
+- "how can I live more sustainably?" → Should return Y on Earth book content
 
 ### Recent Fixes and Improvements
 
@@ -322,8 +324,8 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 - **URL**: http://152.53.194.214/
 - **Purpose**: Workaround for Docker Pydantic validation issues
 - **Features**: Full web interface + working API endpoints (/chat, /api/chat, /api/bm25/chat)
-- **Vector Database**: 9,429 vectors (episodes + books combined)
-- **Book Integration**: VIRIDITAS book successfully processed and searchable
+- **Vector Database**: 18,764+ vectors (episodes + books combined)
+- **Book Integration**: All 3 books successfully processed and searchable
 
 ## Technical Innovation
 
@@ -347,13 +349,16 @@ The web interface provides advanced conversation features:
 - **Template Editing**: Use existing personalities as starting points
 - **Persistent Storage**: Custom prompts saved in browser localStorage
 
-The system handles 172 podcast episodes and integrated books with 9,429 total vectorized chunks, maintaining high citation accuracy through both RAG approaches while providing an intelligent, conversation-aware user experience that searches across both episodes and books simultaneously.
+The system handles 172 podcast episodes and 3 integrated books with 18,764+ total vectorized chunks, maintaining high citation accuracy through both RAG approaches while providing an intelligent, conversation-aware user experience that searches across both episodes and books simultaneously.
 
 ## Current System Status
 
-**System Health (2025-07-03)**:
-- **Vector Database**: 9,429 vectors (episodes + books) in Pinecone
-- **Book Integration**: VIRIDITAS book fully processed with correct chapter references
+**System Health (2025-07-17)**:
+- **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
+- **Book Integration**: 3 books fully processed with correct chapter references
+  - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
+  - Soil Stewardship Handbook (136 chunks)  
+  - Y on Earth: Get Smarter, Feel Better, Heal the Planet (2,124 chunks)
 - **Search Methods**: Both Original RAG and BM25 Hybrid operational
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
 - **Web Interface**: Responsive UI with personality selection and dual search modes
@@ -366,6 +371,9 @@ The system handles 172 podcast episodes and integrated books with 9,429 total ve
 - ✅ Smart conversation-based recommendations
 - ✅ Custom personality system with user-defined prompts
 - ✅ Production-ready deployment with Docker and systemd
+- ✅ Added 2 new books: Soil Stewardship Handbook & Y on Earth (2025-07-17)
+- ✅ Implemented multi-format book links (eBook, audiobook, print)
+- ✅ Fixed "References" label to replace "Referenced Episodes" when books included
 
 ## Known Issues & Planned Improvements
 

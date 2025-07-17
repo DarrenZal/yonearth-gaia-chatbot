@@ -21,7 +21,7 @@ The YonEarth Gaia Chatbot uses a sophisticated content processing pipeline to tr
 | Content Type | Status | Input Format | Output |
 |--------------|--------|--------------|--------|
 | **Podcast Episodes** | ✅ Active | JSON transcripts | 14,475+ searchable chunks |
-| **Books** | ✅ Active | PDF + JSON metadata | 2,029+ chapter-based chunks |
+| **Books** | ✅ Active | PDF + JSON metadata | 4,289+ chapter-based chunks |
 | **Articles** | 📋 Planned | HTML, Markdown | Topic-based segments |
 | **Videos** | 📋 Planned | Transcript files | Time-stamped chunks |
 
@@ -293,6 +293,24 @@ curl -X POST http://localhost:8000/bm25/chat \
 - **Vector Database**: Successfully added to Pinecone
 - **Processing Time**: ~2 minutes (PDF extraction + chunking)
 - **Topics**: viriditas, regenerative agriculture, healing, nature connection, earth healing, ecological restoration
+
+**Soil Stewardship Handbook** by Aaron William Perry:
+- **Pages Processed**: 53 pages (PDF extraction)
+- **Word Count**: 12,430 words
+- **Chapters Detected**: 36 chapters (automatic detection)
+- **Chunks Created**: 136 searchable chunks
+- **Vector Database**: Successfully added to Pinecone
+- **Processing Time**: ~30 seconds (PDF extraction + chunking)
+- **Topics**: soil stewardship, regenerative agriculture, composting, biochar, victory gardens, soil health, permaculture
+
+**Y on Earth: Get Smarter, Feel Better, Heal the Planet** by Aaron William Perry:
+- **Pages Processed**: 547 pages (PDF extraction)
+- **Word Count**: 209,649 words
+- **Chapters Detected**: 488 chapters (automatic detection)
+- **Chunks Created**: 2,124 searchable chunks
+- **Vector Database**: Successfully added to Pinecone
+- **Processing Time**: ~2 minutes (PDF extraction + chunking)
+- **Topics**: sustainable living, mindfulness, community, environmental stewardship, personal wellness, regenerative practices
 
 ## Architecture & Data Flow
 

@@ -326,10 +326,15 @@ class BM25RAGChain:
                 chapter_title = metadata.get('chapter_title', '')
                 author = metadata.get('author', 'Unknown Author')
                 
-                # Get audiobook URL from metadata
+                # Get URLs from metadata (default to ebook)
                 book_url = ''
+                audiobook_url = ''
+                print_url = ''
                 if book_title in self.book_metadata:
-                    book_url = self.book_metadata[book_title].get('audiobook_url', '')
+                    book_meta = self.book_metadata[book_title]
+                    book_url = book_meta.get('ebook_url', '')  # Default to ebook
+                    audiobook_url = book_meta.get('audiobook_url', '')
+                    print_url = book_meta.get('print_url', '')
                 
                 # Create episode-compatible format
                 source = {
@@ -338,13 +343,17 @@ class BM25RAGChain:
                     'episode_number': f"Book: {book_title}",  # Show as book identifier
                     'title': f"Chapter {chapter_int}",
                     'guest_name': author,
-                    'url': book_url,  # Use audiobook URL
+                    'url': book_url,  # Default to ebook URL
                     'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content,
                     # Keep book-specific fields for internal use
                     'book_title': book_title,
                     'author': author,
                     'chapter_number': chapter_int,  # Convert to int for API
-                    'chapter_title': chapter_title
+                    'chapter_title': chapter_title,
+                    # Add all URL options
+                    'ebook_url': book_url,
+                    'audiobook_url': audiobook_url,
+                    'print_url': print_url
                 }
             else:
                 source = {

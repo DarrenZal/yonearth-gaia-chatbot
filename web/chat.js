@@ -556,7 +556,9 @@ class GaiaChat {
         
         const title = document.createElement('div');
         title.className = 'citations-title';
-        title.textContent = 'Referenced Episodes:';
+        // Check if any citations are books
+        const hasBooks = citations.some(c => c.episode_number?.toString().startsWith('Book:'));
+        title.textContent = hasBooks ? 'References:' : 'Referenced Episodes:';
         citationsDiv.appendChild(title);
         
         citations.forEach(citation => {
@@ -595,14 +597,55 @@ class GaiaChat {
             
             if (citation.url) {
                 const linkDiv = document.createElement('div');
-                const link = document.createElement('a');
-                link.href = citation.url;
-                link.target = '_blank';
-                link.className = 'citation-link';
-                // Check if this is a book to use appropriate link text
+                linkDiv.className = 'citation-links';
+                
+                // Check if this is a book
                 const isBook = citation.episode_number?.toString().startsWith('Book:');
-                link.textContent = isBook ? 'Listen to Audiobook →' : 'Listen to Episode →';
-                linkDiv.appendChild(link);
+                
+                if (isBook) {
+                    // For books, show available format links
+                    if (citation.ebook_url || citation.url) {
+                        const ebookLink = document.createElement('a');
+                        ebookLink.href = citation.ebook_url || citation.url;
+                        ebookLink.target = '_blank';
+                        ebookLink.className = 'citation-link';
+                        ebookLink.textContent = 'Read eBook →';
+                        linkDiv.appendChild(ebookLink);
+                    }
+                    
+                    if (citation.audiobook_url) {
+                        if (linkDiv.children.length > 0) {
+                            linkDiv.appendChild(document.createTextNode(' | '));
+                        }
+                        const audioLink = document.createElement('a');
+                        audioLink.href = citation.audiobook_url;
+                        audioLink.target = '_blank';
+                        audioLink.className = 'citation-link';
+                        audioLink.textContent = 'Listen to Audiobook →';
+                        linkDiv.appendChild(audioLink);
+                    }
+                    
+                    if (citation.print_url) {
+                        if (linkDiv.children.length > 0) {
+                            linkDiv.appendChild(document.createTextNode(' | '));
+                        }
+                        const printLink = document.createElement('a');
+                        printLink.href = citation.print_url;
+                        printLink.target = '_blank';
+                        printLink.className = 'citation-link';
+                        printLink.textContent = 'Order Print →';
+                        linkDiv.appendChild(printLink);
+                    }
+                } else {
+                    // For episodes, show single link
+                    const link = document.createElement('a');
+                    link.href = citation.url;
+                    link.target = '_blank';
+                    link.className = 'citation-link';
+                    link.textContent = 'Listen to Episode →';
+                    linkDiv.appendChild(link);
+                }
+                
                 citationDiv.appendChild(linkDiv);
             }
             
@@ -700,13 +743,54 @@ class GaiaChat {
             
             if (citation.url) {
                 const linkDiv = document.createElement('div');
-                const link = document.createElement('a');
-                link.href = citation.url;
-                link.target = '_blank';
-                link.className = 'recommendation-link';
+                linkDiv.className = 'recommendation-links';
+                
                 const isBook = episodeNum.toString().startsWith('Book:');
-                link.textContent = isBook ? 'Listen to Audiobook →' : 'Listen Now →';
-                linkDiv.appendChild(link);
+                
+                if (isBook) {
+                    // For books, show available format links
+                    if (citation.ebook_url || citation.url) {
+                        const ebookLink = document.createElement('a');
+                        ebookLink.href = citation.ebook_url || citation.url;
+                        ebookLink.target = '_blank';
+                        ebookLink.className = 'recommendation-link';
+                        ebookLink.textContent = 'Read eBook →';
+                        linkDiv.appendChild(ebookLink);
+                    }
+                    
+                    if (citation.audiobook_url) {
+                        if (linkDiv.children.length > 0) {
+                            linkDiv.appendChild(document.createTextNode(' | '));
+                        }
+                        const audioLink = document.createElement('a');
+                        audioLink.href = citation.audiobook_url;
+                        audioLink.target = '_blank';
+                        audioLink.className = 'recommendation-link';
+                        audioLink.textContent = 'Listen to Audiobook →';
+                        linkDiv.appendChild(audioLink);
+                    }
+                    
+                    if (citation.print_url) {
+                        if (linkDiv.children.length > 0) {
+                            linkDiv.appendChild(document.createTextNode(' | '));
+                        }
+                        const printLink = document.createElement('a');
+                        printLink.href = citation.print_url;
+                        printLink.target = '_blank';
+                        printLink.className = 'recommendation-link';
+                        printLink.textContent = 'Order Print →';
+                        linkDiv.appendChild(printLink);
+                    }
+                } else {
+                    // For episodes, show single link
+                    const link = document.createElement('a');
+                    link.href = citation.url;
+                    link.target = '_blank';
+                    link.className = 'recommendation-link';
+                    link.textContent = 'Listen Now →';
+                    linkDiv.appendChild(link);
+                }
+                
                 recDiv.appendChild(linkDiv);
             }
             

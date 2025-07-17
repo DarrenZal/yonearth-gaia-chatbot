@@ -1,6 +1,6 @@
 # YonEarth Gaia Chatbot 🌍
 
-> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and integrated books
+> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and three integrated books
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
@@ -108,11 +108,18 @@ Deploy your own instance to try it out!
 - Use any existing personality as a template for editing
 - Works with both search methods
 
-### Book Integration
+### 📚 Integrated Books
+Currently includes three books by Aaron William Perry:
+- **VIRIDITAS: THE GREAT HEALING** - Exploration of viriditas (life force) and regenerative practices
+- **Soil Stewardship Handbook** - Practical guide for soil regeneration, composting, and biochar
+- **Y on Earth: Get Smarter, Feel Better, Heal the Planet** - Sustainable living, mindfulness, and community connection
+
+#### Book Integration Features
 - **PDF Processing**: Automatically extracts and processes PDF books from `/data/books`
 - **Chapter Detection**: Intelligent parsing of chapter boundaries and titles
 - **Unified Search**: Books and podcast episodes searched together seamlessly
-- **Enhanced Citations**: Shows book title, author, and chapter information
+- **Enhanced Citations**: Shows book title, author, and chapter information with clickable links
+- **Multiple Formats**: Links to eBook, audiobook, and print versions when available
 - **Optimized Chunking**: Larger chunks for books (750 tokens) vs episodes (500 tokens)
 
 ## 🚀 Deployment Options
@@ -158,7 +165,9 @@ Visit your deployment URL and try these category-first queries:
 - "herbal medicine" (should reference Episodes 19, 108, 90, 115, 98 - ALL HERBAL MEDICINE category episodes)
 - "Tell me about regenerative agriculture"
 - "How can I start composting?"
-- "What is the significance of chlorophyll and hemoglobin?" (should reference book content from VIRIDITAS)
+- "What is the significance of chlorophyll and hemoglobin?" (references VIRIDITAS book)
+- "What are soil building parties?" (references Soil Stewardship Handbook)
+- "How can I live more sustainably?" (references Y on Earth book)
 
 **🎯 Category Testing**: Use **🔍 BM25 Hybrid Search** mode to test category-first functionality
 
@@ -293,7 +302,15 @@ Try these queries that demonstrate the system's accuracy:
 
 **Query**: "What is the significance of chlorophyll and hemoglobin?"
 - **Multi-Content Search**: References both podcast episodes AND book content from VIRIDITAS
-- **Book Integration**: Shows chapter-specific citations with author information
+- **Book Integration**: Shows chapter-specific citations with author information and clickable links
+
+### Content Database
+- **172 Podcast Episodes**: 14,475+ searchable chunks with full transcripts
+- **3 Books**: 4,289+ searchable chunks with chapter-level citations
+  - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
+  - Soil Stewardship Handbook (136 chunks)
+  - Y on Earth (2,124 chunks)
+- **Total Vectors**: 18,764+ indexed for hybrid search
 
 ## 🎨 Web Interface Features
 

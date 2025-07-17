@@ -4,20 +4,20 @@ Based on Aaron's feedback and our discoveries, here are the critical remaining t
 
 ## 🚨 Critical Priority (Do First)
 
-### 1. Add More Books to Dataset
+### 1. ✅ Add More Books to Dataset [COMPLETED 2025-07-17]
 **Impact**: Aaron said responses should "almost always" reference both podcasts AND books
 
-- [ ] Add "Why on Earth" book by Aaron William Perry
-- [ ] Add "Soil Stewardship Handbook" 
-- [ ] Ensure book integration works seamlessly with episodes
-- [ ] Update prompts to prioritize book+episode citations together
+- [x] ~~Add "Why on Earth" book by Aaron William Perry~~ (Added "Y on Earth" - 2,124 chunks)
+- [x] Add "Soil Stewardship Handbook" (Added - 136 chunks)
+- [x] Ensure book integration works seamlessly with episodes
+- [x] Update prompts to prioritize book+episode citations together
+- [x] Add multi-format book links (eBook, audiobook, print)
+- [x] Fix "Referenced Episodes" to show "References" when books included
 
-**Implementation**:
-```bash
-# Place PDFs in /data/books/book_name/
-# Add metadata.json for each book
-# Run: python3 -m src.ingestion.process_books
-```
+**Completed Implementation**:
+- Added 2 new books to reach 3 total books
+- 4,289+ book chunks now searchable alongside 14,475+ episode chunks
+- Books properly display with chapter references and clickable links
 
 ### 2. Fix Recommended Content Section
 **Impact**: Currently shows mismatched episodes (e.g., Episode 165 referenced but not in recommendations)
@@ -99,12 +99,15 @@ const playVoice = async (text) => {
 - [x] Max References Configuration (1-10 references per response)
 - [x] Episode Categorization Investigation
 - [x] Documentation of search weights
+- [x] Add More Books to Dataset (Y on Earth & Soil Stewardship Handbook) - 2025-07-17
+- [x] Multi-format book links (eBook, audiobook, print)
+- [x] Fix "Referenced Episodes" label for book references
 
 ## 📝 Quick Wins Order
 
-1. **Add the missing books** (most critical per Aaron)
+1. ~~**Add the missing books**~~ ✅ COMPLETED
 2. **Fix recommended content** to match citations
-3. **Add hyperlinks** to episode references
+3. **Add hyperlinks** to episode references  
 4. **Add feedback buttons** for testing phase
 
 ## 🚀 Implementation Timeline
