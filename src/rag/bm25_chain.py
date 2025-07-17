@@ -106,6 +106,7 @@ class BM25RAGChain:
         k: int = 5,
         include_sources: bool = True,
         custom_prompt: Optional[str] = None,
+        max_citations: int = 3,
         **kwargs
     ) -> Dict[str, Any]:
         """
@@ -174,7 +175,7 @@ class BM25RAGChain:
             
             # Step 5: Add sources if requested
             if include_sources:
-                response_data['sources'] = self._format_sources(documents)
+                response_data['sources'] = self._format_sources(documents, max_citations)
                 response_data['episode_references'] = self._extract_episode_references(documents)
             
             logger.info(f"BM25 RAG response generated successfully using {search_method} search")
@@ -224,7 +225,7 @@ class BM25RAGChain:
         logger.info(f"Retrieved {len(documents)} documents using {search_method} method")
         return documents
     
-    def _format_sources(self, documents: List[Document]) -> List[Dict[str, Any]]:
+    def _format_sources(self, documents: List[Document], max_citations: int = 3) -> List[Dict[str, Any]]:
         """Format source citations from retrieved documents with deduplication by episode/book"""
         sources = []
         seen_items = set()
@@ -366,8 +367,8 @@ class BM25RAGChain:
             
             sources.append(source)
             
-            # Limit to top 3 unique items
-            if len(sources) >= 3:
+            # Limit to configured number of unique items
+            if len(sources) >= max_citations:
                 break
         
         return sources

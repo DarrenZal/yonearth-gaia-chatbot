@@ -65,12 +65,13 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             # Extract parameters
             message = request_data.get('message', '')
             search_method = request_data.get('search_method', 'semantic')
-            k = request_data.get('k', 3)
+            max_citations = request_data.get('max_citations', request_data.get('max_references', 3))
+            k = request_data.get('k', max(10, max_citations * 2))  # Retrieve more docs to ensure enough unique episodes
             model = request_data.get('model')  # New: model selection
             personality = request_data.get('personality', 'warm_mother')
             custom_prompt = request_data.get('custom_prompt')
             
-            print(f"Chat request: {message[:50]}... (method: {search_method}, model: {model})")
+            print(f"Chat request: {message[:50]}... (method: {search_method}, model: {model}, max_citations: {max_citations})")
             
             # Use BM25 chain and pass model parameter through kwargs
             result = self.bm25_chain.chat(
@@ -80,7 +81,8 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 include_sources=True,
                 custom_prompt=custom_prompt,
                 model_name=model,
-                personality_variant=personality
+                personality_variant=personality,
+                max_citations=max_citations
             )
             
             # Format sources for web interface
@@ -149,8 +151,9 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             message = request_data.get('message', '')
             personality = request_data.get('personality', 'warm_mother')
             custom_prompt = request_data.get('custom_prompt')
+            max_references = request_data.get('max_references', 3)
             
-            print(f"Model comparison request: {message[:50]}...")
+            print(f"Model comparison request: {message[:50]}... (max_references: {max_references})")
             
             # Define models to compare
             models = ['gpt-3.5-turbo', 'gpt-4o-mini', 'gpt-4']
@@ -173,14 +176,15 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                     search_result = self.bm25_chain._retrieve_documents(
                         query=message,
                         search_method='hybrid',
-                        k=3
+                        k=max(5, max_references)  # Retrieve at least 5 docs to have enough for max_references
                     )
                     
                     # Generate response with specific model
                     response = gaia_instance.generate_response(
                         user_input=message,
                         retrieved_docs=search_result,  # Already just documents
-                        custom_prompt=custom_prompt
+                        custom_prompt=custom_prompt,
+                        max_references=max_references
                     )
                     
                     # Format citations

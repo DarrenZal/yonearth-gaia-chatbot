@@ -75,6 +75,28 @@
                     <small>🔍 <span id="ragDescText">BM25 combines keyword matching with semantic understanding for precise results</span></small>
                 </div>
             </div>
+            
+            <!-- Max References Selector -->
+            <div class="references-selector">
+                <div>
+                    <label for="maxReferences">Max References:</label>
+                    <select id="maxReferences" title="Choose how many episode references to include in responses">
+                        <option value="1">1 Reference</option>
+                        <option value="2">2 References</option>
+                        <option value="3" selected>3 References (Default)</option>
+                        <option value="4">4 References</option>
+                        <option value="5">5 References</option>
+                        <option value="6">6 References</option>
+                        <option value="7">7 References</option>
+                        <option value="8">8 References</option>
+                        <option value="9">9 References</option>
+                        <option value="10">10 References</option>
+                    </select>
+                </div>
+                <div class="references-description" id="referencesDescription">
+                    <small>📚 <span id="referencesDescText">Show 3 most relevant episodes per response</span></small>
+                </div>
+            </div>
         </header>
 
         <!-- Chat Container -->

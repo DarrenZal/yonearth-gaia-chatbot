@@ -87,7 +87,8 @@ IMPORTANT: Always cite your sources using this exact format:
         user_input: str, 
         retrieved_docs: List[Any] = None,
         session_id: Optional[str] = None,
-        custom_prompt: Optional[str] = None
+        custom_prompt: Optional[str] = None,
+        max_references: int = 3
     ) -> Dict[str, Any]:
         """Generate Gaia's response to user input"""
         try:
@@ -129,7 +130,7 @@ IMPORTANT: Always cite your sources using this exact format:
             )
             
             # Extract episode citations
-            citations = self._extract_citations(retrieved_docs or [])
+            citations = self._extract_citations(retrieved_docs or [], max_references)
             
             result = {
                 "response": response.content,
@@ -152,7 +153,7 @@ IMPORTANT: Always cite your sources using this exact format:
                 "context_used": 0
             }
     
-    def _extract_citations(self, retrieved_docs: List[Any]) -> List[Dict[str, Any]]:
+    def _extract_citations(self, retrieved_docs: List[Any], max_references: int = 3) -> List[Dict[str, Any]]:
         """Extract citation information from retrieved documents with deduplication by episode"""
         citations = []
         seen_episodes = set()
@@ -176,8 +177,8 @@ IMPORTANT: Always cite your sources using this exact format:
             }
             citations.append(citation)
             
-            # Limit to top 3 unique episodes
-            if len(citations) >= 3:
+            # Limit to configured number of unique episodes
+            if len(citations) >= max_references:
                 break
         
         return citations

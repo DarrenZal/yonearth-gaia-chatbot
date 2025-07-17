@@ -188,12 +188,19 @@ The system provides two complementary RAG approaches:
 3. **Hybrid Retriever**: Combines both approaches with weighted scoring
 4. **Citation Accuracy**: Solves hallucination by finding episodes that actually contain search terms
 
-#### 🔍 BM25 Advanced RAG (State-of-the-Art)
-1. **BM25 Keyword Search**: Industry-standard keyword matching algorithm
-2. **Semantic Vector Search**: OpenAI embedding similarity
-3. **Reciprocal Rank Fusion (RRF)**: Mathematically optimal result combination
-4. **Cross-Encoder Reranking**: MS-MARCO MiniLM final relevance scoring
-5. **Query-Adaptive Strategy**: Automatically chooses optimal search method per query
+#### 🔍 BM25 Advanced RAG (Category-First with Semantic Matching)
+1. **Episode Categorization**: CSV-based topic tagging from tracking sheet (`/data/PodcastPipelineTracking.csv`)
+2. **Semantic Category Matching**: Uses embeddings to match queries to categories (e.g., "soil" → BIOCHAR)
+3. **Category-First Search**: Prioritizes episodes with matching categories (60-80% weight)
+4. **BM25 Keyword Search**: Industry-standard keyword matching (15% weight)
+5. **Semantic Vector Search**: OpenAI embedding similarity (25% weight)
+6. **Cross-Encoder Reranking**: MS-MARCO MiniLM final relevance scoring
+7. **Episode Diversity**: Ensures all relevant episodes appear, not just one with many chunks
+
+**Current Search Weights**:
+- Category match: 60% (increases to 80% for category-heavy queries)
+- Semantic similarity: 25% (decreases to 15% for category-heavy queries)
+- BM25 keyword: 15% (decreases to 5% for category-heavy queries)
 
 ### Smart Web Interface Features
 
@@ -360,6 +367,43 @@ The system handles 172 podcast episodes and integrated books with 9,429 total ve
 - ✅ Custom personality system with user-defined prompts
 - ✅ Production-ready deployment with Docker and systemd
 
+## Known Issues & Planned Improvements
+
+### Current Issues
+
+1. **Episode Diversity Problem**: When searching for categories like "biochar", the system returns many chunks from episode 120 instead of showing all 4 biochar episodes (120, 122, 124, 165)
+   - **Root Cause**: Category search returns individual chunks (k=20 default), not unique episodes
+   - **Impact**: Users miss relevant episodes even with 80% category weight
+
+2. **Semantic Category Matching**: Episode 124 is categorized as BIOCHAR but doesn't contain the word "biochar"
+   - **Current**: Simple keyword matching misses these connections
+   - **Planned**: Semantic category matching (see SEMANTIC_CATEGORY_IMPLEMENTATION_PLAN.md)
+
+3. **Fixed Search Weights**: Currently hardcoded in backend
+   - **Current**: 60% category, 25% semantic, 15% keyword (adjusts to 80/15/5 for category queries)
+   - **Planned**: User-configurable sliders in web UI
+
+### Planned Improvements
+
+1. **Semantic Category Matcher** (High Priority)
+   - Match "soil" → BIOCHAR, "healing" → HERBAL MEDICINE
+   - Use OpenAI embeddings for category descriptions
+   - Configurable thresholds (strict/normal/broad)
+
+2. **Episode Diversity Algorithm** (High Priority)
+   - Ensure all matching episodes appear in results
+   - Limit chunks per episode to prevent dominance
+   - Show best chunks from each relevant episode
+
+3. **Configurable Search Weights UI** (Medium Priority)
+   - Add sliders for category/semantic/keyword weights
+   - Show which categories matched the query
+   - Display result diversity metrics
+
+4. **Max References Configuration** (Completed ✓)
+   - Users can now select 1-10 references per response
+   - Backend properly handles variable reference counts
+
 ## Documentation References
 
 For comprehensive information about content processing and pipeline management:
@@ -367,3 +411,5 @@ For comprehensive information about content processing and pipeline management:
 - **[Content Processing Pipeline](CONTENT_PROCESSING_PIPELINE.md)** - Complete guide to processing podcast episodes, book integration, search index rebuilding, and troubleshooting
 - **[VPS Deployment Guide](VPS_DEPLOYMENT.md)** - Production deployment instructions
 - **[Implementation Plan](IMPLEMENTATION_PLAN.md)** - BM25 system development history
+- **[Semantic Category Implementation Plan](docs/SEMANTIC_CATEGORY_IMPLEMENTATION_PLAN.md)** - New semantic matching approach
+- **[Remaining TODOs](docs/REMAINING_TODOS.md)** - Critical tasks based on Aaron's feedback (Books, Hyperlinks, Voice, etc.)

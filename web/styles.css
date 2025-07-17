@@ -337,6 +337,56 @@ body {
     gap: 0.25rem;
 }
 
+/* References Selector */
+.references-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.references-selector > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.references-selector label {
+    font-weight: 500;
+    color: var(--earth-green);
+}
+
+.references-selector select {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--sage-green);
+    border-radius: 8px;
+    background: var(--soft-white);
+    color: var(--earth-green);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    min-width: 200px;
+}
+
+.references-selector select:focus {
+    outline: none;
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.references-description {
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.references-description small {
+    color: var(--warm-gray);
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 /* Chat Container */
 .chat-container {
     flex: 1;

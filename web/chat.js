@@ -35,6 +35,8 @@ class GaiaChat {
         this.ragDescText = document.getElementById('ragDescText');
         this.modelTypeSelect = document.getElementById('modelType');
         this.modelDescText = document.getElementById('modelDescText');
+        this.maxReferencesSelect = document.getElementById('maxReferences');
+        this.referencesDescText = document.getElementById('referencesDescText');
         this.recommendations = document.getElementById('recommendations');
         this.recommendationsList = document.getElementById('recommendationsList');
         this.status = document.getElementById('status');
@@ -45,6 +47,7 @@ class GaiaChat {
         // Initialize descriptions
         this.updateModelDescription();
         this.updateRAGDescription();
+        this.updateReferencesDescription();
     }
     
     setupEventListeners() {
@@ -84,6 +87,11 @@ class GaiaChat {
         // Model type change
         this.modelTypeSelect.addEventListener('change', () => {
             this.updateModelDescription();
+        });
+        
+        // Max references change
+        this.maxReferencesSelect.addEventListener('change', () => {
+            this.updateReferencesDescription();
         });
         
         // Personality details toggle
@@ -270,12 +278,15 @@ class GaiaChat {
         // Determine which endpoint to use
         const endpoint = ragType === 'bm25' ? '/bm25/chat' : '/chat';
         
+        const maxReferences = parseInt(this.maxReferencesSelect.value);
+        
         const requestBody = {
             message: message,
             session_id: this.sessionId,
             personality: this.personalitySelect.value,
             max_results: 5,
-            model: modelType !== 'compare' ? modelType : undefined
+            model: modelType !== 'compare' ? modelType : undefined,
+            max_references: maxReferences
         };
         
         // Add custom prompt if custom personality is selected
@@ -292,6 +303,7 @@ class GaiaChat {
             requestBody.k = 5;
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
+            requestBody.max_citations = maxReferences; // BM25 uses max_citations instead of max_references
             
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
@@ -333,12 +345,15 @@ class GaiaChat {
             console.log(`Calling API with model: ${model}`);
             
             try {
+                const maxReferences = parseInt(this.maxReferencesSelect.value);
+                
                 const requestBody = {
                     message: message,
                     session_id: this.sessionId,
                     personality: this.personalitySelect.value,
                     max_results: 5,
-                    model: model  // Specify the model explicitly
+                    model: model,  // Specify the model explicitly
+                    max_references: maxReferences
                 };
                 
                 // Add custom prompt if custom personality is selected
@@ -448,12 +463,14 @@ class GaiaChat {
     
     async callSingleAPI(message, type) {
         const endpoint = type === 'bm25' ? '/bm25/chat' : '/chat';
+        const maxReferences = parseInt(this.maxReferencesSelect.value);
         
         const requestBody = {
             message: message,
             session_id: this.sessionId,
             personality: this.personalitySelect.value,
-            max_results: 5
+            max_results: 5,
+            max_references: maxReferences
         };
         
         // Add custom prompt if custom personality is selected
@@ -469,6 +486,7 @@ class GaiaChat {
             requestBody.k = 5;
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
+            requestBody.max_citations = maxReferences; // BM25 uses max_citations
         }
         
         try {
@@ -617,18 +635,20 @@ class GaiaChat {
             
             // Add original recommendations
             const originalCitations = comparisonData.original.citations || comparisonData.original.sources || [];
-            this.addRecommendationItems(originalRecs, originalCitations.slice(0, 3));
+            const maxRefs = parseInt(this.maxReferencesSelect.value);
+            this.addRecommendationItems(originalRecs, originalCitations.slice(0, maxRefs));
             
             // Add BM25 recommendations
             const bm25Citations = comparisonData.bm25.sources || comparisonData.bm25.citations || [];
-            this.addRecommendationItems(bm25Recs, bm25Citations.slice(0, 3));
+            this.addRecommendationItems(bm25Recs, bm25Citations.slice(0, maxRefs));
             
             this.recommendationsList.appendChild(originalRecs);
             this.recommendationsList.appendChild(bm25Recs);
         } else {
             // Single method recommendations
             this.recommendationsList.className = 'recommendations-list';
-            this.addRecommendationItems(this.recommendationsList, citations.slice(0, 3));
+            const maxRefs = parseInt(this.maxReferencesSelect.value);
+            this.addRecommendationItems(this.recommendationsList, citations.slice(0, maxRefs));
         }
         
         this.recommendations.style.display = 'block';
@@ -883,6 +903,12 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         this.modelDescText.textContent = descriptions[this.modelTypeSelect.value] || descriptions['gpt-3.5-turbo'];
     }
     
+    updateReferencesDescription() {
+        const count = this.maxReferencesSelect.value;
+        const plural = count === '1' ? 'episode' : 'episodes';
+        this.referencesDescText.textContent = `📚 Show ${count} most relevant ${plural} per response`;
+    }
+    
     togglePersonalityDetails() {
         const isVisible = this.personalityDetailsSection.style.display !== 'none';
         this.personalityDetailsSection.style.display = isVisible ? 'none' : 'block';
@@ -1099,7 +1125,8 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         
         // Get unique episodes (remove duplicates) and limit to 3-4 most relevant
         const uniqueEpisodes = this.getUniqueEpisodes(currentEpisodes);
-        const episodesToShow = uniqueEpisodes.slice(0, 3);
+        const maxRefs = parseInt(this.maxReferencesSelect.value);
+        const episodesToShow = uniqueEpisodes.slice(0, maxRefs);
         
         // Add conversation context header
         const contextHeader = document.createElement('div');
