@@ -594,7 +594,7 @@ class BM25HybridRetriever:
         
         for doc_id in sorted_ids:
             # Find the document
-            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results, category_results)
+            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results)
             if doc and doc.page_content not in seen_content:
                 seen_content.add(doc.page_content)
                 results.append(doc)
@@ -694,7 +694,7 @@ class BM25HybridRetriever:
         if self.category_first_mode and category_results:
             fused_results = self.category_first_fusion(keyword_results, semantic_results, category_results)
         else:
-            fused_results = self.reciprocal_rank_fusion(keyword_results, semantic_results, category_results)
+            fused_results = self.reciprocal_rank_fusion(keyword_results, semantic_results)
         
         # 7. Rerank top candidates with cross-encoder
         if len(fused_results) > k and self.use_reranker:
