@@ -342,6 +342,7 @@ The web interface provides advanced conversation features:
 - **Episode Tracking**: Remembers which episodes were discussed
 - **Dynamic Context**: Recommendations evolve with conversation
 - **Smart Suggestions**: Proactively suggests related topics to explore
+- **Cumulative References**: "Recommended Content" section shows ALL references cited throughout the entire conversation
 
 ### Personality System
 - **Predefined Personalities**: 3 carefully crafted Earth-centered voices
@@ -374,6 +375,7 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - ✅ Added 2 new books: Soil Stewardship Handbook & Y on Earth (2025-07-17)
 - ✅ Implemented multi-format book links (eBook, audiobook, print)
 - ✅ Fixed "References" label to replace "Referenced Episodes" when books included
+- ✅ Updated "Recommended Content" to show ALL references from entire conversation (2025-07-17)
 
 ## Known Issues & Planned Improvements
 

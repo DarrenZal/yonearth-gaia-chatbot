@@ -97,8 +97,9 @@ Deploy your own instance to try it out!
 3. **⚖️ Comparison Mode**: See both methods side-by-side to compare approaches
 
 ### Smart Recommendations
-- **Inline Citations**: See which episodes Gaia referenced for each response
-- **Dynamic Recommendations**: Bottom section shows episodes based on your conversation
+- **Inline Citations**: See which episodes and books Gaia referenced for each response
+- **Cumulative References**: "Recommended Content" section shows ALL references from entire conversation
+- **Dynamic Recommendations**: Bottom section updates based on your conversation topics
 - **Context Awareness**: "Based on our conversation about: permaculture, soil health..."
 - **Related Suggestions**: "Try asking about: other episodes on composting"
 

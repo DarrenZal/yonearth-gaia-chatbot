@@ -1249,6 +1249,11 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             model.citations || []
         );
         
+        // Add all citations to our cumulative tracking
+        if (allEpisodes && allEpisodes.length > 0) {
+            this.allCitedReferences = [...this.allCitedReferences, ...allEpisodes];
+        }
+        
         // Track episodes and update smart recommendations
         allEpisodes.forEach(episode => {
             if (episode.episode_number || episode.episode_id) {
@@ -1402,6 +1407,11 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         const originalEpisodes = response.original?.citations || response.original?.sources || [];
         const bm25Episodes = response.bm25?.sources || response.bm25?.citations || [];
         const allEpisodes = [...originalEpisodes, ...bm25Episodes];
+        
+        // Add all citations to our cumulative tracking
+        if (allEpisodes && allEpisodes.length > 0) {
+            this.allCitedReferences = [...this.allCitedReferences, ...allEpisodes];
+        }
         
         // Track episodes and update smart recommendations
         allEpisodes.forEach(episode => {
