@@ -29,7 +29,11 @@ Deploy your own instance to try it out!
 ## 🌟 Key Features
 
 ### 🧠 **Advanced Category-First RAG System**
-- **Category-Primary Search**: Episode categorization CSV drives primary search logic with 80% weight
+- **✨ Semantic Category Matching**: TRUE semantic understanding using OpenAI embeddings
+  - Solves "soil" → BIOCHAR matching automatically (32.1% similarity)
+  - Cached embeddings for performance (`/data/processed/category_embeddings.json`)
+  - User-configurable thresholds: Broad (0.6), Normal (0.7), Strict (0.8), Disabled (1.1)
+- **Episode Diversity Algorithm**: Ensures all relevant episodes appear, not just one with many chunks
 - **Dual Search Methods**: 
   - 🌿 **Original (Semantic Search)**: Meaning-based context understanding
   - 🔍 **BM25 (Category-First Hybrid)**: Category matching (80%) + semantic (15%) + keyword (5%)

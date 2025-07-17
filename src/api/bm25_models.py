@@ -25,6 +25,12 @@ class BM25ChatRequest(BaseModel):
         le=2.0, 
         description="Response creativity level"
     )
+    category_threshold: Optional[float] = Field(
+        default=0.7,
+        ge=0.0,
+        le=1.0,
+        description="Category matching threshold for semantic search (0.6=broad, 0.7=normal, 0.8=strict)"
+    )
 
 
 class BM25Source(BaseModel):

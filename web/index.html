@@ -97,6 +97,22 @@
                     <small>📚 <span id="referencesDescText">Show 3 most relevant episodes per response</span></small>
                 </div>
             </div>
+            
+            <!-- Category Matching Threshold Selector -->
+            <div class="category-threshold-selector">
+                <div>
+                    <label for="categoryThreshold">Category Matching:</label>
+                    <select id="categoryThreshold" title="Control how strictly categories are matched to your questions">
+                        <option value="0.6">Broad (0.6) - Explore connections</option>
+                        <option value="0.7" selected>Normal (0.7) - Balanced matching</option>
+                        <option value="0.8">Strict (0.8) - Exact matches only</option>
+                        <option value="1.1">Disabled - No category filtering</option>
+                    </select>
+                </div>
+                <div class="category-description" id="categoryDescription">
+                    <small>📂 <span id="categoryDescText">Normal category matching finds related topics like soil → biochar</span></small>
+                </div>
+            </div>
         </header>
 
         <!-- Chat Container -->

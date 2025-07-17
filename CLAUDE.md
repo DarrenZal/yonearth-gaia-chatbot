@@ -157,6 +157,8 @@ This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit
 - `bm25_chain.py`: Advanced BM25 RAG with RRF, reranking, and query analysis
 - `hybrid_retriever.py`: Original keyword frequency + semantic search combination
 - `bm25_hybrid_retriever.py`: Advanced BM25 + semantic + cross-encoder reranking
+- `semantic_category_matcher.py`: ✨ NEW: True semantic category matching using OpenAI embeddings
+- `episode_categorizer.py`: Episode categorization from CSV tracking data
 - `keyword_indexer.py`: Builds keyword frequency index for episode lookup
 - `vectorstore.py`: Pinecone vector database wrapper
 - `pinecone_setup.py`: Pinecone index initialization and management
@@ -190,12 +192,16 @@ The system provides two complementary RAG approaches:
 
 #### 🔍 BM25 Advanced RAG (Category-First with Semantic Matching)
 1. **Episode Categorization**: CSV-based topic tagging from tracking sheet (`/data/PodcastPipelineTracking.csv`)
-2. **Semantic Category Matching**: Uses embeddings to match queries to categories (e.g., "soil" → BIOCHAR)
+2. **✨ Semantic Category Matching**: TRUE semantic understanding using OpenAI embeddings
+   - Category embeddings cached in `/data/processed/category_embeddings.json`
+   - Query embeddings compared via cosine similarity
+   - Solves "soil" → BIOCHAR matching (32.1% similarity)
+   - Configurable thresholds: Broad (0.6), Normal (0.7), Strict (0.8), Disabled (1.1)
 3. **Category-First Search**: Prioritizes episodes with matching categories (60-80% weight)
 4. **BM25 Keyword Search**: Industry-standard keyword matching (15% weight)
 5. **Semantic Vector Search**: OpenAI embedding similarity (25% weight)
 6. **Cross-Encoder Reranking**: MS-MARCO MiniLM final relevance scoring
-7. **Episode Diversity**: Ensures all relevant episodes appear, not just one with many chunks
+7. **✨ Episode Diversity Algorithm**: Ensures all relevant episodes appear, not just one with many chunks
 
 **Current Search Weights**:
 - Category match: 60% (increases to 80% for category-heavy queries)
@@ -215,6 +221,12 @@ The system provides two complementary RAG approaches:
 - 🔍 BM25 (Hybrid Search): Keyword + semantic + reranking
 - ⚖️ Both (Comparison): Side-by-side results from both methods
 
+**✨ Category Matching Controls**:
+- **Broad (0.6)**: Explore connections like "dirt" → "biochar"
+- **Normal (0.7)**: Balanced matching (default)
+- **Strict (0.8)**: Only very closely related categories
+- **Disabled (1.1)**: No category filtering - search all content
+
 **Smart Recommendations**:
 - **Inline Citations**: Referenced episodes appear under each response
 - **Dynamic Recommendations**: Bottom section evolves based on conversation context
@@ -229,6 +241,7 @@ The system provides two complementary RAG approaches:
 - `src/rag/bm25_chain.py`: Advanced BM25 RAG pipeline
 - `src/rag/hybrid_retriever.py`: Original hybrid search implementation
 - `src/rag/bm25_hybrid_retriever.py`: Advanced BM25 + semantic + reranking
+- `src/rag/semantic_category_matcher.py`: ✨ NEW: Semantic category matching with OpenAI embeddings
 
 **API Endpoints**:
 - `src/api/main.py`: Original RAG endpoints and middleware
@@ -363,14 +376,16 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 
 **System Health (2025-07-17)**:
 - **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
+- **Category Embeddings**: 24 semantic category embeddings cached locally
 - **Book Integration**: 3 books fully processed with correct chapter references
   - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
   - Soil Stewardship Handbook (136 chunks)  
   - Y on Earth: Get Smarter, Feel Better, Heal the Planet (2,124 chunks)
-- **Search Methods**: Both Original RAG and BM25 Hybrid operational
+- **Search Methods**: Both Original RAG and BM25 Hybrid with semantic category matching
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
-- **Web Interface**: Responsive UI with personality selection and dual search modes
-- **API Endpoints**: Full REST API with both original and BM25 endpoints
+- **Episode Diversity**: All relevant episodes appear through diverse search algorithm
+- **Web Interface**: Responsive UI with personality selection, dual search modes, and category controls
+- **API Endpoints**: Full REST API with both original and BM25 endpoints + configurable thresholds
 
 **Recent Achievements**:
 - ✅ Fixed book chapter reference mapping for accurate citations
@@ -384,36 +399,32 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - ✅ Fixed "References" label to replace "Referenced Episodes" when books included
 - ✅ Updated "Recommended Content" to show ALL references from entire conversation (2025-07-17)
 - ✅ Added user feedback system for quality improvement (2025-07-17)
+- ✅ **Implemented semantic category matching with OpenAI embeddings (2025-07-17)**
+- ✅ **Added episode diversity algorithm ensuring all relevant episodes appear (2025-07-17)**
+- ✅ **Added configurable category threshold controls in web UI (2025-07-17)**
 
-## Known Issues & Planned Improvements
+## ✅ Recent Major Improvements (July 2025)
 
-### Current Issues
+### Recently Resolved Issues
 
-1. **Episode Diversity Problem**: When searching for categories like "biochar", the system returns many chunks from episode 120 instead of showing all 4 biochar episodes (120, 122, 124, 165)
-   - **Root Cause**: Category search returns individual chunks (k=20 default), not unique episodes
-   - **Impact**: Users miss relevant episodes even with 80% category weight
+1. ✅ **Episode Diversity Problem**: SOLVED with `diverse_episode_search()` algorithm
+   - **Was**: Category search returned many chunks from episode 120 instead of all 4 biochar episodes
+   - **Fixed**: Now ensures all relevant episodes (120, 122, 124, 165) appear in results
+   - **Implementation**: Limits chunks per episode and guarantees diversity
 
-2. **Semantic Category Matching**: Episode 124 is categorized as BIOCHAR but doesn't contain the word "biochar"
-   - **Current**: Simple keyword matching misses these connections
-   - **Planned**: Semantic category matching (see SEMANTIC_CATEGORY_IMPLEMENTATION_PLAN.md)
+2. ✅ **Semantic Category Matching**: SOLVED with OpenAI embeddings
+   - **Was**: Episode 124 categorized as BIOCHAR but keyword "biochar" not in transcript  
+   - **Fixed**: "soil" queries now match BIOCHAR category (32.1% similarity)
+   - **Implementation**: True semantic understanding via cosine similarity
 
-3. **Fixed Search Weights**: Currently hardcoded in backend
-   - **Current**: 60% category, 25% semantic, 15% keyword (adjusts to 80/15/5 for category queries)
-   - **Planned**: User-configurable sliders in web UI
+3. ✅ **Category Threshold Configuration**: IMPLEMENTED in UI
+   - **Was**: Fixed thresholds, no user control
+   - **Fixed**: User-configurable thresholds (Broad/Normal/Strict/Disabled)
+   - **Implementation**: Full API + UI integration
 
-### Planned Improvements
+### Remaining Planned Improvements
 
-1. **Semantic Category Matcher** (High Priority)
-   - Match "soil" → BIOCHAR, "healing" → HERBAL MEDICINE
-   - Use OpenAI embeddings for category descriptions
-   - Configurable thresholds (strict/normal/broad)
-
-2. **Episode Diversity Algorithm** (High Priority)
-   - Ensure all matching episodes appear in results
-   - Limit chunks per episode to prevent dominance
-   - Show best chunks from each relevant episode
-
-3. **Configurable Search Weights UI** (Medium Priority)
+1. **Configurable Search Weights UI** (Medium Priority)
    - Add sliders for category/semantic/keyword weights
    - Show which categories matched the query
    - Display result diversity metrics

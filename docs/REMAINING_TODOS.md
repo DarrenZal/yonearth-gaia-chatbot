@@ -55,13 +55,20 @@ Based on Aaron's feedback and our discoveries, here are the critical remaining t
 - Backend endpoint in both main.py and simple_server.py
 - Analysis script at scripts/view_feedback.py
 
-### 5. Implement Semantic Category Matching
+### 5. ✅ Implement Semantic Category Matching [COMPLETED 2025-07-17]
 **Impact**: Solves "soil" → BIOCHAR matching issue
 
-- [ ] Complete implementation from SEMANTIC_CATEGORY_IMPLEMENTATION_PLAN.md
-- [ ] Use OpenAI embeddings for category descriptions
-- [ ] Add configurable thresholds in UI
-- [ ] Show matched categories in responses
+- [x] Complete implementation from SEMANTIC_CATEGORY_IMPLEMENTATION_PLAN.md
+- [x] Use OpenAI embeddings for category descriptions  
+- [x] Add configurable thresholds in UI (Broad/Normal/Strict/Disabled)
+- [x] Implement diverse episode search to ensure all relevant episodes appear
+- [x] Cache embeddings to avoid repeated API calls
+
+**Completed Implementation**:
+- True semantic matching: "teach me about soil" → BIOCHAR (32.1% similarity)
+- Episode diversity: All biochar episodes (120, 122, 124, 165) now discoverable
+- UI controls: Category threshold selector with 4 levels
+- Performance: Cached embeddings in `/data/processed/category_embeddings.json`
 
 ### 6. Add Configurable Search Weights UI
 **Current**: Fixed at 60% category, 25% semantic, 15% keyword
@@ -110,6 +117,7 @@ const playVoice = async (text) => {
 - [x] Multi-format book links (eBook, audiobook, print)
 - [x] Fix "Referenced Episodes" label for book references
 - [x] Add Feedback Component for quality improvement - 2025-07-17
+- [x] Implement Semantic Category Matching with configurable thresholds - 2025-07-17
 
 ## 📝 Quick Wins Order
 

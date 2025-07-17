@@ -37,6 +37,8 @@ class GaiaChat {
         this.modelDescText = document.getElementById('modelDescText');
         this.maxReferencesSelect = document.getElementById('maxReferences');
         this.referencesDescText = document.getElementById('referencesDescText');
+        this.categoryThresholdSelect = document.getElementById('categoryThreshold');
+        this.categoryDescText = document.getElementById('categoryDescText');
         this.recommendations = document.getElementById('recommendations');
         this.recommendationsList = document.getElementById('recommendationsList');
         this.status = document.getElementById('status');
@@ -48,6 +50,7 @@ class GaiaChat {
         this.updateModelDescription();
         this.updateRAGDescription();
         this.updateReferencesDescription();
+        this.updateCategoryDescription();
     }
     
     setupEventListeners() {
@@ -92,6 +95,11 @@ class GaiaChat {
         // Max references change
         this.maxReferencesSelect.addEventListener('change', () => {
             this.updateReferencesDescription();
+        });
+        
+        // Category threshold change
+        this.categoryThresholdSelect.addEventListener('change', () => {
+            this.updateCategoryDescription();
         });
         
         // Personality details toggle
@@ -304,6 +312,7 @@ class GaiaChat {
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
             requestBody.max_citations = maxReferences; // BM25 uses max_citations instead of max_references
+            requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
             
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
@@ -487,6 +496,7 @@ class GaiaChat {
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
             requestBody.max_citations = maxReferences; // BM25 uses max_citations
+            requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
         }
         
         try {
@@ -1314,6 +1324,18 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         const count = this.maxReferencesSelect.value;
         const plural = count === '1' ? 'episode' : 'episodes';
         this.referencesDescText.textContent = `📚 Show ${count} most relevant ${plural} per response`;
+    }
+    
+    updateCategoryDescription() {
+        const threshold = parseFloat(this.categoryThresholdSelect.value);
+        const descriptions = {
+            0.6: '📂 Broad matching finds many related topics like soil → biochar',
+            0.7: '📂 Normal category matching finds related topics like soil → biochar', 
+            0.8: '📂 Strict matching only finds very closely related categories',
+            1.1: '📂 Category filtering disabled - searches all content'
+        };
+        
+        this.categoryDescText.textContent = descriptions[threshold] || descriptions[0.7];
     }
     
     togglePersonalityDetails() {

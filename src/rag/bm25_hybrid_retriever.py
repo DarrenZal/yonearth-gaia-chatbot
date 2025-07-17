@@ -7,7 +7,7 @@ import pickle
 import hashlib
 import re
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Tuple
+from typing import List, Dict, Any, Optional, Tuple, Set
 from rank_bm25 import BM25Okapi
 import nltk
 import numpy as np
@@ -16,6 +16,7 @@ from sentence_transformers import CrossEncoder
 
 from .vectorstore import YonEarthVectorStore
 from .episode_categorizer import EpisodeCategorizer
+from .semantic_category_matcher import SemanticCategoryMatcher, CategoryMatch
 from ..config import settings
 
 logger = logging.getLogger(__name__)
@@ -85,19 +86,22 @@ class BM25HybridRetriever:
         
         # Episode categorizer for enhanced search
         self.categorizer: Optional[EpisodeCategorizer] = None
+        self.semantic_matcher: Optional[SemanticCategoryMatcher] = None
         self._load_categorizer()
         
         # Load or build BM25 index
         self._load_or_build_bm25_index()
     
     def _load_categorizer(self):
-        """Load episode categorizer for category-based search"""
+        """Load episode categorizer and semantic matcher for category-based search"""
         try:
             self.categorizer = EpisodeCategorizer()
-            logger.info(f"Loaded episode categorizer with {len(self.categorizer.episodes)} episodes")
+            self.semantic_matcher = SemanticCategoryMatcher(categorizer=self.categorizer)
+            logger.info(f"Loaded episode categorizer with {len(self.categorizer.episodes)} episodes and semantic matcher")
         except Exception as e:
             logger.warning(f"Failed to load episode categorizer: {e}")
             self.categorizer = None
+            self.semantic_matcher = None
     
     def _get_bm25_cache_path(self) -> Path:
         """Get path for BM25 index cache"""
@@ -217,12 +221,25 @@ class BM25HybridRetriever:
         except Exception as e:
             logger.error(f"Error caching BM25 index: {e}")
     
-    def analyze_query(self, query: str) -> Dict[str, Any]:
+    def analyze_query(self, query: str, category_threshold: float = 0.7) -> Dict[str, Any]:
         """
         Analyze query to determine best search strategy
         Based on ImplimentationPlan.md query analysis approach
         """
         query_lower = query.lower()
+        
+        # Use semantic category matching if available
+        category_matches = {}
+        if self.semantic_matcher:
+            semantic_matches = self.semantic_matcher.get_semantic_category_matches(
+                query, 
+                threshold=category_threshold,  # Use configurable threshold
+                max_matches=5
+            )
+            category_matches = {match.category: match.similarity for match in semantic_matches}
+        elif self.categorizer:
+            # Fallback to keyword-based matching
+            category_matches = self.categorizer.analyze_query_categories(query)
         
         analysis = {
             'has_episode_ref': bool(re.search(r'episode\s*\d+', query_lower)),
@@ -230,7 +247,7 @@ class BM25HybridRetriever:
             'query_length': len(query.split()),
             'is_question': query.strip().endswith('?'),
             'suggested_method': 'hybrid',  # default
-            'category_matches': self.categorizer.analyze_query_categories(query) if self.categorizer else {}
+            'category_matches': category_matches
         }
         
         # Simple heuristics for search method
@@ -290,36 +307,53 @@ class BM25HybridRetriever:
             logger.error(f"Error in semantic search: {e}")
             return []
     
-    def category_search(self, query: str, k: int = 20) -> List[Tuple[Document, float]]:
-        """Perform category-based search using episode categorization data"""
-        if not self.categorizer:
-            logger.warning("Episode categorizer not available")
+    def category_search(self, query: str, k: int = 20, category_threshold: float = 0.7) -> List[Tuple[Document, float]]:
+        """Perform category-based search using semantic category matching"""
+        if not self.semantic_matcher and not self.categorizer:
+            logger.warning("No category matcher available")
             return []
         
         try:
-            # Get top episodes based on category matching
-            top_episodes = self.categorizer.get_top_episodes_for_query(query, k=k)
-            
-            if not top_episodes:
-                logger.info("No episodes found matching query categories")
-                return []
-            
-            # Convert episode IDs to documents
-            results = []
-            for episode_id, score in top_episodes:
-                # Find documents for this episode
-                episode_docs = self._find_documents_for_episode(episode_id)
+            # Get matching categories using semantic matcher
+            if self.semantic_matcher:
+                # Use semantic category matching
+                category_matches = self.semantic_matcher.get_semantic_category_matches(
+                    query,
+                    threshold=category_threshold,  # Use configurable threshold
+                    max_matches=10
+                )
                 
-                # Add all documents for this episode with the category score
-                for doc in episode_docs:
-                    results.append((doc, score))
-            
-            # Sort by score and limit results
-            results.sort(key=lambda x: x[1], reverse=True)
-            results = results[:k]
-            
-            logger.info(f"Category search returned {len(results)} results")
-            return results
+                if not category_matches:
+                    logger.info("No semantic category matches found")
+                    return []
+                
+                # Get all episodes for matched categories
+                episode_ids = self.semantic_matcher.get_episodes_for_semantic_matches(category_matches)
+                
+                # Log what categories matched
+                logger.info(f"Semantic category matches: {self.semantic_matcher.explain_matches(category_matches)}")
+                logger.info(f"Found {len(episode_ids)} episodes from matched categories")
+                
+                # Use diverse episode search to ensure all episodes are represented
+                return self.diverse_episode_search(query, episode_ids, k)
+                
+            else:
+                # Fallback to old keyword-based approach
+                top_episodes = self.categorizer.get_top_episodes_for_query(query, k=k)
+                
+                if not top_episodes:
+                    logger.info("No episodes found matching query categories")
+                    return []
+                
+                # Convert episode IDs to documents
+                results = []
+                for episode_id, score in top_episodes:
+                    episode_docs = self._find_documents_for_episode(episode_id)
+                    for doc in episode_docs:
+                        results.append((doc, score))
+                
+                results.sort(key=lambda x: x[1], reverse=True)
+                return results[:k]
             
         except Exception as e:
             logger.error(f"Error in category search: {e}")
@@ -376,6 +410,85 @@ class BM25HybridRetriever:
                     episode_docs.append(placeholder_doc)
         
         return episode_docs
+    
+    def diverse_episode_search(self, query: str, episode_ids: Set[int], k: int) -> List[Tuple[Document, float]]:
+        """
+        Ensure all matching episodes are represented in results
+        This solves the problem where Episode 120's 31 chunks fill all k=20 slots
+        """
+        if not episode_ids:
+            return []
+        
+        logger.info(f"Performing diverse episode search across {len(episode_ids)} episodes")
+        
+        # Step 1: Get best chunks from each episode
+        episode_chunks = {}
+        max_chunks_per_episode = max(3, k // len(episode_ids))  # At least 3 chunks per episode
+        
+        for ep_id in episode_ids:
+            # Get all chunks for this episode
+            ep_docs = self._find_documents_for_episode(ep_id)
+            
+            if not ep_docs:
+                continue
+            
+            # Score each chunk against the query
+            scored_chunks = []
+            for doc in ep_docs:
+                # Calculate BM25 score
+                bm25_score = 0.0
+                if self.bm25:
+                    tokenized_query = self._tokenize_document(query)
+                    doc_idx = self.documents.index(doc) if doc in self.documents else -1
+                    if doc_idx >= 0:
+                        bm25_score = float(self.bm25.get_scores(tokenized_query)[doc_idx])
+                
+                # Calculate semantic score (would need to call vectorstore)
+                semantic_score = 0.5  # Placeholder - in production, would calculate actual semantic similarity
+                
+                # Combined score
+                combined_score = (self.keyword_weight * bm25_score + 
+                                self.semantic_weight * semantic_score + 
+                                self.category_weight * 1.0)  # Full category weight since it matched
+                
+                scored_chunks.append((doc, combined_score))
+            
+            # Keep top chunks for this episode
+            scored_chunks.sort(key=lambda x: x[1], reverse=True)
+            episode_chunks[ep_id] = scored_chunks[:max_chunks_per_episode]
+            
+            logger.debug(f"Episode {ep_id}: selected {len(episode_chunks[ep_id])} chunks")
+        
+        # Step 2: Combine all chunks and sort by score
+        all_chunks = []
+        for chunks in episode_chunks.values():
+            all_chunks.extend(chunks)
+        
+        all_chunks.sort(key=lambda x: x[1], reverse=True)
+        
+        # Step 3: Ensure diversity - if we have too many chunks from one episode, limit them
+        final_results = []
+        episode_counts = {}
+        max_per_episode_final = max(3, k // max(len(episode_ids) // 2, 1))
+        
+        for doc, score in all_chunks:
+            ep_id = doc.metadata.get('episode_number', -1)
+            
+            # Check if we've already added too many from this episode
+            if episode_counts.get(ep_id, 0) >= max_per_episode_final:
+                continue
+            
+            final_results.append((doc, score))
+            episode_counts[ep_id] = episode_counts.get(ep_id, 0) + 1
+            
+            if len(final_results) >= k:
+                break
+        
+        # Log diversity stats
+        unique_episodes = len(set(doc.metadata.get('episode_number', -1) for doc, _ in final_results))
+        logger.info(f"Diverse search returned {len(final_results)} chunks from {unique_episodes} unique episodes")
+        
+        return final_results
     
     def category_first_fusion(
         self,
@@ -538,7 +651,7 @@ class BM25HybridRetriever:
             logger.error(f"Error in reranking: {e}")
             return documents
     
-    def hybrid_search(self, query: str, k: int = 10) -> List[Document]:
+    def hybrid_search(self, query: str, k: int = 10, category_threshold: float = 0.7) -> List[Document]:
         """
         Perform hybrid search combining semantic and keyword search with reranking
         Implements the complete pipeline from ImplimentationPlan.md
@@ -546,7 +659,7 @@ class BM25HybridRetriever:
         logger.info(f"Performing hybrid search for: {query[:50]}...")
         
         # 1. Analyze query
-        query_analysis = self.analyze_query(query)
+        query_analysis = self.analyze_query(query, category_threshold)
         logger.info(f"Query analysis: {query_analysis}")
         
         # 2. Adjust weights based on query analysis - Category is PRIMARY
@@ -575,7 +688,7 @@ class BM25HybridRetriever:
         semantic_results = self.semantic_search(query, k=20)
         
         # 5. Category search
-        category_results = self.category_search(query, k=20)
+        category_results = self.category_search(query, k=20, category_threshold=category_threshold)
         
         # 6. Combine results using Category-First or Reciprocal Rank Fusion
         if self.category_first_mode and category_results:

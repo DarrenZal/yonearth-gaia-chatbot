@@ -67,7 +67,8 @@ async def bm25_chat(
             include_sources=chat_request.include_sources,
             personality_variant=chat_request.gaia_personality,
             temperature=chat_request.temperature,
-            custom_prompt=chat_request.custom_prompt
+            custom_prompt=chat_request.custom_prompt,
+            category_threshold=chat_request.category_threshold
         )
         
         # Format sources - debug and fix the root cause

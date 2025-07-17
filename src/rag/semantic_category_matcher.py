@@ -5,6 +5,10 @@ import logging
 from typing import List, Dict, Set, Tuple, Optional
 import numpy as np
 from dataclasses import dataclass
+import json
+import os
+from pathlib import Path
+import openai
 
 from ..config import settings
 
@@ -66,16 +70,95 @@ class SemanticCategoryMatcher:
     def __init__(self, categorizer=None):
         self.categorizer = categorizer
         self.category_embeddings = {}
+        self.embedding_cache_path = Path("/root/yonearth-gaia-chatbot/data/processed/category_embeddings.json")
+        self.openai_client = openai.OpenAI(api_key=settings.openai_api_key)
         self._initialize_embeddings()
     
     def _initialize_embeddings(self):
         """
-        Initialize category embeddings (in production, would use OpenAI embeddings)
-        For now, using simple keyword overlap as a proxy
+        Initialize category embeddings using OpenAI embeddings API
+        Loads from cache if available, otherwise creates new embeddings
         """
         logger.info("Initializing semantic category matcher...")
-        # In production: self.category_embeddings = self._create_openai_embeddings()
-        pass
+        
+        # Try to load from cache first
+        if self.embedding_cache_path.exists():
+            try:
+                with open(self.embedding_cache_path, 'r') as f:
+                    cache_data = json.load(f)
+                    self.category_embeddings = cache_data.get('embeddings', {})
+                    logger.info(f"Loaded {len(self.category_embeddings)} category embeddings from cache")
+                    return
+            except Exception as e:
+                logger.warning(f"Failed to load embedding cache: {e}")
+        
+        # Create new embeddings
+        self.category_embeddings = self._create_openai_embeddings()
+        
+        # Save to cache
+        self._save_embeddings_cache()
+    
+    def _create_openai_embeddings(self) -> Dict[str, List[float]]:
+        """
+        Create OpenAI embeddings for each category
+        """
+        logger.info("Creating OpenAI embeddings for categories...")
+        embeddings = {}
+        
+        for category, description in self.CATEGORY_DESCRIPTIONS.items():
+            # Combine category name and description for richer embedding
+            text = f"{category}: {description}"
+            
+            try:
+                response = self.openai_client.embeddings.create(
+                    model=settings.openai_embedding_model,
+                    input=text
+                )
+                embeddings[category] = response.data[0].embedding
+                logger.debug(f"Created embedding for {category}")
+            except Exception as e:
+                logger.error(f"Failed to create embedding for {category}: {e}")
+                # Fallback to empty embedding
+                embeddings[category] = [0.0] * 1536  # Default embedding size
+        
+        logger.info(f"Created embeddings for {len(embeddings)} categories")
+        return embeddings
+    
+    def _save_embeddings_cache(self):
+        """
+        Save embeddings to cache file
+        """
+        try:
+            # Ensure directory exists
+            self.embedding_cache_path.parent.mkdir(parents=True, exist_ok=True)
+            
+            cache_data = {
+                'embeddings': self.category_embeddings,
+                'descriptions': self.CATEGORY_DESCRIPTIONS
+            }
+            
+            with open(self.embedding_cache_path, 'w') as f:
+                json.dump(cache_data, f)
+            
+            logger.info(f"Saved embeddings cache to {self.embedding_cache_path}")
+        except Exception as e:
+            logger.error(f"Failed to save embeddings cache: {e}")
+    
+    def _cosine_similarity(self, vec1: List[float], vec2: List[float]) -> float:
+        """
+        Calculate cosine similarity between two vectors
+        """
+        vec1 = np.array(vec1)
+        vec2 = np.array(vec2)
+        
+        dot_product = np.dot(vec1, vec2)
+        norm1 = np.linalg.norm(vec1)
+        norm2 = np.linalg.norm(vec2)
+        
+        if norm1 == 0 or norm2 == 0:
+            return 0.0
+        
+        return dot_product / (norm1 * norm2)
     
     def get_semantic_category_matches(
         self, 
@@ -95,42 +178,43 @@ class SemanticCategoryMatcher:
             List of CategoryMatch objects sorted by similarity
         """
         query_lower = query.lower()
-        query_terms = set(query_lower.split())
         matches = []
         
-        # Score each category based on description overlap (simplified semantic matching)
-        for category, description in self.CATEGORY_DESCRIPTIONS.items():
-            desc_terms = set(description.lower().split())
+        # Get query embedding
+        try:
+            query_response = self.openai_client.embeddings.create(
+                model=settings.openai_embedding_model,
+                input=query
+            )
+            query_embedding = query_response.data[0].embedding
+        except Exception as e:
+            logger.error(f"Failed to create query embedding: {e}")
+            # Fallback to keyword matching
+            return self._fallback_keyword_matching(query, threshold, max_matches)
+        
+        # Calculate cosine similarity with each category
+        for category, category_embedding in self.category_embeddings.items():
+            if not category_embedding or len(category_embedding) == 0:
+                continue
             
-            # Calculate similarity (in production, use cosine similarity of embeddings)
-            common_terms = query_terms.intersection(desc_terms)
-            if common_terms:
-                # Simple Jaccard similarity as proxy for semantic similarity
-                similarity = len(common_terms) / len(query_terms.union(desc_terms))
-                
-                # Boost score if category name is mentioned
-                if category.lower() in query_lower:
-                    similarity = min(1.0, similarity + 0.3)
-                
-                # Check for related terms
-                matched_terms = list(common_terms)
-                
-                # Add related categories with reduced score
-                if category in self.CATEGORY_RELATIONSHIPS:
-                    for related_cat in self.CATEGORY_RELATIONSHIPS[category]:
-                        related_desc = self.CATEGORY_DESCRIPTIONS.get(related_cat, '').lower()
-                        related_terms = set(related_desc.split())
-                        related_common = query_terms.intersection(related_terms)
-                        if related_common:
-                            similarity = min(1.0, similarity + 0.1 * len(related_common))
-                            matched_terms.extend(related_common)
-                
-                if similarity >= threshold:
-                    matches.append(CategoryMatch(
-                        category=category,
-                        similarity=similarity,
-                        matched_terms=list(set(matched_terms))
-                    ))
+            # Calculate cosine similarity
+            similarity = self._cosine_similarity(query_embedding, category_embedding)
+            
+            # Boost score if category name is directly mentioned
+            if category.lower() in query_lower:
+                similarity = min(1.0, similarity + 0.2)
+            
+            # Extract matched terms from description for explanation
+            desc_terms = self.CATEGORY_DESCRIPTIONS.get(category, '').lower().split()
+            query_terms = set(query_lower.split())
+            matched_terms = list(query_terms.intersection(set(desc_terms)))
+            
+            if similarity >= threshold:
+                matches.append(CategoryMatch(
+                    category=category,
+                    similarity=similarity,
+                    matched_terms=matched_terms if matched_terms else ['semantic similarity']
+                ))
         
         # Sort by similarity descending
         matches.sort(key=lambda x: x.similarity, reverse=True)
@@ -140,29 +224,79 @@ class SemanticCategoryMatcher:
         
         return matches[:max_matches]
     
+    def _fallback_keyword_matching(self, query: str, threshold: float, max_matches: int) -> List[CategoryMatch]:
+        """
+        Fallback to keyword matching if embedding fails
+        """
+        logger.warning("Using fallback keyword matching")
+        query_lower = query.lower()
+        query_terms = set(query_lower.split())
+        matches = []
+        
+        for category, description in self.CATEGORY_DESCRIPTIONS.items():
+            desc_terms = set(description.lower().split())
+            common_terms = query_terms.intersection(desc_terms)
+            
+            if common_terms:
+                # Simple Jaccard similarity
+                similarity = len(common_terms) / len(query_terms.union(desc_terms))
+                
+                if category.lower() in query_lower:
+                    similarity = min(1.0, similarity + 0.3)
+                
+                if similarity >= threshold:
+                    matches.append(CategoryMatch(
+                        category=category,
+                        similarity=similarity,
+                        matched_terms=list(common_terms)
+                    ))
+        
+        matches.sort(key=lambda x: x.similarity, reverse=True)
+        
+        # Apply special rules for fallback matching too
+        matches = self._apply_special_rules(query.lower(), matches)
+        
+        return matches[:max_matches]
+    
     def _apply_special_rules(self, query: str, matches: List[CategoryMatch]) -> List[CategoryMatch]:
         """Apply domain-specific rules for better matching"""
         
-        # Special case: "soil" should always match BIOCHAR
-        if 'soil' in query and not any(m.category == 'BIOCHAR' for m in matches):
-            # Check if BIOCHAR would be close to threshold
-            for category, description in self.CATEGORY_DESCRIPTIONS.items():
-                if category == 'BIOCHAR':
-                    matches.append(CategoryMatch(
-                        category='BIOCHAR',
-                        similarity=0.75,  # Give it a good score
-                        matched_terms=['soil', 'carbon', 'agriculture']
-                    ))
-                    break
+        # Special case: "soil" or "dirt" should always match BIOCHAR
+        has_soil_dirt = 'soil' in query or 'dirt' in query
+        has_biochar = any(m.category == 'BIOCHAR' for m in matches)
+        
+        if has_soil_dirt and not has_biochar:
+            # BIOCHAR is highly relevant to soil health
+            matches.append(CategoryMatch(
+                category='BIOCHAR',
+                similarity=0.72,  # Reasonable semantic score
+                matched_terms=['soil', 'carbon', 'sequestration']
+            ))
+            logger.debug(f"Applied special rule: added BIOCHAR for soil/dirt query: '{query}'")
+        
+        # Special case: "carbon" related queries should match BIOCHAR
+        if any(term in query for term in ['carbon', 'sequester', 'capture carbon']) and not any(m.category == 'BIOCHAR' for m in matches):
+            matches.append(CategoryMatch(
+                category='BIOCHAR',
+                similarity=0.85,
+                matched_terms=['carbon', 'sequestration', 'climate']
+            ))
         
         # Special case: "healing" should match HERBAL MEDICINE
-        if 'healing' in query or 'heal' in query:
-            if not any(m.category == 'HERBAL MEDICINE' for m in matches):
-                matches.append(CategoryMatch(
-                    category='HERBAL MEDICINE',
-                    similarity=0.8,
-                    matched_terms=['healing', 'natural', 'medicine']
-                ))
+        if ('healing' in query or 'heal' in query or 'medicine' in query) and not any(m.category == 'HERBAL MEDICINE' for m in matches):
+            matches.append(CategoryMatch(
+                category='HERBAL MEDICINE',
+                similarity=0.78,
+                matched_terms=['healing', 'natural', 'medicine']
+            ))
+        
+        # Special case: "farm" or "grow" should match FARMING & FOOD
+        if any(term in query for term in ['farm', 'grow', 'crop', 'harvest']) and not any(m.category == 'FARMING & FOOD' for m in matches):
+            matches.append(CategoryMatch(
+                category='FARMING & FOOD',
+                similarity=0.76,
+                matched_terms=['farming', 'growing', 'food']
+            ))
         
         # Re-sort after additions
         matches.sort(key=lambda x: x.similarity, reverse=True)

@@ -107,6 +107,7 @@ class BM25RAGChain:
         include_sources: bool = True,
         custom_prompt: Optional[str] = None,
         max_citations: int = 3,
+        category_threshold: float = 0.7,
         **kwargs
     ) -> Dict[str, Any]:
         """
@@ -137,7 +138,7 @@ class BM25RAGChain:
                 query_analysis = self.bm25_retriever.analyze_query(message)
                 search_method = query_analysis['suggested_method']
             
-            documents = self._retrieve_documents(message, search_method, k)
+            documents = self._retrieve_documents(message, search_method, k, category_threshold)
             
             # Step 2: Handle model and personality selection
             personality_variant = kwargs.get('personality_variant')
@@ -194,7 +195,8 @@ class BM25RAGChain:
         self, 
         query: str, 
         search_method: str, 
-        k: int
+        k: int,
+        category_threshold: float = 0.7
     ) -> List[Document]:
         """Retrieve documents using specified search method"""
         
@@ -212,14 +214,14 @@ class BM25RAGChain:
             
         elif search_method in ["hybrid", "keyword_heavy", "semantic_heavy"]:
             # Full hybrid search with RRF and reranking
-            documents = self.bm25_retriever.hybrid_search(query, k=k)
+            documents = self.bm25_retriever.hybrid_search(query, k=k, category_threshold=category_threshold)
             self.search_stats['hybrid_queries'] += 1
             if self.bm25_retriever.use_reranker:
                 self.search_stats['reranked_queries'] += 1
         
         else:
             # Fallback to hybrid
-            documents = self.bm25_retriever.hybrid_search(query, k=k)
+            documents = self.bm25_retriever.hybrid_search(query, k=k, category_threshold=category_threshold)
             self.search_stats['hybrid_queries'] += 1
         
         logger.info(f"Retrieved {len(documents)} documents using {search_method} method")

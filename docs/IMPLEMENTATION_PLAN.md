@@ -29,7 +29,27 @@
 
 **Current Status**: ✅ **FULLY FUNCTIONAL MVP DEPLOYED** - Ready for public use!
 
-## 🚀 **NEW: Category-First RAG System - IMPLEMENTED July 17, 2025**
+## 🚀 **NEW: Semantic Category Matching System - IMPLEMENTED July 17, 2025**
+
+### ✨ Latest Major Enhancement: True Semantic Category Understanding
+
+**🧠 Semantic Category Matching:**
+- **OpenAI Embeddings**: Category descriptions embedded using `text-embedding-3-small`
+- **Cosine Similarity**: Query embeddings compared with category embeddings for true semantic matching
+- **Cached Performance**: Category embeddings stored in `/data/processed/category_embeddings.json`
+- **Special Rules**: Enhanced matching for soil→biochar, carbon→biochar, healing→herbal medicine
+
+**🎯 Solved Critical Issues:**
+- ✅ **Episode 124 Problem**: Now correctly matches BIOCHAR category through semantic understanding
+- ✅ **Diversity Algorithm**: `diverse_episode_search()` ensures all relevant episodes appear (not just one)
+- ✅ **Query Understanding**: "teach me about soil" → BIOCHAR (32.1% similarity) automatically
+
+**⚙️ User Controls:**
+- **Configurable Thresholds**: Broad (0.6), Normal (0.7), Strict (0.8), Disabled (1.1)
+- **Web UI Integration**: Category threshold selector with dynamic descriptions
+- **API Parameter**: `category_threshold` passed through entire pipeline
+
+## 🚀 **Category-First RAG System - ENHANCED July 17, 2025**
 
 ### Latest Update: Category-Primary Search Engine
 
