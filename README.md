@@ -55,6 +55,7 @@ Deploy your own instance to try it out!
 - **Duplicate Prevention**: Clean, non-redundant episode suggestions
 - **Context Evolution**: Recommendations improve as conversations develop
 - **User Feedback System**: Collect feedback on response quality with ratings and detailed comments
+- **Cost Tracking**: Transparent breakdown of API costs for each response
 
 ### 🎤 **Voice Integration**
 - **Text-to-Speech**: Hear Gaia's responses spoken with ElevenLabs AI voice technology
@@ -428,6 +429,7 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 - **[🚀 VPS Deployment Guide](docs/VPS_DEPLOYMENT.md)** - Complete step-by-step deployment
 - **[🔧 Development Guide](CLAUDE.md)** - Technical architecture and development
 - **[🎤 Voice Integration Guide](docs/VOICE_INTEGRATION.md)** - ElevenLabs TTS setup and usage
+- **[💰 Cost Tracking Guide](docs/COST_TRACKING.md)** - API usage cost transparency
 - **[📋 Implementation Plan](docs/IMPLEMENTATION_PLAN.md)** - BM25 system development history
 
 ## 🚧 Roadmap & Upcoming Features
@@ -435,7 +437,7 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 ### High Priority
 - **✅ Content Categorization**: ✅ COMPLETED - Category-first search with 170 episodes categorized across 28 topics
 - **📊 Recommended Content Alignment**: Ensure recommended episodes precisely match referenced sources
-- **📊 Cost Calculator**: Track and display response generation costs for budget management
+- **✅ Cost Calculator**: ✅ COMPLETED - Track and display response generation costs for budget management
 
 ### Medium Priority  
 - **✅ Voice Integration**: ✅ COMPLETED - Voice responses using ElevenLabs API with custom voice
