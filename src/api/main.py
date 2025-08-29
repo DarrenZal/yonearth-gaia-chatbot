@@ -17,6 +17,7 @@ from slowapi.middleware import SlowAPIMiddleware
 
 from ..config import settings
 from ..rag.chain import get_rag_chain
+from ..voice.elevenlabs_client import ElevenLabsVoiceClient
 from .models import (
     ChatRequest, ChatResponse, Citation,
     RecommendationsRequest, RecommendationsResponse, EpisodeRecommendation,
@@ -26,6 +27,7 @@ from .models import (
     FeedbackRequest, FeedbackResponse
 )
 from .bm25_endpoints import router as bm25_router
+from .voice_endpoints import router as voice_router
 
 # Configure logging
 logging.basicConfig(
@@ -107,6 +109,13 @@ except Exception as e:
             "restart_needed": True
         }
 
+# Include voice router
+try:
+    app.include_router(voice_router)
+    logger.info("✅ Voice router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load voice router: {e}")
+
 
 def get_rag_dependency():
     """Dependency to get RAG chain instance"""
@@ -178,6 +187,21 @@ async def chat_with_gaia(
         
         processing_time = time.time() - start_time
         
+        # Generate voice if requested
+        audio_data = None
+        if chat_request.enable_voice and settings.elevenlabs_api_key:
+            try:
+                voice_client = ElevenLabsVoiceClient(
+                    api_key=settings.elevenlabs_api_key,
+                    voice_id=settings.elevenlabs_voice_id
+                )
+                # Preprocess response for better speech
+                speech_text = voice_client.preprocess_text_for_speech(response["response"])
+                audio_data = voice_client.generate_speech_base64(speech_text)
+            except Exception as voice_error:
+                logger.error(f"Voice generation failed: {voice_error}")
+                # Continue without voice rather than failing the entire request
+        
         return ChatResponse(
             response=response["response"],
             personality=response.get("personality", "warm_mother"),
@@ -186,7 +210,8 @@ async def chat_with_gaia(
             session_id=chat_request.session_id,
             retrieval_count=response.get("retrieval_count", 0),
             processing_time=processing_time,
-            model_used=chat_request.model or settings.openai_model
+            model_used=chat_request.model or settings.openai_model,
+            audio_data=audio_data
         )
         
     except Exception as e:

@@ -31,6 +31,7 @@ class BM25ChatRequest(BaseModel):
         le=1.0,
         description="Category matching threshold for semantic search (0.6=broad, 0.7=normal, 0.8=strict)"
     )
+    enable_voice: bool = Field(False, description="Enable voice generation for the response")
 
 
 class BM25Source(BaseModel):
@@ -67,6 +68,7 @@ class BM25ChatResponse(BaseModel):
     performance_stats: Dict[str, Any] = {}
     success: bool = True
     processing_time: Optional[float] = None
+    audio_data: Optional[str] = Field(None, description="Base64 encoded audio data if voice was enabled")
 
 
 class SearchMethodComparisonRequest(BaseModel):

@@ -8,8 +8,10 @@ from fastapi import APIRouter, HTTPException, Depends, Request
 from slowapi import Limiter
 from slowapi.util import get_remote_address
 
+from ..config import settings
 from ..rag.chain import get_rag_chain
 from ..rag.bm25_chain import BM25RAGChain
+from ..voice.elevenlabs_client import ElevenLabsVoiceClient
 from .bm25_models import (
     BM25ChatRequest, BM25ChatResponse, BM25Source,
     SearchMethodComparisonRequest, SearchMethodComparisonResponse, SearchMethodResult,
@@ -127,6 +129,21 @@ async def bm25_chat(
         
         processing_time = time.time() - start_time
         
+        # Generate voice if requested
+        audio_data = None
+        if chat_request.enable_voice and settings.elevenlabs_api_key:
+            try:
+                voice_client = ElevenLabsVoiceClient(
+                    api_key=settings.elevenlabs_api_key,
+                    voice_id=settings.elevenlabs_voice_id
+                )
+                # Preprocess response for better speech
+                speech_text = voice_client.preprocess_text_for_speech(result.get('response', ''))
+                audio_data = voice_client.generate_speech_base64(speech_text)
+            except Exception as voice_error:
+                logger.error(f"Voice generation failed: {voice_error}")
+                # Continue without voice rather than failing the entire request
+        
         return BM25ChatResponse(
             response=result.get('response', ''),
             sources=formatted_sources,
@@ -135,7 +152,8 @@ async def bm25_chat(
             documents_retrieved=result.get('documents_retrieved', 0),
             bm25_stats=result.get('bm25_stats', {}),
             performance_stats=result.get('performance_stats', {}),
-            processing_time=processing_time
+            processing_time=processing_time,
+            audio_data=audio_data
         )
         
     except Exception as e:

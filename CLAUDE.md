@@ -167,6 +167,12 @@ This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit
 - `gaia.py`: Gaia character with memory, personality, citation handling, custom prompts
 - `gaia_personalities.py`: Personality variants (warm_mother, wise_guide, earth_activist)
 
+**Voice System** (`src/voice/`):
+- `elevenlabs_client.py`: ElevenLabs Text-to-Speech client for voice generation
+- Converts Gaia's text responses to natural speech using custom voice
+- Preprocesses text to remove markdown, citations, and formatting
+- Returns base64-encoded audio for web playback
+
 **Data Ingestion** (`src/ingestion/`):
 - `episode_processor.py`: Processes YonEarth episode transcripts
 - `chunker.py`: Text chunking with overlap for vectorization
@@ -227,6 +233,13 @@ The system provides two complementary RAG approaches:
 - **Strict (0.8)**: Only very closely related categories
 - **Disabled (1.1)**: No category filtering - search all content
 
+**Voice Features**:
+- **Text-to-Speech**: ElevenLabs integration with custom voice
+- **Voice Toggle**: Speaker button to enable/disable voice
+- **Auto-playback**: Responses automatically play when voice is enabled
+- **Manual Replay**: Audio control button to replay responses
+- **Persistent Settings**: Voice preference saved in localStorage
+
 **Smart Recommendations**:
 - **Inline Citations**: Referenced episodes appear under each response
 - **Dynamic Recommendations**: Bottom section evolves based on conversation context
@@ -251,9 +264,13 @@ The system provides two complementary RAG approaches:
 - `src/character/gaia.py`: Response generation with personality and custom prompts
 - `src/character/gaia_personalities.py`: Predefined personality prompts
 
+**Voice System**:
+- `src/voice/elevenlabs_client.py`: ElevenLabs TTS client with text preprocessing
+- `simple_server.py`: Production server with voice generation support
+
 **Web Interface**:
-- `web/chat.js`: Advanced frontend with dual search, smart recommendations, custom prompts
-- `web/index.html`: Responsive UI with personality selection and search method toggle
+- `web/chat.js`: Advanced frontend with dual search, smart recommendations, voice playback
+- `web/index.html`: Responsive UI with personality selection, search method, and voice toggle
 
 ## Environment Setup
 
@@ -262,6 +279,11 @@ Required environment variables:
 # API Keys (required)
 OPENAI_API_KEY=sk-your-key-here
 PINECONE_API_KEY=your-pinecone-key-here
+
+# Voice Configuration (optional)
+ELEVENLABS_API_KEY=your-elevenlabs-key-here
+ELEVENLABS_VOICE_ID=your-voice-id-here
+ELEVENLABS_MODEL_ID=eleven_multilingual_v2
 
 # Pinecone Configuration
 PINECONE_INDEX_NAME=yonearth-episodes
@@ -299,6 +321,8 @@ Edit `src/character/gaia_personalities.py` to add new personality prompts. The s
 **Original System**: Add endpoints in `src/api/main.py` and models in `src/api/models.py`
 
 **BM25 System**: Add endpoints in `src/api/bm25_endpoints.py` and models in `src/api/bm25_models.py`
+
+**Voice System**: Voice generation is integrated into existing chat endpoints via `enable_voice` parameter
 
 ### Web Interface Updates
 **Frontend Logic**: Edit `web/chat.js` for new features, search methods, or UI behavior
@@ -374,7 +398,7 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 
 ## Current System Status
 
-**System Health (2025-07-17)**:
+**System Health (2025-08-29)**:
 - **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
 - **Category Embeddings**: 24 semantic category embeddings cached locally
 - **Book Integration**: 3 books fully processed with correct chapter references
@@ -384,8 +408,9 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - **Search Methods**: Both Original RAG and BM25 Hybrid with semantic category matching
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
 - **Episode Diversity**: All relevant episodes appear through diverse search algorithm
-- **Web Interface**: Responsive UI with personality selection, dual search modes, and category controls
-- **API Endpoints**: Full REST API with both original and BM25 endpoints + configurable thresholds
+- **Voice Integration**: ElevenLabs TTS with custom voice for natural speech responses
+- **Web Interface**: Responsive UI with personality selection, dual search modes, voice toggle, and category controls
+- **API Endpoints**: Full REST API with both original and BM25 endpoints + voice generation support
 
 **Recent Achievements**:
 - ✅ Fixed book chapter reference mapping for accurate citations
@@ -402,6 +427,9 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - ✅ **Implemented semantic category matching with OpenAI embeddings (2025-07-17)**
 - ✅ **Added episode diversity algorithm ensuring all relevant episodes appear (2025-07-17)**
 - ✅ **Added configurable category threshold controls in web UI (2025-07-17)**
+- ✅ **Implemented voice integration with ElevenLabs TTS (2025-08-29)**
+- ✅ **Added voice toggle controls and audio playback in web UI (2025-08-29)**
+- ✅ **Text preprocessing for natural speech generation (2025-08-29)**
 
 ## ✅ Recent Major Improvements (July 2025)
 

@@ -113,6 +113,20 @@
                     <small>📂 <span id="categoryDescText">Normal category matching finds related topics like soil → biochar</span></small>
                 </div>
             </div>
+            
+            <!-- Voice Controls -->
+            <div class="voice-controls">
+                <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
+                    <span class="voice-icon">🔊</span>
+                    <span id="voiceToggleText">Enable Voice</span>
+                </button>
+                <div class="voice-settings" id="voiceSettings" style="display: none;">
+                    <label>
+                        <input type="checkbox" id="autoPlayVoice" checked>
+                        Auto-play responses
+                    </label>
+                </div>
+            </div>
         </header>
 
         <!-- Chat Container -->
@@ -138,6 +152,9 @@
                 </div>
                 <span>Gaia is contemplating your question...</span>
             </div>
+            
+            <!-- Audio Player (Hidden) -->
+            <audio id="voicePlayer" style="display: none;" controls></audio>
 
             <!-- Input area -->
             <div class="input-container">
@@ -189,6 +206,6 @@
         </div>
     </div>
 
-    <script src="chat.js"></script>
+    <script src="chat.js?v=2.5"></script>
 </body>
 </html>

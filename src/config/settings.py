@@ -69,6 +69,12 @@ class Settings(BaseSettings):
     # Development
     debug: bool = Field(default=True, description="Debug mode")
     
+    # ElevenLabs Voice Configuration
+    elevenlabs_api_key: Optional[str] = Field(default=None, description="ElevenLabs API key for voice generation")
+    elevenlabs_voice_id: Optional[str] = Field(default="YcVr5DmTjJ2cEVwNiuhU", description="ElevenLabs voice ID")
+    elevenlabs_model_id: str = Field(default="eleven_multilingual_v2", description="ElevenLabs model ID")
+    enable_voice_generation: bool = Field(default=False, description="Enable voice generation for responses")
+    
     # Paths
     @property
     def project_root(self) -> Path:

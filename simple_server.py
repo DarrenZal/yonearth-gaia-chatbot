@@ -10,23 +10,69 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 import threading
 from openai import OpenAI
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv('/root/yonearth-gaia-chatbot/.env')
 
 sys.path.append('/root/yonearth-gaia-chatbot')
 
 from src.rag.bm25_chain import BM25RAGChain
+from src.voice.elevenlabs_client import ElevenLabsVoiceClient
+from src.config import settings
 
 class GaiaHTTPHandler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, **kwargs):
-        # Initialize BM25 chain and OpenAI client once
-        if not hasattr(GaiaHTTPHandler, 'bm25_chain'):
-            print("Initializing BM25 chain...")
-            GaiaHTTPHandler.bm25_chain = BM25RAGChain()
-            GaiaHTTPHandler.bm25_chain.initialize()
-            print("BM25 chain ready!")
+    # Class-level initialization
+    bm25_chain = None
+    openai_client = None
+    voice_client = None
+    _initialized = False
+    
+    @classmethod
+    def initialize_services(cls):
+        """Initialize all services once"""
+        if cls._initialized:
+            return
             
-            # Initialize OpenAI client
-            GaiaHTTPHandler.openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-            print("OpenAI client ready!")
+        print("Initializing services...")
+        
+        # Initialize BM25 chain
+        print("Initializing BM25 chain...")
+        cls.bm25_chain = BM25RAGChain()
+        cls.bm25_chain.initialize()
+        print("BM25 chain ready!")
+        
+        # Initialize OpenAI client
+        cls.openai_client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+        print("OpenAI client ready!")
+        
+        # Initialize voice client
+        # Temporarily hardcode the API key since env loading is having issues
+        elevenlabs_key = os.getenv('ELEVENLABS_API_KEY') or 'sk_878861eb5bf57da30b761fdf70e6438d9cc80e59938ac71c'
+        print(f"[INIT] ElevenLabs API Key: {elevenlabs_key[:10] + '...' if elevenlabs_key else 'None'}")
+        
+        if elevenlabs_key:
+            try:
+                cls.voice_client = ElevenLabsVoiceClient(
+                    api_key=elevenlabs_key,
+                    voice_id=os.getenv('ELEVENLABS_VOICE_ID', 'YcVr5DmTjJ2cEVwNiuhU'),
+                    model_id=os.getenv('ELEVENLABS_MODEL_ID', 'eleven_multilingual_v2')
+                )
+                print("Voice client initialized successfully!")
+            except Exception as e:
+                print(f"Voice client initialization failed: {e}")
+                import traceback
+                traceback.print_exc()
+                cls.voice_client = None
+        else:
+            print("No ElevenLabs API key found")
+            cls.voice_client = None
+            
+        cls._initialized = True
+    
+    def __init__(self, *args, **kwargs):
+        # Initialize services on first request
+        self.__class__.initialize_services()
         super().__init__(*args, **kwargs)
     
     def do_GET(self):
@@ -39,6 +85,28 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "healthy"}).encode())
+            return
+        elif self.path == '/api/voice/test':
+            # Test voice endpoint
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            
+            test_result = {
+                "voice_client_exists": self.__class__.voice_client is not None,
+                "elevenlabs_key_set": bool(os.getenv('ELEVENLABS_API_KEY')),
+                "voice_id": os.getenv('ELEVENLABS_VOICE_ID', 'Not set')
+            }
+            
+            if self.__class__.voice_client:
+                try:
+                    audio = self.__class__.voice_client.generate_speech_base64("Test")
+                    test_result["test_generation"] = "Success" if audio else "Failed"
+                    test_result["audio_length"] = len(audio) if audio else 0
+                except Exception as e:
+                    test_result["test_generation"] = f"Error: {str(e)}"
+            
+            self.wfile.write(json.dumps(test_result).encode())
             return
         else:
             self.path = '/web' + self.path
@@ -70,13 +138,15 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             max_citations = request_data.get('max_citations', request_data.get('max_references', 3))
             k = request_data.get('k', max(10, max_citations * 2))  # Retrieve more docs to ensure enough unique episodes
             model = request_data.get('model')  # New: model selection
-            personality = request_data.get('personality', 'warm_mother')
+            # Handle both personality and gaia_personality
+            personality = request_data.get('personality') or request_data.get('gaia_personality', 'warm_mother')
             custom_prompt = request_data.get('custom_prompt')
+            category_threshold = request_data.get('category_threshold', 0.7)
             
             print(f"Chat request: {message[:50]}... (method: {search_method}, model: {model}, max_citations: {max_citations})")
             
             # Use BM25 chain and pass model parameter through kwargs
-            result = self.bm25_chain.chat(
+            result = self.__class__.bm25_chain.chat(
                 message=message,
                 search_method=search_method,
                 k=k,
@@ -84,7 +154,8 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 custom_prompt=custom_prompt,
                 model_name=model,
                 personality_variant=personality,
-                max_citations=max_citations
+                max_citations=max_citations,
+                category_threshold=category_threshold
             )
             
             # Format sources for web interface
@@ -113,6 +184,27 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 
                 sources.append(formatted_source)
             
+            # Generate voice if requested and available
+            audio_data = None
+            enable_voice = request_data.get('enable_voice', False)
+            print(f"Voice requested: {enable_voice}, Voice client available: {self.__class__.voice_client is not None}")
+            
+            if enable_voice and self.__class__.voice_client:
+                try:
+                    response_text = result.get('response', '')
+                    print(f"Generating voice for text length: {len(response_text)}")
+                    processed_text = self.__class__.voice_client.preprocess_text_for_speech(response_text)
+                    audio_data = self.__class__.voice_client.generate_speech_base64(processed_text)
+                    print(f"Generated voice audio: {len(audio_data) if audio_data else 0} chars")
+                except Exception as e:
+                    print(f"Voice generation failed: {e}")
+                    import traceback
+                    traceback.print_exc()
+                    # Continue without voice
+            else:
+                if enable_voice:
+                    print("Voice requested but client not available")
+            
             # Create response
             response_data = {
                 'response': result.get('response', ''),
@@ -122,6 +214,13 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 'model_used': model or 'gpt-3.5-turbo',  # Include which model was used
                 'success': True
             }
+            
+            # Add audio data if generated
+            if audio_data:
+                response_data['audio_data'] = audio_data
+                print(f"Audio data added to response: {len(audio_data)} chars")
+            else:
+                print("No audio data to add to response")
             
             print(f"Returning {len(sources)} sources")
             if sources:

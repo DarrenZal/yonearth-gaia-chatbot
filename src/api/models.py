@@ -13,6 +13,7 @@ class ChatRequest(BaseModel):
     custom_prompt: Optional[str] = Field(None, description="Custom system prompt for Gaia (when personality is 'custom')", max_length=5000)
     max_results: Optional[int] = Field(5, description="Maximum number of retrieved documents", ge=1, le=10)
     model: Optional[str] = Field(None, description="OpenAI model to use for response generation")
+    enable_voice: bool = Field(False, description="Enable voice generation for the response")
 
 
 class Citation(BaseModel):
@@ -34,6 +35,7 @@ class ChatResponse(BaseModel):
     retrieval_count: int = Field(0, description="Number of documents retrieved")
     processing_time: Optional[float] = Field(None, description="Processing time in seconds")
     model_used: Optional[str] = Field(None, description="OpenAI model used for response generation")
+    audio_data: Optional[str] = Field(None, description="Base64 encoded audio data if voice was enabled")
 
 
 class EpisodeRecommendation(BaseModel):
@@ -150,3 +152,17 @@ class FeedbackResponse(BaseModel):
     """Response model for feedback submission"""
     success: bool = Field(..., description="Whether feedback was saved successfully")
     message: str = Field(..., description="Response message")
+
+
+class VoiceGenerationRequest(BaseModel):
+    """Request model for voice generation endpoint"""
+    text: str = Field(..., description="Text to convert to speech", min_length=1, max_length=5000)
+    voice_settings: Optional[Dict[str, float]] = Field(None, description="Voice settings (stability, similarity_boost)")
+    output_format: str = Field("mp3_44100_128", description="Audio output format")
+
+
+class VoiceGenerationResponse(BaseModel):
+    """Response model for voice generation endpoint"""
+    audio_data: str = Field(..., description="Base64 encoded audio data")
+    duration: Optional[float] = Field(None, description="Audio duration in seconds")
+    text_length: int = Field(..., description="Length of text that was converted")

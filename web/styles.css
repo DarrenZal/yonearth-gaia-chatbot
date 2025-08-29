@@ -1171,3 +1171,99 @@ body {
 .feedback-submit:active {
     transform: translateY(0);
 }
+
+/* Voice Controls */
+.voice-controls {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.voice-toggle {
+    background: var(--soft-white);
+    border: 2px solid var(--forest-green);
+    color: var(--forest-green);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.voice-toggle:hover {
+    background: var(--forest-green);
+    color: var(--soft-white);
+}
+
+.voice-toggle.active {
+    background: var(--forest-green);
+    color: var(--soft-white);
+}
+
+.voice-icon {
+    font-size: 1.2rem;
+}
+
+.voice-settings {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.voice-settings label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.voice-settings input[type="checkbox"] {
+    cursor: pointer;
+}
+
+/* Audio Controls in Messages */
+.audio-controls {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(45, 80, 22, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.audio-button {
+    background: var(--forest-green);
+    color: var(--soft-white);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.audio-button:hover {
+    background: var(--earth-green);
+    transform: translateY(-1px);
+}
+
+.audio-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.audio-status {
+    font-size: 0.9rem;
+    color: var(--warm-gray);
+    font-style: italic;
+}

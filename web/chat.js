@@ -4,7 +4,7 @@
 
 class GaiaChat {
     constructor() {
-        this.apiUrl = localStorage.getItem('gaiaApiUrl') || '';
+        this.apiUrl = localStorage.getItem('gaiaApiUrl') || '/api';
         this.sessionId = this.generateSessionId();
         this.isLoading = false;
         this.conversationEpisodes = new Set(); // Track episodes mentioned in conversation
@@ -43,6 +43,26 @@ class GaiaChat {
         this.recommendationsList = document.getElementById('recommendationsList');
         this.status = document.getElementById('status');
         
+        // Voice controls
+        this.voiceToggle = document.getElementById('voiceToggle');
+        this.voiceToggleText = document.getElementById('voiceToggleText');
+        this.voiceSettings = document.getElementById('voiceSettings');
+        this.autoPlayVoice = document.getElementById('autoPlayVoice');
+        this.voicePlayer = document.getElementById('voicePlayer');
+        this.voiceIcon = document.querySelector('.voice-icon');
+        
+        // Voice state
+        this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
+        this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
+        this.currentAudio = null;
+        this.audioQueue = [];
+        
+        console.log('Initial voice state:', {
+            voiceEnabled: this.voiceEnabled,
+            localStorage: localStorage.getItem('voiceEnabled'),
+            autoPlay: this.autoPlay
+        });
+        
         // Initialize personality prompts
         this.initializePersonalityPrompts();
         
@@ -51,6 +71,9 @@ class GaiaChat {
         this.updateRAGDescription();
         this.updateReferencesDescription();
         this.updateCategoryDescription();
+        
+        // Initialize voice UI
+        this.updateVoiceUI();
     }
     
     setupEventListeners() {
@@ -123,6 +146,17 @@ class GaiaChat {
             if (e.ctrlKey && e.shiftKey && e.key === 'C') {
                 this.showConfigModal();
             }
+        });
+        
+        // Voice toggle
+        this.voiceToggle.addEventListener('click', () => {
+            this.toggleVoice();
+        });
+        
+        // Auto-play checkbox
+        this.autoPlayVoice.addEventListener('change', () => {
+            this.autoPlay = this.autoPlayVoice.checked;
+            localStorage.setItem('autoPlayVoice', this.autoPlay);
         });
     }
     
@@ -246,9 +280,10 @@ class GaiaChat {
                 });
                 console.log('Added Gaia response to conversation history. Total messages:', this.conversationHistory.length);
                 console.log('Citations in response:', response.citations || response.sources || []);
+                console.log('Audio data in response:', !!response.audio_data, 'Length:', response.audio_data ? response.audio_data.length : 0);
                 
-                // Add Gaia's response WITH inline citations
-                this.addMessage(response.response, 'gaia', response.citations || response.sources);
+                // Add Gaia's response WITH inline citations and audio
+                this.addMessage(response.response, 'gaia', response.citations || response.sources, false, response.audio_data);
                 
                 // Show smart recommendations based on conversation
                 await this.updateConversationRecommendations();
@@ -294,8 +329,11 @@ class GaiaChat {
             personality: this.personalitySelect.value,
             max_results: 5,
             model: modelType !== 'compare' ? modelType : undefined,
-            max_references: maxReferences
+            max_references: maxReferences,
+            enable_voice: this.voiceEnabled
         };
+        
+        console.log('Voice enabled in request:', requestBody.enable_voice);
         
         // Add custom prompt if custom personality is selected
         if (this.personalitySelect.value === 'custom') {
@@ -313,6 +351,7 @@ class GaiaChat {
             requestBody.gaia_personality = this.personalitySelect.value;
             requestBody.max_citations = maxReferences; // BM25 uses max_citations instead of max_references
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
+            requestBody.enable_voice = this.voiceEnabled;
             
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
@@ -322,6 +361,9 @@ class GaiaChat {
                 }
             }
         }
+        
+        console.log('Sending request to:', `${this.apiUrl}${endpoint}`);
+        console.log('Request body:', requestBody);
         
         const response = await fetch(`${this.apiUrl}${endpoint}`, {
             method: 'POST',
@@ -523,7 +565,7 @@ class GaiaChat {
         }
     }
     
-    addMessage(text, sender, citations = [], isError = false) {
+    addMessage(text, sender, citations = [], isError = false, audioData = null) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
         
@@ -561,6 +603,21 @@ class GaiaChat {
         if (citations && citations.length > 0) {
             const citationsDiv = this.createCitationsDiv(citations);
             content.appendChild(citationsDiv);
+        }
+        
+        // Add voice controls if audio is available
+        if (sender === 'gaia' && audioData && this.voiceEnabled) {
+            console.log(`Voice audio received for message ${messageId}, length: ${audioData.length}`);
+            const audioControls = this.createAudioControls(audioData, messageId);
+            content.appendChild(audioControls);
+            
+            // Auto-play if enabled
+            if (this.autoPlay) {
+                console.log('Auto-playing audio...');
+                setTimeout(() => this.playAudio(audioData, messageId), 500);
+            }
+        } else if (sender === 'gaia') {
+            console.log(`No voice audio for message ${messageId}. audioData: ${!!audioData}, voiceEnabled: ${this.voiceEnabled}`);
         }
         
         // Add feedback section for Gaia's messages (but not errors)
@@ -1862,6 +1919,171 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             seen.add(key);
             return true;
         });
+    }
+    
+    // Voice-related methods
+    toggleVoice() {
+        this.voiceEnabled = !this.voiceEnabled;
+        localStorage.setItem('voiceEnabled', this.voiceEnabled);
+        console.log('Voice toggled to:', this.voiceEnabled);
+        this.updateVoiceUI();
+    }
+    
+    updateVoiceUI() {
+        if (this.voiceEnabled) {
+            this.voiceToggle.classList.add('active');
+            this.voiceToggleText.textContent = 'Voice Enabled';
+            this.voiceSettings.style.display = 'block';
+            this.voiceIcon.textContent = '🔊';
+        } else {
+            this.voiceToggle.classList.remove('active');
+            this.voiceToggleText.textContent = 'Enable Voice';
+            this.voiceSettings.style.display = 'none';
+            this.voiceIcon.textContent = '🔇';
+        }
+        this.autoPlayVoice.checked = this.autoPlay;
+    }
+    
+    async playAudio(audioData, messageId) {
+        try {
+            console.log(`Playing audio for message ${messageId}`);
+            
+            // Stop any currently playing audio
+            if (!this.voicePlayer.paused) {
+                console.log('Stopping current audio playback');
+                this.voicePlayer.pause();
+            }
+            
+            // Convert base64 to blob
+            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            const audioUrl = URL.createObjectURL(audioBlob);
+            
+            // Store current audio URL for cleanup
+            if (this.currentAudioUrl) {
+                URL.revokeObjectURL(this.currentAudioUrl);
+            }
+            this.currentAudioUrl = audioUrl;
+            
+            // Update player
+            this.voicePlayer.src = audioUrl;
+            
+            // Update UI to show playing state
+            const playButton = document.querySelector(`#play-${messageId}`);
+            if (playButton) {
+                playButton.textContent = '⏸️ Pause';
+                playButton.onclick = () => this.pauseAudio(messageId);
+            }
+            
+            // Play audio
+            await this.voicePlayer.play();
+            console.log(`Audio playing for message ${messageId}`);
+            
+            // Clean up when done
+            this.voicePlayer.addEventListener('ended', () => {
+                console.log(`Audio ended for message ${messageId}`);
+                URL.revokeObjectURL(audioUrl);
+                this.currentAudioUrl = null;
+                this.resetAudioControls(messageId);
+            }, { once: true });
+            
+        } catch (error) {
+            console.error('Error playing audio:', error);
+            this.showAudioError(messageId);
+        }
+    }
+    
+    pauseAudio(messageId) {
+        this.voicePlayer.pause();
+        const playButton = document.querySelector(`#play-${messageId}`);
+        if (playButton) {
+            playButton.textContent = '▶️ Play';
+            playButton.onclick = () => this.resumeAudio(messageId);
+        }
+    }
+    
+    resumeAudio(messageId) {
+        this.voicePlayer.play();
+        const playButton = document.querySelector(`#play-${messageId}`);
+        if (playButton) {
+            playButton.textContent = '⏸️ Pause';
+            playButton.onclick = () => this.pauseAudio(messageId);
+        }
+    }
+    
+    resetAudioControls(messageId) {
+        const playButton = document.querySelector(`#play-${messageId}`);
+        if (playButton) {
+            playButton.textContent = '▶️ Play Again';
+            playButton.onclick = () => {
+                const audioData = playButton.getAttribute('data-audio');
+                this.playAudio(audioData, messageId);
+            };
+        }
+    }
+    
+    showAudioError(messageId) {
+        const statusElement = document.querySelector(`#audio-status-${messageId}`);
+        if (statusElement) {
+            statusElement.textContent = 'Error playing audio';
+            statusElement.style.color = '#f44336';
+        }
+    }
+    
+    base64ToBlob(base64, mimeType) {
+        const byteCharacters = atob(base64);
+        const byteNumbers = new Array(byteCharacters.length);
+        
+        for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        
+        const byteArray = new Uint8Array(byteNumbers);
+        return new Blob([byteArray], { type: mimeType });
+    }
+    
+    createAudioControls(audioData, messageId) {
+        const audioDiv = document.createElement('div');
+        audioDiv.className = 'audio-controls';
+        
+        const playButton = document.createElement('button');
+        playButton.className = 'audio-button';
+        playButton.id = `play-${messageId}`;
+        playButton.innerHTML = '<span>▶️</span> Play Gaia\'s Voice';
+        playButton.setAttribute('data-audio', audioData);
+        playButton.onclick = () => this.playAudio(audioData, messageId);
+        
+        const downloadButton = document.createElement('button');
+        downloadButton.className = 'audio-button';
+        downloadButton.innerHTML = '<span>💾</span> Download';
+        downloadButton.onclick = () => this.downloadAudio(audioData, messageId);
+        
+        const statusDiv = document.createElement('div');
+        statusDiv.className = 'audio-status';
+        statusDiv.id = `audio-status-${messageId}`;
+        
+        audioDiv.appendChild(playButton);
+        audioDiv.appendChild(downloadButton);
+        audioDiv.appendChild(statusDiv);
+        
+        return audioDiv;
+    }
+    
+    downloadAudio(audioData, messageId) {
+        try {
+            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            const url = URL.createObjectURL(audioBlob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `gaia-response-${messageId}.mp3`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error downloading audio:', error);
+        }
     }
 }
 

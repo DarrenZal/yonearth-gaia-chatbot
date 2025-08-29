@@ -56,6 +56,14 @@ Deploy your own instance to try it out!
 - **Context Evolution**: Recommendations improve as conversations develop
 - **User Feedback System**: Collect feedback on response quality with ratings and detailed comments
 
+### 🎤 **Voice Integration**
+- **Text-to-Speech**: Hear Gaia's responses spoken with ElevenLabs AI voice technology
+- **Custom Voice**: Uses a specially cloned voice for authentic, natural speech
+- **Toggle Control**: Enable/disable voice with a simple speaker button
+- **Auto-play**: Responses automatically play when voice is enabled
+- **Browser Support**: Works across all modern browsers
+- **Persistent Preference**: Voice settings saved in browser localStorage
+
 ### 🚀 **Production Ready**
 - **Docker Deployment**: One-command setup with nginx, Redis, web interface
 - **Beautiful Web UI**: Responsive chat interface with personality selection
@@ -167,6 +175,7 @@ uvicorn src.api.main:app --reload
 
 1. **OpenAI API Key**: Get from [OpenAI Platform](https://platform.openai.com/api-keys)
 2. **Pinecone API Key**: Get from [Pinecone Console](https://app.pinecone.io/)
+3. **ElevenLabs API Key** (Optional): Get from [ElevenLabs Console](https://elevenlabs.io/) for voice features
 
 Create a Pinecone index:
 - **Name**: `yonearth-episodes`
@@ -208,6 +217,19 @@ curl -X POST http://YOUR_SERVER_IP:8000/api/bm25/chat \
     "k": 5,
     "gaia_personality": "wise_guide"
   }'
+
+# Test chat with voice generation
+curl -X POST http://YOUR_SERVER_IP:8000/api/chat \
+  -H "Content-Type: application/json" \
+  -d '{
+    "message": "Tell me about composting",
+    "enable_voice": true,
+    "max_citations": 3,
+    "personality": "warm_mother"
+  }'
+
+# Test voice endpoint
+curl http://YOUR_SERVER_IP:8000/api/voice/test
 ```
 
 ## 📊 API Endpoints
@@ -220,7 +242,8 @@ POST /chat
   "max_results": 5,
   "session_id": "optional",
   "personality": "warm_mother",
-  "custom_prompt": "optional custom system prompt"
+  "custom_prompt": "optional custom system prompt",
+  "enable_voice": false  # Enable voice generation
 }
 ```
 
@@ -232,7 +255,9 @@ POST /bm25/chat
   "search_method": "hybrid",  # auto, bm25, semantic, hybrid
   "k": 5,
   "gaia_personality": "earth_activist",
-  "custom_prompt": "optional custom system prompt"
+  "custom_prompt": "optional custom system prompt",
+  "enable_voice": true,  # Enable voice generation
+  "category_threshold": 0.7  # Semantic category matching threshold
 }
 ```
 
@@ -275,6 +300,12 @@ POST /search
 }
 ```
 
+### Voice Test
+```bash
+GET /api/voice/test
+# Returns voice client status and test generation result
+```
+
 ## ⚙️ Configuration
 
 Key environment variables:
@@ -283,7 +314,12 @@ Key environment variables:
 OPENAI_API_KEY=your_key_here
 PINECONE_API_KEY=your_key_here
 
-# Optional
+# Optional Voice Features
+ELEVENLABS_API_KEY=your_key_here       # For voice generation
+ELEVENLABS_VOICE_ID=your_voice_id      # Custom voice ID
+ELEVENLABS_MODEL_ID=eleven_multilingual_v2  # Voice model
+
+# Optional Configuration
 GAIA_PERSONALITY_VARIANT=warm_mother  # warm_mother, wise_guide, earth_activist
 GAIA_TEMPERATURE=0.7                   # 0.0-1.0 (accuracy vs creativity)
 EPISODES_TO_PROCESS=172                # Number of episodes to index
@@ -352,10 +388,12 @@ Try these queries that demonstrate the system's accuracy:
 
 - **🌿 Personality Selection**: Choose Gaia's voice and communication style
 - **⚙️ Search Method Toggle**: Switch between Original, BM25, or Both
+- **🔊 Voice Toggle**: Enable/disable text-to-speech for Gaia's responses
 - **📋 Smart Recommendations**: Dynamic episode suggestions
 - **💬 Conversation Memory**: Gaia remembers your chat context
 - **✨ Custom Prompts**: Create personalized Gaia personalities
 - **📱 Responsive Design**: Works on desktop, tablet, and mobile
+- **🎤 Audio Controls**: Automatic playback with manual replay option
 
 ## 🧠 Technical Innovation
 
@@ -388,7 +426,8 @@ Try these queries that demonstrate the system's accuracy:
 For detailed documentation, visit the [`docs/` folder](docs/):
 
 - **[🚀 VPS Deployment Guide](docs/VPS_DEPLOYMENT.md)** - Complete step-by-step deployment
-- **[🔧 Development Guide](docs/CLAUDE.md)** - Technical architecture and development
+- **[🔧 Development Guide](CLAUDE.md)** - Technical architecture and development
+- **[🎤 Voice Integration Guide](docs/VOICE_INTEGRATION.md)** - ElevenLabs TTS setup and usage
 - **[📋 Implementation Plan](docs/IMPLEMENTATION_PLAN.md)** - BM25 system development history
 
 ## 🚧 Roadmap & Upcoming Features
@@ -399,9 +438,9 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 - **📊 Cost Calculator**: Track and display response generation costs for budget management
 
 ### Medium Priority  
-- **🎤 Voice Integration**: Add voice responses using 11Labs API for audio interactions
+- **✅ Voice Integration**: ✅ COMPLETED - Voice responses using ElevenLabs API with custom voice
 - **🔗 Knowledge Graph Links**: Implement hyperlinks within responses linking to YonEarth resources and related content
-- **⚙️ Max References Setting**: Add configurable limit for maximum episode/book references per response
+- **✅ Max References Setting**: ✅ COMPLETED - Configurable limit for maximum episode/book references per response
 
 ### Long Term
 - **🧠 Advanced Knowledge Graph**: Create interconnected content relationships for deeper context discovery
