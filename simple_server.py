@@ -20,6 +20,7 @@ sys.path.append('/root/yonearth-gaia-chatbot')
 from src.rag.bm25_chain import BM25RAGChain
 from src.voice.elevenlabs_client import ElevenLabsVoiceClient
 from src.config import settings
+from src.utils.cost_calculator import calculate_elevenlabs_cost, format_cost_breakdown
 
 class GaiaHTTPHandler(SimpleHTTPRequestHandler):
     # Class-level initialization
@@ -186,6 +187,7 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
             
             # Generate voice if requested and available
             audio_data = None
+            voice_cost = None
             enable_voice = request_data.get('enable_voice', False)
             print(f"Voice requested: {enable_voice}, Voice client available: {self.__class__.voice_client is not None}")
             
@@ -196,6 +198,13 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                     processed_text = self.__class__.voice_client.preprocess_text_for_speech(response_text)
                     audio_data = self.__class__.voice_client.generate_speech_base64(processed_text)
                     print(f"Generated voice audio: {len(audio_data) if audio_data else 0} chars")
+                    
+                    # Calculate voice cost
+                    if audio_data:
+                        voice_cost = calculate_elevenlabs_cost(
+                            processed_text, 
+                            model=os.getenv('ELEVENLABS_MODEL_ID', 'eleven_multilingual_v2')
+                        )
                 except Exception as e:
                     print(f"Voice generation failed: {e}")
                     import traceback
@@ -205,6 +214,24 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 if enable_voice:
                     print("Voice requested but client not available")
             
+            # Get cost breakdown from result (or create empty one if not present)
+            cost_breakdown = result.get('cost_breakdown', {'summary': '$0.0000', 'details': []})
+            
+            # Add voice cost if applicable
+            if voice_cost:
+                # Update the cost breakdown with voice cost
+                if 'details' in cost_breakdown:
+                    cost_breakdown['details'].append({
+                        'service': 'ElevenLabs Voice',
+                        'model': voice_cost['model'],
+                        'usage': f"{voice_cost['characters']} characters",
+                        'cost': f"${voice_cost['cost']:.4f}"
+                    })
+                # Update total
+                current_total = float(cost_breakdown['summary'].replace('$', ''))
+                new_total = current_total + voice_cost['cost']
+                cost_breakdown['summary'] = f"${new_total:.4f}"
+            
             # Create response
             response_data = {
                 'response': result.get('response', ''),
@@ -212,6 +239,7 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                 'episode_references': result.get('episode_references', []),
                 'search_method_used': result.get('search_method_used', search_method),
                 'model_used': model or 'gpt-3.5-turbo',  # Include which model was used
+                'cost_breakdown': cost_breakdown,
                 'success': True
             }
             

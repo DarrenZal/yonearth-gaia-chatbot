@@ -10,6 +10,7 @@ from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from ..config import settings
 from .gaia_personalities import get_personality
+from ..utils.cost_calculator import calculate_total_cost, format_cost_breakdown
 
 logger = logging.getLogger(__name__)
 
@@ -132,15 +133,36 @@ IMPORTANT: Always cite your sources using this exact format:
             # Extract episode citations
             citations = self._extract_citations(retrieved_docs or [], max_references)
             
+            # Calculate costs
+            # Convert full_prompt to string for token counting
+            prompt_text = "\n".join([msg.content if hasattr(msg, 'content') else str(msg) for msg in full_prompt])
+            
+            # For embeddings, estimate based on retrieved docs (if any)
+            embedding_texts = []
+            if retrieved_docs:
+                # Approximate - actual embeddings were done during search
+                embedding_texts = [getattr(doc, 'page_content', str(doc))[:200] for doc in retrieved_docs[:5]]
+            
+            # Calculate total cost
+            cost_data = calculate_total_cost(
+                llm_model=self.model_name,
+                prompt=prompt_text,
+                response=response.content,
+                embedding_texts=embedding_texts if embedding_texts else None,
+                voice_text=None  # Will be added by the API layer if voice is enabled
+            )
+            
             result = {
                 "response": response.content,
                 "personality": self.personality_variant,
                 "citations": citations,
                 "context_used": len(retrieved_docs) if retrieved_docs else 0,
-                "session_id": session_id
+                "session_id": session_id,
+                "model_used": self.model_name,
+                "cost_breakdown": format_cost_breakdown(cost_data)
             }
             
-            logger.info(f"Generated response with {len(citations)} citations")
+            logger.info(f"Generated response with {len(citations)} citations, cost: ${cost_data['total']:.4f}")
             return result
             
         except Exception as e:

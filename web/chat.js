@@ -282,8 +282,8 @@ class GaiaChat {
                 console.log('Citations in response:', response.citations || response.sources || []);
                 console.log('Audio data in response:', !!response.audio_data, 'Length:', response.audio_data ? response.audio_data.length : 0);
                 
-                // Add Gaia's response WITH inline citations and audio
-                this.addMessage(response.response, 'gaia', response.citations || response.sources, false, response.audio_data);
+                // Add Gaia's response WITH inline citations, audio, and cost breakdown
+                this.addMessage(response.response, 'gaia', response.citations || response.sources, false, response.audio_data, response.cost_breakdown);
                 
                 // Show smart recommendations based on conversation
                 await this.updateConversationRecommendations();
@@ -565,7 +565,7 @@ class GaiaChat {
         }
     }
     
-    addMessage(text, sender, citations = [], isError = false, audioData = null) {
+    addMessage(text, sender, citations = [], isError = false, audioData = null, costBreakdown = null) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${sender}-message`;
         
@@ -624,6 +624,12 @@ class GaiaChat {
         if (sender === 'gaia' && !isError && this.lastUserMessage) {
             const feedbackDiv = this.createFeedbackDiv(messageId, this.lastUserMessage, text, citations);
             content.appendChild(feedbackDiv);
+        }
+        
+        // Add cost breakdown section for Gaia's messages
+        if (sender === 'gaia' && !isError && costBreakdown) {
+            const costDiv = this.createCostBreakdownDiv(costBreakdown);
+            content.appendChild(costDiv);
         }
         
         messageDiv.appendChild(avatar);
@@ -840,6 +846,71 @@ class GaiaChat {
         this.setupStarRating(feedbackDiv.querySelector('.star-rating'));
         
         return feedbackDiv;
+    }
+    
+    createCostBreakdownDiv(costBreakdown) {
+        const costDiv = document.createElement('div');
+        costDiv.className = 'cost-breakdown-section';
+        
+        // Divider
+        const divider = document.createElement('div');
+        divider.className = 'cost-divider';
+        costDiv.appendChild(divider);
+        
+        // Header with total cost
+        const header = document.createElement('div');
+        header.className = 'cost-header';
+        header.innerHTML = `
+            <span class="cost-title">Cost Breakdown</span>
+            <span class="cost-total">${costBreakdown.summary || '$0.0000'}</span>
+        `;
+        costDiv.appendChild(header);
+        
+        // Details section
+        if (costBreakdown.details && costBreakdown.details.length > 0) {
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'cost-details';
+            
+            costBreakdown.details.forEach(detail => {
+                const detailRow = document.createElement('div');
+                detailRow.className = 'cost-detail-row';
+                detailRow.innerHTML = `
+                    <div class="cost-service">${detail.service}</div>
+                    <div class="cost-model">${detail.model}</div>
+                    <div class="cost-usage">${detail.usage}</div>
+                    <div class="cost-amount">${detail.cost}</div>
+                `;
+                detailsDiv.appendChild(detailRow);
+            });
+            
+            costDiv.appendChild(detailsDiv);
+        }
+        
+        // Collapse/expand functionality
+        const toggleButton = document.createElement('button');
+        toggleButton.className = 'cost-toggle';
+        toggleButton.textContent = 'Show details';
+        toggleButton.onclick = () => {
+            const details = costDiv.querySelector('.cost-details');
+            if (details) {
+                if (details.style.display === 'none' || !details.style.display) {
+                    details.style.display = 'block';
+                    toggleButton.textContent = 'Hide details';
+                } else {
+                    details.style.display = 'none';
+                    toggleButton.textContent = 'Show details';
+                }
+            }
+        };
+        
+        // Initially hide details
+        const details = costDiv.querySelector('.cost-details');
+        if (details) {
+            details.style.display = 'none';
+            costDiv.appendChild(toggleButton);
+        }
+        
+        return costDiv;
     }
     
     setupStarRating(ratingElement) {
