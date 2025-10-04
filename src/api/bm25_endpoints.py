@@ -49,7 +49,7 @@ async def bm25_chat(
 ):
     """
     Chat with Gaia using BM25 hybrid RAG
-    
+
     Features:
     - BM25 keyword search + semantic vector search
     - Reciprocal Rank Fusion for result combination
@@ -57,7 +57,10 @@ async def bm25_chat(
     - Query-adaptive search strategy
     """
     start_time = time.time()
-    
+
+    # Log incoming request parameters
+    logger.info(f"BM25 Chat request - enable_voice: {chat_request.enable_voice}, voice_id: {chat_request.voice_id}")
+
     try:
         bm25_chain = get_bm25_chain()
         
@@ -131,19 +134,45 @@ async def bm25_chat(
         
         # Generate voice if requested
         audio_data = None
+        # Get cost breakdown from result (if available)
+        cost_breakdown = result.get("cost_breakdown")
+
         if chat_request.enable_voice and settings.elevenlabs_api_key:
             try:
+                # Use voice_id from request if provided, otherwise use default from settings
+                voice_id = chat_request.voice_id or settings.elevenlabs_voice_id
+                logger.info(f"Generating voice with voice_id: {voice_id}")
+
                 voice_client = ElevenLabsVoiceClient(
                     api_key=settings.elevenlabs_api_key,
-                    voice_id=settings.elevenlabs_voice_id
+                    voice_id=voice_id
                 )
                 # Preprocess response for better speech
                 speech_text = voice_client.preprocess_text_for_speech(result.get('response', ''))
                 audio_data = voice_client.generate_speech_base64(speech_text)
+
+                # Add voice cost to breakdown if we have one
+                if cost_breakdown and audio_data:
+                    from ..utils.cost_calculator import calculate_elevenlabs_cost
+                    voice_cost = calculate_elevenlabs_cost(speech_text, settings.elevenlabs_model_id)
+
+                    # Add voice cost detail
+                    cost_breakdown["details"].append({
+                        "service": "ElevenLabs Voice",
+                        "model": voice_cost["model"],
+                        "usage": f"{voice_cost['characters']} characters",
+                        "cost": f"${voice_cost['cost']:.4f}"
+                    })
+
+                    # Update total cost
+                    current_total = float(cost_breakdown["summary"].replace("$", ""))
+                    new_total = current_total + voice_cost["cost"]
+                    cost_breakdown["summary"] = f"${new_total:.4f}"
+
             except Exception as voice_error:
                 logger.error(f"Voice generation failed: {voice_error}")
                 # Continue without voice rather than failing the entire request
-        
+
         return BM25ChatResponse(
             response=result.get('response', ''),
             sources=formatted_sources,
@@ -153,7 +182,8 @@ async def bm25_chat(
             bm25_stats=result.get('bm25_stats', {}),
             performance_stats=result.get('performance_stats', {}),
             processing_time=processing_time,
-            audio_data=audio_data
+            audio_data=audio_data,
+            cost_breakdown=cost_breakdown
         )
         
     except Exception as e:

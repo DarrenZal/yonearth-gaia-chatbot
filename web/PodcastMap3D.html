@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Podcast Map 3D</title>
+    <link rel="stylesheet" href="PodcastMap3D.css">
+</head>
+<body>
+    <div id="podcast-map-3d-container">
+        <!-- Header with project selector and episode filter -->
+        <div class="map-header">
+            <div class="project-selector">
+                <button class="project-dropdown-btn">
+                    <span class="project-name">YonEarth Podcast Episodes (3D)</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+
+            <div class="header-controls">
+                <a href="/" class="nav-link">
+                    💬 Chat with Gaia
+                </a>
+                <a href="/PodcastMap.html" class="nav-link">
+                    🗺️ t-SNE Map
+                </a>
+                <a href="/PodcastMapUMAP.html" class="nav-link">
+                    🌊 UMAP Map
+                </a>
+                <a href="/PodcastMapNomic.html" class="nav-link">
+                    🔮 Nomic Map
+                </a>
+                <a href="/PodcastMapHierarchical.html" class="nav-link">
+                    🌱 Hierarchical Map
+                </a>
+                <a href="/KnowledgeGraph.html" class="nav-link">
+                    🕸️ Knowledge Graph
+                </a>
+                <a href="/wiki/" class="nav-link">
+                    📚 Podcast Wiki
+                </a>
+                <a href="/soil-handbook/" class="nav-link">
+                    🌿 Soil Handbook
+                </a>
+            </div>
+
+            <div class="episode-filter">
+                <select id="episode-select" class="episode-dropdown">
+                    <option value="">Select an episode...</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+        </div>
+
+        <!-- Main 3D visualization area -->
+        <div id="3d-graph"></div>
+
+        <!-- Audio player (hidden initially) -->
+        <div class="audio-player-container" id="audio-player" style="display: none;">
+            <div class="player-controls">
+                <button class="close-player" onclick="closeAudioPlayer()">×</button>
+                <div class="episode-info">
+                    <h3 id="current-episode-title"></h3>
+                    <p id="current-chunk-text"></p>
+                </div>
+                <div class="audio-controls">
+                    <audio id="audio-element" controls></audio>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clusters legend -->
+        <div class="clusters-legend">
+            <div class="legend-item" data-cluster="0">
+                <span class="color-box" style="background-color: #4CAF50;"></span>
+                <span>Community</span>
+            </div>
+            <div class="legend-item" data-cluster="1">
+                <span class="color-box" style="background-color: #9C27B0;"></span>
+                <span>Culture</span>
+            </div>
+            <div class="legend-item" data-cluster="2">
+                <span class="color-box" style="background-color: #FF9800;"></span>
+                <span>Economy</span>
+            </div>
+            <div class="legend-item" data-cluster="3">
+                <span class="color-box" style="background-color: #2196F3;"></span>
+                <span>Ecology</span>
+            </div>
+            <div class="legend-item" data-cluster="4">
+                <span class="color-box" style="background-color: #F44336;"></span>
+                <span>Health</span>
+            </div>
+        </div>
+
+        <!-- Controls hint -->
+        <div class="controls-hint">
+            <p>🖱️ Drag to rotate • Scroll to zoom • Click node to play</p>
+        </div>
+    </div>
+
+    <!-- Load dependencies -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Load 3D Force Graph library (includes Three.js) -->
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <!-- Load our 3D visualization script -->
+    <script src="PodcastMap3D.js?v=2"></script>
+</body>
+</html>

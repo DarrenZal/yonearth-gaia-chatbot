@@ -3,7 +3,7 @@ Cost calculator for API usage tracking
 
 Note: Pricing information sources:
 - OpenAI: https://openai.com/api/pricing/ (as of August 2024)
-- ElevenLabs: Based on Creator plan pricing ($22 for 110K characters)
+- ElevenLabs: Based on user's plan ($11/month for 200K characters, then $0.15 per 1K additional)
 
 These are estimates and actual costs may vary based on:
 - Your specific pricing tier
@@ -44,11 +44,12 @@ OPENAI_PRICING = {
 }
 
 # ElevenLabs pricing (per 1K characters)
-# Based on Creator plan: $22 for 110,000 characters = $0.20 per 1K characters
-# Note: This is an approximation - actual costs depend on your subscription
+# Based on user's plan: $11/month for 200,000 characters, then $0.15 per 1K additional
+# Marginal cost calculation: $0.15 per 1K characters for usage beyond monthly quota
+# Note: This represents the additional cost per request, not the subscription cost
 ELEVENLABS_PRICING = {
-    "eleven_multilingual_v2": 0.20,  # $0.20 per 1K characters (Creator plan rate)
-    "eleven_monolingual_v1": 0.18    # $0.18 per 1K characters (slightly less for mono)
+    "eleven_multilingual_v2": 0.15,  # $0.15 per 1K characters (marginal cost)
+    "eleven_monolingual_v1": 0.15    # $0.15 per 1K characters (marginal cost)
 }
 
 

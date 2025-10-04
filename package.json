@@ -1,0 +1,21 @@
+{
+  "name": "yonearth-gaia-chatbot",
+  "version": "1.0.0",
+  "description": "> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and three integrated books",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.55.1",
+    "d3": "^7.9.0",
+    "d3-delaunay": "^6.0.4"
+  }
+}

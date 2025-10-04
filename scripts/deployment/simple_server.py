@@ -28,6 +28,127 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
     openai_client = None
     voice_client = None
     _initialized = False
+
+    def translate_path(self, path):
+        """Translate URL path to local file system path"""
+        # Parse query string
+        from urllib.parse import urlparse, unquote
+        parsed = urlparse(path)
+        original_path = path
+        path = unquote(parsed.path)
+
+        # Apply our custom routing first
+        if path == '/' or path == '/index.html':
+            path = '/web/index.html'
+        elif path == '/podcast-map':
+            path = '/web/PodcastMap.html'
+        elif path == '/wiki' or path == '/wiki/':
+            path = '/web/wiki/Index.html'
+        elif path.startswith('/wiki/'):
+            # Add .html extension if not present and not a directory/file with extension
+            if not path.endswith('.html') and not path.endswith('/') and '.' not in os.path.basename(path):
+                path += '.html'
+            # Convert /wiki/... to /web/wiki/...
+            path = '/web' + path  # Add /web prefix
+
+        # Now let parent class resolve relative to working directory
+        # Use parent's translate_path with our modified path
+        import posixpath
+        import urllib.parse
+
+        # Normalize path
+        path = posixpath.normpath(path)
+        words = path.split('/')
+        words = filter(None, words)
+
+        # Start from working directory
+        result_path = os.getcwd()
+        for word in words:
+            if os.path.dirname(word) or word in (os.curdir, os.pardir):
+                # Ignore components that are not a simple file/directory name
+                continue
+            result_path = os.path.join(result_path, word)
+
+        # If file doesn't exist, try replacing hyphens with underscores
+        # Quartz generates URLs with hyphens but files may use underscores
+        if not os.path.exists(result_path):
+            if '-' in result_path:
+                # Try replacing hyphens with underscores in the filename only
+                directory = os.path.dirname(result_path)
+                filename = os.path.basename(result_path)
+                alt_filename = filename.replace('-', '_')
+                alt_path = os.path.join(directory, alt_filename)
+                if os.path.exists(alt_path):
+                    result_path = alt_path
+
+            # If still not found and it's a wiki path without subdirectory,
+            # search in common subdirectories
+            if not os.path.exists(result_path) and '/web/wiki/' in result_path:
+                parts = result_path.split('/web/wiki/')
+                if len(parts) == 2 and '/' not in parts[1]:
+                    # It's a root-level wiki path like /web/wiki/regenerative-agriculture.html
+                    filename = parts[1]
+                    base_dir = parts[0] + '/web/wiki'
+
+                    # Search in subdirectories
+                    for subdir in ['concepts', 'people', 'organizations', 'practices',
+                                   'technologies', 'locations', 'episodes', 'domains']:
+                        subdir_path = os.path.join(base_dir, subdir)
+                        if not os.path.isdir(subdir_path):
+                            continue
+
+                        # List files in subdirectory for case-insensitive matching
+                        try:
+                            files_in_subdir = os.listdir(subdir_path)
+                            # Try exact match first
+                            if filename in files_in_subdir:
+                                result_path = os.path.join(subdir_path, filename)
+                                break
+
+                            # Try case-insensitive match
+                            filename_lower = filename.lower()
+                            for file_in_subdir in files_in_subdir:
+                                if file_in_subdir.lower() == filename_lower:
+                                    result_path = os.path.join(subdir_path, file_in_subdir)
+                                    break
+
+                            if os.path.exists(result_path):
+                                break
+
+                            # Try with underscores instead of hyphens
+                            if '-' in filename:
+                                alt_filename = filename.replace('-', '_')
+                                alt_filename_lower = alt_filename.lower()
+                                for file_in_subdir in files_in_subdir:
+                                    if file_in_subdir.lower() == alt_filename_lower:
+                                        result_path = os.path.join(subdir_path, file_in_subdir)
+                                        break
+
+                                if os.path.exists(result_path):
+                                    break
+
+                            # Try zero-padded episode numbers (Episode-89 -> Episode_089)
+                            import re
+                            episode_match = re.match(r'(episode)[-_](\d+)(\.html)?$', filename_lower)
+                            if episode_match:
+                                episode_num = episode_match.group(2)
+                                # Try zero-padded version (89 -> 089)
+                                if len(episode_num) < 3:
+                                    padded_num = episode_num.zfill(3)
+                                    for sep in ['_', '-']:
+                                        padded_filename = f'Episode{sep}{padded_num}.html'
+                                        for file_in_subdir in files_in_subdir:
+                                            if file_in_subdir.lower() == padded_filename.lower():
+                                                result_path = os.path.join(subdir_path, file_in_subdir)
+                                                break
+                                        if os.path.exists(result_path):
+                                            break
+                                if os.path.exists(result_path):
+                                    break
+                        except OSError:
+                            continue
+
+        return result_path
     
     @classmethod
     def initialize_services(cls):
@@ -77,28 +198,53 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
         super().__init__(*args, **kwargs)
     
     def do_GET(self):
-        if self.path == '/':
+        # Parse query string if present
+        from urllib.parse import urlparse
+        parsed = urlparse(self.path)
+        clean_path = parsed.path
+
+        if clean_path == '/':
             self.path = '/web/index.html'
-        elif self.path.startswith('/web/'):
+        elif clean_path == '/podcast-map':
+            self.path = '/web/PodcastMap.html'
+        elif clean_path == '/wiki' or clean_path == '/wiki/':
+            self.path = '/web/wiki/Index.html'
+        elif clean_path.startswith('/wiki/'):
+            # Convert /wiki/practices/Breathwork to /web/wiki/practices/Breathwork.html
+            self.path = '/web' + clean_path
+            # If path doesn't end with .html and isn't a directory, add .html
+            if not self.path.endswith('.html') and not self.path.endswith('/') and '.' not in os.path.basename(self.path):
+                # Check if it's a directory first
+                potential_dir = self.path.replace('/web', '/root/yonearth-gaia-chatbot/web', 1)
+                if not os.path.isdir(potential_dir):
+                    self.path += '.html'
+        elif clean_path.startswith('/web/'):
             pass  # Keep the path as is
+        elif self.path.startswith('/data/transcripts/'):
+            # Serve transcript JSON files
+            self.handle_transcript_request()
+            return
         elif self.path == '/health' or self.path == '/api/health':
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
             self.wfile.write(json.dumps({"status": "healthy"}).encode())
             return
+        elif self.path == '/api/map_data' or self.path.startswith('/api/map_data'):
+            self.handle_map_data_request()
+            return
         elif self.path == '/api/voice/test':
             # Test voice endpoint
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
-            
+
             test_result = {
                 "voice_client_exists": self.__class__.voice_client is not None,
                 "elevenlabs_key_set": bool(os.getenv('ELEVENLABS_API_KEY')),
                 "voice_id": os.getenv('ELEVENLABS_VOICE_ID', 'Not set')
             }
-            
+
             if self.__class__.voice_client:
                 try:
                     audio = self.__class__.voice_client.generate_speech_base64("Test")
@@ -106,12 +252,21 @@ class GaiaHTTPHandler(SimpleHTTPRequestHandler):
                     test_result["audio_length"] = len(audio) if audio else 0
                 except Exception as e:
                     test_result["test_generation"] = f"Error: {str(e)}"
-            
+
             self.wfile.write(json.dumps(test_result).encode())
+            return
+        elif self.path == '/api/knowledge-graph/data':
+            self.handle_knowledge_graph_data()
+            return
+        elif self.path.startswith('/api/knowledge-graph/entity/'):
+            self.handle_knowledge_graph_entity()
+            return
+        elif self.path.startswith('/api/knowledge-graph/search'):
+            self.handle_knowledge_graph_search()
             return
         else:
             self.path = '/web' + self.path
-        
+
         super().do_GET()
     
     def do_POST(self):
@@ -671,7 +826,264 @@ The selected_indices should be the numbers (1-based) of the most relevant conten
             self.end_headers()
             error_response = {'error': str(e), 'success': False}
             self.wfile.write(json.dumps(error_response).encode())
-    
+
+    def handle_transcript_request(self):
+        """Handle requests for episode transcript JSON files"""
+        try:
+            # Extract filename from path
+            # Path will be like: /data/transcripts/episode_120.json
+            filename = os.path.basename(self.path)
+            transcript_file = f'/root/yonearth-gaia-chatbot/data/transcripts/{filename}'
+
+            if not os.path.exists(transcript_file):
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {'error': 'Transcript not found'}
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            # Read and serve the transcript file
+            with open(transcript_file, 'r') as f:
+                transcript_data = json.load(f)
+
+            # Send response
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(transcript_data).encode())
+
+        except Exception as e:
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            error_response = {'error': str(e)}
+            self.wfile.write(json.dumps(error_response).encode())
+
+    def handle_map_data_request(self):
+        """Handle requests for podcast map visualization data"""
+        try:
+            # Load the map data from file
+            map_data_file = '/root/yonearth-gaia-chatbot/data/processed/podcast_map_data.json'
+
+            if not os.path.exists(map_data_file):
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {
+                    'error': 'Map data not found. Please run: python3 scripts/generate_map_from_pinecone.py'
+                }
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            # Read the map data
+            with open(map_data_file, 'r') as f:
+                map_data = json.load(f)
+
+            # Parse URL to check for filters
+            parsed_url = urlparse(self.path)
+
+            # Handle different endpoints
+            if '/episodes' in self.path:
+                # Return just episodes
+                response_data = map_data.get('episodes', [])
+            elif '/clusters' in self.path:
+                # Return just clusters
+                response_data = map_data.get('clusters', [])
+            else:
+                # Return full map data
+                response_data = map_data
+
+            # Send response
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(response_data).encode())
+
+        except Exception as e:
+            print(f"Error handling map data request: {e}")
+            import traceback
+            traceback.print_exc()
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+
+    def handle_knowledge_graph_data(self):
+        """Handle requests for knowledge graph visualization data"""
+        try:
+            data_file = '/root/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json'
+
+            if not os.path.exists(data_file):
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {
+                    'error': 'Knowledge graph data not found. Please run: python3 -m src.knowledge_graph.visualization.export_visualization'
+                }
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            with open(data_file, 'r') as f:
+                data = json.load(f)
+
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(data).encode())
+
+        except Exception as e:
+            print(f"Error handling knowledge graph data request: {e}")
+            import traceback
+            traceback.print_exc()
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'error': str(e)}).encode())
+
+    def handle_knowledge_graph_entity(self):
+        """Handle requests for specific entity details"""
+        try:
+            from urllib.parse import unquote
+
+            # Extract entity ID from path
+            entity_id = self.path.replace('/api/knowledge-graph/entity/', '')
+            entity_id = unquote(entity_id)
+
+            data_file = '/root/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json'
+
+            if not os.path.exists(data_file):
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {'error': 'Knowledge graph data not found'}
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            with open(data_file, 'r') as f:
+                data = json.load(f)
+
+            # Find entity
+            entity = next((n for n in data['nodes'] if n['id'] == entity_id), None)
+
+            if not entity:
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {'error': f'Entity "{entity_id}" not found'}
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(entity).encode())
+
+        except Exception as e:
+            print(f"Error handling entity request: {e}")
+            import traceback
+            traceback.print_exc()
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'error': str(e)}).encode())
+
+    def handle_knowledge_graph_search(self):
+        """Handle search requests for knowledge graph entities"""
+        try:
+            from urllib.parse import parse_qs
+
+            # Parse query parameters
+            parsed_url = urlparse(self.path)
+            query_params = parse_qs(parsed_url.query)
+
+            query = query_params.get('q', [''])[0]
+            limit = int(query_params.get('limit', ['20'])[0])
+
+            if not query or len(query) < 2:
+                self.send_response(400)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {'error': 'Query must be at least 2 characters'}
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            data_file = '/root/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json'
+
+            if not os.path.exists(data_file):
+                self.send_response(404)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                error_response = {'error': 'Knowledge graph data not found'}
+                self.wfile.write(json.dumps(error_response).encode())
+                return
+
+            with open(data_file, 'r') as f:
+                data = json.load(f)
+
+            # Search entities
+            query_lower = query.lower()
+            results = []
+
+            for node in data['nodes']:
+                name_match = query_lower in node['name'].lower()
+                desc_match = query_lower in node['description'].lower()
+
+                if name_match or desc_match:
+                    score = 0
+                    if name_match:
+                        score += 10
+                    if desc_match:
+                        score += 5
+                    score *= (1 + node['importance'])
+
+                    results.append({
+                        'entity': node,
+                        'relevance_score': score
+                    })
+
+            # Sort by relevance
+            results.sort(key=lambda x: x['relevance_score'], reverse=True)
+            results = results[:limit]
+
+            response = {
+                'query': query,
+                'total_results': len(results),
+                'results': results
+            }
+
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(response).encode())
+
+        except Exception as e:
+            print(f"Error handling search request: {e}")
+            import traceback
+            traceback.print_exc()
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'error': str(e)}).encode())
+            error_response = {'error': str(e)}
+            self.wfile.write(json.dumps(error_response).encode())
+
     def do_OPTIONS(self):
         # Handle CORS preflight
         self.send_response(200)

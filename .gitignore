@@ -91,4 +91,43 @@ htmlcov/
 # mypy
 .mypy_cache/
 .dmypy.json
-dmypy.jsondata/feedback/
+dmypy.json
+
+# User feedback data (may contain PII)
+data/feedback/
+
+# Data directories (large files, regeneratable)
+data/transcripts/
+data/processed/
+data/knowledge_graph/
+data/books/
+
+# Node modules (if using JavaScript tools)
+node_modules/
+package-lock.json
+
+# Playwright MCP
+.playwright-mcp/
+
+# Wiki outputs (generated files)
+web/wiki/
+web/soil-handbook-wiki/
+wiki-quartz/
+
+# Generated visualizations
+*.png
+*.jpg
+*.jpeg
+*.svg
+!web/assets/*.png
+!web/assets/*.jpg
+
+# Backup files
+*.bak
+*.backup
+*~.nib
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3

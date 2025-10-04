@@ -47,13 +47,15 @@ class GaiaChat {
         this.voiceToggle = document.getElementById('voiceToggle');
         this.voiceToggleText = document.getElementById('voiceToggleText');
         this.voiceSettings = document.getElementById('voiceSettings');
+        this.voiceSelection = document.getElementById('voiceSelection');
         this.autoPlayVoice = document.getElementById('autoPlayVoice');
         this.voicePlayer = document.getElementById('voicePlayer');
         this.voiceIcon = document.querySelector('.voice-icon');
-        
+
         // Voice state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
+        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'YcVr5DmTjJ2cEVwNiuhU';
         this.currentAudio = null;
         this.audioQueue = [];
         
@@ -152,7 +154,14 @@ class GaiaChat {
         this.voiceToggle.addEventListener('click', () => {
             this.toggleVoice();
         });
-        
+
+        // Voice selection
+        this.voiceSelection.addEventListener('change', () => {
+            this.selectedVoiceId = this.voiceSelection.value;
+            localStorage.setItem('selectedVoiceId', this.selectedVoiceId);
+            console.log('Voice changed to:', this.selectedVoiceId);
+        });
+
         // Auto-play checkbox
         this.autoPlayVoice.addEventListener('change', () => {
             this.autoPlay = this.autoPlayVoice.checked;
@@ -330,10 +339,11 @@ class GaiaChat {
             max_results: 5,
             model: modelType !== 'compare' ? modelType : undefined,
             max_references: maxReferences,
-            enable_voice: this.voiceEnabled
+            enable_voice: this.voiceEnabled,
+            voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined
         };
-        
-        console.log('Voice enabled in request:', requestBody.enable_voice);
+
+        console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
         
         // Add custom prompt if custom personality is selected
         if (this.personalitySelect.value === 'custom') {
@@ -352,7 +362,8 @@ class GaiaChat {
             requestBody.max_citations = maxReferences; // BM25 uses max_citations instead of max_references
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
             requestBody.enable_voice = this.voiceEnabled;
-            
+            requestBody.voice_id = this.voiceEnabled ? this.selectedVoiceId : undefined;
+
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
                 const customPrompt = this.customPromptEditor.value.trim();
@@ -2013,6 +2024,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             this.voiceIcon.textContent = '🔇';
         }
         this.autoPlayVoice.checked = this.autoPlay;
+        this.voiceSelection.value = this.selectedVoiceId;
     }
     
     async playAudio(audioData, messageId) {

@@ -28,6 +28,7 @@ from .models import (
 )
 from .bm25_endpoints import router as bm25_router
 from .voice_endpoints import router as voice_router
+from .podcast_map_route_local import router as podcast_map_router
 
 # Configure logging
 logging.basicConfig(
@@ -116,6 +117,13 @@ try:
 except Exception as e:
     logger.error(f"❌ Failed to load voice router: {e}")
 
+# Include podcast map router
+try:
+    app.include_router(podcast_map_router)
+    logger.info("✅ Podcast map router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load podcast map router: {e}")
+
 
 def get_rag_dependency():
     """Dependency to get RAG chain instance"""
@@ -189,19 +197,45 @@ async def chat_with_gaia(
         
         # Generate voice if requested
         audio_data = None
+        # Get cost breakdown from response (if available)
+        cost_breakdown = response.get("cost_breakdown")
+
         if chat_request.enable_voice and settings.elevenlabs_api_key:
             try:
+                # Use voice_id from request if provided, otherwise use default from settings
+                voice_id = chat_request.voice_id or settings.elevenlabs_voice_id
+                logger.info(f"Generating voice with voice_id: {voice_id}")
+
                 voice_client = ElevenLabsVoiceClient(
                     api_key=settings.elevenlabs_api_key,
-                    voice_id=settings.elevenlabs_voice_id
+                    voice_id=voice_id
                 )
                 # Preprocess response for better speech
                 speech_text = voice_client.preprocess_text_for_speech(response["response"])
                 audio_data = voice_client.generate_speech_base64(speech_text)
+
+                # Add voice cost to breakdown if we have one
+                if cost_breakdown and audio_data:
+                    from ..utils.cost_calculator import calculate_elevenlabs_cost
+                    voice_cost = calculate_elevenlabs_cost(speech_text, settings.elevenlabs_model_id)
+
+                    # Add voice cost detail
+                    cost_breakdown["details"].append({
+                        "service": "ElevenLabs Voice",
+                        "model": voice_cost["model"],
+                        "usage": f"{voice_cost['characters']} characters",
+                        "cost": f"${voice_cost['cost']:.4f}"
+                    })
+
+                    # Update total cost
+                    current_total = float(cost_breakdown["summary"].replace("$", ""))
+                    new_total = current_total + voice_cost["cost"]
+                    cost_breakdown["summary"] = f"${new_total:.4f}"
+
             except Exception as voice_error:
                 logger.error(f"Voice generation failed: {voice_error}")
                 # Continue without voice rather than failing the entire request
-        
+
         return ChatResponse(
             response=response["response"],
             personality=response.get("personality", "warm_mother"),
@@ -211,7 +245,8 @@ async def chat_with_gaia(
             retrieval_count=response.get("retrieval_count", 0),
             processing_time=processing_time,
             model_used=chat_request.model or settings.openai_model,
-            audio_data=audio_data
+            audio_data=audio_data,
+            cost_breakdown=cost_breakdown
         )
         
     except Exception as e:
@@ -557,6 +592,199 @@ async def root():
 async def test():
     """Simple test endpoint"""
     return {"status": "ok", "message": "Test endpoint working"}
+
+
+# ========================================
+# Knowledge Graph Endpoints
+# ========================================
+
+@app.get("/api/knowledge-graph/data")
+async def get_knowledge_graph_data():
+    """Get knowledge graph visualization data"""
+    try:
+        import json
+        from pathlib import Path
+
+        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+
+        if not data_file.exists():
+            raise HTTPException(
+                status_code=404,
+                detail="Knowledge graph data not found. Please run the export script first."
+            )
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        return data
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error loading knowledge graph data: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to load knowledge graph data"
+        )
+
+
+@app.get("/api/knowledge-graph/entity/{entity_id}")
+async def get_entity_details(entity_id: str):
+    """Get detailed information about a specific entity"""
+    try:
+        import json
+        from pathlib import Path
+        from urllib.parse import unquote
+
+        # Decode URL-encoded entity_id
+        entity_id = unquote(entity_id)
+
+        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+
+        if not data_file.exists():
+            raise HTTPException(status_code=404, detail="Knowledge graph data not found")
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        # Find entity
+        entity = next((n for n in data["nodes"] if n["id"] == entity_id), None)
+
+        if not entity:
+            raise HTTPException(status_code=404, detail=f"Entity '{entity_id}' not found")
+
+        return entity
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting entity details: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get entity details")
+
+
+@app.get("/api/knowledge-graph/neighborhood/{entity_id}")
+async def get_entity_neighborhood(entity_id: str, depth: int = 1):
+    """Get the neighborhood (connected entities) of a specific entity"""
+    try:
+        import json
+        from pathlib import Path
+        from urllib.parse import unquote
+
+        # Decode URL-encoded entity_id
+        entity_id = unquote(entity_id)
+
+        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+
+        if not data_file.exists():
+            raise HTTPException(status_code=404, detail="Knowledge graph data not found")
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        # Find entity
+        entity = next((n for n in data["nodes"] if n["id"] == entity_id), None)
+
+        if not entity:
+            raise HTTPException(status_code=404, detail=f"Entity '{entity_id}' not found")
+
+        # Find connected entities
+        connected_ids = set([entity_id])
+
+        for _ in range(depth):
+            new_connections = set()
+            for link in data["links"]:
+                source_id = link["source"] if isinstance(link["source"], str) else link["source"]["id"]
+                target_id = link["target"] if isinstance(link["target"], str) else link["target"]["id"]
+
+                if source_id in connected_ids:
+                    new_connections.add(target_id)
+                if target_id in connected_ids:
+                    new_connections.add(source_id)
+
+            connected_ids.update(new_connections)
+
+        # Get nodes for connected entities
+        neighborhood_nodes = [n for n in data["nodes"] if n["id"] in connected_ids]
+
+        # Get links within neighborhood
+        neighborhood_links = [
+            link for link in data["links"]
+            if (link["source"] if isinstance(link["source"], str) else link["source"]["id"]) in connected_ids
+            and (link["target"] if isinstance(link["target"], str) else link["target"]["id"]) in connected_ids
+        ]
+
+        return {
+            "center_entity": entity,
+            "nodes": neighborhood_nodes,
+            "links": neighborhood_links,
+            "depth": depth,
+            "total_nodes": len(neighborhood_nodes)
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error getting entity neighborhood: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get entity neighborhood")
+
+
+@app.get("/api/knowledge-graph/search")
+async def search_knowledge_graph(q: str, limit: int = 20):
+    """Search for entities in the knowledge graph"""
+    try:
+        import json
+        from pathlib import Path
+
+        if not q or len(q) < 2:
+            raise HTTPException(status_code=400, detail="Query must be at least 2 characters")
+
+        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+
+        if not data_file.exists():
+            raise HTTPException(status_code=404, detail="Knowledge graph data not found")
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        query = q.lower()
+
+        # Search in entity names and descriptions
+        results = []
+        for node in data["nodes"]:
+            name_match = query in node["name"].lower()
+            desc_match = query in node["description"].lower()
+
+            if name_match or desc_match:
+                # Calculate relevance score
+                score = 0
+                if name_match:
+                    score += 10
+                if desc_match:
+                    score += 5
+
+                # Boost by importance
+                score *= (1 + node["importance"])
+
+                results.append({
+                    "entity": node,
+                    "relevance_score": score
+                })
+
+        # Sort by relevance and limit
+        results.sort(key=lambda x: x["relevance_score"], reverse=True)
+        results = results[:limit]
+
+        return {
+            "query": q,
+            "total_results": len(results),
+            "results": results
+        }
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error searching knowledge graph: {e}")
+        raise HTTPException(status_code=500, detail="Failed to search knowledge graph")
 
 
 # Exception handlers

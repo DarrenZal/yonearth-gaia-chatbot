@@ -12,28 +12,54 @@ python scripts/start_local.py
 # Or manual startup
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 
-# Current production server (simple_server.py on port 80)
+# Production deployment (nginx + uvicorn + systemd)
 # Web interface available at http://152.53.194.214/
 
 # Production server management (systemd service)
-sudo systemctl status yonearth-gaia      # Check status
-sudo systemctl start yonearth-gaia       # Start service
-sudo systemctl stop yonearth-gaia        # Stop service  
-sudo systemctl restart yonearth-gaia     # Restart service
-sudo systemctl enable yonearth-gaia      # Enable on boot
+sudo systemctl status yonearth-api       # Check status
+sudo systemctl start yonearth-api        # Start service
+sudo systemctl stop yonearth-api         # Stop service
+sudo systemctl restart yonearth-api      # Restart service
+sudo systemctl enable yonearth-api       # Enable on boot (already enabled)
 
 # View logs
-sudo journalctl -u yonearth-gaia -f      # Follow logs
-sudo journalctl -u yonearth-gaia --since "1 hour ago"
-tail -f /var/log/yonearth-gaia.log       # Direct log file
-
-# Manual management (legacy method)
-python3 simple_server.py                 # Run in foreground
-python3 simple_server.py &               # Run in background (not recommended)
+sudo journalctl -u yonearth-api -f       # Follow logs
+sudo journalctl -u yonearth-api --since "1 hour ago"
 
 # Service configuration
-# Location: /etc/systemd/system/yonearth-gaia.service
-# Health monitoring: Cron job runs every 5 minutes to check /health endpoint
+# Location: /etc/systemd/system/yonearth-api.service
+# Runs: uvicorn src.api.main:app --host 127.0.0.1 --port 8000 --workers 4
+# Nginx (port 80) serves static files and proxies /api/* to uvicorn (port 8000)
+
+# ⚠️ IMPORTANT: Deployment Directory Structure
+# Development: /home/claudeuser/yonearth-gaia-chatbot/ (edit files here)
+# Production API: /root/yonearth-gaia-chatbot/ (systemd runs from here)
+# Production Web: /var/www/yonearth/ (nginx serves from here)
+
+# After making code changes, deploy to production:
+# 1. Backend API changes (Python files in src/):
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/src/api/*.py /root/yonearth-gaia-chatbot/src/api/
+sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
+
+# 2. Frontend changes (HTML/JS/CSS in web/):
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.html /var/www/yonearth/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.js /var/www/yonearth/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.css /var/www/yonearth/
+sudo systemctl reload nginx
+
+# ⚠️ IMPORTANT: Browser Cache-Busting
+# When updating JS/CSS files, browsers may cache old versions. To force updates:
+# 1. Add version query parameter to script/link tags in HTML:
+#    <link rel="stylesheet" href="styles.css?v=2">
+#    <script src="app.js?v=2"></script>
+# 2. Increment version number (v=2 -> v=3) each time you update JS/CSS
+# 3. This forces browsers to load the new version instead of using cached files
+
+# 3. Full deployment (both backend and frontend):
+sudo cp -r /home/claudeuser/yonearth-gaia-chatbot/src/* /root/yonearth-gaia-chatbot/src/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/* /var/www/yonearth/
+sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
+sudo systemctl reload nginx
 ```
 
 ### Testing
@@ -139,6 +165,45 @@ python scripts/test_api.py
 - Set `PINECONE_API_KEY` environment variable
 - Ensure Pinecone index `yonearth-episodes` exists (1536 dimensions, cosine metric)
 
+#### Knowledge Graph Extraction Workflow
+
+**Extract knowledge graph from episode transcripts:**
+```bash
+# Extract entities and relationships from all episodes
+python3 scripts/extract_knowledge_graph_episodes.py
+
+# Extract from specific episodes
+python3 scripts/extract_remaining_7_episodes.py
+
+# Build unified knowledge graph from extractions
+python3 scripts/build_unified_knowledge_graph.py
+```
+
+**Knowledge Graph Extraction Pipeline:**
+1. **Load transcripts** from `/data/transcripts/episode_*.json`
+2. **Chunk transcripts** into 800-token segments with 100-token overlap
+3. **Extract entities** using OpenAI with structured outputs (gpt-4o-mini)
+   - Entity types: PERSON, ORGANIZATION, CONCEPT, PLACE, PRACTICE, PRODUCT, etc.
+   - Pydantic schema validation ensures 100% valid JSON
+4. **Extract relationships** between entities using structured outputs
+   - Relationship types: FOUNDED, WORKS_FOR, PRACTICES, ADVOCATES_FOR, etc.
+   - Context-aware relationship identification
+5. **Store extractions** in `/data/knowledge_graph/entities/` and `/relationships/`
+6. **Build unified graph** combining all episodes into single knowledge graph
+
+**Extraction Performance:**
+- **Model**: gpt-4o-mini (fast, cost-effective)
+- **Rate limiting**: 0.05s delay between API calls (1,200 requests/min)
+- **Speed**: ~30 seconds - 1 minute per episode
+- **Output**: JSON files with entities, relationships, and metadata
+- **Structured Outputs**: Guaranteed valid JSON using Pydantic schemas (no parsing errors)
+
+**Knowledge Graph Output:**
+- **Entity files**: `/data/knowledge_graph/entities/episode_*_extraction.json`
+- **Relationship files**: `/data/knowledge_graph/relationships/episode_*_extraction.json`
+- **Unified graph**: `/data/knowledge_graph/graph/unified_knowledge_graph.json`
+- **Total episodes**: 172 (0-172, excluding #26)
+
 ## Architecture Overview
 
 This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit of Earth) using knowledge from 172 YonEarth podcast episodes and integrated books with two advanced search systems.
@@ -185,6 +250,10 @@ This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit
 - `index.html`: Beautiful responsive chat interface with personality selection
 - `chat.js`: Advanced JavaScript with dual search modes, smart recommendations, custom prompts
 - `styles.css`: Earth-themed CSS with comparison views and responsive design
+
+**Deployment** (`/etc/systemd/system/`):
+- `yonearth-api.service`: Systemd service for production uvicorn management
+- Nginx configuration: `/etc/nginx/sites-enabled/yonearth`
 
 ### Dual Search Architecture
 
@@ -266,7 +335,7 @@ The system provides two complementary RAG approaches:
 
 **Voice System**:
 - `src/voice/elevenlabs_client.py`: ElevenLabs TTS client with text preprocessing
-- `simple_server.py`: Production server with voice generation support
+- Voice integration available via `/api/chat` endpoint with `enable_voice` parameter
 
 **Web Interface**:
 - `web/chat.js`: Advanced frontend with dual search, smart recommendations, voice playback
@@ -357,12 +426,16 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 
 ### Current Production Status
 
-**Active Deployment**: `simple_server.py` running on port 80
+**Active Deployment**: Nginx + Uvicorn + Systemd
 - **URL**: http://152.53.194.214/
-- **Purpose**: Workaround for Docker Pydantic validation issues
-- **Features**: Full web interface + working API endpoints (/chat, /api/chat, /api/bm25/chat)
+- **Architecture**:
+  - Nginx (port 80): Serves static files and proxies API requests
+  - Uvicorn (port 8000): FastAPI with 4 workers
+  - Systemd service: `yonearth-api` (auto-restart, boot persistence)
+- **Features**: Full web interface + working API endpoints (/api/chat, /api/bm25/chat)
 - **Vector Database**: 18,764+ vectors (episodes + books combined)
 - **Book Integration**: All 3 books successfully processed and searchable
+- **Episode Coverage**: 172 episodes (0-172, excluding #26)
 
 ## Technical Innovation
 

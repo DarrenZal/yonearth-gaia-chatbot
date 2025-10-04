@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Podcast Map (Hierarchical)</title>
+    <link rel="stylesheet" href="PodcastMapHierarchical.css?v=3">
+</head>
+<body>
+    <div id="podcast-map-container">
+        <!-- Header with project selector and episode filter -->
+        <div class="map-header">
+            <div class="project-selector">
+                <button class="project-dropdown-btn">
+                    <span class="project-name">YonEarth Hierarchical Topics</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+
+            <div class="header-controls">
+                <a href="/" class="nav-link">
+                    💬 Chat with Gaia
+                </a>
+                <a href="/PodcastMap.html" class="nav-link">
+                    🗺️ t-SNE Map
+                </a>
+                <a href="/PodcastMapUMAP.html" class="nav-link">
+                    🌊 UMAP Map
+                </a>
+                <a href="/PodcastMapNomic.html" class="nav-link">
+                    🔮 Nomic Map
+                </a>
+                <a href="/PodcastMap3D.html" class="nav-link">
+                    🌐 3D Map
+                </a>
+                <a href="/KnowledgeGraph.html" class="nav-link">
+                    🕸️ Knowledge Graph
+                </a>
+                <a href="/wiki/" class="nav-link">
+                    📚 Podcast Wiki
+                </a>
+                <a href="/soil-handbook/" class="nav-link">
+                    🌿 Soil Handbook
+                </a>
+            </div>
+
+            <!-- Hierarchical Level Controls -->
+            <div class="hierarchy-controls">
+                <button class="level-btn" data-level="l1" title="4 Broad Themes">
+                    🌍 Broad
+                </button>
+                <button class="level-btn active" data-level="l2" title="10 Medium Categories">
+                    🌱 Medium
+                </button>
+                <button class="level-btn" data-level="l3" title="24 Detailed Topics">
+                    🔬 Detailed
+                </button>
+            </div>
+
+            <div class="episode-filter">
+                <select id="episode-select" class="episode-dropdown">
+                    <option value="">Select an episode...</option>
+                </select>
+                <span class="dropdown-arrow">▼</span>
+            </div>
+        </div>
+
+        <!-- Breadcrumb showing current hierarchy path -->
+        <div class="breadcrumb" id="breadcrumb">
+            <span class="breadcrumb-item">Medium Categories</span>
+        </div>
+
+        <!-- Main visualization area -->
+        <div class="visualization-container">
+            <!-- SVG will be inserted here by D3.js -->
+            <div id="map-svg-container"></div>
+        </div>
+
+        <!-- Audio player (hidden initially) -->
+        <div class="audio-player-container" id="audio-player" style="display: none;">
+            <div class="player-controls">
+                <button class="close-player" onclick="closeAudioPlayer()">×</button>
+                <div class="episode-info">
+                    <h3 id="current-episode-title"></h3>
+                    <p id="current-chunk-text"></p>
+                </div>
+                <div class="audio-controls">
+                    <audio id="audio-element" controls></audio>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tooltip (hidden, positioned absolutely) -->
+        <div id="tooltip" class="tooltip" style="display: none;">
+            <div class="tooltip-content">
+                <div class="tooltip-episode"></div>
+                <div class="tooltip-text"></div>
+                <div class="tooltip-cluster"></div>
+            </div>
+        </div>
+
+        <!-- Magic/Chat button (optional) -->
+        <button class="magic-btn" onclick="toggleChat()">
+            <img src="/assets/magic-icon.svg" alt="Chat">
+        </button>
+
+        <!-- Chat modal (optional) -->
+        <div class="chat-modal" id="chat-modal" style="display: none;">
+            <button class="close-chat" onclick="toggleChat()">×</button>
+            <div class="chat-container">
+                <input type="text" id="chat-input" placeholder="Ask me anything...">
+                <button onclick="sendChatMessage()">Ask</button>
+            </div>
+            <div class="chat-messages" id="chat-messages"></div>
+        </div>
+    </div>
+
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
+    <!-- Load our visualization script -->
+    <script src="PodcastMapHierarchical.js?v=3"></script>
+</body>
+</html>

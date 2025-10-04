@@ -1,6 +1,6 @@
 # YonEarth Gaia Chatbot 🌍
 
-> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and three integrated books
+> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes (episodes 0-172, excluding #26) and three integrated books
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
@@ -446,6 +446,10 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 
 ### Long Term
 - **🧠 Advanced Knowledge Graph**: Create interconnected content relationships for deeper context discovery
+  - Neo4j graph database integration for relationship traversal queries
+  - JSON-LD/RDF format for structured data interoperability
+  - LLM-enhanced wiki generation: Wikipedia-style articles combining structured data with narrative text from source material
+  - Automated wiki page creation using entity data + original context chunks for rich, engaging content
 - **📱 Mobile App**: Native mobile application for better mobile experience
 - **🔍 Advanced Search Filters**: Filter by guest, topic, date range, and content type
 - **📈 Analytics Dashboard**: Usage statistics and popular topics tracking
