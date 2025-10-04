@@ -2,6 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 📂 Repository Structure
+
+**For complete file-by-file documentation**, see **[REPO_STRUCTURE.md](REPO_STRUCTURE.md)**
+
+This comprehensive guide describes every file in the repository, what it does, and how it fits into the system.
+
+### Quick Navigation
+
+- **Main Chat Flow**: `web/index.html` → `web/chat.js` → `src/api/bm25_endpoints.py` → `src/rag/bm25_chain.py` → `src/character/gaia.py`
+- **Search System**: `src/rag/bm25_hybrid_retriever.py` + `src/rag/semantic_category_matcher.py` + `src/rag/vectorstore.py`
+- **Voice Integration**: `src/voice/elevenlabs_client.py` + `src/api/voice_endpoints.py`
+- **Data Processing**: `src/ingestion/` (episode_processor, book_processor, chunker)
+- **Configuration**: `src/config/settings.py` (centralized settings from .env)
+- **Documentation**: `docs/` (setup, features, deployment guides)
+- **Active Scripts**: `scripts/` (6 utility scripts)
+- **Archived Scripts**: `scripts/archive/` (43 historical scripts organized by category)
+
 ## Development Commands
 
 ### Local Development
