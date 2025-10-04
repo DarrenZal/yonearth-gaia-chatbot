@@ -52,6 +52,38 @@
             </div>
         </div>
 
+        <!-- UMAP Parameter Controls -->
+        <div class="umap-controls" style="position: absolute; top: 80px; left: 20px; background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 100; max-width: 300px;">
+            <h3 style="margin: 0 0 15px 0; font-size: 14px; font-weight: 600;">UMAP Parameters</h3>
+
+            <div style="margin-bottom: 12px;">
+                <label style="display: block; font-size: 12px; margin-bottom: 4px;">
+                    Points: <span id="n-points-value">6000</span>
+                </label>
+                <input type="range" id="n-points" min="1000" max="10000" step="1000" value="6000" style="width: 100%;">
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label style="display: block; font-size: 12px; margin-bottom: 4px;">
+                    min_dist: <span id="min-dist-value">0.1</span>
+                </label>
+                <input type="range" id="min-dist" min="0" max="0.99" step="0.05" value="0.1" style="width: 100%;">
+            </div>
+
+            <div style="margin-bottom: 12px;">
+                <label style="display: block; font-size: 12px; margin-bottom: 4px;">
+                    n_neighbors: <span id="n-neighbors-value">15</span>
+                </label>
+                <input type="range" id="n-neighbors" min="5" max="200" step="5" value="15" style="width: 100%;">
+            </div>
+
+            <button id="regenerate-btn" style="width: 100%; padding: 8px; background: #4CAF50; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 600;">
+                Regenerate Map
+            </button>
+
+            <div id="status-message" style="margin-top: 10px; font-size: 11px; color: #666; display: none;"></div>
+        </div>
+
         <!-- Main visualization area -->
         <div class="visualization-container">
             <!-- SVG will be inserted here by D3.js -->

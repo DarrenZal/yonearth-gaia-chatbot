@@ -797,4 +797,142 @@ function sendChatMessage() {
 document.addEventListener('DOMContentLoaded', () => {
     const viz = new PodcastMapVisualization('#map-svg-container');
     window.podcastViz = viz; // Make it globally accessible for debugging
+
+    // Setup UMAP parameter controls
+    setupUMAPControls();
 });
+
+function setupUMAPControls() {
+    // Get slider elements
+    const nPointsSlider = document.getElementById('n-points');
+    const minDistSlider = document.getElementById('min-dist');
+    const nNeighborsSlider = document.getElementById('n-neighbors');
+
+    // Get value display elements
+    const nPointsValue = document.getElementById('n-points-value');
+    const minDistValue = document.getElementById('min-dist-value');
+    const nNeighborsValue = document.getElementById('n-neighbors-value');
+
+    // Get regenerate button and status message
+    const regenerateBtn = document.getElementById('regenerate-btn');
+    const statusMessage = document.getElementById('status-message');
+
+    // Update value displays when sliders change
+    if (nPointsSlider) {
+        nPointsSlider.addEventListener('input', (e) => {
+            nPointsValue.textContent = e.target.value;
+        });
+    }
+
+    if (minDistSlider) {
+        minDistSlider.addEventListener('input', (e) => {
+            minDistValue.textContent = parseFloat(e.target.value).toFixed(2);
+        });
+    }
+
+    if (nNeighborsSlider) {
+        nNeighborsSlider.addEventListener('input', (e) => {
+            nNeighborsValue.textContent = e.target.value;
+        });
+    }
+
+    // Handle regenerate button click
+    if (regenerateBtn) {
+        regenerateBtn.addEventListener('click', async () => {
+            const nPoints = parseInt(nPointsSlider.value);
+            const minDist = parseFloat(minDistSlider.value);
+            const nNeighbors = parseInt(nNeighborsSlider.value);
+
+            // Disable button and show status
+            regenerateBtn.disabled = true;
+            regenerateBtn.style.background = '#999';
+            regenerateBtn.textContent = 'Generating...';
+            statusMessage.style.display = 'block';
+            statusMessage.style.color = '#2196F3';
+            statusMessage.textContent = 'Starting UMAP generation... This may take 2-5 minutes.';
+
+            try {
+                // Call the backend API to regenerate UMAP
+                const response = await fetch(`/api/regenerate_umap?n_points=${nPoints}&min_dist=${minDist}&n_neighbors=${nNeighbors}`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMessage.style.color = '#4CAF50';
+                    statusMessage.textContent = `✓ ${result.message} Monitoring progress...`;
+
+                    // Poll for completion
+                    pollForCompletion(statusMessage, regenerateBtn);
+                } else {
+                    throw new Error(result.detail || 'Generation failed');
+                }
+
+            } catch (error) {
+                console.error('Error regenerating UMAP:', error);
+                statusMessage.style.color = '#f44336';
+                statusMessage.textContent = `✗ Error: ${error.message}`;
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            }
+        });
+    }
+}
+
+function pollForCompletion(statusMessage, regenerateBtn) {
+    let pollCount = 0;
+    const maxPolls = 60; // Poll for up to 5 minutes (5 seconds * 60 = 300s)
+
+    const pollInterval = setInterval(async () => {
+        pollCount++;
+
+        try {
+            const response = await fetch('/api/umap_generation_status');
+            const status = await response.json();
+
+            if (status.status === 'completed') {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#4CAF50';
+                statusMessage.textContent = '✓ Generation complete! Refreshing page...';
+
+                // Refresh after 2 seconds
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            } else if (status.status === 'failed') {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#f44336';
+                statusMessage.textContent = '✗ Generation failed. Please try again.';
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            } else if (status.status === 'running') {
+                // Update progress message
+                const elapsed = Math.floor((Date.now() / 1000) - (status.start_time || 0));
+                statusMessage.textContent = `⏳ Generating... (${elapsed}s elapsed)`;
+            }
+
+            // Stop polling after max attempts
+            if (pollCount >= maxPolls) {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#FF9800';
+                statusMessage.textContent = '⚠ Generation is taking longer than expected. Refresh manually in a few minutes.';
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            }
+
+        } catch (error) {
+            console.error('Error polling status:', error);
+        }
+
+    }, 5000); // Poll every 5 seconds
+}

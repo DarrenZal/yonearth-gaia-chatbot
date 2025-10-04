@@ -288,3 +288,135 @@ async def get_map_data_nomic(
             status_code=500,
             detail=f"Error fetching Nomic visualization data: {str(e)}"
         )
+
+
+@router.post("/regenerate_umap")
+async def regenerate_umap(
+    n_points: int = Query(6000, ge=1000, le=10000, description="Number of data points to use"),
+    min_dist: float = Query(0.1, ge=0.0, le=0.99, description="UMAP min_dist parameter"),
+    n_neighbors: int = Query(15, ge=5, le=200, description="UMAP n_neighbors parameter")
+):
+    """
+    Regenerate UMAP visualization with custom parameters
+
+    Args:
+        n_points: Number of vectors to fetch from Pinecone
+        min_dist: UMAP minimum distance between points (0.0-0.99)
+        n_neighbors: UMAP number of neighbors (5-200)
+
+    Returns:
+        Status message indicating generation has started
+    """
+    import asyncio
+    from concurrent.futures import ThreadPoolExecutor
+    import time
+
+    try:
+        # Run UMAP generation in background thread (it's CPU-intensive)
+        def run_umap_generation():
+            import subprocess
+            import sys
+
+            # Call the UMAP generation script with custom parameters
+            script_path = "/home/claudeuser/yonearth-gaia-chatbot/scripts/archive/visualization/generate_map_umap_topics.py"
+
+            # Run the script with environment variables to pass parameters
+            env = os.environ.copy()
+            env['MAX_VECTORS'] = str(n_points)
+            env['UMAP_MIN_DIST'] = str(min_dist)
+            env['UMAP_N_NEIGHBORS'] = str(n_neighbors)
+
+            # Write start timestamp
+            status_file = '/tmp/umap_generation_status.json'
+            import json
+            with open(status_file, 'w') as f:
+                json.dump({
+                    'status': 'running',
+                    'start_time': time.time(),
+                    'parameters': {
+                        'n_points': n_points,
+                        'min_dist': min_dist,
+                        'n_neighbors': n_neighbors
+                    }
+                }, f)
+
+            result = subprocess.run(
+                [sys.executable, script_path],
+                env=env,
+                capture_output=True,
+                text=True
+            )
+
+            # Write completion status
+            with open(status_file, 'w') as f:
+                json.dump({
+                    'status': 'completed' if result.returncode == 0 else 'failed',
+                    'end_time': time.time(),
+                    'success': result.returncode == 0,
+                    'stdout': result.stdout[-1000:] if result.stdout else '',  # Last 1000 chars
+                    'stderr': result.stderr[-1000:] if result.stderr else '',
+                    'parameters': {
+                        'n_points': n_points,
+                        'min_dist': min_dist,
+                        'n_neighbors': n_neighbors
+                    }
+                }, f)
+
+            return result.returncode == 0
+
+        # Start generation in background
+        executor = ThreadPoolExecutor(max_workers=1)
+        loop = asyncio.get_event_loop()
+
+        # Start the task but don't wait for it
+        loop.run_in_executor(executor, run_umap_generation)
+
+        logger.info(f"Starting UMAP generation with n_points={n_points}, min_dist={min_dist}, n_neighbors={n_neighbors}")
+
+        return {
+            "status": "started",
+            "message": f"UMAP generation started with {n_points} points, min_dist={min_dist}, n_neighbors={n_neighbors}",
+            "parameters": {
+                "n_points": n_points,
+                "min_dist": min_dist,
+                "n_neighbors": n_neighbors
+            }
+        }
+
+    except Exception as e:
+        logger.error(f"Error starting UMAP generation: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail=f"Error starting UMAP generation: {str(e)}"
+        )
+
+
+@router.get("/umap_generation_status")
+async def get_umap_generation_status():
+    """
+    Check the status of UMAP generation
+
+    Returns:
+        Current generation status
+    """
+    import json
+    status_file = '/tmp/umap_generation_status.json'
+
+    try:
+        if not os.path.exists(status_file):
+            return {
+                "status": "idle",
+                "message": "No generation in progress"
+            }
+
+        with open(status_file, 'r') as f:
+            status_data = json.load(f)
+
+        return status_data
+
+    except Exception as e:
+        logger.error(f"Error reading UMAP generation status: {str(e)}")
+        return {
+            "status": "unknown",
+            "error": str(e)
+        }

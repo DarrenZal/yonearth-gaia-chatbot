@@ -14,7 +14,7 @@ from openai import OpenAI
 import umap
 
 # Load environment
-env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+env_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
@@ -29,10 +29,12 @@ if not PINECONE_API_KEY or not OPENAI_API_KEY:
 
 print(f"✓ Environment loaded")
 
-# Parameters
-MAX_VECTORS = 3000  # Reduced for memory safety with UMAP
-N_CLUSTERS = 8  # Discover 8 semantic topics
+# Parameters - can be overridden by environment variables
+MAX_VECTORS = int(os.getenv("MAX_VECTORS", "6000"))  # Standardized across all maps
+N_CLUSTERS = 9  # Standardized to 9 semantic topics
 SAMPLE_SIZE = 15  # Chunks to sample per cluster for labeling
+UMAP_MIN_DIST = float(os.getenv("UMAP_MIN_DIST", "0.1"))
+UMAP_N_NEIGHBORS = int(os.getenv("UMAP_N_NEIGHBORS", "15"))
 
 
 def fetch_vectors():
@@ -96,8 +98,8 @@ def reduce_and_cluster(vectors):
 
     reducer = umap.UMAP(
         n_components=2,
-        n_neighbors=15,
-        min_dist=0.1,
+        n_neighbors=UMAP_N_NEIGHBORS,
+        min_dist=UMAP_MIN_DIST,
         metric='cosine',
         random_state=42,
         verbose=True

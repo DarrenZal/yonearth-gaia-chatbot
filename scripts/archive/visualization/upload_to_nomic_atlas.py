@@ -12,7 +12,7 @@ from dotenv import load_dotenv
 from typing import List, Dict
 
 # Load environment
-env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+env_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
@@ -26,7 +26,7 @@ if not PINECONE_API_KEY:
 
 print(f"✓ Environment loaded")
 
-MAX_VECTORS = 3000  # Reduced for memory constraints
+MAX_VECTORS = 6000  # Standardized across all maps
 
 
 def fetch_vectors_with_embeddings():
@@ -140,7 +140,7 @@ def upload_to_nomic(embeddings, metadata_df):
     # Create dataset with AtlasDataset
     dataset = AtlasDataset(
         identifier='yonearth-podcast-hierarchical-topics',
-        description='YonEarth podcast episodes with automatic hierarchical topic modeling',
+        description='YonEarth podcast episodes (6000 points) with automatic hierarchical topic modeling',
         unique_id_field='id',
         is_public=True  # Required for free tier
     )

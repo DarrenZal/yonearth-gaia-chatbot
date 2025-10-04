@@ -435,10 +435,113 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 - **Result**: VIRIDITAS book now correctly shows "Chapter 30: Gaia Speaks" instead of wrong page numbers
 - **Affected Methods**: `_extract_episode_references`, `_format_sources`, `search_episodes`, and `_format_comparison_result` in `bm25_chain.py`
 
+## Podcast Episode Visualization Maps
+
+The system provides multiple interactive 2D visualizations of podcast episode embeddings, each using different dimensionality reduction algorithms. All maps use **6000 text chunks from 170 episodes** (standardized for fair comparison).
+
+### Available Visualizations
+
+#### 1. **t-SNE Map** (`/PodcastMap.html`)
+- **Algorithm**: t-SNE (t-Distributed Stochastic Neighbor Embedding)
+- **Parameters**:
+  - `perplexity=30`: Balance between local and global structure
+  - `n_iter=1000`: Number of optimization iterations
+  - `n_clusters=9`: K-means clustering for topic groups
+- **Script**: `scripts/archive/visualization/generate_map_semantic_topics.py`
+- **Best For**: Discovering local cluster structures and fine-grained topic boundaries
+- **Output**: `/data/processed/podcast_map_data.json`
+
+#### 2. **UMAP Map** (`/PodcastMapUMAP.html`) ✨ **Interactive Parameters**
+- **Algorithm**: UMAP (Uniform Manifold Approximation and Projection)
+- **Default Parameters**:
+  - `n_points=6000`: Number of text chunks to visualize
+  - `n_neighbors=15`: Controls local vs. global structure (5-200)
+  - `min_dist=0.1`: Minimum distance between points (0.0-0.99)
+  - `n_epochs=500`: Optimization iterations
+  - `n_clusters=9`: K-means clustering for topics
+- **Interactive Controls**: Users can adjust `n_points`, `min_dist`, and `n_neighbors` in the UI
+  - Higher `n_neighbors` (50-100): Pulls clusters closer together globally
+  - Higher `min_dist` (0.3-0.5): Spreads points more evenly
+  - Fewer points (3000): Cleaner aesthetics with tighter clusters
+- **Script**: `scripts/archive/visualization/generate_map_umap_topics.py`
+- **API Endpoints**:
+  - `POST /api/regenerate_umap`: Trigger UMAP generation with custom parameters
+  - `GET /api/umap_generation_status`: Poll generation progress
+- **Best For**: Preserving global structure while maintaining local relationships
+- **Output**: `/data/processed/podcast_map_umap_data.json`
+- **Features**: Real-time progress monitoring, automatic page refresh on completion
+
+#### 3. **Hierarchical Map** (`/PodcastMapHierarchical.html`)
+- **Algorithm**: UMAP with hierarchical clustering
+- **Parameters**:
+  - `n_neighbors=15`
+  - `min_dist=0.1`
+  - `n_clusters_level1=3`: Top-level categories
+  - `n_clusters_level2=9`: Mid-level topics
+  - `n_clusters_level3=27`: Fine-grained subtopics
+- **Script**: `scripts/archive/visualization/generate_map_hierarchical.py`
+- **Best For**: Exploring topic hierarchies and nested relationships
+- **Output**: `/data/processed/podcast_map_hierarchical_data.json`
+
+#### 4. **Nomic Atlas Map** (`/PodcastMapNomic.html`)
+- **Algorithm**: Nomic's proprietary UMAP implementation with automatic topic modeling
+- **Parameters**:
+  - `n_points=6000`: Standardized dataset size
+  - Automatic hierarchical topic detection
+- **Script**: `scripts/archive/visualization/upload_to_nomic_atlas.py`
+- **Best For**: Cloud-based visualization with automatic topic labeling
+- **Output**: `/data/processed/nomic_projections.json`
+- **Features**: Hosted on Nomic Atlas cloud, automatic topic hierarchies
+
+### UMAP Parameter Effects
+
+**`n_neighbors`** (Number of Neighbors):
+- **5-15**: Emphasizes local structure, creates tight small clusters
+- **50-100**: Emphasizes global structure, pulls clusters closer together
+- **Effect**: Higher values reduce gaps between distant clusters (e.g., "Accounting" cluster gap)
+
+**`min_dist`** (Minimum Distance):
+- **0.0-0.1**: Points cluster very tightly, clumped appearance
+- **0.3-0.5**: Points spread more evenly, looser clusters
+- **Effect**: Higher values create more aesthetically balanced layouts
+
+**`n_points`** (Number of Data Points):
+- **3000**: Faster generation (~2min), cleaner aesthetics, fewer outliers
+- **6000**: Better content coverage (~3min), more comprehensive but may have outlier clusters
+- **Effect**: Fewer points often produce more visually pleasing layouts
+
+### Visualization Generation Workflow
+
+1. **Fetch vectors** from Pinecone with embeddings
+2. **Apply dimensionality reduction** (t-SNE, UMAP, or Hierarchical UMAP)
+3. **Cluster** using K-means or hierarchical clustering
+4. **Label clusters** using GPT-4 based on representative chunks
+5. **Save** to `/data/processed/` as JSON
+6. **Serve** via API endpoints for web visualization
+
+### Common Visualization Tasks
+
+**Regenerate UMAP with custom parameters**:
+```bash
+# Via environment variables
+MAX_VECTORS=3000 UMAP_MIN_DIST=0.4 UMAP_N_NEIGHBORS=75 \
+python3 scripts/archive/visualization/generate_map_umap_topics.py
+```
+
+**Upload new dataset to Nomic Atlas**:
+```bash
+python3 scripts/archive/visualization/upload_to_nomic_atlas.py
+```
+
+**Generate hierarchical visualization**:
+```bash
+python3 scripts/archive/visualization/generate_map_hierarchical.py
+```
+
 ## Deployment Notes
 
 - **VPS**: Use `./deploy.sh` for complete Docker setup with nginx, SSL, Redis
-- **Render**: Use `render.yaml` blueprint for cloud deployment  
+- **Render**: Use `render.yaml` blueprint for cloud deployment
 - **Local**: Use `scripts/start_local.py` for development
 
 ### Current Production Status

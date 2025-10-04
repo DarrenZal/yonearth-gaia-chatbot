@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 # Load environment
-env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+env_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
@@ -30,8 +30,8 @@ if not PINECONE_API_KEY or not OPENAI_API_KEY:
 print(f"✓ Environment loaded")
 
 # Parameters
-MAX_VECTORS = 6000  # Reduced for memory safety
-N_CLUSTERS = 8  # Discover 8 semantic topics
+MAX_VECTORS = 6000  # Standardized across all maps
+N_CLUSTERS = 9  # Standardized to 9 semantic topics
 SAMPLE_SIZE = 15  # Chunks to sample per cluster for labeling
 
 

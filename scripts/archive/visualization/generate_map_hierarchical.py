@@ -6,8 +6,10 @@ Generate hierarchical topic map with multi-level clustering
 import os
 import json
 import numpy as np
+import time
 from pinecone import Pinecone
 from sklearn.cluster import AgglomerativeClustering
+from sklearn.feature_extraction.text import TfidfVectorizer
 from typing import List, Dict, Any
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -15,7 +17,7 @@ import umap
 from collections import defaultdict
 
 # Load environment
-env_path = os.path.join(os.path.dirname(__file__), '..', '.env')
+env_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
 load_dotenv(dotenv_path=env_path)
 
 # Configuration
@@ -31,11 +33,23 @@ if not PINECONE_API_KEY or not OPENAI_API_KEY:
 print(f"✓ Environment loaded")
 
 # Hierarchical Parameters
-MAX_VECTORS = 3000
-LEVEL_1_CLUSTERS = 4   # Broad themes
-LEVEL_2_CLUSTERS = 10  # Medium categories
-LEVEL_3_CLUSTERS = 24  # Detailed topics
-SAMPLE_SIZE = 15
+MAX_VECTORS = int(os.getenv("HIERARCHICAL_MAX_VECTORS", "3000"))  # Reduced to 3000 for memory constraints
+LEVEL_1_CLUSTERS = 3   # Broad themes
+LEVEL_2_CLUSTERS = 9   # Medium categories (standardized)
+LEVEL_3_CLUSTERS = 27  # Detailed topics
+SAMPLE_SIZE = 15  # Snippets per cluster for labeling
+
+# Model Configuration (environment overrides)
+LEVEL_1_MODEL = os.getenv("HIERARCHICAL_L1_MODEL", "gpt-4o")  # GPT-4o for broad themes
+LEVEL_2_MODEL = os.getenv("HIERARCHICAL_L2_MODEL", "gpt-4o-mini")  # GPT-4o-mini for medium
+LEVEL_3_MODEL = os.getenv("HIERARCHICAL_L3_MODEL", "gpt-4o-mini")  # GPT-4o-mini for detailed
+
+# API Configuration
+MAX_RETRIES = 3
+RETRY_DELAY_BASE = 2  # Exponential backoff base (seconds)
+MAX_TOKENS_LABEL = 150  # Strict token limit for label generation
+TEMPERATURE = 0.2  # Low temperature for consistency
+TFIDF_TERMS = 10  # Number of TF-IDF terms to include per cluster
 
 # Color palettes for each level
 LEVEL_1_COLORS = ["#E53935", "#43A047", "#1E88E5", "#FB8C00"]  # Red, Green, Blue, Orange
@@ -198,19 +212,69 @@ def build_hierarchy_tree(labels):
     # Assign l2 → l1 parents
     for l2_id in range(LEVEL_2_CLUSTERS):
         if l2_id in l2_to_l1:
-            parent_l1 = max(l2_to_l1[l2_id].items(), key=lambda x: x[1])[0]
+            parent_l1 = int(max(l2_to_l1[l2_id].items(), key=lambda x: x[1])[0])  # Convert to Python int
             hierarchy['l2'][l2_id]['parent_l1'] = parent_l1
-            hierarchy['l1'][parent_l1]['children_l2'].append(l2_id)
+            hierarchy['l1'][parent_l1]['children_l2'].append(int(l2_id))
 
     # Assign l3 → l2 parents
     for l3_id in range(LEVEL_3_CLUSTERS):
         if l3_id in l3_to_l2:
-            parent_l2 = max(l3_to_l2[l3_id].items(), key=lambda x: x[1])[0]
+            parent_l2 = int(max(l3_to_l2[l3_id].items(), key=lambda x: x[1])[0])  # Convert to Python int
             hierarchy['l3'][l3_id]['parent_l2'] = parent_l2
-            hierarchy['l2'][parent_l2]['children_l3'].append(l3_id)
+            hierarchy['l2'][parent_l2]['children_l3'].append(int(l3_id))
 
     print("✓ Hierarchy tree built")
     return hierarchy
+
+
+def extract_tfidf_terms(texts, n_terms=10):
+    """Extract top TF-IDF terms from cluster texts"""
+    try:
+        if len(texts) == 0:
+            return []
+        vectorizer = TfidfVectorizer(max_features=n_terms, stop_words='english')
+        tfidf_matrix = vectorizer.fit_transform(texts)
+        feature_names = vectorizer.get_feature_names_out()
+        return feature_names.tolist()
+    except Exception as e:
+        print(f"    ⚠ TF-IDF extraction failed: {e}")
+        return []
+
+
+def call_openai_with_retry(client, model, prompt, max_retries=MAX_RETRIES):
+    """Call OpenAI API with exponential backoff retry logic"""
+    for attempt in range(max_retries):
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                response_format={"type": "json_object"},
+                temperature=TEMPERATURE,
+                max_tokens=MAX_TOKENS_LABEL
+            )
+            result = json.loads(response.choices[0].message.content)
+
+            # Validate strict schema: { "label": string, "themes": string[] }
+            if not isinstance(result.get("label"), str):
+                raise ValueError("Invalid schema: 'label' must be a string")
+            if not isinstance(result.get("themes"), list):
+                raise ValueError("Invalid schema: 'themes' must be a list")
+            if not all(isinstance(t, str) for t in result.get("themes", [])):
+                raise ValueError("Invalid schema: 'themes' must contain only strings")
+
+            return result
+
+        except Exception as e:
+            wait_time = RETRY_DELAY_BASE ** attempt
+            if attempt < max_retries - 1:
+                print(f"    ⚠ API error (attempt {attempt + 1}/{max_retries}): {e}")
+                print(f"    ⏳ Retrying in {wait_time}s...")
+                time.sleep(wait_time)
+            else:
+                print(f"    ❌ Failed after {max_retries} attempts: {e}")
+                raise
+
+    return {"label": "Unknown Topic", "themes": []}
 
 
 def generate_hierarchical_labels(vectors, labels, hierarchy):
@@ -218,126 +282,157 @@ def generate_hierarchical_labels(vectors, labels, hierarchy):
     print("\n" + "="*70)
     print("GENERATING SEMANTIC LABELS (GPT-4)")
     print("="*70)
+    print("⚠️  This will make 39 API calls (3 + 9 + 27 clusters)")
+    print("⚠️  Saving progress after each level in case of interruption...")
 
     client = OpenAI(api_key=OPENAI_API_KEY)
 
+    # Create checkpoints directory
+    checkpoint_dir = "/root/yonearth-gaia-chatbot/data/processed/hierarchical_checkpoints"
+    os.makedirs(checkpoint_dir, exist_ok=True)
+
     # Level 1 - Broad themes
-    print(f"\nLevel 1: Generating {LEVEL_1_CLUSTERS} broad theme labels...")
+    print(f"\nLevel 1: Generating {LEVEL_1_CLUSTERS} broad theme labels (using {LEVEL_1_MODEL})...")
     for cluster_id in range(LEVEL_1_CLUSTERS):
         cluster_indices = [i for i, label in enumerate(labels['l1']) if label == cluster_id]
         sample_indices = np.random.choice(cluster_indices, min(SAMPLE_SIZE, len(cluster_indices)), replace=False)
-        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:200] for i in sample_indices]
 
-        prompt = f"""Analyze these {len(sample_texts)} podcast transcript excerpts from a BROAD cluster and identify the overarching theme.
+        # Get short snippets (100 chars each, not 200)
+        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:100] for i in sample_indices]
 
-Excerpts:
-{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts)])}
+        # Extract TF-IDF terms from all cluster texts
+        all_cluster_texts = [vectors[i].get('metadata', {}).get('text', '') for i in cluster_indices]
+        tfidf_terms = extract_tfidf_terms(all_cluster_texts, TFIDF_TERMS)
 
-This is a HIGH-LEVEL theme encompassing multiple sub-categories. Provide:
-1. A concise theme label (2-4 words, like "Environmental Stewardship" or "Social Impact")
-2. 3-5 broad concepts that fall under this theme
+        prompt = f"""Analyze this BROAD theme cluster from podcast transcripts.
 
-Format as JSON:
+Sample excerpts (10-15 snippets):
+{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts[:15])])}
+
+Top keywords (TF-IDF):
+{', '.join(tfidf_terms)}
+
+Provide a HIGH-LEVEL theme label (2-4 words) and 3-5 broad concepts.
+
+STRICT JSON FORMAT:
 {{
   "label": "Theme Label Here",
   "themes": ["concept1", "concept2", "concept3"]
 }}"""
 
         try:
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[{"role": "user", "content": prompt}],
-                response_format={"type": "json_object"},
-                temperature=0.3
-            )
-            result = json.loads(response.choices[0].message.content)
+            result = call_openai_with_retry(client, LEVEL_1_MODEL, prompt)
             hierarchy['l1'][cluster_id]['name'] = result.get("label", f"Theme {cluster_id}")
             hierarchy['l1'][cluster_id]['themes'] = result.get("themes", [])
             print(f"  ✓ L1-{cluster_id}: {hierarchy['l1'][cluster_id]['name']}")
         except Exception as e:
-            print(f"  ⚠ Error: {e}")
+            hierarchy['l1'][cluster_id]['name'] = f"Theme {cluster_id}"
+            hierarchy['l1'][cluster_id]['themes'] = []
+            print(f"  ❌ L1-{cluster_id}: Failed - using fallback")
+
+    # Save Level 1 checkpoint
+    with open(f"{checkpoint_dir}/level1_complete.json", 'w') as f:
+        json.dump(hierarchy, f, indent=2)
+    print("  💾 Level 1 saved to checkpoint")
 
     # Level 2 - Medium categories
-    print(f"\nLevel 2: Generating {LEVEL_2_CLUSTERS} category labels...")
+    print(f"\nLevel 2: Generating {LEVEL_2_CLUSTERS} category labels (using {LEVEL_2_MODEL})...")
     for cluster_id in range(LEVEL_2_CLUSTERS):
         cluster_indices = [i for i, label in enumerate(labels['l2']) if label == cluster_id]
         sample_indices = np.random.choice(cluster_indices, min(SAMPLE_SIZE, len(cluster_indices)), replace=False)
-        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:200] for i in sample_indices]
+
+        # Get short snippets (100 chars each)
+        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:100] for i in sample_indices]
+
+        # Extract TF-IDF terms from cluster
+        all_cluster_texts = [vectors[i].get('metadata', {}).get('text', '') for i in cluster_indices]
+        tfidf_terms = extract_tfidf_terms(all_cluster_texts, TFIDF_TERMS)
 
         parent_l1 = hierarchy['l2'][cluster_id]['parent_l1']
         parent_name = hierarchy['l1'][parent_l1]['name'] if parent_l1 is not None else "Unknown"
 
-        prompt = f"""Analyze these {len(sample_texts)} podcast transcript excerpts from a MEDIUM-LEVEL cluster.
+        prompt = f"""Analyze this MEDIUM-LEVEL category cluster from podcast transcripts.
 
 Parent Theme: {parent_name}
 
-Excerpts:
-{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts)])}
+Sample excerpts (10-15 snippets):
+{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts[:15])])}
 
-This is a CATEGORY within "{parent_name}". Provide:
-1. A category label (3-6 words, like "Regenerative Agriculture Practices")
-2. 3-5 key aspects
+Top keywords (TF-IDF):
+{', '.join(tfidf_terms)}
 
-Format as JSON:
+Provide a category label (3-6 words) and 3-5 key aspects within "{parent_name}".
+
+STRICT JSON FORMAT:
 {{
   "label": "Category Label Here",
   "themes": ["aspect1", "aspect2", "aspect3"]
 }}"""
 
         try:
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[{"role": "user", "content": prompt}],
-                response_format={"type": "json_object"},
-                temperature=0.3
-            )
-            result = json.loads(response.choices[0].message.content)
+            result = call_openai_with_retry(client, LEVEL_2_MODEL, prompt)
             hierarchy['l2'][cluster_id]['name'] = result.get("label", f"Category {cluster_id}")
             hierarchy['l2'][cluster_id]['themes'] = result.get("themes", [])
             print(f"  ✓ L2-{cluster_id}: {hierarchy['l2'][cluster_id]['name']} [parent: {parent_name}]")
         except Exception as e:
-            print(f"  ⚠ Error: {e}")
+            hierarchy['l2'][cluster_id]['name'] = f"Category {cluster_id}"
+            hierarchy['l2'][cluster_id]['themes'] = []
+            print(f"  ❌ L2-{cluster_id}: Failed - using fallback [parent: {parent_name}]")
+
+    # Save Level 2 checkpoint
+    with open(f"{checkpoint_dir}/level2_complete.json", 'w') as f:
+        json.dump(hierarchy, f, indent=2)
+    print("  💾 Level 2 saved to checkpoint")
 
     # Level 3 - Detailed topics
-    print(f"\nLevel 3: Generating {LEVEL_3_CLUSTERS} detailed topic labels...")
+    print(f"\nLevel 3: Generating {LEVEL_3_CLUSTERS} detailed topic labels (using {LEVEL_3_MODEL})...")
+    print("  (This will take ~2-3 minutes for 27 clusters with retry logic)")
     for cluster_id in range(LEVEL_3_CLUSTERS):
         cluster_indices = [i for i, label in enumerate(labels['l3']) if label == cluster_id]
         sample_indices = np.random.choice(cluster_indices, min(SAMPLE_SIZE, len(cluster_indices)), replace=False)
-        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:200] for i in sample_indices]
+
+        # Get short snippets (100 chars each)
+        sample_texts = [vectors[i].get('metadata', {}).get('text', '')[:100] for i in sample_indices]
+
+        # Extract TF-IDF terms from cluster
+        all_cluster_texts = [vectors[i].get('metadata', {}).get('text', '') for i in cluster_indices]
+        tfidf_terms = extract_tfidf_terms(all_cluster_texts, TFIDF_TERMS)
 
         parent_l2 = hierarchy['l3'][cluster_id]['parent_l2']
         parent_name = hierarchy['l2'][parent_l2]['name'] if parent_l2 is not None else "Unknown"
 
-        prompt = f"""Analyze these {len(sample_texts)} podcast transcript excerpts from a SPECIFIC cluster.
+        prompt = f"""Analyze this SPECIFIC topic cluster from podcast transcripts.
 
 Parent Category: {parent_name}
 
-Excerpts:
-{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts)])}
+Sample excerpts (10-15 snippets):
+{chr(10).join([f'{i+1}. "{text}..."' for i, text in enumerate(sample_texts[:15])])}
 
-This is a SPECIFIC TOPIC within "{parent_name}". Provide:
-1. A specific topic label (4-8 words, like "Biochar for Soil Carbon Sequestration")
-2. 2-4 detailed themes
+Top keywords (TF-IDF):
+{', '.join(tfidf_terms)}
 
-Format as JSON:
+Provide a specific topic label (4-8 words) and 2-4 detailed themes within "{parent_name}".
+
+STRICT JSON FORMAT:
 {{
   "label": "Specific Topic Label Here",
   "themes": ["theme1", "theme2"]
 }}"""
 
         try:
-            response = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[{"role": "user", "content": prompt}],
-                response_format={"type": "json_object"},
-                temperature=0.3
-            )
-            result = json.loads(response.choices[0].message.content)
+            result = call_openai_with_retry(client, LEVEL_3_MODEL, prompt)
             hierarchy['l3'][cluster_id]['name'] = result.get("label", f"Topic {cluster_id}")
             hierarchy['l3'][cluster_id]['themes'] = result.get("themes", [])
-            print(f"  ✓ L3-{cluster_id}: {hierarchy['l3'][cluster_id]['name']}")
+            print(f"  ✓ L3-{cluster_id+1}/{LEVEL_3_CLUSTERS}: {hierarchy['l3'][cluster_id]['name']}")
         except Exception as e:
-            print(f"  ⚠ Error: {e}")
+            hierarchy['l3'][cluster_id]['name'] = f"Topic {cluster_id}"
+            hierarchy['l3'][cluster_id]['themes'] = []
+            print(f"  ❌ L3-{cluster_id+1}/{LEVEL_3_CLUSTERS}: Failed - using fallback")
+
+    # Save Level 3 checkpoint
+    with open(f"{checkpoint_dir}/level3_complete.json", 'w') as f:
+        json.dump(hierarchy, f, indent=2)
+    print("  💾 Level 3 saved to checkpoint")
 
     return hierarchy
 
