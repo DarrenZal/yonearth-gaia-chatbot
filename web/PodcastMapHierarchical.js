@@ -34,9 +34,15 @@ class PodcastMapVisualization {
         // Audio synchronization
         this.audioSyncInterval = null;
 
-        // Hierarchical state
-        this.currentLevel = 'l2';  // Start with medium level
+        // Hierarchical state with semantic zoom
+        this.currentLevel = 'c9';  // Start with 9 clusters (medium detail)
         this.hierarchy = null;
+        this.clusterLevels = [];  // Will store [1, 2, 3, ..., 18]
+
+        // Zoom state
+        this.zoom = null;
+        this.currentZoomScale = 1.0;
+        this.semanticZoomEnabled = true; // Start with semantic zoom enabled
 
         // Initialize
         this.init();
@@ -55,6 +61,9 @@ class PodcastMapVisualization {
         // Set up scales
         this.setupScales();
 
+        // Set up zoom behavior (before creating visualization)
+        this.setupZoom();
+
         // Create visualization
         this.createVisualization();
 
@@ -66,6 +75,10 @@ class PodcastMapVisualization {
 
         // Set up event listeners
         this.setupEventListeners();
+
+        // Set up mode toggle and slider
+        this.setupModeToggle();
+        this.setupClusterSlider();
 
         // Load episode list
         this.loadEpisodeList();
@@ -91,8 +104,9 @@ class PodcastMapVisualization {
             .attr('height', this.height)
             .attr('fill', 'transparent');
 
-        // Create main group
+        // Create main group for zoom transform
         this.g = this.svg.append('g')
+            .attr('class', 'zoom-group')
             .attr('transform', `translate(0, 0)`);
     }
 
@@ -102,8 +116,10 @@ class PodcastMapVisualization {
             const data = await response.json();
             this.data = data;
             this.hierarchy = data.hierarchy;
+            this.clusterLevels = data.cluster_levels || [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
+            this.currentLevel = data.default_level || 'c9';
             console.log('Loaded hierarchical map data:', data);
-            console.log('Hierarchy levels:', data.levels);
+            console.log('Cluster levels available:', this.clusterLevels);
         } catch (error) {
             console.error('Error loading map data:', error);
             // Use dummy data for testing
@@ -222,6 +238,70 @@ class PodcastMapVisualization {
         this.yScale = d3.scaleLinear()
             .domain(yExtent)
             .range([0, this.height]);
+    }
+
+    setupZoom() {
+        // Create D3 zoom behavior with semantic zoom integration
+        this.zoom = d3.zoom()
+            .scaleExtent([0.5, 8])  // Allow zooming from 0.5x to 8x
+            .on('zoom', (event) => {
+                // Apply transform to main group
+                this.g.attr('transform', event.transform);
+
+                // Get current zoom scale
+                const zoomScale = event.transform.k;
+                this.currentZoomScale = zoomScale;
+
+                // Only apply semantic zoom if enabled
+                if (this.semanticZoomEnabled) {
+                    // Map zoom scale to cluster level (semantic zoom)
+                    const newLevel = this.zoomScaleToClusterLevel(zoomScale);
+
+                    // Switch cluster level if changed
+                    if (newLevel !== this.currentLevel) {
+                        console.log(`Semantic zoom: ${this.currentLevel} → ${newLevel} (zoom: ${zoomScale.toFixed(2)}x)`);
+                        this.switchLevel(newLevel);
+                    }
+                }
+
+                // Update breadcrumb regardless of mode
+                this.updateBreadcrumb();
+            });
+
+        // Apply zoom to SVG
+        this.svg.call(this.zoom);
+    }
+
+    zoomScaleToClusterLevel(zoomScale) {
+        /**
+         * Map zoom scale to cluster count using smooth interpolation
+         * Zoom 0.5x → 1 cluster (most zoomed out, broadest view)
+         * Zoom 1.0x → 9 clusters (default medium detail)
+         * Zoom 8.0x → 18 clusters (most zoomed in, finest detail)
+         */
+
+        // Define zoom breakpoints
+        const minZoom = 0.5;
+        const maxZoom = 8.0;
+        const minClusters = 1;
+        const maxClusters = 18;
+
+        // Clamp zoom scale to valid range
+        const clampedZoom = Math.max(minZoom, Math.min(maxZoom, zoomScale));
+
+        // Exponential mapping for better distribution
+        // More clusters at higher zoom levels
+        const normalizedZoom = (clampedZoom - minZoom) / (maxZoom - minZoom);
+        const clusterCount = Math.round(minClusters + normalizedZoom * (maxClusters - minClusters));
+
+        // Ensure we have this cluster level
+        const validClusterCount = this.clusterLevels.includes(clusterCount)
+            ? clusterCount
+            : this.clusterLevels.reduce((prev, curr) =>
+                Math.abs(curr - clusterCount) < Math.abs(prev - clusterCount) ? curr : prev
+            );
+
+        return `c${validClusterCount}`;
     }
 
     createVisualization() {
@@ -774,12 +854,17 @@ class PodcastMapVisualization {
     }
 
     setupHierarchyControls() {
-        // Set up level switching buttons
+        // Set up level switching buttons with zoom triggers
         const buttons = document.querySelectorAll('.level-btn');
         buttons.forEach(btn => {
             btn.addEventListener('click', () => {
                 const level = btn.getAttribute('data-level');
-                this.switchLevel(level);
+                const targetZoom = parseFloat(btn.getAttribute('data-zoom')) || 1.0;
+
+                // Apply zoom transition (which will automatically trigger level switch)
+                this.svg.transition()
+                    .duration(750)
+                    .call(this.zoom.scaleTo, targetZoom);
 
                 // Update button states
                 buttons.forEach(b => b.classList.remove('active'));
@@ -801,25 +886,37 @@ class PodcastMapVisualization {
 
     updateBreadcrumb() {
         const breadcrumb = document.getElementById('breadcrumb');
-        const levelNames = {
-            'l1': 'Broad Themes',
-            'l2': 'Medium Categories',
-            'l3': 'Detailed Topics'
-        };
-        breadcrumb.innerHTML = `<span class="breadcrumb-item">${levelNames[this.currentLevel]}</span>`;
+
+        // Extract cluster count from level (e.g., 'c9' → 9)
+        const clusterCount = parseInt(this.currentLevel.substring(1));
+
+        // Generate dynamic description based on cluster count
+        let description = '';
+        if (clusterCount <= 3) {
+            description = `Very Broad View (${clusterCount} ${clusterCount === 1 ? 'Cluster' : 'Clusters'})`;
+        } else if (clusterCount <= 9) {
+            description = `Medium Detail (${clusterCount} Clusters)`;
+        } else {
+            description = `Fine Detail (${clusterCount} Clusters)`;
+        }
+
+        breadcrumb.innerHTML = `<span class="breadcrumb-item">${description} - Zoom: ${this.currentZoomScale.toFixed(2)}x</span>`;
     }
 
     updateVisualizationLevel() {
         if (!this.data || !this.hierarchy) return;
 
-        // Update point colors based on current level
+        // Update point colors and sizes based on current level
+        const clusterCount = parseInt(this.currentLevel.substring(1));
+        const pointRadius = clusterCount <= 3 ? 6 : clusterCount <= 9 ? 4 : 3;
+
         const pointsGroup = this.g.select('.points');
         if (!pointsGroup.empty()) {
             pointsGroup.selectAll('circle')
                 .transition()
                 .duration(500)
                 .attr('fill', d => this.getPointColorForLevel(d))
-                .attr('r', d => this.currentLevel === 'l3' ? 3 : this.currentLevel === 'l1' ? 6 : 4);
+                .attr('r', pointRadius);
         }
 
         // Update Voronoi colors
@@ -922,6 +1019,51 @@ class PodcastMapVisualization {
         const clusters = this.getCurrentClusters();
         const cluster = clusters.find(c => c.id === clusterId);
         return cluster?.color || '#999';
+    }
+
+    setupModeToggle() {
+        const checkbox = document.getElementById('zoom-mode-checkbox');
+        const modeLabel = document.getElementById('mode-label');
+        const sliderContainer = document.getElementById('cluster-slider-container');
+
+        if (!checkbox || !modeLabel || !sliderContainer) return;
+
+        checkbox.addEventListener('change', (e) => {
+            this.semanticZoomEnabled = e.target.checked;
+
+            if (this.semanticZoomEnabled) {
+                // Semantic zoom mode
+                modeLabel.textContent = '🔍 Semantic Zoom';
+                sliderContainer.style.display = 'none';
+            } else {
+                // Manual slider mode
+                modeLabel.textContent = '🎚️ Manual Slider';
+                sliderContainer.style.display = 'flex';
+            }
+
+            console.log(`Switched to ${this.semanticZoomEnabled ? 'Semantic Zoom' : 'Manual Slider'} mode`);
+        });
+    }
+
+    setupClusterSlider() {
+        const slider = document.getElementById('cluster-slider');
+        const countDisplay = document.getElementById('cluster-count');
+
+        if (!slider || !countDisplay) return;
+
+        slider.addEventListener('input', (e) => {
+            const clusterCount = parseInt(e.target.value);
+            countDisplay.textContent = clusterCount;
+
+            // Only switch if in manual mode
+            if (!this.semanticZoomEnabled) {
+                const newLevel = `c${clusterCount}`;
+                if (newLevel !== this.currentLevel) {
+                    console.log(`Manual slider: ${this.currentLevel} → ${newLevel}`);
+                    this.switchLevel(newLevel);
+                }
+            }
+        });
     }
 }
 

@@ -149,7 +149,7 @@ python3 -m src.ingestion.process_books
 8. **Update BM25 index** to include book content for keyword-based search
 
 **Important Notes:**
-- **Episode location**: Episodes must be in `/data/transcripts/` directory  
+- **Episode location**: Episodes must be in `/data/transcripts/` directory
 - **Episode format**: JSON files with `full_transcript` field
 - **Episode processing time**: ~172 episodes takes 5-10 minutes depending on API limits
 - **Episode output**: Creates 14,000+ text chunks ready for RAG search
@@ -157,6 +157,37 @@ python3 -m src.ingestion.process_books
 - **Book format**: PDF files with corresponding `metadata.json` file
 - **Book processing time**: Depends on book size (~2,000 chunks for 568-page book)
 - **Book output**: Creates book chunks with chapter-level metadata for precise citations
+
+#### Re-Transcription with Precise Timestamps (Optional)
+
+**For precise timestamps in 3D map navigation:**
+
+See **[docs/TRANSCRIPTION_SETUP.md](docs/TRANSCRIPTION_SETUP.md)** for complete setup instructions.
+
+```bash
+# Install dependencies
+pip install -r requirements-transcription.txt
+sudo apt-get install -y ffmpeg  # Ubuntu/Debian
+brew install ffmpeg  # macOS
+
+# Set HuggingFace token in .env
+HUGGINGFACE_TOKEN=your_token_here
+
+# Test on one episode
+python3 scripts/retranscribe_episodes_lightweight.py test
+
+# Re-transcribe all episodes (8-12 hours on M2 Mac)
+python3 scripts/retranscribe_episodes_lightweight.py
+```
+
+**What This Provides:**
+- **Exact timestamps** for every segment (no estimation)
+- **Word-level timestamps** for ultra-precise navigation
+- **Improved 3D map** - clicking nodes jumps to exact moments in audio
+
+**Two Versions Available:**
+1. **Lightweight** (`retranscribe_episodes_lightweight.py`) - Timestamps only, lower memory
+2. **Full** (`retranscribe_episodes_with_timestamps.py`) - Timestamps + speaker diarization (requires 16GB+ RAM)
 
 **Troubleshooting:**
 ```bash

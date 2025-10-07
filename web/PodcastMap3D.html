@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Podcast Map 3D</title>
-    <link rel="stylesheet" href="PodcastMap3D.css">
+    <link rel="stylesheet" href="PodcastMap3D.css?v=35">
 </head>
 <body>
     <div id="podcast-map-3d-container">
@@ -17,7 +17,11 @@
                 </button>
             </div>
 
-            <div class="header-controls">
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-icon">☰</span>
+            </button>
+
+            <div class="header-controls" id="header-controls">
                 <a href="/" class="nav-link">
                     💬 Chat with Gaia
                 </a>
@@ -44,11 +48,25 @@
                 </a>
             </div>
 
-            <div class="episode-filter">
-                <select id="episode-select" class="episode-dropdown">
-                    <option value="">Select an episode...</option>
-                </select>
-                <span class="dropdown-arrow">▼</span>
+            <div class="mobile-controls">
+                <div class="cluster-control">
+                    <label for="cluster-slider">Clusters: <span id="cluster-count">9</span></label>
+                    <input type="range" id="cluster-slider" min="9" max="18" step="9" value="9">
+                </div>
+
+                <div class="episode-filter">
+                    <select id="episode-select" class="episode-dropdown">
+                        <option value="">Select an episode...</option>
+                    </select>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+
+                <div class="topic-filter">
+                    <select id="topic-select" class="topic-dropdown">
+                        <option value="">Select a topic...</option>
+                    </select>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
             </div>
         </div>
 
@@ -65,34 +83,24 @@
                 </div>
                 <div class="audio-controls">
                     <audio id="audio-element" controls></audio>
-                    <div class="time-display">
-                        <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                    <div class="playback-controls">
+                        <div class="time-display">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                        <div class="speed-control">
+                            <label for="playback-speed">Speed:</label>
+                            <select id="playback-speed">
+                                <option value="0.8">0.8x</option>
+                                <option value="0.9">0.9x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="1.5">1.5x</option>
+                                <option value="2">2x</option>
+                                <option value="2.5">2.5x</option>
+                                <option value="3">3x</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Clusters legend -->
-        <div class="clusters-legend">
-            <div class="legend-item" data-cluster="0">
-                <span class="color-box" style="background-color: #4CAF50;"></span>
-                <span>Community</span>
-            </div>
-            <div class="legend-item" data-cluster="1">
-                <span class="color-box" style="background-color: #9C27B0;"></span>
-                <span>Culture</span>
-            </div>
-            <div class="legend-item" data-cluster="2">
-                <span class="color-box" style="background-color: #FF9800;"></span>
-                <span>Economy</span>
-            </div>
-            <div class="legend-item" data-cluster="3">
-                <span class="color-box" style="background-color: #2196F3;"></span>
-                <span>Ecology</span>
-            </div>
-            <div class="legend-item" data-cluster="4">
-                <span class="color-box" style="background-color: #F44336;"></span>
-                <span>Health</span>
             </div>
         </div>
 
@@ -107,6 +115,6 @@
     <!-- Load 3D Force Graph library (includes Three.js) -->
     <script src="https://unpkg.com/3d-force-graph"></script>
     <!-- Load our 3D visualization script -->
-    <script src="PodcastMap3D.js?v=2"></script>
+    <script src="PodcastMap3D.js?v=33"></script>
 </body>
 </html>

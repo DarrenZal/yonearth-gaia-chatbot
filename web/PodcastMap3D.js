@@ -13,7 +13,10 @@ class PodcastMap3D {
         this.graph = null;
         this.autoRotate = true;
         this.rotationAngle = 0;
-        this.rotationSpeed = 0.2;
+        this.rotationSpeed = 0.05; // Slower rotation
+        this.currentClusterCount = 9; // Default to 9 clusters
+        this.legendDragInitialized = false; // Track if drag handlers are set up
+        this.lastUserClickTime = null; // Track when user last clicked a node
 
         // Cluster colors matching 2D version
         this.clusterColors = {
@@ -32,6 +35,9 @@ class PodcastMap3D {
         // Load data from backend
         await this.loadData();
 
+        // Populate topic dropdown
+        this.populateTopicDropdown();
+
         // Create 3D visualization
         this.create3DGraph();
 
@@ -45,12 +51,25 @@ class PodcastMap3D {
         this.startAutoRotation();
     }
 
-    async loadData() {
+    async loadData(clusterCount = 9) {
         try {
-            const response = await fetch('/api/map_data');
+            const filename = `/data/processed/podcast_map_3d_umap_multi_cluster.json`;
+            const response = await fetch(filename, {
+                cache: 'no-store',  // Bypass cache
+                headers: {
+                    'Cache-Control': 'no-cache',
+                    'Pragma': 'no-cache'
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
             const data = await response.json();
-            this.data = this.transformDataFor3D(data);
-            console.log('Loaded 3D map data:', this.data);
+            this.rawData = data; // Store raw data
+            this.data = this.transformDataFor3D(data, clusterCount);
+            console.log(`Loaded 3D UMAP map data (${clusterCount} clusters):`, this.data);
         } catch (error) {
             console.error('Error loading map data:', error);
             // Use dummy data for testing
@@ -58,18 +77,33 @@ class PodcastMap3D {
         }
     }
 
-    transformDataFor3D(data) {
-        // Transform data to work with 3d-force-graph format
+    transformDataFor3D(data, clusterLevel) {
+        // Build dynamic cluster colors from the discovered topics for this level
+        const clusterKey = `cluster_${clusterLevel}`;
+        const clusterNameKey = `cluster_${clusterLevel}_name`;
+
+        this.clusterColors = {};
+        if (data.clusters_by_level && data.clusters_by_level[clusterLevel]) {
+            data.clusters_by_level[clusterLevel].forEach(cluster => {
+                this.clusterColors[cluster.id] = cluster.color;
+            });
+        }
+
+        // Transform data to work with 3d-force-graph format with actual UMAP coordinates
         const nodes = data.points.map(point => ({
             id: point.id,
             text: point.text,
             episode_id: point.episode_id,
             episode_title: point.episode_title,
             timestamp: point.timestamp,
-            cluster: point.cluster,
-            cluster_name: point.cluster_name,
-            color: this.clusterColors[point.cluster] || '#999999',
-            val: 3 // Node size
+            cluster: point[clusterKey],
+            cluster_name: point[clusterNameKey],
+            color: this.clusterColors[point[clusterKey]] || '#999999',
+            val: 3, // Node size
+            // Use UMAP-generated 3D coordinates (these NEVER change)
+            x: point.x,
+            y: point.y,
+            z: point.z
         }));
 
         // Create links between sequential chunks in same episode
@@ -105,7 +139,7 @@ class PodcastMap3D {
             nodes: nodes,
             links: links,
             episodes: data.episodes,
-            clusters: data.clusters
+            clusters: data.clusters_by_level ? data.clusters_by_level[clusterLevel] : []
         };
     }
 
@@ -184,7 +218,7 @@ class PodcastMap3D {
 
         this.graph = ForceGraph3D()(elem)
             .graphData(this.data)
-            .nodeLabel(node => `${node.episode_title}<br>${node.text.substring(0, 100)}...`)
+            .nodeLabel(node => `<strong>${node.episode_title}</strong><br>Topic: ${node.cluster_name}<br>${node.text.substring(0, 100)}...`)
             .nodeColor(node => node.color)
             .nodeOpacity(0.8)
             .nodeResolution(16)
@@ -195,18 +229,136 @@ class PodcastMap3D {
             .showNavInfo(false)
             .onNodeClick(node => this.handleNodeClick(node))
             .onNodeHover(node => this.handleNodeHover(node))
-            .d3Force('charge', d3.forceManyBody().strength(-30))
-            .d3Force('link', d3.forceLink().distance(20));
+            .enableNodeDrag(false) // Disable node dragging
+            // Disable force simulation - use UMAP coordinates directly
+            .d3Force('center', null)
+            .d3Force('charge', null)
+            .d3Force('link', d3.forceLink().distance(20).strength(0.1)); // Weak links for visual connection only
 
-        // Set initial camera position
-        this.graph.cameraPosition({ z: 1500 });
+        // Set initial camera position - adjust based on UMAP coordinate ranges
+        this.graph.cameraPosition({ z: 2500 });
+
+        // Add cluster boundary meshes after a short delay to ensure scene is initialized
+        setTimeout(() => this.addClusterBoundaries(), 500);
+
+        // Stop rotation on any click in the 3D area
+        elem.addEventListener('click', () => {
+            this.autoRotate = false;
+        });
+    }
+
+    addClusterBoundaries() {
+        const scene = this.graph.scene();
+
+        // Find a sample mesh node to get THREE constructors from
+        const sampleMesh = scene.children.find(child => child.type === 'Mesh' && child.geometry);
+        if (!sampleMesh) {
+            console.warn('No mesh nodes found in scene, skipping cluster boundaries');
+            return;
+        }
+
+        // Group nodes by cluster
+        const nodesByCluster = {};
+        this.data.nodes.forEach(node => {
+            if (!nodesByCluster[node.cluster]) {
+                nodesByCluster[node.cluster] = [];
+            }
+            nodesByCluster[node.cluster].push(node);
+        });
+
+        // Get constructor references from existing scene objects
+        const SphereGeometryConstructor = sampleMesh.geometry.constructor;
+        const MeshConstructor = sampleMesh.constructor;
+        const MaterialConstructor = sampleMesh.material.constructor;
+
+        Object.keys(nodesByCluster).forEach(clusterId => {
+            const nodes = nodesByCluster[clusterId];
+
+            // Skip small clusters
+            if (nodes.length < 4) return;
+
+            // Calculate cluster center and extent
+            const bounds = this.calculateClusterBounds(nodes);
+
+            // Get cluster color and make it muted/soft
+            const color = this.clusterColors[clusterId] || '#888888';
+            const mutedColor = this.getMutedColor(color);
+
+            // Create semi-transparent ellipsoid
+            const geometry = new SphereGeometryConstructor(1, 16, 12);
+            geometry.scale(bounds.scaleX, bounds.scaleY, bounds.scaleZ);
+
+            // Create semi-transparent material
+            const material = new MaterialConstructor({
+                color: mutedColor,
+                transparent: true,
+                opacity: 0.12,
+                side: 2, // THREE.DoubleSide
+                depthWrite: false
+            });
+
+            // Create mesh and position at cluster center
+            const mesh = new MeshConstructor(geometry, material);
+            mesh.position.set(bounds.centerX, bounds.centerY, bounds.centerZ);
+            scene.add(mesh);
+        });
+
+        console.log(`Added ${Object.keys(nodesByCluster).length} cluster boundary visualizations`);
+    }
+
+    calculateClusterBounds(nodes) {
+        // Calculate bounding box
+        let minX = Infinity, maxX = -Infinity;
+        let minY = Infinity, maxY = -Infinity;
+        let minZ = Infinity, maxZ = -Infinity;
+        let sumX = 0, sumY = 0, sumZ = 0;
+
+        nodes.forEach(node => {
+            minX = Math.min(minX, node.x);
+            maxX = Math.max(maxX, node.x);
+            minY = Math.min(minY, node.y);
+            maxY = Math.max(maxY, node.y);
+            minZ = Math.min(minZ, node.z);
+            maxZ = Math.max(maxZ, node.z);
+            sumX += node.x;
+            sumY += node.y;
+            sumZ += node.z;
+        });
+
+        // Calculate center
+        const centerX = sumX / nodes.length;
+        const centerY = sumY / nodes.length;
+        const centerZ = sumZ / nodes.length;
+
+        // Calculate scale with padding (1.3x to create a soft boundary beyond points)
+        const scaleX = ((maxX - minX) / 2) * 1.3 || 10;
+        const scaleY = ((maxY - minY) / 2) * 1.3 || 10;
+        const scaleZ = ((maxZ - minZ) / 2) * 1.3 || 10;
+
+        return { centerX, centerY, centerZ, scaleX, scaleY, scaleZ };
+    }
+
+    getMutedColor(hexColor) {
+        // Convert hex to RGB
+        const r = parseInt(hexColor.slice(1, 3), 16);
+        const g = parseInt(hexColor.slice(3, 5), 16);
+        const b = parseInt(hexColor.slice(5, 7), 16);
+
+        // Mute by blending with dark background (20% original, 80% background)
+        const bgR = 10, bgG = 14, bgB = 26; // Background color #0a0e1a
+        const mutedR = Math.round(r * 0.2 + bgR * 0.8);
+        const mutedG = Math.round(g * 0.2 + bgG * 0.8);
+        const mutedB = Math.round(b * 0.2 + bgB * 0.8);
+
+        // Convert back to hex
+        return `#${mutedR.toString(16).padStart(2, '0')}${mutedG.toString(16).padStart(2, '0')}${mutedB.toString(16).padStart(2, '0')}`;
     }
 
     startAutoRotation() {
         const animate = () => {
             if (this.autoRotate && this.graph) {
                 this.rotationAngle += this.rotationSpeed;
-                const distance = 1500;
+                const distance = 2200;
                 const x = distance * Math.sin(this.rotationAngle * Math.PI / 180);
                 const z = distance * Math.cos(this.rotationAngle * Math.PI / 180);
 
@@ -227,13 +379,22 @@ class PodcastMap3D {
         // Stop auto-rotation when user interacts
         this.autoRotate = false;
 
+        // Store the clicked node as the current active chunk
+        // This ensures we highlight the actual clicked node, not the closest one by timestamp
+        this.currentActiveChunk = node;
+
+        // Mark that user just clicked a node - prevent sync from overriding for 2 seconds
+        this.lastUserClickTime = Date.now();
+        console.log('User clicked node - sync blocked for 2 seconds');
+
         // Play audio at timestamp
         if (node.timestamp !== null && node.timestamp !== undefined) {
             this.playAudioAtTimestamp(node);
         }
 
-        // Highlight episode
+        // Highlight episode and the specific clicked node
         this.highlightEpisode(node.episode_id);
+        this.highlightActiveNode(node);
     }
 
     handleNodeHover(node) {
@@ -244,7 +405,7 @@ class PodcastMap3D {
     highlightEpisode(episodeId) {
         this.selectedEpisode = episodeId;
 
-        // Update node appearance
+        // Update node appearance - make selected episode much larger
         this.graph.nodeColor(node => {
             if (node.episode_id === episodeId) {
                 return node.color;
@@ -253,16 +414,16 @@ class PodcastMap3D {
         });
 
         this.graph.nodeVal(node => {
-            return node.episode_id === episodeId ? 5 : 2;
+            return node.episode_id === episodeId ? 8 : 2; // Increased from 5 to 8
         });
 
-        // Update link appearance
+        // Update link appearance - make selected episode links thicker and brighter
         this.graph.linkOpacity(link => {
-            return link.episode_id === episodeId ? 0.6 : 0.05;
+            return link.episode_id === episodeId ? 0.8 : 0.05; // Increased from 0.6 to 0.8
         });
 
         this.graph.linkWidth(link => {
-            return link.episode_id === episodeId ? 1.5 : 0.3;
+            return link.episode_id === episodeId ? 3 : 0.3; // Increased from 1.5 to 3
         });
     }
 
@@ -303,16 +464,39 @@ class PodcastMap3D {
             const audioUrl = transcriptData.audio_url;
 
             if (this.audioPlayer && audioUrl) {
+                // Pause first
+                this.audioPlayer.pause();
+
                 // Only change source if it's a different episode
-                if (this.audioPlayer.src !== audioUrl) {
+                const needsNewSource = !this.audioPlayer.src.includes(audioUrl);
+                if (needsNewSource) {
                     this.audioPlayer.src = audioUrl;
                     await this.audioPlayer.load();
                 }
 
+                // Ensure timestamp is valid (some might be 0 or null)
+                let timestamp = (startTime !== null && startTime !== undefined && startTime >= 0) ? startTime : 0;
+
+                // Wait for audio to be ready
+                if (this.audioPlayer.readyState < 2) {
+                    await new Promise(resolve => {
+                        this.audioPlayer.addEventListener('loadeddata', resolve, { once: true });
+                    });
+                }
+
+                // Cap timestamp at episode duration to prevent seeking beyond the end
+                // (some episodes have incorrect timestamps due to wrong chunk duration calculations)
+                if (timestamp > this.audioPlayer.duration) {
+                    console.warn(`Timestamp ${timestamp}s exceeds episode duration ${this.audioPlayer.duration}s - capping at duration`);
+                    timestamp = this.audioPlayer.duration;
+                }
+
                 // Seek to timestamp and play
-                this.audioPlayer.currentTime = startTime || 0;
+                this.audioPlayer.currentTime = timestamp;
+
+                console.log(`Playing Episode ${episodeNumber} at timestamp: ${timestamp}s (${Math.floor(timestamp/60)}:${String(Math.floor(timestamp%60)).padStart(2,'0')})`);
+
                 await this.audioPlayer.play();
-                console.log('Playing audio at timestamp:', startTime);
 
                 if (chunkText) {
                     chunkText.textContent = 'Playing...';
@@ -332,23 +516,42 @@ class PodcastMap3D {
     setupAudioSync() {
         if (!this.audioPlayer) return;
 
-        // Remove existing listener to avoid duplicates
-        this.audioPlayer.removeEventListener('timeupdate', this.audioSyncHandler);
+        // Remove existing listeners to avoid duplicates
+        if (this.audioSyncHandler) {
+            this.audioPlayer.removeEventListener('timeupdate', this.audioSyncHandler);
+            this.audioPlayer.removeEventListener('seeked', this.audioSyncHandler);
+            this.audioPlayer.removeEventListener('seeking', this.audioSyncHandler);
+        }
 
-        // Create handler
+        // Create handler for continuous sync
         this.audioSyncHandler = () => {
             if (this.selectedEpisode) {
                 this.syncVisualizationWithAudio();
             }
         };
 
+        // Listen to all relevant events:
+        // - timeupdate: fires continuously during playback (~every 250ms)
+        // - seeking: fires while user is dragging the timeline slider
+        // - seeked: fires when user releases the timeline slider
         this.audioPlayer.addEventListener('timeupdate', this.audioSyncHandler);
+        this.audioPlayer.addEventListener('seeking', this.audioSyncHandler);
+        this.audioPlayer.addEventListener('seeked', this.audioSyncHandler);
+
+        console.log('Audio synchronization enabled - node will update as audio plays and when scrubbing');
     }
 
     syncVisualizationWithAudio() {
         if (!this.audioPlayer || !this.selectedEpisode) return;
 
+        // Don't override user clicks for 2 seconds
+        if (this.lastUserClickTime && (Date.now() - this.lastUserClickTime) < 2000) {
+            console.log('Skipping sync - user recently clicked a node');
+            return;
+        }
+
         const currentTime = this.audioPlayer.currentTime;
+        console.log(`Syncing visualization at ${currentTime.toFixed(2)}s`);
 
         // Find the chunk closest to current time
         const episodeNodes = this.data.nodes.filter(n => n.episode_id === this.selectedEpisode);
@@ -366,40 +569,164 @@ class PodcastMap3D {
             }
         }
 
-        if (activeNode && activeNode.id !== this.currentActiveChunk?.id) {
+        if (activeNode) {
+            // Always update, even if same node (user might have seeked)
+            const nodeChanged = activeNode.id !== this.currentActiveChunk?.id;
             this.currentActiveChunk = activeNode;
+            console.log(`Found active node: ${activeNode.id}, timestamp: ${activeNode.timestamp}, changed: ${nodeChanged}`);
             this.highlightActiveNode(activeNode);
 
-            // Update chunk text in player
-            const chunkText = document.getElementById('current-chunk-text');
-            if (chunkText && activeNode.text) {
-                chunkText.textContent = activeNode.text.substring(0, 200) + '...';
+            // Update chunk text in player (only if node changed)
+            if (nodeChanged) {
+                const chunkText = document.getElementById('current-chunk-text');
+                if (chunkText && activeNode.text) {
+                    chunkText.textContent = activeNode.text.substring(0, 200) + '...';
+                }
             }
+        } else {
+            console.log(`No active node found for time ${currentTime.toFixed(2)}s`);
         }
     }
 
     highlightActiveNode(activeNode) {
         if (!activeNode) return;
 
-        // Make active node extra prominent
+        console.log(`Highlighting node ${activeNode.id} at position (${activeNode.x}, ${activeNode.y}, ${activeNode.z})`);
+
+        // Make currently playing node VERY prominent with bright green
         this.graph.nodeVal(node => {
-            if (node.id === activeNode.id) return 10;
-            if (node.episode_id === this.selectedEpisode) return 4;
-            return 2;
+            if (node.id === activeNode.id) return 20; // MUCH LARGER - currently playing chunk
+            if (node.episode_id === this.selectedEpisode) return 8; // Selected episode nodes
+            return 2; // All other nodes
         });
 
         this.graph.nodeColor(node => {
             if (node.id === activeNode.id) {
-                return '#ffffff'; // Active node is white
+                return '#00ff00'; // Bright green for currently playing chunk
             }
             if (node.episode_id === this.selectedEpisode) {
-                return node.color;
+                return node.color; // Keep cluster color for selected episode
             }
-            return this.hexToRgba(node.color, 0.2);
+            return this.hexToRgba(node.color, 0.2); // Dimmed for other episodes
         });
+
+        // Move camera to follow the active node (keep it in view)
+        if (activeNode.x !== undefined && activeNode.y !== undefined && activeNode.z !== undefined) {
+            // Get current camera position
+            const camera = this.graph.camera();
+            const currentPos = camera.position;
+
+            // Calculate distance from camera to active node
+            const dx = currentPos.x - activeNode.x;
+            const dy = currentPos.y - activeNode.y;
+            const dz = currentPos.z - activeNode.z;
+            const distance = Math.sqrt(dx*dx + dy*dy + dz*dz);
+
+            // If node is too far away (likely out of view), smoothly move camera
+            if (distance > 800) {
+                // Calculate new camera position maintaining current distance but centered on node
+                const targetDistance = 500;
+                const direction = {
+                    x: dx / distance,
+                    y: dy / distance,
+                    z: dz / distance
+                };
+
+                const newCameraPos = {
+                    x: activeNode.x + direction.x * targetDistance,
+                    y: activeNode.y + direction.y * targetDistance,
+                    z: activeNode.z + direction.z * targetDistance
+                };
+
+                // Smooth camera transition (500ms)
+                this.graph.cameraPosition(
+                    newCameraPos,
+                    activeNode, // Look at the active node
+                    500 // Transition duration
+                );
+            }
+        }
+    }
+
+    switchToClusterLevel(clusterLevel) {
+        // Update cluster assignments and colors WITHOUT changing node positions
+        if (!this.rawData) {
+            console.error('No raw data available for cluster switching');
+            return;
+        }
+
+        const clusterKey = `cluster_${clusterLevel}`;
+        const clusterNameKey = `cluster_${clusterLevel}_name`;
+
+        // Update cluster colors
+        this.clusterColors = {};
+        if (this.rawData.clusters_by_level && this.rawData.clusters_by_level[clusterLevel]) {
+            this.rawData.clusters_by_level[clusterLevel].forEach(cluster => {
+                this.clusterColors[cluster.id] = cluster.color;
+            });
+        }
+
+        // Update node cluster assignments and colors
+        this.data.nodes.forEach(node => {
+            const rawPoint = this.rawData.points.find(p => p.id === node.id);
+            if (rawPoint) {
+                node.cluster = rawPoint[clusterKey];
+                node.cluster_name = rawPoint[clusterNameKey];
+                node.color = this.clusterColors[node.cluster] || '#999999';
+            }
+        });
+
+        // Update clusters metadata
+        this.data.clusters = this.rawData.clusters_by_level[clusterLevel];
+
+        // Update graph node colors (smoothly, without rebuilding)
+        this.graph.nodeColor(node => node.color);
+
+        console.log(`Updated to ${clusterLevel} clusters with smooth color transition`);
     }
 
     setupEventListeners() {
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const headerControls = document.getElementById('header-controls');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                headerControls.classList.toggle('show');
+            });
+        }
+
+        // Cluster count slider
+        const clusterSlider = document.getElementById('cluster-slider');
+        const clusterCountDisplay = document.getElementById('cluster-count');
+
+        clusterSlider.addEventListener('input', (e) => {
+            const clusterCount = parseInt(e.target.value);
+            clusterCountDisplay.textContent = clusterCount;
+            this.currentClusterCount = clusterCount;
+
+            console.log(`Switching to ${clusterCount} clusters...`);
+
+            // Update cluster assignments and colors WITHOUT changing positions
+            this.switchToClusterLevel(clusterCount);
+
+            // Update topic dropdown with new clusters
+            this.populateTopicDropdown();
+
+            console.log(`Switched to ${clusterCount} clusters successfully`);
+        });
+
+        // Topic selector
+        document.getElementById('topic-select').addEventListener('change', (e) => {
+            const clusterId = e.target.value;
+            if (clusterId !== '') {
+                this.autoRotate = false;
+                this.highlightCluster(parseInt(clusterId));
+            } else {
+                this.clearSelection();
+            }
+        });
+
         // Episode selector
         document.getElementById('episode-select').addEventListener('change', (e) => {
             const episodeId = e.target.value;
@@ -418,15 +745,17 @@ class PodcastMap3D {
             }
         });
 
-        // Resume auto-rotation when clicking on background
-        window.addEventListener('click', (e) => {
-            if (e.target.id === '3d-graph' || e.target.tagName === 'CANVAS') {
-                // Only if not clicking on a node
-                if (!e.target.closest('.force-graph-container')) {
-                    this.autoRotate = true;
+        // Playback speed control
+        const playbackSpeedSelect = document.getElementById('playback-speed');
+        if (playbackSpeedSelect) {
+            playbackSpeedSelect.addEventListener('change', (e) => {
+                const speed = parseFloat(e.target.value);
+                if (this.audioPlayer) {
+                    this.audioPlayer.playbackRate = speed;
+                    console.log(`Playback speed set to ${speed}x`);
                 }
-            }
-        });
+            });
+        }
     }
 
     focusOnEpisode(episodeId) {
@@ -446,6 +775,47 @@ class PodcastMap3D {
                 1000 // 1 second transition
             );
         }
+    }
+
+    populateTopicDropdown() {
+        const select = document.getElementById('topic-select');
+
+        // Clear existing options
+        select.innerHTML = '<option value="">Select a topic...</option>';
+
+        // Sort clusters by count (descending)
+        const sortedClusters = [...this.data.clusters].sort((a, b) => b.count - a.count);
+
+        // Add topic options
+        sortedClusters.forEach(cluster => {
+            const option = document.createElement('option');
+            option.value = cluster.id;
+            option.textContent = `${cluster.label || cluster.name || 'Unknown'} (${cluster.count} chunks)`;
+            select.appendChild(option);
+        });
+    }
+
+    highlightCluster(clusterId) {
+        this.autoRotate = false;
+
+        // Update node appearance
+        this.graph.nodeColor(node => {
+            if (node.cluster === clusterId) {
+                return node.color;
+            }
+            return this.hexToRgba(node.color, 0.2);
+        });
+
+        this.graph.nodeVal(node => {
+            return node.cluster === clusterId ? 5 : 2;
+        });
+
+        // Update link appearance
+        this.graph.linkOpacity(link => {
+            const sourceCluster = this.data.nodes.find(n => n.id === link.source.id || n.id === link.source)?.cluster;
+            const targetCluster = this.data.nodes.find(n => n.id === link.target.id || n.id === link.target)?.cluster;
+            return (sourceCluster === clusterId && targetCluster === clusterId) ? 0.6 : 0.05;
+        });
     }
 
     loadEpisodeList() {
@@ -473,7 +843,7 @@ class PodcastMap3D {
 
     clearSelection() {
         this.selectedEpisode = null;
-        this.autoRotate = true; // Resume rotation
+        // Don't resume rotation - user stopped it
 
         // Reset all nodes
         this.graph.nodeColor(node => node.color);
@@ -496,11 +866,7 @@ function closeAudioPlayer() {
     if (audio) {
         audio.pause();
     }
-
-    // Resume auto-rotation
-    if (window.podcastViz3D) {
-        window.podcastViz3D.autoRotate = true;
-    }
+    // Don't resume auto-rotation - user stopped it
 }
 
 // Initialize 3D visualization when DOM is ready

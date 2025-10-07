@@ -44,15 +44,30 @@
                 </a>
             </div>
 
-            <!-- Hierarchical Level Controls -->
+            <!-- Zoom Mode Toggle -->
+            <div class="zoom-mode-toggle">
+                <label class="mode-switch">
+                    <input type="checkbox" id="zoom-mode-checkbox" checked>
+                    <span class="slider-toggle"></span>
+                </label>
+                <span class="mode-label" id="mode-label">🔍 Semantic Zoom</span>
+            </div>
+
+            <!-- Cluster Level Slider (hidden by default) -->
+            <div class="cluster-slider-container" id="cluster-slider-container" style="display: none;">
+                <label for="cluster-slider">Clusters: <span id="cluster-count">9</span></label>
+                <input type="range" id="cluster-slider" min="1" max="18" value="9" step="1">
+            </div>
+
+            <!-- Preset Level Controls -->
             <div class="hierarchy-controls">
-                <button class="level-btn" data-level="l1" title="4 Broad Themes">
+                <button class="level-btn" data-level="c3" data-zoom="0.6" title="3 Broad Themes">
                     🌍 Broad
                 </button>
-                <button class="level-btn active" data-level="l2" title="10 Medium Categories">
+                <button class="level-btn active" data-level="c9" data-zoom="1.0" title="9 Medium Categories">
                     🌱 Medium
                 </button>
-                <button class="level-btn" data-level="l3" title="24 Detailed Topics">
+                <button class="level-btn" data-level="c15" data-zoom="2.5" title="15 Detailed Topics">
                     🔬 Detailed
                 </button>
             </div>
@@ -122,6 +137,6 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
     <!-- Load our visualization script -->
-    <script src="PodcastMapHierarchical.js?v=3"></script>
+    <script src="PodcastMapHierarchical.js?v=4"></script>
 </body>
 </html>

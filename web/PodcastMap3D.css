@@ -29,25 +29,33 @@ body {
     overflow: hidden;
 }
 
-/* Header section - clean and minimal */
+/* Header section - two rows on desktop */
 .map-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 12px;
     padding: 16px 24px;
     background: rgba(10, 14, 26, 0.95);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     z-index: 100;
     flex-shrink: 0;
-    height: 72px;
     backdrop-filter: blur(10px);
 }
 
+.project-selector {
+    grid-column: 1;
+    grid-row: 1;
+}
+
 .header-controls {
+    grid-column: 2;
+    grid-row: 1;
     display: flex;
     gap: 15px;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .nav-link {
@@ -101,14 +109,92 @@ body {
     transition: transform 0.3s ease;
 }
 
-/* Episode filter - clean dropdown */
-.episode-filter {
-    position: relative;
+/* Cluster control - slider for 9 vs 18 clusters */
+.cluster-control {
     display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.cluster-control label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.cluster-control #cluster-count {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.cluster-control input[type="range"] {
+    width: 100px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.cluster-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+}
+
+.cluster-control input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    border: none;
+}
+
+/* Mobile menu toggle button */
+.mobile-menu-toggle {
+    display: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile controls container - full width second row on desktop */
+.mobile-controls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    gap: 12px;
     align-items: center;
 }
 
-.episode-dropdown {
+/* Episode and topic filters - clean dropdowns */
+.episode-filter,
+.topic-filter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.episode-dropdown,
+.topic-dropdown {
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #ffffff;
@@ -116,7 +202,7 @@ body {
     border-radius: 8px;
     font-size: 14px;
     cursor: pointer;
-    min-width: 300px;
+    width: 100%;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -124,24 +210,28 @@ body {
     font-weight: 400;
 }
 
-.episode-dropdown option {
+.episode-dropdown option,
+.topic-dropdown option {
     background: #1a1f2e;
     color: #ffffff;
 }
 
-.episode-dropdown:hover {
+.episode-dropdown:hover,
+.topic-dropdown:hover {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.3);
 }
 
-.episode-dropdown:focus {
+.episode-dropdown:focus,
+.topic-dropdown:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.4);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
 }
 
-.episode-filter .dropdown-arrow {
+.episode-filter .dropdown-arrow,
+.topic-filter .dropdown-arrow {
     position: absolute;
     right: 16px;
     top: 50%;
@@ -155,52 +245,9 @@ body {
     flex: 1;
     position: relative;
     width: 100%;
-    height: calc(100vh - 72px);
     background: radial-gradient(ellipse at center, #1a1f2e 0%, #0a0e1a 100%);
 }
 
-/* Clusters legend - elegant positioning */
-.clusters-legend {
-    position: fixed;
-    bottom: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 16px 28px;
-    background: rgba(10, 14, 26, 0.9);
-    border-radius: 12px;
-    backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
-    max-width: 90%;
-    z-index: 10;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 13px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.legend-item:hover {
-    color: #ffffff;
-    transform: translateY(-3px);
-}
-
-.color-box {
-    width: 14px;
-    height: 14px;
-    border-radius: 3px;
-    flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
 
 /* Controls hint */
 .controls-hint {
@@ -225,13 +272,14 @@ body {
 /* Audio player - elegant left-side overlay */
 .audio-player-container {
     position: fixed;
-    top: 72px;
+    top: 0;
     left: 0;
     width: 420px;
-    height: calc(100vh - 72px);
+    height: 100vh;
     background: rgba(10, 14, 26, 0.95);
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     padding: 32px 24px;
+    padding-top: 100px;
     backdrop-filter: blur(20px);
     z-index: 90;
     animation: slideInLeft 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -313,10 +361,57 @@ body {
     border-radius: 8px;
 }
 
+.playback-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
 .time-display {
     font-size: 13px;
     color: rgba(255, 255, 255, 0.5);
-    text-align: center;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.speed-control label {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.speed-control select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.speed-control select:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.speed-control select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+.speed-control option {
+    background: #1a1f2e;
+    color: #ffffff;
 }
 
 /* Responsive design - smooth scaling */
@@ -333,33 +428,64 @@ body {
 
 @media (max-width: 768px) {
     .map-header {
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
         gap: 12px;
         padding: 12px 16px;
-        height: auto;
+    }
+
+    .project-selector {
+        order: 1;
     }
 
     .project-dropdown-btn {
         font-size: 16px;
     }
 
-    .episode-dropdown {
-        min-width: 100%;
+    /* Show hamburger menu button */
+    .mobile-menu-toggle {
+        display: block;
+        margin-left: auto;
+        order: 2;
+    }
+
+    /* Hide nav links by default on mobile */
+    .header-controls {
+        display: none;
+        order: 3;
+        width: 100%;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .header-controls.show {
+        display: flex;
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 10px 16px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Mobile controls container */
+    .mobile-controls {
+        order: 4;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .episode-dropdown,
+    .topic-dropdown {
+        width: 100%;
         font-size: 13px;
     }
 
-    .header-controls {
+    .cluster-control {
         width: 100%;
-        justify-content: flex-end;
-    }
-
-    .clusters-legend {
-        flex-direction: row;
-        gap: 12px;
-        font-size: 11px;
-        padding: 12px 16px;
-        max-width: 95%;
-        bottom: 60px;
     }
 
     .controls-hint {
@@ -374,6 +500,7 @@ body {
         max-height: 50vh;
         border-right: none;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 32px;
         animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 }
