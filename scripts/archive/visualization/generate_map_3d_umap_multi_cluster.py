@@ -41,7 +41,7 @@ UMAP_N_NEIGHBORS = int(os.getenv("UMAP_N_NEIGHBORS", "15"))
 
 
 def fetch_vectors():
-    """Fetch vectors from Pinecone"""
+    """Fetch vectors from Pinecone - prioritize timestamped chunks"""
     print("\n" + "="*70)
     print("FETCHING VECTORS FROM PINECONE")
     print("="*70)
@@ -52,7 +52,9 @@ def fetch_vectors():
     all_vectors = []
     seen_ids = set()
     episode_coverage = set()
+    timestamped_count = 0
 
+    # First try to fetch timestamped chunks (from Whisper transcription)
     for seed in range(0, 100, 5):
         if len(all_vectors) >= MAX_VECTORS:
             break
@@ -60,9 +62,13 @@ def fetch_vectors():
         np.random.seed(seed)
         random_vector = np.random.randn(1536).tolist()
 
+        # Prioritize timestamped episode chunks
         results = index.query(
             vector=random_vector,
-            filter={'content_type': 'episode'},
+            filter={
+                'content_type': {'$eq': 'episode'},
+                'chunk_type': {'$eq': 'timestamped_segment'}
+            },
             top_k=3000,
             include_metadata=True,
             include_values=True
@@ -75,16 +81,52 @@ def fetch_vectors():
                 seen_ids.add(match['id'])
                 all_vectors.append(match)
 
+                if match.get('metadata', {}).get('timestamp') is not None:
+                    timestamped_count += 1
+
                 ep_id = str(match.get('metadata', {}).get('episode_number', ''))
                 if ep_id:
                     episode_coverage.add(ep_id)
 
-        print(f"  Seed {seed}: {len(episode_coverage)} episodes, {len(all_vectors)} vectors")
+        print(f"  Seed {seed}: {len(episode_coverage)} episodes, {len(all_vectors)} vectors ({timestamped_count} timestamped)")
 
-        if len(episode_coverage) >= 172:
+        if len(episode_coverage) >= 172 or len(all_vectors) >= MAX_VECTORS:
             break
 
+    # If we don't have enough vectors, fetch non-timestamped episode chunks as fallback
+    if len(all_vectors) < MAX_VECTORS:
+        print(f"\nFetching additional non-timestamped chunks...")
+        for seed in range(0, 100, 5):
+            if len(all_vectors) >= MAX_VECTORS:
+                break
+
+            np.random.seed(seed + 1000)  # Different seed
+            random_vector = np.random.randn(1536).tolist()
+
+            results = index.query(
+                vector=random_vector,
+                filter={'content_type': {'$eq': 'episode'}},
+                top_k=3000,
+                include_metadata=True,
+                include_values=True
+            )
+
+            for match in results['matches']:
+                if len(all_vectors) >= MAX_VECTORS:
+                    break
+                if match['id'] not in seen_ids:
+                    seen_ids.add(match['id'])
+                    all_vectors.append(match)
+
+                    if match.get('metadata', {}).get('timestamp') is not None:
+                        timestamped_count += 1
+
+                    ep_id = str(match.get('metadata', {}).get('episode_number', ''))
+                    if ep_id:
+                        episode_coverage.add(ep_id)
+
     print(f"\n✓ Fetched {len(all_vectors)} vectors from {len(episode_coverage)} episodes")
+    print(f"✓ {timestamped_count} chunks have real timestamps ({timestamped_count/len(all_vectors)*100:.1f}%)")
     return all_vectors
 
 
@@ -231,23 +273,24 @@ def build_output(vectors, embeddings_3d, all_cluster_labels, clusters_metadata):
     z_coords = (z_coords - z_coords.mean()) / z_coords.std() * scale_factor
 
     # Build points with multiple cluster assignments
-    # Use realistic episode duration estimate
-    # YonEarth episodes are typically 40-60 minutes (average ~50 min = 3000 seconds)
-    AVERAGE_EPISODE_DURATION = 3000  # 50 minutes in seconds
+    # Use REAL timestamps from Whisper transcription (if available)
+    # Fallback to proportional estimation for chunks without timestamps
+    AVERAGE_EPISODE_DURATION = 3000  # 50 minutes in seconds (fallback)
 
     points = []
     for i, v in enumerate(vectors):
         meta = v.get('metadata', {})
 
-        # Calculate timestamp based on proportional chunk position
-        chunk_index = meta.get('chunk_index', 0)
-        chunk_total = meta.get('chunk_total', 1)
         episode_id = str(meta.get('episode_number', ''))
 
-        # Calculate timestamp as proportional position within average episode duration
-        # This maps chunk position to a point in a 50-minute episode
-        # If actual episode is shorter/longer, timestamps will be slightly off but much better than before
-        timestamp = (chunk_index / max(chunk_total, 1)) * AVERAGE_EPISODE_DURATION if chunk_total else 0
+        # Use real timestamp if available (from Whisper transcription)
+        timestamp = meta.get('timestamp')
+
+        if timestamp is None:
+            # Fallback: estimate timestamp based on chunk position (old method)
+            chunk_index = meta.get('chunk_index', 0)
+            chunk_total = meta.get('chunk_total', 1)
+            timestamp = (chunk_index / max(chunk_total, 1)) * AVERAGE_EPISODE_DURATION if chunk_total else 0
 
         point = {
             'id': v['id'],
@@ -257,7 +300,7 @@ def build_output(vectors, embeddings_3d, all_cluster_labels, clusters_metadata):
             'z': float(z_coords[i]),
             'episode_id': episode_id,
             'episode_title': meta.get('title', ''),
-            'timestamp': timestamp
+            'timestamp': timestamp  # Real timestamp from Whisper or fallback estimation
         }
 
         # Add cluster assignments for each level
