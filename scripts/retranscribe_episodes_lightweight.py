@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 load_dotenv()
 
 # Configuration
-TRANSCRIPTS_DIR = Path("/home/claudeuser/yonearth-gaia-chatbot/data/transcripts")
+TRANSCRIPTS_DIR = Path("/Users/darrenzal/projects/yonearth-gaia-chatbot/data/transcripts")
 TEMP_AUDIO_DIR = Path("/tmp/yonearth_audio")
 TEMP_AUDIO_DIR.mkdir(exist_ok=True)
 

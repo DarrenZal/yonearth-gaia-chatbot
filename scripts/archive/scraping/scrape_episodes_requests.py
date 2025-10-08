@@ -20,17 +20,16 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler('/home/claudeuser/yonearth-gaia-chatbot/logs/scrape_episodes.log'),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
-# Episodes to scrape (171 only - others don't exist on website)
-MISSING_EPISODES = [171]
+# Episodes to scrape
+MISSING_EPISODES = [16, 58, 101, 105]
 
 # Output directory
-OUTPUT_DIR = Path('/home/claudeuser/yonearth-gaia-chatbot/data/transcripts')
+OUTPUT_DIR = Path('/Users/darrenzal/projects/yonearth-gaia-chatbot/data/transcripts')
 
 
 def build_episode_url(episode_num):

@@ -158,36 +158,29 @@ python3 -m src.ingestion.process_books
 - **Book processing time**: Depends on book size (~2,000 chunks for 568-page book)
 - **Book output**: Creates book chunks with chapter-level metadata for precise citations
 
-#### Re-Transcription with Precise Timestamps (Optional)
+#### ✅ Re-Transcription with Precise Timestamps (COMPLETE)
 
-**For precise timestamps in 3D map navigation:**
+**Status: All 172 episodes now have word-level timestamps!**
 
 See **[docs/TRANSCRIPTION_SETUP.md](docs/TRANSCRIPTION_SETUP.md)** for complete setup instructions.
 
-```bash
-# Install dependencies
-pip install -r requirements-transcription.txt
-sudo apt-get install -y ffmpeg  # Ubuntu/Debian
-brew install ffmpeg  # macOS
-
-# Set HuggingFace token in .env
-HUGGINGFACE_TOKEN=your_token_here
-
-# Test on one episode
-python3 scripts/retranscribe_episodes_lightweight.py test
-
-# Re-transcribe all episodes (8-12 hours on M2 Mac)
-python3 scripts/retranscribe_episodes_lightweight.py
-```
+**Completed October 2025:**
+- ✅ **172/172 episodes** transcribed with word-level timestamps
+- ✅ **14 episodes** transcribed from YouTube (broken/missing audio URLs)
+  - Episodes: 0, 16, 48, 53, 58, 62, 63, 73, 75, 101, 105, 165, 171, 172
+- ✅ **158 episodes** transcribed from original audio
+- ✅ Only episode #26 missing (doesn't exist in series)
 
 **What This Provides:**
 - **Exact timestamps** for every segment (no estimation)
 - **Word-level timestamps** for ultra-precise navigation
 - **Improved 3D map** - clicking nodes jumps to exact moments in audio
+- **100% coverage** of all publishable episodes
 
-**Two Versions Available:**
-1. **Lightweight** (`retranscribe_episodes_lightweight.py`) - Timestamps only, lower memory
-2. **Full** (`retranscribe_episodes_with_timestamps.py`) - Timestamps + speaker diarization (requires 16GB+ RAM)
+**Implementation Used:**
+- Lightweight Whisper (base model) - timestamps only, lower memory
+- YouTube fallback for episodes with broken audio URLs
+- ~3-4 minutes per episode processing time
 
 **Troubleshooting:**
 ```bash
@@ -622,12 +615,13 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 
 ## Current System Status
 
-**System Health (2025-08-29)**:
+**System Health (2025-10-07)**:
+- **Transcription Dataset**: ✅ **172/172 episodes with word-level timestamps (100% complete)**
 - **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
 - **Category Embeddings**: 24 semantic category embeddings cached locally
 - **Book Integration**: 3 books fully processed with correct chapter references
   - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
-  - Soil Stewardship Handbook (136 chunks)  
+  - Soil Stewardship Handbook (136 chunks)
   - Y on Earth: Get Smarter, Feel Better, Heal the Planet (2,124 chunks)
 - **Search Methods**: Both Original RAG and BM25 Hybrid with semantic category matching
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
@@ -637,6 +631,11 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - **API Endpoints**: Full REST API with both original and BM25 endpoints + voice generation support
 
 **Recent Achievements**:
+- ✅ **COMPLETE: All 172 episodes re-transcribed with word-level timestamps (2025-10-07)**
+  - 14 episodes transcribed from YouTube fallback (broken/missing audio)
+  - 158 episodes transcribed from original audio
+  - 100% coverage of all publishable episodes
+  - Ready for 3D map navigation with precise timestamps
 - ✅ Fixed book chapter reference mapping for accurate citations
 - ✅ Dual RAG system (Original + BM25) fully operational
 - ✅ Multi-content search across episodes AND books

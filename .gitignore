@@ -97,7 +97,7 @@ dmypy.json
 data/feedback/
 
 # Data directories (large files, regeneratable)
-data/transcripts/
+# NOTE: data/transcripts/ is NOT ignored - we commit transcript JSON files
 data/processed/
 data/knowledge_graph/
 data/books/
