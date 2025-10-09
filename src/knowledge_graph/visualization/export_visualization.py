@@ -78,6 +78,7 @@ class KnowledgeGraphExporter:
     def __init__(self, data_dir: str = "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph"):
         self.data_dir = Path(data_dir)
         self.entities_dir = self.data_dir / "entities"
+        self.relationships_dir = self.data_dir / "relationships"
         self.output_file = self.data_dir / "visualization_data.json"
 
         # Graph data
@@ -171,7 +172,77 @@ class KnowledgeGraphExporter:
         logger.info("Domain assignment complete")
 
     def detect_relationships(self) -> None:
-        """Detect relationships based on co-occurrence in episodes."""
+        """Load actual semantic relationships from extraction files."""
+        logger.info("Loading semantic relationships from extraction files...")
+
+        if not self.relationships_dir.exists():
+            logger.warning(f"Relationships directory not found: {self.relationships_dir}")
+            logger.warning("Falling back to co-occurrence detection...")
+            self._detect_cooccurrence_relationships()
+            return
+
+        relationship_files = sorted(self.relationships_dir.glob("episode_*_extraction.json"))
+        logger.info(f"Found {len(relationship_files)} relationship files")
+
+        # Track relationship counts for deduplication and strength
+        relationship_map = defaultdict(lambda: {"count": 0, "type": None})
+
+        for file_path in relationship_files:
+            try:
+                with open(file_path, 'r') as f:
+                    data = json.load(f)
+
+                relationships = data.get("relationships", [])
+
+                for rel in relationships:
+                    # Handle both old format (string) and new format (object)
+                    if "source_entity" in rel:
+                        # Old format: source_entity and target_entity as strings
+                        source = rel.get("source_entity", "").strip()
+                        target = rel.get("target_entity", "").strip()
+                    else:
+                        # New format: source and target as objects
+                        source_obj = rel.get("source", {})
+                        target_obj = rel.get("target", {})
+                        source = source_obj.get("name", "").strip() if isinstance(source_obj, dict) else str(source_obj).strip()
+                        target = target_obj.get("name", "").strip() if isinstance(target_obj, dict) else str(target_obj).strip()
+
+                    rel_type = rel.get("relationship_type", "RELATED_TO")
+
+                    # Skip if source or target not in our entities
+                    if not source or not target:
+                        continue
+                    if source not in self.entities or target not in self.entities:
+                        continue
+
+                    # Create directed key to preserve relationship direction
+                    key = (source, target, rel_type)
+
+                    # Track relationship
+                    relationship_map[key]["count"] += 1
+                    # Store the relationship type
+                    relationship_map[key]["type"] = rel_type
+
+            except Exception as e:
+                logger.error(f"Error loading {file_path}: {e}")
+
+        # Create relationships with actual semantic types
+        for (source, target, rel_type), data in relationship_map.items():
+            self.relationships.append({
+                "source": source,
+                "target": target,
+                "type": data["type"],
+                "strength": min(data["count"] / 3.0, 1.0)  # Normalize to 0-1
+            })
+
+        logger.info(f"Loaded {len(self.relationships)} semantic relationships")
+
+        # Log relationship type distribution
+        type_counts = Counter([r["type"] for r in self.relationships])
+        logger.info(f"Relationship types: {dict(type_counts.most_common(10))}")
+
+    def _detect_cooccurrence_relationships(self) -> None:
+        """Fallback: Detect relationships based on co-occurrence in episodes."""
         logger.info("Detecting relationships through co-occurrence...")
 
         # Group entities by episode
@@ -200,7 +271,7 @@ class KnowledgeGraphExporter:
                     "strength": min(count / 5.0, 1.0)  # Normalize to 0-1
                 })
 
-        logger.info(f"Detected {len(self.relationships)} relationships")
+        logger.info(f"Detected {len(self.relationships)} co-occurrence relationships")
 
     def detect_communities(self) -> Dict[str, int]:
         """Detect communities using NetworkX."""

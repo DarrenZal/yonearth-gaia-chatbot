@@ -21,8 +21,9 @@ class KnowledgeGraphVisualization {
         this.filters = {
             domains: new Set(),
             entityTypes: new Set(),
-            minImportance: 0.0,
-            searchQuery: ""
+            minImportance: 0.7,  // Start with higher threshold to avoid rendering too many nodes
+            searchQuery: "",
+            maxNodes: 1000  // Hard limit on nodes to prevent browser freeze
         };
 
         // Layout parameters
@@ -305,7 +306,7 @@ class KnowledgeGraphVisualization {
 
     getFilteredData() {
         // Filter nodes
-        const filteredNodes = this.data.nodes.filter(node => {
+        let filteredNodes = this.data.nodes.filter(node => {
             // Check importance threshold
             if (node.importance < this.filters.minImportance) {
                 return false;
@@ -334,6 +335,14 @@ class KnowledgeGraphVisualization {
 
             return true;
         });
+
+        // Apply hard limit on number of nodes (performance protection)
+        if (filteredNodes.length > this.filters.maxNodes) {
+            // Sort by importance and take top N
+            filteredNodes = filteredNodes
+                .sort((a, b) => b.importance - a.importance)
+                .slice(0, this.filters.maxNodes);
+        }
 
         // Create a set of filtered node IDs for quick lookup
         const nodeIds = new Set(filteredNodes.map(n => n.id));
@@ -463,6 +472,86 @@ class KnowledgeGraphVisualization {
     showDetails(d) {
         const detailsContent = d3.select('#details-content');
 
+        // Find all relationships (edges) involving this node
+        const outgoingRelationships = [];
+        const incomingRelationships = [];
+
+        this.data.links.forEach(link => {
+            const sourceId = link.source.id || link.source;
+            const targetId = link.target.id || link.target;
+
+            if (sourceId === d.id) {
+                // Outgoing: this node → relationship → target
+                const targetNode = this.data.nodes.find(n => n.id === targetId);
+                if (targetNode) {
+                    outgoingRelationships.push({
+                        type: link.type || link.relationship_type || 'RELATED_TO',
+                        target: targetNode.name,
+                        strength: link.strength || 1.0
+                    });
+                }
+            } else if (targetId === d.id) {
+                // Incoming: source → relationship → this node
+                const sourceNode = this.data.nodes.find(n => n.id === sourceId);
+                if (sourceNode) {
+                    incomingRelationships.push({
+                        type: link.type || link.relationship_type || 'RELATED_TO',
+                        source: sourceNode.name,
+                        strength: link.strength || 1.0
+                    });
+                }
+            }
+        });
+
+        // Build relationships HTML
+        let relationshipsHtml = '';
+
+        if (outgoingRelationships.length > 0 || incomingRelationships.length > 0) {
+            relationshipsHtml = '<div class="entity-relationships">';
+
+            if (outgoingRelationships.length > 0) {
+                relationshipsHtml += `
+                    <div class="relationship-section">
+                        <strong>→ Outgoing (${outgoingRelationships.length})</strong>
+                        <div class="relationship-list">
+                            ${outgoingRelationships.slice(0, 10).map(rel => `
+                                <div class="relationship-item">
+                                    <span class="relationship-subject">${d.name}</span>
+                                    <span class="relationship-type">${rel.type}</span>
+                                    <span class="relationship-object">${rel.target}</span>
+                                </div>
+                            `).join('')}
+                            ${outgoingRelationships.length > 10 ? `
+                                <div class="relationship-more">+ ${outgoingRelationships.length - 10} more outgoing</div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+
+            if (incomingRelationships.length > 0) {
+                relationshipsHtml += `
+                    <div class="relationship-section">
+                        <strong>← Incoming (${incomingRelationships.length})</strong>
+                        <div class="relationship-list">
+                            ${incomingRelationships.slice(0, 10).map(rel => `
+                                <div class="relationship-item">
+                                    <span class="relationship-subject">${rel.source}</span>
+                                    <span class="relationship-type">${rel.type}</span>
+                                    <span class="relationship-object">${d.name}</span>
+                                </div>
+                            `).join('')}
+                            ${incomingRelationships.length > 10 ? `
+                                <div class="relationship-more">+ ${incomingRelationships.length - 10} more incoming</div>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            }
+
+            relationshipsHtml += '</div>';
+        }
+
         detailsContent.html(`
             <div class="entity-name">${d.name}</div>
             <div class="entity-type">${d.type}</div>
@@ -486,6 +575,7 @@ class KnowledgeGraphVisualization {
                     <br/><strong>Aliases:</strong> ${d.aliases.join(', ')}
                 ` : ''}
             </div>
+            ${relationshipsHtml}
             <a href="#" class="wiki-link" onclick="openWiki('${d.id}'); return false;">
                 View in Wiki →
             </a>
@@ -563,19 +653,41 @@ class KnowledgeGraphVisualization {
     updateStatistics() {
         const filteredData = this.getFilteredData();
 
+        // Count nodes before max limit
+        const preFilterCount = this.data.nodes.filter(node => {
+            if (node.importance < this.filters.minImportance) return false;
+            if (!this.filters.entityTypes.has(node.type)) return false;
+            const hasMatchingDomain = node.domains.some(d => this.filters.domains.has(d));
+            if (!hasMatchingDomain) return false;
+            if (this.filters.searchQuery) {
+                const query = this.filters.searchQuery.toLowerCase();
+                const nameMatch = node.name.toLowerCase().includes(query);
+                const descMatch = node.description.toLowerCase().includes(query);
+                if (!nameMatch && !descMatch) return false;
+            }
+            return true;
+        }).length;
+
+        const hitLimit = preFilterCount > this.filters.maxNodes;
+
         const stats = d3.select('#stats-display');
         stats.html(`
             <div class="stat-item">
                 <span class="stat-label">Visible Nodes:</span>
-                <span class="stat-value">${filteredData.nodes.length}</span>
+                <span class="stat-value">${filteredData.nodes.length}${hitLimit ? ' (limited)' : ''}</span>
             </div>
+            ${hitLimit ? `
+                <div class="stat-item" style="color: #e67e22; font-size: 11px; margin-top: 5px;">
+                    ⚠️ Showing top ${this.filters.maxNodes} by importance
+                </div>
+            ` : ''}
             <div class="stat-item">
                 <span class="stat-label">Visible Links:</span>
                 <span class="stat-value">${filteredData.links.length}</span>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Total Entities:</span>
-                <span class="stat-value">${this.data.nodes.length}</span>
+                <span class="stat-value">${this.data.nodes.length.toLocaleString()}</span>
             </div>
             <div class="stat-item">
                 <span class="stat-label">Communities:</span>

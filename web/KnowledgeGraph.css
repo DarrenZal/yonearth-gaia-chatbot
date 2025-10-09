@@ -561,6 +561,73 @@ body {
     transform: translateY(-2px);
 }
 
+/* Entity Relationships */
+.entity-relationships {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.relationship-section {
+    margin-bottom: 15px;
+}
+
+.relationship-section:last-child {
+    margin-bottom: 0;
+}
+
+.relationship-section strong {
+    display: block;
+    font-size: 12px;
+    color: #667eea;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.relationship-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.relationship-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 8px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.relationship-subject,
+.relationship-object {
+    font-weight: 500;
+    color: #333;
+}
+
+.relationship-type {
+    font-size: 10px;
+    padding: 2px 6px;
+    background: #667eea;
+    color: white;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.relationship-more {
+    font-size: 11px;
+    color: #999;
+    font-style: italic;
+    margin-top: 4px;
+    text-align: center;
+}
+
 /* Tooltip */
 .tooltip {
     position: absolute;
