@@ -56,3 +56,8 @@ python-json-logger>=2.0.0
 # Optional: for development
 ipython>=8.19.0
 jupyter>=1.0.0
+# Knowledge Graph Refinement (added for overnight processing)
+pykeen>=1.11.0
+pyshacl>=0.30.0
+splink>=4.0.0
+
