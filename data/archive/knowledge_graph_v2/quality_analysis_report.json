@@ -1,0 +1,822 @@
+{
+  "total_relationships": 15201,
+  "low_confidence": 1830,
+  "geographic_relationships": 5118,
+  "suspicious_patterns": 59,
+  "pattern_breakdown": {
+    "vague_location": 9,
+    "abstract_as_location": 49,
+    "wrong_relationship_type": 1
+  },
+  "avg_confidences": {
+    "source": 0.8853950397999962,
+    "relationship": 0.8357358068547898,
+    "target": 0.862455759489483
+  },
+  "examples": {
+    "low_confidence": [
+      {
+        "episode": 100,
+        "source": "Earth Coast Productions",
+        "relationship": "located_in",
+        "target": "Elk Run Farm",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "Y on Earth community",
+        "relationship": "engages_with",
+        "target": "COVID",
+        "confidence": 0.6
+      },
+      {
+        "episode": 100,
+        "source": "Colorado",
+        "relationship": "contains",
+        "target": "Elk Run Farm",
+        "confidence": 0.6
+      },
+      {
+        "episode": 100,
+        "source": "winers community",
+        "relationship": "contains",
+        "target": "Earth Hero",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "winers community",
+        "relationship": "contains",
+        "target": "Patagonia",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "Maxwell",
+        "relationship": "is_a_friend_of",
+        "target": "unknown speaker",
+        "confidence": 0.6
+      },
+      {
+        "episode": 100,
+        "source": "New York City",
+        "relationship": "part_of",
+        "target": "Colorado",
+        "confidence": 0.5
+      },
+      {
+        "episode": 100,
+        "source": "Otto",
+        "relationship": "made_by",
+        "target": "unknown",
+        "confidence": 0.5
+      },
+      {
+        "episode": 100,
+        "source": "biodynamics",
+        "relationship": "part_of",
+        "target": "organic agriculture",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "quantum and sub-quantum realms",
+        "relationship": "influences",
+        "target": "biodynamics",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "sustainable settings",
+        "relationship": "part_of",
+        "target": "carbon",
+        "confidence": 0.7
+      },
+      {
+        "episode": 100,
+        "source": "YOnEarth.org",
+        "relationship": "offers",
+        "target": "YOnEarth",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "Sandy",
+        "relationship": "participates_in",
+        "target": "discussion",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "Masonry",
+        "relationship": "located_in",
+        "target": "California",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "Masonry",
+        "relationship": "located_in",
+        "target": "Vermont",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "Grand Lodge",
+        "relationship": "located_in",
+        "target": "United States",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "England",
+        "relationship": "located_in",
+        "target": "PLACE",
+        "confidence": 0.7
+      },
+      {
+        "episode": 101,
+        "source": "Jerusalem",
+        "relationship": "contains",
+        "target": "PLACE",
+        "confidence": 0.6
+      },
+      {
+        "episode": 101,
+        "source": "Wieners community",
+        "relationship": "located_in",
+        "target": "nature",
+        "confidence": 0.5
+      },
+      {
+        "episode": 102,
+        "source": "pollinator proclamations",
+        "relationship": "implemented_in",
+        "target": "Virtue",
+        "confidence": 0.5
+      },
+      {
+        "episode": 102,
+        "source": "pollinator proclamations",
+        "relationship": "implemented_in",
+        "target": "Jerry Hills Village",
+        "confidence": 0.5
+      },
+      {
+        "episode": 102,
+        "source": "P-Pan",
+        "relationship": "collaborates_with",
+        "target": "butterfly pavilion",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "P-Pan",
+        "relationship": "collaborates_with",
+        "target": "botanic gardens",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "P-Pan",
+        "relationship": "formed",
+        "target": "environmental health coalition",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "Colorado",
+        "relationship": "contains",
+        "target": "Midwest",
+        "confidence": 0.5
+      },
+      {
+        "episode": 102,
+        "source": "Luis",
+        "relationship": "researches",
+        "target": "ecosystem services",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "Peepan",
+        "relationship": "advocates_for",
+        "target": "Children",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "Homeowners Associations (HOAs)",
+        "relationship": "require",
+        "target": "Toxic Chemicals",
+        "confidence": 0.6
+      },
+      {
+        "episode": 102,
+        "source": "Colorado",
+        "relationship": "contains",
+        "target": "Podcast",
+        "confidence": 0.5
+      },
+      {
+        "episode": 102,
+        "source": "Aaron",
+        "relationship": "works_at",
+        "target": "pollinators.org",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "Boulder",
+        "relationship": "located_in",
+        "target": "Colorado",
+        "confidence": 0.6
+      },
+      {
+        "episode": 102,
+        "source": "HOA",
+        "relationship": "part_of",
+        "target": "community",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "PPAN",
+        "relationship": "advocates_for",
+        "target": "environmental awareness",
+        "confidence": 0.7
+      },
+      {
+        "episode": 102,
+        "source": "living landscape",
+        "relationship": "part_of",
+        "target": "environmental efforts",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Crestone",
+        "relationship": "part_of",
+        "target": "San Luis Valley",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Crestone",
+        "relationship": "located_in",
+        "target": "Colorado",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Crestone",
+        "relationship": "contains",
+        "target": "biodynamic farms",
+        "confidence": 0.6
+      },
+      {
+        "episode": 103,
+        "source": "Crestone",
+        "relationship": "part_of",
+        "target": "Colorado",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "biodynamic farms",
+        "relationship": "located_in",
+        "target": "Canada",
+        "confidence": 0.6
+      },
+      {
+        "episode": 103,
+        "source": "Austria",
+        "relationship": "located_in",
+        "target": "Europe",
+        "confidence": 0.6
+      },
+      {
+        "episode": 103,
+        "source": "Quebec",
+        "relationship": "located_in",
+        "target": "Canada",
+        "confidence": 0.6
+      },
+      {
+        "episode": 103,
+        "source": "New Hampshire",
+        "relationship": "located_in",
+        "target": "United States",
+        "confidence": 0.6
+      },
+      {
+        "episode": 103,
+        "source": "Denver",
+        "relationship": "located_in",
+        "target": "Colorado",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Santa Fe",
+        "relationship": "located_in",
+        "target": "New Mexico",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "canvas lifestyle",
+        "relationship": "advocates_for",
+        "target": "simple style",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Creston",
+        "relationship": "part_of",
+        "target": "Baca",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "commercial kitchen",
+        "relationship": "located_in",
+        "target": "Creston",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "greenhouse",
+        "relationship": "located_in",
+        "target": "Creston",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "San Luis Valley",
+        "relationship": "contains",
+        "target": "Moscow",
+        "confidence": 0.7
+      },
+      {
+        "episode": 103,
+        "source": "Travis Rosenketter",
+        "relationship": "works_at",
+        "target": "Valley Roots Food Hub",
+        "confidence": 0.6
+      }
+    ],
+    "suspicious": [
+      {
+        "type": "vague_location",
+        "episode": 107,
+        "source": "Salaita",
+        "relationship": "contains",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.5
+      },
+      {
+        "type": "vague_location",
+        "episode": 107,
+        "source": "Alamosa",
+        "relationship": "contains",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.5
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 112,
+        "source": "eightfold path",
+        "relationship": "is_part_of",
+        "target": "Buddhist concepts",
+        "issue": "Abstract concept used as location: buddhist concepts",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 113,
+        "source": "Costa Rica",
+        "relationship": "part_of",
+        "target": "Y on Earth Community Stewardship and Sustainability podcast",
+        "issue": "Abstract concept used as location: y on earth community stewardship and sustainability podcast",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 120,
+        "source": "farmers in India",
+        "relationship": "producing",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 120,
+        "source": "farmers in Europe",
+        "relationship": "producing",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 120,
+        "source": "sawmills in the Midwest",
+        "relationship": "producing",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 121,
+        "source": "Oliver Retzloff",
+        "relationship": "engaged_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 122,
+        "source": "terra credit soils",
+        "relationship": "ignited_interest_in",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 122,
+        "source": "leaf",
+        "relationship": "decomposes_into",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 122,
+        "source": "2023 Farm Bill",
+        "relationship": "incorporates",
+        "target": "biochar research funding",
+        "issue": "Abstract concept used as location: biochar research funding",
+        "confidence": 0.8
+      },
+      {
+        "type": "vague_location",
+        "episode": 123,
+        "source": "Jasmine",
+        "relationship": "imaginary_friend_of",
+        "target": "unknown_person",
+        "issue": "Vague location: unknown_person",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 128,
+        "source": "Acosia",
+        "relationship": "is_part_of",
+        "target": "Biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.6
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 129,
+        "source": "education",
+        "relationship": "introduces",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.75
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 129,
+        "source": "Einstein",
+        "relationship": "quoted_in",
+        "target": "the concept of miracles",
+        "issue": "Abstract concept used as location: the concept of miracles",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 129,
+        "source": "Climate Security Peace and Sustainability",
+        "relationship": "discussed_in",
+        "target": "Why on Earth Community Stewardship and Sustainability Podcast series",
+        "issue": "Abstract concept used as location: why on earth community stewardship and sustainability podcast series",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 12,
+        "source": "ISSP",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 12,
+        "source": "ISSP",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 141,
+        "source": "B Corp",
+        "relationship": "part_of",
+        "target": "CONCEPT",
+        "issue": "Abstract concept used as location: concept",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 143,
+        "source": "Cynthia Tina",
+        "relationship": "holds_degree_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "Denver",
+        "relationship": "contains",
+        "target": "chief sustainability officer",
+        "issue": "Abstract concept used as location: chief sustainability officer",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "urban gardens",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "lead certification",
+        "relationship": "is_part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "mayor",
+        "relationship": "appoints",
+        "target": "chief sustainability officer",
+        "issue": "Abstract concept used as location: chief sustainability officer",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "Denver",
+        "relationship": "contains",
+        "target": "office of climate action sustainability resilience",
+        "issue": "Abstract concept used as location: office of climate action sustainability resilience",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 145,
+        "source": "agencies",
+        "relationship": "involved_in",
+        "target": "office of climate action sustainability resilience",
+        "issue": "Abstract concept used as location: office of climate action sustainability resilience",
+        "confidence": 0.6
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 157,
+        "source": "Afghanistan",
+        "relationship": "part_of",
+        "target": "concept of radicalization",
+        "issue": "Abstract concept used as location: concept of radicalization",
+        "confidence": 0.6
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 15,
+        "source": "schools",
+        "relationship": "part_of",
+        "target": "sustainability plan",
+        "issue": "Abstract concept used as location: sustainability plan",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 164,
+        "source": "Vale Resorts",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.7
+      },
+      {
+        "type": "vague_location",
+        "episode": 164,
+        "source": "Park City",
+        "relationship": "part_of",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.7
+      },
+      {
+        "type": "vague_location",
+        "episode": 164,
+        "source": "Keystone",
+        "relationship": "located_in",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.6
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 165,
+        "source": "International Biochar Initiative",
+        "relationship": "located_in",
+        "target": "biochar",
+        "issue": "Abstract concept used as location: biochar",
+        "confidence": 0.8
+      },
+      {
+        "type": "vague_location",
+        "episode": 171,
+        "source": "James Ranch",
+        "relationship": "located_in",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 171,
+        "source": "restaurants",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 1,
+        "source": "food",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 1,
+        "source": "water",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 20,
+        "source": "greenhouse gas emissions",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.8
+      },
+      {
+        "type": "wrong_relationship_type",
+        "episode": 21,
+        "source": "grandmother",
+        "relationship": "part_of",
+        "target": "Lebanese",
+        "issue": "Should be 'is' not 'part_of': grandmother -> lebanese",
+        "confidence": 0.7
+      },
+      {
+        "type": "vague_location",
+        "episode": 28,
+        "source": "Nebraska",
+        "relationship": "located_in",
+        "target": "unknown_county_or_state",
+        "issue": "Vague location: unknown_county_or_state",
+        "confidence": 0.6
+      },
+      {
+        "type": "vague_location",
+        "episode": 30,
+        "source": "Craig",
+        "relationship": "located_in",
+        "target": "unknown",
+        "issue": "Vague location: unknown",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 31,
+        "source": "Patagonia",
+        "relationship": "located_in",
+        "target": "sustainability context",
+        "issue": "Abstract concept used as location: sustainability context",
+        "confidence": 0.6
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 31,
+        "source": "Patagonia",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 31,
+        "source": "Y-Unerg.org",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 31,
+        "source": "humanity",
+        "relationship": "in_service_to",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 31,
+        "source": "companies",
+        "relationship": "embracing",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.9
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 36,
+        "source": "equal exchange",
+        "relationship": "part_of",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 38,
+        "source": "Revery Fields",
+        "relationship": "located_in",
+        "target": "sustainability",
+        "issue": "Abstract concept used as location: sustainability",
+        "confidence": 0.7
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 38,
+        "source": "Massively Mobilizing Sustainability",
+        "relationship": "part_of",
+        "target": "Why on Earth Communities Stewardship and Sustainability Podcast Series",
+        "issue": "Abstract concept used as location: why on earth communities stewardship and sustainability podcast series",
+        "confidence": 0.85
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 48,
+        "source": "sustainable Cleveland 2019 summit",
+        "relationship": "part_of",
+        "target": "sustainability movement",
+        "issue": "Abstract concept used as location: sustainability movement",
+        "confidence": 0.8
+      },
+      {
+        "type": "abstract_as_location",
+        "episode": 49,
+        "source": "Weylay Waters",
+        "relationship": "part_of",
+        "target": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+        "issue": "Abstract concept used as location: why on earth communities stewardship and sustainability podcast series",
+        "confidence": 0.8
+      }
+    ]
+  }
+}

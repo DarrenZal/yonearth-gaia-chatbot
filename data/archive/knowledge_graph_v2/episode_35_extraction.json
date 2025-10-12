@@ -1,0 +1,1814 @@
+{
+  "episode": 35,
+  "timestamp": "2025-10-09T11:17:15.667154",
+  "entity_count": 122,
+  "relationship_count": 95,
+  "entities": [
+    {
+      "name": "Ralph Sorenson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Today, we have with us Ralph Sorenson, also known as Bud."
+    },
+    {
+      "name": "Bud",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "also known as Bud"
+    },
+    {
+      "name": "Babson College",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "served as President of Babson College"
+    },
+    {
+      "name": "Berrywright Corporation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Chairman President and CEO of Berrywright Corporation"
+    },
+    {
+      "name": "University of Colorado Boulder",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Dean of the School of Business at the University of Colorado Boulder"
+    },
+    {
+      "name": "Harvard Business School",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Professor at Harvard Business School"
+    },
+    {
+      "name": "Asian Institute of Management",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founder of the Asian Institute of Management"
+    },
+    {
+      "name": "Whole Foods",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "served on many public and private boards, including Whole Foods"
+    },
+    {
+      "name": "Polaroid",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "served on many public and private boards, including Polaroid"
+    },
+    {
+      "name": "Hutton",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "served on many public and private boards, including Hutton"
+    },
+    {
+      "name": "Mitholine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "served on many public and private boards, including Mitholine"
+    },
+    {
+      "name": "Entrepreneurial Journey Through Life",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "you've written a book called an Entrepreneurial Journey Through Life"
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of the great passions that you focused on through much of your career is in the realm of education"
+    },
+    {
+      "name": "higher education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the future of education"
+    },
+    {
+      "name": "Clayton Christiansson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion of disruptive technology"
+    },
+    {
+      "name": "Harvard Business School",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "source of Clayton Christiansson"
+    },
+    {
+      "name": "STEM",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about education and technology"
+    },
+    {
+      "name": "MOOCs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about online learning"
+    },
+    {
+      "name": "2020s",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about the future of education"
+    },
+    {
+      "name": "student loan debt",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about challenges in higher education"
+    },
+    {
+      "name": "colleges and universities",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing enrollment trends"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning tenure concept"
+    },
+    {
+      "name": "Columbia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning tenure concept"
+    },
+    {
+      "name": "University of Chicago",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning tenure concept"
+    },
+    {
+      "name": "tenure",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing academic freedom and job security"
+    },
+    {
+      "name": "PhD programs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing focus on research for professors"
+    },
+    {
+      "name": "learning",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about education and lifelong learning"
+    },
+    {
+      "name": "higher education",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about the state of education"
+    },
+    {
+      "name": "STEM",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about fields of study"
+    },
+    {
+      "name": "humanities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about fields of study"
+    },
+    {
+      "name": "stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about important issues"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about important issues"
+    },
+    {
+      "name": "Harvard Business School",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about education programs"
+    },
+    {
+      "name": "the why on earth concept",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about educational initiatives"
+    },
+    {
+      "name": "Charlotte Ripley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "romantic adventure with Charlotte"
+    },
+    {
+      "name": "Harvard Business School",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "government room at the Harvard Business School"
+    },
+    {
+      "name": "Wellesley College",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "going out to Wellswood College"
+    },
+    {
+      "name": "Switzerland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "took a job over in Switzerland"
+    },
+    {
+      "name": "Italy",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "went to Italy to study art history"
+    },
+    {
+      "name": "Harvard Business School",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "finished at the Harvard Business School"
+    },
+    {
+      "name": "Switzerland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "took a job over in Switzerland"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Charlotte, who was an art history major"
+    },
+    {
+      "name": "Italy",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "she went to Italy to study art history"
+    },
+    {
+      "name": "Wellesley College",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "she returned to Wellesley"
+    },
+    {
+      "name": "Los Angeles",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I am in Los Angeles, Switzerland"
+    },
+    {
+      "name": "Zah",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "dear Zah, please do not even try to set a date"
+    },
+    {
+      "name": "Shara",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "On that day, Shara, and only on that day"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Just one more thing, Charlotte, in case you may be wondering"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I guess it will just be God's will"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my dear wife, Charlotte keeps asking"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "my dear wife"
+    },
+    {
+      "name": "Ralph Sorns",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "speaking with Ralph Sorns"
+    },
+    {
+      "name": "Buddy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "also known as Buddy"
+    },
+    {
+      "name": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the Why Underth Communities Stewardship and Sustainability Podcast Series"
+    },
+    {
+      "name": "Association of Walder Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Equal Exchange",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "The Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Walei Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "right outside of Boulder, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "right outside of Boulder, Colorado"
+    },
+    {
+      "name": "Amazon",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "getting their own copy of your book"
+    },
+    {
+      "name": "Barnes and Noble",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "getting their own copy of your book"
+    },
+    {
+      "name": "an entrepreneurial journey through life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "enter the name of the book"
+    },
+    {
+      "name": "The Pleasures of Long Javiti",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "final chapter called The Pleasures of Long Javiti"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "spending time with Charlotte and my kids and grandkids"
+    },
+    {
+      "name": "my kids",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "spending time with Charlotte and my kids and grandkids"
+    },
+    {
+      "name": "my grandkids",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "spending time with Charlotte and my kids and grandkids"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "develop a deeper appreciation for nature and the out of doors"
+    },
+    {
+      "name": "the cosmos",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the big bang that fashioned our earth and the cosmos"
+    },
+    {
+      "name": "the golden rule",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "subscribe to the tenets of the golden rule on humanism"
+    },
+    {
+      "name": "organized religions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "disillusioned with most human-invented organized religions"
+    },
+    {
+      "name": "agnostic pantheists",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "attach a label to myself, it would probably be agnostic pantheists"
+    },
+    {
+      "name": "optimist",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "live my life as an optimist than as a pessimist"
+    },
+    {
+      "name": "this wonderful earth",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "what's happening in this wonderful earth that we live on"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wonderful earth that we live on"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "growing respect for nature"
+    },
+    {
+      "name": "father",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "thank you to my father"
+    },
+    {
+      "name": "Midwestern values",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "loving parents with Midwestern values"
+    },
+    {
+      "name": "Colorado Nature Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "board of the Colorado Nature Conservancy"
+    },
+    {
+      "name": "National Trustee Council of the Nature Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Colorado representative to the National Trustee Council of the Nature Conservancy"
+    },
+    {
+      "name": "global warming",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept of global warming"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "children starving in India"
+    },
+    {
+      "name": "Charlotte",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a friend of the speaker."
+    },
+    {
+      "name": "grandchildren",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of family."
+    },
+    {
+      "name": "intergenerational knowledge and wisdom transfer",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussed as an important theme."
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Described as the essence of life."
+    },
+    {
+      "name": "death",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in the context of living life fully."
+    },
+    {
+      "name": "conscious capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Described as an important approach to business."
+    },
+    {
+      "name": "capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to self-interest and community."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in the context of capitalism."
+    },
+    {
+      "name": "Whole Foods Market",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I spent 23 years on the board of directors of Whole Foods Market."
+    },
+    {
+      "name": "John Mackey",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "John Mackey, the founder and still CEO of Whole Foods."
+    },
+    {
+      "name": "Raj Sosodia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "someone named Raj Sosodia, who happens to be the Whole Foods endowed professor at Babson College."
+    },
+    {
+      "name": "Babson College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Whole Foods endowed professor at Babson College."
+    },
+    {
+      "name": "conscious capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "developed this concept of conscious capitalism."
+    },
+    {
+      "name": "Whole People Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Whole People Foundation where Whole Foods is now doing lending in some 65 countries."
+    },
+    {
+      "name": "Mohammed Yunus",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Initially it was in partnership with Mohammed Yunus who developed the concept of this type of language."
+    },
+    {
+      "name": "Whole Kids Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Whole Kids Foundation where they're sponsoring gardens and so forth in schools across the nation."
+    },
+    {
+      "name": "Detroit",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago."
+    },
+    {
+      "name": "New Orleans",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago."
+    },
+    {
+      "name": "Newark",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago."
+    },
+    {
+      "name": "Chicago",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago."
+    },
+    {
+      "name": "John Mackey",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "developed by John Mackey and Rajasodia."
+    },
+    {
+      "name": "Rajasodia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "developed by John Mackey and Rajasodia."
+    },
+    {
+      "name": "conscious capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "that's a concept of conscious capitalism."
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "grandfather who was a Methodist minister in Wisconsin and Minnesota."
+    },
+    {
+      "name": "Minnesota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "grandfather who was a Methodist minister in Wisconsin and Minnesota."
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "He had been born in Germany."
+    },
+    {
+      "name": "Methodist",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "one grandfather who was a Methodist minister."
+    },
+    {
+      "name": "Presbyterian",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the Presbyterians had a better basketball team."
+    },
+    {
+      "name": "Piscopal Church",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "married in the Piscopal Church."
+    },
+    {
+      "name": "Thomas Jefferson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the deism of Thomas Jefferson and others of the founding fathers."
+    },
+    {
+      "name": "Herman Hesse",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "one of my most favorite authors, Herman Hesse."
+    },
+    {
+      "name": "Damien",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "picked this fabulous quote from his novel Damien."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Stewardship and Sustainability Podcast series"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept for developing community stewardship and sustainability"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for Y on Earth community support"
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series hosted by Aaron William Perry"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "works_at",
+      "target": "Babson College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "served as President of Babson College",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "works_at",
+      "target": "Berrywright Corporation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Chairman President and CEO of Berrywright Corporation",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "works_at",
+      "target": "University of Colorado Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Dean of the School of Business at the University of Colorado Boulder",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "works_at",
+      "target": "Harvard Business School",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Professor at Harvard Business School",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "co-founded",
+      "target": "Asian Institute of Management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-founder of the Asian Institute of Management",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "served_on_board",
+      "target": "Whole Foods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "served on many public and private boards, including Whole Foods",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "served_on_board",
+      "target": "Polaroid",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "served on many public and private boards, including Polaroid",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "served_on_board",
+      "target": "Hutton",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "served on many public and private boards, including Hutton",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "served_on_board",
+      "target": "Mitholine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "served on many public and private boards, including Mitholine",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorenson",
+      "relationship": "advocates_for",
+      "target": "education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "one of the great passions that you focused on through much of your career is in the realm of education",
+      "episode_number": 35
+    },
+    {
+      "source": "Clayton Christiansson",
+      "relationship": "advocates_for",
+      "target": "disruptive technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion of disruptive technology",
+      "episode_number": 35
+    },
+    {
+      "source": "Harvard Business School",
+      "relationship": "located_in",
+      "target": "Boston",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "source of Clayton Christiansson",
+      "episode_number": 35
+    },
+    {
+      "source": "higher education",
+      "relationship": "impacted_by",
+      "target": "disruptive technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about the future of education",
+      "episode_number": 35
+    },
+    {
+      "source": "higher education",
+      "relationship": "associated_with",
+      "target": "student loan debt",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about challenges in higher education",
+      "episode_number": 35
+    },
+    {
+      "source": "MOOCs",
+      "relationship": "made_by",
+      "target": "higher education",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about online learning",
+      "episode_number": 35
+    },
+    {
+      "source": "STEM",
+      "relationship": "related_to",
+      "target": "disruptive technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about education and technology",
+      "episode_number": 35
+    },
+    {
+      "source": "Harvard",
+      "relationship": "part_of",
+      "target": "tenure",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning tenure concept",
+      "episode_number": 35
+    },
+    {
+      "source": "Columbia",
+      "relationship": "part_of",
+      "target": "tenure",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning tenure concept",
+      "episode_number": 35
+    },
+    {
+      "source": "University of Chicago",
+      "relationship": "part_of",
+      "target": "tenure",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning tenure concept",
+      "episode_number": 35
+    },
+    {
+      "source": "colleges and universities",
+      "relationship": "advocates_for",
+      "target": "tenure",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing academic practices",
+      "episode_number": 35
+    },
+    {
+      "source": "PhD programs",
+      "relationship": "focus_on",
+      "target": "research",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussing academic training for professors",
+      "episode_number": 35
+    },
+    {
+      "source": "learning",
+      "relationship": "advocates_for",
+      "target": "higher education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about education and lifelong learning",
+      "episode_number": 35
+    },
+    {
+      "source": "higher education",
+      "relationship": "deals_with",
+      "target": "stewardship",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about important issues",
+      "episode_number": 35
+    },
+    {
+      "source": "higher education",
+      "relationship": "deals_with",
+      "target": "sustainability",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about important issues",
+      "episode_number": 35
+    },
+    {
+      "source": "Harvard Business School",
+      "relationship": "located_in",
+      "target": "education",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about education programs",
+      "episode_number": 35
+    },
+    {
+      "source": "the why on earth concept",
+      "relationship": "advocates_for",
+      "target": "lifelong learning",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussion about educational initiatives",
+      "episode_number": 35
+    },
+    {
+      "source": "STEM",
+      "relationship": "part_of",
+      "target": "higher education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about fields of study",
+      "episode_number": 35
+    },
+    {
+      "source": "humanities",
+      "relationship": "part_of",
+      "target": "higher education",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about fields of study",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte Ripley",
+      "relationship": "works_at",
+      "target": "Wellesley College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Charlotte was in her freshman year in her sophomore year at Wellesley",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte Ripley",
+      "relationship": "advocates_for",
+      "target": "art history",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Charlotte, who was an art history major",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte Ripley",
+      "relationship": "part_of",
+      "target": "Switzerland",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "took a job over in Switzerland",
+      "episode_number": 35
+    },
+    {
+      "source": "Harvard Business School",
+      "relationship": "located_in",
+      "target": "Switzerland",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "took a job over in Switzerland",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte Ripley",
+      "relationship": "studied_in",
+      "target": "Italy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "went to Italy to study art history",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "studied_at",
+      "target": "Wellesley College",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "she returned to Wellesley",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "studied_in",
+      "target": "Italy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "she went to Italy to study art history",
+      "episode_number": 35
+    },
+    {
+      "source": "Harvard Business School",
+      "relationship": "located_in",
+      "target": "Switzerland",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.95,
+      "context": "took a job over in Switzerland",
+      "episode_number": 35
+    },
+    {
+      "source": "Zah",
+      "relationship": "addressed_as",
+      "target": "Charlotte",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "dear Zah, please do not even try to set a date",
+      "episode_number": 35
+    },
+    {
+      "source": "Shara",
+      "relationship": "addressed_as",
+      "target": "Charlotte",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "On that day, Shara, and only on that day",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "is_wife_of",
+      "target": "Shara",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "I have an overwhelming faith that the future will one day see us together as husband and wife",
+      "episode_number": 35
+    },
+    {
+      "source": "God",
+      "relationship": "influences",
+      "target": "Charlotte",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "I guess it will just be God's will",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "related_to",
+      "target": "Ralph Sorns",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my dear wife",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorns",
+      "relationship": "works_at",
+      "target": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "speaking with Ralph Sorns",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Association of Walder Schools of North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Equal Exchange",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "International Society of Sustainability Professionals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "The Lich Family Foundation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Patagonia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Why Underth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Walei Waters",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors",
+      "episode_number": 35
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "right outside of Boulder, Colorado",
+      "episode_number": 35
+    },
+    {
+      "source": "Ralph Sorns",
+      "relationship": "authored",
+      "target": "an entrepreneurial journey through life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "getting their own copy of your book",
+      "episode_number": 35
+    },
+    {
+      "source": "The Pleasures of Long Javiti",
+      "relationship": "part_of",
+      "target": "Ralph Sorns",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "final chapter called The Pleasures of Long Javiti",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "spends_time_with",
+      "target": "my kids",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "spending time with Charlotte and my kids and grandkids",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "spends_time_with",
+      "target": "my grandkids",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "spending time with Charlotte and my kids and grandkids",
+      "episode_number": 35
+    },
+    {
+      "source": "my kids",
+      "relationship": "spends_time_with",
+      "target": "my grandkids",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "spending time with Charlotte and my kids and grandkids",
+      "episode_number": 35
+    },
+    {
+      "source": "the big bang",
+      "relationship": "fashioned",
+      "target": "the cosmos",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the big bang that fashioned our earth and the cosmos",
+      "episode_number": 35
+    },
+    {
+      "source": "I",
+      "relationship": "subscribe_to",
+      "target": "the golden rule",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "subscribe to the tenets of the golden rule on humanism",
+      "episode_number": 35
+    },
+    {
+      "source": "I",
+      "relationship": "disillusioned_with",
+      "target": "organized religions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "disillusioned with most human-invented organized religions",
+      "episode_number": 35
+    },
+    {
+      "source": "I",
+      "relationship": "label_as",
+      "target": "agnostic pantheists",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "attach a label to myself, it would probably be agnostic pantheists",
+      "episode_number": 35
+    },
+    {
+      "source": "I",
+      "relationship": "live_as",
+      "target": "optimist",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "live my life as an optimist than as a pessimist",
+      "episode_number": 35
+    },
+    {
+      "source": "we",
+      "relationship": "live_on",
+      "target": "this wonderful earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "what's happening in this wonderful earth that we live on",
+      "episode_number": 35
+    },
+    {
+      "source": "father",
+      "relationship": "advocates_for",
+      "target": "Midwestern values",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "thank you to my father for that because I had that instilled in me at a very early age",
+      "episode_number": 35
+    },
+    {
+      "source": "Colorado Nature Conservancy",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "board of the Colorado Nature Conservancy",
+      "episode_number": 35
+    },
+    {
+      "source": "National Trustee Council of the Nature Conservancy",
+      "relationship": "part_of",
+      "target": "Nature Conservancy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Colorado representative to the National Trustee Council of the Nature Conservancy",
+      "episode_number": 35
+    },
+    {
+      "source": "global warming",
+      "relationship": "concerns",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "concept of global warming is real",
+      "episode_number": 35
+    },
+    {
+      "source": "children",
+      "relationship": "starving_in",
+      "target": "India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "there are children starving in India",
+      "episode_number": 35
+    },
+    {
+      "source": "Charlotte",
+      "relationship": "has_friend",
+      "target": "speaker",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Charlotte is mentioned as a friend of the speaker.",
+      "episode_number": 35
+    },
+    {
+      "source": "speaker",
+      "relationship": "advocates_for",
+      "target": "intergenerational knowledge and wisdom transfer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Speaker discusses the importance of intergenerational knowledge transfer.",
+      "episode_number": 35
+    },
+    {
+      "source": "speaker",
+      "relationship": "discusses",
+      "target": "love",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Speaker discusses the importance of love.",
+      "episode_number": 35
+    },
+    {
+      "source": "speaker",
+      "relationship": "discusses",
+      "target": "death",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Speaker discusses the concept of death.",
+      "episode_number": 35
+    },
+    {
+      "source": "speaker",
+      "relationship": "discusses",
+      "target": "conscious capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Speaker discusses conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "capitalism",
+      "relationship": "is_a_form_of",
+      "target": "religion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Capitalism is discussed in relation to religion.",
+      "episode_number": 35
+    },
+    {
+      "source": "speaker",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Speaker mentions the United States in the context of capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "John Mackey",
+      "relationship": "founded",
+      "target": "Whole Foods Market",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "John Mackey, the founder and still CEO of Whole Foods.",
+      "episode_number": 35
+    },
+    {
+      "source": "Raj Sosodia",
+      "relationship": "works_at",
+      "target": "Babson College",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "who happens to be the Whole Foods endowed professor at Babson College.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "developed",
+      "target": "conscious capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "developed this concept of conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "located_in",
+      "target": "Detroit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "located_in",
+      "target": "New Orleans",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "located_in",
+      "target": "Newark",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "located_in",
+      "target": "Chicago",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "developing stores in areas like Detroit, New Orleans, Newark and Chicago.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "has",
+      "target": "Whole People Foundation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the Whole People Foundation where Whole Foods is now doing lending in some 65 countries.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole Foods Market",
+      "relationship": "has",
+      "target": "Whole Kids Foundation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the Whole Kids Foundation where they're sponsoring gardens and so forth in schools across the nation.",
+      "episode_number": 35
+    },
+    {
+      "source": "Whole People Foundation",
+      "relationship": "partnered_with",
+      "target": "Mohammed Yunus",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Initially it was in partnership with Mohammed Yunus who developed the concept of this type of language.",
+      "episode_number": 35
+    },
+    {
+      "source": "John Mackey",
+      "relationship": "developed",
+      "target": "conscious capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "that's a concept of conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "Rajasodia",
+      "relationship": "developed",
+      "target": "conscious capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "that's a concept of conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "John Mackey",
+      "relationship": "advocates_for",
+      "target": "conscious capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "that's a concept of conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "Rajasodia",
+      "relationship": "advocates_for",
+      "target": "conscious capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "that's a concept of conscious capitalism.",
+      "episode_number": 35
+    },
+    {
+      "source": "Wisconsin",
+      "relationship": "part_of",
+      "target": "Minnesota",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "grandfather who was a Methodist minister in Wisconsin and Minnesota.",
+      "episode_number": 35
+    },
+    {
+      "source": "Germany",
+      "relationship": "located_in",
+      "target": "Wisconsin",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "He had been born in Germany.",
+      "episode_number": 35
+    },
+    {
+      "source": "Thomas Jefferson",
+      "relationship": "associated_with",
+      "target": "deism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the deism of Thomas Jefferson and others of the founding fathers.",
+      "episode_number": 35
+    },
+    {
+      "source": "Herman Hesse",
+      "relationship": "authored",
+      "target": "Damien",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "picked this fabulous quote from his novel Damien.",
+      "episode_number": 35
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Aaron is the host of the podcast series",
+      "episode_number": 35
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "advocates_for",
+      "target": "community stewardship and sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth promotes community stewardship and sustainability concepts",
+      "episode_number": 35
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The podcast series is supported by YOnEarth.org",
+      "episode_number": 35
+    }
+  ]
+}

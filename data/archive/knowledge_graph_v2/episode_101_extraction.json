@@ -1,0 +1,2194 @@
+{
+  "episode": 101,
+  "timestamp": "2025-10-09T10:23:44.599721",
+  "entity_count": 152,
+  "relationship_count": 112,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "William Carstens",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "physics professor"
+    },
+    {
+      "name": "St. Michael's College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "institution where William Carstens works"
+    },
+    {
+      "name": "Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where St. Michael's College is located"
+    },
+    {
+      "name": "University of Vermont",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where William Carstens received his undergraduate degree and PhD"
+    },
+    {
+      "name": "Brandeis University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where William Carstens received his master's degree"
+    },
+    {
+      "name": "Boy Scouts",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization William Carstens has been involved with"
+    },
+    {
+      "name": "Grand Lodge of Vermont",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization where William Carstens is the grand junior warden"
+    },
+    {
+      "name": "Adderondack Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location where William Carstens loves to canoe and camp"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "community audience for the podcast"
+    },
+    {
+      "name": "sacred geometry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "topic of William Carstens' presentation"
+    },
+    {
+      "name": "Fibonacci series",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mathematical concept mentioned in relation to sacred geometry"
+    },
+    {
+      "name": "Michael Himes",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "theologian at Boston College"
+    },
+    {
+      "name": "Michael Himes",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "theologian at Boston College"
+    },
+    {
+      "name": "Boston College",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "institution where Michael Himes works"
+    },
+    {
+      "name": "Newton's laws of planetary motion",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "scientific principle mentioned in relation to geometry"
+    },
+    {
+      "name": "Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "scientist who proved the existence of antiparticles"
+    },
+    {
+      "name": "Murray Gell-Mann",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "developed the eightfold way"
+    },
+    {
+      "name": "eightfold way",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "method for classifying particles"
+    },
+    {
+      "name": "Buddhist",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Buddhist kind of eightfold way"
+    },
+    {
+      "name": "daoists",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "daoists and the in Yang"
+    },
+    {
+      "name": "Christian",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "eight be attitudes if you're a Christian"
+    },
+    {
+      "name": "Kavala",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "esoteric ideas of Kavala"
+    },
+    {
+      "name": "tree of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tree of life in its sort of more modern form"
+    },
+    {
+      "name": "Pythagoras",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "different versions of the Pythagoras called the tetractus"
+    },
+    {
+      "name": "quarks",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the quarks create those particles"
+    },
+    {
+      "name": "leptons",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "three generations of leptons"
+    },
+    {
+      "name": "electron",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the electron being the most familiar"
+    },
+    {
+      "name": "muon",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "there's also a muon"
+    },
+    {
+      "name": "neutrino",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "corresponding neutrino"
+    },
+    {
+      "name": "quark properties",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "quark properties in terms of color"
+    },
+    {
+      "name": "quark",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of particle physics and quark properties"
+    },
+    {
+      "name": "Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "reference to theories published by Einstein"
+    },
+    {
+      "name": "general relativity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of Einstein's theories"
+    },
+    {
+      "name": "particle physics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of the foundation of particle physics"
+    },
+    {
+      "name": "Sandy",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "addressing a participant in the discussion"
+    },
+    {
+      "name": "general relativity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about predictions of general relativity"
+    },
+    {
+      "name": "sun",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "light passing near a very large gravitational object like the sun"
+    },
+    {
+      "name": "light",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "light being a form of energy"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "they could see it on earth"
+    },
+    {
+      "name": "Newton",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about Newton in particular"
+    },
+    {
+      "name": "Kepler",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about Kepler"
+    },
+    {
+      "name": "Copernicus",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about Copernicus"
+    },
+    {
+      "name": "Kepler",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion of astronomy and orbits"
+    },
+    {
+      "name": "Copernicus",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion of geocentric model"
+    },
+    {
+      "name": "Newton",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion of calculus and gravity"
+    },
+    {
+      "name": "calculus",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion of Newton's work"
+    },
+    {
+      "name": "universal law of gravitation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion of Newton's equations"
+    },
+    {
+      "name": "conic sections",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion of orbits"
+    },
+    {
+      "name": "alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion of Newton's interests"
+    },
+    {
+      "name": "Aristotle",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion of Aristotelian physics"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of four elements"
+    },
+    {
+      "name": "air",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of four elements"
+    },
+    {
+      "name": "fire",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of four elements"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of four elements"
+    },
+    {
+      "name": "Isaac Newton",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to physics and alchemy"
+    },
+    {
+      "name": "Galileo Galilei",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to observations and the church"
+    },
+    {
+      "name": "Royal Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to networks of thinkers"
+    },
+    {
+      "name": "Masonic order",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a network influencing thinkers"
+    },
+    {
+      "name": "Invisible College",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to secretive learning"
+    },
+    {
+      "name": "Church",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to education and alchemy"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to the Grand Lodge"
+    },
+    {
+      "name": "Royal Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about experimental science and its origins"
+    },
+    {
+      "name": "Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mention of scientific work and perspective on the universe"
+    },
+    {
+      "name": "Hubble",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mention of discoveries related to galaxies"
+    },
+    {
+      "name": "Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing the impact of Einstein's work on science"
+    },
+    {
+      "name": "Hubble",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioning Hubble's contributions to understanding galaxies"
+    },
+    {
+      "name": "Friedgeoff Khappara",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing the author of 'Dau of Physics' and his impact"
+    },
+    {
+      "name": "Dau of Physics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "referring to the book by Friedgeoff Khappara"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the modern expression of science"
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing the role of education in society"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about knowledge and education"
+    },
+    {
+      "name": "Collegium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "group of Catholic colleges and universities"
+    },
+    {
+      "name": "Kant",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Gerta",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Nietzsche",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Carl Jung",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Joseph Campbell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "lineage of thinkers"
+    },
+    {
+      "name": "Freemasons",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "group associated with thinkers"
+    },
+    {
+      "name": "myth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about Joseph Campbell's work"
+    },
+    {
+      "name": "Joseph Campbell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing Joseph Campbell"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "grand master from California"
+    },
+    {
+      "name": "John Elcouper",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "article by John Elcouper"
+    },
+    {
+      "name": "Masonry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Masonic background"
+    },
+    {
+      "name": "Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "grand lodge of Vermont"
+    },
+    {
+      "name": "Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "grand lodge of Vermont"
+    },
+    {
+      "name": "Grand Lodge of England",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "official birth is from the Grand Lodge of England"
+    },
+    {
+      "name": "United Grand Lodge",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "now the United Grand Lodge"
+    },
+    {
+      "name": "Masonry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "what is masonry looking like right now in Vermont"
+    },
+    {
+      "name": "free Mason",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "standard free Mason that follows certain sort of traditions"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here in the United States"
+    },
+    {
+      "name": "Grand Lodge",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "each of them has an overarching Grand Lodge"
+    },
+    {
+      "name": "ritual",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the idea of ritual here is to, when you go through ritual"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "England has been trying to do that with their grand lodge."
+    },
+    {
+      "name": "Lexington",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the Scottish right, the Northern Masonic jurisdiction here, while in Lexington, Massachusetts, where their headquarters is."
+    },
+    {
+      "name": "Massachusetts",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the Scottish right, the Northern Masonic jurisdiction here, while in Lexington, Massachusetts, where their headquarters is."
+    },
+    {
+      "name": "Jerusalem",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "a lodge in Jerusalem, where Muslim, Jewish, and Christian men came together."
+    },
+    {
+      "name": "Benjamin Franklin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Benjamin Franklin, one of the great founders and framers of the United States."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Benjamin Franklin, one of the great founders and framers of the United States."
+    },
+    {
+      "name": "Tara Massonica",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "documentary that I saw a few months back, Tara Massonica."
+    },
+    {
+      "name": "free masonry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "worldwide tour of free masonry in our modern times."
+    },
+    {
+      "name": "Philadelphia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the city of brotherly love."
+    },
+    {
+      "name": "Jerusalem",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "lodge in Jerusalem"
+    },
+    {
+      "name": "Benjamin Franklin",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "one of the great founders and framers of the United States"
+    },
+    {
+      "name": "Philadelphia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Philadelphia area, known as the city of brotherly love"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the why on earth community podcast"
+    },
+    {
+      "name": "William Carstens",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast, also known as Sandy"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast"
+    },
+    {
+      "name": "particle physics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "sacred geometry",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "free masonry",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "natural philosophy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "Weile waters",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "product offered to contributors"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partner and supporter"
+    },
+    {
+      "name": "William Carstens",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a speaker in the podcast"
+    },
+    {
+      "name": "SMCVT",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "email address domain smcvt.edu"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform mentioned"
+    },
+    {
+      "name": "Frankenstein",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to a story about life force"
+    },
+    {
+      "name": "Newton",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to alchemy and electricity"
+    },
+    {
+      "name": "Mary Shelley",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to Frankenstein"
+    },
+    {
+      "name": "Sandy",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing with the host"
+    },
+    {
+      "name": "Richard Rohr",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "mentioned as a writer and contemporary figure"
+    },
+    {
+      "name": "St. Francis",
+      "type": "PERSON",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "discussed in relation to spirituality"
+    },
+    {
+      "name": "Morris Styles",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "editor mentioned in relation to the book"
+    },
+    {
+      "name": "Alia Delia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "theologian mentioned in relation to the Catholic Church"
+    },
+    {
+      "name": "Catholic Church",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to spirituality and societal changes"
+    },
+    {
+      "name": "Vatican",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to the Catholic Church"
+    },
+    {
+      "name": "Villanova",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "associated with Alia Delia"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "book referenced by the host"
+    },
+    {
+      "name": "St. Francis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to sacramentality and nature."
+    },
+    {
+      "name": "Phi Beta Kappa",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to the love of wisdom."
+    },
+    {
+      "name": "Wieners community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned as a community being thanked."
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to transformation and connection to nature."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussed in relation to seeking solitude and connection."
+    },
+    {
+      "name": "learning",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to the love of learning."
+    },
+    {
+      "name": "Phi Beta Kappa",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast discussion about the organization"
+    },
+    {
+      "name": "Phyllis of Phi Beta Kubenatus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Motto of Phi Beta Kappa"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Host of the podcast"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Website for support and sponsorship"
+    },
+    {
+      "name": "Wienerth Community Stewardship and Sustainability Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Podcast series being discussed"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "William Carstens",
+      "relationship": "works_at",
+      "target": "St. Michael's College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "William Carstens is a professor at St. Michael's College",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "studied_at",
+      "target": "University of Vermont",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "William Carstens received his undergraduate degree and PhD from University of Vermont",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "studied_at",
+      "target": "Brandeis University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "William Carstens received his master's degree from Brandeis University",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "involved_with",
+      "target": "Boy Scouts",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "William Carstens has been involved in Boy Scouts for over 15 years",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "part_of",
+      "target": "Grand Lodge of Vermont",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "William Carstens is the grand junior warden in the Grand Lodge of Vermont",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "loves_to",
+      "target": "Adderondack Mountains",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "William Carstens loves to canoe and camp in the Adderondack Mountains",
+      "episode_number": 101
+    },
+    {
+      "source": "sacred geometry",
+      "relationship": "related_to",
+      "target": "Fibonacci series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sacred geometry is related to the Fibonacci series",
+      "episode_number": 101
+    },
+    {
+      "source": "sacred geometry",
+      "relationship": "advocates_for",
+      "target": "sacred geometry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "William Carstens discusses sacred geometry in his presentation",
+      "episode_number": 101
+    },
+    {
+      "source": "Michael Himes",
+      "relationship": "affiliated_with",
+      "target": "Boston College",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Michael Himes is a theologian at Boston College",
+      "episode_number": 101
+    },
+    {
+      "source": "Michael Himes",
+      "relationship": "works_at",
+      "target": "Boston College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "theologian at Boston College",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton's laws of planetary motion",
+      "relationship": "related_to",
+      "target": "geometry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "concept mentioned in relation to geometry",
+      "episode_number": 101
+    },
+    {
+      "source": "Einstein",
+      "relationship": "proved",
+      "target": "existence of antiparticles",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "scientist who proved the existence of antiparticles",
+      "episode_number": 101
+    },
+    {
+      "source": "Murray Gell-Mann",
+      "relationship": "developed",
+      "target": "eightfold way",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "developed the eightfold way",
+      "episode_number": 101
+    },
+    {
+      "source": "Buddhist",
+      "relationship": "advocates_for",
+      "target": "eightfold way",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Buddhist kind of eightfold way",
+      "episode_number": 101
+    },
+    {
+      "source": "daoists",
+      "relationship": "advocates_for",
+      "target": "eightfold way",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "daoists and the in Yang",
+      "episode_number": 101
+    },
+    {
+      "source": "Christian",
+      "relationship": "advocates_for",
+      "target": "eight be attitudes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "eight be attitudes if you're a Christian",
+      "episode_number": 101
+    },
+    {
+      "source": "Kavala",
+      "relationship": "associated_with",
+      "target": "tree of life",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "esoteric ideas of Kavala",
+      "episode_number": 101
+    },
+    {
+      "source": "Pythagoras",
+      "relationship": "associated_with",
+      "target": "tetractus",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "different versions of the Pythagoras called the tetractus",
+      "episode_number": 101
+    },
+    {
+      "source": "quarks",
+      "relationship": "composed_of",
+      "target": "particles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the quarks create those particles",
+      "episode_number": 101
+    },
+    {
+      "source": "leptons",
+      "relationship": "includes",
+      "target": "electron",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "three generations of leptons",
+      "episode_number": 101
+    },
+    {
+      "source": "leptons",
+      "relationship": "includes",
+      "target": "muon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "three generations of leptons",
+      "episode_number": 101
+    },
+    {
+      "source": "quark properties",
+      "relationship": "describes",
+      "target": "color",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "quark properties in terms of color",
+      "episode_number": 101
+    },
+    {
+      "source": "Einstein",
+      "relationship": "published",
+      "target": "general relativity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion of Einstein's theories",
+      "episode_number": 101
+    },
+    {
+      "source": "quark",
+      "relationship": "part_of",
+      "target": "particle physics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of quark properties and their role in particle physics",
+      "episode_number": 101
+    },
+    {
+      "source": "Sandy",
+      "relationship": "participates_in",
+      "target": "discussion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "addressing Sandy in the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "light",
+      "relationship": "affected_by",
+      "target": "sun",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "light passing near a very large gravitational object like the sun",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton",
+      "relationship": "engaged_in",
+      "target": "alchemy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about Newton's pursuits",
+      "episode_number": 101
+    },
+    {
+      "source": "Kepler",
+      "relationship": "observed",
+      "target": "universe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about Kepler's contributions to observing the universe",
+      "episode_number": 101
+    },
+    {
+      "source": "Copernicus",
+      "relationship": "shifted_viewpoint",
+      "target": "geocentric model",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about Copernicus's impact on the geocentric model",
+      "episode_number": 101
+    },
+    {
+      "source": "general relativity",
+      "relationship": "predicted",
+      "target": "light",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "predictions of general relativity regarding light",
+      "episode_number": 101
+    },
+    {
+      "source": "Kepler",
+      "relationship": "advocates_for",
+      "target": "Copernicus",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion of geocentric model",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton",
+      "relationship": "develops",
+      "target": "calculus",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion of Newton's work",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton",
+      "relationship": "derives",
+      "target": "universal law of gravitation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion of Newton's equations",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton",
+      "relationship": "interested_in",
+      "target": "alchemy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion of Newton's interests",
+      "episode_number": 101
+    },
+    {
+      "source": "Aristotle",
+      "relationship": "conceptualizes",
+      "target": "four elements",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "discussion of Aristotelian physics",
+      "episode_number": 101
+    },
+    {
+      "source": "Newton",
+      "relationship": "contradicts",
+      "target": "Aristotle",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of Newton's approach to physics",
+      "episode_number": 101
+    },
+    {
+      "source": "Isaac Newton",
+      "relationship": "advocates_for",
+      "target": "mechanistic universe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussed in relation to physics and determinism",
+      "episode_number": 101
+    },
+    {
+      "source": "Galileo Galilei",
+      "relationship": "observes",
+      "target": "natural world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "mentioned in relation to observations and the church",
+      "episode_number": 101
+    },
+    {
+      "source": "Royal Society",
+      "relationship": "part_of",
+      "target": "Invisible College",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussed in relation to networks of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Masonic order",
+      "relationship": "influences",
+      "target": "thinkers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "mentioned as a network influencing thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Church",
+      "relationship": "controls",
+      "target": "education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to education and alchemy",
+      "episode_number": 101
+    },
+    {
+      "source": "Grand Lodge of England",
+      "relationship": "located_in",
+      "target": "England",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to the establishment of the lodge",
+      "episode_number": 101
+    },
+    {
+      "source": "Royal Society",
+      "relationship": "part_of",
+      "target": "experimental science",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about the origins of experimental science and the Royal Society's role",
+      "episode_number": 101
+    },
+    {
+      "source": "Einstein",
+      "relationship": "advocates_for",
+      "target": "modern physics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "discussion about Einstein's contributions to science",
+      "episode_number": 101
+    },
+    {
+      "source": "Hubble",
+      "relationship": "advocates_for",
+      "target": "galaxy discovery",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "mention of Hubble's contributions to understanding galaxies",
+      "episode_number": 101
+    },
+    {
+      "source": "Einstein",
+      "relationship": "influenced",
+      "target": "science",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the impact of Einstein's theories on science",
+      "episode_number": 101
+    },
+    {
+      "source": "Hubble",
+      "relationship": "contributed_to",
+      "target": "science",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioning Hubble's contributions to understanding galaxies",
+      "episode_number": 101
+    },
+    {
+      "source": "Friedgeoff Khappara",
+      "relationship": "authored",
+      "target": "Dau of Physics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing the author of 'Dau of Physics'",
+      "episode_number": 101
+    },
+    {
+      "source": "science",
+      "relationship": "includes",
+      "target": "education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the role of education within the context of science",
+      "episode_number": 101
+    },
+    {
+      "source": "Collegium",
+      "relationship": "part_of",
+      "target": "Catholic colleges and universities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "group of colleges and universities",
+      "episode_number": 101
+    },
+    {
+      "source": "Carl Jung",
+      "relationship": "advocates_for",
+      "target": "myth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about thinkers and their ideas",
+      "episode_number": 101
+    },
+    {
+      "source": "Joseph Campbell",
+      "relationship": "explores",
+      "target": "myth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about Joseph Campbell's work",
+      "episode_number": 101
+    },
+    {
+      "source": "Kant",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Gerta",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Nietzsche",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Steiner",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Carl Jung",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "Joseph Campbell",
+      "relationship": "part_of",
+      "target": "lineage of thinkers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "lineage of thinkers",
+      "episode_number": 101
+    },
+    {
+      "source": "John Elcouper",
+      "relationship": "works_at",
+      "target": "Masonry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "article by John Elcouper",
+      "episode_number": 101
+    },
+    {
+      "source": "Masonry",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.98,
+      "context": "grand master from California",
+      "episode_number": 101
+    },
+    {
+      "source": "Masonry",
+      "relationship": "located_in",
+      "target": "Vermont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "grand lodge of Vermont",
+      "episode_number": 101
+    },
+    {
+      "source": "Joseph Campbell",
+      "relationship": "advocates_for",
+      "target": "Masonry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "discussing Joseph Campbell",
+      "episode_number": 101
+    },
+    {
+      "source": "Grand Lodge of England",
+      "relationship": "founded",
+      "target": "Masonry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "official birth is from the Grand Lodge of England",
+      "episode_number": 101
+    },
+    {
+      "source": "Masonry",
+      "relationship": "located_in",
+      "target": "Vermont",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "what is masonry looking like right now in Vermont",
+      "episode_number": 101
+    },
+    {
+      "source": "Masonry",
+      "relationship": "advocates_for",
+      "target": "ritual",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "the idea of ritual here is to, when you go through ritual",
+      "episode_number": 101
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Grand Lodge",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "here in the United States",
+      "episode_number": 101
+    },
+    {
+      "source": "Grand Lodge",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "each of them has an overarching Grand Lodge",
+      "episode_number": 101
+    },
+    {
+      "source": "England",
+      "relationship": "located_in",
+      "target": "PLACE",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "England has been trying to do that with their grand lodge.",
+      "episode_number": 101
+    },
+    {
+      "source": "Lexington",
+      "relationship": "located_in",
+      "target": "Massachusetts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the Scottish right, the Northern Masonic jurisdiction here, while in Lexington, Massachusetts, where their headquarters is.",
+      "episode_number": 101
+    },
+    {
+      "source": "Benjamin Franklin",
+      "relationship": "founded",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Benjamin Franklin, one of the great founders and framers of the United States.",
+      "episode_number": 101
+    },
+    {
+      "source": "Tara Massonica",
+      "relationship": "advocates_for",
+      "target": "free masonry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "documentary that I saw a few months back, Tara Massonica.",
+      "episode_number": 101
+    },
+    {
+      "source": "Philadelphia",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the city of brotherly love.",
+      "episode_number": 101
+    },
+    {
+      "source": "Jerusalem",
+      "relationship": "contains",
+      "target": "PLACE",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "a lodge in Jerusalem, where Muslim, Jewish, and Christian men came together.",
+      "episode_number": 101
+    },
+    {
+      "source": "Benjamin Franklin",
+      "relationship": "founded",
+      "target": "United States",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "one of the great founders and framers of the United States",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "produces",
+      "target": "why on earth community podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "host of the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "discusses",
+      "target": "particle physics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest on the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "discusses",
+      "target": "sacred geometry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest on the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "discusses",
+      "target": "free masonry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest on the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "discusses",
+      "target": "natural philosophy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest on the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "offers",
+      "target": "Weile waters",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "product offered to contributors",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Lidge Family Foundation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Purium",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Earth Hero",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Vera Herbels",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Growing Spaces",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Soil Works",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Earthwater Press",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "1% for the Planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "partnered_with",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "partner and supporter",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "works_at",
+      "target": "SMCVT",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned sharing email address with audience",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "advocates_for",
+      "target": "Frankenstein",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discusses Frankenstein in context of teaching",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "advocates_for",
+      "target": "Newton",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discusses Newton's contributions in teaching",
+      "episode_number": 101
+    },
+    {
+      "source": "William Carstens",
+      "relationship": "uses",
+      "target": "Facebook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentions connecting with audience via Facebook",
+      "episode_number": 101
+    },
+    {
+      "source": "Mary Shelley",
+      "relationship": "created",
+      "target": "Frankenstein",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to the story of Frankenstein",
+      "episode_number": 101
+    },
+    {
+      "source": "Sandy",
+      "relationship": "shares_email_with",
+      "target": "audience",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sharing email address for audience connection",
+      "episode_number": 101
+    },
+    {
+      "source": "Richard Rohr",
+      "relationship": "advocates_for",
+      "target": "spirituality",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to mystical and spiritual themes",
+      "episode_number": 101
+    },
+    {
+      "source": "Richard Rohr",
+      "relationship": "draws_from",
+      "target": "St. Francis",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "connection between Rohr and St. Francis",
+      "episode_number": 101
+    },
+    {
+      "source": "Alia Delia",
+      "relationship": "wrote",
+      "target": "emerging or evolving Christ",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "theologian's work mentioned",
+      "episode_number": 101
+    },
+    {
+      "source": "Catholic Church",
+      "relationship": "located_in",
+      "target": "Vatican",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "institutional relationship",
+      "episode_number": 101
+    },
+    {
+      "source": "Richard Rohr",
+      "relationship": "writes",
+      "target": "weekly meditations",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Rohr's contributions to spirituality",
+      "episode_number": 101
+    },
+    {
+      "source": "Richard Rohr",
+      "relationship": "wrote",
+      "target": "latest book",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to his spiritual teachings",
+      "episode_number": 101
+    },
+    {
+      "source": "St. Francis",
+      "relationship": "connected_with",
+      "target": "natural world",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "St. Francis's relationship with nature",
+      "episode_number": 101
+    },
+    {
+      "source": "St. Francis",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussed in relation to sacramentality and care for the earth.",
+      "episode_number": 101
+    },
+    {
+      "source": "Phi Beta Kappa",
+      "relationship": "advocates_for",
+      "target": "learning",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Mentioned in relation to the love of wisdom and learning.",
+      "episode_number": 101
+    },
+    {
+      "source": "Wieners community",
+      "relationship": "located_in",
+      "target": "nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.9,
+      "context": "Community mentioned in the context of connection to nature.",
+      "episode_number": 101
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Wienerth Community Stewardship and Sustainability Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast hosting",
+      "episode_number": 101
+    },
+    {
+      "source": "YOnEarth",
+      "relationship": "sponsors",
+      "target": "Wienerth Community Stewardship and Sustainability Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Sponsorship of the podcast",
+      "episode_number": 101
+    },
+    {
+      "source": "Phi Beta Kappa",
+      "relationship": "advocates_for",
+      "target": "Phyllis of Phi Beta Kubenatus",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Motto discussion",
+      "episode_number": 101
+    }
+  ]
+}

@@ -1,0 +1,1914 @@
+{
+  "episode": 119,
+  "timestamp": "2025-10-09T10:33:01.846919",
+  "entity_count": 132,
+  "relationship_count": 98,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth community podcast"
+    },
+    {
+      "name": "Richard Hartiman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder and CEO of Rand Marine Technology"
+    },
+    {
+      "name": "Rand Marine Technology",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company founded by Richard Hartiman"
+    },
+    {
+      "name": "Cape Town",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location associated with Richard Hartiman"
+    },
+    {
+      "name": "Rotterdam",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where Rand Marine Technology is based"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where the waste shark has been exported"
+    },
+    {
+      "name": "United Arab Emirates",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country where the waste shark has been exported"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country where the waste shark has been exported"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country where the waste shark has been exported"
+    },
+    {
+      "name": "South Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country where the waste shark has been exported"
+    },
+    {
+      "name": "Hurricane Ian",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "natural disaster mentioned in relation to water cleanup"
+    },
+    {
+      "name": "plastic pollution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "environmental issue being addressed by Richard's technology"
+    },
+    {
+      "name": "plastic pollution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in the context of environmental issues"
+    },
+    {
+      "name": "Roblas",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "robot designed to clean plastic pollution"
+    },
+    {
+      "name": "oil shock",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "robot designed to skim oil from water"
+    },
+    {
+      "name": "Gulf region",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in relation to oil spills"
+    },
+    {
+      "name": "Pacific Ocean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in relation to plastic accumulation"
+    },
+    {
+      "name": "ports",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as entities working with the company"
+    },
+    {
+      "name": "marinas",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as entities working with the company"
+    },
+    {
+      "name": "municipalities",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as entities working with the company"
+    },
+    {
+      "name": "state departments",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as entities working with the company"
+    },
+    {
+      "name": "Tom Chi",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "colleague at At-One Ventures"
+    },
+    {
+      "name": "At-One Ventures",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization associated with Tom Chi"
+    },
+    {
+      "name": "drones",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "technology for environmental cleanup"
+    },
+    {
+      "name": "robotic technologies",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "technologies discussed by Tom Chi"
+    },
+    {
+      "name": "baby coral",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "species being planted by robots"
+    },
+    {
+      "name": "aerial drones",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "technology used for planting seeds"
+    },
+    {
+      "name": "specially coated seeds",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "seeds used for reforestation"
+    },
+    {
+      "name": "the planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "environmental context"
+    },
+    {
+      "name": "journalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "background of the speaker"
+    },
+    {
+      "name": "robots",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "technology discussed as a solution"
+    },
+    {
+      "name": "technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "general context of discussion"
+    },
+    {
+      "name": "Rotterdam",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "manufacturing them here in in Rotterdam in the Netherlands"
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "manufacturing them here in in Rotterdam in the Netherlands"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hoping in office quite soon in the US"
+    },
+    {
+      "name": "Disney",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "really cool clients like Disney and Universal in Orlando"
+    },
+    {
+      "name": "Universal",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "really cool clients like Disney and Universal in Orlando"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "because it's Florida and there's a lot of nitrate in that water"
+    },
+    {
+      "name": "city manager",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "The typical customer is a city manager or a state department"
+    },
+    {
+      "name": "state department",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "The typical customer is a city manager or a state department"
+    },
+    {
+      "name": "algae",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "looking for, if lower, for instance, to solve allergy problems"
+    },
+    {
+      "name": "biomass",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we're taking out all biomass and plastics"
+    },
+    {
+      "name": "GPS",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "everything is GPS tagged and it's time stamp"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "allergy problems because it's Florida"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "deploy quite a few mainly in North America"
+    },
+    {
+      "name": "Malaysia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, Malaysia"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, India"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, Africa"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wind farms have been particularly quite big out here in Europe"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "America tends to be really early adopters on this kind of innovation"
+    },
+    {
+      "name": "oil rigs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "environmental monitoring of oil rigs"
+    },
+    {
+      "name": "wind farms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "environmental monitoring of wind farms"
+    },
+    {
+      "name": "autonomous boats",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "we believe we can do that with autonomous boats"
+    },
+    {
+      "name": "4G",
+      "type": "TECHNOLOGY",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we use 4G and 5G technology"
+    },
+    {
+      "name": "5G",
+      "type": "TECHNOLOGY",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we use 4G and 5G technology"
+    },
+    {
+      "name": "waste management",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about waste management"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "coming from Africa"
+    },
+    {
+      "name": "LiDAR",
+      "type": "TECHNOLOGY",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "LiDAR on top of the drone"
+    },
+    {
+      "name": "shark",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "building a shark part, which is a docking station for five drones"
+    },
+    {
+      "name": "microplastics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "microplastics breaking down in the ocean"
+    },
+    {
+      "name": "ocean",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "ocean where microplastics are found"
+    },
+    {
+      "name": "microplastics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about pollution in oceans"
+    },
+    {
+      "name": "ocean",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about pollution in oceans"
+    },
+    {
+      "name": "seaweed",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about ocean life"
+    },
+    {
+      "name": "fish",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about ocean life"
+    },
+    {
+      "name": "plastic",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about pollution in oceans"
+    },
+    {
+      "name": "Pacific",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about ocean currents"
+    },
+    {
+      "name": "Thailand",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about waste management systems"
+    },
+    {
+      "name": "Asian regions",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about pollution in rivers"
+    },
+    {
+      "name": "United Nations Sustainable Development Goals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing environmental issues and goals"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "environment for environmentally oriented startups"
+    },
+    {
+      "name": "EU",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "government support for environmental startups"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "comparison of venture capital landscape"
+    },
+    {
+      "name": "South Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "company origin"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "focus on sustainable startups"
+    },
+    {
+      "name": "venture capital",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "funding for startups"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "government support"
+    },
+    {
+      "name": "innovation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "focus of grants and funding"
+    },
+    {
+      "name": "USG",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "involved in sustainability in the USG"
+    },
+    {
+      "name": "EU",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "not cheap to manufacture in the EU"
+    },
+    {
+      "name": "pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "issues related to the pandemic"
+    },
+    {
+      "name": "robotics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "everyone that's coming is a robotics guy who loves sustainability"
+    },
+    {
+      "name": "Miguel Gil",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CEO of Organic India"
+    },
+    {
+      "name": "Organic India",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "T and Supplements company"
+    },
+    {
+      "name": "Mondragon cooperatives",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "innovative models around the world"
+    },
+    {
+      "name": "Basque region",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of Mondragon cooperatives"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "region of interest for social enterprise movement"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "region of interest for B-corpbs"
+    },
+    {
+      "name": "B-corpbs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "business model in the US"
+    },
+    {
+      "name": "the Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "region mentioned regarding work culture"
+    },
+    {
+      "name": "Eric Lombardi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "colleague engaged in the social enterprise movement"
+    },
+    {
+      "name": "Richard Hardiman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Rand Marine Technology",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Finland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Denmark",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Puriam",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Walei Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Organic India",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "VeridiTos",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast segment"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "providing wonderful organic and fair trade, Tulsi and other herbal tea and supplements products."
+    },
+    {
+      "name": "Tulsi",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "providing wonderful organic and fair trade, Tulsi and other herbal tea and supplements products."
+    },
+    {
+      "name": "VeridiTos",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention my new novel, VeridiTos, the great healing is within our power."
+    },
+    {
+      "name": "Richard",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "talking with you about your technology."
+    },
+    {
+      "name": "Rand Marine",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "everything that you've got going on with Rand Marine."
+    },
+    {
+      "name": "South Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "flying between South Africa and the Netherlands every two weeks."
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "flying between South Africa and the Netherlands every two weeks."
+    },
+    {
+      "name": "TEDx",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "I was talking about being an accidentally environmentalist in a TEDx talk."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "understood that we environmental problems, the climate change would move to doing a lot of damage."
+    },
+    {
+      "name": "plastics problem",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I wasn't aware of the plastics problem, for instance."
+    },
+    {
+      "name": "robots",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "that's where I started coming up with robots."
+    },
+    {
+      "name": "European way of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "the dutch way or the kind of this European way of life of kind of not everything is about work."
+    },
+    {
+      "name": "government",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "the government implemented it so that fathers would take the afternoon off"
+    },
+    {
+      "name": "kids",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "my kids reminded me that I hadn't done that recently"
+    },
+    {
+      "name": "bankruptcy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "we could have gone under two or three times. You know, we were close to bankruptcy a number of times"
+    },
+    {
+      "name": "family",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "be able to spend time with my family"
+    },
+    {
+      "name": "business",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "have my great little business up the road"
+    },
+    {
+      "name": "entrepreneurial journey",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "what the entrepreneurial journey means and can look like"
+    },
+    {
+      "name": "dad",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I look at my dad and he was a hard worker"
+    },
+    {
+      "name": "book",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "You've written a book"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "including a nonfiction book called Why On Earth"
+    },
+    {
+      "name": "Richard",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast interview"
+    },
+    {
+      "name": "ran marine technology",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "wonderful work that you're doing with ran marine technology"
+    },
+    {
+      "name": "Why On Earth Community Stewardship and Sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "The Why on Earth Community Stewardship and Sustainability podcast series is hosted by Aaron William Perry"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosted by Aaron William Perry, author, thought leader, and executive consultant"
+    },
+    {
+      "name": "Richard",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "conversation with Aaron"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "conversation with Richard"
+    },
+    {
+      "name": "Why on Earth Community Stewardship and Sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "whyonearth.org-support",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "website for support"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discount code"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Richard Hartiman",
+      "relationship": "works_at",
+      "target": "Rand Marine Technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder and CEO of Rand Marine Technology",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine Technology",
+      "relationship": "located_in",
+      "target": "Rotterdam",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "company based in Rotterdam",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard Hartiman",
+      "relationship": "advocates_for",
+      "target": "plastic pollution",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing technology to clean up plastic pollution",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine Technology",
+      "relationship": "produces",
+      "target": "waste shark",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "produces the waste shark",
+      "episode_number": 119
+    },
+    {
+      "source": "waste shark",
+      "relationship": "exported_to",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "exported globally to the United States",
+      "episode_number": 119
+    },
+    {
+      "source": "waste shark",
+      "relationship": "exported_to",
+      "target": "United Arab Emirates",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "exported globally to the United Arab Emirates",
+      "episode_number": 119
+    },
+    {
+      "source": "waste shark",
+      "relationship": "exported_to",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "exported globally to India",
+      "episode_number": 119
+    },
+    {
+      "source": "waste shark",
+      "relationship": "exported_to",
+      "target": "Germany",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "exported globally to Germany",
+      "episode_number": 119
+    },
+    {
+      "source": "waste shark",
+      "relationship": "exported_to",
+      "target": "South Africa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "exported globally to South Africa",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard Hartiman",
+      "relationship": "located_in",
+      "target": "Cape Town",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "divides time between Cape Town and Rotterdam",
+      "episode_number": 119
+    },
+    {
+      "source": "Roblas",
+      "relationship": "designed_to_clean",
+      "target": "plastic pollution",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in the context of environmental issues",
+      "episode_number": 119
+    },
+    {
+      "source": "oil shock",
+      "relationship": "designed_to_skim",
+      "target": "oil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "robot designed to skim oil from water",
+      "episode_number": 119
+    },
+    {
+      "source": "Gulf region",
+      "relationship": "part_of",
+      "target": "oil spills",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "location mentioned in relation to oil spills",
+      "episode_number": 119
+    },
+    {
+      "source": "Roblas",
+      "relationship": "advocates_for",
+      "target": "cleaning plastic pollution",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "robot designed to clean plastic pollution",
+      "episode_number": 119
+    },
+    {
+      "source": "ports",
+      "relationship": "works_with",
+      "target": "Roblas",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned as entities working with the company",
+      "episode_number": 119
+    },
+    {
+      "source": "marinas",
+      "relationship": "works_with",
+      "target": "Roblas",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned as entities working with the company",
+      "episode_number": 119
+    },
+    {
+      "source": "municipalities",
+      "relationship": "works_with",
+      "target": "Roblas",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned as entities working with the company",
+      "episode_number": 119
+    },
+    {
+      "source": "state departments",
+      "relationship": "works_with",
+      "target": "Roblas",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned as entities working with the company",
+      "episode_number": 119
+    },
+    {
+      "source": "Pacific Ocean",
+      "relationship": "contains",
+      "target": "plastic accumulation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "location mentioned in relation to plastic accumulation",
+      "episode_number": 119
+    },
+    {
+      "source": "Tom Chi",
+      "relationship": "works_at",
+      "target": "At-One Ventures",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "colleague at At-One Ventures",
+      "episode_number": 119
+    },
+    {
+      "source": "At-One Ventures",
+      "relationship": "involved_in",
+      "target": "robotic technologies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization associated with Tom Chi",
+      "episode_number": 119
+    },
+    {
+      "source": "robots",
+      "relationship": "used_for",
+      "target": "environmental cleanup",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "technology discussed as a solution",
+      "episode_number": 119
+    },
+    {
+      "source": "drones",
+      "relationship": "used_for",
+      "target": "planting specially coated seeds",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "technology for environmental cleanup",
+      "episode_number": 119
+    },
+    {
+      "source": "baby coral",
+      "relationship": "planted_by",
+      "target": "robots",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "species being planted by robots",
+      "episode_number": 119
+    },
+    {
+      "source": "specially coated seeds",
+      "relationship": "used_for",
+      "target": "reforestation",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "seeds used for reforestation",
+      "episode_number": 119
+    },
+    {
+      "source": "technology",
+      "relationship": "helps",
+      "target": "heal the planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "general context of discussion",
+      "episode_number": 119
+    },
+    {
+      "source": "Disney",
+      "relationship": "advocates_for",
+      "target": "cleaning water",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Disney might be firing up shell casings every single night for fireworks and they need to clean that out the water",
+      "episode_number": 119
+    },
+    {
+      "source": "Universal",
+      "relationship": "advocates_for",
+      "target": "cleaning water",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Universal in Orlando who use us because Disney might be firing up shell casings every single night for fireworks and they need to clean that out the water",
+      "episode_number": 119
+    },
+    {
+      "source": "state department",
+      "relationship": "located_in",
+      "target": "US",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "The typical customer is a city manager or a state department that has authority over a large area of water",
+      "episode_number": 119
+    },
+    {
+      "source": "city manager",
+      "relationship": "located_in",
+      "target": "US",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "The typical customer is a city manager or a state department that has authority over a large area of water",
+      "episode_number": 119
+    },
+    {
+      "source": "cleaning water",
+      "relationship": "part_of",
+      "target": "algae",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "looking for, if lower, for instance, to solve allergy problems and so we're taking out algae",
+      "episode_number": 119
+    },
+    {
+      "source": "cleaning water",
+      "relationship": "part_of",
+      "target": "biomass",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we're taking out all biomass and plastics",
+      "episode_number": 119
+    },
+    {
+      "source": "cleaning water",
+      "relationship": "part_of",
+      "target": "plastics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we're taking out all biomass and plastics",
+      "episode_number": 119
+    },
+    {
+      "source": "Rotterdam",
+      "relationship": "located_in",
+      "target": "Netherlands",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "manufacturing them here in in Rotterdam in the Netherlands",
+      "episode_number": 119
+    },
+    {
+      "source": "Florida",
+      "relationship": "contains",
+      "target": "nitrate",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "allergy problems because it's Florida",
+      "episode_number": 119
+    },
+    {
+      "source": "North America",
+      "relationship": "part_of",
+      "target": "America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "deploy quite a few mainly in North America",
+      "episode_number": 119
+    },
+    {
+      "source": "Malaysia",
+      "relationship": "part_of",
+      "target": "Asia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, Malaysia",
+      "episode_number": 119
+    },
+    {
+      "source": "India",
+      "relationship": "part_of",
+      "target": "Asia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, India",
+      "episode_number": 119
+    },
+    {
+      "source": "Africa",
+      "relationship": "part_of",
+      "target": "Asia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "bigger problems are in sort of Asian regions, Africa",
+      "episode_number": 119
+    },
+    {
+      "source": "wind farms",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Wind farms have been particularly quite big out here in Europe",
+      "episode_number": 119
+    },
+    {
+      "source": "autonomous boats",
+      "relationship": "made_by",
+      "target": "technology",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "we believe we can do that with autonomous boats",
+      "episode_number": 119
+    },
+    {
+      "source": "4G",
+      "relationship": "is_a",
+      "target": "technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we use 4G and 5G technology",
+      "episode_number": 119
+    },
+    {
+      "source": "5G",
+      "relationship": "is_a",
+      "target": "technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we use 4G and 5G technology",
+      "episode_number": 119
+    },
+    {
+      "source": "LiDAR",
+      "relationship": "part_of",
+      "target": "drone",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "LiDAR is part of the drone's hardware",
+      "episode_number": 119
+    },
+    {
+      "source": "shark",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "shark is a product being built",
+      "episode_number": 119
+    },
+    {
+      "source": "microplastics",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "microplastics impact health",
+      "episode_number": 119
+    },
+    {
+      "source": "drone",
+      "relationship": "uses",
+      "target": "LiDAR",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "drone uses LiDAR for navigation",
+      "episode_number": 119
+    },
+    {
+      "source": "ocean",
+      "relationship": "contains",
+      "target": "microplastics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ocean contains microplastics",
+      "episode_number": 119
+    },
+    {
+      "source": "microplastics",
+      "relationship": "causes",
+      "target": "pollution",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about pollution in oceans",
+      "episode_number": 119
+    },
+    {
+      "source": "plastic",
+      "relationship": "pollution_source",
+      "target": "ocean",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about pollution in oceans",
+      "episode_number": 119
+    },
+    {
+      "source": "fish",
+      "relationship": "ingests",
+      "target": "plastic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about ocean life",
+      "episode_number": 119
+    },
+    {
+      "source": "Thailand",
+      "relationship": "has_waste_management_issues",
+      "target": "rivers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about waste management systems",
+      "episode_number": 119
+    },
+    {
+      "source": "Asian regions",
+      "relationship": "experiences",
+      "target": "plastic_pollution",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "discussion about pollution in rivers",
+      "episode_number": 119
+    },
+    {
+      "source": "rivers",
+      "relationship": "contribute_to",
+      "target": "ocean",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion about pollution in oceans",
+      "episode_number": 119
+    },
+    {
+      "source": "EU",
+      "relationship": "supports",
+      "target": "environmentally oriented startups",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "government support for startups",
+      "episode_number": 119
+    },
+    {
+      "source": "US",
+      "relationship": "has",
+      "target": "venture capital firms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "comparison of funding landscape",
+      "episode_number": 119
+    },
+    {
+      "source": "South Africa",
+      "relationship": "origin_of",
+      "target": "company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "company origin",
+      "episode_number": 119
+    },
+    {
+      "source": "grants",
+      "relationship": "focus_on",
+      "target": "innovation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "funding for startups",
+      "episode_number": 119
+    },
+    {
+      "source": "sustainability",
+      "relationship": "advocates_for",
+      "target": "sustainable startups",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "focus on sustainable startups",
+      "episode_number": 119
+    },
+    {
+      "source": "USG",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "involved in sustainability in the USG",
+      "episode_number": 119
+    },
+    {
+      "source": "EU",
+      "relationship": "part_of",
+      "target": "manufacturing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "not cheap to manufacture in the EU",
+      "episode_number": 119
+    },
+    {
+      "source": "pandemic",
+      "relationship": "causes",
+      "target": "issues",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "issues related to the pandemic",
+      "episode_number": 119
+    },
+    {
+      "source": "robotics",
+      "relationship": "associated_with",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "everyone that's coming is a robotics guy who loves sustainability",
+      "episode_number": 119
+    },
+    {
+      "source": "Miguel Gil",
+      "relationship": "works_at",
+      "target": "Organic India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "CEO of Organic India",
+      "episode_number": 119
+    },
+    {
+      "source": "Mondragon cooperatives",
+      "relationship": "located_in",
+      "target": "Basque region",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "innovative models around the world",
+      "episode_number": 119
+    },
+    {
+      "source": "B-corpbs",
+      "relationship": "located_in",
+      "target": "US",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "business model in the US",
+      "episode_number": 119
+    },
+    {
+      "source": "Eric Lombardi",
+      "relationship": "engaged_in",
+      "target": "social enterprise movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "colleague engaged in the social enterprise movement",
+      "episode_number": 119
+    },
+    {
+      "source": "the Netherlands",
+      "relationship": "part_of",
+      "target": "Europe",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "region mentioned regarding work culture",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard Hardiman",
+      "relationship": "founded",
+      "target": "Rand Marine Technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine Technology",
+      "relationship": "located_in",
+      "target": "Netherlands",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard Hardiman",
+      "relationship": "advocates_for",
+      "target": "social enterprise",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Finland",
+      "relationship": "part_of",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Denmark",
+      "relationship": "part_of",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard Hardiman",
+      "relationship": "works_at",
+      "target": "Rand Marine Technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Puriam",
+      "relationship": "provides",
+      "target": "organic superfoods",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Walei Waters",
+      "relationship": "provides",
+      "target": "monthly shipments",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Organic India",
+      "relationship": "provides",
+      "target": "herbal tea and supplements products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "VeridiTos",
+      "relationship": "is_written_by",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine",
+      "relationship": "founded",
+      "target": "Richard",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "everything that you've got going on with Rand Marine.",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine",
+      "relationship": "located_in",
+      "target": "South Africa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "flying between South Africa and the Netherlands every two weeks.",
+      "episode_number": 119
+    },
+    {
+      "source": "Rand Marine",
+      "relationship": "located_in",
+      "target": "Netherlands",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "flying between South Africa and the Netherlands every two weeks.",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "I was talking about being an accidentally environmentalist in a TEDx talk.",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard",
+      "relationship": "advocates_for",
+      "target": "plastics problem",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I wasn't aware of the plastics problem, for instance.",
+      "episode_number": 119
+    },
+    {
+      "source": "VeridiTos",
+      "relationship": "made_by",
+      "target": "Richard",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mention my new novel, VeridiTos, the great healing is within our power.",
+      "episode_number": 119
+    },
+    {
+      "source": "Tulsi",
+      "relationship": "made_by",
+      "target": "India",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "providing wonderful organic and fair trade, Tulsi and other herbal tea and supplements products.",
+      "episode_number": 119
+    },
+    {
+      "source": "government",
+      "relationship": "implemented",
+      "target": "kids",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "the government implemented it so that fathers would take the afternoon off",
+      "episode_number": 119
+    },
+    {
+      "source": "kids",
+      "relationship": "reminded",
+      "target": "father",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "my kids reminded me that I hadn't done that recently",
+      "episode_number": 119
+    },
+    {
+      "source": "business",
+      "relationship": "owned_by",
+      "target": "father",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "have my great little business up the road",
+      "episode_number": 119
+    },
+    {
+      "source": "dad",
+      "relationship": "worked_for",
+      "target": "company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "I look at my dad and he was a hard worker",
+      "episode_number": 119
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "written_by",
+      "target": "unknown_author",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "including a nonfiction book called Why On Earth",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard",
+      "relationship": "works_at",
+      "target": "ran marine technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "wonderful work that you're doing with ran marine technology",
+      "episode_number": 119
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community Stewardship and Sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "The Why on Earth Community Stewardship and Sustainability podcast series is hosted by Aaron William Perry",
+      "episode_number": 119
+    },
+    {
+      "source": "Richard",
+      "relationship": "talks_with",
+      "target": "Aaron",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "conversation",
+      "episode_number": 119
+    },
+    {
+      "source": "William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Stewardship and Sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast hosting",
+      "episode_number": 119
+    },
+    {
+      "source": "Why on Earth Community Stewardship and Sustainability podcast series",
+      "relationship": "supported_by",
+      "target": "whyonearth.org-support",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "funding support",
+      "episode_number": 119
+    },
+    {
+      "source": "Why on Earth Community Stewardship and Sustainability podcast series",
+      "relationship": "sponsored_by",
+      "target": "corporate and organization sponsors",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "sponsorship",
+      "episode_number": 119
+    },
+    {
+      "source": "corporate and organization sponsors",
+      "relationship": "offer_discounts_on",
+      "target": "products and services",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discounts",
+      "episode_number": 119
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "used_as_discount_code_for",
+      "target": "products and services",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "discount code usage",
+      "episode_number": 119
+    }
+  ]
+}

@@ -1,0 +1,2010 @@
+{
+  "episode": 171,
+  "timestamp": "2025-10-09T11:10:42.183206",
+  "entity_count": 140,
+  "relationship_count": 102,
+  "entities": [
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Cynthia James Stewart",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of James Branch Grill"
+    },
+    {
+      "name": "James Branch Grill",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "restaurant founded by Cynthia James Stewart"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the restaurant and home of Cynthia James Stewart"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Durango is located"
+    },
+    {
+      "name": "Robert",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "husband of Cynthia James Stewart"
+    },
+    {
+      "name": "Sonia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "daughter of Cynthia James Stewart"
+    },
+    {
+      "name": "Fashion Institute of Technology",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Cynthia's educational background"
+    },
+    {
+      "name": "Harvest Grill",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "food cart opened by Cynthia and Robert"
+    },
+    {
+      "name": "James Ranch Grill",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "brick and mortar restaurant opened by Cynthia and Robert"
+    },
+    {
+      "name": "Joss",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Redlands University",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "multi million dollar manufacturing company",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "cowboy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "ranch",
+      "type": "PLACE",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "cattle",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "five children",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Jen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "oldest sister"
+    },
+    {
+      "name": "Julie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "next oldest sister"
+    },
+    {
+      "name": "Dan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "brother"
+    },
+    {
+      "name": "Justin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "youngest brother"
+    },
+    {
+      "name": "Seattle",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "where Dan was living"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "where the family is located"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "where the speaker was in the fashion industry"
+    },
+    {
+      "name": "Pregosa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where the speaker's husband's parents lived"
+    },
+    {
+      "name": "cattle business",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "business started by the parents"
+    },
+    {
+      "name": "organic farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "what Jen decided to pursue"
+    },
+    {
+      "name": "egg business",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "business started by Julie"
+    },
+    {
+      "name": "dairy farm",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "business started by Dan"
+    },
+    {
+      "name": "artisan cheese",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "product made by Dan"
+    },
+    {
+      "name": "restaurant",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "idea proposed by the speaker"
+    },
+    {
+      "name": "restaurant",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about opening a restaurant"
+    },
+    {
+      "name": "food wagon",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "reference to a food business"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "mention of local farmers"
+    },
+    {
+      "name": "mother nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "personification of nature"
+    },
+    {
+      "name": "cattle ranching",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "discussion about cattle ranching practices"
+    },
+    {
+      "name": "holistic management",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "management methodology"
+    },
+    {
+      "name": "regenerative methodologies",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion of farming practices"
+    },
+    {
+      "name": "John Ott",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "brother-in-law who introduced holistic management"
+    },
+    {
+      "name": "Saver Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization related to holistic management"
+    },
+    {
+      "name": "Ellen Savry",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "person met at a holistic management conference"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "reference to the speaker's father"
+    },
+    {
+      "name": "grass farmer",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "description of the father's role"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "reference to the local community"
+    },
+    {
+      "name": "Mandy McGill",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "introduced us and with whom you've collaborated"
+    },
+    {
+      "name": "James Ranch Grill",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "encourage everybody to make their way to Durango and come to the James Ranch Grill"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "make their way to Durango"
+    },
+    {
+      "name": "Telluride",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "farmers markets one in Durango, one in Telluride"
+    },
+    {
+      "name": "James Ranch",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "find more information about what you and everyone in the family are doing here at james ranch dot net"
+    },
+    {
+      "name": "holistic management",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "helping more and more folks awaken to the possibilities of holistic management"
+    },
+    {
+      "name": "regenerative stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "helping more and more folks awaken to the possibilities of regenerative stewardship"
+    },
+    {
+      "name": "Mandy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "chatted with Mandy about figuring a way to get the educational panels out digitally"
+    },
+    {
+      "name": "James Ranch",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "find more information about what you and everyone in the family are doing here at james ranch dot net"
+    },
+    {
+      "name": "soil ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "talking like soil ecology is complex very complex"
+    },
+    {
+      "name": "local farmers",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "only source from local farmers in regenerative thinking people"
+    },
+    {
+      "name": "restaurant",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "responsibility as a restaurant I feel as a restaurant owner"
+    },
+    {
+      "name": "industrial food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "what's happening in industrial food which virtually all of us encounter regularly"
+    },
+    {
+      "name": "Michelin star restaurant",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "you can go to a Michelin star restaurant that gets all their food from Cisco"
+    },
+    {
+      "name": "Brook LaVan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "shout out to a dear friend and mentor Brook LaVan"
+    },
+    {
+      "name": "Rose",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "his wife Rose at sustainable settings"
+    },
+    {
+      "name": "Sustainable Settings",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shout out to a dear friend and mentor Brook LaVan and his wife Rose at sustainable settings"
+    },
+    {
+      "name": "Carbondale, Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sustainable settings in Carbondale, Colorado"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the big market for them is Aspen"
+    },
+    {
+      "name": "Gay Brown",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "regenerative ranching experts from the upper Midwest"
+    },
+    {
+      "name": "Nicolette Han Niamen",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Niamen beef company who wrote defending beef"
+    },
+    {
+      "name": "Elizabeth Whitlow",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "with the regenerative organic alliance"
+    },
+    {
+      "name": "Yulei Huta",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "friends Yulei Huta and Jean Michel Flourier in Switzerland"
+    },
+    {
+      "name": "Jean Michel Flourier",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "friends Yulei Huta and Jean Michel Flourier in Switzerland"
+    },
+    {
+      "name": "Good Yannem",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the headquarters for biodynamic practices worldwide"
+    },
+    {
+      "name": "Jeff Moir",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Jeff Moir at the Radeil institute"
+    },
+    {
+      "name": "Radeil Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Jeff Moir at the Radeil institute"
+    },
+    {
+      "name": "Lauren Tucker",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "friends Lauren Tucker and Finneon make peace from kiss the ground"
+    },
+    {
+      "name": "Finneon Make Peace",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "friends Lauren Tucker and Finneon make peace from kiss the ground"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "friends Lauren Tucker and Finneon make peace from kiss the ground"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "quote in the book I wrote called Why On Earth"
+    },
+    {
+      "name": "Dirt to Soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Gay Brown who wrote dirt to soil"
+    },
+    {
+      "name": "Defending Beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Nicolette Han Niamen who wrote defending beef"
+    },
+    {
+      "name": "Moir",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "CEO of Radeil Institute"
+    },
+    {
+      "name": "Radeil Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization where Moir was CEO"
+    },
+    {
+      "name": "Lauren Tucker",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Friend involved with Kiss the Ground"
+    },
+    {
+      "name": "Finneon",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Friend involved with Kiss the Ground"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Organization related to Lauren Tucker and Finneon"
+    },
+    {
+      "name": "Brooke Levan",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Featured in a film"
+    },
+    {
+      "name": "Sustainable Settings",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Organization associated with Brooke Levan"
+    },
+    {
+      "name": "James Ranches",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Concept related to local sourcing of food"
+    },
+    {
+      "name": "National Restaurant Association",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Organization mentioned in relation to sustainability"
+    },
+    {
+      "name": "Michelle Korsmo",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "CEO of National Restaurant Association"
+    },
+    {
+      "name": "millennials",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Demographic mentioned in relation to sustainable sourcing"
+    },
+    {
+      "name": "jansi",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Demographic mentioned in relation to sustainable sourcing"
+    },
+    {
+      "name": "food ink",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "Documentary mentioned in relation to food production awareness"
+    },
+    {
+      "name": "Toast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "POS system used in restaurants"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Describing restaurant practices"
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Describing food sourcing practices"
+    },
+    {
+      "name": "regenerative",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Describing ultimate food sourcing practices"
+    },
+    {
+      "name": "local farmer",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "Describing relationship with food sourcing"
+    },
+    {
+      "name": "restaurants",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Discussing food sourcing and sustainability practices"
+    },
+    {
+      "name": "Mandy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "referring to a friend"
+    },
+    {
+      "name": "Zach Bush",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a speaker on connection to nature"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to human health"
+    },
+    {
+      "name": "industrialism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "mentioned as a factor affecting the dormant seed"
+    },
+    {
+      "name": "materialism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "mentioned as a factor affecting the dormant seed"
+    },
+    {
+      "name": "dormant seed",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "central theme in the discussion"
+    },
+    {
+      "name": "ecological sense",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussed in relation to human analogy"
+    },
+    {
+      "name": "Zach Bush",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaks on this way better than I ever can"
+    },
+    {
+      "name": "James Ranch",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "come to Durango when you're in Durango come to 33 846 highway 550 James Ranch Grill"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "come to Durango when you're in Durango"
+    },
+    {
+      "name": "climate first bank",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "bluestone life insurance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "earth coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "Brad and Lindsey Lidge family foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "Patagonia's home planet fund",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "edaphic solutions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "Josephine Porter Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "Chelsea Green publishing",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborating with uh who help make our podcast series possible"
+    },
+    {
+      "name": "Elaine Ingham",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "our friend doctor Elaine Ingham who essentially pioneered the formal holistic soil science field"
+    },
+    {
+      "name": "soil food web",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "her work there"
+    },
+    {
+      "name": "Toast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "point of sale system used by restaurants"
+    },
+    {
+      "name": "Dan Barber",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "chef and pioneer in culinary world"
+    },
+    {
+      "name": "Blue Hill",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "restaurant associated with Dan Barber"
+    },
+    {
+      "name": "Lindley Dixon",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "founder of Real Organic"
+    },
+    {
+      "name": "Real Organic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization promoting organic practices"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "location where Real Organic is based"
+    },
+    {
+      "name": "San Luis Valley",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "region where Taproot is based"
+    },
+    {
+      "name": "Taproot",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "farm runners organization in San Luis Valley"
+    },
+    {
+      "name": "Farmers Market",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "location for sourcing food from local farmers"
+    },
+    {
+      "name": "Sarah Jones",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "connected with Jay, from Jones organic farm"
+    },
+    {
+      "name": "Jones organic farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing yellow jelly potatoes"
+    },
+    {
+      "name": "San Luis Valley",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of Jones organic farm"
+    },
+    {
+      "name": "yellow jelly",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "type of potato grown by Jones organic farm"
+    },
+    {
+      "name": "taproot",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "farm runner mentioned for distribution"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Cynthia James Stewart",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "James Ranch Grill",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the meeting"
+    },
+    {
+      "name": "Durango",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state in the USA"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website for the Y on Earth Community"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors are listed on the YOnEarth.org-slaeshsupport-page"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "being a part of the Y on Earth Community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "founded",
+      "target": "James Branch Grill",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Cynthia is the founder of the restaurant",
+      "episode_number": 171
+    },
+    {
+      "source": "James Branch Grill",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "The restaurant is located in Durango",
+      "episode_number": 171
+    },
+    {
+      "source": "Durango",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Durango is a city in Colorado",
+      "episode_number": 171
+    },
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "advocates_for",
+      "target": "regenerative practices",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Cynthia promotes regenerative practices in her restaurant",
+      "episode_number": 171
+    },
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "married_to",
+      "target": "Robert",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Cynthia is married to Robert",
+      "episode_number": 171
+    },
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "mother_of",
+      "target": "Sonia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Cynthia is the mother of Sonia",
+      "episode_number": 171
+    },
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "opened",
+      "target": "Harvest Grill",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Cynthia opened the food cart called Harvest Grill",
+      "episode_number": 171
+    },
+    {
+      "source": "Harvest Grill",
+      "relationship": "part_of",
+      "target": "James Ranch Grill",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Harvest Grill was part of the evolution to James Ranch Grill",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss",
+      "relationship": "advocates_for",
+      "target": "cowboy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Redlands University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss",
+      "relationship": "grew_up_in",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss's dad",
+      "relationship": "founded",
+      "target": "multi million dollar manufacturing company",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss's dad",
+      "relationship": "started",
+      "target": "ranch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss",
+      "relationship": "is_child_of",
+      "target": "Joss's dad",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss",
+      "relationship": "is_child_of",
+      "target": "Joss's mom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss",
+      "relationship": "has_siblings",
+      "target": "five children",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.6,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Joss's dad",
+      "relationship": "raises",
+      "target": "cattle",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Podcast transcript segment",
+      "episode_number": 171
+    },
+    {
+      "source": "Jen",
+      "relationship": "advocates_for",
+      "target": "organic farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Jen decided to be an organic farmer",
+      "episode_number": 171
+    },
+    {
+      "source": "Julie",
+      "relationship": "advocates_for",
+      "target": "egg business",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Julie started the egg business",
+      "episode_number": 171
+    },
+    {
+      "source": "Dan",
+      "relationship": "advocates_for",
+      "target": "dairy farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Dan started a dairy farm",
+      "episode_number": 171
+    },
+    {
+      "source": "Dan",
+      "relationship": "made_by",
+      "target": "artisan cheese",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Dan makes artisan cheese",
+      "episode_number": 171
+    },
+    {
+      "source": "speaker",
+      "relationship": "advocates_for",
+      "target": "restaurant",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Speaker proposed opening a restaurant",
+      "episode_number": 171
+    },
+    {
+      "source": "parents",
+      "relationship": "works_at",
+      "target": "cattle business",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Parents had a cattle business",
+      "episode_number": 171
+    },
+    {
+      "source": "speaker",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Speaker returned to Durango",
+      "episode_number": 171
+    },
+    {
+      "source": "Dan",
+      "relationship": "located_in",
+      "target": "Seattle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Dan was living in Seattle",
+      "episode_number": 171
+    },
+    {
+      "source": "speaker",
+      "relationship": "located_in",
+      "target": "New York City",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Speaker lived in New York City",
+      "episode_number": 171
+    },
+    {
+      "source": "speaker",
+      "relationship": "located_in",
+      "target": "Pregosa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Speaker's husband's parents live in Pregosa",
+      "episode_number": 171
+    },
+    {
+      "source": "John Ott",
+      "relationship": "advocates_for",
+      "target": "holistic management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "introduction to holistic management",
+      "episode_number": 171
+    },
+    {
+      "source": "Dave",
+      "relationship": "employs",
+      "target": "holistic management",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "father's adoption of holistic management practices",
+      "episode_number": 171
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "farmers serving the community",
+      "episode_number": 171
+    },
+    {
+      "source": "restaurant",
+      "relationship": "honors",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "restaurant as a tribute to farmers' hard work",
+      "episode_number": 171
+    },
+    {
+      "source": "cattle ranching",
+      "relationship": "part_of",
+      "target": "holistic management",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "cattle ranching practices evolving into holistic management",
+      "episode_number": 171
+    },
+    {
+      "source": "Dave",
+      "relationship": "founded",
+      "target": "grass farmer",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "father's identity as a grass farmer",
+      "episode_number": 171
+    },
+    {
+      "source": "Mandy McGill",
+      "relationship": "collaborated_with",
+      "target": "James Ranch Grill",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "introduced us and with whom you've collaborated",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch Grill",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "make their way to Durango and come to the James Ranch Grill",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch Grill",
+      "relationship": "advocates_for",
+      "target": "holistic management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "educational hub that is helping more and more folks awaken to the possibilities of holistic management",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch Grill",
+      "relationship": "advocates_for",
+      "target": "regenerative stewardship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "educational hub that is helping more and more folks awaken to the possibilities of regenerative stewardship",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch",
+      "relationship": "produces",
+      "target": "food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "producing this incredible food for the community",
+      "episode_number": 171
+    },
+    {
+      "source": "Mandy",
+      "relationship": "chatted_with",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "chatted with Mandy about figuring a way to get the educational panels out digitally",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch",
+      "relationship": "located_in",
+      "target": "unknown",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "find more information about what you and everyone in the family are doing here at james ranch dot net",
+      "episode_number": 171
+    },
+    {
+      "source": "restaurant",
+      "relationship": "sources_from",
+      "target": "local farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "responsibility as a restaurant I feel as a restaurant owner",
+      "episode_number": 171
+    },
+    {
+      "source": "industrial food",
+      "relationship": "is_different_from",
+      "target": "local farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "what's happening in industrial food which virtually all of us encounter regularly",
+      "episode_number": 171
+    },
+    {
+      "source": "Michelin star restaurant",
+      "relationship": "sources_from",
+      "target": "Cisco",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "you can go to a Michelin star restaurant that gets all their food from Cisco",
+      "episode_number": 171
+    },
+    {
+      "source": "Brook LaVan",
+      "relationship": "works_at",
+      "target": "Sustainable Settings",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "shout out to a dear friend and mentor Brook LaVan and his wife Rose at sustainable settings",
+      "episode_number": 171
+    },
+    {
+      "source": "Sustainable Settings",
+      "relationship": "located_in",
+      "target": "Carbondale, Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "sustainable settings in Carbondale, Colorado",
+      "episode_number": 171
+    },
+    {
+      "source": "Aspen",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the big market for them is Aspen",
+      "episode_number": 171
+    },
+    {
+      "source": "Gay Brown",
+      "relationship": "advocates_for",
+      "target": "Dirt to Soil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "regenerative ranching experts from the upper Midwest who wrote dirt to soil",
+      "episode_number": 171
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "advocates_for",
+      "target": "Defending Beef",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Niamen beef company who wrote defending beef",
+      "episode_number": 171
+    },
+    {
+      "source": "Elizabeth Whitlow",
+      "relationship": "works_at",
+      "target": "Regenerative Organic Alliance",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "with the regenerative organic alliance",
+      "episode_number": 171
+    },
+    {
+      "source": "Yulei Huta",
+      "relationship": "works_at",
+      "target": "Good Yannem",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "friends Yulei Huta and Jean Michel Flourier in Switzerland at the Good Yannem",
+      "episode_number": 171
+    },
+    {
+      "source": "Jean Michel Flourier",
+      "relationship": "works_at",
+      "target": "Good Yannem",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "friends Yulei Huta and Jean Michel Flourier in Switzerland at the Good Yannem",
+      "episode_number": 171
+    },
+    {
+      "source": "Jeff Moir",
+      "relationship": "works_at",
+      "target": "Radeil Institute",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jeff Moir at the Radeil institute",
+      "episode_number": 171
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "friends Lauren Tucker and Finneon make peace from kiss the ground",
+      "episode_number": 171
+    },
+    {
+      "source": "Finneon Make Peace",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "friends Lauren Tucker and Finneon make peace from kiss the ground",
+      "episode_number": 171
+    },
+    {
+      "source": "Moir",
+      "relationship": "works_at",
+      "target": "Radeil Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "Moir was CEO of Radeil Institute",
+      "episode_number": 171
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Friend involved with Kiss the Ground",
+      "episode_number": 171
+    },
+    {
+      "source": "Finneon",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Friend involved with Kiss the Ground",
+      "episode_number": 171
+    },
+    {
+      "source": "Brooke Levan",
+      "relationship": "works_at",
+      "target": "Sustainable Settings",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Featured in a film related to Sustainable Settings",
+      "episode_number": 171
+    },
+    {
+      "source": "National Restaurant Association",
+      "relationship": "cited_by",
+      "target": "Michelle Korsmo",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Michelle Korsmo cited the National Restaurant Association",
+      "episode_number": 171
+    },
+    {
+      "source": "millennials",
+      "relationship": "advocates_for",
+      "target": "sustainable sourcing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Millennials want more sustainable sourcing when dining out",
+      "episode_number": 171
+    },
+    {
+      "source": "jansi",
+      "relationship": "advocates_for",
+      "target": "sustainable sourcing",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Jansi want more sustainable sourcing when dining out",
+      "episode_number": 171
+    },
+    {
+      "source": "food ink",
+      "relationship": "creates_awareness_about",
+      "target": "food production",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Food ink creates awareness about food production",
+      "episode_number": 171
+    },
+    {
+      "source": "Toast",
+      "relationship": "conducted_study_with",
+      "target": "850 people",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "Study on sustainability in restaurants",
+      "episode_number": 171
+    },
+    {
+      "source": "sustainability",
+      "relationship": "is_a_type_of",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Describing restaurant practices",
+      "episode_number": 171
+    },
+    {
+      "source": "organic",
+      "relationship": "is_a_type_of",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Describing food sourcing practices",
+      "episode_number": 171
+    },
+    {
+      "source": "regenerative",
+      "relationship": "is_a_type_of",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Describing ultimate food sourcing practices",
+      "episode_number": 171
+    },
+    {
+      "source": "local farmer",
+      "relationship": "works_with",
+      "target": "restaurant",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "Describing relationship with food sourcing",
+      "episode_number": 171
+    },
+    {
+      "source": "restaurants",
+      "relationship": "located_in",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Discussing food sourcing and sustainability practices",
+      "episode_number": 171
+    },
+    {
+      "source": "Mandy",
+      "relationship": "advocates_for",
+      "target": "dormant seed",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned as a friend who brought attention to the concept",
+      "episode_number": 171
+    },
+    {
+      "source": "Zach Bush",
+      "relationship": "speaks_on",
+      "target": "connection to nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as a speaker on the topic",
+      "episode_number": 171
+    },
+    {
+      "source": "dormant seed",
+      "relationship": "affects",
+      "target": "human health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to nature and humanity",
+      "episode_number": 171
+    },
+    {
+      "source": "industrialism",
+      "relationship": "buries",
+      "target": "dormant seed",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned as a factor affecting the dormant seed",
+      "episode_number": 171
+    },
+    {
+      "source": "materialism",
+      "relationship": "buries",
+      "target": "dormant seed",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned as a factor affecting the dormant seed",
+      "episode_number": 171
+    },
+    {
+      "source": "Zach Bush",
+      "relationship": "advocates_for",
+      "target": "cosmogenetic fabric",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "speaks on this way better than I ever can",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "come to Durango when you're in Durango come to 33 846 highway 550 James Ranch Grill",
+      "episode_number": 171
+    },
+    {
+      "source": "climate first bank",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "bluestone life insurance",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "earth coast productions",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "Brad and Lindsey Lidge family foundation",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "Patagonia's home planet fund",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "edaphic solutions",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "Josephine Porter Institute",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "Chelsea Green publishing",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "collaborating with uh who help make our podcast series possible",
+      "episode_number": 171
+    },
+    {
+      "source": "Elaine Ingham",
+      "relationship": "pioneered",
+      "target": "holistic soil science",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "our friend doctor Elaine Ingham who essentially pioneered the formal holistic soil science field",
+      "episode_number": 171
+    },
+    {
+      "source": "Toast",
+      "relationship": "used_by",
+      "target": "restaurants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "point of sale system for restaurants",
+      "episode_number": 171
+    },
+    {
+      "source": "Dan Barber",
+      "relationship": "advocates_for",
+      "target": "organic practices",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "pioneer in culinary world promoting organic sourcing",
+      "episode_number": 171
+    },
+    {
+      "source": "Lindley Dixon",
+      "relationship": "founded",
+      "target": "Real Organic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "founder of the organization",
+      "episode_number": 171
+    },
+    {
+      "source": "Real Organic",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "organization based in Durango",
+      "episode_number": 171
+    },
+    {
+      "source": "Taproot",
+      "relationship": "located_in",
+      "target": "San Luis Valley",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "farm runners organization based in San Luis Valley",
+      "episode_number": 171
+    },
+    {
+      "source": "Farmers Market",
+      "relationship": "part_of",
+      "target": "local food sourcing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "location for sourcing food from local farmers",
+      "episode_number": 171
+    },
+    {
+      "source": "Sarah Jones",
+      "relationship": "works_at",
+      "target": "Jones organic farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "connected with Jay, from Jones organic farm",
+      "episode_number": 171
+    },
+    {
+      "source": "Jones organic farm",
+      "relationship": "located_in",
+      "target": "San Luis Valley",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "growing yellow jelly potatoes",
+      "episode_number": 171
+    },
+    {
+      "source": "Jones organic farm",
+      "relationship": "grows",
+      "target": "yellow jelly",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "growing yellow jelly potatoes",
+      "episode_number": 171
+    },
+    {
+      "source": "taproot",
+      "relationship": "supports",
+      "target": "local farmers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "mentioned for distribution",
+      "episode_number": 171
+    },
+    {
+      "source": "local farmers",
+      "relationship": "provides",
+      "target": "potatoes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "supporting the food economy",
+      "episode_number": 171
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast host",
+      "episode_number": 171
+    },
+    {
+      "source": "Cynthia James Stewart",
+      "relationship": "visits",
+      "target": "James Ranch Grill",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "guest on the podcast",
+      "episode_number": 171
+    },
+    {
+      "source": "James Ranch Grill",
+      "relationship": "located_in",
+      "target": "Durango",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the meeting",
+      "episode_number": 171
+    },
+    {
+      "source": "Durango",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "city in Colorado",
+      "episode_number": 171
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "collaborates_with",
+      "target": "ambassador network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "organization mentioned in the podcast",
+      "episode_number": 171
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "provides",
+      "target": "resources",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "organization mentioned in the podcast",
+      "episode_number": 171
+    },
+    {
+      "source": "YOnEarth.org",
+      "relationship": "supports",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors are listed on the YOnEarth.org-slaeshsupport-page",
+      "episode_number": 171
+    }
+  ]
+}

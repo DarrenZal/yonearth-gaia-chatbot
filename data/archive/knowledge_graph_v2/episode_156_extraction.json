@@ -1,0 +1,2338 @@
+{
+  "episode": 156,
+  "timestamp": "2025-10-09T10:57:00.136389",
+  "entity_count": 174,
+  "relationship_count": 111,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Lisa Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "author of Soap and Soul"
+    },
+    {
+      "name": "Soap and Soul",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Lisa Bronner"
+    },
+    {
+      "name": "Dr. Bronner's Magic Soaps",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "brand of soaps founded by Dr. Emanuel Bronner"
+    },
+    {
+      "name": "Dr. Emanuel Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founder of Dr. Bronner's Magic Soaps"
+    },
+    {
+      "name": "Duke University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "university where Lisa graduated"
+    },
+    {
+      "name": "Raleigh, North Carolina",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city where Lisa taught English and journalism"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Lisa resides"
+    },
+    {
+      "name": "San Diego County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "county where Lisa resides in California"
+    },
+    {
+      "name": "Going Green with Lisa Bronner",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "blog authored by Lisa Bronner"
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "family's company"
+    },
+    {
+      "name": "Emmanuel Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founded the company"
+    },
+    {
+      "name": "lung cancer",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cause of death"
+    },
+    {
+      "name": "Parkinson's",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "condition that affected Emmanuel Bronner"
+    },
+    {
+      "name": "1993",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "year my dad took over"
+    },
+    {
+      "name": "1997",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "year my grandfather passed away"
+    },
+    {
+      "name": "1998",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "year my dad passed away"
+    },
+    {
+      "name": "chemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "my dad was a chemist"
+    },
+    {
+      "name": "dad",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "my dad really was the main person there."
+    },
+    {
+      "name": "mom",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "my mom at a side"
+    },
+    {
+      "name": "uncle Ralph",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my uncle Ralph, they made that happen."
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Dr. Bronner's as an organization now is really leading globally"
+    },
+    {
+      "name": "Garelle Lesone",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "your brothers, Garelle Lesone."
+    },
+    {
+      "name": "Ryan Zinn",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Ryan Zinn, the regenerative projects manager"
+    },
+    {
+      "name": "Honor the Label",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Garelle's book, he's not a family member, his book Honor the Label."
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "both in Germany and Europe"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "here in the United States"
+    },
+    {
+      "name": "Southern Germany",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "in what is now Southern Germany"
+    },
+    {
+      "name": "manual Howe Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "manual Howe Bronner in 1858 started making soap."
+    },
+    {
+      "name": "grandfather",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "my grandfather was actually the third generation of his family to make soap."
+    },
+    {
+      "name": "grandmother",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my grandmother, she died in a mental institution in the 40s."
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "grandfather, my only living grandparent"
+    },
+    {
+      "name": "IRS",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "got in trouble with the IRS several times"
+    },
+    {
+      "name": "soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "he knew how to make soap"
+    },
+    {
+      "name": "health stores",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sold in crunchy camping stores and mom and pop independent health stores"
+    },
+    {
+      "name": "Ralph",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "my uncle Ralph, Dr. Bronner's middle child"
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Dr. Bronner's granddaughter refers to him."
+    },
+    {
+      "name": "Ralph",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned as a person the speaker is embarrassed to be associated with."
+    },
+    {
+      "name": "Elgin State Hospital",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mental institution where the grandfather was incarcerated."
+    },
+    {
+      "name": "Chicago",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location outside of which the Elgin State Hospital is situated."
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Country where the family has historical ties."
+    },
+    {
+      "name": "Halbrenner",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Family name changed from Einstein to Halbrenner."
+    },
+    {
+      "name": "Einstein",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Original family name before it was changed."
+    },
+    {
+      "name": "1858",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Year when the family started making soap."
+    },
+    {
+      "name": "1930s",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Decade when laws impacted the family's economic situation."
+    },
+    {
+      "name": "Kristallnacht",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Historical event that excluded Jews from economic life in Germany."
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...law that excluded Jews from economic life in Germany."
+    },
+    {
+      "name": "Halbren",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the soap factory in Halbren still stands."
+    },
+    {
+      "name": "Albert Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...potentially related to Albert Einstein also."
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...my brother David and our company has championed..."
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...the amazing work the company is doing in the regenerative agriculture arena."
+    },
+    {
+      "name": "New Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...attending a permaculture workshop on a community farm in New Mexico."
+    },
+    {
+      "name": "New England",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...his family ended up in New England."
+    },
+    {
+      "name": "regenerative organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...our company has championed so much towards regenerative organic agriculture."
+    },
+    {
+      "name": "soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...the labels on the soap."
+    },
+    {
+      "name": "chestnut farmer",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...he is a regenerative chestnut farmer."
+    },
+    {
+      "name": "New Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "attending a permaculture workshop on a community farm"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "familiar with in New York products"
+    },
+    {
+      "name": "personal care products",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "toxicity found in so many personal care products"
+    },
+    {
+      "name": "home cleaning products",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "toxicity found in so many home cleaning products"
+    },
+    {
+      "name": "Lisa",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "ask Lisa kind of pulling from your blog"
+    },
+    {
+      "name": "the world",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "sharing that with the world"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about climate change"
+    },
+    {
+      "name": "chemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about chemistry and its importance"
+    },
+    {
+      "name": "Epsom salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about mixing cleaners"
+    },
+    {
+      "name": "vinegar",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about mixing cleaners"
+    },
+    {
+      "name": "soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about mixing cleaners"
+    },
+    {
+      "name": "Castile soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about mixing cleaners"
+    },
+    {
+      "name": "book",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the author's book"
+    },
+    {
+      "name": "English teacher",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author's profession"
+    },
+    {
+      "name": "chemist",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author's family background"
+    },
+    {
+      "name": "laboratory",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about the author's father's laboratory"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about soap products"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "mention of federal agencies governing products"
+    },
+    {
+      "name": "sunscreen",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about buying sunscreen"
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "roles that Dr. Bronner is consumer education"
+    },
+    {
+      "name": "FDA",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "under the FDA for the most part what's in personal care"
+    },
+    {
+      "name": "1938 law",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "language in in a 1938 law"
+    },
+    {
+      "name": "mocha",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "something called mocha that modernized that a little bit"
+    },
+    {
+      "name": "personal care",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "when it comes to personal care"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Environmental Protection Agency",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "hemp seed oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Mike",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Oregon Tilth",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "committed to going fair trade with our major ingredients"
+    },
+    {
+      "name": "Sri Lanka",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "founded our own mill in Sri Lanka called surrender Paul"
+    },
+    {
+      "name": "surrender Paul",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founded in 2000 in the aftermath of the tsunami"
+    },
+    {
+      "name": "Ghana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "fair trade palm oil operation in Ghana called surrender palm"
+    },
+    {
+      "name": "kavitramin",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mint oil production in northern India called kavitramin"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partnered with a group from rodeo the rodeo institute long time champion of organic standards and patagonia"
+    },
+    {
+      "name": "regenerative organic alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founded the regenerative organic alliance"
+    },
+    {
+      "name": "regenerative organic certified",
+      "type": "CONCEPT",
+      "name_confidence": 0.88,
+      "type_confidence": 0.88,
+      "context": "creating a new certification regenerative organic certified"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "our coconut oil which we use not only in our soap"
+    },
+    {
+      "name": "chocolate",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "first regenerative organic certified chocolate that will be on the market"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "food grade coconut oil it is regenerative organic certified"
+    },
+    {
+      "name": "chocolate",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first regenerative organic certified chocolate that will be on the market"
+    },
+    {
+      "name": "dr. Bronn",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "how dr. Bronn has always been on a journey of how can we do things better"
+    },
+    {
+      "name": "hem seed oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hem seed oil is a great replenishment to it"
+    },
+    {
+      "name": "david",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "david actually and i i refer to david"
+    },
+    {
+      "name": "Michael",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "my husband Michael"
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my uncle ral still sort of advising from Wisconsin"
+    },
+    {
+      "name": "cannabis sativa",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "relation to well come from the cannabis sativa plant"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "legal to grow hemp seed hemp in the United States"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we had been sourcing it from Canada prior to them"
+    },
+    {
+      "name": "hemp seed oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a legal product in the United States"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 1.0,
+      "type_confidence": 1.0,
+      "context": "mentioned as a location where hemp is legal to grow"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 1.0,
+      "type_confidence": 1.0,
+      "context": "mentioned as a source for hemp prior to 2019"
+    },
+    {
+      "name": "Aaron William Parry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Lisa Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast and author of 'Soap and Soul'"
+    },
+    {
+      "name": "Bronner family",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a notable family related to Lisa Bronner"
+    },
+    {
+      "name": "Scott Black",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a guest in a previous podcast episode"
+    },
+    {
+      "name": "Bersy Society",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "organization mentioned in relation to toxic chemicals"
+    },
+    {
+      "name": "David Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as Lisa's brother and previous podcast guest"
+    },
+    {
+      "name": "Michael Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as Lisa's brother and previous podcast guest"
+    },
+    {
+      "name": "Ryan Zinn",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a guest from Dr. Bronner's"
+    },
+    {
+      "name": "Gary L.",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "mentioned as a guest from Dr. Bronner's"
+    },
+    {
+      "name": "Jackie Bow",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "executive director of Clean Label Project"
+    },
+    {
+      "name": "Clean Label Project",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to consumer education"
+    },
+    {
+      "name": "Elisabeth Witlow",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "executive director of the Regenerative Organic Alliance"
+    },
+    {
+      "name": "Regenerative Organic Alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to organic practices"
+    },
+    {
+      "name": "Yicharu",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "mentioned as a guest from the Rodale Institute"
+    },
+    {
+      "name": "Jef Moyer",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "mentioned as a guest from the Rodale Institute"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization mentioned in relation to organic practices"
+    },
+    {
+      "name": "Kate Garsus",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "mentioned in relation to beauty products"
+    },
+    {
+      "name": "Chelsi Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Wale Waters",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Aroma Therapy",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned as a sponsor"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company mentioned as a sponsor and producer of products"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast title and community mentioned"
+    },
+    {
+      "name": "Lisa Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Facebook at green with Lisa Bronner"
+    },
+    {
+      "name": "soap and soul",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "get a copy of soap and soul"
+    },
+    {
+      "name": "dr bronners",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "learn more about dr bronners and their products"
+    },
+    {
+      "name": "drbronner.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "learn more about dr bronners and their products"
+    },
+    {
+      "name": "Facebook",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "also on Facebook and Instagram"
+    },
+    {
+      "name": "Instagram",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "also on Facebook and Instagram"
+    },
+    {
+      "name": "soap and soul book",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "you can go to soap and soul book.com"
+    },
+    {
+      "name": "social media",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the impact of voices in our lives"
+    },
+    {
+      "name": "voices",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the impact of external influences on well-being"
+    },
+    {
+      "name": "well-being",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the importance of caring voices"
+    },
+    {
+      "name": "mom",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaker referring to themselves as a mother"
+    },
+    {
+      "name": "three kids",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "speaker mentioning their children"
+    },
+    {
+      "name": "English project",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing a school assignment"
+    },
+    {
+      "name": "Ruthlessly Eliminating Hurry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the book"
+    },
+    {
+      "name": "Veritas",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "both in my novel"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned more than once in each"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the main character in Veritas"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioned frequently"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "main character of Veritas"
+    },
+    {
+      "name": "Veritas",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "story of Veritas"
+    },
+    {
+      "name": "Lisa",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioned in the podcast discussion"
+    },
+    {
+      "name": "Mario Rodel",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "recently read and podcasted about"
+    },
+    {
+      "name": "Rodel Institute",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "grandpa salad of Mario Rodel"
+    },
+    {
+      "name": "three a.m.",
+      "type": "TIME",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "midnight of the soul concept"
+    },
+    {
+      "name": "Michael",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "husband of the speaker"
+    },
+    {
+      "name": "Lisa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the end of day routine"
+    },
+    {
+      "name": "Erin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the end of day routine"
+    },
+    {
+      "name": "book",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the whole arc of the book"
+    },
+    {
+      "name": "tada list",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the tada list was something another thing that came out of my early mothering years"
+    },
+    {
+      "name": "Lisa",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "visiting with you today Lisa"
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "bottle of dr. Bronner soaked in their hand"
+    },
+    {
+      "name": "to do list",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the to do list came from"
+    },
+    {
+      "name": "sunset",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "go look at the sunset"
+    },
+    {
+      "name": "cat",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "come look at the cat"
+    },
+    {
+      "name": "Lisa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "visiting with you today Lisa"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "yon earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit yon earth.org backslash support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Lisa Bronner",
+      "relationship": "author_of",
+      "target": "Soap and Soul",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Lisa Bronner is the author of the book Soap and Soul",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Emanuel Bronner",
+      "relationship": "founded",
+      "target": "Dr. Bronner's Magic Soaps",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Dr. Emanuel Bronner founded the brand of soaps",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "works_at",
+      "target": "Going Green with Lisa Bronner",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Lisa Bronner authors the blog Going Green with Lisa Bronner",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "graduated_from",
+      "target": "Duke University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Lisa Bronner graduated from Duke University",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "taught_in",
+      "target": "Raleigh, North Carolina",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lisa Bronner taught English and journalism in Raleigh, North Carolina",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "located_in",
+      "target": "San Diego County",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Lisa Bronner resides in rural San Diego County, California",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's Magic Soaps",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Dr. Bronner's Magic Soaps is the top selling natural brand of soaps in North America",
+      "episode_number": 156
+    },
+    {
+      "source": "Emmanuel Bronner",
+      "relationship": "founded",
+      "target": "Dr. Bronner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Emmanuel Bronner founded the company",
+      "episode_number": 156
+    },
+    {
+      "source": "my dad",
+      "relationship": "took_over",
+      "target": "Dr. Bronner",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "my dad took over the company in 1993",
+      "episode_number": 156
+    },
+    {
+      "source": "my grandfather",
+      "relationship": "passed_away",
+      "target": "1997",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my grandfather passed away in 1997",
+      "episode_number": 156
+    },
+    {
+      "source": "my dad",
+      "relationship": "passed_away",
+      "target": "lung cancer",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "my dad passed away from lung cancer in 1998",
+      "episode_number": 156
+    },
+    {
+      "source": "my dad",
+      "relationship": "was",
+      "target": "chemist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "my dad was a chemist",
+      "episode_number": 156
+    },
+    {
+      "source": "dad",
+      "relationship": "works_at",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "my dad really was the main person there.",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Dr. Bronner's as an organization now is really leading globally",
+      "episode_number": 156
+    },
+    {
+      "source": "Garelle Lesone",
+      "relationship": "authored",
+      "target": "Honor the Label",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Garelle's book, he's not a family member, his book Honor the Label.",
+      "episode_number": 156
+    },
+    {
+      "source": "manual Howe Bronner",
+      "relationship": "founded",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "manual Howe Bronner in 1858 started making soap.",
+      "episode_number": 156
+    },
+    {
+      "source": "grandfather",
+      "relationship": "part_of",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "my grandfather was actually the third generation of his family to make soap.",
+      "episode_number": 156
+    },
+    {
+      "source": "grandmother",
+      "relationship": "related_to",
+      "target": "grandfather",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my grandmother, she died in a mental institution in the 40s.",
+      "episode_number": 156
+    },
+    {
+      "source": "grandfather",
+      "relationship": "immigrated_to",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "my grandfather had immigrated already to the United States.",
+      "episode_number": 156
+    },
+    {
+      "source": "grandfather",
+      "relationship": "lived_in",
+      "target": "Germany",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "his parents both perished in concentration camps.",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "founded",
+      "target": "company",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "he started the company not as a business, but as a way to get out of message",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "advocates_for",
+      "target": "world peace",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "he put the message on the bottle and the soap became the messenger",
+      "episode_number": 156
+    },
+    {
+      "source": "Ralph",
+      "relationship": "works_at",
+      "target": "health stores",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "he would go visit health stores in different cities",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "has_child",
+      "target": "Ralph",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "my uncle Ralph, Dr. Bronner's middle child",
+      "episode_number": 156
+    },
+    {
+      "source": "Ralph",
+      "relationship": "related_to",
+      "target": "Dr. Bronner",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Ralph is mentioned in relation to Dr. Bronner's granddaughter.",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "incarcerated_in",
+      "target": "Elgin State Hospital",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Dr. Bronner was incarcerated in a mental institution.",
+      "episode_number": 156
+    },
+    {
+      "source": "Elgin State Hospital",
+      "relationship": "located_in",
+      "target": "Chicago",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Elgin State Hospital is located outside of Chicago.",
+      "episode_number": 156
+    },
+    {
+      "source": "Halbrenner",
+      "relationship": "part_of",
+      "target": "Germany",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Halbrenner is a family name tied to Germany.",
+      "episode_number": 156
+    },
+    {
+      "source": "Einstein",
+      "relationship": "part_of",
+      "target": "Germany",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Einstein is the original family name tied to Germany.",
+      "episode_number": 156
+    },
+    {
+      "source": "1858",
+      "relationship": "marks_event",
+      "target": "Halbrenner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Year when the family started making soap under the name Halbrenner.",
+      "episode_number": 156
+    },
+    {
+      "source": "1930s",
+      "relationship": "impacted",
+      "target": "Halbrenner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "The 1930s laws impacted the family's economic situation.",
+      "episode_number": 156
+    },
+    {
+      "source": "Kristallnacht",
+      "relationship": "excluded",
+      "target": "Jews",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Kristallnacht excluded Jews from economic life in Germany.",
+      "episode_number": 156
+    },
+    {
+      "source": "Albert Einstein",
+      "relationship": "related_to",
+      "target": "Unnamed Grandfather",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "...potentially related to Albert Einstein also... my grandfather embraced that tenuous connection.",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "regenerative agriculture arena",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the amazing work the company is doing in the regenerative agriculture arena.",
+      "episode_number": 156
+    },
+    {
+      "source": "David",
+      "relationship": "works_at",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...my brother David and our company has championed...",
+      "episode_number": 156
+    },
+    {
+      "source": "Halbren",
+      "relationship": "part_of",
+      "target": "Germany",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "...the soap factory in Halbren still stands...",
+      "episode_number": 156
+    },
+    {
+      "source": "Unnamed Cousin",
+      "relationship": "related_to",
+      "target": "Unnamed Grandfather",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "...there's one of my cousins... the only shared ancestor is a manual Halbrenner...",
+      "episode_number": 156
+    },
+    {
+      "source": "Unnamed Cousin",
+      "relationship": "works_as",
+      "target": "chestnut farmer",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "...he is a regenerative chestnut farmer...",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "personal care products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "ask Lisa kind of pulling from your blog",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "home cleaning products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "ask Lisa kind of pulling from your blog",
+      "episode_number": 156
+    },
+    {
+      "source": "New Mexico",
+      "relationship": "part_of",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "attending a permaculture workshop on a community farm",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "shares_with",
+      "target": "the world",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "sharing that with the world",
+      "episode_number": 156
+    },
+    {
+      "source": "author",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about climate change advocacy",
+      "episode_number": 156
+    },
+    {
+      "source": "author",
+      "relationship": "wrote",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussion about the author's book",
+      "episode_number": 156
+    },
+    {
+      "source": "author",
+      "relationship": "is_a",
+      "target": "English teacher",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "author's profession",
+      "episode_number": 156
+    },
+    {
+      "source": "author",
+      "relationship": "is_a",
+      "target": "chemist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "author's family background",
+      "episode_number": 156
+    },
+    {
+      "source": "author",
+      "relationship": "discusses",
+      "target": "chemistry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about chemistry",
+      "episode_number": 156
+    },
+    {
+      "source": "Epsom salts",
+      "relationship": "mixed_with",
+      "target": "soap",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about mixing cleaners",
+      "episode_number": 156
+    },
+    {
+      "source": "vinegar",
+      "relationship": "mixed_with",
+      "target": "soap",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about mixing cleaners",
+      "episode_number": 156
+    },
+    {
+      "source": "Castile soap",
+      "relationship": "mixed_with",
+      "target": "Epsom salts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about mixing cleaners",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "makes",
+      "target": "soap products",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about soap products",
+      "episode_number": 156
+    },
+    {
+      "source": "United States",
+      "relationship": "governs",
+      "target": "federal agencies",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mention of federal agencies governing products",
+      "episode_number": 156
+    },
+    {
+      "source": "consumer",
+      "relationship": "interacts_with",
+      "target": "sunscreen",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about buying sunscreen",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "advocates_for",
+      "target": "consumer education",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "roles that Dr. Bronner is consumer education",
+      "episode_number": 156
+    },
+    {
+      "source": "FDA",
+      "relationship": "oversees",
+      "target": "personal care",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "under the FDA for the most part what's in personal care",
+      "episode_number": 156
+    },
+    {
+      "source": "1938 law",
+      "relationship": "created",
+      "target": "FDA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "the 1938 law which is what created the FDA",
+      "episode_number": 156
+    },
+    {
+      "source": "mocha",
+      "relationship": "modernized",
+      "target": "1938 law",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "something called mocha that modernized that a little bit",
+      "episode_number": 156
+    },
+    {
+      "source": "David",
+      "relationship": "works_at",
+      "target": "Oregon Tilth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "David",
+      "relationship": "founded",
+      "target": "coconut oil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "organic standards",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "Environmental Protection Agency",
+      "relationship": "oversees",
+      "target": "coconut oil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "made_by",
+      "target": "David",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "hemp seed oil",
+      "relationship": "made_by",
+      "target": "David",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "located_in",
+      "target": "America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "committed_to",
+      "target": "fair trade",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "committed to going fair trade with our major ingredients",
+      "episode_number": 156
+    },
+    {
+      "source": "surrender Paul",
+      "relationship": "located_in",
+      "target": "Sri Lanka",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "founded our own mill in Sri Lanka called surrender Paul",
+      "episode_number": 156
+    },
+    {
+      "source": "surrender palm",
+      "relationship": "located_in",
+      "target": "Ghana",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "fair trade palm oil operation in Ghana called surrender palm",
+      "episode_number": 156
+    },
+    {
+      "source": "kavitramin",
+      "relationship": "located_in",
+      "target": "northern India",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mint oil production in northern India called kavitramin",
+      "episode_number": 156
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "founded_by",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "founded the regenerative organic alliance",
+      "episode_number": 156
+    },
+    {
+      "source": "regenerative organic certified",
+      "relationship": "is_a",
+      "target": "certification",
+      "source_confidence": 0.88,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "creating a new certification regenerative organic certified",
+      "episode_number": 156
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "made_by",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "our coconut oil which we use not only in our soap",
+      "episode_number": 156
+    },
+    {
+      "source": "chocolate",
+      "relationship": "made_by",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "first regenerative organic certified chocolate that will be on the market",
+      "episode_number": 156
+    },
+    {
+      "source": "david",
+      "relationship": "works_at",
+      "target": "24",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "david stepped into the presidency of 24 at the time",
+      "episode_number": 156
+    },
+    {
+      "source": "hem seed oil",
+      "relationship": "made_by",
+      "target": "cannabis sativa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "hem seed oil was actually classified as a class one narcotic because it's relation to cannabis sativa",
+      "episode_number": 156
+    },
+    {
+      "source": "david",
+      "relationship": "advocates_for",
+      "target": "hem seed oil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "david chose to add hem seed oil to the formulation",
+      "episode_number": 156
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "part_of",
+      "target": "chocolate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "food grade coconut oil it is regenerative organic certified and chocolate",
+      "episode_number": 156
+    },
+    {
+      "source": "Michael",
+      "relationship": "works_at",
+      "target": "24",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "my husband Michael",
+      "episode_number": 156
+    },
+    {
+      "source": "Wisconsin",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "my uncle ral still sort of advising from Wisconsin",
+      "episode_number": 156
+    },
+    {
+      "source": "hem seed oil",
+      "relationship": "part_of",
+      "target": "soap",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "hem seed oil became a part of the super fadding of the bar soap",
+      "episode_number": 156
+    },
+    {
+      "source": "chocolate",
+      "relationship": "made_by",
+      "target": "24",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "first regenerative organic certified chocolate that will be on the market",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "works_at",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Lisa Bronner is associated with Dr. Bronner's as a member of the Bronner family and author of related works.",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 1.0,
+      "context": "Dr. Bronner's is a company operating within the United States.",
+      "episode_number": 156
+    },
+    {
+      "source": "Clean Label Project",
+      "relationship": "advocates_for",
+      "target": "consumer education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jackie Bow leads the Clean Label Project which focuses on educating consumers.",
+      "episode_number": 156
+    },
+    {
+      "source": "Regenerative Organic Alliance",
+      "relationship": "advocates_for",
+      "target": "organic practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Elisabeth Witlow leads the Regenerative Organic Alliance which promotes organic practices.",
+      "episode_number": 156
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "produces",
+      "target": "Why on Earth Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The community produces the podcast that features various guests and topics.",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "advocates_for",
+      "target": "soap and soul",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "recommend that folks get a copy of soap and soul",
+      "episode_number": 156
+    },
+    {
+      "source": "dr bronners",
+      "relationship": "produces",
+      "target": "soap and soul",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "learn more about dr bronners and their products",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa Bronner",
+      "relationship": "works_at",
+      "target": "dr bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Lisa is a convergence from my perspective of so many important themes",
+      "episode_number": 156
+    },
+    {
+      "source": "dr bronners",
+      "relationship": "located_in",
+      "target": "drbronner.com",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "learn more about dr bronners and their products",
+      "episode_number": 156
+    },
+    {
+      "source": "mom",
+      "relationship": "advocates_for",
+      "target": "well-being",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "speaker discussing the importance of caring voices for well-being",
+      "episode_number": 156
+    },
+    {
+      "source": "social media",
+      "relationship": "affects",
+      "target": "voices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the impact of social media on the voices we hear",
+      "episode_number": 156
+    },
+    {
+      "source": "mom",
+      "relationship": "has",
+      "target": "three kids",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "speaker referring to their role as a mother",
+      "episode_number": 156
+    },
+    {
+      "source": "mom",
+      "relationship": "experiences",
+      "target": "hurry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "speaker discussing their busy life",
+      "episode_number": 156
+    },
+    {
+      "source": "voices",
+      "relationship": "impact",
+      "target": "well-being",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the importance of positive voices for well-being",
+      "episode_number": 156
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "goes_through",
+      "target": "Ruthlessly Eliminating Hurry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "in the story of Veritas",
+      "episode_number": 156
+    },
+    {
+      "source": "Veritas",
+      "relationship": "made_by",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "mentioned in the story",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "advocates_for",
+      "target": "Ruthlessly Eliminating Hurry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned frequently in the book",
+      "episode_number": 156
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "goes_through",
+      "target": "Veritas",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "main character of Veritas",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "mentioned_in",
+      "target": "Veritas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioned frequently",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "Veritas",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned in the podcast discussion",
+      "episode_number": 156
+    },
+    {
+      "source": "Mario Rodel",
+      "relationship": "associated_with",
+      "target": "Rodel Institute",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "grandpa salad of Mario Rodel",
+      "episode_number": 156
+    },
+    {
+      "source": "Michael",
+      "relationship": "talks_about",
+      "target": "three a.m.",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "husband of the speaker",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "tada list",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about the end of day routine",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "wrote",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the whole arc of the book",
+      "episode_number": 156
+    },
+    {
+      "source": "Erin",
+      "relationship": "visits",
+      "target": "Lisa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the end of day routine",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "to do list",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "visiting with you today Lisa",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "sunset",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "go look at the sunset",
+      "episode_number": 156
+    },
+    {
+      "source": "Lisa",
+      "relationship": "advocates_for",
+      "target": "cat",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "come look at the cat",
+      "episode_number": 156
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.5,
+      "context": "bottle of dr. Bronner soaked in their hand",
+      "episode_number": 156
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the podcast series is hosted by Aaron William Perry",
+      "episode_number": 156
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "yon earth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "the podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 156
+    }
+  ]
+}

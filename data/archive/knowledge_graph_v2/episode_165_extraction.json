@@ -1,0 +1,1640 @@
+{
+  "episode": 165,
+  "timestamp": "2025-10-09T11:05:12.571978",
+  "entity_count": 110,
+  "relationship_count": 86,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the podcast"
+    },
+    {
+      "name": "Kelpie Wilson",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Author of the biochar handbook"
+    },
+    {
+      "name": "biochar handbook",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Book authored by Kelpie Wilson"
+    },
+    {
+      "name": "International Biochar Initiative",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Organization related to biochar"
+    },
+    {
+      "name": "truthout.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Website where Kelpie was an environmental editor"
+    },
+    {
+      "name": "Yoga Plus magazine",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Magazine where Kelpie was a contributing editor"
+    },
+    {
+      "name": "Ciccube Regional Education Project",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Project where Kelpie was a forest protection advocate"
+    },
+    {
+      "name": "Oregon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State where Kelpie worked with Ciccube"
+    },
+    {
+      "name": "Berkeley, California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "City where Kelpie worked at a research firm"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Publisher of the biochar handbook"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Main topic of the podcast discussion"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Purpose of biochar usage"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "definition of biochar"
+    },
+    {
+      "name": "BTUs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "British thermal units"
+    },
+    {
+      "name": "fuel",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fuel triangle"
+    },
+    {
+      "name": "oxygen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fuel triangle"
+    },
+    {
+      "name": "heat",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fuel triangle"
+    },
+    {
+      "name": "charcoal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "making charcoal"
+    },
+    {
+      "name": "gasification",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "process of making biochar"
+    },
+    {
+      "name": "campfire",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "campfire ring"
+    },
+    {
+      "name": "wood",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "stack up a bunch of wood"
+    },
+    {
+      "name": "smoke",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "gases turn into smoke"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a strategy for soil regeneration and carbon sequestration"
+    },
+    {
+      "name": "Iowa",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a location with productive soils"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a location with productive soils"
+    },
+    {
+      "name": "Native Americans",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to fire practices and biochar production"
+    },
+    {
+      "name": "mother nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to natural biochar production"
+    },
+    {
+      "name": "charcoal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil and carbon content"
+    },
+    {
+      "name": "prairie",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to productive soils and fire practices"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the history of biochar"
+    },
+    {
+      "name": "indigenous cultures",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about indigenous cultures working with fire"
+    },
+    {
+      "name": "Brazilian Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about terra preta soils"
+    },
+    {
+      "name": "terra preta soils",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about terra preta soils in the Brazilian Amazon"
+    },
+    {
+      "name": "France",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "comparison of area size to France"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the Amazon river"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of examples in Africa"
+    },
+    {
+      "name": "Spain",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of examples in Spain"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of medieval cities in Europe"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of forest fires in Canada"
+    },
+    {
+      "name": "Wendell Berry",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "quote by Wendell Berry"
+    },
+    {
+      "name": "Ring of Fire",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of kilns sold by the speaker"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "current location of the speaker"
+    },
+    {
+      "name": "Oregon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "current location of the speaker"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about ecological practices"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publisher of the biochar handbook"
+    },
+    {
+      "name": "Kelp",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "author of the biochar handbook"
+    },
+    {
+      "name": "veterans",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "group involved in the burning work"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Chelsea Green.com"
+    },
+    {
+      "name": "Eustace Levy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "talking about a person named Eustace Levy"
+    },
+    {
+      "name": "black Madonna",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "talking about the black Madonna, the black virgin"
+    },
+    {
+      "name": "charcoal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "talking about charcoal in the soil"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "laboratory in Germany in the 1830s"
+    },
+    {
+      "name": "N.P.K.",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "father of N.P.K."
+    },
+    {
+      "name": "Levy, Sparrow",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "father of N.P.K. or Levy, Sparrow"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "throughout Europe in the early middle ages"
+    },
+    {
+      "name": "Madonna",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "depictions of the Madonna and child"
+    },
+    {
+      "name": "ancient goddess of the soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "worshipping kind of, you know, the ancient goddess of the soil"
+    },
+    {
+      "name": "Leibig",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the use of charcoal and chemical fertilizers"
+    },
+    {
+      "name": "charcoal",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "used in plant growth experiments"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "source of carbon for plants"
+    },
+    {
+      "name": "Pacific",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "source of guano"
+    },
+    {
+      "name": "South Pacific",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "source of guano"
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "city rethinking waste management"
+    },
+    {
+      "name": "Paris",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city rethinking waste management"
+    },
+    {
+      "name": "cholera epidemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "result of poor waste management in London"
+    },
+    {
+      "name": "night soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "human waste discussed in the context of soil treatment"
+    },
+    {
+      "name": "sulfur",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "recommended for treating night soil"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "used to preserve nutrients in manure"
+    },
+    {
+      "name": "parliament",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "body that received recommendations from Leibig"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about soil and carbon"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about carbon chemistry"
+    },
+    {
+      "name": "diamond",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about carbon allotropes"
+    },
+    {
+      "name": "graphite",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about carbon allotropes"
+    },
+    {
+      "name": "carbon nanotube",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about carbon nanomaterials"
+    },
+    {
+      "name": "buckyball",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about carbon nanomaterials"
+    },
+    {
+      "name": "organic chemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about carbon in organic compounds"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about microbial metabolism"
+    },
+    {
+      "name": "electrons",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about chemical reactions in biochar"
+    },
+    {
+      "name": "ionic van Dorn",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about electro culture"
+    },
+    {
+      "name": "Wendell Berry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "quote mentioned earlier"
+    },
+    {
+      "name": "coyote",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "indigenous cosmologies and stories"
+    },
+    {
+      "name": "bear",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "indigenous cosmologies and stories"
+    },
+    {
+      "name": "eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "indigenous cosmologies and stories"
+    },
+    {
+      "name": "salmon",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "indigenous cosmologies and stories"
+    },
+    {
+      "name": "MIT",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "education background"
+    },
+    {
+      "name": "Massachusetts Institute of Technology",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "education background"
+    },
+    {
+      "name": "William Irwin Thompson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "favorite author"
+    },
+    {
+      "name": "Ring of Fire dot earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "technology offered"
+    },
+    {
+      "name": "William Irwin Thompson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shout out to William Irwin Thompson, rest his soul"
+    },
+    {
+      "name": "MIT",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "shout out to MIT"
+    },
+    {
+      "name": "Ring of Fire",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "technology that you offer through Ring of Fire dot earth"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "three cubic yards of biochar"
+    },
+    {
+      "name": "Scotch broom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "invasive species like Scotch broom"
+    },
+    {
+      "name": "Gandhi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reminds me a little bit of Gandhi's notion of Swadeshi"
+    },
+    {
+      "name": "Gandhi",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Gandhi's notion of Swadeshi"
+    },
+    {
+      "name": "Swadeshi",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Gandhi's notion of Swadeshi"
+    },
+    {
+      "name": "Kelpism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the event"
+    },
+    {
+      "name": "simple gardening wisdom video course",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "educational module for our simple gardening wisdom video course"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Chelsea green.com"
+    },
+    {
+      "name": "Wilson Biochar Associates",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Wilson biochar associates"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "partners include Patagonia"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "partners include Earth coast productions"
+    },
+    {
+      "name": "Josephine Porter Institute for Biodynamics",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "partners include Josephine Porter Institute for biodynamics"
+    },
+    {
+      "name": "Kyrgyzstan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "you gone to kyrgyzstan"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "you gone to Mexico"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "you gone to Germany"
+    },
+    {
+      "name": "kelp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "book recommendation"
+    },
+    {
+      "name": "health and wellness",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "improving quality of life"
+    },
+    {
+      "name": "ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "improving our ecology"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "improving our climate"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "works_at",
+      "target": "International Biochar Initiative",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Kelpie's work in the biochar field",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "author_of",
+      "target": "biochar handbook",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Kelpie authored the book",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Kelpie discusses biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "worked_at",
+      "target": "truthout.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Kelpie's role as environmental editor",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "worked_as",
+      "target": "forest protection advocate",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Kelpie's role with Ciccube",
+      "episode_number": 165
+    },
+    {
+      "source": "International Biochar Initiative",
+      "relationship": "located_in",
+      "target": "biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Organization related to biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "published_in",
+      "target": "Yoga Plus magazine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Kelpie's contributions to the magazine",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "worked_at",
+      "target": "Ciccube Regional Education Project",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Kelpie's role in Oregon",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpie Wilson",
+      "relationship": "worked_at",
+      "target": "energy outfitters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Kelpie's role as technical writer",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "part_of",
+      "target": "carbon sequestration",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Usage of biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "is_made_by",
+      "target": "charcoal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "making biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "is_related_to",
+      "target": "fuel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "fuel triangle",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "is_related_to",
+      "target": "oxygen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "fuel triangle",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "is_related_to",
+      "target": "heat",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "fuel triangle",
+      "episode_number": 165
+    },
+    {
+      "source": "charcoal",
+      "relationship": "is_made_by",
+      "target": "gasification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "process of making biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "campfire",
+      "relationship": "contains",
+      "target": "wood",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "campfire ring",
+      "episode_number": 165
+    },
+    {
+      "source": "wood",
+      "relationship": "produces",
+      "target": "smoke",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "gases turn into smoke",
+      "episode_number": 165
+    },
+    {
+      "source": "Native Americans",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to fire practices and biochar production",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "part_of",
+      "target": "soil regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed as a strategy for soil regeneration",
+      "episode_number": 165
+    },
+    {
+      "source": "Iowa",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned as a location with productive soils",
+      "episode_number": 165
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "located_in",
+      "target": "Eastern Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned as a location with productive soils",
+      "episode_number": 165
+    },
+    {
+      "source": "charcoal",
+      "relationship": "part_of",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to soil and carbon content",
+      "episode_number": 165
+    },
+    {
+      "source": "mother nature",
+      "relationship": "produces",
+      "target": "biochar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to natural biochar production",
+      "episode_number": 165
+    },
+    {
+      "source": "prairie",
+      "relationship": "contains",
+      "target": "charcoal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to productive soils and fire practices",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "advocates_for",
+      "target": "indigenous cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about biochar and indigenous cultures",
+      "episode_number": 165
+    },
+    {
+      "source": "terra preta soils",
+      "relationship": "located_in",
+      "target": "Brazilian Amazon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussion about terra preta soils in the Brazilian Amazon",
+      "episode_number": 165
+    },
+    {
+      "source": "Brazilian Amazon",
+      "relationship": "part_of",
+      "target": "Amazon",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the Amazon river",
+      "episode_number": 165
+    },
+    {
+      "source": "France",
+      "relationship": "contains",
+      "target": "terra preta soils",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "comparison of area size to France",
+      "episode_number": 165
+    },
+    {
+      "source": "Canada",
+      "relationship": "contains",
+      "target": "forest fires",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mention of forest fires in Canada",
+      "episode_number": 165
+    },
+    {
+      "source": "Wendell Berry",
+      "relationship": "quoted_by",
+      "target": "speaker",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "quote by Wendell Berry",
+      "episode_number": 165
+    },
+    {
+      "source": "speaker",
+      "relationship": "works_at",
+      "target": "Ring of Fire",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mention of kilns sold by the speaker",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelp",
+      "relationship": "works_at",
+      "target": "Chelsea Green",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "author of the biochar handbook",
+      "episode_number": 165
+    },
+    {
+      "source": "California",
+      "relationship": "part_of",
+      "target": "Oregon",
+      "source_confidence": 0.5,
+      "relationship_confidence": 0.3,
+      "target_confidence": 0.5,
+      "context": "geographic relationship between states",
+      "episode_number": 165
+    },
+    {
+      "source": "veterans",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "veterans involved in ecological practices",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "made_by",
+      "target": "Chelsea Green",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "biochar handbook publication",
+      "episode_number": 165
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "strategic_partner",
+      "target": "Eustace Levy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Chelsea Green is one of our strategic partners",
+      "episode_number": 165
+    },
+    {
+      "source": "Eustace Levy",
+      "relationship": "advocates_for",
+      "target": "black Madonna",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "talking about a person named Eustace Levy and the black Madonna",
+      "episode_number": 165
+    },
+    {
+      "source": "Eustace Levy",
+      "relationship": "located_in",
+      "target": "Germany",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "laboratory in Germany in the 1830s",
+      "episode_number": 165
+    },
+    {
+      "source": "Eustace Levy",
+      "relationship": "developed",
+      "target": "N.P.K.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "father of N.P.K.",
+      "episode_number": 165
+    },
+    {
+      "source": "black Madonna",
+      "relationship": "part_of",
+      "target": "ancient goddess of the soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "the black Madonna was the soil goddess",
+      "episode_number": 165
+    },
+    {
+      "source": "charcoal",
+      "relationship": "related_to",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "talking about charcoal in the soil",
+      "episode_number": 165
+    },
+    {
+      "source": "Eustace Levy",
+      "relationship": "studied",
+      "target": "charcoal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "looking up charcoal",
+      "episode_number": 165
+    },
+    {
+      "source": "black Madonna",
+      "relationship": "symbolizes",
+      "target": "fertility",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "that aspect of the Madonna that related to fertility",
+      "episode_number": 165
+    },
+    {
+      "source": "Eustace Levy",
+      "relationship": "debunked",
+      "target": "vitalists",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Leibig said, no, let's don't get their carbon from soil",
+      "episode_number": 165
+    },
+    {
+      "source": "Leibig",
+      "relationship": "advocates_for",
+      "target": "charcoal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing the benefits of charcoal for plant growth",
+      "episode_number": 165
+    },
+    {
+      "source": "Leibig",
+      "relationship": "advocates_for",
+      "target": "night soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "recommendation for treating night soil",
+      "episode_number": 165
+    },
+    {
+      "source": "Leibig",
+      "relationship": "works_at",
+      "target": "parliament",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "wrote letters to parliament regarding waste management",
+      "episode_number": 165
+    },
+    {
+      "source": "London",
+      "relationship": "contains",
+      "target": "cholera epidemic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "cholera epidemic occurred due to waste management issues",
+      "episode_number": 165
+    },
+    {
+      "source": "Pacific",
+      "relationship": "contains",
+      "target": "guano",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "source of guano for fertilizers",
+      "episode_number": 165
+    },
+    {
+      "source": "South Pacific",
+      "relationship": "contains",
+      "target": "guano",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "source of guano for fertilizers",
+      "episode_number": 165
+    },
+    {
+      "source": "Leibig",
+      "relationship": "recommends",
+      "target": "sulfur",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "recommended for treating night soil",
+      "episode_number": 165
+    },
+    {
+      "source": "Leibig",
+      "relationship": "recommends",
+      "target": "biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "recommended for preserving nutrients in manure",
+      "episode_number": 165
+    },
+    {
+      "source": "London",
+      "relationship": "located_in",
+      "target": "England",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "London is a major city in England",
+      "episode_number": 165
+    },
+    {
+      "source": "Paris",
+      "relationship": "located_in",
+      "target": "France",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Paris is a major city in France",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "contains",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about the structure of biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "carbon",
+      "relationship": "has_form",
+      "target": "diamond",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about carbon allotropes",
+      "episode_number": 165
+    },
+    {
+      "source": "carbon",
+      "relationship": "has_form",
+      "target": "graphite",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about carbon allotropes",
+      "episode_number": 165
+    },
+    {
+      "source": "carbon",
+      "relationship": "has_form",
+      "target": "carbon nanotube",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about carbon nanomaterials",
+      "episode_number": 165
+    },
+    {
+      "source": "carbon",
+      "relationship": "has_form",
+      "target": "buckyball",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about carbon nanomaterials",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "supports",
+      "target": "microbes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about microbial metabolism in biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "biochar",
+      "relationship": "provides",
+      "target": "electrons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about chemical reactions in biochar",
+      "episode_number": 165
+    },
+    {
+      "source": "ionic van Dorn",
+      "relationship": "advocates_for",
+      "target": "electro culture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about electro culture",
+      "episode_number": 165
+    },
+    {
+      "source": "Wendell Berry",
+      "relationship": "quotes",
+      "target": "purpose of people",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "quote mentioned earlier",
+      "episode_number": 165
+    },
+    {
+      "source": "coyote",
+      "relationship": "has_purpose",
+      "target": "stewardship of the landscape",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "indigenous cosmologies and stories",
+      "episode_number": 165
+    },
+    {
+      "source": "bear",
+      "relationship": "has_purpose",
+      "target": "stewardship of the landscape",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "indigenous cosmologies and stories",
+      "episode_number": 165
+    },
+    {
+      "source": "eagle",
+      "relationship": "has_purpose",
+      "target": "stewardship of the landscape",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "indigenous cosmologies and stories",
+      "episode_number": 165
+    },
+    {
+      "source": "salmon",
+      "relationship": "has_purpose",
+      "target": "stewardship of the landscape",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "indigenous cosmologies and stories",
+      "episode_number": 165
+    },
+    {
+      "source": "MIT",
+      "relationship": "located_in",
+      "target": "Massachusetts",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "education background",
+      "episode_number": 165
+    },
+    {
+      "source": "William Irwin Thompson",
+      "relationship": "worked_at",
+      "target": "MIT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "favorite author",
+      "episode_number": 165
+    },
+    {
+      "source": "Ring of Fire dot earth",
+      "relationship": "provides_tools_for",
+      "target": "yards, farms, ranches, neighborhoods, communities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "technology offered",
+      "episode_number": 165
+    },
+    {
+      "source": "William Irwin Thompson",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "shout out to William Irwin Thompson, rest his soul",
+      "episode_number": 165
+    },
+    {
+      "source": "Ring of Fire",
+      "relationship": "offers",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "technology that you offer through Ring of Fire dot earth",
+      "episode_number": 165
+    },
+    {
+      "source": "Ring of Fire",
+      "relationship": "located_in",
+      "target": "MIT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.95,
+      "context": "shout out to MIT",
+      "episode_number": 165
+    },
+    {
+      "source": "Gandhi",
+      "relationship": "advocates_for",
+      "target": "Swadeshi",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "reminds me a little bit of Gandhi's notion of Swadeshi",
+      "episode_number": 165
+    },
+    {
+      "source": "Gandhi",
+      "relationship": "advocates_for",
+      "target": "Swadeshi",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Gandhi's notion of Swadeshi",
+      "episode_number": 165
+    },
+    {
+      "source": "Kelpism",
+      "relationship": "part_of",
+      "target": "simple gardening wisdom video course",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "the event",
+      "episode_number": 165
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "produces",
+      "target": "Kelpism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Chelsea green.com",
+      "episode_number": 165
+    },
+    {
+      "source": "Wilson Biochar Associates",
+      "relationship": "produces",
+      "target": "Kelpism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Wilson biochar associates",
+      "episode_number": 165
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "partners_with",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "partners include Patagonia",
+      "episode_number": 165
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "partners_with",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "partners include Earth coast productions",
+      "episode_number": 165
+    },
+    {
+      "source": "Kyrgyzstan",
+      "relationship": "located_in",
+      "target": "Global Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "you gone to kyrgyzstan",
+      "episode_number": 165
+    },
+    {
+      "source": "Mexico",
+      "relationship": "located_in",
+      "target": "Global Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "you gone to Mexico",
+      "episode_number": 165
+    },
+    {
+      "source": "Germany",
+      "relationship": "located_in",
+      "target": "Global Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "you gone to Germany",
+      "episode_number": 165
+    },
+    {
+      "source": "kelp",
+      "relationship": "advocates_for",
+      "target": "health and wellness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "book recommendation",
+      "episode_number": 165
+    },
+    {
+      "source": "kelp",
+      "relationship": "advocates_for",
+      "target": "ecology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "improving our ecology",
+      "episode_number": 165
+    },
+    {
+      "source": "kelp",
+      "relationship": "advocates_for",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "improving our climate",
+      "episode_number": 165
+    }
+  ]
+}

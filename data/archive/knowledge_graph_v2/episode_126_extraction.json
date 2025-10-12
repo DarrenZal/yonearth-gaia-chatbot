@@ -1,0 +1,2384 @@
+{
+  "episode": 126,
+  "timestamp": "2025-10-09T10:37:13.775059",
+  "entity_count": 172,
+  "relationship_count": 117,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "David George Haskell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "biologist and author"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in the podcast"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Boulder is located"
+    },
+    {
+      "name": "Sohani",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "institution where David George Haskell is a professor"
+    },
+    {
+      "name": "University of the South",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where David George Haskell is a professor"
+    },
+    {
+      "name": "Guggenheim",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization associated with David George Haskell"
+    },
+    {
+      "name": "National Outdoor Book Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "award won by David George Haskell"
+    },
+    {
+      "name": "John Burroughs Medal",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "award won by David George Haskell"
+    },
+    {
+      "name": "The Song of Trees",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by David George Haskell"
+    },
+    {
+      "name": "Public Radio International Science Friday",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization that named The Song of Trees one of the best science books"
+    },
+    {
+      "name": "Forbes.com",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization that selected The Song of Trees as one of the best environment books"
+    },
+    {
+      "name": "The Forest Unseen",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by David George Haskell"
+    },
+    {
+      "name": "University of Oxford",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where David George Haskell completed his undergraduate studies"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where David George Haskell completed his PhD"
+    },
+    {
+      "name": "Sounds, Wild and Broken",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "latest book authored by David George Haskell"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...going out to the woods in Tennessee where I live for more than 20 years..."
+    },
+    {
+      "name": "humans",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...humans are having it. We're nearly 8 billion of us..."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...a call for a lot more immersion in and connection to what we would call nature..."
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...some microbes might argue with that particular arrogance statement..."
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...of our kin, of our brothers, sister cousins, the trees and the birds..."
+    },
+    {
+      "name": "birds",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...of our kin, of our brothers, sister cousins, the trees and the birds..."
+    },
+    {
+      "name": "living rivers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...sister cousins, the trees and the birds and the living rivers..."
+    },
+    {
+      "name": "Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "listening within the environment"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "listening within the environment"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "listening within the environment"
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "born in the city"
+    },
+    {
+      "name": "Paris",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "grew up in their Paris"
+    },
+    {
+      "name": "the forest unseen",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "wrote a book about that"
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "grew up in and around London"
+    },
+    {
+      "name": "Paris",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "grew up in and around Paris"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "highways through low income and minority neighborhoods in the US"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sitting in the same patch of woods in Tennessee"
+    },
+    {
+      "name": "shinrin yoku",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Japanese tradition of shinrin yoku which is known as forest bathing"
+    },
+    {
+      "name": "Y on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "working on with the Y on earth community"
+    },
+    {
+      "name": "mountain meadow",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "walking in a mountain meadow"
+    },
+    {
+      "name": "forest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "molecules from the forest"
+    },
+    {
+      "name": "salamander",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "life of a salamander"
+    },
+    {
+      "name": "book",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the book that we're speaking about today sounds wild and broken"
+    },
+    {
+      "name": "human",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "human imagination"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "nature is this place of always being happy"
+    },
+    {
+      "name": "ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "ecology of the world"
+    },
+    {
+      "name": "Chesapeake Bay",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "...in the Chesapeake Bay area or something..."
+    },
+    {
+      "name": "St. Catherine's Island",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "...off an island where I work and teach sometimes St. Catherine's Island off the coast of Georgia..."
+    },
+    {
+      "name": "Georgia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...off the coast of Georgia big salt marsh area..."
+    },
+    {
+      "name": "Jacques Cousteau",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...certainly Western science thought that the sounds of the the ocean with silent I mean Jacques Cousteau his first film..."
+    },
+    {
+      "name": "humpback whale",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...the most famous underwater sound probably the song of a humpback whale..."
+    },
+    {
+      "name": "hydrophones",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...now we know because we have hydrophones which are underwater microphones..."
+    },
+    {
+      "name": "salt marsh grass",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...just a bunch of the same species of salt marsh grass stretching to the horizon..."
+    },
+    {
+      "name": "toadfish",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sounds of the toadfish"
+    },
+    {
+      "name": "snapping shrimp",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sounds of the snapping shrimp"
+    },
+    {
+      "name": "US Navy",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "WWII the US Navy"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "study just came out this week from Australia"
+    },
+    {
+      "name": "oysters",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "little larvae of oysters"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "most insects can't hear"
+    },
+    {
+      "name": "crickets",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "very cool of crickets"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hooking an accelerometer up to a cottonwood tree in Boulder"
+    },
+    {
+      "name": "University of Missouri",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Rex Krokov to his at the University of Missouri"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "located in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": null
+    },
+    {
+      "name": "Rex Krokov",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "expert on vibrational communication among insects"
+    },
+    {
+      "name": "University of Missouri",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "where Rex Krokov works"
+    },
+    {
+      "name": "snapping shrimp",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to sound and light"
+    },
+    {
+      "name": "cottonwood tree",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to sound production"
+    },
+    {
+      "name": "microbiology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "Celia",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to sensory perception"
+    },
+    {
+      "name": "inner ear",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "part of human physiology discussed"
+    },
+    {
+      "name": "hairs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to sound perception"
+    },
+    {
+      "name": "hair cells",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "tiny little hair cells in our inner ears"
+    },
+    {
+      "name": "inner ear",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "inner ear of fish"
+    },
+    {
+      "name": "fish",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "inner ear of fish"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hearing organs in the legs of insects"
+    },
+    {
+      "name": "ciliates",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "non-animal creatures like little ciliates"
+    },
+    {
+      "name": "ocean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ponds and in the ocean"
+    },
+    {
+      "name": "human cultures",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "human cultures and biology"
+    },
+    {
+      "name": "body size",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "frequencies that are used among different species corresponds with body size"
+    },
+    {
+      "name": "elk",
+      "type": "ANIMAL",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing body size and sound frequencies"
+    },
+    {
+      "name": "Rocky Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "location of elk example"
+    },
+    {
+      "name": "mammals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing body size and sound frequencies"
+    },
+    {
+      "name": "rabbits",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparing sound frequencies with elk"
+    },
+    {
+      "name": "elephants",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing low frequency sounds"
+    },
+    {
+      "name": "insects",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing high frequency sounds"
+    },
+    {
+      "name": "crossbill birds",
+      "type": "ANIMAL",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "example of birds in the Rockies"
+    },
+    {
+      "name": "red crossbill",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "birds that are these crazy birds that they literally they're called crossbells because their beaks are crossed at the front"
+    },
+    {
+      "name": "bats",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "bats are the absolute champions because they use super high frequency sounds for echolocation"
+    },
+    {
+      "name": "humans",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "humans at best can hear up to 20 killahertz"
+    },
+    {
+      "name": "cats",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "my cat is hearing 50 60 killahertz"
+    },
+    {
+      "name": "dogs",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "but you know cats and dogs"
+    },
+    {
+      "name": "Rockies",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "I love hearing in in the Rockies"
+    },
+    {
+      "name": "forest",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "forest nesting birds do face have a nice slow melodious song"
+    },
+    {
+      "name": "prairie",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "birds out in the prairie they're singing super high pitch"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "University of Colorado campus"
+    },
+    {
+      "name": "University of Colorado",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "campus in Boulder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Boulder is located"
+    },
+    {
+      "name": "mice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "creatures communicating"
+    },
+    {
+      "name": "rats",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "creatures communicating"
+    },
+    {
+      "name": "cats",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "common animals"
+    },
+    {
+      "name": "dogs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "common animals"
+    },
+    {
+      "name": "birds",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sounds of local environment"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sounds of local environment"
+    },
+    {
+      "name": "Morgan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "students in Colorado"
+    },
+    {
+      "name": "New Orleans",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "students in New Orleans"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "students in New York"
+    },
+    {
+      "name": "indigenous communities",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "teachers and guides from indigenous communities"
+    },
+    {
+      "name": "grandfather",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "speaker's grandfather"
+    },
+    {
+      "name": "birds",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "voices of birds"
+    },
+    {
+      "name": "cultural traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "maintained through those cultural traditions"
+    },
+    {
+      "name": "ecological knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ecological knowledge is so imperative"
+    },
+    {
+      "name": "regenerative restorative efforts",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "need for the regenerative restorative efforts"
+    },
+    {
+      "name": "seeds",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "getting food from the seeds"
+    },
+    {
+      "name": "vegetable plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work with vegetable plants"
+    },
+    {
+      "name": "microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing growth rates and sound sensitivity"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "describing their sounds and growth patterns"
+    },
+    {
+      "name": "E. coli",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as an example of a microbe"
+    },
+    {
+      "name": "sound",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing its effects on microorganisms"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing its viscous qualities at a microbial scale"
+    },
+    {
+      "name": "microbial communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "context of sound studies"
+    },
+    {
+      "name": "E. coli",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about microbial world and sounds"
+    },
+    {
+      "name": "neuroscience",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of undergrad degree in neuroscience"
+    },
+    {
+      "name": "Edgar Casey",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "reference to a famous saying about sound and medicine"
+    },
+    {
+      "name": "cosmic microwave background",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about remnants of sound waves in the universe"
+    },
+    {
+      "name": "cosmic background radiation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of radiation in the universe"
+    },
+    {
+      "name": "cosmic microwave background",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cosmic background radiation of the universe"
+    },
+    {
+      "name": "galaxies",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mapping the position of galaxies in the sky"
+    },
+    {
+      "name": "stars",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "spacing of the stars"
+    },
+    {
+      "name": "astronomers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "astronomers measure them from instruments in the desert southwest in the US"
+    },
+    {
+      "name": "desert southwest",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "instruments in the desert southwest in the US"
+    },
+    {
+      "name": "universe",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "background radiation of the universe"
+    },
+    {
+      "name": "physics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "just straight up physics and astronomy"
+    },
+    {
+      "name": "ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mysticism and physics and ecologists all like wrapped up together"
+    },
+    {
+      "name": "human language",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "through human language and human music"
+    },
+    {
+      "name": "music",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I think music and particularly instrumental music does that"
+    },
+    {
+      "name": "violin",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when we hear a violin play for example"
+    },
+    {
+      "name": "orchestra",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "emerging from an orchestra stage"
+    },
+    {
+      "name": "bluegrass fiddlers",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "from a bluegrass fiddlers skill"
+    },
+    {
+      "name": "electric keyboard",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "plug in an electric keyboard"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the voice of the pre-industrial earth"
+    },
+    {
+      "name": "live music",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "go here live music"
+    },
+    {
+      "name": "David George Haskell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "sounds wild and broken",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "title of David's latest book"
+    },
+    {
+      "name": "why on earth community podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "name of the podcast"
+    },
+    {
+      "name": "Wele Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "soil works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "$50 discount",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "offer related to Purium"
+    },
+    {
+      "name": "$33 donation",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "donation level for supporters"
+    },
+    {
+      "name": "Wele Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hemp infused aroma therapy soaking salts"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "talking about coming back as an e-coli"
+    },
+    {
+      "name": "Joachim",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "favorite authors and books"
+    },
+    {
+      "name": "Spana",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "favorite authors and books"
+    },
+    {
+      "name": "Nada Brahma",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "wonderful book called Nada Brahma the world of sound"
+    },
+    {
+      "name": "the third year",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "wonderful book called the third year"
+    },
+    {
+      "name": "free joff capra",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "free joff capra with his dava physics"
+    },
+    {
+      "name": "dava physics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "dava physics really dove deeply"
+    },
+    {
+      "name": "web of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "his book web of life on the ecology"
+    },
+    {
+      "name": "tropical forest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "tropical forest conservation and indigenous land rights"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "affecting in North America"
+    },
+    {
+      "name": "indigenous cultures",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "important for human rights for the indigenous cultures"
+    },
+    {
+      "name": "tropical wood",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we use in awful lot of tropical wood"
+    },
+    {
+      "name": "tropical forest conservation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "tropical forest conservation and indigenous land rights in tropical forests"
+    },
+    {
+      "name": "indigenous land rights",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "tropical forest conservation and indigenous land rights in tropical forests"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "stories in North America"
+    },
+    {
+      "name": "gasoline",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we use gasoline and other things"
+    },
+    {
+      "name": "y-north.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you can go to y-north.org to learn more about becoming an ambassador"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "thank you for sharing that with us and before we sign off I want to mention and tease for our audience that we're going to after concluding the podcast episode have a few minutes of our behind the scenes conversation David"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry"
+    },
+    {
+      "name": "Sounds Wild and Broken",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thanks again for sharing on it book with us sounds wild and broken"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth community stewardship and sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast series"
+    },
+    {
+      "name": "why on earth.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website for support"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "packages for supporters"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "David George Haskell",
+      "relationship": "works_at",
+      "target": "University of the South",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "David George Haskell's profession as a professor",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "founded",
+      "target": "Guggenheim",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "David George Haskell's association with the Guggenheim",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "advocates_for",
+      "target": "National Outdoor Book Award",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "David George Haskell's recognition through awards",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "advocates_for",
+      "target": "John Burroughs Medal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "David George Haskell's recognition through awards",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "wrote",
+      "target": "The Song of Trees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "David George Haskell's authorship of the book",
+      "episode_number": 126
+    },
+    {
+      "source": "The Song of Trees",
+      "relationship": "made_by",
+      "target": "David George Haskell",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "The Song of Trees being authored by David George Haskell",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "wrote",
+      "target": "The Forest Unseen",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "David George Haskell's authorship of the book",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "studied_at",
+      "target": "University of Oxford",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "David George Haskell's educational background",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "studied_at",
+      "target": "Cornell University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "David George Haskell's educational background",
+      "episode_number": 126
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Geographic relationship between Boulder and Colorado",
+      "episode_number": 126
+    },
+    {
+      "source": "humans",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...a call for a lot more immersion in and connection to what we would call nature...",
+      "episode_number": 126
+    },
+    {
+      "source": "Tennessee",
+      "relationship": "contains",
+      "target": "woods",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...going out to the woods in Tennessee where I live for more than 20 years...",
+      "episode_number": 126
+    },
+    {
+      "source": "humans",
+      "relationship": "located_in",
+      "target": "planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...if we is the most powerful species on the planet...",
+      "episode_number": 126
+    },
+    {
+      "source": "trees",
+      "relationship": "part_of",
+      "target": "nature",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...of our kin, of our brothers, sister cousins, the trees and the birds...",
+      "episode_number": 126
+    },
+    {
+      "source": "birds",
+      "relationship": "part_of",
+      "target": "nature",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...of our kin, of our brothers, sister cousins, the trees and the birds...",
+      "episode_number": 126
+    },
+    {
+      "source": "living rivers",
+      "relationship": "part_of",
+      "target": "nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "...of our kin, of our brothers, sister cousins, the trees and the birds and the living rivers...",
+      "episode_number": 126
+    },
+    {
+      "source": "the forest unseen",
+      "relationship": "made_by",
+      "target": "unknown",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "wrote a book about that",
+      "episode_number": 126
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "listening within the environment",
+      "episode_number": 126
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "listening within the environment",
+      "episode_number": 126
+    },
+    {
+      "source": "Manhattan",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "listening within the environment",
+      "episode_number": 126
+    },
+    {
+      "source": "London",
+      "relationship": "part_of",
+      "target": "United Kingdom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "born in the city",
+      "episode_number": 126
+    },
+    {
+      "source": "Paris",
+      "relationship": "part_of",
+      "target": "France",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "grew up in their Paris",
+      "episode_number": 126
+    },
+    {
+      "source": "London",
+      "relationship": "part_of",
+      "target": "England",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "grew up in and around London",
+      "episode_number": 126
+    },
+    {
+      "source": "Paris",
+      "relationship": "part_of",
+      "target": "France",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "grew up in and around Paris",
+      "episode_number": 126
+    },
+    {
+      "source": "US",
+      "relationship": "contains",
+      "target": "low income and minority neighborhoods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "highways through low income and minority neighborhoods in the US",
+      "episode_number": 126
+    },
+    {
+      "source": "Tennessee",
+      "relationship": "located_in",
+      "target": "USA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "sitting in the same patch of woods in Tennessee",
+      "episode_number": 126
+    },
+    {
+      "source": "shinrin yoku",
+      "relationship": "advocates_for",
+      "target": "forest bathing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Japanese tradition of shinrin yoku which is known as forest bathing",
+      "episode_number": 126
+    },
+    {
+      "source": "Y on earth community",
+      "relationship": "works_on",
+      "target": "environmental issues",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "working on with the Y on earth community",
+      "episode_number": 126
+    },
+    {
+      "source": "mountain meadow",
+      "relationship": "part_of",
+      "target": "forest",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "walking in a mountain meadow",
+      "episode_number": 126
+    },
+    {
+      "source": "human",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "human imagination",
+      "episode_number": 126
+    },
+    {
+      "source": "book",
+      "relationship": "made_by",
+      "target": "human",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the book that we're speaking about today sounds wild and broken",
+      "episode_number": 126
+    },
+    {
+      "source": "forest",
+      "relationship": "contains",
+      "target": "salamander",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "molecules from the forest",
+      "episode_number": 126
+    },
+    {
+      "source": "human",
+      "relationship": "interacts_with",
+      "target": "ecology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "human actions affecting ecology",
+      "episode_number": 126
+    },
+    {
+      "source": "Jacques Cousteau",
+      "relationship": "founded",
+      "target": "silent world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...Jacques Cousteau his first film in the 1950s... was called Lamont du Cilare so the silent world...",
+      "episode_number": 126
+    },
+    {
+      "source": "humpback whale",
+      "relationship": "makes",
+      "target": "song",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...the most famous underwater sound probably the song of a humpback whale...",
+      "episode_number": 126
+    },
+    {
+      "source": "hydrophones",
+      "relationship": "used_in",
+      "target": "ocean research",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "...now we know because we have hydrophones which are underwater microphones...",
+      "episode_number": 126
+    },
+    {
+      "source": "St. Catherine's Island",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "...off an island where I work and teach sometimes St. Catherine's Island off the coast of Georgia...",
+      "episode_number": 126
+    },
+    {
+      "source": "Chesapeake Bay",
+      "relationship": "part_of",
+      "target": "Maryland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "...in the Chesapeake Bay area or something...",
+      "episode_number": 126
+    },
+    {
+      "source": "snapping shrimp",
+      "relationship": "makes_sound",
+      "target": "sound",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the sound of hundreds of these together creates this",
+      "episode_number": 126
+    },
+    {
+      "source": "US Navy",
+      "relationship": "located_in",
+      "target": "WWII",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the US Navy actually parks and hits some of its submarines amid the snapping shrimp bed",
+      "episode_number": 126
+    },
+    {
+      "source": "little larvae of oysters",
+      "relationship": "attracted_to",
+      "target": "healthy oyster",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "when you play the sound of a healthy oyster the little larvae attracted to it",
+      "episode_number": 126
+    },
+    {
+      "source": "insects",
+      "relationship": "can_hear",
+      "target": "vibrations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "every insect has got little hearing organs in the joints of their legs to pick up vibrations",
+      "episode_number": 126
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "hooking an accelerometer up to a cottonwood tree in Boulder",
+      "episode_number": 126
+    },
+    {
+      "source": "Rex Krokov",
+      "relationship": "works_at",
+      "target": "University of Missouri",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sent the soundfalt to Rex Krokov to his at the University of Missouri",
+      "episode_number": 126
+    },
+    {
+      "source": "Rex Krokov",
+      "relationship": "works_at",
+      "target": "University of Missouri",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "expert on vibrational communication among insects",
+      "episode_number": 126
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": null,
+      "episode_number": 126
+    },
+    {
+      "source": "snapping shrimp",
+      "relationship": "causes",
+      "target": "sound and light",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussed in relation to communication",
+      "episode_number": 126
+    },
+    {
+      "source": "hairs",
+      "relationship": "stimulated_by",
+      "target": "sound waves",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "part of human physiology",
+      "episode_number": 126
+    },
+    {
+      "source": "inner ear",
+      "relationship": "contains",
+      "target": "hairs",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "part of human physiology",
+      "episode_number": 126
+    },
+    {
+      "source": "microbiology",
+      "relationship": "related_to",
+      "target": "Celia",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "topic of discussion",
+      "episode_number": 126
+    },
+    {
+      "source": "hair cells",
+      "relationship": "part_of",
+      "target": "inner ear",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "tiny little hair cells in our inner ears",
+      "episode_number": 126
+    },
+    {
+      "source": "inner ear",
+      "relationship": "part_of",
+      "target": "fish",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "inner ear of fish",
+      "episode_number": 126
+    },
+    {
+      "source": "hearing organs",
+      "relationship": "part_of",
+      "target": "insects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "hearing organs in the legs of insects",
+      "episode_number": 126
+    },
+    {
+      "source": "ciliates",
+      "relationship": "located_in",
+      "target": "ocean",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "non-animal creatures like little ciliates",
+      "episode_number": 126
+    },
+    {
+      "source": "human cultures",
+      "relationship": "correlates_with",
+      "target": "body size",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "human cultures and biology",
+      "episode_number": 126
+    },
+    {
+      "source": "elk",
+      "relationship": "located_in",
+      "target": "Rocky Mountains",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussing elk in the context of sound frequencies and body size",
+      "episode_number": 126
+    },
+    {
+      "source": "mammals",
+      "relationship": "correlates_with",
+      "target": "body size",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing frequencies and body size",
+      "episode_number": 126
+    },
+    {
+      "source": "elk",
+      "relationship": "advocates_for",
+      "target": "sexual selection",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing reasons for elk's high frequency sounds",
+      "episode_number": 126
+    },
+    {
+      "source": "elk",
+      "relationship": "makes",
+      "target": "high frequency sound",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing elk's vocalizations",
+      "episode_number": 126
+    },
+    {
+      "source": "crossbill birds",
+      "relationship": "located_in",
+      "target": "Rocky Mountains",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "example of birds in the Rockies",
+      "episode_number": 126
+    },
+    {
+      "source": "red crossbill",
+      "relationship": "makes",
+      "target": "songs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "they make this beautiful wobbling song",
+      "episode_number": 126
+    },
+    {
+      "source": "bats",
+      "relationship": "uses",
+      "target": "echolocation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "bats are the absolute champions because they use super high frequency sounds for echolocation",
+      "episode_number": 126
+    },
+    {
+      "source": "humans",
+      "relationship": "can_hear_up_to",
+      "target": "20 killahertz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "humans at best can hear up to 20 killahertz",
+      "episode_number": 126
+    },
+    {
+      "source": "cats",
+      "relationship": "can_hear_up_to",
+      "target": "50 60 killahertz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "my cat is hearing 50 60 killahertz",
+      "episode_number": 126
+    },
+    {
+      "source": "forest",
+      "relationship": "contains",
+      "target": "birds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "forest nesting birds do face have a nice slow melodious song",
+      "episode_number": 126
+    },
+    {
+      "source": "prairie",
+      "relationship": "contains",
+      "target": "birds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "birds out in the prairie they're singing super high pitch",
+      "episode_number": 126
+    },
+    {
+      "source": "University of Colorado",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "campus in Boulder",
+      "episode_number": 126
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is a city in Colorado",
+      "episode_number": 126
+    },
+    {
+      "source": "mice",
+      "relationship": "communicate_with",
+      "target": "rats",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "creatures communicating",
+      "episode_number": 126
+    },
+    {
+      "source": "cats",
+      "relationship": "advocates_for",
+      "target": "birds",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "common animals hunting",
+      "episode_number": 126
+    },
+    {
+      "source": "dogs",
+      "relationship": "advocates_for",
+      "target": "insects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "common animals hunting",
+      "episode_number": 126
+    },
+    {
+      "source": "Morgan",
+      "relationship": "advocates_for",
+      "target": "ecological knowledge",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion on ecological knowledge",
+      "episode_number": 126
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "birds",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "students in Colorado should learn the voices of Colorado birds",
+      "episode_number": 126
+    },
+    {
+      "source": "New Orleans",
+      "relationship": "contains",
+      "target": "birds",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "students in New Orleans should learn different things",
+      "episode_number": 126
+    },
+    {
+      "source": "New York",
+      "relationship": "contains",
+      "target": "birds",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "students in New York should learn different things",
+      "episode_number": 126
+    },
+    {
+      "source": "indigenous communities",
+      "relationship": "teaches",
+      "target": "ecological knowledge",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "teachers and guides from indigenous communities",
+      "episode_number": 126
+    },
+    {
+      "source": "grandfather",
+      "relationship": "communicates_with",
+      "target": "birds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "speaker's grandfather communicating with robins",
+      "episode_number": 126
+    },
+    {
+      "source": "cultural traditions",
+      "relationship": "maintains",
+      "target": "ecological knowledge",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "maintained through those cultural traditions",
+      "episode_number": 126
+    },
+    {
+      "source": "regenerative restorative efforts",
+      "relationship": "needed_for",
+      "target": "cultural traditions",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "need for the regenerative restorative efforts",
+      "episode_number": 126
+    },
+    {
+      "source": "seeds",
+      "relationship": "used_in",
+      "target": "vegetable plants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "getting food from the seeds",
+      "episode_number": 126
+    },
+    {
+      "source": "bacteria",
+      "relationship": "sensitive_to",
+      "target": "sound",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing how bacteria respond to sounds they make",
+      "episode_number": 126
+    },
+    {
+      "source": "E. coli",
+      "relationship": "experiences",
+      "target": "sound",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "hypothetical experience of E. coli in a fluid environment",
+      "episode_number": 126
+    },
+    {
+      "source": "microorganisms",
+      "relationship": "influence",
+      "target": "growth rates",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the impact of sound on microorganisms",
+      "episode_number": 126
+    },
+    {
+      "source": "water",
+      "relationship": "dominates",
+      "target": "microbial world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the physical laws affecting microbes",
+      "episode_number": 126
+    },
+    {
+      "source": "Edgar Casey",
+      "relationship": "advocates_for",
+      "target": "sound",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "reference to a famous saying about sound and medicine",
+      "episode_number": 126
+    },
+    {
+      "source": "neuroscience",
+      "relationship": "related_to",
+      "target": "language acquisition",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about sound frequencies improving language acquisition",
+      "episode_number": 126
+    },
+    {
+      "source": "cosmic microwave background",
+      "relationship": "part_of",
+      "target": "universe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about remnants of sound waves in the universe",
+      "episode_number": 126
+    },
+    {
+      "source": "cosmic background radiation",
+      "relationship": "part_of",
+      "target": "universe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mention of radiation in the universe",
+      "episode_number": 126
+    },
+    {
+      "source": "galaxies",
+      "relationship": "spaced_about",
+      "target": "500 million light years",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "these galaxies are spaced about 500 million light years apart",
+      "episode_number": 126
+    },
+    {
+      "source": "astronomers",
+      "relationship": "measure",
+      "target": "galaxies",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "astronomers measure them from instruments in the desert southwest in the US",
+      "episode_number": 126
+    },
+    {
+      "source": "music",
+      "relationship": "is_a",
+      "target": "deeply ecological experience",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "music is a deeply ecological experience",
+      "episode_number": 126
+    },
+    {
+      "source": "violin",
+      "relationship": "made_by",
+      "target": "human musician",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "when we hear a violin play for example we're hearing of course the artistry of human musician",
+      "episode_number": 126
+    },
+    {
+      "source": "electric keyboard",
+      "relationship": "made_from",
+      "target": "plastic keys",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "what are you doing you're using plastic keys which are made from oil",
+      "episode_number": 126
+    },
+    {
+      "source": "human language",
+      "relationship": "connects",
+      "target": "human",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "through human language and human music we're connecting one person to another",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "works_at",
+      "target": "why on earth community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "host of the podcast",
+      "episode_number": 126
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "authored",
+      "target": "sounds wild and broken",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "latest book by David",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth community podcast",
+      "relationship": "sponsored_by",
+      "target": "Wele Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast sponsorship",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth community podcast",
+      "relationship": "sponsored_by",
+      "target": "soil works",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast sponsorship",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth community podcast",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast sponsorship",
+      "episode_number": 126
+    },
+    {
+      "source": "Purium",
+      "relationship": "offers",
+      "target": "$50 discount",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discount offer",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth community podcast",
+      "relationship": "encourages",
+      "target": "$33 donation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "donation encouragement",
+      "episode_number": 126
+    },
+    {
+      "source": "Wele Waters",
+      "relationship": "made_by",
+      "target": "David",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "hemp infused aroma therapy soaking salts",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "tropical forest",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "thinking about the future and you're thinking about where we're headed",
+      "episode_number": 126
+    },
+    {
+      "source": "tropical forest",
+      "relationship": "contains",
+      "target": "indigenous cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "important for human rights for the indigenous cultures",
+      "episode_number": 126
+    },
+    {
+      "source": "North America",
+      "relationship": "contains",
+      "target": "tropical forest",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "affecting in North America",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "wrote",
+      "target": "Nada Brahma",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "wonderful book called Nada Brahma the world of sound",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "wrote",
+      "target": "the third year",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "wonderful book called the third year",
+      "episode_number": 126
+    },
+    {
+      "source": "free joff capra",
+      "relationship": "wrote",
+      "target": "web of life",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "his book web of life on the ecology",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "tropical forest conservation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "tropical forest conservation and indigenous land rights in tropical forests",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "indigenous land rights",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "tropical forest conservation and indigenous land rights in tropical forests",
+      "episode_number": 126
+    },
+    {
+      "source": "North America",
+      "relationship": "contains",
+      "target": "tropical forest conservation",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "stories in North America",
+      "episode_number": 126
+    },
+    {
+      "source": "y-north.org",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "you can go to y-north.org to learn more about becoming an ambassador",
+      "episode_number": 126
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "the why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry",
+      "episode_number": 126
+    },
+    {
+      "source": "David",
+      "relationship": "authored",
+      "target": "Sounds Wild and Broken",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "thanks again for sharing on it book with us sounds wild and broken",
+      "episode_number": 126
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "podcast series hosting",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth community stewardship and sustainability podcast series",
+      "relationship": "sponsored_by",
+      "target": "why on earth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsorship information",
+      "episode_number": 126
+    },
+    {
+      "source": "why on earth.org",
+      "relationship": "offers",
+      "target": "support packages",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "support offerings",
+      "episode_number": 126
+    }
+  ]
+}

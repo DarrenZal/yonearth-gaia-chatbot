@@ -1,0 +1,119 @@
+{
+  "approach": "two-pass-batched",
+  "model": "gpt-4o-mini",
+  "batch_size": 50,
+  "timestamp": "2025-10-10T07:51:41.824666",
+  "test_episodes": [
+    10,
+    39,
+    50,
+    75,
+    100,
+    112,
+    120,
+    122,
+    150,
+    165
+  ],
+  "total_time_seconds": 11065.99988770485,
+  "episodes_successful": 10,
+  "total_extracted_pass1": 3170,
+  "total_evaluated_pass2": 3165,
+  "total_batches_pass2": 67,
+  "conflicts_detected": 139,
+  "type_violations_found": 6,
+  "conflict_rate": 0.04391785150078989,
+  "speedup_vs_unbatched": "~10x (estimated)",
+  "results": [
+    {
+      "episode": 10,
+      "status": "success",
+      "extracted": 233,
+      "evaluated": 233,
+      "batches": 5,
+      "conflicts": 5,
+      "type_violations": 1
+    },
+    {
+      "episode": 39,
+      "status": "success",
+      "extracted": 313,
+      "evaluated": 313,
+      "batches": 7,
+      "conflicts": 27,
+      "type_violations": 0
+    },
+    {
+      "episode": 50,
+      "status": "success",
+      "extracted": 284,
+      "evaluated": 284,
+      "batches": 6,
+      "conflicts": 20,
+      "type_violations": 0
+    },
+    {
+      "episode": 75,
+      "status": "success",
+      "extracted": 285,
+      "evaluated": 285,
+      "batches": 6,
+      "conflicts": 16,
+      "type_violations": 3
+    },
+    {
+      "episode": 100,
+      "status": "success",
+      "extracted": 395,
+      "evaluated": 390,
+      "batches": 8,
+      "conflicts": 18,
+      "type_violations": 0
+    },
+    {
+      "episode": 112,
+      "status": "success",
+      "extracted": 344,
+      "evaluated": 344,
+      "batches": 7,
+      "conflicts": 25,
+      "type_violations": 0
+    },
+    {
+      "episode": 120,
+      "status": "success",
+      "extracted": 279,
+      "evaluated": 279,
+      "batches": 6,
+      "conflicts": 3,
+      "type_violations": 1
+    },
+    {
+      "episode": 122,
+      "status": "success",
+      "extracted": 398,
+      "evaluated": 398,
+      "batches": 8,
+      "conflicts": 3,
+      "type_violations": 0
+    },
+    {
+      "episode": 150,
+      "status": "success",
+      "extracted": 309,
+      "evaluated": 309,
+      "batches": 7,
+      "conflicts": 7,
+      "type_violations": 0
+    },
+    {
+      "episode": 165,
+      "status": "success",
+      "extracted": 330,
+      "evaluated": 330,
+      "batches": 7,
+      "conflicts": 15,
+      "type_violations": 1
+    }
+  ]
+}

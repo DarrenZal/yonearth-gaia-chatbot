@@ -1,0 +1,1813 @@
+{
+  "episode": 33,
+  "timestamp": "2025-10-09T11:15:27.697534",
+  "entity_count": 139,
+  "relationship_count": 83,
+  "entities": [
+    {
+      "name": "Kevin Townley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Carmelite Order",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Kevin's background"
+    },
+    {
+      "name": "Freemason institution",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Kevin's background"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Kevin's background"
+    },
+    {
+      "name": "Aspen Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Kevin's encounter with Father Thomas Keating"
+    },
+    {
+      "name": "Father Thomas Keating",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Kevin's encounter"
+    },
+    {
+      "name": "Sustertian monastery",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Father Keating's affiliation"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion topic"
+    },
+    {
+      "name": "Eucharist",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion topic"
+    },
+    {
+      "name": "Sofi Kaskas",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...we had Sofi Kaskas on the show several months ago."
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "...He's from Saudi Arabia doing great interfaith work throughout the world."
+    },
+    {
+      "name": "Abrahamic tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the influence, the impact of the Abrahamic tradition that Jewish, the Christian, the Islamic traditions is substantial."
+    },
+    {
+      "name": "Waiyer",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...My research for Waiyer showed me that some five out of eight people on the planet identify as being affiliated with one of the Abrahamic traditions."
+    },
+    {
+      "name": "Eucharist",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...curious to talk about this sacrament of the Eucharist with the microbiome in mind."
+    },
+    {
+      "name": "yeast",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...Waiyer is a yeast."
+    },
+    {
+      "name": "grape juice",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the wine is grape juice generally speaking."
+    },
+    {
+      "name": "wine",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the wine is grape juice generally speaking."
+    },
+    {
+      "name": "vinegar",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...which produces vinegar."
+    },
+    {
+      "name": "yeast",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "of yeast to the grape juice"
+    },
+    {
+      "name": "grape juice",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "of yeast to the grape juice"
+    },
+    {
+      "name": "alcohol",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "creates a product that doesn't exist in that form in the natural world and that is alcohol"
+    },
+    {
+      "name": "vinegar",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "another culture is generated which produces vinegar"
+    },
+    {
+      "name": "kombucha",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Just our kombucha"
+    },
+    {
+      "name": "sour crout",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "living sour crouts"
+    },
+    {
+      "name": "kimchi",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "There's kimchi, all kinds of different things"
+    },
+    {
+      "name": "modern industrial foods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "modern industrial foods have eliminated that living component"
+    },
+    {
+      "name": "sour crout",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "buy a shelf stable version of sour crout"
+    },
+    {
+      "name": "health issues",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "connection there between many of the health issues"
+    },
+    {
+      "name": "nutritionist",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "modern nutritionist and biologist would agree with that"
+    },
+    {
+      "name": "biologist",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "modern nutritionist and biologist would agree with that"
+    },
+    {
+      "name": "soil stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "work in the realm of soil stewardship"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "carbon sequestration through soil building"
+    },
+    {
+      "name": "soil building",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "soil building, soil regeneration"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Rudolph Steiner, a great esotericist of about 100 years ago"
+    },
+    {
+      "name": "guts",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "connection between our guts as being analogous to the soil"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "analogous to the soil in the landscape on the farm"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "living microbiome is in the soil just as it is in our own bodies"
+    },
+    {
+      "name": "esoteric traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "studied different esoteric traditions from all around the world"
+    },
+    {
+      "name": "Peru",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where was he from Peru?"
+    },
+    {
+      "name": "Peruvian farmer",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I met this one, where was he from Peru? It was a Peruvian farmer"
+    },
+    {
+      "name": "Greeley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "got his PhD in agriculture from Greeley at the University of Northern Colorado"
+    },
+    {
+      "name": "University of Northern Colorado",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "got his PhD in agriculture from Greeley at the University of Northern Colorado"
+    },
+    {
+      "name": "Greeley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "from Greeley at the University of Northern Colorado"
+    },
+    {
+      "name": "University of Northern Colorado",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "from Greeley at the University of Northern Colorado"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "about soil and fertilizers"
+    },
+    {
+      "name": "fertilizers",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "about soil and fertilizers"
+    },
+    {
+      "name": "agricultural practices",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "modern agricultural practices"
+    },
+    {
+      "name": "indigenous people",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the indigenous people tend to have that deep connection"
+    },
+    {
+      "name": "signatures of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "in the alchemical world, it's called the signatures of nature"
+    },
+    {
+      "name": "chemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "chemistry is the science of effects"
+    },
+    {
+      "name": "alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "alchemy is the science of causes"
+    },
+    {
+      "name": "The Dwellings of the Philosophers",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "a great book that was written called The Dwellings of the Philosophers"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "connection to the earth"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "science went into that separation mode"
+    },
+    {
+      "name": "microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "these microorganisms"
+    },
+    {
+      "name": "solar system",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "our life and world and in our even our solar system"
+    },
+    {
+      "name": "galaxy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "our life and world and in our even our solar system"
+    },
+    {
+      "name": "Kevin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "curious, Kevin, with your background"
+    },
+    {
+      "name": "humanity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "humanity as a whole is moving in a particular trajectory"
+    },
+    {
+      "name": "humanity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the trajectory of humanity"
+    },
+    {
+      "name": "Masonic institution",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing the principles of the Masonic institution"
+    },
+    {
+      "name": "George Washington",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "mentioning founding leaders of the United States"
+    },
+    {
+      "name": "Ben Franklin",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "mentioning founding leaders of the United States"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "discussing the founding of the country"
+    },
+    {
+      "name": "Philadelphia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioning the location of Independence Hall"
+    },
+    {
+      "name": "Independence Hall",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the historical site related to the Constitution"
+    },
+    {
+      "name": "Constitution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the foundational document of the United States"
+    },
+    {
+      "name": "Declaration of Independence",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the foundational document of the United States"
+    },
+    {
+      "name": "slavery",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing historical issues in the United States"
+    },
+    {
+      "name": "genocide",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing historical issues in the United States"
+    },
+    {
+      "name": "indigenous peoples",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing historical issues in the United States"
+    },
+    {
+      "name": "women",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing historical issues in the United States"
+    },
+    {
+      "name": "slavery",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "history relative to slavery and genocide"
+    },
+    {
+      "name": "genocide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "history relative to slavery and genocide"
+    },
+    {
+      "name": "indigenous peoples",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "treatment of the indigenous peoples"
+    },
+    {
+      "name": "women",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the repression of women"
+    },
+    {
+      "name": "democracy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "moving from a democracy to a topocracy"
+    },
+    {
+      "name": "Masonic principles",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Masonic principles that some of the founding fathers had"
+    },
+    {
+      "name": "founding fathers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Masonic principles that some of the founding fathers had"
+    },
+    {
+      "name": "Congress",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "many of the women that have just come into the Congress"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talking about microbiome"
+    },
+    {
+      "name": "neurobiochemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the neurobiochemistry going on in each of our bodies"
+    },
+    {
+      "name": "cube of space",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the cube of space"
+    },
+    {
+      "name": "meditations on the cube of space",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "meditations on the cube of space"
+    },
+    {
+      "name": "Hebrew tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tie to the Hebrew tradition"
+    },
+    {
+      "name": "Kabbalistic tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tie to the Kabbalistic tradition"
+    },
+    {
+      "name": "Big Bang Theory",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of creativity and creation process"
+    },
+    {
+      "name": "Kabbalah",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "intellectual aspects related to creativity"
+    },
+    {
+      "name": "alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "symbol systems employed in the books"
+    },
+    {
+      "name": "geometry",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "symbol systems employed in the books"
+    },
+    {
+      "name": "number",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "symbol systems employed in the books"
+    },
+    {
+      "name": "Spagiarics",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "plant alchemy discussed in the laboratory work"
+    },
+    {
+      "name": "Taro",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "symbol systems used in the creative process"
+    },
+    {
+      "name": "Taro",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cymbal systems"
+    },
+    {
+      "name": "Christianity",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "inner presence"
+    },
+    {
+      "name": "Hindu tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "inner presence"
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "inner presence"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "three-day summit"
+    },
+    {
+      "name": "Kevin Townley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking with"
+    },
+    {
+      "name": "Kevin Townley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking with Kevin Townley"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Association of Waldorf Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Amazon",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "where Kevin's books can be found"
+    },
+    {
+      "name": "Cuba Space",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "title of one of Kevin's books"
+    },
+    {
+      "name": "Meditations on the Cuba Space",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "title of one of Kevin's books"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "name of the podcast"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing topics related to microbiome"
+    },
+    {
+      "name": "alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing topics related to alchemy"
+    },
+    {
+      "name": "affirmation",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussing topics related to affirmation"
+    },
+    {
+      "name": "artificial intelligence",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing types of intelligences"
+    },
+    {
+      "name": "alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the life principle"
+    },
+    {
+      "name": "vegetable kingdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing life in nature"
+    },
+    {
+      "name": "human kingdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing life in nature"
+    },
+    {
+      "name": "animal kingdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing life in nature"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing efforts to understand life mechanisms"
+    },
+    {
+      "name": "testosterone",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing human biology"
+    },
+    {
+      "name": "estrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing human biology"
+    },
+    {
+      "name": "health companies",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussing advanced health companies"
+    },
+    {
+      "name": "natural forces",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing collaboration with natural forces"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing sequestering carbon"
+    },
+    {
+      "name": "Bhutan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing gross national happiness"
+    },
+    {
+      "name": "gross national happiness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing Bhutan's measurement of happiness"
+    },
+    {
+      "name": "gross national happiness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing measuring sticks for cultures"
+    },
+    {
+      "name": "Yahweh",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "referring to deity in Hebrew tradition"
+    },
+    {
+      "name": "Adam and Eve",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in the creation story"
+    },
+    {
+      "name": "Genesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book of the Bible discussing creation"
+    },
+    {
+      "name": "Brahma",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in Hindu tradition as analogous to Yahweh"
+    },
+    {
+      "name": "stewardship summit",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "event where the speaker will be present"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in the context of sustainability"
+    },
+    {
+      "name": "Yahweh",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a different aspect of deity"
+    },
+    {
+      "name": "Brahma",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "compared to Yahweh in Hindu tradition"
+    },
+    {
+      "name": "Sephiri Esra",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Kebleristic text that speaks to pre-creation story"
+    },
+    {
+      "name": "Genesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a creation narrative"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "name of the podcast series"
+    },
+    {
+      "name": "Yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website mentioned for support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Kevin Townley",
+      "relationship": "works_at",
+      "target": "Freemason institution",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Kevin's background",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "studied",
+      "target": "Carmelite Order",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Kevin's background",
+      "episode_number": 33
+    },
+    {
+      "source": "Freemason institution",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Kevin's background",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "encountered",
+      "target": "Father Thomas Keating",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Kevin's encounter",
+      "episode_number": 33
+    },
+    {
+      "source": "Father Thomas Keating",
+      "relationship": "affiliated_with",
+      "target": "Sustertian monastery",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Father Keating's affiliation",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "advocates_for",
+      "target": "microbiome",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion topic",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "discusses",
+      "target": "Eucharist",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion topic",
+      "episode_number": 33
+    },
+    {
+      "source": "Sofi Kaskas",
+      "relationship": "works_at",
+      "target": "Saudi Arabia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.98,
+      "context": "...He's from Saudi Arabia doing great interfaith work throughout the world.",
+      "episode_number": 33
+    },
+    {
+      "source": "Waiyer",
+      "relationship": "made_by",
+      "target": "yeast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...Waiyer is a yeast.",
+      "episode_number": 33
+    },
+    {
+      "source": "Eucharist",
+      "relationship": "related_to",
+      "target": "Abrahamic tradition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...curious to talk about this sacrament of the Eucharist with the microbiome in mind.",
+      "episode_number": 33
+    },
+    {
+      "source": "grape juice",
+      "relationship": "made_by",
+      "target": "wine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the wine is grape juice generally speaking.",
+      "episode_number": 33
+    },
+    {
+      "source": "wine",
+      "relationship": "transforms_into",
+      "target": "vinegar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...which produces vinegar.",
+      "episode_number": 33
+    },
+    {
+      "source": "yeast",
+      "relationship": "transforms",
+      "target": "grape juice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "of yeast to the grape juice",
+      "episode_number": 33
+    },
+    {
+      "source": "grape juice",
+      "relationship": "produces",
+      "target": "alcohol",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "creates a product that doesn't exist in that form in the natural world and that is alcohol",
+      "episode_number": 33
+    },
+    {
+      "source": "grape juice",
+      "relationship": "produces",
+      "target": "vinegar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "another culture is generated which produces vinegar",
+      "episode_number": 33
+    },
+    {
+      "source": "kombucha",
+      "relationship": "is_a",
+      "target": "PRODUCT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Just our kombucha",
+      "episode_number": 33
+    },
+    {
+      "source": "sour crout",
+      "relationship": "is_a",
+      "target": "PRODUCT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "living sour crouts",
+      "episode_number": 33
+    },
+    {
+      "source": "kimchi",
+      "relationship": "is_a",
+      "target": "PRODUCT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "There's kimchi, all kinds of different things",
+      "episode_number": 33
+    },
+    {
+      "source": "modern industrial foods",
+      "relationship": "eliminates",
+      "target": "living component",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "modern industrial foods have eliminated that living component",
+      "episode_number": 33
+    },
+    {
+      "source": "health issues",
+      "relationship": "related_to",
+      "target": "living cultured food",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "connection there between many of the health issues",
+      "episode_number": 33
+    },
+    {
+      "source": "nutritionist",
+      "relationship": "agrees_with",
+      "target": "biologist",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "modern nutritionist and biologist would agree with that",
+      "episode_number": 33
+    },
+    {
+      "source": "soil stewardship",
+      "relationship": "is_part_of",
+      "target": "biodynamic tradition",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "work in the realm of soil stewardship and carbon sequestration through soil building, soil regeneration are working in the biodynamic tradition",
+      "episode_number": 33
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "spoke_about",
+      "target": "connection between guts and soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Rudolph Steiner, a great esotericist of about 100 years ago, spoke about the connection between our guts as being analogous to the soil in the landscape on the farm",
+      "episode_number": 33
+    },
+    {
+      "source": "guts",
+      "relationship": "is_analogous_to",
+      "target": "soil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "connection between our guts as being analogous to the soil in the landscape on the farm",
+      "episode_number": 33
+    },
+    {
+      "source": "microbiome",
+      "relationship": "is_important_for",
+      "target": "soil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "living microbiome is in the soil just as it is in our own bodies",
+      "episode_number": 33
+    },
+    {
+      "source": "Peruvian farmer",
+      "relationship": "met_at",
+      "target": "conference",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "I met this one, where was he from Peru? It was a Peruvian farmer. And I actually met him at the same conference",
+      "episode_number": 33
+    },
+    {
+      "source": "Peruvian farmer",
+      "relationship": "studied_at",
+      "target": "University of Northern Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "got his PhD in agriculture from Greeley at the University of Northern Colorado",
+      "episode_number": 33
+    },
+    {
+      "source": "University of Northern Colorado",
+      "relationship": "located_in",
+      "target": "Greeley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "from Greeley at the University of Northern Colorado",
+      "episode_number": 33
+    },
+    {
+      "source": "indigenous people",
+      "relationship": "advocates_for",
+      "target": "signatures of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the indigenous people tend to have that deep connection",
+      "episode_number": 33
+    },
+    {
+      "source": "chemistry",
+      "relationship": "contrasts_with",
+      "target": "alchemy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "chemistry is the science of effects and alchemy is the science of causes",
+      "episode_number": 33
+    },
+    {
+      "source": "science",
+      "relationship": "severs_connection_with",
+      "target": "earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "science went into that separation mode",
+      "episode_number": 33
+    },
+    {
+      "source": "microorganisms",
+      "relationship": "part_of",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the soil in our internal biosphere is one example of that interdependent",
+      "episode_number": 33
+    },
+    {
+      "source": "humanity",
+      "relationship": "moving_in",
+      "target": "particular trajectory",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "humanity as a whole is moving in a particular trajectory",
+      "episode_number": 33
+    },
+    {
+      "source": "Masonic institution",
+      "relationship": "advocates_for",
+      "target": "familyhood of humanity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the principles of the Masonic institution",
+      "episode_number": 33
+    },
+    {
+      "source": "George Washington",
+      "relationship": "founded",
+      "target": "United States",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "mentioning founding leaders of the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "Ben Franklin",
+      "relationship": "founded",
+      "target": "United States",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "mentioning founding leaders of the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Philadelphia",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussing the location of Independence Hall",
+      "episode_number": 33
+    },
+    {
+      "source": "Philadelphia",
+      "relationship": "contains",
+      "target": "Independence Hall",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the historical site related to the Constitution",
+      "episode_number": 33
+    },
+    {
+      "source": "Constitution",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "discussing the foundational document of the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "Declaration of Independence",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "discussing the foundational document of the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "United States",
+      "relationship": "has_issues_with",
+      "target": "slavery",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing historical issues in the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "United States",
+      "relationship": "has_issues_with",
+      "target": "genocide",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing historical issues in the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "United States",
+      "relationship": "has_issues_with",
+      "target": "indigenous peoples",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing historical issues in the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "United States",
+      "relationship": "has_issues_with",
+      "target": "women",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing historical issues in the United States",
+      "episode_number": 33
+    },
+    {
+      "source": "founding fathers",
+      "relationship": "advocates_for",
+      "target": "Masonic principles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Masonic principles that some of the founding fathers had",
+      "episode_number": 33
+    },
+    {
+      "source": "women",
+      "relationship": "work_at",
+      "target": "Congress",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "many of the women that have just come into the Congress",
+      "episode_number": 33
+    },
+    {
+      "source": "microbiome",
+      "relationship": "related_to",
+      "target": "neurobiochemistry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "talking about microbiome and neurobiochemistry",
+      "episode_number": 33
+    },
+    {
+      "source": "cube of space",
+      "relationship": "made_by",
+      "target": "Hebrew tradition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the cube of space relates to the Hebrew tradition",
+      "episode_number": 33
+    },
+    {
+      "source": "meditations on the cube of space",
+      "relationship": "made_by",
+      "target": "Kabbalistic tradition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "meditations on the cube of space relates to the Kabbalistic tradition",
+      "episode_number": 33
+    },
+    {
+      "source": "Big Bang Theory",
+      "relationship": "influences",
+      "target": "creative process",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of creativity and creation process",
+      "episode_number": 33
+    },
+    {
+      "source": "Kabbalah",
+      "relationship": "related_to",
+      "target": "creative process",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "intellectual aspects related to creativity",
+      "episode_number": 33
+    },
+    {
+      "source": "alchemy",
+      "relationship": "part_of",
+      "target": "symbol systems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "symbol systems employed in the books",
+      "episode_number": 33
+    },
+    {
+      "source": "geometry",
+      "relationship": "part_of",
+      "target": "symbol systems",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "symbol systems employed in the books",
+      "episode_number": 33
+    },
+    {
+      "source": "number",
+      "relationship": "part_of",
+      "target": "symbol systems",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "symbol systems employed in the books",
+      "episode_number": 33
+    },
+    {
+      "source": "Spagiarics",
+      "relationship": "employed_in",
+      "target": "plant alchemy",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "plant alchemy discussed in the laboratory work",
+      "episode_number": 33
+    },
+    {
+      "source": "Taro",
+      "relationship": "used_in",
+      "target": "creative process",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "symbol systems used in the creative process",
+      "episode_number": 33
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "hosts",
+      "target": "three-day summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "May 17 to 19",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "speaking_with",
+      "target": "audience",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast series",
+      "episode_number": 33
+    },
+    {
+      "source": "Christianity",
+      "relationship": "related_to",
+      "target": "leadership",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "inner presence",
+      "episode_number": 33
+    },
+    {
+      "source": "Hindu tradition",
+      "relationship": "related_to",
+      "target": "leadership",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "inner presence",
+      "episode_number": 33
+    },
+    {
+      "source": "Buddhism",
+      "relationship": "related_to",
+      "target": "leadership",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "inner presence",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "works_at",
+      "target": "Why on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "speaking with Kevin Townley",
+      "episode_number": 33
+    },
+    {
+      "source": "International Society of Sustainability Professionals",
+      "relationship": "sponsors",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "sponsors",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Association of Waldorf Schools of North America",
+      "relationship": "sponsors",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "authored",
+      "target": "Cuba Space",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mention of Kevin's books",
+      "episode_number": 33
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "authored",
+      "target": "Meditations on the Cuba Space",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mention of Kevin's books",
+      "episode_number": 33
+    },
+    {
+      "source": "microbiome",
+      "relationship": "related_to",
+      "target": "alchemy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing topics related to microbiome and alchemy",
+      "episode_number": 33
+    },
+    {
+      "source": "health companies",
+      "relationship": "engaged_in",
+      "target": "understanding life mechanisms",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing advanced health companies' efforts",
+      "episode_number": 33
+    },
+    {
+      "source": "natural forces",
+      "relationship": "collaborating_with",
+      "target": "carbon",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing collaboration to sequester carbon",
+      "episode_number": 33
+    },
+    {
+      "source": "Bhutan",
+      "relationship": "has",
+      "target": "gross national happiness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing Bhutan's unique measurement",
+      "episode_number": 33
+    },
+    {
+      "source": "human kingdom",
+      "relationship": "part_of",
+      "target": "animal kingdom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing life in nature",
+      "episode_number": 33
+    },
+    {
+      "source": "vegetable kingdom",
+      "relationship": "part_of",
+      "target": "earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing life in nature",
+      "episode_number": 33
+    },
+    {
+      "source": "Yahweh",
+      "relationship": "is_analogous_to",
+      "target": "Brahma",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "comparison of deities in different traditions",
+      "episode_number": 33
+    },
+    {
+      "source": "Yahweh",
+      "relationship": "mentioned_in",
+      "target": "Genesis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Yahweh's introduction in the creation story",
+      "episode_number": 33
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "created_by",
+      "target": "Yahweh",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "creation narrative in Genesis",
+      "episode_number": 33
+    },
+    {
+      "source": "stewardship summit",
+      "relationship": "part_of",
+      "target": "Y-Earth community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "event organized by the community",
+      "episode_number": 33
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast series hosting",
+      "episode_number": 33
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "sponsorship for the podcast",
+      "episode_number": 33
+    },
+    {
+      "source": "Yahweh",
+      "relationship": "analogous_to",
+      "target": "Brahma",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "comparison in religious context",
+      "episode_number": 33
+    },
+    {
+      "source": "Sephiri Esra",
+      "relationship": "speaks_to",
+      "target": "Genesis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "text discussing creation narrative",
+      "episode_number": 33
+    }
+  ]
+}

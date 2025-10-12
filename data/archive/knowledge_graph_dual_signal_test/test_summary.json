@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-10-09T23:07:51.405286",
+  "test_episodes": [
+    10,
+    39,
+    50,
+    75,
+    100,
+    112,
+    120,
+    122,
+    150,
+    165
+  ],
+  "total_time_seconds": 2149.5187458992004,
+  "episodes_successful": 10,
+  "total_relationships": 711,
+  "conflicts_detected": 6,
+  "type_violations_found": 8,
+  "conflict_rate": 0.008438818565400843,
+  "results": [
+    {
+      "episode": 10,
+      "status": "success",
+      "relationships": 45,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 39,
+      "status": "success",
+      "relationships": 73,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 50,
+      "status": "success",
+      "relationships": 71,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 75,
+      "status": "success",
+      "relationships": 65,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 100,
+      "status": "success",
+      "relationships": 97,
+      "conflicts": 3,
+      "type_violations": 2
+    },
+    {
+      "episode": 112,
+      "status": "success",
+      "relationships": 85,
+      "conflicts": 1,
+      "type_violations": 2
+    },
+    {
+      "episode": 120,
+      "status": "success",
+      "relationships": 60,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 122,
+      "status": "success",
+      "relationships": 81,
+      "conflicts": 2,
+      "type_violations": 2
+    },
+    {
+      "episode": 150,
+      "status": "success",
+      "relationships": 73,
+      "conflicts": 0,
+      "type_violations": 2
+    },
+    {
+      "episode": 165,
+      "status": "success",
+      "relationships": 61,
+      "conflicts": 0,
+      "type_violations": 0
+    }
+  ]
+}

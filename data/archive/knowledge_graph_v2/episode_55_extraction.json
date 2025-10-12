@@ -1,0 +1,1935 @@
+{
+  "episode": 55,
+  "timestamp": "2025-10-09T11:25:34.076679",
+  "entity_count": 135,
+  "relationship_count": 98,
+  "entities": [
+    {
+      "name": "Trameless Crow",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Dallas, Texas-based businessman, philanthropist, entrepreneur, and innovative leader in business development and operations."
+    },
+    {
+      "name": "Joni Clar",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of the premier ambassadors at the Y on Earth community and on the global advisory board."
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Y on Earth Communities Stewardship and Sustainability Podcast."
+    },
+    {
+      "name": "Earth Day Texas",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the world's largest Earth Day celebration."
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the world's largest environmental expo, conference, and film festival."
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Dallas, Texas-based."
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Dallas, Texas-based."
+    },
+    {
+      "name": "Sierra Club",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "exhibitors at Earth X."
+    },
+    {
+      "name": "University of Georgia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "exhibitors at Earth X."
+    },
+    {
+      "name": "solar paneling",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "little companies that sell solar paneling to the public."
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Lord knows we all need to do that all over America."
+    },
+    {
+      "name": "ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "69 virtual reality films all about ecology."
+    },
+    {
+      "name": "Austin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "amazing environmental super conference"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.98,
+      "context": "Austin Texas has an amazing environmental super conference"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "it will be in Dallas and they're moving their headquarters to Dallas"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "I wish this would happen in New York"
+    },
+    {
+      "name": "Washington, DC",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "if it happened in Washington, DC"
+    },
+    {
+      "name": "San Antonio",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "I lived in San Antonio for a little while"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "United Nations 17 sustainable directive goals"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mainstay of the deer population in America"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a whole lot of the land conservation happening"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing land conservation and wolf reintroduction"
+    },
+    {
+      "name": "Laura Sidel",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as part of the Captain Planet Foundation"
+    },
+    {
+      "name": "Captain Planet Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization involved in land conservation"
+    },
+    {
+      "name": "Turner family",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as part of the conservation efforts"
+    },
+    {
+      "name": "Sidel family",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as part of the conservation efforts"
+    },
+    {
+      "name": "Rocky Mountain Wolf Project",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization advocating for wolf reintroduction"
+    },
+    {
+      "name": "Western Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location for wolf reintroduction program"
+    },
+    {
+      "name": "Earth Day",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "50th anniversary mentioned in relation to mobilization efforts"
+    },
+    {
+      "name": "Earth Day",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "April 22, 2020 is the 50th anniversary of Earth Day."
+    },
+    {
+      "name": "Ralph Nader",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mr. Ralph Nader has not said he's coming."
+    },
+    {
+      "name": "Gaylord Nelson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Senator Gaylord Nelson was the guy, the governor of Minnesota."
+    },
+    {
+      "name": "Minnesota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the governor of Minnesota, I mean Wisconsin."
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the governor of Minnesota, I mean Wisconsin."
+    },
+    {
+      "name": "Richard Nixon",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at that time, it was Richard Nixon."
+    },
+    {
+      "name": "EPA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "He formed the EPA and quickly passed various acts."
+    },
+    {
+      "name": "Clean Air Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Clean Air Act, the Clean Water Act."
+    },
+    {
+      "name": "Clean Water Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Clean Air Act, the Clean Water Act."
+    },
+    {
+      "name": "Richard Nixon",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "So at that time, it was Richard Nixon."
+    },
+    {
+      "name": "EPA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "He formed the EPA and quickly passed various acts."
+    },
+    {
+      "name": "Clean Air Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Clean Air Act, the Clean Water Act"
+    },
+    {
+      "name": "Clean Water Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Clean Air Act, the Clean Water Act"
+    },
+    {
+      "name": "April 22, 1970",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "as a consequence of April 22, 1970"
+    },
+    {
+      "name": "Santa Barbara",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "to those folks in Santa Barbara, California"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "to those folks in Santa Barbara, California"
+    },
+    {
+      "name": "Matt Gray",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we recently had on the podcast Matt Gray, the Chief Sustainability Officer"
+    },
+    {
+      "name": "City of Cleveland",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Chief Sustainability Officer of the City of Cleveland"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "real conversation right here in Dallas, Texas"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "real conversation right here in Dallas, Texas"
+    },
+    {
+      "name": "Highland Paracyser School",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I was in Highland Paracyser School right here in Dallas, Texas"
+    },
+    {
+      "name": "Minnesota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I was in Minnesota."
+    },
+    {
+      "name": "South Dakota",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "My family had moved from South Dakota to Minnesota."
+    },
+    {
+      "name": "Earth Day",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "celebrate Earth Day on April 22"
+    },
+    {
+      "name": "Yogi Bear",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "just like Yogi Bear"
+    },
+    {
+      "name": "suburban sprawl",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part of what your organization works on."
+    },
+    {
+      "name": "Zach Bush",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Zach Bush and his farmer's footprint"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in New York"
+    },
+    {
+      "name": "Zach Bush",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Dr. Zach Bush is an amazing doctor"
+    },
+    {
+      "name": "Monsanto",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "By Monsanto, that people using their lawns and farm fields"
+    },
+    {
+      "name": "glycophate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "research on glycophate"
+    },
+    {
+      "name": "Round up",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Round up being the pesticide"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "You grew up in Texas"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "talked about at length in the book Why On Earth"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book title"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in food forest discussion"
+    },
+    {
+      "name": "Cleveland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in food forest discussion"
+    },
+    {
+      "name": "Ohio",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where food forest is located"
+    },
+    {
+      "name": "Akron",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city near food forest location"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state mentioned in food forest discussion"
+    },
+    {
+      "name": "food forests",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "type of ecological strategy discussed"
+    },
+    {
+      "name": "refugees",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "group mentioned in community efforts"
+    },
+    {
+      "name": "immigrants",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "group mentioned in community efforts"
+    },
+    {
+      "name": "individuals",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "group mentioned in food forest creation"
+    },
+    {
+      "name": "nonprofits",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization type involved in food forest creation"
+    },
+    {
+      "name": "Soil Stewardship Handbook",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about a book on soil stewardship."
+    },
+    {
+      "name": "Joe",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "A friend of the speaker."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "The speaker."
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "An organization mentioned in relation to solutions for environmental issues."
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "City where John Corona is mentioned."
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a larger environment."
+    },
+    {
+      "name": "Tramble Crow Company",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Company mentioned in relation to residential development."
+    },
+    {
+      "name": "community gardens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Strategies for improving community interaction."
+    },
+    {
+      "name": "food forest strategies",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Strategies mentioned for landscaping."
+    },
+    {
+      "name": "community gardens",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "put in community gardens so that the individuals have access to growing a little bit of their own fresh vegetables"
+    },
+    {
+      "name": "fresh vegetables",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "growing a little bit of their own fresh vegetables"
+    },
+    {
+      "name": "crime",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "reduces often crime in some cases where you've got more community interaction"
+    },
+    {
+      "name": "food forest strategies",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "do the food forest strategies so that your landscape's not just for the visual aesthetic"
+    },
+    {
+      "name": "medicinal herbs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "growing foods and in some cases medicinal herbs"
+    },
+    {
+      "name": "composting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we're also going to really encourage people to do composting"
+    },
+    {
+      "name": "climate crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "exacerbating the climate crisis"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a nation that destroys its soil destroys itself"
+    },
+    {
+      "name": "Franklin Roosevelt",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "there's a quote from President Franklin Roosevelt"
+    },
+    {
+      "name": "soil installations",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mobilizing around these soil installations"
+    },
+    {
+      "name": "gardening",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "gardening, food forests"
+    },
+    {
+      "name": "Jerome Duddow",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "you met Jerome Duddow"
+    },
+    {
+      "name": "Primal Culture Guru",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "He's at Primal Culture Guru there"
+    },
+    {
+      "name": "Greenhouses",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "wrote the book on the Greenhouses"
+    },
+    {
+      "name": "spider plant",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the very best is the spider plant is the household name"
+    },
+    {
+      "name": "spider plant",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a plant good for filtering air"
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization mentioned in relation to selling plants"
+    },
+    {
+      "name": "Bruce",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "individual associated with Earth X"
+    },
+    {
+      "name": "Dr. Osfond",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to carbon concentration discussion"
+    },
+    {
+      "name": "Industrial Revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical reference for carbon concentration"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to climate crisis and soil building"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to carbon sequestration"
+    },
+    {
+      "name": "atmosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to carbon concentration"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about plants and agriculture"
+    },
+    {
+      "name": "bamboo",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about fast growing plants"
+    },
+    {
+      "name": "hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about fast growing plants"
+    },
+    {
+      "name": "Industrial Revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "historical reference"
+    },
+    {
+      "name": "comfrey",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about plants for soil health"
+    },
+    {
+      "name": "Hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "part of our heritage"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "home here in Dallas, Texas"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "home here in Dallas, Texas"
+    },
+    {
+      "name": "Tramble Crow",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "wonderful conversation with Tramble Crow"
+    },
+    {
+      "name": "Joni Clark",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "joined by Joni Clark, one of our board members"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Why on Earth communities stewardship and sustainability podcast series"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organizations include Patagonia"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include Earth Coast productions"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include Weylay Waters"
+    },
+    {
+      "name": "The Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include The Lidge Family Foundation"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include International Society of Sustainability Professionals"
+    },
+    {
+      "name": "Beauty Counter",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include Beauty Counter"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include Purium"
+    },
+    {
+      "name": "Madera Outdoor",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organizations include Madera Outdoor"
+    },
+    {
+      "name": "Tucson Gym",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talking about the Tucson Gym and the Inno Show"
+    },
+    {
+      "name": "Earth Day",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the 50th anniversary of Earth Day"
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the 10th anniversary of Earth X, 2020 in April"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Ornery Texas Rancher"
+    },
+    {
+      "name": "April 24, 25, 26, 2020",
+      "type": "DATE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the Wolf Introduction program exhibiting at the event"
+    },
+    {
+      "name": "Tramble",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Closing thoughts or remarks for Tramble"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the podcast"
+    },
+    {
+      "name": "Why On Earth Community Stewardship and Sustainability Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast series"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Website for support packages"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Discount code for sponsors"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Trameless Crow",
+      "relationship": "works_at",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Dallas, Texas-based businessman, philanthropist, entrepreneur, and innovative leader in business development and operations.",
+      "episode_number": 55
+    },
+    {
+      "source": "Joni Clar",
+      "relationship": "works_at",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "one of the premier ambassadors at the Y on Earth community and on the global advisory board.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day Texas",
+      "relationship": "transformed_into",
+      "target": "Earth X",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the world's largest Earth Day celebration, which in 2011 transformed into Earth X.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "located_in",
+      "target": "Dallas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the world's largest environmental expo, conference, and film festival, which takes place every April and Dallas, Texas.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "contains",
+      "target": "Sierra Club",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "exhibitors at Earth X.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "contains",
+      "target": "University of Georgia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "exhibitors at Earth X.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "advocates_for",
+      "target": "ecology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "69 virtual reality films all about ecology.",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Dallas, Texas-based.",
+      "episode_number": 55
+    },
+    {
+      "source": "Austin",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Austin Texas has an amazing environmental super conference",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "it will be in Dallas and they're moving their headquarters to Dallas",
+      "episode_number": 55
+    },
+    {
+      "source": "New York",
+      "relationship": "part_of",
+      "target": "USA",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "I wish this would happen in New York",
+      "episode_number": 55
+    },
+    {
+      "source": "Washington, DC",
+      "relationship": "part_of",
+      "target": "USA",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "if it happened in Washington, DC",
+      "episode_number": 55
+    },
+    {
+      "source": "San Antonio",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "I lived in San Antonio for a little while",
+      "episode_number": 55
+    },
+    {
+      "source": "United Nations",
+      "relationship": "advocates_for",
+      "target": "sustainable directive goals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "United Nations 17 sustainable directive goals",
+      "episode_number": 55
+    },
+    {
+      "source": "America",
+      "relationship": "contains",
+      "target": "deer population",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mainstay of the deer population in America",
+      "episode_number": 55
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "land conservation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "a whole lot of the land conservation happening",
+      "episode_number": 55
+    },
+    {
+      "source": "Laura Sidel",
+      "relationship": "works_at",
+      "target": "Captain Planet Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing conservation efforts",
+      "episode_number": 55
+    },
+    {
+      "source": "Turner family",
+      "relationship": "advocates_for",
+      "target": "Rocky Mountain Wolf Project",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "mentioned in relation to conservation efforts",
+      "episode_number": 55
+    },
+    {
+      "source": "Sidel family",
+      "relationship": "advocates_for",
+      "target": "Rocky Mountain Wolf Project",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "mentioned in relation to conservation efforts",
+      "episode_number": 55
+    },
+    {
+      "source": "Rocky Mountain Wolf Project",
+      "relationship": "located_in",
+      "target": "Western Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing wolf reintroduction",
+      "episode_number": 55
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Western Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "geographic context of conservation efforts",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day",
+      "relationship": "is_celebrated_on",
+      "target": "April 22, 2020",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the significance of the date",
+      "episode_number": 55
+    },
+    {
+      "source": "Gaylord Nelson",
+      "relationship": "works_at",
+      "target": "Wisconsin",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Senator Gaylord Nelson was the guy, the governor of Minnesota, I mean Wisconsin.",
+      "episode_number": 55
+    },
+    {
+      "source": "Richard Nixon",
+      "relationship": "founded",
+      "target": "EPA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day",
+      "relationship": "celebrated_on",
+      "target": "April 22, 2020",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "April 22, 2020 is the 50th anniversary of Earth Day.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day",
+      "relationship": "galvanizer_of",
+      "target": "environmental movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "That was the galvanizer of environmental movement.",
+      "episode_number": 55
+    },
+    {
+      "source": "Richard Nixon",
+      "relationship": "passed",
+      "target": "Clean Air Act",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "Richard Nixon",
+      "relationship": "passed",
+      "target": "Clean Water Act",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "Richard Nixon",
+      "relationship": "works_at",
+      "target": "EPA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "EPA",
+      "relationship": "passed",
+      "target": "Clean Air Act",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "EPA",
+      "relationship": "passed",
+      "target": "Clean Water Act",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "He formed the EPA and quickly passed various acts.",
+      "episode_number": 55
+    },
+    {
+      "source": "Santa Barbara",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "to those folks in Santa Barbara, California",
+      "episode_number": 55
+    },
+    {
+      "source": "Matt Gray",
+      "relationship": "works_at",
+      "target": "City of Cleveland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the Chief Sustainability Officer of the City of Cleveland",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "real conversation right here in Dallas, Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Highland Paracyser School",
+      "relationship": "located_in",
+      "target": "Dallas",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "I was in Highland Paracyser School right here in Dallas, Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Minnesota",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "I was in Minnesota.",
+      "episode_number": 55
+    },
+    {
+      "source": "South Dakota",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "My family had moved from South Dakota to Minnesota.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day",
+      "relationship": "advocates_for",
+      "target": "suburban sprawl",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "part of what your organization works on.",
+      "episode_number": 55
+    },
+    {
+      "source": "Zach Bush",
+      "relationship": "works_on",
+      "target": "farmer's footprint",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Zach Bush and his farmer's footprint",
+      "episode_number": 55
+    },
+    {
+      "source": "Zach Bush",
+      "relationship": "advocates_for",
+      "target": "glycophate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Zach Bush and his farmer's footprint and creating the research on glycophate",
+      "episode_number": 55
+    },
+    {
+      "source": "Monsanto",
+      "relationship": "made_by",
+      "target": "Round up",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Round up being the pesticide. By Monsanto",
+      "episode_number": 55
+    },
+    {
+      "source": "New York",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "in New York",
+      "episode_number": 55
+    },
+    {
+      "source": "Zach Bush",
+      "relationship": "works_at",
+      "target": "farmer's footprint",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Zach Bush and his farmer's footprint",
+      "episode_number": 55
+    },
+    {
+      "source": "Texas",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "You grew up in Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "location of food forest",
+      "episode_number": 55
+    },
+    {
+      "source": "Cleveland",
+      "relationship": "located_in",
+      "target": "Ohio",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of community efforts",
+      "episode_number": 55
+    },
+    {
+      "source": "Akron",
+      "relationship": "located_in",
+      "target": "Ohio",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of food forest",
+      "episode_number": 55
+    },
+    {
+      "source": "individuals",
+      "relationship": "created",
+      "target": "nonprofits",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "involved in food forest creation",
+      "episode_number": 55
+    },
+    {
+      "source": "refugees",
+      "relationship": "advocates_for",
+      "target": "food forests",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "community efforts in Cleveland",
+      "episode_number": 55
+    },
+    {
+      "source": "immigrants",
+      "relationship": "advocates_for",
+      "target": "food forests",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "community efforts in Cleveland",
+      "episode_number": 55
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "Soil Stewardship Handbook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussion about the handbook and its importance.",
+      "episode_number": 55
+    },
+    {
+      "source": "Joe",
+      "relationship": "receives",
+      "target": "Soil Stewardship Handbook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Joe called Aaron about the handbook after receiving it.",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "provides",
+      "target": "solutions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Earth X is mentioned as a source of solutions for environmental issues.",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Dallas is a city in Texas.",
+      "episode_number": 55
+    },
+    {
+      "source": "Tramble Crow Company",
+      "relationship": "manages",
+      "target": "residential properties",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Mentioned in relation to residential development.",
+      "episode_number": 55
+    },
+    {
+      "source": "community gardens",
+      "relationship": "improves",
+      "target": "community interaction",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Community gardens are mentioned as a way to improve community interaction.",
+      "episode_number": 55
+    },
+    {
+      "source": "food forest strategies",
+      "relationship": "enhances",
+      "target": "landscaping",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Food forest strategies are mentioned in relation to landscaping.",
+      "episode_number": 55
+    },
+    {
+      "source": "community gardens",
+      "relationship": "advocates_for",
+      "target": "fresh vegetables",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "put in community gardens so that the individuals have access to growing a little bit of their own fresh vegetables",
+      "episode_number": 55
+    },
+    {
+      "source": "community interaction",
+      "relationship": "reduces",
+      "target": "crime",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "reduces often crime in some cases where you've got more community interaction",
+      "episode_number": 55
+    },
+    {
+      "source": "food forest strategies",
+      "relationship": "involves",
+      "target": "medicinal herbs",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "do the food forest strategies so that your landscape's not just for the visual aesthetic",
+      "episode_number": 55
+    },
+    {
+      "source": "composting",
+      "relationship": "encourages",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we're also going to really encourage people to do composting",
+      "episode_number": 55
+    },
+    {
+      "source": "soil",
+      "relationship": "destroys",
+      "target": "climate crisis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "a nation that destroys its soil destroys itself",
+      "episode_number": 55
+    },
+    {
+      "source": "Franklin Roosevelt",
+      "relationship": "quoted_in",
+      "target": "soil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "there's a quote from President Franklin Roosevelt",
+      "episode_number": 55
+    },
+    {
+      "source": "soil installations",
+      "relationship": "mobilizes",
+      "target": "gardening",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mobilizing around these soil installations",
+      "episode_number": 55
+    },
+    {
+      "source": "Jerome Duddow",
+      "relationship": "works_at",
+      "target": "Primal Culture Guru",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "you met Jerome Duddow",
+      "episode_number": 55
+    },
+    {
+      "source": "Primal Culture Guru",
+      "relationship": "wrote",
+      "target": "Greenhouses",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "He's at Primal Culture Guru there",
+      "episode_number": 55
+    },
+    {
+      "source": "spider plant",
+      "relationship": "filters",
+      "target": "air",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the very best is the spider plant is the household name",
+      "episode_number": 55
+    },
+    {
+      "source": "Bruce",
+      "relationship": "works_at",
+      "target": "Earth X",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "individual associated with organization",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "advocates_for",
+      "target": "spider plant",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organization promoting plant for air quality",
+      "episode_number": 55
+    },
+    {
+      "source": "Dr. Osfond",
+      "relationship": "informed_about",
+      "target": "carbon concentration",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "person mentioned in carbon discussion",
+      "episode_number": 55
+    },
+    {
+      "source": "Industrial Revolution",
+      "relationship": "related_to",
+      "target": "carbon concentration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "historical event linked to current carbon levels",
+      "episode_number": 55
+    },
+    {
+      "source": "soil",
+      "relationship": "sequesters",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "concept of soil's role in carbon management",
+      "episode_number": 55
+    },
+    {
+      "source": "atmosphere",
+      "relationship": "contains",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "concept discussing carbon levels in the air",
+      "episode_number": 55
+    },
+    {
+      "source": "bamboo",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about plants and their benefits",
+      "episode_number": 55
+    },
+    {
+      "source": "hemp",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about plants and their benefits",
+      "episode_number": 55
+    },
+    {
+      "source": "Texas",
+      "relationship": "contains",
+      "target": "bamboo",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about plants in Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Texas",
+      "relationship": "contains",
+      "target": "hemp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about plants in Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Texas",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "geographic context",
+      "episode_number": 55
+    },
+    {
+      "source": "Industrial Revolution",
+      "relationship": "related_to",
+      "target": "carbon sequestration",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "historical context",
+      "episode_number": 55
+    },
+    {
+      "source": "comfrey",
+      "relationship": "advocates_for",
+      "target": "soil health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about plants and their benefits",
+      "episode_number": 55
+    },
+    {
+      "source": "Tramble Crow",
+      "relationship": "located_in",
+      "target": "Dallas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "home here in Dallas, Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "home here in Dallas, Texas",
+      "episode_number": 55
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Why on Earth communities stewardship and sustainability podcast series",
+      "episode_number": 55
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organizations include Patagonia",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Coast productions",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include Earth Coast productions",
+      "episode_number": 55
+    },
+    {
+      "source": "Weylay Waters",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include Weylay Waters",
+      "episode_number": 55
+    },
+    {
+      "source": "The Lidge Family Foundation",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include The Lidge Family Foundation",
+      "episode_number": 55
+    },
+    {
+      "source": "International Society of Sustainability Professionals",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include International Society of Sustainability Professionals",
+      "episode_number": 55
+    },
+    {
+      "source": "Beauty Counter",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include Beauty Counter",
+      "episode_number": 55
+    },
+    {
+      "source": "Purium",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include Purium",
+      "episode_number": 55
+    },
+    {
+      "source": "Madera Outdoor",
+      "relationship": "part_of",
+      "target": "Why on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organizations include Madera Outdoor",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth X",
+      "relationship": "located_in",
+      "target": "Earth Day",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "the 10th anniversary of Earth X, 2020 in April",
+      "episode_number": 55
+    },
+    {
+      "source": "Tucson Gym",
+      "relationship": "part_of",
+      "target": "Inno Show",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "talking about the Tucson Gym and the Inno Show",
+      "episode_number": 55
+    },
+    {
+      "source": "Texas",
+      "relationship": "contains",
+      "target": "Ornery Texas Rancher",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "the Ornery Texas Rancher",
+      "episode_number": 55
+    },
+    {
+      "source": "Earth Day",
+      "relationship": "celebrates",
+      "target": "Earth X",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the 50th anniversary of Earth Day",
+      "episode_number": 55
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community Stewardship and Sustainability Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast series",
+      "episode_number": 55
+    },
+    {
+      "source": "Tramble",
+      "relationship": "advocates_for",
+      "target": "YOnEarth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Closing thoughts or remarks",
+      "episode_number": 55
+    },
+    {
+      "source": "Why On Earth Community Stewardship and Sustainability Podcast",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Support packages",
+      "episode_number": 55
+    }
+  ]
+}

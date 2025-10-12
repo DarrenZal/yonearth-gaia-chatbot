@@ -1,0 +1,2353 @@
+{
+  "episode": 131,
+  "timestamp": "2025-10-09T10:40:57.979483",
+  "entity_count": 169,
+  "relationship_count": 116,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Douglas Gardner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "country where Douglas worked"
+    },
+    {
+      "name": "Eurasia",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "broader region related to Ukraine"
+    },
+    {
+      "name": "Crimea",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "region in Ukraine"
+    },
+    {
+      "name": "Chernobyl",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location in Ukraine"
+    },
+    {
+      "name": "Donbass",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "region in Ukraine"
+    },
+    {
+      "name": "Levyv",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "city in Ukraine"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "city in Colorado where Douglas currently resides"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "state in the USA where Boulder is located"
+    },
+    {
+      "name": "Wellesley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "town in Massachusetts where Douglas grew up"
+    },
+    {
+      "name": "Denison University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "university Douglas graduated from"
+    },
+    {
+      "name": "Peace Corps",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization Douglas joined for service"
+    },
+    {
+      "name": "Chase Manhattan Bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "bank where Douglas worked on Wall Street"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "organization Douglas worked for in Ukraine"
+    },
+    {
+      "name": "Occidental College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "college where Douglas worked as director"
+    },
+    {
+      "name": "Highland Institute for the Advancement of Humanity",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "institute where Douglas is acting director"
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country currently at war with Ukraine"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "knowledge of Ukraine, my experience there"
+    },
+    {
+      "name": "Adolf Hitler",
+      "type": "PERSON",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "seeing how Adolf Hitler had absorbed neighboring countries"
+    },
+    {
+      "name": "Czechoslovakia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "absorbed neighboring countries, Czechoslovakia in Austria in 1939"
+    },
+    {
+      "name": "Austria",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "absorbed neighboring countries, Czechoslovakia in Austria in 1939"
+    },
+    {
+      "name": "Poland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "full on attack of Poland and it started the war"
+    },
+    {
+      "name": "President Putin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Here we have President Putin who has invaded the country"
+    },
+    {
+      "name": "Crimea",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "absorbed or annexed Crimea"
+    },
+    {
+      "name": "Donbas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "went into the eastern area of Donbas in 2014"
+    },
+    {
+      "name": "February 2022",
+      "type": "DATE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "full on invasion of Ukraine in 2022"
+    },
+    {
+      "name": "Jews",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Hitler demonized the Jews"
+    },
+    {
+      "name": "Gays",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Hitler demonized the Gays"
+    },
+    {
+      "name": "Gypsies",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Hitler demonized the Gypsies"
+    },
+    {
+      "name": "Nazis",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Putin has demonized the supposed Nazis in Ukraine"
+    },
+    {
+      "name": "President of Ukraine",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the president of Ukraine is Jewish"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Frankly, Aaron, I agree with you."
+    },
+    {
+      "name": "Soviet Union",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the collapse of the society."
+    },
+    {
+      "name": "G8",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "from being a G8 member and negotiating with the other members of the G7."
+    },
+    {
+      "name": "G7",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "It's now the G7 because Russia is out."
+    },
+    {
+      "name": "Alexey Navalny",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "this extraordinary opposition leader is now jailed in Siberia."
+    },
+    {
+      "name": "Boris Nemsov",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Boris Nemsov, who was shot in front of the Kremlin in 2015, was also an opposition leader."
+    },
+    {
+      "name": "Kremlin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "who was shot in front of the Kremlin in 2015."
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking out on the war in Ukraine, which started in 2014."
+    },
+    {
+      "name": "Donbas",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "when the annexed Donbas."
+    },
+    {
+      "name": "Putin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "what I've seen is Putin has no shame in outing human rights activists."
+    },
+    {
+      "name": "oligarchs",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "stories in the past year of oligarchs falling mysteriously from a high floor window."
+    },
+    {
+      "name": "Adolf Hitler",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "to continue the parallel comparison with Adolf Hitler and Nazi Germany."
+    },
+    {
+      "name": "Nazi Germany",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "to continue the parallel comparison with Adolf Hitler and Nazi Germany."
+    },
+    {
+      "name": "Weimar Republic",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "as the Nazis were consolidating power in the Weimar Republic of Germany."
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Many Russians have left the country."
+    },
+    {
+      "name": "Vladimir Putin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about Putin's leadership and the war in Ukraine"
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "discussion about the Russian people's response to the war"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "discussion about the war and UN votes regarding Ukraine"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.97,
+      "type_confidence": 0.95,
+      "context": "discussion about the UN's role in the conflict"
+    },
+    {
+      "name": "China",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about China's position regarding Russia and Ukraine"
+    },
+    {
+      "name": "Taiwan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about China's concerns related to Taiwan"
+    },
+    {
+      "name": "South Korea",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about countries supporting Ukraine"
+    },
+    {
+      "name": "Japan",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about countries supporting Ukraine"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about countries supporting Ukraine"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Australia, that this is a united effort to push against a country that is not just Europe, but also China, and Australia."
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Australia, that this is a united effort to push against a country that is not just Europe, but also China, and Australia."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "What do you think about the way that all of this relates to the situation in Africa where so many nations in Europe, in the Americas, and in Asia are really interested in resources and in potentially developing the world."
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "They have voted in large part with Ukraine against Russia, but not entirely."
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "As you know, the BRICS, as they're in this grouping of five countries, Brazil, Russia, India, China, South Africa, take Russia out."
+    },
+    {
+      "name": "Brazil",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "As you know, the BRICS, as they're in this grouping of five countries, Brazil, Russia, India, China, South Africa."
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "As you know, the BRICS, as they're in this grouping of five countries, Brazil, Russia, India, China, South Africa."
+    },
+    {
+      "name": "South Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "As you know, the BRICS, as they're in this grouping of five countries, Brazil, Russia, India, China, South Africa."
+    },
+    {
+      "name": "Mali",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Wagner group that as a paramilitary force has in a country like Mali in West Africa."
+    },
+    {
+      "name": "Wagner group",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Now Russia has had a very strong diplomatic outreach to African countries, the Wagner group that as a paramilitary force has in a country like Mali in West Africa."
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "And a member state of the United Nations has been invaded."
+    },
+    {
+      "name": "World War II",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "It was set up at the end of World War II to stop this invasion of one country of another."
+    },
+    {
+      "name": "international order",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "that they will hopefully vote for the rules of the international order, the universal declaration on human rights, the UN charter."
+    },
+    {
+      "name": "Putin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "You've also seen, I think, that the Wagner group has been empowered by Putin to go to prisons."
+    },
+    {
+      "name": "Wagner group",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in Central African Republic"
+    },
+    {
+      "name": "Central African Republic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wagner group is in Central African Republic"
+    },
+    {
+      "name": "Putin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "empowered by Putin"
+    },
+    {
+      "name": "Evgeny Praglusion",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "led by Evgeny Praglusion"
+    },
+    {
+      "name": "Olga Gark",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "close friend of Vladimir Putin"
+    },
+    {
+      "name": "Vladimir Putin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "close friend of Vladimir Putin"
+    },
+    {
+      "name": "St. Petersburg",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grew up together in St. Petersburg"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "impact not just in the Ukraine war"
+    },
+    {
+      "name": "Highland Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "my organization, the Highland Institute"
+    },
+    {
+      "name": "Elena Zelenska",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first lady of Ukraine"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mental health in Ukraine"
+    },
+    {
+      "name": "Elena Zelenska",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "champion for soldiers and their families"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "impacted by the war"
+    },
+    {
+      "name": "Highland Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "supporting methodologies and techniques"
+    },
+    {
+      "name": "Center for Mind Body Medicine",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "scaling up operations in Ukraine"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "expertise on trauma techniques"
+    },
+    {
+      "name": "Dr. Gay Logan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working with Ukrainian graduate students"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Dr. Gay Logan"
+    },
+    {
+      "name": "World War II",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical context of trauma"
+    },
+    {
+      "name": "Tibet",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "where Dr. Logan worked"
+    },
+    {
+      "name": "Venetia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "addressing in Venetia"
+    },
+    {
+      "name": "World War II",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "happened in World War II"
+    },
+    {
+      "name": "Tibet",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "worked in Tibet"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work that we're doing through the Y-Earth community"
+    },
+    {
+      "name": "United States",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the United States helping to share expertise"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "growing roots in a place like Ukraine"
+    },
+    {
+      "name": "First Lady",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "under the leadership of the First Lady"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "support from the United Nations"
+    },
+    {
+      "name": "WHO",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "support from WHO"
+    },
+    {
+      "name": "Ministry of Education",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part of the policy of the Ministry of Education"
+    },
+    {
+      "name": "HIV-AIDS",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "on a different topic of HIV-AIDS"
+    },
+    {
+      "name": "Leonid Kuchma",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the daughter of President Leonid Kuchma"
+    },
+    {
+      "name": "Elena Zelenska",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first lady, Elena Zelenska"
+    },
+    {
+      "name": "Elena Zelenska",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "first lady getting behind mental health element"
+    },
+    {
+      "name": "Douglas Gardner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast title"
+    },
+    {
+      "name": "Highland Institutes",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "location of podcast recording"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of podcast recording"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of podcast recording"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "institution Douglas Gardner worked in"
+    },
+    {
+      "name": "David Beasley",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "former governor of South Carolina"
+    },
+    {
+      "name": "South Carolina",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of David Beasley"
+    },
+    {
+      "name": "United Nations World Food Program",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization run by David Beasley"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "institution like the United Nations"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when I went to Ukraine"
+    },
+    {
+      "name": "Hong Kong",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Hong Kong had a very successful anti-corruption program"
+    },
+    {
+      "name": "Mongolia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "brought the Hong Kong anti-corruption commissioner to Mongolia"
+    },
+    {
+      "name": "Bertrands Disbevel",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Hong Kong anti-corruption commissioner, Bertrands Disbevel"
+    },
+    {
+      "name": "Peace Corps",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I was a Peace Corps volunteer"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussing roles in Ukraine through the UN."
+    },
+    {
+      "name": "Chernobyl",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Example of a nuclear reactor explosion."
+    },
+    {
+      "name": "Belarus",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Countries affected by Chernobyl."
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Countries affected by Chernobyl."
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Discussing the nature and operations of the UN."
+    },
+    {
+      "name": "Cambodia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Example of a country reporting on human rights."
+    },
+    {
+      "name": "Jonathan Granoff",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a mutual friend and colleague."
+    },
+    {
+      "name": "Global Security Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization run by Jonathan Granoff."
+    },
+    {
+      "name": "Mikhail Gorbachev",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a Nobel Peace laureate."
+    },
+    {
+      "name": "Jonathan Granoff",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a mutual friend and colleague"
+    },
+    {
+      "name": "Global Security Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "runs the Global Security Institute"
+    },
+    {
+      "name": "nuclear non proliferation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "doing important work around nuclear non proliferation"
+    },
+    {
+      "name": "Mikhail Gorbachev",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "worked with a number of the Nobel Peace laureates including Mikhail Gorbachev"
+    },
+    {
+      "name": "Kyrgyzstan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of our board members being from Kyrgyzstan"
+    },
+    {
+      "name": "Artem Nikolakov",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Artem Nikolakov, who runs Earth Coast Productions"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "runs Earth Coast Productions"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "large country like the United States"
+    },
+    {
+      "name": "Ronald Reagan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Gorbachev told the story of how he developed trust with Ronald Reagan"
+    },
+    {
+      "name": "Kofi Anan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the late Kofi Anan, who was one of the greats of the Secretary General lineup"
+    },
+    {
+      "name": "Kofi Anan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the late Kofi Anan, who was one of the greats of the Secretary General lineup."
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "working in the United Nations."
+    },
+    {
+      "name": "global community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the global community has agreed to a major preservation and conservation effort."
+    },
+    {
+      "name": "law of the seas",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the law of the seas has been under negotiation seems forever."
+    },
+    {
+      "name": "plastics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "what's going on in the oceans with plastics."
+    },
+    {
+      "name": "coral reefs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "what's going on in the oceans with the loss of coral reefs."
+    },
+    {
+      "name": "deep sea habitat",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "30% of the deep sea habitat of the ocean is going to be set aside."
+    },
+    {
+      "name": "Yhonner.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "go to Yhonner.org."
+    },
+    {
+      "name": "George Soros",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "picked up a book by George Soros talking about the Carl Popper's open society."
+    },
+    {
+      "name": "Eastern Europe",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "good work in the world in that part of the world, Eastern Europe and Central Eurasia."
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "in the world around Ukraine and other parts of Eastern Europe."
+    },
+    {
+      "name": "George Soros",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a leader and philanthropist"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "region in the world around Ukraine"
+    },
+    {
+      "name": "Eastern Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "region in the world around Ukraine"
+    },
+    {
+      "name": "Open Society Foundations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization established by George Soros"
+    },
+    {
+      "name": "International Renaissance Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization focused on democratic governance in Ukraine"
+    },
+    {
+      "name": "UNDP",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "partnered with International Renaissance Foundation"
+    },
+    {
+      "name": "Mark Malik Brown",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "president of Open Society Foundations"
+    },
+    {
+      "name": "Kofi Anon",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "former Deputy Secretary General"
+    },
+    {
+      "name": "Alex Soros",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "son of George Soros"
+    },
+    {
+      "name": "Highland Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "think tank mentioned in the podcast"
+    },
+    {
+      "name": "Omaha Beach",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "title of Douglas's article"
+    },
+    {
+      "name": "Tabouca",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "title of Douglas's article"
+    },
+    {
+      "name": "Center for Mindbody Medicine",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in relation to activities in Ukraine"
+    },
+    {
+      "name": "Soros",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Soros people on the ground"
+    },
+    {
+      "name": "International Renaissance Foundation",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "working in present day with International Renaissance Foundation"
+    },
+    {
+      "name": "Dr. Gay Logan",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization of Dr. Gay Logan"
+    },
+    {
+      "name": "Ukraine",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "engaged with Ukraine"
+    },
+    {
+      "name": "Zelensky",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "President Zelensky's speech to Congress"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsored by several corporate and organization sponsors"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "YOnEarth.org backslashsupport page"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Douglas Gardner",
+      "relationship": "worked_at",
+      "target": "United Nations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Douglas worked for the United Nations in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "located_in",
+      "target": "Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "Douglas was the UN resident coordinator for Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "grew_up_in",
+      "target": "Wellesley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Douglas grew up in Wellesley, Massachusetts",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "attended",
+      "target": "Denison University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Douglas graduated from Denison University",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "worked_at",
+      "target": "Peace Corps",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Douglas joined the Peace Corps for service",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "worked_at",
+      "target": "Chase Manhattan Bank",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Douglas worked at Chase Manhattan Bank on Wall Street",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "worked_at",
+      "target": "Occidental College",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Douglas was director at Occidental College",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "is_currently_director_of",
+      "target": "Highland Institute for the Advancement of Humanity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Douglas is acting director of the Highland Institute",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "at_war_with",
+      "target": "Russia",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ukraine is currently at war with Russia",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "advocates_for",
+      "target": "peace",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Douglas advocates for peace in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "absorbed",
+      "target": "Czechoslovakia",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "seeing how Adolf Hitler had absorbed neighboring countries",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "absorbed",
+      "target": "Austria",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "seeing how Adolf Hitler had absorbed neighboring countries",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "attacked",
+      "target": "Poland",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "full on attack of Poland and it started the war",
+      "episode_number": 131
+    },
+    {
+      "source": "President Putin",
+      "relationship": "invaded",
+      "target": "Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Here we have President Putin who has invaded the country",
+      "episode_number": 131
+    },
+    {
+      "source": "President Putin",
+      "relationship": "absorbed",
+      "target": "Crimea",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "absorbed or annexed Crimea",
+      "episode_number": 131
+    },
+    {
+      "source": "President Putin",
+      "relationship": "invaded",
+      "target": "Donbas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "went into the eastern area of Donbas in 2014",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "demonized",
+      "target": "Jews",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "The Hitler demonized the Jews",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "demonized",
+      "target": "Gays",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "The Hitler demonized the Gays",
+      "episode_number": 131
+    },
+    {
+      "source": "Adolf Hitler",
+      "relationship": "demonized",
+      "target": "Gypsies",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "The Hitler demonized the Gypsies",
+      "episode_number": 131
+    },
+    {
+      "source": "President Putin",
+      "relationship": "demonized",
+      "target": "Nazis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Putin has demonized the supposed Nazis in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "President of Ukraine",
+      "relationship": "is",
+      "target": "Jewish",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the president of Ukraine is Jewish",
+      "episode_number": 131
+    },
+    {
+      "source": "Aaron",
+      "relationship": "agrees_with",
+      "target": "Unnamed Speaker",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Frankly, Aaron, I agree with you.",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "ordered",
+      "target": "invasion of Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "it was he who ordered the invasion of Ukraine, unprovoked, breaking international law.",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "uses",
+      "target": "murder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I think he uses murder, and this is pure murder, as a tool of terror.",
+      "episode_number": 131
+    },
+    {
+      "source": "Boris Nemsov",
+      "relationship": "was",
+      "target": "opposition leader",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boris Nemsov, who was shot in front of the Kremlin in 2015, was also an opposition leader.",
+      "episode_number": 131
+    },
+    {
+      "source": "Alexey Navalny",
+      "relationship": "is",
+      "target": "jailed in Siberia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "this extraordinary opposition leader is now jailed in Siberia.",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "has",
+      "target": "nuclear weapons",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the fact that he also has nuclear weapons is a big concern.",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "does away with",
+      "target": "checks and balances",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Putin has successfully done away with the checks and balances that might otherwise ordinarily keep somebody like him in check.",
+      "episode_number": 131
+    },
+    {
+      "source": "Russians",
+      "relationship": "left",
+      "target": "country",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Many Russians have left the country.",
+      "episode_number": 131
+    },
+    {
+      "source": "Vladimir Putin",
+      "relationship": "leads",
+      "target": "Russia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussion about Putin's leadership",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.97,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about the UN's role in the conflict",
+      "episode_number": 131
+    },
+    {
+      "source": "China",
+      "relationship": "concerned_about",
+      "target": "Taiwan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about China's geopolitical concerns",
+      "episode_number": 131
+    },
+    {
+      "source": "China",
+      "relationship": "interested_in",
+      "target": "Russia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "discussion about China's position regarding Russia and Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Russia",
+      "relationship": "invaded",
+      "target": "Ukraine",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "discussion about the war",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "voted_on",
+      "target": "Russia",
+      "source_confidence": 0.97,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussion about UN votes condemning Russia",
+      "episode_number": 131
+    },
+    {
+      "source": "South Korea",
+      "relationship": "supports",
+      "target": "Ukraine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "discussion about countries supporting Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Japan",
+      "relationship": "supports",
+      "target": "Ukraine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "discussion about countries supporting Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Australia",
+      "relationship": "supports",
+      "target": "Ukraine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "discussion about countries supporting Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Wagner group",
+      "relationship": "located_in",
+      "target": "Mali",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the Wagner group that as a paramilitary force has in a country like Mali in West Africa.",
+      "episode_number": 131
+    },
+    {
+      "source": "Africa",
+      "relationship": "part_of",
+      "target": "global south",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "this is a war that is impacting the entirety of the global south.",
+      "episode_number": 131
+    },
+    {
+      "source": "Russia",
+      "relationship": "advocates_for",
+      "target": "Wagner group",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Now Russia has had a very strong diplomatic outreach to African countries, the Wagner group that as a paramilitary force has in a country like Mali in West Africa.",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "established_after",
+      "target": "World War II",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "It was set up at the end of World War II to stop this invasion of one country of another.",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "voted_with",
+      "target": "Russia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "They have voted in large part with Ukraine against Russia, but not entirely.",
+      "episode_number": 131
+    },
+    {
+      "source": "Wagner group",
+      "relationship": "supports",
+      "target": "Mali",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "You have Wagner guards protecting the president and the palace guards are Wagner soldiers.",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "empowers",
+      "target": "Wagner group",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "You've also seen, I think, that the Wagner group has been empowered by Putin to go to prisons.",
+      "episode_number": 131
+    },
+    {
+      "source": "Wagner group",
+      "relationship": "located_in",
+      "target": "Central African Republic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Wagner group is in Central African Republic",
+      "episode_number": 131
+    },
+    {
+      "source": "Putin",
+      "relationship": "empowers",
+      "target": "Wagner group",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wagner group has been empowered by Putin",
+      "episode_number": 131
+    },
+    {
+      "source": "Evgeny Praglusion",
+      "relationship": "leads",
+      "target": "Wagner group",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "led by Evgeny Praglusion",
+      "episode_number": 131
+    },
+    {
+      "source": "Olga Gark",
+      "relationship": "close_friend_of",
+      "target": "Vladimir Putin",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "close friend of Vladimir Putin",
+      "episode_number": 131
+    },
+    {
+      "source": "Vladimir Putin",
+      "relationship": "part_of",
+      "target": "St. Petersburg",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "grew up together in St. Petersburg",
+      "episode_number": 131
+    },
+    {
+      "source": "Highland Institute",
+      "relationship": "advocates_for",
+      "target": "mental health in Ukraine",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "my organization, the Highland Institute hopes to make a difference",
+      "episode_number": 131
+    },
+    {
+      "source": "Elena Zelenska",
+      "relationship": "champion_for",
+      "target": "soldiers and their families",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "first lady of Ukraine, Elena Zelenska, has been the champion",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "experiences",
+      "target": "collective trauma",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "every Ukrainian has been impacted by this war",
+      "episode_number": 131
+    },
+    {
+      "source": "Elena Zelenska",
+      "relationship": "advocates_for",
+      "target": "soldiers and their families",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "champion for soldiers and their families",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "contains",
+      "target": "collective trauma",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "impact of war on the population",
+      "episode_number": 131
+    },
+    {
+      "source": "Highland Institute",
+      "relationship": "supports",
+      "target": "methodologies and techniques",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "supporting trauma techniques in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Center for Mind Body Medicine",
+      "relationship": "located_in",
+      "target": "Ukraine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "scaling up operations",
+      "episode_number": 131
+    },
+    {
+      "source": "United States",
+      "relationship": "has_expertise_on",
+      "target": "trauma techniques",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "expertise on trauma techniques",
+      "episode_number": 131
+    },
+    {
+      "source": "Dr. Gay Logan",
+      "relationship": "works_with",
+      "target": "Ukrainian graduate students",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "training potential psychotherapists",
+      "episode_number": 131
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "location of Dr. Gay Logan",
+      "episode_number": 131
+    },
+    {
+      "source": "Dr. Gay Logan",
+      "relationship": "worked_in",
+      "target": "Tibet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "experience in trauma",
+      "episode_number": 131
+    },
+    {
+      "source": "World War II",
+      "relationship": "influenced",
+      "target": "trauma techniques",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical context of trauma",
+      "episode_number": 131
+    },
+    {
+      "source": "Y-Earth community",
+      "relationship": "addresses",
+      "target": "social and environmental challenges",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "addressing a number of different social and environmental challenges",
+      "episode_number": 131
+    },
+    {
+      "source": "First Lady",
+      "relationship": "leads",
+      "target": "national plan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "under the leadership of the First Lady",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "supports",
+      "target": "national plan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "support from the United Nations",
+      "episode_number": 131
+    },
+    {
+      "source": "WHO",
+      "relationship": "supports",
+      "target": "national plan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "support from WHO",
+      "episode_number": 131
+    },
+    {
+      "source": "Ministry of Education",
+      "relationship": "filters_down_to",
+      "target": "schools",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "part of the policy of the Ministry of Education",
+      "episode_number": 131
+    },
+    {
+      "source": "HIV-AIDS",
+      "relationship": "exploded_in",
+      "target": "Ukraine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "HIV-AIDS, which was exploding in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Leonid Kuchma",
+      "relationship": "has_daughter",
+      "target": "daughter",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the daughter of President Leonid Kuchma",
+      "episode_number": 131
+    },
+    {
+      "source": "Elena Zelenska",
+      "relationship": "advocates_for",
+      "target": "mental health element",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "first lady, Elena Zelenska, was getting behind this mental health element",
+      "episode_number": 131
+    },
+    {
+      "source": "Elena Zelenska",
+      "relationship": "advocates_for",
+      "target": "mental health element",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "first lady getting behind mental health element",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "works_at",
+      "target": "United Nations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "former UN resident coordinator to Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "works_at",
+      "target": "United Nations World Food Program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "former governor of South Carolina",
+      "episode_number": 131
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of podcast recording",
+      "episode_number": 131
+    },
+    {
+      "source": "Highland Institutes",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "location of podcast recording",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas Gardner",
+      "relationship": "advocates_for",
+      "target": "human rights issues",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about American culture and global institutions",
+      "episode_number": 131
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "supports",
+      "target": "monthly giving program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast discussion about community support",
+      "episode_number": 131
+    },
+    {
+      "source": "Douglas",
+      "relationship": "works_at",
+      "target": "United Nations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "having spent so much of your career within an institution like the United Nations",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "located_in",
+      "target": "Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "when I went to Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "advocates_for",
+      "target": "sustainable development goals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the sustainable development goals",
+      "episode_number": 131
+    },
+    {
+      "source": "Bertrands Disbevel",
+      "relationship": "works_at",
+      "target": "Hong Kong",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Hong Kong anti-corruption commissioner, Bertrands Disbevel",
+      "episode_number": 131
+    },
+    {
+      "source": "Peace Corps",
+      "relationship": "teaches",
+      "target": "cultural awareness",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "Peace Corps teaches you to realize that you are a guest in your visiting country",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "collaborates_with",
+      "target": "Ukrainian organizations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "work with the Ukrainian government and Ukrainian organizations",
+      "episode_number": 131
+    },
+    {
+      "source": "United Nations",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Headquarters of the UN are in New York.",
+      "episode_number": 131
+    },
+    {
+      "source": "Chernobyl",
+      "relationship": "part_of",
+      "target": "Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Chernobyl is located in Ukraine.",
+      "episode_number": 131
+    },
+    {
+      "source": "Chernobyl",
+      "relationship": "contains",
+      "target": "radioactive cesium and strontium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Chernobyl explosion released radioactive materials.",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "shares_experience_with",
+      "target": "Belarus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Ukraine, Belarus, and Russia share experiences post-Chernobyl.",
+      "episode_number": 131
+    },
+    {
+      "source": "Ukraine",
+      "relationship": "shares_experience_with",
+      "target": "Russia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Ukraine, Belarus, and Russia share experiences post-Chernobyl.",
+      "episode_number": 131
+    },
+    {
+      "source": "Jonathan Granoff",
+      "relationship": "works_at",
+      "target": "Global Security Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Jonathan Granoff runs the Global Security Institute.",
+      "episode_number": 131
+    },
+    {
+      "source": "Mikhail Gorbachev",
+      "relationship": "worked_with",
+      "target": "Jonathan Granoff",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mikhail Gorbachev has worked with Jonathan Granoff.",
+      "episode_number": 131
+    },
+    {
+      "source": "Jonathan Granoff",
+      "relationship": "works_at",
+      "target": "Global Security Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "runs the Global Security Institute",
+      "episode_number": 131
+    },
+    {
+      "source": "Jonathan Granoff",
+      "relationship": "advocates_for",
+      "target": "nuclear non proliferation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "doing important work around nuclear non proliferation",
+      "episode_number": 131
+    },
+    {
+      "source": "Mikhail Gorbachev",
+      "relationship": "collaborated_with",
+      "target": "Jonathan Granoff",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "worked with a number of the Nobel Peace laureates including Mikhail Gorbachev",
+      "episode_number": 131
+    },
+    {
+      "source": "Artem Nikolakov",
+      "relationship": "works_at",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "who runs Earth Coast Productions",
+      "episode_number": 131
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "made_by",
+      "target": "Jonathan Granoff",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "helps in a huge way to make our podcast series possible",
+      "episode_number": 131
+    },
+    {
+      "source": "Kofi Anan",
+      "relationship": "worked_with",
+      "target": "United Nations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "a great Secretary General",
+      "episode_number": 131
+    },
+    {
+      "source": "Kofi Anan",
+      "relationship": "interacted_with",
+      "target": "Ronald Reagan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Gorbachev told the story of how he developed trust with Ronald Reagan",
+      "episode_number": 131
+    },
+    {
+      "source": "Kofi Anan",
+      "relationship": "interacted_with",
+      "target": "speaker of the parliament",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "sat at a dinner table with Kofi Anan and the speaker of the parliament",
+      "episode_number": 131
+    },
+    {
+      "source": "Kofi Anan",
+      "relationship": "worked_at",
+      "target": "United Nations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "the late Kofi Anan, who was one of the greats of the Secretary General lineup.",
+      "episode_number": 131
+    },
+    {
+      "source": "global community",
+      "relationship": "agreed_to",
+      "target": "preservation and conservation effort",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the global community has agreed to a major preservation and conservation effort.",
+      "episode_number": 131
+    },
+    {
+      "source": "law of the seas",
+      "relationship": "under_negotiation",
+      "target": "United Nations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.99,
+      "context": "the law of the seas has been under negotiation seems forever under the auspices of the United Nations.",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "advocates_for",
+      "target": "open society",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "picked up a book by George Soros talking about the Carl Popper's open society.",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "worked_in",
+      "target": "Eastern Europe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "he has done a lot of really good work in the world in that part of the world, Eastern Europe and Central Eurasia.",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "worked_in",
+      "target": "Ukraine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "particularly in that region in the world around Ukraine and other parts of Eastern Europe.",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "founded",
+      "target": "Open Society Foundations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "established this open society foundations",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "advocates_for",
+      "target": "democratic governance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "focused on democratic governance in Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "International Renaissance Foundation",
+      "relationship": "partnered_with",
+      "target": "UNDP",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "partnered with them in lots of areas",
+      "episode_number": 131
+    },
+    {
+      "source": "Mark Malik Brown",
+      "relationship": "works_at",
+      "target": "Open Society Foundations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "president of Open Society Foundations",
+      "episode_number": 131
+    },
+    {
+      "source": "George Soros",
+      "relationship": "invests_in",
+      "target": "freedom and democracy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "invest in that part of the world in freedom democracy",
+      "episode_number": 131
+    },
+    {
+      "source": "Alex Soros",
+      "relationship": "takes_over",
+      "target": "mantle of George Soros",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "picking up the mantle progressively that is dad carried",
+      "episode_number": 131
+    },
+    {
+      "source": "Highland Institute",
+      "relationship": "provides_information_on",
+      "target": "Ukraine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "think tank that can add value to the issue of Ukraine",
+      "episode_number": 131
+    },
+    {
+      "source": "Center for Mindbody Medicine",
+      "relationship": "active_in",
+      "target": "Ukraine",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "activities in Ukraine link",
+      "episode_number": 131
+    },
+    {
+      "source": "Dr. Gay Logan",
+      "relationship": "works_at",
+      "target": "International Renaissance Foundation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "organization of Dr. Gay Logan",
+      "episode_number": 131
+    },
+    {
+      "source": "Soros",
+      "relationship": "located_in",
+      "target": "Ukraine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.98,
+      "context": "Soros people on the ground",
+      "episode_number": 131
+    },
+    {
+      "source": "Zelensky",
+      "relationship": "advocates_for",
+      "target": "Ukraine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "President Zelensky's speech to Congress",
+      "episode_number": 131
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsored by several corporate and organization sponsors",
+      "episode_number": 131
+    }
+  ]
+}

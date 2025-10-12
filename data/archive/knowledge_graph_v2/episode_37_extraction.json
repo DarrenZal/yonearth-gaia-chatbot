@@ -1,0 +1,928 @@
+{
+  "episode": 37,
+  "timestamp": "2025-10-09T11:16:17.978605",
+  "entity_count": 64,
+  "relationship_count": 47,
+  "entities": [
+    {
+      "name": "Dr. Nikola Siso",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Aspen Talks Health",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Harvard University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Dr. Rudy Tanzi",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Hippocrates Health Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "prevent Alzheimer's"
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "importance of love"
+    },
+    {
+      "name": "health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "related to health"
+    },
+    {
+      "name": "nutrition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "related to nutrition"
+    },
+    {
+      "name": "environmental toxins",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "related to environmental toxins"
+    },
+    {
+      "name": "self-love",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "cultivate that love"
+    },
+    {
+      "name": "meditation practice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "doing a meditation practice"
+    },
+    {
+      "name": "mirror",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "look in the mirror"
+    },
+    {
+      "name": "kindness",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "practice kindness"
+    },
+    {
+      "name": "compassion",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "practice compassion"
+    },
+    {
+      "name": "mother",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "my mother is so good at reminding me"
+    },
+    {
+      "name": "mother",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reminds me of my, my mother is so good at sometimes reminding me."
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "genetically modified organisms, pesticides, glyphosate."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "here in the United States, like it or not, we're basically the unwitting lab rats."
+    },
+    {
+      "name": "cancer",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "By the cancer rate, the diabetes, the obesity."
+    },
+    {
+      "name": "diabetes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "By the cancer rate, the diabetes, the obesity."
+    },
+    {
+      "name": "obesity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "By the cancer rate, the diabetes, the obesity."
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I highly advocate buying organic."
+    },
+    {
+      "name": "local",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Local locally sourced, if you can buy from your farmer only, that's the best."
+    },
+    {
+      "name": "farmer",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "if you can buy from your farmer only, that's the best."
+    },
+    {
+      "name": "fruits and vegetables",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "picking the fruits and vegetables right off the tree."
+    },
+    {
+      "name": "fruits and veggies",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussing the importance of fresh produce."
+    },
+    {
+      "name": "local organic fresh ripe raw fruits and veggies",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Advocating for local produce."
+    },
+    {
+      "name": "plant-based diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Promoting dietary choices."
+    },
+    {
+      "name": "livestock production system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Critique of current agricultural practices."
+    },
+    {
+      "name": "Kevin Townley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a recent guest."
+    },
+    {
+      "name": "Star Wars",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Cultural reference."
+    },
+    {
+      "name": "Scandinavia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Referenced as a filming location."
+    },
+    {
+      "name": "Northern California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Referenced as a filming location."
+    },
+    {
+      "name": "Scandinavia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "snow planet"
+    },
+    {
+      "name": "Northern California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Endor Ewa planet"
+    },
+    {
+      "name": "local farmers",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "freshness of local fruits and vegetables"
+    },
+    {
+      "name": "Environmental Working Group",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "water contaminants"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "water quality"
+    },
+    {
+      "name": "Dr. Nicholas Ciso",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast guest"
+    },
+    {
+      "name": "Association of Walder Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor"
+    },
+    {
+      "name": "Dr. Nicholas Ciso",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "talking with Dr. Nicholas Ciso"
+    },
+    {
+      "name": "Y on Earth communities stewardship and sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "this is the Y on Earth communities stewardship and sustainability podcast series"
+    },
+    {
+      "name": "Association of Walder Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include the Association of Walder Schools of North America"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include Purium"
+    },
+    {
+      "name": "Equal Exchange",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include Equal Exchange"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include the International Society of Sustainability Professionals"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include Patagonia"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include Waylay Waters"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors include Earth Coast Productions"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "hosting outside Boulder, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "hosting outside Boulder, Colorado"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "studied sustainability and environmental management at Harvard"
+    },
+    {
+      "name": "Amazon basin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "especially in the Amazon basin"
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "South America"
+    },
+    {
+      "name": "Nikola",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "stat learned at Harvard"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series sponsorship"
+    },
+    {
+      "name": "vinegar",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "cleaning products"
+    },
+    {
+      "name": "lemon oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "cleaning products"
+    },
+    {
+      "name": "aluminum",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "deodorant ingredients"
+    },
+    {
+      "name": "processed foods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "dietary advice"
+    },
+    {
+      "name": "clean green products",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "cleaning products"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Dr. Nikola Siso",
+      "relationship": "works_at",
+      "target": "Aspen Talks Health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Nikola Siso",
+      "relationship": "advocates_for",
+      "target": "health and healing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Nikola Siso",
+      "relationship": "founded",
+      "target": "Aspen Talks Health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Rudy Tanzi",
+      "relationship": "works_at",
+      "target": "Harvard Medical School",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Harvard Medical School",
+      "relationship": "part_of",
+      "target": "Harvard University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Hippocrates Health Institute",
+      "relationship": "part_of",
+      "target": "health education",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Alzheimer's",
+      "relationship": "related_to",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 37
+    },
+    {
+      "source": "Alzheimer's",
+      "relationship": "prevented_by",
+      "target": "love",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "prevent Alzheimer's",
+      "episode_number": 37
+    },
+    {
+      "source": "self-love",
+      "relationship": "advocates_for",
+      "target": "love",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cultivate that love",
+      "episode_number": 37
+    },
+    {
+      "source": "meditation practice",
+      "relationship": "helps_with",
+      "target": "self-love",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "doing a meditation practice",
+      "episode_number": 37
+    },
+    {
+      "source": "mirror",
+      "relationship": "used_for",
+      "target": "self-love",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "look in the mirror",
+      "episode_number": 37
+    },
+    {
+      "source": "kindness",
+      "relationship": "related_to",
+      "target": "compassion",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "practice kindness",
+      "episode_number": 37
+    },
+    {
+      "source": "mother",
+      "relationship": "reminds",
+      "target": "self-love",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "my mother is so good at reminding me",
+      "episode_number": 37
+    },
+    {
+      "source": "mother",
+      "relationship": "advocates_for",
+      "target": "love",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "my mother reminds me often that if somebody is coming at us with, you know, kind of cold, prickly feelings or whatever.",
+      "episode_number": 37
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "part_of",
+      "target": "genetically modified organisms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the reason why companies genetically modify crops is so that they can widespread spray, pesticides and herbicides, especially to kill off the weed, but not the crop.",
+      "episode_number": 37
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "cancer",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "here in the United States, like it or not, we're basically the unwitting lab rats.",
+      "episode_number": 37
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "diabetes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "here in the United States, like it or not, we're basically the unwitting lab rats.",
+      "episode_number": 37
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "obesity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "here in the United States, like it or not, we're basically the unwitting lab rats.",
+      "episode_number": 37
+    },
+    {
+      "source": "organic",
+      "relationship": "advocates_for",
+      "target": "local",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I highly advocate buying organic.",
+      "episode_number": 37
+    },
+    {
+      "source": "farmer",
+      "relationship": "works_at",
+      "target": "fruits and vegetables",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "if you can buy from your farmer only, that's the best.",
+      "episode_number": 37
+    },
+    {
+      "source": "Kevin Townley",
+      "relationship": "advocates_for",
+      "target": "life force",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussing spiritual background and concepts.",
+      "episode_number": 37
+    },
+    {
+      "source": "fruits and veggies",
+      "relationship": "part_of",
+      "target": "local organic fresh ripe raw fruits and veggies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Emphasizing the importance of fresh produce.",
+      "episode_number": 37
+    },
+    {
+      "source": "livestock production system",
+      "relationship": "contains",
+      "target": "cows and pigs and chickens",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "Critique of agricultural practices.",
+      "episode_number": 37
+    },
+    {
+      "source": "Star Wars",
+      "relationship": "contains",
+      "target": "real places",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussing filming locations.",
+      "episode_number": 37
+    },
+    {
+      "source": "Scandinavia",
+      "relationship": "part_of",
+      "target": "Star Wars",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Filming location.",
+      "episode_number": 37
+    },
+    {
+      "source": "Northern California",
+      "relationship": "part_of",
+      "target": "Star Wars",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Filming location.",
+      "episode_number": 37
+    },
+    {
+      "source": "Environmental Working Group",
+      "relationship": "advocates_for",
+      "target": "water quality",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "water contaminants",
+      "episode_number": 37
+    },
+    {
+      "source": "local farmers",
+      "relationship": "provides",
+      "target": "local fruits and vegetables",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "freshness of local fruits and vegetables",
+      "episode_number": 37
+    },
+    {
+      "source": "Aspen",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "water quality",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Nicholas Ciso",
+      "relationship": "guest_on",
+      "target": "Y on Earth communities stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast guest",
+      "episode_number": 37
+    },
+    {
+      "source": "Association of Walder Schools of North America",
+      "relationship": "sponsors",
+      "target": "Y on Earth communities stewardship and sustainability podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast sponsors",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Nicholas Ciso",
+      "relationship": "works_at",
+      "target": "Y on Earth communities stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "talking with Dr. Nicholas Ciso",
+      "episode_number": 37
+    },
+    {
+      "source": "Association of Walder Schools of North America",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include the Association of Walder Schools of North America",
+      "episode_number": 37
+    },
+    {
+      "source": "Purium",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include Purium",
+      "episode_number": 37
+    },
+    {
+      "source": "Equal Exchange",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include Equal Exchange",
+      "episode_number": 37
+    },
+    {
+      "source": "International Society of Sustainability Professionals",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include the International Society of Sustainability Professionals",
+      "episode_number": 37
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include Patagonia",
+      "episode_number": 37
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include Waylay Waters",
+      "episode_number": 37
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors include Earth Coast Productions",
+      "episode_number": 37
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "hosting outside Boulder, Colorado",
+      "episode_number": 37
+    },
+    {
+      "source": "Dr. Nicholas Ciso",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "talking about sustainability",
+      "episode_number": 37
+    },
+    {
+      "source": "Harvard",
+      "relationship": "part_of",
+      "target": "education",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "studied sustainability and environmental management at Harvard",
+      "episode_number": 37
+    },
+    {
+      "source": "Amazon basin",
+      "relationship": "part_of",
+      "target": "South America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "especially in the Amazon basin",
+      "episode_number": 37
+    },
+    {
+      "source": "Nikola",
+      "relationship": "advocates_for",
+      "target": "clean green products",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about beauty and cleaning products",
+      "episode_number": 37
+    },
+    {
+      "source": "Nikola",
+      "relationship": "advocates_for",
+      "target": "processed foods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about diet",
+      "episode_number": 37
+    },
+    {
+      "source": "YOnEarth",
+      "relationship": "sponsored_by",
+      "target": "several corporate and organization sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast sponsorship",
+      "episode_number": 37
+    },
+    {
+      "source": "Harvard",
+      "relationship": "provides_information_on",
+      "target": "average woman lathers herself in 170 chemicals a day",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "stat learned at Harvard",
+      "episode_number": 37
+    }
+  ]
+}

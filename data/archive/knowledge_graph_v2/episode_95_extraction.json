@@ -1,0 +1,2756 @@
+{
+  "episode": 95,
+  "timestamp": "2025-10-09T11:47:26.437787",
+  "entity_count": 188,
+  "relationship_count": 143,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y-Earth Community Podcast"
+    },
+    {
+      "name": "John Liu",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of ecosystem restoration camps"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization founded by John Liu"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location mentioned by John Liu"
+    },
+    {
+      "name": "Santa Cruz",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location near where John Liu is situated"
+    },
+    {
+      "name": "University of the Trees",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "place pioneered by Christopher Hills"
+    },
+    {
+      "name": "Christopher Hills",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "pioneer of University of the Trees"
+    },
+    {
+      "name": "Alan Watts",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure associated with University of the Trees"
+    },
+    {
+      "name": "Timothy Leary",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure associated with University of the Trees"
+    },
+    {
+      "name": "Terrence McKenna",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure associated with University of the Trees"
+    },
+    {
+      "name": "R.A.I.S.R.G.",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization John Liu worked for"
+    },
+    {
+      "name": "B.S.S.R.",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization John Liu worked for"
+    },
+    {
+      "name": "ZDF",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization John Liu worked for"
+    },
+    {
+      "name": "BBC World",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization John Liu worked for"
+    },
+    {
+      "name": "National Geographic Channel",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization John Liu worked for"
+    },
+    {
+      "name": "Common Land Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization where John Liu is ecosystem ambassador"
+    },
+    {
+      "name": "Judith Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author of Rainier Chronicles"
+    },
+    {
+      "name": "Rainier Chronicles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "book by Judith Schwartz"
+    },
+    {
+      "name": "Lus Plato",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location in China related to ecosystem restoration"
+    },
+    {
+      "name": "Yellow River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "river in China related to ecosystem restoration"
+    },
+    {
+      "name": "River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "River in China"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "River in China"
+    },
+    {
+      "name": "Chinese civilization",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "cradle of Chinese civilization"
+    },
+    {
+      "name": "ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "study ecology"
+    },
+    {
+      "name": "climate changes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mitigate and adapt to climate changes"
+    },
+    {
+      "name": "food security",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ensure food security"
+    },
+    {
+      "name": "food insecurity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "reduce the possibility of food insecurity"
+    },
+    {
+      "name": "extreme weather events",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "extreme weather events"
+    },
+    {
+      "name": "climate impacts",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "climate impacts"
+    },
+    {
+      "name": "status quo",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "maintain the status quo"
+    },
+    {
+      "name": "transformational change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "transformational change"
+    },
+    {
+      "name": "indigenous and endemic trees and plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "propagate and plant out"
+    },
+    {
+      "name": "Judith Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "authored Judith Schwartz"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "link to Chelsea Green"
+    },
+    {
+      "name": "y-on-earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "y-on-earth.org partners page"
+    },
+    {
+      "name": "Lois Plateau",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work that you've documented on the Lois Plateau"
+    },
+    {
+      "name": "John",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "John, and I was hoping for our audience"
+    },
+    {
+      "name": "ecosystem restoration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about engaging people in restoration efforts"
+    },
+    {
+      "name": "Spain",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "first camp location"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "second camp location"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of one foundation"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to camps"
+    },
+    {
+      "name": "Cosmos Journal",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "publication where an essay was written"
+    },
+    {
+      "name": "Permaculture magazine",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "publication where an essay was written"
+    },
+    {
+      "name": "ecosystem restoration camps.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "resource for opportunities to engage and learn"
+    },
+    {
+      "name": "John",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "interviewee discussing camps movement"
+    },
+    {
+      "name": "Mauritania",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Mali",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Somalia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Libya",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Lebanon",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Turkey",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Greece",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "Southern California",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a location for camps"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as the audience location"
+    },
+    {
+      "name": "Yon Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "through the Yon Earth community are located throughout the world"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "most of our audience is in the United States"
+    },
+    {
+      "name": "Paul Stamets",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "wonderful things about Paul Stamets's work with fungi"
+    },
+    {
+      "name": "mycelial network",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I would call it more like a mycelial network"
+    },
+    {
+      "name": "restoration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working for decades in this concept of restoration"
+    },
+    {
+      "name": "Ecosystem Restoration Camps",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "ecosystem restoration camps movement"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "restoration of forests in California"
+    },
+    {
+      "name": "Morocco",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Morocco"
+    },
+    {
+      "name": "Somalia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Somalia"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Egypt"
+    },
+    {
+      "name": "Brazil",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Brazil"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Mexico"
+    },
+    {
+      "name": "Guatemala",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Guatemala"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from India"
+    },
+    {
+      "name": "Thailand",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Thailand"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Europe"
+    },
+    {
+      "name": "Morocco",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Morocco"
+    },
+    {
+      "name": "Somalia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Somalia"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Egypt"
+    },
+    {
+      "name": "Brazil",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Brazil"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Mexico"
+    },
+    {
+      "name": "Guatemala",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Guatemala"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from India"
+    },
+    {
+      "name": "Thailand",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "models coming from Thailand"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "models coming from Europe"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "models coming from California"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "living at Elk Run Farm in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "living in Colorado"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "friends Nick and Marissa"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "friends Nick and Marissa"
+    },
+    {
+      "name": "Dryland Agro Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nonprofit called Dryland Agro Ecology Research"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "developed by our global communities through the United Nations"
+    },
+    {
+      "name": "Arabic",
+      "type": "LANGUAGE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of languages"
+    },
+    {
+      "name": "Hindi",
+      "type": "LANGUAGE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of languages"
+    },
+    {
+      "name": "Spanish",
+      "type": "LANGUAGE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of languages"
+    },
+    {
+      "name": "French",
+      "type": "LANGUAGE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of languages"
+    },
+    {
+      "name": "North Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of regions"
+    },
+    {
+      "name": "Middle East",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of regions"
+    },
+    {
+      "name": "Somalia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of regions"
+    },
+    {
+      "name": "Sinai Peninsula",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of regions"
+    },
+    {
+      "name": "Fertile Crescent",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical reference"
+    },
+    {
+      "name": "Western culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "cultural reference"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of organizations"
+    },
+    {
+      "name": "weather makers",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mention of organizations"
+    },
+    {
+      "name": "Cosmos journal",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of publication"
+    },
+    {
+      "name": "Guardian",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of publication"
+    },
+    {
+      "name": "Mount Sinai",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "geographical reference"
+    },
+    {
+      "name": "Mount Catherine",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "geographical reference"
+    },
+    {
+      "name": "African continent",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "African continent"
+    },
+    {
+      "name": "Indian Ocean",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "moisture and airflow from the south coming out of the Indian Ocean"
+    },
+    {
+      "name": "Mount Sinai",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "moisture and airflow was from the south coming out of the Indian Ocean and flowing over Mount Sinai"
+    },
+    {
+      "name": "Mount Catherine",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "now also called Mount Catherine"
+    },
+    {
+      "name": "Spain",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "found a professor in Spain"
+    },
+    {
+      "name": "professor Mayan",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "found a professor, professor Mayan in Spain"
+    },
+    {
+      "name": "Judas",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.7,
+      "context": "big influence on Judas understanding"
+    },
+    {
+      "name": "CO2",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "more effective at holding heat into the atmosphere than CO2"
+    },
+    {
+      "name": "evapotranspiration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "important measurement for functional ecosystems"
+    },
+    {
+      "name": "marine sediments",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "removing marine sediments which are the eroded soils"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the Y on Earth community podcast"
+    },
+    {
+      "name": "John Liu",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "founder of ecosystem restoration camps"
+    },
+    {
+      "name": "Ecosystem Restoration Camps",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization founded by John Liu"
+    },
+    {
+      "name": "Y on Earth community podcast",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast hosted by Aaron William Perry"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Vera Earbles",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Zeal Optics",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Common Land Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned by John Liu"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform where John Liu has a profile"
+    },
+    {
+      "name": "Twitter",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform where John Liu has a profile"
+    },
+    {
+      "name": "Instagram",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform where John Liu has a profile"
+    },
+    {
+      "name": "LinkedIn",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform where John Liu has a profile"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of the biodynamic community mentioned"
+    },
+    {
+      "name": "Guatemala",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location where people are working on ecosystem restoration"
+    },
+    {
+      "name": "second",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "community that's 43 years old in Egypt"
+    },
+    {
+      "name": "Ibrahim Abulayish",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "created by ibrahim Abulayish"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "community that's 43 years old in Egypt"
+    },
+    {
+      "name": "Guatemala",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "there's in Guatemala"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "here in California"
+    },
+    {
+      "name": "Wienerth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "work that we're doing here through the Wienerth community"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "executive director of Kiss the Ground"
+    },
+    {
+      "name": "Los Plateau",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "time lapse of what occurred in the Los Plateau"
+    },
+    {
+      "name": "China Watershed Rehabilitation Project",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "later the China Watershed Rehabilitation Project"
+    },
+    {
+      "name": "Los Plateau",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Los Plateau is 640,000 square kilometers."
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "China Watershed Rehabilitation Project"
+    },
+    {
+      "name": "Chinese government",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "implemented by the Chinese government together with the local communities"
+    },
+    {
+      "name": "Chinese Academy of Sciences",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "government through the Chinese Academy of Sciences"
+    },
+    {
+      "name": "Institute of Soil and Water Conservation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Institute of soil and water conservation"
+    },
+    {
+      "name": "Yellow River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the yellow river was called the yellow river because it was filled with less sediments."
+    },
+    {
+      "name": "local communities",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "local communities were engaged in destructive practices."
+    },
+    {
+      "name": "500 million dollars",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we have 500 million dollars for this."
+    },
+    {
+      "name": "satellite imagery",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "using satellite imagery where they could have a total mapping system."
+    },
+    {
+      "name": "John",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Speaker mentioning John as a contributor to the project."
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of discussing the rise from poverty."
+    },
+    {
+      "name": "Soviet Union",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of discussing historical events."
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in the context of agricultural productivity and methods."
+    },
+    {
+      "name": "Lus Plato",
+      "type": "FILM",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned as a film related to the project."
+    },
+    {
+      "name": "ecological systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in the context of natural regeneration."
+    },
+    {
+      "name": "future generations",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned in the context of sustainability and earth systems."
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discuss for a moment what we've been working on here in California"
+    },
+    {
+      "name": "Santa Cruz",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "near Santa Cruz"
+    },
+    {
+      "name": "Hollywood",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "down in near Hollywood"
+    },
+    {
+      "name": "University of the Trees",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "near Santa Cruz and at the University of the Trees"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "encourage folks to join ecosystem restoration camps"
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "food is like a medicine"
+    },
+    {
+      "name": "organic and biodynamic growers",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "connect them with the organic and biodynamic growers"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "fires that have taken place in California"
+    },
+    {
+      "name": "Los Angeles",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "work that you're doing in Los Angeles"
+    },
+    {
+      "name": "birdhouse",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the birdhouse which is the first urban camp within the ecosystem restoration camps movement"
+    },
+    {
+      "name": "ecosystem restoration camps movement",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "part of the ecosystem restoration camps movement"
+    },
+    {
+      "name": "gorilla masks movement",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "another group called gorilla masks movement"
+    },
+    {
+      "name": "COVID crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "during this COVID crisis"
+    },
+    {
+      "name": "personal protective equipment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "delivering personal protective equipment"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth community stewardship and sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "land-based healing",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "emergent concept discussed"
+    },
+    {
+      "name": "restaurants",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "businesses discussed in context of closure"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a solution"
+    },
+    {
+      "name": "Y on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "code for discounts"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast sponsorship"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "website for support packages"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "packages for supporters"
+    },
+    {
+      "name": "podcast series",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "series being sponsored"
+    },
+    {
+      "name": "discounts",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "benefits from sponsors"
+    },
+    {
+      "name": "corporate sponsors",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "why on earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "community related to the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "John Liu",
+      "relationship": "founded",
+      "target": "ecosystem restoration camps",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "John Liu is the founder of ecosystem restoration camps",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "John Liu mentions he is in California",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "located_in",
+      "target": "Santa Cruz",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "John Liu mentions he is near Santa Cruz",
+      "episode_number": 95
+    },
+    {
+      "source": "University of the Trees",
+      "relationship": "part_of",
+      "target": "California",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.99,
+      "context": "University of the Trees is in California",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "advocates_for",
+      "target": "ecosystem restoration camps",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "John Liu advocates for ecosystem restoration camps",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "worked_at",
+      "target": "R.A.I.S.R.G.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "John Liu worked for R.A.I.S.R.G.",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "worked_at",
+      "target": "B.S.S.R.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "John Liu worked for B.S.S.R.",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "worked_at",
+      "target": "ZDF",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "John Liu worked for ZDF",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "worked_at",
+      "target": "BBC World",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "John Liu worked for BBC World",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "worked_at",
+      "target": "National Geographic Channel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "John Liu worked for National Geographic Channel",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "part_of",
+      "target": "Common Land Foundation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "John Liu is ecosystem ambassador for Common Land Foundation",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "advocates_for",
+      "target": "ecosystem restoration",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "John Liu advocates for ecosystem restoration",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "studied_at",
+      "target": "University of the Trees",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "John Liu studied at University of the Trees",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "studied_at",
+      "target": "University of the West of England",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "John Liu was a visiting fellow at University of the West of England",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "studied_at",
+      "target": "George Mason University",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "John Liu was Associate Professor at George Mason University",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "studied_at",
+      "target": "Netherlands Institute of Ecology",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "John Liu was Visiting Fellow at Netherlands Institute of Ecology",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "advocates_for",
+      "target": "landscape restoration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Judith Schwartz refers to John Liu as the Indiana Jones of landscape restoration",
+      "episode_number": 95
+    },
+    {
+      "source": "Lus Plato",
+      "relationship": "located_in",
+      "target": "Yellow River",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Lus Plato is in the upper and middle reaches of the Yellow River",
+      "episode_number": 95
+    },
+    {
+      "source": "Lus Plato",
+      "relationship": "part_of",
+      "target": "China",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Lus Plato is part of China",
+      "episode_number": 95
+    },
+    {
+      "source": "River",
+      "relationship": "located_in",
+      "target": "China",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "River in China",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "ecology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "went into study ecology",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "climate changes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mitigate and adapt to climate changes",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "food security",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ensure food security",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "food insecurity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "reduce the possibility of food insecurity",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "extreme weather events",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "extreme weather events",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "climate impacts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "climate impacts",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "status quo",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "maintain the status quo",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "transformational change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "transformational change",
+      "episode_number": 95
+    },
+    {
+      "source": "Judith Schwartz",
+      "relationship": "talks_about",
+      "target": "John",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "authored Judith Schwartz talks about your work",
+      "episode_number": 95
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "located_in",
+      "target": "y-on-earth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "link to Chelsea Green",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "indigenous and endemic trees and plants",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "propagate and plant out",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "Lois Plateau",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "work that you've documented on the Lois Plateau",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration",
+      "relationship": "advocates_for",
+      "target": "people",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about engaging people in restoration efforts",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "located_in",
+      "target": "Spain",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "first camp location",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "second camp location",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "location of one foundation",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "contains",
+      "target": "Cosmos Journal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "publication where an essay was written",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "contains",
+      "target": "Permaculture magazine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "publication where an essay was written",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "ecosystem restoration camps.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing how to support the camps movement",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "resource for opportunities to engage and learn",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Mauritania",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Mali",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Somalia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Libya",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Lebanon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Turkey",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Greece",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps.org",
+      "relationship": "contains",
+      "target": "Southern California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "mentioned as a location for camps",
+      "episode_number": 95
+    },
+    {
+      "source": "Yon Earth community",
+      "relationship": "located_in",
+      "target": "world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "through the Yon Earth community are located throughout the world",
+      "episode_number": 95
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "camps",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "existing camps and the possibility of emerging camps here in the United States",
+      "episode_number": 95
+    },
+    {
+      "source": "Paul Stamets",
+      "relationship": "advocates_for",
+      "target": "mycelial network",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "wonderful things about Paul Stamets's work with fungi",
+      "episode_number": 95
+    },
+    {
+      "source": "mycelial network",
+      "relationship": "part_of",
+      "target": "ecosystem restoration camps",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I kind of think of it, I think of the ecosystem restoration camps in this way, that it's like a mycelial network",
+      "episode_number": 95
+    },
+    {
+      "source": "restoration",
+      "relationship": "benefits",
+      "target": "humanity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "it's not in my interest personally or I don't profit from restoration personally, but we all benefit",
+      "episode_number": 95
+    },
+    {
+      "source": "Ecosystem Restoration Camps",
+      "relationship": "supports",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "ecosystem restoration camps movement",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "forests",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "restoration of forests in California",
+      "episode_number": 95
+    },
+    {
+      "source": "Morocco",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Morocco",
+      "episode_number": 95
+    },
+    {
+      "source": "Somalia",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Somalia",
+      "episode_number": 95
+    },
+    {
+      "source": "Egypt",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Egypt",
+      "episode_number": 95
+    },
+    {
+      "source": "Brazil",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Brazil",
+      "episode_number": 95
+    },
+    {
+      "source": "Mexico",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Mexico",
+      "episode_number": 95
+    },
+    {
+      "source": "Guatemala",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Guatemala",
+      "episode_number": 95
+    },
+    {
+      "source": "India",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from India",
+      "episode_number": 95
+    },
+    {
+      "source": "Thailand",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Thailand",
+      "episode_number": 95
+    },
+    {
+      "source": "Europe",
+      "relationship": "part_of",
+      "target": "models",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "models coming from Europe",
+      "episode_number": 95
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "Dryland Agro Ecology Research",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friends Nick and Marissa are doing amazing work with their nonprofit called Dryland Agro Ecology Research",
+      "episode_number": 95
+    },
+    {
+      "source": "Marissa",
+      "relationship": "works_at",
+      "target": "Dryland Agro Ecology Research",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friends Nick and Marissa are doing amazing work with their nonprofit called Dryland Agro Ecology Research",
+      "episode_number": 95
+    },
+    {
+      "source": "Dryland Agro Ecology Research",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "nonprofit called Dryland Agro Ecology Research in Colorado",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "living at Elk Run Farm here in California",
+      "episode_number": 95
+    },
+    {
+      "source": "United Nations",
+      "relationship": "developed",
+      "target": "sustainable development goals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sustainable development goals of which there are 17 developed by our global communities through the United Nations",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "developing",
+      "target": "research project",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mention of organization and project",
+      "episode_number": 95
+    },
+    {
+      "source": "weather makers",
+      "relationship": "led",
+      "target": "strategy and restoration",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mention of organization and their role",
+      "episode_number": 95
+    },
+    {
+      "source": "Sinai Peninsula",
+      "relationship": "part_of",
+      "target": "North Africa",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "geographical relationship",
+      "episode_number": 95
+    },
+    {
+      "source": "Sinai Peninsula",
+      "relationship": "part_of",
+      "target": "Middle East",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "geographical relationship",
+      "episode_number": 95
+    },
+    {
+      "source": "Mount Sinai",
+      "relationship": "located_in",
+      "target": "North Africa",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "geographical relationship",
+      "episode_number": 95
+    },
+    {
+      "source": "Mount Sinai",
+      "relationship": "located_in",
+      "target": "Middle East",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "geographical relationship",
+      "episode_number": 95
+    },
+    {
+      "source": "Fertile Crescent",
+      "relationship": "part_of",
+      "target": "Western culture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "historical reference",
+      "episode_number": 95
+    },
+    {
+      "source": "Arabic",
+      "relationship": "advocates_for",
+      "target": "translation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "mention of languages",
+      "episode_number": 95
+    },
+    {
+      "source": "Hindi",
+      "relationship": "advocates_for",
+      "target": "translation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "mention of languages",
+      "episode_number": 95
+    },
+    {
+      "source": "Spanish",
+      "relationship": "advocates_for",
+      "target": "translation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "mention of languages",
+      "episode_number": 95
+    },
+    {
+      "source": "French",
+      "relationship": "advocates_for",
+      "target": "translation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "mention of languages",
+      "episode_number": 95
+    },
+    {
+      "source": "Indian Ocean",
+      "relationship": "flows_over",
+      "target": "Mount Sinai",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "moisture and airflow was from the south coming out of the Indian Ocean and flowing over Mount Sinai",
+      "episode_number": 95
+    },
+    {
+      "source": "Mount Sinai",
+      "relationship": "also_called",
+      "target": "Mount Catherine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "now also called Mount Catherine",
+      "episode_number": 95
+    },
+    {
+      "source": "professor Mayan",
+      "relationship": "works_in",
+      "target": "Spain",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "found a professor, professor Mayan in Spain",
+      "episode_number": 95
+    },
+    {
+      "source": "Judas",
+      "relationship": "influenced_by",
+      "target": "professor Mayan",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "big influence on Judas understanding",
+      "episode_number": 95
+    },
+    {
+      "source": "evapotranspiration",
+      "relationship": "related_to",
+      "target": "respiration",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mixture of respiration and evaporation",
+      "episode_number": 95
+    },
+    {
+      "source": "marine sediments",
+      "relationship": "eroded_from",
+      "target": "Mount Sinai",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "removing marine sediments which are the eroded soils that have eroded off the sign eye",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "founded",
+      "target": "Ecosystem Restoration Camps",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "John Liu is the founder of Ecosystem Restoration Camps",
+      "episode_number": 95
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Aaron William Perry is the host of the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Ecosystem Restoration Camps",
+      "relationship": "located_in",
+      "target": "Egypt",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Ecosystem Restoration Camps have a presence in Egypt",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "advocates_for",
+      "target": "biodynamics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "John Liu advocates for biodynamic techniques in ecosystem restoration",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "advocates_for",
+      "target": "permaculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "John Liu advocates for permaculture in ecosystem restoration",
+      "episode_number": 95
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Earth Coast Productions sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Lidge Family Foundation sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Alpine Botanicals sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Purium sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Earth Hero sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Vera Earbles",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Vera Earbles sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Growing Spaces",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Growing Spaces sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Soil Works sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Earthwater Press",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Earthwater Press sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "1% for the Planet",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "1% for the Planet sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Dr. Bronners sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "Zeal Optics",
+      "relationship": "sponsors",
+      "target": "Y on Earth community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Zeal Optics sponsors the podcast",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "associated_with",
+      "target": "Common Land Foundation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "John Liu mentioned Common Land Foundation",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "uses",
+      "target": "biodynamics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "John Liu uses biodynamics in his work",
+      "episode_number": 95
+    },
+    {
+      "source": "John Liu",
+      "relationship": "uses",
+      "target": "permaculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "John Liu uses permaculture in his work",
+      "episode_number": 95
+    },
+    {
+      "source": "Ecosystem Restoration Camps",
+      "relationship": "located_in",
+      "target": "Guatemala",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Ecosystem Restoration Camps have a presence in Guatemala",
+      "episode_number": 95
+    },
+    {
+      "source": "Ibrahim Abulayish",
+      "relationship": "founded",
+      "target": "second",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "created by ibrahim Abulayish",
+      "episode_number": 95
+    },
+    {
+      "source": "second",
+      "relationship": "located_in",
+      "target": "Egypt",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "community that's 43 years old in Egypt",
+      "episode_number": 95
+    },
+    {
+      "source": "Wienerth community",
+      "relationship": "works_with",
+      "target": "indigenous wisdom keepers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "work that we're doing here through the Wienerth community",
+      "episode_number": 95
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "produced",
+      "target": "Kiss the Ground documentary",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "executive director of Kiss the Ground",
+      "episode_number": 95
+    },
+    {
+      "source": "Los Plateau",
+      "relationship": "part_of",
+      "target": "China Watershed Rehabilitation Project",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "what occurred in the Los Plateau",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "here in California",
+      "episode_number": 95
+    },
+    {
+      "source": "Guatemala",
+      "relationship": "contains",
+      "target": "biodynamic and anthroposophic community",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "there's in Guatemala",
+      "episode_number": 95
+    },
+    {
+      "source": "Chinese government",
+      "relationship": "collaborates_with",
+      "target": "local communities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "implemented by the Chinese government together with the local communities",
+      "episode_number": 95
+    },
+    {
+      "source": "Los Plateau",
+      "relationship": "part_of",
+      "target": "China",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Los Plateau is 640,000 square kilometers.",
+      "episode_number": 95
+    },
+    {
+      "source": "Chinese Academy of Sciences",
+      "relationship": "analyzes",
+      "target": "Yellow River",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "government through the Chinese Academy of Sciences analyzing the situation",
+      "episode_number": 95
+    },
+    {
+      "source": "local communities",
+      "relationship": "engaged_in",
+      "target": "destructive practices",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "local communities were engaged in destructive practices.",
+      "episode_number": 95
+    },
+    {
+      "source": "500 million dollars",
+      "relationship": "allocated_for",
+      "target": "rehabilitation project",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "we have 500 million dollars for this.",
+      "episode_number": 95
+    },
+    {
+      "source": "satellite imagery",
+      "relationship": "used_for",
+      "target": "mapping system",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "using satellite imagery where they could have a total mapping system.",
+      "episode_number": 95
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "John discusses the importance of sustainable agriculture methods.",
+      "episode_number": 95
+    },
+    {
+      "source": "China",
+      "relationship": "part_of",
+      "target": "international terrorism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Mentioned in relation to historical events and issues.",
+      "episode_number": 95
+    },
+    {
+      "source": "Soviet Union",
+      "relationship": "part_of",
+      "target": "international terrorism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Mentioned in relation to historical events and issues.",
+      "episode_number": 95
+    },
+    {
+      "source": "agriculture",
+      "relationship": "increases",
+      "target": "ecological systems",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussed in the context of agricultural practices improving ecological systems.",
+      "episode_number": 95
+    },
+    {
+      "source": "Lus Plato",
+      "relationship": "is_about",
+      "target": "agriculture",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Film mentioned in relation to agricultural practices.",
+      "episode_number": 95
+    },
+    {
+      "source": "future generations",
+      "relationship": "benefit_from",
+      "target": "ecological systems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Discussed in the context of sustainability for future generations.",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Santa Cruz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "near Santa Cruz",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Hollywood",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "down in near Hollywood",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "advocates_for",
+      "target": "food",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "encourage folks to join ecosystem restoration camps",
+      "episode_number": 95
+    },
+    {
+      "source": "food",
+      "relationship": "made_by",
+      "target": "organic and biodynamic growers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "connect them with the organic and biodynamic growers",
+      "episode_number": 95
+    },
+    {
+      "source": "birdhouse",
+      "relationship": "part_of",
+      "target": "ecosystem restoration camps movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the birdhouse which is the first urban camp within the ecosystem restoration camps movement",
+      "episode_number": 95
+    },
+    {
+      "source": "gorilla masks movement",
+      "relationship": "advocates_for",
+      "target": "personal protective equipment",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "gorilla masks movement which started to bring masks to the first line first responders",
+      "episode_number": 95
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Los Angeles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "fires that have taken place in California",
+      "episode_number": 95
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast hosting context",
+      "episode_number": 95
+    },
+    {
+      "source": "restaurants",
+      "relationship": "part_of",
+      "target": "small businesses",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "context of closure and unemployment",
+      "episode_number": 95
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "part_of",
+      "target": "land-based healing",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "solution discussed",
+      "episode_number": 95
+    },
+    {
+      "source": "Y on earth",
+      "relationship": "sponsored_by",
+      "target": "several corporate and organization sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "context of podcast sponsorship",
+      "episode_number": 95
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "engaged_in",
+      "target": "land-based healing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "context of personal involvement",
+      "episode_number": 95
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsored_by",
+      "target": "corporate sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "podcast sponsorship",
+      "episode_number": 95
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "located_in",
+      "target": "yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "website for support packages",
+      "episode_number": 95
+    },
+    {
+      "source": "podcast series",
+      "relationship": "offers",
+      "target": "support packages",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "packages for supporters",
+      "episode_number": 95
+    },
+    {
+      "source": "corporate sponsors",
+      "relationship": "provides",
+      "target": "discounts",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "benefits from sponsors",
+      "episode_number": 95
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "part_of",
+      "target": "podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "community related to the podcast",
+      "episode_number": 95
+    }
+  ]
+}

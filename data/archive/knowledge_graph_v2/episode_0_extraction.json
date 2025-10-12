@@ -1,0 +1,75 @@
+{
+  "episode": 0,
+  "timestamp": "2025-10-09T10:21:21.244365",
+  "entity_count": 5,
+  "relationship_count": 3,
+  "entities": [
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast host introduction"
+    },
+    {
+      "name": "Y Honors Community Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast name"
+    },
+    {
+      "name": "Stewardship and Sustainability Series",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Podcast series name"
+    },
+    {
+      "name": "Y Honors",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Book referenced in the podcast"
+    },
+    {
+      "name": "Y Honors Community Ambassador Network",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Community network mentioned"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Aaron Perry",
+      "relationship": "hosts",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast introduction",
+      "episode_number": 0
+    },
+    {
+      "source": "Stewardship and Sustainability Series",
+      "relationship": "is_extension_of",
+      "target": "Y Honors",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Series description",
+      "episode_number": 0
+    },
+    {
+      "source": "Y Honors Community Ambassador Network",
+      "relationship": "part_of",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Community involvement",
+      "episode_number": 0
+    }
+  ]
+}

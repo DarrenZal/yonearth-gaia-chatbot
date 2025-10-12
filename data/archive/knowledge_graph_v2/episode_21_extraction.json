@@ -1,0 +1,1614 @@
+{
+  "episode": 21,
+  "timestamp": "2025-10-09T11:12:21.922480",
+  "entity_count": 112,
+  "relationship_count": 82,
+  "entities": [
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast host"
+    },
+    {
+      "name": "Chef Maria Cooper",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Guest on the podcast"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast sponsor"
+    },
+    {
+      "name": "Highland City Club",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of meetings and discussions"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "City where Highland City Club is located"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State where Boulder is located"
+    },
+    {
+      "name": "Heartful Kitchen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Cookbook authored by Chef Maria Cooper"
+    },
+    {
+      "name": "autoimmune protocols diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Diet type mentioned by Maria"
+    },
+    {
+      "name": "gluten free",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Diet type mentioned by Maria"
+    },
+    {
+      "name": "dairy free",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Diet type mentioned by Maria"
+    },
+    {
+      "name": "fog map",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Diet type mentioned by Maria"
+    },
+    {
+      "name": "scaps diets",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Diet type mentioned by Maria"
+    },
+    {
+      "name": "heartful kitchen",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "start of what is heartful kitchen today"
+    },
+    {
+      "name": "grandmother",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "my grandmother, who's probably my number one biggest food inspiration"
+    },
+    {
+      "name": "Lebanese grandmother",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Lebanese grandmother"
+    },
+    {
+      "name": "Mary Rose Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "created a publishing company called Mary Rose Press"
+    },
+    {
+      "name": "Mary",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "her name is Mary and her middle name is Rose"
+    },
+    {
+      "name": "Slovenian",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "she was Slovenian"
+    },
+    {
+      "name": "mom",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my mom too"
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "my connection with food is very closely tied to my time with my grandmother in the kitchen"
+    },
+    {
+      "name": "Linda",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "My mom's name is Linda, but everyone calls her babe in her family."
+    },
+    {
+      "name": "Babes Baked Fish",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "there's a recipe in the book called Babes Baked Fish."
+    },
+    {
+      "name": "ghee",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I make it with ghee because I think ghee is a very tasty healthy fat to cook with."
+    },
+    {
+      "name": "FODMAPs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet."
+    },
+    {
+      "name": "GAPS diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet."
+    },
+    {
+      "name": "autoimmune protocol",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet."
+    },
+    {
+      "name": "plant paradox",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet."
+    },
+    {
+      "name": "David Tusek",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "a good friend of mine, David Tusek, who works in the"
+    },
+    {
+      "name": "David Tusek",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "a good friend of mine, David Tusek, who works in the building that I work in the Highland Building"
+    },
+    {
+      "name": "Highland Building",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the building that I work in the Highland Building"
+    },
+    {
+      "name": "FODMAPs diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "let's say you follow a FODMAPs diet"
+    },
+    {
+      "name": "medical toolbar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "David inspired me to create this medical toolbar"
+    },
+    {
+      "name": "broccoli dish",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "for the broccoli dish, if you're following a FODMAPs diet"
+    },
+    {
+      "name": "cruciferous vegetables",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "cruciferous vegetables are in no"
+    },
+    {
+      "name": "plant paradox",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "we have plant paradox"
+    },
+    {
+      "name": "vitamins and minerals",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I was considering having vitamins and minerals on this as well"
+    },
+    {
+      "name": "nightshades",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "there's no nightshades in this book"
+    },
+    {
+      "name": "citrus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "there's no fruit in this book except for citrus"
+    },
+    {
+      "name": "umami",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of flavors"
+    },
+    {
+      "name": "miso",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "example of umami flavor"
+    },
+    {
+      "name": "soy",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "example of umami flavor"
+    },
+    {
+      "name": "Parmesan cheese",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "example of umami flavor"
+    },
+    {
+      "name": "avocado",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ingredient in dishes"
+    },
+    {
+      "name": "citrus zest",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in dishes"
+    },
+    {
+      "name": "ketogenic diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "dietary reference"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cooking fat suggestion"
+    },
+    {
+      "name": "ghee",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cooking fat suggestion"
+    },
+    {
+      "name": "grass fed beef tallow",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "cooking fat suggestion"
+    },
+    {
+      "name": "chicken fat",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "cooking fat suggestion"
+    },
+    {
+      "name": "duck fat",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "cooking fat suggestion"
+    },
+    {
+      "name": "dance",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "reference to profession"
+    },
+    {
+      "name": "chef",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "reference to profession"
+    },
+    {
+      "name": "chef",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "work as a chef"
+    },
+    {
+      "name": "city club",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "at the club, at city club"
+    },
+    {
+      "name": "book",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "this book, you know, it's been, um, it's been a journey"
+    },
+    {
+      "name": "clients",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "working with clients"
+    },
+    {
+      "name": "recipes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "these recipes helping people"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "visiting Denver or Boulder and can come up to the Highland City Club"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "visiting Denver or Boulder and can come up to the Highland City Club"
+    },
+    {
+      "name": "Highland City Club",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "come to lunch at the Highland City Club"
+    },
+    {
+      "name": "Spain",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "you also have had a restaurant in Spain"
+    },
+    {
+      "name": "Madrid",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I got hired to help open up a restaurant in downtown Madrid"
+    },
+    {
+      "name": "Harvest",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "it was called Harvest and they wanted a chef who had been involved with organic food"
+    },
+    {
+      "name": "Spain",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "they don't do that in Spain."
+    },
+    {
+      "name": "Madrid",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reminds you of your time in Madrid"
+    },
+    {
+      "name": "Hamas recipe",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I had my grandmother's Hamas recipe on the menu"
+    },
+    {
+      "name": "Spaghetti Squash",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "use spaghetti squash at decent amount in this book"
+    },
+    {
+      "name": "fish",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you have the umami from the fish"
+    },
+    {
+      "name": "macarole",
+      "type": "PRODUCT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "you choose between macarole or cod in this dish"
+    },
+    {
+      "name": "cod",
+      "type": "PRODUCT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "you choose between macarole or cod in this dish"
+    },
+    {
+      "name": "cooking oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the fatteness comes from the cooking oil"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo"
+    },
+    {
+      "name": "ghee",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo"
+    },
+    {
+      "name": "chicken fat",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo"
+    },
+    {
+      "name": "talo",
+      "type": "PRODUCT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo"
+    },
+    {
+      "name": "caramelized onion",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the sweet is the caramelized onion"
+    },
+    {
+      "name": "garlic",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "you get the pungent flavor from the garlic"
+    },
+    {
+      "name": "anchovy",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "more umami from the anchovy"
+    },
+    {
+      "name": "white wine",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you get the sour from the white wine"
+    },
+    {
+      "name": "avocado",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you get more fatty from the avocado"
+    },
+    {
+      "name": "bone broth",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the mineral rich bone broth, which is um, very central to this, this book"
+    },
+    {
+      "name": "Maria Cooper",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "chef Maria Cooper"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Y on Earth communities stewardship and sustainability podcast series"
+    },
+    {
+      "name": "Heart Full Kitchen",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "amazing cookbook"
+    },
+    {
+      "name": "chef Maria Cooper.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for chef Maria Cooper"
+    },
+    {
+      "name": "Y on Earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for Y on Earth"
+    },
+    {
+      "name": "Maria",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussing food and recipes."
+    },
+    {
+      "name": "cooking",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Discussing personal cooking experiences."
+    },
+    {
+      "name": "chicken",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussing cooking methods and recipes."
+    },
+    {
+      "name": "soup",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussing cooking methods and recipes."
+    },
+    {
+      "name": "salad",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussing grab and go meals."
+    },
+    {
+      "name": "chili blanco",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Discussing favorite recipes."
+    },
+    {
+      "name": "garlic",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussing ingredients in recipes."
+    },
+    {
+      "name": "bone broth",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Discussing cooking methods and recipes."
+    },
+    {
+      "name": "chicken broth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing recipes and cooking methods"
+    },
+    {
+      "name": "bone broth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing recipes and cooking methods"
+    },
+    {
+      "name": "rotisserie chickens",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing cooking methods and ingredients"
+    },
+    {
+      "name": "apple cider vinegar",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing cooking methods and ingredients"
+    },
+    {
+      "name": "onions",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing cooking methods and ingredients"
+    },
+    {
+      "name": "celery",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing cooking methods and ingredients"
+    },
+    {
+      "name": "carrots",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing cooking methods and ingredients"
+    },
+    {
+      "name": "broth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing recipes and cooking methods"
+    },
+    {
+      "name": "warm liquid gold",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing recipes and cooking methods"
+    },
+    {
+      "name": "cayenne",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing remedies and cooking methods"
+    },
+    {
+      "name": "black pepper",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing remedies and cooking methods"
+    },
+    {
+      "name": "turmeric",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing remedies and cooking methods"
+    },
+    {
+      "name": "lemon juice",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing remedies and cooking methods"
+    },
+    {
+      "name": "friend",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing personal anecdotes"
+    },
+    {
+      "name": "woman",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing personal anecdotes and coaching"
+    },
+    {
+      "name": "Maria Cooper",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Chef Maria Cooper"
+    },
+    {
+      "name": "chefmaryacouper.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website mentioned for Maria Cooper"
+    },
+    {
+      "name": "Heartful Kitchen",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "cookbook and guidebook mentioned"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "works_at",
+      "target": "Highland City Club",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Chef Maria Cooper is the executive chef at the Highland City Club",
+      "episode_number": 21
+    },
+    {
+      "source": "Highland City Club",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Highland City Club is located in Boulder, Colorado",
+      "episode_number": 21
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is a city in Colorado",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "author_of",
+      "target": "Heartful Kitchen",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Chef Maria Cooper is the author of the cookbook Heartful Kitchen",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "autoimmune protocols diet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Chef Maria Cooper discusses autoimmune protocols diet",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "gluten free",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Chef Maria Cooper discusses gluten free diets",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "dairy free",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Chef Maria Cooper discusses dairy free diets",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "fog map",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Chef Maria Cooper discusses fog map diets",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "scaps diets",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Chef Maria Cooper discusses scaps diets",
+      "episode_number": 21
+    },
+    {
+      "source": "grandmother",
+      "relationship": "advocates_for",
+      "target": "food",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "my grandmother, who's probably my number one biggest food inspiration",
+      "episode_number": 21
+    },
+    {
+      "source": "Mary Rose Press",
+      "relationship": "published_by",
+      "target": "grandmother",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "created a publishing company called Mary Rose Press",
+      "episode_number": 21
+    },
+    {
+      "source": "grandmother",
+      "relationship": "part_of",
+      "target": "Lebanese",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Lebanese grandmother",
+      "episode_number": 21
+    },
+    {
+      "source": "mom",
+      "relationship": "advocates_for",
+      "target": "food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "my mom too",
+      "episode_number": 21
+    },
+    {
+      "source": "heartful kitchen",
+      "relationship": "created_by",
+      "target": "grandmother",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "start of what is heartful kitchen today",
+      "episode_number": 21
+    },
+    {
+      "source": "Mary",
+      "relationship": "part_of",
+      "target": "Mary Rose Press",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "her name is Mary and her middle name is Rose",
+      "episode_number": 21
+    },
+    {
+      "source": "Linda",
+      "relationship": "advocates_for",
+      "target": "nutrient dense diet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "my mom definitely nourished us, like through the busyness.",
+      "episode_number": 21
+    },
+    {
+      "source": "Babes Baked Fish",
+      "relationship": "made_with",
+      "target": "cod",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "this dish is generally made with cod.",
+      "episode_number": 21
+    },
+    {
+      "source": "FODMAPs",
+      "relationship": "part_of",
+      "target": "healing diets",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet.",
+      "episode_number": 21
+    },
+    {
+      "source": "GAPS diet",
+      "relationship": "part_of",
+      "target": "healing diets",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet.",
+      "episode_number": 21
+    },
+    {
+      "source": "autoimmune protocol",
+      "relationship": "part_of",
+      "target": "healing diets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet.",
+      "episode_number": 21
+    },
+    {
+      "source": "plant paradox",
+      "relationship": "part_of",
+      "target": "healing diets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "some examples of these diets are our FODMAPs and GAPS diet.",
+      "episode_number": 21
+    },
+    {
+      "source": "David Tusek",
+      "relationship": "works_at",
+      "target": "healing diets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "a good friend of mine, David Tusek, who works in the",
+      "episode_number": 21
+    },
+    {
+      "source": "David Tusek",
+      "relationship": "works_at",
+      "target": "Highland Building",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "a good friend of mine, David Tusek, who works in the building that I work in the Highland Building",
+      "episode_number": 21
+    },
+    {
+      "source": "David Tusek",
+      "relationship": "advocates_for",
+      "target": "FODMAPs diet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "David helped me some with this project. And brilliant man, brilliant doctor, part of, he started called medical.",
+      "episode_number": 21
+    },
+    {
+      "source": "David Tusek",
+      "relationship": "started",
+      "target": "medical toolbar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "David inspired me to create this medical toolbar",
+      "episode_number": 21
+    },
+    {
+      "source": "FODMAPs diet",
+      "relationship": "related_to",
+      "target": "broccoli dish",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "for the broccoli dish, if you're following a FODMAPs diet",
+      "episode_number": 21
+    },
+    {
+      "source": "broccoli dish",
+      "relationship": "contains",
+      "target": "cruciferous vegetables",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "cruciferous vegetables are in no",
+      "episode_number": 21
+    },
+    {
+      "source": "plant paradox",
+      "relationship": "related_to",
+      "target": "FODMAPs diet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "you can have it if you're plant paradox",
+      "episode_number": 21
+    },
+    {
+      "source": "vitamins and minerals",
+      "relationship": "included_in",
+      "target": "medical toolbar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "I was considering having vitamins and minerals on this as well",
+      "episode_number": 21
+    },
+    {
+      "source": "nightshades",
+      "relationship": "excluded_from",
+      "target": "medical toolbar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "there's no nightshades in this book",
+      "episode_number": 21
+    },
+    {
+      "source": "citrus",
+      "relationship": "included_in",
+      "target": "medical toolbar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "there's no fruit in this book except for citrus",
+      "episode_number": 21
+    },
+    {
+      "source": "ketogenic diet",
+      "relationship": "advocates_for",
+      "target": "healthy fats",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion of dietary practices",
+      "episode_number": 21
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "made_by",
+      "target": "cooking fat suggestion",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "suggested for cooking",
+      "episode_number": 21
+    },
+    {
+      "source": "ghee",
+      "relationship": "made_by",
+      "target": "cooking fat suggestion",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "suggested for cooking",
+      "episode_number": 21
+    },
+    {
+      "source": "grass fed beef tallow",
+      "relationship": "made_by",
+      "target": "cooking fat suggestion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "suggested for cooking",
+      "episode_number": 21
+    },
+    {
+      "source": "chicken fat",
+      "relationship": "made_by",
+      "target": "cooking fat suggestion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "suggested for cooking",
+      "episode_number": 21
+    },
+    {
+      "source": "duck fat",
+      "relationship": "made_by",
+      "target": "cooking fat suggestion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "suggested for cooking",
+      "episode_number": 21
+    },
+    {
+      "source": "dance",
+      "relationship": "related_to",
+      "target": "chef",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion of personal connection and profession",
+      "episode_number": 21
+    },
+    {
+      "source": "chef",
+      "relationship": "works_at",
+      "target": "city club",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "at the club, at city club",
+      "episode_number": 21
+    },
+    {
+      "source": "chef",
+      "relationship": "advocates_for",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "this book, you know, it's been, um, it's been a journey",
+      "episode_number": 21
+    },
+    {
+      "source": "chef",
+      "relationship": "teaches",
+      "target": "clients",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "working with clients",
+      "episode_number": 21
+    },
+    {
+      "source": "book",
+      "relationship": "contains",
+      "target": "recipes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "these recipes helping people",
+      "episode_number": 21
+    },
+    {
+      "source": "Highland City Club",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "come to lunch at the Highland City Club",
+      "episode_number": 21
+    },
+    {
+      "source": "Harvest",
+      "relationship": "located_in",
+      "target": "Madrid",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "it was called Harvest and they wanted a chef who had been involved with organic food",
+      "episode_number": 21
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.8,
+      "context": "visiting Denver or Boulder and can come up to the Highland City Club",
+      "episode_number": 21
+    },
+    {
+      "source": "Chef",
+      "relationship": "worked_at",
+      "target": "Harvest",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I got hired to help open up a restaurant in downtown Madrid",
+      "episode_number": 21
+    },
+    {
+      "source": "Spain",
+      "relationship": "contains",
+      "target": "Madrid",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "they don't do that in Spain.",
+      "episode_number": 21
+    },
+    {
+      "source": "Hamas recipe",
+      "relationship": "made_by",
+      "target": "grandmother",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I had my grandmother's Hamas recipe on the menu",
+      "episode_number": 21
+    },
+    {
+      "source": "Spaghetti Squash",
+      "relationship": "made_by",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "use spaghetti squash at decent amount in this book",
+      "episode_number": 21
+    },
+    {
+      "source": "fish",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "you have the umami from the fish",
+      "episode_number": 21
+    },
+    {
+      "source": "macarole",
+      "relationship": "part_of",
+      "target": "dish",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "you choose between macarole or cod in this dish",
+      "episode_number": 21
+    },
+    {
+      "source": "cod",
+      "relationship": "part_of",
+      "target": "dish",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "you choose between macarole or cod in this dish",
+      "episode_number": 21
+    },
+    {
+      "source": "cooking oil",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the fatteness comes from the cooking oil",
+      "episode_number": 21
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo",
+      "episode_number": 21
+    },
+    {
+      "source": "ghee",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo",
+      "episode_number": 21
+    },
+    {
+      "source": "chicken fat",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo",
+      "episode_number": 21
+    },
+    {
+      "source": "talo",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "your choice of coconut oil or ghee or chicken fat or talo",
+      "episode_number": 21
+    },
+    {
+      "source": "caramelized onion",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the sweet is the caramelized onion",
+      "episode_number": 21
+    },
+    {
+      "source": "garlic",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "you get the pungent flavor from the garlic",
+      "episode_number": 21
+    },
+    {
+      "source": "anchovy",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "more umami from the anchovy",
+      "episode_number": 21
+    },
+    {
+      "source": "white wine",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "you get the sour from the white wine",
+      "episode_number": 21
+    },
+    {
+      "source": "avocado",
+      "relationship": "made_by",
+      "target": "dish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "you get more fatty from the avocado",
+      "episode_number": 21
+    },
+    {
+      "source": "bone broth",
+      "relationship": "part_of",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the mineral rich bone broth, which is um, very central to this, this book",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "works_at",
+      "target": "chef Maria Cooper.com",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "website for chef Maria Cooper",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "Heart Full Kitchen",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "amazing cookbook",
+      "episode_number": 21
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "contains",
+      "target": "Y on Earth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "website for Y on Earth",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "offers",
+      "target": "coaching and consulting services",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "coaching services mentioned",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "advocates_for",
+      "target": "cooking",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussing personal cooking experiences.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "makes",
+      "target": "chicken",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Discussing cooking methods and recipes.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "makes",
+      "target": "soup",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Discussing cooking methods and recipes.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "makes",
+      "target": "salad",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Discussing grab and go meals.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "makes",
+      "target": "chili blanco",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Discussing favorite recipes.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "uses",
+      "target": "garlic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussing ingredients in recipes.",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria",
+      "relationship": "makes",
+      "target": "bone broth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Discussing cooking methods and recipes.",
+      "episode_number": 21
+    },
+    {
+      "source": "rotisserie chickens",
+      "relationship": "made_by",
+      "target": "foods",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussing cooking methods and ingredients",
+      "episode_number": 21
+    },
+    {
+      "source": "broth",
+      "relationship": "advocates_for",
+      "target": "warm liquid gold",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing recipes and cooking methods",
+      "episode_number": 21
+    },
+    {
+      "source": "friend",
+      "relationship": "teaches",
+      "target": "chicken broth",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing personal anecdotes",
+      "episode_number": 21
+    },
+    {
+      "source": "woman",
+      "relationship": "works_at",
+      "target": "jails",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussing personal anecdotes and coaching",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "works_at",
+      "target": "jails",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Maria works in jails every day",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "advocates_for",
+      "target": "self-care",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussion about self-care practices",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "founded",
+      "target": "chefmaryacouper.com",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Website for her coaching and consulting services",
+      "episode_number": 21
+    },
+    {
+      "source": "Maria Cooper",
+      "relationship": "authored",
+      "target": "Heartful Kitchen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Cookbook mentioned in the podcast",
+      "episode_number": 21
+    }
+  ]
+}

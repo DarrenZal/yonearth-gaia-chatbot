@@ -1,0 +1,1362 @@
+{
+  "episode": 142,
+  "timestamp": "2025-10-09T10:45:01.992059",
+  "entity_count": 96,
+  "relationship_count": 68,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Maria Radell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "author of Love Nature Magic, Shamanic Journeys"
+    },
+    {
+      "name": "Love Nature Magic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book authored by Maria Radell"
+    },
+    {
+      "name": "Radell publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization founded by Maria Radell"
+    },
+    {
+      "name": "Men's Health Magazine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publication associated with Maria Radell"
+    },
+    {
+      "name": "Prevention Magazine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publication associated with Maria Radell"
+    },
+    {
+      "name": "Radell Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization where Maria Radell serves on the board"
+    },
+    {
+      "name": "Organic Manifesto",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book authored by Maria Radell"
+    },
+    {
+      "name": "Scratch",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book authored by Maria Radell"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "documentary featuring Maria Radell"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where Maria Radell lives"
+    },
+    {
+      "name": "shamanism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "topic discussed in Maria Radell's book"
+    },
+    {
+      "name": "organic regenerative farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "advocacy topic of Maria Radell"
+    },
+    {
+      "name": "shamanic journeying",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a practice in the podcast segment"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "publisher mentioned in the podcast segment"
+    },
+    {
+      "name": "vulture",
+      "type": "ANIMAL",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a source of messages in the podcast segment"
+    },
+    {
+      "name": "phoenix",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a theme in the podcast segment"
+    },
+    {
+      "name": "vulture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about messages from vulture"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "theme of regenerative agriculture"
+    },
+    {
+      "name": "ecosystem stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "theme of ecosystem stewardship"
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "emphasis on love in the book"
+    },
+    {
+      "name": "joy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "emphasis on joy in the book"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concern about climate change"
+    },
+    {
+      "name": "politics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "concern about politics"
+    },
+    {
+      "name": "economic inequity",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "concern about economic inequity"
+    },
+    {
+      "name": "mosquito",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussion about the role of mosquitoes in the environment."
+    },
+    {
+      "name": "graduate school",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of acquiring a skill."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Context of getting out of town."
+    },
+    {
+      "name": "permaculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Involvement in land stewardship."
+    },
+    {
+      "name": "regenerative land stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of environmental practices."
+    },
+    {
+      "name": "mosquito",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about mosquitoes and their role in nature"
+    },
+    {
+      "name": "mugwort",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about mugwort as an invasive plant"
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about herbicides and their effects"
+    },
+    {
+      "name": "pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "reference to the time period during which shamanic journeys were conducted"
+    },
+    {
+      "name": "mugwort",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mugwort is like the mother of all plants"
+    },
+    {
+      "name": "Pennsylvania Dutch",
+      "type": "CULTURE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mugwort is sacred to the Pennsylvania Dutch"
+    },
+    {
+      "name": "Germans",
+      "type": "CULTURE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mugwort is sacred to the Germans"
+    },
+    {
+      "name": "Maria Rodel",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I'm speaking with Maria Rodel"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the grateful dead just played here in Boulder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the grateful dead just played here in Boulder, Colorado"
+    },
+    {
+      "name": "Grateful Dead",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I happen to like the grateful dead's music"
+    },
+    {
+      "name": "weather",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "talking to weather"
+    },
+    {
+      "name": "Grateful Dead",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "played here in Boulder, Colorado"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "played here in Boulder, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "played here in Boulder, Colorado"
+    },
+    {
+      "name": "Maria",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "you're a retired CEO"
+    },
+    {
+      "name": "CEO",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "you're a retired CEO"
+    },
+    {
+      "name": "health and wellness company",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "CEO of a health and wellness company"
+    },
+    {
+      "name": "men's health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "top 10 things people searched for on men's health"
+    },
+    {
+      "name": "women's health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "top 10 things people searched for on women's health"
+    },
+    {
+      "name": "Darwin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing Darwin's ideas"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about adaptability and collaboration in nature"
+    },
+    {
+      "name": "patriarchy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about societal structures"
+    },
+    {
+      "name": "matriarchy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about societal structures"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about reading science magazines and books"
+    },
+    {
+      "name": "survival of the fittest",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about Darwin's theories"
+    },
+    {
+      "name": "survival of the happiest",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about an alternative concept to Darwin's theory"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why on Earth Community Podcast"
+    },
+    {
+      "name": "Maria Radale",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Love Nature Magic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "title of the book by Maria Radale"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publisher mentioned in the podcast"
+    },
+    {
+      "name": "Purium Organic Superfoods",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization related to the podcast"
+    },
+    {
+      "name": "Life Unfiltered",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "substack by Maria Radale"
+    },
+    {
+      "name": "wheylay waters",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned in the podcast"
+    },
+    {
+      "name": "Life Unfiltered",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "substock is called Life Unfiltered"
+    },
+    {
+      "name": "Love Nature Magic",
+      "type": "BOOK",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "resources at the back of the book Love Nature Magic"
+    },
+    {
+      "name": "VIMAR Republic",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "deep dive on what happened in the VIMAR Republic in Germany"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Germany was a democratic system leading up to the takeover of the Nazi regime"
+    },
+    {
+      "name": "Nazi regime",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "takeover of the Nazi regime"
+    },
+    {
+      "name": "Second World War",
+      "type": "EVENT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "leading to the horrors of the Second World War and the Holocaust"
+    },
+    {
+      "name": "Holocaust",
+      "type": "EVENT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "leading to the horrors of the Second World War and the Holocaust"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "taken over Pennsylvania"
+    },
+    {
+      "name": "Roundup",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "conservation groups and parks use Roundup"
+    },
+    {
+      "name": "invasive species",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "against invasive species"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "nature knows what it's doing"
+    },
+    {
+      "name": "environmentalists",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "environmentalists really smart and environmentalists be like"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "greater Boulder County region of Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "greater Boulder County region of Colorado"
+    },
+    {
+      "name": "Susan Samard",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "book, Finding the Mother Tree"
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about the importance of love in society"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about how nature works"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mention of plants being on the planet longer than humans"
+    },
+    {
+      "name": "grandparents",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "mention of the speaker's grandparents raising their father"
+    },
+    {
+      "name": "father",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "mention of the speaker's father"
+    },
+    {
+      "name": "Middle Eastern cultures",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "discussion about love being dangerous in some cultures"
+    },
+    {
+      "name": "Asia",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "discussion about marriage in Asian cultures"
+    },
+    {
+      "name": "Maria",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the book"
+    },
+    {
+      "name": "Love, Nature, Magic, Shamanic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "title of the book"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast series"
+    },
+    {
+      "name": "yonearth.org-support",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "website for support"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Y on Earth Community"
+    },
+    {
+      "name": "YonEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "sponsors are listed on the YonEarth.org-support-page"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Maria Radell",
+      "relationship": "works_at",
+      "target": "Radell publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Maria Radell is the recovering CEO of Radell publishing",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "author_of",
+      "target": "Love Nature Magic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Maria Radell is the author of Love Nature Magic",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "advocates_for",
+      "target": "organic regenerative farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Maria Radell advocates for organic regenerative farming",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "author_of",
+      "target": "Organic Manifesto",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Maria Radell is the author of Organic Manifesto",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "author_of",
+      "target": "Scratch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Maria Radell is the author of Scratch",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "featured_in",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Maria Radell was featured in the documentary Kiss the Ground",
+      "episode_number": 142
+    },
+    {
+      "source": "Radell publishing",
+      "relationship": "located_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Radell publishing is located in Pennsylvania",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radell",
+      "relationship": "lives_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Maria Radell lives in Pennsylvania",
+      "episode_number": 142
+    },
+    {
+      "source": "shamanic journeying",
+      "relationship": "advocates_for",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed as a practice in the podcast segment",
+      "episode_number": 142
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "published",
+      "target": "book",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "publisher mentioned in the podcast segment",
+      "episode_number": 142
+    },
+    {
+      "source": "vulture",
+      "relationship": "provides_message_for",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned as a source of messages in the podcast segment",
+      "episode_number": 142
+    },
+    {
+      "source": "phoenix",
+      "relationship": "associated_with",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "mentioned as a theme in the podcast segment",
+      "episode_number": 142
+    },
+    {
+      "source": "vulture",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about messages from vulture",
+      "episode_number": 142
+    },
+    {
+      "source": "vulture",
+      "relationship": "advocates_for",
+      "target": "ecosystem stewardship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about messages from vulture",
+      "episode_number": 142
+    },
+    {
+      "source": "love",
+      "relationship": "part_of",
+      "target": "joy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "emphasis on love and joy in the book",
+      "episode_number": 142
+    },
+    {
+      "source": "climate change",
+      "relationship": "concerns",
+      "target": "politics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "concern about climate change and politics",
+      "episode_number": 142
+    },
+    {
+      "source": "climate change",
+      "relationship": "concerns",
+      "target": "economic inequity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "concern about climate change and economic inequity",
+      "episode_number": 142
+    },
+    {
+      "source": "mosquito",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Discussion about the importance of mosquitoes in the ecosystem.",
+      "episode_number": 142
+    },
+    {
+      "source": "graduate school",
+      "relationship": "provides_skill",
+      "target": "speed skimming",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "Skill acquired during graduate school.",
+      "episode_number": 142
+    },
+    {
+      "source": "permaculture",
+      "relationship": "part_of",
+      "target": "regenerative land stewardship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Permaculture as a practice within regenerative land stewardship.",
+      "episode_number": 142
+    },
+    {
+      "source": "mosquito",
+      "relationship": "supports",
+      "target": "waterways",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about the ecological role of mosquitoes",
+      "episode_number": 142
+    },
+    {
+      "source": "mugwort",
+      "relationship": "is_a",
+      "target": "plant",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about mugwort as an invasive plant",
+      "episode_number": 142
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "is_a",
+      "target": "herbicide",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about glyphosate as a toxic herbicide",
+      "episode_number": 142
+    },
+    {
+      "source": "shamanic journey",
+      "relationship": "involves",
+      "target": "mugwort",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion about the experience of journeying with mugwort",
+      "episode_number": 142
+    },
+    {
+      "source": "mugwort",
+      "relationship": "sacred_to",
+      "target": "Pennsylvania Dutch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "mugwort is sacred to the Pennsylvania Dutch",
+      "episode_number": 142
+    },
+    {
+      "source": "mugwort",
+      "relationship": "sacred_to",
+      "target": "Germans",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "mugwort is sacred to the Germans",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Rodel",
+      "relationship": "works_at",
+      "target": "Grateful Dead",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.9,
+      "context": "I happen to like the grateful dead's music",
+      "episode_number": 142
+    },
+    {
+      "source": "Grateful Dead",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "the grateful dead just played here in Boulder",
+      "episode_number": 142
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "the grateful dead just played here in Boulder, Colorado",
+      "episode_number": 142
+    },
+    {
+      "source": "weather",
+      "relationship": "communicates_with",
+      "target": "Maria Rodel",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "talking to weather",
+      "episode_number": 142
+    },
+    {
+      "source": "Grateful Dead",
+      "relationship": "played_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "played here in Boulder, Colorado",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria",
+      "relationship": "works_at",
+      "target": "health and wellness company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "you're a retired CEO",
+      "episode_number": 142
+    },
+    {
+      "source": "men's health",
+      "relationship": "related_to",
+      "target": "Maria",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "top 10 things people searched for on men's health",
+      "episode_number": 142
+    },
+    {
+      "source": "women's health",
+      "relationship": "related_to",
+      "target": "Maria",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "top 10 things people searched for on women's health",
+      "episode_number": 142
+    },
+    {
+      "source": "Darwin",
+      "relationship": "advocates_for",
+      "target": "survival of the fittest",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about Darwin's theories",
+      "episode_number": 142
+    },
+    {
+      "source": "survival of the fittest",
+      "relationship": "contrasts_with",
+      "target": "survival of the happiest",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about alternative concepts to Darwin's theory",
+      "episode_number": 142
+    },
+    {
+      "source": "nature",
+      "relationship": "teaches",
+      "target": "collaboration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about adaptability and collaboration in nature",
+      "episode_number": 142
+    },
+    {
+      "source": "patriarchy",
+      "relationship": "contrasts_with",
+      "target": "matriarchy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about societal structures",
+      "episode_number": 142
+    },
+    {
+      "source": "science",
+      "relationship": "informs",
+      "target": "adaptability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about reading science magazines and books",
+      "episode_number": 142
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "visits_with",
+      "target": "Maria Radale",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "host and guest on the podcast",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radale",
+      "relationship": "authored",
+      "target": "Love Nature Magic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "book authored by Maria",
+      "episode_number": 142
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "publishes",
+      "target": "Love Nature Magic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "publisher of the book",
+      "episode_number": 142
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsors",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organization sponsoring Chelsea Green",
+      "episode_number": 142
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsors",
+      "target": "Purium Organic Superfoods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization sponsoring Purium",
+      "episode_number": 142
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsors",
+      "target": "Earth Hero",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization sponsoring Earth Hero",
+      "episode_number": 142
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsors",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization sponsoring Earth Coast Productions",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria Radale",
+      "relationship": "writes",
+      "target": "Life Unfiltered",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "substack written by Maria",
+      "episode_number": 142
+    },
+    {
+      "source": "wheylay waters",
+      "relationship": "made_by",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "product made by Earth Coast Productions",
+      "episode_number": 142
+    },
+    {
+      "source": "Life Unfiltered",
+      "relationship": "provides",
+      "target": "resources",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "substock is called Life Unfiltered",
+      "episode_number": 142
+    },
+    {
+      "source": "VIMAR Republic",
+      "relationship": "part_of",
+      "target": "Germany",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "deep dive on what happened in the VIMAR Republic in Germany",
+      "episode_number": 142
+    },
+    {
+      "source": "Nazi regime",
+      "relationship": "led_to",
+      "target": "Second World War",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "takeover of the Nazi regime",
+      "episode_number": 142
+    },
+    {
+      "source": "Second World War",
+      "relationship": "includes",
+      "target": "Holocaust",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "leading to the horrors of the Second World War and the Holocaust",
+      "episode_number": 142
+    },
+    {
+      "source": "invasive species",
+      "relationship": "located_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "a newly quote invasive species from Asia that has taken over Pennsylvania",
+      "episode_number": 142
+    },
+    {
+      "source": "Roundup",
+      "relationship": "made_by",
+      "target": "conservation groups",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "conservation groups and parks use Roundup",
+      "episode_number": 142
+    },
+    {
+      "source": "environmentalists",
+      "relationship": "advocates_for",
+      "target": "invasive species",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "environmentalists really smart and environmentalists be like",
+      "episode_number": 142
+    },
+    {
+      "source": "nature",
+      "relationship": "has_value",
+      "target": "every single being",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "nature knows what it's doing",
+      "episode_number": 142
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "greater Boulder County region of Colorado",
+      "episode_number": 142
+    },
+    {
+      "source": "Susan Samard",
+      "relationship": "wrote",
+      "target": "Finding the Mother Tree",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "book, Finding the Mother Tree",
+      "episode_number": 142
+    },
+    {
+      "source": "grandparents",
+      "relationship": "raised",
+      "target": "father",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.75,
+      "context": "discussion about parenting advice from the speaker's grandparents",
+      "episode_number": 142
+    },
+    {
+      "source": "father",
+      "relationship": "has_lifelong_trauma",
+      "target": "children",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "discussion about the impact of parenting on the speaker's generation",
+      "episode_number": 142
+    },
+    {
+      "source": "love",
+      "relationship": "advocates_for",
+      "target": "kindness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about the importance of love and kindness",
+      "episode_number": 142
+    },
+    {
+      "source": "love",
+      "relationship": "is_misunderstood_in",
+      "target": "Middle Eastern cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "discussion about cultural perceptions of love",
+      "episode_number": 142
+    },
+    {
+      "source": "love",
+      "relationship": "is_misunderstood_in",
+      "target": "Asia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "discussion about cultural perceptions of love",
+      "episode_number": 142
+    },
+    {
+      "source": "Maria",
+      "relationship": "advocates_for",
+      "target": "Love, Nature, Magic, Shamanic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about the book",
+      "episode_number": 142
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "host of the podcast",
+      "episode_number": 142
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "yonearth.org-support",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "support for the podcast",
+      "episode_number": 142
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "advocates_for",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Thank you for being a part of the Y on Earth Community",
+      "episode_number": 142
+    },
+    {
+      "source": "YonEarth.org",
+      "relationship": "located_in",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "sponsors are listed on the YonEarth.org-support-page",
+      "episode_number": 142
+    }
+  ]
+}

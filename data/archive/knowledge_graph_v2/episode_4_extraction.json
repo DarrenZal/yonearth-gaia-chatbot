@@ -1,0 +1,566 @@
+{
+  "episode": 4,
+  "timestamp": "2025-10-09T11:17:06.867062",
+  "entity_count": 38,
+  "relationship_count": 29,
+  "entities": [
+    {
+      "name": "Reverend Fletcher Harper",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "talk with Reverend Fletcher Harper from Green Faith"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "talk with Reverend Fletcher Harper from Green Faith"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Y on Earth community stewardship and sustainability discussion series"
+    },
+    {
+      "name": "U.S.",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "concerns around the environment and climate change in the U.S."
+    },
+    {
+      "name": "Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the Earth is a gift, it's our responsibility to take care of that gift"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "work you're doing at Green Faith"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "leaders out at the fore for many faith communities, at least all around the United States"
+    },
+    {
+      "name": "fossil fuel divestment movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "involved as an example in the fossil fuel divestment movement"
+    },
+    {
+      "name": "climate negotiations",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "important negotiation moments in terms of the global climate negotiations"
+    },
+    {
+      "name": "climate marches",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mobilizing religious and spiritual communities or the various people's climate marches"
+    },
+    {
+      "name": "environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "supporting local faith communities getting involved in environment"
+    },
+    {
+      "name": "faith communities",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "supporting local faith communities getting involved"
+    },
+    {
+      "name": "green faith.org",
+      "type": "URL",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "visit our website which is green faith, green like the color green faith like faith in God.org"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental issues"
+    },
+    {
+      "name": "religious relief and development agencies",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of agencies addressing natural disasters"
+    },
+    {
+      "name": "small farmers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about agriculture and climate challenges"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of a country in relation to social challenges"
+    },
+    {
+      "name": "Genesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reference to a book in the Hebrew scriptures"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "reference to a deity in religious context"
+    },
+    {
+      "name": "God",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Hebrew scriptures from the book of Genesis"
+    },
+    {
+      "name": "Genesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Hebrew scriptures"
+    },
+    {
+      "name": "Revelation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the other end of the Bible"
+    },
+    {
+      "name": "New Jerusalem",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book of Revelation"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "healing and restorative power"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "passage in the book of Revelation"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "biodynamic soil preps"
+    },
+    {
+      "name": "yhonor.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for special deals"
+    },
+    {
+      "name": "Reverend Fletcher",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in the podcast"
+    },
+    {
+      "name": "Reverend Fletcher",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental leadership and community outreach"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "reference to an initiative called Living Churchyard"
+    },
+    {
+      "name": "Living Churchyard",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "initiative in the UK regarding old cemeteries and biodiversity"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in relation to making a difference in environmental care"
+    },
+    {
+      "name": "San Francisco",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "climate summit happening in San Francisco"
+    },
+    {
+      "name": "Living the Change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "multi-faith international campaign called Living the Change"
+    },
+    {
+      "name": "Greenfaith",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "work you and your colleagues are doing at Greenfaith"
+    },
+    {
+      "name": "Yonnerth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "connect in further with the Yonnerth community"
+    },
+    {
+      "name": "Reverend Fletcher",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "joining us today"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "thanks for your leadership"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Reverend Fletcher Harper",
+      "relationship": "works_at",
+      "target": "Green Faith",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "talk with Reverend Fletcher Harper from Green Faith",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "advocates_for",
+      "target": "environmental concerns",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "talk with Reverend Fletcher Harper from Green Faith",
+      "episode_number": 4
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "located_in",
+      "target": "U.S.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Y on Earth community stewardship and sustainability discussion series",
+      "episode_number": 4
+    },
+    {
+      "source": "U.S.",
+      "relationship": "part_of",
+      "target": "global society",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "concerns around the environment and climate change in the U.S.",
+      "episode_number": 4
+    },
+    {
+      "source": "Earth",
+      "relationship": "part_of",
+      "target": "human family",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "the Earth is a gift, it's our responsibility to take care of that gift",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "works_at",
+      "target": "faith communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "work you're doing at Green Faith",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "advocates_for",
+      "target": "fossil fuel divestment movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "involved as an example in the fossil fuel divestment movement",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "advocates_for",
+      "target": "climate negotiations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "important negotiation moments in terms of the global climate negotiations",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "mobilizes",
+      "target": "climate marches",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mobilizing religious and spiritual communities or the various people's climate marches",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "supports",
+      "target": "environment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "supporting local faith communities getting involved in environment",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "leaders out at the fore for many faith communities, at least all around the United States",
+      "episode_number": 4
+    },
+    {
+      "source": "religious relief and development agencies",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about agencies addressing climate issues",
+      "episode_number": 4
+    },
+    {
+      "source": "small farmers",
+      "relationship": "suffering_from",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about the impact of climate change on agriculture",
+      "episode_number": 4
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "small farmers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mention of farmers in the context of the US",
+      "episode_number": 4
+    },
+    {
+      "source": "Genesis",
+      "relationship": "mentions",
+      "target": "God",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "reference to creation in religious texts",
+      "episode_number": 4
+    },
+    {
+      "source": "God",
+      "relationship": "advocates_for",
+      "target": "Genesis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Hebrew scriptures from the book of Genesis",
+      "episode_number": 4
+    },
+    {
+      "source": "New Jerusalem",
+      "relationship": "part_of",
+      "target": "Revelation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "book of Revelation",
+      "episode_number": 4
+    },
+    {
+      "source": "trees",
+      "relationship": "provides_for",
+      "target": "healing of the nations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "passage in the book of Revelation",
+      "episode_number": 4
+    },
+    {
+      "source": "soil",
+      "relationship": "supports",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "biodynamic soil preps",
+      "episode_number": 4
+    },
+    {
+      "source": "yhonor.org",
+      "relationship": "offers",
+      "target": "audiobooks",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "website for special deals",
+      "episode_number": 4
+    },
+    {
+      "source": "Reverend Fletcher",
+      "relationship": "works_with",
+      "target": "biodynamic soil preps",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioned in the podcast",
+      "episode_number": 4
+    },
+    {
+      "source": "Reverend Fletcher",
+      "relationship": "advocates_for",
+      "target": "Green Faith",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental leadership and community outreach",
+      "episode_number": 4
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "mention of mobilization around climate summit",
+      "episode_number": 4
+    },
+    {
+      "source": "Living Churchyard",
+      "relationship": "part_of",
+      "target": "UK",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "initiative related to biodiversity in the UK",
+      "episode_number": 4
+    },
+    {
+      "source": "Reverend Fletcher",
+      "relationship": "advocates_for",
+      "target": "Living the Change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "advocating for good policies",
+      "episode_number": 4
+    },
+    {
+      "source": "Greenfaith",
+      "relationship": "works_at",
+      "target": "Reverend Fletcher",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "work you and your colleagues are doing at Greenfaith",
+      "episode_number": 4
+    },
+    {
+      "source": "San Francisco",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "climate summit happening in San Francisco",
+      "episode_number": 4
+    },
+    {
+      "source": "Living the Change",
+      "relationship": "part_of",
+      "target": "multi-faith international campaign",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "multi-faith international campaign called Living the Change",
+      "episode_number": 4
+    },
+    {
+      "source": "Yonnerth",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "connect in further with the Yonnerth community",
+      "episode_number": 4
+    }
+  ]
+}

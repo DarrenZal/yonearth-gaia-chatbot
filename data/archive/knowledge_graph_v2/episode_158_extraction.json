@@ -1,0 +1,1799 @@
+{
+  "episode": 158,
+  "timestamp": "2025-10-09T10:57:05.341366",
+  "entity_count": 127,
+  "relationship_count": 90,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "Gabe Brown",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Dirt to Soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "title of Gabe Brown's book"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "publisher of Dirt to Soil"
+    },
+    {
+      "name": "Soil Health Movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "movement focused on soil health"
+    },
+    {
+      "name": "Regenified",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company where Gabe Brown is a partner and board member"
+    },
+    {
+      "name": "Understanding Ag LLC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company founded by Gabe Brown"
+    },
+    {
+      "name": "Soil Health Academy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nonprofit founded by Gabe Brown"
+    },
+    {
+      "name": "Brown's Ranch",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "farming ranch founded by Gabe Brown and his wife"
+    },
+    {
+      "name": "Bismarck",
+      "type": "CITY",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Brown's Ranch"
+    },
+    {
+      "name": "North Dakota",
+      "type": "STATE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Bismarck is located"
+    },
+    {
+      "name": "Paul",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "son of Gabe Brown"
+    },
+    {
+      "name": "Jasmine",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "wife of Paul"
+    },
+    {
+      "name": "Hines Award for the Environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "award received by Gabe Brown"
+    },
+    {
+      "name": "Green Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "award received by Gabe Brown"
+    },
+    {
+      "name": "Natural Resource Defense Council",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization that gives the Green Award"
+    },
+    {
+      "name": "Environmental Stewardship Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "award received by Gabe Brown"
+    },
+    {
+      "name": "National Cattlemen's Beef Association",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization that gives the Environmental Stewardship Award"
+    },
+    {
+      "name": "Zero-Till Producer of the Year Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "award received by Gabe Brown"
+    },
+    {
+      "name": "Washington DC",
+      "type": "CITY",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where Gabe Brown speaks to policymakers"
+    },
+    {
+      "name": "agricultural economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "degree held by Gabe Brown"
+    },
+    {
+      "name": "animal science",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "degree held by Gabe Brown"
+    },
+    {
+      "name": "National Nonotell Association",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization that recognized Gabe Brown"
+    },
+    {
+      "name": "United States",
+      "type": "COUNTRY",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where Gabe Brown is recognized as influential"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing the benefits of regenerative agriculture"
+    },
+    {
+      "name": "conventional agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "contrasting with regenerative agriculture"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches"
+    },
+    {
+      "name": "Ireland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches"
+    },
+    {
+      "name": "water scarcity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing issues in agriculture"
+    },
+    {
+      "name": "human health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing the impact of agriculture on health"
+    },
+    {
+      "name": "ADA",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "ADHD",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "Parkinson's",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "autoimmune diseases",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "cancer",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioning health issues related to agriculture"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a conduit for common good"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to observation and intelligence"
+    },
+    {
+      "name": "Dr. Jonathan Lundgren",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "world famous entomologist speaking at Notil on the Plains"
+    },
+    {
+      "name": "Notil on the Plains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of a session attended in 2011"
+    },
+    {
+      "name": "Kansas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Notil on the Plains is located"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to pests and beneficial species"
+    },
+    {
+      "name": "pesticide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to its effects on insects"
+    },
+    {
+      "name": "serengeti plains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to animal populations"
+    },
+    {
+      "name": "gazelles",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to serengeti plains"
+    },
+    {
+      "name": "zebras",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to serengeti plains"
+    },
+    {
+      "name": "lions",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to serengeti plains"
+    },
+    {
+      "name": "cheetahs",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to serengeti plains"
+    },
+    {
+      "name": "Scott Black",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "episode we did with Scott Black a while back"
+    },
+    {
+      "name": "Zircees Society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "from the zircees society that focuses on the insects themselves"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "getty planes in Africa"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "massive reduction in overall biomass globally of insects and invertebrates"
+    },
+    {
+      "name": "rhizosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of my very favorite words in the entire english lexicon which is the word rhizosphere"
+    },
+    {
+      "name": "soil ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the many organisms below ground living in the in the soil ecology"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I have called a couple degrees in agriculture"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "plants take in sunlight photosynthesis occurs"
+    },
+    {
+      "name": "soil microbiology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "interaction between the plant and soil microbiology"
+    },
+    {
+      "name": "nutrient cycle",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "that's the nutrient cycle that's the naturally occurring nutrient cycle"
+    },
+    {
+      "name": "atmosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "approximately 95 to 98% of the nutrients of plant needs for growth comes from the atmosphere"
+    },
+    {
+      "name": "microrhizofunja",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "you have microrhizofunja that transfer nutrients"
+    },
+    {
+      "name": "soil aggregates",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the formation of soil aggregates"
+    },
+    {
+      "name": "sand, silt and clay",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "a soil aggregate is simply sand, silt and clay held together by biotic blues"
+    },
+    {
+      "name": "Gabe",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Dr. Elaine Ingham",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "notable soil experts on the podcast"
+    },
+    {
+      "name": "Helen Atto",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "notable soil experts on the podcast"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "author speaking about soil"
+    },
+    {
+      "name": "Dr. Stefan Van Vee",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "groundbreaking work on soil diversity"
+    },
+    {
+      "name": "Dr. Fred Provenza",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "groundbreaking work on soil diversity"
+    },
+    {
+      "name": "Dr. Schrock",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "groundbreaking work on soil diversity"
+    },
+    {
+      "name": "Prumber",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "groundbreaking work on soil diversity"
+    },
+    {
+      "name": "North Dakota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of young farmer"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "farming practice discussed"
+    },
+    {
+      "name": "soil health academy",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "educational institution attended by farmer"
+    },
+    {
+      "name": "North Dakota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in North Dakota where we only have approximately 110 to 120 frosts three days a year"
+    },
+    {
+      "name": "Dr Jonathan Lunger",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Dr Jonathan Lunger and I mentioned him earlier"
+    },
+    {
+      "name": "Understanding Ag",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we formed Understanding Ag which is a consulting company"
+    },
+    {
+      "name": "Soil Health Academy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we formed Soil Health Academy that's a 501c3 nonprofit"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the regenerative path"
+    },
+    {
+      "name": "Ray Archie",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "years ago Ray Archie let her Dr Alan Williams"
+    },
+    {
+      "name": "Dr Alan Williams",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "years ago Ray Archie let her Dr Alan Williams"
+    },
+    {
+      "name": "David Bratt",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "years ago Ray Archie let her Dr Alan Williams and my David Bratt myself founded on Understanding Ag"
+    },
+    {
+      "name": "Hale",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "slap me three times with Hale"
+    },
+    {
+      "name": "Soil Health Academy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "we formed soil health academy that's a 501c3 nonprofit"
+    },
+    {
+      "name": "regenerified",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the third company which my partners and I helped to build is called regenerified"
+    },
+    {
+      "name": "North Dakota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here I am in North Dakota"
+    },
+    {
+      "name": "Mark Rutsloff",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "we've had Mark Rutsloff on who's done a lot of work on the consumer interface side of things"
+    },
+    {
+      "name": "Mark Rutsloff",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment discussing consumer interface in organics movement"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing predominant methodology in agriculture"
+    },
+    {
+      "name": "Washington",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "context of policy making and consumer awareness"
+    },
+    {
+      "name": "fertilizer industry",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "context of lobbying in Washington"
+    },
+    {
+      "name": "Washington",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "people that are in Washington"
+    },
+    {
+      "name": "fertilizer industry",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the fertilizer industry"
+    },
+    {
+      "name": "chemical industry",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the chemical industry"
+    },
+    {
+      "name": "equipment manufacturers",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "the equipment manufacturers themselves"
+    },
+    {
+      "name": "grain growing associations",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "the grain growing associations themselves"
+    },
+    {
+      "name": "David Beasley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "we had a David Beasley on the podcast"
+    },
+    {
+      "name": "United Nations World Food Program",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "running the United Nations World Food Program"
+    },
+    {
+      "name": "Nobel Peace Prize",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "awarded the Nobel Peace Prize"
+    },
+    {
+      "name": "covid",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the compounding challenges of covid"
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one third of the food we're growing worldwide"
+    },
+    {
+      "name": "desertification",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the acres of desertification"
+    },
+    {
+      "name": "Chewalean desert",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "the Chewalean desert of Mexico"
+    },
+    {
+      "name": "southwestern US",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the southwestern US"
+    },
+    {
+      "name": "Gabe Brown",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Dirt to Soil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book authored by Gabe Brown"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publisher of Dirt to Soil"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Understanding Ag",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization associated with Gabe Brown"
+    },
+    {
+      "name": "Soil Health Academy",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization associated with Gabe Brown"
+    },
+    {
+      "name": "Regenerative Model",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "farming concept discussed in the podcast"
+    },
+    {
+      "name": "Waylay and Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization producing podcasts"
+    },
+    {
+      "name": "Y Honors Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community associated with the podcast"
+    },
+    {
+      "name": "Patreon",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "platform for supporting the podcast"
+    },
+    {
+      "name": "Gabe Brown",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "main interview segment"
+    },
+    {
+      "name": "yonurth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website mentioned for ambassador network"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in context of faith and personal experience"
+    },
+    {
+      "name": "Detroit",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "city mentioned in relation to food production concerns"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a significant theme in Gabe Brown's story"
+    },
+    {
+      "name": "Gabe Brown",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Detroit",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "inner city"
+    },
+    {
+      "name": "North Dakota",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "rancher"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast host"
+    },
+    {
+      "name": "William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author and thought leader"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Gabe Brown",
+      "relationship": "authored",
+      "target": "Dirt to Soil",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Gabe Brown authored the book",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "works_at",
+      "target": "Regenified",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Gabe Brown is a partner and board member at Regenified",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "founded",
+      "target": "Understanding Ag LLC",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Gabe Brown is a founding partner of Understanding Ag LLC",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "founded",
+      "target": "Soil Health Academy",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Gabe Brown founded the Soil Health Academy",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "founded",
+      "target": "Brown's Ranch",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Gabe Brown and his wife founded Brown's Ranch",
+      "episode_number": 158
+    },
+    {
+      "source": "Brown's Ranch",
+      "relationship": "located_in",
+      "target": "Bismarck",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Brown's Ranch is located near Bismarck",
+      "episode_number": 158
+    },
+    {
+      "source": "Bismarck",
+      "relationship": "located_in",
+      "target": "North Dakota",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Bismarck is located in North Dakota",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "recognized_by",
+      "target": "National Nonotell Association",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Gabe Brown recognized by National Nonotell Association",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "speaks_on",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Gabe Brown speaks on regenerative agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "advocates_for",
+      "target": "Soil Health Movement",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Gabe Brown advocates for the Soil Health Movement",
+      "episode_number": 158
+    },
+    {
+      "source": "conventional agriculture",
+      "relationship": "contrasts_with",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussing the differences between agricultural practices",
+      "episode_number": 158
+    },
+    {
+      "source": "North America",
+      "relationship": "contains",
+      "target": "farms and ranches",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches",
+      "episode_number": 158
+    },
+    {
+      "source": "England",
+      "relationship": "contains",
+      "target": "farms and ranches",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches",
+      "episode_number": 158
+    },
+    {
+      "source": "Ireland",
+      "relationship": "contains",
+      "target": "farms and ranches",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning the location of farms and ranches",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "impacts",
+      "target": "human health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing the effects of agricultural practices on health",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "ADA",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "ADHD",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "Alzheimer's",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "Parkinson's",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "autoimmune diseases",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "agriculture",
+      "relationship": "contributes_to",
+      "target": "cancer",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioning health issues related to agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr. Jonathan Lundgren",
+      "relationship": "speaking_at",
+      "target": "Notil on the Plains",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "session attended in 2011",
+      "episode_number": 158
+    },
+    {
+      "source": "Notil on the Plains",
+      "relationship": "located_in",
+      "target": "Kansas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of a session attended in 2011",
+      "episode_number": 158
+    },
+    {
+      "source": "insects",
+      "relationship": "indicate",
+      "target": "sick plants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to pests and plant health",
+      "episode_number": 158
+    },
+    {
+      "source": "pesticide",
+      "relationship": "affects",
+      "target": "insects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to its effects on beneficial and pest species",
+      "episode_number": 158
+    },
+    {
+      "source": "serengeti plains",
+      "relationship": "contains",
+      "target": "gazelles",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to animal populations",
+      "episode_number": 158
+    },
+    {
+      "source": "serengeti plains",
+      "relationship": "contains",
+      "target": "zebras",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to animal populations",
+      "episode_number": 158
+    },
+    {
+      "source": "serengeti plains",
+      "relationship": "contains",
+      "target": "lions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to animal populations",
+      "episode_number": 158
+    },
+    {
+      "source": "serengeti plains",
+      "relationship": "contains",
+      "target": "cheetahs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to animal populations",
+      "episode_number": 158
+    },
+    {
+      "source": "Scott Black",
+      "relationship": "works_at",
+      "target": "Zircees Society",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "episode we did with Scott Black a while back",
+      "episode_number": 158
+    },
+    {
+      "source": "Zircees Society",
+      "relationship": "advocates_for",
+      "target": "insects",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "from the zircees society that focuses on the insects themselves",
+      "episode_number": 158
+    },
+    {
+      "source": "Africa",
+      "relationship": "contains",
+      "target": "gazelles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "getty planes in Africa",
+      "episode_number": 158
+    },
+    {
+      "source": "Africa",
+      "relationship": "contains",
+      "target": "zebras",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "getty planes in Africa",
+      "episode_number": 158
+    },
+    {
+      "source": "plants",
+      "relationship": "interacts_with",
+      "target": "soil microbiology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "interaction between the plant and soil microbiology",
+      "episode_number": 158
+    },
+    {
+      "source": "plants",
+      "relationship": "uses",
+      "target": "atmosphere",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "approximately 95 to 98% of the nutrients of plant needs for growth comes from the atmosphere",
+      "episode_number": 158
+    },
+    {
+      "source": "soil microbiology",
+      "relationship": "feeds",
+      "target": "plants",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "what the plant gets that biology its predator prey relationship",
+      "episode_number": 158
+    },
+    {
+      "source": "soil aggregates",
+      "relationship": "part_of",
+      "target": "soil ecology",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the formation of soil aggregates",
+      "episode_number": 158
+    },
+    {
+      "source": "microrhizofunja",
+      "relationship": "transfers",
+      "target": "nutrients",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "you have microrhizofunja that transfer nutrients",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe",
+      "relationship": "discusses_with",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "podcast discussion",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr. Elaine Ingham",
+      "relationship": "works_at",
+      "target": "Chelsea Green",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "notable soil experts on the podcast",
+      "episode_number": 158
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "works_at",
+      "target": "Chelsea Green",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "notable soil experts on the podcast",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr. Stefan Van Vee",
+      "relationship": "conducts_research_on",
+      "target": "soil diversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "groundbreaking work on soil diversity",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr. Fred Provenza",
+      "relationship": "conducts_research_on",
+      "target": "soil diversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "groundbreaking work on soil diversity",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr. Schrock",
+      "relationship": "conducts_research_on",
+      "target": "soil diversity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "groundbreaking work on soil diversity",
+      "episode_number": 158
+    },
+    {
+      "source": "Prumber",
+      "relationship": "conducts_research_on",
+      "target": "soil diversity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "groundbreaking work on soil diversity",
+      "episode_number": 158
+    },
+    {
+      "source": "young farmer",
+      "relationship": "located_in",
+      "target": "North Dakota",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "location of young farmer",
+      "episode_number": 158
+    },
+    {
+      "source": "young farmer",
+      "relationship": "attended",
+      "target": "soil health academy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "educational institution attended by farmer",
+      "episode_number": 158
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "advocated_by",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "farming practice discussed",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr Jonathan Lunger",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Dr Jonathan Lunger and I mentioned him earlier",
+      "episode_number": 158
+    },
+    {
+      "source": "Understanding Ag",
+      "relationship": "located_in",
+      "target": "North Dakota",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "we formed Understanding Ag which is a consulting company",
+      "episode_number": 158
+    },
+    {
+      "source": "Soil Health Academy",
+      "relationship": "located_in",
+      "target": "North Dakota",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "we formed Soil Health Academy that's a 501c3 nonprofit",
+      "episode_number": 158
+    },
+    {
+      "source": "Ray Archie",
+      "relationship": "founded",
+      "target": "Understanding Ag",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "years ago Ray Archie let her Dr Alan Williams and my David Bratt myself founded on Understanding Ag",
+      "episode_number": 158
+    },
+    {
+      "source": "Dr Alan Williams",
+      "relationship": "founded",
+      "target": "Understanding Ag",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "years ago Ray Archie let her Dr Alan Williams and my David Bratt myself founded on Understanding Ag",
+      "episode_number": 158
+    },
+    {
+      "source": "David Bratt",
+      "relationship": "founded",
+      "target": "Understanding Ag",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "years ago Ray Archie let her Dr Alan Williams and my David Bratt myself founded on Understanding Ag",
+      "episode_number": 158
+    },
+    {
+      "source": "Hale",
+      "relationship": "advocates_for",
+      "target": "Soil Health Academy",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "slap me three times with Hale and... we formed soil health academy",
+      "episode_number": 158
+    },
+    {
+      "source": "Soil Health Academy",
+      "relationship": "located_in",
+      "target": "nonprofit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "we formed soil health academy that's a 501c3 nonprofit",
+      "episode_number": 158
+    },
+    {
+      "source": "regenerified",
+      "relationship": "made_by",
+      "target": "Hale",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the third company which my partners and I helped to build is called regenerified",
+      "episode_number": 158
+    },
+    {
+      "source": "North Dakota",
+      "relationship": "contains",
+      "target": "spinach",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "here I am in North Dakota go go go try and find some good spinach",
+      "episode_number": 158
+    },
+    {
+      "source": "Mark Rutsloff",
+      "relationship": "works_at",
+      "target": "consumer interface",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we've had Mark Rutsloff on who's done a lot of work on the consumer interface side of things",
+      "episode_number": 158
+    },
+    {
+      "source": "Mark Rutsloff",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing consumer interface in organics movement",
+      "episode_number": 158
+    },
+    {
+      "source": "Washington",
+      "relationship": "contains",
+      "target": "fertilizer industry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "context of lobbying in Washington",
+      "episode_number": 158
+    },
+    {
+      "source": "consumers",
+      "relationship": "drive",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing consumer demand and awareness",
+      "episode_number": 158
+    },
+    {
+      "source": "supply chains",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "context of supply chain involvement in agriculture",
+      "episode_number": 158
+    },
+    {
+      "source": "fertilizer industry",
+      "relationship": "advocates_for",
+      "target": "status quo",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "putting money into our delegation saying hey we want the status quo",
+      "episode_number": 158
+    },
+    {
+      "source": "chemical industry",
+      "relationship": "advocates_for",
+      "target": "status quo",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "putting money into our delegation saying hey we want the status quo",
+      "episode_number": 158
+    },
+    {
+      "source": "equipment manufacturers",
+      "relationship": "advocates_for",
+      "target": "status quo",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "putting money into our delegation saying hey we want the status quo",
+      "episode_number": 158
+    },
+    {
+      "source": "grain growing associations",
+      "relationship": "advocates_for",
+      "target": "status quo",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "putting money into our delegation saying hey we want the status quo",
+      "episode_number": 158
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "works_at",
+      "target": "United Nations World Food Program",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we had a David Beasley on the podcast",
+      "episode_number": 158
+    },
+    {
+      "source": "United Nations World Food Program",
+      "relationship": "awarded",
+      "target": "Nobel Peace Prize",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "awarded the Nobel Peace Prize",
+      "episode_number": 158
+    },
+    {
+      "source": "covid",
+      "relationship": "causes",
+      "target": "starvation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the compounding challenges of covid doubled essentially the number of our fellow humans worldwide on the verge of starvation",
+      "episode_number": 158
+    },
+    {
+      "source": "food",
+      "relationship": "spoils",
+      "target": "people",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "one third of the food we're growing worldwide spoils does not get to a person",
+      "episode_number": 158
+    },
+    {
+      "source": "Chewalean desert",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "I stood in the Chewalean desert of Mexico",
+      "episode_number": 158
+    },
+    {
+      "source": "southwestern US",
+      "relationship": "contains",
+      "target": "desertification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "you look at the southwestern US man kinds actions cause that desert to appear",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "authored",
+      "target": "Dirt to Soil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Dirt to Soil",
+      "relationship": "published_by",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y Honors Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "associated_with",
+      "target": "Understanding Ag",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "associated_with",
+      "target": "Soil Health Academy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Y Honors Community",
+      "relationship": "supported_by",
+      "target": "Waylay and Waters",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "produces",
+      "target": "Y Honors Community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Y Honors Community",
+      "relationship": "supported_by",
+      "target": "Patreon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Gabe discusses his experiences and the importance of regenerative agriculture in his life",
+      "episode_number": 158
+    },
+    {
+      "source": "yonurth.org",
+      "relationship": "located_in",
+      "target": "internet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "website mentioned as a resource for becoming an ambassador",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "located_in",
+      "target": "Detroit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Gabe mentions a call from a lady in Detroit regarding food production",
+      "episode_number": 158
+    },
+    {
+      "source": "God",
+      "relationship": "inspired",
+      "target": "Gabe Brown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Gabe attributes his motivation and promise to God during difficult times",
+      "episode_number": 158
+    },
+    {
+      "source": "Gabe Brown",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Aaron",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "William Perry",
+      "relationship": "leads",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 158
+    },
+    {
+      "source": "Detroit",
+      "relationship": "located_in",
+      "target": "Michigan",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "inner city",
+      "episode_number": 158
+    },
+    {
+      "source": "North Dakota",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "rancher",
+      "episode_number": 158
+    }
+  ]
+}

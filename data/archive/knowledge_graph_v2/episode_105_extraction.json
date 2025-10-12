@@ -1,0 +1,2078 @@
+{
+  "episode": 105,
+  "timestamp": "2025-10-09T10:25:56.014106",
+  "entity_count": 144,
+  "relationship_count": 106,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y-Earth Community Podcast"
+    },
+    {
+      "name": "Y-Earth Community Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast being hosted"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the workshop"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friend from drylands agroecology research"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friend from drylands agroecology research"
+    },
+    {
+      "name": "drylands agroecology research",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization involved in the workshop"
+    },
+    {
+      "name": "Audrey",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friend from Allens Farm"
+    },
+    {
+      "name": "Allens Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization involved in the workshop"
+    },
+    {
+      "name": "Shane",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friend from Medacarbon Farm"
+    },
+    {
+      "name": "Medacarbon Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization involved in the workshop"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location near Lions"
+    },
+    {
+      "name": "Lions",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location near Boulder"
+    },
+    {
+      "name": "Pat Gioli",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "historical figure related to accounting"
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure contemporary to Pat Gioli"
+    },
+    {
+      "name": "suma 1494",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "book written by Pat Gioli"
+    },
+    {
+      "name": "Why North community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "community mentioned for expertise"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Joyful Journey",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Hot Springs Spa",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partner organization"
+    },
+    {
+      "name": "Wyners community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "collaborate with a company"
+    },
+    {
+      "name": "Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Joyful Journey",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Hot Springs Spa",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "shout out to organizations"
+    },
+    {
+      "name": "Bob Hill",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "joined our stewardship circle"
+    },
+    {
+      "name": "Father Pat Giole",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "wrote a book called Summa 1494"
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "dates of the life coincide"
+    },
+    {
+      "name": "parents",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "I remember back in the day, my parents first asked me if I wanted to do bookkeeping for their company when I was in middle school."
+    },
+    {
+      "name": "bookkeeping",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "if I wanted to do bookkeeping for their company when I was in middle school."
+    },
+    {
+      "name": "accounting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "was doing accounting and advising work for a number of companies"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "you do that in accounting software like QuickBooks."
+    },
+    {
+      "name": "bank",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.7,
+      "context": "literally taking checks to the bank or a photo of a check if you're remote depositing"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "I fully trust Aaron that there's going to be more for you also learn to do with one of the knowledge that you may be versed in this more so than we are."
+    },
+    {
+      "name": "math",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "what's interesting about accounting is that there's not a lot of advanced math involved."
+    },
+    {
+      "name": "income statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "generally expressed on a financial report called an income statement"
+    },
+    {
+      "name": "statement of activity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "which for nonprofits is also called a statement of activity"
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "expressed on the balance sheet, which is also called a statement of position"
+    },
+    {
+      "name": "cash flow statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "the third common financial statement, which is called a cash flow statement"
+    },
+    {
+      "name": "assets",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "types are assets, liabilities, and equity."
+    },
+    {
+      "name": "liabilities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "types are assets, liabilities, and equity."
+    },
+    {
+      "name": "equity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "types are assets, liabilities, and equity."
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "balance sheet, which is also called a statement of position."
+    },
+    {
+      "name": "cash flow statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "third common financial statement, which is called a cash flow statement."
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "something like QuickBooks."
+    },
+    {
+      "name": "Intuit",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the company into it that has developed the QuickBooks software."
+    },
+    {
+      "name": "debits",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Now for the fun. Now we're going to talk about debits and credits."
+    },
+    {
+      "name": "credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Now for the fun. Now we're going to talk about debits and credits."
+    },
+    {
+      "name": "accounting system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the logic within any accounting system we're using."
+    },
+    {
+      "name": "local food",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "we were doing local food and attempting to track source and destination of all this local food."
+    },
+    {
+      "name": "my grandfather",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "My grandfather was an accountant back in the post-war era."
+    },
+    {
+      "name": "income account",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "When we credit an income account, we are increasing that income account."
+    },
+    {
+      "name": "expense account",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a debit to an expense account, is an increase."
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "When you're on a balance sheet."
+    },
+    {
+      "name": "non-profits",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "In non-profits, you can have in-kind income."
+    },
+    {
+      "name": "income",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "expenses",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "assets",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "liabilities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "equity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "intellectual property",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "patent",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "statement of activity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "statement of cash flow",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "financial statements",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "financial statements discussion"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "accounting software"
+    },
+    {
+      "name": "invoice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "financial transaction"
+    },
+    {
+      "name": "accounts receivable",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "financial account"
+    },
+    {
+      "name": "income statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "financial report"
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "financial report"
+    },
+    {
+      "name": "P&L",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "financial report"
+    },
+    {
+      "name": "design project",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "financial transaction"
+    },
+    {
+      "name": "financials",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "financial report"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "software for accounting"
+    },
+    {
+      "name": "Mary Smith",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "example invoice recipient"
+    },
+    {
+      "name": "folk farm",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "business concept mentioned in context of invoicing"
+    },
+    {
+      "name": "Mary Smith",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing invoicing for folk farm"
+    },
+    {
+      "name": "folk farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing income and expenses related to folk farm"
+    },
+    {
+      "name": "Naderina",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "setting up the chart of accounts"
+    },
+    {
+      "name": "Metacarbon",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing sections for eggs and chicken related stuff"
+    },
+    {
+      "name": "Exxon",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "largest corporations using accounting systems"
+    },
+    {
+      "name": "Apple",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "largest corporations using accounting systems"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing data structures in accounting"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "software for accounting"
+    },
+    {
+      "name": "Comcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "telecommunications company"
+    },
+    {
+      "name": "Verizon",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "telecommunications company"
+    },
+    {
+      "name": "S-GNA",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "sales general administration concept"
+    },
+    {
+      "name": "bill",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "financial transaction concept"
+    },
+    {
+      "name": "customer",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "business term"
+    },
+    {
+      "name": "vendor",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "business term"
+    },
+    {
+      "name": "program",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "business term"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussing accounting software features."
+    },
+    {
+      "name": "Aunt Judy",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of invoice fraud."
+    },
+    {
+      "name": "Comcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Example of a vendor for internet expenses."
+    },
+    {
+      "name": "internet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussed as an expense account."
+    },
+    {
+      "name": "accounts payable",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to liabilities."
+    },
+    {
+      "name": "accounts payable",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about balance sheet"
+    },
+    {
+      "name": "balance sheet",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about accounting"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "software mentioned for accounting"
+    },
+    {
+      "name": "Comcast",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "company mentioned in billing example"
+    },
+    {
+      "name": "Elevations Credit Union",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "bank mentioned in payment example"
+    },
+    {
+      "name": "cash",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about financial transactions"
+    },
+    {
+      "name": "truck",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "example of asset purchase"
+    },
+    {
+      "name": "eggs",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "example of expense purchase"
+    },
+    {
+      "name": "folk farm program",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "program mentioned in expense example"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "software used for accounting"
+    },
+    {
+      "name": "Adam",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "individual mentioned as helping with accounting"
+    },
+    {
+      "name": "mortgage",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financial concept related to payments"
+    },
+    {
+      "name": "truck",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "item mentioned in the context of payments"
+    },
+    {
+      "name": "bank statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "financial document used for reconciliation"
+    },
+    {
+      "name": "QuickBooks",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed as a financial software for transactions"
+    },
+    {
+      "name": "bank",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to financial transactions"
+    },
+    {
+      "name": "receipts",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in the context of recording transactions"
+    },
+    {
+      "name": "debit card",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a payment method"
+    },
+    {
+      "name": "workshop",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to a speaker visit"
+    },
+    {
+      "name": "excel",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a tool for exporting reports"
+    },
+    {
+      "name": "tuition",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to income"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community stewardship and sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "yonurth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "visit yonurth.org-support"
+    },
+    {
+      "name": "Adam",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "ask Adam"
+    },
+    {
+      "name": "crit books",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "nothing to do with crit books"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "hosting the podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "drylands agroecology research",
+      "relationship": "located_in",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "workshop location",
+      "episode_number": 105
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "drylands agroecology research",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friend from organization",
+      "episode_number": 105
+    },
+    {
+      "source": "Marissa",
+      "relationship": "works_at",
+      "target": "drylands agroecology research",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friend from organization",
+      "episode_number": 105
+    },
+    {
+      "source": "Audrey",
+      "relationship": "works_at",
+      "target": "Allens Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friend from organization",
+      "episode_number": 105
+    },
+    {
+      "source": "Shane",
+      "relationship": "works_at",
+      "target": "Medacarbon Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friend from organization",
+      "episode_number": 105
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "geographic location",
+      "episode_number": 105
+    },
+    {
+      "source": "Lions",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic location",
+      "episode_number": 105
+    },
+    {
+      "source": "Pat Gioli",
+      "relationship": "wrote",
+      "target": "suma 1494",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "historical figure and book",
+      "episode_number": 105
+    },
+    {
+      "source": "Leonardo da Vinci",
+      "relationship": "contemporary_of",
+      "target": "Pat Gioli",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "historical context",
+      "episode_number": 105
+    },
+    {
+      "source": "Why North community",
+      "relationship": "offers",
+      "target": "advising and consulting",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "community offering services",
+      "episode_number": 105
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Lich Family Foundation",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Purium",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Liquid Trainer",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Vera Herbles",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Growing Spaces",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Joyful Journey",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Hot Springs Spa",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Earthwater Press",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "partner_of",
+      "target": "Y-Earth Community Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership in podcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Artem",
+      "relationship": "works_at",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "collaborate with a company",
+      "episode_number": 105
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "located_in",
+      "target": "Wyners community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "collaborate with a company",
+      "episode_number": 105
+    },
+    {
+      "source": "Father Pat Giole",
+      "relationship": "wrote",
+      "target": "Summa 1494",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "wrote a book",
+      "episode_number": 105
+    },
+    {
+      "source": "Summa 1494",
+      "relationship": "presents",
+      "target": "double entry accounting",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "system of double entry accounting",
+      "episode_number": 105
+    },
+    {
+      "source": "Leonardo da Vinci",
+      "relationship": "contemporary_of",
+      "target": "Father Pat Giole",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "dates of the life coincide",
+      "episode_number": 105
+    },
+    {
+      "source": "parents",
+      "relationship": "works_at",
+      "target": "company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "my parents first asked me if I wanted to do bookkeeping for their company when I was in middle school.",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "made_by",
+      "target": "company",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "you do that in accounting software like QuickBooks.",
+      "episode_number": 105
+    },
+    {
+      "source": "accounting",
+      "relationship": "advocates_for",
+      "target": "math",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "what's interesting about accounting is that there's not a lot of advanced math involved.",
+      "episode_number": 105
+    },
+    {
+      "source": "income statement",
+      "relationship": "part_of",
+      "target": "financial report",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "generally expressed on a financial report called an income statement",
+      "episode_number": 105
+    },
+    {
+      "source": "statement of activity",
+      "relationship": "part_of",
+      "target": "financial report",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "which for nonprofits is also called a statement of activity",
+      "episode_number": 105
+    },
+    {
+      "source": "balance sheet",
+      "relationship": "part_of",
+      "target": "financial report",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "expressed on the balance sheet, which is also called a statement of position",
+      "episode_number": 105
+    },
+    {
+      "source": "cash flow statement",
+      "relationship": "part_of",
+      "target": "financial report",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "the third common financial statement, which is called a cash flow statement",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "developed_by",
+      "target": "Intuit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the company into it that has developed the QuickBooks software.",
+      "episode_number": 105
+    },
+    {
+      "source": "debits",
+      "relationship": "affects",
+      "target": "accounting system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the logic within any accounting system we're using.",
+      "episode_number": 105
+    },
+    {
+      "source": "credits",
+      "relationship": "affects",
+      "target": "accounting system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the logic within any accounting system we're using.",
+      "episode_number": 105
+    },
+    {
+      "source": "income account",
+      "relationship": "increases",
+      "target": "assets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "When we credit an income account, we are increasing that income account.",
+      "episode_number": 105
+    },
+    {
+      "source": "expense account",
+      "relationship": "increases",
+      "target": "liabilities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "a debit to an expense account, is an increase.",
+      "episode_number": 105
+    },
+    {
+      "source": "balance sheet",
+      "relationship": "contains",
+      "target": "assets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "When you're on a balance sheet.",
+      "episode_number": 105
+    },
+    {
+      "source": "balance sheet",
+      "relationship": "contains",
+      "target": "liabilities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "When you're on a balance sheet.",
+      "episode_number": 105
+    },
+    {
+      "source": "balance sheet",
+      "relationship": "contains",
+      "target": "equity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "When you're on a balance sheet.",
+      "episode_number": 105
+    },
+    {
+      "source": "my grandfather",
+      "relationship": "was",
+      "target": "accountant",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "My grandfather was an accountant back in the post-war era.",
+      "episode_number": 105
+    },
+    {
+      "source": "income",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "expenses",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "assets",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "liabilities",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "equity",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "intellectual property",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "patent",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "balance sheet",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "statement of activity",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "statement of cash flow",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "financial statements",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "is_a",
+      "target": "ORG",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "financial statements discussion",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "used_for",
+      "target": "invoice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "accounting software functionality",
+      "episode_number": 105
+    },
+    {
+      "source": "invoice",
+      "relationship": "part_of",
+      "target": "financials",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "financial transaction context",
+      "episode_number": 105
+    },
+    {
+      "source": "accounts receivable",
+      "relationship": "part_of",
+      "target": "balance sheet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "financial account context",
+      "episode_number": 105
+    },
+    {
+      "source": "income statement",
+      "relationship": "part_of",
+      "target": "P&L",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "financial report context",
+      "episode_number": 105
+    },
+    {
+      "source": "design project",
+      "relationship": "involves",
+      "target": "invoice",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "financial transaction context",
+      "episode_number": 105
+    },
+    {
+      "source": "invoice",
+      "relationship": "leads_to",
+      "target": "accounts receivable",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "financial transaction context",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "works_at",
+      "target": "Mary Smith",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "example invoice context",
+      "episode_number": 105
+    },
+    {
+      "source": "Mary Smith",
+      "relationship": "advocates_for",
+      "target": "folk farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "invoice context",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "contains",
+      "target": "accounts receivable",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "financial management context",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "contains",
+      "target": "undeposited funds",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "financial management context",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "contains",
+      "target": "bank account",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "financial management context",
+      "episode_number": 105
+    },
+    {
+      "source": "Mary Smith",
+      "relationship": "works_at",
+      "target": "folk farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussing invoicing for folk farm",
+      "episode_number": 105
+    },
+    {
+      "source": "folk farm",
+      "relationship": "part_of",
+      "target": "Naderina",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.8,
+      "context": "setting up the chart of accounts",
+      "episode_number": 105
+    },
+    {
+      "source": "folk farm",
+      "relationship": "contains",
+      "target": "Metacarbon",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "discussing sections for eggs and chicken related stuff",
+      "episode_number": 105
+    },
+    {
+      "source": "Exxon",
+      "relationship": "uses",
+      "target": "QuickBooks",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "largest corporations using accounting systems",
+      "episode_number": 105
+    },
+    {
+      "source": "Apple",
+      "relationship": "uses",
+      "target": "QuickBooks",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "largest corporations using accounting systems",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "integrates_with",
+      "target": "bank accounts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "integration features of QuickBooks",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "automates",
+      "target": "bill",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "automation features of QuickBooks",
+      "episode_number": 105
+    },
+    {
+      "source": "Comcast",
+      "relationship": "provides",
+      "target": "telecommunications services",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "services provided by Comcast",
+      "episode_number": 105
+    },
+    {
+      "source": "Verizon",
+      "relationship": "provides",
+      "target": "telecommunications services",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "services provided by Verizon",
+      "episode_number": 105
+    },
+    {
+      "source": "S-GNA",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "business terminology",
+      "episode_number": 105
+    },
+    {
+      "source": "customer",
+      "relationship": "is_related_to",
+      "target": "vendor",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "business relationships",
+      "episode_number": 105
+    },
+    {
+      "source": "program",
+      "relationship": "has",
+      "target": "income and expense accounts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "financial structure of programs",
+      "episode_number": 105
+    },
+    {
+      "source": "Aunt Judy",
+      "relationship": "advocates_for",
+      "target": "invoice fraud",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Mentioned in the context of fraud involving invoices.",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "contains",
+      "target": "bill pay",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Discussing features of QuickBooks.",
+      "episode_number": 105
+    },
+    {
+      "source": "Comcast",
+      "relationship": "provides",
+      "target": "internet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Example of a vendor providing internet service.",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "records",
+      "target": "accounts payable",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Discussing how QuickBooks handles financial records.",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "used_for",
+      "target": "accounts payable",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "software used for managing accounts payable",
+      "episode_number": 105
+    },
+    {
+      "source": "Comcast",
+      "relationship": "billing_for",
+      "target": "accounts payable",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "billing example for accounts payable",
+      "episode_number": 105
+    },
+    {
+      "source": "Elevations Credit Union",
+      "relationship": "associated_with",
+      "target": "accounts payable",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "bank account used for payments",
+      "episode_number": 105
+    },
+    {
+      "source": "cash",
+      "relationship": "affects",
+      "target": "balance sheet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "cash transactions affect balance sheet",
+      "episode_number": 105
+    },
+    {
+      "source": "truck",
+      "relationship": "purchased_with",
+      "target": "loan",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "example of asset purchase with loan",
+      "episode_number": 105
+    },
+    {
+      "source": "eggs",
+      "relationship": "purchased_for",
+      "target": "folk farm program",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "example of expense for program",
+      "episode_number": 105
+    },
+    {
+      "source": "Adam",
+      "relationship": "works_at",
+      "target": "QuickBooks",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "helping with accounting setup",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "contains",
+      "target": "bank statement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "software used for accounting that includes bank statements",
+      "episode_number": 105
+    },
+    {
+      "source": "mortgage",
+      "relationship": "part_of",
+      "target": "truck",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "concept related to payments that could apply to truck payments",
+      "episode_number": 105
+    },
+    {
+      "source": "truck",
+      "relationship": "made_by",
+      "target": "QuickBooks",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "item mentioned in the context of payments recorded in QuickBooks",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "used_for",
+      "target": "bank",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of verifying transactions",
+      "episode_number": 105
+    },
+    {
+      "source": "receipts",
+      "relationship": "related_to",
+      "target": "QuickBooks",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed as a method for recording expenses in QuickBooks",
+      "episode_number": 105
+    },
+    {
+      "source": "debit card",
+      "relationship": "used_for",
+      "target": "receipts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned as a payment method that generates receipts",
+      "episode_number": 105
+    },
+    {
+      "source": "workshop",
+      "relationship": "involves",
+      "target": "speaker",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of an important speaker visit",
+      "episode_number": 105
+    },
+    {
+      "source": "QuickBooks",
+      "relationship": "generates",
+      "target": "reports",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in the context of generating financial reports",
+      "episode_number": 105
+    },
+    {
+      "source": "tuition",
+      "relationship": "contributes_to",
+      "target": "gross revenue",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to income generation",
+      "episode_number": 105
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the podcast series is hosted by Aaron William Perry",
+      "episode_number": 105
+    },
+    {
+      "source": "yonurth.org",
+      "relationship": "sponsors",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 105
+    },
+    {
+      "source": "Adam",
+      "relationship": "consults_on",
+      "target": "employment law",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "ask Adam about employment law questions",
+      "episode_number": 105
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "advocates_for",
+      "target": "community stewardship and sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the why on earth community stewardship and sustainability podcast series",
+      "episode_number": 105
+    },
+    {
+      "source": "crit books",
+      "relationship": "related_to",
+      "target": "tuition",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "charged tuition through like my own invoice that I created that is nothing to do with crit books",
+      "episode_number": 105
+    }
+  ]
+}

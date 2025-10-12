@@ -1,0 +1,1288 @@
+{
+  "episode": 11,
+  "timestamp": "2025-10-09T10:27:40.475876",
+  "entity_count": 94,
+  "relationship_count": 62,
+  "entities": [
+    {
+      "name": "Lauren Tucker",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director of Kiss the Ground"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization Lauren Tucker works at"
+    },
+    {
+      "name": "West Virginia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where Lauren grew up"
+    },
+    {
+      "name": "American University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where Lauren graduated"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "where Lauren studied abroad"
+    },
+    {
+      "name": "Ethiopia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "country in Lauren's thesis"
+    },
+    {
+      "name": "North Korea",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "country in Lauren's thesis"
+    },
+    {
+      "name": "Malawi",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "country in Lauren's thesis"
+    },
+    {
+      "name": "Greenlight New Orleans",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "nonprofit Lauren helped develop"
+    },
+    {
+      "name": "Katrina",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "devastation that led to Greenlight New Orleans"
+    },
+    {
+      "name": "Ryland Englehart",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "owner manager of Cafe Gratitude"
+    },
+    {
+      "name": "Cafe Gratitude",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Ryland Englehart's family business"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of Cafe Gratitude"
+    },
+    {
+      "name": "soil carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "topic that inspired Ryland"
+    },
+    {
+      "name": "carbon cycle",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "related to agriculture and global warming"
+    },
+    {
+      "name": "global warming",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "issue related to agriculture"
+    },
+    {
+      "name": "education program",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part of Kiss the Ground's initiatives"
+    },
+    {
+      "name": "farmer training program",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part of Kiss the Ground's initiatives"
+    },
+    {
+      "name": "farmer training program",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a farmer training program"
+    },
+    {
+      "name": "scholarship fund for farmers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a scholarship fund for farmers"
+    },
+    {
+      "name": "business education program",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a business education program"
+    },
+    {
+      "name": "regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "regeneration of our planet"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "agriculture on the one hand"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "regenerative agriculture on the other hand"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "carbon in our soils"
+    },
+    {
+      "name": "climate stabilization",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "help with climate stabilization"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "plants breathe carbon"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "diverse microbes and fungi"
+    },
+    {
+      "name": "soil life",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "improve our soil life"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing farming practices and soil health"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing farming practices and soil health"
+    },
+    {
+      "name": "pesticides",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing farming practices and soil health"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing farming practices and societal engagement"
+    },
+    {
+      "name": "Wendell Berry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "quoting a notable figure in agriculture"
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization promoting sustainable agriculture"
+    },
+    {
+      "name": "farmer's market",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing personal shopping experiences"
+    },
+    {
+      "name": "Mark Gutridge",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "picking up some produce from a good friend Mark Gutridge who has oil in farms and is just an amazing soil steward."
+    },
+    {
+      "name": "farmer's market",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I was at our farmer's market picking up some produce from a good friend Mark Gutridge."
+    },
+    {
+      "name": "oil in farms",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mark Gutridge who has oil in farms and is just an amazing soil steward."
+    },
+    {
+      "name": "corporation",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "a corporation in the area wanted instead of having a regular sort of office party to commemorate an event for the employees and staff."
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "growing, knowing and showing when it comes to food."
+    },
+    {
+      "name": "community dinner",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "they all shared a beautiful community dinner right there on the farm together."
+    },
+    {
+      "name": "environmental impacts of farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "understand the environmental impacts of farming, whether they're negative or positive."
+    },
+    {
+      "name": "Kepaic Gratitude",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Ryland's father is one of the founders of Kepaic Gratitude."
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a farmer in northern California."
+    },
+    {
+      "name": "Lauren Tucker",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director of Kiss the Ground."
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Kiss the Ground is providing a purchasing guide."
+    },
+    {
+      "name": "Santa Barbara",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "surrounding food shed in Santa Barbara."
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Why on Earth Community Stewardship and Sustainability Podcast Series."
+    },
+    {
+      "name": "tequila",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "it's like a tequila and it's made from Santa Barbara."
+    },
+    {
+      "name": "food shed",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "it's in my quote-unquote food shed."
+    },
+    {
+      "name": "kisstheground.com",
+      "type": "URL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you can find that at kisstheground.com."
+    },
+    {
+      "name": "Instagram",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kiss the Ground on social media is also found at Kiss the Ground Instagram."
+    },
+    {
+      "name": "Facebook",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at the ground CA for Facebook."
+    },
+    {
+      "name": "Twitter",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at the ground CA for Twitter."
+    },
+    {
+      "name": "YouTube",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at the ground CA for YouTube."
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Kiss the Ground on social media"
+    },
+    {
+      "name": "Instagram",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kiss the Ground on social media"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kiss the Ground on social media"
+    },
+    {
+      "name": "Twitter",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kiss the Ground on social media"
+    },
+    {
+      "name": "YouTube",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kiss the Ground on social media"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "special deal for listeners"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "marketplace for eBooks and audiobooks"
+    },
+    {
+      "name": "Lifelab",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "gardening education nonprofit"
+    },
+    {
+      "name": "Santa Cruz",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Lifelab location"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Lifelab location"
+    },
+    {
+      "name": "The Soil Story",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "video created by Kiss the Ground"
+    },
+    {
+      "name": "carbon cycle",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "explained in The Soil Story"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "curriculum for middle school"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "final lesson in curriculum"
+    },
+    {
+      "name": "Lauren",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about soil and human connection"
+    },
+    {
+      "name": "Venice",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of a ceremony"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about soil and its significance"
+    },
+    {
+      "name": "humus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "etymology related to soil"
+    },
+    {
+      "name": "microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing living soil"
+    },
+    {
+      "name": "soil carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental practices"
+    },
+    {
+      "name": "food brands",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about supply chains and innovation"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental interdependence"
+    },
+    {
+      "name": "animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental interdependence"
+    },
+    {
+      "name": "humans",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about human connection to the environment"
+    },
+    {
+      "name": "Venice, California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "city-owned property in Venice, California"
+    },
+    {
+      "name": "City of LA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "owned by City of LA"
+    },
+    {
+      "name": "LA",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "part of LA proper"
+    },
+    {
+      "name": "Poetry nonprofit",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "arts nonprofits"
+    },
+    {
+      "name": "public art mural painting nonprofit",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "arts nonprofits"
+    },
+    {
+      "name": "homeless youth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "working and training homeless youth"
+    },
+    {
+      "name": "soil microbiology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "work with soil microbiology"
+    },
+    {
+      "name": "urban landscapes",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "urban landscapes"
+    },
+    {
+      "name": "indigenous traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "many of our traditions worldwide are indigenous traditions"
+    },
+    {
+      "name": "ecosystem",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "roles and then ecosystem"
+    },
+    {
+      "name": "Lauren",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion with Aaron"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion with Lauren"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "part of national and international coalitions"
+    },
+    {
+      "name": "community project",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about volunteering and community involvement"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Lauren Tucker",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "executive director of Kiss the Ground",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "grew_up_in",
+      "target": "West Virginia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "where she was surrounded by natural beauty",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "graduated_from",
+      "target": "American University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "degree in psychology and international studies",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "studied_abroad_in",
+      "target": "Africa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "volunteering throughout Africa",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote_thesis_on",
+      "target": "Ethiopia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "ineffectiveness of US food aid",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote_thesis_on",
+      "target": "North Korea",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "ineffectiveness of US food aid",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote_thesis_on",
+      "target": "Malawi",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "ineffectiveness of US food aid",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "helped_develop",
+      "target": "Greenlight New Orleans",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "nonprofit in response to Katrina",
+      "episode_number": 11
+    },
+    {
+      "source": "Ryland Englehart",
+      "relationship": "owns",
+      "target": "Cafe Gratitude",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "family business",
+      "episode_number": 11
+    },
+    {
+      "source": "Cafe Gratitude",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organic vegan restaurant chain",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "focuses_on",
+      "target": "education program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "part of their initiatives",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "focuses_on",
+      "target": "farmer training program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "part of their initiatives",
+      "episode_number": 11
+    },
+    {
+      "source": "farmer training program",
+      "relationship": "advocates_for",
+      "target": "regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "a farmer training program",
+      "episode_number": 11
+    },
+    {
+      "source": "scholarship fund for farmers",
+      "relationship": "advocates_for",
+      "target": "agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "a scholarship fund for farmers",
+      "episode_number": 11
+    },
+    {
+      "source": "business education program",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "a business education program",
+      "episode_number": 11
+    },
+    {
+      "source": "agriculture",
+      "relationship": "emits",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "agriculture can be a significant emitter of greenhouse gases",
+      "episode_number": 11
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "sequesters",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "regenerative agriculture is one of the big strategies to sequester carbon",
+      "episode_number": 11
+    },
+    {
+      "source": "plants",
+      "relationship": "breathe_in",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "plants breathe carbon",
+      "episode_number": 11
+    },
+    {
+      "source": "healthy soils",
+      "relationship": "support",
+      "target": "microbes",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "when soils are healthy, diverse microbes and fungi",
+      "episode_number": 11
+    },
+    {
+      "source": "farming practices",
+      "relationship": "improve",
+      "target": "soil life",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "ways that we can farm which really improve our soil life",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "advocates_for",
+      "target": "agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the organization's efforts in agriculture education",
+      "episode_number": 11
+    },
+    {
+      "source": "Wendell Berry",
+      "relationship": "advocates_for",
+      "target": "agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "quoting Wendell Berry's perspective on food and agriculture",
+      "episode_number": 11
+    },
+    {
+      "source": "farmer's market",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussing the local shopping experience",
+      "episode_number": 11
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing soil health and carbon storage",
+      "episode_number": 11
+    },
+    {
+      "source": "farming practices",
+      "relationship": "improve",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing methods to enhance soil health",
+      "episode_number": 11
+    },
+    {
+      "source": "Mark Gutridge",
+      "relationship": "works_at",
+      "target": "oil in farms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Mark Gutridge who has oil in farms and is just an amazing soil steward.",
+      "episode_number": 11
+    },
+    {
+      "source": "corporation",
+      "relationship": "located_in",
+      "target": "farmer's market",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "a corporation in the area wanted instead of having a regular sort of office party to commemorate an event for the employees and staff.",
+      "episode_number": 11
+    },
+    {
+      "source": "food",
+      "relationship": "advocates_for",
+      "target": "community dinner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "growing, knowing and showing when it comes to food.",
+      "episode_number": 11
+    },
+    {
+      "source": "Mark Gutridge",
+      "relationship": "advocates_for",
+      "target": "environmental impacts of farming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mark was telling me this really cool story about an event he had just had.",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "works_at",
+      "target": "Kiss the Ground",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "executive director of Kiss the Ground.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Kiss the Ground is providing a purchasing guide.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "advocates_for",
+      "target": "food shed",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Kiss the Ground is providing a purchasing guide.",
+      "episode_number": 11
+    },
+    {
+      "source": "Santa Barbara",
+      "relationship": "part_of",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "surrounding food shed in Santa Barbara.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has_social_media",
+      "target": "Instagram",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Kiss the Ground on social media is also found at Kiss the Ground Instagram.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has_social_media",
+      "target": "Facebook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "at the ground CA for Facebook.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has_social_media",
+      "target": "Twitter",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "at the ground CA for Twitter.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has_social_media",
+      "target": "YouTube",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "at the ground CA for YouTube.",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "works_at",
+      "target": "Why on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "marketplace for eBooks and audiobooks",
+      "episode_number": 11
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "collaborates_with",
+      "target": "Lifelab",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "created curriculum",
+      "episode_number": 11
+    },
+    {
+      "source": "Lifelab",
+      "relationship": "located_in",
+      "target": "Santa Cruz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Lifelab location",
+      "episode_number": 11
+    },
+    {
+      "source": "Santa Cruz",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Lifelab location",
+      "episode_number": 11
+    },
+    {
+      "source": "The Soil Story",
+      "relationship": "explains",
+      "target": "carbon cycle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "video created by Kiss the Ground",
+      "episode_number": 11
+    },
+    {
+      "source": "curriculum",
+      "relationship": "teaches_about",
+      "target": "photosynthesis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "curriculum for middle school",
+      "episode_number": 11
+    },
+    {
+      "source": "curriculum",
+      "relationship": "teaches_about",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "final lesson in curriculum",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren",
+      "relationship": "advocates_for",
+      "target": "soil carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental practices",
+      "episode_number": 11
+    },
+    {
+      "source": "food brands",
+      "relationship": "innovate",
+      "target": "supply chains",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion about supply chains and innovation",
+      "episode_number": 11
+    },
+    {
+      "source": "humans",
+      "relationship": "dependent_on",
+      "target": "plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental interdependence",
+      "episode_number": 11
+    },
+    {
+      "source": "humans",
+      "relationship": "dependent_on",
+      "target": "animals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental interdependence",
+      "episode_number": 11
+    },
+    {
+      "source": "plants",
+      "relationship": "part_of",
+      "target": "environment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about environmental interdependence",
+      "episode_number": 11
+    },
+    {
+      "source": "animals",
+      "relationship": "part_of",
+      "target": "environment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about environmental interdependence",
+      "episode_number": 11
+    },
+    {
+      "source": "humans",
+      "relationship": "part_of",
+      "target": "environment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussion about human connection to the environment",
+      "episode_number": 11
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microorganisms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about living soil",
+      "episode_number": 11
+    },
+    {
+      "source": "Venice, California",
+      "relationship": "located_in",
+      "target": "City of LA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "city-owned property in Venice, California",
+      "episode_number": 11
+    },
+    {
+      "source": "City of LA",
+      "relationship": "contains",
+      "target": "Poetry nonprofit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "arts nonprofits",
+      "episode_number": 11
+    },
+    {
+      "source": "City of LA",
+      "relationship": "contains",
+      "target": "public art mural painting nonprofit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "arts nonprofits",
+      "episode_number": 11
+    },
+    {
+      "source": "Venice, California",
+      "relationship": "part_of",
+      "target": "LA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "when Venice became part of LA",
+      "episode_number": 11
+    },
+    {
+      "source": "homeless youth",
+      "relationship": "advocates_for",
+      "target": "soil microbiology",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "working and training homeless youth",
+      "episode_number": 11
+    },
+    {
+      "source": "urban landscapes",
+      "relationship": "part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "thinking about what I believe is going to be happening over the next few years in landscapes",
+      "episode_number": 11
+    },
+    {
+      "source": "indigenous traditions",
+      "relationship": "advocates_for",
+      "target": "ecosystem",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "many of our traditions worldwide are indigenous traditions",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about inspiring brands and farmers",
+      "episode_number": 11
+    },
+    {
+      "source": "Lauren",
+      "relationship": "part_of",
+      "target": "community project",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about community involvement",
+      "episode_number": 11
+    },
+    {
+      "source": "Aaron",
+      "relationship": "works_with",
+      "target": "Lauren",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion between Aaron and Lauren",
+      "episode_number": 11
+    }
+  ]
+}

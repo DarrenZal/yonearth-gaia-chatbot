@@ -1,0 +1,812 @@
+{
+  "episode": 2,
+  "timestamp": "2025-10-09T11:11:09.203176",
+  "entity_count": 56,
+  "relationship_count": 41,
+  "entities": [
+    {
+      "name": "Judith Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Judy Judith is the author of Cow Save the Planet as well as Water and Plain Site."
+    },
+    {
+      "name": "Cow Save the Planet",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Judy Judith is the author of Cow Save the Planet."
+    },
+    {
+      "name": "Water and Plain Site",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Judy Judith is the author of Water and Plain Site."
+    },
+    {
+      "name": "Why on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...to share a bit of your work with the Why on Earth community."
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one statistic that I often use and this is from the USDA."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...connection between soil and water."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...connection between soil and water."
+    },
+    {
+      "name": "organic matter",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...1% increase of organic matter in soil equates to a 25,000 gallon additional water absorption capacity."
+    },
+    {
+      "name": "chemicals",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...the first thing to do is to stop putting chemicals on your lawn."
+    },
+    {
+      "name": "Walter Yena",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "scientist that talks a lot about the soil carbon sponge"
+    },
+    {
+      "name": "Kansas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "met up with him in Kansas"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "soil carbon sponge tour through North America"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "excess gram of nitrogen fertilizer"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "30 grams of carbon being volatized"
+    },
+    {
+      "name": "Earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "miraculous planet Earth that we live on"
+    },
+    {
+      "name": "soil microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "incredible, complex activities of the soil microbiome"
+    },
+    {
+      "name": "Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "amazing planet Earth that we live on."
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "nitrogen is so abundant, right?"
+    },
+    {
+      "name": "World War I",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "nitrogen is a central ingredient in the munitions we utilized in World War I"
+    },
+    {
+      "name": "World War II",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "utilized in World War II"
+    },
+    {
+      "name": "United States",
+      "type": "GEO",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "we as a nation here in the United States made a decision"
+    },
+    {
+      "name": "Christine Jones",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "another Australian scientist, Christine Jones"
+    },
+    {
+      "name": "amazing carbon.com",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website amazing carbon.com"
+    },
+    {
+      "name": "Southern Vermont",
+      "type": "GEO",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I live in Southern Vermont"
+    },
+    {
+      "name": "clover",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "adding clover to the mix"
+    },
+    {
+      "name": "red clover",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "red clover is our state flower"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "herbalist educating people about plants"
+    },
+    {
+      "name": "dandelions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "important food source for pollinators"
+    },
+    {
+      "name": "red clover",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "state flower"
+    },
+    {
+      "name": "Studio Hill farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "regenerative farm in Vermont"
+    },
+    {
+      "name": "Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Studio Hill farm"
+    },
+    {
+      "name": "Restoration Flashmob",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "next book about restoring the earth"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparison for land restoration"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparison for land restoration"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparison for land restoration"
+    },
+    {
+      "name": "sheep",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "animals used in land restoration"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of the community in relation to soil and environmental initiatives"
+    },
+    {
+      "name": "sheep",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about sheep on land and their ecological impact"
+    },
+    {
+      "name": "soil microbiology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of soil microbiology in relation to community initiatives"
+    },
+    {
+      "name": "Midtown Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reference to a location where sheep may not be practical"
+    },
+    {
+      "name": "restoration flashmob",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mention of a book related to community initiatives"
+    },
+    {
+      "name": "probiotic, biodynamic soil activator",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about soil activator used in community initiatives"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Y on Earth community, one of the things I'm so excited about"
+    },
+    {
+      "name": "Midtown Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "some of my friends, perhaps in Midtown Manhattan"
+    },
+    {
+      "name": "Eden",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "feel like what we would imagine the garden of Eden to feel like"
+    },
+    {
+      "name": "GMO corn",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "they're putting GMO corn on the ground to feed the cow"
+    },
+    {
+      "name": "cows",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the immune systems of those core creatures are actually in the process of collapsing"
+    },
+    {
+      "name": "grasses",
+      "type": "PLANT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "feeding corn to these animals that are beautifully designed to eat grasses"
+    },
+    {
+      "name": "biodynamic farm",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I heard recently mentioned up at a biodynamic farm"
+    },
+    {
+      "name": "soil microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "with the soil microbiome, with the plants and the trees"
+    },
+    {
+      "name": "Judith Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioning her books and website"
+    },
+    {
+      "name": "cowsave the planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "title of a book"
+    },
+    {
+      "name": "water and plain sight",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "title of a book"
+    },
+    {
+      "name": "restoration flash mob",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "title of a book"
+    },
+    {
+      "name": "Judy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "referring to Judith Schwartz"
+    },
+    {
+      "name": "Judy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Thank you, Judy."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Judith Schwartz",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...Judy, to have this opportunity to chat with you and to share a bit of your work with the Why on Earth community.",
+      "episode_number": 2
+    },
+    {
+      "source": "Judith Schwartz",
+      "relationship": "advocates_for",
+      "target": "water",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...Judy, to have this opportunity to chat with you and to share a bit of your work with the Why on Earth community.",
+      "episode_number": 2
+    },
+    {
+      "source": "Cow Save the Planet",
+      "relationship": "made_by",
+      "target": "Judith Schwartz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Judy Judith is the author of Cow Save the Planet.",
+      "episode_number": 2
+    },
+    {
+      "source": "Water and Plain Site",
+      "relationship": "made_by",
+      "target": "Judith Schwartz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Judy Judith is the author of Water and Plain Site.",
+      "episode_number": 2
+    },
+    {
+      "source": "Why on Earth community",
+      "relationship": "contains",
+      "target": "Judith Schwartz",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "...to share a bit of your work with the Why on Earth community.",
+      "episode_number": 2
+    },
+    {
+      "source": "USDA",
+      "relationship": "provides_data_on",
+      "target": "organic matter",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "one statistic that I often use and this is from the USDA.",
+      "episode_number": 2
+    },
+    {
+      "source": "Walter Yena",
+      "relationship": "speaks_about",
+      "target": "soil carbon sponge",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "scientist that talks a lot about the soil carbon sponge",
+      "episode_number": 2
+    },
+    {
+      "source": "Walter Yena",
+      "relationship": "located_in",
+      "target": "Kansas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "met up with him in Kansas",
+      "episode_number": 2
+    },
+    {
+      "source": "Walter Yena",
+      "relationship": "conducts_tour",
+      "target": "North America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "soil carbon sponge tour through North America",
+      "episode_number": 2
+    },
+    {
+      "source": "nitrogen",
+      "relationship": "affects",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "every one gram of excess nitrogen flowing into the soil represents 30 grams of carbon being volatized",
+      "episode_number": 2
+    },
+    {
+      "source": "Earth",
+      "relationship": "contains",
+      "target": "soil microbiome",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "miraculous planet Earth that we live on",
+      "episode_number": 2
+    },
+    {
+      "source": "nitrogen",
+      "relationship": "part_of",
+      "target": "Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "nitrogen is so abundant, right?",
+      "episode_number": 2
+    },
+    {
+      "source": "World War I",
+      "relationship": "related_to",
+      "target": "nitrogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "nitrogen is a central ingredient in the munitions we utilized in World War I",
+      "episode_number": 2
+    },
+    {
+      "source": "World War II",
+      "relationship": "related_to",
+      "target": "nitrogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "utilized in World War II",
+      "episode_number": 2
+    },
+    {
+      "source": "United States",
+      "relationship": "located_in",
+      "target": "Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we as a nation here in the United States made a decision",
+      "episode_number": 2
+    },
+    {
+      "source": "Christine Jones",
+      "relationship": "works_at",
+      "target": "amazing carbon.com",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "another Australian scientist, Christine Jones",
+      "episode_number": 2
+    },
+    {
+      "source": "Christine Jones",
+      "relationship": "located_in",
+      "target": "Southern Vermont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "I live in Southern Vermont",
+      "episode_number": 2
+    },
+    {
+      "source": "clover",
+      "relationship": "benefits",
+      "target": "soil microbiome",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "adding clover to the mix",
+      "episode_number": 2
+    },
+    {
+      "source": "red clover",
+      "relationship": "is",
+      "target": "state flower",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "red clover is our state flower",
+      "episode_number": 2
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "dandelions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "educating people about plants",
+      "episode_number": 2
+    },
+    {
+      "source": "Studio Hill farm",
+      "relationship": "located_in",
+      "target": "Vermont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "regenerative farm",
+      "episode_number": 2
+    },
+    {
+      "source": "Restoration Flashmob",
+      "relationship": "made_by",
+      "target": "unknown author",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "next book about restoring the earth",
+      "episode_number": 2
+    },
+    {
+      "source": "sheep",
+      "relationship": "part_of",
+      "target": "land",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "used in land restoration",
+      "episode_number": 2
+    },
+    {
+      "source": "Africa",
+      "relationship": "part_of",
+      "target": "land restoration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "comparison for land restoration",
+      "episode_number": 2
+    },
+    {
+      "source": "Mexico",
+      "relationship": "part_of",
+      "target": "land restoration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "comparison for land restoration",
+      "episode_number": 2
+    },
+    {
+      "source": "Canada",
+      "relationship": "part_of",
+      "target": "land restoration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "comparison for land restoration",
+      "episode_number": 2
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "advocates_for",
+      "target": "soil microbiology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "community initiatives to engage with soil microbiology",
+      "episode_number": 2
+    },
+    {
+      "source": "sheep",
+      "relationship": "part_of",
+      "target": "land",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sheep being introduced onto land for ecological benefits",
+      "episode_number": 2
+    },
+    {
+      "source": "restoration flashmob",
+      "relationship": "related_to",
+      "target": "Y on Earth community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "book mentioned in relation to community initiatives",
+      "episode_number": 2
+    },
+    {
+      "source": "probiotic, biodynamic soil activator",
+      "relationship": "used_by",
+      "target": "Y on Earth community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "soil activator used in community initiatives",
+      "episode_number": 2
+    },
+    {
+      "source": "Midtown Manhattan",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "reference to a city where sheep may not be practical",
+      "episode_number": 2
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "advocates_for",
+      "target": "soil microbiome",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the Y on Earth community, one of the things I'm so excited about",
+      "episode_number": 2
+    },
+    {
+      "source": "cows",
+      "relationship": "eats",
+      "target": "GMO corn",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "they're putting GMO corn on the ground to feed the cow",
+      "episode_number": 2
+    },
+    {
+      "source": "cows",
+      "relationship": "should_eat",
+      "target": "grasses",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "feeding corn to these animals that are beautifully designed to eat grasses",
+      "episode_number": 2
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "located_in",
+      "target": "Eden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "feel like what we would imagine the garden of Eden to feel like",
+      "episode_number": 2
+    },
+    {
+      "source": "biodynamic farm",
+      "relationship": "produces",
+      "target": "soil microbiome",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "I heard recently mentioned up at a biodynamic farm",
+      "episode_number": 2
+    },
+    {
+      "source": "Judith Schwartz",
+      "relationship": "advocates_for",
+      "target": "cowsave the planet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning her book",
+      "episode_number": 2
+    },
+    {
+      "source": "Judith Schwartz",
+      "relationship": "advocates_for",
+      "target": "water and plain sight",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning her book",
+      "episode_number": 2
+    },
+    {
+      "source": "Judith Schwartz",
+      "relationship": "advocates_for",
+      "target": "restoration flash mob",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioning her book",
+      "episode_number": 2
+    },
+    {
+      "source": "Judy",
+      "relationship": "works_at",
+      "target": "Judith Schwartz",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "referring to Judith Schwartz as Judy",
+      "episode_number": 2
+    },
+    {
+      "source": "Judy",
+      "relationship": "advocates_for",
+      "target": "sustainable land management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "checking on the sheep and their impact on the land",
+      "episode_number": 2
+    }
+  ]
+}

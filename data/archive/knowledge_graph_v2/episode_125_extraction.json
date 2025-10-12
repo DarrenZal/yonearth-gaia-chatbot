@@ -1,0 +1,2368 @@
+{
+  "episode": 125,
+  "timestamp": "2025-10-09T10:37:00.325491",
+  "entity_count": 164,
+  "relationship_count": 121,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast host"
+    },
+    {
+      "name": "Danielle Ryan Breuda",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Co-author of Healing Adapted"
+    },
+    {
+      "name": "Healing Adapted",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Book title"
+    },
+    {
+      "name": "Four Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Organization related to herbal medicine"
+    },
+    {
+      "name": "Whitman College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "College where Danielle studied"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Country where Danielle studied Ayurveda"
+    },
+    {
+      "name": "Ganges River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location where Danielle became a yoga instructor"
+    },
+    {
+      "name": "Colorado School of Clinical Irbilism",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "School where Danielle teaches"
+    },
+    {
+      "name": "Taro as a Copella",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Founder of Four Sigmatic"
+    },
+    {
+      "name": "Taro as a Copella",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-authored this book"
+    },
+    {
+      "name": "Four Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of four sigmatic"
+    },
+    {
+      "name": "Ashwaganda",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "adaptogens"
+    },
+    {
+      "name": "Dove",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Dove did a line of adaptogen body soaps"
+    },
+    {
+      "name": "Colorado School of Clinical Irblosism",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "where I teach my young aspiring herbalists"
+    },
+    {
+      "name": "Meringa",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "never used Meringa before"
+    },
+    {
+      "name": "herbalists",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "teaching young aspiring herbalists"
+    },
+    {
+      "name": "Chaga",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing the effectiveness of Chaga"
+    },
+    {
+      "name": "turmeric",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "daily golden milk with turmeric"
+    },
+    {
+      "name": "cordiceps",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "benefits of cordiceps"
+    },
+    {
+      "name": "vitamin C",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "nutrient depletion due to stress"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing the benefits of adaptogens"
+    },
+    {
+      "name": "supplements",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussing the viability of supplements"
+    },
+    {
+      "name": "Tai Chi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a method of balance and resilience"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as nutrient dense foods"
+    },
+    {
+      "name": "immunity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "related to gut health"
+    },
+    {
+      "name": "gut health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to immunity"
+    },
+    {
+      "name": "liver health",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "related to detoxification systems"
+    },
+    {
+      "name": "stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in terms of preparation and resilience"
+    },
+    {
+      "name": "Danika",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "mentioned as a friend with a quirky saying"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as cognitive supporting and physical energy resources"
+    },
+    {
+      "name": "chaga",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in the context of antioxidant profile and health benefits"
+    },
+    {
+      "name": "libido",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to stress effects"
+    },
+    {
+      "name": "stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "central theme of discussion regarding effects on body and adaptogens"
+    },
+    {
+      "name": "performance",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "related to the effects of adaptogens on energy and stress response"
+    },
+    {
+      "name": "stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "how stress is taking a toll on our body"
+    },
+    {
+      "name": "libido",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "libido is our libido is often suppressed one more in a state of stress"
+    },
+    {
+      "name": "saber-toothed tiger",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "when a, you know, saber-shoothed tiger is coming to attack us"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "this is the approach with adaptogens in libido"
+    },
+    {
+      "name": "mocha",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "things like mocha and the quarticeps"
+    },
+    {
+      "name": "Four Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is actually one of the four sigmatic products"
+    },
+    {
+      "name": "plant-based protein shake",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a defend plant-based protein shake with a variety of mushrooms and adaptogens"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when I wrote the book Why on Earth a number of years ago"
+    },
+    {
+      "name": "Change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about changing habits and health"
+    },
+    {
+      "name": "health",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about health and well-being"
+    },
+    {
+      "name": "alcohol",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of alcohol consumption"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about adaptogens and their benefits"
+    },
+    {
+      "name": "stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of stress as a common experience in modern life"
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about food and diet"
+    },
+    {
+      "name": "pharmaceuticals",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mention of pharmaceuticals as coping tools"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about water consumption"
+    },
+    {
+      "name": "exercise",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of exercise as part of health practices"
+    },
+    {
+      "name": "Forrest Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing habits and routines"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "using cannabis for digestion or headaches or sleep"
+    },
+    {
+      "name": "alcohol",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing alternatives to alcohol"
+    },
+    {
+      "name": "herbs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "non-alcoholic beverages with herbs"
+    },
+    {
+      "name": "blueberries",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "adding blueberries into your week"
+    },
+    {
+      "name": "trace minerals",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "putting trace minerals in your water"
+    },
+    {
+      "name": "Forrest Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the company that adds adaptogen extracts to daily habits"
+    },
+    {
+      "name": "gut microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "referring to the microorganisms in the digestive system"
+    },
+    {
+      "name": "microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "referring to the variety of organisms in the gut"
+    },
+    {
+      "name": "sugar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing dietary habits and cravings"
+    },
+    {
+      "name": "psychology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "referring to thought patterns and mental health"
+    },
+    {
+      "name": "fiancee",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "mentioning the speaker's partner who works in mental health"
+    },
+    {
+      "name": "environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussing environmental impact and choices"
+    },
+    {
+      "name": "neural pathways",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing gut health and connections"
+    },
+    {
+      "name": "gut",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing health and nutrition"
+    },
+    {
+      "name": "dollar",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing economic choices"
+    },
+    {
+      "name": "Walmart",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing consumer choices"
+    },
+    {
+      "name": "farmer",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing economic support"
+    },
+    {
+      "name": "sugar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing dietary choices"
+    },
+    {
+      "name": "kale",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing dietary choices"
+    },
+    {
+      "name": "political landscape",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing economic impact of choices"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing hydration and health"
+    },
+    {
+      "name": "trace minerals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing water quality"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing hydration issues in higher elevation zones"
+    },
+    {
+      "name": "inflammation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "at the root of so many diseases"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "how do we replenish ourselves with water"
+    },
+    {
+      "name": "spring water",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "when we would drink spring water"
+    },
+    {
+      "name": "big companies",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "springs have been purchased by big companies"
+    },
+    {
+      "name": "tap water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we're drinking water that's coming out of our tap"
+    },
+    {
+      "name": "antibiotics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "it's like, okay, we got to kill all the bad guys"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "it's killing all the microbiome in our body"
+    },
+    {
+      "name": "burky filter",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I have a burky filter I'm looking at"
+    },
+    {
+      "name": "Himalayan salt",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "adding some lemon and like a high quality Himalayan salt to their water"
+    },
+    {
+      "name": "trace minerals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "there's an amazing company called trace minerals"
+    },
+    {
+      "name": "Utah",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "they get their trace minerals from Utah"
+    },
+    {
+      "name": "find a spring",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "there's a great website called find a spring"
+    },
+    {
+      "name": "Pratchek Reskone",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my friend Pratchek, Pratchek Reskone who has a water mineral company"
+    },
+    {
+      "name": "volcanic sources",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sourcing some very special minerals from different volcanic sources around the world"
+    },
+    {
+      "name": "adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "I talk about this a bit in healing adaptogens"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community podcast"
+    },
+    {
+      "name": "Danielle Ryan Broida",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "co-author of Healing Adaptogens"
+    },
+    {
+      "name": "Healing Adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book discussed in the podcast"
+    },
+    {
+      "name": "Four Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company mentioned in the podcast"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "partner mentioned in the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "partner mentioned in the podcast"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "partner mentioned in the podcast"
+    },
+    {
+      "name": "hemp infused aromatherapy soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product offered as a donation incentive"
+    },
+    {
+      "name": "Chaga",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "adaptogen discussed in the podcast"
+    },
+    {
+      "name": "Chaga",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as a powerful functional fungi for immunity"
+    },
+    {
+      "name": "Siberian Jinsing",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussed as an adaptogenic root for immunity and energy"
+    },
+    {
+      "name": "turkey tail",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as a mushroom beneficial for the immune system"
+    },
+    {
+      "name": "Creston",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioned as a mushroom-based anti-cancer drug in Japan"
+    },
+    {
+      "name": "turmeric",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.98,
+      "context": "discussed as an adaptogen with anti-inflammatory properties"
+    },
+    {
+      "name": "black pepper",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an ingredient that enhances turmeric's effectiveness"
+    },
+    {
+      "name": "black pepper",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an ingredient in supplements"
+    },
+    {
+      "name": "golden milk tea",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a drink with black pepper"
+    },
+    {
+      "name": "gummy bears",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a snack"
+    },
+    {
+      "name": "organic gummy bear",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a type of gummy bear"
+    },
+    {
+      "name": "goji berry",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a substitute for gummy bears"
+    },
+    {
+      "name": "Shesandra",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an adaptation"
+    },
+    {
+      "name": "Asuraola",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a cherry rich in vitamin C"
+    },
+    {
+      "name": "vitamin C",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to Asuraola and health benefits"
+    },
+    {
+      "name": "vitamin C",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Using vitamin C for its immune benefits or stress benefits"
+    },
+    {
+      "name": "Asuraola",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Using Asuraola instead"
+    },
+    {
+      "name": "Jin-Sing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I think of like old, you know, traditional TCM practitioners using Jin-Sing"
+    },
+    {
+      "name": "cordiseps",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "One of my favorite species of all time. Functional mushroom originally from the Hai Himalayas"
+    },
+    {
+      "name": "Maka",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Maka is the highest elevation crop in the world"
+    },
+    {
+      "name": "Maka",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a great example of adaptogens"
+    },
+    {
+      "name": "Lions mane",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to functional foods and adaptogens"
+    },
+    {
+      "name": "Healing Adaptogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "title of the book recommended"
+    },
+    {
+      "name": "Y Honors community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in relation to giving copies of the book"
+    },
+    {
+      "name": "Danielle",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "author of the book discussed"
+    },
+    {
+      "name": "Danielle",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion that Danielle put together so beautifully in the book"
+    },
+    {
+      "name": "Makuna",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Makuna, the Valhubi and the Dopa mean bean"
+    },
+    {
+      "name": "aldopa",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "precursor to aldopa"
+    },
+    {
+      "name": "Rhodiola",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Rhodiola, I think I have some Rhodiola behind me"
+    },
+    {
+      "name": "Iceland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I found Rhodiola in Iceland a few summers ago"
+    },
+    {
+      "name": "Go to cola",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Go to cola. This is another brain herb"
+    },
+    {
+      "name": "Southeast Asian countries",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "popular leaf in Southeast Asian countries"
+    },
+    {
+      "name": "Ashwagandha",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Ashwagandha is an amazing adaption to start with"
+    },
+    {
+      "name": "Rishi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Rishi's clean of mushrooms is the most studied of all the adaptogens"
+    },
+    {
+      "name": "Rishi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a type of decoction or tea"
+    },
+    {
+      "name": "Tulsi",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed as a plant with health benefits"
+    },
+    {
+      "name": "Kakao",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed as a nutrient-dense food"
+    },
+    {
+      "name": "magnesium",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a mineral deficiency in the American population"
+    },
+    {
+      "name": "Gino Stema",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a health supplement"
+    },
+    {
+      "name": "Jack",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a mutual friend who drinks Gino Stema"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand that produces chocolate bars"
+    },
+    {
+      "name": "Mike Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to a chocolate episode"
+    },
+    {
+      "name": "Gino Stema",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing superfoods"
+    },
+    {
+      "name": "Maringa",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing nutrient dense leaves"
+    },
+    {
+      "name": "A Straggalist",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing health benefits"
+    },
+    {
+      "name": "Danielle Ryan Broida",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a contact on Instagram"
+    },
+    {
+      "name": "Four-Sigmatic",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing products"
+    },
+    {
+      "name": "Hay House",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publisher of the book Healing Adaptogens"
+    },
+    {
+      "name": "Tarot As A Capella",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "co-author of Healing Adaptogens"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where Tarot studied"
+    },
+    {
+      "name": "Healing Mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "title of a book"
+    },
+    {
+      "name": "Santa Sold Shrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "title of a children's book"
+    },
+    {
+      "name": "Danielle",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Healing Mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a book title"
+    },
+    {
+      "name": "Santa Sold Shrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a book title"
+    },
+    {
+      "name": "yhoners.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for ambassador program"
+    },
+    {
+      "name": "Amazon",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a place to find ingredients"
+    },
+    {
+      "name": "Cacao",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed as an ingredient"
+    },
+    {
+      "name": "mushroom coffee",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a product"
+    },
+    {
+      "name": "plant medicines",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed as a category of ingredients"
+    },
+    {
+      "name": "fungal medicines",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed as a category of ingredients"
+    },
+    {
+      "name": "Danielle",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioned as a participant in the podcast"
+    },
+    {
+      "name": "Jack",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a friend and advisor"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a community in the podcast"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "name of the podcast and community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "works_at",
+      "target": "Four Sigmatic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Danielle's role at Four Sigmatic",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "co-authored",
+      "target": "Healing Adapted",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Danielle's contribution to the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Taro as a Copella",
+      "relationship": "founded",
+      "target": "Four Sigmatic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Taro's role in founding the organization",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "studied_at",
+      "target": "Whitman College",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Danielle's education background",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "studied",
+      "target": "Ayurveda",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Field of study in India",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "teaches_at",
+      "target": "Colorado School of Clinical Irbilism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Danielle's teaching position",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Breuda",
+      "relationship": "certified_as",
+      "target": "registered herbalist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Danielle's certification",
+      "episode_number": 125
+    },
+    {
+      "source": "Taro as a Copella",
+      "relationship": "works_at",
+      "target": "Four Sigmatic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "co-authored this book",
+      "episode_number": 125
+    },
+    {
+      "source": "Dove",
+      "relationship": "produced",
+      "target": "adaptogen body soaps",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Dove did a line of adaptogen body soaps",
+      "episode_number": 125
+    },
+    {
+      "source": "Colorado School of Clinical Irblosism",
+      "relationship": "teaches",
+      "target": "young aspiring herbalists",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "where I teach my young aspiring herbalists",
+      "episode_number": 125
+    },
+    {
+      "source": "Ashwaganda",
+      "relationship": "is_a",
+      "target": "adaptogen",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Ashwaganda surpassed green juices in Google search",
+      "episode_number": 125
+    },
+    {
+      "source": "Meringa",
+      "relationship": "is_a",
+      "target": "adaptogen",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "What are the things to look out for?",
+      "episode_number": 125
+    },
+    {
+      "source": "turmeric",
+      "relationship": "part_of",
+      "target": "golden milk",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "daily golden milk with turmeric",
+      "episode_number": 125
+    },
+    {
+      "source": "herbalists",
+      "relationship": "advocates_for",
+      "target": "supplements",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "teaching young aspiring herbalists about supplements",
+      "episode_number": 125
+    },
+    {
+      "source": "cordiceps",
+      "relationship": "made_by",
+      "target": "adaptogens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing benefits of cordiceps as an adaptogen",
+      "episode_number": 125
+    },
+    {
+      "source": "stress",
+      "relationship": "depletes",
+      "target": "vitamin C",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "stress takes a toll on our body",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "contains",
+      "target": "nutrients",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the nutrient density of adaptogens",
+      "episode_number": 125
+    },
+    {
+      "source": "Danika",
+      "relationship": "advocates_for",
+      "target": "pre-charge",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "Danika's advice on preparing for stressors",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "related_to",
+      "target": "immunity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in terms of health benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "related_to",
+      "target": "gut health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in terms of health benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "gut health",
+      "relationship": "related_to",
+      "target": "liver health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to detoxification",
+      "episode_number": 125
+    },
+    {
+      "source": "stress",
+      "relationship": "affects",
+      "target": "equilibrium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussed in terms of resilience and balance",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "supports",
+      "target": "stress",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed as a means to combat stress",
+      "episode_number": 125
+    },
+    {
+      "source": "chaga",
+      "relationship": "is_a_type_of",
+      "target": "adaptogens",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a specific adaptogen",
+      "episode_number": 125
+    },
+    {
+      "source": "stress",
+      "relationship": "affects",
+      "target": "libido",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to how stress impacts libido",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "improves",
+      "target": "performance",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "related to the benefits of adaptogens on energy levels",
+      "episode_number": 125
+    },
+    {
+      "source": "stress",
+      "relationship": "affects",
+      "target": "libido",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "how stress is taking a toll on our body",
+      "episode_number": 125
+    },
+    {
+      "source": "saber-toothed tiger",
+      "relationship": "represents",
+      "target": "acute stress",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "when a, you know, saber-shoothed tiger is coming to attack us",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "support",
+      "target": "stress response",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "this is the approach with adaptogens in libido",
+      "episode_number": 125
+    },
+    {
+      "source": "Four Sigmatic",
+      "relationship": "produces",
+      "target": "plant-based protein shake",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "this is actually one of the four sigmatic products",
+      "episode_number": 125
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "discusses",
+      "target": "changing habits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "when I wrote the book Why on Earth a number of years ago",
+      "episode_number": 125
+    },
+    {
+      "source": "Change",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion about changing habits and health",
+      "episode_number": 125
+    },
+    {
+      "source": "stress",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mention of stress affecting health",
+      "episode_number": 125
+    },
+    {
+      "source": "alcohol",
+      "relationship": "made_by",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about alcohol and health",
+      "episode_number": 125
+    },
+    {
+      "source": "adaptogens",
+      "relationship": "supports",
+      "target": "health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about adaptogens supporting health",
+      "episode_number": 125
+    },
+    {
+      "source": "food",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about food and its effect on health",
+      "episode_number": 125
+    },
+    {
+      "source": "pharmaceuticals",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mention of pharmaceuticals affecting health",
+      "episode_number": 125
+    },
+    {
+      "source": "water",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about water consumption and health",
+      "episode_number": 125
+    },
+    {
+      "source": "exercise",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mention of exercise affecting health",
+      "episode_number": 125
+    },
+    {
+      "source": "Forrest Sigmatic",
+      "relationship": "advocates_for",
+      "target": "healthy habit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing routines and healthy habits",
+      "episode_number": 125
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "digestion",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "using cannabis for digestion or headaches or sleep",
+      "episode_number": 125
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "headaches",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "using cannabis for digestion or headaches or sleep",
+      "episode_number": 125
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "sleep",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "using cannabis for digestion or headaches or sleep",
+      "episode_number": 125
+    },
+    {
+      "source": "alcohol",
+      "relationship": "compared_to",
+      "target": "non-alcoholic beverages",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing alternatives to alcohol",
+      "episode_number": 125
+    },
+    {
+      "source": "blueberries",
+      "relationship": "added_to",
+      "target": "daily life",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "adding blueberries into your week",
+      "episode_number": 125
+    },
+    {
+      "source": "trace minerals",
+      "relationship": "added_to",
+      "target": "water",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "putting trace minerals in your water",
+      "episode_number": 125
+    },
+    {
+      "source": "Forrest Sigmatic",
+      "relationship": "advocates_for",
+      "target": "adaptogen extracts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the company's focus on adaptogen extracts",
+      "episode_number": 125
+    },
+    {
+      "source": "gut microbiome",
+      "relationship": "contains",
+      "target": "microorganisms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "referring to the microorganisms present in the digestive system",
+      "episode_number": 125
+    },
+    {
+      "source": "sugar",
+      "relationship": "affects",
+      "target": "gut microbiome",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussing how sugar consumption impacts gut health",
+      "episode_number": 125
+    },
+    {
+      "source": "fiancee",
+      "relationship": "works_at",
+      "target": "mental health",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "mentioning the speaker's partner's profession",
+      "episode_number": 125
+    },
+    {
+      "source": "dollar",
+      "relationship": "invests_in",
+      "target": "environment",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussing consumer choices and environmental impact",
+      "episode_number": 125
+    },
+    {
+      "source": "dollar",
+      "relationship": "invests_in",
+      "target": "farmer",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussing economic choices",
+      "episode_number": 125
+    },
+    {
+      "source": "dollar",
+      "relationship": "invests_in",
+      "target": "Walmart",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "discussing economic choices",
+      "episode_number": 125
+    },
+    {
+      "source": "water",
+      "relationship": "contains",
+      "target": "trace minerals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing water quality",
+      "episode_number": 125
+    },
+    {
+      "source": "Colorado",
+      "relationship": "located_in",
+      "target": "higher elevation zones",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "discussing hydration issues",
+      "episode_number": 125
+    },
+    {
+      "source": "water",
+      "relationship": "is vital for",
+      "target": "every cell in our body",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing hydration and health",
+      "episode_number": 125
+    },
+    {
+      "source": "neural pathways",
+      "relationship": "interconnects with",
+      "target": "gut",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing health and nutrition",
+      "episode_number": 125
+    },
+    {
+      "source": "purchasing decisions",
+      "relationship": "influences",
+      "target": "political landscape",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussing economic impact of choices",
+      "episode_number": 125
+    },
+    {
+      "source": "big companies",
+      "relationship": "purchased",
+      "target": "spring water",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "springs have been purchased by big companies",
+      "episode_number": 125
+    },
+    {
+      "source": "water",
+      "relationship": "contains",
+      "target": "minerals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "our water is void of the minerals",
+      "episode_number": 125
+    },
+    {
+      "source": "Pratchek Reskone",
+      "relationship": "founded",
+      "target": "water mineral company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my friend Pratchek, Pratchek Reskone who has a water mineral company",
+      "episode_number": 125
+    },
+    {
+      "source": "trace minerals",
+      "relationship": "located_in",
+      "target": "Utah",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "they get their trace minerals from Utah",
+      "episode_number": 125
+    },
+    {
+      "source": "tap water",
+      "relationship": "treated_with",
+      "target": "antibiotics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "it's been treated to kill different pathogens and bacteria",
+      "episode_number": 125
+    },
+    {
+      "source": "water",
+      "relationship": "void_of",
+      "target": "minerals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "it's void of the minerals that we need",
+      "episode_number": 125
+    },
+    {
+      "source": "burky filter",
+      "relationship": "filters",
+      "target": "water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I have a burky filter I'm looking at",
+      "episode_number": 125
+    },
+    {
+      "source": "spring water",
+      "relationship": "part_of",
+      "target": "water",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "if you can have access to spring water",
+      "episode_number": 125
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Broida",
+      "relationship": "co-authored",
+      "target": "Healing Adaptogens",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "co-author of the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Four Sigmatic",
+      "relationship": "produces",
+      "target": "hemp infused aromatherapy soaking salts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "company mentioned in the podcast",
+      "episode_number": 125
+    },
+    {
+      "source": "Weylay Waters",
+      "relationship": "provides",
+      "target": "hemp infused aromatherapy soaking salts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "partner mentioned in the podcast",
+      "episode_number": 125
+    },
+    {
+      "source": "Healing Adaptogens",
+      "relationship": "discusses",
+      "target": "Chaga",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "book discusses adaptogens",
+      "episode_number": 125
+    },
+    {
+      "source": "Why On Earth Community podcast",
+      "relationship": "features",
+      "target": "Danielle Ryan Broida",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "guest on the podcast",
+      "episode_number": 125
+    },
+    {
+      "source": "Chaga",
+      "relationship": "advocates_for",
+      "target": "immunity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussed as a bodyguard for the immune system",
+      "episode_number": 125
+    },
+    {
+      "source": "Siberian Jinsing",
+      "relationship": "advocates_for",
+      "target": "immunity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed as beneficial for immunity",
+      "episode_number": 125
+    },
+    {
+      "source": "turkey tail",
+      "relationship": "advocates_for",
+      "target": "immune system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussed as beneficial for immune system",
+      "episode_number": 125
+    },
+    {
+      "source": "Creston",
+      "relationship": "made_by",
+      "target": "turkey tail",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed as derived from a compound in turkey tail",
+      "episode_number": 125
+    },
+    {
+      "source": "turmeric",
+      "relationship": "advocates_for",
+      "target": "anti-inflammatory properties",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.95,
+      "context": "discussed for its anti-inflammatory benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "black pepper",
+      "relationship": "enhances",
+      "target": "turmeric",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed as enhancing turmeric's effectiveness",
+      "episode_number": 125
+    },
+    {
+      "source": "goji berry",
+      "relationship": "advocates_for",
+      "target": "libido endurance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed as beneficial for libido and endurance",
+      "episode_number": 125
+    },
+    {
+      "source": "Shesandra",
+      "relationship": "advocates_for",
+      "target": "beauty",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed for its benefits to skin and liver health",
+      "episode_number": 125
+    },
+    {
+      "source": "Asuraola",
+      "relationship": "made_by",
+      "target": "vitamin C",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed as a cherry rich in vitamin C",
+      "episode_number": 125
+    },
+    {
+      "source": "black pepper",
+      "relationship": "enhances",
+      "target": "supplement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed as an ingredient that enhances supplements",
+      "episode_number": 125
+    },
+    {
+      "source": "vitamin C",
+      "relationship": "advocates_for",
+      "target": "immune benefits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Using vitamin C for its immune benefits or stress benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "Jin-Sing",
+      "relationship": "advocates_for",
+      "target": "cognitive benefits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "I recommend Jin-Sing, it can kind of help re-invigorate libido. It can have kind of cognitive benefits as well.",
+      "episode_number": 125
+    },
+    {
+      "source": "cordiseps",
+      "relationship": "advocates_for",
+      "target": "long-term immune health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "cordiseps is like a total all-hitter. Wonderful.",
+      "episode_number": 125
+    },
+    {
+      "source": "Maka",
+      "relationship": "advocates_for",
+      "target": "Xenohormasis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Maka is a great example. It's this phenomenon called Xenohormasis.",
+      "episode_number": 125
+    },
+    {
+      "source": "Maka",
+      "relationship": "advocates_for",
+      "target": "adaptogens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Maka is discussed in relation to adaptogens' benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "Lions mane",
+      "relationship": "advocates_for",
+      "target": "cognitive memory brain enhancing benefits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Lions mane is mentioned for its cognitive benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "Healing Adaptogens",
+      "relationship": "recommended_by",
+      "target": "Y Honors community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "The book is recommended to the community",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle",
+      "relationship": "authored",
+      "target": "Healing Adaptogens",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Danielle is mentioned as the author of the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle",
+      "relationship": "authored",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion that Danielle put together so beautifully in the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Makuna",
+      "relationship": "is_a",
+      "target": "bean",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Makuna, the Valhubi and the Dopa mean bean",
+      "episode_number": 125
+    },
+    {
+      "source": "aldopa",
+      "relationship": "is_precursor_to",
+      "target": "Makuna",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "precursor to aldopa",
+      "episode_number": 125
+    },
+    {
+      "source": "Rhodiola",
+      "relationship": "found_in",
+      "target": "Iceland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "I found Rhodiola in Iceland a few summers ago",
+      "episode_number": 125
+    },
+    {
+      "source": "Go to cola",
+      "relationship": "is_a",
+      "target": "brain herb",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Go to cola. This is another brain herb",
+      "episode_number": 125
+    },
+    {
+      "source": "Ashwagandha",
+      "relationship": "is_a",
+      "target": "adaptogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ashwagandha is an amazing adaption to start with",
+      "episode_number": 125
+    },
+    {
+      "source": "Rishi",
+      "relationship": "is_a",
+      "target": "adaptogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Rishi's clean of mushrooms is the most studied of all the adaptogens",
+      "episode_number": 125
+    },
+    {
+      "source": "Kakao",
+      "relationship": "advocates_for",
+      "target": "magnesium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to health benefits and mineral content",
+      "episode_number": 125
+    },
+    {
+      "source": "Tulsi",
+      "relationship": "advocates_for",
+      "target": "stress",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to mood lifting and stress support",
+      "episode_number": 125
+    },
+    {
+      "source": "Rishi",
+      "relationship": "advocates_for",
+      "target": "mind body spirit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to harmonizing effects",
+      "episode_number": 125
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "produces",
+      "target": "chocolate bar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to a specific product",
+      "episode_number": 125
+    },
+    {
+      "source": "Gino Stema",
+      "relationship": "advocates_for",
+      "target": "longevity benefits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to health benefits",
+      "episode_number": 125
+    },
+    {
+      "source": "Jack",
+      "relationship": "drinks",
+      "target": "Gino Stema",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned as a person who consumes Gino Stema",
+      "episode_number": 125
+    },
+    {
+      "source": "Tarot As A Capella",
+      "relationship": "co-authored",
+      "target": "Healing Adaptogens",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning co-author of the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Tarot As A Capella",
+      "relationship": "founded",
+      "target": "Four-Sigmatic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing the founder of Four-Sigmatic",
+      "episode_number": 125
+    },
+    {
+      "source": "Tarot As A Capella",
+      "relationship": "works_at",
+      "target": "Four-Sigmatic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioning the CEO of Four-Sigmatic",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle Ryan Broida",
+      "relationship": "connected_with",
+      "target": "Four-Sigmatic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioning connection on Instagram",
+      "episode_number": 125
+    },
+    {
+      "source": "Hay House",
+      "relationship": "published",
+      "target": "Healing Adaptogens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the publisher of the book",
+      "episode_number": 125
+    },
+    {
+      "source": "Tarot As A Capella",
+      "relationship": "studied_at",
+      "target": "Cornell University",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning education background",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle",
+      "relationship": "advocates_for",
+      "target": "Healing Mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast discussion",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle",
+      "relationship": "advocates_for",
+      "target": "Santa Sold Shrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast discussion",
+      "episode_number": 125
+    },
+    {
+      "source": "yhoners.org",
+      "relationship": "provides",
+      "target": "ambassador program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "website mentioned",
+      "episode_number": 125
+    },
+    {
+      "source": "Cacao",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as an ingredient",
+      "episode_number": 125
+    },
+    {
+      "source": "mushroom coffee",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "mentioned as a product",
+      "episode_number": 125
+    },
+    {
+      "source": "plant medicines",
+      "relationship": "is_related_to",
+      "target": "fungal medicines",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to ingredients",
+      "episode_number": 125
+    },
+    {
+      "source": "Amazon",
+      "relationship": "sells",
+      "target": "Cacao",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a place to find ingredients",
+      "episode_number": 125
+    },
+    {
+      "source": "Amazon",
+      "relationship": "sells",
+      "target": "mushroom coffee",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a place to find ingredients",
+      "episode_number": 125
+    },
+    {
+      "source": "Danielle",
+      "relationship": "advocates_for",
+      "target": "connection with earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about connection with earth in the podcast",
+      "episode_number": 125
+    },
+    {
+      "source": "Jack",
+      "relationship": "advises",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as an advisor to the community",
+      "episode_number": 125
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mentioned as the host of the podcast series",
+      "episode_number": 125
+    },
+    {
+      "source": "why on earth",
+      "relationship": "sponsors",
+      "target": "several corporate and organization sponsors",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioned as a sponsor of the podcast",
+      "episode_number": 125
+    }
+  ]
+}

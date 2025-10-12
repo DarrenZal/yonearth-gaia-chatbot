@@ -1,0 +1,2135 @@
+{
+  "episode": 138,
+  "timestamp": "2025-10-09T10:43:41.588132",
+  "entity_count": 145,
+  "relationship_count": 111,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Tom Chi-Hai-Tom",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "At One Ventures",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "organization founded by Tom Chi"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "university attended by Tom Chi"
+    },
+    {
+      "name": "Microsoft Outlook",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company Tom worked with"
+    },
+    {
+      "name": "Yahoo Search",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company Tom worked with"
+    },
+    {
+      "name": "Google",
+      "type": "ORG",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "company Tom worked with"
+    },
+    {
+      "name": "Google Glass",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "technology Tom was involved with"
+    },
+    {
+      "name": "Google self driving car",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "technology Tom was involved with"
+    },
+    {
+      "name": "fund one",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "first investment fund of At One Ventures"
+    },
+    {
+      "name": "fund two",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "second investment fund of At One Ventures"
+    },
+    {
+      "name": "honey bee vaccine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "vaccine developed for honey bees"
+    },
+    {
+      "name": "colony collapse disorder",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "threat to food supply related to bees"
+    },
+    {
+      "name": "Neonicotinoid pesticides",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "major stressors for bees"
+    },
+    {
+      "name": "University of Maryland",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "industry benchmark reports in terms of annual bee losses"
+    },
+    {
+      "name": "Southern California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "commercial bees in North America go to Southern California for the almond crop"
+    },
+    {
+      "name": "almond crop",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "commercial bees in North America go to Southern California for the almond crop"
+    },
+    {
+      "name": "honey bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "killing the honey bees"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "critical to biodiversity on the planet"
+    },
+    {
+      "name": "Charles Darwin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "follow the work of Charles Darwin"
+    },
+    {
+      "name": "Charles Darwin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "work of Charles Darwin"
+    },
+    {
+      "name": "Zercy Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "executive director of the Zercy Society"
+    },
+    {
+      "name": "Scott Black",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "episode a while back with Scott Black"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "interviewing a Chelsea Green author"
+    },
+    {
+      "name": "Mira Terra",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of our fun to companies is called Mira Terra"
+    },
+    {
+      "name": "NPK",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "application of the the most common inputs into agriculture"
+    },
+    {
+      "name": "NPK",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about crop nutrients"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to fertilizer application"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a prevalent greenhouse gas"
+    },
+    {
+      "name": "methane",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a prevalent greenhouse gas"
+    },
+    {
+      "name": "soil carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to soil measurement"
+    },
+    {
+      "name": "carbon markets",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to farmers and profitability"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about agricultural practices"
+    },
+    {
+      "name": "MPK",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "podcast segment discussing carbon measurement technology"
+    },
+    {
+      "name": "Myra Tera",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "podcast segment discussing ecological issues"
+    },
+    {
+      "name": "Lan Animal Health",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast segment discussing honeybee vaccine company"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast segment discussing community and blog page"
+    },
+    {
+      "name": "Epoch Zero",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "podcast segment discussing economic development epochs"
+    },
+    {
+      "name": "Ecosystem Stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "podcast segment discussing ecological technology"
+    },
+    {
+      "name": "Climate Stabilization",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "podcast segment discussing ecological technology"
+    },
+    {
+      "name": "ecological technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "three epochs of ecological technology"
+    },
+    {
+      "name": "extractive economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "epoch zero is the extractive economy"
+    },
+    {
+      "name": "natural resources",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "natural resources are understood to be commodities"
+    },
+    {
+      "name": "financial leverage",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "people achieve financial leverage by scaling extraction"
+    },
+    {
+      "name": "material productivity economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "epoch beyond that is called the material productivity economy"
+    },
+    {
+      "name": "commodities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "resources you know natural resources are still commodities"
+    },
+    {
+      "name": "energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "how do we get the most benefit whether it's economic benefit social benefit ecological benefit"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "most of the folks that talk about sustainability are talking about different variations of this epoch"
+    },
+    {
+      "name": "material productivity epoch",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussing epochs of sustainability"
+    },
+    {
+      "name": "natural resources",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing resources in economic terms"
+    },
+    {
+      "name": "ecosystem metabolics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing ecological concepts"
+    },
+    {
+      "name": "economic value",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing value derived from ecosystems"
+    },
+    {
+      "name": "watershed",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "defining watershed in ecological terms"
+    },
+    {
+      "name": "nature based services",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing valuation of ecological services"
+    },
+    {
+      "name": "ecosystem service",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about economic value and fragility"
+    },
+    {
+      "name": "market economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about current economic systems"
+    },
+    {
+      "name": "international laws",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "discussion about selling organs"
+    },
+    {
+      "name": "organs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about market price and ethics"
+    },
+    {
+      "name": "kidney",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about selling organs"
+    },
+    {
+      "name": "sacredness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about what should not be commodified"
+    },
+    {
+      "name": "ecosystem metabolic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about value creation in the economy"
+    },
+    {
+      "name": "regenerative landscaping",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental practices"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental practices"
+    },
+    {
+      "name": "epoch two",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussing mobilizing capital into behaviors and activities of epoch two"
+    },
+    {
+      "name": "Dendro Systems",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioning a company that does scalable ecosystem restoration"
+    },
+    {
+      "name": "Myanmar",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of mangrove restoration"
+    },
+    {
+      "name": "southern Myanmar",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "specific region mentioned for mangrove restoration"
+    },
+    {
+      "name": "government services",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussing the need for government services due to starvation"
+    },
+    {
+      "name": "subsistence fishing",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "source of livelihood for population in southern Myanmar"
+    },
+    {
+      "name": "economic development",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "reason for clearing mangroves"
+    },
+    {
+      "name": "Myanmar",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Myanmar government cleared them for economic development"
+    },
+    {
+      "name": "southern Myanmar",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "source of subsistence fishing for a huge population in southern Myanmar"
+    },
+    {
+      "name": "Abu Dhabi",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "looking at restoring over 20,000 hectares of mangroves around the Abu Dhabi region"
+    },
+    {
+      "name": "Nature Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "created the first insurance policy for coral reefs"
+    },
+    {
+      "name": "Katana Roo",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "first one launched in Katana Roo, Mexico along the Gulf Coast"
+    },
+    {
+      "name": "coral reefs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first insurance policy for coral reefs"
+    },
+    {
+      "name": "insurance companies",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "working with insurance companies"
+    },
+    {
+      "name": "Nature Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "insurance policy for coral reef restoration"
+    },
+    {
+      "name": "Reef Gen",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "company that creates coral planting robots"
+    },
+    {
+      "name": "coral reef",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "natural structure that absorbs wave energy"
+    },
+    {
+      "name": "seagrass",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "plant that grows in coastal waters"
+    },
+    {
+      "name": "epoch three",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "concept related to nutrient flows"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "interviewee discussing epoch three"
+    },
+    {
+      "name": "Richard Feynman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "talk that was done by Richard Feynman back in 1959"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.98,
+      "type_confidence": 0.9,
+      "context": "what life has been trying to do on earth since the beginning"
+    },
+    {
+      "name": "Cambrian explosion",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "fast forward through the Cambrian explosion"
+    },
+    {
+      "name": "semiconductor revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "predicted the entire semiconductor revolution in the digital revolution"
+    },
+    {
+      "name": "sun",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "almost all the energy for life is coming from the sun"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Tom She",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "at one ventures",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "company founded by Tom She"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Ecosine economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "topic discussed in the podcast"
+    },
+    {
+      "name": "regenerative finance",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "topic discussed in the podcast"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "process mentioned in relation to plants"
+    },
+    {
+      "name": "solar panel",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "object discussed in relation to photons"
+    },
+    {
+      "name": "lizard",
+      "type": "ANIMAL",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "example used in the discussion"
+    },
+    {
+      "name": "herbivore",
+      "type": "ANIMAL",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "example used in the discussion"
+    },
+    {
+      "name": "predator",
+      "type": "ANIMAL",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "example used in the discussion"
+    },
+    {
+      "name": "soil micro biome",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "ecosystem mentioned in relation to plants"
+    },
+    {
+      "name": "wealth",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "economic concept discussed"
+    },
+    {
+      "name": "value creation",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "economic concept discussed"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "visiting for a second time with Tom"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "quick shout out to a few of our sponsors including Chelsea green publishing"
+    },
+    {
+      "name": "Purium Organic Super Foods",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "other sponsors like purium organic super foods"
+    },
+    {
+      "name": "Doctor Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "want to be sure to mention doctor Bronners"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "friends at soil works"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "supporting our podcast series and our stewardship regeneration and sustainability work at the why on earth community"
+    },
+    {
+      "name": "Economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "important work being done around economics and economic systems"
+    },
+    {
+      "name": "Astrophysicist",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "I was a scientist I was an astrophysicist for six years"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about disciplines"
+    },
+    {
+      "name": "economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about disciplines"
+    },
+    {
+      "name": "toaster",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "metaphor for economic design"
+    },
+    {
+      "name": "USA",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "comparison of economies"
+    },
+    {
+      "name": "USA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing economic systems"
+    },
+    {
+      "name": "America",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing economic systems"
+    },
+    {
+      "name": "design discipline",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing design and economics"
+    },
+    {
+      "name": "economic product",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing economic systems"
+    },
+    {
+      "name": "social justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing social issues and design"
+    },
+    {
+      "name": "planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "discussing care of planet"
+    },
+    {
+      "name": "humanity",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "discussing balance of prosperity among humanity"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about design constraints and societal issues"
+    },
+    {
+      "name": "artificial intelligence",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about its impact on society"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website mentioned for becoming an ambassador"
+    },
+    {
+      "name": "Readie Toss",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "novel written by the speaker"
+    },
+    {
+      "name": "AI",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Discussion about technology and its implications."
+    },
+    {
+      "name": "Singapore",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in the context of government analysis and economic development."
+    },
+    {
+      "name": "Google",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of self-driving car development."
+    },
+    {
+      "name": "self-driving car",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to technology and economic impact."
+    },
+    {
+      "name": "taxi drivers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a class of jobs in Singapore."
+    },
+    {
+      "name": "government of Singapore",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Engaged in discussions about economic development and AI."
+    },
+    {
+      "name": "AI",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about technology and its impact on society"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaker in the podcast"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "name of the podcast"
+    },
+    {
+      "name": "one ventures",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "venture firm mentioned by Tom"
+    },
+    {
+      "name": "cognitive resources",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about the impact of AI on human thought"
+    },
+    {
+      "name": "physical economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about economic impacts of AI"
+    },
+    {
+      "name": "developing world",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "context of farmers affected by stock trading algorithms"
+    },
+    {
+      "name": "advertising",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the impact of ads on cognitive resources"
+    },
+    {
+      "name": "Tom Ch",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioned as a speaker"
+    },
+    {
+      "name": "One Ventures",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a venture firm"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a podcast"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "website for support"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "mentioned in the context of support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Tom Chi-Hai-Tom",
+      "relationship": "works_at",
+      "target": "At One Ventures",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "Tom is the founder of At One Ventures",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom Chi-Hai-Tom",
+      "relationship": "attended",
+      "target": "Cornell University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "Tom went to Cornell University",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom Chi-Hai-Tom",
+      "relationship": "worked_with",
+      "target": "Microsoft Outlook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Tom worked with Microsoft Outlook",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom Chi-Hai-Tom",
+      "relationship": "worked_with",
+      "target": "Yahoo Search",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Tom worked with Yahoo Search",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom Chi-Hai-Tom",
+      "relationship": "worked_with",
+      "target": "Google",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "Tom worked with Google",
+      "episode_number": 138
+    },
+    {
+      "source": "At One Ventures",
+      "relationship": "contains",
+      "target": "fund one",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "At One Ventures has fund one",
+      "episode_number": 138
+    },
+    {
+      "source": "At One Ventures",
+      "relationship": "contains",
+      "target": "fund two",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "At One Ventures has fund two",
+      "episode_number": 138
+    },
+    {
+      "source": "honey bee vaccine",
+      "relationship": "developed_by",
+      "target": "At One Ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.98,
+      "context": "The honey bee vaccine is developed under At One Ventures",
+      "episode_number": 138
+    },
+    {
+      "source": "colony collapse disorder",
+      "relationship": "affects",
+      "target": "global food supply",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Colony collapse disorder is a threat to food supply",
+      "episode_number": 138
+    },
+    {
+      "source": "Neonicotinoid pesticides",
+      "relationship": "major_stressor_for",
+      "target": "bees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "major stressors for bees",
+      "episode_number": 138
+    },
+    {
+      "source": "University of Maryland",
+      "relationship": "conducts",
+      "target": "industry benchmark reports",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "industry benchmark reports in terms of annual bee losses",
+      "episode_number": 138
+    },
+    {
+      "source": "Southern California",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "commercial bees in North America go to Southern California for the almond crop",
+      "episode_number": 138
+    },
+    {
+      "source": "honey bees",
+      "relationship": "critical_to",
+      "target": "biodiversity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "killing the honey bees",
+      "episode_number": 138
+    },
+    {
+      "source": "Charles Darwin",
+      "relationship": "advocates_for",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "follow the work of Charles Darwin",
+      "episode_number": 138
+    },
+    {
+      "source": "Scott Black",
+      "relationship": "works_at",
+      "target": "Zercy Society",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "executive director of the Zercy Society",
+      "episode_number": 138
+    },
+    {
+      "source": "Charles Darwin",
+      "relationship": "advocates_for",
+      "target": "biodiversity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "work of Charles Darwin",
+      "episode_number": 138
+    },
+    {
+      "source": "Mira Terra",
+      "relationship": "made_by",
+      "target": "soil measurement technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "created the most accurate way of being able to go measure the compounds that are in soil",
+      "episode_number": 138
+    },
+    {
+      "source": "NPK",
+      "relationship": "part_of",
+      "target": "agriculture inputs",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "application of the the most common inputs into agriculture",
+      "episode_number": 138
+    },
+    {
+      "source": "NPK",
+      "relationship": "advocates_for",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Discussion about crop nutrients and their importance for farmers",
+      "episode_number": 138
+    },
+    {
+      "source": "nitrogen",
+      "relationship": "part_of",
+      "target": "NPK",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned in relation to fertilizer application and NPK",
+      "episode_number": 138
+    },
+    {
+      "source": "carbon dioxide",
+      "relationship": "prevalent_in",
+      "target": "greenhouse gases",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a prevalent greenhouse gas",
+      "episode_number": 138
+    },
+    {
+      "source": "methane",
+      "relationship": "prevalent_in",
+      "target": "greenhouse gases",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a prevalent greenhouse gas",
+      "episode_number": 138
+    },
+    {
+      "source": "soil carbon",
+      "relationship": "measured_by",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Discussion about measuring soil carbon and its importance for farmers",
+      "episode_number": 138
+    },
+    {
+      "source": "carbon markets",
+      "relationship": "advocates_for",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Mentioned in relation to profitability for farmers",
+      "episode_number": 138
+    },
+    {
+      "source": "MPK",
+      "relationship": "advocates_for",
+      "target": "carbon measurement technology",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion on carbon measurement and profitability",
+      "episode_number": 138
+    },
+    {
+      "source": "Myra Tera",
+      "relationship": "advocates_for",
+      "target": "ecological issues",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion on beautification and dead zones",
+      "episode_number": 138
+    },
+    {
+      "source": "Lan Animal Health",
+      "relationship": "makes",
+      "target": "honeybee vaccine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussion on honeybee vaccine company",
+      "episode_number": 138
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "provides",
+      "target": "blog page",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion on community and resources",
+      "episode_number": 138
+    },
+    {
+      "source": "Epoch Zero",
+      "relationship": "is_part_of",
+      "target": "economic development",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion on epochs of economic development",
+      "episode_number": 138
+    },
+    {
+      "source": "Ecosystem Stewardship",
+      "relationship": "is_related_to",
+      "target": "climate stabilization",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "discussion on ecological technology",
+      "episode_number": 138
+    },
+    {
+      "source": "extractive economy",
+      "relationship": "part_of",
+      "target": "ecological technology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "epoch zero is the extractive economy",
+      "episode_number": 138
+    },
+    {
+      "source": "natural resources",
+      "relationship": "understood_as",
+      "target": "commodities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "natural resources are understood to be commodities",
+      "episode_number": 138
+    },
+    {
+      "source": "financial leverage",
+      "relationship": "achieved_by",
+      "target": "scaling extraction",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "people achieve financial leverage by scaling extraction",
+      "episode_number": 138
+    },
+    {
+      "source": "material productivity economy",
+      "relationship": "part_of",
+      "target": "ecological technology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "epoch beyond that is called the material productivity economy",
+      "episode_number": 138
+    },
+    {
+      "source": "energy",
+      "relationship": "related_to",
+      "target": "material productivity economy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "how do we get the most benefit whether it's economic benefit social benefit ecological benefit",
+      "episode_number": 138
+    },
+    {
+      "source": "sustainability",
+      "relationship": "discussed_in",
+      "target": "material productivity economy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "most of the folks that talk about sustainability are talking about different variations of this epoch",
+      "episode_number": 138
+    },
+    {
+      "source": "material productivity epoch",
+      "relationship": "discusses",
+      "target": "natural resources",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing epochs of sustainability",
+      "episode_number": 138
+    },
+    {
+      "source": "natural resources",
+      "relationship": "understood_as",
+      "target": "ecosystem metabolics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the shift in understanding resources",
+      "episode_number": 138
+    },
+    {
+      "source": "ecosystem metabolics",
+      "relationship": "creates",
+      "target": "economic value",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the value derived from healthy ecosystems",
+      "episode_number": 138
+    },
+    {
+      "source": "watershed",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "defining watershed in ecological terms",
+      "episode_number": 138
+    },
+    {
+      "source": "nature based services",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing valuation of ecological services",
+      "episode_number": 138
+    },
+    {
+      "source": "ecosystem service",
+      "relationship": "sacredness",
+      "target": "sacredness",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about economic value and fragility",
+      "episode_number": 138
+    },
+    {
+      "source": "market economy",
+      "relationship": "part_of",
+      "target": "economics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about current economic systems",
+      "episode_number": 138
+    },
+    {
+      "source": "international laws",
+      "relationship": "advocates_for",
+      "target": "sacredness",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "discussion about selling organs",
+      "episode_number": 138
+    },
+    {
+      "source": "organs",
+      "relationship": "part_of",
+      "target": "market economy",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about market price and ethics",
+      "episode_number": 138
+    },
+    {
+      "source": "kidney",
+      "relationship": "part_of",
+      "target": "organs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about selling organs",
+      "episode_number": 138
+    },
+    {
+      "source": "ecosystem metabolic",
+      "relationship": "source_of",
+      "target": "economic value",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about value creation in the economy",
+      "episode_number": 138
+    },
+    {
+      "source": "regenerative landscaping",
+      "relationship": "advocates_for",
+      "target": "ecosystem metabolic",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental practices",
+      "episode_number": 138
+    },
+    {
+      "source": "agriculture",
+      "relationship": "advocates_for",
+      "target": "ecosystem metabolic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental practices",
+      "episode_number": 138
+    },
+    {
+      "source": "Dendro Systems",
+      "relationship": "works_with",
+      "target": "southern Myanmar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "company involved in ecosystem restoration in southern Myanmar",
+      "episode_number": 138
+    },
+    {
+      "source": "Myanmar",
+      "relationship": "contains",
+      "target": "southern Myanmar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "geographic relationship",
+      "episode_number": 138
+    },
+    {
+      "source": "southern Myanmar",
+      "relationship": "part_of",
+      "target": "Myanmar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "geographic relationship",
+      "episode_number": 138
+    },
+    {
+      "source": "Myanmar government",
+      "relationship": "provides",
+      "target": "government services",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "government's role in addressing starvation",
+      "episode_number": 138
+    },
+    {
+      "source": "clearing mangroves",
+      "relationship": "affects",
+      "target": "subsistence fishing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "impact of economic development on local livelihoods",
+      "episode_number": 138
+    },
+    {
+      "source": "Myanmar",
+      "relationship": "contains",
+      "target": "southern Myanmar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "source of subsistence fishing for a huge population in southern Myanmar",
+      "episode_number": 138
+    },
+    {
+      "source": "Nature Conservancy",
+      "relationship": "founded",
+      "target": "insurance policy for coral reefs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "created the first insurance policy for coral reefs",
+      "episode_number": 138
+    },
+    {
+      "source": "Nature Conservancy",
+      "relationship": "works_with",
+      "target": "insurance companies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "working with insurance companies",
+      "episode_number": 138
+    },
+    {
+      "source": "Abu Dhabi",
+      "relationship": "part_of",
+      "target": "main grows",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "looking at restoring over 20,000 hectares of mangroves around the Abu Dhabi region",
+      "episode_number": 138
+    },
+    {
+      "source": "Katana Roo",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "first one launched in Katana Roo, Mexico along the Gulf Coast",
+      "episode_number": 138
+    },
+    {
+      "source": "Nature Conservancy",
+      "relationship": "advocates_for",
+      "target": "coral reef",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "insurance policy for coral reef restoration",
+      "episode_number": 138
+    },
+    {
+      "source": "Reef Gen",
+      "relationship": "made_by",
+      "target": "coral planting robots",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "company that creates coral planting robots",
+      "episode_number": 138
+    },
+    {
+      "source": "Reef Gen",
+      "relationship": "made_by",
+      "target": "seagrass planting robots",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "company that creates seagrass planting robots",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "advocates_for",
+      "target": "epoch three",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing the importance of epoch three",
+      "episode_number": 138
+    },
+    {
+      "source": "Richard Feynman",
+      "relationship": "advocates_for",
+      "target": "plenty of room at the bottom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "talk that was done by Richard Feynman back in 1959",
+      "episode_number": 138
+    },
+    {
+      "source": "earth",
+      "relationship": "contains",
+      "target": "Cambrian explosion",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "fast forward through the Cambrian explosion",
+      "episode_number": 138
+    },
+    {
+      "source": "sun",
+      "relationship": "provides_energy_for",
+      "target": "earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "almost all the energy for life is coming from the sun",
+      "episode_number": 138
+    },
+    {
+      "source": "Richard Feynman",
+      "relationship": "predicted",
+      "target": "semiconductor revolution",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "predicted the entire semiconductor revolution in the digital revolution",
+      "episode_number": 138
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "host of the podcast",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom She",
+      "relationship": "founded",
+      "target": "at one ventures",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "founder of at one ventures",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom She",
+      "relationship": "advocates_for",
+      "target": "regenerative finance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion topic",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom She",
+      "relationship": "advocates_for",
+      "target": "Ecosine economics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion topic",
+      "episode_number": 138
+    },
+    {
+      "source": "solar panel",
+      "relationship": "benefits",
+      "target": "household",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "example of photon interaction",
+      "episode_number": 138
+    },
+    {
+      "source": "green leafy plant",
+      "relationship": "benefits",
+      "target": "soil micro biome",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "example of photon interaction",
+      "episode_number": 138
+    },
+    {
+      "source": "herbivore",
+      "relationship": "eats",
+      "target": "green leafy plant",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "food chain example",
+      "episode_number": 138
+    },
+    {
+      "source": "predator",
+      "relationship": "eats",
+      "target": "herbivore",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "food chain example",
+      "episode_number": 138
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "publishes",
+      "target": "wood ship handbook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "publisher of an author's work",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "works_at",
+      "target": "At One Ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Tom she the technologist and finance your founder of at one ventures",
+      "episode_number": 138
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "sponsors",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "quick shout out to a few of our sponsors including Chelsea green publishing",
+      "episode_number": 138
+    },
+    {
+      "source": "Purium Organic Super Foods",
+      "relationship": "sponsors",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "other sponsors like purium organic super foods",
+      "episode_number": 138
+    },
+    {
+      "source": "Doctor Bronners",
+      "relationship": "sponsors",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "want to be sure to mention doctor Bronners",
+      "episode_number": 138
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "sponsors",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "friends at soil works",
+      "episode_number": 138
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "focuses_on",
+      "target": "Economics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "focusing more and more on some of the important work being done around economics and economic systems",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "advocates_for",
+      "target": "Economics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Tom please take it away and tell us what's going on with economics as a discipline",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "was",
+      "target": "Astrophysicist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I was a scientist I was an astrophysicist for six years",
+      "episode_number": 138
+    },
+    {
+      "source": "economics",
+      "relationship": "advocates_for",
+      "target": "science",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the nature of economics and science",
+      "episode_number": 138
+    },
+    {
+      "source": "toaster",
+      "relationship": "made_by",
+      "target": "design discipline",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "metaphor for economic design",
+      "episode_number": 138
+    },
+    {
+      "source": "USA",
+      "relationship": "located_in",
+      "target": "economics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about the economy of the USA",
+      "episode_number": 138
+    },
+    {
+      "source": "USA",
+      "relationship": "advocates_for",
+      "target": "design discipline",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing economic systems and design",
+      "episode_number": 138
+    },
+    {
+      "source": "America",
+      "relationship": "advocates_for",
+      "target": "design discipline",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing economic systems and design",
+      "episode_number": 138
+    },
+    {
+      "source": "design discipline",
+      "relationship": "includes",
+      "target": "economic product",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussing design and economics",
+      "episode_number": 138
+    },
+    {
+      "source": "design discipline",
+      "relationship": "addresses",
+      "target": "social justice",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing design constraints and social issues",
+      "episode_number": 138
+    },
+    {
+      "source": "design discipline",
+      "relationship": "concerns",
+      "target": "planet",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "discussing care of planet",
+      "episode_number": 138
+    },
+    {
+      "source": "design discipline",
+      "relationship": "aims_for",
+      "target": "humanity",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "discussing balance of prosperity",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "advocates_for",
+      "target": "design constraints",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about societal design constraints",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "involved_in",
+      "target": "artificial intelligence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about AI and its development",
+      "episode_number": 138
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "located_in",
+      "target": "website",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "context of becoming an ambassador",
+      "episode_number": 138
+    },
+    {
+      "source": "Readie Toss",
+      "relationship": "made_by",
+      "target": "Tom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about the novel written by Tom",
+      "episode_number": 138
+    },
+    {
+      "source": "AI",
+      "relationship": "advocates_for",
+      "target": "self-driving car",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Discussion about AI technology and its applications in self-driving cars.",
+      "episode_number": 138
+    },
+    {
+      "source": "government of Singapore",
+      "relationship": "located_in",
+      "target": "Singapore",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Government entity responsible for economic development in Singapore.",
+      "episode_number": 138
+    },
+    {
+      "source": "government of Singapore",
+      "relationship": "analyzes",
+      "target": "taxi drivers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Government analysis of job types in Singapore.",
+      "episode_number": 138
+    },
+    {
+      "source": "self-driving car",
+      "relationship": "made_by",
+      "target": "Google",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Self-driving car technology developed at Google.",
+      "episode_number": 138
+    },
+    {
+      "source": "Singapore",
+      "relationship": "contains",
+      "target": "taxi drivers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Taxi drivers are a part of the workforce in Singapore.",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom",
+      "relationship": "works_at",
+      "target": "one ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Tom mentions his venture firm",
+      "episode_number": 138
+    },
+    {
+      "source": "AI",
+      "relationship": "damages",
+      "target": "physical economy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about AI's impact on economy",
+      "episode_number": 138
+    },
+    {
+      "source": "AI",
+      "relationship": "damages",
+      "target": "cognitive resources",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about AI's impact on human thought",
+      "episode_number": 138
+    },
+    {
+      "source": "developing world",
+      "relationship": "contains",
+      "target": "farmers",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "context of farmers affected by stock trading algorithms",
+      "episode_number": 138
+    },
+    {
+      "source": "why on earth",
+      "relationship": "features",
+      "target": "Tom",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Tom is a guest on the podcast",
+      "episode_number": 138
+    },
+    {
+      "source": "Tom Ch",
+      "relationship": "works_at",
+      "target": "One Ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Tom mentions his work and the venture firm",
+      "episode_number": 138
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Aaron is identified as the host of the podcast",
+      "episode_number": 138
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "One Ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "The podcast mentions sponsors including One Ventures",
+      "episode_number": 138
+    },
+    {
+      "source": "whyonearth.org",
+      "relationship": "provides",
+      "target": "support packages",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "Website mentioned for support packages",
+      "episode_number": 138
+    }
+  ]
+}

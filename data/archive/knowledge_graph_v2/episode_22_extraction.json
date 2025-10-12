@@ -1,0 +1,1581 @@
+{
+  "episode": 22,
+  "timestamp": "2025-10-09T11:12:08.246265",
+  "entity_count": 123,
+  "relationship_count": 71,
+  "entities": [
+    {
+      "name": "Sahar Al Salani",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "interfaith peace activist"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location where Sahar moved"
+    },
+    {
+      "name": "Los Angeles",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location where Sahar had a successful career"
+    },
+    {
+      "name": "USA Broadcasting",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "Warner Brothers",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "Fox",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "Paramount",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "American Forces Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "Discovery ID",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar worked for"
+    },
+    {
+      "name": "North American Interfaith Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar serves on the board of"
+    },
+    {
+      "name": "Religions for Peace, USA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar is a member of the Executive Council"
+    },
+    {
+      "name": "Council on American Islamic Relations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar is involved with"
+    },
+    {
+      "name": "Poor People's Campaign",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "campaign Sahar is involved with"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Sahar is a fellow at"
+    },
+    {
+      "name": "Stony Point Center",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the Community of Living Traditions"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location of the Interfaith Climate Summit"
+    },
+    {
+      "name": "Interfaith Climate Summit",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "event where Sahar met the speaker"
+    },
+    {
+      "name": "Islam",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion of moral traditions and divine concepts"
+    },
+    {
+      "name": "Catholic schools",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "personal education background"
+    },
+    {
+      "name": "Jewish summer camps",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "personal education background"
+    },
+    {
+      "name": "Gabriel",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "angel in Islamic tradition"
+    },
+    {
+      "name": "Muhammad",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "prophet in Islamic tradition"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion of divine concepts"
+    },
+    {
+      "name": "justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion of moral values"
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion of moral values"
+    },
+    {
+      "name": "truth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion of moral values"
+    },
+    {
+      "name": "accountability",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of moral values"
+    },
+    {
+      "name": "empathy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of moral values"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about personal healing and development"
+    },
+    {
+      "name": "Islam",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about personal struggle and jihad"
+    },
+    {
+      "name": "Taoist tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about knowledge and enlightenment"
+    },
+    {
+      "name": "prophet Laouzou",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "reference to a quote about knowledge and self-awareness"
+    },
+    {
+      "name": "justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about external and internal struggles"
+    },
+    {
+      "name": "clean water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about fighting for environmental issues"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about fighting for environmental issues"
+    },
+    {
+      "name": "activists",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about the need for self-awareness in activism"
+    },
+    {
+      "name": "divine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the various attributes of the divine"
+    },
+    {
+      "name": "justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "finding justice or righteousness for living things"
+    },
+    {
+      "name": "righteousness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "finding justice or righteousness for living things"
+    },
+    {
+      "name": "energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing effort and enlightenment"
+    },
+    {
+      "name": "management skills",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing skills needed for jobs"
+    },
+    {
+      "name": "organizational skills",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing skills needed for jobs"
+    },
+    {
+      "name": "crusades",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "historical context of the term hijacked"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "during the time of the crusades"
+    },
+    {
+      "name": "evangelical friends",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "personal struggle with friends"
+    },
+    {
+      "name": "Christian friends",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "personal struggle with friends"
+    },
+    {
+      "name": "poor people's campaign",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "work on the poor people's campaign"
+    },
+    {
+      "name": "gospel",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "spreading the gospel"
+    },
+    {
+      "name": "political efforts",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "misuse of words in politics"
+    },
+    {
+      "name": "Catholic schools",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "background as a student"
+    },
+    {
+      "name": "Jesuit high school",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "background as a student"
+    },
+    {
+      "name": "North American continent",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location just north along the Hudson River"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location just north along the Hudson River"
+    },
+    {
+      "name": "Iraq",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "origin of the speaker"
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "place of birth"
+    },
+    {
+      "name": "Pittsburgh",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "settled in Pittsburgh"
+    },
+    {
+      "name": "mom",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "family background"
+    },
+    {
+      "name": "dad",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "family background"
+    },
+    {
+      "name": "Iraq",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Iraqi born"
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "born in Saudi Arabia"
+    },
+    {
+      "name": "Pittsburgh",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "settled in Pittsburgh"
+    },
+    {
+      "name": "Mr. Rogers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mr. Rogers lived about six blocks away from me"
+    },
+    {
+      "name": "Los Angeles",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "raised my children in Los Angeles"
+    },
+    {
+      "name": "Ravelin Gottlieb",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a dear friend of ours, Ravelin Gottlieb"
+    },
+    {
+      "name": "Islamic schools",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "my children grew up in Islamic schools"
+    },
+    {
+      "name": "Catholic schools",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I grew up in Catholic schools"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "just outside New York City"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working on through these organizations like Green Faith"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "working on through these organizations"
+    },
+    {
+      "name": "Pope",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Lodato Si came right around 2015, the Pope's"
+    },
+    {
+      "name": "Islam",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "my Islam had anything to do with the earth"
+    },
+    {
+      "name": "Lodato Si",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Pope wrote the book, his Lodato Si"
+    },
+    {
+      "name": "Vatican",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "they're trying to green the Vatican"
+    },
+    {
+      "name": "Mekka",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "they're trying to green Mekka"
+    },
+    {
+      "name": "Greenfield",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "projects that they do are phenomenal"
+    },
+    {
+      "name": "Vatican",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "they're trying to green the Vatican"
+    },
+    {
+      "name": "Mekka",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "they're trying to green Mekka"
+    },
+    {
+      "name": "Ramadan",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "if you're going to do Ramadan, don't use plastic"
+    },
+    {
+      "name": "Sahar Al Salani",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we are talking with Sahar Al Salani"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "based out of the New York area"
+    },
+    {
+      "name": "Lodato C",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Lodato C was published"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "migration is really very directly related to climate change"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "digging into mother earth and abusing her"
+    },
+    {
+      "name": "humanitarian crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "almost every single humanitarian crisis can be somehow traced back to violation of the earth"
+    },
+    {
+      "name": "Sahar Al Salani",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "faith leader activist and ecologist social justice leader based out of the New York area"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "New York area"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "social media platform where Sahar can be found"
+    },
+    {
+      "name": "Twitter",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "social media platform where Sahar can be found"
+    },
+    {
+      "name": "Iraqi sunflower",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Sahar's Twitter handle"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization providing audiobook or ebook resources"
+    },
+    {
+      "name": "North American interfaith network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Sahar is likely starting a new position on the board"
+    },
+    {
+      "name": "Council on American Islamic Relations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in relation to advocacy work"
+    },
+    {
+      "name": "green faith",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Sahar worked with"
+    },
+    {
+      "name": "Buddhist global relief",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization doing similar work as green faith"
+    },
+    {
+      "name": "Mormons",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "group doing similar work as green faith"
+    },
+    {
+      "name": "Puerto Rico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where aid is being sent by various groups"
+    },
+    {
+      "name": "Hindus",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "group working on similar efforts"
+    },
+    {
+      "name": "Amish",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "group working on similar efforts"
+    },
+    {
+      "name": "Green Faith",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working in green faith"
+    },
+    {
+      "name": "Buddhist Global Relief",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Buddhist global relief was doing something very similar"
+    },
+    {
+      "name": "Mormons",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "what the Mormons were doing"
+    },
+    {
+      "name": "Puerto Rico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sending things to Puerto Rico"
+    },
+    {
+      "name": "Hindus",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the Hindus are working together"
+    },
+    {
+      "name": "Amish",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the Amish are working together"
+    },
+    {
+      "name": "Religious for Peace",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organizations like Religious for Peace"
+    },
+    {
+      "name": "North American Faith Network",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "North American Faith Network is basically sort of a resource"
+    },
+    {
+      "name": "Brutorhof",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "the Brutorhof first can come and say"
+    },
+    {
+      "name": "Council on American Islamic Relations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Care, Council on American Islamic Relations"
+    },
+    {
+      "name": "NAACP",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "modeled off of the NAACP"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "somebody in New York City gets pulled over"
+    },
+    {
+      "name": "African-American",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "young person who's African-American"
+    },
+    {
+      "name": "Latino",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "young person happens to be Latino and African-American"
+    },
+    {
+      "name": "Muslim",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "person is Latino, African-American and Muslim"
+    },
+    {
+      "name": "LGBTQ",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "person is Latino, African-American, Muslim, and of an LGBTQ identity"
+    },
+    {
+      "name": "Standing Rock",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when we went to Standing Rock"
+    },
+    {
+      "name": "Standing Rock",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "where all of our resources come together."
+    },
+    {
+      "name": "Charlottesville",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "when the Muslim ban happened."
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "all these drag queens and Dallas were, you know, shutting down airports saying we love Muslims."
+    },
+    {
+      "name": "Ferguson",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "the rabbis, I mean, people in Ferguson."
+    },
+    {
+      "name": "Sahar Salani",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "And Sahar, my goodness, thank you so much for being with us today."
+    },
+    {
+      "name": "Erin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we're very proud of you, Erin."
+    },
+    {
+      "name": "Muslim ban",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "when the Muslim ban happened."
+    },
+    {
+      "name": "intersectional work",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "that's the real beauty of intersectional work and faith-based advocacy work."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "USA Broadcasting",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sahar's various projects included productions for USA Broadcasting",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "Warner Brothers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Sahar's various projects included productions for Warner Brothers",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "Fox",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Sahar's various projects included productions for Fox",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "Paramount",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Sahar's various projects included productions for Paramount",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "American Forces Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sahar's various projects included productions for American Forces Network",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "Discovery ID",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sahar's various projects included productions for Discovery ID",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "serves_on_board",
+      "target": "North American Interfaith Network",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Sahar is on the board of the North American Interfaith Network",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "is_member_of",
+      "target": "Religions for Peace, USA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Sahar is a member of the Executive Council of Religions for Peace, USA",
+      "episode_number": 22
+    },
+    {
+      "source": "Council on American Islamic Relations",
+      "relationship": "contributes_to",
+      "target": "Poor People's Campaign",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The board of Council on American Islamic Relations in New York has contributed to the Poor People's Campaign",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "is_fellow_at",
+      "target": "Green Faith",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sahar is a fellow at Green Faith",
+      "episode_number": 22
+    },
+    {
+      "source": "Community of Living Traditions",
+      "relationship": "located_in",
+      "target": "Stony Point Center",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sahar is a member of the Community of Living Traditions at the Stony Point Center",
+      "episode_number": 22
+    },
+    {
+      "source": "Interfaith Climate Summit",
+      "relationship": "hosted_in",
+      "target": "Colorado",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.99,
+      "context": "Interfaith Climate Summit was hosted in Colorado",
+      "episode_number": 22
+    },
+    {
+      "source": "Muhammad",
+      "relationship": "received_revelation_from",
+      "target": "Gabriel",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Islamic tradition regarding the first revelation",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "justice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of moral values",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "love",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of moral values",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "truth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of moral values",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "accountability",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion of moral values",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "empathy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion of moral values",
+      "episode_number": 22
+    },
+    {
+      "source": "Catholic schools",
+      "relationship": "part_of",
+      "target": "personal education background",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "personal education background",
+      "episode_number": 22
+    },
+    {
+      "source": "Jewish summer camps",
+      "relationship": "part_of",
+      "target": "personal education background",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "personal education background",
+      "episode_number": 22
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "advocates_for",
+      "target": "personal healing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about personal growth and community work",
+      "episode_number": 22
+    },
+    {
+      "source": "Islam",
+      "relationship": "advocates_for",
+      "target": "jihad",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about personal struggle and self-cultivation",
+      "episode_number": 22
+    },
+    {
+      "source": "prophet Laouzou",
+      "relationship": "informs",
+      "target": "Taoist tradition",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "reference to a quote about knowledge and enlightenment",
+      "episode_number": 22
+    },
+    {
+      "source": "justice",
+      "relationship": "is_related_to",
+      "target": "jihad",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the struggle for justice and personal growth",
+      "episode_number": 22
+    },
+    {
+      "source": "activists",
+      "relationship": "advocates_for",
+      "target": "clean water",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental activism",
+      "episode_number": 22
+    },
+    {
+      "source": "activists",
+      "relationship": "advocates_for",
+      "target": "trees",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental activism",
+      "episode_number": 22
+    },
+    {
+      "source": "Iraq",
+      "relationship": "part_of",
+      "target": "oldest indigenous groups",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "origin of the speaker",
+      "episode_number": 22
+    },
+    {
+      "source": "Saudi Arabia",
+      "relationship": "located_in",
+      "target": "Pittsburgh",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "place of birth and settlement",
+      "episode_number": 22
+    },
+    {
+      "source": "mom",
+      "relationship": "works_at",
+      "target": "university",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "completed her PhD",
+      "episode_number": 22
+    },
+    {
+      "source": "Pittsburgh",
+      "relationship": "contains",
+      "target": "pluralistic community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "growing up in Pittsburgh",
+      "episode_number": 22
+    },
+    {
+      "source": "Iraq",
+      "relationship": "located_in",
+      "target": "Saudi Arabia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Iraqi born",
+      "episode_number": 22
+    },
+    {
+      "source": "Pittsburgh",
+      "relationship": "part_of",
+      "target": "Pennsylvania",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "settled in Pittsburgh",
+      "episode_number": 22
+    },
+    {
+      "source": "Mr. Rogers",
+      "relationship": "advocates_for",
+      "target": "social justice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Mr. Rogers taught us about social justice",
+      "episode_number": 22
+    },
+    {
+      "source": "Ravelin Gottlieb",
+      "relationship": "works_at",
+      "target": "interfaith summer camps",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Ravelin used to do these interfaith summer camps",
+      "episode_number": 22
+    },
+    {
+      "source": "Los Angeles",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "raised my children in Los Angeles",
+      "episode_number": 22
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "has_fellow",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "where you're a fellow",
+      "episode_number": 22
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "mobilizes",
+      "target": "communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "specific actions that are being mobilized in communities all over through that organization",
+      "episode_number": 22
+    },
+    {
+      "source": "Pope",
+      "relationship": "wrote",
+      "target": "Lodato Si",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the Pope wrote the book, his Lodato Si",
+      "episode_number": 22
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "advocates_for",
+      "target": "environment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "what I learned most from Green Faith and the projects that they do are phenomenal",
+      "episode_number": 22
+    },
+    {
+      "source": "Vatican",
+      "relationship": "part_of",
+      "target": "Catholic Church",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "they're trying to green the Vatican",
+      "episode_number": 22
+    },
+    {
+      "source": "Mekka",
+      "relationship": "part_of",
+      "target": "Islam",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "they're trying to green Mekka",
+      "episode_number": 22
+    },
+    {
+      "source": "Greenfield",
+      "relationship": "works_at",
+      "target": "houses of worship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the projects that they do are phenomenal",
+      "episode_number": 22
+    },
+    {
+      "source": "Vatican",
+      "relationship": "part_of",
+      "target": "houses of worship",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "they're trying to green the Vatican",
+      "episode_number": 22
+    },
+    {
+      "source": "Mekka",
+      "relationship": "part_of",
+      "target": "houses of worship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "they're trying to green Mekka",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "incredible faith leader activist and ecologist",
+      "episode_number": 22
+    },
+    {
+      "source": "Lodato C",
+      "relationship": "mandatory_reading_for",
+      "target": "youth groups",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Lodato C was published",
+      "episode_number": 22
+    },
+    {
+      "source": "climate change",
+      "relationship": "causes",
+      "target": "migration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "migration is really very directly related to climate change",
+      "episode_number": 22
+    },
+    {
+      "source": "mother earth",
+      "relationship": "abused_by",
+      "target": "humanitarian crisis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "digging into mother earth and abusing her",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "works_at",
+      "target": "North American interfaith network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Sahar is likely starting a new position on the board",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Al Salani",
+      "relationship": "advocates_for",
+      "target": "social justice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Sahar is a social justice leader",
+      "episode_number": 22
+    },
+    {
+      "source": "Council on American Islamic Relations",
+      "relationship": "part_of",
+      "target": "advocacy organizations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to advocacy work",
+      "episode_number": 22
+    },
+    {
+      "source": "green faith",
+      "relationship": "contains",
+      "target": "Buddhist global relief",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "working on similar efforts",
+      "episode_number": 22
+    },
+    {
+      "source": "green faith",
+      "relationship": "contains",
+      "target": "Mormons",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "working on similar efforts",
+      "episode_number": 22
+    },
+    {
+      "source": "Hindus",
+      "relationship": "located_in",
+      "target": "Puerto Rico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "working on similar efforts",
+      "episode_number": 22
+    },
+    {
+      "source": "Amish",
+      "relationship": "located_in",
+      "target": "Puerto Rico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "working on similar efforts",
+      "episode_number": 22
+    },
+    {
+      "source": "Green Faith",
+      "relationship": "advocates_for",
+      "target": "faith-based activism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "working in green faith",
+      "episode_number": 22
+    },
+    {
+      "source": "Buddhist Global Relief",
+      "relationship": "collaborates_with",
+      "target": "Mormons",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "doing something very similar to what the Mormons were doing",
+      "episode_number": 22
+    },
+    {
+      "source": "Hindus",
+      "relationship": "collaborates_with",
+      "target": "Amish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Hindus and the Amish are working together",
+      "episode_number": 22
+    },
+    {
+      "source": "Religious for Peace",
+      "relationship": "located_in",
+      "target": "North American Faith Network",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organizations like Religious for Peace",
+      "episode_number": 22
+    },
+    {
+      "source": "Council on American Islamic Relations",
+      "relationship": "modeled_after",
+      "target": "NAACP",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Care, Council on American Islamic Relations was modeled off of the NAACP",
+      "episode_number": 22
+    },
+    {
+      "source": "New York City",
+      "relationship": "contains",
+      "target": "African-American",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "somebody in New York City gets pulled over",
+      "episode_number": 22
+    },
+    {
+      "source": "African-American",
+      "relationship": "increases_risk_for",
+      "target": "Latino",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "chances are getting pulled over or more likely",
+      "episode_number": 22
+    },
+    {
+      "source": "Latino",
+      "relationship": "increases_risk_for",
+      "target": "Muslim",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "chances rises higher",
+      "episode_number": 22
+    },
+    {
+      "source": "Muslim",
+      "relationship": "increases_risk_for",
+      "target": "LGBTQ",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "that increases it more",
+      "episode_number": 22
+    },
+    {
+      "source": "Standing Rock",
+      "relationship": "contains",
+      "target": "faith-based activism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "when we went to Standing Rock",
+      "episode_number": 22
+    },
+    {
+      "source": "Sahar Salani",
+      "relationship": "advocates_for",
+      "target": "Muslim ban",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "And Sahar, my goodness, thank you so much for being with us today.",
+      "episode_number": 22
+    },
+    {
+      "source": "Standing Rock",
+      "relationship": "contains",
+      "target": "indigenous",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "when we went to Standing Rock.",
+      "episode_number": 22
+    },
+    {
+      "source": "Dallas",
+      "relationship": "located_in",
+      "target": "Texas",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "all these drag queens and Dallas were, you know, shutting down airports saying we love Muslims.",
+      "episode_number": 22
+    },
+    {
+      "source": "Charlottesville",
+      "relationship": "located_in",
+      "target": "Virginia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "when the Muslim ban happened.",
+      "episode_number": 22
+    },
+    {
+      "source": "Ferguson",
+      "relationship": "located_in",
+      "target": "Missouri",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "the rabbis, I mean, people in Ferguson.",
+      "episode_number": 22
+    },
+    {
+      "source": "intersectional work",
+      "relationship": "part_of",
+      "target": "faith-based advocacy work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "that's the real beauty of intersectional work and faith-based advocacy work.",
+      "episode_number": 22
+    }
+  ]
+}

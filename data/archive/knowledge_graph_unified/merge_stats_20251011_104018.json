@@ -1,0 +1,133 @@
+{
+  "total_sources": 101,
+  "books_processed": 1,
+  "episodes_processed": 100,
+  "total_relationships_before_merge": 30123,
+  "total_relationships_after_merge": 29962,
+  "duplicate_relationships_removed": 161,
+  "entities_before_aliasing": 0,
+  "entities_after_aliasing": 29015,
+  "aliases_applied": 9576,
+  "conflict_count": 827,
+  "high_confidence_count": 28476,
+  "medium_confidence_count": 1442,
+  "low_confidence_count": 205,
+  "relationship_types": {
+    "provides": 294,
+    "is associated with": 263,
+    "is a sponsor of": 229,
+    "is a": 206,
+    "includes": 166,
+    "supports": 161,
+    "is": 152,
+    "is part of": 150,
+    "has": 147,
+    "offers": 147,
+    "is described as": 135,
+    "author of": 131,
+    "is a type of": 116,
+    "is involved in": 101,
+    "focuses on": 99,
+    "describes": 98,
+    "affects": 94,
+    "is supported by": 93,
+    "is related to": 88,
+    "discusses": 88
+  },
+  "source_type_distribution": {
+    "book": 5182,
+    "episode": 24772,
+    "Food choices": 1,
+    "Guide": 1,
+    "Activity": 1,
+    "Person": 1,
+    "Employees": 1,
+    "Companies": 1,
+    "individual": 1,
+    "concept": 1
+  },
+  "top_entities_by_degree": [
+    {
+      "entity": "Speaker",
+      "degree": 939
+    },
+    {
+      "entity": "The speaker",
+      "degree": 755
+    },
+    {
+      "entity": "People",
+      "degree": 423
+    },
+    {
+      "entity": "I",
+      "degree": 324
+    },
+    {
+      "entity": "Y on Earth community",
+      "degree": 189
+    },
+    {
+      "entity": "Humans",
+      "degree": 179
+    },
+    {
+      "entity": "Individuals",
+      "degree": 178
+    },
+    {
+      "entity": "Soil",
+      "degree": 173
+    },
+    {
+      "entity": "Aaron William Perry",
+      "degree": 161
+    },
+    {
+      "entity": "Why On Earth Community",
+      "degree": 161
+    },
+    {
+      "entity": "We",
+      "degree": 157
+    },
+    {
+      "entity": "Climate Change",
+      "degree": 145
+    },
+    {
+      "entity": "Farmers",
+      "degree": 141
+    },
+    {
+      "entity": "Nature",
+      "degree": 133
+    },
+    {
+      "entity": "Community",
+      "degree": 132
+    },
+    {
+      "entity": "Y on Earth",
+      "degree": 124
+    },
+    {
+      "entity": "Organization",
+      "degree": 117
+    },
+    {
+      "entity": "1% for the Planet",
+      "degree": 115
+    },
+    {
+      "entity": "Listeners",
+      "degree": 104
+    },
+    {
+      "entity": "Podcast Series",
+      "degree": 99
+    }
+  ],
+  "deduplication_rate": "0.5%",
+  "compression_ratio": "1.01x"
+}

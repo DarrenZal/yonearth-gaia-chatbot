@@ -1,0 +1,997 @@
+{
+  "episode": 6,
+  "timestamp": "2025-10-09T11:26:56.055186",
+  "entity_count": 71,
+  "relationship_count": 49,
+  "entities": [
+    {
+      "name": "Dr. Sapi Koskas",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaking with political leaders, business leaders, and religious and spiritual leaders"
+    },
+    {
+      "name": "Jeddah",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "joins us from Jeddah, Saudi Arabia"
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "joins us from Jeddah, Saudi Arabia"
+    },
+    {
+      "name": "David Hungerford",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "co-authored a translation of the Quran with David Hungerford"
+    },
+    {
+      "name": "Quran",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "translation of the Quran"
+    },
+    {
+      "name": "Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "references to the Bible"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "promote God's love and mercy"
+    },
+    {
+      "name": "grandchildren",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "dedicated to our grandchildren, half of them Muslim, half of them Christian"
+    },
+    {
+      "name": "Quran",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussing the essence and message of the Quran."
+    },
+    {
+      "name": "Safi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a person who documents journeys and travels."
+    },
+    {
+      "name": "Middle East",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location where spiritual leaders were met."
+    },
+    {
+      "name": "Mormon Church",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization met with elders."
+    },
+    {
+      "name": "Utah",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location mentioned in relation to meeting with the Mormon Church."
+    },
+    {
+      "name": "Washington DC",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Location where the speaker conducted a survey."
+    },
+    {
+      "name": "Georgia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of the church where the speaker spoke."
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Country mentioned in relation to the speaker's experience."
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Concept discussed in relation to love and neighbor."
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Central theme of the speaker's message."
+    },
+    {
+      "name": "peace",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Central theme of the speaker's message."
+    },
+    {
+      "name": "Georgia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking at a church in noon, in Georgia"
+    },
+    {
+      "name": "Saudi Arabia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "do you live in Saudi Arabia?"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "the way United States used to be"
+    },
+    {
+      "name": "Washington DC",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "my home is not here. It is in the Washington DC area"
+    },
+    {
+      "name": "Maryland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I know a street in Maryland"
+    },
+    {
+      "name": "Safi",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "This is beautiful, Safi."
+    },
+    {
+      "name": "Constitution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I have the Constitution to protect me."
+    },
+    {
+      "name": "pluralism",
+      "type": "CONCEPT",
+      "name_confidence": 0.88,
+      "type_confidence": 0.88,
+      "context": "Pluralism is very important."
+    },
+    {
+      "name": "diversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.88,
+      "type_confidence": 0.88,
+      "context": "not a diverse country."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...enemies of the United States to come in between us."
+    },
+    {
+      "name": "Lebanon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I was born in Lebanon."
+    },
+    {
+      "name": "Birmingham",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I moved to Birmingham, Alabama."
+    },
+    {
+      "name": "Alabama",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I moved to Birmingham, Alabama."
+    },
+    {
+      "name": "New Orleans",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Then I moved from there to New Orleans."
+    },
+    {
+      "name": "Louisiana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "New Orleans, Louisiana, of course."
+    },
+    {
+      "name": "Jesus",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "If we claim to follow Jesus, Jesus talked about love."
+    },
+    {
+      "name": "Quran",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "This is what the Quran talks about."
+    },
+    {
+      "name": "Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "go read your Bible and treat me as if I was just another Christian."
+    },
+    {
+      "name": "Islam",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism."
+    },
+    {
+      "name": "Christianity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism."
+    },
+    {
+      "name": "Judaism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism."
+    },
+    {
+      "name": "New Orleans",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I moved from there to New Orleans."
+    },
+    {
+      "name": "Louisiana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "New Orleans, Louisiana, of course."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "the United States, I tell you, although we have a separation of church and state in the United States"
+    },
+    {
+      "name": "American constitution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The American constitution is something that I and my children and my grandchildren is something that we are ready to die for."
+    },
+    {
+      "name": "Arabah Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a simple place in Israel called the Arabah Institute"
+    },
+    {
+      "name": "Israel",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a simple place in Israel called the Arabah Institute"
+    },
+    {
+      "name": "Palestinian youth",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "bringing together Palestinian youth and young adults"
+    },
+    {
+      "name": "Israeli youth",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "bringing together Israeli youth and young adults"
+    },
+    {
+      "name": "Jews",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Christians",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Muslims",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Arabah Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a simple place in Israel called the Arabah Institute"
+    },
+    {
+      "name": "Israel",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a place in Israel called the Arabah Institute"
+    },
+    {
+      "name": "Palestinian youth",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "bringing together Palestinian youth and young adults"
+    },
+    {
+      "name": "Israeli youth",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "bringing together Israeli youth and young adults"
+    },
+    {
+      "name": "Jews",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Christians",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Muslims",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "others, Jews, Christians, Muslims"
+    },
+    {
+      "name": "Palestinian",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "independent Palestinian state"
+    },
+    {
+      "name": "West Bank",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the West Bank and Gaza alone"
+    },
+    {
+      "name": "Gaza",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the West Bank and Gaza alone"
+    },
+    {
+      "name": "peace",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "bringing peace into the holy land"
+    },
+    {
+      "name": "freedom",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "seeing freedom as being so central"
+    },
+    {
+      "name": "the holy land",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "it is the holy land"
+    },
+    {
+      "name": "Israel",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "If Israel want to give the Palestinian, their independent state"
+    },
+    {
+      "name": "two million",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "two million of them in a place where they cannot leave"
+    },
+    {
+      "name": "Palestinian state",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about peace and coexistence"
+    },
+    {
+      "name": "Israel",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about peace and coexistence"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about values and acceptance"
+    },
+    {
+      "name": "Sofis",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion with the host"
+    },
+    {
+      "name": "Safi",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion with the host"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Dr. Sapi Koskas",
+      "relationship": "works_at",
+      "target": "Quran",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "doing work in the arena of cultural reconciliation",
+      "episode_number": 6
+    },
+    {
+      "source": "Dr. Sapi Koskas",
+      "relationship": "advocates_for",
+      "target": "cultural reconciliation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "doing work in the arena of cultural reconciliation",
+      "episode_number": 6
+    },
+    {
+      "source": "Dr. Sapi Koskas",
+      "relationship": "co-authored",
+      "target": "Quran",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-authored a translation of the Quran with David Hungerford",
+      "episode_number": 6
+    },
+    {
+      "source": "David Hungerford",
+      "relationship": "co-authored",
+      "target": "Quran",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-authored a translation of the Quran with Dr. Sapi Koskas",
+      "episode_number": 6
+    },
+    {
+      "source": "Jeddah",
+      "relationship": "located_in",
+      "target": "Saudi Arabia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "joins us from Jeddah, Saudi Arabia",
+      "episode_number": 6
+    },
+    {
+      "source": "grandchildren",
+      "relationship": "part_of",
+      "target": "Dr. Sapi Koskas",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "dedicated to our grandchildren, half of them Muslim, half of them Christian",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "documents",
+      "target": "journeys",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Safi's activities are mentioned in the context of documenting travels.",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "meets",
+      "target": "spiritual leaders",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Safi is mentioned as meeting spiritual leaders in the Middle East.",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "meets",
+      "target": "elders of the Mormon Church",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Safi is mentioned as meeting with elders of the Mormon Church in Utah.",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "brings",
+      "target": "message of love and peace",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Safi's message is about love and peace.",
+      "episode_number": 6
+    },
+    {
+      "source": "speaker",
+      "relationship": "conducts",
+      "target": "survey",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "The speaker conducted a survey in Washington DC.",
+      "episode_number": 6
+    },
+    {
+      "source": "speaker",
+      "relationship": "speaks_at",
+      "target": "church",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The speaker spoke at a church in Georgia.",
+      "episode_number": 6
+    },
+    {
+      "source": "speaker",
+      "relationship": "lives_in",
+      "target": "Washington DC",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "The speaker mentions living in Washington DC.",
+      "episode_number": 6
+    },
+    {
+      "source": "speaker",
+      "relationship": "lives_in",
+      "target": "Saudi Arabia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "The speaker mentions living in Saudi Arabia.",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "advocates_for",
+      "target": "pluralism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.88,
+      "context": "This is beautiful, Safi. I want to reference something you said...",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "lives_in",
+      "target": "Washington DC",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "my home is not here. It is in the Washington DC area",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Maryland",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I know a street in Maryland where you have a Jewish synagogue...",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "advocates_for",
+      "target": "pluralism",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.88,
+      "context": "This is what made the United States grow and be number one in scientists in research.",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "the way United States used to be",
+      "episode_number": 6
+    },
+    {
+      "source": "Saudi Arabia",
+      "relationship": "located_in",
+      "target": "Middle East",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.6,
+      "context": "do you live in Saudi Arabia?",
+      "episode_number": 6
+    },
+    {
+      "source": "Jesus",
+      "relationship": "advocates_for",
+      "target": "love",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "If we claim to follow Jesus, Jesus talked about love.",
+      "episode_number": 6
+    },
+    {
+      "source": "Quran",
+      "relationship": "advocates_for",
+      "target": "love",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "This is what the Quran talks about.",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Birmingham",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "I moved to Birmingham, Alabama.",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "New Orleans",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Then I moved from there to New Orleans.",
+      "episode_number": 6
+    },
+    {
+      "source": "Birmingham",
+      "relationship": "located_in",
+      "target": "Alabama",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I moved to Birmingham, Alabama.",
+      "episode_number": 6
+    },
+    {
+      "source": "New Orleans",
+      "relationship": "located_in",
+      "target": "Louisiana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "New Orleans, Louisiana, of course.",
+      "episode_number": 6
+    },
+    {
+      "source": "Islam",
+      "relationship": "part_of",
+      "target": "Abrahamic religious traditions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism.",
+      "episode_number": 6
+    },
+    {
+      "source": "Christianity",
+      "relationship": "part_of",
+      "target": "Abrahamic religious traditions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism.",
+      "episode_number": 6
+    },
+    {
+      "source": "Judaism",
+      "relationship": "part_of",
+      "target": "Abrahamic religious traditions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...in our Abrahamic religious traditions, Islam, Christianity, Judaism.",
+      "episode_number": 6
+    },
+    {
+      "source": "New Orleans",
+      "relationship": "located_in",
+      "target": "Louisiana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.95,
+      "context": "New Orleans, Louisiana, of course.",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "located_in",
+      "target": "Israel",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "a simple place in Israel called the Arabah Institute",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "brings_together",
+      "target": "Palestinian youth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "bringing together Palestinian youth and young adults",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "brings_together",
+      "target": "Israeli youth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "bringing together Israeli youth and young adults",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "brings_together",
+      "target": "Jews",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "brings_together",
+      "target": "Christians",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "brings_together",
+      "target": "Muslims",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "others, Jews, Christians, Muslims",
+      "episode_number": 6
+    },
+    {
+      "source": "Arabah Institute",
+      "relationship": "located_in",
+      "target": "Israel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "a simple place in Israel called the Arabah Institute",
+      "episode_number": 6
+    },
+    {
+      "source": "Palestinian youth",
+      "relationship": "advocates_for",
+      "target": "peace",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "bringing together Palestinian youth and young adults",
+      "episode_number": 6
+    },
+    {
+      "source": "Israeli youth",
+      "relationship": "advocates_for",
+      "target": "peace",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "bringing together Israeli youth and young adults",
+      "episode_number": 6
+    },
+    {
+      "source": "Israel",
+      "relationship": "contains",
+      "target": "West Bank",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Israel want to give the Palestinian, their independent state",
+      "episode_number": 6
+    },
+    {
+      "source": "Israel",
+      "relationship": "contains",
+      "target": "Gaza",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Israel want to give the Palestinian, their independent state",
+      "episode_number": 6
+    },
+    {
+      "source": "Israel",
+      "relationship": "advocates_for",
+      "target": "freedom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "seeing freedom as being so central",
+      "episode_number": 6
+    },
+    {
+      "source": "Israel",
+      "relationship": "part_of",
+      "target": "the holy land",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "it is the holy land",
+      "episode_number": 6
+    },
+    {
+      "source": "two million",
+      "relationship": "located_in",
+      "target": "Gaza",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "two million of them in a place where they cannot leave",
+      "episode_number": 6
+    },
+    {
+      "source": "Sofis",
+      "relationship": "advocates_for",
+      "target": "Palestinian state",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about peace and coexistence",
+      "episode_number": 6
+    },
+    {
+      "source": "Israel",
+      "relationship": "located_in",
+      "target": "Middle East",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "discussion about peace and coexistence",
+      "episode_number": 6
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "values",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about values and acceptance",
+      "episode_number": 6
+    },
+    {
+      "source": "Sofis",
+      "relationship": "shares",
+      "target": "love",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about love and humanity",
+      "episode_number": 6
+    },
+    {
+      "source": "Safi",
+      "relationship": "shares",
+      "target": "love",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about love and humanity",
+      "episode_number": 6
+    }
+  ]
+}

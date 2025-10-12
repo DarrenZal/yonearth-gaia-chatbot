@@ -1,0 +1,2228 @@
+{
+  "episode": 70,
+  "timestamp": "2025-10-09T11:33:03.343621",
+  "entity_count": 164,
+  "relationship_count": 107,
+  "entities": [
+    {
+      "name": "Jeff Moyer",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CEO of Rodal Institute"
+    },
+    {
+      "name": "Rodal Institute",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Organization where Jeff Moyer works"
+    },
+    {
+      "name": "J.I. Rodeil",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Founder of Rodal Institute"
+    },
+    {
+      "name": "Organic No-till Farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Book authored by Jeff Moyer"
+    },
+    {
+      "name": "National Organic Standards Board",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Board where Jeff Moyer was a past chair"
+    },
+    {
+      "name": "Regenerative Organic Alliance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization where Jeff Moyer is Board Chair"
+    },
+    {
+      "name": "Soil Health Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization where Jeff Moyer sits on the board"
+    },
+    {
+      "name": "Pennsylvania Certified Organic",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization where Jeff Moyer is a founding board member"
+    },
+    {
+      "name": "Seed Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Project founded by Jeff Moyer"
+    },
+    {
+      "name": "Roundup",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Herbicide mentioned in context of agriculture"
+    },
+    {
+      "name": "organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Production paradigm discussed by J.I. Rodeil"
+    },
+    {
+      "name": "Robert Rodeo",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "His son Robert Rodeo took over the Rodeo enterprises."
+    },
+    {
+      "name": "Rodeo enterprises",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Robert Rodeo took over the Rodeo enterprises."
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "working with the USDA."
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the idea of continuous improvement."
+    },
+    {
+      "name": "regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "he came up with the new word regeneration."
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the word sustainable and sustainability."
+    },
+    {
+      "name": "Road Hill Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "What we've done now at Road Hill Institute."
+    },
+    {
+      "name": "Road Hill Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working with some major brand partners"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "linked those two words together"
+    },
+    {
+      "name": "organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "does a new thing or even a fat or some sort of marketing invention"
+    },
+    {
+      "name": "Egyptian empire",
+      "type": "HISTORICAL_ENTITY",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "create a timeline and start maybe with the Egyptian empire"
+    },
+    {
+      "name": "United States",
+      "type": "GEO",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "not just the United States but globally around the world"
+    },
+    {
+      "name": "Midwestern part of the United States",
+      "type": "GEO",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Most of the farmers across the Midwestern part of the United States"
+    },
+    {
+      "name": "corn",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "commodity growers grow commodities of corn and beans"
+    },
+    {
+      "name": "soy beans",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "commodity growers grow commodities of corn and beans"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "disincentivized farmers from paying attention to their real goal"
+    },
+    {
+      "name": "organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "disagree with the timeline is that when we look at organic agriculture"
+    },
+    {
+      "name": "regenerative organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "disagree with the timeline is that when we look at regenerative organic agriculture"
+    },
+    {
+      "name": "precision agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "take advantage of precision agriculture"
+    },
+    {
+      "name": "robotics",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "take advantage of robotics"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "destroying the animals and the biodiversity on that"
+    },
+    {
+      "name": "regenerative organic certification program",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "spearheading and innovating on is the regenerative organic certification program"
+    },
+    {
+      "name": "consumers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "imperative for us as consumers to do really all that we can do"
+    },
+    {
+      "name": "Road to Health",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "solutions-based company in the Food and Agriculture arena"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "model that we're creating around regenerative organic certification"
+    },
+    {
+      "name": "science-based organization",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization that focuses on soil, soil health, and food production"
+    },
+    {
+      "name": "human health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "goal of having healthy populations"
+    },
+    {
+      "name": "cardiologist",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "meeting with a cardiologist discussing heart health"
+    },
+    {
+      "name": "healthy organic diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "what people need to eat for health"
+    },
+    {
+      "name": "food production system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "system that consumers vote with their dollars for"
+    },
+    {
+      "name": "brands",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "partnered with a bunch of brands that produce food and fiber products"
+    },
+    {
+      "name": "grocery store",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "Most customers or consumers come to a grocery store"
+    },
+    {
+      "name": "restaurant",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "Most customers or consumers come to a restaurant"
+    },
+    {
+      "name": "fiber products",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "if you're buying fiber products"
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "somebody wants to come and buy a product that is organic"
+    },
+    {
+      "name": "social justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I'm really interested in social justice"
+    },
+    {
+      "name": "animal welfare",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "an animal welfare component"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "carbon sequestration because the climate is really important to me"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we hope consumers begin to focus as we roll out our regenerative organic certification"
+    },
+    {
+      "name": "farmer",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "I've talked with a farmer"
+    },
+    {
+      "name": "Eagle Scout",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the only merit badge you use, you just showed everybody, oh, I'm an Eagle Scout"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "which is called the regenerative organic certification or ROC"
+    },
+    {
+      "name": "ROC seal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the ROC seal, which will be rolling out in supermarkets"
+    },
+    {
+      "name": "supermarkets",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "rolling out in supermarkets in the next few months"
+    },
+    {
+      "name": "disc brakes",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "all have disc brakes because it's such a much better mode of stopping a vehicle"
+    },
+    {
+      "name": "farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "we know that the labor on the farm was treated fairly"
+    },
+    {
+      "name": "regenerative organic alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "encourage all of your listeners and viewers to go to the regenerative organic alliance"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "two of the leading brands that have been involved with Rodeo from the very beginning"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "two of the leading brands that have been involved with Rodeo from the very beginning"
+    },
+    {
+      "name": "Applegate Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I think there's 42 brands that are on their Applegate Farm"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "food product that came from India or Argentina"
+    },
+    {
+      "name": "Argentina",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "food product that came from India or Argentina"
+    },
+    {
+      "name": "Indiana",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "whether we sequester carbon in India or in Indiana"
+    },
+    {
+      "name": "Jeff",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing consumer choices in food purchasing"
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "contamination testing"
+    },
+    {
+      "name": "Mississippi River",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "dredging due to farming practices"
+    },
+    {
+      "name": "organic plant-based diet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "dietary changes for health improvement"
+    },
+    {
+      "name": "food production system",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion on external costs of food production"
+    },
+    {
+      "name": "Mississippi River",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the Mississippi River every year"
+    },
+    {
+      "name": "Joel Salatin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the great regenerative farmer, a cum philosopher and comedian Joel Salatin"
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you mentioned glyphosate, which is of course the active ingredient in a very potent pesticide"
+    },
+    {
+      "name": "Roundup",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "in products known as Roundup"
+    },
+    {
+      "name": "Monsanto",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the producer of Roundup, Monsanto"
+    },
+    {
+      "name": "Duane Johnson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a groundskeeper, a guy named Duane Johnson"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here in the United States, in particular"
+    },
+    {
+      "name": "cancer",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "other health issues like cancer"
+    },
+    {
+      "name": "attention deficit disorder",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "certain neurological diseases like attention deficit disorder"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "certain neurological diseases like Alzheimer's"
+    },
+    {
+      "name": "autism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "certain neurological diseases like autism"
+    },
+    {
+      "name": "ergo thionine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "an amino acid called ergo thionine"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing rates of Alzheimer's"
+    },
+    {
+      "name": "autism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing rates of autism"
+    },
+    {
+      "name": "attention deficit disorder",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing rates of attention deficit disorder"
+    },
+    {
+      "name": "Rodal Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Jeff Moir is the CEO of Rodal Institute"
+    },
+    {
+      "name": "Jeff Moir",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking with Jeff Moir"
+    },
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I'm your host, Aaron Perry"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Weile Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "wyoners.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wyoners.org slash support and join at any level."
+    },
+    {
+      "name": "Weile Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "special partnership with Weile Waters"
+    },
+    {
+      "name": "CBB hemipin fused soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "monthly shipments of our special CBB hemipin fused soaking salts"
+    },
+    {
+      "name": "Jeff",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "And Jeff, I'm just, I'm, I'm going to admit to you"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "with your friends at, you know, Patagonia"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "with your friends at, you know, Dr. Bronners"
+    },
+    {
+      "name": "rodeo institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "it was only logical that they reached out to rodeo institute"
+    },
+    {
+      "name": "food and agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "having worked for 20 plus years in the food and agriculture arena"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "what was being put together with the regenerative organic certification"
+    },
+    {
+      "name": "fertilizer",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fertilizer in a conventional system"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "microbes attack it"
+    },
+    {
+      "name": "corn",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "planting corn"
+    },
+    {
+      "name": "fungicide",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "encapsulate it with a fungicide"
+    },
+    {
+      "name": "bacteria side",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "fungicide and a bacteria side"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "killed all the microbes in the soil"
+    },
+    {
+      "name": "regenerative organic model",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "more regenerative organic model"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "regenerate our climate"
+    },
+    {
+      "name": "Roedale",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "gravitated to Roedale"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "go to roedaleinstitute.org"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a nonprofit organization in the podcast segment."
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as the person speaking in the podcast segment."
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to soil degradation."
+    },
+    {
+      "name": "soil degradation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a global issue in the podcast."
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to the community."
+    },
+    {
+      "name": "organic food",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in the context of consumer choices."
+    },
+    {
+      "name": "philanthropic dollars",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to funding the organization's work."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussing farming practices"
+    },
+    {
+      "name": "Washington, DC",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "impacting farming decisions"
+    },
+    {
+      "name": "Iowa",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "farming decisions impacted by Washington, DC"
+    },
+    {
+      "name": "Boston",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "health of children impacted by farming decisions"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "farming practices discussed"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "where Rhode Island Institute is housed"
+    },
+    {
+      "name": "Rhode Island Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "located in Pennsylvania"
+    },
+    {
+      "name": "CSA shares",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "program for underprivileged communities"
+    },
+    {
+      "name": "organic food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to affordability"
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "health of children discussed"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "transitioning to better practices"
+    },
+    {
+      "name": "Jeff",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about carbon sequestration"
+    },
+    {
+      "name": "social media",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about customer interactions"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about climate crisis"
+    },
+    {
+      "name": "climate crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about climate stabilization"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about carbon sequestration"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about soil regeneration"
+    },
+    {
+      "name": "industrial revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about carbon increase"
+    },
+    {
+      "name": "microbial life",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about soil health"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "carbon that we put into the atmosphere"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the only tool that's going to do that is photosynthesis"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Farmers should be planting cover crops"
+    },
+    {
+      "name": "Rodeo Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the only organization that was there to talk about soil"
+    },
+    {
+      "name": "Paris Climate Accord",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when we had the Paris Climate Accord"
+    },
+    {
+      "name": "USDA NRCS",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "equity funds through the USDA NRCS office"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "photosynthesis works at scale"
+    },
+    {
+      "name": "chlorophyll",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "amazing and elegant molecule"
+    },
+    {
+      "name": "apple tree",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "an apple tree would have one flower"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sequester carbon"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "based on science"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "agriculture moves on the back of science"
+    },
+    {
+      "name": "human health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "human health side"
+    },
+    {
+      "name": "climate health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "climate health side"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "soil health side"
+    },
+    {
+      "name": "organic product",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "buy an organic product"
+    },
+    {
+      "name": "farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "farming that way"
+    },
+    {
+      "name": "international trade",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "came from international trade"
+    },
+    {
+      "name": "federal government",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "federal government here says"
+    },
+    {
+      "name": "younger generation",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "younger generation want to farm organically"
+    },
+    {
+      "name": "marketplace",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "support in the marketplace"
+    },
+    {
+      "name": "younger folks",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "younger folks want to farm organically"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "involved with soil health"
+    },
+    {
+      "name": "Jeff",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "thank you so much Jeff"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "yonurth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "please visit yonurth.org backslash support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Jeff Moyer",
+      "relationship": "works_at",
+      "target": "Rodal Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "CEO of Rodal Institute",
+      "episode_number": 70
+    },
+    {
+      "source": "J.I. Rodeil",
+      "relationship": "founded",
+      "target": "Rodal Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "Founder of Rodal Institute",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "advocates_for",
+      "target": "Organic No-till Farming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Author of the book on organic no-till farming",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "works_at",
+      "target": "National Organic Standards Board",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Past chair of the board",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "works_at",
+      "target": "Regenerative Organic Alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Current Board Chair",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "works_at",
+      "target": "Soil Health Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sits on the board",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "founded",
+      "target": "Pennsylvania Certified Organic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Founding board member",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "founded",
+      "target": "Seed Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Past founder and board chair",
+      "episode_number": 70
+    },
+    {
+      "source": "J.I. Rodeil",
+      "relationship": "advocates_for",
+      "target": "organic agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussed production paradigm",
+      "episode_number": 70
+    },
+    {
+      "source": "Roundup",
+      "relationship": "made_by",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Mentioned as a tool in agriculture",
+      "episode_number": 70
+    },
+    {
+      "source": "Robert Rodeo",
+      "relationship": "works_at",
+      "target": "Rodeo enterprises",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "His son Robert Rodeo took over the Rodeo enterprises.",
+      "episode_number": 70
+    },
+    {
+      "source": "Robert Rodeo",
+      "relationship": "advocates_for",
+      "target": "organic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "he was an early proponent of sort of giving the standard...",
+      "episode_number": 70
+    },
+    {
+      "source": "Robert Rodeo",
+      "relationship": "collaborates_with",
+      "target": "USDA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "working with the USDA.",
+      "episode_number": 70
+    },
+    {
+      "source": "Robert Rodeo",
+      "relationship": "advocates_for",
+      "target": "regeneration",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "he came up with the new word regeneration.",
+      "episode_number": 70
+    },
+    {
+      "source": "Robert Rodeo",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the problem with the word sustainability...",
+      "episode_number": 70
+    },
+    {
+      "source": "Road Hill Institute",
+      "relationship": "works_with",
+      "target": "brand partners",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "What we've done now at Road Hill Institute in working with some major brand partners is we've linked those",
+      "episode_number": 70
+    },
+    {
+      "source": "Road Hill Institute",
+      "relationship": "works_with",
+      "target": "major brand partners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "working with some major brand partners",
+      "episode_number": 70
+    },
+    {
+      "source": "regenerative organic certification",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "linked those two words together",
+      "episode_number": 70
+    },
+    {
+      "source": "organic agriculture",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "does a new thing or even a fat or some sort of marketing invention",
+      "episode_number": 70
+    },
+    {
+      "source": "Egyptian empire",
+      "relationship": "part_of",
+      "target": "history of agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "create a timeline and start maybe with the Egyptian empire",
+      "episode_number": 70
+    },
+    {
+      "source": "United States",
+      "relationship": "located_in",
+      "target": "global agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "not just the United States but globally around the world",
+      "episode_number": 70
+    },
+    {
+      "source": "Midwestern part of the United States",
+      "relationship": "contains",
+      "target": "corn and beans",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Most of the farmers across the Midwestern part of the United States",
+      "episode_number": 70
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "organic agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "disincentivized farmers from paying attention to their real goal",
+      "episode_number": 70
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "regenerative organic agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "disincentivized farmers from paying attention to their real goal",
+      "episode_number": 70
+    },
+    {
+      "source": "precision agriculture",
+      "relationship": "part_of",
+      "target": "regenerative organic agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "take advantage of precision agriculture",
+      "episode_number": 70
+    },
+    {
+      "source": "robotics",
+      "relationship": "part_of",
+      "target": "regenerative organic agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "take advantage of robotics",
+      "episode_number": 70
+    },
+    {
+      "source": "consumers",
+      "relationship": "supports",
+      "target": "regenerative organic certification program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "imperative for us as consumers to do really all that we can do",
+      "episode_number": 70
+    },
+    {
+      "source": "Road to Health",
+      "relationship": "advocates_for",
+      "target": "regenerative organic certification",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "model that we're creating around regenerative organic certification",
+      "episode_number": 70
+    },
+    {
+      "source": "Road to Health",
+      "relationship": "focuses_on",
+      "target": "science-based organization",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization that focuses on soil, soil health, and food production",
+      "episode_number": 70
+    },
+    {
+      "source": "cardiologist",
+      "relationship": "advocates_for",
+      "target": "healthy organic diet",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about heart health and diet",
+      "episode_number": 70
+    },
+    {
+      "source": "consumers",
+      "relationship": "vote_with",
+      "target": "food production system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "consumers vote with their dollars for food purchases",
+      "episode_number": 70
+    },
+    {
+      "source": "Road to Health",
+      "relationship": "partners_with",
+      "target": "brands",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "partnered with a bunch of brands that produce food and fiber products",
+      "episode_number": 70
+    },
+    {
+      "source": "grocery store",
+      "relationship": "located_in",
+      "target": "marketplace",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Most customers or consumers come to a grocery store",
+      "episode_number": 70
+    },
+    {
+      "source": "farmer",
+      "relationship": "advocates_for",
+      "target": "regenerative organic certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "I've talked with a farmer",
+      "episode_number": 70
+    },
+    {
+      "source": "regenerative organic certification",
+      "relationship": "part_of",
+      "target": "ROC seal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "which is called the regenerative organic certification or ROC",
+      "episode_number": 70
+    },
+    {
+      "source": "supermarkets",
+      "relationship": "contains",
+      "target": "ROC seal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "rolling out in supermarkets in the next few months",
+      "episode_number": 70
+    },
+    {
+      "source": "farmer",
+      "relationship": "produces",
+      "target": "fiber products",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I've talked with a farmer",
+      "episode_number": 70
+    },
+    {
+      "source": "social justice",
+      "relationship": "advocates_for",
+      "target": "product",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "I'm really interested in social justice",
+      "episode_number": 70
+    },
+    {
+      "source": "animal welfare",
+      "relationship": "advocates_for",
+      "target": "product",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "an animal welfare component",
+      "episode_number": 70
+    },
+    {
+      "source": "carbon sequestration",
+      "relationship": "advocates_for",
+      "target": "product",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "carbon sequestration because the climate is really important to me",
+      "episode_number": 70
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "works_at",
+      "target": "regenerative organic alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "two of the leading brands that have been involved with Rodeo from the very beginning",
+      "episode_number": 70
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "works_at",
+      "target": "regenerative organic alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "two of the leading brands that have been involved with Rodeo from the very beginning",
+      "episode_number": 70
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "contains",
+      "target": "Applegate Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "I think there's 42 brands that are on their Applegate Farm",
+      "episode_number": 70
+    },
+    {
+      "source": "India",
+      "relationship": "part_of",
+      "target": "international certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "food product that came from India or Argentina",
+      "episode_number": 70
+    },
+    {
+      "source": "Argentina",
+      "relationship": "part_of",
+      "target": "international certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "food product that came from India or Argentina",
+      "episode_number": 70
+    },
+    {
+      "source": "Indiana",
+      "relationship": "part_of",
+      "target": "international certification",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "whether we sequester carbon in India or in Indiana",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff",
+      "relationship": "advocates_for",
+      "target": "organic plant-based diet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion on consumer choices in food purchasing",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "affects",
+      "target": "health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "testing for contamination and health effects",
+      "episode_number": 70
+    },
+    {
+      "source": "food production system",
+      "relationship": "causes",
+      "target": "dredging of Mississippi River",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion on external costs of food production",
+      "episode_number": 70
+    },
+    {
+      "source": "organic plant-based diet",
+      "relationship": "improves",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "dietary changes for health improvement",
+      "episode_number": 70
+    },
+    {
+      "source": "Monsanto",
+      "relationship": "produced",
+      "target": "Roundup",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the producer of Roundup, Monsanto",
+      "episode_number": 70
+    },
+    {
+      "source": "Duane Johnson",
+      "relationship": "suffered_from",
+      "target": "non-Hodgkin's lymphoma",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "found liable for the non-Hodgkin's lymphoma of a groundskeeper, a guy named Duane Johnson",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "active_ingredient_in",
+      "target": "Roundup",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "active ingredient in a very potent pesticide that's in products known as Roundup",
+      "episode_number": 70
+    },
+    {
+      "source": "Monsanto",
+      "relationship": "involved_in",
+      "target": "lawsuits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "there have been a whole slew of lawsuits, including class action lawsuits around this",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "linked_to",
+      "target": "cancer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "active ingredient in a very potent pesticide that's in products known as Roundup",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "linked_to",
+      "target": "attention deficit disorder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "active ingredient in a very potent pesticide that's in products known as Roundup",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "linked_to",
+      "target": "Alzheimer's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "active ingredient in a very potent pesticide that's in products known as Roundup",
+      "episode_number": 70
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "linked_to",
+      "target": "autism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "active ingredient in a very potent pesticide that's in products known as Roundup",
+      "episode_number": 70
+    },
+    {
+      "source": "soil",
+      "relationship": "produces",
+      "target": "ergo thionine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "an amino acid that's produced by soil funguses",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff Moir",
+      "relationship": "works_at",
+      "target": "Rodal Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Jeff Moir is the CEO of Rodal Institute",
+      "episode_number": 70
+    },
+    {
+      "source": "Aaron Perry",
+      "relationship": "hosts",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I'm your host, Aaron Perry",
+      "episode_number": 70
+    },
+    {
+      "source": "Rodal Institute",
+      "relationship": "part_of",
+      "target": "consortium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "part of a consortium that is helping launch the new regenerative organic certification",
+      "episode_number": 70
+    },
+    {
+      "source": "Earth Coast productions",
+      "relationship": "sponsors",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 70
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "sponsors",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors of the podcast",
+      "episode_number": 70
+    },
+    {
+      "source": "Lich Family Foundation",
+      "relationship": "sponsors",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 70
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 70
+    },
+    {
+      "source": "Weile Waters",
+      "relationship": "sponsors",
+      "target": "Wieners Community podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff",
+      "relationship": "works_at",
+      "target": "wyoners.org",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "And Jeff, I'm just, I'm, I'm going to admit to you",
+      "episode_number": 70
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "collaborates_with",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organizations like Patagonia and Dr. Bronners were interested",
+      "episode_number": 70
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "reaches_out_to",
+      "target": "rodeo institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "it was only logical that they reached out to rodeo institute",
+      "episode_number": 70
+    },
+    {
+      "source": "CBB hemipin fused soaking salts",
+      "relationship": "made_by",
+      "target": "wyoners.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "monthly shipments of our special CBB hemipin fused soaking salts",
+      "episode_number": 70
+    },
+    {
+      "source": "food and agriculture",
+      "relationship": "advocates_for",
+      "target": "regenerative organic certification",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "having worked for 20 plus years in the food and agriculture arena",
+      "episode_number": 70
+    },
+    {
+      "source": "microbes",
+      "relationship": "attack",
+      "target": "fertilizer",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "microbes attack it",
+      "episode_number": 70
+    },
+    {
+      "source": "fertilizer",
+      "relationship": "leaches_into",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "it leaches into the soil",
+      "episode_number": 70
+    },
+    {
+      "source": "regenerative organic model",
+      "relationship": "improves",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "improve the health of the soil",
+      "episode_number": 70
+    },
+    {
+      "source": "Roedale",
+      "relationship": "is_a",
+      "target": "solutions-based company",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "we have a reputation for being a solutions-based company",
+      "episode_number": 70
+    },
+    {
+      "source": "Rodale Institute",
+      "relationship": "is_a",
+      "target": "nonprofit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we are a 501c3 nonprofit",
+      "episode_number": 70
+    },
+    {
+      "source": "Rodale Institute",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in the context of the organization's community presence.",
+      "episode_number": 70
+    },
+    {
+      "source": "Eric",
+      "relationship": "advocates_for",
+      "target": "organic food",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Eric encourages listeners to buy organic food.",
+      "episode_number": 70
+    },
+    {
+      "source": "Rodale Institute",
+      "relationship": "supports",
+      "target": "soil degradation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Rodale Institute is involved in addressing soil degradation issues.",
+      "episode_number": 70
+    },
+    {
+      "source": "United Nations",
+      "relationship": "reports_on",
+      "target": "soil degradation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "United Nations is mentioned in relation to soil degradation.",
+      "episode_number": 70
+    },
+    {
+      "source": "Washington, DC",
+      "relationship": "impact",
+      "target": "Iowa",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "farming decisions impacted by Washington, DC",
+      "episode_number": 70
+    },
+    {
+      "source": "Iowa",
+      "relationship": "impact",
+      "target": "Boston",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "health of children impacted by farming decisions",
+      "episode_number": 70
+    },
+    {
+      "source": "Rhode Island Institute",
+      "relationship": "located_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "where Rhode Island Institute is housed",
+      "episode_number": 70
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "organic food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "farmers transitioning to better practices",
+      "episode_number": 70
+    },
+    {
+      "source": "children",
+      "relationship": "interested_in",
+      "target": "human health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "health of children discussed",
+      "episode_number": 70
+    },
+    {
+      "source": "CSA shares",
+      "relationship": "provides",
+      "target": "organic food",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "program for underprivileged communities",
+      "episode_number": 70
+    },
+    {
+      "source": "Jeff",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about climate crisis",
+      "episode_number": 70
+    },
+    {
+      "source": "photosynthesis",
+      "relationship": "part_of",
+      "target": "carbon sequestration",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about carbon sequestration",
+      "episode_number": 70
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microbial life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about soil health",
+      "episode_number": 70
+    },
+    {
+      "source": "carbon sequestration",
+      "relationship": "related_to",
+      "target": "climate crisis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about climate stabilization",
+      "episode_number": 70
+    },
+    {
+      "source": "industrial revolution",
+      "relationship": "influences",
+      "target": "carbon loading",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "discussion about carbon increase",
+      "episode_number": 70
+    },
+    {
+      "source": "Rodeo Institute",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the only organization that was there to talk about soil",
+      "episode_number": 70
+    },
+    {
+      "source": "farmers",
+      "relationship": "part_of",
+      "target": "solution",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "if we don't see farmers as part of the problem we cannot see them as part of the solution",
+      "episode_number": 70
+    },
+    {
+      "source": "photosynthesis",
+      "relationship": "utilizes",
+      "target": "solar radiation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "photosynthesis is utilizing a little over 1% of all the inbound solar radiation",
+      "episode_number": 70
+    },
+    {
+      "source": "USDA NRCS",
+      "relationship": "rewards",
+      "target": "farmers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "equity funds through the USDA NRCS office that will reward farmers for planting cover crops",
+      "episode_number": 70
+    },
+    {
+      "source": "carbon",
+      "relationship": "sequestered_by",
+      "target": "photosynthesis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "carbon is being pulled photosynthesis",
+      "episode_number": 70
+    },
+    {
+      "source": "science",
+      "relationship": "supports",
+      "target": "agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "agriculture moves on the back of science",
+      "episode_number": 70
+    },
+    {
+      "source": "organic product",
+      "relationship": "made_by",
+      "target": "farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "buy an organic product",
+      "episode_number": 70
+    },
+    {
+      "source": "federal government",
+      "relationship": "predicts_change_in",
+      "target": "land management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "federal government here says that over the next 20 years",
+      "episode_number": 70
+    },
+    {
+      "source": "younger generation",
+      "relationship": "advocates_for",
+      "target": "organic farming",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "younger folks want to farm organically",
+      "episode_number": 70
+    },
+    {
+      "source": "science",
+      "relationship": "is_important_for",
+      "target": "human health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "science is very important for human health side",
+      "episode_number": 70
+    },
+    {
+      "source": "science",
+      "relationship": "is_important_for",
+      "target": "climate health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "science is very important for climate health side",
+      "episode_number": 70
+    },
+    {
+      "source": "science",
+      "relationship": "is_important_for",
+      "target": "soil health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "science is very important for soil health side",
+      "episode_number": 70
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "hosted by Aaron William Perry",
+      "episode_number": 70
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "sponsored_by",
+      "target": "yonurth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 70
+    },
+    {
+      "source": "younger folks",
+      "relationship": "advocates_for",
+      "target": "soil health",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "younger folks want to farm organically they want to get involved with soil health",
+      "episode_number": 70
+    }
+  ]
+}

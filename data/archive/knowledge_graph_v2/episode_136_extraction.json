@@ -1,0 +1,1903 @@
+{
+  "episode": 136,
+  "timestamp": "2025-10-09T10:42:53.724087",
+  "entity_count": 129,
+  "relationship_count": 99,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "Ben Raskin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Woodchip Handbook",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Ben Raskin"
+    },
+    {
+      "name": "soil association",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Ben Raskin works for"
+    },
+    {
+      "name": "Wiltshire",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of agroforestry planting"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where Wiltshire is located"
+    },
+    {
+      "name": "Defra Edibles horticulture round table",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Ben co-chairs"
+    },
+    {
+      "name": "organic growers alliance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Ben is on the board of"
+    },
+    {
+      "name": "community supported agriculture network UK",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Ben is on the board of"
+    },
+    {
+      "name": "Chelsea Green publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publisher of the Woodchip Handbook"
+    },
+    {
+      "name": "Ben",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "David Granitestein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to commercial orchards"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the organic grower"
+    },
+    {
+      "name": "wood chip",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed as a gardening resource"
+    },
+    {
+      "name": "commercial orchards",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "context of David Granitestein's work"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to gardening and farming"
+    },
+    {
+      "name": "Tolhurst",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a vegan organic grower"
+    },
+    {
+      "name": "gardener",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "target audience for the book"
+    },
+    {
+      "name": "farmer",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "target audience for the book"
+    },
+    {
+      "name": "landscaper",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "target audience for the book"
+    },
+    {
+      "name": "worms",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing the benefits of worms in soil health"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the benefits of worms in soil health"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning farmers and growers connected throughout North America"
+    },
+    {
+      "name": "wood chip mulch",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing the types of mulch to avoid"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the impact of climate change on soil resilience"
+    },
+    {
+      "name": "Scotland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of an associate in Scotland"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of communities in North America"
+    },
+    {
+      "name": "wood chipper",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about pooling resources for wood chipping"
+    },
+    {
+      "name": "local nonprofit",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mention of local nonprofit pooling resources"
+    },
+    {
+      "name": "neighborhood scale stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about stewardship and sustainability efforts"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of biodiversity benefits"
+    },
+    {
+      "name": "wood chip",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about wood shipping as a resource"
+    },
+    {
+      "name": "wood chips",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing sourcing and quality of wood chips"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioning the location regarding wood chip availability"
+    },
+    {
+      "name": "landfill",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the impact of organic waste disposal"
+    },
+    {
+      "name": "methane",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing environmental impacts of waste disposal"
+    },
+    {
+      "name": "energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing energy and environmental issues"
+    },
+    {
+      "name": "composting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing better waste management practices"
+    },
+    {
+      "name": "Glenn Percivil",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "scientist who works with urban trees"
+    },
+    {
+      "name": "willow",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "tree species used in wood chip system"
+    },
+    {
+      "name": "apple tree",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "tree used in trial with willow chip"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location mentioned in relation to biodynamics"
+    },
+    {
+      "name": "biodynamic community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "community involved in biodynamic practices"
+    },
+    {
+      "name": "soil works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "social enterprise product related to biodynamic preparation"
+    },
+    {
+      "name": "Southwest",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "region mentioned in relation to trial"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "agricultural practice used in vineyards"
+    },
+    {
+      "name": "biodynamic community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "work in the biodynamic community worldwide"
+    },
+    {
+      "name": "soil works",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "one of our social enterprise products is called soil works"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "wine growing regions of California"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "folks out in California"
+    },
+    {
+      "name": "Elkron Farm",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "out here at Elkron Farm"
+    },
+    {
+      "name": "wood chips",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wood chips down in the walk paths"
+    },
+    {
+      "name": "vineyards",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "using a lot of biodynamics on both organic and conventional vineyards"
+    },
+    {
+      "name": "Elkron Farm",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "out here at Elkron Farm"
+    },
+    {
+      "name": "wood chips",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "wood chips down in the walk paths"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "nitrogen piece"
+    },
+    {
+      "name": "wood chip handbook",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the book the wood chip handbook"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the fungi that are breaking it down"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "bacteria can't really start that process"
+    },
+    {
+      "name": "wood chip",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "growing mushrooms and the silver pasture and agro forestry strategies"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "surrounded by soil"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "suck nitrogen from every bit"
+    },
+    {
+      "name": "worms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "let you know the worms and other things pull it down"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "boost it you know worm populations, fungi populations"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "it was something that Chelsea Green and i decided we should cover in the book"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "growing mushrooms"
+    },
+    {
+      "name": "agro forestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "agro forestry strategies that might be in use"
+    },
+    {
+      "name": "Steve Gabriel",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "inspired actually partly by Steve Gabriel"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "another Chelsea Green or the who came over"
+    },
+    {
+      "name": "Helen Browning",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Helen Browning owns the farm business"
+    },
+    {
+      "name": "climate change resilience",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "her motivations were around climate change resilience"
+    },
+    {
+      "name": "dairy building",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "too far away from the main dairy building"
+    },
+    {
+      "name": "farm",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the farm I work on the whole farm is actually 1500 acres"
+    },
+    {
+      "name": "heavy clay",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "it's mainly an arable and livestock plant and the bit where we're doing a lot of the tree planting is heavy clay"
+    },
+    {
+      "name": "cows",
+      "type": "ANIMAL",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "providing browse for cows"
+    },
+    {
+      "name": "Aber for Shea Handbook",
+      "type": "BOOK",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "it's in I edited another book called the Aber for Shea Handbook"
+    },
+    {
+      "name": "Ben Raskin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of agroforestry systems"
+    },
+    {
+      "name": "agroforestry handbook",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "resource for agroforestry"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publisher of Ben's book"
+    },
+    {
+      "name": "solid association",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website for agroforestry handbook"
+    },
+    {
+      "name": "Waylay",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "provider of health and wellness products"
+    },
+    {
+      "name": "Purium Organic Super Foods",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "provider of organic products"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "provider of soil preparation services"
+    },
+    {
+      "name": "Instagram",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform for Ben Raskin"
+    },
+    {
+      "name": "Twitter",
+      "type": "PLATFORM",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "social media platform for Ben Raskin"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "biodynamically and regeneratively grown hemp infused aroma therapy soaking salts"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "recorded here at Elk Run Farm"
+    },
+    {
+      "name": "Nick D. Domenico",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "with Nick D. Domenico on a variety of specific and simple strategies"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one of the big biodynamic ranches here in Colorado"
+    },
+    {
+      "name": "Western England",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you're on the western edge of England"
+    },
+    {
+      "name": "Wales",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "not too far from Wales"
+    },
+    {
+      "name": "Cotswolds",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "southern end of an area called the Cotswolds"
+    },
+    {
+      "name": "Google culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an approach to working with soil and gardening strategies"
+    },
+    {
+      "name": "Pete",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to its use in the landscape and carbon storage"
+    },
+    {
+      "name": "Ireland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to the use of Pete for fuel"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to the use of Pete for growing seedlings"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of a ban for amateur use"
+    },
+    {
+      "name": "P",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about dependency on P"
+    },
+    {
+      "name": "wood chip",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of homemade wood chip compost"
+    },
+    {
+      "name": "hazel",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "discussion about species that might work well for crops"
+    },
+    {
+      "name": "Y on earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mention of the website for ambassadors"
+    },
+    {
+      "name": "horn beam",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "favorite species of wood"
+    },
+    {
+      "name": "horn beam",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "favorite species of wood"
+    },
+    {
+      "name": "willow",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "favorite species of wood"
+    },
+    {
+      "name": "UK",
+      "type": "GEO",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "grants in the UK"
+    },
+    {
+      "name": "farm",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "area of the farm"
+    },
+    {
+      "name": "brook",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "little brook that runs alongside the field"
+    },
+    {
+      "name": "2018",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "hot dry year"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "group of trees that got mulch"
+    },
+    {
+      "name": "mulch",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mulch to a half foot deep of willow chip"
+    },
+    {
+      "name": "Ben",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of Ben's book"
+    },
+    {
+      "name": "Soil Association",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization mentioned in relation to agroforestry"
+    },
+    {
+      "name": "Wood Chip Handbook",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book mentioned in the podcast"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the Soil Association"
+    },
+    {
+      "name": "agroforestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing farming practices"
+    },
+    {
+      "name": "organic growers alliance",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization supporting organic growers"
+    },
+    {
+      "name": "community supported agriculture network",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization related to agriculture"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "geographic location mentioned in context of farming"
+    },
+    {
+      "name": "supermarket multiple retailer sector",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "industry affecting growers"
+    },
+    {
+      "name": "growers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "referring to farmers involved in agriculture"
+    },
+    {
+      "name": "Roe Dale Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mention of Roe Dale"
+    },
+    {
+      "name": "Jeff Moir",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast episode with Jeff Moir"
+    },
+    {
+      "name": "Yechow Ruiz",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast episode with Yechow Ruiz"
+    },
+    {
+      "name": "Ben",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "publisher of the Wood Ship handbook"
+    },
+    {
+      "name": "Woodland Trust",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization working with the farm"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "community mentioned in the podcast"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ben Raskin",
+      "relationship": "works_at",
+      "target": "soil association",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ben Raskin's role in horticulture",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "author_of",
+      "target": "Woodchip Handbook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Ben Raskin's authorship",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "co-chairs",
+      "target": "Defra Edibles horticulture round table",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Ben's involvement in horticulture advocacy",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "sits_on_board_of",
+      "target": "organic growers alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Ben's involvement in organic farming",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "sits_on_board_of",
+      "target": "community supported agriculture network UK",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Ben's involvement in community agriculture",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "located_in",
+      "target": "Wiltshire",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Ben's agroforestry project location",
+      "episode_number": 136
+    },
+    {
+      "source": "Wiltshire",
+      "relationship": "part_of",
+      "target": "England",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Geographic relationship",
+      "episode_number": 136
+    },
+    {
+      "source": "Woodchip Handbook",
+      "relationship": "published_by",
+      "target": "Chelsea Green publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Publication relationship",
+      "episode_number": 136
+    },
+    {
+      "source": "David Granitestein",
+      "relationship": "works_at",
+      "target": "commercial orchards",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to benefits of wood chip mulch",
+      "episode_number": 136
+    },
+    {
+      "source": "Tolhurst",
+      "relationship": "advocates_for",
+      "target": "wood chip",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed as a long-standing vegan organic grower",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip",
+      "relationship": "benefits",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to gardening and farming",
+      "episode_number": 136
+    },
+    {
+      "source": "gardener",
+      "relationship": "uses",
+      "target": "wood chip",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned as part of the target audience for the book",
+      "episode_number": 136
+    },
+    {
+      "source": "farmer",
+      "relationship": "uses",
+      "target": "wood chip",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned as part of the target audience for the book",
+      "episode_number": 136
+    },
+    {
+      "source": "landscaper",
+      "relationship": "uses",
+      "target": "wood chip",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned as part of the target audience for the book",
+      "episode_number": 136
+    },
+    {
+      "source": "worms",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the benefits of worms in soil health",
+      "episode_number": 136
+    },
+    {
+      "source": "North America",
+      "relationship": "contains",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioning farmers and growers connected throughout North America",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip mulch",
+      "relationship": "part_of",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussing the types of mulch to avoid and their impact on soil",
+      "episode_number": 136
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the impact of climate change on soil resilience",
+      "episode_number": 136
+    },
+    {
+      "source": "local nonprofit",
+      "relationship": "collaborates_with",
+      "target": "communities in North America",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "discussion about pooling resources for wood chipping",
+      "episode_number": 136
+    },
+    {
+      "source": "communities in North America",
+      "relationship": "advocates_for",
+      "target": "neighborhood scale stewardship",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about community efforts in sustainability",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chipper",
+      "relationship": "made_by",
+      "target": "local nonprofit",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about pooling resources for wood chipping",
+      "episode_number": 136
+    },
+    {
+      "source": "biodiversity",
+      "relationship": "benefits_from",
+      "target": "wood chip",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mention of biodiversity benefits from managing resources",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip",
+      "relationship": "part_of",
+      "target": "wood shipping",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussion about wood shipping as a resource",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chips",
+      "relationship": "made_by",
+      "target": "arborist",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussing the source of wood chips from arborists",
+      "episode_number": 136
+    },
+    {
+      "source": "UK",
+      "relationship": "contains",
+      "target": "landfill",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "discussing waste management in the UK",
+      "episode_number": 136
+    },
+    {
+      "source": "organic waste",
+      "relationship": "leads_to",
+      "target": "methane",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the decomposition of organic waste",
+      "episode_number": 136
+    },
+    {
+      "source": "composting",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing better waste management practices",
+      "episode_number": 136
+    },
+    {
+      "source": "energy",
+      "relationship": "exacerbates",
+      "target": "methane",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussing environmental impacts of energy and methane",
+      "episode_number": 136
+    },
+    {
+      "source": "Glenn Percivil",
+      "relationship": "works_with",
+      "target": "urban tree",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "scientist conducting trials",
+      "episode_number": 136
+    },
+    {
+      "source": "willow",
+      "relationship": "used_in",
+      "target": "wood chip system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "beneficial tree species",
+      "episode_number": 136
+    },
+    {
+      "source": "apple tree",
+      "relationship": "surrounded_by",
+      "target": "willow chip",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "trial observation",
+      "episode_number": 136
+    },
+    {
+      "source": "California",
+      "relationship": "located_in",
+      "target": "biodynamic community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "region using biodynamics",
+      "episode_number": 136
+    },
+    {
+      "source": "soil works",
+      "relationship": "offers",
+      "target": "biodynamic preparation blend",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "product offered for sale",
+      "episode_number": 136
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "used_in",
+      "target": "vineyards",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "agricultural practice in wine growing regions",
+      "episode_number": 136
+    },
+    {
+      "source": "Southwest",
+      "relationship": "involves",
+      "target": "trial",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "region mentioned in trial",
+      "episode_number": 136
+    },
+    {
+      "source": "biodynamic community",
+      "relationship": "advocates_for",
+      "target": "soil works",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "work in the biodynamic community worldwide",
+      "episode_number": 136
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "vineyards",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "wine growing regions of California",
+      "episode_number": 136
+    },
+    {
+      "source": "California",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "folks out in California",
+      "episode_number": 136
+    },
+    {
+      "source": "Elkron Farm",
+      "relationship": "part_of",
+      "target": "gardens",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "out here at Elkron Farm",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chips",
+      "relationship": "made_by",
+      "target": "biodynamic community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "wood chips down in the walk paths",
+      "episode_number": 136
+    },
+    {
+      "source": "Elkron Farm",
+      "relationship": "located_in",
+      "target": "PLACE",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "out here at Elkron Farm",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chips",
+      "relationship": "advocates_for",
+      "target": "nitrogen",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "this is a use that I imagine you might advocate for folks in all kinds of different climate situations",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip handbook",
+      "relationship": "contains",
+      "target": "nitrogen",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "you're also talking about strategies around nitrogen specifically in nitrogen fixers",
+      "episode_number": 136
+    },
+    {
+      "source": "fungi",
+      "relationship": "breaks_down",
+      "target": "wood chips",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the fungi that are breaking it down",
+      "episode_number": 136
+    },
+    {
+      "source": "bacteria",
+      "relationship": "unable_to_break_down",
+      "target": "wood chips",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "bacteria can't really start that process",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip",
+      "relationship": "absorbs",
+      "target": "nitrogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "suck nitrogen from every bit that it's touching",
+      "episode_number": 136
+    },
+    {
+      "source": "worms",
+      "relationship": "pulls_down",
+      "target": "wood chip",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "let you know the worms and other things pull it down",
+      "episode_number": 136
+    },
+    {
+      "source": "fungi",
+      "relationship": "boosts",
+      "target": "worm populations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "boost it you know worm populations, fungi populations",
+      "episode_number": 136
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "published",
+      "target": "mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "it was something that Chelsea Green and i decided we should cover in the book",
+      "episode_number": 136
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "grows_in",
+      "target": "wood chip",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "they grow so well in which it's safe",
+      "episode_number": 136
+    },
+    {
+      "source": "agro forestry",
+      "relationship": "involves",
+      "target": "mushrooms",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "agro forestry strategies that might be in use",
+      "episode_number": 136
+    },
+    {
+      "source": "Helen Browning",
+      "relationship": "works_at",
+      "target": "farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Helen Browning owns the farm business",
+      "episode_number": 136
+    },
+    {
+      "source": "Steve Gabriel",
+      "relationship": "advocates_for",
+      "target": "climate change resilience",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "inspired actually partly by Steve Gabriel",
+      "episode_number": 136
+    },
+    {
+      "source": "farm",
+      "relationship": "contains",
+      "target": "heavy clay",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "the bit where we're doing a lot of the tree planting is heavy clay",
+      "episode_number": 136
+    },
+    {
+      "source": "cows",
+      "relationship": "browse_on",
+      "target": "tree browse",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "providing browse for cows",
+      "episode_number": 136
+    },
+    {
+      "source": "farm",
+      "relationship": "located_in",
+      "target": "dairy building",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "too far away from the main dairy building",
+      "episode_number": 136
+    },
+    {
+      "source": "Aber for Shea Handbook",
+      "relationship": "contains",
+      "target": "study",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "there's a great study I can't remember if I put it in this but it's in I edited another book called the Aber for Shea Handbook",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "works_at",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "author of the wood chip handbook",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "administers",
+      "target": "wood chip for soil health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Facebook group",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "has_website",
+      "target": "Ben Raskin dot UK",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "personal website",
+      "episode_number": 136
+    },
+    {
+      "source": "agroforestry handbook",
+      "relationship": "published_by",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "resource for agroforestry",
+      "episode_number": 136
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "agroforestry systems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "conversion of open pasture",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben Raskin",
+      "relationship": "advocates_for",
+      "target": "agroforestry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion on agroforestry",
+      "episode_number": 136
+    },
+    {
+      "source": "solid association",
+      "relationship": "provides",
+      "target": "agroforestry handbook",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "website for resource",
+      "episode_number": 136
+    },
+    {
+      "source": "Waylay",
+      "relationship": "offers",
+      "target": "aroma therapy soaking salts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "health and wellness products",
+      "episode_number": 136
+    },
+    {
+      "source": "Purium Organic Super Foods",
+      "relationship": "offers",
+      "target": "discounts on products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "organic products",
+      "episode_number": 136
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "provides",
+      "target": "soil preparation services",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "social enterprise",
+      "episode_number": 136
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "made_by",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "biodynamically and regeneratively grown hemp infused aroma therapy soaking salts",
+      "episode_number": 136
+    },
+    {
+      "source": "Nick D. Domenico",
+      "relationship": "works_at",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "with Nick D. Domenico on a variety of specific and simple strategies",
+      "episode_number": 136
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "one of the big biodynamic ranches here in Colorado",
+      "episode_number": 136
+    },
+    {
+      "source": "Western England",
+      "relationship": "located_in",
+      "target": "England",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "you're on the western edge of England",
+      "episode_number": 136
+    },
+    {
+      "source": "Wales",
+      "relationship": "located_in",
+      "target": "United Kingdom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "not too far from Wales",
+      "episode_number": 136
+    },
+    {
+      "source": "Cotswolds",
+      "relationship": "part_of",
+      "target": "England",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "southern end of an area called the Cotswolds",
+      "episode_number": 136
+    },
+    {
+      "source": "Pete",
+      "relationship": "advocates_for",
+      "target": "sustainable gardening practices",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussed as a material used in gardening and its environmental impact",
+      "episode_number": 136
+    },
+    {
+      "source": "Ireland",
+      "relationship": "contains",
+      "target": "Pete",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned in relation to the traditional use of Pete",
+      "episode_number": 136
+    },
+    {
+      "source": "UK",
+      "relationship": "uses",
+      "target": "Pete",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed in relation to its use for growing seedlings",
+      "episode_number": 136
+    },
+    {
+      "source": "Pete",
+      "relationship": "part_of",
+      "target": "carbon storage",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussed as a significant store of carbon",
+      "episode_number": 136
+    },
+    {
+      "source": "P",
+      "relationship": "advocates_for",
+      "target": "wood chip",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about dependency on P and wood chip compost",
+      "episode_number": 136
+    },
+    {
+      "source": "Y on earth.org",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mention of the website for ambassadors",
+      "episode_number": 136
+    },
+    {
+      "source": "hazel",
+      "relationship": "part_of",
+      "target": "wood chip",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "discussion about species that might work well for crops",
+      "episode_number": 136
+    },
+    {
+      "source": "wood chip",
+      "relationship": "made_by",
+      "target": "horn beam",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about favorite species of wood",
+      "episode_number": 136
+    },
+    {
+      "source": "willow",
+      "relationship": "advocates_for",
+      "target": "mulch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "willow chip and mulch",
+      "episode_number": 136
+    },
+    {
+      "source": "UK",
+      "relationship": "contains",
+      "target": "farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "grants in the UK",
+      "episode_number": 136
+    },
+    {
+      "source": "farm",
+      "relationship": "located_in",
+      "target": "brook",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "area of the farm with brook",
+      "episode_number": 136
+    },
+    {
+      "source": "2018",
+      "relationship": "part_of",
+      "target": "hot dry year",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "2018 was a really hot dry year",
+      "episode_number": 136
+    },
+    {
+      "source": "trees",
+      "relationship": "made_by",
+      "target": "mulch",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "trees that got mulch",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben",
+      "relationship": "advocates_for",
+      "target": "Wood Chip Handbook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mention of Ben's book",
+      "episode_number": 136
+    },
+    {
+      "source": "Soil Association",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization's location",
+      "episode_number": 136
+    },
+    {
+      "source": "Soil Association",
+      "relationship": "works_with",
+      "target": "growers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "work with growers mentioned",
+      "episode_number": 136
+    },
+    {
+      "source": "agroforestry",
+      "relationship": "advocates_for",
+      "target": "organic growers alliance",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "supporting organic farming practices",
+      "episode_number": 136
+    },
+    {
+      "source": "organic growers alliance",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "organization supporting organic growers in the UK",
+      "episode_number": 136
+    },
+    {
+      "source": "community supported agriculture network",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "organization related to agriculture in the UK",
+      "episode_number": 136
+    },
+    {
+      "source": "supermarket multiple retailer sector",
+      "relationship": "affects",
+      "target": "growers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "impact on farmers' income and supply chains",
+      "episode_number": 136
+    },
+    {
+      "source": "Jeff Moir",
+      "relationship": "works_at",
+      "target": "Roe Dale Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mention of podcast episodes with Jeff Moir",
+      "episode_number": 136
+    },
+    {
+      "source": "Yechow Ruiz",
+      "relationship": "works_at",
+      "target": "Roe Dale Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mention of podcast episodes with Yechow Ruiz",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben",
+      "relationship": "advocates_for",
+      "target": "Woodland Trust",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the farm and Woodland Trust",
+      "episode_number": 136
+    },
+    {
+      "source": "Ben",
+      "relationship": "wrote",
+      "target": "Wood Ship handbook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "encouragement to get a copy of the Wood Ship handbook",
+      "episode_number": 136
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y-Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "host of the Y-Earth community podcast",
+      "episode_number": 136
+    },
+    {
+      "source": "Y-Earth community",
+      "relationship": "supports",
+      "target": "Chelsea Green",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "support mentioned for the podcast",
+      "episode_number": 136
+    }
+  ]
+}

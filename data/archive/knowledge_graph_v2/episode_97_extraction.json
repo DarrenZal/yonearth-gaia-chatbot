@@ -1,0 +1,1386 @@
+{
+  "episode": 97,
+  "timestamp": "2025-10-09T11:46:43.385837",
+  "entity_count": 108,
+  "relationship_count": 62,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Ron Lamir",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of Liquid Trainer"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company founded by Ron Lamir"
+    },
+    {
+      "name": "Ohio",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned by Ron Lamir"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location Ron drove to"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Boulder is located"
+    },
+    {
+      "name": "Rocky Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mountains mentioned by Ron Lamir"
+    },
+    {
+      "name": "John Denver",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "famous musician associated with Ron Lamir"
+    },
+    {
+      "name": "Ayurvedic medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "type of medicine mentioned in the context"
+    },
+    {
+      "name": "yoga",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "practice mentioned in the context"
+    },
+    {
+      "name": "meditation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "practice mentioned in the context"
+    },
+    {
+      "name": "Chinese medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "type of medicine mentioned in the context"
+    },
+    {
+      "name": "Japanese macrobiotics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "dietary practice mentioned in the context"
+    },
+    {
+      "name": "Ida Rolf",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founder of Rolfing"
+    },
+    {
+      "name": "Honora Rolf",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "associated with the Masonic school"
+    },
+    {
+      "name": "Chogium Trungpa Rinpoche",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Buddhist teacher mentioned in the context"
+    },
+    {
+      "name": "Yogi Bhajan",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "spiritual teacher mentioned in the context"
+    },
+    {
+      "name": "Dr. Binder",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "teacher of Ron Lamir"
+    },
+    {
+      "name": "acupuncture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "practice associated with Dr. Binder"
+    },
+    {
+      "name": "homeopathy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "practice associated with Dr. Binder"
+    },
+    {
+      "name": "chiropractic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "practice associated with Dr. Binder"
+    },
+    {
+      "name": "naturopathy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "practice associated with Dr. Binder"
+    },
+    {
+      "name": "Yogi Bajjan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "people wearing white turbans and white and kittying daggers"
+    },
+    {
+      "name": "Dr. Binder",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I had a teacher named Dr. Binder"
+    },
+    {
+      "name": "Jacques Cousteau",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "there was a great story you have to share with Jacques Cousteau"
+    },
+    {
+      "name": "human body",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "looking at structure in the human body"
+    },
+    {
+      "name": "position technique",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "a thing called position technique"
+    },
+    {
+      "name": "ground reaction force",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "learn about ground reaction force"
+    },
+    {
+      "name": "seismograph boat",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "I worked on that particular boat. It was a seismograph boat"
+    },
+    {
+      "name": "flying fish",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "we ran into a sea of flying fish"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the core of it is that you're working with water"
+    },
+    {
+      "name": "ground reaction force",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "understanding how we walk on the earth"
+    },
+    {
+      "name": "liquid trainer",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "demonstrate how to use this"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "support our podcast episodes and our community mobilization work"
+    },
+    {
+      "name": "2021",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "bring it in the new year 2021"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "living here in Boulder"
+    },
+    {
+      "name": "Chris",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Chris and I"
+    },
+    {
+      "name": "Shining Mountain",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "she was at a shining mountain"
+    },
+    {
+      "name": "Waldorf class",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "I get this Waldorf class"
+    },
+    {
+      "name": "Indiana Pacers",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "training with the Indiana Pacers"
+    },
+    {
+      "name": "Indiana Pacers",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "training with the Indiana Pacers, the professional basketball team."
+    },
+    {
+      "name": "Rick Smiths",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Rick Smiths was seven feet four or five inches tall."
+    },
+    {
+      "name": "Carlos Cast",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "something that was in the dawn one books with Carlos cast."
+    },
+    {
+      "name": "martial arts",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "understanding structure and how it applied in martial arts or yoga."
+    },
+    {
+      "name": "yoga",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "understanding structure and how it applied in martial arts or yoga."
+    },
+    {
+      "name": "suspension mechanics",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "teaching him a suspension mechanics."
+    },
+    {
+      "name": "liquid trainer",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "worked with Rick with the liquid trainer."
+    },
+    {
+      "name": "Ron Lemire",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Y on Earth community podcast"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "founded by Ron Lemire"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Y on Earth community podcast"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "John Denver",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to Ron Lemire"
+    },
+    {
+      "name": "Jacques Cousteau",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to Ron Lemire"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location mentioned in the podcast"
+    },
+    {
+      "name": "Starwood",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "location mentioned in the podcast"
+    },
+    {
+      "name": "Aspen Snowmass",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "location mentioned in the podcast"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "first time I was in Aspen"
+    },
+    {
+      "name": "Scottie Helleson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my friend, Scottie Helleson brought me there"
+    },
+    {
+      "name": "Jimmy Wenger",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my friend Jimmy Wenger says"
+    },
+    {
+      "name": "John Denver",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "appointment with John Denver"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "what was going on in Boulder"
+    },
+    {
+      "name": "Tom Crom",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "my friend, Tom Crom, who was his co-founder of Winstar"
+    },
+    {
+      "name": "Winstar",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founder of Winstar"
+    },
+    {
+      "name": "Coleman",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "three burner Coleman fuel stove"
+    },
+    {
+      "name": "Houston",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "calls me to fly me to Houston on February 22nd"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Boulder was one"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "I met Aaron at our day"
+    },
+    {
+      "name": "Chip Cummins",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this guy named Chip Cummins"
+    },
+    {
+      "name": "Malcolm",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Chip was with Malcolm at the time that John passed away"
+    },
+    {
+      "name": "John",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "John passed away"
+    },
+    {
+      "name": "Winstorse Symposium",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we had the Winstorse Symposium"
+    },
+    {
+      "name": "Tom Crom",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "done with Tom Crom and John and Buckminster Fuller"
+    },
+    {
+      "name": "Buckminster Fuller",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "done with Tom Crom and John and Buckminster Fuller"
+    },
+    {
+      "name": "Calypso",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "when he was on the Calypso"
+    },
+    {
+      "name": "Jacques Cousteau",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one of the influences that really shifted him was when he was on the Calypso, was Jacques"
+    },
+    {
+      "name": "John",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "John was going out on the Calypso with Jacques"
+    },
+    {
+      "name": "Jacques",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Jacques was one of these guys that was a co-inventor"
+    },
+    {
+      "name": "Calypso",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "John was going out on the Calypso with Jacques"
+    },
+    {
+      "name": "aqua long",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "co-inventor of like the aqua long"
+    },
+    {
+      "name": "World Game",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "they did a reggae song called World Game"
+    },
+    {
+      "name": "Rita and the Whalers",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "he did an album with Rita and the Whalers"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "we're not the proper custodians for our planet"
+    },
+    {
+      "name": "environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "this guy was pretty hip for understanding things about the environment"
+    },
+    {
+      "name": "Ron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about movements and workouts"
+    },
+    {
+      "name": "neuroplasticity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about brain function and movements"
+    },
+    {
+      "name": "baseball",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "simulating movements for sports"
+    },
+    {
+      "name": "golf",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "simulating movements for sports"
+    },
+    {
+      "name": "Ron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "chatting with you today"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "made liquid trainer a part of our Y on Earth community"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part of our Y on Earth community"
+    },
+    {
+      "name": "LinkedIn",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "connect with Ron on LinkedIn"
+    },
+    {
+      "name": "Ron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "inviting Ron to share with the audience"
+    },
+    {
+      "name": "Kustos society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioning Kustos society"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosting the podcast"
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the podcast series name"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for support"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "community mentioned in the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ron Lamir",
+      "relationship": "founded",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ron is the founder of Liquid Trainer",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "worked_at",
+      "target": "Ohio",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Ron mentions being in Ohio",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Ron drove to Boulder, Colorado",
+      "episode_number": 97
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is in Colorado",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "advocates_for",
+      "target": "Ayurvedic medicine",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Ron discusses various healing practices",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "advocates_for",
+      "target": "yoga",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Ron discusses various healing practices",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "advocates_for",
+      "target": "meditation",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Ron discusses various healing practices",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "advocates_for",
+      "target": "Chinese medicine",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Ron discusses various healing practices",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "advocates_for",
+      "target": "Japanese macrobiotics",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Ron discusses various healing practices",
+      "episode_number": 97
+    },
+    {
+      "source": "Ida Rolf",
+      "relationship": "founded",
+      "target": "Rolfing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ida Rolf is the founder of Rolfing",
+      "episode_number": 97
+    },
+    {
+      "source": "Honora Rolf",
+      "relationship": "founded",
+      "target": "Masonic school",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Honora Rolf is associated with the Masonic school",
+      "episode_number": 97
+    },
+    {
+      "source": "Chogium Trungpa Rinpoche",
+      "relationship": "opened_up",
+      "target": "Buddhism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Chogium Trungpa Rinpoche opened up Buddhism to the community",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamir",
+      "relationship": "studied_under",
+      "target": "Dr. Binder",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Ron studied under Dr. Binder",
+      "episode_number": 97
+    },
+    {
+      "source": "Dr. Binder",
+      "relationship": "advocates_for",
+      "target": "position technique",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "He was an acupuncturist, or he is an acupuncturist, a homeopath, a chiropractor, naturopath, and basically I saw him regularly and was guided to learn lots of different things.",
+      "episode_number": 97
+    },
+    {
+      "source": "Yogi Bajjan",
+      "relationship": "advocates_for",
+      "target": "human body",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "people wearing white turbans and white and kittying daggers",
+      "episode_number": 97
+    },
+    {
+      "source": "Jacques Cousteau",
+      "relationship": "interacted_with",
+      "target": "seismograph boat",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "there was a great story you have to share with Jacques Cousteau",
+      "episode_number": 97
+    },
+    {
+      "source": "human body",
+      "relationship": "part_of",
+      "target": "position technique",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "studying anatomy and physiology in the interest of learning position technique",
+      "episode_number": 97
+    },
+    {
+      "source": "ground reaction force",
+      "relationship": "related_to",
+      "target": "water",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "understanding, maybe in the six months of being out to sea, was totally in my cells to understand how we walk on the earth",
+      "episode_number": 97
+    },
+    {
+      "source": "liquid trainer",
+      "relationship": "made_by",
+      "target": "why on earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "part of our regenerative economic ecosystem",
+      "episode_number": 97
+    },
+    {
+      "source": "liquid trainer",
+      "relationship": "utilized_in",
+      "target": "environment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "should be very easy for us to utilize in just about any environment",
+      "episode_number": 97
+    },
+    {
+      "source": "ground reaction force",
+      "relationship": "related_to",
+      "target": "movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "learn ground reaction force relative to other waterers",
+      "episode_number": 97
+    },
+    {
+      "source": "liquid trainer",
+      "relationship": "part_of",
+      "target": "health and wellness routine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "make liquid trainer a part of their health and wellness routine",
+      "episode_number": 97
+    },
+    {
+      "source": "Chris",
+      "relationship": "works_with",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Chris and I living here in Boulder",
+      "episode_number": 97
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "living here in Boulder",
+      "episode_number": 97
+    },
+    {
+      "source": "Chris",
+      "relationship": "advocates_for",
+      "target": "Waldorf class",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "I get this Waldorf class",
+      "episode_number": 97
+    },
+    {
+      "source": "Indiana Pacers",
+      "relationship": "influences",
+      "target": "athletics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "training with the Indiana Pacers",
+      "episode_number": 97
+    },
+    {
+      "source": "Rick Smiths",
+      "relationship": "works_with",
+      "target": "Indiana Pacers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "I worked with Rick with the liquid trainer as well as teaching him a suspension mechanics.",
+      "episode_number": 97
+    },
+    {
+      "source": "Indiana Pacers",
+      "relationship": "located_in",
+      "target": "Indiana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "training with the Indiana Pacers, the professional basketball team.",
+      "episode_number": 97
+    },
+    {
+      "source": "Rick Smiths",
+      "relationship": "has_condition",
+      "target": "knee issues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "one of the problems he had is his knees were blown out.",
+      "episode_number": 97
+    },
+    {
+      "source": "Carlos Cast",
+      "relationship": "authored",
+      "target": "dawn one books",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "something that was in the dawn one books with Carlos cast.",
+      "episode_number": 97
+    },
+    {
+      "source": "suspension mechanics",
+      "relationship": "applied_in",
+      "target": "basketball",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "teaching him a suspension mechanics.",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lemire",
+      "relationship": "founded",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast",
+      "episode_number": 97
+    },
+    {
+      "source": "Liquid Trainer",
+      "relationship": "located_in",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "advertisement in podcast",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lemire",
+      "relationship": "advocates_for",
+      "target": "sustainability movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about influence on sustainability",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lemire",
+      "relationship": "spent_time_up_at",
+      "target": "Starwood",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about experiences",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lemire",
+      "relationship": "spent_time_up_at",
+      "target": "Aspen Snowmass",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about experiences",
+      "episode_number": 97
+    },
+    {
+      "source": "John Denver",
+      "relationship": "associated_with",
+      "target": "Jacques Cousteau",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to experiences",
+      "episode_number": 97
+    },
+    {
+      "source": "Aspen",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "geographic location",
+      "episode_number": 97
+    },
+    {
+      "source": "Scottie Helleson",
+      "relationship": "works_at",
+      "target": "Aspen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "my friend, Scottie Helleson brought me there",
+      "episode_number": 97
+    },
+    {
+      "source": "John Denver",
+      "relationship": "located_in",
+      "target": "Aspen",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "appointment with John Denver",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron Lamarys",
+      "relationship": "advocates_for",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "what was going on in Boulder",
+      "episode_number": 97
+    },
+    {
+      "source": "Tom Crom",
+      "relationship": "works_at",
+      "target": "Winstar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my friend, Tom Crom, who was his co-founder of Winstar",
+      "episode_number": 97
+    },
+    {
+      "source": "Chip Cummins",
+      "relationship": "worked_with",
+      "target": "Malcolm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Chip was with Malcolm at the time that John passed away",
+      "episode_number": 97
+    },
+    {
+      "source": "John",
+      "relationship": "influenced_by",
+      "target": "Jacques Cousteau",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "One of the influences that really shifted him was when he was on the Calypso, was Jacques",
+      "episode_number": 97
+    },
+    {
+      "source": "Chip Cummins",
+      "relationship": "honors",
+      "target": "John",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Chip Cummins, I guess, wanted to honor him for taking the lineage from John",
+      "episode_number": 97
+    },
+    {
+      "source": "Winstorse Symposium",
+      "relationship": "located_in",
+      "target": "Aspen",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "we had the Winstorse Symposium in Aspen",
+      "episode_number": 97
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "Boulder was one",
+      "episode_number": 97
+    },
+    {
+      "source": "Jacques",
+      "relationship": "co-inventor_of",
+      "target": "aqua long",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Jacques was one of these guys that was a co-inventor of like the aqua long",
+      "episode_number": 97
+    },
+    {
+      "source": "John",
+      "relationship": "went_on",
+      "target": "Calypso",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "John was going out on the Calypso with Jacques",
+      "episode_number": 97
+    },
+    {
+      "source": "John",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "he represents the animals, he represents the whales, the dolphins",
+      "episode_number": 97
+    },
+    {
+      "source": "Rita and the Whalers",
+      "relationship": "made",
+      "target": "World Game",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "they did a reggae song called World Game",
+      "episode_number": 97
+    },
+    {
+      "source": "John",
+      "relationship": "represents",
+      "target": "environment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "this guy was pretty hip for understanding things about the environment",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron",
+      "relationship": "advocates_for",
+      "target": "neuroplasticity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about movements and workouts",
+      "episode_number": 97
+    },
+    {
+      "source": "baseball",
+      "relationship": "part_of",
+      "target": "sports",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "simulating movements for sports",
+      "episode_number": 97
+    },
+    {
+      "source": "golf",
+      "relationship": "part_of",
+      "target": "sports",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "simulating movements for sports",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron",
+      "relationship": "advocates_for",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "chatting with you today",
+      "episode_number": 97
+    },
+    {
+      "source": "Liquid Trainer",
+      "relationship": "part_of",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "made liquid trainer a part of our Y on Earth community",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron",
+      "relationship": "works_at",
+      "target": "LinkedIn",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "connect with Ron on LinkedIn",
+      "episode_number": 97
+    },
+    {
+      "source": "Ron",
+      "relationship": "advocates_for",
+      "target": "Kustos society",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Ron mentions Kustos society",
+      "episode_number": 97
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Erin hosting the podcast",
+      "episode_number": 97
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast series sponsored by YOnEarth.org",
+      "episode_number": 97
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "supported_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "community supported by YOnEarth.org",
+      "episode_number": 97
+    }
+  ]
+}

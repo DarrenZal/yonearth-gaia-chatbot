@@ -1,0 +1,2399 @@
+{
+  "episode": 103,
+  "timestamp": "2025-10-09T10:25:13.327614",
+  "entity_count": 167,
+  "relationship_count": 122,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Nick Chambers",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Living Arts Systems",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization founded by Nick Chambers"
+    },
+    {
+      "name": "Valley Roots food hub",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization where Nick serves as general manager"
+    },
+    {
+      "name": "San Luis Valley",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "geographic location of Nick Chambers"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where San Luis Valley is located"
+    },
+    {
+      "name": "Crestone",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hamlet where Nick's homestead is located"
+    },
+    {
+      "name": "Moscow",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location of Valley Roots food hub"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "continent where Moscow is described as the quinoa capital"
+    },
+    {
+      "name": "Santa Fe Community College",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "educational institution where Nick serves as adjunct faculty"
+    },
+    {
+      "name": "BioFuel's department",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "department at Santa Fe Community College"
+    },
+    {
+      "name": "renewable energy park",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "concept planned for commercial venture in Moscow"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Bill Moloson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Crestone",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "British Columbia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "permaculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "biodynamic farms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Woofing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "willing workers on organic farms"
+    },
+    {
+      "name": "Austria",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a carpenter from Austria"
+    },
+    {
+      "name": "Quebec",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a welder from Quebec"
+    },
+    {
+      "name": "New Hampshire",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "kids from New Hampshire"
+    },
+    {
+      "name": "humanewer",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned humanewer"
+    },
+    {
+      "name": "Joseph Jenkins",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Shout out to Joseph Jenkins, author"
+    },
+    {
+      "name": "bio cycle conference",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "met him once at a bio cycle conference"
+    },
+    {
+      "name": "municipal waste water treatment",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "municipal waste water treatment"
+    },
+    {
+      "name": "composting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "composting human manure"
+    },
+    {
+      "name": "human manure handbook",
+      "type": "BOOK",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "there's a great book called the humanewer handbook"
+    },
+    {
+      "name": "anaerobic digestion system",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a solution for wastewater treatment"
+    },
+    {
+      "name": "methane gas",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "produced by anaerobic digestion for energy and cooking"
+    },
+    {
+      "name": "Archaea",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "microorganisms involved in methane digestion"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to wastewater treatment"
+    },
+    {
+      "name": "Santa Fe",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to wastewater treatment"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of training for anaerobic digestion systems"
+    },
+    {
+      "name": "fixed dome hydraulic pressure",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "described as a method for gas creation in anaerobic systems"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing his lifestyle and experiences"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location where Nick studied in college"
+    },
+    {
+      "name": "canvas lifestyle",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lifestyle described by Nick"
+    },
+    {
+      "name": "teepee",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "type of dwelling Nick lived in"
+    },
+    {
+      "name": "wood stove",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "appliance used in Nick's dwelling"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "studying up in Montana"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "growing up outside of Denver"
+    },
+    {
+      "name": "Creston",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "here in Creston out in the Baca"
+    },
+    {
+      "name": "Baca",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "out in the Baca"
+    },
+    {
+      "name": "canvas lifestyle",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you call it the canvas lifestyle"
+    },
+    {
+      "name": "strawberry yurt",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "with the strawberry yurt thing"
+    },
+    {
+      "name": "fire",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "light a fire in the wilderness for fun"
+    },
+    {
+      "name": "hot water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "what is it that you want next? And it's just hot water"
+    },
+    {
+      "name": "Creston",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "here in Creston out in the Baca"
+    },
+    {
+      "name": "Baca",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "here in Creston out in the Baca"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "you've been living this very humble, thrifty, frugal lifestyle"
+    },
+    {
+      "name": "Alicia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the amazing home that Nick has just referenced that he built over the years with his wife, Alicia"
+    },
+    {
+      "name": "food hub",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "all the work you're doing with the food hub"
+    },
+    {
+      "name": "commercial kitchen",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "we're going to look at the commercial kitchen"
+    },
+    {
+      "name": "greenhouse",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "we're here in the greenhouse"
+    },
+    {
+      "name": "Alicia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "years with his wife, Alicia"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "So let me just think, is there anything else Nick we want to mention"
+    },
+    {
+      "name": "Valley Roots",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "all of the work you're doing at Valley Roots"
+    },
+    {
+      "name": "commercial kitchen",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "So here we are in the commercial kitchen that you built, Nick."
+    },
+    {
+      "name": "biodeigester",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "stove partially plumbed up to the biodeigester out there"
+    },
+    {
+      "name": "straw-bale wall",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "behind you is a straw-bale wall"
+    },
+    {
+      "name": "hydrogen sulfide scrubber",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "this is a hydrogen sulfide scrubber"
+    },
+    {
+      "name": "sub-training greenhouse",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sub-training greenhouse is actually really good"
+    },
+    {
+      "name": "tomatoes",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "growing tomatoes in here"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussing artisan food products and the Valley Roots Food Hub."
+    },
+    {
+      "name": "Valley Roots Food Hub",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a food hub in the valley."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Location of the food company and local food system."
+    },
+    {
+      "name": "San Luis Valley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of the food hub."
+    },
+    {
+      "name": "Moscow",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a location in the valley."
+    },
+    {
+      "name": "Quinoa",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to agricultural work."
+    },
+    {
+      "name": "Travis Rosenketter",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned as a timber framer."
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of Travis Rosenketter."
+    },
+    {
+      "name": "Travis Rosenketter",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a buddy of mine from Montana"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a buddy of mine from Montana"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "dug for from Colorado"
+    },
+    {
+      "name": "Valley Roots Food Hub",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "more information about Valley Roots Food Hub"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "that Nick is managing"
+    },
+    {
+      "name": "Living Arts Systems",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "his own organization, uh, living arts systems"
+    },
+    {
+      "name": "Santa Fe Community College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Santa Fe Community College, uh, for their biofuels program"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "through our Why On Earth community network"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Walei Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors making this podcast series possible"
+    },
+    {
+      "name": "Crestone",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "coming down and visiting you here in Crestone"
+    },
+    {
+      "name": "Crestone",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "visiting you here in Crestone"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the coldness of 8,000 feet in Colorado"
+    },
+    {
+      "name": "Chris Miro",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "our buddy Chris Miro, uh, pulled out and he, he brought down donated"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing his house and woodwork"
+    },
+    {
+      "name": "solar hot water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the features of the house"
+    },
+    {
+      "name": "straw bales",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing building materials"
+    },
+    {
+      "name": "Adobe",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing building materials"
+    },
+    {
+      "name": "house",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing Nick's home"
+    },
+    {
+      "name": "Isabella",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "My daughter Isabella."
+    },
+    {
+      "name": "grapevine",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "This grapevine takes over and it's just unbelievable how productive they are."
+    },
+    {
+      "name": "cottonwoods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "This land had a lot of cottonwoods."
+    },
+    {
+      "name": "house",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the house is still going."
+    },
+    {
+      "name": "greenhouse",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the greenhouse is pretty well performing."
+    },
+    {
+      "name": "salt",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the salt, sulfur and mercury."
+    },
+    {
+      "name": "sulfur",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the salt, sulfur and mercury."
+    },
+    {
+      "name": "mercury",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the salt, sulfur and mercury."
+    },
+    {
+      "name": "high school",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "And you just graduated high school."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in reference to passive solar energy use"
+    },
+    {
+      "name": "Amish cook stove",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "describing the main heating and cooking device"
+    },
+    {
+      "name": "solar hot water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing methods for heating water"
+    },
+    {
+      "name": "biogas",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioning cooking fuel"
+    },
+    {
+      "name": "passive solar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing energy efficiency for heating"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about cabinetry work"
+    },
+    {
+      "name": "Rocky Mountain juniper",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "type of wood used for cabinetry"
+    },
+    {
+      "name": "concrete countertop",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to cabinetry"
+    },
+    {
+      "name": "doby floors",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "type of flooring mentioned"
+    },
+    {
+      "name": "Tolkien",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "reference to literature in relation to door design"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "high school students, teenagers"
+    },
+    {
+      "name": "Chimney Rock",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "southwest Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "southwest Colorado"
+    },
+    {
+      "name": "the creek",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "water flow discussion"
+    },
+    {
+      "name": "the water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "importance of water in seasonal cycles"
+    },
+    {
+      "name": "Bacca Wildlife Refuge",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the Bacca Wildlife Refuge has all the senior rights..."
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...now we also have this COVID situation right..."
+    },
+    {
+      "name": "December 2020",
+      "type": "DATE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...right around the second week in December of 2020..."
+    },
+    {
+      "name": "renewable energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...one is the renewable energy and home-stepping..."
+    },
+    {
+      "name": "local food system",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...it's been great for the local food system..."
+    },
+    {
+      "name": "U.S. foods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...the cheapness and the convenience of U.S. foods..."
+    },
+    {
+      "name": "March 2020",
+      "type": "DATE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...since March of this year..."
+    },
+    {
+      "name": "small farmer",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "...it's a great time to be a small farmer..."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...working with the water is a lot of fun..."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...perhaps connected to our changing climate..."
+    },
+    {
+      "name": "supply chain",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...the other one is just local supply chain food distribution..."
+    },
+    {
+      "name": "San Luis Valley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "rural area of San Luis Valley"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "population centers of Denver"
+    },
+    {
+      "name": "Springs",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "population centers of Springs"
+    },
+    {
+      "name": "Pueblo",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "population centers of Pueblo"
+    },
+    {
+      "name": "Draingo",
+      "type": "PLACE",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "Draingo area"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "USDA inspection"
+    },
+    {
+      "name": "yak beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "local food production"
+    },
+    {
+      "name": "bison",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "local food production"
+    },
+    {
+      "name": "lamb",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "local food production"
+    },
+    {
+      "name": "local foods",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about food preferences"
+    },
+    {
+      "name": "free energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "subject of free energy"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "opening up your home to share this with us"
+    },
+    {
+      "name": "Einstein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "quote by Einstein that you shared with me"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thanks Aaron uh well of course you and I co-conspirated"
+    },
+    {
+      "name": "local food system",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "working in the local food system"
+    },
+    {
+      "name": "regenerative soil farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "regenerative soil farming food that was grown in living soil"
+    },
+    {
+      "name": "regenerative soil farmer",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we coined the rsf regenerative soil farmer designation"
+    },
+    {
+      "name": "regenerative soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "importance is needs to be invested in"
+    },
+    {
+      "name": "covid",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the covid kind of was a distraction"
+    },
+    {
+      "name": "local food",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "importance of local food"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of local food and the climate"
+    },
+    {
+      "name": "carbon neutrality",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "importance of local food and the climate and the carbon neutrality"
+    },
+    {
+      "name": "Mars",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "we might travel to Mars"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we've got so much work to do right here on earth"
+    },
+    {
+      "name": "Winer's community",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "work we're doing at the Winer's community"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "seems to me Nick that oddly enough we tuned into this fairly early in our lives"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast series"
+    },
+    {
+      "name": "why on earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for the podcast"
+    },
+    {
+      "name": "community stewardship and sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "theme of the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nick Chambers",
+      "relationship": "works_at",
+      "target": "Living Arts Systems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick is the founder of Living Arts Systems",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "serves_as",
+      "target": "Valley Roots food hub",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick serves as the founding general manager",
+      "episode_number": 103
+    },
+    {
+      "source": "Valley Roots food hub",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Valley Roots food hub is a statewide distributor in Colorado",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "located_in",
+      "target": "San Luis Valley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nick is based in the San Luis Valley",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "located_in",
+      "target": "Crestone",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nick's homestead choke cherry farm is situated in Crestone",
+      "episode_number": 103
+    },
+    {
+      "source": "Valley Roots food hub",
+      "relationship": "located_in",
+      "target": "Moscow",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Valley Roots food hub is based in Moscow",
+      "episode_number": 103
+    },
+    {
+      "source": "Crestone",
+      "relationship": "part_of",
+      "target": "San Luis Valley",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Crestone is located in the San Luis Valley",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "advocates_for",
+      "target": "sustainability movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Nick is involved in the sustainability movement",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "teaches",
+      "target": "appropriate technology solutions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Nick teaches appropriate technology solutions",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick Chambers",
+      "relationship": "supports",
+      "target": "his kids",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick enjoys supporting his kids",
+      "episode_number": 103
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "permaculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "Bill Moloson",
+      "relationship": "wrote",
+      "target": "permaculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "Crestone",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "Crestone",
+      "relationship": "contains",
+      "target": "biodynamic farms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "Crestone",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "located_in",
+      "target": "Canada",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "permaculture",
+      "relationship": "inspired_by",
+      "target": "cultural diversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 103
+    },
+    {
+      "source": "Woofing",
+      "relationship": "advocates_for",
+      "target": "willing workers on organic farms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Woofing is the, what does that sand for again?",
+      "episode_number": 103
+    },
+    {
+      "source": "Joseph Jenkins",
+      "relationship": "authored",
+      "target": "human manure handbook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Shout out to Joseph Jenkins, author that",
+      "episode_number": 103
+    },
+    {
+      "source": "composting",
+      "relationship": "related_to",
+      "target": "municipal waste water treatment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "composting human manure is all we're talking about",
+      "episode_number": 103
+    },
+    {
+      "source": "humanewer",
+      "relationship": "related_to",
+      "target": "composting",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "you mentioned humanewer, that may be a concept",
+      "episode_number": 103
+    },
+    {
+      "source": "bio cycle conference",
+      "relationship": "features",
+      "target": "composting",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "met him once at a bio cycle conference",
+      "episode_number": 103
+    },
+    {
+      "source": "Austria",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "a carpenter from Austria",
+      "episode_number": 103
+    },
+    {
+      "source": "Quebec",
+      "relationship": "located_in",
+      "target": "Canada",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "a welder from Quebec",
+      "episode_number": 103
+    },
+    {
+      "source": "New Hampshire",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "kids from New Hampshire",
+      "episode_number": 103
+    },
+    {
+      "source": "anaerobic digestion system",
+      "relationship": "provides",
+      "target": "methane gas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed in the context of energy and cooking",
+      "episode_number": 103
+    },
+    {
+      "source": "anaerobic digestion system",
+      "relationship": "treats",
+      "target": "wastewater",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a solution for wastewater treatment",
+      "episode_number": 103
+    },
+    {
+      "source": "Archaea",
+      "relationship": "yields",
+      "target": "methane",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to their metabolism",
+      "episode_number": 103
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to wastewater treatment",
+      "episode_number": 103
+    },
+    {
+      "source": "Santa Fe",
+      "relationship": "located_in",
+      "target": "New Mexico",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to wastewater treatment",
+      "episode_number": 103
+    },
+    {
+      "source": "China",
+      "relationship": "associated_with",
+      "target": "fixed dome hydraulic pressure",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "location of training for anaerobic digestion systems",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "lived_in",
+      "target": "teepee",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussing his past living situation",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "canvas lifestyle",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "describing his lifestyle choices",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "studied_in",
+      "target": "Montana",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing his college experience",
+      "episode_number": 103
+    },
+    {
+      "source": "teepee",
+      "relationship": "contains",
+      "target": "wood stove",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "describing the features of the dwelling",
+      "episode_number": 103
+    },
+    {
+      "source": "Montana",
+      "relationship": "located_in",
+      "target": "USA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "studying up in Montana",
+      "episode_number": 103
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "growing up outside of Denver",
+      "episode_number": 103
+    },
+    {
+      "source": "Creston",
+      "relationship": "located_in",
+      "target": "Baca",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "here in Creston out in the Baca",
+      "episode_number": 103
+    },
+    {
+      "source": "canvas lifestyle",
+      "relationship": "advocates_for",
+      "target": "simple style",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "you call it the canvas lifestyle",
+      "episode_number": 103
+    },
+    {
+      "source": "strawberry yurt",
+      "relationship": "made_by",
+      "target": "person",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "with the strawberry yurt thing",
+      "episode_number": 103
+    },
+    {
+      "source": "fire",
+      "relationship": "part_of",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "light a fire in the wilderness for fun",
+      "episode_number": 103
+    },
+    {
+      "source": "hot water",
+      "relationship": "requires",
+      "target": "freeze-proof conditions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "you can't have hot water until you have freeze-proof conditions",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "you've been living this very humble, thrifty, frugal lifestyle",
+      "episode_number": 103
+    },
+    {
+      "source": "food hub",
+      "relationship": "located_in",
+      "target": "Creston",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "all the work you're doing with the food hub",
+      "episode_number": 103
+    },
+    {
+      "source": "Creston",
+      "relationship": "part_of",
+      "target": "Baca",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "here in Creston out in the Baca",
+      "episode_number": 103
+    },
+    {
+      "source": "commercial kitchen",
+      "relationship": "located_in",
+      "target": "Creston",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "we're going to look at the commercial kitchen",
+      "episode_number": 103
+    },
+    {
+      "source": "greenhouse",
+      "relationship": "located_in",
+      "target": "Creston",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "we're here in the greenhouse",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "Valley Roots",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "all of the work you're doing at Valley Roots",
+      "episode_number": 103
+    },
+    {
+      "source": "biodeigester",
+      "relationship": "part_of",
+      "target": "commercial kitchen",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "stove partially plumbed up to the biodeigester out there",
+      "episode_number": 103
+    },
+    {
+      "source": "sub-training greenhouse",
+      "relationship": "contains",
+      "target": "tomatoes",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "growing tomatoes in here",
+      "episode_number": 103
+    },
+    {
+      "source": "commercial kitchen",
+      "relationship": "located_in",
+      "target": "Valley Roots",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "So here we are in the commercial kitchen that you built, Nick.",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "Valley Roots Food Hub",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussing the work done at the food hub.",
+      "episode_number": 103
+    },
+    {
+      "source": "Valley Roots Food Hub",
+      "relationship": "located_in",
+      "target": "San Luis Valley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as the location of the food hub.",
+      "episode_number": 103
+    },
+    {
+      "source": "San Luis Valley",
+      "relationship": "contains",
+      "target": "Moscow",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Moscow is mentioned as being in the valley.",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "Colorado food company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Nick mentions working for a Colorado food company.",
+      "episode_number": 103
+    },
+    {
+      "source": "Travis Rosenketter",
+      "relationship": "located_in",
+      "target": "Montana",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Travis is mentioned as being from Montana.",
+      "episode_number": 103
+    },
+    {
+      "source": "Valley Roots Food Hub",
+      "relationship": "advocates_for",
+      "target": "local food system",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The food hub is part of the local food system.",
+      "episode_number": 103
+    },
+    {
+      "source": "Travis Rosenketter",
+      "relationship": "works_at",
+      "target": "Valley Roots Food Hub",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "a buddy of mine from Montana, a shadowed out Travis Rosenketter. He turned out to be a timber framer.",
+      "episode_number": 103
+    },
+    {
+      "source": "Valley Roots Food Hub",
+      "relationship": "managed_by",
+      "target": "Nick",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "that Nick is managing",
+      "episode_number": 103
+    },
+    {
+      "source": "Living Arts Systems",
+      "relationship": "founded_by",
+      "target": "Nick",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "his own organization, uh, living arts systems",
+      "episode_number": 103
+    },
+    {
+      "source": "Santa Fe Community College",
+      "relationship": "offers",
+      "target": "biofuels program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Santa Fe Community College, uh, for their biofuels program",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "LIDGE Family Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Earth Hero",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Vera Herbels",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Growing Spaces",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Soil Works",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Earthwater Press",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "1% for the planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "sponsored_by",
+      "target": "Walei Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "through our Why On Earth community network",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "collaborated_with",
+      "target": "Crestone",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "you and I have been engaged in, you know, conspiring together for well over two decades now.",
+      "episode_number": 103
+    },
+    {
+      "source": "Chris Miro",
+      "relationship": "donated",
+      "target": "marble table",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "our buddy Chris Miro, uh, pulled out and he, he brought down donated",
+      "episode_number": 103
+    },
+    {
+      "source": "Crestone",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "visiting you here in Crestone",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "solar hot water",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the features of his house",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "uses",
+      "target": "straw bales",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing building materials for his house",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "uses",
+      "target": "Adobe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing building materials for his house",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "lives_in",
+      "target": "house",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing his home",
+      "episode_number": 103
+    },
+    {
+      "source": "Isabella",
+      "relationship": "graduated_from",
+      "target": "high school",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "And you just graduated high school.",
+      "episode_number": 103
+    },
+    {
+      "source": "house",
+      "relationship": "built_by",
+      "target": "Isabella",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "the house that your mom and dad built",
+      "episode_number": 103
+    },
+    {
+      "source": "grapevine",
+      "relationship": "produced_by",
+      "target": "greenhouse",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "This grapevine takes over and it's just unbelievable how productive they are.",
+      "episode_number": 103
+    },
+    {
+      "source": "cottonwoods",
+      "relationship": "used_in",
+      "target": "house",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "This land had a lot of cottonwoods. So we milled, has a lot of cotton with lumber incorporated, which is a novelty in some regards.",
+      "episode_number": 103
+    },
+    {
+      "source": "Amish cook stove",
+      "relationship": "made_by",
+      "target": "unknown",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.5,
+      "context": "describing the stove's function and origin",
+      "episode_number": 103
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "passive solar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing energy practices in Colorado",
+      "episode_number": 103
+    },
+    {
+      "source": "solar hot water",
+      "relationship": "advocates_for",
+      "target": "biogas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "mentioning alternative energy solutions",
+      "episode_number": 103
+    },
+    {
+      "source": "passive solar",
+      "relationship": "part_of",
+      "target": "sustainable living",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussing energy efficiency in homesteading",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "Rocky Mountain juniper",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about cabinetry work",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "uses",
+      "target": "concrete countertop",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to cabinetry",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "discusses",
+      "target": "doby floors",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about flooring",
+      "episode_number": 103
+    },
+    {
+      "source": "Tolkien",
+      "relationship": "influences",
+      "target": "door design",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "reference to literature in relation to door design",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "the water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about connection to place and water importance",
+      "episode_number": 103
+    },
+    {
+      "source": "Chimney Rock",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing geographical location",
+      "episode_number": 103
+    },
+    {
+      "source": "the creek",
+      "relationship": "part_of",
+      "target": "the water",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "discussion about water flow",
+      "episode_number": 103
+    },
+    {
+      "source": "Bacca Wildlife Refuge",
+      "relationship": "has",
+      "target": "senior rights",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...the Bacca Wildlife Refuge has all the senior rights...",
+      "episode_number": 103
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "local food system",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...now we also have this COVID situation right and that has brought a lot of change into the world...",
+      "episode_number": 103
+    },
+    {
+      "source": "March 2020",
+      "relationship": "marks",
+      "target": "change in local food system",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "...since March of this year God it's the world has really changed...",
+      "episode_number": 103
+    },
+    {
+      "source": "renewable energy",
+      "relationship": "is part of",
+      "target": "local food system",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "...one is the renewable energy and home-stepping and land-based stuff and the other one is just local supply chain food distribution...",
+      "episode_number": 103
+    },
+    {
+      "source": "small farmer",
+      "relationship": "benefits from",
+      "target": "local food system",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "...it's a great time to be a small farmer because there is a supply chain to plug into...",
+      "episode_number": 103
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "water flow cycles",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...affecting water flow cycles perhaps connected to our changing climate...",
+      "episode_number": 103
+    },
+    {
+      "source": "water",
+      "relationship": "is involved in",
+      "target": "local food system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...working with the water is a lot of fun...",
+      "episode_number": 103
+    },
+    {
+      "source": "San Luis Valley",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "rural area of San Luis Valley",
+      "episode_number": 103
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "population centers of Denver",
+      "episode_number": 103
+    },
+    {
+      "source": "Springs",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "population centers of Springs",
+      "episode_number": 103
+    },
+    {
+      "source": "Pueblo",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "population centers of Pueblo",
+      "episode_number": 103
+    },
+    {
+      "source": "Draingo",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "Draingo area",
+      "episode_number": 103
+    },
+    {
+      "source": "USDA",
+      "relationship": "regulates",
+      "target": "meat processing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "USDA inspection",
+      "episode_number": 103
+    },
+    {
+      "source": "local foods",
+      "relationship": "advocates_for",
+      "target": "self-sufficiency",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about food preferences",
+      "episode_number": 103
+    },
+    {
+      "source": "free energy",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "subject of free energy",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_with",
+      "target": "local food system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "opening up your home to share this with us",
+      "episode_number": 103
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "local food system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "thanks Aaron uh well of course you and I co-conspirated",
+      "episode_number": 103
+    },
+    {
+      "source": "local food system",
+      "relationship": "part_of",
+      "target": "regenerative soil farming",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "working in the local food system",
+      "episode_number": 103
+    },
+    {
+      "source": "regenerative soil farming",
+      "relationship": "includes",
+      "target": "regenerative soil farmer",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "regenerative soil is really where so much of misplaced long-do importance is needs to be invested in",
+      "episode_number": 103
+    },
+    {
+      "source": "covid",
+      "relationship": "distraction_for",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the covid kind of was a distraction for a little bit as far as the you know climate",
+      "episode_number": 103
+    },
+    {
+      "source": "local food",
+      "relationship": "advocates_for",
+      "target": "carbon neutrality",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "importance of local food and the climate and the carbon neutrality",
+      "episode_number": 103
+    },
+    {
+      "source": "Winer's community",
+      "relationship": "works_on",
+      "target": "local food",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "work we're doing at the Winer's community that we can create more videos with you guys",
+      "episode_number": 103
+    },
+    {
+      "source": "Nick",
+      "relationship": "is_a",
+      "target": "leader",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "folks like you are in a position to shine even more brightly as leaders",
+      "episode_number": 103
+    },
+    {
+      "source": "earth",
+      "relationship": "part_of",
+      "target": "solar system",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "terraform some other body in the solar system wouldn't logic require us to get really good at it here",
+      "episode_number": 103
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "why on earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "host of the why on earth community stewardship and sustainability podcast series",
+      "episode_number": 103
+    },
+    {
+      "source": "why on earth",
+      "relationship": "sponsored_by",
+      "target": "why on earth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "website for the podcast",
+      "episode_number": 103
+    },
+    {
+      "source": "why on earth",
+      "relationship": "advocates_for",
+      "target": "community stewardship and sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "theme of the podcast",
+      "episode_number": 103
+    }
+  ]
+}

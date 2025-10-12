@@ -1,0 +1,2049 @@
+{
+  "episode": 102,
+  "timestamp": "2025-10-09T10:23:36.485973",
+  "entity_count": 147,
+  "relationship_count": 101,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Louise Chaula",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "director of the People and Pollinators Action Network"
+    },
+    {
+      "name": "Julie Morris",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "director of the People and Pollinators Action Network"
+    },
+    {
+      "name": "People and Pollinators Action Network",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization discussed in the podcast"
+    },
+    {
+      "name": "University of Colorado",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "institution where Louise Chaula works"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the University of Colorado"
+    },
+    {
+      "name": "Children and Nature Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization Louise Chaula serves on the Scientific Advisory Committee"
+    },
+    {
+      "name": "University of Denver",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "institution where Julie Morris works"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the University of Denver"
+    },
+    {
+      "name": "D.U. Pollinators Association",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "undergraduate student organization advised by Julie Morris"
+    },
+    {
+      "name": "D.U. Botanical Society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "undergraduate student organization advised by Julie Morris"
+    },
+    {
+      "name": "P-Pan",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "acronym for People and Pollinators Action Network"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept discussed in relation to pollinators"
+    },
+    {
+      "name": "ecosystem services",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept related to the role of pollinators"
+    },
+    {
+      "name": "Julie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "biologist"
+    },
+    {
+      "name": "EO Wilson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "entomologist"
+    },
+    {
+      "name": "P-Pan",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "statewide organization"
+    },
+    {
+      "name": "Department of Natural Resources",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "state agency in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state in the USA"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "county in Colorado"
+    },
+    {
+      "name": "Lafayette",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Longmont",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Virtue",
+      "type": "PLACE",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Jerry Hills Village",
+      "type": "PLACE",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "butterfly pavilion",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "organization for education"
+    },
+    {
+      "name": "botanic gardens",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "organization for education"
+    },
+    {
+      "name": "Colorado pollinator summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "annual event for pollinator initiatives"
+    },
+    {
+      "name": "environmental health coalition",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "coalition of groups in Colorado"
+    },
+    {
+      "name": "Luis",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about Colorado pollinator summit"
+    },
+    {
+      "name": "Colorado pollinator summit",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "event mentioned in the context of outreach initiatives"
+    },
+    {
+      "name": "Colorado Department of Transportation",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization involved in the pollinator highway project"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "state mentioned in relation to various initiatives"
+    },
+    {
+      "name": "pollinator highway project",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "project aimed at increasing pollinator habitats along highways"
+    },
+    {
+      "name": "Julesburg",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "location mentioned as part of the highway stretch"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location mentioned as part of the highway stretch"
+    },
+    {
+      "name": "Scott Black",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "executive director of Zersi's interviewed in a previous discussion"
+    },
+    {
+      "name": "Zersi's",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in relation to insect die-off rates"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment discussing ecosystem services and insect declines."
+    },
+    {
+      "name": "Scott Black",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Interviewed executive director of Zersi."
+    },
+    {
+      "name": "Zersi",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Organization mentioned in context of insect decline."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussion about insect die-off rates."
+    },
+    {
+      "name": "Midwest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Region mentioned in relation to insect die-off rates."
+    },
+    {
+      "name": "P-Pans",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Concept related to addressing insect declines."
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about biodiversity loss."
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Insects that are important for ecosystems."
+    },
+    {
+      "name": "european honey bees",
+      "type": "SPECIES",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Non-native species mentioned in relation to pollinators."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a factor affecting insect populations."
+    },
+    {
+      "name": "phenology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Timing of biological events discussed in relation to climate change."
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing their role in ecosystems"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "impact on organisms' synchronization"
+    },
+    {
+      "name": "ecosystem services",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "benefits humans get from functioning ecosystems"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing its importance to ecosystem stability"
+    },
+    {
+      "name": "Luis",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to research on ecosystem services"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "open space in Colorado"
+    },
+    {
+      "name": "pollination",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of pollination in ecosystems"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "decided through the United Nations body"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "kingdom of fungi and insects"
+    },
+    {
+      "name": "ecosystem restoration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "beginning of the decade on ecosystem restoration"
+    },
+    {
+      "name": "insects",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "kingdom of fungi and insects"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "concern about industrial agriculture"
+    },
+    {
+      "name": "wild flowers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "wild flowers and the shrubbery and trees"
+    },
+    {
+      "name": "neighborhoods",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "space our neighborhoods take up"
+    },
+    {
+      "name": "Julie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about gardening and pollinators"
+    },
+    {
+      "name": "Louise",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about gardening and pollinators"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to gardening and biodiversity"
+    },
+    {
+      "name": "native plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as beneficial for pollinators"
+    },
+    {
+      "name": "pollinator garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "example of a garden discussed"
+    },
+    {
+      "name": "townhouse",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "location of the pollinator garden"
+    },
+    {
+      "name": "pollinator garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "put a pollinator garden in the sunny west facing side of our townhouse"
+    },
+    {
+      "name": "bumblebees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the bumblebees and they were the bees"
+    },
+    {
+      "name": "hummingbirds",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the bumblebees and they were the bees and hummingbirds"
+    },
+    {
+      "name": "Gulson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "an internationally recognized entomologist and an expert on insects"
+    },
+    {
+      "name": "Colorado Pollinator Summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "keynote speaker for our Colorado pollinator summit in 2020"
+    },
+    {
+      "name": "Julie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "as Julie was saying"
+    },
+    {
+      "name": "CU",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we had it at CU with our beat club"
+    },
+    {
+      "name": "People and Pollinators Action Network",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "on the board of directors of People and Pollinators Action Network"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "I'm your host Aaron William Perry"
+    },
+    {
+      "name": "Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes the Lich Family Foundation"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Earth Coast Productions"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Alpine Botanicals"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Purium"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Earth Hero"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Liquid Trainer"
+    },
+    {
+      "name": "Vera Urbels",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "includes Vera Urbels"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Growing Spaces"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Soil Works"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes 1% for the Planet"
+    },
+    {
+      "name": "Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Earth Water Press"
+    },
+    {
+      "name": "Doctor Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Doctor Bronners"
+    },
+    {
+      "name": "Whale Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "includes Whale Waters"
+    },
+    {
+      "name": "Lich Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Vera Urbels",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Doctor Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Whale Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors and partners"
+    },
+    {
+      "name": "Yon Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "donate button"
+    },
+    {
+      "name": "Peepan",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "coupon code"
+    },
+    {
+      "name": "CBD Hemp Infused Aroma Therapy Soaking Salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "monthly delivery"
+    },
+    {
+      "name": "Celebrating Honeybee's Children's Book",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "purchase"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "progressive place"
+    },
+    {
+      "name": "Children",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "impacts on children"
+    },
+    {
+      "name": "Pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "important issues"
+    },
+    {
+      "name": "Toxic Chemicals",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "toxic chemicals"
+    },
+    {
+      "name": "Homeowners Associations (HOAs)",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "toxic chemicals"
+    },
+    {
+      "name": "Pets",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "harmful to children and pets"
+    },
+    {
+      "name": "Dave Goulson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "keynote speech at the Colorado pollinators summit"
+    },
+    {
+      "name": "Colorado pollinators summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "keynote speech by Dave Goulson"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to herbicides"
+    },
+    {
+      "name": "EPA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to safety levels of herbicides"
+    },
+    {
+      "name": "University",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "stopped using toxic pesticides"
+    },
+    {
+      "name": "City of Boulder",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "stopped using toxic pesticides in city lands and parks"
+    },
+    {
+      "name": "herbicides",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to safety and environmental impact"
+    },
+    {
+      "name": "insecticides",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to safety and environmental impact"
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to health and safety concerns"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a world renowned herbalist"
+    },
+    {
+      "name": "dandelions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as important early flowering plants"
+    },
+    {
+      "name": "University of Colorado",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to going organic"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to University of Colorado"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Louise",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "pollinators.org",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "website mentioned for additional information"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "town mentioned in the discussion"
+    },
+    {
+      "name": "HOA",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "homeowners associations discussed in the context of community action"
+    },
+    {
+      "name": "PPAN",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "group mentioned for advocacy"
+    },
+    {
+      "name": "public spaces",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "concept discussed regarding pollinator habitats"
+    },
+    {
+      "name": "toxic chemicals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to parking lots and herbicides"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conversation with Aaron"
+    },
+    {
+      "name": "ppan",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "join with groups like ppan"
+    },
+    {
+      "name": "pesticides",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "avoiding the risks of pesticides"
+    },
+    {
+      "name": "children",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of avoiding the risks of pesticides that are harmful to people pets and ecosystems"
+    },
+    {
+      "name": "autism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "pesticides can contribute to autism"
+    },
+    {
+      "name": "living landscape",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "building living landscape"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry author thought leader and executive consultant"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit whyonearth.org-support"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "plight of the pollinators"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "areas of sustainability"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Louise Chaula",
+      "relationship": "works_at",
+      "target": "University of Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Louise Chaula's employment",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie Morris",
+      "relationship": "works_at",
+      "target": "University of Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Julie Morris's employment",
+      "episode_number": 102
+    },
+    {
+      "source": "Louise Chaula",
+      "relationship": "serves_on",
+      "target": "Children and Nature Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Louise Chaula's advisory role",
+      "episode_number": 102
+    },
+    {
+      "source": "People and Pollinators Action Network",
+      "relationship": "advocates_for",
+      "target": "biodiversity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mission of the organization",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie Morris",
+      "relationship": "advises",
+      "target": "D.U. Pollinators Association",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Julie Morris's advisory role",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie Morris",
+      "relationship": "advises",
+      "target": "D.U. Botanical Society",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Julie Morris's advisory role",
+      "episode_number": 102
+    },
+    {
+      "source": "People and Pollinators Action Network",
+      "relationship": "part_of",
+      "target": "P-Pan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization's identity",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "recognizes",
+      "target": "ecosystem services",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "P-Pan's mission",
+      "episode_number": 102
+    },
+    {
+      "source": "University of Colorado",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of the university",
+      "episode_number": 102
+    },
+    {
+      "source": "University of Denver",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of the university",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie",
+      "relationship": "advocates_for",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "biologist discussing pollinators",
+      "episode_number": 102
+    },
+    {
+      "source": "EO Wilson",
+      "relationship": "predicted",
+      "target": "insects disappearing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "entomologist discussing ecosystem impact",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "works_at",
+      "target": "Department of Natural Resources",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "statewide organization working with state agencies",
+      "episode_number": 102
+    },
+    {
+      "source": "Department of Natural Resources",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "state agency in Colorado",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "statewide organization",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "created",
+      "target": "pollinator proclamations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organization creating initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Boulder County",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Lafayette",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Longmont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Virtue",
+      "source_confidence": 0.5,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.5,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator proclamations",
+      "relationship": "implemented_in",
+      "target": "Jerry Hills Village",
+      "source_confidence": 0.5,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.5,
+      "context": "cities implementing initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "collaborates_with",
+      "target": "butterfly pavilion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "organization collaborating for education",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "collaborates_with",
+      "target": "botanic gardens",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "organization collaborating for education",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "organizes",
+      "target": "Colorado pollinator summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organization organizing annual event",
+      "episode_number": 102
+    },
+    {
+      "source": "P-Pan",
+      "relationship": "formed",
+      "target": "environmental health coalition",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "organization forming coalition",
+      "episode_number": 102
+    },
+    {
+      "source": "Luis",
+      "relationship": "advocates_for",
+      "target": "Colorado pollinator summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion about outreach initiatives",
+      "episode_number": 102
+    },
+    {
+      "source": "Colorado Department of Transportation",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "organization involved in the pollinator highway project",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator highway project",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.99,
+      "context": "project aimed at increasing pollinator habitats",
+      "episode_number": 102
+    },
+    {
+      "source": "Julesburg",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.99,
+      "context": "location mentioned as part of the highway stretch",
+      "episode_number": 102
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "location mentioned as part of the highway stretch",
+      "episode_number": 102
+    },
+    {
+      "source": "Scott Black",
+      "relationship": "works_at",
+      "target": "Zersi's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "executive director of Zersi's interviewed in a previous discussion",
+      "episode_number": 102
+    },
+    {
+      "source": "Scott Black",
+      "relationship": "works_at",
+      "target": "Zersi",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "Interviewed executive director of Zersi.",
+      "episode_number": 102
+    },
+    {
+      "source": "Zersi",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Organization mentioned in context of insect decline.",
+      "episode_number": 102
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Midwest",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.9,
+      "context": "Discussion about insect die-off rates.",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinators",
+      "relationship": "advocates_for",
+      "target": "biodiversity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Discussion about the importance of pollinators and biodiversity.",
+      "episode_number": 102
+    },
+    {
+      "source": "european honey bees",
+      "relationship": "compete_with",
+      "target": "native pollinators",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Discussion about non-native species and their impact on native species.",
+      "episode_number": 102
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "phenology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Mentioned as a factor affecting timing of biological events.",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinators",
+      "relationship": "advocates_for",
+      "target": "ecosystem services",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "importance of pollinators in ecosystem services",
+      "episode_number": 102
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "pollinators",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "impact on the timing of pollinators' emergence",
+      "episode_number": 102
+    },
+    {
+      "source": "biodiversity",
+      "relationship": "leads_to",
+      "target": "ecosystem services",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "connection between biodiversity and ecosystem services",
+      "episode_number": 102
+    },
+    {
+      "source": "Luis",
+      "relationship": "researches",
+      "target": "ecosystem services",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to research on ecosystem services",
+      "episode_number": 102
+    },
+    {
+      "source": "pollination",
+      "relationship": "requires",
+      "target": "wild flowers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "importance of pollination in ecosystems",
+      "episode_number": 102
+    },
+    {
+      "source": "United Nations",
+      "relationship": "decided_on",
+      "target": "ecosystem restoration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "decided through the United Nations body",
+      "episode_number": 102
+    },
+    {
+      "source": "fungi",
+      "relationship": "interacts_with",
+      "target": "insects",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "kingdom of fungi and insects",
+      "episode_number": 102
+    },
+    {
+      "source": "agriculture",
+      "relationship": "affects",
+      "target": "neighborhoods",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "concern about industrial agriculture",
+      "episode_number": 102
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "wild flowers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "open space in Colorado",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie",
+      "relationship": "advocates_for",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about gardening and biodiversity",
+      "episode_number": 102
+    },
+    {
+      "source": "Louise",
+      "relationship": "advocates_for",
+      "target": "native plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about gardening and pollinators",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie",
+      "relationship": "advocates_for",
+      "target": "pollinator garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about gardening and biodiversity",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinator garden",
+      "relationship": "located_in",
+      "target": "townhouse",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "example of a garden discussed",
+      "episode_number": 102
+    },
+    {
+      "source": "pollinators",
+      "relationship": "benefit_from",
+      "target": "native plants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussed in relation to gardening and biodiversity",
+      "episode_number": 102
+    },
+    {
+      "source": "Gulson",
+      "relationship": "works_at",
+      "target": "People and Pollinators Action Network",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnering with us with Gulson",
+      "episode_number": 102
+    },
+    {
+      "source": "Julie",
+      "relationship": "advocates_for",
+      "target": "pollinator garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "as Julie was saying about connectivity",
+      "episode_number": 102
+    },
+    {
+      "source": "People and Pollinators Action Network",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "on the board of directors of People and Pollinators Action Network",
+      "episode_number": 102
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "People and Pollinators Action Network",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "I'm your host Aaron William Perry",
+      "episode_number": 102
+    },
+    {
+      "source": "CU",
+      "relationship": "collaborates_with",
+      "target": "pollinator garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we had it at CU with our beat club",
+      "episode_number": 102
+    },
+    {
+      "source": "Lich Family Foundation",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "includes the Lich Family Foundation",
+      "episode_number": 102
+    },
+    {
+      "source": "Lich Family Foundation",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Purium",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Liquid Trainer",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Vera Urbels",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Growing Spaces",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "1% for the Planet",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Earth Water Press",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Doctor Bronner's",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Whale Waters",
+      "relationship": "works_at",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsors and partners",
+      "episode_number": 102
+    },
+    {
+      "source": "Yon Earth",
+      "relationship": "located_in",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "donate button",
+      "episode_number": 102
+    },
+    {
+      "source": "Peepan",
+      "relationship": "advocates_for",
+      "target": "Children",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "coupon code",
+      "episode_number": 102
+    },
+    {
+      "source": "Toxic Chemicals",
+      "relationship": "harmful_to",
+      "target": "Children",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "harmful to children and pets",
+      "episode_number": 102
+    },
+    {
+      "source": "Toxic Chemicals",
+      "relationship": "harmful_to",
+      "target": "Pets",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "harmful to children and pets",
+      "episode_number": 102
+    },
+    {
+      "source": "Homeowners Associations (HOAs)",
+      "relationship": "require",
+      "target": "Toxic Chemicals",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "toxic chemicals",
+      "episode_number": 102
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.8,
+      "context": "progressive place",
+      "episode_number": 102
+    },
+    {
+      "source": "Dave Goulson",
+      "relationship": "speaks_at",
+      "target": "Colorado pollinators summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "keynote speech",
+      "episode_number": 102
+    },
+    {
+      "source": "City of Boulder",
+      "relationship": "stopped_using",
+      "target": "toxic pesticides",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "city lands and parks",
+      "episode_number": 102
+    },
+    {
+      "source": "University",
+      "relationship": "stopped_using",
+      "target": "toxic pesticides",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "for health reasons",
+      "episode_number": 102
+    },
+    {
+      "source": "Boulder",
+      "relationship": "contains",
+      "target": "herbicides",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to safety levels",
+      "episode_number": 102
+    },
+    {
+      "source": "herbicides",
+      "relationship": "affect",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to environmental impact",
+      "episode_number": 102
+    },
+    {
+      "source": "children",
+      "relationship": "affected_by",
+      "target": "herbicides",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "health and safety concerns",
+      "episode_number": 102
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "dandelions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "encouraging folks to not spray the dandelions",
+      "episode_number": 102
+    },
+    {
+      "source": "University of Colorado",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to going organic",
+      "episode_number": 102
+    },
+    {
+      "source": "Aaron",
+      "relationship": "works_at",
+      "target": "pollinators.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "podcast discussion",
+      "episode_number": 102
+    },
+    {
+      "source": "Louise",
+      "relationship": "advocates_for",
+      "target": "pollinator habitat",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about community efforts",
+      "episode_number": 102
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "town mentioned in the discussion",
+      "episode_number": 102
+    },
+    {
+      "source": "HOA",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "homeowners associations discussed in the context of community action",
+      "episode_number": 102
+    },
+    {
+      "source": "PPAN",
+      "relationship": "advocates_for",
+      "target": "environmental awareness",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "group mentioned for advocacy",
+      "episode_number": 102
+    },
+    {
+      "source": "toxic chemicals",
+      "relationship": "causes",
+      "target": "environmental harm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to parking lots and herbicides",
+      "episode_number": 102
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "pesticides",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "conversation with Aaron",
+      "episode_number": 102
+    },
+    {
+      "source": "ppan",
+      "relationship": "advocates_for",
+      "target": "pesticides",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "join with groups like ppan",
+      "episode_number": 102
+    },
+    {
+      "source": "children",
+      "relationship": "vulnerable_to",
+      "target": "pesticides",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "importance of avoiding the risks of pesticides that are harmful to people pets and ecosystems",
+      "episode_number": 102
+    },
+    {
+      "source": "pesticides",
+      "relationship": "contribute_to",
+      "target": "autism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "pesticides can contribute to autism",
+      "episode_number": 102
+    },
+    {
+      "source": "living landscape",
+      "relationship": "part_of",
+      "target": "environmental efforts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "building living landscapes",
+      "episode_number": 102
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry",
+      "episode_number": 102
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "advocates_for",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "bringing up the plight of the pollinators",
+      "episode_number": 102
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "areas of sustainability",
+      "episode_number": 102
+    },
+    {
+      "source": "whyonearth.org",
+      "relationship": "sponsors",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the podcast and video recordings are made possible by the generous support of people like you",
+      "episode_number": 102
+    }
+  ]
+}

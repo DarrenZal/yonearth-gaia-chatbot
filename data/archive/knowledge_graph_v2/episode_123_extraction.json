@@ -1,0 +1,1605 @@
+{
+  "episode": 123,
+  "timestamp": "2025-10-09T10:35:28.081633",
+  "entity_count": 115,
+  "relationship_count": 79,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "Marissa Poloski",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Drylands Agri-Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization co-founded by Marissa Poloski and Nick D. Domenico"
+    },
+    {
+      "name": "Nick D. Domenico",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "co-founder of Drylands Agri-Ecology Research"
+    },
+    {
+      "name": "Elk Run Farm Garden",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the podcast recording"
+    },
+    {
+      "name": "Naropa University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where Marissa studied"
+    },
+    {
+      "name": "Elkron",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location of folk farm run by Marissa"
+    },
+    {
+      "name": "Dar",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "short form for Drylands Agri-Ecology Research"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "spending time here at Elk Run Farm"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "children's books, of course, through the Y on Earth community"
+    },
+    {
+      "name": "indigenous community leaders",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "important theme for a lot of the indigenous community leaders"
+    },
+    {
+      "name": "Father Sky",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "relationship to Father Sky and Mother Earth"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "relationship to Father Sky and Mother Earth"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "my father for that as well, my mother passed when I was really young and she told me, you know, when I was one or two years old, she would always say, Marissa, that's a brown person."
+    },
+    {
+      "name": "upstate New York",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "introduced me to some tribes in upstate New York"
+    },
+    {
+      "name": "Yoloteo",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "relationship with a dear sister"
+    },
+    {
+      "name": "Harvest of All First Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "chief executive director of Harvest of All First Nations"
+    },
+    {
+      "name": "Yellow Barn Farm",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "program that's now planted at the Yellow Barn Farm"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "my better half"
+    },
+    {
+      "name": "Spirit of the Sun",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "gathered a bunch of seeds from different communities, Spirit of the Sun"
+    },
+    {
+      "name": "Shannon Francis",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "able to give us some corn seeds"
+    },
+    {
+      "name": "DARR",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "DARR.ECO website"
+    },
+    {
+      "name": "DARR",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "DARR website"
+    },
+    {
+      "name": "indigenous lead farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "approaches you're planning to take"
+    },
+    {
+      "name": "first nations people",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "traditions that have come through many cultures"
+    },
+    {
+      "name": "Shoshone",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "shout out the Shoshone"
+    },
+    {
+      "name": "Shoshone",
+      "type": "TRIBE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "indigenous leaders that you're working with"
+    },
+    {
+      "name": "Wind River Reservation",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "work on the Wind River Reservation at Wyoming"
+    },
+    {
+      "name": "Wyoming",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "work on the Wind River Reservation at Wyoming"
+    },
+    {
+      "name": "Mayan",
+      "type": "CULTURE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "folks who come from the Mayan tradition as tech communities"
+    },
+    {
+      "name": "Meshika",
+      "type": "CULTURE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "folks who come from the Mayan tradition as tech communities"
+    },
+    {
+      "name": "Harvest of All First Nations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "collaboration with Harvest of All First Nations"
+    },
+    {
+      "name": "community roots midwife collective",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "collaboration with the community roots midwife collective"
+    },
+    {
+      "name": "Turtle Island",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "knowledge around different medicines from different parts of Turtle Island"
+    },
+    {
+      "name": "Mohawk",
+      "type": "TRIBE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends and relatives and the Mohawk and Irkhoi regions"
+    },
+    {
+      "name": "Irkhoi",
+      "type": "TRIBE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends and relatives and the Mohawk and Irkhoi regions"
+    },
+    {
+      "name": "Tiffany Fallon",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "friends Tiffany Fallon and Gowen Eosta"
+    },
+    {
+      "name": "Gowen Eosta",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "friends Tiffany Fallon and Gowen Eosta"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "relationship to the mother earth"
+    },
+    {
+      "name": "women",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "women learning how to care for themselves"
+    },
+    {
+      "name": "postpartum care project",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "practice within the postpartum care project"
+    },
+    {
+      "name": "serrata",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "traditional ceremony called a serrata"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "teachers from Mexico"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "teachers from California"
+    },
+    {
+      "name": "women of color",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "only women of color completely paid for onto this land"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "teachers from Mexico and California"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "teachers from Mexico and California"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "characters come here to Elk Run Farm"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "meet and encounter Marissa and Nick"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "meet and encounter Marissa and Nick"
+    },
+    {
+      "name": "Marie Mullins",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my friend Marie Mullins actually shared with me"
+    },
+    {
+      "name": "Gaia",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "seasonal cycles that mama Gaia goes through"
+    },
+    {
+      "name": "Venus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "affiliation with Venus as another mother goddess"
+    },
+    {
+      "name": "Luna",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "affiliation with Venus as another mother goddess"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "affiliation with Venus as another mother goddess"
+    },
+    {
+      "name": "40 days",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "this thing about the 40 days shows up again and again"
+    },
+    {
+      "name": "birth canal",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "the hips, the birth canal, the womb, the woman's body after giving birth"
+    },
+    {
+      "name": "community roots",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "thinking of community roots too"
+    },
+    {
+      "name": "Felicia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "I've been chatting with Felicia about doing a podcast"
+    },
+    {
+      "name": "Felicia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "chatting with Felicia about doing a podcast"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Marissa not only is your leadership in the community"
+    },
+    {
+      "name": "Veridi Toss",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the mnemonic culture which is another theme in my book Veridi Toss"
+    },
+    {
+      "name": "Northeast New England New York area",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "magical experiences as a child up in the Northeast New England New York area"
+    },
+    {
+      "name": "Jasmine",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Imaginary friend mentioned in childhood"
+    },
+    {
+      "name": "grandmother",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Relative mentioned in childhood"
+    },
+    {
+      "name": "mama earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Concept of earth as a nurturing entity"
+    },
+    {
+      "name": "language",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Importance of communication and understanding"
+    },
+    {
+      "name": "generational trauma",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of mindful communication"
+    },
+    {
+      "name": "woods",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of childhood experiences"
+    },
+    {
+      "name": "garden",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Location of childhood experiences"
+    },
+    {
+      "name": "planetary scale",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Work engaged in at a large scale"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Mentioned in the context of shared experiences"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Person mentioned in relation to community"
+    },
+    {
+      "name": "Marissa Poloski",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "co founder of drylands agri ecology research"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the why on earth community podcast"
+    },
+    {
+      "name": "drylands agri ecology research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization co founded by Marissa Poloski"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the podcast recording"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization associated with the podcast"
+    },
+    {
+      "name": "Turtle Island",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "refers to North America in indigenous cultures"
+    },
+    {
+      "name": "wailay waters",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned in the podcast"
+    },
+    {
+      "name": "purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "monthly giving program"
+    },
+    {
+      "name": "purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shout out to purium"
+    },
+    {
+      "name": "million moms movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "their work in the million moms movement"
+    },
+    {
+      "name": "Veridi toss",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "my new book Veridi toss the great healing"
+    },
+    {
+      "name": "Elkhruhn farm",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "characters actually come here to Elkhruhn farm"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "another one of our beautiful family friend farms in Colorado"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talented chefs and cooks and bakers who spend time around here"
+    },
+    {
+      "name": "Erin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thank you Erin"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "as our good friend Brigitte Mars would say"
+    },
+    {
+      "name": "drylands agar ecology research",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "drylands agar ecology research"
+    },
+    {
+      "name": "biodynamic preparations",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work with the biodynamic preparations"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "at sustainable settings"
+    },
+    {
+      "name": "Valerian",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "around the frost medicine and when we spray Valerian"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing her travels and experiences"
+    },
+    {
+      "name": "Tanzania",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a location of travel"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to gardening and medicine"
+    },
+    {
+      "name": "Valerian",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in the context of frost medicine"
+    },
+    {
+      "name": "kombucha",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to using Habiscus"
+    },
+    {
+      "name": "Habiscus",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to making kombucha"
+    },
+    {
+      "name": "frost medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a type of medicine used in gardening"
+    },
+    {
+      "name": "Tanzania",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "...I was able to get it in Tanzania and bring it all the way back..."
+    },
+    {
+      "name": "kombucha",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...we grew a lot of kombucha and I love using Habiscus in our kombuchas..."
+    },
+    {
+      "name": "Habiscus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...I love using Habiscus in our kombuchas..."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry..."
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...thank you Marissa my pleasure..."
+    },
+    {
+      "name": "the business of botanicals",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...something our podcast guest and armbrecht explored in her book the business of botanicals..."
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...thank you for being present thank you for your patience and your kindness and your curiosity..."
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...please visit why on earth org backslash support..."
+    },
+    {
+      "name": "the sun",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    },
+    {
+      "name": "the moon",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    },
+    {
+      "name": "the water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    },
+    {
+      "name": "the fire",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    },
+    {
+      "name": "the air",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    },
+    {
+      "name": "the earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth..."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Marissa Poloski",
+      "relationship": "works_at",
+      "target": "Drylands Agri-Ecology Research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "co-founder of the organization",
+      "episode_number": 123
+    },
+    {
+      "source": "Nick D. Domenico",
+      "relationship": "works_at",
+      "target": "Drylands Agri-Ecology Research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "co-founder of the organization",
+      "episode_number": 123
+    },
+    {
+      "source": "Drylands Agri-Ecology Research",
+      "relationship": "located_in",
+      "target": "Elk Run Farm Garden",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization's location",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa Poloski",
+      "relationship": "studied_at",
+      "target": "Naropa University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "graduate of environmental studies and psychology",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa Poloski",
+      "relationship": "runs",
+      "target": "folk farm at Elkron",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "runs folk farm encouraging play",
+      "episode_number": 123
+    },
+    {
+      "source": "Drylands Agri-Ecology Research",
+      "relationship": "contains",
+      "target": "Dar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "short form for the organization",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "advocates_for",
+      "target": "food sovereignty projects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "a lot of my work right now is focused on food sovereignty projects",
+      "episode_number": 123
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "PLACE",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "spending time here at Elk Run Farm",
+      "episode_number": 123
+    },
+    {
+      "source": "indigenous community leaders",
+      "relationship": "works_with",
+      "target": "Marissa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "important theme for a lot of the indigenous community leaders that you work with through your various programs and projects",
+      "episode_number": 123
+    },
+    {
+      "source": "Father Sky",
+      "relationship": "part_of",
+      "target": "Mother Earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "relationship to Father Sky and Mother Earth",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "has_relationship_with",
+      "target": "indigenous community leaders",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "because of my relationships and my own work that I have with particular ceremonies",
+      "episode_number": 123
+    },
+    {
+      "source": "Yoloteo",
+      "relationship": "works_at",
+      "target": "Harvest of All First Nations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "chief executive director of Harvest of All First Nations",
+      "episode_number": 123
+    },
+    {
+      "source": "Harvest of All First Nations",
+      "relationship": "located_in",
+      "target": "Yellow Barn Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "program that's now planted at the Yellow Barn Farm",
+      "episode_number": 123
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "Yellow Barn Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my better half",
+      "episode_number": 123
+    },
+    {
+      "source": "Shannon Francis",
+      "relationship": "advocates_for",
+      "target": "food sovereignty",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "able to give us some corn seeds",
+      "episode_number": 123
+    },
+    {
+      "source": "DARR",
+      "relationship": "located_in",
+      "target": "elkrun.farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "DARR.ECO website",
+      "episode_number": 123
+    },
+    {
+      "source": "DARR",
+      "relationship": "located_in",
+      "target": "website",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "DARR website",
+      "episode_number": 123
+    },
+    {
+      "source": "first nations people",
+      "relationship": "advocates_for",
+      "target": "indigenous lead farming",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "traditions that have come through many cultures",
+      "episode_number": 123
+    },
+    {
+      "source": "Shoshone",
+      "relationship": "part_of",
+      "target": "first nations people",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "shout out the Shoshone",
+      "episode_number": 123
+    },
+    {
+      "source": "Shoshone",
+      "relationship": "part_of",
+      "target": "Wind River Reservation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "indigenous leaders that you're working with",
+      "episode_number": 123
+    },
+    {
+      "source": "Wind River Reservation",
+      "relationship": "located_in",
+      "target": "Wyoming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "work on the Wind River Reservation at Wyoming",
+      "episode_number": 123
+    },
+    {
+      "source": "Harvest of All First Nations",
+      "relationship": "collaborates_with",
+      "target": "community roots midwife collective",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "collaboration with Harvest of All First Nations",
+      "episode_number": 123
+    },
+    {
+      "source": "Mayan",
+      "relationship": "advocates_for",
+      "target": "Latinx communities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "folks who come from the Mayan tradition as tech communities",
+      "episode_number": 123
+    },
+    {
+      "source": "Mohawk",
+      "relationship": "interacts_with",
+      "target": "Irkhoi",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "friends and relatives and the Mohawk and Irkhoi regions",
+      "episode_number": 123
+    },
+    {
+      "source": "Tiffany Fallon",
+      "relationship": "works_with",
+      "target": "Gowen Eosta",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "friends Tiffany Fallon and Gowen Eosta",
+      "episode_number": 123
+    },
+    {
+      "source": "women",
+      "relationship": "advocates_for",
+      "target": "mother earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "women learning how to care for themselves and relationship to mother earth",
+      "episode_number": 123
+    },
+    {
+      "source": "postpartum care project",
+      "relationship": "practices",
+      "target": "serrata",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "practice within the postpartum care project",
+      "episode_number": 123
+    },
+    {
+      "source": "teachers from Mexico",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "teachers from Mexico",
+      "episode_number": 123
+    },
+    {
+      "source": "teachers from California",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "teachers from California",
+      "episode_number": 123
+    },
+    {
+      "source": "women of color",
+      "relationship": "advocates_for",
+      "target": "self-care",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "relearn how to take care of ourselves",
+      "episode_number": 123
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "contains",
+      "target": "Marissa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "meet and encounter Marissa and Nick",
+      "episode_number": 123
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "contains",
+      "target": "Nick",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "meet and encounter Marissa and Nick",
+      "episode_number": 123
+    },
+    {
+      "source": "Marie Mullins",
+      "relationship": "shared_with",
+      "target": "info",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Marie Mullins actually shared with me some really useful info",
+      "episode_number": 123
+    },
+    {
+      "source": "Gaia",
+      "relationship": "part_of",
+      "target": "seasonal cycles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "seasonal cycles that mama Gaia goes through",
+      "episode_number": 123
+    },
+    {
+      "source": "Venus",
+      "relationship": "affiliated_with",
+      "target": "mother goddess",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "affiliation with Venus as another mother goddess",
+      "episode_number": 123
+    },
+    {
+      "source": "Luna",
+      "relationship": "affiliated_with",
+      "target": "mother goddess",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "affiliation with Venus as another mother goddess",
+      "episode_number": 123
+    },
+    {
+      "source": "40 days",
+      "relationship": "appears_in",
+      "target": "sacred scripture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "this thing about the 40 days shows up again and again in sacred scripture",
+      "episode_number": 123
+    },
+    {
+      "source": "Felicia",
+      "relationship": "works_with",
+      "target": "podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "I've been chatting with Felicia about doing a podcast",
+      "episode_number": 123
+    },
+    {
+      "source": "Felicia",
+      "relationship": "works_at",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "chatting with Felicia about doing a podcast",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "leads",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Marissa not only is your leadership in the community",
+      "episode_number": 123
+    },
+    {
+      "source": "Veridi Toss",
+      "relationship": "discussed_in",
+      "target": "book",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "the mnemonic culture which is another theme in my book Veridi Toss",
+      "episode_number": 123
+    },
+    {
+      "source": "Northeast New England New York area",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "magical experiences as a child up in the Northeast New England New York area",
+      "episode_number": 123
+    },
+    {
+      "source": "Jasmine",
+      "relationship": "imaginary_friend_of",
+      "target": "unknown_person",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.5,
+      "context": "Imaginary friend from childhood",
+      "episode_number": 123
+    },
+    {
+      "source": "grandmother",
+      "relationship": "related_to",
+      "target": "unknown_person",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "Relative mentioned in childhood",
+      "episode_number": 123
+    },
+    {
+      "source": "mama earth",
+      "relationship": "direct_relationship_with",
+      "target": "unknown_person",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "Concept of earth as a nurturing entity",
+      "episode_number": 123
+    },
+    {
+      "source": "language",
+      "relationship": "important_for",
+      "target": "communication",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Importance of communication and understanding",
+      "episode_number": 123
+    },
+    {
+      "source": "generational trauma",
+      "relationship": "creates",
+      "target": "triggers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "Mentioned in the context of mindful communication",
+      "episode_number": 123
+    },
+    {
+      "source": "woods",
+      "relationship": "part_of",
+      "target": "childhood_experience",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Location of childhood experiences",
+      "episode_number": 123
+    },
+    {
+      "source": "garden",
+      "relationship": "part_of",
+      "target": "childhood_experience",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Location of childhood experiences",
+      "episode_number": 123
+    },
+    {
+      "source": "planetary scale",
+      "relationship": "engaged_in",
+      "target": "work",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.6,
+      "context": "Work engaged in at a large scale",
+      "episode_number": 123
+    },
+    {
+      "source": "community",
+      "relationship": "shared_experience_with",
+      "target": "unknown_person",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "Mentioned in the context of shared experiences",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "embodies",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Person mentioned in relation to community",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa Poloski",
+      "relationship": "works_at",
+      "target": "drylands agri ecology research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co founder of drylands agri ecology research",
+      "episode_number": 123
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "host of the why on earth community podcast",
+      "episode_number": 123
+    },
+    {
+      "source": "drylands agri ecology research",
+      "relationship": "located_in",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organization co founded by Marissa Poloski",
+      "episode_number": 123
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "advocates_for",
+      "target": "Turtle Island",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organization associated with the podcast",
+      "episode_number": 123
+    },
+    {
+      "source": "wailay waters",
+      "relationship": "made_by",
+      "target": "purium",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "product mentioned in the podcast",
+      "episode_number": 123
+    },
+    {
+      "source": "purium",
+      "relationship": "advocates_for",
+      "target": "million moms movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "their work in the million moms movement",
+      "episode_number": 123
+    },
+    {
+      "source": "Veridi toss",
+      "relationship": "made_by",
+      "target": "why on earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my new book Veridi toss the great healing",
+      "episode_number": 123
+    },
+    {
+      "source": "Elkhruhn farm",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "characters actually come here to Elkhruhn farm",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "works_at",
+      "target": "drylands agar ecology research",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "talented chefs and cooks and bakers who spend time around here",
+      "episode_number": 123
+    },
+    {
+      "source": "Erin",
+      "relationship": "advocates_for",
+      "target": "biodynamic preparations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "thank you Erin",
+      "episode_number": 123
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "biodynamic preparations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "as our good friend Brigitte Mars would say",
+      "episode_number": 123
+    },
+    {
+      "source": "drylands agar ecology research",
+      "relationship": "located_in",
+      "target": "sustainable settings",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "drylands agar ecology research",
+      "episode_number": 123
+    },
+    {
+      "source": "Valerian",
+      "relationship": "used_in",
+      "target": "biodynamic preparations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "around the frost medicine and when we spray Valerian",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "advocates_for",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the importance of biodynamics in gardening",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "located_in",
+      "target": "Tanzania",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Marissa mentions her travel experiences in Tanzania",
+      "episode_number": 123
+    },
+    {
+      "source": "Valerian",
+      "relationship": "made_by",
+      "target": "biodynamics",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Valerian is used in the context of frost medicine and biodynamics",
+      "episode_number": 123
+    },
+    {
+      "source": "kombucha",
+      "relationship": "made_by",
+      "target": "Habiscus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "kombucha is made using Habiscus",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "advocates_for",
+      "target": "frost medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Marissa discusses the significance of frost medicine in gardening",
+      "episode_number": 123
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry...",
+      "episode_number": 123
+    },
+    {
+      "source": "Marissa",
+      "relationship": "advocates_for",
+      "target": "the business of botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...something our podcast guest and armbrecht explored in her book the business of botanicals...",
+      "episode_number": 123
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "part_of",
+      "target": "why on earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...thank you for being present thank you for your patience and your kindness and your curiosity...",
+      "episode_number": 123
+    },
+    {
+      "source": "kombucha",
+      "relationship": "made_by",
+      "target": "Habiscus",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...I love using Habiscus in our kombuchas...",
+      "episode_number": 123
+    },
+    {
+      "source": "the sun",
+      "relationship": "part_of",
+      "target": "the earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth...",
+      "episode_number": 123
+    },
+    {
+      "source": "the moon",
+      "relationship": "part_of",
+      "target": "the earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth...",
+      "episode_number": 123
+    },
+    {
+      "source": "the water",
+      "relationship": "part_of",
+      "target": "the earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth...",
+      "episode_number": 123
+    },
+    {
+      "source": "the fire",
+      "relationship": "part_of",
+      "target": "the earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth...",
+      "episode_number": 123
+    },
+    {
+      "source": "the air",
+      "relationship": "part_of",
+      "target": "the earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...thank the sun thank the moon the water the fire the air the earth...",
+      "episode_number": 123
+    }
+  ]
+}

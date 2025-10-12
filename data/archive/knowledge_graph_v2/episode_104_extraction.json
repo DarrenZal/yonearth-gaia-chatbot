@@ -1,0 +1,1502 @@
+{
+  "episode": 104,
+  "timestamp": "2025-10-09T10:24:46.147780",
+  "entity_count": 96,
+  "relationship_count": 82,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the Y-Uner's Community Podcast"
+    },
+    {
+      "name": "Jeffrey May",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Guest on the podcast"
+    },
+    {
+      "name": "Wildlands Restoration Volunteers",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Organization discussed in the podcast"
+    },
+    {
+      "name": "Metro State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "University where Jeffrey studied"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "State where Jeffrey has lived for 15 years"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "City where Jeffrey grew up"
+    },
+    {
+      "name": "New England",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Region where Jeffrey managed projects"
+    },
+    {
+      "name": "East Coast",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Region where Jeffrey managed projects"
+    },
+    {
+      "name": "COOK program",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Program managed by Jeffrey at WRB"
+    },
+    {
+      "name": "diversity, equity, and inclusion",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Principles incorporated into WRB's community"
+    },
+    {
+      "name": "WRV",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization providing volunteer projects"
+    },
+    {
+      "name": "Breckenridge",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location mentioned for projects"
+    },
+    {
+      "name": "Mount Albert",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location mentioned for projects"
+    },
+    {
+      "name": "Reyes Peak",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location mentioned for projects"
+    },
+    {
+      "name": "Denver Front Range",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "region mentioned for population and wilderness pressure"
+    },
+    {
+      "name": "Jeffery",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "person mentioned in conversation"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...projects on Colorado 14 years."
+    },
+    {
+      "name": "Find Your Fort Teenor Initiative",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...part of I should mention the Find Your Fort Teenor Initiative..."
+    },
+    {
+      "name": "National Forest Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the initiative is headed by the National Forest Foundation..."
+    },
+    {
+      "name": "US Forest Service",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...a partner of the US Forest Service."
+    },
+    {
+      "name": "Grace Peak",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...working on some of these mountains. So it's Grace Peak and Mon Albert..."
+    },
+    {
+      "name": "Mon Albert",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...working on some of these mountains. So it's Grace Peak and Mon Albert..."
+    },
+    {
+      "name": "Great Outdoors Colorado",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...goko one of these acronyms. Great outdoors, Colorado..."
+    },
+    {
+      "name": "Colorado Parks and Wildlife",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...National Forest Foundation or Colorado Parks and Wildlife..."
+    },
+    {
+      "name": "Lotto dollars",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...they're funded in significant part by Lotto dollars."
+    },
+    {
+      "name": "goko",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "partner to work with"
+    },
+    {
+      "name": "National Forest Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partner to work with"
+    },
+    {
+      "name": "Colorado Parks and Wildlife",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partner to work with"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of activities"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of activities"
+    },
+    {
+      "name": "wilderness",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "concept of outdoor experience"
+    },
+    {
+      "name": "natural open spaces",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "concept of outdoor experience"
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "environmental context"
+    },
+    {
+      "name": "food deserts",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "context of local food systems"
+    },
+    {
+      "name": "lower income communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "context of food access"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "place like Denver, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Denver, Colorado"
+    },
+    {
+      "name": "Rachel Brett",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "micro worker, Rachel Brett"
+    },
+    {
+      "name": "Afro-Ottors",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Afro-Ottors"
+    },
+    {
+      "name": "Brown Girls Hike",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Brown Girls Hike"
+    },
+    {
+      "name": "youth program",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "youth program run by a micro worker"
+    },
+    {
+      "name": "diversity equity inclusion plan",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "diversity equity inclusion plan"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a location for invasive species"
+    },
+    {
+      "name": "Mertle Spurge",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "invasive species mentioned in the context of education"
+    },
+    {
+      "name": "Russian olive",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "invasive species mentioned in the context of education"
+    },
+    {
+      "name": "tamarisk",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "invasive species mentioned in the context of education"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to ambassador program"
+    },
+    {
+      "name": "ambassador program",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "program mentioned in relation to the Y on Earth community"
+    },
+    {
+      "name": "volunteer leadership",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "group mentioned in relation to project leadership"
+    },
+    {
+      "name": "native seed harvesting",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "activity mentioned in the context of wilderness settings"
+    },
+    {
+      "name": "invasive weeds",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "activity mentioned in the context of wilderness settings"
+    },
+    {
+      "name": "plant species",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "subject of education during projects"
+    },
+    {
+      "name": "geology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "subject of education during projects"
+    },
+    {
+      "name": "hydrology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "subject of education during projects"
+    },
+    {
+      "name": "WLRV.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website mentioned in the podcast"
+    },
+    {
+      "name": "Wild Lands Restoration Volunteers",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Jeffrey May",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Society for Ecological Restoration",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state mentioned in the podcast"
+    },
+    {
+      "name": "Wild Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company mentioned in the podcast"
+    },
+    {
+      "name": "volunteermatch.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website mentioned in the podcast"
+    },
+    {
+      "name": "Bob Hill",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "joined our stewardship circle"
+    },
+    {
+      "name": "Wildlands Restoration Volunteers",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "to get to Wildlands Restoration Volunteers"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "outside Colorado"
+    },
+    {
+      "name": "New England",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "worked on the East Coast in the New England"
+    },
+    {
+      "name": "14ers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "working on the 14ers"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "innovated in the face of uh COVID"
+    },
+    {
+      "name": "natural disasters",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "natural disasters like these fires"
+    },
+    {
+      "name": "flicker album",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "check out photos from from projects going back all the way to 1999"
+    },
+    {
+      "name": "Indian Peaks wilderness",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...work in the Indian Peaks wilderness region which is west of the Boulder area..."
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...west of the Boulder area..."
+    },
+    {
+      "name": "Bernard Lake",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...projects that we did in the Bernard Lake area..."
+    },
+    {
+      "name": "WRB",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...my very first project as a volunteer with WRB..."
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...because we wanted to be really safe during COVID..."
+    },
+    {
+      "name": "coffee",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...importance of coffee on a project..."
+    },
+    {
+      "name": "mother nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...connect with with earth with mother nature..."
+    },
+    {
+      "name": "project season",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...ramping up for our project season because that's when..."
+    },
+    {
+      "name": "sanitation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...different sanitation uh it was it was interesting times..."
+    },
+    {
+      "name": "video",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...shows in that video um I want to ask..."
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...connect with with earth with mother nature..."
+    },
+    {
+      "name": "divine",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...connect with with earth with mother nature with the divine..."
+    },
+    {
+      "name": "Indian Peaks",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "needed maintenance in the Indian Peaks area"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "in Colorado even in the front country"
+    },
+    {
+      "name": "Leave No Trace",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "leave no trace ethics as we refer to it"
+    },
+    {
+      "name": "lnt.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "leave no trace as a great website lnt.org"
+    },
+    {
+      "name": "Jeffrey",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "that's great Jeffrey well i am so excited"
+    },
+    {
+      "name": "Jeffrey",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conversation about volunteering"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website for support"
+    },
+    {
+      "name": "Hawaii",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in song lyrics"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "support of people like you"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "using the code YOnEarth"
+    },
+    {
+      "name": "YOnEarth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "being a part of the YOnEarth community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Jeffrey May",
+      "relationship": "works_at",
+      "target": "Wildlands Restoration Volunteers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "Jeffrey's role at the organization",
+      "episode_number": 104
+    },
+    {
+      "source": "Wildlands Restoration Volunteers",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "Location of the organization",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey May",
+      "relationship": "studied_at",
+      "target": "Metro State University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jeffrey's educational background",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey May",
+      "relationship": "grew_up_in",
+      "target": "Dallas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Jeffrey's upbringing",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey May",
+      "relationship": "managed",
+      "target": "COOK program",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Jeffrey's management role",
+      "episode_number": 104
+    },
+    {
+      "source": "Wildlands Restoration Volunteers",
+      "relationship": "advocates_for",
+      "target": "diversity, equity, and inclusion",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Organization's focus on DEI principles",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey May",
+      "relationship": "managed",
+      "target": "projects",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jeffrey's role in managing projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Wildlands Restoration Volunteers",
+      "relationship": "contains",
+      "target": "New England",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Region where the organization operates",
+      "episode_number": 104
+    },
+    {
+      "source": "Wildlands Restoration Volunteers",
+      "relationship": "contains",
+      "target": "East Coast",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Region where the organization operates",
+      "episode_number": 104
+    },
+    {
+      "source": "WRV",
+      "relationship": "provides",
+      "target": "volunteer projects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization providing volunteer projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Breckenridge",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "location mentioned for projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Mount Albert",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "location mentioned for projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Reyes Peak",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "location mentioned for projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Denver Front Range",
+      "relationship": "contains",
+      "target": "wilderness landscapes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "region mentioned for population and wilderness pressure",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffery",
+      "relationship": "advocates_for",
+      "target": "community engagement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "person mentioned in conversation",
+      "episode_number": 104
+    },
+    {
+      "source": "Find Your Fort Teenor Initiative",
+      "relationship": "collaboration",
+      "target": "National Forest Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...it's the Find Your Fort Teenor Initiative, or find your Forteener initiative. It's a collaboration between all the acronyms in Colorado.",
+      "episode_number": 104
+    },
+    {
+      "source": "National Forest Foundation",
+      "relationship": "partner_of",
+      "target": "US Forest Service",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the initiative is headed by the National Forest Foundation, which is a partner of the US Forest Service.",
+      "episode_number": 104
+    },
+    {
+      "source": "Great Outdoors Colorado",
+      "relationship": "funded_by",
+      "target": "Lotto dollars",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...they're funded in significant part by Lotto dollars.",
+      "episode_number": 104
+    },
+    {
+      "source": "Great Outdoors Colorado",
+      "relationship": "collaborates_with",
+      "target": "Colorado Parks and Wildlife",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...if it's goko or National Forest Foundation or Colorado Parks and Wildlife...",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Grace Peak",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...working on some of these mountains. So it's Grace Peak and Mon Albert this year.",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Mon Albert",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...working on some of these mountains. So it's Grace Peak and Mon Albert this year.",
+      "episode_number": 104
+    },
+    {
+      "source": "goko",
+      "relationship": "works_with",
+      "target": "National Forest Foundation",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "partner to work with",
+      "episode_number": 104
+    },
+    {
+      "source": "goko",
+      "relationship": "works_with",
+      "target": "Colorado Parks and Wildlife",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "partner to work with",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado Parks and Wildlife",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "partner to work with",
+      "episode_number": 104
+    },
+    {
+      "source": "Denver",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of activities",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "wilderness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "location of activities",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "natural open spaces",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "location of activities",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "ecosystems",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "environmental context",
+      "episode_number": 104
+    },
+    {
+      "source": "food deserts",
+      "relationship": "affects",
+      "target": "lower income communities",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "context of local food systems",
+      "episode_number": 104
+    },
+    {
+      "source": "Rachel Brett",
+      "relationship": "works_with",
+      "target": "youth program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "micro worker, Rachel Brett runs a youth program",
+      "episode_number": 104
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "place like Denver, Colorado",
+      "episode_number": 104
+    },
+    {
+      "source": "Afro-Ottors",
+      "relationship": "advocates_for",
+      "target": "diversity equity inclusion plan",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "organizations like Afro-Ottors create diversity and equity",
+      "episode_number": 104
+    },
+    {
+      "source": "Brown Girls Hike",
+      "relationship": "advocates_for",
+      "target": "diversity equity inclusion plan",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "organizations like Brown Girls Hike create diversity and equity",
+      "episode_number": 104
+    },
+    {
+      "source": "youth program",
+      "relationship": "promotes",
+      "target": "diversity equity inclusion plan",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "youth program is part of the diversity equity inclusion plan",
+      "episode_number": 104
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "has",
+      "target": "ambassador program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about ambassador program",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteer leadership",
+      "relationship": "leads",
+      "target": "projects",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "discussion about project leadership",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Mertle Spurge",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "invasive species mentioned in relation to Colorado",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Russian olive",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "invasive species mentioned in relation to Colorado",
+      "episode_number": 104
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "tamarisk",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "invasive species mentioned in relation to Colorado",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteers",
+      "relationship": "educate_about",
+      "target": "native seed harvesting",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "education during projects",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteers",
+      "relationship": "educate_about",
+      "target": "invasive weeds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "education during projects",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteers",
+      "relationship": "educate_about",
+      "target": "plant species",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "education during projects",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteers",
+      "relationship": "educate_about",
+      "target": "geology",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "education during projects",
+      "episode_number": 104
+    },
+    {
+      "source": "volunteers",
+      "relationship": "educate_about",
+      "target": "hydrology",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "education during projects",
+      "episode_number": 104
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Wild Honors Community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey May",
+      "relationship": "works_at",
+      "target": "Wild Lands Restoration Volunteers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "guest on the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Lands Restoration Volunteers",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "organization mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "affiliated_with",
+      "target": "Patagonia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Society for Ecological Restoration",
+      "relationship": "found_at",
+      "target": "volunteermatch.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "organization mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Earth Coast productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Lidge Family Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Earth Hero",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Vera Urals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Growing Spaces",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "soil works",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "joyful journey hot springs spa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "earth water press",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "part_of",
+      "target": "1% for the planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "program mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "sponsors",
+      "target": "1% for the planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors mentioned in the podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Bob Hill",
+      "relationship": "joined",
+      "target": "Wildlands Restoration Volunteers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "joined our stewardship circle",
+      "episode_number": 104
+    },
+    {
+      "source": "Wildlands Restoration Volunteers",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "to get to Wildlands Restoration Volunteers",
+      "episode_number": 104
+    },
+    {
+      "source": "New England",
+      "relationship": "part_of",
+      "target": "East Coast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "worked on the East Coast in the New England",
+      "episode_number": 104
+    },
+    {
+      "source": "COVID",
+      "relationship": "related_to",
+      "target": "natural disasters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "innovated in the face of uh COVID and natural disasters like these fires",
+      "episode_number": 104
+    },
+    {
+      "source": "flicker album",
+      "relationship": "contains",
+      "target": "photos",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "check out photos from from projects going back all the way to 1999",
+      "episode_number": 104
+    },
+    {
+      "source": "WRB",
+      "relationship": "works_at",
+      "target": "Indian Peaks wilderness",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "...my very first project as a volunteer with WRB uh was at the Bernard Lake...",
+      "episode_number": 104
+    },
+    {
+      "source": "Indian Peaks wilderness",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "...work in the Indian Peaks wilderness region which is west of the Boulder area...",
+      "episode_number": 104
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "project season",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...because we wanted to be really safe during COVID um...",
+      "episode_number": 104
+    },
+    {
+      "source": "coffee",
+      "relationship": "important_for",
+      "target": "project season",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...importance of coffee on a project right especially when you're high up in the mountains...",
+      "episode_number": 104
+    },
+    {
+      "source": "mother nature",
+      "relationship": "connects_with",
+      "target": "earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "...connect with with earth with mother nature...",
+      "episode_number": 104
+    },
+    {
+      "source": "Indian Peaks",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "needed maintenance in the Indian Peaks area",
+      "episode_number": 104
+    },
+    {
+      "source": "Leave No Trace",
+      "relationship": "advocates_for",
+      "target": "lnt.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "leave no trace ethics as we refer to it",
+      "episode_number": 104
+    },
+    {
+      "source": "Jeffrey",
+      "relationship": "works_at",
+      "target": "Leave No Trace",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "that's great Jeffrey well i am so excited",
+      "episode_number": 104
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast series hosting",
+      "episode_number": 104
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability",
+      "relationship": "supported_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "support for podcast",
+      "episode_number": 104
+    },
+    {
+      "source": "Hawaii",
+      "relationship": "part_of",
+      "target": "song lyrics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.9,
+      "context": "mentioned in lyrics",
+      "episode_number": 104
+    },
+    {
+      "source": "YOnEarth.org",
+      "relationship": "sponsored_by",
+      "target": "several corporate and organization sponsors",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 104
+    },
+    {
+      "source": "YOnEarth.org",
+      "relationship": "located_in",
+      "target": "support page",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "These sponsors are listed on the YOnEarth.org-support-page",
+      "episode_number": 104
+    },
+    {
+      "source": "YOnEarth community",
+      "relationship": "advocates_for",
+      "target": "support",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Thank you for your support and thank you for being a part of the YOnEarth community",
+      "episode_number": 104
+    }
+  ]
+}

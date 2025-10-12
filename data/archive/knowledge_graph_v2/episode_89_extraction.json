@@ -1,0 +1,2043 @@
+{
+  "episode": 89,
+  "timestamp": "2025-10-09T11:42:35.010104",
+  "entity_count": 139,
+  "relationship_count": 106,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y-Energ Community Podcast"
+    },
+    {
+      "name": "Ichao Ruiz",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization Ichao Ruiz works for"
+    },
+    {
+      "name": "Soil Health Research",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "research area overseen by Ichao Ruiz"
+    },
+    {
+      "name": "Nanka University",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "university where Ichao Ruiz obtained his bachelor's degree"
+    },
+    {
+      "name": "University of Chinese Academy of Sciences",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "university where Ichao Ruiz obtained his PhD"
+    },
+    {
+      "name": "Griffith University",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "university where Ichao Ruiz obtained his PhD"
+    },
+    {
+      "name": "University of Western Australia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "university where Ichao Ruiz worked before Rodale Institute"
+    },
+    {
+      "name": "University of Wisconsin-Madison",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "university where Ichao Ruiz worked before Rodale Institute"
+    },
+    {
+      "name": "Alan Town",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "current residence of Ichao Ruiz"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Ichao Ruiz lives"
+    },
+    {
+      "name": "Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "wife of Ichao Ruiz"
+    },
+    {
+      "name": "Tristan",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "son of Ichao Ruiz"
+    },
+    {
+      "name": "Winston",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "son of Ichao Ruiz"
+    },
+    {
+      "name": "Appalachians",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mountain range where Ichao Ruiz enjoys hiking"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "focus of the white paper co-authored by Ichao Ruiz"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "issue addressed in the white paper"
+    },
+    {
+      "name": "soil carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "scientific concept discussed in the white paper"
+    },
+    {
+      "name": "regenerative food and farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "practices promoted in the white paper"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a solution for food production and climate stabilization"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as the birthplace of organic agriculture"
+    },
+    {
+      "name": "Road Out Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "recognized as the birthplace of organic agriculture"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to emissions"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil and emissions"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to climate change"
+    },
+    {
+      "name": "Intergovernmental Panel on Climate Change",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to global agriculture and emissions"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to carbon sink/source"
+    },
+    {
+      "name": "fossil fuels",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as a source of greenhouse gas emissions"
+    },
+    {
+      "name": "food production",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil health and agriculture"
+    },
+    {
+      "name": "conventional industrial agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a method of agriculture"
+    },
+    {
+      "name": "United Nations IPCC",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a source of information regarding greenhouse gas emissions"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an alternative to conventional agriculture"
+    },
+    {
+      "name": "Gulf of Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to agricultural runoff"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil carbon sink and emissions"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to agriculture and health"
+    },
+    {
+      "name": "animal husbandry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to agriculture practices"
+    },
+    {
+      "name": "veganism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as an alternative agricultural practice"
+    },
+    {
+      "name": "animal husbandry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agriculture and climate"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about farming practices"
+    },
+    {
+      "name": "veganism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about dietary practices"
+    },
+    {
+      "name": "farming community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about agricultural perspectives"
+    },
+    {
+      "name": "regenerative grazing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about soil health and agriculture"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "Midwest",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about agricultural initiatives"
+    },
+    {
+      "name": "Randy Jackson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about collaborators in agriculture"
+    },
+    {
+      "name": "Grassland 2.0",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agricultural initiatives"
+    },
+    {
+      "name": "corn",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "soy",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "corn",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "being fed by corn and soy"
+    },
+    {
+      "name": "soy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "being fed by corn and soy"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "regenerative grass fed"
+    },
+    {
+      "name": "Rodel Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here at Rodel Institute"
+    },
+    {
+      "name": "hogs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hogs raising hog is also very important"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "economy in many parts of the United States"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "general soil health and its relationship between with the human house"
+    },
+    {
+      "name": "human health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "impacts on the human health"
+    },
+    {
+      "name": "nutrient density",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nutrient density of food that is being consumed"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is the Why on Earth Community podcast. I'm your host, Aaron William Perry"
+    },
+    {
+      "name": "Dr. Yee Chow Rui",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "visiting with Dr. Yee Chow Rui from the Rodale Institute"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the Why on Earth Community podcast"
+    },
+    {
+      "name": "Dr. Yee Chow Rui",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization associated with Dr. Yee Chow Rui"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "country where Dr. Yee Chow Rui was born"
+    },
+    {
+      "name": "Eastern China",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "region where Dr. Yee Chow Rui grew up"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country where Dr. Yee Chow Rui studied"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country where Dr. Yee Chow Rui has lived"
+    },
+    {
+      "name": "Shanghai",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "city near Dr. Yee Chow Rui's hometown"
+    },
+    {
+      "name": "Confucius",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "historical figure mentioned in relation to agriculture"
+    },
+    {
+      "name": "green manure cover crops",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "agricultural practice discussed by Dr. Yee Chow Rui"
+    },
+    {
+      "name": "environmental degradation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "issue witnessed by Dr. Yee Chow Rui in his hometown"
+    },
+    {
+      "name": "sustainability research",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "field of study pursued by Dr. Yee Chow Rui"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "the nature and the mother earth and be more humble and careful our soil and mother earth."
+    },
+    {
+      "name": "Confucius",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "And I'm wondering Dr. Rui if you could just share with us what did Confucius say?"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "Are you what are you seeing in China today does it seem that obviously we want to see things scaling and accelerating as it relates to the widespread adoption of regenerative practices"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "I right now I focus my work in the United States but I do have seen that some positive changes being made in China"
+    },
+    {
+      "name": "Xi Jinping",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I remember a couple of weeks ago the president of China Xi Jinping he promised that by two done and two thousand and sixty the year twenty sixty China promised to have zero emissions"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing agricultural policies and history"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing agricultural policies and history"
+    },
+    {
+      "name": "Soviet Union",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing historical competition during the Cold War"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "growing spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "soil works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "earth water press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors of the podcast"
+    },
+    {
+      "name": "Y and Earth Community Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing community mobilization work"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Earth Coast productions"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include the Lidge Family Foundation"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Alpine Botanicals"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Purium"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Earth Hero"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Vera Herbles"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Growing Spaces"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Soil Works"
+    },
+    {
+      "name": "Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Earth Water Press"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include 1% for the Planet"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Dr. Bronners"
+    },
+    {
+      "name": "Wale Water",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Wale Water"
+    },
+    {
+      "name": "Y and Earth Community Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "individuals in our Y and Earth Community Network"
+    },
+    {
+      "name": "Regenerative Organic Certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "new certification program called the regenerative organic certification"
+    },
+    {
+      "name": "Radeel Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "work there at the Radeel Institute"
+    },
+    {
+      "name": "USDA Organic Farming Certificate Program",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "founded by the USDA organic farming certificate program"
+    },
+    {
+      "name": "Delaware Valley University",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "joint education program between Radeel and Delvel the Delaware Valley University"
+    },
+    {
+      "name": "Radeel",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mission of Radeel is to improve the well being of the people and the planet through organic leadership."
+    },
+    {
+      "name": "Delaware Valley University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "joint education program between Radeel and Delvel the Delaware Valley University"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "founded by the USDA organic farming certificate program"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "now live in Pennsylvania, United States"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "both were born in Australia"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talk to our family in China"
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends in Wisconsin"
+    },
+    {
+      "name": "Brazil",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends in Brazil"
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends in New Zealand"
+    },
+    {
+      "name": "Tristan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my son, seven year old Tristan"
+    },
+    {
+      "name": "Winston",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "two sons Tristan and Winston"
+    },
+    {
+      "name": "wife",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "my wife and I"
+    },
+    {
+      "name": "Tristan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "My son, seven year old Tristan, he can beat me every time now."
+    },
+    {
+      "name": "Dr. Cindy Prescott",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I have a collaborator in Canada, Dr. Cindy Prescott, a collaborator of mine, a professor in forest ecology and management in the University of British Columbia in Canada."
+    },
+    {
+      "name": "University of British Columbia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a professor in forest ecology and management in the University of British Columbia in Canada."
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "regenerative agriculture, it's a powerful tool for regenerating our systems."
+    },
+    {
+      "name": "soil carbon building",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "regenerative agriculture and the soil carbon building, it's the most exciting development in her 40 years of career."
+    },
+    {
+      "name": "Rodeil Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the Rodeil Institute.org."
+    },
+    {
+      "name": "regenorganic.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the regenerative organic certification information can also be found at regenorganic.org."
+    },
+    {
+      "name": "youchowrui.com",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you can go to youchowrui.com."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Thank you for having me, Aaron."
+    },
+    {
+      "name": "regenorganic.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "can also be found at regenorganic.org"
+    },
+    {
+      "name": "Dr. Rui",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "So Dr. Rui, thank you so much."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "thank you for having me, Aaron."
+    },
+    {
+      "name": "Dr. Yechowrui",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we just had a wonderful discussion with Dr. Yechowrui."
+    },
+    {
+      "name": "compost",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "This is a compost pile."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "A compost is a soil amendment that can enrich the soil with fertilizers."
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast Series is hosted by Aaron William Perry."
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit YOnEarth.org-support."
+    },
+    {
+      "name": "YOnEarth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "using the code YOnEarth, all one word with a Y."
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "thank you for being a part of the Y on Earth Community."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "works_at",
+      "target": "Rodale Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ichao Ruiz's employment",
+      "episode_number": 89
+    },
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "oversees",
+      "target": "Soil Health Research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Ichao Ruiz's role at Rodale Institute",
+      "episode_number": 89
+    },
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "holds_degree",
+      "target": "bachelor of science and biology",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Ichao Ruiz's education",
+      "episode_number": 89
+    },
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "holds_degree",
+      "target": "PhD degree in microbial ecology and soil science",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Ichao Ruiz's education",
+      "episode_number": 89
+    },
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "lives_in",
+      "target": "Alan Town",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Ichao Ruiz's residence",
+      "episode_number": 89
+    },
+    {
+      "source": "Alan Town",
+      "relationship": "located_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of Ichao Ruiz's residence",
+      "episode_number": 89
+    },
+    {
+      "source": "Ichao Ruiz",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "focus of Ichao Ruiz's research",
+      "episode_number": 89
+    },
+    {
+      "source": "Rodale Institute",
+      "relationship": "published",
+      "target": "regenerative agriculture and soil carbon solution",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "white paper published by Rodale Institute",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture and soil carbon solution",
+      "relationship": "addresses",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "topic of the white paper",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "improves",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "benefits of regenerative agriculture",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "feeds",
+      "target": "the world",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "impact of regenerative agriculture",
+      "episode_number": 89
+    },
+    {
+      "source": "soil carbon sequestration",
+      "relationship": "is_a_solution_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "role of soil carbon sequestration",
+      "episode_number": 89
+    },
+    {
+      "source": "Road Out Institute",
+      "relationship": "founded",
+      "target": "organic agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as the birthplace of organic agriculture in the United States",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "advocates_for",
+      "target": "climate stabilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a solution for stabilizing the climate",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "feeds",
+      "target": "world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed as a means to feed the world",
+      "episode_number": 89
+    },
+    {
+      "source": "global agriculture",
+      "relationship": "contributes_to",
+      "target": "greenhouse gas emissions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to emissions",
+      "episode_number": 89
+    },
+    {
+      "source": "soil",
+      "relationship": "can_be",
+      "target": "carbon sink",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to carbon management",
+      "episode_number": 89
+    },
+    {
+      "source": "fossil fuels",
+      "relationship": "releases",
+      "target": "greenhouse gas emissions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed as a source of emissions",
+      "episode_number": 89
+    },
+    {
+      "source": "conventional industrial agriculture",
+      "relationship": "depletes",
+      "target": "soil microbiology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to soil health",
+      "episode_number": 89
+    },
+    {
+      "source": "conventional industrial agriculture",
+      "relationship": "contributes_to",
+      "target": "global greenhouse gas emissions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to environmental impact",
+      "episode_number": 89
+    },
+    {
+      "source": "conventional industrial agriculture",
+      "relationship": "depletes",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to soil microbiology",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "improves",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a solution to soil degradation",
+      "episode_number": 89
+    },
+    {
+      "source": "conventional industrial agriculture",
+      "relationship": "uses",
+      "target": "chemical fertilizers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to agricultural practices",
+      "episode_number": 89
+    },
+    {
+      "source": "conventional industrial agriculture",
+      "relationship": "is_characterized_by",
+      "target": "monocrop systems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to farming methods",
+      "episode_number": 89
+    },
+    {
+      "source": "Gulf of Mexico",
+      "relationship": "is_affected_by",
+      "target": "agricultural runoff",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to environmental issues",
+      "episode_number": 89
+    },
+    {
+      "source": "animal husbandry",
+      "relationship": "is_related_to",
+      "target": "agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to farming practices",
+      "episode_number": 89
+    },
+    {
+      "source": "veganism",
+      "relationship": "is_an_alternative_to",
+      "target": "animal husbandry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to sustainable practices",
+      "episode_number": 89
+    },
+    {
+      "source": "Randy Jackson",
+      "relationship": "works_at",
+      "target": "Grassland 2.0",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural initiatives",
+      "episode_number": 89
+    },
+    {
+      "source": "Grassland 2.0",
+      "relationship": "located_in",
+      "target": "Midwest",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussion about agricultural initiatives",
+      "episode_number": 89
+    },
+    {
+      "source": "farming community",
+      "relationship": "advocates_for",
+      "target": "regenerative grazing",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural practices",
+      "episode_number": 89
+    },
+    {
+      "source": "regenerative grazing",
+      "relationship": "improves",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural practices",
+      "episode_number": 89
+    },
+    {
+      "source": "corn",
+      "relationship": "made_by",
+      "target": "farming community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about agricultural practices",
+      "episode_number": 89
+    },
+    {
+      "source": "soy",
+      "relationship": "made_by",
+      "target": "farming community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about agricultural practices",
+      "episode_number": 89
+    },
+    {
+      "source": "Rodel Institute",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "here at Rodel Institute",
+      "episode_number": 89
+    },
+    {
+      "source": "hogs",
+      "relationship": "part_of",
+      "target": "Rodel Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "hogs raising hog is also very important to economy in many parts of the United States",
+      "episode_number": 89
+    },
+    {
+      "source": "nutrient density",
+      "relationship": "declined",
+      "target": "human health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "nutrient density of food that is being consumed has declined",
+      "episode_number": 89
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "this is the Why on Earth Community podcast. I'm your host, Aaron William Perry",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "works_at",
+      "target": "Rodel Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "visiting with Dr. Yee Chow Rui from the Rodale Institute",
+      "episode_number": 89
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast hosting",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "works_at",
+      "target": "Rodale Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "employment",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "born_in",
+      "target": "China",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "birth origin",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "grew_up_in",
+      "target": "Eastern China",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "childhood location",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "lived_in",
+      "target": "Australia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "study location",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "lived_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "residence",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "located_near",
+      "target": "Shanghai",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "hometown proximity",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "advocates_for",
+      "target": "sustainability research",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "academic focus",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Yee Chow Rui",
+      "relationship": "witnessed",
+      "target": "environmental degradation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "personal experience",
+      "episode_number": 89
+    },
+    {
+      "source": "Confucius",
+      "relationship": "advocated_for",
+      "target": "green manure cover crops",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "historical agricultural practice",
+      "episode_number": 89
+    },
+    {
+      "source": "Confucius",
+      "relationship": "advocates_for",
+      "target": "humility",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Confucius says that a man who loves a mountain is kind to everything.",
+      "episode_number": 89
+    },
+    {
+      "source": "China",
+      "relationship": "located_in",
+      "target": "Asia",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "Are you what are you seeing in China today does it seem that obviously we want to see things scaling and accelerating as it relates to the widespread adoption of regenerative practices",
+      "episode_number": 89
+    },
+    {
+      "source": "Xi Jinping",
+      "relationship": "works_at",
+      "target": "Chinese Government",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "I remember a couple of weeks ago the president of China Xi Jinping he promised that by two done and two thousand and sixty the year twenty sixty China promised to have zero emissions",
+      "episode_number": 89
+    },
+    {
+      "source": "United States",
+      "relationship": "part_of",
+      "target": "Western World",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "things happen I think from a bottom to top so these grassroots you know movement to create the changes in the society and things in China especially these big movement",
+      "episode_number": 89
+    },
+    {
+      "source": "United States",
+      "relationship": "part_of",
+      "target": "North America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing agricultural policies and history",
+      "episode_number": 89
+    },
+    {
+      "source": "China",
+      "relationship": "part_of",
+      "target": "Asia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing agricultural policies and history",
+      "episode_number": 89
+    },
+    {
+      "source": "Earth Coast productions",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Purium",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Vera Herbles",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "growing spaces",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "soil works",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "earth water press",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "1% for the planet",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "supports",
+      "target": "Y and Earth Community Podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sponsors of the podcast",
+      "episode_number": 89
+    },
+    {
+      "source": "Y and Earth Community Network",
+      "relationship": "joined",
+      "target": "monthly giving program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing community mobilization work",
+      "episode_number": 89
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Earth Coast productions",
+      "episode_number": 89
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include the Lidge Family Foundation",
+      "episode_number": 89
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Alpine Botanicals",
+      "episode_number": 89
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Purium",
+      "episode_number": 89
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Earth Hero",
+      "episode_number": 89
+    },
+    {
+      "source": "Vera Herbles",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Vera Herbles",
+      "episode_number": 89
+    },
+    {
+      "source": "Growing Spaces",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Growing Spaces",
+      "episode_number": 89
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Soil Works",
+      "episode_number": 89
+    },
+    {
+      "source": "Earth Water Press",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Earth Water Press",
+      "episode_number": 89
+    },
+    {
+      "source": "1% for the Planet",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include 1% for the Planet",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Dr. Bronners",
+      "episode_number": 89
+    },
+    {
+      "source": "Wale Water",
+      "relationship": "sponsors",
+      "target": "Y and Earth Community Network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsors include Wale Water",
+      "episode_number": 89
+    },
+    {
+      "source": "Radeel Institute",
+      "relationship": "conducts research on",
+      "target": "soil health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "currently I oversee so your health research and education at Radeel Institute",
+      "episode_number": 89
+    },
+    {
+      "source": "Radeel Institute",
+      "relationship": "joint education program with",
+      "target": "Delaware Valley University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "joint education program between Radeel and Delvel the Delaware Valley University",
+      "episode_number": 89
+    },
+    {
+      "source": "Regenerative Organic Certification",
+      "relationship": "includes",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "three pillars so your health social justice or social fairness and animal welfare",
+      "episode_number": 89
+    },
+    {
+      "source": "Regenerative Organic Certification",
+      "relationship": "includes",
+      "target": "social justice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "three pillars so your health social justice or social fairness and animal welfare",
+      "episode_number": 89
+    },
+    {
+      "source": "Regenerative Organic Certification",
+      "relationship": "includes",
+      "target": "animal welfare",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "three pillars so your health social justice or social fairness and animal welfare",
+      "episode_number": 89
+    },
+    {
+      "source": "Radeel",
+      "relationship": "founded",
+      "target": "USDA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "founded by the USDA organic farming certificate program",
+      "episode_number": 89
+    },
+    {
+      "source": "Radeel",
+      "relationship": "located_in",
+      "target": "Pennsylvania",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mission of Radeel is to improve the well being of the people and the planet through organic leadership.",
+      "episode_number": 89
+    },
+    {
+      "source": "Delaware Valley University",
+      "relationship": "part_of",
+      "target": "Radeel",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "joint education program between Radeel and Delvel the Delaware Valley University",
+      "episode_number": 89
+    },
+    {
+      "source": "Tristan",
+      "relationship": "born_in",
+      "target": "Australia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "both were born in Australia",
+      "episode_number": 89
+    },
+    {
+      "source": "Winston",
+      "relationship": "born_in",
+      "target": "Australia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "both were born in Australia",
+      "episode_number": 89
+    },
+    {
+      "source": "family",
+      "relationship": "located_in",
+      "target": "China",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "talk to our family in China",
+      "episode_number": 89
+    },
+    {
+      "source": "family",
+      "relationship": "located_in",
+      "target": "Wisconsin",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friends in Wisconsin",
+      "episode_number": 89
+    },
+    {
+      "source": "family",
+      "relationship": "located_in",
+      "target": "Brazil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friends in Brazil",
+      "episode_number": 89
+    },
+    {
+      "source": "family",
+      "relationship": "located_in",
+      "target": "New Zealand",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friends in New Zealand",
+      "episode_number": 89
+    },
+    {
+      "source": "wife",
+      "relationship": "takes_care_of",
+      "target": "Tristan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my wife needs to take care of the boys",
+      "episode_number": 89
+    },
+    {
+      "source": "wife",
+      "relationship": "takes_care_of",
+      "target": "Winston",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my wife needs to take care of the boys",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Cindy Prescott",
+      "relationship": "works_at",
+      "target": "University of British Columbia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "a professor in forest ecology and management in the University of British Columbia in Canada.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "regenerative agriculture, it's a powerful tool for regenerating our systems.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "advocates_for",
+      "target": "soil carbon building",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "regenerative agriculture and the soil carbon building, it's the most exciting development in her 40 years of career.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "works_at",
+      "target": "Rodeil Institute",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the Rodeil Institute.org.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "has_website",
+      "target": "youchowrui.com",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "you can go to youchowrui.com.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "has_website",
+      "target": "regenorganic.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the regenerative organic certification information can also be found at regenorganic.org.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "has_website",
+      "target": "Rodeil Institute",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the Rodeil Institute.org.",
+      "episode_number": 89
+    },
+    {
+      "source": "Dr. Rui",
+      "relationship": "works_at",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "So Dr. Rui, thank you so much.",
+      "episode_number": 89
+    },
+    {
+      "source": "Aaron",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast Series is hosted by Aaron William Perry.",
+      "episode_number": 89
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors.",
+      "episode_number": 89
+    },
+    {
+      "source": "compost",
+      "relationship": "related_to",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "A compost is a soil amendment that can enrich the soil with fertilizers.",
+      "episode_number": 89
+    },
+    {
+      "source": "YOnEarth",
+      "relationship": "advocates_for",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "thank you for being a part of the Y on Earth Community.",
+      "episode_number": 89
+    }
+  ]
+}

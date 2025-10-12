@@ -1,0 +1,914 @@
+{
+  "episode": 1,
+  "timestamp": "2025-10-09T10:22:24.840476",
+  "entity_count": 62,
+  "relationship_count": 47,
+  "entities": [
+    {
+      "name": "Nancy Tuckman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Loyola University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "affiliation of Nancy Tuckman"
+    },
+    {
+      "name": "Institute of Environmental Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "founded by Nancy Tuckman"
+    },
+    {
+      "name": "Pope Francis LaDouteau",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to stewardship and sustainability"
+    },
+    {
+      "name": "Jesuit universities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "topic of discussion"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "geographic context"
+    },
+    {
+      "name": "Syria",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "geographic context related to refugees"
+    },
+    {
+      "name": "Father Mark Bosco",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a mutual friend"
+    },
+    {
+      "name": "environmental justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "part of Jesuit universities' mission"
+    },
+    {
+      "name": "refugees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to environmental issues"
+    },
+    {
+      "name": "Syria",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "drought in Syria"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "result of global climate change"
+    },
+    {
+      "name": "Jesuit universities",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Jesuit universities don't deny climate change"
+    },
+    {
+      "name": "St. Louis University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "climate summit hosted by St. Louis University"
+    },
+    {
+      "name": "Jesuits",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about human spirituality and education"
+    },
+    {
+      "name": "Pope Francis",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "leadership in thought leadership throughout the world"
+    },
+    {
+      "name": "Loyola Chicago",
+      "type": "ORG",
+      "name_confidence": 0.97,
+      "type_confidence": 0.95,
+      "context": "sustainability efforts and discussions"
+    },
+    {
+      "name": "Institute of Environmental Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "decrease environmental footprint"
+    },
+    {
+      "name": "Chicago",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.98,
+      "context": "location of Loyola Chicago and its campuses"
+    },
+    {
+      "name": "Water Tower campus",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "second campus of Loyola Chicago"
+    },
+    {
+      "name": "Institute of Environmental Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "launched the Institute of Environmental Sustainability in 2013"
+    },
+    {
+      "name": "environmental justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "core foundational science course which is about environmental justice"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "they learn about climate change"
+    },
+    {
+      "name": "acidification of the ocean",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "they learn about the acidification of the ocean"
+    },
+    {
+      "name": "nitrogen pollution",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "they learn about the nitrogen pollution problem"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "they learn about the loss of biodiversity"
+    },
+    {
+      "name": "Jesuit universities",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "many of the Jesuit universities are doing similar environmental courses"
+    },
+    {
+      "name": "Loyola Chicago",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...at a place like Loyola Chicago this is being not only inculcated with the students..."
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the work we're doing with the the why on earth community..."
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...solutions for sustainability for stewardship..."
+    },
+    {
+      "name": "stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...solutions for sustainability for stewardship..."
+    },
+    {
+      "name": "students",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...especially students they come in as freshmen..."
+    },
+    {
+      "name": "individuals",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...the one biggest impact that we can have as individuals..."
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...conscientious about the food and water and drink that we consume..."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...conscientious about the food and water and drink that we consume..."
+    },
+    {
+      "name": "meat",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about diet and sustainability"
+    },
+    {
+      "name": "livestock",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "impact on landscape"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "areas of focus"
+    },
+    {
+      "name": "energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "consumption related to health"
+    },
+    {
+      "name": "bike",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "alternative to car usage"
+    },
+    {
+      "name": "communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working in diverse communities"
+    },
+    {
+      "name": "vegan",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "friends who are devoutly vegan"
+    },
+    {
+      "name": "Midwest",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "cultural background of meat consumption"
+    },
+    {
+      "name": "regenerative grass fed beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "alternative to industrial meats"
+    },
+    {
+      "name": "soil building carbon sequestration process",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "related to regenerative agriculture"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "working with families"
+    },
+    {
+      "name": "young people",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "eager to make a change"
+    },
+    {
+      "name": "Jesuit colleges and universities",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "working with worldwide institutions"
+    },
+    {
+      "name": "Nancy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Jesuit colleges and universities",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "working with Jesuit colleges"
+    },
+    {
+      "name": "society of Jesus",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "working in the society of Jesus"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing social justice and ecology"
+    },
+    {
+      "name": "dandelions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "importance for bees"
+    },
+    {
+      "name": "native plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "yard filled with native plants"
+    },
+    {
+      "name": "honey bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "food sources for bees"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of community connection"
+    },
+    {
+      "name": "Nancy Tuckman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaking with Nancy Tuckman"
+    },
+    {
+      "name": "University Loyola Chicago",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "founding director of the Institute of Environmental Sustainability"
+    },
+    {
+      "name": "Institute of Environmental Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "founding director of the Institute of Environmental Sustainability"
+    },
+    {
+      "name": "Jesuit network",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "all around the world through the universities and the Jesuit network"
+    },
+    {
+      "name": "biodynamic farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "My son is a biodynamic farmer and beekeeper"
+    },
+    {
+      "name": "shared economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "that kind of shared economy is so much more sustainable"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nancy Tuckman",
+      "relationship": "works_at",
+      "target": "Loyola University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "affiliation of Nancy Tuckman",
+      "episode_number": 1
+    },
+    {
+      "source": "Nancy Tuckman",
+      "relationship": "founded",
+      "target": "Institute of Environmental Sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Nancy Tuckman is the founding director",
+      "episode_number": 1
+    },
+    {
+      "source": "Pope Francis LaDouteau",
+      "relationship": "connected_to",
+      "target": "environmental justice",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to stewardship and sustainability",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit universities",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mention of Jesuit universities in the US",
+      "episode_number": 1
+    },
+    {
+      "source": "Syria",
+      "relationship": "contains",
+      "target": "refugees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to environmental issues",
+      "episode_number": 1
+    },
+    {
+      "source": "Father Mark Bosco",
+      "relationship": "advocates_for",
+      "target": "refugees",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to working with refugees",
+      "episode_number": 1
+    },
+    {
+      "source": "environmental justice",
+      "relationship": "part_of",
+      "target": "Jesuit universities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "part of the mission of Jesuit universities",
+      "episode_number": 1
+    },
+    {
+      "source": "Nancy Tuckman",
+      "relationship": "advocates_for",
+      "target": "environmental justice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to her work",
+      "episode_number": 1
+    },
+    {
+      "source": "Syria",
+      "relationship": "contains",
+      "target": "drought",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "drought in Syria",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit universities",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.98,
+      "context": "Jesuit universities don't deny climate change",
+      "episode_number": 1
+    },
+    {
+      "source": "St. Louis University",
+      "relationship": "located_in",
+      "target": "climate summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "climate summit hosted by St. Louis University",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit universities",
+      "relationship": "part_of",
+      "target": "education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "enormous body of education",
+      "episode_number": 1
+    },
+    {
+      "source": "Pope Francis",
+      "relationship": "leads",
+      "target": "thought leadership",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "leadership in thought leadership throughout the world",
+      "episode_number": 1
+    },
+    {
+      "source": "Loyola Chicago",
+      "relationship": "located_in",
+      "target": "Chicago",
+      "source_confidence": 0.97,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "sustainability efforts and discussions",
+      "episode_number": 1
+    },
+    {
+      "source": "Institute of Environmental Sustainability",
+      "relationship": "part_of",
+      "target": "Loyola Chicago",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.97,
+      "context": "decrease environmental footprint",
+      "episode_number": 1
+    },
+    {
+      "source": "Loyola Chicago",
+      "relationship": "contains",
+      "target": "Water Tower campus",
+      "source_confidence": 0.97,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "second campus of Loyola Chicago",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuits",
+      "relationship": "advocates_for",
+      "target": "human spirituality",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about human spirituality and education",
+      "episode_number": 1
+    },
+    {
+      "source": "Institute of Environmental Sustainability",
+      "relationship": "founded",
+      "target": "ORG",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "launched the Institute of Environmental Sustainability in 2013",
+      "episode_number": 1
+    },
+    {
+      "source": "Institute of Environmental Sustainability",
+      "relationship": "integrates",
+      "target": "environmental justice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "core foundational science course which is about environmental justice",
+      "episode_number": 1
+    },
+    {
+      "source": "students",
+      "relationship": "learns_about",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "they learn about climate change",
+      "episode_number": 1
+    },
+    {
+      "source": "students",
+      "relationship": "learns_about",
+      "target": "acidification of the ocean",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "they learn about the acidification of the ocean",
+      "episode_number": 1
+    },
+    {
+      "source": "students",
+      "relationship": "learns_about",
+      "target": "nitrogen pollution",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "they learn about the nitrogen pollution problem",
+      "episode_number": 1
+    },
+    {
+      "source": "students",
+      "relationship": "learns_about",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "they learn about the loss of biodiversity",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit universities",
+      "relationship": "offers",
+      "target": "environmental courses",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "many of the Jesuit universities are doing similar environmental courses",
+      "episode_number": 1
+    },
+    {
+      "source": "Loyola Chicago",
+      "relationship": "located_in",
+      "target": "Chicago",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...at a place like Loyola Chicago this is being not only inculcated with the students...",
+      "episode_number": 1
+    },
+    {
+      "source": "why on earth",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...the work we're doing with the the why on earth community...",
+      "episode_number": 1
+    },
+    {
+      "source": "students",
+      "relationship": "part_of",
+      "target": "Loyola Chicago",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "...especially students they come in as freshmen...",
+      "episode_number": 1
+    },
+    {
+      "source": "individuals",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...the one biggest impact that we can have as individuals...",
+      "episode_number": 1
+    },
+    {
+      "source": "food",
+      "relationship": "part_of",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...conscientious about the food and water and drink that we consume...",
+      "episode_number": 1
+    },
+    {
+      "source": "water",
+      "relationship": "part_of",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...conscientious about the food and water and drink that we consume...",
+      "episode_number": 1
+    },
+    {
+      "source": "individuals",
+      "relationship": "advocates_for",
+      "target": "not eat meat",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about dietary impact",
+      "episode_number": 1
+    },
+    {
+      "source": "livestock",
+      "relationship": "has_impact_on",
+      "target": "landscape",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "impact of livestock on environment",
+      "episode_number": 1
+    },
+    {
+      "source": "energy",
+      "relationship": "related_to",
+      "target": "health and well-being",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about energy consumption",
+      "episode_number": 1
+    },
+    {
+      "source": "friends",
+      "relationship": "are",
+      "target": "devoutly vegan",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "friends' dietary choices",
+      "episode_number": 1
+    },
+    {
+      "source": "Midwest culture",
+      "relationship": "is_part_of",
+      "target": "meat and potatoes culture",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "cultural background",
+      "episode_number": 1
+    },
+    {
+      "source": "regenerative grass fed beef",
+      "relationship": "is_made_by",
+      "target": "sustainable agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "discussion about sustainable meat sources",
+      "episode_number": 1
+    },
+    {
+      "source": "young people",
+      "relationship": "advocates_for",
+      "target": "change in diet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about youth involvement",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit colleges and universities",
+      "relationship": "are_connected_to",
+      "target": "social justice and ecology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "working with educational institutions",
+      "episode_number": 1
+    },
+    {
+      "source": "Nancy",
+      "relationship": "advocates_for",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion on community importance",
+      "episode_number": 1
+    },
+    {
+      "source": "Jesuit colleges and universities",
+      "relationship": "located_in",
+      "target": "society of Jesus",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "working with Jesuit colleges",
+      "episode_number": 1
+    },
+    {
+      "source": "dandelions",
+      "relationship": "important_for",
+      "target": "honey bees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "food sources for bees",
+      "episode_number": 1
+    },
+    {
+      "source": "native plants",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "yard filled with native plants",
+      "episode_number": 1
+    },
+    {
+      "source": "community",
+      "relationship": "supports",
+      "target": "diversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion on community and diversity",
+      "episode_number": 1
+    },
+    {
+      "source": "Nancy Tuckman",
+      "relationship": "works_at",
+      "target": "University Loyola Chicago",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "founding director of the Institute of Environmental Sustainability",
+      "episode_number": 1
+    },
+    {
+      "source": "Nancy Tuckman",
+      "relationship": "advocates_for",
+      "target": "biodynamic farming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "My son is a biodynamic farmer and beekeeper",
+      "episode_number": 1
+    },
+    {
+      "source": "University Loyola Chicago",
+      "relationship": "part_of",
+      "target": "Jesuit network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "all around the world through the universities and the Jesuit network",
+      "episode_number": 1
+    },
+    {
+      "source": "shared economy",
+      "relationship": "enhances",
+      "target": "quality of life",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "that kind of shared economy is so much more sustainable",
+      "episode_number": 1
+    }
+  ]
+}

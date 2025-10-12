@@ -1,0 +1,1907 @@
+{
+  "episode": 108,
+  "timestamp": "2025-10-09T10:27:44.416702",
+  "entity_count": 141,
+  "relationship_count": 91,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the Y on Earth community podcast"
+    },
+    {
+      "name": "Ann Armwrecked",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Guest on the podcast"
+    },
+    {
+      "name": "American Botanical Council",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Organization Ann works with"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "University where Ann obtained her PhD"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Country where Ann conducted research"
+    },
+    {
+      "name": "Newman, the Nature of Plants",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Documentary co-produced by Ann"
+    },
+    {
+      "name": "Thin Places of Pilgrimage Home",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Ethnographic memoir authored by Ann"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Publisher of Ann's latest book"
+    },
+    {
+      "name": "Central Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location where Ann lives"
+    },
+    {
+      "name": "EBSUL",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Herbalist Ann met after returning home"
+    },
+    {
+      "name": "Rosemary Gladstar",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Herbalist Ann met at the conference"
+    },
+    {
+      "name": "Sage Mom",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Place where Ann studied herbal medicine"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about herbal medicine"
+    },
+    {
+      "name": "sage mom",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mention of herbal medicine at sage mom"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "comparison to Harvard education"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publisher involved in book revisions"
+    },
+    {
+      "name": "Wendell Berry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "quotation by Wendell Berry about ecological responsibility"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about herbal medicine"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community discussing food sourcing"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "reference to local farmers"
+    },
+    {
+      "name": "third-party certifications",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "discussion about sourcing credibility"
+    },
+    {
+      "name": "Fair trade",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "certification mentioned in sourcing"
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "certification mentioned in sourcing"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "certification mentioned in sourcing"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about herbal medicine and its sourcing"
+    },
+    {
+      "name": "Eastern Poland",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "question about the origin of nettle"
+    },
+    {
+      "name": "southern India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about herbal products and their origins"
+    },
+    {
+      "name": "Nicaragua",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mention of supporting farmers in rural communities"
+    },
+    {
+      "name": "vodka",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about making herbal medicine"
+    },
+    {
+      "name": "tea",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about buying a box of tea"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "figuring out our values about herbal medicine"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "support farmers and rural communities in India"
+    },
+    {
+      "name": "Nicaragua",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "support farmers and rural communities in Nicaragua"
+    },
+    {
+      "name": "NPR",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "making a donation to the our local NPR station"
+    },
+    {
+      "name": "Sustainable Herb's program",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "on the Sustainable Herb's program website"
+    },
+    {
+      "name": "herb parmes",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "certified organic, there's a few, there's one, I think herb parmes certified"
+    },
+    {
+      "name": "fair for life",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "a few that are fair for life or fair wild"
+    },
+    {
+      "name": "fair wild",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "a few that are fair for life or fair wild"
+    },
+    {
+      "name": "The Business of Botanicals",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "get your book. And this is the business of Botanicals"
+    },
+    {
+      "name": "Kate Williams",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "including Kate Williams, Judith Schwartz, her self and author and Ryan Zinn from Dr. Bronners"
+    },
+    {
+      "name": "Judith Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "including Kate Williams, Judith Schwartz, her self and author and Ryan Zinn from Dr. Bronners"
+    },
+    {
+      "name": "Ryan Zinn",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "including Kate Williams, Judith Schwartz, her self and author and Ryan Zinn from Dr. Bronners"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Ryan Zinn from Dr. Bronners"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kate Williams of course, being the CEO of 1% for the planet"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the herbalist Brigitte Mars on a while back"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "herbalist Brigitte Mars on a while back"
+    },
+    {
+      "name": "Paca",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Paca is now owned by Unilever"
+    },
+    {
+      "name": "Unilever",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Paca is now owned by Unilever"
+    },
+    {
+      "name": "traditional medicinals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "similarly with traditional medicinals"
+    },
+    {
+      "name": "Avena Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Avena Botanicals, which I do mention in the book"
+    },
+    {
+      "name": "Deb Souls",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Deb Souls and Herbalist Alchemists by David Winston"
+    },
+    {
+      "name": "David Winston",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Deb Souls and Herbalist Alchemists by David Winston"
+    },
+    {
+      "name": "mother work",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I love mother work"
+    },
+    {
+      "name": "black cohosh",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I love black cohosh because I'm from West Virginia"
+    },
+    {
+      "name": "lemon balm",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I make a rose glycerin or lemon balm glycerin"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "getting into things like herbal medicine"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "thinking about the United States right now in general"
+    },
+    {
+      "name": "herbalist",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "speaking with an herbalist who works at a company"
+    },
+    {
+      "name": "ABC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at ABC and the Sustainable UPS program"
+    },
+    {
+      "name": "Sustainable UPS program",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "at ABC and the Sustainable UPS program"
+    },
+    {
+      "name": "Eastern Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "facing the wild harvesters in Eastern Europe"
+    },
+    {
+      "name": "nettles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "where are the nettles that are grown on the market"
+    },
+    {
+      "name": "turmeric",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "what are the issues around where turmeric is from"
+    },
+    {
+      "name": "Newman",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "wonderfully produced documentaries like Newman"
+    },
+    {
+      "name": "Asian medical system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "teach a class on Asian medical system sometimes"
+    },
+    {
+      "name": "Asian medical system",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "teaching a class on Asian medical system"
+    },
+    {
+      "name": "American Botanical Council",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization known for scientific rigor into the use of plants"
+    },
+    {
+      "name": "Verity Toss",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "concept discussed in the book"
+    },
+    {
+      "name": "Heligarth Fund",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization related to the concept of Verity Toss"
+    },
+    {
+      "name": "David Hoffman",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "described the greenness of the natural world"
+    },
+    {
+      "name": "Drogama",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "center in India where the speaker visited"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where Drogama is located"
+    },
+    {
+      "name": "Drogama",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "center in India"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Drogama"
+    },
+    {
+      "name": "Hadangna",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "villager context"
+    },
+    {
+      "name": "Chaman",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "location of priests"
+    },
+    {
+      "name": "Dhanapal",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "priest in Chaman"
+    },
+    {
+      "name": "Vereditas",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "concept discussed in the chapter"
+    },
+    {
+      "name": "Jeff Bodney",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussed in the chapter"
+    },
+    {
+      "name": "Lizzie",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "wife of Jeff Bodney"
+    },
+    {
+      "name": "Robert Po'Karis",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "philosopher mentioned"
+    },
+    {
+      "name": "The Business of Botanicals",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book by the author"
+    },
+    {
+      "name": "Ann Armbrick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "author and filmmaker"
+    },
+    {
+      "name": "Ann Armbrack",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned earlier in the podcast"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "publisher of the book"
+    },
+    {
+      "name": "sustainableherbsprogram.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website mentioned"
+    },
+    {
+      "name": "whyoners.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website mentioned"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community sponsor"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Jointful Journey",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Hot Spring Spa",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community sponsor"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "collaboration mentioned"
+    },
+    {
+      "name": "Waylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community sponsor"
+    },
+    {
+      "name": "Hempings",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "product offered by Waylay Waters"
+    },
+    {
+      "name": "Roman Therapy",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "product offered by Waylay Waters"
+    },
+    {
+      "name": "turmeric",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "plant mentioned in agroforestry context"
+    },
+    {
+      "name": "agroforestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to planting turmeric"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Modern Renaissance of herbal medicine"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "quote from your book"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "learning directly from the plants"
+    },
+    {
+      "name": "central Vermont",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sitting with plants in central Vermont"
+    },
+    {
+      "name": "Sage Mountain",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "First time I did that at Sage Mountain"
+    },
+    {
+      "name": "Harvard",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Writing my dissertation in Harvard"
+    },
+    {
+      "name": "Rosemary",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "How Rosemary introduces students"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Power of herbal medicine"
+    },
+    {
+      "name": "green capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Potential for green capitalism"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Plants have this aliveness"
+    },
+    {
+      "name": "green capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a potential path for herbal medicine"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to green capitalism"
+    },
+    {
+      "name": "urban environments",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in the context of greening living environments"
+    },
+    {
+      "name": "suburban environments",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in the context of greening living environments"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as having aliveness and potential for relationships"
+    },
+    {
+      "name": "Joseph Brinkman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as an expert from Traditional Mendistines"
+    },
+    {
+      "name": "Traditional Mendistines",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in relation to sourcing plants"
+    },
+    {
+      "name": "Dari Naturi",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a center in Poland called Dari Naturi"
+    },
+    {
+      "name": "Poland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a center in Poland called Dari Naturi"
+    },
+    {
+      "name": "Kenny Osabel",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "co-founder of Bioneers"
+    },
+    {
+      "name": "Bioneers",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founder of Bioneers"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "dealing with something like climate change"
+    },
+    {
+      "name": "Newman",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a filmmaker and subject of a film"
+    },
+    {
+      "name": "Terry Yalke",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as the filmmaker and husband of the speaker"
+    },
+    {
+      "name": "Rosemary",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as an individual who offered a stipend for research"
+    },
+    {
+      "name": "United Plant Savers",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to a research project"
+    },
+    {
+      "name": "traditional Western herbalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a subject of the film"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to similar ideas encountered by the speaker"
+    },
+    {
+      "name": "Vimeo",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "platform where the film can be rented"
+    },
+    {
+      "name": "DVDs",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a format for the film being sold"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Why on Earth Community Stewardship and Sustainability",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "Raymond Williams",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "quoted literary theorist"
+    },
+    {
+      "name": "Martha Herbert",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "interviewed doctor"
+    },
+    {
+      "name": "coal",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed concept in the podcast"
+    },
+    {
+      "name": "side effects",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed concept in the podcast"
+    },
+    {
+      "name": "WhyOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "works_at",
+      "target": "American Botanical Council",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ann is the director of the sustainable herbs program",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "founded",
+      "target": "Newman, the Nature of Plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ann is the co-producer of the documentary",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "authored",
+      "target": "Thin Places of Pilgrimage Home",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ann authored the ethnographic memoir",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "published_by",
+      "target": "Chelsea Green",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ann's latest book was published by Chelsea Green",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "located_in",
+      "target": "Central Vermont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ann lives with her family in Central Vermont",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ann is exploring herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "EBSUL",
+      "relationship": "advocates_for",
+      "target": "plants",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "EBSUL has a different relationship with plants",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "studied_at",
+      "target": "Sage Mom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Ann studied herbal medicine at Sage Mom",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armwrecked",
+      "relationship": "visited",
+      "target": "Nepal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ann went to Nepal after college",
+      "episode_number": 108
+    },
+    {
+      "source": "sage mom",
+      "relationship": "offers",
+      "target": "herbal medicine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about herbal medicine at sage mom",
+      "episode_number": 108
+    },
+    {
+      "source": "Harvard",
+      "relationship": "influenced",
+      "target": "herbal medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "comparison of education background",
+      "episode_number": 108
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "published",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "involvement in book revisions",
+      "episode_number": 108
+    },
+    {
+      "source": "Wendell Berry",
+      "relationship": "quoted_in",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "inspiration for research",
+      "episode_number": 108
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the community's focus on herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "local area",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "reference to sourcing from nearby farmers",
+      "episode_number": 108
+    },
+    {
+      "source": "third-party certifications",
+      "relationship": "related_to",
+      "target": "sourcing",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about sourcing credibility",
+      "episode_number": 108
+    },
+    {
+      "source": "Fair trade",
+      "relationship": "related_to",
+      "target": "sourcing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "certification mentioned in sourcing",
+      "episode_number": 108
+    },
+    {
+      "source": "organic",
+      "relationship": "related_to",
+      "target": "sourcing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "certification mentioned in sourcing",
+      "episode_number": 108
+    },
+    {
+      "source": "regenerative organic certification",
+      "relationship": "related_to",
+      "target": "sourcing",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.7,
+      "context": "certification mentioned in sourcing",
+      "episode_number": 108
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "advocates_for",
+      "target": "empowerment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about the benefits of herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "southern India",
+      "relationship": "part_of",
+      "target": "herbal products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about origins of herbal products",
+      "episode_number": 108
+    },
+    {
+      "source": "Nicaragua",
+      "relationship": "part_of",
+      "target": "herbal products",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mention of supporting farmers in rural communities",
+      "episode_number": 108
+    },
+    {
+      "source": "vodka",
+      "relationship": "made_by",
+      "target": "herbal medicine",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "discussion about making herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "tea",
+      "relationship": "made_by",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about buying tea",
+      "episode_number": 108
+    },
+    {
+      "source": "Sustainable Herb's program",
+      "relationship": "supports",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "on the Sustainable Herb's program website",
+      "episode_number": 108
+    },
+    {
+      "source": "NPR",
+      "relationship": "associated_with",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "making a donation to the our local NPR station",
+      "episode_number": 108
+    },
+    {
+      "source": "India",
+      "relationship": "part_of",
+      "target": "rural communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "support farmers and rural communities in India",
+      "episode_number": 108
+    },
+    {
+      "source": "Nicaragua",
+      "relationship": "part_of",
+      "target": "rural communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "support farmers and rural communities in Nicaragua",
+      "episode_number": 108
+    },
+    {
+      "source": "Kate Williams",
+      "relationship": "works_at",
+      "target": "1% for the Planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "being the CEO of 1% for the planet",
+      "episode_number": 108
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "works_at",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ryan Zinn from Dr. Bronners",
+      "episode_number": 108
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the herbalist Brigitte Mars on a while back",
+      "episode_number": 108
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "herbalist Brigitte Mars on a while back",
+      "episode_number": 108
+    },
+    {
+      "source": "Paca",
+      "relationship": "owned_by",
+      "target": "Unilever",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Paca is now owned by Unilever",
+      "episode_number": 108
+    },
+    {
+      "source": "traditional medicinals",
+      "relationship": "part_of",
+      "target": "herb schools",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "similarly with traditional medicinals",
+      "episode_number": 108
+    },
+    {
+      "source": "Avena Botanicals",
+      "relationship": "run_by",
+      "target": "herbalist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Avena Botanicals, which I do mention in the book",
+      "episode_number": 108
+    },
+    {
+      "source": "Deb Souls",
+      "relationship": "works_at",
+      "target": "Avena Botanicals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Deb Souls and Herbalist Alchemists by David Winston",
+      "episode_number": 108
+    },
+    {
+      "source": "David Winston",
+      "relationship": "wrote",
+      "target": "Herbalist Alchemists",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Deb Souls and Herbalist Alchemists by David Winston",
+      "episode_number": 108
+    },
+    {
+      "source": "black cohosh",
+      "relationship": "reminds_of",
+      "target": "Appalachian forests",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I love black cohosh because I'm from West Virginia",
+      "episode_number": 108
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "taught_in",
+      "target": "curriculum",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "getting into things like herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "herb schools",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "thinking about the United States right now in general",
+      "episode_number": 108
+    },
+    {
+      "source": "herbalist",
+      "relationship": "works_at",
+      "target": "company",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "speaking with an herbalist who works at a company",
+      "episode_number": 108
+    },
+    {
+      "source": "ABC",
+      "relationship": "part_of",
+      "target": "Sustainable UPS program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "at ABC and the Sustainable UPS program",
+      "episode_number": 108
+    },
+    {
+      "source": "nettles",
+      "relationship": "grown_in",
+      "target": "Eastern Europe",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "where are the nettles that are grown on the market",
+      "episode_number": 108
+    },
+    {
+      "source": "turmeric",
+      "relationship": "originates_from",
+      "target": "Eastern Europe",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "what are the issues around where turmeric is from",
+      "episode_number": 108
+    },
+    {
+      "source": "Newman",
+      "relationship": "produced_by",
+      "target": "researchers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "wonderfully produced documentaries like Newman",
+      "episode_number": 108
+    },
+    {
+      "source": "Asian medical system",
+      "relationship": "taught_in",
+      "target": "class",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "teach a class on Asian medical system sometimes",
+      "episode_number": 108
+    },
+    {
+      "source": "American Botanical Council",
+      "relationship": "advocates_for",
+      "target": "scientific rigor",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization known for scientific rigor into the use of plants",
+      "episode_number": 108
+    },
+    {
+      "source": "David Hoffman",
+      "relationship": "describes",
+      "target": "greenness of the natural world",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "described the greenness of the natural world",
+      "episode_number": 108
+    },
+    {
+      "source": "Drogama",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "center in India where the speaker visited",
+      "episode_number": 108
+    },
+    {
+      "source": "Verity Toss",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "concept discussed in the book",
+      "episode_number": 108
+    },
+    {
+      "source": "Drogama",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "center in India",
+      "episode_number": 108
+    },
+    {
+      "source": "Dhanapal",
+      "relationship": "works_at",
+      "target": "Chaman",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "priest in Chaman",
+      "episode_number": 108
+    },
+    {
+      "source": "Jeff Bodney",
+      "relationship": "married_to",
+      "target": "Lizzie",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "discussed in the chapter",
+      "episode_number": 108
+    },
+    {
+      "source": "Robert Po'Karis",
+      "relationship": "advocates_for",
+      "target": "The Business of Botanicals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "philosopher mentioned",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armbrick",
+      "relationship": "wrote",
+      "target": "The Business of Botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "author and filmmaker",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armbrack",
+      "relationship": "works_at",
+      "target": "sustainableherbsprogram.org",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "Ann Armbrack",
+      "relationship": "advocates_for",
+      "target": "plant medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "context of the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "published_by",
+      "target": "sustainableherbsprogram.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "context of the book",
+      "episode_number": 108
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsor_of",
+      "target": "whyoners.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "community sponsors mentioned",
+      "episode_number": 108
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "offers",
+      "target": "Hempings",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "mentioned in the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "Waylay Waters",
+      "relationship": "offers",
+      "target": "Roman Therapy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "mentioned in the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "sustainableherbsprogram.org",
+      "relationship": "located_in",
+      "target": "Costa Rica",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "context of upcoming work",
+      "episode_number": 108
+    },
+    {
+      "source": "sustainableherbsprogram.org",
+      "relationship": "located_in",
+      "target": "Nicaragua",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "context of upcoming work",
+      "episode_number": 108
+    },
+    {
+      "source": "turmeric",
+      "relationship": "part_of",
+      "target": "agroforestry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "context of planting",
+      "episode_number": 108
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "quote from your book",
+      "episode_number": 108
+    },
+    {
+      "source": "plants",
+      "relationship": "part_of",
+      "target": "herbal medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "learning directly from the plants",
+      "episode_number": 108
+    },
+    {
+      "source": "central Vermont",
+      "relationship": "located_in",
+      "target": "Vermont",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "sitting with plants in central Vermont",
+      "episode_number": 108
+    },
+    {
+      "source": "Rosemary",
+      "relationship": "introduces",
+      "target": "students",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "How Rosemary introduces students",
+      "episode_number": 108
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "has_the_potential_to_show",
+      "target": "green capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Herbal medicine has the potential to show us that path",
+      "episode_number": 108
+    },
+    {
+      "source": "plants",
+      "relationship": "are_in_relationship_with",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Plants have this aliveness and relationship with herbal medicine",
+      "episode_number": 108
+    },
+    {
+      "source": "Sage Mountain",
+      "relationship": "located_in",
+      "target": "Harvard",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "First time I did that at Sage Mountain while writing my dissertation in Harvard",
+      "episode_number": 108
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "advocates_for",
+      "target": "green capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed as a potential path for green capitalism",
+      "episode_number": 108
+    },
+    {
+      "source": "urban environments",
+      "relationship": "part_of",
+      "target": "greening living environments",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned in the context of greening living environments",
+      "episode_number": 108
+    },
+    {
+      "source": "suburban environments",
+      "relationship": "part_of",
+      "target": "greening living environments",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned in the context of greening living environments",
+      "episode_number": 108
+    },
+    {
+      "source": "Joseph Brinkman",
+      "relationship": "works_at",
+      "target": "Traditional Mendistines",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as an expert from Traditional Mendistines",
+      "episode_number": 108
+    },
+    {
+      "source": "plants",
+      "relationship": "leads_to",
+      "target": "relationships",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed as having aliveness and potential for relationships",
+      "episode_number": 108
+    },
+    {
+      "source": "Kenny Osabel",
+      "relationship": "works_at",
+      "target": "Bioneers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-founder of Bioneers",
+      "episode_number": 108
+    },
+    {
+      "source": "Dari Naturi",
+      "relationship": "located_in",
+      "target": "Poland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "a center in Poland called Dari Naturi",
+      "episode_number": 108
+    },
+    {
+      "source": "Kenny Osabel",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "commented on climate change",
+      "episode_number": 108
+    },
+    {
+      "source": "Terry Yalke",
+      "relationship": "married_to",
+      "target": "speaker",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Terry Yalke is mentioned as the husband of the speaker",
+      "episode_number": 108
+    },
+    {
+      "source": "Newman",
+      "relationship": "advocates_for",
+      "target": "traditional Western herbalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Newman is discussed in relation to the film about herbalism",
+      "episode_number": 108
+    },
+    {
+      "source": "speaker",
+      "relationship": "studied",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the speaker studied herbal medicine with Rosemary",
+      "episode_number": 108
+    },
+    {
+      "source": "speaker",
+      "relationship": "conducted_research_on",
+      "target": "United Plant Savers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the speaker conducted research related to United Plant Savers",
+      "episode_number": 108
+    },
+    {
+      "source": "speaker",
+      "relationship": "encountered_similar_ideas_in",
+      "target": "Nepal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the speaker encountered similar ideas in rural Nepal",
+      "episode_number": 108
+    },
+    {
+      "source": "Newman",
+      "relationship": "featured_in",
+      "target": "film",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Newman is discussed as part of the film",
+      "episode_number": 108
+    },
+    {
+      "source": "film",
+      "relationship": "available_on",
+      "target": "Vimeo",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the film can be rented on Vimeo",
+      "episode_number": 108
+    },
+    {
+      "source": "film",
+      "relationship": "made_by",
+      "target": "Terry Yalke",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the film is made by Terry Yalke",
+      "episode_number": 108
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Stewardship and Sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast series",
+      "episode_number": 108
+    },
+    {
+      "source": "Raymond Williams",
+      "relationship": "advocates_for",
+      "target": "coal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "quoted in the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "Martha Herbert",
+      "relationship": "advocates_for",
+      "target": "side effects",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "interviewed in the podcast",
+      "episode_number": 108
+    },
+    {
+      "source": "Why on Earth Community Stewardship and Sustainability",
+      "relationship": "sponsored_by",
+      "target": "WhyOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "support website",
+      "episode_number": 108
+    }
+  ]
+}

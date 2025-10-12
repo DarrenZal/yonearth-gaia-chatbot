@@ -1,0 +1,976 @@
+{
+  "episode": 20,
+  "timestamp": "2025-10-09T11:11:18.791597",
+  "entity_count": 68,
+  "relationship_count": 49,
+  "entities": [
+    {
+      "name": "Christine Robinson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking with Christine Robinson from Deloitte"
+    },
+    {
+      "name": "Deloitte",
+      "type": "ORG",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "Christine is with a she is the senior manager in the sustainability services practice group at Deloitte"
+    },
+    {
+      "name": "sustainability reporting initiative",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "helps companies with their sustainability reporting initiative"
+    },
+    {
+      "name": "environmental, social and governance (ESG)",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "environmental, social and governance or ESG risks"
+    },
+    {
+      "name": "investors",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "it's investors. Investors are increasingly relying on sustainability information"
+    },
+    {
+      "name": "shareholders",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "pressure from shareholders that may not own a direct share"
+    },
+    {
+      "name": "MSCI",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ESG Raiders out there. So like MSCI"
+    },
+    {
+      "name": "ISS",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ESG Raiders out there. So like ISS"
+    },
+    {
+      "name": "CSR Hub",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ESG Raiders out there. So like CSR Hub"
+    },
+    {
+      "name": "European companies",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "a lot by the way of European companies where they are"
+    },
+    {
+      "name": "millennials",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "trends, I think you've probably heard a lot about the millennials"
+    },
+    {
+      "name": "Gen Z",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "trends, I think you've probably heard a lot about the Gen Z generation"
+    },
+    {
+      "name": "millennials",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to consumer behavior"
+    },
+    {
+      "name": "Gen Z generation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to consumer behavior"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to regulation"
+    },
+    {
+      "name": "European Union",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to regulation"
+    },
+    {
+      "name": "sustainability reporting standards",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to companies reporting"
+    },
+    {
+      "name": "Global Reporting Initiative (GRI)",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a set of standards"
+    },
+    {
+      "name": "Sustainability Accounting Standards Board (SASB)",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a set of standards"
+    },
+    {
+      "name": "automotive industry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about GHG emissions in the automotive context"
+    },
+    {
+      "name": "SASB standards",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "standards related to financial materiality and investor disclosure"
+    },
+    {
+      "name": "financial materiality",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept discussed in relation to SASB standards"
+    },
+    {
+      "name": "financial models",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in context of consulting clients"
+    },
+    {
+      "name": "Renaissance Italian merchant",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "historical reference for financial systems"
+    },
+    {
+      "name": "CPA",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in context of financial reporting and accounting"
+    },
+    {
+      "name": "GRI",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in context of reporting standards"
+    },
+    {
+      "name": "greenhouse gas emissions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "key performance indicator in sustainability reporting"
+    },
+    {
+      "name": "Ray Anderson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "TED talk about sustainability"
+    },
+    {
+      "name": "Interface Carpets",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Company mentioned in relation to sustainability"
+    },
+    {
+      "name": "Intergovernmental Panel on Climate Change",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Issued a report on climate change"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Topic of discussion regarding future impacts"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "General theme of the TED talk and discussion"
+    },
+    {
+      "name": "2030",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Year mentioned in relation to climate change impacts"
+    },
+    {
+      "name": "economic development",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned in relation to competitive advantage"
+    },
+    {
+      "name": "greenhouse gas emissions",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Key performance indicator discussed"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to future impacts and challenges"
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a location for personal activities"
+    },
+    {
+      "name": "southeastern Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "specific region mentioned in relation to personal experiences"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a scarce natural resource"
+    },
+    {
+      "name": "beekeeping",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a family hobby"
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as the speaker's kids"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to professional and personal values"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "scarce and precious resource"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reverse the climate change trends"
+    },
+    {
+      "name": "soil building",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hopeful activities"
+    },
+    {
+      "name": "companies",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "companies small medium and large"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "media partner, Artem Nicolcov from Earth Coast Productions"
+    },
+    {
+      "name": "millennial generation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "millennial generation now getting older"
+    },
+    {
+      "name": "boards",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the board plays a huge role in this"
+    },
+    {
+      "name": "Christine Robinson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaking with Christine Robinson, CPA accountant and sustainability senior manager at Deloitte"
+    },
+    {
+      "name": "Deloitte",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "sustainability senior manager at Deloitte"
+    },
+    {
+      "name": "FO Journal",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "article in the FO Journal part of the Wall Street Journal"
+    },
+    {
+      "name": "Wall Street Journal",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "part of the Wall Street Journal back in July of 2018"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sustainability as it appears in the realm of accounting and in the corporate world"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "in terms of climate change"
+    },
+    {
+      "name": "global reporting initiative",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "checking out the global reporting initiative"
+    },
+    {
+      "name": "sustainability accounting standards board",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the sustainability accounting standards board"
+    },
+    {
+      "name": "Global Reporting Initiative",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "referring to the standards"
+    },
+    {
+      "name": "Sustainability Accounting Standards Board",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "referring to the standards"
+    },
+    {
+      "name": "CPA",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned by the speaker"
+    },
+    {
+      "name": "kids",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned by the speaker"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing stabilization of climate"
+    },
+    {
+      "name": "greenwashing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing marketing practices"
+    },
+    {
+      "name": "companies",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "working with companies"
+    },
+    {
+      "name": "Christina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion with Aaron"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion with Christina"
+    },
+    {
+      "name": "sustainability strategy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "business strategy discussion"
+    },
+    {
+      "name": "materiality",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "business strategy discussion"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Christine Robinson",
+      "relationship": "works_at",
+      "target": "Deloitte",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.99,
+      "target_confidence": 0.99,
+      "context": "Christine is with a she is the senior manager in the sustainability services practice group at Deloitte",
+      "episode_number": 20
+    },
+    {
+      "source": "Deloitte",
+      "relationship": "advocates_for",
+      "target": "sustainability reporting initiative",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "helps companies with their sustainability reporting initiative",
+      "episode_number": 20
+    },
+    {
+      "source": "investors",
+      "relationship": "rely_on",
+      "target": "sustainability information",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Investors are increasingly relying on sustainability information in their decision-making processes",
+      "episode_number": 20
+    },
+    {
+      "source": "shareholders",
+      "relationship": "pressure_on",
+      "target": "companies",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "pressure from shareholders that may not own a direct share but own through like an exchange-traded fund",
+      "episode_number": 20
+    },
+    {
+      "source": "MSCI",
+      "relationship": "rates",
+      "target": "companies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ESG Raiders out there. So like MSCI, it's seen a litix, ISS, CSR Hub",
+      "episode_number": 20
+    },
+    {
+      "source": "European companies",
+      "relationship": "set_expectations_for",
+      "target": "customers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "a lot by the way of European companies where they are, they're a little bit more advanced in this space",
+      "episode_number": 20
+    },
+    {
+      "source": "millennials",
+      "relationship": "align_with",
+      "target": "environmental and social beliefs",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "millennials are aligning their purchasing power and their buying habits to their environmental and social beliefs too",
+      "episode_number": 20
+    },
+    {
+      "source": "Gen Z",
+      "relationship": "align_with",
+      "target": "environmental and social beliefs",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Gen Z generation but as consumers, their buying habits are a lot different than the generations before them",
+      "episode_number": 20
+    },
+    {
+      "source": "millennials",
+      "relationship": "advocates_for",
+      "target": "sustainability reporting standards",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to consumer behavior and beliefs",
+      "episode_number": 20
+    },
+    {
+      "source": "Gen Z generation",
+      "relationship": "advocates_for",
+      "target": "sustainability reporting standards",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to consumer behavior and beliefs",
+      "episode_number": 20
+    },
+    {
+      "source": "California",
+      "relationship": "part_of",
+      "target": "US",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned in relation to regulation",
+      "episode_number": 20
+    },
+    {
+      "source": "European Union",
+      "relationship": "regulates",
+      "target": "sustainability reporting standards",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to regulation",
+      "episode_number": 20
+    },
+    {
+      "source": "Global Reporting Initiative (GRI)",
+      "relationship": "provides",
+      "target": "sustainability reporting standards",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to reporting standards",
+      "episode_number": 20
+    },
+    {
+      "source": "Sustainability Accounting Standards Board (SASB)",
+      "relationship": "provides",
+      "target": "sustainability reporting standards",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to reporting standards",
+      "episode_number": 20
+    },
+    {
+      "source": "SASB standards",
+      "relationship": "advocates_for",
+      "target": "financial materiality",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the purpose of SASB standards",
+      "episode_number": 20
+    },
+    {
+      "source": "automotive industry",
+      "relationship": "impacts",
+      "target": "greenhouse gas emissions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about emissions during use phase",
+      "episode_number": 20
+    },
+    {
+      "source": "financial models",
+      "relationship": "used_by",
+      "target": "consulting clients",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "context of building financial models for clients",
+      "episode_number": 20
+    },
+    {
+      "source": "Renaissance Italian merchant",
+      "relationship": "developed",
+      "target": "financial reporting system",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "historical reference to the evolution of financial systems",
+      "episode_number": 20
+    },
+    {
+      "source": "CPA",
+      "relationship": "works_at",
+      "target": "financial statement audit practice",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "context of professional experience in auditing",
+      "episode_number": 20
+    },
+    {
+      "source": "companies",
+      "relationship": "report_in accordance_with",
+      "target": "GRI",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "discussion about reporting standards",
+      "episode_number": 20
+    },
+    {
+      "source": "companies",
+      "relationship": "report_on",
+      "target": "greenhouse gas emissions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "context of sustainability reporting",
+      "episode_number": 20
+    },
+    {
+      "source": "Ray Anderson",
+      "relationship": "works_at",
+      "target": "Interface Carpets",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "TED talk about sustainability",
+      "episode_number": 20
+    },
+    {
+      "source": "Intergovernmental Panel on Climate Change",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Issued a report on climate change",
+      "episode_number": 20
+    },
+    {
+      "source": "sustainability",
+      "relationship": "related_to",
+      "target": "economic development",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "Discussion on competitive advantage",
+      "episode_number": 20
+    },
+    {
+      "source": "greenhouse gas emissions",
+      "relationship": "part_of",
+      "target": "sustainability",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "Key performance indicator discussed",
+      "episode_number": 20
+    },
+    {
+      "source": "climate change",
+      "relationship": "impacts",
+      "target": "2030",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Future impacts discussed",
+      "episode_number": 20
+    },
+    {
+      "source": "sustainability",
+      "relationship": "advocates_for",
+      "target": "children",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in the context of teaching values to kids",
+      "episode_number": 20
+    },
+    {
+      "source": "Wisconsin",
+      "relationship": "contains",
+      "target": "southeastern Wisconsin",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "geographic relationship",
+      "episode_number": 20
+    },
+    {
+      "source": "children",
+      "relationship": "experience",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to future challenges",
+      "episode_number": 20
+    },
+    {
+      "source": "water",
+      "relationship": "is_a",
+      "target": "scarce natural resource",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to teaching kids about resources",
+      "episode_number": 20
+    },
+    {
+      "source": "beekeeping",
+      "relationship": "is_a_hobby_of",
+      "target": "children",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioned as a family activity",
+      "episode_number": 20
+    },
+    {
+      "source": "companies",
+      "relationship": "engaging_in",
+      "target": "community activities",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "companies small medium and large engaging in some of these community activities",
+      "episode_number": 20
+    },
+    {
+      "source": "millennial generation",
+      "relationship": "influences",
+      "target": "business practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "millennial thinking and this is how they do business",
+      "episode_number": 20
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "partner_with",
+      "target": "media",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "media partner, Artem Nicolcov from Earth Coast Productions",
+      "episode_number": 20
+    },
+    {
+      "source": "boards",
+      "relationship": "plays_role_in",
+      "target": "business decisions",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "the board plays a huge role in this",
+      "episode_number": 20
+    },
+    {
+      "source": "Christine Robinson",
+      "relationship": "works_at",
+      "target": "Deloitte",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "sustainability senior manager at Deloitte",
+      "episode_number": 20
+    },
+    {
+      "source": "Christine Robinson",
+      "relationship": "co-authored",
+      "target": "FO Journal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "co-authored this article, which is called Why Sustainability as a Board-Level Risk",
+      "episode_number": 20
+    },
+    {
+      "source": "FO Journal",
+      "relationship": "part_of",
+      "target": "Wall Street Journal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "part of the Wall Street Journal back in July of 2018",
+      "episode_number": 20
+    },
+    {
+      "source": "Deloitte",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "sustainability senior manager at Deloitte",
+      "episode_number": 20
+    },
+    {
+      "source": "Deloitte",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "in terms of climate change",
+      "episode_number": 20
+    },
+    {
+      "source": "Christine Robinson",
+      "relationship": "refers_to",
+      "target": "global reporting initiative",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I always like to refer back to the standards so checking out the global reporting initiative",
+      "episode_number": 20
+    },
+    {
+      "source": "Christine Robinson",
+      "relationship": "refers_to",
+      "target": "sustainability accounting standards board",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "checking out the sustainability accounting standards board",
+      "episode_number": 20
+    },
+    {
+      "source": "Global Reporting Initiative",
+      "relationship": "works_with",
+      "target": "Sustainability Accounting Standards Board",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "referring to the standards",
+      "episode_number": 20
+    },
+    {
+      "source": "PERSON",
+      "relationship": "advocates_for",
+      "target": "climate",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about future impacts",
+      "episode_number": 20
+    },
+    {
+      "source": "PERSON",
+      "relationship": "has",
+      "target": "kids",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "personal anecdote",
+      "episode_number": 20
+    },
+    {
+      "source": "companies",
+      "relationship": "engaged_in",
+      "target": "greenwashing",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing marketing practices",
+      "episode_number": 20
+    },
+    {
+      "source": "Christina",
+      "relationship": "advocates_for",
+      "target": "sustainability strategy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about sustainability strategies",
+      "episode_number": 20
+    },
+    {
+      "source": "Aaron",
+      "relationship": "works_at",
+      "target": "sustainability strategy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about sustainability strategies",
+      "episode_number": 20
+    },
+    {
+      "source": "sustainability strategy",
+      "relationship": "related_to",
+      "target": "materiality",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about business strategies",
+      "episode_number": 20
+    }
+  ]
+}

@@ -1,0 +1,2040 @@
+{
+  "episode": 82,
+  "timestamp": "2025-10-09T11:38:11.013950",
+  "entity_count": 140,
+  "relationship_count": 105,
+  "entities": [
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "Julian Struva",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "climate scientist"
+    },
+    {
+      "name": "Netterland",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "backyard of Julian's home"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Netterland is located"
+    },
+    {
+      "name": "University of Colorado",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "university where Julian received her PhD"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "city where University of Colorado is located"
+    },
+    {
+      "name": "National Snow and Ice Data Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization where Julian became a senior research scientist"
+    },
+    {
+      "name": "Cooperative Institute for Research and Environmental Sciences",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "institute associated with the University of Colorado"
+    },
+    {
+      "name": "University College London",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where Julian was a professor"
+    },
+    {
+      "name": "University of Manitoba",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where Julian was awarded a Canada Excellence Research Chair"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Julian's research on climate variability"
+    },
+    {
+      "name": "Arctic Ocean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of Julian's field campaigns"
+    },
+    {
+      "name": "Al Gore",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "former vice president Julian briefed"
+    },
+    {
+      "name": "IPCC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization related to climate change reports"
+    },
+    {
+      "name": "Al Gore",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing climate change"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "transition to a seasonally ice-free state"
+    },
+    {
+      "name": "IPCC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reports on climate models"
+    },
+    {
+      "name": "Mosaic expedition",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "scientific expedition in the Arctic"
+    },
+    {
+      "name": "German",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "lead expedition in the Arctic"
+    },
+    {
+      "name": "Polar Stern",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "German ship Polar Stern"
+    },
+    {
+      "name": "Russian ship",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "the Russian ship because we had to get refueled"
+    },
+    {
+      "name": "satellites",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "instruments that we have on satellites up in space"
+    },
+    {
+      "name": "microwave instruments",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "full suite of active and passive microwave instruments"
+    },
+    {
+      "name": "polar regions",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "monitoring places like the polar regions"
+    },
+    {
+      "name": "European Space Agency",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "considering building a satellite"
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "my residence is in London"
+    },
+    {
+      "name": "Norway",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "our ship was able to dock in Norway"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "lockdown due to COVID"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we left for the Arctic before COVID had come about"
+    },
+    {
+      "name": "$600,000 radar",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a $600,000 radar that I had built"
+    },
+    {
+      "name": "expedition",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "goal on mosaic while I was there"
+    },
+    {
+      "name": "Germans",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Germans, I'm chartered an airplane for us to fly home to our respective countries."
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "I went back to the UK"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "we could just stay in the Arctic"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "before COVID had come about"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "China and that China was locked down"
+    },
+    {
+      "name": "Italy",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "things emerging in Italy"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we both at that time resided in the Boulder, Netherlands area"
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "we both at that time resided in the Boulder, Netherlands area"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "around climate and have a number of colleagues"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "largely limited to the US"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "in Europe, you know, if I were to have a similar question"
+    },
+    {
+      "name": "Arctic sea ice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "targeting the Arctic sea ice because that had become our poster child for climate change."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the implications of this climate shift that we're going through."
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I went to Greenland in 1993."
+    },
+    {
+      "name": "CICR",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the CICR record."
+    },
+    {
+      "name": "pinotubo eruptions",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "after the pinotubo eruptions."
+    },
+    {
+      "name": "polar regions",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "studying the Arctic regions is because, or just polar regions in general."
+    },
+    {
+      "name": "albedo",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reflective property of snow and ice"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "geographical context of climate change"
+    },
+    {
+      "name": "ocean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "geographical context of climate change"
+    },
+    {
+      "name": "coastal communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "implications of climate change"
+    },
+    {
+      "name": "marine ecosystem",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "dependent on sea ice"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "concerns about climate change"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "concerns about climate change"
+    },
+    {
+      "name": "pomephras",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "warming and methane release"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion of implications"
+    },
+    {
+      "name": "Western world",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "social justice implications"
+    },
+    {
+      "name": "developing nations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "social justice implications"
+    },
+    {
+      "name": "CIA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "task force on climate change"
+    },
+    {
+      "name": "NSIDC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "briefings on Arctic concerns"
+    },
+    {
+      "name": "Russia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "geopolitical situation in the Arctic"
+    },
+    {
+      "name": "CIA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CIA had a task force on climate change."
+    },
+    {
+      "name": "NSIDC",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "They used to come to NSIDC for briefings."
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Concerned about the Arctic, the geopolitical situation."
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Concerned about the Arctic, of course, as well with Russia."
+    },
+    {
+      "name": "Middle East",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Concerned with the Middle East and the Himalayas."
+    },
+    {
+      "name": "Himalayas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Concerned with the Middle East and the Himalayas."
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I've been in the UK since the current administration."
+    },
+    {
+      "name": "DC",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I was at a conference last August in DC."
+    },
+    {
+      "name": "indigenous peoples",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Brought together a lot of indigenous peoples to talk with scientists."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "How their lives are being affected by climate change in the Arctic."
+    },
+    {
+      "name": "National Snow and Ice Data Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Website for the National Snow and Ice Data Center, nsidc.org."
+    },
+    {
+      "name": "University of Manitoba",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The University of Manitoba has a resource."
+    },
+    {
+      "name": "Canada 150",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I have a new Canada 150 chair."
+    },
+    {
+      "name": "Earth observation and modeling",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Center for Earth observation and modeling."
+    },
+    {
+      "name": "Canada 150",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "new Canada 150 chair"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "change precipitation just within the Arctic itself"
+    },
+    {
+      "name": "polar bear",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "polar bear guard"
+    },
+    {
+      "name": "Julian Struva",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Twitter feed at Julian's Truva and Facebook, Julian.struva"
+    },
+    {
+      "name": "remote sensing instruments",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "moved one of the antennas into a different direction"
+    },
+    {
+      "name": "power hut",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "power hut where the power source was coming in"
+    },
+    {
+      "name": "polar bear",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about wildlife interactions"
+    },
+    {
+      "name": "polar fox",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about wildlife interactions"
+    },
+    {
+      "name": "Met City",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to meteorological measurements"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Way They Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Julian Possible",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion participant"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in the podcast"
+    },
+    {
+      "name": "Julian",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about climate action and lifestyle changes"
+    },
+    {
+      "name": "Wyners community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "community mobilization work"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "impact on lifestyle changes"
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "experience during COVID"
+    },
+    {
+      "name": "Antarctica",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "concerns about climate change"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "concerns about climate change"
+    },
+    {
+      "name": "climate action",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community mobilization work"
+    },
+    {
+      "name": "sea ice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about climate change"
+    },
+    {
+      "name": "CO2",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about climate change"
+    },
+    {
+      "name": "bicycles",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "lifestyle changes during COVID"
+    },
+    {
+      "name": "Antarctic",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...the Antarctic has a lot of ice, like 80 meters of sea level rise, contained within that continent."
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...Greenland has been melting quite a bit and contributing more now than ocean expansion or other glaciers to sea level rise."
+    },
+    {
+      "name": "IPCC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...IPCC is the international Panel for climate change."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...they try to synthesize all the publications and all the science understanding that we have about the climate system."
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "on what we think Greenland will contribute has been underestimated."
+    },
+    {
+      "name": "IPCC",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "IPCC is the international."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Panel for climate change."
+    },
+    {
+      "name": "cryosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cryosphere means frozen?"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "about the sea ice and Arctic amplification for that report."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "come back to Colorado for a bit."
+    },
+    {
+      "name": "London",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "there's this fantastic bulk food store that's near my tube station."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "the leadership in this country, the United States."
+    },
+    {
+      "name": "two-degree target",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "to get to the below two-degree target."
+    },
+    {
+      "name": "sea ice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the Arctic sea ice kind of disappears at 1.7 degrees."
+    },
+    {
+      "name": "carbon capture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing methods to reduce carbon in the atmosphere"
+    },
+    {
+      "name": "Arctic sea ice",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing climate change impacts"
+    },
+    {
+      "name": "two degrees Celsius",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing global warming targets"
+    },
+    {
+      "name": "soil regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing carbon sequestration methods"
+    },
+    {
+      "name": "industrial revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing historical context of carbon emissions"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing community efforts for carbon sequestration"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing lifestyle changes during the pandemic"
+    },
+    {
+      "name": "UK",
+      "type": "GEO",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing geographic context of lifestyle changes"
+    },
+    {
+      "name": "London",
+      "type": "GEO",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing city-specific impacts of pollution"
+    },
+    {
+      "name": "Boulder",
+      "type": "GEO",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing local observations of wildlife"
+    },
+    {
+      "name": "Denver",
+      "type": "GEO",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing local observations of wildlife"
+    },
+    {
+      "name": "farmer's market",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing local food sourcing"
+    },
+    {
+      "name": "grass-fed cows",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing sustainable farming practices"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry, author, thought leader, and executive consultant."
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry."
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "To sign up as a daily, weekly, or monthly supporter, please visit yonearth.org-support."
+    },
+    {
+      "name": "glass bottle",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I get my milk in a glass bottle."
+    },
+    {
+      "name": "grass-fed cows",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "He's got only, you know, grass-fed cows."
+    },
+    {
+      "name": "carbon cycling",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Good for the carbon cycling too when it's grass-fed."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Julian Struva",
+      "relationship": "works_at",
+      "target": "National Snow and Ice Data Center",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Julian became a senior research scientist at NSIDC",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "received",
+      "target": "PhD",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Julian received a PhD in geography from the University of Colorado",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Julian's research interests include climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "National Snow and Ice Data Center",
+      "relationship": "part_of",
+      "target": "Cooperative Institute for Research and Environmental Sciences",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "NSIDC is within the Cooperative Institute",
+      "episode_number": 82
+    },
+    {
+      "source": "University of Colorado",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "University of Colorado is located in Boulder",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "published",
+      "target": "80 articles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Julian has published more than 80 articles in peer-reviewed journals",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "briefed",
+      "target": "Al Gore",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Julian has briefed Al Gore on Arctic climate issues",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "located_in",
+      "target": "Netterland",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Julian's home is in Netterland, Colorado",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "part_of",
+      "target": "Arctic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Greenland is part of the Arctic region",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "works_at",
+      "target": "University College London",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Julian was a professor at University College London",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "awarded",
+      "target": "Canada Excellence Research Chair",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Julian was awarded a Canada Excellence Research Chair at University of Manitoba",
+      "episode_number": 82
+    },
+    {
+      "source": "Al Gore",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "Mosaic expedition",
+      "relationship": "part_of",
+      "target": "Arctic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "scientific expedition in the Arctic",
+      "episode_number": 82
+    },
+    {
+      "source": "IPCC",
+      "relationship": "contains",
+      "target": "climate models",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "reports on climate models",
+      "episode_number": 82
+    },
+    {
+      "source": "German",
+      "relationship": "leads",
+      "target": "Mosaic expedition",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "lead expedition in the Arctic",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "contains",
+      "target": "sea ice",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about sea ice levels",
+      "episode_number": 82
+    },
+    {
+      "source": "Polar Stern",
+      "relationship": "part_of",
+      "target": "German ship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the German ship Polar Stern",
+      "episode_number": 82
+    },
+    {
+      "source": "satellites",
+      "relationship": "influences",
+      "target": "microwave instruments",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "instruments that we have on satellites up in space",
+      "episode_number": 82
+    },
+    {
+      "source": "microwave instruments",
+      "relationship": "used_for",
+      "target": "monitoring",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "monitoring places like the polar regions",
+      "episode_number": 82
+    },
+    {
+      "source": "Russian ship",
+      "relationship": "located_in",
+      "target": "ice",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.6,
+      "context": "the Russian ship because we had to get refueled",
+      "episode_number": 82
+    },
+    {
+      "source": "European Space Agency",
+      "relationship": "considering",
+      "target": "satellite",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "considering building a satellite with those same frequencies on it",
+      "episode_number": 82
+    },
+    {
+      "source": "London",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "my residence is in London",
+      "episode_number": 82
+    },
+    {
+      "source": "Norway",
+      "relationship": "part_of",
+      "target": "Europe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "our ship was able to dock in Norway",
+      "episode_number": 82
+    },
+    {
+      "source": "COVID",
+      "relationship": "caused",
+      "target": "lockdown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "lockdown due to COVID",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "part_of",
+      "target": "Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we left for the Arctic before COVID had come about",
+      "episode_number": 82
+    },
+    {
+      "source": "$600,000 radar",
+      "relationship": "made_by",
+      "target": "US",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "a $600,000 radar that I had built by processing in the US",
+      "episode_number": 82
+    },
+    {
+      "source": "expedition",
+      "relationship": "involves",
+      "target": "80 people",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we had between 80, 90 or so people on board",
+      "episode_number": 82
+    },
+    {
+      "source": "Germans",
+      "relationship": "chartered",
+      "target": "airplane",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Germans, I'm chartered an airplane for us to fly home to our respective countries.",
+      "episode_number": 82
+    },
+    {
+      "source": "UK",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "I went back to the UK and then... we both at that time resided in the Boulder, Netherlands area.",
+      "episode_number": 82
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Netherlands",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "we both at that time resided in the Boulder, Netherlands area",
+      "episode_number": 82
+    },
+    {
+      "source": "COVID",
+      "relationship": "impacts",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "the potential impacts that you're seeing and possibly even at times recommendations",
+      "episode_number": 82
+    },
+    {
+      "source": "US",
+      "relationship": "dismisses",
+      "target": "science",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "this idea that it's fake news or it's not true seems to be largely limited to the US",
+      "episode_number": 82
+    },
+    {
+      "source": "Europe",
+      "relationship": "understands",
+      "target": "climate shift",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "they understand that there's going to be some serious implications of this climate shift that we're going through",
+      "episode_number": 82
+    },
+    {
+      "source": "climate change",
+      "relationship": "impacts",
+      "target": "Arctic sea ice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the implications of this climate shift that we're going through.",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "part_of",
+      "target": "Arctic regions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I went to Greenland in 1993.",
+      "episode_number": 82
+    },
+    {
+      "source": "CICR",
+      "relationship": "monitored_by",
+      "target": "scientists",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the CICR record.",
+      "episode_number": 82
+    },
+    {
+      "source": "pinotubo eruptions",
+      "relationship": "caused",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "after the pinotubo eruptions.",
+      "episode_number": 82
+    },
+    {
+      "source": "polar regions",
+      "relationship": "reflects",
+      "target": "sun's energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "snow and ice is a really great balancer for the climate on our planet.",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "contains",
+      "target": "ocean",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographical context of climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "ocean",
+      "relationship": "part_of",
+      "target": "marine ecosystem",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "dependent on sea ice",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "located_in",
+      "target": "coastal communities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "implications of climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "albedo",
+      "relationship": "affects",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "reflective property of snow and ice",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "contains",
+      "target": "ice sheet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "concerns about climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "coastal communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion of implications",
+      "episode_number": 82
+    },
+    {
+      "source": "Western world",
+      "relationship": "creates",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "social justice implications",
+      "episode_number": 82
+    },
+    {
+      "source": "developing nations",
+      "relationship": "suffers_from",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "social justice implications",
+      "episode_number": 82
+    },
+    {
+      "source": "CIA",
+      "relationship": "concerned_about",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "task force on climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "NSIDC",
+      "relationship": "provides_briefings_to",
+      "target": "CIA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "task force on climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "impacts",
+      "target": "global sea level rise",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion of implications",
+      "episode_number": 82
+    },
+    {
+      "source": "CIA",
+      "relationship": "works_at",
+      "target": "NSIDC",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "CIA had a task force on climate change and they used to come to NSIDC for briefings.",
+      "episode_number": 82
+    },
+    {
+      "source": "CIA",
+      "relationship": "concerned_about",
+      "target": "Arctic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "CIA was concerned about the Arctic.",
+      "episode_number": 82
+    },
+    {
+      "source": "CIA",
+      "relationship": "concerned_about",
+      "target": "Middle East",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "CIA was concerned with the Middle East.",
+      "episode_number": 82
+    },
+    {
+      "source": "CIA",
+      "relationship": "concerned_about",
+      "target": "Himalayas",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "CIA was concerned with the Himalayas.",
+      "episode_number": 82
+    },
+    {
+      "source": "indigenous peoples",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Indigenous peoples raised alarm about how their lives are being affected by climate change.",
+      "episode_number": 82
+    },
+    {
+      "source": "NSIDC",
+      "relationship": "located_in",
+      "target": "Arctic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "NSIDC is involved with climate change issues in the Arctic.",
+      "episode_number": 82
+    },
+    {
+      "source": "University of Manitoba",
+      "relationship": "located_in",
+      "target": "Canada",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "University of Manitoba has a resource related to Earth observation.",
+      "episode_number": 82
+    },
+    {
+      "source": "Canada 150",
+      "relationship": "part_of",
+      "target": "University of Manitoba",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Canada 150 chair is part of the University of Manitoba.",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Struva",
+      "relationship": "advocates_for",
+      "target": "Canada 150",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "new Canada 150 chair",
+      "episode_number": 82
+    },
+    {
+      "source": "remote sensing instruments",
+      "relationship": "made_by",
+      "target": "Julian Struva",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "moved one of the antennas into a different direction",
+      "episode_number": 82
+    },
+    {
+      "source": "polar bear",
+      "relationship": "located_in",
+      "target": "Arctic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "polar bear guard",
+      "episode_number": 82
+    },
+    {
+      "source": "power hut",
+      "relationship": "part_of",
+      "target": "Arctic",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "power hut where the power source was coming in",
+      "episode_number": 82
+    },
+    {
+      "source": "polar bear",
+      "relationship": "interacts_with",
+      "target": "polar fox",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "wildlife interactions",
+      "episode_number": 82
+    },
+    {
+      "source": "Met City",
+      "relationship": "located_in",
+      "target": "meteorological measurements",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about wildlife interactions",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Lidge Family Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Vera Herbels",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Growing Spaces",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Soil Works",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Earthwater Press",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "1% for the planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsors",
+      "target": "Way They Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian Possible",
+      "relationship": "participates_in",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion participant",
+      "episode_number": 82
+    },
+    {
+      "source": "Julian",
+      "relationship": "advocates_for",
+      "target": "climate action",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about climate action and lifestyle changes",
+      "episode_number": 82
+    },
+    {
+      "source": "Wyners community",
+      "relationship": "located_in",
+      "target": "climate action",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "community mobilization work",
+      "episode_number": 82
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "lifestyle changes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "impact on lifestyle changes",
+      "episode_number": 82
+    },
+    {
+      "source": "London",
+      "relationship": "located_in",
+      "target": "United Kingdom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "experience during COVID",
+      "episode_number": 82
+    },
+    {
+      "source": "Antarctica",
+      "relationship": "part_of",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "concerns about climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "part_of",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "concerns about climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "CO2",
+      "relationship": "affects",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about climate change",
+      "episode_number": 82
+    },
+    {
+      "source": "bicycles",
+      "relationship": "advocates_for",
+      "target": "health and wellness",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "lifestyle changes during COVID",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "contributes_to",
+      "target": "sea level rise",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...Greenland has been melting quite a bit and contributing more now than ocean expansion or other glaciers to sea level rise.",
+      "episode_number": 82
+    },
+    {
+      "source": "Antarctic",
+      "relationship": "contains",
+      "target": "ice",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the Antarctic has a lot of ice, like 80 meters of sea level rise, contained within that continent.",
+      "episode_number": 82
+    },
+    {
+      "source": "IPCC",
+      "relationship": "composed_of",
+      "target": "scientists",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...this is a consortium of scientists from around the world, yes?",
+      "episode_number": 82
+    },
+    {
+      "source": "climate change",
+      "relationship": "is_studied_by",
+      "target": "IPCC",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...they try to synthesize all the publications and all the science understanding that we have about the climate system.",
+      "episode_number": 82
+    },
+    {
+      "source": "IPCC",
+      "relationship": "located_in",
+      "target": "climate change",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Panel for climate change.",
+      "episode_number": 82
+    },
+    {
+      "source": "IPCC",
+      "relationship": "advocates_for",
+      "target": "cryosphere",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "there was this special on cryospheric report that came out last year",
+      "episode_number": 82
+    },
+    {
+      "source": "Greenland",
+      "relationship": "contributes_to",
+      "target": "cryosphere",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "on what we think Greenland will contribute has been underestimated.",
+      "episode_number": 82
+    },
+    {
+      "source": "Colorado",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "come back to Colorado for a bit.",
+      "episode_number": 82
+    },
+    {
+      "source": "London",
+      "relationship": "contains",
+      "target": "bulk food store",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "there's this fantastic bulk food store that's near my tube station.",
+      "episode_number": 82
+    },
+    {
+      "source": "Arctic",
+      "relationship": "contains",
+      "target": "sea ice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "about the sea ice and Arctic amplification for that report.",
+      "episode_number": 82
+    },
+    {
+      "source": "United States",
+      "relationship": "leads",
+      "target": "climate change",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the leadership in this country, the United States.",
+      "episode_number": 82
+    },
+    {
+      "source": "two-degree target",
+      "relationship": "requires",
+      "target": "reduction of carbon",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "to get to the below two-degree target.",
+      "episode_number": 82
+    },
+    {
+      "source": "carbon capture",
+      "relationship": "advocates_for",
+      "target": "two degrees Celsius",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing methods to achieve climate targets",
+      "episode_number": 82
+    },
+    {
+      "source": "Y-Earth community",
+      "relationship": "located_in",
+      "target": "UK",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing community efforts for carbon sequestration",
+      "episode_number": 82
+    },
+    {
+      "source": "soil regeneration",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing methods to reduce carbon in the atmosphere",
+      "episode_number": 82
+    },
+    {
+      "source": "COVID",
+      "relationship": "impacts",
+      "target": "lifestyle changes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing changes in behavior during the pandemic",
+      "episode_number": 82
+    },
+    {
+      "source": "London",
+      "relationship": "part_of",
+      "target": "UK",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussing geographic context of lifestyle changes",
+      "episode_number": 82
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing local observations of wildlife",
+      "episode_number": 82
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing local observations of wildlife",
+      "episode_number": 82
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry.",
+      "episode_number": 82
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors.",
+      "episode_number": 82
+    },
+    {
+      "source": "milk",
+      "relationship": "contained_in",
+      "target": "glass bottle",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "I get my milk in a glass bottle.",
+      "episode_number": 82
+    },
+    {
+      "source": "grass-fed cows",
+      "relationship": "advocates_for",
+      "target": "carbon cycling",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Good for the carbon cycling too when it's grass-fed.",
+      "episode_number": 82
+    }
+  ]
+}

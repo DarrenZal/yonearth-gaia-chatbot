@@ -1,0 +1,1377 @@
+{
+  "episode": 16,
+  "timestamp": "2025-10-09T10:57:40.050649",
+  "entity_count": 91,
+  "relationship_count": 73,
+  "entities": [
+    {
+      "name": "Brett King Karen",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast introduction"
+    },
+    {
+      "name": "City of Boulder",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Brett's position"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Location of the summit"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "State where Boulder is located"
+    },
+    {
+      "name": "ecosystem summit",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Event being discussed"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Environmental issue"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Environmental issue"
+    },
+    {
+      "name": "bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Focus area of the summit"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Focus area of the summit"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Focus area of the summit"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Focus area of the summit"
+    },
+    {
+      "name": "Ecosystem Summit",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about the ecosystem summit and its areas of focus."
+    },
+    {
+      "name": "Bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "One of the areas of focus at the ecosystem summit."
+    },
+    {
+      "name": "Trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "One of the areas of focus at the ecosystem summit."
+    },
+    {
+      "name": "Soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "One of the areas of focus at the ecosystem summit."
+    },
+    {
+      "name": "Water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "One of the areas of focus at the ecosystem summit."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Participant in the conversation."
+    },
+    {
+      "name": "Brett",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Participant in the conversation."
+    },
+    {
+      "name": "City Council",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Entity that approved the plan discussed."
+    },
+    {
+      "name": "Community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Refers to the local community involved in the ecosystem summit."
+    },
+    {
+      "name": "Climate Change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Issue discussed in relation to ecosystems."
+    },
+    {
+      "name": "Circular Economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Concept discussed in relation to resource use."
+    },
+    {
+      "name": "Social Justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Area added as a focus after community feedback."
+    },
+    {
+      "name": "Equity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Area added as a focus after community feedback."
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the emerald ash borer arrived in Boulder, first place west of the Mississippi"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Boulder and Boulder County can make in that sort of a context"
+    },
+    {
+      "name": "emerald ash borer",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the emerald ash borer arrived in Boulder"
+    },
+    {
+      "name": "tree trust",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "a new organization has started called the tree trust"
+    },
+    {
+      "name": "Rayback collective",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "right near the Rayback collective, they've just installed a new pollinator garden"
+    },
+    {
+      "name": "Be Safe Neighborhoods",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "specific organizations I'm familiar with called Be Safe Neighborhoods"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the issue for honey bees, that honey bee issue"
+    },
+    {
+      "name": "honey bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the issue for honey bees, that honey bee issue"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Boulder Creek is mentioned as a location."
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Boulder County is mentioned in relation to a project."
+    },
+    {
+      "name": "Home Depot",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Home Depot is mentioned in the context of buying chemicals."
+    },
+    {
+      "name": "neonictonoids",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Neonictonoids are discussed as a harmful chemical."
+    },
+    {
+      "name": "Boulder Creek",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Boulder Creek is mentioned in relation to chemical evidence."
+    },
+    {
+      "name": "Silicon Valley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Silicon Valley is mentioned in the context of technology development."
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Climate is discussed in relation to emissions and soil sequestration."
+    },
+    {
+      "name": "soil sequestration project",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "A project launched by Boulder County and the city of Boulder."
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Boulder open space agricultural property"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Boulder is located in Colorado"
+    },
+    {
+      "name": "Jay",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "adjacent organic farmer"
+    },
+    {
+      "name": "National Academy of Sciences",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "study on climate change impacts"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "benefits of the foresight of the founders of the community"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "impacts of climate change on water safety"
+    },
+    {
+      "name": "carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "methodology for agricultural regeneration"
+    },
+    {
+      "name": "Bio Nutrient Food Association",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as an organization engaged in testing nutrient density of food"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to water retention and nutrient density"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a treatment for soil"
+    },
+    {
+      "name": "natural system regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to soil building"
+    },
+    {
+      "name": "citizen's soil initiative",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "mentioned as an initiative for soil sampling and treatment"
+    },
+    {
+      "name": "compost",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a soil amendment"
+    },
+    {
+      "name": "biodynamic",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a possible soil amendment"
+    },
+    {
+      "name": "nutrient density",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to food quality"
+    },
+    {
+      "name": "carrot",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as an item for nutrient testing"
+    },
+    {
+      "name": "apple",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as an item for nutrient testing"
+    },
+    {
+      "name": "broccoli",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as an item for nutrient testing"
+    },
+    {
+      "name": "Brett Can Care",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "senior policy advisor for sustainability and resilience at the city of Boulder"
+    },
+    {
+      "name": "Mark Gutridge",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the great organic farmers right here in the area"
+    },
+    {
+      "name": "McColley Farms",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the farm that's right to the east of the property we're doing our soil test project on"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "city of Boulder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Boulder, Colorado"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book discussed in the podcast"
+    },
+    {
+      "name": "CSA",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "community supported agriculture program"
+    },
+    {
+      "name": "ECO cycle",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "wonderful organizations that are part of this collaboration"
+    },
+    {
+      "name": "University of Colorado Center for Sustainable Landscapes and Communities",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "wonderful organizations that are part of this collaboration"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "wonderful organizations that are part of this collaboration"
+    },
+    {
+      "name": "Phil Taylor",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Matt agriculture, Phil Taylor and his team"
+    },
+    {
+      "name": "Matt agriculture",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of work being done by Matt agriculture"
+    },
+    {
+      "name": "Phil Taylor",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Phil Taylor and his team"
+    },
+    {
+      "name": "ECO cycle",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "talk a little about ECO cycle"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the community of Boulder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "first carbon farm plans in Colorado's history"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Phil's been in close connection to California"
+    },
+    {
+      "name": "natural resource conservation service",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "submitted to the natural resource conservation service"
+    },
+    {
+      "name": "David Haskell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaking briefly about trees"
+    },
+    {
+      "name": "The Song of the Trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "David Haskell's most recent book"
+    },
+    {
+      "name": "The Peoples Pollinator Action Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "group of folks talking about their work"
+    },
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "talking about soils"
+    },
+    {
+      "name": "Yvonne Coslina",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "artist friend creating children's books"
+    },
+    {
+      "name": "Kickstarter",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "platform for running a campaign"
+    },
+    {
+      "name": "bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the topics discussed"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the topics discussed"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the topics discussed"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the topics discussed"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one of the topics discussed"
+    },
+    {
+      "name": "Brett",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast discussion"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about environmental issues"
+    },
+    {
+      "name": "ecosystem summit",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned upcoming event"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about social structure"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Brett King Karen",
+      "relationship": "works_at",
+      "target": "City of Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brett's position at the City of Boulder",
+      "episode_number": 16
+    },
+    {
+      "source": "City of Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "City's location",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Summit location",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "focuses_on",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Focus area of the summit",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "focuses_on",
+      "target": "bees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Focus area of the summit",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "focuses_on",
+      "target": "trees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Focus area of the summit",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "focuses_on",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Focus area of the summit",
+      "episode_number": 16
+    },
+    {
+      "source": "ecosystem summit",
+      "relationship": "focuses_on",
+      "target": "water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Focus area of the summit",
+      "episode_number": 16
+    },
+    {
+      "source": "Brett King Karen",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Brett's focus on climate issues",
+      "episode_number": 16
+    },
+    {
+      "source": "Ecosystem Summit",
+      "relationship": "focuses_on",
+      "target": "Bees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Areas of focus at the ecosystem summit.",
+      "episode_number": 16
+    },
+    {
+      "source": "Ecosystem Summit",
+      "relationship": "focuses_on",
+      "target": "Trees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Areas of focus at the ecosystem summit.",
+      "episode_number": 16
+    },
+    {
+      "source": "Ecosystem Summit",
+      "relationship": "focuses_on",
+      "target": "Soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Areas of focus at the ecosystem summit.",
+      "episode_number": 16
+    },
+    {
+      "source": "Ecosystem Summit",
+      "relationship": "focuses_on",
+      "target": "Water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Areas of focus at the ecosystem summit.",
+      "episode_number": 16
+    },
+    {
+      "source": "Community",
+      "relationship": "advocates_for",
+      "target": "Climate Change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Community involvement in climate work.",
+      "episode_number": 16
+    },
+    {
+      "source": "City Council",
+      "relationship": "approved",
+      "target": "Ecosystem Summit",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "Approval of the plan discussed.",
+      "episode_number": 16
+    },
+    {
+      "source": "Community",
+      "relationship": "advocates_for",
+      "target": "Social Justice",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Community feedback on the areas of focus.",
+      "episode_number": 16
+    },
+    {
+      "source": "Community",
+      "relationship": "advocates_for",
+      "target": "Equity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Community feedback on the areas of focus.",
+      "episode_number": 16
+    },
+    {
+      "source": "Ecosystem Summit",
+      "relationship": "addresses",
+      "target": "Circular Economy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Discussion on resource use and sustainability.",
+      "episode_number": 16
+    },
+    {
+      "source": "emerald ash borer",
+      "relationship": "causes_decline_in",
+      "target": "ash trees",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "the emerald ash borer arrived in Boulder, first place west of the Mississippi",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "contains",
+      "target": "tree trust",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "a new organization has started called the tree trust",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder and Boulder County can make in that sort of a context",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "contains",
+      "target": "pollinator gardens",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "this amazing grassroots movement that has started in Boulder",
+      "episode_number": 16
+    },
+    {
+      "source": "Be Safe Neighborhoods",
+      "relationship": "advocates_for",
+      "target": "pollinators",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "specific organizations I'm familiar with called Be Safe Neighborhoods",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we'll be talking about how we make this transition and adjust in equitable way",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Boulder County is a part of Colorado.",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder is a city within Boulder County.",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder Creek",
+      "relationship": "contains",
+      "target": "neonictonoids",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Boulder Creek is found to have evidence of neonictonoids.",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "initiated",
+      "target": "soil sequestration project",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Boulder County started a soil sequestration project.",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder is located in Boulder County.",
+      "episode_number": 16
+    },
+    {
+      "source": "Home Depot",
+      "relationship": "sells",
+      "target": "neonictonoids",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Home Depot is mentioned as a place to buy chemicals, including neonictonoids.",
+      "episode_number": 16
+    },
+    {
+      "source": "climate",
+      "relationship": "affects",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Climate change impacts soil health and composition.",
+      "episode_number": 16
+    },
+    {
+      "source": "Silicon Valley",
+      "relationship": "collaborates_with",
+      "target": "natural living biosphere",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Silicon Valley is mentioned in the context of collaboration with natural systems.",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder open space agricultural property",
+      "episode_number": 16
+    },
+    {
+      "source": "Jay",
+      "relationship": "works_with",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "adjacent organic farmer",
+      "episode_number": 16
+    },
+    {
+      "source": "National Academy of Sciences",
+      "relationship": "studies",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "study on climate change impacts",
+      "episode_number": 16
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "water",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "benefits of the foresight of the founders of the community",
+      "episode_number": 16
+    },
+    {
+      "source": "climate change",
+      "relationship": "increases",
+      "target": "fire likelihood",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "impacts of climate change on fire likelihood",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "experiences",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Boulder climate conditions",
+      "episode_number": 16
+    },
+    {
+      "source": "Bio Nutrient Food Association",
+      "relationship": "advocates_for",
+      "target": "nutrient density",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization promotes methodologies for testing nutrient density of food",
+      "episode_number": 16
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "natural system regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "soil is integral to the concept of natural system regeneration",
+      "episode_number": 16
+    },
+    {
+      "source": "citizen's soil initiative",
+      "relationship": "supports",
+      "target": "soil",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "initiative aims to engage people in soil sampling and treatment",
+      "episode_number": 16
+    },
+    {
+      "source": "compost",
+      "relationship": "made_by",
+      "target": "citizen's soil initiative",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "compost is a treatment option promoted by the initiative",
+      "episode_number": 16
+    },
+    {
+      "source": "biodynamic",
+      "relationship": "made_by",
+      "target": "citizen's soil initiative",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "biodynamic is a treatment option promoted by the initiative",
+      "episode_number": 16
+    },
+    {
+      "source": "carrot",
+      "relationship": "made_by",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "carrots are grown in soil, nutrient density is affected by soil quality",
+      "episode_number": 16
+    },
+    {
+      "source": "apple",
+      "relationship": "made_by",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "apples are grown in soil, nutrient density is affected by soil quality",
+      "episode_number": 16
+    },
+    {
+      "source": "broccoli",
+      "relationship": "made_by",
+      "target": "soil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "broccoli is grown in soil, nutrient density is affected by soil quality",
+      "episode_number": 16
+    },
+    {
+      "source": "Brett Can Care",
+      "relationship": "works_at",
+      "target": "city of Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "senior policy advisor for sustainability and resilience at the city of Boulder",
+      "episode_number": 16
+    },
+    {
+      "source": "Mark Gutridge",
+      "relationship": "advocates_for",
+      "target": "organic farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "one of the great organic farmers right here in the area",
+      "episode_number": 16
+    },
+    {
+      "source": "McColley Farms",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the farm that's right to the east of the property we're doing our soil test project on",
+      "episode_number": 16
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "city of Boulder",
+      "episode_number": 16
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "discussed_in",
+      "target": "podcast series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "book discussed in the podcast",
+      "episode_number": 16
+    },
+    {
+      "source": "ECO cycle",
+      "relationship": "collaborates_with",
+      "target": "Boulder County",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "wonderful organizations that are part of this collaboration",
+      "episode_number": 16
+    },
+    {
+      "source": "University of Colorado Center for Sustainable Landscapes and Communities",
+      "relationship": "collaborates_with",
+      "target": "Boulder County",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "wonderful organizations that are part of this collaboration",
+      "episode_number": 16
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "collaborates_with",
+      "target": "Boulder County",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "wonderful organizations that are part of this collaboration",
+      "episode_number": 16
+    },
+    {
+      "source": "Phil Taylor",
+      "relationship": "works_at",
+      "target": "Matt agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "Matt agriculture, Phil Taylor and his team",
+      "episode_number": 16
+    },
+    {
+      "source": "Phil Taylor",
+      "relationship": "works_at",
+      "target": "Matt agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Phil Taylor and Matt agriculture",
+      "episode_number": 16
+    },
+    {
+      "source": "ECO cycle",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "talk a little about ECO cycle",
+      "episode_number": 16
+    },
+    {
+      "source": "Phil Taylor",
+      "relationship": "advocates_for",
+      "target": "natural resource conservation service",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "helping to lead the development of the first carbon farm plans",
+      "episode_number": 16
+    },
+    {
+      "source": "ECO cycle",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "first carbon farm plans in Colorado's history",
+      "episode_number": 16
+    },
+    {
+      "source": "Phil Taylor",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Phil's been in close connection to California",
+      "episode_number": 16
+    },
+    {
+      "source": "David Haskell",
+      "relationship": "advocates_for",
+      "target": "trees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "speaking briefly about trees",
+      "episode_number": 16
+    },
+    {
+      "source": "The Peoples Pollinator Action Network",
+      "relationship": "works_on",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "group of folks talking about their work",
+      "episode_number": 16
+    },
+    {
+      "source": "Aaron Perry",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "talking about soils",
+      "episode_number": 16
+    },
+    {
+      "source": "Yvonne Coslina",
+      "relationship": "creates",
+      "target": "children's books",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "creating a series of children's books",
+      "episode_number": 16
+    },
+    {
+      "source": "Kickstarter",
+      "relationship": "hosts",
+      "target": "campaign",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "running a campaign for children's books",
+      "episode_number": 16
+    },
+    {
+      "source": "bees",
+      "relationship": "part_of",
+      "target": "pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one of the topics discussed",
+      "episode_number": 16
+    },
+    {
+      "source": "trees",
+      "relationship": "part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one of the topics discussed",
+      "episode_number": 16
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one of the topics discussed",
+      "episode_number": 16
+    },
+    {
+      "source": "water",
+      "relationship": "part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one of the topics discussed",
+      "episode_number": 16
+    },
+    {
+      "source": "community",
+      "relationship": "part_of",
+      "target": "social systems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one of the topics discussed",
+      "episode_number": 16
+    },
+    {
+      "source": "Brett",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussion about climate action",
+      "episode_number": 16
+    },
+    {
+      "source": "community",
+      "relationship": "part_of",
+      "target": "ecosystem summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mentioned in the context of the event",
+      "episode_number": 16
+    },
+    {
+      "source": "community",
+      "relationship": "supports",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Discussion about community actions against climate change",
+      "episode_number": 16
+    }
+  ]
+}

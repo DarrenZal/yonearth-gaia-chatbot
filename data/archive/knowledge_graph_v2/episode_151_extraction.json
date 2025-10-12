@@ -1,0 +1,2835 @@
+{
+  "episode": 151,
+  "timestamp": "2025-10-09T10:54:04.795486",
+  "entity_count": 205,
+  "relationship_count": 139,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Nicolette Han Niamen",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "author of Defending Beef"
+    },
+    {
+      "name": "Defending Beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Nicolette Han Niamen"
+    },
+    {
+      "name": "Righteous Pork Chop",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Nicolette Han Niamen"
+    },
+    {
+      "name": "New York Times",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "Wall Street Journal",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "Los Angeles Times",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "Atlantic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "San Francisco Chronicle",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "Earth Island Journal",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication where Nicolette has written essays"
+    },
+    {
+      "name": "PBS News Hour",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "show where Nicolette has appeared"
+    },
+    {
+      "name": "Dr. Oz Show",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "show where Nicolette has appeared"
+    },
+    {
+      "name": "eating animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "film where Nicolette has appeared"
+    },
+    {
+      "name": "sustainable",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "film where Nicolette has appeared"
+    },
+    {
+      "name": "Time",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication featuring Nicolette's work"
+    },
+    {
+      "name": "O Magazine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication featuring Nicolette's work"
+    },
+    {
+      "name": "Guardian",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication featuring Nicolette's work"
+    },
+    {
+      "name": "Waterkeeper",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Environmental Organization where Nicolette was senior attorney"
+    },
+    {
+      "name": "National Wildlife Federation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization where Nicolette was an Environmental Lawyer"
+    },
+    {
+      "name": "Kalamazoo",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "City where Nicolette served on the City Commission"
+    },
+    {
+      "name": "Michigan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State where Kalamazoo is located"
+    },
+    {
+      "name": "Northern California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "place where Nicolette lives"
+    },
+    {
+      "name": "Bill Niamen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Nicolette's husband"
+    },
+    {
+      "name": "Natural Meat Companies",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "company founded by Bill Niamen"
+    },
+    {
+      "name": "Niamen Ranch",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "company founded by Bill Niamen"
+    },
+    {
+      "name": "BN Ranch",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "company founded by Bill Niamen"
+    },
+    {
+      "name": "meat",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "argument that meat is too ecologically damaging"
+    },
+    {
+      "name": "beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "specifically beef is the one that usually gets the focus"
+    },
+    {
+      "name": "environmentalist",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "lifelong environmentalist"
+    },
+    {
+      "name": "lawyer",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "working as a lawyer for environmental organizations"
+    },
+    {
+      "name": "environmental organizations",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working as a lawyer for environmental organizations"
+    },
+    {
+      "name": "meat industry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "focused on the meat industry"
+    },
+    {
+      "name": "ranch",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "living and working on a ranch"
+    },
+    {
+      "name": "ranchers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "met ranchers all over the world"
+    },
+    {
+      "name": "ecological argument",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ecological argument is just very, very wrong"
+    },
+    {
+      "name": "health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "beef is not good for your health"
+    },
+    {
+      "name": "environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "beef is damaging to the environment"
+    },
+    {
+      "name": "beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "beef was valuable food for our health"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "human impacted climate change"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "engaged directly in agriculture"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "engaged directly in regenerative agriculture"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "collaborate with dozens and dozens of farmers"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "published by our friends at Chelsea Green Publishing"
+    },
+    {
+      "name": "cattle",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cattle grazing on grasslands"
+    },
+    {
+      "name": "grasslands",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "cattle grazing on grasslands"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "water, the wildlife, the biodiversity"
+    },
+    {
+      "name": "Alan Savory",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "wildlife ecologist from Zimbabwe"
+    },
+    {
+      "name": "Zimbabwe",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "country where Alan Savory is from"
+    },
+    {
+      "name": "cattle",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grazing animals essential for ecological function"
+    },
+    {
+      "name": "beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "concept discussed in relation to agriculture"
+    },
+    {
+      "name": "Earth",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "planet discussed in ecological context"
+    },
+    {
+      "name": "caribou",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "example of wild grazing herd"
+    },
+    {
+      "name": "bison",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "example of wild grazing herd"
+    },
+    {
+      "name": "Kate Buffalo",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "example of wild grazing herd"
+    },
+    {
+      "name": "Will de Beast",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "example of wild grazing herd"
+    },
+    {
+      "name": "Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing ecological impact and soil biology"
+    },
+    {
+      "name": "cattle",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing ecological impact and soil biology"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing ecological impact and soil biology"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing carbon concentration and climate"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing carbon concentration and climate"
+    },
+    {
+      "name": "methane",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing carbon concentration and climate"
+    },
+    {
+      "name": "industrial revolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing historical context of carbon release"
+    },
+    {
+      "name": "West Jackson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioning a quote regarding the plow"
+    },
+    {
+      "name": "plow",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing agricultural impact on soil"
+    },
+    {
+      "name": "Fred Provenza",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "work of people like Fred Provenza"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "importance of doing that in order to create more healthful food"
+    },
+    {
+      "name": "atmosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "migration from basically from the soil to that atmosphere"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "ways to get more carbon back into the soil"
+    },
+    {
+      "name": "animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "role of animals in that"
+    },
+    {
+      "name": "manure",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "impact of the manure"
+    },
+    {
+      "name": "Ellen Savory",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Ellen savory concept of proxy for a wild animal"
+    },
+    {
+      "name": "Ellen Savory",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept of proxy for a wild animal"
+    },
+    {
+      "name": "Alan Sabry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wildlife ecologist"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "biodynamic ranch here in Colorado"
+    },
+    {
+      "name": "NRCS",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "multi year study"
+    },
+    {
+      "name": "ecosystem restoration camp movement",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "rebranded as ecosystem restoration communities"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of sustainable settings"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "landscapes where Alan Sabry worked"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "studies from around the world"
+    },
+    {
+      "name": "Asia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "studies from around the world"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "studies from around the world"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the role of water in beef production"
+    },
+    {
+      "name": "beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing the water footprint of beef"
+    },
+    {
+      "name": "National Wildlife Federation",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization where the speaker worked as an environmental lawyer"
+    },
+    {
+      "name": "waterkeeper",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization where the speaker worked as an environmental lawyer"
+    },
+    {
+      "name": "UC Davis",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university that conducted a study on water usage in beef production"
+    },
+    {
+      "name": "vegetation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the role of vegetation in water storage and ecosystem health"
+    },
+    {
+      "name": "rice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparing water footprint of beef to rice"
+    },
+    {
+      "name": "rice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "commonly eat such as rice."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "it's not an outsized water footprint."
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "where you have ecosystems with grazing animals."
+    },
+    {
+      "name": "grazing animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where you have ecosystems with grazing animals."
+    },
+    {
+      "name": "vegetation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "storing more water in the vegetation."
+    },
+    {
+      "name": "beef",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "defending beef, that's the quantity side of it."
+    },
+    {
+      "name": "Judy Schwartz",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "to give a shout out and connect another dot to another wonderful Chelsea Green author, Judy Schwartz."
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "another wonderful Chelsea Green author."
+    },
+    {
+      "name": "cow, save the planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "she's written a book, cow, save the planet."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "book on water."
+    },
+    {
+      "name": "corn",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cereal or grass crop production, which is rice or corn."
+    },
+    {
+      "name": "soy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "protein substitutes from crops like soy."
+    },
+    {
+      "name": "wildlife",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "dramatic impacts on wildlife."
+    },
+    {
+      "name": "monarchs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "whether they're migrating, you know, monarchs or other birds."
+    },
+    {
+      "name": "migratory birds",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "research that I cite some of it in my book about migratory birds."
+    },
+    {
+      "name": "chemical runoff",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental impacts"
+    },
+    {
+      "name": "groundwater",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about chemical seepage"
+    },
+    {
+      "name": "wildlife",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about impacts on animals"
+    },
+    {
+      "name": "monarchs",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about migrating birds"
+    },
+    {
+      "name": "birds",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about wildlife"
+    },
+    {
+      "name": "grazing landscape",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "comparison with crop fields"
+    },
+    {
+      "name": "crop field",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "comparison with grazing landscape"
+    },
+    {
+      "name": "Amazonian rainforest",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "comparison for biodiversity"
+    },
+    {
+      "name": "pasture",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about environments"
+    },
+    {
+      "name": "conventional corn field",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "soy field",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "ranch",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "personal experience"
+    },
+    {
+      "name": "Iowa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "driving through agricultural areas"
+    },
+    {
+      "name": "Idaho",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "driving through agricultural areas"
+    },
+    {
+      "name": "potato fields",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about agriculture"
+    },
+    {
+      "name": "San Francisco",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of radio station"
+    },
+    {
+      "name": "vegan",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about dietary choices"
+    },
+    {
+      "name": "radio station",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about interview"
+    },
+    {
+      "name": "Siri",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as agreeing during the discussion."
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Located in Colorado."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State where Boulder is located."
+    },
+    {
+      "name": "nature conservancy study",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Study mentioned regarding biodiversity."
+    },
+    {
+      "name": "Vernal pools",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Topic of study mentioned."
+    },
+    {
+      "name": "regenerative farm",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Type of farm mentioned in the context of biodiversity."
+    },
+    {
+      "name": "urban communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Mentioned in relation to agricultural communities."
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Key topic discussed in the podcast."
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "moved to California"
+    },
+    {
+      "name": "Vernal pools",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "controversy surrounding Vernal pools"
+    },
+    {
+      "name": "cattle",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "movement to get cattle out of those areas"
+    },
+    {
+      "name": "nature conservancy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nature conservancy decided to study this"
+    },
+    {
+      "name": "Alan Sanfrey",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "as Alan Sanfrey points out"
+    },
+    {
+      "name": "Nature Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "nature conservancy study"
+    },
+    {
+      "name": "Alan Sanfrey",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "points out, cattle uniquely because"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "moving to California and learning about that particular ecosystem"
+    },
+    {
+      "name": "Defending Beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Defending Beef, a beautiful book"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "published by Chelsea Green Publishing"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "I'm your host, Aaron William Perry"
+    },
+    {
+      "name": "Nicolette Han Nyman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "visiting with Nicolette Han Nyman, the author of Defending Beef"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "this is the Y on Earth community podcast"
+    },
+    {
+      "name": "Purium Organic Superfudes",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "a big shout out to Purium Organic Superfudes"
+    },
+    {
+      "name": "Waleigh Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "a big shout out to Waleigh Waters"
+    },
+    {
+      "name": "Earth Hero Sustainable Products",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Thanks to Earth Hero Sustainable Products"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Thanks to Profitable Purpose Consulting"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Earth Coast Productions that has a huge hand in making our podcast series possible"
+    },
+    {
+      "name": "Y-O-Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "go to Y-O-Earth.org and click on the donate button"
+    },
+    {
+      "name": "Nikolette",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast interview"
+    },
+    {
+      "name": "Waleigh Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "aromatherapy soaking salts"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "urban environment"
+    },
+    {
+      "name": "omega-3 fatty acids",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "dietary discussion"
+    },
+    {
+      "name": "children's immunity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about parenting and health"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I lived in New York City for five years"
+    },
+    {
+      "name": "Bill Niamen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "married Bill Niamen"
+    },
+    {
+      "name": "Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "It's just living in Manhattan"
+    },
+    {
+      "name": "France",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "paintings I've seen from France in the Middle Ages"
+    },
+    {
+      "name": "Amish",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the amish were a community that was almost absent of both of these conditions"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in industrialized countries, including the United States"
+    },
+    {
+      "name": "Amish",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Amish farming practices"
+    },
+    {
+      "name": "COVID pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "discussion on pandemics"
+    },
+    {
+      "name": "asthma",
+      "type": "CONCEPT",
+      "name_confidence": 0.97,
+      "type_confidence": 0.95,
+      "context": "discussion on health effects"
+    },
+    {
+      "name": "food allergies",
+      "type": "CONCEPT",
+      "name_confidence": 0.97,
+      "type_confidence": 0.95,
+      "context": "discussion on health effects"
+    },
+    {
+      "name": "PBS",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "reference to a PBS program"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "research from various parts of the world"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "research from various parts of the world"
+    },
+    {
+      "name": "grass fed pasture raised beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion on nutrition"
+    },
+    {
+      "name": "healthy animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion on health benefits"
+    },
+    {
+      "name": "nutrition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about food alternatives and nutrients"
+    },
+    {
+      "name": "bioavailability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about nutrients"
+    },
+    {
+      "name": "bones",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about health and nutrients"
+    },
+    {
+      "name": "muscles",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about health and nutrients"
+    },
+    {
+      "name": "brains",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about health and nutrients"
+    },
+    {
+      "name": "mind-body spirit",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussion about health and nutrients"
+    },
+    {
+      "name": "biologist",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "speaker's background"
+    },
+    {
+      "name": "parents",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "speaker's upbringing"
+    },
+    {
+      "name": "species",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about evolution"
+    },
+    {
+      "name": "pre-human ancestors",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about evolution"
+    },
+    {
+      "name": "meat",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about diet and evolution"
+    },
+    {
+      "name": "Richard Rangham",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author of 'Catching Fire'"
+    },
+    {
+      "name": "Catching Fire",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book discussed"
+    },
+    {
+      "name": "Nobel event",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "context of meeting Richard Rangham"
+    },
+    {
+      "name": "pathogens",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about food safety"
+    },
+    {
+      "name": "food system",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about food and health"
+    },
+    {
+      "name": "protein",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about nutrients"
+    },
+    {
+      "name": "meat, fish, dairy, eggs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sources of protein"
+    },
+    {
+      "name": "plant sources",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about protein sources"
+    },
+    {
+      "name": "United Nations Food and Agricultural Organization",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing nutrition and health"
+    },
+    {
+      "name": "Fred Provenza",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to studies and books"
+    },
+    {
+      "name": "industrialized world",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussing health and nutrition"
+    },
+    {
+      "name": "ultra-processed foods",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing health impacts"
+    },
+    {
+      "name": "calcium",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "nutritional content"
+    },
+    {
+      "name": "protein",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "nutritional content"
+    },
+    {
+      "name": "Niklai",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "food system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about regenerative food system"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about food production"
+    },
+    {
+      "name": "grandma Moses",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "reference to a painting"
+    },
+    {
+      "name": "animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about animal production"
+    },
+    {
+      "name": "landscape",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about returning animals to landscape"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about farm community"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a community involved in sustainable farming"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "title of the podcast"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website mentioned for support"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "code for discounts"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "authored",
+      "target": "Defending Beef",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Nicolette is the author of the book Defending Beef",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "authored",
+      "target": "Righteous Pork Chop",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Nicolette is the author of the book Righteous Pork Chop",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "New York Times",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nicolette has written essays for the New York Times",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "Wall Street Journal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nicolette has written essays for the Wall Street Journal",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "Los Angeles Times",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nicolette has written essays for the Los Angeles Times",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "Atlantic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette has written essays for the Atlantic",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "San Francisco Chronicle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette has written essays for the San Francisco Chronicle",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "wrote_for",
+      "target": "Earth Island Journal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette has written essays for the Earth Island Journal",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "appeared_on",
+      "target": "PBS News Hour",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette has appeared on PBS News Hour",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "appeared_on",
+      "target": "Dr. Oz Show",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette has appeared on Dr. Oz Show",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "appeared_in",
+      "target": "eating animals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nicolette has appeared in the film eating animals",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "appeared_in",
+      "target": "sustainable",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nicolette has appeared in the film sustainable",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "featured_in",
+      "target": "Time",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette's work has been featured in Time",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "featured_in",
+      "target": "O Magazine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette's work has been featured in O Magazine",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "featured_in",
+      "target": "Guardian",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette's work has been featured in the Guardian",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "worked_at",
+      "target": "Waterkeeper",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nicolette was senior attorney for Waterkeeper",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "worked_at",
+      "target": "National Wildlife Federation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nicolette was an Environmental Lawyer for National Wildlife Federation",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "served_on",
+      "target": "City Commission",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette served two terms on the City Commission for Kalamazoo",
+      "episode_number": 151
+    },
+    {
+      "source": "Kalamazoo",
+      "relationship": "located_in",
+      "target": "Michigan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Kalamazoo is a city in Michigan",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Niamen",
+      "relationship": "lives_in",
+      "target": "Northern California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nicolette lives in Northern California",
+      "episode_number": 151
+    },
+    {
+      "source": "Bill Niamen",
+      "relationship": "founded",
+      "target": "Natural Meat Companies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Bill Niamen is the founder of Natural Meat Companies",
+      "episode_number": 151
+    },
+    {
+      "source": "Bill Niamen",
+      "relationship": "founded",
+      "target": "Niamen Ranch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Bill Niamen is the founder of Niamen Ranch",
+      "episode_number": 151
+    },
+    {
+      "source": "Bill Niamen",
+      "relationship": "founded",
+      "target": "BN Ranch",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Bill Niamen is the founder of BN Ranch",
+      "episode_number": 151
+    },
+    {
+      "source": "environmentalist",
+      "relationship": "works_at",
+      "target": "environmental organizations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "working as a lawyer for environmental organizations",
+      "episode_number": 151
+    },
+    {
+      "source": "environmental organizations",
+      "relationship": "focused_on",
+      "target": "meat industry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "focused on the meat industry",
+      "episode_number": 151
+    },
+    {
+      "source": "ranchers",
+      "relationship": "located_in",
+      "target": "ranch",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "met ranchers all over the world",
+      "episode_number": 151
+    },
+    {
+      "source": "beef",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "beef was valuable food for our health",
+      "episode_number": 151
+    },
+    {
+      "source": "beef",
+      "relationship": "damaging_to",
+      "target": "environment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "beef is damaging to the environment",
+      "episode_number": 151
+    },
+    {
+      "source": "agriculture",
+      "relationship": "part_of",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "engaged directly in agriculture",
+      "episode_number": 151
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "published",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "published by our friends at Chelsea Green Publishing",
+      "episode_number": 151
+    },
+    {
+      "source": "cattle",
+      "relationship": "grazing_on",
+      "target": "grasslands",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "cattle grazing on grasslands",
+      "episode_number": 151
+    },
+    {
+      "source": "grasslands",
+      "relationship": "contains",
+      "target": "biodiversity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "water, the wildlife, the biodiversity",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Savory",
+      "relationship": "advocates_for",
+      "target": "holistic management",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing ecological management principles",
+      "episode_number": 151
+    },
+    {
+      "source": "cattle",
+      "relationship": "made_by",
+      "target": "agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing ecological function of grazing animals",
+      "episode_number": 151
+    },
+    {
+      "source": "beef",
+      "relationship": "defended_by",
+      "target": "Alan Savory",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "context of agricultural practices",
+      "episode_number": 151
+    },
+    {
+      "source": "Earth",
+      "relationship": "contains",
+      "target": "caribou",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing ecological impact of grazing herds",
+      "episode_number": 151
+    },
+    {
+      "source": "Earth",
+      "relationship": "contains",
+      "target": "bison",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing ecological impact of grazing herds",
+      "episode_number": 151
+    },
+    {
+      "source": "Earth",
+      "relationship": "contains",
+      "target": "Kate Buffalo",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing ecological impact of grazing herds",
+      "episode_number": 151
+    },
+    {
+      "source": "Earth",
+      "relationship": "contains",
+      "target": "Will de Beast",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing ecological impact of grazing herds",
+      "episode_number": 151
+    },
+    {
+      "source": "cattle",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussing ecological impact and soil biology",
+      "episode_number": 151
+    },
+    {
+      "source": "carbon",
+      "relationship": "related_to",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing carbon concentration and climate",
+      "episode_number": 151
+    },
+    {
+      "source": "carbon dioxide",
+      "relationship": "related_to",
+      "target": "climate",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing carbon concentration and climate",
+      "episode_number": 151
+    },
+    {
+      "source": "methane",
+      "relationship": "related_to",
+      "target": "climate",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing carbon concentration and climate",
+      "episode_number": 151
+    },
+    {
+      "source": "plow",
+      "relationship": "damages",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing agricultural impact on soil",
+      "episode_number": 151
+    },
+    {
+      "source": "West Jackson",
+      "relationship": "says",
+      "target": "plow",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioning a quote regarding the plow",
+      "episode_number": 151
+    },
+    {
+      "source": "Fred Provenza",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "work of people like Fred Provenza",
+      "episode_number": 151
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microorganisms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "importance of doing that in order to create more healthful food",
+      "episode_number": 151
+    },
+    {
+      "source": "manure",
+      "relationship": "made_by",
+      "target": "animals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "impact of the manure",
+      "episode_number": 151
+    },
+    {
+      "source": "animals",
+      "relationship": "part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "role of animals in that",
+      "episode_number": 151
+    },
+    {
+      "source": "soil",
+      "relationship": "located_in",
+      "target": "atmosphere",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "migration from basically from the soil to that atmosphere",
+      "episode_number": 151
+    },
+    {
+      "source": "Ellen Savory",
+      "relationship": "advocates_for",
+      "target": "grazing animals",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Ellen savory concept of proxy for a wild animal",
+      "episode_number": 151
+    },
+    {
+      "source": "Ellen Savory",
+      "relationship": "advocates_for",
+      "target": "grazing animal management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "concept of proxy for a wild animal",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sabry",
+      "relationship": "works_at",
+      "target": "Sabry Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "wildlife ecologist",
+      "episode_number": 151
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "biodynamic ranch",
+      "episode_number": 151
+    },
+    {
+      "source": "NRCS",
+      "relationship": "conducted_study_with",
+      "target": "sustainable settings",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "multi year study",
+      "episode_number": 151
+    },
+    {
+      "source": "ecosystem restoration camp movement",
+      "relationship": "rebranded_as",
+      "target": "ecosystem restoration communities",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "movement worldwide",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sabry",
+      "relationship": "conducted_study_in",
+      "target": "Africa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "wildlife ecologist",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sabry",
+      "relationship": "conducted_study_in",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "wildlife ecologist",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sabry",
+      "relationship": "conducted_study_in",
+      "target": "Asia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "wildlife ecologist",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sabry",
+      "relationship": "conducted_study_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "wildlife ecologist",
+      "episode_number": 151
+    },
+    {
+      "source": "water",
+      "relationship": "stored_in",
+      "target": "vegetation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing how water is captured in vegetation",
+      "episode_number": 151
+    },
+    {
+      "source": "beef",
+      "relationship": "more_water_intensive_than",
+      "target": "rice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "comparing the water footprint of beef to rice",
+      "episode_number": 151
+    },
+    {
+      "source": "National Wildlife Federation",
+      "relationship": "employs",
+      "target": "speaker",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the speaker's previous job",
+      "episode_number": 151
+    },
+    {
+      "source": "waterkeeper",
+      "relationship": "employs",
+      "target": "speaker",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the speaker's previous job",
+      "episode_number": 151
+    },
+    {
+      "source": "UC Davis",
+      "relationship": "conducted_study_on",
+      "target": "water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "study on water usage in beef production",
+      "episode_number": 151
+    },
+    {
+      "source": "grazing animals",
+      "relationship": "advocates_for",
+      "target": "water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "you will actually be essentially protecting water.",
+      "episode_number": 151
+    },
+    {
+      "source": "Judy Schwartz",
+      "relationship": "wrote",
+      "target": "cow, save the planet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "she's written a book, cow, save the planet.",
+      "episode_number": 151
+    },
+    {
+      "source": "Judy Schwartz",
+      "relationship": "wrote",
+      "target": "water",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "book on water.",
+      "episode_number": 151
+    },
+    {
+      "source": "grazing animals",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "where you have ecosystems with grazing animals.",
+      "episode_number": 151
+    },
+    {
+      "source": "conventional crop production",
+      "relationship": "causes",
+      "target": "water pollution",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "adverse impacts on water we're seeing from conventional crop production worldwide.",
+      "episode_number": 151
+    },
+    {
+      "source": "grazing landscape",
+      "relationship": "contains",
+      "target": "migratory birds",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how where you have a kind of a grazing landscape compared to a crop field.",
+      "episode_number": 151
+    },
+    {
+      "source": "wildlife",
+      "relationship": "impacted_by",
+      "target": "chemical runoff",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about environmental impacts",
+      "episode_number": 151
+    },
+    {
+      "source": "grazing landscape",
+      "relationship": "compared_to",
+      "target": "crop field",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "comparison of environments",
+      "episode_number": 151
+    },
+    {
+      "source": "grazing landscape",
+      "relationship": "part_of",
+      "target": "Amazonian rainforest",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "comparison for biodiversity",
+      "episode_number": 151
+    },
+    {
+      "source": "conventional corn field",
+      "relationship": "compared_to",
+      "target": "grazing landscape",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about ecological differences",
+      "episode_number": 151
+    },
+    {
+      "source": "Iowa",
+      "relationship": "contains",
+      "target": "corn field",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "geographic context",
+      "episode_number": 151
+    },
+    {
+      "source": "Idaho",
+      "relationship": "contains",
+      "target": "potato fields",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "geographic context",
+      "episode_number": 151
+    },
+    {
+      "source": "San Francisco",
+      "relationship": "hosts",
+      "target": "radio station",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "location of interview",
+      "episode_number": 151
+    },
+    {
+      "source": "vegan",
+      "relationship": "advocates_for",
+      "target": "plant-based diet",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about dietary choices",
+      "episode_number": 151
+    },
+    {
+      "source": "Siri",
+      "relationship": "agrees_with",
+      "target": "the speaker",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Siri is mentioned as agreeing during the discussion.",
+      "episode_number": 151
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is a city in the state of Colorado.",
+      "episode_number": 151
+    },
+    {
+      "source": "nature conservancy study",
+      "relationship": "studies",
+      "target": "biodiversity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Study mentioned in relation to biodiversity.",
+      "episode_number": 151
+    },
+    {
+      "source": "Vernal pools",
+      "relationship": "associated_with",
+      "target": "nature conservancy study",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Vernal pools are a topic of the nature conservancy study.",
+      "episode_number": 151
+    },
+    {
+      "source": "regenerative farm",
+      "relationship": "part_of",
+      "target": "biodiversity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Regenerative farms contribute to biodiversity.",
+      "episode_number": 151
+    },
+    {
+      "source": "urban communities",
+      "relationship": "interconnected_with",
+      "target": "agricultural communities",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Discussion on the interconnectivity between urban and agricultural communities.",
+      "episode_number": 151
+    },
+    {
+      "source": "nature conservancy",
+      "relationship": "conducted",
+      "target": "study",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "nature conservancy decided to study this",
+      "episode_number": 151
+    },
+    {
+      "source": "cattle",
+      "relationship": "harmed",
+      "target": "Vernal pools",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "cattle harming the plant life and animal life in those Vernal pools",
+      "episode_number": 151
+    },
+    {
+      "source": "Vernal pools",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Vernal pools are particularly an issue in California",
+      "episode_number": 151
+    },
+    {
+      "source": "nature conservancy",
+      "relationship": "supports",
+      "target": "argument",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "nature conservancy study helps make the argument",
+      "episode_number": 151
+    },
+    {
+      "source": "cattle",
+      "relationship": "serves_as",
+      "target": "proxy for wild animals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "having domesticated animals that would serve as proxies for those disappeared wild animals",
+      "episode_number": 151
+    },
+    {
+      "source": "Alan Sanfrey",
+      "relationship": "advocates_for",
+      "target": "cattle",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "points out, cattle uniquely because",
+      "episode_number": 151
+    },
+    {
+      "source": "Nicolette Han Nyman",
+      "relationship": "works_at",
+      "target": "Defending Beef",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "author of Defending Beef",
+      "episode_number": 151
+    },
+    {
+      "source": "Defending Beef",
+      "relationship": "published_by",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "published by Chelsea Green Publishing",
+      "episode_number": 151
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I'm your host, Aaron William Perry",
+      "episode_number": 151
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "contains",
+      "target": "Nicolette Han Nyman",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "this is the Y on Earth community podcast",
+      "episode_number": 151
+    },
+    {
+      "source": "Y-O-Earth",
+      "relationship": "contains",
+      "target": "Purium Organic Superfudes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "a big shout out to Purium Organic Superfudes",
+      "episode_number": 151
+    },
+    {
+      "source": "Y-O-Earth",
+      "relationship": "contains",
+      "target": "Waleigh Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "a big shout out to Waleigh Waters",
+      "episode_number": 151
+    },
+    {
+      "source": "Y-O-Earth",
+      "relationship": "contains",
+      "target": "Earth Hero Sustainable Products",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Thanks to Earth Hero Sustainable Products",
+      "episode_number": 151
+    },
+    {
+      "source": "Y-O-Earth",
+      "relationship": "contains",
+      "target": "Profitable Purpose Consulting",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Thanks to Profitable Purpose Consulting",
+      "episode_number": 151
+    },
+    {
+      "source": "Y-O-Earth",
+      "relationship": "contains",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Earth Coast Productions that has a huge hand in making our podcast series possible",
+      "episode_number": 151
+    },
+    {
+      "source": "Nikolette",
+      "relationship": "advocates_for",
+      "target": "children's immunity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast interview",
+      "episode_number": 151
+    },
+    {
+      "source": "Waleigh Waters",
+      "relationship": "made_by",
+      "target": "Nikolette",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "aromatherapy soaking salts promotion",
+      "episode_number": 151
+    },
+    {
+      "source": "New York City",
+      "relationship": "part_of",
+      "target": "urban environments",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about living conditions",
+      "episode_number": 151
+    },
+    {
+      "source": "omega-3 fatty acids",
+      "relationship": "impacts",
+      "target": "children's immunity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "dietary discussion",
+      "episode_number": 151
+    },
+    {
+      "source": "Bill Niamen",
+      "relationship": "married_to",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.5,
+      "context": "married Bill Niamen",
+      "episode_number": 151
+    },
+    {
+      "source": "New York City",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "I lived in New York City for five years",
+      "episode_number": 151
+    },
+    {
+      "source": "Amish",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the amish were a community that was almost absent of both of these conditions",
+      "episode_number": 151
+    },
+    {
+      "source": "Amish",
+      "relationship": "advocates_for",
+      "target": "diversified farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "the unique thing about the Amish farming was it's diversified and it almost always has livestock there",
+      "episode_number": 151
+    },
+    {
+      "source": "food allergies",
+      "relationship": "associated_with",
+      "target": "Amish",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "children on Amish farms were not getting food allergies",
+      "episode_number": 151
+    },
+    {
+      "source": "asthma",
+      "relationship": "associated_with",
+      "target": "Amish",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "children on Amish farms were not getting asthma",
+      "episode_number": 151
+    },
+    {
+      "source": "Amish",
+      "relationship": "advocates_for",
+      "target": "healthy animals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Amish farming practices promoting healthy animals",
+      "episode_number": 151
+    },
+    {
+      "source": "COVID pandemic",
+      "relationship": "related_to",
+      "target": "asthma",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.97,
+      "context": "discussion on health vulnerabilities during the pandemic",
+      "episode_number": 151
+    },
+    {
+      "source": "COVID pandemic",
+      "relationship": "related_to",
+      "target": "food allergies",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.97,
+      "context": "discussion on health vulnerabilities during the pandemic",
+      "episode_number": 151
+    },
+    {
+      "source": "PBS",
+      "relationship": "discusses",
+      "target": "asthma",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.97,
+      "context": "PBS program discussing asthma and animal exposure",
+      "episode_number": 151
+    },
+    {
+      "source": "grass fed pasture raised beef",
+      "relationship": "made_by",
+      "target": "healthy animals",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion on nutrition from healthy animals",
+      "episode_number": 151
+    },
+    {
+      "source": "Europe",
+      "relationship": "part_of",
+      "target": "research",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "research from various parts of the world",
+      "episode_number": 151
+    },
+    {
+      "source": "United States",
+      "relationship": "part_of",
+      "target": "research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "research from various parts of the world",
+      "episode_number": 151
+    },
+    {
+      "source": "biologist",
+      "relationship": "advocates_for",
+      "target": "nutrition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about health and nutrients",
+      "episode_number": 151
+    },
+    {
+      "source": "species",
+      "relationship": "part_of",
+      "target": "evolution",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about evolution",
+      "episode_number": 151
+    },
+    {
+      "source": "meat",
+      "relationship": "part_of",
+      "target": "diet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about diet and evolution",
+      "episode_number": 151
+    },
+    {
+      "source": "Richard Rangham",
+      "relationship": "wrote",
+      "target": "Catching Fire",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the book",
+      "episode_number": 151
+    },
+    {
+      "source": "Catching Fire",
+      "relationship": "discusses",
+      "target": "cooking",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about cooking in evolution",
+      "episode_number": 151
+    },
+    {
+      "source": "meat",
+      "relationship": "contains",
+      "target": "pathogens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about food safety",
+      "episode_number": 151
+    },
+    {
+      "source": "protein",
+      "relationship": "found_in",
+      "target": "meat, fish, dairy, eggs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about protein sources",
+      "episode_number": 151
+    },
+    {
+      "source": "protein",
+      "relationship": "found_in",
+      "target": "plant sources",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about protein sources",
+      "episode_number": 151
+    },
+    {
+      "source": "United Nations Food and Agricultural Organization",
+      "relationship": "advocates_for",
+      "target": "nutrition",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "emphasizing nutrition and health studies",
+      "episode_number": 151
+    },
+    {
+      "source": "Fred Provenza",
+      "relationship": "wrote",
+      "target": "studies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to studies and books",
+      "episode_number": 151
+    },
+    {
+      "source": "industrialized world",
+      "relationship": "has_problem_with",
+      "target": "processed foods",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "discussing health issues",
+      "episode_number": 151
+    },
+    {
+      "source": "ultra-processed foods",
+      "relationship": "made_by",
+      "target": "industrial system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing food production",
+      "episode_number": 151
+    },
+    {
+      "source": "calcium",
+      "relationship": "is_a_component_of",
+      "target": "animal-based foods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "nutritional content",
+      "episode_number": 151
+    },
+    {
+      "source": "protein",
+      "relationship": "is_a_component_of",
+      "target": "animal-based foods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "nutritional content",
+      "episode_number": 151
+    },
+    {
+      "source": "Niklai",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 151
+    },
+    {
+      "source": "Niklai",
+      "relationship": "envisions",
+      "target": "food system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about regenerative food system",
+      "episode_number": 151
+    },
+    {
+      "source": "grandma Moses",
+      "relationship": "depicts",
+      "target": "community",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "reference to a painting",
+      "episode_number": 151
+    },
+    {
+      "source": "animals",
+      "relationship": "located_in",
+      "target": "landscape",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "discussion about returning animals to landscape",
+      "episode_number": 151
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Aaron William Perry is identified as the host of the podcast",
+      "episode_number": 151
+    },
+    {
+      "source": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Elk Run Farm is mentioned as part of the community supporting the podcast",
+      "episode_number": 151
+    },
+    {
+      "source": "yonearth.org",
+      "relationship": "provides_support_for",
+      "target": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "yonearth.org is mentioned as a support platform for the podcast",
+      "episode_number": 151
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Why on Earth is a concept related to sustainability",
+      "episode_number": 151
+    }
+  ]
+}

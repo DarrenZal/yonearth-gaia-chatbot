@@ -1,0 +1,94 @@
+{
+  "model": "gpt-5-nano",
+  "timestamp": "2025-10-10T05:10:08.529811",
+  "test_episodes": [
+    10,
+    39,
+    50,
+    75,
+    100,
+    112,
+    120,
+    122,
+    150,
+    165
+  ],
+  "total_time_seconds": 7792.345521211624,
+  "episodes_successful": 10,
+  "total_relationships": 942,
+  "conflicts_detected": 14,
+  "type_violations_found": 0,
+  "conflict_rate": 0.014861995753715499,
+  "results": [
+    {
+      "episode": 10,
+      "status": "success",
+      "relationships": 69,
+      "conflicts": 1,
+      "type_violations": 0
+    },
+    {
+      "episode": 39,
+      "status": "success",
+      "relationships": 109,
+      "conflicts": 5,
+      "type_violations": 0
+    },
+    {
+      "episode": 50,
+      "status": "success",
+      "relationships": 100,
+      "conflicts": 1,
+      "type_violations": 0
+    },
+    {
+      "episode": 75,
+      "status": "success",
+      "relationships": 60,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 100,
+      "status": "success",
+      "relationships": 100,
+      "conflicts": 2,
+      "type_violations": 0
+    },
+    {
+      "episode": 112,
+      "status": "success",
+      "relationships": 91,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 120,
+      "status": "success",
+      "relationships": 94,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 122,
+      "status": "success",
+      "relationships": 141,
+      "conflicts": 0,
+      "type_violations": 0
+    },
+    {
+      "episode": 150,
+      "status": "success",
+      "relationships": 92,
+      "conflicts": 2,
+      "type_violations": 0
+    },
+    {
+      "episode": 165,
+      "status": "success",
+      "relationships": 86,
+      "conflicts": 3,
+      "type_violations": 0
+    }
+  ]
+}

@@ -1,0 +1,2042 @@
+{
+  "episode": 115,
+  "timestamp": "2025-10-09T10:32:12.563671",
+  "entity_count": 146,
+  "relationship_count": 101,
+  "entities": [
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Brad Lidge",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Why On Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "novel",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Hunter",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Veridi Toss",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "title of the book"
+    },
+    {
+      "name": "Hildegard von Bingen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "German mystic"
+    },
+    {
+      "name": "Bernard De Claire Vaux",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "historical figure"
+    },
+    {
+      "name": "St. Francis of Assisi",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "historical figure"
+    },
+    {
+      "name": "Latin",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about language"
+    },
+    {
+      "name": "Brad",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "interview context"
+    },
+    {
+      "name": "Charmaine Boudreau",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "editor mentioned"
+    },
+    {
+      "name": "Andrea Vonderikin",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "editor mentioned"
+    },
+    {
+      "name": "Dave Aretha",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "editor mentioned"
+    },
+    {
+      "name": "the human family",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about humanity"
+    },
+    {
+      "name": "biosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environment"
+    },
+    {
+      "name": "climate",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about environment"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about environment"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about environment"
+    },
+    {
+      "name": "indigenous knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about wisdom"
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the book"
+    },
+    {
+      "name": "book",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about manuscript"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...takes place a lot of it here in Colorado."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...it's focused obviously in the United States..."
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...our main character, her name is Brigitte Sophia..."
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...kicks off kind of hot and heavy in New York City..."
+    },
+    {
+      "name": "Central Park",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...has to run through Central Park..."
+    },
+    {
+      "name": "Metropolitan Museum",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...the Metropolitan Museum is being chased by these very scary sort of paramilitary guys..."
+    },
+    {
+      "name": "Cleopatra's needle",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...runs right by Cleopatra's needle, that Egyptian obelisk that's there behind the museum..."
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...catching a last minute flight to Denver, Colorado..."
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...the rest of the story sort of unfolds both here on the front range centered around Boulder..."
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...the rest of the story sort of unfolds both here on the front range centered around Boulder and Netherlands."
+    },
+    {
+      "name": "Central Park",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "paramilitary guys with drones overhead and has to run through Central Park"
+    },
+    {
+      "name": "Cleopatra's needle",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "runs right by Cleopatra's needle, that Egyptian obelisk that's there behind the museum"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "catching a last minute flight to Denver, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "catching a last minute flight to Denver, Colorado"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the front range centered around Boulder"
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the front range centered around Boulder and Netherlands"
+    },
+    {
+      "name": "Carbondale",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a magical biodynamic farm called sustainable settings outside of carbon Dale Colorado"
+    },
+    {
+      "name": "Aspen airport",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "after a quick flight into the Aspen airport"
+    },
+    {
+      "name": "DIA",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "pass through DIA, Denver International Airport"
+    },
+    {
+      "name": "Denver International Airport",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "pass through DIA, Denver International Airport"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "different places you mentioned, Boulder, Carbondale, Elk Run Farm"
+    },
+    {
+      "name": "Stapleton",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the switch from this cute little airport called Stapleton to this massive installation"
+    },
+    {
+      "name": "Space Command",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "our government has decided to locate the space command, the new space force element of our military right here in Colorado"
+    },
+    {
+      "name": "Space Force",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the new space force element of our military right here in Colorado"
+    },
+    {
+      "name": "Masonic cornerstone",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "strange Masonic cornerstone placed in the southern edge of the big, great atrium"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "located the space command, the new space force element of our military right here in Colorado"
+    },
+    {
+      "name": "Denver International Airport",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Masonic cornerstone placed in the southern edge of the big, great atrium room at Denver International Airport"
+    },
+    {
+      "name": "Roman Catholic Church",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "looking at the history of the Roman Catholic church and the treatment of many of my indigenous friends"
+    },
+    {
+      "name": "Pope Francis",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "leadership of Pope Francis, there's a lot of really extraordinary healing work"
+    },
+    {
+      "name": "Freemasons",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "different organizations from the Catholic Church to the Freemasons"
+    },
+    {
+      "name": "Templars",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "different organizations from the Catholic Church to the Freemasons, the Templars"
+    },
+    {
+      "name": "ancient Egyptians",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "different organizations from the Catholic Church to the Freemasons, the Templars, the ancient Egyptians"
+    },
+    {
+      "name": "Chinese knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "ancient and esoteric Chinese and Japanese knowledge"
+    },
+    {
+      "name": "Japanese knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "ancient and esoteric Chinese and Japanese knowledge"
+    },
+    {
+      "name": "Pope Francis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Carbondale",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Lions",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Brigitte",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Marissa Pulaski",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Nick D. Dominico",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "sweat lodge",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "drylands Agri Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Character in the podcast discussing her journey and education."
+    },
+    {
+      "name": "Marissa Pulaski",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Runs Elk Run Farm."
+    },
+    {
+      "name": "Nick D. Dominico",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Partner of Marissa Pulaski at Elk Run."
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Location where Brigitte visits for nerving tonics."
+    },
+    {
+      "name": "drylands Agri Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Nonprofit run by Marissa Pulaski and Nick D. Dominico."
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Place where a workshop is held."
+    },
+    {
+      "name": "Brooke and Rose",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Teachers at the workshop."
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Location of the supercomputer Brigitte works with."
+    },
+    {
+      "name": "Ithaca",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "City where Cornell University is located."
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "State where Ithaca is located."
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "City mentioned as a location for the character."
+    },
+    {
+      "name": "Carbon Dale",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Location mentioned in relation to workshops."
+    },
+    {
+      "name": "highway 133",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Road mentioned in the address for workshops."
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "super computer that she's been working with for several years at the beginning of the story is located in Cornell University in Ithaca New York"
+    },
+    {
+      "name": "Ithaca",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "super computer that she's been working with for several years at the beginning of the story is located in Cornell University in Ithaca New York"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "super computer that she's been working with for several years at the beginning of the story is located in Cornell University in Ithaca New York"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "internal struggles that our character Brigitte Sophia has to grapple with"
+    },
+    {
+      "name": "Oshah",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "my daughter Oshah being you know foremost in my mind among them"
+    },
+    {
+      "name": "Karesa",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "including my sweetheart Karesa express some real concern around the use of artificial intelligence in the story"
+    },
+    {
+      "name": "AI",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about technology and immersion in the real world"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where character connects with Leo"
+    },
+    {
+      "name": "Leo",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "character who connects with the main character"
+    },
+    {
+      "name": "Cave",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "location where the character spends time"
+    },
+    {
+      "name": "Russian mafia",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "potential pursuers of the character"
+    },
+    {
+      "name": "Israeli special forces",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "potential pursuers of the character"
+    },
+    {
+      "name": "deep state of the US",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "potential pursuers of the character"
+    },
+    {
+      "name": "Chinese technology company",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "potential pursuers of the character"
+    },
+    {
+      "name": "Carbondale",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of a cyber cafe where characters go online"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "connection with the environment during solitude"
+    },
+    {
+      "name": "Brad",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing ideas back and forth"
+    },
+    {
+      "name": "Kevin Townley",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a mutual friend"
+    },
+    {
+      "name": "Renee Perez",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a mutual friend in New York City"
+    },
+    {
+      "name": "Haudenosaunee people",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural wisdom"
+    },
+    {
+      "name": "Iroquois people",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural wisdom"
+    },
+    {
+      "name": "Mohawk people",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural wisdom"
+    },
+    {
+      "name": "Hopi people",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural wisdom"
+    },
+    {
+      "name": "Egyptian",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a culture"
+    },
+    {
+      "name": "Chinese",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a culture"
+    },
+    {
+      "name": "Japanese",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a culture"
+    },
+    {
+      "name": "Sanskrit",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a language"
+    },
+    {
+      "name": "Hebrew",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a language"
+    },
+    {
+      "name": "Arabic",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a language"
+    },
+    {
+      "name": "Greek",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a language"
+    },
+    {
+      "name": "Latin",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a language"
+    },
+    {
+      "name": "Haudenosaunee people",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cultural legacies and heraldages and lineages"
+    },
+    {
+      "name": "Iroquois people",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cultural legacies and heraldages and lineages"
+    },
+    {
+      "name": "Mohawk people",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cultural legacies and heraldages and lineages"
+    },
+    {
+      "name": "Hopi people",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cultural legacies and heraldages and lineages"
+    },
+    {
+      "name": "Brigitte",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "speaking directly to Brigitte and to humanity"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mother earth ends up speaking directly to Brigitte"
+    },
+    {
+      "name": "humanity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "speaking directly to Brigitte and to humanity"
+    },
+    {
+      "name": "planet earth",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "healing work here on planet earth"
+    },
+    {
+      "name": "Hunter Chessna Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "big shout out to my son Hunter Chessna Perry"
+    },
+    {
+      "name": "Jake Welch",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "big shout out to Jake Welch"
+    },
+    {
+      "name": "Maggie McLaughlin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "big shout out to Maggie McLaughlin"
+    },
+    {
+      "name": "Maggie McLaughlin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Leo",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Netterling",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "yaro",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "herbs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Regit Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Brad",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Lindsay",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Hunter",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "involved in some of the design work of the book"
+    },
+    {
+      "name": "Oshah",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "has expertise in neuroscience and health"
+    },
+    {
+      "name": "VeridiTos-society.org",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "website for the upcoming book launch"
+    },
+    {
+      "name": "Y on Earth community ecosystem",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "part of the community ecosystem"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Y on Earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "VeridiTos",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "looking forward to the next steps and to where VeridiTos is gonna go"
+    },
+    {
+      "name": "yonearth.org-support",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "please visit yonearth.org-support"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "using the code YOnEarth, all one word with a Y"
+    },
+    {
+      "name": "YOnEarth.org-support-page",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "These sponsors are listed on the YOnEarth.org-support-page"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Aaron",
+      "relationship": "works_at",
+      "target": "Why On Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad Lidge",
+      "relationship": "works_at",
+      "target": "Why On Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Aaron",
+      "relationship": "wrote",
+      "target": "novel",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad Lidge",
+      "relationship": "involved_in",
+      "target": "novel",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Hunter",
+      "relationship": "part_of",
+      "target": "novel",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Hildegard von Bingen",
+      "relationship": "coined",
+      "target": "Veridi Toss",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussion about the term Veridi Toss",
+      "episode_number": 115
+    },
+    {
+      "source": "Hildegard von Bingen",
+      "relationship": "was_in_correspondence_with",
+      "target": "Bernard De Claire Vaux",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "historical correspondence",
+      "episode_number": 115
+    },
+    {
+      "source": "Hildegard von Bingen",
+      "relationship": "predated",
+      "target": "St. Francis of Assisi",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "historical timeline",
+      "episode_number": 115
+    },
+    {
+      "source": "Veridi Toss",
+      "relationship": "refers_to",
+      "target": "healing power of plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "definition of the term",
+      "episode_number": 115
+    },
+    {
+      "source": "Hildegard von Bingen",
+      "relationship": "wrote_about",
+      "target": "healing power of stones",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "her writings",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad",
+      "relationship": "advocates_for",
+      "target": "education",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the book and education",
+      "episode_number": 115
+    },
+    {
+      "source": "Charmaine Boudreau",
+      "relationship": "works_at",
+      "target": "the human family",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "editor mentioned",
+      "episode_number": 115
+    },
+    {
+      "source": "Andrea Vonderikin",
+      "relationship": "works_at",
+      "target": "the human family",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "editor mentioned",
+      "episode_number": 115
+    },
+    {
+      "source": "Dave Aretha",
+      "relationship": "works_at",
+      "target": "the human family",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "editor mentioned",
+      "episode_number": 115
+    },
+    {
+      "source": "the human family",
+      "relationship": "located_in",
+      "target": "biosphere",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "discussion about humanity's place in the environment",
+      "episode_number": 115
+    },
+    {
+      "source": "the human family",
+      "relationship": "interacts_with",
+      "target": "climate",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about humanity's impact on the environment",
+      "episode_number": 115
+    },
+    {
+      "source": "the human family",
+      "relationship": "interacts_with",
+      "target": "water",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about humanity's impact on the environment",
+      "episode_number": 115
+    },
+    {
+      "source": "the human family",
+      "relationship": "interacts_with",
+      "target": "soil",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about humanity's impact on the environment",
+      "episode_number": 115
+    },
+    {
+      "source": "indigenous knowledge",
+      "relationship": "advocates_for",
+      "target": "healing",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about wisdom and healing",
+      "episode_number": 115
+    },
+    {
+      "source": "education",
+      "relationship": "part_of",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion about the book's content",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "works_at",
+      "target": "deep artificial intelligence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...who is a brilliant computer scientist and has cracked the code to deep artificial intelligence...",
+      "episode_number": 115
+    },
+    {
+      "source": "New York City",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "...kicks off kind of hot and heavy in New York City...",
+      "episode_number": 115
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the rest of the story sort of unfolds both here on the front range centered around Boulder...",
+      "episode_number": 115
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...catching a last minute flight to Denver, Colorado...",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "adventures_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "...the rest of the story sort of unfolds both here on the front range centered around Boulder...",
+      "episode_number": 115
+    },
+    {
+      "source": "Denver International Airport",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "strategically placed midway, if you can imagine between the major European hubs and the major Asian hubs with also the sort of optimal placement to get down to the major South American hubs by flight",
+      "episode_number": 115
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "the front range centered around Boulder",
+      "episode_number": 115
+    },
+    {
+      "source": "Carbondale",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "a magical biodynamic farm called sustainable settings outside of carbon Dale Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "Stapleton",
+      "relationship": "part_of",
+      "target": "Denver International Airport",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the switch from this cute little airport called Stapleton to this massive installation",
+      "episode_number": 115
+    },
+    {
+      "source": "Space Command",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "our government has decided to locate the space command, the new space force element of our military right here in Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "Space Force",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "the new space force element of our military right here in Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "space command",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "located the space command, the new space force element of our military right here in Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "Masonic cornerstone",
+      "relationship": "located_in",
+      "target": "Denver International Airport",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Masonic cornerstone placed in the southern edge of the big, great atrium room at Denver International Airport",
+      "episode_number": 115
+    },
+    {
+      "source": "Roman Catholic Church",
+      "relationship": "advocates_for",
+      "target": "healing work",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the Roman Catholic church that is also bringing such great hope and peace to so many people around the planet",
+      "episode_number": 115
+    },
+    {
+      "source": "Pope Francis",
+      "relationship": "leads",
+      "target": "Roman Catholic Church",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "leadership of Pope Francis, there's a lot of really extraordinary healing work",
+      "episode_number": 115
+    },
+    {
+      "source": "different organizations",
+      "relationship": "includes",
+      "target": "Freemasons",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "different organizations from the Catholic Church to the Freemasons",
+      "episode_number": 115
+    },
+    {
+      "source": "different organizations",
+      "relationship": "includes",
+      "target": "Templars",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "different organizations from the Catholic Church to the Freemasons, the Templars",
+      "episode_number": 115
+    },
+    {
+      "source": "different organizations",
+      "relationship": "includes",
+      "target": "ancient Egyptians",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "different organizations from the Catholic Church to the Freemasons, the Templars, the ancient Egyptians",
+      "episode_number": 115
+    },
+    {
+      "source": "ancient Egyptians",
+      "relationship": "influences",
+      "target": "present day world",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "how that has all kind of woven together into our present day world",
+      "episode_number": 115
+    },
+    {
+      "source": "Chinese knowledge",
+      "relationship": "influences",
+      "target": "present day world",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "how that has all kind of woven together into our present day world",
+      "episode_number": 115
+    },
+    {
+      "source": "Japanese knowledge",
+      "relationship": "influences",
+      "target": "present day world",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "how that has all kind of woven together into our present day world",
+      "episode_number": 115
+    },
+    {
+      "source": "Pope Francis",
+      "relationship": "advocates_for",
+      "target": "ecological stewardship",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Carbondale",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Aspen",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "part_of",
+      "target": "drylands Agri Ecology Research",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte",
+      "relationship": "experiences",
+      "target": "sweat lodge",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Marissa Pulaski",
+      "relationship": "runs",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "partners_with",
+      "target": "Marissa Pulaski",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Marissa Pulaski",
+      "relationship": "runs",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Marissa Pulaski is associated with Elk Run Farm.",
+      "episode_number": 115
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "partner_of",
+      "target": "Marissa Pulaski",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick D. Dominico is a partner at Elk Run.",
+      "episode_number": 115
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Elk Run Farm is located in Boulder.",
+      "episode_number": 115
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sustainable settings is located in Boulder.",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "works_at",
+      "target": "Cornell University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Brigitte Sophia works with a supercomputer at Cornell University.",
+      "episode_number": 115
+    },
+    {
+      "source": "Ithaca",
+      "relationship": "part_of",
+      "target": "New York",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Ithaca is part of New York.",
+      "episode_number": 115
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Denver is a city in Colorado.",
+      "episode_number": 115
+    },
+    {
+      "source": "Carbon Dale",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Carbon Dale is a town in Colorado.",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "advocates_for",
+      "target": "artificial intelligence",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "express some real concern around the use of artificial intelligence in the story",
+      "episode_number": 115
+    },
+    {
+      "source": "Cornell University",
+      "relationship": "located_in",
+      "target": "Ithaca",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "super computer that she's been working with for several years at the beginning of the story is located in Cornell University in Ithaca New York",
+      "episode_number": 115
+    },
+    {
+      "source": "Ithaca",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "super computer that she's been working with for several years at the beginning of the story is located in Cornell University in Ithaca New York",
+      "episode_number": 115
+    },
+    {
+      "source": "Leo",
+      "relationship": "works_with",
+      "target": "unknown character",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Leo connects with the main character in Boulder",
+      "episode_number": 115
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is a city in Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "Carbondale",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Carbondale is a town in Colorado",
+      "episode_number": 115
+    },
+    {
+      "source": "Cave",
+      "relationship": "part_of",
+      "target": "nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Cave is a natural location where character spends time",
+      "episode_number": 115
+    },
+    {
+      "source": "Russian mafia",
+      "relationship": "pursues",
+      "target": "unknown character",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "Russian mafia is one of the potential pursuers",
+      "episode_number": 115
+    },
+    {
+      "source": "Israeli special forces",
+      "relationship": "pursues",
+      "target": "unknown character",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "Israeli special forces is one of the potential pursuers",
+      "episode_number": 115
+    },
+    {
+      "source": "deep state of the US",
+      "relationship": "pursues",
+      "target": "unknown character",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "deep state of the US is one of the potential pursuers",
+      "episode_number": 115
+    },
+    {
+      "source": "Chinese technology company",
+      "relationship": "pursues",
+      "target": "unknown character",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "Chinese technology company is one of the potential pursuers",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad",
+      "relationship": "discusses_with",
+      "target": "Kevin Townley",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "kicking ideas back and forth",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad",
+      "relationship": "discusses_with",
+      "target": "Renee Perez",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "kicking ideas back and forth",
+      "episode_number": 115
+    },
+    {
+      "source": "Haudenosaunee people",
+      "relationship": "provides_wisdom_for",
+      "target": "book",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "cultural wisdom",
+      "episode_number": 115
+    },
+    {
+      "source": "Iroquois people",
+      "relationship": "provides_wisdom_for",
+      "target": "book",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "cultural wisdom",
+      "episode_number": 115
+    },
+    {
+      "source": "Mohawk people",
+      "relationship": "provides_wisdom_for",
+      "target": "book",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "cultural wisdom",
+      "episode_number": 115
+    },
+    {
+      "source": "Hopi people",
+      "relationship": "provides_wisdom_for",
+      "target": "book",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "cultural wisdom",
+      "episode_number": 115
+    },
+    {
+      "source": "Egyptian",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Chinese",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Japanese",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Sanskrit",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Hebrew",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Arabic",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Greek",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Latin",
+      "relationship": "influences",
+      "target": "book",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "cultural influence",
+      "episode_number": 115
+    },
+    {
+      "source": "Brigitte",
+      "relationship": "advocates_for",
+      "target": "Mother Earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "speaking directly to Brigitte and to humanity",
+      "episode_number": 115
+    },
+    {
+      "source": "Mother Earth",
+      "relationship": "speaks_to",
+      "target": "humanity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mother earth ends up speaking directly to Brigitte",
+      "episode_number": 115
+    },
+    {
+      "source": "Hunter Chessna Perry",
+      "relationship": "designed",
+      "target": "cover art",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "big shout out to my son Hunter Chessna Perry",
+      "episode_number": 115
+    },
+    {
+      "source": "Jake Welch",
+      "relationship": "designed",
+      "target": "interior symbols",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "big shout out to Jake Welch",
+      "episode_number": 115
+    },
+    {
+      "source": "Maggie McLaughlin",
+      "relationship": "designed",
+      "target": "layout",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "big shout out to Maggie McLaughlin",
+      "episode_number": 115
+    },
+    {
+      "source": "Maggie McLaughlin",
+      "relationship": "works_at",
+      "target": "herbal medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Leo",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Leo",
+      "relationship": "leads",
+      "target": "Regit Sophia",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Brad",
+      "relationship": "married_to",
+      "target": "Lindsay",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "podcast transcript",
+      "episode_number": 115
+    },
+    {
+      "source": "Hunter",
+      "relationship": "works_on",
+      "target": "book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "design work of the book",
+      "episode_number": 115
+    },
+    {
+      "source": "Oshah",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "expertise in neuroscience and health",
+      "episode_number": 115
+    },
+    {
+      "source": "VeridiTos-society.org",
+      "relationship": "part_of",
+      "target": "Y on Earth community ecosystem",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "as part of the community ecosystem",
+      "episode_number": 115
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "hosted by Aaron William Perry",
+      "episode_number": 115
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsored_by",
+      "target": "VeridiTos",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "looking forward to the next steps and to where VeridiTos is gonna go",
+      "episode_number": 115
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "located_in",
+      "target": "yonearth.org-support",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "please visit yonearth.org-support",
+      "episode_number": 115
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "advocates_for",
+      "target": "YOnEarth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "using the code YOnEarth, all one word with a Y",
+      "episode_number": 115
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "listed_on",
+      "target": "YOnEarth.org-support-page",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "These sponsors are listed on the YOnEarth.org-support-page",
+      "episode_number": 115
+    }
+  ]
+}

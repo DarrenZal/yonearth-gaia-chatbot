@@ -1,0 +1,1768 @@
+{
+  "episode": 116,
+  "timestamp": "2025-10-09T10:32:04.127325",
+  "entity_count": 124,
+  "relationship_count": 89,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "David Sandevol",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of Purium"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company founded by David Sandevol"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "belief in sustainability and organic foods"
+    },
+    {
+      "name": "Whole Foods movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "movement related to organic foods"
+    },
+    {
+      "name": "Platinum Health",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "company in Europe related to Purium"
+    },
+    {
+      "name": "Amy Venter",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founder of Purium"
+    },
+    {
+      "name": "Long Beach",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where Purium was started"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where Purium is located"
+    },
+    {
+      "name": "Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept of sustainability and human connection"
+    },
+    {
+      "name": "Long Beach",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...I went to Long Beach in 1992, 1993, after the Rodney King riots..."
+    },
+    {
+      "name": "Rodney King riots",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...after the Rodney King riots had destroyed that part of Long Beach..."
+    },
+    {
+      "name": "Purim",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...your work at Purim now? Absolutely..."
+    },
+    {
+      "name": "Compton",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...we are now in Compton..."
+    },
+    {
+      "name": "million mom movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...the million mom movement is an extension of just that..."
+    },
+    {
+      "name": "eco thriller novel of Reedytoss",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...the launch and release of my visionary eco thriller novel of Reedytoss..."
+    },
+    {
+      "name": "gang members",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "...we hired gang members and we hired what, at the time..."
+    },
+    {
+      "name": "welfare moms",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "...we hired them and we trained them and we changed their lives..."
+    },
+    {
+      "name": "mothers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...serve these people, the caregivers, the mothers..."
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...so that their children, you know, and their families are avoiding..."
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...what most people considered food..."
+    },
+    {
+      "name": "autism",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "...that could literally cause, you know, um, autism..."
+    },
+    {
+      "name": "Purim",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "social activism arm of Purim"
+    },
+    {
+      "name": "Clean Label Project",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "organization helping to reveal toxins in foods"
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "chemical used to support the production of genetically modified organisms"
+    },
+    {
+      "name": "The Toxin that came to dinner",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book discussing the dangers of glyphosate"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "speaker discussing toxins and health issues"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country where depression is rampant"
+    },
+    {
+      "name": "glyphosate",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "harms your body by destroying the friendly beneficial flora in your stomach"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "depression is rampant in America today"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "If somebody wants to get your book, The Toxin that came to dinner, where do they go to get that?"
+    },
+    {
+      "name": "The Toxin that came to dinner",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "If somebody wants to get your book, The Toxin that came to dinner"
+    },
+    {
+      "name": "Albert Sand-Shorisgy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "representatives of a Nobel Prize winning doctor, Albert Sand-Shorisgy"
+    },
+    {
+      "name": "Linus Pauling",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Linus Pauling was his assistant"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "preclinical trial done in the United States"
+    },
+    {
+      "name": "National Science Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "validated and verified by the National Science Foundation"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "share with our partnership, folks can go right to yonearth.org slash purion"
+    },
+    {
+      "name": "Yonearth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "educational nonprofit"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "product mentioned"
+    },
+    {
+      "name": "ULT",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ultimate lifestyle transformation"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast speaker"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing financial freedom and lifestyle"
+    },
+    {
+      "name": "purio",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "network marketing business model"
+    },
+    {
+      "name": "regenerative economic models",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "research topic"
+    },
+    {
+      "name": "network marketing model",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "business model discussion"
+    },
+    {
+      "name": "Amazon",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "selling products directly to consumers"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "social media platform for sharing recommendations"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Veriditas story"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Brigitte Sophia first arrives in Boulder"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Purium product on counter"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "information about the Y on Earth community"
+    },
+    {
+      "name": "Veriditas Society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "our new Veriditas Society"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Y on earth is partnered here with Elk Run Farm"
+    },
+    {
+      "name": "Drylands Agri-Ecollege Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partnered with Drylands Agri-Ecollege Institute"
+    },
+    {
+      "name": "Y on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partnered here with Elk Run Farm"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partnered here with Y on earth"
+    },
+    {
+      "name": "Drylands Agri-Ecollege Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "partnered here with Elk Run Farm"
+    },
+    {
+      "name": "Purium products",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "many of which come in powder form"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hoping you could tell us a bit, Dave, about the manufacturing process"
+    },
+    {
+      "name": "organic supply chains",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "as it relates to your organic supply chains and the packaging"
+    },
+    {
+      "name": "bamboo",
+      "type": "MATERIAL",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "develop packaging made out of bamboo and hemp"
+    },
+    {
+      "name": "hemp",
+      "type": "MATERIAL",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "develop packaging made out of bamboo and hemp"
+    },
+    {
+      "name": "plastic",
+      "type": "MATERIAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "put it into unfortunately plastic bottles"
+    },
+    {
+      "name": "landfills",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "thrown into landfills"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of Purium"
+    },
+    {
+      "name": "David Sandeval",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founder of Purium"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "lobbied the USDA"
+    },
+    {
+      "name": "Oregon Tilt",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "basis for Oregon Tilt method"
+    },
+    {
+      "name": "Organic Crop Improvement Association",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we call ourselves the Organic CIA"
+    },
+    {
+      "name": "European standards",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "harmonized just three years ago"
+    },
+    {
+      "name": "Rodale Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friends over at the Rodale Institute"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friends over at Dr. Bronner's"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about the Purium economy"
+    },
+    {
+      "name": "Hawaii",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "woman who was living in her car in Hawaii"
+    },
+    {
+      "name": "internet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "access to the internet"
+    },
+    {
+      "name": "location freedom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "called location freedom"
+    },
+    {
+      "name": "time freedom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "second thing is time freedom"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "before we sign off, I am really excited to ask you about the soil stewardship work"
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing soil stewardship work"
+    },
+    {
+      "name": "Utah",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of farmland"
+    },
+    {
+      "name": "Native American tribe",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "working on soil stewardship projects"
+    },
+    {
+      "name": "bacterium",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "identified in buffalo feces for soil regeneration"
+    },
+    {
+      "name": "buffalo",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "source of feces for soil regeneration"
+    },
+    {
+      "name": "cottonwood",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "used in soil regeneration"
+    },
+    {
+      "name": "mycelium",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "used in soil regeneration"
+    },
+    {
+      "name": "sunflower seeds",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "crop for soil regeneration"
+    },
+    {
+      "name": "alfa",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "used for soil regeneration"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "part of soil regeneration process"
+    },
+    {
+      "name": "Brookle Van",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "co-founder of sustainable settings"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "bio-dynamic farm in Colorado"
+    },
+    {
+      "name": "Lakota wisdom medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "connected with sustainable settings for soil regeneration"
+    },
+    {
+      "name": "soil carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "measured for soil health"
+    },
+    {
+      "name": "NRCS",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "standard measurements for soil data"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "BOOK",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "book discussing soil carbon increase"
+    },
+    {
+      "name": "Stewards of Handbook",
+      "type": "BOOK",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "book discussing soil stewardship"
+    },
+    {
+      "name": "Dave Sandeval",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast episode"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "founder of Purium"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "part of the Y on Earth Community"
+    },
+    {
+      "name": "Jesus Christ",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in the context of forgiveness"
+    },
+    {
+      "name": "Dave Sandeval",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of Purium"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization founded by Dave Sandeval"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community mentioned in the podcast"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in the context of personal beliefs"
+    },
+    {
+      "name": "Paris",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of gratitude"
+    },
+    {
+      "name": "homelessness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "aspect of Dave's background"
+    },
+    {
+      "name": "Puria",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "brand ambassadors with Puria"
+    },
+    {
+      "name": "Income Disclosure statement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "it's called an income, statement."
+    },
+    {
+      "name": "network marketing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the beauty of network marketing is that it's redistributed."
+    },
+    {
+      "name": "salesman",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "I ever made money that got me out of my poverty was as a salesman."
+    },
+    {
+      "name": "Dave",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about entrepreneurship and income"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "partnership discussion"
+    },
+    {
+      "name": "Purim family",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "partnership discussion"
+    },
+    {
+      "name": "John Parcell",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "mention of ambassador"
+    },
+    {
+      "name": "Rosie",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "mention of John Parcell's partner"
+    },
+    {
+      "name": "Michael Maises",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "mention of love family group"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast host"
+    },
+    {
+      "name": "income",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about financial opportunities"
+    },
+    {
+      "name": "paycheck matrix",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about work structure"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "author, thought leader, and executive consultant"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast series"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for support"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "community mentioned in the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "David Sandevol",
+      "relationship": "founded",
+      "target": "Purium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder of Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "company location",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandevol",
+      "relationship": "advocates_for",
+      "target": "Mother Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "belief in sustainability",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandevol",
+      "relationship": "co-founded",
+      "target": "Amy Venter",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-founder of Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "part_of",
+      "target": "Whole Foods movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "related to the organic foods movement",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "located_in",
+      "target": "Long Beach",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location where Purium was started",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "collaborates_with",
+      "target": "Y on Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "partnership announcement",
+      "episode_number": 116
+    },
+    {
+      "source": "Purim",
+      "relationship": "works_at",
+      "target": "million mom movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...what that's all about and, and how that plays into your strategy and your work at Purim now?...",
+      "episode_number": 116
+    },
+    {
+      "source": "Long Beach",
+      "relationship": "part_of",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...I went to Long Beach in 1992, 1993...",
+      "episode_number": 116
+    },
+    {
+      "source": "gang members",
+      "relationship": "works_at",
+      "target": "Purim",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...we hired gang members and we hired what, at the time...",
+      "episode_number": 116
+    },
+    {
+      "source": "mothers",
+      "relationship": "advocates_for",
+      "target": "million mom movement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...serve these people, the caregivers, the mothers...",
+      "episode_number": 116
+    },
+    {
+      "source": "children",
+      "relationship": "benefit_from",
+      "target": "million mom movement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...so that their children, you know, and their families are avoiding...",
+      "episode_number": 116
+    },
+    {
+      "source": "Rodney King riots",
+      "relationship": "caused_damage_to",
+      "target": "Long Beach",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "...after the Rodney King riots had destroyed that part of Long Beach...",
+      "episode_number": 116
+    },
+    {
+      "source": "Long Beach",
+      "relationship": "contains",
+      "target": "gang members",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "...there were gang bangers, drug dealers, prostitutes...",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "glyphosate",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about the dangers of glyphosate",
+      "episode_number": 116
+    },
+    {
+      "source": "Clean Label Project",
+      "relationship": "located_in",
+      "target": "America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "organization revealing toxins in foods",
+      "episode_number": 116
+    },
+    {
+      "source": "Purim",
+      "relationship": "part_of",
+      "target": "the million mom movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "social activism arm of Purim",
+      "episode_number": 116
+    },
+    {
+      "source": "The Toxin that came to dinner",
+      "relationship": "made_by",
+      "target": "Dave",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "book authored by Dave discussing glyphosate",
+      "episode_number": 116
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "causes",
+      "target": "cancer",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about health risks associated with glyphosate",
+      "episode_number": 116
+    },
+    {
+      "source": "glyphosate",
+      "relationship": "harms",
+      "target": "beneficial flora",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about the impact of glyphosate on health",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "The Toxin that came to dinner",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "If somebody wants to get your book, The Toxin that came to dinner, where do they go to get that?",
+      "episode_number": 116
+    },
+    {
+      "source": "Albert Sand-Shorisgy",
+      "relationship": "worked_with",
+      "target": "Linus Pauling",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Albert Sand-Shorisgy was the lead doctor. Linus Pauling was his assistant",
+      "episode_number": 116
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "preclinical trial",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "preclinical trial done in the United States",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "located_in",
+      "target": "yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "folks can go right to yonearth.org slash purion",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "made_by",
+      "target": "Yonearth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion about products and nonprofit benefits",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "ULT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "personal testimony about lifestyle transformation",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "financial freedom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion on lifestyle and freedom",
+      "episode_number": 116
+    },
+    {
+      "source": "purio",
+      "relationship": "located_in",
+      "target": "network marketing business model",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "business model discussion",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "works_at",
+      "target": "purio",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion about personal experience with the product",
+      "episode_number": 116
+    },
+    {
+      "source": "Amazon",
+      "relationship": "contains",
+      "target": "products",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "selling products directly to consumers",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "uses",
+      "target": "Facebook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "sharing recommendations on social media",
+      "episode_number": 116
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Brigitte Sophia first arrives in Boulder",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "part_of",
+      "target": "Y on Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Purium product mentioned in the context of Y on Earth community",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "part_of",
+      "target": "Veriditas Society",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "information about the Y on Earth community and Veriditas Society",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "partnered_with",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Y on earth is partnered here with Elk Run Farm",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "partnered_with",
+      "target": "Drylands Agri-Ecollege Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Y on earth is partnered with Drylands Agri-Ecollege Institute",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on earth",
+      "relationship": "partnered_with",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "partnered here with Elk Run Farm",
+      "episode_number": 116
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "partnered_with",
+      "target": "Drylands Agri-Ecollege Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "partnered here with Elk Run Farm",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium products",
+      "relationship": "made_by",
+      "target": "Y on earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "many of which come in powder form",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "organic supply chains",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "hoping you could tell us a bit, Dave, about the manufacturing process",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on earth",
+      "relationship": "developed",
+      "target": "packaging",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "develop packaging made out of bamboo and hemp",
+      "episode_number": 116
+    },
+    {
+      "source": "packaging",
+      "relationship": "contains",
+      "target": "bamboo",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "develop packaging made out of bamboo and hemp",
+      "episode_number": 116
+    },
+    {
+      "source": "packaging",
+      "relationship": "contains",
+      "target": "hemp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "develop packaging made out of bamboo and hemp",
+      "episode_number": 116
+    },
+    {
+      "source": "packaging",
+      "relationship": "contains",
+      "target": "plastic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "put it into unfortunately plastic bottles",
+      "episode_number": 116
+    },
+    {
+      "source": "plastic",
+      "relationship": "disposed_in",
+      "target": "landfills",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "thrown into landfills",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandeval",
+      "relationship": "works_at",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder of Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Organic Crop Improvement Association",
+      "relationship": "lobbied",
+      "target": "USDA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "lobbied the USDA",
+      "episode_number": 116
+    },
+    {
+      "source": "Oregon Tilt",
+      "relationship": "part_of",
+      "target": "Organic Crop Improvement Association",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "basis for Oregon Tilt method",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandeval",
+      "relationship": "advocates_for",
+      "target": "organic food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "commitment to organic food",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "provides",
+      "target": "organic superfoods",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we provide you with organic superfoods",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandeval",
+      "relationship": "collaborates_with",
+      "target": "Rodale Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friends over at the Rodale Institute",
+      "episode_number": 116
+    },
+    {
+      "source": "David Sandeval",
+      "relationship": "collaborates_with",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "friends over at Dr. Bronner's",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "advocates_for",
+      "target": "healthier, safer, better foods",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about the Purium economy",
+      "episode_number": 116
+    },
+    {
+      "source": "woman",
+      "relationship": "located_in",
+      "target": "Hawaii",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "woman who was living in her car in Hawaii",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "provides",
+      "target": "location freedom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "as long as you have access to the internet, you're at work with Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "provides",
+      "target": "time freedom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "second thing is time freedom",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "helps",
+      "target": "community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "to help improve the lives of your community and your family",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "creates",
+      "target": "economic opportunity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the Purium economy",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "discusses",
+      "target": "soil stewardship work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "before we sign off, I am really excited to ask you about the soil stewardship work",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "soil stewardship work",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing soil stewardship",
+      "episode_number": 116
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "bio-dynamic farm location",
+      "episode_number": 116
+    },
+    {
+      "source": "Brookle Van",
+      "relationship": "works_at",
+      "target": "sustainable settings",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-founder of sustainable settings",
+      "episode_number": 116
+    },
+    {
+      "source": "bacterium",
+      "relationship": "identified_in",
+      "target": "buffalo feces",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "for soil regeneration",
+      "episode_number": 116
+    },
+    {
+      "source": "buffalo",
+      "relationship": "used_for",
+      "target": "soil regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "feces used in soil regeneration",
+      "episode_number": 116
+    },
+    {
+      "source": "carbon sequestration",
+      "relationship": "part_of",
+      "target": "soil regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "process of soil regeneration",
+      "episode_number": 116
+    },
+    {
+      "source": "soil carbon",
+      "relationship": "measured_by",
+      "target": "NRCS",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "standard measurements for soil data",
+      "episode_number": 116
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "discusses",
+      "target": "soil carbon increase",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "book discussing soil carbon",
+      "episode_number": 116
+    },
+    {
+      "source": "Stewards of Handbook",
+      "relationship": "discusses",
+      "target": "soil stewardship",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "book discussing soil stewardship",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "founded",
+      "target": "Purium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "founder of Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "hosted by Aaron William Perry",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "advocates_for",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "part of the Y on Earth Community",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "mentions",
+      "target": "Jesus Christ",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned in the context of forgiveness",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "founded",
+      "target": "Purium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "founder of Purium",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "advocates_for",
+      "target": "homelessness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sharing his story about homelessness",
+      "episode_number": 116
+    },
+    {
+      "source": "Purium",
+      "relationship": "located_in",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "engagement with ambassadors",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "grateful_to",
+      "target": "God",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "expressing gratitude",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave Sandeval",
+      "relationship": "lives_in",
+      "target": "Paris",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.7,
+      "context": "mentioned in the context of gratitude",
+      "episode_number": 116
+    },
+    {
+      "source": "salesman",
+      "relationship": "works_at",
+      "target": "Puria",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "I ever made money that got me out of my poverty was as a salesman, built Puria on that model.",
+      "episode_number": 116
+    },
+    {
+      "source": "Puria",
+      "relationship": "advocates_for",
+      "target": "network marketing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the beauty of network marketing is that it's redistributed.",
+      "episode_number": 116
+    },
+    {
+      "source": "Income Disclosure statement",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "it's called an income, Disclosure statement.",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "Y-Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about partnership",
+      "episode_number": 116
+    },
+    {
+      "source": "Dave",
+      "relationship": "advocates_for",
+      "target": "Purim family",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about partnership",
+      "episode_number": 116
+    },
+    {
+      "source": "John Parcell",
+      "relationship": "part_of",
+      "target": "Purim family",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mention of ambassador",
+      "episode_number": 116
+    },
+    {
+      "source": "Rosie",
+      "relationship": "part_of",
+      "target": "Purim family",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "mention of John Parcell's partner",
+      "episode_number": 116
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y-Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast host",
+      "episode_number": 116
+    },
+    {
+      "source": "income",
+      "relationship": "part_of",
+      "target": "paycheck matrix",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about financial opportunities",
+      "episode_number": 116
+    },
+    {
+      "source": "William Perry",
+      "relationship": "works_at",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "host of the podcast",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "sponsored_by",
+      "target": "yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "sponsorship mentioned in the podcast",
+      "episode_number": 116
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "advocates_for",
+      "target": "Y on Earth community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "community mentioned in the podcast",
+      "episode_number": 116
+    }
+  ]
+}

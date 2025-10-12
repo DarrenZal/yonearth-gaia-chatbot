@@ -245,11 +245,14 @@ def generate_claim_uid(rel: ProductionRelationship) -> str:
     """
     evidence_hash = hashlib.sha1(rel.evidence_text.encode()).hexdigest()[:8]
 
+    # FIX: Handle missing doc_sha256 gracefully (defense in depth)
+    doc_sha = rel.evidence.get('doc_sha256', '') or ''
+
     components = [
         rel.source,          # Already canonicalized
         rel.relationship,
         rel.target,          # Already canonicalized
-        rel.evidence['doc_sha256'],
+        doc_sha,             # Safe: defaults to empty string if None
         evidence_hash
         # NOTE: No prompt_version - facts stable across iterations
     ]
@@ -414,7 +417,8 @@ def pass1_extract(chunk: str, doc_sha256: str) -> List[ProductionRelationship]:
                 }
             ],
             response_format=ComprehensiveExtraction,
-            temperature=0.3
+            temperature=0.3,
+            max_completion_tokens=10000  # FIX: Limit to 10K tokens (prevents 16K overflow)
         )
 
         extraction = response.choices[0].message.parsed
@@ -445,7 +449,12 @@ def pass1_extract(chunk: str, doc_sha256: str) -> List[ProductionRelationship]:
         return candidates
 
     except Exception as e:
-        logger.error(f"Error in Pass 1 extraction: {e}")
+        # FIX: Handle token limit errors gracefully
+        error_msg = str(e)
+        if "length limit" in error_msg.lower() or "token" in error_msg.lower():
+            logger.warning(f"⚠️  Token limit exceeded for chunk - skipping (chunk may be too dense)")
+        else:
+            logger.error(f"Error in Pass 1 extraction: {e}")
         return []
 
 
@@ -610,6 +619,11 @@ def evaluate_batch_robust(batch: List[ProductionRelationship],
         for evaluation in batch_result.evaluations:
             # Get the original candidate item for flag copying
             candidate = uid_to_item.get(evaluation.candidate_uid)
+
+            # FIX: Skip evaluations where candidate lookup fails (prevents None doc_sha256 crash)
+            if not candidate:
+                logger.warning(f"⚠️  Skipping evaluation with unknown candidate_uid: {evaluation.candidate_uid[:16]}...")
+                continue
 
             # Convert to ProductionRelationship
             prod_rel = ProductionRelationship(

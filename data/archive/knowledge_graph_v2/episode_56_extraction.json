@@ -1,0 +1,1608 @@
+{
+  "episode": 56,
+  "timestamp": "2025-10-09T11:25:43.001301",
+  "entity_count": 114,
+  "relationship_count": 80,
+  "entities": [
+    {
+      "name": "Brian",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Brian is an ecological economist and is the executive director of the Center for the Advancement of the Steady State Economy."
+    },
+    {
+      "name": "Center for the Advancement of the Steady State Economy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Brian is the executive director of the Center for the Advancement of the Steady State Economy."
+    },
+    {
+      "name": "United States Fish and Wildlife Service",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Brian spent nearly 20 years at the United States Fish and Wildlife Service headquarters."
+    },
+    {
+      "name": "Eco-Champion Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Cassie has been awarded the Eco-Champion Award by public employees for environmental responsibility."
+    },
+    {
+      "name": "Peer",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Cassie has been awarded the Eco-Champion Award by public employees for environmental responsibility known as Peer."
+    },
+    {
+      "name": "University of Arizona",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Brian has a PhD from the University of Arizona."
+    },
+    {
+      "name": "Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...limits to growth and ecological carrying capacity and integrity here on Earth."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "We're both traveling through the High Mountains of Colorado."
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "We're having to meet up in Aspen."
+    },
+    {
+      "name": "Gali",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Congress",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "DC",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "planet earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "limits to growth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "international stability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "national security",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "military",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "citizens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "voters",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Adam Smith",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Wealth of Nations",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Scottish Enlightenment",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "French physiocrats",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "ecological economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Francois Canne",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Francois Canne",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of ecological economics"
+    },
+    {
+      "name": "Adam Smith",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion of ecological economics"
+    },
+    {
+      "name": "economy of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of ecological economics"
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion of producers in the economy of nature"
+    },
+    {
+      "name": "humans",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion of the economy of nature"
+    },
+    {
+      "name": "agricultural and extractive sectors",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion of economic structure"
+    },
+    {
+      "name": "forestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of agricultural and extractive sectors"
+    },
+    {
+      "name": "fishing",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of agricultural and extractive sectors"
+    },
+    {
+      "name": "mining",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of agricultural and extractive sectors"
+    },
+    {
+      "name": "manufacturing sectors",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion of economic structure"
+    },
+    {
+      "name": "heavy manufacturing",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of manufacturing sectors"
+    },
+    {
+      "name": "iron ore refining",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of manufacturing sectors"
+    },
+    {
+      "name": "computer chip manufacturing",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of manufacturing sectors"
+    },
+    {
+      "name": "cell phones",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion of manufacturing sectors"
+    },
+    {
+      "name": "economic growth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of economic conflict"
+    },
+    {
+      "name": "environmental protection",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of economic conflict"
+    },
+    {
+      "name": "endangered species",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of species and economy"
+    },
+    {
+      "name": "American economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of endangered species"
+    },
+    {
+      "name": "President Franklin Roosevelt",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of population growth"
+    },
+    {
+      "name": "Teddy Roosevelt",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of population growth"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion of population growth"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion of consumption patterns"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "India alone has a billion people."
+    },
+    {
+      "name": "Tamil Nadu",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "much of Tamil Nadu in southern India is without water."
+    },
+    {
+      "name": "Chennai",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "cities like Chennai, huge cities in southern India"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "water is the lifeblood of the economy."
+    },
+    {
+      "name": "oil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "some people might say it's oil, okay, you know, lifeblood, energy"
+    },
+    {
+      "name": "Bhutan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Bhutan, moving to the pursuit of gross national happiness"
+    },
+    {
+      "name": "Thailand",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Thailand's idea of the sufficiency economy"
+    },
+    {
+      "name": "gross national happiness",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the gross national happiness work that's being done in Bhutan."
+    },
+    {
+      "name": "Convention on Biological Diversity",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "familiarized partially through the Convention on Biological Diversity"
+    },
+    {
+      "name": "Bhutan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Bhutan was a kingdom."
+    },
+    {
+      "name": "Convention on Biological Diversity",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "familiarized partially through the Convention on Biological Diversity that heads of state attended."
+    },
+    {
+      "name": "gross national happiness",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "GDP is not what we're after. We're after gross national happiness."
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "with the Y on Earth community, we also, in addition to our civic work and conversations with policymakers."
+    },
+    {
+      "name": "GDP",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "GDP is probably a better indicator of environmental impact than it is of any kind of well-being."
+    },
+    {
+      "name": "John Stuart Mill",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing economic theories"
+    },
+    {
+      "name": "GDP",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing economic indicators"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "historical reference"
+    },
+    {
+      "name": "ambulance",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "example of emergency services"
+    },
+    {
+      "name": "hummer",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing consumer behavior"
+    },
+    {
+      "name": "John Stuart Mill",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "recognized the importance of quality of life outside economic activity"
+    },
+    {
+      "name": "Cassie position",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a position on economic growth"
+    },
+    {
+      "name": "steadystate.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website for learning more about the Cassie position"
+    },
+    {
+      "name": "E.O. Wilson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position"
+    },
+    {
+      "name": "Jane Goodall",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position"
+    },
+    {
+      "name": "Vandana Shiva",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position"
+    },
+    {
+      "name": "David Suzuki",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position"
+    },
+    {
+      "name": "Chris Matthews",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "notable thought leader supporting the Cassie position"
+    },
+    {
+      "name": "Trump",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "current president discussed in context of GDP"
+    },
+    {
+      "name": "Trump",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about GDP and politics"
+    },
+    {
+      "name": "Cory Booker",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in the context of Democratic representatives"
+    },
+    {
+      "name": "Cassie",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization mentioned in relation to legislative project"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "context of Employment Act and macroeconomic policy"
+    },
+    {
+      "name": "Employment Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "central macroeconomic policy of the United States"
+    },
+    {
+      "name": "GDP",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to economic growth and politics"
+    },
+    {
+      "name": "Teddy Roosevelt",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in the context of conservation and national wildlife refuges"
+    },
+    {
+      "name": "national wildlife refuges",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to conservation efforts"
+    },
+    {
+      "name": "national forests",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to conservation efforts"
+    },
+    {
+      "name": "Brian Check",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "speaking with Brian Check, the executive director of Cassie"
+    },
+    {
+      "name": "Cassie",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "executive director of Cassie, the center for the advancement of the steady state economy"
+    },
+    {
+      "name": "Employment Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "to amend the Employment Act, which is the central macroeconomic policy of the United States"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the central macroeconomic policy of the United States"
+    },
+    {
+      "name": "steady-state economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the steady-state economy"
+    },
+    {
+      "name": "steadystate.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "start by visiting the website, steadystate.org"
+    },
+    {
+      "name": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "this is the Wiener's Community's Stewardship and Sustainability Podcast series"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "shout out to our sponsors including Patagonia"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "shout out to our sponsors including Weylay Waters"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "shout out to our sponsors including the International Society of Sustainability Professionals"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "shout out to our sponsors including Purium"
+    },
+    {
+      "name": "Earth",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "shout out to our sponsors including Earth"
+    },
+    {
+      "name": "Brian Check",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director of Cassie"
+    },
+    {
+      "name": "Cassie",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "center for the advancement of the steady state economy"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Association of Walters Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "community mentioned in the podcast"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Weed and Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "grant provider for curriculum"
+    },
+    {
+      "name": "K-12 curriculum",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "resource mentioned in the podcast"
+    },
+    {
+      "name": "limits to growth game",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "resource mentioned in the podcast"
+    },
+    {
+      "name": "WhyOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "sponsors are listed on the WhyOnEarth.org-support-page"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "part of the Why on Earth Community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Brian",
+      "relationship": "works_at",
+      "target": "Center for the Advancement of the Steady State Economy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brian is the executive director of the Center for the Advancement of the Steady State Economy.",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian",
+      "relationship": "worked_at",
+      "target": "United States Fish and Wildlife Service",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brian spent nearly 20 years at the United States Fish and Wildlife Service headquarters.",
+      "episode_number": 56
+    },
+    {
+      "source": "Center for the Advancement of the Steady State Economy",
+      "relationship": "awarded",
+      "target": "Eco-Champion Award",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Cassie has been awarded the Eco-Champion Award by public employees for environmental responsibility.",
+      "episode_number": 56
+    },
+    {
+      "source": "Center for the Advancement of the Steady State Economy",
+      "relationship": "awarded_by",
+      "target": "Peer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Cassie has been awarded the Eco-Champion Award by public employees for environmental responsibility known as Peer.",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian",
+      "relationship": "has_degree_from",
+      "target": "University of Arizona",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brian has a PhD from the University of Arizona.",
+      "episode_number": 56
+    },
+    {
+      "source": "Center for the Advancement of the Steady State Economy",
+      "relationship": "advocates_for",
+      "target": "Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...limits to growth and ecological carrying capacity and integrity here on Earth.",
+      "episode_number": 56
+    },
+    {
+      "source": "Aspen",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "We're having to meet up in Aspen.",
+      "episode_number": 56
+    },
+    {
+      "source": "Gali",
+      "relationship": "advocates_for",
+      "target": "economics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "Congress",
+      "relationship": "located_in",
+      "target": "DC",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "planet earth",
+      "relationship": "part_of",
+      "target": "economics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "US",
+      "relationship": "contains",
+      "target": "military",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "Adam Smith",
+      "relationship": "wrote",
+      "target": "Wealth of Nations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "Scottish Enlightenment",
+      "relationship": "part_of",
+      "target": "economics",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "French physiocrats",
+      "relationship": "focused_on",
+      "target": "natural foundation of economic production",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "ecological economics",
+      "relationship": "includes",
+      "target": "trophic structure of the economy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "Francois Canne",
+      "relationship": "understood",
+      "target": "economy of nature",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.75,
+      "context": "podcast discussion",
+      "episode_number": 56
+    },
+    {
+      "source": "Francois Canne",
+      "relationship": "works_at",
+      "target": "economy of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion of ecological economics",
+      "episode_number": 56
+    },
+    {
+      "source": "Adam Smith",
+      "relationship": "works_at",
+      "target": "economy of nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion of ecological economics",
+      "episode_number": 56
+    },
+    {
+      "source": "humans",
+      "relationship": "part_of",
+      "target": "economy of nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion of the economy of nature",
+      "episode_number": 56
+    },
+    {
+      "source": "agricultural and extractive sectors",
+      "relationship": "contains",
+      "target": "forestry",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion of economic structure",
+      "episode_number": 56
+    },
+    {
+      "source": "agricultural and extractive sectors",
+      "relationship": "contains",
+      "target": "fishing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion of economic structure",
+      "episode_number": 56
+    },
+    {
+      "source": "agricultural and extractive sectors",
+      "relationship": "contains",
+      "target": "mining",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion of economic structure",
+      "episode_number": 56
+    },
+    {
+      "source": "manufacturing sectors",
+      "relationship": "part_of",
+      "target": "economy of nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion of economic structure",
+      "episode_number": 56
+    },
+    {
+      "source": "endangered species",
+      "relationship": "advocates_for",
+      "target": "environmental protection",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion of species and economy",
+      "episode_number": 56
+    },
+    {
+      "source": "President Franklin Roosevelt",
+      "relationship": "associated_with",
+      "target": "population growth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion of population growth",
+      "episode_number": 56
+    },
+    {
+      "source": "Teddy Roosevelt",
+      "relationship": "associated_with",
+      "target": "population growth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussion of population growth",
+      "episode_number": 56
+    },
+    {
+      "source": "India",
+      "relationship": "contains",
+      "target": "billion people",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion of population growth",
+      "episode_number": 56
+    },
+    {
+      "source": "US",
+      "relationship": "consumes_more_than",
+      "target": "India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion of consumption patterns",
+      "episode_number": 56
+    },
+    {
+      "source": "India",
+      "relationship": "contains",
+      "target": "Tamil Nadu",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "much of Tamil Nadu in southern India is without water.",
+      "episode_number": 56
+    },
+    {
+      "source": "Tamil Nadu",
+      "relationship": "contains",
+      "target": "Chennai",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "cities like Chennai, huge cities in southern India",
+      "episode_number": 56
+    },
+    {
+      "source": "water",
+      "relationship": "advocates_for",
+      "target": "gross national happiness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "water is the lifeblood of the economy.",
+      "episode_number": 56
+    },
+    {
+      "source": "Bhutan",
+      "relationship": "located_in",
+      "target": "gross national happiness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Bhutan, moving to the pursuit of gross national happiness",
+      "episode_number": 56
+    },
+    {
+      "source": "Thailand",
+      "relationship": "located_in",
+      "target": "sufficiency economy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the Thailand's idea of the sufficiency economy",
+      "episode_number": 56
+    },
+    {
+      "source": "Convention on Biological Diversity",
+      "relationship": "attended_by",
+      "target": "heads of state",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "familiarized partially through the Convention on Biological Diversity that heads of state attended",
+      "episode_number": 56
+    },
+    {
+      "source": "Bhutan",
+      "relationship": "located_in",
+      "target": "Asia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Bhutan was a kingdom.",
+      "episode_number": 56
+    },
+    {
+      "source": "Convention on Biological Diversity",
+      "relationship": "attended_by",
+      "target": "heads of state",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "familiarized partially through the Convention on Biological Diversity that heads of state attended.",
+      "episode_number": 56
+    },
+    {
+      "source": "Bhutan",
+      "relationship": "advocates_for",
+      "target": "gross national happiness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "GDP is not what we're after. We're after gross national happiness.",
+      "episode_number": 56
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "engages_in",
+      "target": "civic work",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "with the Y on Earth community, we also, in addition to our civic work and conversations with policymakers.",
+      "episode_number": 56
+    },
+    {
+      "source": "GDP",
+      "relationship": "indicates",
+      "target": "environmental impact",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "GDP is probably a better indicator of environmental impact than it is of any kind of well-being.",
+      "episode_number": 56
+    },
+    {
+      "source": "John Stuart Mill",
+      "relationship": "advocates_for",
+      "target": "stationary state",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing economic theories",
+      "episode_number": 56
+    },
+    {
+      "source": "GDP",
+      "relationship": "affects",
+      "target": "quality of life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing economic indicators",
+      "episode_number": 56
+    },
+    {
+      "source": "ambulance",
+      "relationship": "made_by",
+      "target": "emergency services",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "example of emergency services",
+      "episode_number": 56
+    },
+    {
+      "source": "hummer",
+      "relationship": "symbolizes",
+      "target": "conspicuous consumption",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing consumer behavior",
+      "episode_number": 56
+    },
+    {
+      "source": "England",
+      "relationship": "part_of",
+      "target": "United Kingdom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "historical reference",
+      "episode_number": 56
+    },
+    {
+      "source": "John Stuart Mill",
+      "relationship": "advocates_for",
+      "target": "quality of life",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "recognized the importance of quality of life outside economic activity",
+      "episode_number": 56
+    },
+    {
+      "source": "Cassie position",
+      "relationship": "advocates_for",
+      "target": "economic growth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "a position on economic growth",
+      "episode_number": 56
+    },
+    {
+      "source": "steadystate.org",
+      "relationship": "provides_information_about",
+      "target": "Cassie position",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "website for learning more about the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "E.O. Wilson",
+      "relationship": "supports",
+      "target": "Cassie position",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "Jane Goodall",
+      "relationship": "supports",
+      "target": "Cassie position",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "Vandana Shiva",
+      "relationship": "supports",
+      "target": "Cassie position",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "David Suzuki",
+      "relationship": "supports",
+      "target": "Cassie position",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "Chris Matthews",
+      "relationship": "supports",
+      "target": "Cassie position",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "notable thought leader supporting the Cassie position",
+      "episode_number": 56
+    },
+    {
+      "source": "Trump",
+      "relationship": "obsessed_with",
+      "target": "GDP",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "current president discussed in context of GDP",
+      "episode_number": 56
+    },
+    {
+      "source": "Trump",
+      "relationship": "advocates_for",
+      "target": "GDP",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about Trump's argument regarding GDP growth",
+      "episode_number": 56
+    },
+    {
+      "source": "Cory Booker",
+      "relationship": "works_at",
+      "target": "Cassie",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in context of meeting with staff",
+      "episode_number": 56
+    },
+    {
+      "source": "Cassie",
+      "relationship": "embarked_on",
+      "target": "Employment Act",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed legislative project",
+      "episode_number": 56
+    },
+    {
+      "source": "Teddy Roosevelt",
+      "relationship": "part_of",
+      "target": "national wildlife refuges",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in context of conservation",
+      "episode_number": 56
+    },
+    {
+      "source": "Teddy Roosevelt",
+      "relationship": "part_of",
+      "target": "national forests",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in context of conservation",
+      "episode_number": 56
+    },
+    {
+      "source": "Cassie",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "organization mentioned in relation to legislative project",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian Check",
+      "relationship": "works_at",
+      "target": "Cassie",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "executive director of Cassie",
+      "episode_number": 56
+    },
+    {
+      "source": "Cassie",
+      "relationship": "advocates_for",
+      "target": "steady-state economy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the center for the advancement of the steady state economy",
+      "episode_number": 56
+    },
+    {
+      "source": "Employment Act",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "the central macroeconomic policy of the United States",
+      "episode_number": 56
+    },
+    {
+      "source": "steadystate.org",
+      "relationship": "provides_resources_for",
+      "target": "steady-state economy",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "start by visiting the website, steadystate.org",
+      "episode_number": 56
+    },
+    {
+      "source": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "Patagonia",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "shout out to our sponsors including Patagonia",
+      "episode_number": 56
+    },
+    {
+      "source": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "Weylay Waters",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "shout out to our sponsors including Weylay Waters",
+      "episode_number": 56
+    },
+    {
+      "source": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "International Society of Sustainability Professionals",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "shout out to our sponsors including the International Society of Sustainability Professionals",
+      "episode_number": 56
+    },
+    {
+      "source": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "shout out to our sponsors including Purium",
+      "episode_number": 56
+    },
+    {
+      "source": "Wiener's Community's Stewardship and Sustainability Podcast series",
+      "relationship": "sponsored_by",
+      "target": "Earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "shout out to our sponsors including Earth",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian Check",
+      "relationship": "works_at",
+      "target": "Cassie",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "executive director of Cassie",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Patagonia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Weylay Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "International Society of Sustainability Professionals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "LIDGE Family Foundation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Association of Walters Schools of North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "sponsor of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian Check",
+      "relationship": "advocates_for",
+      "target": "K-12 curriculum",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "resource mentioned in the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Brian Check",
+      "relationship": "advocates_for",
+      "target": "limits to growth game",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "resource mentioned in the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "host of the podcast",
+      "episode_number": 56
+    },
+    {
+      "source": "WhyOnEarth.org",
+      "relationship": "supports",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors are listed on the WhyOnEarth.org-support-page",
+      "episode_number": 56
+    }
+  ]
+}

@@ -1,0 +1,823 @@
+{
+  "episode": 14,
+  "timestamp": "2025-10-09T10:42:37.269913",
+  "entity_count": 59,
+  "relationship_count": 40,
+  "entities": [
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Podcast Series"
+    },
+    {
+      "name": "Mahatma Gandhi",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Quote about culture"
+    },
+    {
+      "name": "Dalai Lama",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Quote about responsibility"
+    },
+    {
+      "name": "Pope Francis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Quote from La Dato Si"
+    },
+    {
+      "name": "La Dato Si",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Encyclical by Pope Francis"
+    },
+    {
+      "name": "Maslow's hierarchy of needs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Psychological theory referenced"
+    },
+    {
+      "name": "human culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Our identities, our motivations, our choices, are all converging in a great tapestry that makes human culture on planet earth."
+    },
+    {
+      "name": "consumer culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "To see through the veil of the consumer culture veneer that has emerged and taken hold over the past century."
+    },
+    {
+      "name": "eco-zoic era",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Into a mature and caring, eco-zoic era that Thomas Barry and Brian Swim have envisioned and shared with us."
+    },
+    {
+      "name": "Thomas Barry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "As Barry writes, our only security lies in an integral human relation with the life systems of the planet."
+    },
+    {
+      "name": "Brian Swim",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Into a mature and caring, eco-zoic era that Thomas Barry and Brian Swim have envisioned and shared with us."
+    },
+    {
+      "name": "sacred stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Our quest to reconnect, to cultivate and ethos of sacred stewardship and mindfulness is essential to our health and well-being."
+    },
+    {
+      "name": "knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Harnasing wisdom and coupling it to the burgeoning knowledge of the modern era is paramount to creating the culture and future we really want."
+    },
+    {
+      "name": "wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Harnasing wisdom and coupling it to the burgeoning knowledge of the modern era is paramount to creating the culture and future we really want."
+    },
+    {
+      "name": "techno-consumer culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "For until now, our mainstream techno-consumer culture has been a wash and knowledge and bereft of wisdom."
+    },
+    {
+      "name": "knowledge",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "burgeoning knowledge of the modern era"
+    },
+    {
+      "name": "wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "bereft of wisdom"
+    },
+    {
+      "name": "humans",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "we humans are at a tremendous crossroads"
+    },
+    {
+      "name": "internet",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "great digital internet that spans the globe"
+    },
+    {
+      "name": "Teahard Deshardin",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "noosphere-positive just a century ago by Teahard Deshardin"
+    },
+    {
+      "name": "mother nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "out of balance, out of cycle with mother nature"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "our mother earth"
+    },
+    {
+      "name": "Wendelberry",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "sage poet Farmer Wendelberry"
+    },
+    {
+      "name": "economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one economy, the place that is our only home"
+    },
+    {
+      "name": "market",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the economic market of commerce"
+    },
+    {
+      "name": "Henry David Thoreau",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...the wisdom of Henry David Thoreau when he tells us..."
+    },
+    {
+      "name": "Annie Leonard",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Annie Leonard observes, everywhere I go she says I meet people ready for change."
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "serve God's creation in this critical time."
+    },
+    {
+      "name": "Thomas Berry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "As Thomas Barry observes."
+    },
+    {
+      "name": "the planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "it's wrong to treat the planet and whole groups of people as disposable."
+    },
+    {
+      "name": "the living world",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "connect organically with each other and with the living world around us."
+    },
+    {
+      "name": "the wilder reaches",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "open a space for our hearts and minds to connect with the wilder reaches."
+    },
+    {
+      "name": "the great disintegration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "reverse the great disintegration that has been underway."
+    },
+    {
+      "name": "the songbirds",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "As we lose our experience of the songbirds."
+    },
+    {
+      "name": "the flowers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the flowers in the fields."
+    },
+    {
+      "name": "the streams",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the streams that pour over the land."
+    },
+    {
+      "name": "the fish",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the fish that swim in their waters."
+    },
+    {
+      "name": "creation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the incredible beauty and sophistication and patterned complexity that is the fabric of our living world."
+    },
+    {
+      "name": "Melissa Will",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Empress of Dirt"
+    },
+    {
+      "name": "Bear",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grandpa"
+    },
+    {
+      "name": "Alistair Macintosh",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "meta-culture advocate"
+    },
+    {
+      "name": "eco-soic culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural concept"
+    },
+    {
+      "name": "agro-tourism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tourism type"
+    },
+    {
+      "name": "ecotourism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tourism type"
+    },
+    {
+      "name": "service-tourism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "tourism type"
+    },
+    {
+      "name": "garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "gardening concept"
+    },
+    {
+      "name": "healing planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "planetary condition"
+    },
+    {
+      "name": "legacy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "cultural concept"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book title"
+    },
+    {
+      "name": "Culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "chapter title"
+    },
+    {
+      "name": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "E.O. Wilson",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Concluding quotes"
+    },
+    {
+      "name": "Jof Capra",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Concluding quotes"
+    },
+    {
+      "name": "Shardan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Concluding quotes"
+    },
+    {
+      "name": "Maslow's hierarchy of needs",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussion of human needs"
+    },
+    {
+      "name": "biosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Sustainable human community discussion"
+    },
+    {
+      "name": "sustainable communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussion of communities after nature's ecosystems"
+    },
+    {
+      "name": "incredible place",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "description of the location"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Mahatma Gandhi",
+      "relationship": "advocates_for",
+      "target": "culture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Quote about culture",
+      "episode_number": 14
+    },
+    {
+      "source": "Dalai Lama",
+      "relationship": "advocates_for",
+      "target": "responsibility",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Quote about responsibility",
+      "episode_number": 14
+    },
+    {
+      "source": "Pope Francis",
+      "relationship": "advocates_for",
+      "target": "creation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Quote from La Dato Si",
+      "episode_number": 14
+    },
+    {
+      "source": "Maslow's hierarchy of needs",
+      "relationship": "related_to",
+      "target": "human culture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Psychological theory referenced",
+      "episode_number": 14
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "covers",
+      "target": "stewardship and sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Podcast content",
+      "episode_number": 14
+    },
+    {
+      "source": "Thomas Barry",
+      "relationship": "advocates_for",
+      "target": "eco-zoic era",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Into a mature and caring, eco-zoic era that Thomas Barry and Brian Swim have envisioned and shared with us.",
+      "episode_number": 14
+    },
+    {
+      "source": "Brian Swim",
+      "relationship": "advocates_for",
+      "target": "eco-zoic era",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Into a mature and caring, eco-zoic era that Thomas Barry and Brian Swim have envisioned and shared with us.",
+      "episode_number": 14
+    },
+    {
+      "source": "knowledge",
+      "relationship": "coupled_with",
+      "target": "wisdom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Harnasing wisdom and coupling it to the burgeoning knowledge of the modern era is paramount to creating the culture and future we really want.",
+      "episode_number": 14
+    },
+    {
+      "source": "consumer culture",
+      "relationship": "influences",
+      "target": "human culture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "To see through the veil of the consumer culture veneer that has emerged and taken hold over the past century.",
+      "episode_number": 14
+    },
+    {
+      "source": "sacred stewardship",
+      "relationship": "essential_to",
+      "target": "health and well-being",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Our quest to reconnect, to cultivate and ethos of sacred stewardship and mindfulness is essential to our health and well-being.",
+      "episode_number": 14
+    },
+    {
+      "source": "humans",
+      "relationship": "at_crossroads",
+      "target": "knowledge",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "we humans are at a tremendous crossroads",
+      "episode_number": 14
+    },
+    {
+      "source": "internet",
+      "relationship": "connected_to",
+      "target": "earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "great digital internet that spans the globe",
+      "episode_number": 14
+    },
+    {
+      "source": "Teahard Deshardin",
+      "relationship": "advocates_for",
+      "target": "noosphere",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "noosphere-positive just a century ago by Teahard Deshardin",
+      "episode_number": 14
+    },
+    {
+      "source": "earth",
+      "relationship": "part_of",
+      "target": "mother nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "out of balance, out of cycle with mother nature",
+      "episode_number": 14
+    },
+    {
+      "source": "Wendelberry",
+      "relationship": "leads",
+      "target": "economy",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "sage poet Farmer Wendelberry",
+      "episode_number": 14
+    },
+    {
+      "source": "market",
+      "relationship": "needs",
+      "target": "humans",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the market needs us to guide it",
+      "episode_number": 14
+    },
+    {
+      "source": "Paul Hawken",
+      "relationship": "advocates_for",
+      "target": "prosperous commercial culture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "As Paul Hawken describes it, we need to imagine a prosperous commercial culture...",
+      "episode_number": 14
+    },
+    {
+      "source": "Pope Francis",
+      "relationship": "advocates_for",
+      "target": "humility, service and love",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...a choice articulated by Pope Francis. The world tells us to seek success, power and money, he says, but God tells us to seek humility, service and love.",
+      "episode_number": 14
+    },
+    {
+      "source": "Derek Jensen",
+      "relationship": "describes",
+      "target": "time of magic",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "...as Derek Jensen means magic. He says the time after is a time of magic.",
+      "episode_number": 14
+    },
+    {
+      "source": "Annie Leonard",
+      "relationship": "advocates_for",
+      "target": "change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Annie Leonard observes, everywhere I go she says I meet people ready for change.",
+      "episode_number": 14
+    },
+    {
+      "source": "God",
+      "relationship": "needs",
+      "target": "healing efforts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "serve God's creation in this critical time.",
+      "episode_number": 14
+    },
+    {
+      "source": "the great disintegration",
+      "relationship": "affects",
+      "target": "the living world",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "reverse the great disintegration that has been underway.",
+      "episode_number": 14
+    },
+    {
+      "source": "the living world",
+      "relationship": "contains",
+      "target": "the songbirds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "connect organically with each other and with the living world around us.",
+      "episode_number": 14
+    },
+    {
+      "source": "the living world",
+      "relationship": "contains",
+      "target": "the flowers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "connect organically with each other and with the living world around us.",
+      "episode_number": 14
+    },
+    {
+      "source": "the living world",
+      "relationship": "contains",
+      "target": "the streams",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "connect organically with each other and with the living world around us.",
+      "episode_number": 14
+    },
+    {
+      "source": "the living world",
+      "relationship": "contains",
+      "target": "the fish",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "connect organically with each other and with the living world around us.",
+      "episode_number": 14
+    },
+    {
+      "source": "Melissa Will",
+      "relationship": "advocates_for",
+      "target": "eco-soic culture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Empress of Dirt advocating for eco-soic culture",
+      "episode_number": 14
+    },
+    {
+      "source": "Bear",
+      "relationship": "works_at",
+      "target": "garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "grandpa Bear's garden",
+      "episode_number": 14
+    },
+    {
+      "source": "Alistair Macintosh",
+      "relationship": "advocates_for",
+      "target": "meta-culture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "advocating for meta-culture",
+      "episode_number": 14
+    },
+    {
+      "source": "garden",
+      "relationship": "part_of",
+      "target": "healing planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "gardens contributing to healing planet",
+      "episode_number": 14
+    },
+    {
+      "source": "legacy",
+      "relationship": "contains",
+      "target": "healing planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "legacy of healing planet",
+      "episode_number": 14
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "Why On Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast host and organization",
+      "episode_number": 14
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "authored",
+      "target": "Why On Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "author of the book",
+      "episode_number": 14
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "contains",
+      "target": "Culture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "book contains chapter",
+      "episode_number": 14
+    },
+    {
+      "source": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "relationship": "features",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast features host",
+      "episode_number": 14
+    },
+    {
+      "source": "E.O. Wilson",
+      "relationship": "advocates_for",
+      "target": "authentic experience",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Concluding quotes",
+      "episode_number": 14
+    },
+    {
+      "source": "Jof Capra",
+      "relationship": "advocates_for",
+      "target": "sustainable human communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Concluding quotes",
+      "episode_number": 14
+    },
+    {
+      "source": "Shardan",
+      "relationship": "advocates_for",
+      "target": "evolution of consciousness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Concluding quotes",
+      "episode_number": 14
+    },
+    {
+      "source": "Maslow's hierarchy of needs",
+      "relationship": "part_of",
+      "target": "human experience",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "Discussion of human needs",
+      "episode_number": 14
+    },
+    {
+      "source": "biosphere",
+      "relationship": "contains",
+      "target": "sustainable communities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Sustainable human community discussion",
+      "episode_number": 14
+    }
+  ]
+}

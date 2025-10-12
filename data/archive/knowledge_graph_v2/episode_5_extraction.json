@@ -1,0 +1,768 @@
+{
+  "episode": 5,
+  "timestamp": "2025-10-09T11:21:09.316532",
+  "entity_count": 54,
+  "relationship_count": 38,
+  "entities": [
+    {
+      "name": "Stephanie Saisen",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Hi friends, I'm here with Stephanie Saisen from Biodynamic Botanicals"
+    },
+    {
+      "name": "Biodynamic Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I'm here with Stephanie Saisen from Biodynamic Botanicals"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Yarrow which is native to Colorado"
+    },
+    {
+      "name": "Yarrow",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "this is Yarrow which is native to Colorado"
+    },
+    {
+      "name": "Achilia Milafolium",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "this Latin is Achilia Milafolium"
+    },
+    {
+      "name": "Roman soldiers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I remember hearing that Yarrow that Roman soldiers would spread Yarrow"
+    },
+    {
+      "name": "Echinacea",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "some echinacea which people are familiar with"
+    },
+    {
+      "name": "Lavender",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "some lavender"
+    },
+    {
+      "name": "Lemon balm",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Lemon balm"
+    },
+    {
+      "name": "Hawthorn",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Hawthorn"
+    },
+    {
+      "name": "Angelica",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is all Angelica so this is native as well"
+    },
+    {
+      "name": "Comfrey",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is kind of permacultures darling herb do you know it? It's not comfrey is it? It is comfrey"
+    },
+    {
+      "name": "Osha",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "We've got osha is in that category."
+    },
+    {
+      "name": "Wild carrot",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "We've got wild carrot which is queen anzlays."
+    },
+    {
+      "name": "Cilantro",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "We've got loveage, cilantro, parsley those are also in that family."
+    },
+    {
+      "name": "Parsley",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "We've got loveage, cilantro, parsley those are also in that family."
+    },
+    {
+      "name": "birdock",
+      "type": "HERB",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "used for food and medicine"
+    },
+    {
+      "name": "cotton nit bones",
+      "type": "HERB",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "used for healing wounds"
+    },
+    {
+      "name": "hiss up",
+      "type": "HERB",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "used for coughs and congestion"
+    },
+    {
+      "name": "Mugwort",
+      "type": "HERB",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a wild herb"
+    },
+    {
+      "name": "Valerian",
+      "type": "HERB",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a wild herb"
+    },
+    {
+      "name": "Mount Soepras",
+      "type": "PLACE",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "location where tea is enjoyed"
+    },
+    {
+      "name": "Motherwort",
+      "type": "HERB",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "identified as a patch of herb"
+    },
+    {
+      "name": "Motherwort",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a herb in the discussion."
+    },
+    {
+      "name": "Lyonaurus cardiaca",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Scientific name for Motherwort."
+    },
+    {
+      "name": "heart",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in context of health benefits."
+    },
+    {
+      "name": "stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a condition that Motherwort helps with."
+    },
+    {
+      "name": "anxiety",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a condition that Motherwort helps with."
+    },
+    {
+      "name": "plantain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as another herb."
+    },
+    {
+      "name": "clover",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as another herb."
+    },
+    {
+      "name": "skull cap",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as another herb."
+    },
+    {
+      "name": "caffeine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in context of effects on nervousness."
+    },
+    {
+      "name": "nettle",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a crop."
+    },
+    {
+      "name": "caterpillar",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in relation to nettle."
+    },
+    {
+      "name": "nettles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "important in the biodynamic practice"
+    },
+    {
+      "name": "herbs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "important from a biodynamic perspective"
+    },
+    {
+      "name": "oats",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "used for the nervous system"
+    },
+    {
+      "name": "red clover",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "used for vegetable production"
+    },
+    {
+      "name": "oats",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "benefit from using oats"
+    },
+    {
+      "name": "red clover",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "great for us both red clover and oats"
+    },
+    {
+      "name": "Clary Sage",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Last year was Clary Sage was my most favorite herb"
+    },
+    {
+      "name": "Blue Vervaine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the year before that it was Blue Vervaine"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "why on earth is herbal medicine important for people"
+    },
+    {
+      "name": "willow bark",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I'll take willow bark instead"
+    },
+    {
+      "name": "ashwaganda",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "germinate a flat of ashwaganda"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "why on earth is soil important"
+    },
+    {
+      "name": "biodynamic preps",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "growing a lot of the herbs used in the biodynamic preps"
+    },
+    {
+      "name": "ecosystem",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "it's a whole nother ecosystem"
+    },
+    {
+      "name": "Stephanie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "biodynamic botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "animals",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Stephanie Saisen",
+      "relationship": "works_at",
+      "target": "Biodynamic Botanicals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Hi friends, I'm here with Stephanie Saisen from Biodynamic Botanicals",
+      "episode_number": 5
+    },
+    {
+      "source": "Yarrow",
+      "relationship": "native_to",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "this is Yarrow which is native to Colorado",
+      "episode_number": 5
+    },
+    {
+      "source": "Yarrow",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Yarrow for his soldiers. The reason being it's a rapid blood coagulator",
+      "episode_number": 5
+    },
+    {
+      "source": "Yarrow",
+      "relationship": "used_for",
+      "target": "first aid",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "it's a good one to have in your first aid kit",
+      "episode_number": 5
+    },
+    {
+      "source": "Echinacea",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "some echinacea which people are familiar with",
+      "episode_number": 5
+    },
+    {
+      "source": "Lavender",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "some lavender",
+      "episode_number": 5
+    },
+    {
+      "source": "Lemon balm",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lemon balm",
+      "episode_number": 5
+    },
+    {
+      "source": "Hawthorn",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Hawthorn",
+      "episode_number": 5
+    },
+    {
+      "source": "Angelica",
+      "relationship": "used_for",
+      "target": "medicinal purposes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "this is all Angelica so this is native as well",
+      "episode_number": 5
+    },
+    {
+      "source": "Comfrey",
+      "relationship": "used_for",
+      "target": "fertilizing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "it is comfrey dinging. Oh my gosh. Yeah so really beautiful nutrient accumulator",
+      "episode_number": 5
+    },
+    {
+      "source": "Comfrey",
+      "relationship": "used_for",
+      "target": "healing wounds",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "it's also a rapid celery generator so it's going to help heal wounds faster",
+      "episode_number": 5
+    },
+    {
+      "source": "birdock",
+      "relationship": "advocates_for",
+      "target": "food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "used as food regularly in China and Japan",
+      "episode_number": 5
+    },
+    {
+      "source": "birdock",
+      "relationship": "advocates_for",
+      "target": "medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "helps bind heavy metals in the body",
+      "episode_number": 5
+    },
+    {
+      "source": "cotton nit bones",
+      "relationship": "used_for",
+      "target": "healing wounds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "used for healing wounds faster",
+      "episode_number": 5
+    },
+    {
+      "source": "hiss up",
+      "relationship": "used_for",
+      "target": "coughs and congestion",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.7,
+      "context": "used for coughs and congestion",
+      "episode_number": 5
+    },
+    {
+      "source": "Mount Soepras",
+      "relationship": "located_in",
+      "target": "place of reverence",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "place where tea is enjoyed and fires are held",
+      "episode_number": 5
+    },
+    {
+      "source": "Motherwort",
+      "relationship": "is_a",
+      "target": "Lyonaurus cardiaca",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "identified as a type of herb",
+      "episode_number": 5
+    },
+    {
+      "source": "Motherwort",
+      "relationship": "advocates_for",
+      "target": "heart",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Motherwort is described as good for healing the heart.",
+      "episode_number": 5
+    },
+    {
+      "source": "Motherwort",
+      "relationship": "advocates_for",
+      "target": "stress",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Motherwort is mentioned as helpful for stress.",
+      "episode_number": 5
+    },
+    {
+      "source": "Motherwort",
+      "relationship": "advocates_for",
+      "target": "anxiety",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Motherwort is mentioned as helpful for anxiety.",
+      "episode_number": 5
+    },
+    {
+      "source": "plantain",
+      "relationship": "part_of",
+      "target": "herbs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Plantain is mentioned in the context of other herbs.",
+      "episode_number": 5
+    },
+    {
+      "source": "clover",
+      "relationship": "part_of",
+      "target": "herbs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Clover is mentioned in the context of other herbs.",
+      "episode_number": 5
+    },
+    {
+      "source": "skull cap",
+      "relationship": "part_of",
+      "target": "herbs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Skull cap is mentioned in the context of other herbs.",
+      "episode_number": 5
+    },
+    {
+      "source": "nettle",
+      "relationship": "contains",
+      "target": "caterpillar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nettle is mentioned as having caterpillars that feed on it.",
+      "episode_number": 5
+    },
+    {
+      "source": "nettles",
+      "relationship": "advocates_for",
+      "target": "biodynamic practice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "important in the biodynamic practice",
+      "episode_number": 5
+    },
+    {
+      "source": "oats",
+      "relationship": "made_by",
+      "target": "herbs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "used for the nervous system",
+      "episode_number": 5
+    },
+    {
+      "source": "red clover",
+      "relationship": "part_of",
+      "target": "vegetable production",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "for the other areas out there",
+      "episode_number": 5
+    },
+    {
+      "source": "red clover",
+      "relationship": "beneficial_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "add the nitrogen with the clover",
+      "episode_number": 5
+    },
+    {
+      "source": "oats",
+      "relationship": "beneficial_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "add the biomass with the oats",
+      "episode_number": 5
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "important_for",
+      "target": "people",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "why on earth is herbal medicine important for people",
+      "episode_number": 5
+    },
+    {
+      "source": "willow bark",
+      "relationship": "alternative_to",
+      "target": "aspirin",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "I'll take willow bark instead",
+      "episode_number": 5
+    },
+    {
+      "source": "ashwaganda",
+      "relationship": "germination_rate",
+      "target": "herbs",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "germinate a flat of ashwaganda",
+      "episode_number": 5
+    },
+    {
+      "source": "soil",
+      "relationship": "supports",
+      "target": "plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the life in it creates everything else we eat the plants",
+      "episode_number": 5
+    },
+    {
+      "source": "soil",
+      "relationship": "is_part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "it's a whole nother ecosystem",
+      "episode_number": 5
+    },
+    {
+      "source": "Stephanie",
+      "relationship": "advocates_for",
+      "target": "biodynamic botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 5
+    },
+    {
+      "source": "biodynamic botanicals",
+      "relationship": "located_in",
+      "target": "sustainable settings",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 5
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "plants",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 5
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "animals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 5
+    }
+  ]
+}

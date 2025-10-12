@@ -1,0 +1,1435 @@
+{
+  "episode": 99,
+  "timestamp": "2025-10-09T11:49:29.733198",
+  "entity_count": 95,
+  "relationship_count": 76,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "David Beasley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director of the World Food Program"
+    },
+    {
+      "name": "United Nations World Food Program",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "recipient of the 2020 Nobel Peace Prize"
+    },
+    {
+      "name": "Nobel Peace Prize",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "awarded to the World Food Program"
+    },
+    {
+      "name": "South Carolina",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "US State where David Beasley was governor"
+    },
+    {
+      "name": "Clemson University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where David Beasley earned his bachelor's degree"
+    },
+    {
+      "name": "University of South Carolina",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where David Beasley earned his doctor of jurisprudence degree"
+    },
+    {
+      "name": "Harvard University Kennedy School of Government",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where David Beasley taught"
+    },
+    {
+      "name": "World Food Program",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as an organization providing aid"
+    },
+    {
+      "name": "Nobel Peace Prize Committee",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as awarding the Nobel Peace Prize"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a speaker discussing global issues"
+    },
+    {
+      "name": "Tony Blair",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a person who called David"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to the pandemic"
+    },
+    {
+      "name": "hunger pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to food security"
+    },
+    {
+      "name": "United Nations Security Council",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a body David spoke to"
+    },
+    {
+      "name": "2020",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a year of challenges"
+    },
+    {
+      "name": "2021",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a year expected to be difficult"
+    },
+    {
+      "name": "Tony",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "down with Tony for about a half a dozen countries."
+    },
+    {
+      "name": "Security Council",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "I went to the Security Council, gave them the very grave reality."
+    },
+    {
+      "name": "2020",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "about $19 trillion in the year 2020."
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "we were hoping that COVID would be in our rearview mirror."
+    },
+    {
+      "name": "270 million people",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "looking at with 270 million people."
+    },
+    {
+      "name": "billionaires",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "calling on the world's billionaires."
+    },
+    {
+      "name": "Trump",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "what was 90% of the news? It was Trump, Trump, Trump, Trump."
+    },
+    {
+      "name": "Brexit",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "whether you loved or hated Trump or Brexit, Brexit, Brexit, Brexit."
+    },
+    {
+      "name": "Trump",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussion about media coverage of news."
+    },
+    {
+      "name": "Brexit",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about media coverage of news."
+    },
+    {
+      "name": "Sahel",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussion about climate change effects."
+    },
+    {
+      "name": "Southern Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change effects."
+    },
+    {
+      "name": "Asia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change effects."
+    },
+    {
+      "name": "World's Food Program",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussion about tackling crises and stabilization."
+    },
+    {
+      "name": "Niger",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change and food support."
+    },
+    {
+      "name": "Mali",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change and food support."
+    },
+    {
+      "name": "Burkina Faso",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change and food support."
+    },
+    {
+      "name": "Sahara",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussion about climate change effects."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussion about environmental issues."
+    },
+    {
+      "name": "ecosystem and soil regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussion about solutions for stabilization."
+    },
+    {
+      "name": "Faso",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Sahel",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Sahara",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Mr. Beasley",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Nigeria",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Algeria",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "John Lou",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Los Plateau",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "John Lou",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founder of ecosystem restoration camps"
+    },
+    {
+      "name": "ecosystem restoration camps",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "founded by John Lou"
+    },
+    {
+      "name": "Los Plateau",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "project location in China"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "country where Los Plateau is located"
+    },
+    {
+      "name": "North Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "region mentioned in context of desertification"
+    },
+    {
+      "name": "Middle East",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "region mentioned in context of desertification"
+    },
+    {
+      "name": "Ethiopia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country known for planting trees"
+    },
+    {
+      "name": "Prime Minister",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "met with the Prime Minister of Ethiopia"
+    },
+    {
+      "name": "Tigray",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "region in Ethiopia with current issues"
+    },
+    {
+      "name": "Afghanistan",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "country mentioned in context of famine"
+    },
+    {
+      "name": "Mausoleil Shereef",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "area in Afghanistan"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "country where food is brought from"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "tribal leader in Afghanistan"
+    },
+    {
+      "name": "World Food Program",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...to help the work you're doing with your team there at the World Food Program?"
+    },
+    {
+      "name": "Yemen",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...doing on Yemen, very bad situation."
+    },
+    {
+      "name": "Scott Pelley",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...you might remember Scott Pelley with 60 minutes."
+    },
+    {
+      "name": "children",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...I go to bed worried weeping over children we couldn't save."
+    },
+    {
+      "name": "maize",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...we know for every degree of temperature you have a reduction in amount of maize."
+    },
+    {
+      "name": "Southern Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...down in Southern Africa, you know, as the temperature continues to rise."
+    },
+    {
+      "name": "www.sharethemeal.org",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "...you can go to www.sharethemeal.org, www.sharethemeal.org, and pick a country."
+    },
+    {
+      "name": "Scott",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about choices regarding children in need."
+    },
+    {
+      "name": "$400 trillion",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mention of wealth on Earth."
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Context of wealth increase during the pandemic."
+    },
+    {
+      "name": "world food program",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a resource for helping communities."
+    },
+    {
+      "name": "Nobel Peace Prize",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to Director Beasley."
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in the context of community support."
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a partner in community mobilization."
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Walei Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter of the podcast."
+    },
+    {
+      "name": "Y-North",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a platform for support."
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as part of companies offering discounts."
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned as part of companies offering discounts."
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as part of companies offering discounts."
+    },
+    {
+      "name": "Walei Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as part of companies offering discounts."
+    },
+    {
+      "name": "Y-North",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as the community and support program."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the Y-North community stewardship and sustainability podcast."
+    },
+    {
+      "name": "Y-On-Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a community and support program."
+    },
+    {
+      "name": "biodynamically grown hemp infused aroma therapy soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Product made by Walei Waters."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "David Beasley",
+      "relationship": "works_at",
+      "target": "United Nations World Food Program",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "executive director of the World Food Program",
+      "episode_number": 99
+    },
+    {
+      "source": "United Nations World Food Program",
+      "relationship": "located_in",
+      "target": "Nobel Peace Prize",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "recipient of the Nobel Peace Prize",
+      "episode_number": 99
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "governed",
+      "target": "South Carolina",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "governor of South Carolina",
+      "episode_number": 99
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "earned",
+      "target": "bachelor's degree",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "earned from Clemson University",
+      "episode_number": 99
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "earned",
+      "target": "doctor of jurisprudence degree",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "earned from University of South Carolina",
+      "episode_number": 99
+    },
+    {
+      "source": "David Beasley",
+      "relationship": "taught_at",
+      "target": "Harvard University Kennedy School of Government",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "taught at Harvard University Kennedy School of Government",
+      "episode_number": 99
+    },
+    {
+      "source": "World Food Program",
+      "relationship": "advocates_for",
+      "target": "hunger pandemic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to the organization's mission",
+      "episode_number": 99
+    },
+    {
+      "source": "Nobel Peace Prize Committee",
+      "relationship": "awarded",
+      "target": "World Food Program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed in relation to the recognition of the organization",
+      "episode_number": 99
+    },
+    {
+      "source": "David",
+      "relationship": "spoke_to",
+      "target": "United Nations Security Council",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as addressing the council about global issues",
+      "episode_number": 99
+    },
+    {
+      "source": "David",
+      "relationship": "consulted_with",
+      "target": "Tony Blair",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as having a conversation about global challenges",
+      "episode_number": 99
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "caused",
+      "target": "supply chain disruption",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to economic impacts",
+      "episode_number": 99
+    },
+    {
+      "source": "hunger pandemic",
+      "relationship": "is_related_to",
+      "target": "World Food Program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed in relation to the organization's mission",
+      "episode_number": 99
+    },
+    {
+      "source": "2020",
+      "relationship": "precedes",
+      "target": "2021",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned as years of challenges",
+      "episode_number": 99
+    },
+    {
+      "source": "Tony",
+      "relationship": "advocates_for",
+      "target": "economic dynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Tony was like, oh my gosh, you've got to tell the world what you're seeing.",
+      "episode_number": 99
+    },
+    {
+      "source": "Security Council",
+      "relationship": "responds_to",
+      "target": "grave reality",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I went to the Security Council, gave them the very grave reality.",
+      "episode_number": 99
+    },
+    {
+      "source": "2020",
+      "relationship": "contains",
+      "target": "economic stimulus packages",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "about $19 trillion in the year 2020.",
+      "episode_number": 99
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "2021",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "we were hoping that COVID would be in our rearview mirror in the 2021 would be a lighter path forward.",
+      "episode_number": 99
+    },
+    {
+      "source": "270 million people",
+      "relationship": "facing",
+      "target": "mass famines",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "looking at with 270 million people.",
+      "episode_number": 99
+    },
+    {
+      "source": "billionaires",
+      "relationship": "increase_net_worth",
+      "target": "$5.2 billion per day",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "the world's wealthiest people, the billionaires, increase their net worth.",
+      "episode_number": 99
+    },
+    {
+      "source": "Trump",
+      "relationship": "is_referenced_in",
+      "target": "news",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "what was 90% of the news? It was Trump, Trump, Trump, Trump.",
+      "episode_number": 99
+    },
+    {
+      "source": "Brexit",
+      "relationship": "is_referenced_in",
+      "target": "news",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "whether you loved or hated Trump or Brexit, Brexit, Brexit, Brexit.",
+      "episode_number": 99
+    },
+    {
+      "source": "Trump",
+      "relationship": "mentioned_in",
+      "target": "news",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Discussion about media coverage of news.",
+      "episode_number": 99
+    },
+    {
+      "source": "Brexit",
+      "relationship": "mentioned_in",
+      "target": "news",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Discussion about media coverage of news.",
+      "episode_number": 99
+    },
+    {
+      "source": "Sahel",
+      "relationship": "affected_by",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change effects.",
+      "episode_number": 99
+    },
+    {
+      "source": "Southern Africa",
+      "relationship": "affected_by",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change effects.",
+      "episode_number": 99
+    },
+    {
+      "source": "Asia",
+      "relationship": "affected_by",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change effects.",
+      "episode_number": 99
+    },
+    {
+      "source": "World's Food Program",
+      "relationship": "addresses",
+      "target": "immediate crises",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Discussion about tackling crises and stabilization.",
+      "episode_number": 99
+    },
+    {
+      "source": "Niger",
+      "relationship": "located_in",
+      "target": "Sahel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change and food support.",
+      "episode_number": 99
+    },
+    {
+      "source": "Mali",
+      "relationship": "located_in",
+      "target": "Sahel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change and food support.",
+      "episode_number": 99
+    },
+    {
+      "source": "Burkina Faso",
+      "relationship": "located_in",
+      "target": "Sahel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change and food support.",
+      "episode_number": 99
+    },
+    {
+      "source": "Sahara",
+      "relationship": "part_of",
+      "target": "Sahel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussion about climate change effects.",
+      "episode_number": 99
+    },
+    {
+      "source": "Sahel",
+      "relationship": "part_of",
+      "target": "Faso",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "Faso",
+      "relationship": "located_in",
+      "target": "Nigeria",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "Mr. Beasley",
+      "relationship": "advocates_for",
+      "target": "sustainable agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "founded_by",
+      "target": "John Lou",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "Los Plateau",
+      "relationship": "located_in",
+      "target": "China",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "Sahara",
+      "relationship": "contains",
+      "target": "Sahel",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Transcript segment",
+      "episode_number": 99
+    },
+    {
+      "source": "John Lou",
+      "relationship": "founded",
+      "target": "ecosystem restoration camps",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder of ecosystem restoration camps",
+      "episode_number": 99
+    },
+    {
+      "source": "ecosystem restoration camps",
+      "relationship": "located_in",
+      "target": "Los Plateau",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "project location in China",
+      "episode_number": 99
+    },
+    {
+      "source": "Los Plateau",
+      "relationship": "located_in",
+      "target": "China",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "project location in China",
+      "episode_number": 99
+    },
+    {
+      "source": "North Africa",
+      "relationship": "part_of",
+      "target": "desertification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "region mentioned in context of desertification",
+      "episode_number": 99
+    },
+    {
+      "source": "Middle East",
+      "relationship": "part_of",
+      "target": "desertification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "region mentioned in context of desertification",
+      "episode_number": 99
+    },
+    {
+      "source": "Ethiopia",
+      "relationship": "advocates_for",
+      "target": "tree planting",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "country known for planting trees",
+      "episode_number": 99
+    },
+    {
+      "source": "Prime Minister",
+      "relationship": "met_with",
+      "target": "John Lou",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "met with the Prime Minister of Ethiopia",
+      "episode_number": 99
+    },
+    {
+      "source": "Afghanistan",
+      "relationship": "contains",
+      "target": "Mausoleil Shereef",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "country mentioned in context of famine",
+      "episode_number": 99
+    },
+    {
+      "source": "Mausoleil Shereef",
+      "relationship": "located_in",
+      "target": "Afghanistan",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "area in Afghanistan",
+      "episode_number": 99
+    },
+    {
+      "source": "United States",
+      "relationship": "supplies",
+      "target": "food",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "country where food is brought from",
+      "episode_number": 99
+    },
+    {
+      "source": "Aaron",
+      "relationship": "leads",
+      "target": "community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "tribal leader in Afghanistan",
+      "episode_number": 99
+    },
+    {
+      "source": "World Food Program",
+      "relationship": "works_at",
+      "target": "David",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...help the work you're doing with your team there at the World Food Program?",
+      "episode_number": 99
+    },
+    {
+      "source": "Scott Pelley",
+      "relationship": "interviews",
+      "target": "David",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "...you might remember Scott Pelley with 60 minutes.",
+      "episode_number": 99
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "children",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "...I go to bed worried weeping over children we couldn't save.",
+      "episode_number": 99
+    },
+    {
+      "source": "maize",
+      "relationship": "brought_in",
+      "target": "Southern Africa",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...maize wasn't natural...was brought in from the outsiders as a carbohydrate.",
+      "episode_number": 99
+    },
+    {
+      "source": "Southern Africa",
+      "relationship": "located_in",
+      "target": "Africa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "...down in Southern Africa, you know, as the temperature continues to rise.",
+      "episode_number": 99
+    },
+    {
+      "source": "www.sharethemeal.org",
+      "relationship": "supports",
+      "target": "World Food Program",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "...you can go to www.sharethemeal.org, www.sharethemeal.org, and pick a country.",
+      "episode_number": 99
+    },
+    {
+      "source": "Scott",
+      "relationship": "engaged_in",
+      "target": "world food program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Discussion about community engagement in food programs.",
+      "episode_number": 99
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "community mobilization",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Mentioned in the context of helping others.",
+      "episode_number": 99
+    },
+    {
+      "source": "Earth Coast productions",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Purium",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Liquid Trainer",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Vera Herbels",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Growing Spaces",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Soil Works",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Earthwater Press",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "1% for the planet",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Walei Waters",
+      "relationship": "supports",
+      "target": "community mobilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a supporter of community efforts.",
+      "episode_number": 99
+    },
+    {
+      "source": "Y-North",
+      "relationship": "provides",
+      "target": "monthly support program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a platform for support.",
+      "episode_number": 99
+    },
+    {
+      "source": "Walei Waters",
+      "relationship": "made_by",
+      "target": "biodynamically grown hemp infused aroma therapy soaking salts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Mentioned in the context of monthly shipments.",
+      "episode_number": 99
+    },
+    {
+      "source": "Y-North",
+      "relationship": "hosts",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Y-North community stewardship and sustainability podcast series is hosted by Aaron William Perry.",
+      "episode_number": 99
+    },
+    {
+      "source": "Earthwater Press",
+      "relationship": "part_of",
+      "target": "Y-North",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned as part of companies in the Y-North ecosystem.",
+      "episode_number": 99
+    },
+    {
+      "source": "1% for the planet",
+      "relationship": "part_of",
+      "target": "Y-North",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned as part of companies in the Y-North ecosystem.",
+      "episode_number": 99
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "part_of",
+      "target": "Y-North",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned as part of companies in the Y-North ecosystem.",
+      "episode_number": 99
+    },
+    {
+      "source": "Walei Waters",
+      "relationship": "part_of",
+      "target": "Y-North",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned as part of companies in the Y-North ecosystem.",
+      "episode_number": 99
+    }
+  ]
+}

@@ -1,0 +1,2319 @@
+{
+  "episode": 83,
+  "timestamp": "2025-10-09T11:39:44.978314",
+  "entity_count": 157,
+  "relationship_count": 121,
+  "entities": [
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "Ryan Lewis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "founder and CEO of Earth Hero"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company founded by Ryan Lewis"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location mentioned by Ryan Lewis"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "community mentioned by Aaron Perry"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "context of the pandemic affecting e-commerce"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "concept discussed by Ryan Lewis"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about e-commerce and local businesses"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "mention of the local community"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about changes in shopping behavior"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of environmental initiatives"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shopping at Earth Hero"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "friend's apothecary alpine botanicals"
+    },
+    {
+      "name": "Netherland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "up in netterland"
+    },
+    {
+      "name": "1% for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "1% for the planet"
+    },
+    {
+      "name": "BeCorp",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "going back to, you know, becorp"
+    },
+    {
+      "name": "CarbonFund.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partnered with CarbonFund.org"
+    },
+    {
+      "name": "B-Corp certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about business certification"
+    },
+    {
+      "name": "entrepreneurs",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about interviewing entrepreneurs"
+    },
+    {
+      "name": "nonprofits",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mention of partnering with nonprofits"
+    },
+    {
+      "name": "carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about offsetting emissions"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about replanting trees"
+    },
+    {
+      "name": "team",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "14 people on the team now"
+    },
+    {
+      "name": "business",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "investing into the business"
+    },
+    {
+      "name": "customers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "customers love"
+    },
+    {
+      "name": "startup",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "I still think of us as a startup"
+    },
+    {
+      "name": "products",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "What kind of products do we want to bring in"
+    },
+    {
+      "name": "zero waste",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "zero waste, sustainable essentials"
+    },
+    {
+      "name": "personal care",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "second biggest category is personal care"
+    },
+    {
+      "name": "personal care",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "category of products discussed"
+    },
+    {
+      "name": "Davids",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company mentioned for toothpaste alternative"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book authored by the speaker"
+    },
+    {
+      "name": "fungus",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "material discussed for packaging"
+    },
+    {
+      "name": "mycelial-based packaging materials",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "type of packaging materials mentioned"
+    },
+    {
+      "name": "banana leaves",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "natural material discussed as an alternative"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "natural material discussed as an alternative"
+    },
+    {
+      "name": "I am true Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "new event for I am true Earth"
+    },
+    {
+      "name": "laundry detergent",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "laundry detergent just comes with sheets"
+    },
+    {
+      "name": "cardboard sleeve",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "comes in a little tiny cardboard sleeve that you can recycle"
+    },
+    {
+      "name": "Photopoxy",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Photopoxy, maybe you recognize the brand, create outdoor brand"
+    },
+    {
+      "name": "just elite",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this is a brand just elite"
+    },
+    {
+      "name": "Plain products",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Plain products came up with a concept"
+    },
+    {
+      "name": "Outplane products",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussed as a brand for recyclable packaging."
+    },
+    {
+      "name": "PLA",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Mentioned in relation to Outplane products."
+    },
+    {
+      "name": "Food huggers",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed as a product that keeps food fresh."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to greenhouse gas emissions."
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to greenhouse gas emissions."
+    },
+    {
+      "name": "solar dynamics",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned as a manufacturer of hand sanitizer."
+    },
+    {
+      "name": "hand sanitizer",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Discussed as a product made by solar dynamics."
+    },
+    {
+      "name": "earthhero.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for products"
+    },
+    {
+      "name": "hand sanitizer",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned as the best on the market"
+    },
+    {
+      "name": "Shampoo bars",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned as amazing"
+    },
+    {
+      "name": "conditioner bars",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned as amazing"
+    },
+    {
+      "name": "face masks",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product mentioned as a hot topic"
+    },
+    {
+      "name": "organic cotton",
+      "type": "MATERIAL",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "material used for masks"
+    },
+    {
+      "name": "hemp mask",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "type of mask mentioned"
+    },
+    {
+      "name": "sawila shoes",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "shoes made from recycled materials"
+    },
+    {
+      "name": "recycled water bottles",
+      "type": "MATERIAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "material used for shoes"
+    },
+    {
+      "name": "cork",
+      "type": "MATERIAL",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "material used for shoe insole"
+    },
+    {
+      "name": "electronics",
+      "type": "PRODUCT",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "mentioned as recycled material for products"
+    },
+    {
+      "name": "bamboo",
+      "type": "MATERIAL",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "mentioned as recycled material for products"
+    },
+    {
+      "name": "Pila case",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "compostable phone cases"
+    },
+    {
+      "name": "Nimble",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "electronics category"
+    },
+    {
+      "name": "reusable diapers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "diaper concept"
+    },
+    {
+      "name": "food storage",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "food storage solutions"
+    },
+    {
+      "name": "diapers",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one time use diapers"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as a brand in the podcast"
+    },
+    {
+      "name": "Art of Nickel Coffee",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned as a board member"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to Art of Nickel Coffee"
+    },
+    {
+      "name": "why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed as a concept that helps popularize products"
+    },
+    {
+      "name": "sustainability made simple",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "mentioned as a tagline on a shirt"
+    },
+    {
+      "name": "waste",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "discussed in relation to a chapter in a book"
+    },
+    {
+      "name": "reusable diapers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed as a product concept"
+    },
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth community podcast"
+    },
+    {
+      "name": "Ryan Lewis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder and CEO of Earth Hero"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization discussed in the podcast"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast name"
+    },
+    {
+      "name": "earthhero.com",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for Earth Hero"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Vera Herbles",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Soil Works",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Weile Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Weile Waters CBD Hemp infused aroma therapy soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "product mentioned in the podcast"
+    },
+    {
+      "name": "Ivan Shunard",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a great leader from Patagonia"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to Ivan Shunard"
+    },
+    {
+      "name": "joy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as an important element in work"
+    },
+    {
+      "name": "love",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as an important element in work"
+    },
+    {
+      "name": "service",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as an important element in work"
+    },
+    {
+      "name": "stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as an important element in work"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "starting Earth Hero"
+    },
+    {
+      "name": "fatherhood",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "influence on work"
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "having children"
+    },
+    {
+      "name": "boys",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "fatherhood"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "speaking to our community"
+    },
+    {
+      "name": "baseball game",
+      "type": "PLACE",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "at a baseball game"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing conscious consumerism"
+    },
+    {
+      "name": "conscious consumerism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing its importance"
+    },
+    {
+      "name": "planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "impact on the planet"
+    },
+    {
+      "name": "family",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "impact on the health of my family"
+    },
+    {
+      "name": "plastic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "why is plastic bad?"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "beyond sustainability"
+    },
+    {
+      "name": "reusable",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "reusable, refillable shampoos"
+    },
+    {
+      "name": "compost",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "looking to compost"
+    },
+    {
+      "name": "alternative",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "sourcing alternative"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "community context"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "state context"
+    },
+    {
+      "name": "sustainable shopping",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mission statement"
+    },
+    {
+      "name": "natural disasters",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about world events"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about the organization and its growth"
+    },
+    {
+      "name": "House of Marley",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand partner"
+    },
+    {
+      "name": "Peela Case",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a brand partner for compostable phone cases"
+    },
+    {
+      "name": "chopped values",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a brand making cutting boards"
+    },
+    {
+      "name": "AirPod Pro",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a product available in the warehouse"
+    },
+    {
+      "name": "bamboo",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to kitchen supplies and turntables"
+    },
+    {
+      "name": "Hydroflask",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioned as a familiar product"
+    },
+    {
+      "name": "L'Oreal",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a company that had a spin-off"
+    },
+    {
+      "name": "Earth Harvest Gray",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to cosmetics"
+    },
+    {
+      "name": "David's",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "mentioned in relation to toothpaste"
+    },
+    {
+      "name": "Stasher",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to personal care products"
+    },
+    {
+      "name": "seed",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioned as a concept from L'Oreal"
+    },
+    {
+      "name": "glass straws",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a product being discussed"
+    },
+    {
+      "name": "bamboo utensils",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a product being discussed"
+    },
+    {
+      "name": "recyclable packaging",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to floss packaging"
+    },
+    {
+      "name": "sustainable products",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to the overall theme of the discussion"
+    },
+    {
+      "name": "sustainability folks",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "podcast discussion about sustainability"
+    },
+    {
+      "name": "books",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about selling books"
+    },
+    {
+      "name": "the story of stuff",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "reference to a book"
+    },
+    {
+      "name": "hygiene supplies",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about hygiene supplies"
+    },
+    {
+      "name": "soap dispenser",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about kitchen products"
+    },
+    {
+      "name": "soap block",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about a specific product"
+    },
+    {
+      "name": "wine earth headquarters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "reference to an organization"
+    },
+    {
+      "name": "floss",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about a product"
+    },
+    {
+      "name": "candles",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about candles"
+    },
+    {
+      "name": "safety razors",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about razors"
+    },
+    {
+      "name": "dog toys",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about dog toys"
+    },
+    {
+      "name": "Charmer Center for Harder Psych Materials",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "We recycle all this stuff locally at this, at Charmer Center for Harder Psych Materials."
+    },
+    {
+      "name": "Ten Trees",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Ten Trees cool because every time you buy something, they give you a little chip that gives you, like, certified, like, ten trees are planted for every article of clothing you buy."
+    },
+    {
+      "name": "Unite by Blue",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "From Tentry and Unite by Blue are kind of two brands that we really like to support."
+    },
+    {
+      "name": "recycled milk jugs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "all this stuff is made from 100% recycled milk jugs."
+    },
+    {
+      "name": "recycled plastic",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "even though it's plastic, it's 100% recycled plastic."
+    },
+    {
+      "name": "eco dough",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "some eco dough for kids, crayons, all good ingredients."
+    },
+    {
+      "name": "dog toys",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "A lot of dogs apply, you know, dog toys."
+    },
+    {
+      "name": "yoga mats",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Yoga mats or yoga mat pads."
+    },
+    {
+      "name": "women's sports bras",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "We do a lot of women's sports bras and, uh, and compression leggings."
+    },
+    {
+      "name": "laundry powders",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "this, uh, file out of here, got laundry, powders, you know, that alternative."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "The Why on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry, author, thought leader, and executive consultant."
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Why on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry."
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "please visit, whyonearth.org-support."
+    },
+    {
+      "name": "Why on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "using the code, Why on Earth, all one word with a Why."
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Thank you for being a part of the Why on Earth Community."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ryan Lewis",
+      "relationship": "works_at",
+      "target": "Earth Hero",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Ryan Lewis is the founder and CEO of Earth Hero",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Earth Hero is based in Boulder",
+      "episode_number": 83
+    },
+    {
+      "source": "Ryan Lewis",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Ryan Lewis discusses sustainability in relation to Earth Hero",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "affiliated_with",
+      "target": "Earth Hero",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Y on Earth community has an affiliate relationship with Earth Hero",
+      "episode_number": 83
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "affects",
+      "target": "e-commerce",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "COVID-19 has changed e-commerce patterns",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussion about local business involvement",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mention of social and environmental impacts",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "located_in",
+      "target": "1% for the Planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mention of environmental initiatives",
+      "episode_number": 83
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "shopping behavior",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about changes in e-commerce",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "provides",
+      "target": "greater confidence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "provide them with greater confidence that the impacts that are resulting from shopping at Earth Hero are positive",
+      "episode_number": 83
+    },
+    {
+      "source": "Alpine Botanicals",
+      "relationship": "located_in",
+      "target": "Netherland",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "up in netterland",
+      "episode_number": 83
+    },
+    {
+      "source": "1% for the Planet",
+      "relationship": "partners_with",
+      "target": "BeCorp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "when we started the business, it was, there was really three nonprofit partners that came to mind",
+      "episode_number": 83
+    },
+    {
+      "source": "BeCorp",
+      "relationship": "allows",
+      "target": "CarbonFund.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnered with CarbonFund.org, and they allow us to be completely carbon neutral",
+      "episode_number": 83
+    },
+    {
+      "source": "CarbonFund.org",
+      "relationship": "offsets",
+      "target": "inbound shipments",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "completely offset, you know, through purchasing carbon credits",
+      "episode_number": 83
+    },
+    {
+      "source": "entrepreneurs",
+      "relationship": "advocates_for",
+      "target": "B-Corp certification",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the importance of B-Corp certification",
+      "episode_number": 83
+    },
+    {
+      "source": "nonprofits",
+      "relationship": "partner_with",
+      "target": "entrepreneurs",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mention of partnering with nonprofits and entrepreneurs",
+      "episode_number": 83
+    },
+    {
+      "source": "carbon credits",
+      "relationship": "related_to",
+      "target": "trees",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about tactics for offsetting emissions through replanting trees",
+      "episode_number": 83
+    },
+    {
+      "source": "team",
+      "relationship": "part_of",
+      "target": "business",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "14 people on the team now",
+      "episode_number": 83
+    },
+    {
+      "source": "business",
+      "relationship": "advocates_for",
+      "target": "customers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "investing into the business",
+      "episode_number": 83
+    },
+    {
+      "source": "startup",
+      "relationship": "part_of",
+      "target": "business",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "I still think of us as a startup",
+      "episode_number": 83
+    },
+    {
+      "source": "products",
+      "relationship": "made_by",
+      "target": "business",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "What kind of products do we want to bring in",
+      "episode_number": 83
+    },
+    {
+      "source": "zero waste",
+      "relationship": "part_of",
+      "target": "products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "zero waste, sustainable essentials",
+      "episode_number": 83
+    },
+    {
+      "source": "personal care",
+      "relationship": "part_of",
+      "target": "products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "second biggest category is personal care",
+      "episode_number": 83
+    },
+    {
+      "source": "Davids",
+      "relationship": "makes",
+      "target": "toothpaste",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "alternative toothpaste company mentioned",
+      "episode_number": 83
+    },
+    {
+      "source": "Why On Earth",
+      "relationship": "authored_by",
+      "target": "unknown",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "book authored by the speaker",
+      "episode_number": 83
+    },
+    {
+      "source": "mycelial-based packaging materials",
+      "relationship": "made_of",
+      "target": "fungus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "packaging materials discussed",
+      "episode_number": 83
+    },
+    {
+      "source": "banana leaves",
+      "relationship": "used_in",
+      "target": "packaging",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "natural material discussed for packaging",
+      "episode_number": 83
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "used_in",
+      "target": "packaging",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "natural material discussed for packaging",
+      "episode_number": 83
+    },
+    {
+      "source": "I am true Earth",
+      "relationship": "produces",
+      "target": "laundry detergent",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "new event for I am true Earth",
+      "episode_number": 83
+    },
+    {
+      "source": "I am true Earth",
+      "relationship": "offers",
+      "target": "cardboard sleeve",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "comes in a little tiny cardboard sleeve that you can recycle",
+      "episode_number": 83
+    },
+    {
+      "source": "Photopoxy",
+      "relationship": "creates",
+      "target": "outdoor products",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Photopoxy, maybe you recognize the brand, create outdoor brand",
+      "episode_number": 83
+    },
+    {
+      "source": "just elite",
+      "relationship": "produces",
+      "target": "cosmetics",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "this is a brand just elite",
+      "episode_number": 83
+    },
+    {
+      "source": "Plain products",
+      "relationship": "produces",
+      "target": "recyclable can",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Plain products came up with a concept",
+      "episode_number": 83
+    },
+    {
+      "source": "Outplane products",
+      "relationship": "makes",
+      "target": "PLA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Discussed in the context of recyclable packaging.",
+      "episode_number": 83
+    },
+    {
+      "source": "Food huggers",
+      "relationship": "reduces",
+      "target": "food waste",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussed as a solution to food waste.",
+      "episode_number": 83
+    },
+    {
+      "source": "food waste",
+      "relationship": "emits",
+      "target": "greenhouse gases",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Mentioned in relation to greenhouse gas emissions.",
+      "episode_number": 83
+    },
+    {
+      "source": "solar dynamics",
+      "relationship": "makes",
+      "target": "hand sanitizer",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Discussed as a manufacturer of hand sanitizer.",
+      "episode_number": 83
+    },
+    {
+      "source": "earthhero.com",
+      "relationship": "offers",
+      "target": "hand sanitizer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "website for products",
+      "episode_number": 83
+    },
+    {
+      "source": "earthhero.com",
+      "relationship": "offers",
+      "target": "Shampoo bars",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "website for products",
+      "episode_number": 83
+    },
+    {
+      "source": "earthhero.com",
+      "relationship": "offers",
+      "target": "conditioner bars",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "website for products",
+      "episode_number": 83
+    },
+    {
+      "source": "earthhero.com",
+      "relationship": "offers",
+      "target": "face masks",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "website for products",
+      "episode_number": 83
+    },
+    {
+      "source": "face masks",
+      "relationship": "made_of",
+      "target": "organic cotton",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "material used for masks",
+      "episode_number": 83
+    },
+    {
+      "source": "face masks",
+      "relationship": "made_of",
+      "target": "hemp mask",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "type of mask mentioned",
+      "episode_number": 83
+    },
+    {
+      "source": "sawila shoes",
+      "relationship": "made_of",
+      "target": "recycled water bottles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "shoes made from recycled materials",
+      "episode_number": 83
+    },
+    {
+      "source": "sawila shoes",
+      "relationship": "made_of",
+      "target": "cork",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "material used for shoe insole",
+      "episode_number": 83
+    },
+    {
+      "source": "electronics",
+      "relationship": "made_of",
+      "target": "bamboo",
+      "source_confidence": 0.5,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.5,
+      "context": "mentioned as recycled material for products",
+      "episode_number": 83
+    },
+    {
+      "source": "Pila case",
+      "relationship": "made_by",
+      "target": "Nimble",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "compostable phone cases",
+      "episode_number": 83
+    },
+    {
+      "source": "reusable diapers",
+      "relationship": "advocates_for",
+      "target": "diapers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "diaper concept",
+      "episode_number": 83
+    },
+    {
+      "source": "food storage",
+      "relationship": "part_of",
+      "target": "reusable diapers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "food storage solutions",
+      "episode_number": 83
+    },
+    {
+      "source": "Art of Nickel Coffee",
+      "relationship": "works_at",
+      "target": "Earth Coast Productions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as a board member of Earth Coast Productions",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "advocates_for",
+      "target": "sustainability made simple",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "discussed as a brand promoting sustainable practices",
+      "episode_number": 83
+    },
+    {
+      "source": "why on Earth",
+      "relationship": "popularizes",
+      "target": "reusable diapers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to promoting reusable diapers",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "promotes",
+      "target": "waste",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "discussed in relation to digital marketing and waste management",
+      "episode_number": 83
+    },
+    {
+      "source": "Ryan Lewis",
+      "relationship": "works_at",
+      "target": "Earth Hero",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Ryan Lewis is the founder and CEO of Earth Hero.",
+      "episode_number": 83
+    },
+    {
+      "source": "Aaron Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Aaron Perry is the host of the Y on Earth community podcast.",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "located_in",
+      "target": "earthhero.com",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Earth Hero's products can be found on their website.",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "advocates_for",
+      "target": "sustainable regenerative stewardship",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Earth Hero promotes sustainable practices.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Earth Coast productions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Lidge Family Foundation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Vera Herbles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Growing Spaces",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Soil Works",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Earthwater Press",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "1% for the planet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "Weile Waters",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth community podcast is sponsored by various organizations.",
+      "episode_number": 83
+    },
+    {
+      "source": "Ivan Shunard",
+      "relationship": "works_at",
+      "target": "Patagonia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "mentioned as a great leader from Patagonia",
+      "episode_number": 83
+    },
+    {
+      "source": "joy",
+      "relationship": "advocates_for",
+      "target": "work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as an important element in work",
+      "episode_number": 83
+    },
+    {
+      "source": "love",
+      "relationship": "advocates_for",
+      "target": "work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as an important element in work",
+      "episode_number": 83
+    },
+    {
+      "source": "service",
+      "relationship": "advocates_for",
+      "target": "work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as an important element in work",
+      "episode_number": 83
+    },
+    {
+      "source": "stewardship",
+      "relationship": "advocates_for",
+      "target": "work",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as an important element in work",
+      "episode_number": 83
+    },
+    {
+      "source": "fatherhood",
+      "relationship": "influences",
+      "target": "work",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "influence on work",
+      "episode_number": 83
+    },
+    {
+      "source": "children",
+      "relationship": "part_of",
+      "target": "family",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "having children",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "founded_by",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.6,
+      "context": "starting Earth Hero",
+      "episode_number": 83
+    },
+    {
+      "source": "boys",
+      "relationship": "part_of",
+      "target": "family",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "fatherhood",
+      "episode_number": 83
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "authenticity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "speaking to our community",
+      "episode_number": 83
+    },
+    {
+      "source": "baseball game",
+      "relationship": "located_in",
+      "target": "place",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.6,
+      "context": "at a baseball game",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "advocates_for",
+      "target": "conscious consumerism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing its importance at Earth Hero",
+      "episode_number": 83
+    },
+    {
+      "source": "conscious consumerism",
+      "relationship": "impacts",
+      "target": "planet",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "thinking about how it impacts the planet",
+      "episode_number": 83
+    },
+    {
+      "source": "conscious consumerism",
+      "relationship": "impacts",
+      "target": "family",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "thinking about how it impacts the health of my family",
+      "episode_number": 83
+    },
+    {
+      "source": "plastic",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "why is plastic bad?",
+      "episode_number": 83
+    },
+    {
+      "source": "sustainability",
+      "relationship": "part_of",
+      "target": "conscious living",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "beyond sustainability",
+      "episode_number": 83
+    },
+    {
+      "source": "compost",
+      "relationship": "part_of",
+      "target": "sustainable practices",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "looking to compost",
+      "episode_number": 83
+    },
+    {
+      "source": "reusable",
+      "relationship": "made_by",
+      "target": "sustainable products",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "reusable, refillable shampoos",
+      "episode_number": 83
+    },
+    {
+      "source": "alternative",
+      "relationship": "advocates_for",
+      "target": "sustainable living",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "sourcing alternative",
+      "episode_number": 83
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "community context",
+      "episode_number": 83
+    },
+    {
+      "source": "sustainable shopping",
+      "relationship": "advocates_for",
+      "target": "human race",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "mission statement",
+      "episode_number": 83
+    },
+    {
+      "source": "natural disasters",
+      "relationship": "affects",
+      "target": "human race",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "discussion about world events",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about supporting sustainable companies and products",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "located_in",
+      "target": "warehouse",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the warehouse where products are stored",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "works_with",
+      "target": "House of Marley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about brand partners",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "works_with",
+      "target": "Peela Case",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about brand partners",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "works_with",
+      "target": "chopped values",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about brand partners",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "offers",
+      "target": "AirPod Pro",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about products available",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "offers",
+      "target": "bamboo turntable",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about products available",
+      "episode_number": 83
+    },
+    {
+      "source": "L'Oreal",
+      "relationship": "founded",
+      "target": "seed",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as a spin-off from L'Oreal",
+      "episode_number": 83
+    },
+    {
+      "source": "Hydroflask",
+      "relationship": "made_by",
+      "target": "ORG",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned as a familiar product",
+      "episode_number": 83
+    },
+    {
+      "source": "David's",
+      "relationship": "advocates_for",
+      "target": "recyclable packaging",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to toothpaste packaging",
+      "episode_number": 83
+    },
+    {
+      "source": "Stasher",
+      "relationship": "made_by",
+      "target": "ORG",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to personal care products",
+      "episode_number": 83
+    },
+    {
+      "source": "Earth Harvest Gray",
+      "relationship": "produces",
+      "target": "bamboo utensils",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to cosmetics",
+      "episode_number": 83
+    },
+    {
+      "source": "glass straws",
+      "relationship": "part_of",
+      "target": "sustainable products",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioned as a product being discussed",
+      "episode_number": 83
+    },
+    {
+      "source": "sustainability folks",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "podcast discussion about sustainability",
+      "episode_number": 83
+    },
+    {
+      "source": "the story of stuff",
+      "relationship": "made_by",
+      "target": "books",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "reference to a book",
+      "episode_number": 83
+    },
+    {
+      "source": "wine earth headquarters",
+      "relationship": "located_in",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "reference to an organization",
+      "episode_number": 83
+    },
+    {
+      "source": "soap block",
+      "relationship": "made_by",
+      "target": "soap dispenser",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about a specific product",
+      "episode_number": 83
+    },
+    {
+      "source": "safety razors",
+      "relationship": "made_by",
+      "target": "razor company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "discussion about razors",
+      "episode_number": 83
+    },
+    {
+      "source": "dog toys",
+      "relationship": "part_of",
+      "target": "dog supplies",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about dog toys",
+      "episode_number": 83
+    },
+    {
+      "source": "Charmer Center for Harder Psych Materials",
+      "relationship": "recycles",
+      "target": "recycled plastic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "We recycle all this stuff locally at this, at Charmer Center for Harder Psych Materials.",
+      "episode_number": 83
+    },
+    {
+      "source": "Ten Trees",
+      "relationship": "supports",
+      "target": "recycled plastic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Ten Trees cool because every time you buy something, they give you a little chip that gives you, like, certified, like, ten trees are planted for every article of clothing you buy.",
+      "episode_number": 83
+    },
+    {
+      "source": "Unite by Blue",
+      "relationship": "supports",
+      "target": "recycled plastic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "From Tentry and Unite by Blue are kind of two brands that we really like to support.",
+      "episode_number": 83
+    },
+    {
+      "source": "dog toys",
+      "relationship": "made_from",
+      "target": "recycled plastic",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "A lot of dogs apply, you know, dog toys.",
+      "episode_number": 83
+    },
+    {
+      "source": "women's sports bras",
+      "relationship": "made_from",
+      "target": "recycled plastic",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "We do a lot of women's sports bras and, uh, and compression leggings.",
+      "episode_number": 83
+    },
+    {
+      "source": "yoga mats",
+      "relationship": "made_from",
+      "target": "recycled plastic",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Yoga mats or yoga mat pads.",
+      "episode_number": 83
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "The Why on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry, author, thought leader, and executive consultant.",
+      "episode_number": 83
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "whyonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors.",
+      "episode_number": 83
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "offers_discount",
+      "target": "Why on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "You can get discounts on their products and services using the code, Why on Earth, all one word with a Why.",
+      "episode_number": 83
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "advocates_for",
+      "target": "insightful",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "Thank you for being a part of the Why on Earth Community.",
+      "episode_number": 83
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "advocates_for",
+      "target": "informative",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "Thank you for being a part of the Why on Earth Community.",
+      "episode_number": 83
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "advocates_for",
+      "target": "inspiring",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "Thank you for being a part of the Why on Earth Community.",
+      "episode_number": 83
+    }
+  ]
+}

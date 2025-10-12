@@ -1,0 +1,1477 @@
+{
+  "episode": 75,
+  "timestamp": "2025-10-09T11:34:47.264170",
+  "entity_count": 101,
+  "relationship_count": 76,
+  "entities": [
+    {
+      "name": "Dr. Jandell Allen Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast introduction"
+    },
+    {
+      "name": "Craig Hospital",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "hospital mentioned as rehabilitation center"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of Craig Hospital"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Denver is located"
+    },
+    {
+      "name": "Kaiser Permanente",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization where Dr. Allen Davis worked"
+    },
+    {
+      "name": "Dartmouth College",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "educational institution attended by Dr. Allen Davis"
+    },
+    {
+      "name": "Dartmouth Medical School",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "medical school attended by Dr. Allen Davis"
+    },
+    {
+      "name": "Thomas Jefferson University Hospital",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hospital where Dr. Allen Davis completed residency"
+    },
+    {
+      "name": "Denver Botanic Gardens",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization Dr. Allen Davis serves on the board of"
+    },
+    {
+      "name": "Denver Metro Chamber of Commerce",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization Dr. Allen Davis serves on the board of"
+    },
+    {
+      "name": "National Jewish Health",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization Dr. Allen Davis serves on the board of"
+    },
+    {
+      "name": "Geisel School of Medicine",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "medical school where Dr. Allen Davis serves on the board of advisors"
+    },
+    {
+      "name": "George Floyd",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "individual mentioned in relation to protests"
+    },
+    {
+      "name": "coronavirus",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "context of pandemic mentioned in the podcast"
+    },
+    {
+      "name": "Craig",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "first African American leader at Craig"
+    },
+    {
+      "name": "Jan Dell",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "a friend reached out to the speaker"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "platform where Jan Dell shared an emotional post"
+    },
+    {
+      "name": "pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "context of the conversation about race and protests"
+    },
+    {
+      "name": "protest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "context of the conversation about race and pandemic"
+    },
+    {
+      "name": "political environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "context of the conversation about race and protests"
+    },
+    {
+      "name": "Javit Craig",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "CEO and president mentioned in the context of leadership."
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Platform where emotional post was shared."
+    },
+    {
+      "name": "race",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Topic of conversation regarding emotionality and leadership."
+    },
+    {
+      "name": "leaders",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "General reference to individuals in leadership roles."
+    },
+    {
+      "name": "emotion",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to leadership."
+    },
+    {
+      "name": "eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "Mentioned in the context of walking and sharing experiences."
+    },
+    {
+      "name": "gardens",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "Mentioned in the context of sharing experiences."
+    },
+    {
+      "name": "Jan Dell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "shared missives with team and board"
+    },
+    {
+      "name": "Dr. Martin Luther King",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "murdered in 1968"
+    },
+    {
+      "name": "Washington, DC",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.98,
+      "context": "location of grandmother's house"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "leader of the free world"
+    },
+    {
+      "name": "black lives matter",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "protests around the world"
+    },
+    {
+      "name": "England",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of protests"
+    },
+    {
+      "name": "France",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of protests"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of protests"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of protests"
+    },
+    {
+      "name": "police",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about laws and policies regarding police"
+    },
+    {
+      "name": "pandemic",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about the impact of the pandemic on health disparities"
+    },
+    {
+      "name": "black people",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about health disparities during the pandemic"
+    },
+    {
+      "name": "health equity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about health disparities and social determinants of health"
+    },
+    {
+      "name": "poor people",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about the workforce during the pandemic"
+    },
+    {
+      "name": "young people",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about the optimism for the future generation"
+    },
+    {
+      "name": "America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about diversity and identity in the U.S."
+    },
+    {
+      "name": "America",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Discussion about identity and culture."
+    },
+    {
+      "name": "Sunday",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of personal reflection."
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of social media engagement."
+    },
+    {
+      "name": "black folks",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Discussion about racial conversations."
+    },
+    {
+      "name": "Hispanic",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Discussion about racial conversations."
+    },
+    {
+      "name": "white folks",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Discussion about racial conversations."
+    },
+    {
+      "name": "Crag",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "Mentioned as a workplace."
+    },
+    {
+      "name": "African American",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of diversity in leadership."
+    },
+    {
+      "name": "physical therapy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned in the context of professions."
+    },
+    {
+      "name": "occupational therapy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned in the context of professions."
+    },
+    {
+      "name": "Black Lives Matter",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast discussion about social issues."
+    },
+    {
+      "name": "Ethiopian women",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussion about female genital mutilation."
+    },
+    {
+      "name": "African custom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of problem-solving."
+    },
+    {
+      "name": "female genital mutilation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about social issues in Ethiopia."
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "Discussion about community engagement."
+    },
+    {
+      "name": "policy level",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of social change."
+    },
+    {
+      "name": "political level",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of social change."
+    },
+    {
+      "name": "organizational level",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of social change."
+    },
+    {
+      "name": "homes",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "Mentioned in the context of social change."
+    },
+    {
+      "name": "empathy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the need to channel empathy in conversations about social issues"
+    },
+    {
+      "name": "racism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as an issue that needs to be addressed in conversations"
+    },
+    {
+      "name": "bigotry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as part of the human condition that needs to be addressed"
+    },
+    {
+      "name": "hatred",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as part of the human condition that needs to be addressed"
+    },
+    {
+      "name": "bias",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as part of the human condition that needs to be addressed"
+    },
+    {
+      "name": "cerebral cortex",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to human thinking and choice"
+    },
+    {
+      "name": "trauma",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to small discussion circles for healing"
+    },
+    {
+      "name": "discussion circles",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a method for healing and conversation"
+    },
+    {
+      "name": "women's marches",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "referenced as a form of protest"
+    },
+    {
+      "name": "federal legislation",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of policing reforms"
+    },
+    {
+      "name": "Asian American",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "Discussion about a young man who called the police department."
+    },
+    {
+      "name": "African-American communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Discussion about the relationship and history with Asian businesses."
+    },
+    {
+      "name": "hip-hop songs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a medium where tensions show up."
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "Referenced in the context of small circles and discussions."
+    },
+    {
+      "name": "technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "Mentioned in relation to facilitating conversations."
+    },
+    {
+      "name": "small circles",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Discussed as a powerful way to have conversations."
+    },
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Dr. Jendell Alan Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Whalei Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Honors Community Podcast",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "name of the podcast"
+    },
+    {
+      "name": "Craig",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "mentioned in a conversation about communication and trauma"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to trauma and the pandemic"
+    },
+    {
+      "name": "George Floyd",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to trauma and societal issues"
+    },
+    {
+      "name": "Kula Ross",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to stages of grief"
+    },
+    {
+      "name": "Kessler",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to stages of grief"
+    },
+    {
+      "name": "Kula Rosa",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "five stages of grief"
+    },
+    {
+      "name": "Kessler",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to stages of grief"
+    },
+    {
+      "name": "Dr. Alan Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaker in the podcast"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast series"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website for support"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth community stewardship and sustainability podcast series",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "title of the podcast"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for support"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "type of packages offered"
+    },
+    {
+      "name": "corporate and organization sponsors",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "sponsors of the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "works_at",
+      "target": "Craig Hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "Dr. Allen Davis introduced as president and CEO of Craig Hospital",
+      "episode_number": 75
+    },
+    {
+      "source": "Craig Hospital",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Craig Hospital is located in Denver, Colorado",
+      "episode_number": 75
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Denver is a city in Colorado",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "worked_at",
+      "target": "Kaiser Permanente",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Dr. Allen Davis worked at Kaiser Permanente from 2009 to 2018",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "graduated_from",
+      "target": "Dartmouth College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Dr. Allen Davis is a graduate of Dartmouth College",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "graduated_from",
+      "target": "Dartmouth Medical School",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Dr. Allen Davis graduated from Dartmouth Medical School",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "completed_residency_at",
+      "target": "Thomas Jefferson University Hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Dr. Allen Davis completed her residency at Thomas Jefferson University Hospital",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Denver Botanic Gardens",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Dr. Allen Davis serves on the board of Denver Botanic Gardens",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Denver Metro Chamber of Commerce",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Dr. Allen Davis serves on the board of Denver Metro Chamber of Commerce",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "National Jewish Health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Dr. Allen Davis serves on the board of National Jewish Health",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Geisel School of Medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Dr. Allen Davis serves on the board of Geisel School of Medicine",
+      "episode_number": 75
+    },
+    {
+      "source": "George Floyd",
+      "relationship": "influenced",
+      "target": "protests",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "George Floyd mentioned in context of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "Craig Hospital",
+      "relationship": "fighting",
+      "target": "coronavirus",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Craig Hospital is fighting against the coronavirus",
+      "episode_number": 75
+    },
+    {
+      "source": "Jan Dell",
+      "relationship": "advocates_for",
+      "target": "diversity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion about diversity in the workplace",
+      "episode_number": 75
+    },
+    {
+      "source": "Craig",
+      "relationship": "located_in",
+      "target": "diversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "discussion about diversity in the workplace",
+      "episode_number": 75
+    },
+    {
+      "source": "Craig",
+      "relationship": "contains",
+      "target": "people of color",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about the workforce at Craig",
+      "episode_number": 75
+    },
+    {
+      "source": "pandemic",
+      "relationship": "part_of",
+      "target": "P-Cube",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "context of the conversation about current events",
+      "episode_number": 75
+    },
+    {
+      "source": "protest",
+      "relationship": "part_of",
+      "target": "P-Cube",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "context of the conversation about current events",
+      "episode_number": 75
+    },
+    {
+      "source": "political environment",
+      "relationship": "part_of",
+      "target": "P-Cube",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "context of the conversation about current events",
+      "episode_number": 75
+    },
+    {
+      "source": "Javit Craig",
+      "relationship": "works_at",
+      "target": "Facebook",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned in the context of leadership and emotional posts.",
+      "episode_number": 75
+    },
+    {
+      "source": "leaders",
+      "relationship": "advocates_for",
+      "target": "emotion",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Discussed in relation to how leaders manage emotions.",
+      "episode_number": 75
+    },
+    {
+      "source": "leaders",
+      "relationship": "discusses",
+      "target": "race",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Mentioned in the context of conversations about emotionality.",
+      "episode_number": 75
+    },
+    {
+      "source": "Jan Dell",
+      "relationship": "advocates_for",
+      "target": "black lives matter",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Martin Luther King",
+      "relationship": "murdered_in",
+      "target": "1968",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "historical context",
+      "episode_number": 75
+    },
+    {
+      "source": "Washington, DC",
+      "relationship": "located_in",
+      "target": "America",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "location of events",
+      "episode_number": 75
+    },
+    {
+      "source": "America",
+      "relationship": "is_the_leader_of",
+      "target": "the free world",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "global perspective",
+      "episode_number": 75
+    },
+    {
+      "source": "England",
+      "relationship": "contains",
+      "target": "protests",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "location of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "France",
+      "relationship": "contains",
+      "target": "protests",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "location of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "Germany",
+      "relationship": "contains",
+      "target": "protests",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "location of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "Africa",
+      "relationship": "contains",
+      "target": "protests",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "location of protests",
+      "episode_number": 75
+    },
+    {
+      "source": "black people",
+      "relationship": "advocates_for",
+      "target": "health equity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about health disparities during the pandemic",
+      "episode_number": 75
+    },
+    {
+      "source": "police",
+      "relationship": "part_of",
+      "target": "laws",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about laws and policies regarding police",
+      "episode_number": 75
+    },
+    {
+      "source": "pandemic",
+      "relationship": "contributes_to",
+      "target": "health disparities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about the impact of the pandemic on health disparities",
+      "episode_number": 75
+    },
+    {
+      "source": "young people",
+      "relationship": "embrace",
+      "target": "diversity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussion about the optimism for the future generation",
+      "episode_number": 75
+    },
+    {
+      "source": "America",
+      "relationship": "contains",
+      "target": "diversity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about diversity and identity in the U.S.",
+      "episode_number": 75
+    },
+    {
+      "source": "Sunday",
+      "relationship": "advocates_for",
+      "target": "America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Discussion about identity and culture.",
+      "episode_number": 75
+    },
+    {
+      "source": "black folks",
+      "relationship": "needs_to_have",
+      "target": "conversations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussion about racial conversations.",
+      "episode_number": 75
+    },
+    {
+      "source": "Hispanic",
+      "relationship": "needs_to_have",
+      "target": "conversations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussion about racial conversations.",
+      "episode_number": 75
+    },
+    {
+      "source": "white folks",
+      "relationship": "needs_to_have",
+      "target": "conversations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussion about racial conversations.",
+      "episode_number": 75
+    },
+    {
+      "source": "Crag",
+      "relationship": "located_in",
+      "target": "America",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a workplace.",
+      "episode_number": 75
+    },
+    {
+      "source": "African American",
+      "relationship": "works_at",
+      "target": "Crag",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "Mentioned in the context of diversity in leadership.",
+      "episode_number": 75
+    },
+    {
+      "source": "physical therapy",
+      "relationship": "made_by",
+      "target": "African American",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mentioned in the context of professions.",
+      "episode_number": 75
+    },
+    {
+      "source": "occupational therapy",
+      "relationship": "made_by",
+      "target": "African American",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mentioned in the context of professions.",
+      "episode_number": 75
+    },
+    {
+      "source": "Ethiopian women",
+      "relationship": "advocates_for",
+      "target": "female genital mutilation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussion about reducing female genital mutilation rates in Ethiopia.",
+      "episode_number": 75
+    },
+    {
+      "source": "Black Lives Matter",
+      "relationship": "advocates_for",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "Discussion about social justice and community engagement.",
+      "episode_number": 75
+    },
+    {
+      "source": "community",
+      "relationship": "part_of",
+      "target": "policy level",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Mentioned in the context of social change.",
+      "episode_number": 75
+    },
+    {
+      "source": "community",
+      "relationship": "part_of",
+      "target": "political level",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Mentioned in the context of social change.",
+      "episode_number": 75
+    },
+    {
+      "source": "community",
+      "relationship": "part_of",
+      "target": "organizational level",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Mentioned in the context of social change.",
+      "episode_number": 75
+    },
+    {
+      "source": "empathy",
+      "relationship": "advocates_for",
+      "target": "racism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the need to channel empathy in conversations about social issues",
+      "episode_number": 75
+    },
+    {
+      "source": "empathy",
+      "relationship": "advocates_for",
+      "target": "bigotry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the need to channel empathy in conversations about social issues",
+      "episode_number": 75
+    },
+    {
+      "source": "empathy",
+      "relationship": "advocates_for",
+      "target": "hatred",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the need to channel empathy in conversations about social issues",
+      "episode_number": 75
+    },
+    {
+      "source": "empathy",
+      "relationship": "advocates_for",
+      "target": "bias",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the need to channel empathy in conversations about social issues",
+      "episode_number": 75
+    },
+    {
+      "source": "discussion circles",
+      "relationship": "part_of",
+      "target": "trauma",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned as a method for healing and conversation",
+      "episode_number": 75
+    },
+    {
+      "source": "women's marches",
+      "relationship": "part_of",
+      "target": "federal legislation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "referenced as a form of protest",
+      "episode_number": 75
+    },
+    {
+      "source": "Asian American",
+      "relationship": "part_of",
+      "target": "African-American communities",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "Discussion about the relationship and history with Asian businesses.",
+      "episode_number": 75
+    },
+    {
+      "source": "hip-hop songs",
+      "relationship": "advocates_for",
+      "target": "African-American communities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Mentioned as a medium where tensions show up.",
+      "episode_number": 75
+    },
+    {
+      "source": "community",
+      "relationship": "contains",
+      "target": "small circles",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Referenced in the context of small circles and discussions.",
+      "episode_number": 75
+    },
+    {
+      "source": "technology",
+      "relationship": "facilitates",
+      "target": "community",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "Mentioned in relation to facilitating conversations.",
+      "episode_number": 75
+    },
+    {
+      "source": "Aaron Perry",
+      "relationship": "hosts",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Jendell Alan Davis",
+      "relationship": "visits",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "guest on the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "sponsor of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "sponsors",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "sponsor of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Purium Earth Water Press",
+      "relationship": "sponsors",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "sponsor of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Whalei Waters",
+      "relationship": "sponsors",
+      "target": "Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "sponsor of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Craig",
+      "relationship": "works_at",
+      "target": "unknown organization",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.5,
+      "context": "mentioned in a conversation about communication and trauma",
+      "episode_number": 75
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "causes",
+      "target": "trauma",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to trauma and the pandemic",
+      "episode_number": 75
+    },
+    {
+      "source": "George Floyd",
+      "relationship": "is_related_to",
+      "target": "trauma",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to trauma and societal issues",
+      "episode_number": 75
+    },
+    {
+      "source": "Kula Ross",
+      "relationship": "developed",
+      "target": "stages of grief",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to stages of grief",
+      "episode_number": 75
+    },
+    {
+      "source": "Kessler",
+      "relationship": "expanded",
+      "target": "stages of grief",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to stages of grief",
+      "episode_number": 75
+    },
+    {
+      "source": "Kessler",
+      "relationship": "advocates_for",
+      "target": "Kula Rosa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to stages of grief",
+      "episode_number": 75
+    },
+    {
+      "source": "Dr. Alan Davis",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "speaker in the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "host of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "yonearth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "website for support",
+      "episode_number": 75
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast hosting",
+      "episode_number": 75
+    },
+    {
+      "source": "why on earth community stewardship and sustainability podcast series",
+      "relationship": "sponsored_by",
+      "target": "corporate and organization sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "sponsorship of the podcast",
+      "episode_number": 75
+    },
+    {
+      "source": "yonearth.org",
+      "relationship": "offers",
+      "target": "support packages",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "support offered through the website",
+      "episode_number": 75
+    }
+  ]
+}

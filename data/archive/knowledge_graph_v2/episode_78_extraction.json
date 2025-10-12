@@ -1,0 +1,1211 @@
+{
+  "episode": 78,
+  "timestamp": "2025-10-09T11:35:54.409670",
+  "entity_count": 83,
+  "relationship_count": 62,
+  "entities": [
+    {
+      "name": "Maria Nicolcova",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast episode"
+    },
+    {
+      "name": "Miller Lab",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "molecular biology field"
+    },
+    {
+      "name": "University of Colorado Denver",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Miller Lab at the University of Colorado Denver"
+    },
+    {
+      "name": "Colorado State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "collaborative lab"
+    },
+    {
+      "name": "Bachelor of Science in Biology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "degree earned by Maria Nicolcova"
+    },
+    {
+      "name": "CU Denver Biology Master of Science program",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "program Maria Nicolcova started"
+    },
+    {
+      "name": "archeal genomes",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "research focus of Maria Nicolcova"
+    },
+    {
+      "name": "freshwater wetlands",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "source of archeal genomes"
+    },
+    {
+      "name": "Carl",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "scientist"
+    },
+    {
+      "name": "archaea",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "different from bacteria"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "different from archaea"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "importance of the microbiome"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "importance of soil"
+    },
+    {
+      "name": "wetlands",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "the work we do is in wetlands"
+    },
+    {
+      "name": "Yellowstone",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hot places like Yellowstone"
+    },
+    {
+      "name": "DNA sequencing",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sequencing boom, that DNA sequencing boom"
+    },
+    {
+      "name": "phylum",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "talking about phylum"
+    },
+    {
+      "name": "Archaea",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about taxonomy and microbial research"
+    },
+    {
+      "name": "E coli",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "example of genus and species in microbial classification"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about its importance in daily life and ecosystems"
+    },
+    {
+      "name": "microbial communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about complexity and functions in ecosystems"
+    },
+    {
+      "name": "nitrogen cycling",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about microbial functions and their importance in ecosystems"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing nitrogen cycling and methane emission"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing nitrogen cycling and its forms"
+    },
+    {
+      "name": "methane",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing methane emission from wetlands"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing loss of biodiversity among microbes"
+    },
+    {
+      "name": "Y-Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing community efforts related to soil and microbiome"
+    },
+    {
+      "name": "soil microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the importance of soil microbiome"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about small organisms"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of bacteria side of things"
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about organisms within the microbiome"
+    },
+    {
+      "name": "DNA sequencing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about sequencing and its importance"
+    },
+    {
+      "name": "genome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about genetic code"
+    },
+    {
+      "name": "E-cola",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "DNA sequence of E-cola"
+    },
+    {
+      "name": "archaea",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "archael research"
+    },
+    {
+      "name": "phylogenetic tree",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "tree that separates bacteria"
+    },
+    {
+      "name": "Enigma Archaeotus",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "research paper about archaea"
+    },
+    {
+      "name": "R-squared problem",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about statistical models"
+    },
+    {
+      "name": "statistical model",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about statistical models"
+    },
+    {
+      "name": "research paper",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about publishing research"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about familiarity with science"
+    },
+    {
+      "name": "visualization",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about methods of communication"
+    },
+    {
+      "name": "Artem Nikolikov",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as big brother"
+    },
+    {
+      "name": "Artem Nikolikov",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Big brother, Artem Nikolikov."
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...there's something to be said that science is a lot of creativity too."
+    },
+    {
+      "name": "visualization",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...what I like to do in terms of visualization..."
+    },
+    {
+      "name": "biology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...all the work you're doing in biology..."
+    },
+    {
+      "name": "drawing",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...you're also an artist and a drawer."
+    },
+    {
+      "name": "Roman model",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "...I always liked, I think it was that Roman model of the perfect soldier."
+    },
+    {
+      "name": "Maria Nicolkolba",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Adam Nicolkov",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Walea Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Wieners Community",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Wienerth Monthly Giving program",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "wetlands",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "Seattle",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Wieners Community podcast"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a city"
+    },
+    {
+      "name": "Seattle",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a city"
+    },
+    {
+      "name": "wetlands",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to biodiversity and beauty"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to wetlands"
+    },
+    {
+      "name": "CRISPR",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a gene editing technology"
+    },
+    {
+      "name": "gene editing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "related to CRISPR technology"
+    },
+    {
+      "name": "CRISPR",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "gene editing technology"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "location of discovery of CRISPR"
+    },
+    {
+      "name": "University of California",
+      "type": "ORG",
+      "name_confidence": 0.97,
+      "type_confidence": 0.93,
+      "context": "institution where CRISPR was discovered"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organism associated with CRISPR"
+    },
+    {
+      "name": "Gatica",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "science fiction film related to gene editing"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "university mentioned in context of science community"
+    },
+    {
+      "name": "Maria",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "guest in the podcast"
+    },
+    {
+      "name": "Harvard",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "white males and lab coats at Harvard"
+    },
+    {
+      "name": "Maria",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "And it's been such a joy talking with you, Maria."
+    },
+    {
+      "name": "Colorado State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "which was also mentioned up at Colorado State University"
+    },
+    {
+      "name": "Miller Lab",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "One is the Miller Lab, where Maria does some of her work."
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast Series is hosted by Erin William Perry"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "is hosted by Erin William Perry, author, thought leader, and executive consultant."
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit YOnEarth.org-support."
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Thank you for being a part of the Y on Earth Community."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Maria Nicolcova",
+      "relationship": "works_at",
+      "target": "Miller Lab",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "molecular biology field",
+      "episode_number": 78
+    },
+    {
+      "source": "Maria Nicolcova",
+      "relationship": "works_at",
+      "target": "University of Colorado Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "teaching at the University of Colorado",
+      "episode_number": 78
+    },
+    {
+      "source": "Miller Lab",
+      "relationship": "part_of",
+      "target": "University of Colorado Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Miller Lab at the University of Colorado Denver",
+      "episode_number": 78
+    },
+    {
+      "source": "Maria Nicolcova",
+      "relationship": "started",
+      "target": "CU Denver Biology Master of Science program",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "program started by Maria Nicolcova",
+      "episode_number": 78
+    },
+    {
+      "source": "Maria Nicolcova",
+      "relationship": "conducts_research_on",
+      "target": "archeal genomes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "research focus of Maria Nicolcova",
+      "episode_number": 78
+    },
+    {
+      "source": "archeal genomes",
+      "relationship": "found_in",
+      "target": "freshwater wetlands",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "source of archeal genomes",
+      "episode_number": 78
+    },
+    {
+      "source": "Carl",
+      "relationship": "advocates_for",
+      "target": "archaea",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "scientist discussing archaea",
+      "episode_number": 78
+    },
+    {
+      "source": "archaea",
+      "relationship": "different_from",
+      "target": "bacteria",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "distinction showing archaea are different from bacteria",
+      "episode_number": 78
+    },
+    {
+      "source": "microbiome",
+      "relationship": "important_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "importance of the microbiome and soil",
+      "episode_number": 78
+    },
+    {
+      "source": "wetlands",
+      "relationship": "part_of",
+      "target": "environment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the work we do is in wetlands",
+      "episode_number": 78
+    },
+    {
+      "source": "Yellowstone",
+      "relationship": "located_in",
+      "target": "extreme environments",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "hot places like Yellowstone",
+      "episode_number": 78
+    },
+    {
+      "source": "DNA sequencing",
+      "relationship": "enables",
+      "target": "understanding of archaea",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "DNA sequencing boom has allowed us to go further",
+      "episode_number": 78
+    },
+    {
+      "source": "phylum",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "talking about phylum",
+      "episode_number": 78
+    },
+    {
+      "source": "Archaea",
+      "relationship": "advocates_for",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "discussing the relevance of Archaea to soil ecosystems",
+      "episode_number": 78
+    },
+    {
+      "source": "E coli",
+      "relationship": "made_by",
+      "target": "microbial communities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "example of a product related to microbial classification",
+      "episode_number": 78
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microbial communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing the role of soil in supporting microbial life",
+      "episode_number": 78
+    },
+    {
+      "source": "microbial communities",
+      "relationship": "performs",
+      "target": "nitrogen cycling",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing the functions of microbial communities in ecosystems",
+      "episode_number": 78
+    },
+    {
+      "source": "microbes",
+      "relationship": "advocates_for",
+      "target": "nitrogen",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing the role of microbes in nitrogen cycling",
+      "episode_number": 78
+    },
+    {
+      "source": "microbes",
+      "relationship": "advocates_for",
+      "target": "methane",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing the role of microbes in methane emission",
+      "episode_number": 78
+    },
+    {
+      "source": "biodiversity",
+      "relationship": "affects",
+      "target": "microbes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussing loss of biodiversity affecting microbes",
+      "episode_number": 78
+    },
+    {
+      "source": "Y-Earth community",
+      "relationship": "works_at",
+      "target": "soil microbiome",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing community efforts related to soil microbiome",
+      "episode_number": 78
+    },
+    {
+      "source": "microbiome",
+      "relationship": "contains",
+      "target": "microbes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about organisms within the microbiome",
+      "episode_number": 78
+    },
+    {
+      "source": "bacteria",
+      "relationship": "part_of",
+      "target": "microbiome",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "mention of bacteria side of things",
+      "episode_number": 78
+    },
+    {
+      "source": "DNA sequencing",
+      "relationship": "helps_explain",
+      "target": "microbes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about sequencing and understanding organisms",
+      "episode_number": 78
+    },
+    {
+      "source": "genome",
+      "relationship": "is_part_of",
+      "target": "DNA sequencing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about genetic code and sequencing",
+      "episode_number": 78
+    },
+    {
+      "source": "E-cola",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "DNA sequence of E-cola",
+      "episode_number": 78
+    },
+    {
+      "source": "Enigma Archaeotus",
+      "relationship": "part_of",
+      "target": "archaea",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "research paper about archaea",
+      "episode_number": 78
+    },
+    {
+      "source": "phylogenetic tree",
+      "relationship": "contains",
+      "target": "bacteria",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "tree that separates bacteria",
+      "episode_number": 78
+    },
+    {
+      "source": "phylogenetic tree",
+      "relationship": "contains",
+      "target": "us",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "tree that separates bacteria",
+      "episode_number": 78
+    },
+    {
+      "source": "phylogenetic tree",
+      "relationship": "contains",
+      "target": "archaea",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "tree that separates bacteria",
+      "episode_number": 78
+    },
+    {
+      "source": "R-squared problem",
+      "relationship": "related_to",
+      "target": "statistical model",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about statistical models",
+      "episode_number": 78
+    },
+    {
+      "source": "research paper",
+      "relationship": "published_by",
+      "target": "statistical model",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about publishing research",
+      "episode_number": 78
+    },
+    {
+      "source": "science",
+      "relationship": "familiarity_with",
+      "target": "visualization",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about familiarity with science and communication methods",
+      "episode_number": 78
+    },
+    {
+      "source": "Artem Nikolikov",
+      "relationship": "sibling_of",
+      "target": "unknown speaker",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as big brother",
+      "episode_number": 78
+    },
+    {
+      "source": "Artem Nikolikov",
+      "relationship": "works_at",
+      "target": "science",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...all the work you're doing in biology and with science...",
+      "episode_number": 78
+    },
+    {
+      "source": "science",
+      "relationship": "advocates_for",
+      "target": "visualization",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "...there's something to be said that science is a lot of creativity too...",
+      "episode_number": 78
+    },
+    {
+      "source": "Artem Nikolikov",
+      "relationship": "advocates_for",
+      "target": "drawing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...you're also an artist and a drawer...",
+      "episode_number": 78
+    },
+    {
+      "source": "Roman model",
+      "relationship": "part_of",
+      "target": "creativity",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...I always liked, I think it was that Roman model of the perfect soldier...",
+      "episode_number": 78
+    },
+    {
+      "source": "Maria Nicolkolba",
+      "relationship": "sister_of",
+      "target": "Adam Nicolkov",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "supports",
+      "target": "Wieners Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Lidge Family Foundation",
+      "relationship": "supports",
+      "target": "Wieners Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "supports",
+      "target": "Wieners Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Purium",
+      "relationship": "supports",
+      "target": "Wieners Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Walea Waters",
+      "relationship": "supports",
+      "target": "Wieners Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Wieners Community",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "wetlands",
+      "relationship": "part_of",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "New York",
+      "relationship": "contains",
+      "target": "wetlands",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "Seattle",
+      "relationship": "contains",
+      "target": "wetlands",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Wieners Community podcast",
+      "episode_number": 78
+    },
+    {
+      "source": "New York",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned as a city in the context of discussion about locations",
+      "episode_number": 78
+    },
+    {
+      "source": "Seattle",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioned as a city in the context of discussion about locations",
+      "episode_number": 78
+    },
+    {
+      "source": "wetlands",
+      "relationship": "part_of",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to biodiversity",
+      "episode_number": 78
+    },
+    {
+      "source": "CRISPR",
+      "relationship": "used_for",
+      "target": "gene editing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussed as a technology for gene editing",
+      "episode_number": 78
+    },
+    {
+      "source": "CRISPR",
+      "relationship": "used_in",
+      "target": "molecular lab",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "gene editing technology used in labs",
+      "episode_number": 78
+    },
+    {
+      "source": "CRISPR",
+      "relationship": "first_discovered_in",
+      "target": "University of California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.97,
+      "context": "discovery location of CRISPR",
+      "episode_number": 78
+    },
+    {
+      "source": "CRISPR",
+      "relationship": "associated_with",
+      "target": "bacteria",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "CRISPR mechanism in bacteria",
+      "episode_number": 78
+    },
+    {
+      "source": "Gatica",
+      "relationship": "depicts",
+      "target": "gene editing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "film related to gene editing",
+      "episode_number": 78
+    },
+    {
+      "source": "University of California",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.97,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "location of the university",
+      "episode_number": 78
+    },
+    {
+      "source": "science community",
+      "relationship": "includes",
+      "target": "diverse community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "description of the science community",
+      "episode_number": 78
+    },
+    {
+      "source": "Maria",
+      "relationship": "works_at",
+      "target": "Miller Lab",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "One is the Miller Lab, where Maria does some of her work.",
+      "episode_number": 78
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "relationship": "hosted_by",
+      "target": "Erin William Perry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast Series is hosted by Erin William Perry.",
+      "episode_number": 78
+    },
+    {
+      "source": "Miller Lab",
+      "relationship": "located_in",
+      "target": "Colorado State University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "which was also mentioned up at Colorado State University",
+      "episode_number": 78
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast Series",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The podcast and video recordings are made possible by the generous support of people like you.",
+      "episode_number": 78
+    }
+  ]
+}

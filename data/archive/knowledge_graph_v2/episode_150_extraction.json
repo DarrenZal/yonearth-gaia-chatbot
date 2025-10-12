@@ -1,0 +1,1846 @@
+{
+  "episode": 150,
+  "timestamp": "2025-10-09T10:51:19.833703",
+  "entity_count": 128,
+  "relationship_count": 94,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Hunter",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Love",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Tim Magazine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publication"
+    },
+    {
+      "name": "Natural Capitalism Solutions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization founded by Hunter"
+    },
+    {
+      "name": "The Way Out",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "book co-authored by Hunter"
+    },
+    {
+      "name": "Natural Capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "best-selling book co-authored by Hunter"
+    },
+    {
+      "name": "World Economic Forum",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "event attended by Hunter"
+    },
+    {
+      "name": "United States Congress",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "government body addressed by Hunter"
+    },
+    {
+      "name": "World Summit on Sustainable Development",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "event attended by Hunter"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "international organization involved in climate discussions"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in context of travel"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in context of travel"
+    },
+    {
+      "name": "Dubai",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in context of travel"
+    },
+    {
+      "name": "Maui",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location mentioned in context of wildfire"
+    },
+    {
+      "name": "Switzerland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location mentioned in context of floods"
+    },
+    {
+      "name": "Libya",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location mentioned in context of devastation"
+    },
+    {
+      "name": "Horn of Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "region mentioned in context of droughts"
+    },
+    {
+      "name": "Antonio Guteras",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Secretary General of the United Nations"
+    },
+    {
+      "name": "Dubai",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...burn jet fuel to go to Dubai..."
+    },
+    {
+      "name": "China",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Recent news out of China."
+    },
+    {
+      "name": "California",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "California signed the fossil fuel non-proliferation treaty."
+    },
+    {
+      "name": "Pakistan",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "The floods in Pakistan a year or so ago."
+    },
+    {
+      "name": "COP",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Now, COP, what the hell is COP? Conference of parties."
+    },
+    {
+      "name": "Paris Climate Summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "At the Paris COP, the Paris Climate Summit."
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "particularly about regenerative agriculture."
+    },
+    {
+      "name": "renewable energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Pretty much everybody knows renewable energy is a good thing."
+    },
+    {
+      "name": "climate crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "we solved the climate crisis."
+    },
+    {
+      "name": "electric vehicles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "20% of its vehicles being electric vehicles."
+    },
+    {
+      "name": "fossil fuel non-proliferation treaty",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "California signed the fossil fuel non-proliferation treaty."
+    },
+    {
+      "name": "climate justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "calling for a transition plan, particularly around climate justice."
+    },
+    {
+      "name": "Lahaina",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "As Lahaina showed."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the famine in Africa."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "famine in Africa"
+    },
+    {
+      "name": "COP",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "one of the fights we're going to have at COP"
+    },
+    {
+      "name": "Paris Climate Summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "At the Paris COP, the Paris Climate Summit"
+    },
+    {
+      "name": "Cristiana Figueres",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the brilliant diplomacy of Cristiana Figueres"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Some nations like China legitimately can celebrate"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "what they're doing to US is way behind"
+    },
+    {
+      "name": "William Ripple",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Recent report out from the scientist William Ripple"
+    },
+    {
+      "name": "AMOC",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "what's called AMOC, Atlantic meridial overturning circulation"
+    },
+    {
+      "name": "Gulf of Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "brings the warm water from Gulf of Mexico across the Atlantic"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "up towards Greenland"
+    },
+    {
+      "name": "El Nino",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "The El Nino that this year is going to be extreme"
+    },
+    {
+      "name": "Johan Rockstrom",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "great scientist Dr. Johan Rockstrom"
+    },
+    {
+      "name": "Arctic ice",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "when you melt the Arctic ice"
+    },
+    {
+      "name": "methane",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "starts to release methane"
+    },
+    {
+      "name": "CO2",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "more potent a warmer of the earth than even CO2"
+    },
+    {
+      "name": "climate despair",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "how I deal with climate despair"
+    },
+    {
+      "name": "climate movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "putting together a global climate movement"
+    },
+    {
+      "name": "UN",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "UN's meeting rooms"
+    },
+    {
+      "name": "COP",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "conference of parties"
+    },
+    {
+      "name": "Natural capitalism solutions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "accredited observer organization"
+    },
+    {
+      "name": "Copenhagen",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Copenhagen, Chua's 2009"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "COP in Egypt"
+    },
+    {
+      "name": "Dubai",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "exhibition center in Dubai"
+    },
+    {
+      "name": "UAE",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "UAE United Arab Emirates website for COP28"
+    },
+    {
+      "name": "blue zone",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the blue zone is the UN's zone"
+    },
+    {
+      "name": "green zone",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the green zone is typically a y'all come"
+    },
+    {
+      "name": "UN Framework Convention on Climate Change",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "COP28"
+    },
+    {
+      "name": "UAE",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "COP28"
+    },
+    {
+      "name": "Paris Accord",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "COP28"
+    },
+    {
+      "name": "World Bank",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "fund for loss and damage"
+    },
+    {
+      "name": "G77",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "fund for loss and damage"
+    },
+    {
+      "name": "US",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fund for loss and damage"
+    },
+    {
+      "name": "Second",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "COP side events"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "COP side events"
+    },
+    {
+      "name": "Egyptian stock exchange",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "carbon credits"
+    },
+    {
+      "name": "Y on Earth community podcast",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast"
+    },
+    {
+      "name": "Hunter",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast discussion on regenerative agriculture."
+    },
+    {
+      "name": "Secum",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of regenerative agriculture."
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Location of Secum."
+    },
+    {
+      "name": "natural capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to economic mechanisms."
+    },
+    {
+      "name": "fossil industries",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Context of subsidies for fossil energy."
+    },
+    {
+      "name": "renewables",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to energy pricing."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in relation to the inflation reduction act."
+    },
+    {
+      "name": "inflation reduction act",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Policy mentioned in the context of solar pricing."
+    },
+    {
+      "name": "Excel Energy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Utility company mentioned in relation to energy pricing in Colorado."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Location of Excel Energy's operations."
+    },
+    {
+      "name": "solar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to energy pricing."
+    },
+    {
+      "name": "wind",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Discussed in relation to energy pricing."
+    },
+    {
+      "name": "batteries",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to energy storage."
+    },
+    {
+      "name": "Solar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Solar came in, let's see, a bit above 3 cents."
+    },
+    {
+      "name": "Wind",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Wind came in, blow 3 cents."
+    },
+    {
+      "name": "Excel",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Excel said no."
+    },
+    {
+      "name": "Inflation Reduction Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "The inflation reduction act said by an electric car will give you what $7,500 tax credit."
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Texas recently, Texans were oil country."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "biggest wind producer in the United States."
+    },
+    {
+      "name": "batteries",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we're now building massive battery storage."
+    },
+    {
+      "name": "electric car",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "by an electric car will give you what $7,500 tax credit."
+    },
+    {
+      "name": "heat pump",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "put in a heat pump will give you tax credit."
+    },
+    {
+      "name": "grid",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "let it be help feed the grid."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we are losing lives now to climate change."
+    },
+    {
+      "name": "COVID pandemics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "to conflict and to COVID pandemics."
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a big green conference out in California."
+    },
+    {
+      "name": "beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I said beef and whiskey."
+    },
+    {
+      "name": "whiskey",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I said beef and whiskey."
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "big green conference"
+    },
+    {
+      "name": "Erin William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Hunter Leavens",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "COP28",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "climate conference"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "partner and sponsor"
+    },
+    {
+      "name": "Y on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast title"
+    },
+    {
+      "name": "Waley Waters Soaking Salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "product mentioned"
+    },
+    {
+      "name": "natural capitalism solutions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization connected to Hunter"
+    },
+    {
+      "name": "United Nations FCC",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "resources for COP28"
+    },
+    {
+      "name": "United Arab Emirates",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location for COP28"
+    },
+    {
+      "name": "Natcappsolutions.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website mentioned for information"
+    },
+    {
+      "name": "COP28",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "event mentioned in the podcast"
+    },
+    {
+      "name": "United Nations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization mentioned for resources"
+    },
+    {
+      "name": "United Arab Emirates",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country mentioned for COP28 resources"
+    },
+    {
+      "name": "climate and capital media",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website mentioned for live blogging"
+    },
+    {
+      "name": "Hunter Lovins",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "person being acknowledged in the podcast"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization mentioned as a biodynamic farm"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where the farm is located"
+    },
+    {
+      "name": "Munich",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city mentioned in the context of a trip"
+    },
+    {
+      "name": "Rome",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city mentioned in the context of a trip"
+    },
+    {
+      "name": "B corporation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type of organization mentioned in the summit"
+    },
+    {
+      "name": "Walter",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "partner mentioned in the podcast"
+    },
+    {
+      "name": "Hunter Lovens",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I said howdy my name's Hunter Lovens"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "spend some time working with the team that he has collected in Germany"
+    },
+    {
+      "name": "Dubai",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "on my way to Dubai"
+    },
+    {
+      "name": "Italy",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "somewhere in the middle of Italy"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "please visit YOnEarth.org-support"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "YOnEarth.org-support-page"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Y on Earth community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Hunter",
+      "relationship": "works_at",
+      "target": "Natural Capitalism Solutions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Hunter is the president and founder of the organization",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter",
+      "relationship": "co-authored",
+      "target": "The Way Out",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Hunter is a co-author of the book",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter",
+      "relationship": "co-authored",
+      "target": "Natural Capitalism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Hunter is a co-author of the book",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter",
+      "relationship": "advocates_for",
+      "target": "climate",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Hunter addresses climate issues in various forums",
+      "episode_number": 150
+    },
+    {
+      "source": "Natural Capitalism Solutions",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The organization is based in Colorado",
+      "episode_number": 150
+    },
+    {
+      "source": "United Nations",
+      "relationship": "hosts",
+      "target": "Conference of Parties",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "The UN hosts the COP events",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter",
+      "relationship": "participated_in",
+      "target": "Conference of Parties",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Hunter has participated in COP events",
+      "episode_number": 150
+    },
+    {
+      "source": "Maui",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Maui is a location within the United States",
+      "episode_number": 150
+    },
+    {
+      "source": "Switzerland",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Switzerland is a country in Europe",
+      "episode_number": 150
+    },
+    {
+      "source": "Libya",
+      "relationship": "located_in",
+      "target": "Africa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Libya is a country in Africa",
+      "episode_number": 150
+    },
+    {
+      "source": "Horn of Africa",
+      "relationship": "part_of",
+      "target": "Africa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Horn of Africa is a region in Africa",
+      "episode_number": 150
+    },
+    {
+      "source": "Antonio Guteras",
+      "relationship": "works_at",
+      "target": "United Nations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Antonio Guteras is the Secretary General of the UN",
+      "episode_number": 150
+    },
+    {
+      "source": "Abu Dhabi National Oil Company",
+      "relationship": "led_by",
+      "target": "man",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "...headed by the man who runs the Abu Dhabi National Oil Company...",
+      "episode_number": 150
+    },
+    {
+      "source": "carbon",
+      "relationship": "part_of",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...put it back in the soil where it belongs...",
+      "episode_number": 150
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "advocates_for",
+      "target": "healthier farm communities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...this is the kind of agriculture that increasing numbers of farmers and ranchers are turning to because it's more profitable...",
+      "episode_number": 150
+    },
+    {
+      "source": "bison",
+      "relationship": "managed_by",
+      "target": "predators",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...the bison across the North American great plains, the greatest land managers ever, were dense packed because of predators, wolves...",
+      "episode_number": 150
+    },
+    {
+      "source": "Greg Ritalik",
+      "relationship": "wrote",
+      "target": "paper",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...Paper by a scientist named Greg Ritalik showed that 60 million years ago...",
+      "episode_number": 150
+    },
+    {
+      "source": "grass",
+      "relationship": "has",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...Grass has 40 times the carbon per weight of a tree...",
+      "episode_number": 150
+    },
+    {
+      "source": "Michael Rysal fungi",
+      "relationship": "mineralizes",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...the microbiological community in the soil, particularly the Michael Rysal fungi, that is what mineralizes the carbon...",
+      "episode_number": 150
+    },
+    {
+      "source": "solar panels",
+      "relationship": "power",
+      "target": "electric car",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...Add to that the solar panels out front, which is what's powering our ability to have this conversation...",
+      "episode_number": 150
+    },
+    {
+      "source": "China",
+      "relationship": "located_in",
+      "target": "Asia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Recent news out of China.",
+      "episode_number": 150
+    },
+    {
+      "source": "California",
+      "relationship": "works_at",
+      "target": "fossil fuel non-proliferation treaty",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "California signed the fossil fuel non-proliferation treaty.",
+      "episode_number": 150
+    },
+    {
+      "source": "Pakistan",
+      "relationship": "part_of",
+      "target": "South Asia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "The floods in Pakistan a year or so ago.",
+      "episode_number": 150
+    },
+    {
+      "source": "COP",
+      "relationship": "advocates_for",
+      "target": "climate justice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Now, COP, what the hell is COP? Conference of parties.",
+      "episode_number": 150
+    },
+    {
+      "source": "Paris Climate Summit",
+      "relationship": "part_of",
+      "target": "COP",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "At the Paris COP, the Paris Climate Summit.",
+      "episode_number": 150
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "advocates_for",
+      "target": "renewable energy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "particularly about regenerative agriculture.",
+      "episode_number": 150
+    },
+    {
+      "source": "climate crisis",
+      "relationship": "solved_by",
+      "target": "renewable energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "we solved the climate crisis.",
+      "episode_number": 150
+    },
+    {
+      "source": "electric vehicles",
+      "relationship": "part_of",
+      "target": "China",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "20% of its vehicles being electric vehicles.",
+      "episode_number": 150
+    },
+    {
+      "source": "California",
+      "relationship": "signed",
+      "target": "fossil fuel non-proliferation treaty",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "California signed the fossil fuel non-proliferation treaty.",
+      "episode_number": 150
+    },
+    {
+      "source": "climate justice",
+      "relationship": "advocates_for",
+      "target": "developing nations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "calling for a transition plan, particularly around climate justice.",
+      "episode_number": 150
+    },
+    {
+      "source": "Lahaina",
+      "relationship": "part_of",
+      "target": "Hawaii",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "As Lahaina showed.",
+      "episode_number": 150
+    },
+    {
+      "source": "famine in Africa",
+      "relationship": "affects",
+      "target": "developing world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the famine in Africa.",
+      "episode_number": 150
+    },
+    {
+      "source": "Cristiana Figueres",
+      "relationship": "led",
+      "target": "Paris Climate Summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the brilliant diplomacy of Cristiana Figueres",
+      "episode_number": 150
+    },
+    {
+      "source": "China",
+      "relationship": "compared_to",
+      "target": "US",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Some nations like China legitimately can celebrate what they're doing to US is way behind",
+      "episode_number": 150
+    },
+    {
+      "source": "William Ripple",
+      "relationship": "published",
+      "target": "report",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Recent report out from the scientist William Ripple",
+      "episode_number": 150
+    },
+    {
+      "source": "AMOC",
+      "relationship": "influences",
+      "target": "Gulf of Mexico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "what's called AMOC, Atlantic meridial overturning circulation",
+      "episode_number": 150
+    },
+    {
+      "source": "Johan Rockstrom",
+      "relationship": "published",
+      "target": "papers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "great scientist Dr. Johan Rockstrom has several papers out recently on the tipping points",
+      "episode_number": 150
+    },
+    {
+      "source": "Arctic ice",
+      "relationship": "affects",
+      "target": "methane",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "when you melt the Arctic ice, the boreal forest starts to warm up and starts to release methane",
+      "episode_number": 150
+    },
+    {
+      "source": "climate despair",
+      "relationship": "addressed_in",
+      "target": "climate movement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how I deal with climate despair",
+      "episode_number": 150
+    },
+    {
+      "source": "Natural capitalism solutions",
+      "relationship": "works_at",
+      "target": "COP",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "officially a delegate to the COP, a UN from an UN accredited observer organization",
+      "episode_number": 150
+    },
+    {
+      "source": "UN",
+      "relationship": "located_in",
+      "target": "blue zone",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the blue zone is the UN's zone",
+      "episode_number": 150
+    },
+    {
+      "source": "Copenhagen",
+      "relationship": "part_of",
+      "target": "COP",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Copenhagen top, they said, let's give the NGOs their own space",
+      "episode_number": 150
+    },
+    {
+      "source": "Egypt",
+      "relationship": "located_in",
+      "target": "COP",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "last year at the COP in Egypt",
+      "episode_number": 150
+    },
+    {
+      "source": "Dubai",
+      "relationship": "contains",
+      "target": "COP",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the projections are 70,000 are coming to the exhibition center in Dubai",
+      "episode_number": 150
+    },
+    {
+      "source": "UAE",
+      "relationship": "located_in",
+      "target": "green zone",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "UAE United Arab Emirates website for COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "UN Framework Convention on Climate Change",
+      "relationship": "located_in",
+      "target": "COP28",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "UAE",
+      "relationship": "located_in",
+      "target": "COP28",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "Paris Accord",
+      "relationship": "advocates_for",
+      "target": "COP28",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "World Bank",
+      "relationship": "part_of",
+      "target": "fund for loss and damage",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "fund for loss and damage",
+      "episode_number": 150
+    },
+    {
+      "source": "G77",
+      "relationship": "advocates_for",
+      "target": "fund for loss and damage",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "fund for loss and damage",
+      "episode_number": 150
+    },
+    {
+      "source": "US",
+      "relationship": "advocates_for",
+      "target": "World Bank",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "fund for loss and damage",
+      "episode_number": 150
+    },
+    {
+      "source": "Second",
+      "relationship": "works_with",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "COP side events",
+      "episode_number": 150
+    },
+    {
+      "source": "Second",
+      "relationship": "located_in",
+      "target": "Egypt",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "COP side events",
+      "episode_number": 150
+    },
+    {
+      "source": "Egyptian stock exchange",
+      "relationship": "contains",
+      "target": "carbon credits",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "carbon credits",
+      "episode_number": 150
+    },
+    {
+      "source": "Y on Earth community podcast",
+      "relationship": "discusses",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Podcast discussion on regenerative practices.",
+      "episode_number": 150
+    },
+    {
+      "source": "Secum",
+      "relationship": "located_in",
+      "target": "Egypt",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Mentioned in the context of regenerative agriculture.",
+      "episode_number": 150
+    },
+    {
+      "source": "fossil industries",
+      "relationship": "receives",
+      "target": "subsidies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussed in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "renewables",
+      "relationship": "competes_with",
+      "target": "fossil industries",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Discussed in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "United States",
+      "relationship": "has_policy",
+      "target": "inflation reduction act",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Mentioned in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "Excel Energy",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Utility company mentioned in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "solar",
+      "relationship": "made_by",
+      "target": "Excel Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussed in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "wind",
+      "relationship": "made_by",
+      "target": "Excel Energy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussed in relation to energy pricing.",
+      "episode_number": 150
+    },
+    {
+      "source": "batteries",
+      "relationship": "made_by",
+      "target": "Excel Energy",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Discussed in relation to energy storage.",
+      "episode_number": 150
+    },
+    {
+      "source": "Excel",
+      "relationship": "advocates_for",
+      "target": "Solar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Excel said no.",
+      "episode_number": 150
+    },
+    {
+      "source": "Texas",
+      "relationship": "contains",
+      "target": "Wind",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "biggest wind producer in the United States.",
+      "episode_number": 150
+    },
+    {
+      "source": "Texas",
+      "relationship": "contains",
+      "target": "Solar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "one of the biggest solar producers.",
+      "episode_number": 150
+    },
+    {
+      "source": "Inflation Reduction Act",
+      "relationship": "advocates_for",
+      "target": "electric car",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "The inflation reduction act said by an electric car.",
+      "episode_number": 150
+    },
+    {
+      "source": "climate change",
+      "relationship": "part_of",
+      "target": "poly crisis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we are actually in what's now being called a poly crisis.",
+      "episode_number": 150
+    },
+    {
+      "source": "California",
+      "relationship": "part_of",
+      "target": "green conference",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "a big green conference out in California.",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Leavens",
+      "relationship": "works_at",
+      "target": "natural capitalism solutions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "connection mentioned during the podcast",
+      "episode_number": 150
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "hosts",
+      "target": "Y on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "host of the podcast",
+      "episode_number": 150
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "sponsors",
+      "target": "Y on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned as a sponsor",
+      "episode_number": 150
+    },
+    {
+      "source": "COP28",
+      "relationship": "located_in",
+      "target": "United Arab Emirates",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "context of the climate conference",
+      "episode_number": 150
+    },
+    {
+      "source": "Waley Waters Soaking Salts",
+      "relationship": "made_by",
+      "target": "Y on earth community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "product mentioned in the podcast",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Leavens",
+      "relationship": "advocates_for",
+      "target": "COP28",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about climate activism",
+      "episode_number": 150
+    },
+    {
+      "source": "Erin William Perry",
+      "relationship": "visits_with",
+      "target": "Hunter Leavens",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast guest appearance",
+      "episode_number": 150
+    },
+    {
+      "source": "Y on earth community",
+      "relationship": "contains",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "partnership mentioned",
+      "episode_number": 150
+    },
+    {
+      "source": "Y on earth community",
+      "relationship": "contains",
+      "target": "Waley Waters Soaking Salts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "product mentioned",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovins",
+      "relationship": "works_at",
+      "target": "sustainable settings",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Hunter's past work experience",
+      "episode_number": 150
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of the farm",
+      "episode_number": 150
+    },
+    {
+      "source": "United Nations",
+      "relationship": "provides",
+      "target": "COP28",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "resources for COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "United Arab Emirates",
+      "relationship": "hosts",
+      "target": "COP28",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "country hosting COP28",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovins",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Hunter's advocacy work",
+      "episode_number": 150
+    },
+    {
+      "source": "Walter",
+      "relationship": "invites",
+      "target": "Hunter Lovins",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "invitation for a trip",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovins",
+      "relationship": "attends",
+      "target": "B corporation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "event attended by Hunter",
+      "episode_number": 150
+    },
+    {
+      "source": "climate and capital media",
+      "relationship": "provides",
+      "target": "live blogging",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "platform for live blogging",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovens",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "gives a speech on regenerative agriculture",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovens",
+      "relationship": "works_at",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry",
+      "episode_number": 150
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovens",
+      "relationship": "located_in",
+      "target": "Germany",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "spend some time working with the team that he has collected in Germany",
+      "episode_number": 150
+    },
+    {
+      "source": "Hunter Lovens",
+      "relationship": "located_in",
+      "target": "Italy",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "somewhere in the middle of Italy",
+      "episode_number": 150
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "hosted by Aaron William Perry",
+      "episode_number": 150
+    },
+    {
+      "source": "YOnEarth",
+      "relationship": "supports",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "YOnEarth.org-support-page",
+      "episode_number": 150
+    }
+  ]
+}

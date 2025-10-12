@@ -1,0 +1,1489 @@
+{
+  "episode": 24,
+  "timestamp": "2025-10-09T11:13:06.678898",
+  "entity_count": 107,
+  "relationship_count": 73,
+  "entities": [
+    {
+      "name": "David George Haskell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Professor and author"
+    },
+    {
+      "name": "University of the South",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location of David's professorship"
+    },
+    {
+      "name": "Sohani",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Location of the University of the South"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "State where Sohani is located"
+    },
+    {
+      "name": "The Song of Trees",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Book authored by David George Haskell"
+    },
+    {
+      "name": "The Forest Unseen",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Book authored by David George Haskell"
+    },
+    {
+      "name": "Cornell",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "University where David did his graduate work"
+    },
+    {
+      "name": "Oxford",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "University where David completed his undergraduate degree"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "City where the discussion is recorded"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "State where Boulder is located"
+    },
+    {
+      "name": "cottonwoods",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Type of tree mentioned in the discussion"
+    },
+    {
+      "name": "crows",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Type of bird mentioned in the discussion"
+    },
+    {
+      "name": "kingfish",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Type of bird mentioned in the discussion"
+    },
+    {
+      "name": "The Songs of Trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed as a book written by a scientist."
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of academic disciplines."
+    },
+    {
+      "name": "humanities",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of academic disciplines."
+    },
+    {
+      "name": "creek",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of standing by it to perceive truths."
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to breaking out of boxes."
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to complex issues on this planet."
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "meeting room was going to be decided to fate of tens of thousands of acres of forest"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "forest that was owned by a particular corporate entity"
+    },
+    {
+      "name": "forest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "fate of tens of thousands of acres of forest"
+    },
+    {
+      "name": "Kant",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the philosopher Kant a couple two or three centuries ago"
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "experience of trees and forests and ecosystems"
+    },
+    {
+      "name": "Kant",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "philosopher referenced in discussions about intellectual enlightenment"
+    },
+    {
+      "name": "intellectual enlightenment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "term used by Kant"
+    },
+    {
+      "name": "rivers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to having a voice in boardrooms"
+    },
+    {
+      "name": "forests",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to having a voice in boardrooms"
+    },
+    {
+      "name": "sound",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed as a means of communication and revealing environmental injustice"
+    },
+    {
+      "name": "environmental injustice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to sound and lower income communities"
+    },
+    {
+      "name": "data",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to listening to the world"
+    },
+    {
+      "name": "scientific process",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to gathering data"
+    },
+    {
+      "name": "creek",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a place to connect with the world"
+    },
+    {
+      "name": "land",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussed in relation to being stolen from other people"
+    },
+    {
+      "name": "factory farms",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "mentioned in relation to air quality issues"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to listening practices"
+    },
+    {
+      "name": "computer screens",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a buffer from the realities of the world"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one patch of old growth forest in Tennessee"
+    },
+    {
+      "name": "Amazon rainforest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a tree in the Amazon rainforest"
+    },
+    {
+      "name": "Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a tree on a street corner in Manhattan"
+    },
+    {
+      "name": "Walson Fur",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "different trees"
+    },
+    {
+      "name": "Green Ash",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "different trees"
+    },
+    {
+      "name": "Hazel",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "different trees"
+    },
+    {
+      "name": "Cottonwood",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "different trees"
+    },
+    {
+      "name": "Japanese white pine",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "different trees"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sounds of trees"
+    },
+    {
+      "name": "Amazon rainforest",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in a place where there are tens of thousands of square kilometers of forest all around it."
+    },
+    {
+      "name": "Manhattan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "unity though and that unity is a tree in Manhattan and the tree in the Amazon are both made out of interconnections"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Of course in New York a lot of people are unaware of how they're related to the tree on their street"
+    },
+    {
+      "name": "East Jerusalem",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "olive trees in East Jerusalem for example a place where the olive has encouraged an allowed human life"
+    },
+    {
+      "name": "Southeast Asia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a lot of human calories are being derived from palm oil plantations in Southeast Asia"
+    },
+    {
+      "name": "olive trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the olive is at the center of both giving life to people but also of it's at the center of the ways that people fragmenting and pushing apart from one another."
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "humans are right at the center of these networks of life that have trees within them"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "lived in my younger days in New York City for a spell"
+    },
+    {
+      "name": "urban forests",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "urban forests are so important to our well-being"
+    },
+    {
+      "name": "human culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the great diversity of human culture"
+    },
+    {
+      "name": "trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hidden connections to trees"
+    },
+    {
+      "name": "urban forestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "urban forestry and tree management in urban areas"
+    },
+    {
+      "name": "life",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "source of life"
+    },
+    {
+      "name": "religious traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "religious traditions have taught us this for millennia"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "lived in my younger days in New York City"
+    },
+    {
+      "name": "Brooklyn",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "decision was made in the 19th century to have one big park prospect park and not to have lots of other smaller parks scattered around Brooklyn"
+    },
+    {
+      "name": "Prospect Park",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one big park prospect park"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sprawling out so as those new cities those new suburbs emerge in what way will we invite other species into them"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "urban areas say Denver, Boulder, Fort Collins"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "urban areas say Denver, Boulder, Fort Collins"
+    },
+    {
+      "name": "Fort Collins",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "urban areas say Denver, Boulder, Fort Collins"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "most of the landmass of North America and the whole world is not urban"
+    },
+    {
+      "name": "Front Range",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "one of the challenges in on the front range in particular"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "urban forests of Boulder"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "urban forests of Denver"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "New York is moving away from exotics"
+    },
+    {
+      "name": "Brooklyn",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "thinking about New York and Brooklyn"
+    },
+    {
+      "name": "ash trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the ash trees are all being killed off"
+    },
+    {
+      "name": "cottonwoods",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "do we plant just cottonwoods and ponderosa pines"
+    },
+    {
+      "name": "ponderosa pines",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "do we plant just cottonwoods and ponderosa pines"
+    },
+    {
+      "name": "box elder",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "maybe some box elder those are the natives"
+    },
+    {
+      "name": "Thomas Berry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the great writer Thomas Berry suggests"
+    },
+    {
+      "name": "serotonin",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "stabilizing levels of serotonin"
+    },
+    {
+      "name": "National Geographic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "National Geographic Instagram for you to so popular"
+    },
+    {
+      "name": "Rocky Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "portrait of the Rocky Mountains"
+    },
+    {
+      "name": "David George Haskell",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaking with author and professor David George Haskell"
+    },
+    {
+      "name": "Boulder Creek",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "along the Boulder Creek here in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here in Colorado"
+    },
+    {
+      "name": "songs of trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "his latest book the songs of trees"
+    },
+    {
+      "name": "dghaskell.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you can get more information on that and on david's work generally at dghaskell.com"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the why on earth communities stewardship and sustainability podcast series"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a place in denver where one riparian ecosystem called cherry creek flows into another called the plat river"
+    },
+    {
+      "name": "Cherry Creek",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "one riparian ecosystem called cherry creek"
+    },
+    {
+      "name": "Platte River",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "flows into another called the plat river"
+    },
+    {
+      "name": "Confluence Park",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "this place known as confluence park"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Confluence Park",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Interstate 25",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "cottonwoods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "Buddha",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Transcript segment"
+    },
+    {
+      "name": "cottonwood",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a tree that adapts to changing rivers"
+    },
+    {
+      "name": "western rivers",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "described as changing their course and affecting cottonwood growth"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a speaker providing advice"
+    },
+    {
+      "name": "humans",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "referring to the audience of professionals and community leaders"
+    },
+    {
+      "name": "place",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "invitation to deepen relationship with a specific location"
+    },
+    {
+      "name": "suburban development",
+      "type": "PLACE",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "example of a location to connect with nature"
+    },
+    {
+      "name": "grass",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned as a specific type of vegetation in the context of a place"
+    },
+    {
+      "name": "David",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "invitation is to pick a particular patch of this living earth and return it again and again"
+    },
+    {
+      "name": "living earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "pick a particular patch of this living earth and return it again and again"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "David George Haskell",
+      "relationship": "works_at",
+      "target": "University of the South",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "David is a professor at the University of the South",
+      "episode_number": 24
+    },
+    {
+      "source": "University of the South",
+      "relationship": "located_in",
+      "target": "Sohani",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "University is located in Sohani",
+      "episode_number": 24
+    },
+    {
+      "source": "Sohani",
+      "relationship": "located_in",
+      "target": "Tennessee",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sohani is in Tennessee",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "founded",
+      "target": "The Song of Trees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "David authored The Song of Trees",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "founded",
+      "target": "The Forest Unseen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "David authored The Forest Unseen",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "did_graduate_work_at",
+      "target": "Cornell",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "David did graduate work at Cornell",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "did_undergrad_at",
+      "target": "Oxford",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "David completed his undergraduate degree at Oxford",
+      "episode_number": 24
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder is located in Colorado",
+      "episode_number": 24
+    },
+    {
+      "source": "cottonwoods",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Cottonwoods are part of the environment in Boulder",
+      "episode_number": 24
+    },
+    {
+      "source": "crows",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Crows are part of the environment in Boulder",
+      "episode_number": 24
+    },
+    {
+      "source": "kingfish",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Kingfish are part of the environment in Boulder",
+      "episode_number": 24
+    },
+    {
+      "source": "The Songs of Trees",
+      "relationship": "advocates_for",
+      "target": "science",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "The book discusses the interconnectedness of science and poetry.",
+      "episode_number": 24
+    },
+    {
+      "source": "education",
+      "relationship": "related_to",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Education is discussed in the context of addressing sustainability issues.",
+      "episode_number": 24
+    },
+    {
+      "source": "creek",
+      "relationship": "part_of",
+      "target": "PLACE",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.7,
+      "context": "The creek is mentioned as a place to stand and perceive truths.",
+      "episode_number": 24
+    },
+    {
+      "source": "New York City",
+      "relationship": "located_in",
+      "target": "Tennessee",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "meeting room was going to be decided to fate of tens of thousands of acres of forest",
+      "episode_number": 24
+    },
+    {
+      "source": "forest",
+      "relationship": "part_of",
+      "target": "Tennessee",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "forest that was owned by a particular corporate entity",
+      "episode_number": 24
+    },
+    {
+      "source": "Kant",
+      "relationship": "advocates_for",
+      "target": "ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "the philosopher Kant a couple two or three centuries ago",
+      "episode_number": 24
+    },
+    {
+      "source": "Kant",
+      "relationship": "advocates_for",
+      "target": "intellectual enlightenment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Kant's philosophical discussions",
+      "episode_number": 24
+    },
+    {
+      "source": "rivers",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "rivers mentioned in relation to ecosystems",
+      "episode_number": 24
+    },
+    {
+      "source": "forests",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "forests mentioned in relation to ecosystems",
+      "episode_number": 24
+    },
+    {
+      "source": "sound",
+      "relationship": "revealer_of",
+      "target": "environmental injustice",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sound discussed in context of environmental issues",
+      "episode_number": 24
+    },
+    {
+      "source": "data",
+      "relationship": "gathered_by",
+      "target": "scientific process",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "data collection methods discussed",
+      "episode_number": 24
+    },
+    {
+      "source": "creek",
+      "relationship": "located_in",
+      "target": "ecosystem",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "creek mentioned in ecological context",
+      "episode_number": 24
+    },
+    {
+      "source": "land",
+      "relationship": "stolen_from",
+      "target": "people",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "land ownership issues discussed",
+      "episode_number": 24
+    },
+    {
+      "source": "factory farms",
+      "relationship": "affects",
+      "target": "air quality",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "factory farms mentioned in relation to air pollution",
+      "episode_number": 24
+    },
+    {
+      "source": "trees",
+      "relationship": "listened_to_in",
+      "target": "ecosystems",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "listening practices discussed in relation to trees",
+      "episode_number": 24
+    },
+    {
+      "source": "computer screens",
+      "relationship": "buffer_against",
+      "target": "realities",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "computer screens mentioned as a means of escape",
+      "episode_number": 24
+    },
+    {
+      "source": "Tennessee",
+      "relationship": "contains",
+      "target": "old growth forest",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "one patch of old growth forest in Tennessee",
+      "episode_number": 24
+    },
+    {
+      "source": "Amazon rainforest",
+      "relationship": "contains",
+      "target": "forest",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "a tree in the Amazon rainforest",
+      "episode_number": 24
+    },
+    {
+      "source": "Manhattan",
+      "relationship": "contains",
+      "target": "tree",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "a tree on a street corner in Manhattan",
+      "episode_number": 24
+    },
+    {
+      "source": "trees",
+      "relationship": "part_of",
+      "target": "living networks",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sounds of trees",
+      "episode_number": 24
+    },
+    {
+      "source": "old growth forest",
+      "relationship": "located_in",
+      "target": "Tennessee",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "one patch of old growth forest in Tennessee",
+      "episode_number": 24
+    },
+    {
+      "source": "tree",
+      "relationship": "located_in",
+      "target": "Amazon rainforest",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "a tree in the Amazon rainforest",
+      "episode_number": 24
+    },
+    {
+      "source": "tree",
+      "relationship": "located_in",
+      "target": "Manhattan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "a tree on a street corner in Manhattan",
+      "episode_number": 24
+    },
+    {
+      "source": "Manhattan",
+      "relationship": "part_of",
+      "target": "New York",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "unity though and that unity is a tree in Manhattan and the tree in the Amazon are both made out of interconnections",
+      "episode_number": 24
+    },
+    {
+      "source": "Amazon rainforest",
+      "relationship": "part_of",
+      "target": "South America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "in a place where there are tens of thousands of square kilometers of forest all around it.",
+      "episode_number": 24
+    },
+    {
+      "source": "New York",
+      "relationship": "contains",
+      "target": "trees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "a lot of people are unaware of how they're related to the tree on their street",
+      "episode_number": 24
+    },
+    {
+      "source": "East Jerusalem",
+      "relationship": "contains",
+      "target": "olive trees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "olive trees in East Jerusalem for example a place where the olive has encouraged an allowed human life",
+      "episode_number": 24
+    },
+    {
+      "source": "Southeast Asia",
+      "relationship": "contains",
+      "target": "palm oil plantations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "a lot of human calories are being derived from palm oil plantations in Southeast Asia",
+      "episode_number": 24
+    },
+    {
+      "source": "trees",
+      "relationship": "interconnected_with",
+      "target": "humans",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "humans are right at the center of these networks of life that have trees within them",
+      "episode_number": 24
+    },
+    {
+      "source": "New York City",
+      "relationship": "part_of",
+      "target": "urban environments",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "lived in my younger days in New York City for a spell",
+      "episode_number": 24
+    },
+    {
+      "source": "urban forests",
+      "relationship": "advocates_for",
+      "target": "human well-being",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "urban forests are so important to our well-being",
+      "episode_number": 24
+    },
+    {
+      "source": "human culture",
+      "relationship": "interconnects_with",
+      "target": "trees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "hidden connections to trees",
+      "episode_number": 24
+    },
+    {
+      "source": "urban forestry",
+      "relationship": "located_in",
+      "target": "urban areas",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "urban forestry and tree management in urban areas",
+      "episode_number": 24
+    },
+    {
+      "source": "life",
+      "relationship": "is_part_of",
+      "target": "human experience",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "source of life",
+      "episode_number": 24
+    },
+    {
+      "source": "religious traditions",
+      "relationship": "advocates_for",
+      "target": "thankfulness",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "religious traditions have taught us this for millennia",
+      "episode_number": 24
+    },
+    {
+      "source": "Brooklyn",
+      "relationship": "contains",
+      "target": "Prospect Park",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "decision was made in the 19th century to have one big park prospect park and not to have lots of other smaller parks scattered around Brooklyn",
+      "episode_number": 24
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "sprawling out so as those new cities those new suburbs emerge in what way will we invite other species into them",
+      "episode_number": 24
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "sprawling out so as those new cities those new suburbs emerge in what way will we invite other species into them",
+      "episode_number": 24
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Fort Collins",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "sprawling out so as those new cities those new suburbs emerge in what way will we invite other species into them",
+      "episode_number": 24
+    },
+    {
+      "source": "North America",
+      "relationship": "part_of",
+      "target": "Front Range",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "most of the landmass of North America and the whole world is not urban",
+      "episode_number": 24
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "urban forests of Boulder",
+      "episode_number": 24
+    },
+    {
+      "source": "Denver",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "urban forests of Denver",
+      "episode_number": 24
+    },
+    {
+      "source": "New York",
+      "relationship": "advocates_for",
+      "target": "native species",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "New York is moving away from exotics",
+      "episode_number": 24
+    },
+    {
+      "source": "Thomas Berry",
+      "relationship": "advocates_for",
+      "target": "relationships with trees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the great writer Thomas Berry suggests",
+      "episode_number": 24
+    },
+    {
+      "source": "National Geographic",
+      "relationship": "produces",
+      "target": "Instagram content",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "National Geographic Instagram for you to so popular",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "speaking_with",
+      "target": "why on earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "speaking with author and professor David George Haskell about trees",
+      "episode_number": 24
+    },
+    {
+      "source": "Boulder Creek",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "along the Boulder Creek here in Colorado",
+      "episode_number": 24
+    },
+    {
+      "source": "David George Haskell",
+      "relationship": "authored",
+      "target": "songs of trees",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "his latest book the songs of trees",
+      "episode_number": 24
+    },
+    {
+      "source": "Denver",
+      "relationship": "contains",
+      "target": "Confluence Park",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "a place in denver where one riparian ecosystem called cherry creek flows into another called the plat river",
+      "episode_number": 24
+    },
+    {
+      "source": "Cherry Creek",
+      "relationship": "flows_into",
+      "target": "Platte River",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "one riparian ecosystem called cherry creek flows into another called the plat river",
+      "episode_number": 24
+    },
+    {
+      "source": "Cherry Creek",
+      "relationship": "part_of",
+      "target": "Confluence Park",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "this place known as confluence park",
+      "episode_number": 24
+    },
+    {
+      "source": "Platte River",
+      "relationship": "part_of",
+      "target": "Confluence Park",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "this place known as confluence park",
+      "episode_number": 24
+    },
+    {
+      "source": "Confluence Park",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Transcript segment",
+      "episode_number": 24
+    },
+    {
+      "source": "Interstate 25",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Transcript segment",
+      "episode_number": 24
+    },
+    {
+      "source": "cottonwoods",
+      "relationship": "advocates_for",
+      "target": "David",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Transcript segment",
+      "episode_number": 24
+    },
+    {
+      "source": "New York City",
+      "relationship": "part_of",
+      "target": "cottonwoods",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "Transcript segment",
+      "episode_number": 24
+    },
+    {
+      "source": "Buddha",
+      "relationship": "achieved_enlightenment_under",
+      "target": "tree",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Transcript segment",
+      "episode_number": 24
+    },
+    {
+      "source": "cottonwood",
+      "relationship": "adapts_to",
+      "target": "western rivers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed in the context of growth and survival in changing river conditions",
+      "episode_number": 24
+    },
+    {
+      "source": "David",
+      "relationship": "gives_advice_to",
+      "target": "humans",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "providing advice to the audience of professionals",
+      "episode_number": 24
+    },
+    {
+      "source": "humans",
+      "relationship": "interact_with",
+      "target": "place",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "invitation to deepen relationship with a specific location",
+      "episode_number": 24
+    },
+    {
+      "source": "place",
+      "relationship": "contains",
+      "target": "grass",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "example of a location to connect with nature",
+      "episode_number": 24
+    },
+    {
+      "source": "David",
+      "relationship": "advocates_for",
+      "target": "living earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "invitation is to pick a particular patch of this living earth and return it again and again",
+      "episode_number": 24
+    }
+  ]
+}

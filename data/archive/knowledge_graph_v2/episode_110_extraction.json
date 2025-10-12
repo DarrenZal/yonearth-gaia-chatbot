@@ -1,0 +1,2603 @@
+{
+  "episode": 110,
+  "timestamp": "2025-10-09T10:30:25.090061",
+  "entity_count": 199,
+  "relationship_count": 120,
+  "entities": [
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Talking about the cannabis plant as the tree of life."
+    },
+    {
+      "name": "cannabis plant",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Talking about the possibility that it is the tree of life."
+    },
+    {
+      "name": "Naropa University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Brigitte teaches herbal medicine there."
+    },
+    {
+      "name": "School of Health Mastery",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Brigitte teaches herbal medicine there."
+    },
+    {
+      "name": "Omega Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Brigitte has taught there."
+    },
+    {
+      "name": "American Herbalist Guild",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Brigitte is a professional member."
+    },
+    {
+      "name": "Mayo Clinic",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Brigitte has taught there."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Host of the podcast."
+    },
+    {
+      "name": "Wildflower Child",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Brigitte's latest project."
+    },
+    {
+      "name": "Naropa University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "teaches at a Buddhist university"
+    },
+    {
+      "name": "Hinduism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "studied Eastern religion"
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "studied Eastern religion"
+    },
+    {
+      "name": "Tree of Life",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "connection to lore, legend, and mythology"
+    },
+    {
+      "name": "cannabis sativa",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "plant with many uses"
+    },
+    {
+      "name": "The Urantia Book",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "influences of world religions"
+    },
+    {
+      "name": "celestial beings",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "claims to be written by celestial beings"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "uransia means earth"
+    },
+    {
+      "name": "Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentions healing of the nations"
+    },
+    {
+      "name": "hops",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "closest relative to cannabis"
+    },
+    {
+      "name": "hackberry",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "possible relative to cannabis"
+    },
+    {
+      "name": "ginkgo trees",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "example of male and female plants"
+    },
+    {
+      "name": "nettles",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "example of male and female plants"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about cultivation and uses of cannabis"
+    },
+    {
+      "name": "hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about uses of cannabis"
+    },
+    {
+      "name": "Euronechture book",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a source of information"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of ancient mummies"
+    },
+    {
+      "name": "DeGon people",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "cultural group discussing extraterrestrial beliefs"
+    },
+    {
+      "name": "Canis minor",
+      "type": "PLACE",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "mentioned as a planet"
+    },
+    {
+      "name": "serious",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "companion planet known by DeGon people"
+    },
+    {
+      "name": "Carl Sagan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Carl Sagan, who I happen to know, was a cannabis user."
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "he believes that cannabis is perhaps the oldest cultivated plant on the face of the earth."
+    },
+    {
+      "name": "cannabis sativa",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I have a picture of cannabis sativa."
+    },
+    {
+      "name": "Nero",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "who went on a battle tour with Nero when he was conquering Rome."
+    },
+    {
+      "name": "Roman Empire",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when he was conquering Rome and Roman empire lands."
+    },
+    {
+      "name": "Nephilim",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we hear about the Nephilim, made it with the humans."
+    },
+    {
+      "name": "No Dites",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "a seventh race was created called the No Dites."
+    },
+    {
+      "name": "Oranche book",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the Oranche book in many world tales talk about a war in the heavens."
+    },
+    {
+      "name": "Star Wars",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "another story that really talks about this war in the heavens is the Star Wars story."
+    },
+    {
+      "name": "No Dites",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "created called the No Dites"
+    },
+    {
+      "name": "Star Wars",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "story"
+    },
+    {
+      "name": "Oranche",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "our planet, Oranche became quarantined"
+    },
+    {
+      "name": "Delusifer Abelian",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "joined Delusifer Abelian"
+    },
+    {
+      "name": "creator",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "loyal to the creator"
+    },
+    {
+      "name": "Van",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "I consider Van the steadfast one of my eternal heroes"
+    },
+    {
+      "name": "tree of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "kept the tree of life safe"
+    },
+    {
+      "name": "Turkey",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "lived in Turkey"
+    },
+    {
+      "name": "Lake Van",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "there's a lake named after him called Lake Van"
+    },
+    {
+      "name": "Amadon",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "human consort named Amadon"
+    },
+    {
+      "name": "Adam",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "two other celestial visitors, Adam and Eve"
+    },
+    {
+      "name": "Eve",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "two other celestial visitors, Adam and Eve"
+    },
+    {
+      "name": "Edencia",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "from the star system, Edencia"
+    },
+    {
+      "name": "Robert Sarmasd",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "the research of Robert Sarmasd"
+    },
+    {
+      "name": "Atlantis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book called The Discovery of Atlantis"
+    },
+    {
+      "name": "Cyprus",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "near Cyprus"
+    },
+    {
+      "name": "Mediterranean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "northeastern Mediterranean"
+    },
+    {
+      "name": "Adam and Eve",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "They were said to be immortal and came to this planet."
+    },
+    {
+      "name": "Cyprus",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "An area that's now underwater near Cyprus in the northeastern Mediterranean."
+    },
+    {
+      "name": "Mediterranean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "An area that's now underwater near Cyprus in the northeastern Mediterranean."
+    },
+    {
+      "name": "Aphrodite",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Talking about Aphrodite and Venus or Astarte or Ashera."
+    },
+    {
+      "name": "Venus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Talking about Aphrodite and Venus or Astarte or Ashera."
+    },
+    {
+      "name": "Astarte",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Talking about Aphrodite and Venus or Astarte or Ashera."
+    },
+    {
+      "name": "Ashera",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Talking about Aphrodite and Venus or Astarte or Ashera."
+    },
+    {
+      "name": "Apollo",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Talking about Aphrodite and Venus or Astarte or Ashera."
+    },
+    {
+      "name": "Tara",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Buddhist goddess of compassion and healing."
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Describes cannabis, describes the tree of life."
+    },
+    {
+      "name": "tree of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Describes the tree of life."
+    },
+    {
+      "name": "hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Wrote a hemp cookbook."
+    },
+    {
+      "name": "edustine",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "Contains a type of protein called edustine."
+    },
+    {
+      "name": "Easter",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "We celebrate Easter, a star-tay."
+    },
+    {
+      "name": "Tara",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Buddhist goddess of compassion and healing"
+    },
+    {
+      "name": "Adam",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Biblical figure"
+    },
+    {
+      "name": "Eve",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Biblical figure"
+    },
+    {
+      "name": "Keno",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "half human half extraterrestrial being"
+    },
+    {
+      "name": "Lilith",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mythical figure associated with Adam"
+    },
+    {
+      "name": "Leota",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "alternate name for Lilith"
+    },
+    {
+      "name": "Kene",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "child of Adam and Eve"
+    },
+    {
+      "name": "Persephone",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mythical figure associated with the underworld"
+    },
+    {
+      "name": "Anana",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "mythical figure associated with descent into winter"
+    },
+    {
+      "name": "Edencia",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "home planet of Adam and Eve"
+    },
+    {
+      "name": "cannabis",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "plant mentioned in context of cloning"
+    },
+    {
+      "name": "the tree of life",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "concept related to Adam and Eve's story"
+    },
+    {
+      "name": "Adam",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Eve",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Lilith",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Kane",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Abel",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Mesopotamia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Babylon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Euronecia",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Diana",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Athena",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Kairan",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Peter Pan",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Pied Piper",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "bocus dien icies",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Peter Pan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the secret magical plants I mean these beings all had special powers I mean Peter Pan could teach you to fly"
+    },
+    {
+      "name": "Pied Piper",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the pied piper kept valaring in this pocket and led the children out of hamlin"
+    },
+    {
+      "name": "Hamlin",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "led the children out of hamlin because the townspeople didn't pay him for getting the rats out"
+    },
+    {
+      "name": "Canaanites",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "perhaps cane became the father of the canaanites who are very very discriminated against"
+    },
+    {
+      "name": "Hemp Seeds",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "what would be one of the most precious things I could give them especially you know 38,000 years ago around about would be some hemp seeds"
+    },
+    {
+      "name": "Nordic Mythology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I don't know as much about Nordic mythology but I did like watching the Vikings on the history station"
+    },
+    {
+      "name": "Yggdrasil",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "they talk about a world tree eegdrasil"
+    },
+    {
+      "name": "Iceland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I teach in Iceland so I know about the elves"
+    },
+    {
+      "name": "South American",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "similarities to the Nordic mythology about the tree of life as well as South American"
+    },
+    {
+      "name": "Kitsikoto",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "they also have their cosmic serpent tree kitsikoto"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "now moving over to india in the Hindu tradition"
+    },
+    {
+      "name": "Brahma",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "they have a trinity brahma the supreme creator"
+    },
+    {
+      "name": "Vishnu",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "they have vishnu and they also have brahma shiva"
+    },
+    {
+      "name": "Shiva",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shiva as said to be lord of the dance he's the creator and destroyer"
+    },
+    {
+      "name": "Parvati",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "his consort parvati did not really like that"
+    },
+    {
+      "name": "Cannabis",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "she had access to a plant cannabis"
+    },
+    {
+      "name": "Sadhus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "his devotees include the sadhus of india these holy men"
+    },
+    {
+      "name": "Chilum",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "they smoke the chilum and the word chilum means chalice"
+    },
+    {
+      "name": "Shiva",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...they sing their praises to shiva..."
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...the sadhus of india..."
+    },
+    {
+      "name": "Bong",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...that liquid is known as bong..."
+    },
+    {
+      "name": "Ganges River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...this gongi's river is associated with a goddess named gonga..."
+    },
+    {
+      "name": "Ganga",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...associated with a goddess named gonga or gongja..."
+    },
+    {
+      "name": "Chris Benette",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...chris benette who I consider a great scholar..."
+    },
+    {
+      "name": "Kumbh Mela",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...there's a huge festival that happens in india every several years..."
+    },
+    {
+      "name": "Indra",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "...the origin of the kumbamela tells a story about the god indra..."
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...the Buddhist tradition really tried to distance themselves from the licensiousness of Hinduism..."
+    },
+    {
+      "name": "Abraham",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...melchizedek came and visited abraham..."
+    },
+    {
+      "name": "Melchizedek",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...melchizedek came and visited abraham..."
+    },
+    {
+      "name": "Buddha",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about Buddha's traditions and practices"
+    },
+    {
+      "name": "Abraham",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "reference to Abraham in Jewish tradition"
+    },
+    {
+      "name": "Moses",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "reference to Moses receiving the ten commandments"
+    },
+    {
+      "name": "Oracle of Delphi",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mention of the Oracle of Delphi and its priestesses"
+    },
+    {
+      "name": "Sithians",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about the Sithians as cultivators of cannabis"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about cannabis use in rituals"
+    },
+    {
+      "name": "Holy Anointing Oil",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mention of the holy anointing oil in the Bible"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a fiber plant and sacrament in religious contexts"
+    },
+    {
+      "name": "Holy Anointing Oil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in the Bible as made from various ingredients"
+    },
+    {
+      "name": "Zoroastrian Religion",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to plant sacraments and rituals"
+    },
+    {
+      "name": "Jesus",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to apostles and the Bible"
+    },
+    {
+      "name": "three wise men",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to astrology and Zoroastrian priests"
+    },
+    {
+      "name": "Sirius",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to Egyptian architecture and pyramids"
+    },
+    {
+      "name": "Szechmet",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "goddess mentioned in relation to ancient Egypt"
+    },
+    {
+      "name": "cinnamon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as an ingredient in Holy Anointing Oil"
+    },
+    {
+      "name": "myrrh",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as an ingredient in Holy Anointing Oil"
+    },
+    {
+      "name": "olive oil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as an ingredient in Holy Anointing Oil"
+    },
+    {
+      "name": "cannae bosom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to translations of the Bible"
+    },
+    {
+      "name": "calamus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to translations of the Bible"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to ancient mysteries and architecture"
+    },
+    {
+      "name": "ancient Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to mysteries and symbols"
+    },
+    {
+      "name": "the Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a source of religious texts"
+    },
+    {
+      "name": "the Onc",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "symbol mentioned in relation to eternal life"
+    },
+    {
+      "name": "the companion planet to Sirius",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in relation to visitors and architecture"
+    },
+    {
+      "name": "Serious",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "talked about the visitors from the companion planet to serious"
+    },
+    {
+      "name": "Egyptian architecture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "all of Egyptian architecture is really modeled around serious"
+    },
+    {
+      "name": "Chinto religion",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "the chinto religion is an ancient Japanese religion"
+    },
+    {
+      "name": "Hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ceremonial robes made out of hemp"
+    },
+    {
+      "name": "Alchemy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "alchemy had to be quite secretive"
+    },
+    {
+      "name": "Philosopher's stone",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "they talk about the philosopher's stone"
+    },
+    {
+      "name": "Cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "some scholars think that perhaps they're talking about cannabis"
+    },
+    {
+      "name": "Trees",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "many cultures honor trees in different ways"
+    },
+    {
+      "name": "Jesus Christ",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Jesus Christ the word Christ means the anointed one"
+    },
+    {
+      "name": "Holy anointing oil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "anoint you with the holy anointing oil"
+    },
+    {
+      "name": "Cana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Jesus' first miracle was performed in cana"
+    },
+    {
+      "name": "Ashara",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "Ashara one of the things that happened"
+    },
+    {
+      "name": "Yahweh",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Ashara was the consort to Yahweh"
+    },
+    {
+      "name": "Queen of Heaven",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "honor the queen of heaven"
+    },
+    {
+      "name": "Venus",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "statues of the goddess of Venus"
+    },
+    {
+      "name": "Aphrodite",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "statues of the goddess of Aphrodite"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a plant with healing properties"
+    },
+    {
+      "name": "Ashara",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "honored as the queen of heaven"
+    },
+    {
+      "name": "Eve",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "associated with the queen of heaven"
+    },
+    {
+      "name": "Venus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "goddess with statues that were defaced"
+    },
+    {
+      "name": "Aphrodite",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "goddess with statues that were defaced"
+    },
+    {
+      "name": "Mary",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "substitute for the goddess"
+    },
+    {
+      "name": "Maddie Wana",
+      "type": "CONCEPT",
+      "name_confidence": 0.5,
+      "type_confidence": 0.4,
+      "context": "mentioned in relation to cannabis"
+    },
+    {
+      "name": "Koran",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "religious text that forbids alcohol but not cannabis"
+    },
+    {
+      "name": "Rastafarians",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "culture that uses cannabis as a sacrament"
+    },
+    {
+      "name": "Chilim",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.5,
+      "context": "another name for cannabis used by Rastafarians"
+    },
+    {
+      "name": "Chalice",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.5,
+      "context": "another name for cannabis used by Rastafarians"
+    },
+    {
+      "name": "Haile Selassie",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "spiritual leader respected by Rastafarians"
+    },
+    {
+      "name": "Abraham Lincoln",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure who enjoyed hemp"
+    },
+    {
+      "name": "George Washington",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure who advocated for hemp cultivation"
+    },
+    {
+      "name": "Thomas Jefferson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical figure who advocated for hemp cultivation"
+    },
+    {
+      "name": "sisters of the valley",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "group that believes in the healing properties of cannabis"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of an international church of cannabis"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing the plant's uses and legal status"
+    },
+    {
+      "name": "female plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "referring to the type of cannabis plants being grown"
+    },
+    {
+      "name": "male plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "referring to cannabis plants that are not grown for production"
+    },
+    {
+      "name": "industrial grow-ups",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "comparing cannabis cultivation to henhouses"
+    },
+    {
+      "name": "henhouses",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "used as a metaphor for industrial grow-ups"
+    },
+    {
+      "name": "cattle industry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "comparing the treatment of female cows to female cannabis plants"
+    },
+    {
+      "name": "pharmaceutical nation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "referring to the societal reliance on pharmaceutical drugs"
+    },
+    {
+      "name": "endocannabinoid system",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing the human body's system that interacts with cannabis"
+    },
+    {
+      "name": "planet earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "referring to the state of the environment"
+    },
+    {
+      "name": "wild oregano",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as another plant that interacts with the endocannabinoid system"
+    },
+    {
+      "name": "canvas",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing the historical use of cannabis in making canvas"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "visit yonearth.org-support"
+    },
+    {
+      "name": "vitamin C",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "standing in the front of the vitamin C"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "support packages start at just one dollar per month"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Brigitte Mars",
+      "relationship": "works_at",
+      "target": "Naropa University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brigitte teaches herbal medicine at Naropa University.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "works_at",
+      "target": "School of Health Mastery",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Brigitte teaches herbal medicine at the School of Health Mastery in Iceland.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "teaches_at",
+      "target": "Omega Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Brigitte has taught at Omega Institute.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "teaches_at",
+      "target": "Mayo Clinic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Brigitte has taught at Mayo Clinic.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "is_member_of",
+      "target": "American Herbalist Guild",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Brigitte is a professional member of the American Herbalist Guild.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "authored",
+      "target": "Wildflower Child",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Brigitte is working on her latest project, a memoir titled Wildflower Child.",
+      "episode_number": 110
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "cannabis plant",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Brigitte discusses the cannabis plant as the tree of life.",
+      "episode_number": 110
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Aaron is the host of the podcast.",
+      "episode_number": 110
+    },
+    {
+      "source": "Naropa University",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "teaches at a Buddhist university",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis sativa",
+      "relationship": "made_by",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "plant with many uses",
+      "episode_number": 110
+    },
+    {
+      "source": "The Urantia Book",
+      "relationship": "advocates_for",
+      "target": "spiritual traditions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "influences of world religions",
+      "episode_number": 110
+    },
+    {
+      "source": "Bible",
+      "relationship": "mentions",
+      "target": "healing of the nations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "talks about a plant for healing",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "related_to",
+      "target": "hops",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "closest relative to cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "related_to",
+      "target": "hackberry",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "possible relative to cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "related_to",
+      "target": "ginkgo trees",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "example of male and female plants",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "related_to",
+      "target": "nettles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "example of male and female plants",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "rope",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about uses of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "fiber",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about uses of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "fuel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about uses of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "used_for",
+      "target": "fabric",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about uses of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "Euronechture book",
+      "relationship": "contains",
+      "target": "quotes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "source of information",
+      "episode_number": 110
+    },
+    {
+      "source": "mummy",
+      "relationship": "found_in",
+      "target": "China",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "location of ancient mummies",
+      "episode_number": 110
+    },
+    {
+      "source": "DeGon people",
+      "relationship": "believe_in",
+      "target": "extraterrestrials",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "cultural beliefs",
+      "episode_number": 110
+    },
+    {
+      "source": "DeGon people",
+      "relationship": "taught_about",
+      "target": "cannabis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "cultural beliefs",
+      "episode_number": 110
+    },
+    {
+      "source": "extraterrestrials",
+      "relationship": "visited",
+      "target": "DeGon people",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "cultural beliefs",
+      "episode_number": 110
+    },
+    {
+      "source": "extraterrestrials",
+      "relationship": "brought",
+      "target": "plant",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussion about extraterrestrials",
+      "episode_number": 110
+    },
+    {
+      "source": "Carl Sagan",
+      "relationship": "advocates_for",
+      "target": "cannabis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "he believes that cannabis is perhaps the oldest cultivated plant on the face of the earth.",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis sativa",
+      "relationship": "made_by",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "I have a picture of cannabis sativa.",
+      "episode_number": 110
+    },
+    {
+      "source": "Nero",
+      "relationship": "part_of",
+      "target": "Roman Empire",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "who went on a battle tour with Nero when he was conquering Rome.",
+      "episode_number": 110
+    },
+    {
+      "source": "Nephilim",
+      "relationship": "created",
+      "target": "No Dites",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "a seventh race was created called the No Dites.",
+      "episode_number": 110
+    },
+    {
+      "source": "Oranche book",
+      "relationship": "talks_about",
+      "target": "war in the heavens",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the Oranche book in many world tales talk about a war in the heavens.",
+      "episode_number": 110
+    },
+    {
+      "source": "Star Wars",
+      "relationship": "depicts",
+      "target": "battle of good and evil",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "another story that really talks about this war in the heavens is the Star Wars story.",
+      "episode_number": 110
+    },
+    {
+      "source": "Van",
+      "relationship": "kept",
+      "target": "tree of life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "kept the tree of life safe",
+      "episode_number": 110
+    },
+    {
+      "source": "Van",
+      "relationship": "located_in",
+      "target": "Turkey",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "lived in Turkey",
+      "episode_number": 110
+    },
+    {
+      "source": "Lake Van",
+      "relationship": "named_after",
+      "target": "Van",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "there's a lake named after him called Lake Van",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "came_from",
+      "target": "Edencia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "from the star system, Edencia",
+      "episode_number": 110
+    },
+    {
+      "source": "Robert Sarmasd",
+      "relationship": "wrote",
+      "target": "The Discovery of Atlantis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the research of Robert Sarmasd",
+      "episode_number": 110
+    },
+    {
+      "source": "Atlantis",
+      "relationship": "matches",
+      "target": "Euransha book",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "description of Atlantis totally matches the Euransha book's description",
+      "episode_number": 110
+    },
+    {
+      "source": "Eve",
+      "relationship": "came_with",
+      "target": "Adam",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "two other celestial visitors, Adam and Eve",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "considered_as",
+      "target": "gods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "thought Adam and Eve were gods",
+      "episode_number": 110
+    },
+    {
+      "source": "Oranche",
+      "relationship": "became",
+      "target": "quarantined",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Oranche became quarantined",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "arrived_in",
+      "target": "Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "They arrived here on this planet quite recently about 38,000 years ago.",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "lived_in",
+      "target": "garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Adam and Eve lived peacefully in this garden.",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "are",
+      "target": "gods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "They thought Adam and Eve were gods.",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "describes",
+      "target": "tree of life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Describes cannabis, describes the tree of life.",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "made_by",
+      "target": "hemp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Wrote a hemp cookbook.",
+      "episode_number": 110
+    },
+    {
+      "source": "Easter",
+      "relationship": "celebrates",
+      "target": "nature returning to the earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "We celebrate Easter, a star-tay, the celebration of nature returning to the earth.",
+      "episode_number": 110
+    },
+    {
+      "source": "Tara",
+      "relationship": "is",
+      "target": "star being",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "Tara also said to be a star being.",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "were",
+      "target": "geneticists",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "They were geneticists, they were eight feet tall.",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam and Eve",
+      "relationship": "were",
+      "target": "immortal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "They were said to be immortal.",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "partner_of",
+      "target": "Eve",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Biblical narrative",
+      "episode_number": 110
+    },
+    {
+      "source": "Eve",
+      "relationship": "gave_birth_to",
+      "target": "Kene",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Biblical narrative",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "partner_of",
+      "target": "Lilith",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Biblical narrative",
+      "episode_number": 110
+    },
+    {
+      "source": "Lilith",
+      "relationship": "gave_birth_to",
+      "target": "sansa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Biblical narrative",
+      "episode_number": 110
+    },
+    {
+      "source": "Eve",
+      "relationship": "nursed",
+      "target": "sansa",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "Biblical narrative",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "descended_from",
+      "target": "Edencia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "story context",
+      "episode_number": 110
+    },
+    {
+      "source": "Tara",
+      "relationship": "is_a",
+      "target": "Buddhist goddess",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "context of Tara's description",
+      "episode_number": 110
+    },
+    {
+      "source": "Persephone",
+      "relationship": "descended_into",
+      "target": "the underworld",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mythological context",
+      "episode_number": 110
+    },
+    {
+      "source": "Kane",
+      "relationship": "killed",
+      "target": "Abel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "partnered_with",
+      "target": "Eve",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Eve",
+      "relationship": "took_care_of",
+      "target": "Lilith's child",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Adam",
+      "relationship": "located_in",
+      "target": "Mesopotamia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Kairan",
+      "relationship": "is_a",
+      "target": "half human half beast",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Diana",
+      "relationship": "is_an_alias_of",
+      "target": "Athena",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Kane",
+      "relationship": "went_to",
+      "target": "land of Nod",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "is_related_to",
+      "target": "wine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 110
+    },
+    {
+      "source": "Pied Piper",
+      "relationship": "leads",
+      "target": "children",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "led the children out of hamlin",
+      "episode_number": 110
+    },
+    {
+      "source": "Canaanites",
+      "relationship": "discriminated_against",
+      "target": "Cane",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "perhaps cane became the father of the canaanites who are very very discriminated against",
+      "episode_number": 110
+    },
+    {
+      "source": "Hemp Seeds",
+      "relationship": "help_civilize",
+      "target": "part_of_the_world",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "what would be one of the most precious things I could give them especially you know 38,000 years ago around about would be some hemp seeds",
+      "episode_number": 110
+    },
+    {
+      "source": "Nordic Mythology",
+      "relationship": "similar_to",
+      "target": "South American",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "similarities to the Nordic mythology about the tree of life as well as South American",
+      "episode_number": 110
+    },
+    {
+      "source": "Brahma",
+      "relationship": "part_of",
+      "target": "Hindu Trinity",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "they have a trinity brahma the supreme creator",
+      "episode_number": 110
+    },
+    {
+      "source": "Shiva",
+      "relationship": "associated_with",
+      "target": "Cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "she had access to a plant cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "Sadhus",
+      "relationship": "devotees_of",
+      "target": "Shiva",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "his devotees include the sadhus of india these holy men",
+      "episode_number": 110
+    },
+    {
+      "source": "Shiva",
+      "relationship": "advocates_for",
+      "target": "Bong",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...they sing their praises to shiva...",
+      "episode_number": 110
+    },
+    {
+      "source": "Ganges River",
+      "relationship": "part_of",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...this gongi's river is associated with a goddess named gonga...",
+      "episode_number": 110
+    },
+    {
+      "source": "Chris Benette",
+      "relationship": "wrote",
+      "target": "Cannabis in the Soma Solution",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...chris benette who I consider a great scholar wrote a book called cannabis in the soma solution...",
+      "episode_number": 110
+    },
+    {
+      "source": "Kumbh Mela",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...there's a huge festival that happens in india every several years...",
+      "episode_number": 110
+    },
+    {
+      "source": "Indra",
+      "relationship": "part_of",
+      "target": "Kumbh Mela",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...the origin of the kumbamela tells a story about the god indra...",
+      "episode_number": 110
+    },
+    {
+      "source": "Abraham",
+      "relationship": "visited_by",
+      "target": "Melchizedek",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...melchizedek came and visited abraham...",
+      "episode_number": 110
+    },
+    {
+      "source": "Moses",
+      "relationship": "received",
+      "target": "Ten Commandments",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Moses got his ten commandments while sitting in front of a burning bush",
+      "episode_number": 110
+    },
+    {
+      "source": "Sithians",
+      "relationship": "cultivated",
+      "target": "cannabis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "the Sithians were the first people to domesticate cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "Oracle of Delphi",
+      "relationship": "foretells",
+      "target": "future",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "the women who were the priestesses would foretell the future",
+      "episode_number": 110
+    },
+    {
+      "source": "Holy Anointing Oil",
+      "relationship": "made_of",
+      "target": "cinnamon, myrrh, olive oil, and cane bosom",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "the holy anointing oil is mentioned many times in the Bible",
+      "episode_number": 110
+    },
+    {
+      "source": "Holy Anointing Oil",
+      "relationship": "made_of",
+      "target": "cinnamon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ingredients of Holy Anointing Oil",
+      "episode_number": 110
+    },
+    {
+      "source": "Holy Anointing Oil",
+      "relationship": "made_of",
+      "target": "myrrh",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ingredients of Holy Anointing Oil",
+      "episode_number": 110
+    },
+    {
+      "source": "Holy Anointing Oil",
+      "relationship": "made_of",
+      "target": "olive oil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ingredients of Holy Anointing Oil",
+      "episode_number": 110
+    },
+    {
+      "source": "cannae bosom",
+      "relationship": "translated_to",
+      "target": "calamus",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "translation of biblical text",
+      "episode_number": 110
+    },
+    {
+      "source": "Zoroastrian Religion",
+      "relationship": "uses",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "plant sacrament in rituals",
+      "episode_number": 110
+    },
+    {
+      "source": "three wise men",
+      "relationship": "were",
+      "target": "Zoroastrian priests",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "relation to astrology and knowledge",
+      "episode_number": 110
+    },
+    {
+      "source": "Egypt",
+      "relationship": "contains",
+      "target": "Szechmet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "goddess associated with ancient Egypt",
+      "episode_number": 110
+    },
+    {
+      "source": "Egyptian architecture",
+      "relationship": "modeled_around",
+      "target": "Sirius",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "relation to pyramids and their placement",
+      "episode_number": 110
+    },
+    {
+      "source": "the Onc",
+      "relationship": "indicates",
+      "target": "eternal life",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "symbolism in ancient Egypt",
+      "episode_number": 110
+    },
+    {
+      "source": "Chinto religion",
+      "relationship": "advocates_for",
+      "target": "Hemp",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the chinto religion is an ancient Japanese religion and they have all of their ceremonial robes made out of hemp",
+      "episode_number": 110
+    },
+    {
+      "source": "Alchemy",
+      "relationship": "advocates_for",
+      "target": "Philosopher's stone",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "in alchemy they talk about the philosopher's stone",
+      "episode_number": 110
+    },
+    {
+      "source": "Jesus Christ",
+      "relationship": "performed_miracle_in",
+      "target": "Cana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jesus' first miracle was performed in cana",
+      "episode_number": 110
+    },
+    {
+      "source": "Ashara",
+      "relationship": "consort_to",
+      "target": "Yahweh",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Ashara was the consort to Yahweh",
+      "episode_number": 110
+    },
+    {
+      "source": "Ashara",
+      "relationship": "honored_as",
+      "target": "Queen of Heaven",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "they would honor the queen of heaven who is also perhaps Eve",
+      "episode_number": 110
+    },
+    {
+      "source": "Venus",
+      "relationship": "part_of",
+      "target": "Aphrodite",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "statues of the goddess of Venus and Aphrodite",
+      "episode_number": 110
+    },
+    {
+      "source": "Ashara",
+      "relationship": "honors",
+      "target": "cannabis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "people honor Ashara as the queen of heaven",
+      "episode_number": 110
+    },
+    {
+      "source": "Mary",
+      "relationship": "substitutes",
+      "target": "goddess",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Mary became a substitute for the goddess",
+      "episode_number": 110
+    },
+    {
+      "source": "Rastafarians",
+      "relationship": "advocates_for",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Rastafarians use cannabis as a sacrament",
+      "episode_number": 110
+    },
+    {
+      "source": "Koran",
+      "relationship": "forbids",
+      "target": "alcohol",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Koran forbids alcohol but not cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "Abraham Lincoln",
+      "relationship": "enjoys",
+      "target": "hemp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lincoln enjoyed sitting on his porch with hemp",
+      "episode_number": 110
+    },
+    {
+      "source": "George Washington",
+      "relationship": "advocates_for",
+      "target": "hemp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Washington advocated for hemp cultivation",
+      "episode_number": 110
+    },
+    {
+      "source": "Thomas Jefferson",
+      "relationship": "advocates_for",
+      "target": "hemp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jefferson advocated for hemp cultivation",
+      "episode_number": 110
+    },
+    {
+      "source": "sisters of the valley",
+      "relationship": "believes_in",
+      "target": "healing properties of cannabis",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "sisters of the valley believe in the healing properties of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "Denver",
+      "relationship": "contains",
+      "target": "international church of cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Denver has an international church of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "cannabis",
+      "relationship": "advocates_for",
+      "target": "healing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing the healing properties of cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "female plants",
+      "relationship": "part_of",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "referring to the type of cannabis plants grown",
+      "episode_number": 110
+    },
+    {
+      "source": "male plants",
+      "relationship": "part_of",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "referring to the type of cannabis plants not grown for production",
+      "episode_number": 110
+    },
+    {
+      "source": "cattle industry",
+      "relationship": "compares_to",
+      "target": "female plants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "comparing the treatment of female cows to female cannabis plants",
+      "episode_number": 110
+    },
+    {
+      "source": "pharmaceutical nation",
+      "relationship": "contrasts_with",
+      "target": "cannabis",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussing societal reliance on pharmaceuticals vs cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "endocannabinoid system",
+      "relationship": "interacts_with",
+      "target": "cannabis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing how the human body interacts with cannabis",
+      "episode_number": 110
+    },
+    {
+      "source": "planet earth",
+      "relationship": "influenced_by",
+      "target": "cannabis",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing the environmental impact of cannabis cultivation",
+      "episode_number": 110
+    },
+    {
+      "source": "wild oregano",
+      "relationship": "compares_to",
+      "target": "cannabis",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "mentioning another plant that interacts with the endocannabinoid system",
+      "episode_number": 110
+    },
+    {
+      "source": "canvas",
+      "relationship": "made_from",
+      "target": "cannabis",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing historical use of cannabis in making canvas",
+      "episode_number": 110
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the podcast series is hosted by Aaron William Perry",
+      "episode_number": 110
+    },
+    {
+      "source": "yonearth.org",
+      "relationship": "offers",
+      "target": "support packages",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "please visit yonearth.org-support support packages start at just one dollar per month",
+      "episode_number": 110
+    },
+    {
+      "source": "vitamin C",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "standing in the front of the vitamin C",
+      "episode_number": 110
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "why on earth community stewardship and sustainability podcast series",
+      "episode_number": 110
+    }
+  ]
+}

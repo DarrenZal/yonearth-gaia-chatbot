@@ -1,0 +1,64 @@
+{
+  "timestamp": "/home/claudeuser/yonearth-gaia-chatbot",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "tests": [
+    {
+      "name": "AT-01: Evidence Integrity",
+      "passed": true,
+      "message": "SHA256 coverage: 100.0%, stale detection: True",
+      "details": {
+        "relationships_with_sha256": "137/137",
+        "original_sha": "34b7c279199ad98a...",
+        "modified_sha": "1edfa0bf7e83bd99...",
+        "stale_detected": true
+      }
+    },
+    {
+      "name": "AT-02: Idempotency",
+      "passed": true,
+      "message": "Claim UID uniqueness: 29962/29962",
+      "details": {
+        "total_relationships": 29962,
+        "unique_claim_uids": 29962,
+        "duplicate_claim_uids": 0,
+        "duplicate_rate": "0.00%"
+      }
+    },
+    {
+      "name": "AT-03: NDJSON Robustness",
+      "passed": true,
+      "message": "Recovered 2/3 items despite malformed line",
+      "details": {
+        "parsed_successfully": 2,
+        "failed_lines": 1,
+        "recovery_rate": "66.7%"
+      }
+    },
+    {
+      "name": "AT-04: Geo Validation",
+      "passed": true,
+      "message": "Detected invalid relationship: Boulder\u2192Lafayette",
+      "details": {
+        "boulder_population": 108090,
+        "lafayette_population": 30411,
+        "validation_failed": true,
+        "suggested_correction": "Lafayette\u2192Boulder"
+      }
+    },
+    {
+      "name": "AT-05: Calibration",
+      "passed": true,
+      "message": "Mean p_true: 0.85, High confidence: 99.5%",
+      "details": {
+        "mean_p_true": "0.853",
+        "high_confidence_rate": "99.5%",
+        "total_relationships": 372,
+        "note": "Full ECE requires labeled test set"
+      }
+    }
+  ]
+}

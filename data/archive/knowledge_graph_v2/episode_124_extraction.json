@@ -1,0 +1,1700 @@
+{
+  "episode": 124,
+  "timestamp": "2025-10-09T10:35:28.179527",
+  "entity_count": 110,
+  "relationship_count": 92,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Nick D. Dominico",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founded by Nick D. Dominico"
+    },
+    {
+      "name": "Drylands Agro Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founded by Nick D. Dominico"
+    },
+    {
+      "name": "Rocky Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "geographic reference"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Elk Run Farm"
+    },
+    {
+      "name": "North Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "specific area mentioned in context of farming"
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization with headquarters at Elk Run Farm"
+    },
+    {
+      "name": "prairie dogs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ecosystem issue in Boulder County"
+    },
+    {
+      "name": "NRCS",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Natural Resource Conservation Services department of the USDA"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "specific area, Boulder County, next to the Rocky Mountains in Colorado"
+    },
+    {
+      "name": "Rocky Mountains",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "next to the Rocky Mountains in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "next to the Rocky Mountains in Colorado"
+    },
+    {
+      "name": "forest garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sitting here in the forest garden"
+    },
+    {
+      "name": "Mossas Seed Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Rich Pekararo of Mossas Seed Foundation"
+    },
+    {
+      "name": "Rich Pekararo",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Rich Pekararo of Mossas Seed Foundation"
+    },
+    {
+      "name": "Hopi Black beans",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "settled on Hopi Black beans"
+    },
+    {
+      "name": "Chihuahua Blue",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "breeding his Chihuahua Blue"
+    },
+    {
+      "name": "sheep",
+      "type": "ANIMAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "raising sheep on pasture in regenerative systems"
+    },
+    {
+      "name": "pigs",
+      "type": "ANIMAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "pigs really were a major force here for a long time"
+    },
+    {
+      "name": "pigs",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "used for building soil and preparing ecosystems"
+    },
+    {
+      "name": "chickens",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "for eggs and mobile coops"
+    },
+    {
+      "name": "ducks",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hang out in the ponds"
+    },
+    {
+      "name": "deer",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "come through the property"
+    },
+    {
+      "name": "fruit trees",
+      "type": "PLANT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "over a thousand established in dry land systems"
+    },
+    {
+      "name": "agroforestry crops",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "breeding drought tolerant crops"
+    },
+    {
+      "name": "agro ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "overarching concept for restoration techniques"
+    },
+    {
+      "name": "forest garden",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "nucleus for the farm"
+    },
+    {
+      "name": "elk run",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "demonstration site"
+    },
+    {
+      "name": "county",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "part of the broader ecosystem"
+    },
+    {
+      "name": "landowners",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "knocking on our door intrigued"
+    },
+    {
+      "name": "Alan Savory",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "models for holistic management"
+    },
+    {
+      "name": "pollinators",
+      "type": "ANIMAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "supporting wildlife"
+    },
+    {
+      "name": "Alan Savory",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about holistic management and regenerative grazing"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to regenerative practices"
+    },
+    {
+      "name": "Medicarbon Organic Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "partner organization for livestock"
+    },
+    {
+      "name": "Yellow Barn Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "partner organization for farm school and silvo pasture demonstration"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "concept discussed in relation to ecosystem restoration"
+    },
+    {
+      "name": "silvo pastures",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "concept of planting trees within pastures"
+    },
+    {
+      "name": "farm school",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "educational initiative for children at the farm"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Mark Shepherd",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Bill Mollison",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Wisconsin",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mark Shepherd is a farmer up in Wisconsin"
+    },
+    {
+      "name": "permaculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Bill Mollison being the founder of the permaculture movement"
+    },
+    {
+      "name": "Restoration Agriculture",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mark Shepherd wrote a book called Restoration Agriculture"
+    },
+    {
+      "name": "Mark Shepherd",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "came up with the concept called stun right sheer total utter neglect"
+    },
+    {
+      "name": "agroforestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "creating this huge opportunity to develop agroforestry crops for drying and drought prone areas"
+    },
+    {
+      "name": "Tom Chi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "interviewing Tom Chi at one ventures"
+    },
+    {
+      "name": "one ventures",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "interviewing Tom Chi at one ventures"
+    },
+    {
+      "name": "drone seed planting technology",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "drone seed planting technology"
+    },
+    {
+      "name": "coral reefs",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "help restore coral reefs"
+    },
+    {
+      "name": "tropical rainforests",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "replant parts of the tropical rainforests around the world"
+    },
+    {
+      "name": "crab apple",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "it's a crab apple"
+    },
+    {
+      "name": "apple",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "probably grafted with apple"
+    },
+    {
+      "name": "Alan Savry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about brittle ecosystems"
+    },
+    {
+      "name": "Sinai Peninsula",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about Gulf stream flow and desertification"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of ecosystem restoration camp"
+    },
+    {
+      "name": "Ecuador",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of potential projects"
+    },
+    {
+      "name": "Baja California",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mention of potential projects"
+    },
+    {
+      "name": "John Liu",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about global ecosystem restoration camp movement"
+    },
+    {
+      "name": "Ecuador",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "potential projects in Ecuador"
+    },
+    {
+      "name": "Baja California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "potential project in Baja California"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "local county here in Boulder County"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "experiences in the Amazon"
+    },
+    {
+      "name": "Peru",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "experiences in Peru"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "traditional indigenous ceremony of North America"
+    },
+    {
+      "name": "Shoshone",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "food sovereignty project on the Shoshone reservation"
+    },
+    {
+      "name": "Wind River",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Shoshone reservation up in Wind River"
+    },
+    {
+      "name": "indigenous cultures",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "connected deeply to a lot of the indigenous people and indigenous cultures of this region"
+    },
+    {
+      "name": "Shoshone reservation",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "food sovereignty project just beginning on the Shoshone reservation"
+    },
+    {
+      "name": "Wind River",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "up in Wind River"
+    },
+    {
+      "name": "Nick D. Domenico",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "visiting with Nick D. Domenico"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "founder of Elk Run Farm"
+    },
+    {
+      "name": "Drylands Agri Ecology Research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founder of Drylands Agri Ecology Research"
+    },
+    {
+      "name": "Puriam",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Puriam, the organic superfoods company"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Weylay Waters of course is one of our social enterprises"
+    },
+    {
+      "name": "Veridi Toss",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "my new book Veridi Toss"
+    },
+    {
+      "name": "Brigitte Sophia",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "characters Brigitte Sophia and her not really friend at first this guy Leo"
+    },
+    {
+      "name": "Leo",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "characters Brigitte Sophia and her not really friend at first this guy Leo"
+    },
+    {
+      "name": "Veridi Toss",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "John Liu",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "natural habitats",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "winter",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "seasons",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Elkhruhn Farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "cultural hub for festivals"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "co-founder of drylands agro ecology research"
+    },
+    {
+      "name": "DARR",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "founded by Marissa and Nick"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location for tree planting"
+    },
+    {
+      "name": "drylands agro ecology research",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization founded by Marissa and Nick"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "partner and co-founder of DARR"
+    },
+    {
+      "name": "yellow barn",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "location for tree planting"
+    },
+    {
+      "name": "Marissa",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast episode"
+    },
+    {
+      "name": "Nick",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast episode"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast episode"
+    },
+    {
+      "name": "DARR",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "drylands agri-re-e-cology research"
+    },
+    {
+      "name": "The Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "podcast series"
+    },
+    {
+      "name": "regenerative culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion of community work"
+    },
+    {
+      "name": "permaculture classes",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "events and workshops"
+    },
+    {
+      "name": "yellow barn",
+      "type": "PLACE",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "location of events"
+    },
+    {
+      "name": "magical forest garden",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "location of discussion"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for support"
+    },
+    {
+      "name": "magical forest garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "location of discussion"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "founded",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick is the founder of Elk Run Farm",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "co-founded",
+      "target": "Drylands Agro Ecology Research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick is the co-founder of Drylands Agro Ecology Research",
+      "episode_number": 124
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Elk Run Farm is located in Boulder County",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nick is involved in regenerative agriculture",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "advocates_for",
+      "target": "regenerative culture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nick is involved in regenerative culture",
+      "episode_number": 124
+    },
+    {
+      "source": "Y on Earth",
+      "relationship": "located_in",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Y on Earth has headquarters at Elk Run Farm",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "prairie dogs",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "prairie dogs are a controversial issue in Boulder County",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Dominico",
+      "relationship": "works_at",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nick works at Elk Run Farm",
+      "episode_number": 124
+    },
+    {
+      "source": "NRCS",
+      "relationship": "helps",
+      "target": "farmers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "NRCS helps farmers conserve resources",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "specific area, Boulder County, next to the Rocky Mountains in Colorado",
+      "episode_number": 124
+    },
+    {
+      "source": "Mossas Seed Foundation",
+      "relationship": "founded",
+      "target": "Rich Pekararo",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Rich Pekararo of Mossas Seed Foundation",
+      "episode_number": 124
+    },
+    {
+      "source": "forest garden",
+      "relationship": "contains",
+      "target": "vegetable crops",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sitting here in the forest garden",
+      "episode_number": 124
+    },
+    {
+      "source": "pigs",
+      "relationship": "used_for",
+      "target": "soil building",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "pigs were used for a lot of soil building",
+      "episode_number": 124
+    },
+    {
+      "source": "Hopi Black beans",
+      "relationship": "made_by",
+      "target": "Mossas Seed Foundation",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "settled on Hopi Black beans from Rich Pekararo of Mossas Seed Foundation",
+      "episode_number": 124
+    },
+    {
+      "source": "sheep",
+      "relationship": "raised_on",
+      "target": "pasture",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "raising sheep on pasture in regenerative systems",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "specific area, Boulder County, next to the Rocky Mountains in Colorado",
+      "episode_number": 124
+    },
+    {
+      "source": "pigs",
+      "relationship": "used_for",
+      "target": "building soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "used for building soil and preparing ecosystems",
+      "episode_number": 124
+    },
+    {
+      "source": "chickens",
+      "relationship": "provides",
+      "target": "eggs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "for eggs and mobile coops",
+      "episode_number": 124
+    },
+    {
+      "source": "ducks",
+      "relationship": "hangs_out_in",
+      "target": "ponds",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "hang out in the ponds",
+      "episode_number": 124
+    },
+    {
+      "source": "deer",
+      "relationship": "comes_through",
+      "target": "property",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "come through the property",
+      "episode_number": 124
+    },
+    {
+      "source": "fruit trees",
+      "relationship": "established_in",
+      "target": "dry land systems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "over a thousand established in dry land systems",
+      "episode_number": 124
+    },
+    {
+      "source": "agroforestry crops",
+      "relationship": "bred_for",
+      "target": "drought tolerance",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "breeding drought tolerant crops",
+      "episode_number": 124
+    },
+    {
+      "source": "agro ecology",
+      "relationship": "used_in",
+      "target": "restoration techniques",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "overarching concept for restoration techniques",
+      "episode_number": 124
+    },
+    {
+      "source": "forest garden",
+      "relationship": "is_a",
+      "target": "nucleus for the farm",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "nucleus for the farm",
+      "episode_number": 124
+    },
+    {
+      "source": "elk run",
+      "relationship": "is_a",
+      "target": "demonstration site",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "demonstration site",
+      "episode_number": 124
+    },
+    {
+      "source": "county",
+      "relationship": "part_of",
+      "target": "broader ecosystem",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "part of the broader ecosystem",
+      "episode_number": 124
+    },
+    {
+      "source": "landowners",
+      "relationship": "interested_in",
+      "target": "regenerative farming",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "knocking on our door intrigued",
+      "episode_number": 124
+    },
+    {
+      "source": "Alan Savory",
+      "relationship": "models",
+      "target": "holistic management",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "models for holistic management",
+      "episode_number": 124
+    },
+    {
+      "source": "trees",
+      "relationship": "support",
+      "target": "pollinators",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "supporting wildlife",
+      "episode_number": 124
+    },
+    {
+      "source": "Alan Savory",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about holistic management and regenerative grazing",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "Medicarbon Organic Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "location mentioned in relation to regenerative practices",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "Yellow Barn Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "location mentioned in relation to regenerative practices",
+      "episode_number": 124
+    },
+    {
+      "source": "Medicarbon Organic Farm",
+      "relationship": "works_with",
+      "target": "livestock",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "partner organization for livestock",
+      "episode_number": 124
+    },
+    {
+      "source": "Yellow Barn Farm",
+      "relationship": "works_with",
+      "target": "farm school",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "partner organization for farm school and silvo pasture demonstration",
+      "episode_number": 124
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "part_of",
+      "target": "regenerative practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "concept discussed in relation to ecosystem restoration",
+      "episode_number": 124
+    },
+    {
+      "source": "silvo pastures",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "concept of planting trees within pastures",
+      "episode_number": 124
+    },
+    {
+      "source": "Mark Shepherd",
+      "relationship": "works_at",
+      "target": "Wisconsin",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Mark Shepherd is a farmer up in Wisconsin",
+      "episode_number": 124
+    },
+    {
+      "source": "Bill Mollison",
+      "relationship": "founded",
+      "target": "permaculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Bill Mollison being the founder of the permaculture movement",
+      "episode_number": 124
+    },
+    {
+      "source": "Mark Shepherd",
+      "relationship": "advocates_for",
+      "target": "permaculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mark Shepherd was one of his original students and was really excited to expand the permaculture philosophy",
+      "episode_number": 124
+    },
+    {
+      "source": "Mark Shepherd",
+      "relationship": "wrote",
+      "target": "Restoration Agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Mark Shepherd wrote a book called Restoration Agriculture",
+      "episode_number": 124
+    },
+    {
+      "source": "Mark Shepherd",
+      "relationship": "advocates_for",
+      "target": "agroforestry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "came up with the concept called stun right sheer total utter neglect",
+      "episode_number": 124
+    },
+    {
+      "source": "Tom Chi",
+      "relationship": "works_at",
+      "target": "one ventures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "interviewing Tom Chi at one ventures",
+      "episode_number": 124
+    },
+    {
+      "source": "one ventures",
+      "relationship": "develops",
+      "target": "drone seed planting technology",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "interviewing Tom Chi at one ventures",
+      "episode_number": 124
+    },
+    {
+      "source": "drone seed planting technology",
+      "relationship": "helps_restore",
+      "target": "coral reefs",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "help restore coral reefs",
+      "episode_number": 124
+    },
+    {
+      "source": "drone seed planting technology",
+      "relationship": "helps_replant",
+      "target": "tropical rainforests",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "replant parts of the tropical rainforests around the world",
+      "episode_number": 124
+    },
+    {
+      "source": "crab apple",
+      "relationship": "grafted_with",
+      "target": "apple",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "it's a crab apple",
+      "episode_number": 124
+    },
+    {
+      "source": "Alan Savry",
+      "relationship": "advocates_for",
+      "target": "brittle ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about ecosystems and desertification",
+      "episode_number": 124
+    },
+    {
+      "source": "Sinai Peninsula",
+      "relationship": "part_of",
+      "target": "Egypt",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about desertification and ecosystem restoration",
+      "episode_number": 124
+    },
+    {
+      "source": "John Liu",
+      "relationship": "founded",
+      "target": "global ecosystem restoration camp movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about ecosystem restoration",
+      "episode_number": 124
+    },
+    {
+      "source": "Ecuador",
+      "relationship": "located_in",
+      "target": "South America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mention of potential projects",
+      "episode_number": 124
+    },
+    {
+      "source": "Baja California",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mention of potential projects",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "local county here in Boulder County",
+      "episode_number": 124
+    },
+    {
+      "source": "indigenous cultures",
+      "relationship": "advocates_for",
+      "target": "food sovereignty",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "connected deeply to a lot of the indigenous people and indigenous cultures of this region",
+      "episode_number": 124
+    },
+    {
+      "source": "Shoshone",
+      "relationship": "located_in",
+      "target": "Wind River",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.8,
+      "context": "food sovereignty project on the Shoshone reservation",
+      "episode_number": 124
+    },
+    {
+      "source": "Ecuador",
+      "relationship": "contains",
+      "target": "indigenous cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "potential projects in Ecuador",
+      "episode_number": 124
+    },
+    {
+      "source": "Baja California",
+      "relationship": "contains",
+      "target": "indigenous cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "potential project in Baja California",
+      "episode_number": 124
+    },
+    {
+      "source": "North America",
+      "relationship": "part_of",
+      "target": "indigenous cultures",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "traditional indigenous ceremony of North America",
+      "episode_number": 124
+    },
+    {
+      "source": "Amazon",
+      "relationship": "contains",
+      "target": "indigenous cultures",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "experiences in the Amazon",
+      "episode_number": 124
+    },
+    {
+      "source": "Peru",
+      "relationship": "contains",
+      "target": "indigenous cultures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "experiences in Peru",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Domenico",
+      "relationship": "founded",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "founder of Elk Run Farm",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick D. Domenico",
+      "relationship": "co-founded",
+      "target": "Drylands Agri Ecology Research",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-founder of Drylands Agri Ecology Research",
+      "episode_number": 124
+    },
+    {
+      "source": "Puriam",
+      "relationship": "part_of",
+      "target": "organic superfoods company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Puriam, the organic superfoods company",
+      "episode_number": 124
+    },
+    {
+      "source": "Brigitte Sophia",
+      "relationship": "appears_in",
+      "target": "Veridi Toss",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "characters Brigitte Sophia and her not really friend at first this guy Leo",
+      "episode_number": 124
+    },
+    {
+      "source": "Leo",
+      "relationship": "appears_in",
+      "target": "Veridi Toss",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "characters Brigitte Sophia and her not really friend at first this guy Leo",
+      "episode_number": 124
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "Wind River",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Elk Run Farm",
+      "episode_number": 124
+    },
+    {
+      "source": "Weylay Waters",
+      "relationship": "part_of",
+      "target": "social enterprises",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Weylay Waters of course is one of our social enterprises",
+      "episode_number": 124
+    },
+    {
+      "source": "Veridi Toss",
+      "relationship": "mentions",
+      "target": "Tom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Veridi Toss",
+      "relationship": "mentions",
+      "target": "John Liu",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "natural habitats",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "winter",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "seasons",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "podcast transcript",
+      "episode_number": 124
+    },
+    {
+      "source": "Marissa",
+      "relationship": "works_at",
+      "target": "DARR",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "co-founder of DARR",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "DARR",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "co-founder of DARR",
+      "episode_number": 124
+    },
+    {
+      "source": "DARR",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "organization based in Boulder County",
+      "episode_number": 124
+    },
+    {
+      "source": "Elkhruhn Farm",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "cultural hub located in Boulder County",
+      "episode_number": 124
+    },
+    {
+      "source": "Marissa",
+      "relationship": "advocates_for",
+      "target": "regenerative movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "promoting community involvement in regenerative practices",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "advocates_for",
+      "target": "regenerative movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "promoting community involvement in regenerative practices",
+      "episode_number": 124
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "yellow barn",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "location for tree planting",
+      "episode_number": 124
+    },
+    {
+      "source": "Nick",
+      "relationship": "works_at",
+      "target": "DARR",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion of work",
+      "episode_number": 124
+    },
+    {
+      "source": "Marissa",
+      "relationship": "works_at",
+      "target": "DARR",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion of work",
+      "episode_number": 124
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "The Y on Earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast series",
+      "episode_number": 124
+    },
+    {
+      "source": "DARR",
+      "relationship": "advocates_for",
+      "target": "regenerative culture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion of community work",
+      "episode_number": 124
+    },
+    {
+      "source": "DARR",
+      "relationship": "offers",
+      "target": "permaculture classes",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "events and workshops",
+      "episode_number": 124
+    },
+    {
+      "source": "DARR",
+      "relationship": "located_in",
+      "target": "yellow barn",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "location of events",
+      "episode_number": 124
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "collaborates_with",
+      "target": "Nick",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion of teamwork",
+      "episode_number": 124
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "collaborates_with",
+      "target": "Marissa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion of teamwork",
+      "episode_number": 124
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "Y on Earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast host",
+      "episode_number": 124
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "sponsored_by",
+      "target": "yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "support for podcast",
+      "episode_number": 124
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "advocates_for",
+      "target": "magical forest garden",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about positive influence",
+      "episode_number": 124
+    }
+  ]
+}

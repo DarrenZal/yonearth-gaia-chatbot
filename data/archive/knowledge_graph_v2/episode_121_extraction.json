@@ -1,0 +1,1611 @@
+{
+  "episode": 121,
+  "timestamp": "2025-10-09T10:34:18.214955",
+  "entity_count": 113,
+  "relationship_count": 81,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "Oliver Retzloff",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location where Oliver was born and raised"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "state where Boulder County is located"
+    },
+    {
+      "name": "wild nectar farm",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "flower farm owned by Oliver"
+    },
+    {
+      "name": "SAE Expression College",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "college where Oliver graduated"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "another farm mentioned by Oliver"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "farming focus of Oliver and his husband"
+    },
+    {
+      "name": "native pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "part of the ecosystem focus of wild nectar farm"
+    },
+    {
+      "name": "flowers",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "main product of wild nectar farm"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "area of work for Oliver's colleagues"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...where we are in Boulder County..."
+    },
+    {
+      "name": "regenerative economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "at different aspects of regenerative economics"
+    },
+    {
+      "name": "Colorado flower collective",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "there is a great group the Colorado flower collective"
+    },
+    {
+      "name": "Arvada",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "they're in Arvada now"
+    },
+    {
+      "name": "Seattle",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I grew up my early years around the Seattle area"
+    },
+    {
+      "name": "Pike Place Market",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "something kind of like a pikes place market"
+    },
+    {
+      "name": "dollies",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing a lot of varieties of flowers including dollos"
+    },
+    {
+      "name": "zinnias",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing a lot of varieties of flowers including zinnias"
+    },
+    {
+      "name": "cosmos",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing a lot of varieties of flowers including cosmos"
+    },
+    {
+      "name": "marigolds",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing a lot of varieties of flowers including marigolds"
+    },
+    {
+      "name": "snap dragons",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing a lot of varieties of flowers including snap dragons"
+    },
+    {
+      "name": "dollos",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing varieties and cultivars of flowers"
+    },
+    {
+      "name": "tubers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the process of planting and storing flowers"
+    },
+    {
+      "name": "farmer's market",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing pricing of flowers"
+    },
+    {
+      "name": "wholesale",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing pricing of flowers"
+    },
+    {
+      "name": "coconut core",
+      "type": "MATERIAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing packaging materials for tubers"
+    },
+    {
+      "name": "peat",
+      "type": "MATERIAL",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing packaging materials for tubers"
+    },
+    {
+      "name": "Dauy",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "initial investment with Dauy"
+    },
+    {
+      "name": "Dahlia",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "national flower of Mexico"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "national flower of Mexico"
+    },
+    {
+      "name": "San Francisco",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "official flower of both San Francisco and Seattle"
+    },
+    {
+      "name": "Seattle",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "official flower of both San Francisco and Seattle"
+    },
+    {
+      "name": "Aztecs",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Aztecs use the tubers as a substitute for potato"
+    },
+    {
+      "name": "Wauhaquin",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "big part of Wauhaquin cuisine in Mexico"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in a place like Colorado they thrive"
+    },
+    {
+      "name": "Zineas",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talk a little about Zineas"
+    },
+    {
+      "name": "zinnias",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "flowers"
+    },
+    {
+      "name": "John Perkins",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "friend"
+    },
+    {
+      "name": "Confessions of an Economic Hitman",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book"
+    },
+    {
+      "name": "Touching the Jaguar",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book"
+    },
+    {
+      "name": "the sun",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "thermonuclear power plant"
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "partner"
+    },
+    {
+      "name": "land",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "degraded land"
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Eric and I spend time here"
+    },
+    {
+      "name": "mama gaiya",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "relationship with the living biosphere and with mama gaiya"
+    },
+    {
+      "name": "reeditas",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my new novel of reeditas"
+    },
+    {
+      "name": "hunter",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my son hunter designed along with our buddy Jake"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "our buddy Jake a graphic designer"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "this particular area in rural boulder county"
+    },
+    {
+      "name": "the environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "love for the environment that we live in"
+    },
+    {
+      "name": "the soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "love for the soil the creatures the water"
+    },
+    {
+      "name": "the creatures",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "love for the soil the creatures the water"
+    },
+    {
+      "name": "the water",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "love for the soil the creatures the water"
+    },
+    {
+      "name": "pollinators",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of the pollinator gardens"
+    },
+    {
+      "name": "grasshoppers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "unprecedented amount of grasshoppers"
+    },
+    {
+      "name": "neem",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "natural things that I could use like neem"
+    },
+    {
+      "name": "dolia",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "put these bags on the dolias"
+    },
+    {
+      "name": "grasshoppers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about nature and pest control."
+    },
+    {
+      "name": "wasps",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about nature and pest control."
+    },
+    {
+      "name": "bees",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about nature and pest control."
+    },
+    {
+      "name": "butterflies",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about nature and pest control."
+    },
+    {
+      "name": "zinnias",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about plants used by indigenous peoples."
+    },
+    {
+      "name": "Navajo",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Indigenous peoples using zinnias."
+    },
+    {
+      "name": "Pueblo peoples",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Indigenous peoples using zinnias."
+    },
+    {
+      "name": "marigolds",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about plants and their uses."
+    },
+    {
+      "name": "calendula",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Another name for marigolds."
+    },
+    {
+      "name": "elk run farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location where recording took place."
+    },
+    {
+      "name": "drylands agrar ecology research",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sister organization of elk run farm."
+    },
+    {
+      "name": "Niktida Minico",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Person mentioned in relation to drylands agrar ecology research."
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "Herbalist friend mentioned."
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "herbalist friend"
+    },
+    {
+      "name": "marigold",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "flower used in herbal tea"
+    },
+    {
+      "name": "cosmos",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "flower known for beauty"
+    },
+    {
+      "name": "snap dragons",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "flower type on the farm"
+    },
+    {
+      "name": "Mediterranean region",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "geographic origin of snap dragons"
+    },
+    {
+      "name": "Morocco",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country in the Mediterranean region"
+    },
+    {
+      "name": "Portugal",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country in the Mediterranean region"
+    },
+    {
+      "name": "southern France",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "region in the Mediterranean"
+    },
+    {
+      "name": "Turkey",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country in the Mediterranean region"
+    },
+    {
+      "name": "Syria",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "country in the Mediterranean region"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the why on earth community podcast"
+    },
+    {
+      "name": "wild nectar farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of podcast recording"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nonprofit organization"
+    },
+    {
+      "name": "purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organic superfoods company"
+    },
+    {
+      "name": "Veronica",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type of flower"
+    },
+    {
+      "name": "hemp infused aroma therapy soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product offered by why on earth community"
+    },
+    {
+      "name": "Eric Ice Knuts",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "care we ranch",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "neighboring ranch"
+    },
+    {
+      "name": "grass farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "type of agriculture discussed"
+    },
+    {
+      "name": "animal husbandry",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "type of agricultural practice discussed"
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in the podcast"
+    },
+    {
+      "name": "Flatarins Farmers Coalition",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization discussed in the podcast"
+    },
+    {
+      "name": "young farmers",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "concept related to the organization"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...in Boulder County especially growing up here..."
+    },
+    {
+      "name": "farmer's coalition",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...it's awesome that we have a club like the farmer's coalition..."
+    },
+    {
+      "name": "Richard Harteman",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...interviewing my friend Richard Harteman who's in the Netherlands..."
+    },
+    {
+      "name": "Ran Marine",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...with his company Ran Marine and their way shark technology..."
+    },
+    {
+      "name": "Netherlands",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...who's in the Netherlands with his company Ran Marine..."
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Oliver",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "flower farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "horticulture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "regenerative world",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "meta-industrial future",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Oliver",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends like Oliver and Eric who are helping to make this happen"
+    },
+    {
+      "name": "Eric",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "friends like Oliver and Eric who are helping to make this happen"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "thank you for being a part of the why on earth community"
+    },
+    {
+      "name": "yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit yonearth.org backslash support"
+    },
+    {
+      "name": "y on earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "using the code y on earth all one word with a y"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "works_at",
+      "target": "wild nectar farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Oliver is a farmer and floral designer at the farm",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "born_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Oliver was born and raised in Boulder County",
+      "episode_number": 121
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Boulder County is located in Colorado",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "graduated_from",
+      "target": "SAE Expression College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Oliver graduated with a Bachelor of Science in Sound Arts",
+      "episode_number": 121
+    },
+    {
+      "source": "wild nectar farm",
+      "relationship": "offers",
+      "target": "floral design services",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The farm offers floral design services for various events",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Oliver focuses on regenerative agriculture in his work",
+      "episode_number": 121
+    },
+    {
+      "source": "wild nectar farm",
+      "relationship": "contains",
+      "target": "native pollinators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The farm supports native pollinators as part of its ecosystem",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "collaborates_with",
+      "target": "Elk Run Farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Oliver mentions collaborating with other farms including Elk Run Farm",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver Retzloff",
+      "relationship": "engaged_in",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Oliver is engaged in sustainability efforts",
+      "episode_number": 121
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "flower shops",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...there's at least 100 flower shops that are looking to buy...",
+      "episode_number": 121
+    },
+    {
+      "source": "small business owner",
+      "relationship": "advocates_for",
+      "target": "growing flowers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...I hope that more people can start growing flowers on a small scale...",
+      "episode_number": 121
+    },
+    {
+      "source": "global flower industry",
+      "relationship": "has_issues_with",
+      "target": "chemicals and pesticides",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...the global flower industry is, it's horrible. There's so many chemicals and pesticides used...",
+      "episode_number": 121
+    },
+    {
+      "source": "small business owner",
+      "relationship": "works_with",
+      "target": "flower industry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...I'm fortunate enough to have a community of people who are in the flower industry...",
+      "episode_number": 121
+    },
+    {
+      "source": "small business owner",
+      "relationship": "sells_to",
+      "target": "flower shops",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...there's definitely, there's market out there for local flowers...",
+      "episode_number": 121
+    },
+    {
+      "source": "Colorado flower collective",
+      "relationship": "located_in",
+      "target": "Arvada",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "there is a great group the Colorado flower collective which is down I think they're in Arvada now",
+      "episode_number": 121
+    },
+    {
+      "source": "dollies",
+      "relationship": "made_by",
+      "target": "Colorado flower collective",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "growing a lot of varieties of flowers including dollos",
+      "episode_number": 121
+    },
+    {
+      "source": "wholesale",
+      "relationship": "part_of",
+      "target": "local florists",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "most of our business is wholesale. We sell mostly to local florists",
+      "episode_number": 121
+    },
+    {
+      "source": "Pike Place Market",
+      "relationship": "similar_to",
+      "target": "Colorado flower collective",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "I'm most picturing something kind of like a pikes place market",
+      "episode_number": 121
+    },
+    {
+      "source": "dollos",
+      "relationship": "contains",
+      "target": "tubers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the growth process of dollos",
+      "episode_number": 121
+    },
+    {
+      "source": "tubers",
+      "relationship": "used_in",
+      "target": "wholesale",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the selling of flowers",
+      "episode_number": 121
+    },
+    {
+      "source": "tubers",
+      "relationship": "packaged_in",
+      "target": "coconut core",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing how tubers are stored",
+      "episode_number": 121
+    },
+    {
+      "source": "tubers",
+      "relationship": "packaged_in",
+      "target": "peat",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing how tubers are stored",
+      "episode_number": 121
+    },
+    {
+      "source": "farmer's market",
+      "relationship": "competes_with",
+      "target": "wholesale",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing pricing discrepancies",
+      "episode_number": 121
+    },
+    {
+      "source": "Dahlia",
+      "relationship": "national_flower_of",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Dahlia is actually the national flower of Mexico",
+      "episode_number": 121
+    },
+    {
+      "source": "Dahlia",
+      "relationship": "official_flower_of",
+      "target": "San Francisco",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the official flower of both San Francisco and Seattle",
+      "episode_number": 121
+    },
+    {
+      "source": "Dahlia",
+      "relationship": "official_flower_of",
+      "target": "Seattle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the official flower of both San Francisco and Seattle",
+      "episode_number": 121
+    },
+    {
+      "source": "Aztecs",
+      "relationship": "use",
+      "target": "Dahlia tubers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the Aztecs use the tubers as a substitute for potato",
+      "episode_number": 121
+    },
+    {
+      "source": "Dahlia tubers",
+      "relationship": "part_of",
+      "target": "Wauhaquin cuisine",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "big part of Wauhaquin cuisine in Mexico",
+      "episode_number": 121
+    },
+    {
+      "source": "Zineas",
+      "relationship": "thrive_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "in a place like Colorado they thrive",
+      "episode_number": 121
+    },
+    {
+      "source": "John Perkins",
+      "relationship": "wrote",
+      "target": "Confessions of an Economic Hitman",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friend discussing books",
+      "episode_number": 121
+    },
+    {
+      "source": "John Perkins",
+      "relationship": "wrote",
+      "target": "Touching the Jaguar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "friend discussing books",
+      "episode_number": 121
+    },
+    {
+      "source": "the sun",
+      "relationship": "powers",
+      "target": "zinnias",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "relationship with nature",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "works_with",
+      "target": "land",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "working on land",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "works_with",
+      "target": "mama gaiya",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Eric and I spend time here",
+      "episode_number": 121
+    },
+    {
+      "source": "mama gaiya",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "relationship with the living biosphere and with mama gaiya",
+      "episode_number": 121
+    },
+    {
+      "source": "hunter",
+      "relationship": "designed",
+      "target": "reeditas",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "my son hunter designed along with our buddy Jake",
+      "episode_number": 121
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "the environment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "this particular area in rural boulder county",
+      "episode_number": 121
+    },
+    {
+      "source": "the environment",
+      "relationship": "is_loved_by",
+      "target": "mama gaiya",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "love for the environment that we live in",
+      "episode_number": 121
+    },
+    {
+      "source": "the soil",
+      "relationship": "is_loved_by",
+      "target": "mama gaiya",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "love for the soil the creatures the water",
+      "episode_number": 121
+    },
+    {
+      "source": "the creatures",
+      "relationship": "are_part_of",
+      "target": "the environment",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "love for the soil the creatures the water",
+      "episode_number": 121
+    },
+    {
+      "source": "the water",
+      "relationship": "is_loved_by",
+      "target": "mama gaiya",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "love for the soil the creatures the water",
+      "episode_number": 121
+    },
+    {
+      "source": "pollinators",
+      "relationship": "depend_on",
+      "target": "human beings",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we completely depend on pollinators for so much of our food and lives as human beings",
+      "episode_number": 121
+    },
+    {
+      "source": "grasshoppers",
+      "relationship": "prayed_on_by",
+      "target": "wasps",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "bunch more wasps on the things that are praying on the grasshoppers",
+      "episode_number": 121
+    },
+    {
+      "source": "neem",
+      "relationship": "used_for",
+      "target": "pest management",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "natural things that I could use like neem and some other things to try to maybe get a hold of them quicker",
+      "episode_number": 121
+    },
+    {
+      "source": "Navajo",
+      "relationship": "advocates_for",
+      "target": "zinnias",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Indigenous peoples using zinnias for children's health benefits.",
+      "episode_number": 121
+    },
+    {
+      "source": "Pueblo peoples",
+      "relationship": "advocates_for",
+      "target": "zinnias",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Indigenous peoples using zinnias for children's health benefits.",
+      "episode_number": 121
+    },
+    {
+      "source": "elk run farm",
+      "relationship": "located_in",
+      "target": "drylands agrar ecology research",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Location of recording.",
+      "episode_number": 121
+    },
+    {
+      "source": "Niktida Minico",
+      "relationship": "works_at",
+      "target": "drylands agrar ecology research",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Person associated with drylands agrar ecology research.",
+      "episode_number": 121
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "marigolds",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Herbalist friend mentioned in relation to marigolds.",
+      "episode_number": 121
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "works_at",
+      "target": "herbalist",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "herbalist friend",
+      "episode_number": 121
+    },
+    {
+      "source": "marigold",
+      "relationship": "advocates_for",
+      "target": "anti-inflammatory properties",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "used in herbal tea",
+      "episode_number": 121
+    },
+    {
+      "source": "snap dragons",
+      "relationship": "located_in",
+      "target": "Mediterranean region",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "native to the Mediterranean region",
+      "episode_number": 121
+    },
+    {
+      "source": "Mediterranean region",
+      "relationship": "contains",
+      "target": "Morocco",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic origin",
+      "episode_number": 121
+    },
+    {
+      "source": "Mediterranean region",
+      "relationship": "contains",
+      "target": "Portugal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic origin",
+      "episode_number": 121
+    },
+    {
+      "source": "Mediterranean region",
+      "relationship": "contains",
+      "target": "southern France",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic origin",
+      "episode_number": 121
+    },
+    {
+      "source": "Mediterranean region",
+      "relationship": "contains",
+      "target": "Turkey",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic origin",
+      "episode_number": 121
+    },
+    {
+      "source": "Mediterranean region",
+      "relationship": "contains",
+      "target": "Syria",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "geographic origin",
+      "episode_number": 121
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "host of the podcast",
+      "episode_number": 121
+    },
+    {
+      "source": "wild nectar farm",
+      "relationship": "located_in",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "location of podcast recording",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric Ice Knuts",
+      "relationship": "leads",
+      "target": "animal husbandry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "guest discussing his role",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric Ice Knuts",
+      "relationship": "works_at",
+      "target": "wild nectar farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "guest on the podcast",
+      "episode_number": 121
+    },
+    {
+      "source": "purium",
+      "relationship": "made_by",
+      "target": "hemp infused aroma therapy soaking salts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "product offered by why on earth community",
+      "episode_number": 121
+    },
+    {
+      "source": "care we ranch",
+      "relationship": "part_of",
+      "target": "wild nectar farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "neighboring ranch",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "works_at",
+      "target": "Flatarins Farmers Coalition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Eric is part of the organization",
+      "episode_number": 121
+    },
+    {
+      "source": "Flatarins Farmers Coalition",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "organization mentioned to be in Boulder County",
+      "episode_number": 121
+    },
+    {
+      "source": "Flatarins Farmers Coalition",
+      "relationship": "advocates_for",
+      "target": "young farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization supports beginning farmers",
+      "episode_number": 121
+    },
+    {
+      "source": "farmer's coalition",
+      "relationship": "supports",
+      "target": "new generation of farmers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...it's awesome that we have a club like the farmer's coalition...",
+      "episode_number": 121
+    },
+    {
+      "source": "Richard Harteman",
+      "relationship": "works_at",
+      "target": "Ran Marine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...interviewing my friend Richard Harteman who's in the Netherlands with his company Ran Marine...",
+      "episode_number": 121
+    },
+    {
+      "source": "Ran Marine",
+      "relationship": "located_in",
+      "target": "Netherlands",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "...with his company Ran Marine and their way shark technology cleaning up plastics out of the oceans...",
+      "episode_number": 121
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "old family farms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "...a lot of this land that isn't open space and some of the open space is old family farms...",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "works_with",
+      "target": "Oliver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver",
+      "relationship": "advocates_for",
+      "target": "flower farming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "advocates_for",
+      "target": "horticulture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "contributes_to",
+      "target": "community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver",
+      "relationship": "contributes_to",
+      "target": "community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "describes",
+      "target": "regenerative world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Eric",
+      "relationship": "describes",
+      "target": "meta-industrial future",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 121
+    },
+    {
+      "source": "Oliver",
+      "relationship": "works_with",
+      "target": "Eric",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "friends like Oliver and Eric who are helping to make this happen",
+      "episode_number": 121
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry",
+      "episode_number": 121
+    },
+    {
+      "source": "yonearth.org",
+      "relationship": "sponsored_by",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the podcast and video recordings are made possible by the generous support of people like you to sign up as a daily weekly or monthly supporter please visit yonearth.org backslash support",
+      "episode_number": 121
+    },
+    {
+      "source": "y on earth",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "using the code y on earth all one word with a y",
+      "episode_number": 121
+    }
+  ]
+}

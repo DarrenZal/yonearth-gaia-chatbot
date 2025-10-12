@@ -1,0 +1,1616 @@
+{
+  "episode": 152,
+  "timestamp": "2025-10-09T10:51:58.496607",
+  "entity_count": 108,
+  "relationship_count": 85,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Gertianum",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the podcast recording"
+    },
+    {
+      "name": "Donach",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location in Switzerland"
+    },
+    {
+      "name": "Waley Hulter",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Jommie Schelfloin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Bio-Dynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "field of work discussed"
+    },
+    {
+      "name": "Agriculture section",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "section of the Gertianum"
+    },
+    {
+      "name": "General Anthroposophical Society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization related to Waley Hulter"
+    },
+    {
+      "name": "Waleida",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization related to Waley Hulter"
+    },
+    {
+      "name": "Fermi Frommagerie de L'Obi\u00e9",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "farm associated with Waley Hulter"
+    },
+    {
+      "name": "International Bio-Dynamic Association",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization associated with Waley Hulter"
+    },
+    {
+      "name": "Bio-Dynamic Federation Demeter International",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "organization associated with Waley Hulter"
+    },
+    {
+      "name": "Rudolf Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "architect of the Gertianum"
+    },
+    {
+      "name": "Guitiano",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "building discussed in the podcast"
+    },
+    {
+      "name": "Munich",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "been in different theaters, mainly in Munich"
+    },
+    {
+      "name": "G\u00f6tterno",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "we call ourselves a school for spiritual science and perhaps you can introduce this aspect of what it is about the G\u00f6tterno"
+    },
+    {
+      "name": "Donner",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "it's here in Donner maybe I would say the biggest garden from the village"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "many of our friends with biodynamic farms and gardens back in Colorado"
+    },
+    {
+      "name": "Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "It's interesting that Steiner was asked about a lot of topics from different people around him"
+    },
+    {
+      "name": "biodynamic farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "it was really the beginning of biodynamic farming 100 years ago in 1924"
+    },
+    {
+      "name": "Poland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "this place is now in Poland in cover vids"
+    },
+    {
+      "name": "Gehtheanung Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "biodynamic farming lectures in Poland"
+    },
+    {
+      "name": "Poland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the lectures"
+    },
+    {
+      "name": "biodynamic farming",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "agriculture practices discussed"
+    },
+    {
+      "name": "Jomi Shelle",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in context of farming practices"
+    },
+    {
+      "name": "Rudolf Schneiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "associated with spiritual science and farming practices"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "origin of Slebic"
+    },
+    {
+      "name": "Slebic",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "chemical man from Germany"
+    },
+    {
+      "name": "GMO",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about farming practices"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about farming practices"
+    },
+    {
+      "name": "Sheila Foster",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "executive director of the biodynamic demeter alliance"
+    },
+    {
+      "name": "biodynamic demeter alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in relation to biodynamics"
+    },
+    {
+      "name": "Lynn Boutsa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Theo Maria Carlson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Pat Frazier",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Stephanie Sison",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Brook Levan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization where the speaker used to work"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "farming practice discussed"
+    },
+    {
+      "name": "permaculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "farming practice discussed"
+    },
+    {
+      "name": "Schneider",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "quoted individual"
+    },
+    {
+      "name": "Guadianum",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "location of upcoming conference"
+    },
+    {
+      "name": "Sun Earth Man",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "title of the conference"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "general reference to planet earth"
+    },
+    {
+      "name": "camomile",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a plant with healing properties"
+    },
+    {
+      "name": "Matricaria chamomilla",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "scientific name of camomile"
+    },
+    {
+      "name": "earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of co-creation"
+    },
+    {
+      "name": "kingdoms of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "mentioned in the context of creating new substances"
+    },
+    {
+      "name": "farm organisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a concept in farming"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of preparations"
+    },
+    {
+      "name": "animal kingdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "mentioned in the context of preparations"
+    },
+    {
+      "name": "guts",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of health and healing"
+    },
+    {
+      "name": "inflammation",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in the context of healing properties of camomile"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to plant growth and preparations"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing the opportunity to run down some exciting rabbit holes including getting into some of the esoteric sciences"
+    },
+    {
+      "name": "camomile",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "important symbolic gesture with the relationship with mercury and the hermetic arts"
+    },
+    {
+      "name": "February 2024",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conference coming up marking the 100 year anniversary"
+    },
+    {
+      "name": "hermetic arts",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing the esoteric aspects of Steiner's work"
+    },
+    {
+      "name": "esoteric sciences",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing the opportunity to run down some exciting rabbit holes"
+    },
+    {
+      "name": "Michael",
+      "type": "TEXT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "last text he wrote at the end of his life"
+    },
+    {
+      "name": "Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "conference in February"
+    },
+    {
+      "name": "artificial intelligence",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion on thinking and perception"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "reconnecting with nature"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion on observation and perception"
+    },
+    {
+      "name": "biodynamic farms",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion on farming practices"
+    },
+    {
+      "name": "soil regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "issue of soil regeneration"
+    },
+    {
+      "name": "climate stabilization",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "issue of climate stabilization"
+    },
+    {
+      "name": "biodynamic farms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "soil regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental issues"
+    },
+    {
+      "name": "carbon sequestration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental issues"
+    },
+    {
+      "name": "climate stabilization",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental issues"
+    },
+    {
+      "name": "certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "operations",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "cooperative",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "Aspen",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to biodynamic ranch"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to Aspen"
+    },
+    {
+      "name": "France",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to wine quality"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location mentioned in relation to restaurants"
+    },
+    {
+      "name": "Vintner",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion about wine producers"
+    },
+    {
+      "name": "chefs",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about culinary professionals"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y Honors Community Podcast"
+    },
+    {
+      "name": "Atagatiana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the podcast recording in Switzerland"
+    },
+    {
+      "name": "John Michel Flaja",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-director of the section for agriculture"
+    },
+    {
+      "name": "W\u00e9li Hulze",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-director of the section for agriculture"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium Organic Superfoods",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "W\u00e9le Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "topic discussed in relation to sponsors"
+    },
+    {
+      "name": "agriculture-conference.org",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website for upcoming conference"
+    },
+    {
+      "name": "section-landvietshop.org",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website for general information"
+    },
+    {
+      "name": "Gutianom",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location related to the anthroposophical society"
+    },
+    {
+      "name": "anthroposophical society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in relation to membership"
+    },
+    {
+      "name": "General Anthroposophical Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "opportunity to become a member of AND or connect to the general anthroposophical society"
+    },
+    {
+      "name": "Gutianom",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "global web works emanating out from the Gutianom"
+    },
+    {
+      "name": "Biodynamic Movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "upcoming conference marking the 100 year anniversary of the agriculture lectures the biodynamic movement"
+    },
+    {
+      "name": "Gerta",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "impulse of Gerta"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "legacy of Rudolph Steiner"
+    },
+    {
+      "name": "Faust",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "his masterpiece is called Faust"
+    },
+    {
+      "name": "Mephisto",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Mephisto is kind of a appearance of what is the bad or the devil"
+    },
+    {
+      "name": "Faust",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a masterpiece"
+    },
+    {
+      "name": "Mephisto",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "character in Faust"
+    },
+    {
+      "name": "Margarete Gr\u00e4dchen",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "character in Faust"
+    },
+    {
+      "name": "eco movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to biodynamics"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a term and identity"
+    },
+    {
+      "name": "20th century",
+      "type": "TIME_PERIOD",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned in relation to eco movement"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "visit whyonearth.org backslash support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "works_at",
+      "target": "Agriculture section",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "director of the Agriculture section",
+      "episode_number": 152
+    },
+    {
+      "source": "Jommie Schelfloin",
+      "relationship": "works_at",
+      "target": "Agriculture section",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "director of the Agriculture section",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "advocates_for",
+      "target": "Bio-Dynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-leader of the section for agriculture",
+      "episode_number": 152
+    },
+    {
+      "source": "Jommie Schelfloin",
+      "relationship": "advocates_for",
+      "target": "Bio-Dynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-leader of the section for agriculture",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "member_of",
+      "target": "General Anthroposophical Society",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Executive Council member",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "member_of",
+      "target": "Waleida",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Board of Directors member",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "founded",
+      "target": "Fermi Frommagerie de L'Obi\u00e9",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Bio-Dynamic farmer",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "member_of",
+      "target": "International Bio-Dynamic Association",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "board member",
+      "episode_number": 152
+    },
+    {
+      "source": "Waley Hulter",
+      "relationship": "member_of",
+      "target": "Bio-Dynamic Federation Demeter International",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "supervisory board member",
+      "episode_number": 152
+    },
+    {
+      "source": "Rudolf Steiner",
+      "relationship": "architect_of",
+      "target": "Gertianum",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "architect of the building",
+      "episode_number": 152
+    },
+    {
+      "source": "Gertianum",
+      "relationship": "located_in",
+      "target": "Donach",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "location of the Gertianum",
+      "episode_number": 152
+    },
+    {
+      "source": "Gertianum",
+      "relationship": "part_of",
+      "target": "Switzerland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Gertianum is in Switzerland",
+      "episode_number": 152
+    },
+    {
+      "source": "Guitiano",
+      "relationship": "part_of",
+      "target": "Gertianum",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Guitiano is a building in Gertianum",
+      "episode_number": 152
+    },
+    {
+      "source": "G\u00f6tterno",
+      "relationship": "located_in",
+      "target": "Donner",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "it's here in Donner maybe I would say the biggest garden from the village",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farming",
+      "relationship": "advocates_for",
+      "target": "Steiner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "they asked really Steiner can you give some insights for farming for the future",
+      "episode_number": 152
+    },
+    {
+      "source": "Steiner",
+      "relationship": "founded",
+      "target": "biodynamic farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "it was really the beginning of biodynamic farming 100 years ago in 1924",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farming",
+      "relationship": "located_in",
+      "target": "Poland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "this place is now in Poland in cover vids",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farming",
+      "relationship": "part_of",
+      "target": "G\u00f6tterno",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we are leading the co-leading the section for agriculture",
+      "episode_number": 152
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "biodynamic farms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "many of our friends with biodynamic farms and gardens back in Colorado",
+      "episode_number": 152
+    },
+    {
+      "source": "Gehtheanung Steiner",
+      "relationship": "gave",
+      "target": "biodynamic farming lectures",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "lectures in Poland",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farming",
+      "relationship": "advocates_for",
+      "target": "organic agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "described as advanced form of organic agriculture",
+      "episode_number": 152
+    },
+    {
+      "source": "Rudolf Schneiner",
+      "relationship": "opened",
+      "target": "spiritual science",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "alternative to materialistic science",
+      "episode_number": 152
+    },
+    {
+      "source": "Slebic",
+      "relationship": "described",
+      "target": "nutrition phenomena",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "chemical man from Germany",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farming",
+      "relationship": "located_in",
+      "target": "Poland",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "origin of the movement",
+      "episode_number": 152
+    },
+    {
+      "source": "Germany",
+      "relationship": "part_of",
+      "target": "Western civilization",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "context of agricultural science development",
+      "episode_number": 152
+    },
+    {
+      "source": "Sheila Foster",
+      "relationship": "works_at",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "executive director of the organization",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "advocates_for",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "organization promoting biodynamic practices",
+      "episode_number": 152
+    },
+    {
+      "source": "Lynn Boutsa",
+      "relationship": "guest_on",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest appearance on the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "Theo Maria Carlson",
+      "relationship": "guest_on",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest appearance on the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "Pat Frazier",
+      "relationship": "guest_on",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest appearance on the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "Stephanie Sison",
+      "relationship": "guest_on",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest appearance on the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "Brook Levan",
+      "relationship": "guest_on",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "guest appearance on the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "organization related to sustainable practices",
+      "episode_number": 152
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "part_of",
+      "target": "biodynamics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "farming practice related to biodynamics",
+      "episode_number": 152
+    },
+    {
+      "source": "permaculture",
+      "relationship": "part_of",
+      "target": "biodynamics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "farming practice related to biodynamics",
+      "episode_number": 152
+    },
+    {
+      "source": "Schneider",
+      "relationship": "quoted_in",
+      "target": "podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "individual quoted in the podcast",
+      "episode_number": 152
+    },
+    {
+      "source": "Guadianum",
+      "relationship": "contains",
+      "target": "conference",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "location of the conference",
+      "episode_number": 152
+    },
+    {
+      "source": "camomile",
+      "relationship": "advocates_for",
+      "target": "guts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of healing properties of camomile for gut health",
+      "episode_number": 152
+    },
+    {
+      "source": "camomile",
+      "relationship": "made_by",
+      "target": "farm organisms",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of preparations involving camomile",
+      "episode_number": 152
+    },
+    {
+      "source": "plants",
+      "relationship": "part_of",
+      "target": "kingdoms of nature",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "mentioned in the context of creating new substances from nature",
+      "episode_number": 152
+    },
+    {
+      "source": "animal kingdom",
+      "relationship": "part_of",
+      "target": "kingdoms of nature",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "mentioned in the context of creating new substances from nature",
+      "episode_number": 152
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "camomile",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to camomile growth",
+      "episode_number": 152
+    },
+    {
+      "source": "camomile",
+      "relationship": "helps",
+      "target": "inflammation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of healing properties",
+      "episode_number": 152
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocates_for",
+      "target": "hermetic arts",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing the esoteric aspects of Steiner's work",
+      "episode_number": 152
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocates_for",
+      "target": "esoteric sciences",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing the opportunity to run down some exciting rabbit holes",
+      "episode_number": 152
+    },
+    {
+      "source": "February 2024",
+      "relationship": "part_of",
+      "target": "conference",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "conference coming up marking the 100 year anniversary",
+      "episode_number": 152
+    },
+    {
+      "source": "Michael",
+      "relationship": "is_written_by",
+      "target": "Rudolph Steiner",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "last text he wrote at the end of his life",
+      "episode_number": 152
+    },
+    {
+      "source": "Steiner",
+      "relationship": "advocates_for",
+      "target": "four steps of consciousness",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "conference in February",
+      "episode_number": 152
+    },
+    {
+      "source": "artificial intelligence",
+      "relationship": "related_to",
+      "target": "thinking",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion on thinking and perception",
+      "episode_number": 152
+    },
+    {
+      "source": "nature",
+      "relationship": "reconnect_with",
+      "target": "human beings",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "reconnecting with nature",
+      "episode_number": 152
+    },
+    {
+      "source": "plants",
+      "relationship": "gives_wisdom_to",
+      "target": "human beings",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion on observation and perception",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "part_of",
+      "target": "movement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussion on farming practices",
+      "episode_number": 152
+    },
+    {
+      "source": "soil regeneration",
+      "relationship": "related_to",
+      "target": "climate stabilization",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "issue of soil regeneration",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "advocates_for",
+      "target": "soil regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural practices",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural practices",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "advocates_for",
+      "target": "climate stabilization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about agricultural practices",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "location of biodynamic ranch",
+      "episode_number": 152
+    },
+    {
+      "source": "Aspen",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Aspen's location",
+      "episode_number": 152
+    },
+    {
+      "source": "Vintner",
+      "relationship": "located_in",
+      "target": "France",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "wine producers in France",
+      "episode_number": 152
+    },
+    {
+      "source": "chefs",
+      "relationship": "works_at",
+      "target": "restaurants",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "chefs working in restaurants",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamic farms",
+      "relationship": "located_in",
+      "target": "North America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "biodynamic farms in North America",
+      "episode_number": 152
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 152
+    },
+    {
+      "source": "Atagatiana",
+      "relationship": "located_in",
+      "target": "Switzerland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the podcast recording",
+      "episode_number": 152
+    },
+    {
+      "source": "John Michel Flaja",
+      "relationship": "works_at",
+      "target": "section for agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-director",
+      "episode_number": 152
+    },
+    {
+      "source": "W\u00e9li Hulze",
+      "relationship": "works_at",
+      "target": "section for agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "co-director",
+      "episode_number": 152
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "sponsors",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast sponsor",
+      "episode_number": 152
+    },
+    {
+      "source": "Purium Organic Superfoods",
+      "relationship": "sponsors",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 152
+    },
+    {
+      "source": "W\u00e9le Waters",
+      "relationship": "sponsors",
+      "target": "Y Honors Community Podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "advocates_for",
+      "target": "W\u00e9le Waters",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "concept related to products",
+      "episode_number": 152
+    },
+    {
+      "source": "agriculture-conference.org",
+      "relationship": "provides_information_on",
+      "target": "upcoming conference",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "website for registration",
+      "episode_number": 152
+    },
+    {
+      "source": "section-landvietshop.org",
+      "relationship": "provides_information_on",
+      "target": "general information",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "website for information",
+      "episode_number": 152
+    },
+    {
+      "source": "Gutianom",
+      "relationship": "part_of",
+      "target": "anthroposophical society",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "location related to organization",
+      "episode_number": 152
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocates_for",
+      "target": "Biodynamic Movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "legacy of Rudolph Steiner",
+      "episode_number": 152
+    },
+    {
+      "source": "Gerta",
+      "relationship": "influences",
+      "target": "Biodynamic Movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "impulse of Gerta",
+      "episode_number": 152
+    },
+    {
+      "source": "Gerta",
+      "relationship": "has_written",
+      "target": "Faust",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "his masterpiece is called Faust",
+      "episode_number": 152
+    },
+    {
+      "source": "Faust",
+      "relationship": "features",
+      "target": "Mephisto",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Faust is the dramatic story of of himself",
+      "episode_number": 152
+    },
+    {
+      "source": "General Anthroposophical Society",
+      "relationship": "located_in",
+      "target": "Gutianom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "opportunity to become a member of AND or connect to the general anthroposophical society",
+      "episode_number": 152
+    },
+    {
+      "source": "Faust",
+      "relationship": "is_about",
+      "target": "Mephisto",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed as a character in Faust's story",
+      "episode_number": 152
+    },
+    {
+      "source": "Faust",
+      "relationship": "is_written_by",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.5,
+      "context": "discussed as a masterpiece",
+      "episode_number": 152
+    },
+    {
+      "source": "Margarete Gr\u00e4dchen",
+      "relationship": "helps",
+      "target": "Faust",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned as helping Faust",
+      "episode_number": 152
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "is_a_part_of",
+      "target": "eco movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to eco movements",
+      "episode_number": 152
+    },
+    {
+      "source": "20th century",
+      "relationship": "is_a_time_period_for",
+      "target": "eco movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to the eco movement",
+      "episode_number": 152
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast series is hosted by Aaron William Perry",
+      "episode_number": 152
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "sponsored_by",
+      "target": "whyonearth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the podcast and video recordings are made possible by the generous support of people like you to sign up as a daily weekly or monthly supporter please visit whyonearth.org backslash support",
+      "episode_number": 152
+    }
+  ]
+}

@@ -1,0 +1,2460 @@
+{
+  "episode": 141,
+  "timestamp": "2025-10-09T10:45:52.270158",
+  "entity_count": 170,
+  "relationship_count": 126,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "Nathan Stuck",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company founded by Nathan Stuck"
+    },
+    {
+      "name": "B Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "business certification concept"
+    },
+    {
+      "name": "B Local Georgia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization founded and chaired by Nathan Stuck"
+    },
+    {
+      "name": "B academics",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "nonprofit organization"
+    },
+    {
+      "name": "University of Georgia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "institution where Nathan teaches"
+    },
+    {
+      "name": "Happy Monday, Designing Your Career with Purpose",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Nathan Stuck"
+    },
+    {
+      "name": "B-Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing B-Corp certification"
+    },
+    {
+      "name": "LEED",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing LEED certifications for buildings"
+    },
+    {
+      "name": "Jenna",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "colleague who does LEED certifications"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "B-Corp certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing the process of B-Corp certification"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "website mentioned for connecting with services"
+    },
+    {
+      "name": "B-Corp",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "organization related to B-Corp certification"
+    },
+    {
+      "name": "B-Impact Assessment",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "tool used for assessing B-Corp impact"
+    },
+    {
+      "name": "B-Corp",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a certification and community in the business space."
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a consultant."
+    },
+    {
+      "name": "B-Corp certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to business certification."
+    },
+    {
+      "name": "version six",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "referring to the current version of B-Corp standards."
+    },
+    {
+      "name": "version seven",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "referring to the upcoming version of B-Corp standards."
+    },
+    {
+      "name": "B Corp community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about assessment process"
+    },
+    {
+      "name": "CEO",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "mention of roles in companies"
+    },
+    {
+      "name": "co-founder",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "mention of roles in companies"
+    },
+    {
+      "name": "carbon footprint",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about assessment process"
+    },
+    {
+      "name": "supply chain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about assessment process"
+    },
+    {
+      "name": "professional services",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "mention of industry"
+    },
+    {
+      "name": "CPG products",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about consumer packaged goods"
+    },
+    {
+      "name": "ROI",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of business terminology"
+    },
+    {
+      "name": "MBA",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing education and jargon"
+    },
+    {
+      "name": "ROI",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing business metrics"
+    },
+    {
+      "name": "B certified",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing business certifications"
+    },
+    {
+      "name": "CPG",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussing consumer packaged goods"
+    },
+    {
+      "name": "1% for the planet certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing environmental certifications"
+    },
+    {
+      "name": "sustainability page",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussing company practices"
+    },
+    {
+      "name": "shein",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing a specific company"
+    },
+    {
+      "name": "chocolate",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussing product certifications"
+    },
+    {
+      "name": "XYZ companies",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussing general companies"
+    },
+    {
+      "name": "B-Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing the value of B-Corps"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo"
+    },
+    {
+      "name": "XYZ brand",
+      "type": "ORG",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "mentioned as a comparison to Dr. Bronner's"
+    },
+    {
+      "name": "Allbirds",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo"
+    },
+    {
+      "name": "Nike",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand compared to Allbirds"
+    },
+    {
+      "name": "Tom's Shoes",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a brand with a B-Corp logo"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo"
+    },
+    {
+      "name": "Olukai",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a brand with a B-Corp logo"
+    },
+    {
+      "name": "employees",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussing hiring practices in a B-Corp"
+    },
+    {
+      "name": "business",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the benefits of being a B-Corp"
+    },
+    {
+      "name": "business school",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "common denominators, it's everything we teach in a business school."
+    },
+    {
+      "name": "consumer demand",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "there's a chapter on demand about the power of consumer demand."
+    },
+    {
+      "name": "environmental stewardship",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "shared values of environmental stewardship and social responsibility."
+    },
+    {
+      "name": "social responsibility",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "shared values of environmental stewardship and social responsibility."
+    },
+    {
+      "name": "Tampa Bay Buccaneers",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "quote my old quarterback from my Tampa Bay Buccaneers."
+    },
+    {
+      "name": "Thomas Piketty",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I got plenty of Thomas Piketty on my bookshelf."
+    },
+    {
+      "name": "B Corp",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I'm going to run my company's B Corp."
+    },
+    {
+      "name": "LGBTQ",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hate on DEI and hate on LGBTQ."
+    },
+    {
+      "name": "DEI",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hate on DEI and hate on LGBTQ."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "don't believe in climate change."
+    },
+    {
+      "name": "B Corp",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I'm going to run my company's B Corp."
+    },
+    {
+      "name": "DEI",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you continue to hate on DEI"
+    },
+    {
+      "name": "LGBTQ",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "you continue to hate on LGBTQ"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "don't believe in climate change"
+    },
+    {
+      "name": "Mike Tyson",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "it's, it's Mike Tyson punch out"
+    },
+    {
+      "name": "entrepreneurialism",
+      "type": "CONCEPT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "I inherited the, what I, I think, might be a genetic disease called entrepreneurialism"
+    },
+    {
+      "name": "habitat for humanity",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "he was involved in habitat for humanity for a number of years"
+    },
+    {
+      "name": "Jimmy Carter",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the leadership of, of Jimmy Carter"
+    },
+    {
+      "name": "Milton Friedman",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "was Milton Friedman right?"
+    },
+    {
+      "name": "ESG",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "this isn't, this isn't, you know, ESG"
+    },
+    {
+      "name": "Ted talk",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "the point of my, my Ted talk"
+    },
+    {
+      "name": "B Corp",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about certification and business advantages"
+    },
+    {
+      "name": "Happy Monday",
+      "type": "BOOK",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to designing careers"
+    },
+    {
+      "name": "Tom Chi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "referenced in relation to portfolio management"
+    },
+    {
+      "name": "One Venture",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "company managing a portfolio"
+    },
+    {
+      "name": "conscious capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed as a movement and philosophy"
+    },
+    {
+      "name": "Whole Foods",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization associated with conscious capitalism"
+    },
+    {
+      "name": "Lanna",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization involved in conscious capitalism"
+    },
+    {
+      "name": "John Mackie",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Whole Foods founder"
+    },
+    {
+      "name": "Whole Foods",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization that started conscious capitalism"
+    },
+    {
+      "name": "conscious capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "business philosophy discussed in the podcast"
+    },
+    {
+      "name": "Lanna",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization involved with conscious capitalism"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "issue discussed in the podcast"
+    },
+    {
+      "name": "LGBT",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "social issue mentioned in relation to activism"
+    },
+    {
+      "name": "Allbirds",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "company mentioned for sustainable practices"
+    },
+    {
+      "name": "Moonshot Shoes",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "company mentioned for sustainable practices"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing the need to reverse climate change"
+    },
+    {
+      "name": "PPC",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "partnering with PPC"
+    },
+    {
+      "name": "flex seal",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "reference to a product in an analogy"
+    },
+    {
+      "name": "southern charm",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "describing a personal trait"
+    },
+    {
+      "name": "Michigan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "place of birth"
+    },
+    {
+      "name": "Miami",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "place of upbringing"
+    },
+    {
+      "name": "southeast",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "geographic region of operation"
+    },
+    {
+      "name": "B Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "there's only 7,000 B corpse in the world"
+    },
+    {
+      "name": "North Carolina",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "our CEO's in the outer banks of North Carolina"
+    },
+    {
+      "name": "Raleigh",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you should come to Raleigh"
+    },
+    {
+      "name": "Georgia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "B local Georgia"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "build Mount West in Denver"
+    },
+    {
+      "name": "Red Rocks",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sometimes you need to go to Red Rocks"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "then COVID hits"
+    },
+    {
+      "name": "Southeast",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "build Southeast"
+    },
+    {
+      "name": "B Corps",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "there would be perfect trial"
+    },
+    {
+      "name": "B local",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "B local Georgia"
+    },
+    {
+      "name": "Carolina Miranda",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "consultant"
+    },
+    {
+      "name": "B-Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community meeting"
+    },
+    {
+      "name": "New Orleans",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "conference"
+    },
+    {
+      "name": "Atlanta",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "conference"
+    },
+    {
+      "name": "September",
+      "type": "DATE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "conference"
+    },
+    {
+      "name": "conference",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community meeting"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why on Earth Community podcast"
+    },
+    {
+      "name": "Nathan Stuck",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of Profitable Purpose Consulting"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization founded by Nathan Stuck"
+    },
+    {
+      "name": "B local Georgia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to Nathan Stuck"
+    },
+    {
+      "name": "B impact assessment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "framework for B certification"
+    },
+    {
+      "name": "Why on Earth Community podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast hosted by Aaron William Perry"
+    },
+    {
+      "name": "Georgia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Nathan Stuck"
+    },
+    {
+      "name": "B local Georgia dot com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a website"
+    },
+    {
+      "name": "B impact assessment dot net",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a website"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast participant"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a sponsor"
+    },
+    {
+      "name": "Purium Organic Superfoods",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a sponsor"
+    },
+    {
+      "name": "David Sandeval",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Founder of Purium"
+    },
+    {
+      "name": "Earth hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to sustainability products"
+    },
+    {
+      "name": "Earth coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to sustainability products"
+    },
+    {
+      "name": "Soil works",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in relation to biodynamic soil amendment"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a supporter"
+    },
+    {
+      "name": "TEDx Folsom",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to Nathan's TED talk"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in relation to Nathan's heritage"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Miami",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Atlanta",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Cuba",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Dominican Republic",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "South Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Denmark",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing community involvement and personal growth"
+    },
+    {
+      "name": "Athens",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning the need for entrepreneurial organization"
+    },
+    {
+      "name": "B-Core",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioning volunteer hours tracking"
+    },
+    {
+      "name": "chamber of commerce",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussing economic development in Athens"
+    },
+    {
+      "name": "Jim Rohn",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Quote about working harder on oneself"
+    },
+    {
+      "name": "designing your dream career",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Book mentioned in the podcast"
+    },
+    {
+      "name": "MBA",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mention of obtaining an MBA"
+    },
+    {
+      "name": "B-Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Certification mentioned in the podcast"
+    },
+    {
+      "name": "enterprise rent car",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "working at enterprise rent car"
+    },
+    {
+      "name": "medium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "article published on medium"
+    },
+    {
+      "name": "social impact burnout",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussing social impact burnout"
+    },
+    {
+      "name": "mental health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "awareness of the mental health issue"
+    },
+    {
+      "name": "CEO",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "any CEO"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.7,
+      "context": "mentioning Tom in context of mental health and social impact burnout"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast interview"
+    },
+    {
+      "name": "Y on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website"
+    },
+    {
+      "name": "Accelerator cohort certifications",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website offerings"
+    },
+    {
+      "name": "Twana",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "business partner"
+    },
+    {
+      "name": "Birmingham",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of accelerator"
+    },
+    {
+      "name": "foundation",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "context of funding"
+    },
+    {
+      "name": "Twana",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "collaborator collaborative partner"
+    },
+    {
+      "name": "Atlanta",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of business activities"
+    },
+    {
+      "name": "SBA",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "grant organization"
+    },
+    {
+      "name": "B Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "business certification"
+    },
+    {
+      "name": "BIPOC",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "diversity term"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion participant"
+    },
+    {
+      "name": "BIPOC",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the term BIPOC, Black Indigenous people of color"
+    },
+    {
+      "name": "Nathan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "visiting with you, man"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosted by Aaron William Perry, author, thought leader, and executive consultant"
+    },
+    {
+      "name": "Y on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "visit YOnEarth.org-support"
+    },
+    {
+      "name": "Blue Yeti",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "blue Yeti drop"
+    },
+    {
+      "name": "YOnEarth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "using the code YOnEarth, all one word with a Y"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nathan Stuck",
+      "relationship": "works_at",
+      "target": "Profitable Purpose Consulting",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder of Profitable Purpose Consulting",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "advocates_for",
+      "target": "B Corp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "involved in the B Corp community",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "founded",
+      "target": "B Local Georgia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "founded and chairs B Local Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "serves_on",
+      "target": "B academics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "serves on the board of B academics",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "teaches",
+      "target": "University of Georgia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "teaches an MBA course on B Corps",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "authored",
+      "target": "Happy Monday, Designing Your Career with Purpose",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "authored the book released in 2022",
+      "episode_number": 141
+    },
+    {
+      "source": "Jenna",
+      "relationship": "works_at",
+      "target": "B-Corp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Jenna's expertise in B-Corp certifications",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "advocates_for",
+      "target": "B-Corp certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nathan discussing the importance of B-Corp certification",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "provides",
+      "target": "B-Impact Assessment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Nathan's consulting services involve B-Impact Assessment",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "located_in",
+      "target": "whyonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "website mentioned for B-Corp services",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "leads",
+      "target": "B-Corp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Nathan's role in consulting for B-Corp",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "works_at",
+      "target": "B-Corp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Nathan is mentioned in the context of consulting for B-Corp certification.",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp certification",
+      "relationship": "advocates_for",
+      "target": "B-Corp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "B-Corp certification is discussed as a guiding tool for businesses.",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "has_version",
+      "target": "version six",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "B-Corp is currently in version six of its standards.",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "has_version",
+      "target": "version seven",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "B-Corp is expected to release version seven next year.",
+      "episode_number": 141
+    },
+    {
+      "source": "CEO",
+      "relationship": "works_at",
+      "target": "B Corp community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mention of roles in companies",
+      "episode_number": 141
+    },
+    {
+      "source": "co-founder",
+      "relationship": "works_at",
+      "target": "B Corp community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mention of roles in companies",
+      "episode_number": 141
+    },
+    {
+      "source": "carbon footprint",
+      "relationship": "part_of",
+      "target": "supply chain",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about assessment process",
+      "episode_number": 141
+    },
+    {
+      "source": "professional services",
+      "relationship": "contains",
+      "target": "worker section",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "mention of industry",
+      "episode_number": 141
+    },
+    {
+      "source": "CPG products",
+      "relationship": "related_to",
+      "target": "consumer packaged goods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about consumer packaged goods",
+      "episode_number": 141
+    },
+    {
+      "source": "ROI",
+      "relationship": "is_a",
+      "target": "return on investment",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mention of business terminology",
+      "episode_number": 141
+    },
+    {
+      "source": "shein",
+      "relationship": "has",
+      "target": "sustainability page",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing company practices",
+      "episode_number": 141
+    },
+    {
+      "source": "XYZ companies",
+      "relationship": "committed_to",
+      "target": "community service",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.6,
+      "context": "discussing corporate social responsibility",
+      "episode_number": 141
+    },
+    {
+      "source": "B certified",
+      "relationship": "advocates_for",
+      "target": "CONCEPT",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing business certifications",
+      "episode_number": 141
+    },
+    {
+      "source": "MBA",
+      "relationship": "involves",
+      "target": "jargon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing education",
+      "episode_number": 141
+    },
+    {
+      "source": "ROI",
+      "relationship": "is",
+      "target": "CONCEPT",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing business metrics",
+      "episode_number": 141
+    },
+    {
+      "source": "1% for the planet certification",
+      "relationship": "is",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing environmental certifications",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "advocates_for",
+      "target": "business",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussing the value of B-Corps in business practices",
+      "episode_number": 141
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "made_by",
+      "target": "B-Corp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo",
+      "episode_number": 141
+    },
+    {
+      "source": "Allbirds",
+      "relationship": "made_by",
+      "target": "B-Corp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo",
+      "episode_number": 141
+    },
+    {
+      "source": "Tom's Shoes",
+      "relationship": "made_by",
+      "target": "B-Corp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned as a brand with a B-Corp logo",
+      "episode_number": 141
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "made_by",
+      "target": "B-Corp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as a brand with a B-Corp logo",
+      "episode_number": 141
+    },
+    {
+      "source": "Olukai",
+      "relationship": "made_by",
+      "target": "B-Corp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioned as a brand with a B-Corp logo",
+      "episode_number": 141
+    },
+    {
+      "source": "employees",
+      "relationship": "work_at",
+      "target": "B-Corp",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing hiring practices in a B-Corp",
+      "episode_number": 141
+    },
+    {
+      "source": "business school",
+      "relationship": "teaches",
+      "target": "common denominators",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "it's everything we teach in a business school.",
+      "episode_number": 141
+    },
+    {
+      "source": "consumer demand",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the power of consumer demand.",
+      "episode_number": 141
+    },
+    {
+      "source": "Tampa Bay Buccaneers",
+      "relationship": "associated_with",
+      "target": "quarterback",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "quote my old quarterback from my Tampa Bay Buccaneers.",
+      "episode_number": 141
+    },
+    {
+      "source": "Thomas Piketty",
+      "relationship": "authored",
+      "target": "bookshelf",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "I got plenty of Thomas Piketty on my bookshelf.",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "is_a",
+      "target": "company",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "I'm going to run my company's B Corp.",
+      "episode_number": 141
+    },
+    {
+      "source": "LGBTQ",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "hate on DEI and hate on LGBTQ.",
+      "episode_number": 141
+    },
+    {
+      "source": "DEI",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "hate on DEI and hate on LGBTQ.",
+      "episode_number": 141
+    },
+    {
+      "source": "climate change",
+      "relationship": "is_a",
+      "target": "concept",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "don't believe in climate change.",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "works_at",
+      "target": "company",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "I'm going to run my company's B Corp.",
+      "episode_number": 141
+    },
+    {
+      "source": "Jimmy Carter",
+      "relationship": "works_at",
+      "target": "habitat for humanity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the leadership of, of Jimmy Carter",
+      "episode_number": 141
+    },
+    {
+      "source": "habitat for humanity",
+      "relationship": "part_of",
+      "target": "competitive capitalist system",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.6,
+      "context": "it's an interesting thing to consider for those of us participating in a competitive capitalist system",
+      "episode_number": 141
+    },
+    {
+      "source": "Milton Friedman",
+      "relationship": "advocates_for",
+      "target": "capitalism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "was Milton Friedman right?",
+      "episode_number": 141
+    },
+    {
+      "source": "ESG",
+      "relationship": "related_to",
+      "target": "business",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "this isn't, this isn't, you know, ESG",
+      "episode_number": 141
+    },
+    {
+      "source": "Tom Chi",
+      "relationship": "works_at",
+      "target": "One Venture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "managing a $450 million portfolio",
+      "episode_number": 141
+    },
+    {
+      "source": "Whole Foods",
+      "relationship": "founded",
+      "target": "conscious capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "organization that started the movement",
+      "episode_number": 141
+    },
+    {
+      "source": "Lanna",
+      "relationship": "advocates_for",
+      "target": "conscious capitalism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "organization involved in the movement",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "advocates_for",
+      "target": "conscious capitalism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussion about business advantages and certification",
+      "episode_number": 141
+    },
+    {
+      "source": "John Mackie",
+      "relationship": "founded",
+      "target": "Whole Foods",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about conscious capitalism and its origins",
+      "episode_number": 141
+    },
+    {
+      "source": "Whole Foods",
+      "relationship": "advocates_for",
+      "target": "conscious capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Whole Foods' role in promoting the concept",
+      "episode_number": 141
+    },
+    {
+      "source": "Lanna",
+      "relationship": "works_at",
+      "target": "conscious capitalism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "organization's involvement in the movement",
+      "episode_number": 141
+    },
+    {
+      "source": "climate change",
+      "relationship": "is_discussed_in",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "topic of climate change mentioned",
+      "episode_number": 141
+    },
+    {
+      "source": "Allbirds",
+      "relationship": "made_by",
+      "target": "sustainable practices",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "company known for sustainable products",
+      "episode_number": 141
+    },
+    {
+      "source": "Moonshot Shoes",
+      "relationship": "made_by",
+      "target": "sustainable practices",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "company known for sustainable products",
+      "episode_number": 141
+    },
+    {
+      "source": "LGBT",
+      "relationship": "advocates_for",
+      "target": "activism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "social issue mentioned in relation to activism",
+      "episode_number": 141
+    },
+    {
+      "source": "PPC",
+      "relationship": "partner_with",
+      "target": "consultants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "partnering with PPC for consulting",
+      "episode_number": 141
+    },
+    {
+      "source": "climate change",
+      "relationship": "advocates_for",
+      "target": "collective action",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing actions to reverse climate change",
+      "episode_number": 141
+    },
+    {
+      "source": "Michigan",
+      "relationship": "located_in",
+      "target": "USA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "place of birth",
+      "episode_number": 141
+    },
+    {
+      "source": "Miami",
+      "relationship": "located_in",
+      "target": "USA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "place of upbringing",
+      "episode_number": 141
+    },
+    {
+      "source": "southeast",
+      "relationship": "part_of",
+      "target": "USA",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "geographic region of operation",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "part_of",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "there's only 7,000 B corpse in the world",
+      "episode_number": 141
+    },
+    {
+      "source": "North Carolina",
+      "relationship": "located_in",
+      "target": "Outer Banks",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "our CEO's in the outer banks of North Carolina",
+      "episode_number": 141
+    },
+    {
+      "source": "Raleigh",
+      "relationship": "located_in",
+      "target": "North Carolina",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "you should come to Raleigh",
+      "episode_number": 141
+    },
+    {
+      "source": "Georgia",
+      "relationship": "contains",
+      "target": "B local",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "B local Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "build Mount West in Denver",
+      "episode_number": 141
+    },
+    {
+      "source": "COVID",
+      "relationship": "affects",
+      "target": "Southeast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "then COVID hits",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corps",
+      "relationship": "part_of",
+      "target": "Southeast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "there would be perfect trial",
+      "episode_number": 141
+    },
+    {
+      "source": "B local",
+      "relationship": "advocates_for",
+      "target": "B Corps",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "B local Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Carolina Miranda",
+      "relationship": "advocates_for",
+      "target": "B-Corp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "consultant",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "community meeting",
+      "episode_number": 141
+    },
+    {
+      "source": "New Orleans",
+      "relationship": "located_in",
+      "target": "Louisiana",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "conference",
+      "episode_number": 141
+    },
+    {
+      "source": "Atlanta",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "conference",
+      "episode_number": 141
+    },
+    {
+      "source": "September",
+      "relationship": "part_of",
+      "target": "conference",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "community meeting",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "founded",
+      "target": "Profitable Purpose Consulting",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nathan Stuck is the founder of Profitable Purpose Consulting",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan Stuck",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Nathan Stuck is located in Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Aaron William Perry is the host of the podcast",
+      "episode_number": 141
+    },
+    {
+      "source": "Profitable Purpose Consulting",
+      "relationship": "advocates_for",
+      "target": "B impact assessment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Profitable Purpose Consulting supports the B impact assessment framework",
+      "episode_number": 141
+    },
+    {
+      "source": "B local Georgia",
+      "relationship": "part_of",
+      "target": "Georgia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "B local Georgia is an organization based in Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "advocates_for",
+      "target": "B certification framework",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Discussing the B certification framework",
+      "episode_number": 141
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "sponsor_of",
+      "target": "podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a sponsor of the podcast series",
+      "episode_number": 141
+    },
+    {
+      "source": "Purium Organic Superfoods",
+      "relationship": "sponsor_of",
+      "target": "podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a sponsor of the podcast series",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "founded",
+      "target": "Purium Organic Superfoods",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Mentioned in relation to David Sandeval",
+      "episode_number": 141
+    },
+    {
+      "source": "B local Georgia dot com",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Website mentioned in relation to Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "B impact assessment dot net",
+      "relationship": "located_in",
+      "target": "Georgia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Website mentioned in relation to Georgia",
+      "episode_number": 141
+    },
+    {
+      "source": "Colorado",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Geographic relationship",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "has_heritage",
+      "target": "Germany",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussing Nathan's heritage",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "located_in",
+      "target": "Miami",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "located_in",
+      "target": "Atlanta",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Miami",
+      "relationship": "part_of",
+      "target": "South America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Miami",
+      "relationship": "part_of",
+      "target": "Cuba",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Miami",
+      "relationship": "part_of",
+      "target": "Dominican Republic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "advocates_for",
+      "target": "German culture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "interacts_with",
+      "target": "various cultures",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "located_in",
+      "target": "Germany",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "interacts_with",
+      "target": "South Africa",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "interacts_with",
+      "target": "Denmark",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast transcript",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "advocates_for",
+      "target": "community involvement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussing personal involvement in community activities",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Core",
+      "relationship": "located_in",
+      "target": "Athens",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "mentioning volunteer hours in Athens",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "works_at",
+      "target": "B-Core",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing metrics and volunteer hours",
+      "episode_number": 141
+    },
+    {
+      "source": "Athens",
+      "relationship": "contains",
+      "target": "chamber of commerce",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "discussing economic development needs",
+      "episode_number": 141
+    },
+    {
+      "source": "Jim Rohn",
+      "relationship": "advocates_for",
+      "target": "working harder on oneself",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Quote about working harder on oneself",
+      "episode_number": 141
+    },
+    {
+      "source": "designing your dream career",
+      "relationship": "discussed_in",
+      "target": "podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Book mentioned in the podcast",
+      "episode_number": 141
+    },
+    {
+      "source": "MBA",
+      "relationship": "associated_with",
+      "target": "putting good in the world",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "Mention of obtaining an MBA and its impact",
+      "episode_number": 141
+    },
+    {
+      "source": "B-Corp",
+      "relationship": "certification_type",
+      "target": "entrepreneur",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "Certification mentioned in the podcast",
+      "episode_number": 141
+    },
+    {
+      "source": "CEO",
+      "relationship": "advocates_for",
+      "target": "mental health",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "any CEO advocating for mental health awareness",
+      "episode_number": 141
+    },
+    {
+      "source": "medium",
+      "relationship": "published_article_on",
+      "target": "social impact burnout",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "article published on medium about social impact burnout",
+      "episode_number": 141
+    },
+    {
+      "source": "Tom",
+      "relationship": "advocates_for",
+      "target": "social impact burnout",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.8,
+      "context": "Tom discussing social impact burnout",
+      "episode_number": 141
+    },
+    {
+      "source": "enterprise rent car",
+      "relationship": "located_in",
+      "target": "business",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "working at enterprise rent car in the context of business",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "advocates_for",
+      "target": "mental health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about mental health and work-life balance",
+      "episode_number": 141
+    },
+    {
+      "source": "Y on earth community",
+      "relationship": "located_in",
+      "target": "whyoners.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "website for community engagement",
+      "episode_number": 141
+    },
+    {
+      "source": "foundation",
+      "relationship": "funds",
+      "target": "Accelerator cohort certifications",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "discussion about funding for cohorts",
+      "episode_number": 141
+    },
+    {
+      "source": "Twana",
+      "relationship": "collaborates_with",
+      "target": "Nathan",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "business collaboration",
+      "episode_number": 141
+    },
+    {
+      "source": "Accelerator cohort certifications",
+      "relationship": "part_of",
+      "target": "Birmingham",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "location of accelerator program",
+      "episode_number": 141
+    },
+    {
+      "source": "Twana",
+      "relationship": "works_with",
+      "target": "SBA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "collaborative partner in business activities",
+      "episode_number": 141
+    },
+    {
+      "source": "SBA",
+      "relationship": "provides_grant_to",
+      "target": "small business",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "grant funding for business support",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "advocates_for",
+      "target": "BIPOC",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "promoting diversity in business",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "collaborates_with",
+      "target": "Twana",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about collaboration",
+      "episode_number": 141
+    },
+    {
+      "source": "B Corp",
+      "relationship": "part_of",
+      "target": "business certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "business certification process",
+      "episode_number": 141
+    },
+    {
+      "source": "Nathan",
+      "relationship": "collaborates_with",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "excited about our connection and growing collaboration",
+      "episode_number": 141
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The Y on Earth Community Stewardship and Sustainability Podcast series is hosted by Aaron William Perry",
+      "episode_number": 141
+    },
+    {
+      "source": "Y on Earth Community",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 141
+    },
+    {
+      "source": "Blue Yeti",
+      "relationship": "made_by",
+      "target": "Blue",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "blue Yeti, I don't know. Somebody told me this is like the premier podcast scene",
+      "episode_number": 141
+    },
+    {
+      "source": "YOnEarth",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "using the code YOnEarth, all one word with a Y",
+      "episode_number": 141
+    }
+  ]
+}

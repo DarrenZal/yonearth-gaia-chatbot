@@ -1,0 +1,702 @@
+{
+  "episode": 15,
+  "timestamp": "2025-10-09T10:49:06.651260",
+  "entity_count": 46,
+  "relationship_count": 37,
+  "entities": [
+    {
+      "name": "Dr. Geeta Levinstine Carol",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "sustainability coordinator for the Boulder Valley School District"
+    },
+    {
+      "name": "Boulder Valley School District",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sustainability coordinator for the Boulder Valley School District in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "sustainability coordinator for the Boulder Valley School District in Colorado"
+    },
+    {
+      "name": "University of Colorado Boulder",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "received a PhD in environmental studies from the University of Colorado Boulder"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "advancing district level sustainability planning and initiatives"
+    },
+    {
+      "name": "environmental studies",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "received a PhD in environmental studies from the University of Colorado Boulder"
+    },
+    {
+      "name": "University of Colorado, Boulder",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...brought in community members, we brought in staff, we brought in maintenance, teachers, students, University of Colorado, Boulder..."
+    },
+    {
+      "name": "university",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "collaborative relationship with the university"
+    },
+    {
+      "name": "K12",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "planning for sustainability in education"
+    },
+    {
+      "name": "community partners",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working with community partners who integrate gardens into curriculum"
+    },
+    {
+      "name": "students",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "students in the district getting out and hands in soil"
+    },
+    {
+      "name": "gardens",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "we have gardens in about two thirds of our schools"
+    },
+    {
+      "name": "food service program",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "food service program is amazing and has done a lot in support of eating local food"
+    },
+    {
+      "name": "Sembrero Marsh",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "opportunity to go to Sembrero Marsh"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "where the water is coming from from this community"
+    },
+    {
+      "name": "schools",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "improvements in our schools"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "farmers have come into the lunch room"
+    },
+    {
+      "name": "food service program",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "food service program is amazing"
+    },
+    {
+      "name": "garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "use some of the food in the garden"
+    },
+    {
+      "name": "GreenApple",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization helping to connect projects and leadership in communities"
+    },
+    {
+      "name": "Gita",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sustainability coordinator for a district with 56 schools"
+    },
+    {
+      "name": "GreenSchools network",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "network providing resources for schools"
+    },
+    {
+      "name": "GreenApple.org",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "website for GreenApple organization"
+    },
+    {
+      "name": "schools",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "educational institutions involved in energy savings program"
+    },
+    {
+      "name": "communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "groups of people connected through projects"
+    },
+    {
+      "name": "students",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "individuals participating in educational programs"
+    },
+    {
+      "name": "volunteers",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "people assisting in programs"
+    },
+    {
+      "name": "countries",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "nations where GreenApple is active"
+    },
+    {
+      "name": "Gita",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "sustainability coordinator for a district with 56 schools"
+    },
+    {
+      "name": "56 schools",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "district with 56 schools"
+    },
+    {
+      "name": "Heatherwood Elementary",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "winner last year was Heatherwood Elementary"
+    },
+    {
+      "name": "green report cards",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "we're launching green report cards"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "benefit of the community, the environment in the broader world"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sustainability woven into the fabric of your overall"
+    },
+    {
+      "name": "Dr. Geeta Carroll",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "sustainability coordinator for the Boulder Valley School District"
+    },
+    {
+      "name": "Boulder Valley School District",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "sustainability coordinator for the Boulder Valley School District in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.98,
+      "context": "Boulder Valley School District in Colorado"
+    },
+    {
+      "name": "Center for Green Schools",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "scholarships that can help support sustainability professionals"
+    },
+    {
+      "name": "Minneapolis",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "national green schools conference is taking place in Minneapolis"
+    },
+    {
+      "name": "national green schools conference",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "an opportunity to bring together thought leaders"
+    },
+    {
+      "name": "Department of Education",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "recognition program for schools and districts doing this work"
+    },
+    {
+      "name": "BVSD.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "learn more about the work you're doing at the Boulder Valley School District"
+    },
+    {
+      "name": "Gita",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "Boulder Valley School District",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "BVSD",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast transcript segment"
+    },
+    {
+      "name": "sustainability plans",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast transcript segment"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Dr. Geeta Levinstine Carol",
+      "relationship": "works_at",
+      "target": "Boulder Valley School District",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sustainability coordinator for the Boulder Valley School District",
+      "episode_number": 15
+    },
+    {
+      "source": "Boulder Valley School District",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "sustainability coordinator for the Boulder Valley School District in Colorado",
+      "episode_number": 15
+    },
+    {
+      "source": "Dr. Geeta Levinstine Carol",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "pioneer in advancing district level sustainability planning and initiatives",
+      "episode_number": 15
+    },
+    {
+      "source": "Dr. Geeta Levinstine Carol",
+      "relationship": "received_degree_in",
+      "target": "environmental studies",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "received a PhD in environmental studies from the University of Colorado Boulder",
+      "episode_number": 15
+    },
+    {
+      "source": "University of Colorado Boulder",
+      "relationship": "produces",
+      "target": "environmental studies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "received a PhD in environmental studies from the University of Colorado Boulder",
+      "episode_number": 15
+    },
+    {
+      "source": "University of Colorado, Boulder",
+      "relationship": "collaborates_with",
+      "target": "schools",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...brought in community members, we brought in staff, we brought in maintenance, teachers, students, University of Colorado, Boulder...",
+      "episode_number": 15
+    },
+    {
+      "source": "schools",
+      "relationship": "part_of",
+      "target": "sustainability plan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...So our sustainability plan, we decided the most important areas for us to focus on were our buildings...",
+      "episode_number": 15
+    },
+    {
+      "source": "university",
+      "relationship": "partnered_with",
+      "target": "school districts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "collaborative relationship with the university",
+      "episode_number": 15
+    },
+    {
+      "source": "students",
+      "relationship": "engaged_in",
+      "target": "gardens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "students in the district getting out and hands in soil",
+      "episode_number": 15
+    },
+    {
+      "source": "gardens",
+      "relationship": "integrated_into",
+      "target": "curriculum",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "working with community partners who integrate garden into the curriculum",
+      "episode_number": 15
+    },
+    {
+      "source": "food service program",
+      "relationship": "supports",
+      "target": "eating local food",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "food service program is amazing and has done a lot in support of eating local food",
+      "episode_number": 15
+    },
+    {
+      "source": "food service program",
+      "relationship": "supports",
+      "target": "eating local food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "food service program is amazing and has done a lot in support of eating local",
+      "episode_number": 15
+    },
+    {
+      "source": "Sembrero Marsh",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "opportunity to go to Sembrero Marsh, which is nearby and located",
+      "episode_number": 15
+    },
+    {
+      "source": "farmers",
+      "relationship": "interact_with",
+      "target": "kids",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "kids have gotten to meet the farmers who are actually growing the food",
+      "episode_number": 15
+    },
+    {
+      "source": "schools",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "create some outdoor learning spaces in some of our schools",
+      "episode_number": 15
+    },
+    {
+      "source": "garden",
+      "relationship": "provides",
+      "target": "food",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "use some of the food in the garden in our lunch rooms",
+      "episode_number": 15
+    },
+    {
+      "source": "Gita",
+      "relationship": "works_at",
+      "target": "GreenApple",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "sustainability coordinator for a district with 56 schools",
+      "episode_number": 15
+    },
+    {
+      "source": "GreenApple",
+      "relationship": "located_in",
+      "target": "communities",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization helping to connect projects and leadership in communities",
+      "episode_number": 15
+    },
+    {
+      "source": "GreenApple",
+      "relationship": "provides",
+      "target": "students",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization recognized for its impact on students",
+      "episode_number": 15
+    },
+    {
+      "source": "GreenSchools network",
+      "relationship": "supports",
+      "target": "schools",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "network providing resources for schools",
+      "episode_number": 15
+    },
+    {
+      "source": "GreenApple",
+      "relationship": "affects",
+      "target": "volunteers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organization impacting volunteers",
+      "episode_number": 15
+    },
+    {
+      "source": "GreenApple",
+      "relationship": "active_in",
+      "target": "countries",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "organization active in multiple countries",
+      "episode_number": 15
+    },
+    {
+      "source": "Gita",
+      "relationship": "works_at",
+      "target": "56 schools",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "sustainability coordinator for a district with 56 schools",
+      "episode_number": 15
+    },
+    {
+      "source": "Gita",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "sustainability woven into the fabric of your overall",
+      "episode_number": 15
+    },
+    {
+      "source": "56 schools",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "district with 56 schools",
+      "episode_number": 15
+    },
+    {
+      "source": "Heatherwood Elementary",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "winner last year was Heatherwood Elementary",
+      "episode_number": 15
+    },
+    {
+      "source": "green report cards",
+      "relationship": "recognizes",
+      "target": "56 schools",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we're launching green report cards",
+      "episode_number": 15
+    },
+    {
+      "source": "Dr. Geeta Carroll",
+      "relationship": "works_at",
+      "target": "Boulder Valley School District",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "sustainability coordinator for the Boulder Valley School District",
+      "episode_number": 15
+    },
+    {
+      "source": "Boulder Valley School District",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.99,
+      "target_confidence": 0.99,
+      "context": "sustainability coordinator for the Boulder Valley School District in Colorado",
+      "episode_number": 15
+    },
+    {
+      "source": "Department of Education",
+      "relationship": "has",
+      "target": "recognition program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "recognition program for schools and districts doing this work",
+      "episode_number": 15
+    },
+    {
+      "source": "Center for Green Schools",
+      "relationship": "provides",
+      "target": "scholarships",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "scholarships that can help support sustainability professionals",
+      "episode_number": 15
+    },
+    {
+      "source": "national green schools conference",
+      "relationship": "takes_place_in",
+      "target": "Minneapolis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "national green schools conference is taking place in Minneapolis",
+      "episode_number": 15
+    },
+    {
+      "source": "Boulder Valley School District",
+      "relationship": "has_website",
+      "target": "BVSD.org",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "learn more about the work you're doing at the Boulder Valley School District on the web at BVSD.org",
+      "episode_number": 15
+    },
+    {
+      "source": "Gita",
+      "relationship": "advocates_for",
+      "target": "sustainability plans",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast transcript segment",
+      "episode_number": 15
+    },
+    {
+      "source": "Boulder Valley School District",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "podcast transcript segment",
+      "episode_number": 15
+    },
+    {
+      "source": "Boulder Valley School District",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 15
+    },
+    {
+      "source": "BVSD",
+      "relationship": "located_in",
+      "target": "Boulder Valley School District",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "podcast transcript segment",
+      "episode_number": 15
+    }
+  ]
+}

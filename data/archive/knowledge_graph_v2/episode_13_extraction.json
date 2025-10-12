@@ -1,0 +1,928 @@
+{
+  "episode": 13,
+  "timestamp": "2025-10-09T10:38:01.914587",
+  "entity_count": 64,
+  "relationship_count": 47,
+  "entities": [
+    {
+      "name": "Sarah Davidson Tracy",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Seeds of Exchange",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization founded by Sarah Davidson Tracy"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "location mentioned in relation to Sarah"
+    },
+    {
+      "name": "Himalayas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location mentioned in relation to Sarah"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "specific area in the Himalayas mentioned by Sarah"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city mentioned in relation to the conversation"
+    },
+    {
+      "name": "Bible",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "sacred text"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "conversation"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "conversation"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about connection and support"
+    },
+    {
+      "name": "media",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussion about influences on life"
+    },
+    {
+      "name": "two kids",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "personal life"
+    },
+    {
+      "name": "God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "sacred connection"
+    },
+    {
+      "name": "home",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "discussion about personal life"
+    },
+    {
+      "name": "neighbors",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "discussion about community"
+    },
+    {
+      "name": "soul friends",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "discussion about personal relationships"
+    },
+    {
+      "name": "strangers",
+      "type": "PERSON",
+      "name_confidence": 0.6,
+      "type_confidence": 0.65,
+      "context": "discussion about community interactions"
+    },
+    {
+      "name": "places of pause",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about personal reflections and writing"
+    },
+    {
+      "name": "soul",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about personal reflections and inner feelings"
+    },
+    {
+      "name": "activism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about personal beliefs and actions"
+    },
+    {
+      "name": "technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about modern culture and its impact"
+    },
+    {
+      "name": "creation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about the divine and nature"
+    },
+    {
+      "name": "St. Francis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in the context of experiencing the divine"
+    },
+    {
+      "name": "Causan Zakis",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "author of the book St. Francis"
+    },
+    {
+      "name": "divinity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to human experience"
+    },
+    {
+      "name": "yoga",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in the context of practice and experience"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a writer and practitioner"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "working with beautiful souls in Nepal"
+    },
+    {
+      "name": "anorexia",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "addiction of anorexia"
+    },
+    {
+      "name": "community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "talking with my community"
+    },
+    {
+      "name": "pain",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "pain of wondering and worrying"
+    },
+    {
+      "name": "struggle",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "incredible struggle and hardship"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast segment discussing personal experiences and advocacy."
+    },
+    {
+      "name": "Tracy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast segment discussing personal experiences and advocacy."
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of anti-trafficking endeavors."
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in the context of anti-trafficking endeavors."
+    },
+    {
+      "name": "Asia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in the context of anti-trafficking endeavors."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in the context of women's and community empowerment projects."
+    },
+    {
+      "name": "Asama",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in the context of fundraising for college."
+    },
+    {
+      "name": "Lighthouse Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as an NGO partner running a school."
+    },
+    {
+      "name": "Seeds of Exchange",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of community projects and fundraising."
+    },
+    {
+      "name": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Podcast series title."
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing support for a college student"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing the Body caste and cultural issues"
+    },
+    {
+      "name": "Body",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the Body caste system in Nepal"
+    },
+    {
+      "name": "Kathmandu",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the school for girls and boys"
+    },
+    {
+      "name": "Ashama",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first land owning body woman in the history of Nepal"
+    },
+    {
+      "name": "Nepal",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where Ashama is the first land owning woman"
+    },
+    {
+      "name": "Kathmandu",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city where the boarding school is located"
+    },
+    {
+      "name": "boarding school",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "school started by two friends"
+    },
+    {
+      "name": "two friends",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "individuals who started the boarding school"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the group of people involved in the cultural shift"
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the value being elevated among boys and girls"
+    },
+    {
+      "name": "human rights struggles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the struggles being told in the stories"
+    },
+    {
+      "name": "healing and restoration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the themes of the stories being told"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "individual mentioned in relation to healing and community"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "individual mentioned in relation to emotional connection"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "email is Sarah at seedsofexchange.org"
+    },
+    {
+      "name": "seedsofexchange.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "email is Sarah at seedsofexchange.org"
+    },
+    {
+      "name": "Maisie",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "this is my dog Maisie"
+    },
+    {
+      "name": "encouragement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the word encouragement yes not until I I played with writing that out"
+    },
+    {
+      "name": "courage",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the word courage is in there"
+    },
+    {
+      "name": "Sarah",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion"
+    },
+    {
+      "name": "courage",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "word meaning"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Sarah Davidson Tracy",
+      "relationship": "founded",
+      "target": "Seeds of Exchange",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sarah is the founder of Seeds of Exchange",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah Davidson Tracy",
+      "relationship": "advocates_for",
+      "target": "human rights",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Sarah is described as a human rights advocate",
+      "episode_number": 13
+    },
+    {
+      "source": "Seeds of Exchange",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "Seeds of Exchange is based in Colorado",
+      "episode_number": 13
+    },
+    {
+      "source": "Himalayas",
+      "relationship": "part_of",
+      "target": "Nepal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Himalayas includes the area of Nepal",
+      "episode_number": 13
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "Denver is a city in Colorado",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah Davidson Tracy",
+      "relationship": "works_with",
+      "target": "people in Nepal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sarah works with people in Nepal",
+      "episode_number": 13
+    },
+    {
+      "source": "Aaron",
+      "relationship": "interacts_with",
+      "target": "Sarah",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "conversation",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about connection and support",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "has_children",
+      "target": "two kids",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "personal life",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "draws_inspiration_from",
+      "target": "Bible",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sacred text",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "finds_support_in",
+      "target": "God",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sacred connection",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "engages_with",
+      "target": "neighbors",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.6,
+      "context": "discussion about community",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "engages_with",
+      "target": "soul friends",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.6,
+      "context": "discussion about personal relationships",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "interacts_with",
+      "target": "strangers",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.65,
+      "target_confidence": 0.6,
+      "context": "discussion about community interactions",
+      "episode_number": 13
+    },
+    {
+      "source": "soul",
+      "relationship": "advocates_for",
+      "target": "places of pause",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about personal reflections and inner feelings",
+      "episode_number": 13
+    },
+    {
+      "source": "activism",
+      "relationship": "connected_to",
+      "target": "places of pause",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussion about personal beliefs and actions",
+      "episode_number": 13
+    },
+    {
+      "source": "technology",
+      "relationship": "affects",
+      "target": "places of pause",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussion about modern culture and its impact",
+      "episode_number": 13
+    },
+    {
+      "source": "creation",
+      "relationship": "connected_to",
+      "target": "soul",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about the divine and nature",
+      "episode_number": 13
+    },
+    {
+      "source": "Causan Zakis",
+      "relationship": "wrote",
+      "target": "St. Francis",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "author of the book St. Francis",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "divinity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to her writings and work",
+      "episode_number": 13
+    },
+    {
+      "source": "yoga",
+      "relationship": "practiced_by",
+      "target": "Sarah",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "mentioned in the context of her life and experience",
+      "episode_number": 13
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "pain",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "talking with my community about pain",
+      "episode_number": 13
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "struggle",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "talking with my community about struggle",
+      "episode_number": 13
+    },
+    {
+      "source": "individual worth",
+      "relationship": "part_of",
+      "target": "pain",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "wondering and worrying about individual worth",
+      "episode_number": 13
+    },
+    {
+      "source": "individual worth",
+      "relationship": "part_of",
+      "target": "struggle",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "wondering and worrying about individual worth",
+      "episode_number": 13
+    },
+    {
+      "source": "anorexia",
+      "relationship": "made_by",
+      "target": "pain",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "addiction of anorexia related to pain",
+      "episode_number": 13
+    },
+    {
+      "source": "anorexia",
+      "relationship": "made_by",
+      "target": "struggle",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "addiction of anorexia related to struggle",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "anti-trafficking endeavors",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Sarah discusses her commitment to anti-trafficking efforts.",
+      "episode_number": 13
+    },
+    {
+      "source": "Asama",
+      "relationship": "born_in",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Asama's background discussed in the context of her story.",
+      "episode_number": 13
+    },
+    {
+      "source": "Asama",
+      "relationship": "studies_at",
+      "target": "Lighthouse Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Asama is in school run by an NGO partner, Lighthouse Foundation.",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "partners_with",
+      "target": "Seeds of Exchange",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sarah's involvement in community projects.",
+      "episode_number": 13
+    },
+    {
+      "source": "Lighthouse Foundation",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Lighthouse Foundation operates in India.",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "supports",
+      "target": "Asama",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sarah discusses fundraising efforts for Asama's college tuition.",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "Body",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing support for the Body caste system and its issues",
+      "episode_number": 13
+    },
+    {
+      "source": "Body",
+      "relationship": "located_in",
+      "target": "Nepal",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussing the Body caste system",
+      "episode_number": 13
+    },
+    {
+      "source": "Kathmandu",
+      "relationship": "part_of",
+      "target": "Nepal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of the school for girls and boys",
+      "episode_number": 13
+    },
+    {
+      "source": "Ashama",
+      "relationship": "advocates_for",
+      "target": "education",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Ashama is involved in education initiatives",
+      "episode_number": 13
+    },
+    {
+      "source": "boarding school",
+      "relationship": "located_in",
+      "target": "Kathmandu",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "boarding school is in Kathmandu",
+      "episode_number": 13
+    },
+    {
+      "source": "boarding school",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "boarding school is part of the community effort",
+      "episode_number": 13
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "human rights struggles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "community is involved in advocating for human rights",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "helps",
+      "target": "Ashama",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Sarah is helping Ashama with her college tuition campaign",
+      "episode_number": 13
+    },
+    {
+      "source": "Aaron",
+      "relationship": "connects_with",
+      "target": "community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Aaron's story connects with the community's healing",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "works_at",
+      "target": "seedsofexchange.org",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "email is Sarah at seedsofexchange.org",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "encouragement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I believe is one of our calls as community members with each other",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "courage",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "the word courage is planted right inside of it",
+      "episode_number": 13
+    },
+    {
+      "source": "Maisie",
+      "relationship": "punctuates",
+      "target": "Sarah",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "the dog has spoken the dog speaking of punctuation",
+      "episode_number": 13
+    },
+    {
+      "source": "Sarah",
+      "relationship": "advocates_for",
+      "target": "courage",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion",
+      "episode_number": 13
+    }
+  ]
+}

@@ -1,0 +1,1414 @@
+{
+  "episode": 159,
+  "timestamp": "2025-10-09T10:57:05.173954",
+  "entity_count": 102,
+  "relationship_count": 69,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Helen Atto",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "author of the ecological farm"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location of new farm"
+    },
+    {
+      "name": "Woodley Farm",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ongoing research location in Eastern Oregon"
+    },
+    {
+      "name": "Carl Rosado",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Helen's late husband"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location of certified organic orchard"
+    },
+    {
+      "name": "Rutgers University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "institution where Helen has a master's degree"
+    },
+    {
+      "name": "University of Arkansas",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "institution where Helen worked in education and research"
+    },
+    {
+      "name": "Oregon State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "institution where Helen worked in education and research"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "publisher of Helen's book"
+    },
+    {
+      "name": "Organic Farming Research Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization where Helen served as a board member"
+    },
+    {
+      "name": "Wild Farm Alliance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization where Helen served as an advisor"
+    },
+    {
+      "name": "USDA soil health initiative",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "initiative related to soil health principles"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "...growing roots but we have living roots. That doesn't necessarily mean a growing root in Montana, when the ground is freezing..."
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "partnership with Chelsea Green Publishing"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "on my farm in Montana"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "on farm research in California"
+    },
+    {
+      "name": "Oregon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "moved to Oregon and started a farm together"
+    },
+    {
+      "name": "Helen",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "module that you've provided, Helen"
+    },
+    {
+      "name": "my husband",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "my husband and I never believed in recipes"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "his farm in California"
+    },
+    {
+      "name": "Montana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "my farm in Montana"
+    },
+    {
+      "name": "Oregon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we moved to Oregon"
+    },
+    {
+      "name": "Carl",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Carl's farm"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Chelsea Green, my wonderful editor at Chelsea Green"
+    },
+    {
+      "name": "human health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "synergy between human health, farm health, soil health, environmental health"
+    },
+    {
+      "name": "farm health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "synergy between human health, farm health, soil health, environmental health"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "synergy between human health, farm health, soil health, environmental health"
+    },
+    {
+      "name": "environmental health",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "synergy between human health, farm health, soil health, environmental health"
+    },
+    {
+      "name": "good food",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "good food growing makes good humans"
+    },
+    {
+      "name": "rhizosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the rhizosphere that I was talking about"
+    },
+    {
+      "name": "mycorrhizae",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "one that probably everybody's heard about is mycorrhizae"
+    },
+    {
+      "name": "rhizobium",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you mentioned rhizobium, of course, are the bacteria that associate with a legume root"
+    },
+    {
+      "name": "legume",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "bacteria that associate with a legume root"
+    },
+    {
+      "name": "nitrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "allow it to fix nitrogen from the atmosphere"
+    },
+    {
+      "name": "iron",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "help plants take up and utilize iron"
+    },
+    {
+      "name": "disease-causing microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "microorganisms that can actually attack the plant"
+    },
+    {
+      "name": "biochemical",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a biochemical that that plant exudes"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the carbon that it harvest from the sun"
+    },
+    {
+      "name": "proteins",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "manufacturing compounds, biochemicals, proteins"
+    },
+    {
+      "name": "microbial community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shares some of that carbon with the microbial community"
+    },
+    {
+      "name": "White Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "impact on soil ecology work"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "fundamental to terrestrial life"
+    },
+    {
+      "name": "mycelial networks",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "networks connecting plants and trees"
+    },
+    {
+      "name": "mycorrhizae",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "fungi associated with plant roots"
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "involved in nutrient cycling"
+    },
+    {
+      "name": "soil ecology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "work related to White Earth community"
+    },
+    {
+      "name": "nutrients",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "healthy amount of nutrients in plants"
+    },
+    {
+      "name": "biochemicals",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "signals exuded by plants"
+    },
+    {
+      "name": "microorganisms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "involved in soil health and nutrient uptake"
+    },
+    {
+      "name": "liquid carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "nutrient produced by plants for microorganisms"
+    },
+    {
+      "name": "mycelian plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "mycorrhizae",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "native healthy ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "poly culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "forest",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "cover crops",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about soil and ecosystems"
+    },
+    {
+      "name": "permaculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about farming practices"
+    },
+    {
+      "name": "forest gardens",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about farming practices"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Helen",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "publisher of the book"
+    },
+    {
+      "name": "YouTube",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "platform for videos"
+    },
+    {
+      "name": "veganic permaculture.com",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "website for connecting with Helen"
+    },
+    {
+      "name": "wood leaf farm.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "website for connecting with Helen"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Helen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "The Ecological Farm",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book authored by Helen"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "publisher of the book"
+    },
+    {
+      "name": "YouTube",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "platform where videos are posted"
+    },
+    {
+      "name": "Agrarian Dreams",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "YouTube channel"
+    },
+    {
+      "name": "Veganic Permaculture",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website associated with Helen"
+    },
+    {
+      "name": "Wood Leaf Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website associated with Helen"
+    },
+    {
+      "name": "Simple Gardening Wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "video course offered"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "partner organization for the video course"
+    },
+    {
+      "name": "Drylands Agrarian College Research",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "partner organization for the video course"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "partner organization for the video course"
+    },
+    {
+      "name": "Elk Run Farm",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "partner organization for the video course"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization working with B certified companies"
+    },
+    {
+      "name": "Wailing Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "company producing hemp infused products"
+    },
+    {
+      "name": "Why On Earth Community Podcast",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast hosting the conversation"
+    },
+    {
+      "name": "B Certified Companies",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "companies certified for social and environmental performance"
+    },
+    {
+      "name": "potassium",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "nutrient elements"
+    },
+    {
+      "name": "calcium",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "nutrient elements"
+    },
+    {
+      "name": "magnesium",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "nutrient elements"
+    },
+    {
+      "name": "hydrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "nutrient elements"
+    },
+    {
+      "name": "cat ion exchange capacity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "soil properties"
+    },
+    {
+      "name": "Helen's growing mix",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "growing mix developed by speaker"
+    },
+    {
+      "name": "microbial community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "soil health"
+    },
+    {
+      "name": "soil organic matter",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "soil properties"
+    },
+    {
+      "name": "Helen",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book publisher"
+    },
+    {
+      "name": "ecological farm",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "book title"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "video course provider"
+    },
+    {
+      "name": "Helen",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Conversation about gardening wisdom video course."
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of gardening wisdom."
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Website for gardening wisdom video course."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Host of the podcast series."
+    },
+    {
+      "name": "why on earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Community mentioned in the podcast."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Helen Atto",
+      "relationship": "works_at",
+      "target": "Woodley Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "ongoing research location in Eastern Oregon",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "located_in",
+      "target": "Montana",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.99,
+      "context": "location of new farm",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "advocates_for",
+      "target": "USDA soil health initiative",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "principles for managing ecological relationships",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "co-owned",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.99,
+      "context": "location of certified organic orchard",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "founded",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "publisher of Helen's book",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "worked_at",
+      "target": "Rutgers University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "institution where Helen has a master's degree",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "worked_at",
+      "target": "University of Arkansas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "institution where Helen worked in education and research",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "worked_at",
+      "target": "Oregon State University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "institution where Helen worked in education and research",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "served_as",
+      "target": "Organic Farming Research Foundation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization where Helen served as a board member",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen Atto",
+      "relationship": "served_as",
+      "target": "Wild Farm Alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "organization where Helen served as an advisor",
+      "episode_number": 159
+    },
+    {
+      "source": "Montana",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...growing roots but we have living roots. That doesn't necessarily mean a growing root in Montana, when the ground is freezing...",
+      "episode_number": 159
+    },
+    {
+      "source": "my husband",
+      "relationship": "works_at",
+      "target": "California",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "doing his own on farm research in California",
+      "episode_number": 159
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "part_of",
+      "target": "wider community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "in partnership with Chelsea Green Publishing and others",
+      "episode_number": 159
+    },
+    {
+      "source": "Montana",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "on my farm in Montana",
+      "episode_number": 159
+    },
+    {
+      "source": "California",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "on farm research in California",
+      "episode_number": 159
+    },
+    {
+      "source": "Oregon",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "moved to Oregon and started a farm together",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "advocates_for",
+      "target": "gardening wisdom",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "module that you've provided, Helen",
+      "episode_number": 159
+    },
+    {
+      "source": "Carl",
+      "relationship": "founded",
+      "target": "farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Carl's farm",
+      "episode_number": 159
+    },
+    {
+      "source": "California",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "his farm in California",
+      "episode_number": 159
+    },
+    {
+      "source": "Montana",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my farm in Montana",
+      "episode_number": 159
+    },
+    {
+      "source": "Oregon",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "we moved to Oregon",
+      "episode_number": 159
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "works_at",
+      "target": "Carl",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Chelsea Green, my wonderful editor at Chelsea Green",
+      "episode_number": 159
+    },
+    {
+      "source": "good food",
+      "relationship": "advocates_for",
+      "target": "human health",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "good food growing makes good humans",
+      "episode_number": 159
+    },
+    {
+      "source": "mycorrhizae",
+      "relationship": "associates_with",
+      "target": "rhizosphere",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "one that probably everybody's heard about is mycorrhizae",
+      "episode_number": 159
+    },
+    {
+      "source": "rhizobium",
+      "relationship": "associates_with",
+      "target": "legume",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "you mentioned rhizobium, of course, are the bacteria that associate with a legume root",
+      "episode_number": 159
+    },
+    {
+      "source": "plant",
+      "relationship": "produces",
+      "target": "biochemical",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "a biochemical that that plant exudes",
+      "episode_number": 159
+    },
+    {
+      "source": "plant",
+      "relationship": "takes_in",
+      "target": "carbon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the carbon that it harvest from the sun",
+      "episode_number": 159
+    },
+    {
+      "source": "microbial community",
+      "relationship": "interacts_with",
+      "target": "plant",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "shares some of that carbon with the microbial community",
+      "episode_number": 159
+    },
+    {
+      "source": "disease-causing microorganisms",
+      "relationship": "attacks",
+      "target": "plant",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "microorganisms that can actually attack the plant",
+      "episode_number": 159
+    },
+    {
+      "source": "White Earth community",
+      "relationship": "works_with",
+      "target": "soil ecology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "impact on soil ecology work",
+      "episode_number": 159
+    },
+    {
+      "source": "plants",
+      "relationship": "communicate_with",
+      "target": "microorganisms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "plants exude signals for microorganisms",
+      "episode_number": 159
+    },
+    {
+      "source": "mycorrhizae",
+      "relationship": "associated_with",
+      "target": "plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "fungi that associate with plant roots",
+      "episode_number": 159
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microorganisms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "soil health and nutrient cycling",
+      "episode_number": 159
+    },
+    {
+      "source": "plants",
+      "relationship": "produce",
+      "target": "liquid carbon",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "nutrients produced by plants",
+      "episode_number": 159
+    },
+    {
+      "source": "mycelial networks",
+      "relationship": "connects",
+      "target": "plants",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "networks connecting various organisms",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "authored",
+      "target": "The Ecological Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about Helen's work",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "advocates_for",
+      "target": "permaculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about farming practices",
+      "episode_number": 159
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "published",
+      "target": "The Ecological Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about Helen's book",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "has_videos_on",
+      "target": "YouTube",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about Helen's videos",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "runs",
+      "target": "veganic permaculture.com",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about Helen's websites",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "runs",
+      "target": "wood leaf farm.org",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion about Helen's websites",
+      "episode_number": 159
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "authored",
+      "target": "The Ecological Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "guest on the podcast",
+      "episode_number": 159
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "published",
+      "target": "The Ecological Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "publisher of the book",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "created",
+      "target": "Agrarian Dreams",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "YouTube channel",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "associated_with",
+      "target": "Veganic Permaculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "website associated with Helen",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "associated_with",
+      "target": "Wood Leaf Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "website associated with Helen",
+      "episode_number": 159
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "partnered_with",
+      "target": "Simple Gardening Wisdom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "partner organization for the video course",
+      "episode_number": 159
+    },
+    {
+      "source": "Drylands Agrarian College Research",
+      "relationship": "partnered_with",
+      "target": "Simple Gardening Wisdom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "partner organization for the video course",
+      "episode_number": 159
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "partnered_with",
+      "target": "Simple Gardening Wisdom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "partner organization for the video course",
+      "episode_number": 159
+    },
+    {
+      "source": "Elk Run Farm",
+      "relationship": "partnered_with",
+      "target": "Simple Gardening Wisdom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "partner organization for the video course",
+      "episode_number": 159
+    },
+    {
+      "source": "Profitable Purpose Consulting",
+      "relationship": "works_with",
+      "target": "B Certified Companies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "organization working with certified companies",
+      "episode_number": 159
+    },
+    {
+      "source": "Wailing Waters",
+      "relationship": "produces",
+      "target": "hemp infused products",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "company producing wellness products",
+      "episode_number": 159
+    },
+    {
+      "source": "cat ion exchange capacity",
+      "relationship": "affects",
+      "target": "soil fertility",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "soil properties and nutrient retention",
+      "episode_number": 159
+    },
+    {
+      "source": "cover crops",
+      "relationship": "increases",
+      "target": "soil organic matter",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "soil health strategies",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen's growing mix",
+      "relationship": "developed_by",
+      "target": "speaker",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "product development",
+      "episode_number": 159
+    },
+    {
+      "source": "soil organic matter",
+      "relationship": "helps_with",
+      "target": "cat ion exchange capacity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "soil properties",
+      "episode_number": 159
+    },
+    {
+      "source": "nutrient elements",
+      "relationship": "includes",
+      "target": "potassium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "nutrient elements",
+      "episode_number": 159
+    },
+    {
+      "source": "nutrient elements",
+      "relationship": "includes",
+      "target": "calcium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "nutrient elements",
+      "episode_number": 159
+    },
+    {
+      "source": "nutrient elements",
+      "relationship": "includes",
+      "target": "magnesium",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "nutrient elements",
+      "episode_number": 159
+    },
+    {
+      "source": "nutrient elements",
+      "relationship": "includes",
+      "target": "hydrogen",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "nutrient elements",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "advocates_for",
+      "target": "ecological farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast conversation",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "created",
+      "target": "simple gardening wisdom video course",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast conversation",
+      "episode_number": 159
+    },
+    {
+      "source": "ecological farm",
+      "relationship": "published_by",
+      "target": "Chelsea Green",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "book publisher",
+      "episode_number": 159
+    },
+    {
+      "source": "simple gardening wisdom video course",
+      "relationship": "provided_by",
+      "target": "why on earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "video course provider",
+      "episode_number": 159
+    },
+    {
+      "source": "Helen",
+      "relationship": "advocates_for",
+      "target": "gardening wisdom",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Helen encourages gardening wisdom.",
+      "episode_number": 159
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Aaron is the host of the podcast series.",
+      "episode_number": 159
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "sponsored_by",
+      "target": "why on earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Chelsea Green is associated with the why on earth organization.",
+      "episode_number": 159
+    },
+    {
+      "source": "why on earth",
+      "relationship": "contains",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "The organization contains the community.",
+      "episode_number": 159
+    }
+  ]
+}

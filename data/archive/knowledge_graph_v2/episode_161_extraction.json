@@ -1,0 +1,3096 @@
+{
+  "episode": 161,
+  "timestamp": "2025-10-09T11:03:24.752367",
+  "entity_count": 228,
+  "relationship_count": 149,
+  "entities": [
+    {
+      "name": "Wyon Earth Community Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast introduction"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Host of the podcast"
+    },
+    {
+      "name": "Jake Plummer",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Guest on the podcast"
+    },
+    {
+      "name": "Boise",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Birthplace of Jake Plummer"
+    },
+    {
+      "name": "Idaho",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "State where Boise is located"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Current residence of Jake Plummer"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "State where Boulder is located"
+    },
+    {
+      "name": "Tempe",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "City where Jake Plummer played football"
+    },
+    {
+      "name": "Arizona",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "State where Tempe is located"
+    },
+    {
+      "name": "Arizona State University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "University Jake Plummer attended"
+    },
+    {
+      "name": "NFL",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Professional football league"
+    },
+    {
+      "name": "Arizona Cardinals",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Team Jake Plummer played for"
+    },
+    {
+      "name": "Denver Broncos",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Team Jake Plummer played for"
+    },
+    {
+      "name": "Pro Bowl",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "All-Star game in NFL"
+    },
+    {
+      "name": "Charlotte's Web",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Company Jake Plummer worked with"
+    },
+    {
+      "name": "hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Natural product Jake Plummer advocates for"
+    },
+    {
+      "name": "UNMO Functional Mushroom Company",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Company co-founded by Jake Plummer"
+    },
+    {
+      "name": "Michael Love Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Farm co-founded by Jake Plummer"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Natural product Jake Plummer advocates for"
+    },
+    {
+      "name": "natural medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Field Jake Plummer is involved in"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing holistic medicine and career in football"
+    },
+    {
+      "name": "Michael Pittman",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to holistic medicine"
+    },
+    {
+      "name": "Nate Jackson",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "former teammate"
+    },
+    {
+      "name": "Ryan Kingsbury",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "working with Nate Jackson"
+    },
+    {
+      "name": "Charlotte's Web",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "hemp company providing medicine"
+    },
+    {
+      "name": "CW Hemp",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "hemp company providing medicine"
+    },
+    {
+      "name": "Charlotte Fiji",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "child receiving treatment"
+    },
+    {
+      "name": "Zakai Jackson",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "child receiving treatment"
+    },
+    {
+      "name": "holistic medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to health and wellness"
+    },
+    {
+      "name": "mushrooms",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to farming and extracts"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to wellness and medicine"
+    },
+    {
+      "name": "Chinese medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to historical knowledge of wellness"
+    },
+    {
+      "name": "Western medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing possibilities to initiate a path to wellness"
+    },
+    {
+      "name": "European medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "comparison with Asian medicine"
+    },
+    {
+      "name": "Asian medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "comparison with European medicine"
+    },
+    {
+      "name": "Chinese medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "specific mention of Asian medicine"
+    },
+    {
+      "name": "medicinal plants",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "traditions carried through cultures"
+    },
+    {
+      "name": "medicinal mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "traditions carried through cultures"
+    },
+    {
+      "name": "modern Western society",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state of amnesia regarding herbal medicine"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing its historical use"
+    },
+    {
+      "name": "pharmaceutical industries",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion on modern developments"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "reference to nature's healing methods"
+    },
+    {
+      "name": "TV",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "distraction from reconnecting to healing methods"
+    },
+    {
+      "name": "social media",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "distraction from reconnecting to healing methods"
+    },
+    {
+      "name": "pocket computers",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "distraction from reconnecting to healing methods"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "comparison with cannabis and hemp"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "comparison with mushrooms"
+    },
+    {
+      "name": "hemp",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "comparison with mushrooms"
+    },
+    {
+      "name": "psilocybin",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion on psychedelic mushrooms"
+    },
+    {
+      "name": "magic mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "common knowledge about mushrooms"
+    },
+    {
+      "name": "Amanita muscaria",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "reference to a specific poisonous mushroom"
+    },
+    {
+      "name": "psilocybin",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mushrooms are similar to cannabis and hemp because of psilocybin"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mushrooms are similar to cannabis and hemp"
+    },
+    {
+      "name": "magic mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "they heard about magic mushrooms"
+    },
+    {
+      "name": "Amanita muscaria",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "or their amaneeta the red and white mushrooms"
+    },
+    {
+      "name": "CrossFit",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "they may go to CrossFit"
+    },
+    {
+      "name": "energy drinks",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "they drink energy drinks"
+    },
+    {
+      "name": "modern medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "they're into modern medicine"
+    },
+    {
+      "name": "sports",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "they're watching a lot of sports"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "there goes Jake he's that hippie stoner"
+    },
+    {
+      "name": "herbalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "got my herbalism certificate"
+    },
+    {
+      "name": "umbos",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "that's why we did start umbo"
+    },
+    {
+      "name": "Shard's web",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "was similar to Shard's web"
+    },
+    {
+      "name": "anxiety",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is good for anxiety"
+    },
+    {
+      "name": "depression",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is beneficial for depression"
+    },
+    {
+      "name": "sleep",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is beneficial for sleep"
+    },
+    {
+      "name": "inflammation",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this can help with inflammation"
+    },
+    {
+      "name": "immune system",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "boost your immune system"
+    },
+    {
+      "name": "gut",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "help balance your gut"
+    },
+    {
+      "name": "nervous system",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "calmative I mean all these things"
+    },
+    {
+      "name": "healing",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "put into it healing and love"
+    },
+    {
+      "name": "profit",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "not profit"
+    },
+    {
+      "name": "product",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "make sure that it's good product grown with the right intention"
+    },
+    {
+      "name": "Shard's web",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "best product on the shelf"
+    },
+    {
+      "name": "Lilies Lighthouse",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "people check out lilies lighthouse dot org"
+    },
+    {
+      "name": "Dr. Elaine Ingham",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "foremost soil scientist worldwide"
+    },
+    {
+      "name": "fungus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "role of fungus in agricultural soils"
+    },
+    {
+      "name": "agricultural soils",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "role of fungus in agricultural soils"
+    },
+    {
+      "name": "NFL",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "owners of NFL teams"
+    },
+    {
+      "name": "functional mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "helped them"
+    },
+    {
+      "name": "Fort Leopton",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grown in Fort Leopton"
+    },
+    {
+      "name": "Michael Leop",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Michael Leop and extracted at the lab that I helped start"
+    },
+    {
+      "name": "cordiceps mushrooms",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "cordiceps mushrooms with a glove on"
+    },
+    {
+      "name": "Paul Stammitz",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Paul Stammitz is leading voice in all of this"
+    },
+    {
+      "name": "HBO",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the last of us the shillin HBO comes out"
+    },
+    {
+      "name": "Last of Us",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the last of us the shillin HBO comes out"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "discussion about the importance of mushrooms and nature"
+    },
+    {
+      "name": "mycelium",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about mushrooms and their role in nature"
+    },
+    {
+      "name": "fungal kingdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussion about the importance of fungi"
+    },
+    {
+      "name": "umbo",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in context of helping people heal and learn"
+    },
+    {
+      "name": "Dell Jolly",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "co-founder of umbo and involved in research on psychedelics"
+    },
+    {
+      "name": "unlimited sciences.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "organization mentioned in context of responsible research on psychedelics"
+    },
+    {
+      "name": "mycelial networks",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the activation of humans resembling mycelial networks"
+    },
+    {
+      "name": "neuron networks",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "comparing human activation to neuronal networks in nature"
+    },
+    {
+      "name": "medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing resources for stewardship and food production"
+    },
+    {
+      "name": "food production",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing resources for stewardship and medicine"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "affiliate relationship being set up"
+    },
+    {
+      "name": "misshaude Evans",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "co-founder and UFC hall of famer"
+    },
+    {
+      "name": "paul stamens",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "expert on mushrooms"
+    },
+    {
+      "name": "mushroom bar",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing a product containing mushrooms"
+    },
+    {
+      "name": "lion's mane",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in mushroom bar"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing therapeutic doses of mushrooms"
+    },
+    {
+      "name": "Longmont",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of the company honey bunches"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location mentioned in relation to product sales"
+    },
+    {
+      "name": "REI",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "retailer selling the product"
+    },
+    {
+      "name": "Lucky's Market",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "retailer selling the product"
+    },
+    {
+      "name": "yoga pod",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "retailer selling the product"
+    },
+    {
+      "name": "energy and focus capsules",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "product mentioned in the transcript"
+    },
+    {
+      "name": "lion's mane",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "herb mentioned for its calming effects"
+    },
+    {
+      "name": "rhodiola",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "herb mentioned for its historical use by Vikings"
+    },
+    {
+      "name": "nicotinamide riboside",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "compound mentioned in the energy and focus capsules"
+    },
+    {
+      "name": "lion's mane",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an herb that induces calm and clarity"
+    },
+    {
+      "name": "althianine",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as an herb that induces calm"
+    },
+    {
+      "name": "Longmont",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where mushrooms are extracted"
+    },
+    {
+      "name": "Jakes Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "farm where mushrooms are grown"
+    },
+    {
+      "name": "Turkey tails",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as beneficial for gut balance"
+    },
+    {
+      "name": "Japan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where turkey tails have been prescribed for patients"
+    },
+    {
+      "name": "turkey tails",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as beneficial for gut health"
+    },
+    {
+      "name": "Japan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a place where turkey tails are prescribed"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as the source of electrolyte salts"
+    },
+    {
+      "name": "play and pause",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as drinks created by the speaker"
+    },
+    {
+      "name": "ceremonial matcha",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "Makarute",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "tolcy leaf",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "cordiceps",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "lion's mane",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "chaga",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "ashwaganda",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "camomile",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ingredient in play and pause drinks"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast host"
+    },
+    {
+      "name": "Jake Plummer",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "get umbo",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mushroom company"
+    },
+    {
+      "name": "my go love farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mushroom farm"
+    },
+    {
+      "name": "healing mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "medicinal mushrooms"
+    },
+    {
+      "name": "Instagram",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "social media platform"
+    },
+    {
+      "name": "y-earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for community support"
+    },
+    {
+      "name": "patreon",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "platform for monthly giving"
+    },
+    {
+      "name": "y-earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "monthly giving program"
+    },
+    {
+      "name": "Patreon",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "new patreon page"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "here in the united states"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Waley Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "New Earth Coast News",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "corporate sponsors"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast guest"
+    },
+    {
+      "name": "Jason",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "legal name"
+    },
+    {
+      "name": "Pierce Park Elementary",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "school attended"
+    },
+    {
+      "name": "Boise, Idaho",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of school"
+    },
+    {
+      "name": "Jason",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Pierce Park Elementary",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Boise",
+      "type": "CITY",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Idaho",
+      "type": "STATE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Mrs. Jenkins",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Jake Plummer",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Kenny Stabler",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "NFL",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Oakland Raiders",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Arizona",
+      "type": "STATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Sun Devils",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "Jeopardy",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "pharmaceutical companies",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Podcast transcript segment"
+    },
+    {
+      "name": "snake",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in the context of ecosystem and medicine"
+    },
+    {
+      "name": "pharmaceutical companies",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to RX and snake symbolism"
+    },
+    {
+      "name": "foundation",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "mentioned as benefiting from snake-related initiatives"
+    },
+    {
+      "name": "CTE",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to traumatic brain injury in football"
+    },
+    {
+      "name": "TBI",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "related to CTE and football injuries"
+    },
+    {
+      "name": "football",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a sport associated with CTE"
+    },
+    {
+      "name": "NFL",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to CTE and player safety"
+    },
+    {
+      "name": "junior seau",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to CTE and suicide for research"
+    },
+    {
+      "name": "dementia",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a condition related to CTE"
+    },
+    {
+      "name": "Alzheimer's",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a condition related to CTE"
+    },
+    {
+      "name": "depression",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a condition related to CTE"
+    },
+    {
+      "name": "suicidal ideation",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussed as a condition related to CTE"
+    },
+    {
+      "name": "CTE",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about brain injuries and their effects"
+    },
+    {
+      "name": "psilocybin",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about potential treatments for brain injuries"
+    },
+    {
+      "name": "lion's mane",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about potential treatments for brain injuries"
+    },
+    {
+      "name": "football",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about sports and brain injuries"
+    },
+    {
+      "name": "UFC",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about sports and brain injuries"
+    },
+    {
+      "name": "boxing",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about sports and brain injuries"
+    },
+    {
+      "name": "mama",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "personal anecdote about motivation to play despite injuries"
+    },
+    {
+      "name": "soldiers",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about brain injuries in relation to military personnel"
+    },
+    {
+      "name": "psychedelics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the potential benefits of psychedelics"
+    },
+    {
+      "name": "functional mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the potential benefits of functional mushrooms"
+    },
+    {
+      "name": "cannabis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the potential benefits of cannabis"
+    },
+    {
+      "name": "CTE",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioning concerns about cognitive health"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "acknowledging a person involved in the conversation"
+    },
+    {
+      "name": "regenerative farm community",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "mentioning the community where they met"
+    },
+    {
+      "name": "planet",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the need to improve the planet's condition"
+    },
+    {
+      "name": "children",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about ensuring a clean environment for future generations"
+    },
+    {
+      "name": "air",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about ensuring a clean environment"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about ensuring a clean environment"
+    },
+    {
+      "name": "life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about living to an old age"
+    },
+    {
+      "name": "quarterback",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about leadership in sports"
+    },
+    {
+      "name": "lineman",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about teamwork in sports"
+    },
+    {
+      "name": "center",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about teamwork in sports"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about personal experiences in sports leadership"
+    },
+    {
+      "name": "broccoli",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about healthy food endorsements"
+    },
+    {
+      "name": "sweet potatoes",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about healthy food endorsements"
+    },
+    {
+      "name": "Pepsi",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "discussion about unhealthy food endorsements"
+    },
+    {
+      "name": "urban roots farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about farming practices in Arizona"
+    },
+    {
+      "name": "Arizona",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about location of urban roots farm"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about water sourcing for farming"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the desert it's taking our water out of a Colorado"
+    },
+    {
+      "name": "LeBron James",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "that's what I want like Wins LeBron James gonna endorse microgreens"
+    },
+    {
+      "name": "Pepsi",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "and Pepsi you know god damn these are the this is why we're here right now having to band together"
+    },
+    {
+      "name": "urban roots farms",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "in urban roots farms loved it connected them"
+    },
+    {
+      "name": "Arizona",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "till I did an event in Arizona"
+    },
+    {
+      "name": "St Vincent de Paul",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a guy working for St Vincent to Paul"
+    },
+    {
+      "name": "Salvation Army",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "was it yeah I think the same answer the Salvation Army was working with the homeless"
+    },
+    {
+      "name": "mycelia",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "that's the mycelian mycelia teaching us"
+    },
+    {
+      "name": "mushroom company",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "let's start mushroom company man"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Michael",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "love farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "umbo.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "yhonnerf.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Charlotte's web",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "functional mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "micro greens",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Jake",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "micro greens",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about food access"
+    },
+    {
+      "name": "yoga",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about self-care"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "discussion about taking walks"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Jake Plummer",
+      "relationship": "born_in",
+      "target": "Boise",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jake Plummer's birthplace",
+      "episode_number": 161
+    },
+    {
+      "source": "Boise",
+      "relationship": "located_in",
+      "target": "Idaho",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boise is a city in Idaho",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "resides_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Current residence of Jake Plummer",
+      "episode_number": 161
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Boulder is a city in Colorado",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "played_for",
+      "target": "Arizona Cardinals",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Team Jake Plummer played for in the NFL",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "played_for",
+      "target": "Denver Broncos",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Team Jake Plummer played for in the NFL",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "advocates_for",
+      "target": "hemp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jake Plummer advocates for hemp",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "co-founded",
+      "target": "UNMO Functional Mushroom Company",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Company co-founded by Jake Plummer",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "co-founded",
+      "target": "Michael Love Farm",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Farm co-founded by Jake Plummer",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jake Plummer advocates for mushrooms",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "advocates_for",
+      "target": "natural medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jake Plummer advocates for natural medicine",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "holistic medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "discussing his path and beliefs about health and wellness",
+      "episode_number": 161
+    },
+    {
+      "source": "Michael Pittman",
+      "relationship": "receives_treatment_from",
+      "target": "Jake",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jake applied holistic treatment to Michael's toe",
+      "episode_number": 161
+    },
+    {
+      "source": "Nate Jackson",
+      "relationship": "works_with",
+      "target": "Ryan Kingsbury",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "Nate Jackson's collaboration with Ryan",
+      "episode_number": 161
+    },
+    {
+      "source": "Charlotte's Web",
+      "relationship": "provides",
+      "target": "CW Hemp",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "Charlotte's Web is a hemp company",
+      "episode_number": 161
+    },
+    {
+      "source": "Charlotte Fiji",
+      "relationship": "receives_treatment_from",
+      "target": "CW Hemp",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "Charlotte Fiji receiving treatment from CW Hemp",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "founded",
+      "target": "mushrooms",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jake discusses his farm growing mushrooms",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "part_of",
+      "target": "fungi",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mushrooms are a type of fungi",
+      "episode_number": 161
+    },
+    {
+      "source": "Chinese medicine",
+      "relationship": "influences",
+      "target": "holistic medicine",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Chinese medicine has historical knowledge relevant to holistic practices",
+      "episode_number": 161
+    },
+    {
+      "source": "Western medicine",
+      "relationship": "initiates",
+      "target": "path to wellness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing possibilities",
+      "episode_number": 161
+    },
+    {
+      "source": "Chinese medicine",
+      "relationship": "known_for",
+      "target": "medicinal plants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "historical knowledge",
+      "episode_number": 161
+    },
+    {
+      "source": "modern Western society",
+      "relationship": "experiences",
+      "target": "amnesia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "regarding herbal medicine",
+      "episode_number": 161
+    },
+    {
+      "source": "herbal medicine",
+      "relationship": "is",
+      "target": "bizarre aberration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "in modern society",
+      "episode_number": 161
+    },
+    {
+      "source": "mother earth",
+      "relationship": "provides",
+      "target": "healing methods",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "reconnecting to nature",
+      "episode_number": 161
+    },
+    {
+      "source": "TV",
+      "relationship": "is",
+      "target": "distraction",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "from reconnecting to healing methods",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "are_similar_to",
+      "target": "cannabis",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "in terms of psilocybin",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "are_similar_to",
+      "target": "hemp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "in terms of psilocybin",
+      "episode_number": 161
+    },
+    {
+      "source": "Amanita muscaria",
+      "relationship": "has",
+      "target": "positive benefits",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussing its properties",
+      "episode_number": 161
+    },
+    {
+      "source": "psilocybin",
+      "relationship": "similar_to",
+      "target": "cannabis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mushrooms are similar to cannabis and hemp because of psilocybin",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "part_of",
+      "target": "psychedelics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "most people only know mushrooms because they're pizza topping or their psychedelics",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "I'm glad to be a person that's a voice for it",
+      "episode_number": 161
+    },
+    {
+      "source": "umbos",
+      "relationship": "made_by",
+      "target": "Shard's web",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "that's why we did start umbo was similar to Shard's web",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "beneficial_for",
+      "target": "anxiety",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "this is good for anxiety",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "beneficial_for",
+      "target": "depression",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "this is beneficial for depression",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "beneficial_for",
+      "target": "sleep",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "this is beneficial for sleep",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "helps_with",
+      "target": "inflammation",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "this can help with inflammation",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "boosts",
+      "target": "immune system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "boost your immune system",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "balances",
+      "target": "gut",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "help balance your gut",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "calmative_for",
+      "target": "nervous system",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "calmative I mean all these things",
+      "episode_number": 161
+    },
+    {
+      "source": "Shard's web",
+      "relationship": "produces",
+      "target": "functional mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "best product on the shelf",
+      "episode_number": 161
+    },
+    {
+      "source": "Lilies Lighthouse",
+      "relationship": "advocates_for",
+      "target": "functional mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "people check out lilies lighthouse dot org",
+      "episode_number": 161
+    },
+    {
+      "source": "Dr. Elaine Ingham",
+      "relationship": "studies",
+      "target": "fungus",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "foremost soil scientist worldwide",
+      "episode_number": 161
+    },
+    {
+      "source": "fungus",
+      "relationship": "is_part_of",
+      "target": "agricultural soils",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "role of fungus in agricultural soils",
+      "episode_number": 161
+    },
+    {
+      "source": "NFL",
+      "relationship": "contains",
+      "target": "NFL teams",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "owners of NFL teams",
+      "episode_number": 161
+    },
+    {
+      "source": "Michael Leop",
+      "relationship": "founded",
+      "target": "lab",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "extracted at the lab that I helped start",
+      "episode_number": 161
+    },
+    {
+      "source": "cordiceps mushrooms",
+      "relationship": "made_by",
+      "target": "Michael Leop",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "I've had my hands on those cordiceps mushrooms",
+      "episode_number": 161
+    },
+    {
+      "source": "Paul Stammitz",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Paul Stammitz is leading voice in all of this",
+      "episode_number": 161
+    },
+    {
+      "source": "HBO",
+      "relationship": "produced",
+      "target": "Last of Us",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the last of us the shillin HBO comes out",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "part_of",
+      "target": "biomaterials",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "a lot of work with materials biometherials mycomaterials",
+      "episode_number": 161
+    },
+    {
+      "source": "Dell Jolly",
+      "relationship": "works_at",
+      "target": "umbo",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "co-founder of umbo",
+      "episode_number": 161
+    },
+    {
+      "source": "umbo",
+      "relationship": "advocates_for",
+      "target": "mycelium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organization promoting the benefits of mushrooms",
+      "episode_number": 161
+    },
+    {
+      "source": "umbo",
+      "relationship": "supports",
+      "target": "unlimited sciences.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "organization involved in research on psychedelics",
+      "episode_number": 161
+    },
+    {
+      "source": "mother earth",
+      "relationship": "contains",
+      "target": "fungal kingdom",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "concept of nature containing various life forms",
+      "episode_number": 161
+    },
+    {
+      "source": "misshaude Evans",
+      "relationship": "works_at",
+      "target": "why on earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "co-founder of why on earth",
+      "episode_number": 161
+    },
+    {
+      "source": "paul stamens",
+      "relationship": "advocates_for",
+      "target": "mushroom bar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "expert discussing mushroom bars",
+      "episode_number": 161
+    },
+    {
+      "source": "mycelial networks",
+      "relationship": "resembles",
+      "target": "human activation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "comparing human activation to mycelial networks",
+      "episode_number": 161
+    },
+    {
+      "source": "medicine",
+      "relationship": "part_of",
+      "target": "food production",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "resources for stewardship and food production",
+      "episode_number": 161
+    },
+    {
+      "source": "mushroom bar",
+      "relationship": "made_by",
+      "target": "why on earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "product associated with why on earth",
+      "episode_number": 161
+    },
+    {
+      "source": "Longmont",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the company honey bunches",
+      "episode_number": 161
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location mentioned in relation to product sales",
+      "episode_number": 161
+    },
+    {
+      "source": "energy and focus capsules",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "product mentioned in the transcript",
+      "episode_number": 161
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "advocates_for",
+      "target": "energy and focus capsules",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing therapeutic doses of mushrooms",
+      "episode_number": 161
+    },
+    {
+      "source": "lion's mane",
+      "relationship": "advocates_for",
+      "target": "calmness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "herb mentioned for its calming effects",
+      "episode_number": 161
+    },
+    {
+      "source": "rhodiola",
+      "relationship": "advocates_for",
+      "target": "focus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "herb mentioned for its historical use by Vikings",
+      "episode_number": 161
+    },
+    {
+      "source": "lion's mane",
+      "relationship": "advocates_for",
+      "target": "calm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as inducing a state of calm",
+      "episode_number": 161
+    },
+    {
+      "source": "althianine",
+      "relationship": "advocates_for",
+      "target": "calm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as inducing a state of calm",
+      "episode_number": 161
+    },
+    {
+      "source": "Jakes Farm",
+      "relationship": "located_in",
+      "target": "Longmont",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "farm where mushrooms are grown and extracted",
+      "episode_number": 161
+    },
+    {
+      "source": "Turkey tails",
+      "relationship": "beneficial_for",
+      "target": "gut balance",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as great for balancing gut health",
+      "episode_number": 161
+    },
+    {
+      "source": "Turkey tails",
+      "relationship": "prescribed_in",
+      "target": "Japan",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed as being used in Japan for years",
+      "episode_number": 161
+    },
+    {
+      "source": "turkey tails",
+      "relationship": "advocates_for",
+      "target": "gut health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as beneficial for patients taking radiation and chemo",
+      "episode_number": 161
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "mentioned as the source of electrolyte salts",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "discussed as drinks created by the speaker",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "ceremonial matcha",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "Makarute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "tolcy leaf",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "cordiceps",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "lion's mane",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "chaga",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "ashwaganda",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "play and pause",
+      "relationship": "contains",
+      "target": "camomile",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "ingredients in the drinks",
+      "episode_number": 161
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "get umbo",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast context",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "founded",
+      "target": "get umbo",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about his company",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "founded",
+      "target": "my go love farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about his farm",
+      "episode_number": 161
+    },
+    {
+      "source": "get umbo",
+      "relationship": "located_in",
+      "target": "Instagram",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "social media presence",
+      "episode_number": 161
+    },
+    {
+      "source": "y-earth.org",
+      "relationship": "supports",
+      "target": "get umbo",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "community support",
+      "episode_number": 161
+    },
+    {
+      "source": "patreon",
+      "relationship": "supports",
+      "target": "y-earth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "monthly giving program",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "works_at",
+      "target": "y-earth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "ambassador network",
+      "episode_number": 161
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Waley Waters",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Profitable Purpose Consulting",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "New Earth Coast News",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Earth Hero",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "corporate sponsors",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "attended",
+      "target": "Pierce Park Elementary",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "school attended",
+      "episode_number": 161
+    },
+    {
+      "source": "Pierce Park Elementary",
+      "relationship": "located_in",
+      "target": "Boise, Idaho",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "school location",
+      "episode_number": 161
+    },
+    {
+      "source": "Jason",
+      "relationship": "attended",
+      "target": "Pierce Park Elementary",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Pierce Park Elementary",
+      "relationship": "located_in",
+      "target": "Boise",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Boise",
+      "relationship": "located_in",
+      "target": "Idaho",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Mrs. Jenkins",
+      "relationship": "taught",
+      "target": "Jake Plummer",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "played_for",
+      "target": "NFL",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Kenny Stabler",
+      "relationship": "played_for",
+      "target": "Oakland Raiders",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "played_for",
+      "target": "Arizona",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake Plummer",
+      "relationship": "appeared_on",
+      "target": "Jeopardy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "pharmaceutical companies",
+      "relationship": "use_symbol",
+      "target": "snake",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Podcast transcript segment",
+      "episode_number": 161
+    },
+    {
+      "source": "junior seau",
+      "relationship": "advocates_for",
+      "target": "CTE",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to his suicide for research",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "related_to",
+      "target": "TBI",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a consequence of multiple TBIs",
+      "episode_number": 161
+    },
+    {
+      "source": "football",
+      "relationship": "causes",
+      "target": "CTE",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as the sport that coined the term CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "NFL",
+      "relationship": "located_in",
+      "target": "football",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned as the league associated with football and CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "pharmaceutical companies",
+      "relationship": "benefits_from",
+      "target": "snake",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to RX and snake symbolism",
+      "episode_number": 161
+    },
+    {
+      "source": "foundation",
+      "relationship": "benefits_from",
+      "target": "snake",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned as benefiting from snake-related initiatives",
+      "episode_number": 161
+    },
+    {
+      "source": "mama",
+      "relationship": "motivates",
+      "target": "unknown",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.5,
+      "context": "personal anecdote about motivation to play despite injuries",
+      "episode_number": 161
+    },
+    {
+      "source": "UFC",
+      "relationship": "located_in",
+      "target": "sports",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about sports and brain injuries",
+      "episode_number": 161
+    },
+    {
+      "source": "boxing",
+      "relationship": "located_in",
+      "target": "sports",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about sports and brain injuries",
+      "episode_number": 161
+    },
+    {
+      "source": "football",
+      "relationship": "located_in",
+      "target": "sports",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about sports and brain injuries",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "causes",
+      "target": "depression",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the effects of CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "causes",
+      "target": "anxiety",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the effects of CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "causes",
+      "target": "anger issues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the effects of CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "causes",
+      "target": "dementia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the effects of CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "causes",
+      "target": "Alzheimer's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the effects of CTE",
+      "episode_number": 161
+    },
+    {
+      "source": "psilocybin",
+      "relationship": "mixed_with",
+      "target": "lion's mane",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about potential treatments for brain injuries",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "works_at",
+      "target": "regenerative farm community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "acknowledging Jake's involvement in the regenerative farm community",
+      "episode_number": 161
+    },
+    {
+      "source": "psychedelics",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the benefits of psychedelics for health",
+      "episode_number": 161
+    },
+    {
+      "source": "functional mushrooms",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the benefits of functional mushrooms for health",
+      "episode_number": 161
+    },
+    {
+      "source": "cannabis",
+      "relationship": "advocates_for",
+      "target": "health",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the benefits of cannabis for health",
+      "episode_number": 161
+    },
+    {
+      "source": "CTE",
+      "relationship": "is_a_concern_for",
+      "target": "health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioning CTE as a concern for cognitive health",
+      "episode_number": 161
+    },
+    {
+      "source": "planet",
+      "relationship": "contains",
+      "target": "clean air",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the need for clean air on the planet",
+      "episode_number": 161
+    },
+    {
+      "source": "planet",
+      "relationship": "contains",
+      "target": "clean water",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the need for clean water on the planet",
+      "episode_number": 161
+    },
+    {
+      "source": "urban roots farm",
+      "relationship": "located_in",
+      "target": "Arizona",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussion about farming practices in Arizona",
+      "episode_number": 161
+    },
+    {
+      "source": "urban roots farm",
+      "relationship": "uses",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussion about water sourcing for farming",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "broccoli",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion about healthy food endorsements",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "sweet potatoes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion about healthy food endorsements",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "criticizes",
+      "target": "Pepsi",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussion about unhealthy food endorsements",
+      "episode_number": 161
+    },
+    {
+      "source": "LeBron James",
+      "relationship": "endorses",
+      "target": "microgreens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "that's what I want like Wins LeBron James gonna endorse microgreens",
+      "episode_number": 161
+    },
+    {
+      "source": "urban roots farms",
+      "relationship": "collaborates_with",
+      "target": "LeBron James",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "in urban roots farms loved it connected them",
+      "episode_number": 161
+    },
+    {
+      "source": "Arizona",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "till I did an event in Arizona",
+      "episode_number": 161
+    },
+    {
+      "source": "St Vincent de Paul",
+      "relationship": "works_with",
+      "target": "homeless",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "a guy working for St Vincent to Paul",
+      "episode_number": 161
+    },
+    {
+      "source": "Salvation Army",
+      "relationship": "works_with",
+      "target": "homeless",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the Salvation Army was working with the homeless",
+      "episode_number": 161
+    },
+    {
+      "source": "mycelia",
+      "relationship": "teaches",
+      "target": "nutrient sharing",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "that's the mycelian mycelia teaching us",
+      "episode_number": 161
+    },
+    {
+      "source": "mushroom company",
+      "relationship": "provides",
+      "target": "learning opportunities",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "let's start mushroom company man",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "functional mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Michael",
+      "relationship": "works_at",
+      "target": "love farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 161
+    },
+    {
+      "source": "love farm",
+      "relationship": "located_in",
+      "target": "umbo.com",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "micro greens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "podcast segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Charlotte's web",
+      "relationship": "made_by",
+      "target": "functional mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "micro greens",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about food access",
+      "episode_number": 161
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "yoga",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about self-care",
+      "episode_number": 161
+    },
+    {
+      "source": "Jake",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about taking walks",
+      "episode_number": 161
+    }
+  ]
+}

@@ -1,0 +1,1786 @@
+{
+  "episode": 139,
+  "timestamp": "2025-10-09T10:43:31.025966",
+  "entity_count": 128,
+  "relationship_count": 88,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast host"
+    },
+    {
+      "name": "Nisha Mary Palos",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "executive director of Regenerative Rising"
+    },
+    {
+      "name": "Regenerative Rising",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "facilitated meeting"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "country"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "state"
+    },
+    {
+      "name": "woven design collaborative",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "spatial design and planning firm"
+    },
+    {
+      "name": "Prime Minister of India",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "award recipient"
+    },
+    {
+      "name": "Kachiyama",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "small town in Karala"
+    },
+    {
+      "name": "Karala",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "state in India"
+    },
+    {
+      "name": "Erasmus Mundus Program",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "education program"
+    },
+    {
+      "name": "Indian National Trust for Art and Cultural Heritage",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "organization for heritage preservation"
+    },
+    {
+      "name": "South Asia Bio-regionalism Working Group",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "research group"
+    },
+    {
+      "name": "regenerative community",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the movement and allies in the regenerative community"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "importance of connecting with nature in regenerative work"
+    },
+    {
+      "name": "living systems world view",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the mindset related to living systems"
+    },
+    {
+      "name": "AI",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "referring to the authentic intelligence of nature"
+    },
+    {
+      "name": "Veridi Tos",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioning the new novel"
+    },
+    {
+      "name": "southwestern coast of India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "growing up in the southwestern coast of India"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "rich in biodiversity in the small town"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "grew up in the southwestern coast of India"
+    },
+    {
+      "name": "southwestern coast of India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grew up in the southwestern coast of India"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "relationship with nature"
+    },
+    {
+      "name": "Pacific Northwest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "experiences I had in the woods in the Pacific Northwest"
+    },
+    {
+      "name": "regeneration movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "regeneration movement as its emerging world wide"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as a source of comfort and connection"
+    },
+    {
+      "name": "regeneration movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned as a movement that connects people with nature"
+    },
+    {
+      "name": "nature deficit disorder",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to psychological impact of nature absence"
+    },
+    {
+      "name": "eco psychology movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mentioned as an important movement in the last 20 years"
+    },
+    {
+      "name": "planet earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as the context for human experiences with nature"
+    },
+    {
+      "name": "spiritual practices",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussed as a way to connect with nature"
+    },
+    {
+      "name": "artificial intelligence",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in comparison to nature's intelligence"
+    },
+    {
+      "name": "technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to intelligence and nature"
+    },
+    {
+      "name": "wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to knowledge from nature"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the idea of like tapping into that consciousness which is basically you have to go into your own heart or your inner sort of voice"
+    },
+    {
+      "name": "pets",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "I like how you bring it in pets and some of the other ways we might personally relate to this"
+    },
+    {
+      "name": "wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "I really appreciate the wisdom that you're sharing"
+    },
+    {
+      "name": "observation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "what has really worked is observation"
+    },
+    {
+      "name": "family",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "that's something again that I did as a family"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I work for mother earth actually"
+    },
+    {
+      "name": "Regenerative Rising",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the work you're doing especially with regenerative rising"
+    },
+    {
+      "name": "Regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the concept of regeneration is a bit newer"
+    },
+    {
+      "name": "Nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "the practice of sharing with nature really helps"
+    },
+    {
+      "name": "regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the concept of regeneration"
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioning ecosystems in relation to regeneration"
+    },
+    {
+      "name": "indigenous communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioning indigenous communities understanding regeneration"
+    },
+    {
+      "name": "human system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussing the human system in contrast to natural systems"
+    },
+    {
+      "name": "economic regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioning economic regeneration as a type of regeneration"
+    },
+    {
+      "name": "regenerative work environments",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussing regenerative work environments"
+    },
+    {
+      "name": "regenerative food systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "mentioning regenerative food systems"
+    },
+    {
+      "name": "regenerative arts summit",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conference in November"
+    },
+    {
+      "name": "organizations",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "part of this movement"
+    },
+    {
+      "name": "food sector",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "bringing the food and the fashion sectors together"
+    },
+    {
+      "name": "fashion sector",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "bringing the food and the fashion sectors together"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "time when there is climate change"
+    },
+    {
+      "name": "supply chains",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "holding this in their own supply chains"
+    },
+    {
+      "name": "AI",
+      "type": "TECHNOLOGY",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "developed tools or platforms or data sets"
+    },
+    {
+      "name": "regenerative rising",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "conference discussion"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "conference location"
+    },
+    {
+      "name": "Nisha Marry Palos",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "conference speaker"
+    },
+    {
+      "name": "AI",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about technology"
+    },
+    {
+      "name": "mycelial networks",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "comparison to ecological systems"
+    },
+    {
+      "name": "wildlife",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "discussion about ecosystems"
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about ecological systems"
+    },
+    {
+      "name": "regenerative rising",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "non-profit organization discussed in the podcast"
+    },
+    {
+      "name": "earth summit",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "event mentioned in the podcast"
+    },
+    {
+      "name": "nisha",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "executive director of regenerative rising"
+    },
+    {
+      "name": "earth coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Chelsea green publishers",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "partner mentioned in the podcast"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "community mentioned in the podcast"
+    },
+    {
+      "name": "doctor Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company mentioned in the podcast"
+    },
+    {
+      "name": "waylay waters",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "social enterprise mentioned in the podcast"
+    },
+    {
+      "name": "biodynamically grown hemp infused aroma therapy soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "biodynamically grown hemp infused aroma therapy soaking salts"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "social enterprises we stood up through the why on earth community"
+    },
+    {
+      "name": "doctor Bronners",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the nonprofit of course doctor Bronners"
+    },
+    {
+      "name": "regenerative space",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "doing so much in the regenerative uh space globally"
+    },
+    {
+      "name": "why on earth communities ambassador network",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "you can join the why on earth communities ambassador network"
+    },
+    {
+      "name": "CIA",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "you too can join the CIA if you're interested"
+    },
+    {
+      "name": "why on earth dot org",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "go to why on earth dot org and click on the supporter donate page"
+    },
+    {
+      "name": "waylay waters soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "we'll send you one or more jars of the waylay waters soaking salts each month"
+    },
+    {
+      "name": "regenerative rising",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "with regenerative rising one of the things you guys talk about"
+    },
+    {
+      "name": "women led organization",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "it is a one hundred percent um women led organization"
+    },
+    {
+      "name": "divine feminine",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "the emergence and rebalancing with the divine feminine"
+    },
+    {
+      "name": "indigenous traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "in indigenous traditions there are a variety of mechanisms"
+    },
+    {
+      "name": "feminine and masculine",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "every human being has the feminine and the masculine in it"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "when we're talking about mother earth we're talking about guy"
+    },
+    {
+      "name": "Mother Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "talking about mother earth"
+    },
+    {
+      "name": "patriarchal system",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "patriarchal system continues to embody as a woman"
+    },
+    {
+      "name": "matrilineal culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "part Mohawk in my own personal ancestral lineage makeup"
+    },
+    {
+      "name": "Ben Franklin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "inspired Ben Franklin and others in the framing of this country"
+    },
+    {
+      "name": "Y and Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "here at the Y and Earth community"
+    },
+    {
+      "name": "Sophia Wisdom council",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "launch a Sophia Wisdom council"
+    },
+    {
+      "name": "grandmothers council",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "grandmothers council that actually inspired Ben Franklin"
+    },
+    {
+      "name": "councils of women",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "having councils of women ensuring certain types of decision making"
+    },
+    {
+      "name": "Museum of Let's Summit",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "collaborating with the Museum of Let's Summit"
+    },
+    {
+      "name": "Lissiel Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "doing some collaborative work with the Lissiel foundation out of Europe"
+    },
+    {
+      "name": "patriarchy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about collaboration and gender dynamics"
+    },
+    {
+      "name": "architecture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about design expertise"
+    },
+    {
+      "name": "human habitat",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about shelter and living spaces"
+    },
+    {
+      "name": "land",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about planning and architecture"
+    },
+    {
+      "name": "ecosystems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about nature-based infrastructure"
+    },
+    {
+      "name": "cities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about urban planning"
+    },
+    {
+      "name": "cities",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussing urban environments and their infrastructure."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of ecosystems and natural systems."
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to livable environments."
+    },
+    {
+      "name": "infrastructure",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of urban planning."
+    },
+    {
+      "name": "natural drainage system",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to water management."
+    },
+    {
+      "name": "sewers",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of urban water management."
+    },
+    {
+      "name": "stormwater drainage systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussed in relation to urban infrastructure."
+    },
+    {
+      "name": "projects",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Mentioned in the context of urban design."
+    },
+    {
+      "name": "design",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to urban planning and nature."
+    },
+    {
+      "name": "human beings",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of habitat and needs."
+    },
+    {
+      "name": "Nisha Mary Palos",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Regenerative Rising",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Nisha Mary Palos is the executive director"
+    },
+    {
+      "name": "Woven Design Collaborative",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Nisha Mary Palos is the founder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Nisha is visiting in Colorado"
+    },
+    {
+      "name": "Japan",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Japanese concept of shinran yoku"
+    },
+    {
+      "name": "shinran yoku",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Japanese concept discussed in the podcast"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Nisha mentions coming from India"
+    },
+    {
+      "name": "Nisha",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "Yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for support"
+    },
+    {
+      "name": "co-working space",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "workspace mentioned"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "access to nature discussed"
+    },
+    {
+      "name": "sustainability podcast series",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type of podcast"
+    },
+    {
+      "name": "Yonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "sponsors are listed on the Yonearth.org backslash support page"
+    },
+    {
+      "name": "why on earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "thank you for being a part of the why on earth community"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "works_at",
+      "target": "Regenerative Rising",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "executive director of Regenerative Rising",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "founded",
+      "target": "woven design collaborative",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "founder of woven design collaborative",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "advocates_for",
+      "target": "regenerative principles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "devoted to elevating regenerative principles",
+      "episode_number": 139
+    },
+    {
+      "source": "Regenerative Rising",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "organization based in Colorado",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "supports",
+      "target": "Indian National Trust for Art and Cultural Heritage",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "co-convener for the Indian National Trust",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "part_of",
+      "target": "South Asia Bio-regionalism Working Group",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "part of the South Asia Bio-regionalism Working Group",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "grew_up_in",
+      "target": "Kachiyama",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "grew up in Kachiyama, India",
+      "episode_number": 139
+    },
+    {
+      "source": "Kachiyama",
+      "relationship": "located_in",
+      "target": "Karala",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "small town in Karala",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "received_award_from",
+      "target": "Prime Minister of India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "won an award from the Prime Minister of India",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "studied_in",
+      "target": "Erasmus Mundus Program",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "selected for Erasmus Mundus Program",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative community",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussing the movement and allies in the regenerative community",
+      "episode_number": 139
+    },
+    {
+      "source": "living systems world view",
+      "relationship": "part_of",
+      "target": "regenerative community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the mindset related to living systems",
+      "episode_number": 139
+    },
+    {
+      "source": "Veridi Tos",
+      "relationship": "made_by",
+      "target": "AI",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mentioning the new novel",
+      "episode_number": 139
+    },
+    {
+      "source": "southwestern coast of India",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "growing up in the southwestern coast of India",
+      "episode_number": 139
+    },
+    {
+      "source": "southwestern coast of India",
+      "relationship": "part_of",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "grew up in the southwestern coast of India",
+      "episode_number": 139
+    },
+    {
+      "source": "nature",
+      "relationship": "advocates_for",
+      "target": "regeneration movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "intimate connection with nature",
+      "episode_number": 139
+    },
+    {
+      "source": "Pacific Northwest",
+      "relationship": "contains",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "experiences I had in the woods in the Pacific Northwest",
+      "episode_number": 139
+    },
+    {
+      "source": "regeneration movement",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to people's connection with nature",
+      "episode_number": 139
+    },
+    {
+      "source": "nature deficit disorder",
+      "relationship": "related_to",
+      "target": "eco psychology movement",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "mentioned in the context of psychological impacts of nature absence",
+      "episode_number": 139
+    },
+    {
+      "source": "spiritual practices",
+      "relationship": "cultivates",
+      "target": "connection with nature",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussed as a means to enhance connectivity with nature",
+      "episode_number": 139
+    },
+    {
+      "source": "artificial intelligence",
+      "relationship": "compared_to",
+      "target": "nature's intelligence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mentioned in the context of intelligence comparison",
+      "episode_number": 139
+    },
+    {
+      "source": "technology",
+      "relationship": "has",
+      "target": "intelligence",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to intelligence",
+      "episode_number": 139
+    },
+    {
+      "source": "wisdom",
+      "relationship": "is_a_part_of",
+      "target": "knowledge",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to the depth of understanding from nature",
+      "episode_number": 139
+    },
+    {
+      "source": "PERSON",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the idea of like tapping into that consciousness which is basically you have to go into your own heart or your inner sort of voice",
+      "episode_number": 139
+    },
+    {
+      "source": "PERSON",
+      "relationship": "advocates_for",
+      "target": "pets",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "I like how you bring it in pets and some of the other ways we might personally relate to this",
+      "episode_number": 139
+    },
+    {
+      "source": "PERSON",
+      "relationship": "shares",
+      "target": "wisdom",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "I really appreciate the wisdom that you're sharing",
+      "episode_number": 139
+    },
+    {
+      "source": "PERSON",
+      "relationship": "practices",
+      "target": "observation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "what has really worked is observation",
+      "episode_number": 139
+    },
+    {
+      "source": "family",
+      "relationship": "supports",
+      "target": "observation",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "that's something again that I did as a family",
+      "episode_number": 139
+    },
+    {
+      "source": "Mother Earth",
+      "relationship": "advocates_for",
+      "target": "Regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I work for mother earth actually",
+      "episode_number": 139
+    },
+    {
+      "source": "Regenerative Rising",
+      "relationship": "works_at",
+      "target": "Regeneration",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the work you're doing especially with regenerative rising",
+      "episode_number": 139
+    },
+    {
+      "source": "Nature",
+      "relationship": "helps",
+      "target": "individuals",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "the practice of sharing with nature really helps",
+      "episode_number": 139
+    },
+    {
+      "source": "regeneration",
+      "relationship": "is_part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing regeneration in the context of ecosystems",
+      "episode_number": 139
+    },
+    {
+      "source": "indigenous communities",
+      "relationship": "understand",
+      "target": "regeneration",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "indigenous communities understanding the concept of regeneration",
+      "episode_number": 139
+    },
+    {
+      "source": "human system",
+      "relationship": "is_contrasted_with",
+      "target": "natural system",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "contrasting human systems with natural systems in the discussion of regeneration",
+      "episode_number": 139
+    },
+    {
+      "source": "economic regeneration",
+      "relationship": "is_a_type_of",
+      "target": "regeneration",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussing economic regeneration as a type of regeneration",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative work environments",
+      "relationship": "is_a_type_of",
+      "target": "regeneration",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "mentioning regenerative work environments as a type of regeneration",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative food systems",
+      "relationship": "is_a_type_of",
+      "target": "regeneration",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "mentioning regenerative food systems as a type of regeneration",
+      "episode_number": 139
+    },
+    {
+      "source": "organizations",
+      "relationship": "advocates_for",
+      "target": "regenerative arts summit",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "part of this movement",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative arts summit",
+      "relationship": "contains",
+      "target": "food sector",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "bringing the food and the fashion sectors together",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative arts summit",
+      "relationship": "contains",
+      "target": "fashion sector",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "bringing the food and the fashion sectors together",
+      "episode_number": 139
+    },
+    {
+      "source": "organizations",
+      "relationship": "works_at",
+      "target": "supply chains",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "holding this in their own supply chains",
+      "episode_number": 139
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "supply chains",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "time when there is climate change",
+      "episode_number": 139
+    },
+    {
+      "source": "organizations",
+      "relationship": "developed",
+      "target": "AI",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "developed tools or platforms or data sets",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative rising",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "conference location",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Marry Palos",
+      "relationship": "works_at",
+      "target": "regenerative rising",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "conference speaker",
+      "episode_number": 139
+    },
+    {
+      "source": "AI",
+      "relationship": "advocates_for",
+      "target": "ecosystems",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussion about technology and ecology",
+      "episode_number": 139
+    },
+    {
+      "source": "mycelial networks",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "comparison to ecological systems",
+      "episode_number": 139
+    },
+    {
+      "source": "wildlife",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "discussion about ecological systems",
+      "episode_number": 139
+    },
+    {
+      "source": "nisha",
+      "relationship": "works_at",
+      "target": "regenerative rising",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "nisha is the executive director of regenerative rising",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative rising",
+      "relationship": "located_in",
+      "target": "earth summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "regenerative rising is associated with the earth summit",
+      "episode_number": 139
+    },
+    {
+      "source": "earth coast productions",
+      "relationship": "supports",
+      "target": "regenerative rising",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "earth coast productions is a sponsor supporting regenerative rising",
+      "episode_number": 139
+    },
+    {
+      "source": "Chelsea green publishers",
+      "relationship": "partners_with",
+      "target": "regenerative rising",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Chelsea green publishers has a partnership with regenerative rising",
+      "episode_number": 139
+    },
+    {
+      "source": "doctor Bronners",
+      "relationship": "supports",
+      "target": "regenerative rising",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "doctor Bronners is involved in the regenerative space and supports regenerative rising",
+      "episode_number": 139
+    },
+    {
+      "source": "waylay waters",
+      "relationship": "made_by",
+      "target": "why on earth community",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "waylay waters is a social enterprise established through the why on earth community",
+      "episode_number": 139
+    },
+    {
+      "source": "doctor Bronners",
+      "relationship": "works_at",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the nonprofit of course doctor Bronners",
+      "episode_number": 139
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "contains",
+      "target": "biodynamically grown hemp infused aroma therapy soaking salts",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "social enterprises we stood up through the why on earth community",
+      "episode_number": 139
+    },
+    {
+      "source": "why on earth communities ambassador network",
+      "relationship": "part_of",
+      "target": "why on earth community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "you can join the why on earth communities ambassador network",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative rising",
+      "relationship": "founded",
+      "target": "women led organization",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "with regenerative rising one of the things you guys talk about",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative rising",
+      "relationship": "advocates_for",
+      "target": "divine feminine",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "it is a one hundred percent um women led organization",
+      "episode_number": 139
+    },
+    {
+      "source": "indigenous traditions",
+      "relationship": "contains",
+      "target": "feminine and masculine",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "in indigenous traditions there are a variety of mechanisms",
+      "episode_number": 139
+    },
+    {
+      "source": "regenerative rising",
+      "relationship": "promotes",
+      "target": "mother earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "we want to bring the power of the feminine back into this conversation",
+      "episode_number": 139
+    },
+    {
+      "source": "patriarchal system",
+      "relationship": "oppresses",
+      "target": "Mother Earth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "patriarchal system continues to embody as a woman is also being oppressed",
+      "episode_number": 139
+    },
+    {
+      "source": "Ben Franklin",
+      "relationship": "inspired",
+      "target": "grandmothers council",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "inspired Ben Franklin and others in the framing of this country",
+      "episode_number": 139
+    },
+    {
+      "source": "Y and Earth community",
+      "relationship": "launches",
+      "target": "Sophia Wisdom council",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "here at the Y and Earth community one of the things we've done is launch a Sophia Wisdom council",
+      "episode_number": 139
+    },
+    {
+      "source": "grandmothers council",
+      "relationship": "inspired",
+      "target": "Ben Franklin",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "grandmothers council that actually inspired Ben Franklin",
+      "episode_number": 139
+    },
+    {
+      "source": "councils of women",
+      "relationship": "ensures",
+      "target": "decision making",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "having councils of women ensuring certain types of decision making",
+      "episode_number": 139
+    },
+    {
+      "source": "Museum of Let's Summit",
+      "relationship": "collaborates_with",
+      "target": "Lissiel Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "collaborating with the Museum of Let's Summit and the Lissiel foundation",
+      "episode_number": 139
+    },
+    {
+      "source": "patriarchy",
+      "relationship": "influences",
+      "target": "collaboration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about gender dynamics in collaboration",
+      "episode_number": 139
+    },
+    {
+      "source": "architecture",
+      "relationship": "related_to",
+      "target": "human habitat",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about architecture and living spaces",
+      "episode_number": 139
+    },
+    {
+      "source": "land",
+      "relationship": "used_for",
+      "target": "habitat",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about planning and architecture",
+      "episode_number": 139
+    },
+    {
+      "source": "cities",
+      "relationship": "contain",
+      "target": "ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion about urban planning and nature-based infrastructure",
+      "episode_number": 139
+    },
+    {
+      "source": "nature",
+      "relationship": "advocates_for",
+      "target": "biodiversity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussing the importance of integrating nature into urban environments for biodiversity.",
+      "episode_number": 139
+    },
+    {
+      "source": "cities",
+      "relationship": "contains",
+      "target": "infrastructure",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Discussing urban environments and their infrastructure.",
+      "episode_number": 139
+    },
+    {
+      "source": "natural drainage system",
+      "relationship": "part_of",
+      "target": "ecosystems",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Discussing the role of natural drainage in ecosystems.",
+      "episode_number": 139
+    },
+    {
+      "source": "projects",
+      "relationship": "designed_for",
+      "target": "cities",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Discussing design projects aimed at improving urban environments.",
+      "episode_number": 139
+    },
+    {
+      "source": "design",
+      "relationship": "integrates_with",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Discussing the integration of design with natural systems.",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "works_at",
+      "target": "Regenerative Rising",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nisha is the executive director of Regenerative Rising",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "founded",
+      "target": "Woven Design Collaborative",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Nisha is the founder of Woven Design Collaborative",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Nisha is visiting in Colorado",
+      "episode_number": 139
+    },
+    {
+      "source": "shinran yoku",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Nisha discusses the concept of shinran yoku in relation to nature",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha Mary Palos",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Nisha mentions coming from India",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about access to nature",
+      "episode_number": 139
+    },
+    {
+      "source": "Aaron",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "hosting the podcast",
+      "episode_number": 139
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "sponsored_by",
+      "target": "Yonearth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "support for the podcast",
+      "episode_number": 139
+    },
+    {
+      "source": "Aaron",
+      "relationship": "collaborates_with",
+      "target": "Nisha",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion of future collaboration",
+      "episode_number": 139
+    },
+    {
+      "source": "Nisha",
+      "relationship": "worked_at",
+      "target": "co-working space",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mention of workspace",
+      "episode_number": 139
+    },
+    {
+      "source": "Yonearth.org",
+      "relationship": "contains",
+      "target": "sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsors are listed on the Yonearth.org backslash support page",
+      "episode_number": 139
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "advocates_for",
+      "target": "podcast episode",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "thank you for being a part of the why on earth community",
+      "episode_number": 139
+    }
+  ]
+}

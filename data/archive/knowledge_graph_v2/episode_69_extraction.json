@@ -1,0 +1,1917 @@
+{
+  "episode": 69,
+  "timestamp": "2025-10-09T11:32:13.803274",
+  "entity_count": 131,
+  "relationship_count": 99,
+  "entities": [
+    {
+      "name": "Ryan Zinn",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Regenerative Projects Manager at Dr. Bronners"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "soap business"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "You're in California. You're at home."
+    },
+    {
+      "name": "San Diego",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "county of San Diego"
+    },
+    {
+      "name": "UCLA",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "master's in nurse practitioner at UCLA"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "dealing with COVID-19"
+    },
+    {
+      "name": "Fair Trade Advocacy Organization",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "supports nonprofit partners like the Fair Trade Advocacy Organization"
+    },
+    {
+      "name": "Fair World Project",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "supports nonprofit partners like Fair World Project"
+    },
+    {
+      "name": "Grow Ahead",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "small farmer crowdfunding platform called Grow Ahead"
+    },
+    {
+      "name": "soap",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "middle of it. So I'm excited about our conversation, Aaron."
+    },
+    {
+      "name": "supply chain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "supply chain issues."
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "supporting regenerative agricultural practices"
+    },
+    {
+      "name": "Paraguay",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working with small-scale farmers"
+    },
+    {
+      "name": "Ecuador",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working with small-scale farmers"
+    },
+    {
+      "name": "Sri Lanka",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "set up our first supply chain"
+    },
+    {
+      "name": "Sri Lanka",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "set up our first supply chain in Sri Lanka to produce coconut oil"
+    },
+    {
+      "name": "coconut oil",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "to produce coconut oil, which is our number one ingredient in most of our soaps"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "we also wanted to produce under fair trade conditions as well. So that means that farmers are paid fair prices"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thinking it through the lens of climate change"
+    },
+    {
+      "name": "Ghana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "in Ghana and West Africa, where we see a number of our farmers actually grow cocoa"
+    },
+    {
+      "name": "cocoa",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grow cocoa to make chocolate"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we find them premium buyers in the United States or in Europe"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we find them premium buyers in the United States or in Europe"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about converting farmers to organic practices"
+    },
+    {
+      "name": "Uttar Pradesh",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location where mint is grown"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "country where Uttar Pradesh is located"
+    },
+    {
+      "name": "peppermint",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "product mentioned in relation to Dr. Bronner's soap"
+    },
+    {
+      "name": "Dr. Bronner's soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "product mentioned by the speaker"
+    },
+    {
+      "name": "solar panels",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "as a way to kind of mitigate against some of the bigger and broader kind of climate change challenges."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mitigate against some of the bigger and broader kind of climate change challenges."
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "agriculture or industrialized agriculture, in fact, is one of the larger, you know, sources of greenhouse gases."
+    },
+    {
+      "name": "greenhouse gases",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "is one of the larger, you know, sources of greenhouse gases."
+    },
+    {
+      "name": "mechanized agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "everything from, you know, mechanized agriculture is a big combine of tractors to the production of food."
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we see a lot of potential for regenerative agriculture to not only stop those emissions."
+    },
+    {
+      "name": "carbon cycle",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "restore this carbon cycle, which basically means that soil can act as a carbon sink."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "soil can act as a carbon sink, suck all that CO2 out of the atmosphere."
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "provides a lot of stability for farmers."
+    },
+    {
+      "name": "Dr. Brotter's soap",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "produce a product like Dr. Brotter's soap that's done in a way that's fairly and as cleanly as possible."
+    },
+    {
+      "name": "Y on Earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "here at the Y on Earth community, obviously, we really emphasize for folks."
+    },
+    {
+      "name": "ethical consumers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "consumers, ethical consumers are seeing that they want to go quote unquote above and beyond organic."
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "if you really want to get freaked out, you know, above and beyond COVID-19."
+    },
+    {
+      "name": "food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "to their communities, but to the foods that they like."
+    },
+    {
+      "name": "chocolate",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type in your favorite food into Google and climate change, whether it's chocolate."
+    },
+    {
+      "name": "coffee",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type in your favorite food into Google and climate change, whether it's coffee."
+    },
+    {
+      "name": "wine",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type in your favorite food into Google and climate change, whether it's wine."
+    },
+    {
+      "name": "bread",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "type in your favorite food into Google and climate change, whether it's bread."
+    },
+    {
+      "name": "farmers organizations",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "fine work that's been done by, you know, farmers organizations and other."
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about food and climate change"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.97,
+      "context": "organization involved in creating standards"
+    },
+    {
+      "name": "Rhode Island Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "partner organization"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "location of Rhode Island Institute"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "partner organization"
+    },
+    {
+      "name": "regenerative organic certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.92,
+      "type_confidence": 0.9,
+      "context": "standard being discussed"
+    },
+    {
+      "name": "organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "type of product claim"
+    },
+    {
+      "name": "fair trade",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "type of product claim"
+    },
+    {
+      "name": "soil health",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "value being considered in farming"
+    },
+    {
+      "name": "animal welfare",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "value being considered in farming"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "community involved in awareness and education"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "silver lining of the COVID-19 crisis"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "work that farmers and farm workers go through"
+    },
+    {
+      "name": "farm workers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "work that farmers and farm workers go through"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "training to the USDA"
+    },
+    {
+      "name": "school districts",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "for like school districts and hospitals"
+    },
+    {
+      "name": "hospitals",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "for like school districts and hospitals"
+    },
+    {
+      "name": "organic seeds",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sales of organic seeds have just gone through the roof"
+    },
+    {
+      "name": "regenerative practices",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "transition to regenerative practices"
+    },
+    {
+      "name": "regenerative purchasing policies",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "regenerative purchasing policies"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "supporting farmers as they transition to regenerative practices"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "training to the USDA"
+    },
+    {
+      "name": "school districts",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "school districts to have regenerative purchasing policies"
+    },
+    {
+      "name": "hospitals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "hospitals to have regenerative purchasing policies"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "impact of COVID-19 on food supply chains"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "writing the book Why on Earth"
+    },
+    {
+      "name": "community-supported agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community-supported agriculture model"
+    },
+    {
+      "name": "small farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "support small farmers during tough times"
+    },
+    {
+      "name": "e-commerce",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "using e-commerce options to support farmers"
+    },
+    {
+      "name": "Equal Exchange",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "shout out to Equal Exchange, one of the cooperative global networks doing coffee, tea, chocolate."
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Weylay waters, it's a social enterprise and all of their proceeds support the Y on Earth community."
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "supported some of our Y on Earth work over the months."
+    },
+    {
+      "name": "LIDGE family foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "these include the LIDGE family foundation, Purium, Earth Coast productions and Weylay waters."
+    },
+    {
+      "name": "drbronor.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "want to also mention drbronor.com."
+    },
+    {
+      "name": "Roedale Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "collaborating with the Roedale Institute on these efforts."
+    },
+    {
+      "name": "small scale farmers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the small scale farmers, cool planet video."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "connections between farming and climate change."
+    },
+    {
+      "name": "regenerative organic agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "impact of regenerative, organic, agricultural can have."
+    },
+    {
+      "name": "small farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "small farmers feed the majority of the world's population"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "context of climate change"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "2015 climate mobilization in New York City"
+    },
+    {
+      "name": "Paris climate talk",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "leading up into the Paris climate talk"
+    },
+    {
+      "name": "David Groner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "our CEO or cosmic engagement officer David Groner"
+    },
+    {
+      "name": "Uttar Pradesh",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "local partners in Uttar Pradesh, India"
+    },
+    {
+      "name": "Pavitraman",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "they run Pavitraman, which is our Middolos supplier"
+    },
+    {
+      "name": "Middolos",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "Middolos supplier"
+    },
+    {
+      "name": "Broner family",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the Broner family from top to bottom"
+    },
+    {
+      "name": "Dr. Broner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Dr. Broner is one of the few companies"
+    },
+    {
+      "name": "Y on earth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Y on earth.org site"
+    },
+    {
+      "name": "Community Mobilization Kit",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Community Mobilization Kit"
+    },
+    {
+      "name": "biodynamic soil activator",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "biodynamic soil activator that you can use in your garden"
+    },
+    {
+      "name": "soil stewardship handbook",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "soil stewardship handbook"
+    },
+    {
+      "name": "garden bundle kit",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "garden bundle kit that we put together"
+    },
+    {
+      "name": "regenerative organic alliance",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as an organization co-founded by Patagonia, Dr. Bronner's, Rodial Institute and others"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "co-founded the regenerative organic alliance"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.99,
+      "context": "co-founded the regenerative organic alliance"
+    },
+    {
+      "name": "Rodial Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "co-founded the regenerative organic alliance"
+    },
+    {
+      "name": "Ghana",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification"
+    },
+    {
+      "name": "Sri Lanka",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification"
+    },
+    {
+      "name": "USDA organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a standard for organic certification"
+    },
+    {
+      "name": "USDA organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...USDA organic is really the sort of entry point."
+    },
+    {
+      "name": "Roedale Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...in our partnership with the Roedale Institute..."
+    },
+    {
+      "name": "Jeff Moyer",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...interview with CEO Jeff Moyer on a lot of this regenerative work."
+    },
+    {
+      "name": "regenerative organic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...certified regenerative organic, it will not have these poisonous toxic chemicals..."
+    },
+    {
+      "name": "climate collaborative",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...you had also shared the climate collaborative, which is climate collaborative.com."
+    },
+    {
+      "name": "climate collaborative",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "climate collaborative.com"
+    },
+    {
+      "name": "Dr. Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Dr. Bronner supports a number of great causes"
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "regenerative agriculture is close to my heart"
+    },
+    {
+      "name": "agroforestry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "this notion of agroforestry"
+    },
+    {
+      "name": "Green New Deal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Dr. Bronner's Supports the Green New Deal"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "COVID-19 has really amplified certain aspects of discussions"
+    },
+    {
+      "name": "federal government",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "put all of the resources of the federal government behind a recovery"
+    },
+    {
+      "name": "Green New Deal",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "proposing this concept of a Green New Deal"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "what we want to do is try to replicate the values and practices that we do at Dr. Bronner's"
+    },
+    {
+      "name": "David Bronner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "David Bronner can't make more than five times what the lowest person pays"
+    },
+    {
+      "name": "Gandhi",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "a wonderful quote that I've seen attributed to Gandhi"
+    },
+    {
+      "name": "Gandhi",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "quote attributed to Gandhi"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization mentioned in the context of exemplary work"
+    },
+    {
+      "name": "Ryan",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "person being thanked and engaged in conversation"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "context of discussion regarding the pandemic"
+    },
+    {
+      "name": "Southern California",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location where the speaker lives"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "community mentioned in the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Ryan Zinn",
+      "relationship": "works_at",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "Regenerative Projects Manager at Dr. Bronners",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.99,
+      "target_confidence": 0.99,
+      "context": "You're in California. You're at home.",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "supports",
+      "target": "Fair Trade Advocacy Organization",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "supports nonprofit partners like the Fair Trade Advocacy Organization",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "supports",
+      "target": "Fair World Project",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "supports nonprofit partners like Fair World Project",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "supports",
+      "target": "Grow Ahead",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "small farmer crowdfunding platform called Grow Ahead",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "produces",
+      "target": "soap",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "you're in the soap business",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronners",
+      "relationship": "has_supply_chain",
+      "target": "supply chain",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "supply chain issues",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "is_in",
+      "target": "COVID-19",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "dealing with COVID-19",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "is_in",
+      "target": "California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.99,
+      "target_confidence": 0.99,
+      "context": "You're in California. You're at home.",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan Zinn",
+      "relationship": "is_parent_of",
+      "target": "two children",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I've got my two children here at home",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "works_with",
+      "target": "10,000 small farmers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "providing them with a sustained fair trading relationship",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "food servers here in the United States",
+      "episode_number": 69
+    },
+    {
+      "source": "small-scale farmers",
+      "relationship": "located_in",
+      "target": "Paraguay",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "working with small-scale farmers in Paraguay",
+      "episode_number": 69
+    },
+    {
+      "source": "small-scale farmers",
+      "relationship": "located_in",
+      "target": "Ecuador",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "working with small-scale farmers in Ecuador",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "set_up_supply_chain_in",
+      "target": "Sri Lanka",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "set up our first supply chain in Sri Lanka",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "fair trade conditions",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "So that means that farmers are paid fair prices",
+      "episode_number": 69
+    },
+    {
+      "source": "Sri Lanka",
+      "relationship": "contains",
+      "target": "coconut oil",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "set up our first supply chain in Sri Lanka to produce coconut oil",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "Ghana",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "in Ghana and West Africa, where we see a number of our farmers actually grow cocoa",
+      "episode_number": 69
+    },
+    {
+      "source": "cocoa",
+      "relationship": "made_by",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "grow cocoa to make chocolate",
+      "episode_number": 69
+    },
+    {
+      "source": "climate change",
+      "relationship": "impacts",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "climate change has already been having a big impact on farmers around the world",
+      "episode_number": 69
+    },
+    {
+      "source": "coconut oil",
+      "relationship": "made_by",
+      "target": "Sri Lanka",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "to produce coconut oil, which is our number one ingredient in most of our soaps",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "we find them premium buyers in the United States or in Europe",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "we find them premium buyers in the United States or in Europe",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "organic practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about farmers transitioning to organic farming",
+      "episode_number": 69
+    },
+    {
+      "source": "Uttar Pradesh",
+      "relationship": "part_of",
+      "target": "India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "geographic relationship",
+      "episode_number": 69
+    },
+    {
+      "source": "peppermint",
+      "relationship": "made_by",
+      "target": "farmers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about peppermint production",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's soap",
+      "relationship": "contains",
+      "target": "peppermint",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "mention of Dr. Bronner's soap as a product",
+      "episode_number": 69
+    },
+    {
+      "source": "industrialized agriculture",
+      "relationship": "contributes_to",
+      "target": "greenhouse gases",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about the impact of agriculture on climate change",
+      "episode_number": 69
+    },
+    {
+      "source": "agriculture",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "agriculture or industrialized agriculture, in fact, is one of the larger, you know, sources of greenhouse gases.",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "mitigates",
+      "target": "greenhouse gases",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we see a lot of potential for regenerative agriculture to not only stop those emissions.",
+      "episode_number": 69
+    },
+    {
+      "source": "soil",
+      "relationship": "acts_as",
+      "target": "carbon sink",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "soil can act as a carbon sink, suck all that CO2 out of the atmosphere.",
+      "episode_number": 69
+    },
+    {
+      "source": "Y on Earth community",
+      "relationship": "emphasizes",
+      "target": "consumer demand signals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "here at the Y on Earth community, obviously, we really emphasize for folks is the critical role that each of us as individuals plays as a consumer.",
+      "episode_number": 69
+    },
+    {
+      "source": "ethical consumers",
+      "relationship": "desire",
+      "target": "organic",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "consumers, ethical consumers are seeing that they want to go quote unquote above and beyond organic.",
+      "episode_number": 69
+    },
+    {
+      "source": "chocolate",
+      "relationship": "impacted_by",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "type in your favorite food into Google and climate change, whether it's chocolate.",
+      "episode_number": 69
+    },
+    {
+      "source": "coffee",
+      "relationship": "impacted_by",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "type in your favorite food into Google and climate change, whether it's coffee.",
+      "episode_number": 69
+    },
+    {
+      "source": "wine",
+      "relationship": "impacted_by",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "type in your favorite food into Google and climate change, whether it's wine.",
+      "episode_number": 69
+    },
+    {
+      "source": "bread",
+      "relationship": "impacted_by",
+      "target": "climate change",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "type in your favorite food into Google and climate change, whether it's bread.",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers organizations",
+      "relationship": "support",
+      "target": "ethical consumers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "fine work that's been done by, you know, farmers organizations and other.",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "partners_with",
+      "target": "Rhode Island Institute",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "collaboration to create standards",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "partners_with",
+      "target": "Patagonia",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "collaboration to create standards",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "creates",
+      "target": "regenerative organic certification",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.92,
+      "context": "standard being developed",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic certification",
+      "relationship": "includes",
+      "target": "organic",
+      "source_confidence": 0.92,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "components of the certification",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic certification",
+      "relationship": "includes",
+      "target": "fair trade",
+      "source_confidence": 0.92,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "components of the certification",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "advocates_for",
+      "target": "animal welfare",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "values promoted by the organization",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "advocates_for",
+      "target": "soil health",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "values promoted by the organization",
+      "episode_number": 69
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "engages_in",
+      "target": "awareness and education",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "community activities",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "regenerative practices",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "support farmers to transition regeneratively",
+      "episode_number": 69
+    },
+    {
+      "source": "USDA",
+      "relationship": "supports",
+      "target": "farmers",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "training to the USDA",
+      "episode_number": 69
+    },
+    {
+      "source": "school districts",
+      "relationship": "located_in",
+      "target": "regenerative purchasing policies",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "for like school districts and hospitals",
+      "episode_number": 69
+    },
+    {
+      "source": "hospitals",
+      "relationship": "located_in",
+      "target": "regenerative purchasing policies",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "for like school districts and hospitals",
+      "episode_number": 69
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "forces",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "silver lining of the COVID-19 crisis",
+      "episode_number": 69
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "regenerative practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "supporting farmers as they transition to regenerative practices",
+      "episode_number": 69
+    },
+    {
+      "source": "USDA",
+      "relationship": "located_in",
+      "target": "training",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "training to the USDA",
+      "episode_number": 69
+    },
+    {
+      "source": "school districts",
+      "relationship": "advocates_for",
+      "target": "regenerative purchasing policies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "school districts to have regenerative purchasing policies",
+      "episode_number": 69
+    },
+    {
+      "source": "hospitals",
+      "relationship": "advocates_for",
+      "target": "regenerative purchasing policies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "hospitals to have regenerative purchasing policies",
+      "episode_number": 69
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "affects",
+      "target": "food supply chains",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "impact of COVID-19 on food supply chains",
+      "episode_number": 69
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "written_by",
+      "target": "unknown author",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "writing the book Why on Earth",
+      "episode_number": 69
+    },
+    {
+      "source": "community-supported agriculture",
+      "relationship": "supports",
+      "target": "small farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "community-supported agriculture model",
+      "episode_number": 69
+    },
+    {
+      "source": "e-commerce",
+      "relationship": "supports",
+      "target": "farmers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "using e-commerce options to support farmers",
+      "episode_number": 69
+    },
+    {
+      "source": "Equal Exchange",
+      "relationship": "supports",
+      "target": "Y on Earth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "shout out to Equal Exchange, one of the cooperative global networks doing coffee, tea, chocolate. They've supported some of our Y on Earth work over the months.",
+      "episode_number": 69
+    },
+    {
+      "source": "Weylay Waters",
+      "relationship": "supports",
+      "target": "Y on Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Weylay waters, it's a social enterprise and all of their proceeds support the Y on Earth community.",
+      "episode_number": 69
+    },
+    {
+      "source": "drbronor.com",
+      "relationship": "collaborates_with",
+      "target": "Roedale Institute",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "excited to be talking with drbronor's about collaborating on some of this. We're collaborating with the Roedale Institute on these efforts as well.",
+      "episode_number": 69
+    },
+    {
+      "source": "small scale farmers",
+      "relationship": "feeds",
+      "target": "world's population",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "small farmers feed the majority of the world's population just on a quarter of the farmland.",
+      "episode_number": 69
+    },
+    {
+      "source": "small scale farmers",
+      "relationship": "provides",
+      "target": "healthy food supply",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we can really focus in on having a very healthy and regenerative food supply as so long as we are about the support, support small farmers.",
+      "episode_number": 69
+    },
+    {
+      "source": "small farmers",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "support small farmers and climate change",
+      "episode_number": 69
+    },
+    {
+      "source": "David Groner",
+      "relationship": "works_at",
+      "target": "Pavitraman",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "our CEO or cosmic engagement officer David Groner",
+      "episode_number": 69
+    },
+    {
+      "source": "Pavitraman",
+      "relationship": "located_in",
+      "target": "Uttar Pradesh",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "they run Pavitraman in Uttar Pradesh",
+      "episode_number": 69
+    },
+    {
+      "source": "Uttar Pradesh",
+      "relationship": "part_of",
+      "target": "India",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.99,
+      "context": "Uttar Pradesh, India",
+      "episode_number": 69
+    },
+    {
+      "source": "Broner family",
+      "relationship": "works_at",
+      "target": "Dr. Broner",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the Broner family from top to bottom are just the most committed people",
+      "episode_number": 69
+    },
+    {
+      "source": "Y on earth.org",
+      "relationship": "provides",
+      "target": "Community Mobilization Kit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Y on earth.org site, Community Mobilization Kit",
+      "episode_number": 69
+    },
+    {
+      "source": "Community Mobilization Kit",
+      "relationship": "includes",
+      "target": "biodynamic soil activator",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "includes some biodynamic soil activator",
+      "episode_number": 69
+    },
+    {
+      "source": "Community Mobilization Kit",
+      "relationship": "includes",
+      "target": "soil stewardship handbook",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "includes our soil stewardship handbook",
+      "episode_number": 69
+    },
+    {
+      "source": "garden bundle kit",
+      "relationship": "contains",
+      "target": "biochar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "garden bundle kit that has some biochar",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "co-founded",
+      "target": "Patagonia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussed as an organization co-founded by Patagonia, Dr. Bronner's, Rodial Institute and others",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "co-founded",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "discussed as an organization co-founded by Patagonia, Dr. Bronner's, Rodial Institute and others",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "co-founded",
+      "target": "Rodial Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as an organization co-founded by Patagonia, Dr. Bronner's, Rodial Institute and others",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "located_in",
+      "target": "Ghana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "located_in",
+      "target": "Sri Lanka",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic alliance",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "location of pilot projects for regenerative organic certification",
+      "episode_number": 69
+    },
+    {
+      "source": "standard",
+      "relationship": "built_on",
+      "target": "USDA organic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned as a standard for organic certification",
+      "episode_number": 69
+    },
+    {
+      "source": "USDA organic",
+      "relationship": "entry_point_for",
+      "target": "farmers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...USDA organic is really the sort of entry point for farmers...",
+      "episode_number": 69
+    },
+    {
+      "source": "Roedale Institute",
+      "relationship": "collaborates_with",
+      "target": "farmers",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "...in our partnership with the Roedale Institute...",
+      "episode_number": 69
+    },
+    {
+      "source": "Jeff Moyer",
+      "relationship": "CEO_of",
+      "target": "Roedale Institute",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "...interview with CEO Jeff Moyer on a lot of this regenerative work...",
+      "episode_number": 69
+    },
+    {
+      "source": "regenerative organic",
+      "relationship": "standard_for",
+      "target": "certified entities",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...entry point for any certified entity within the regenerative organic system...",
+      "episode_number": 69
+    },
+    {
+      "source": "climate collaborative",
+      "relationship": "coalition_of",
+      "target": "companies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...the climate collaborative is a coalition of companies that has come together...",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "supports",
+      "target": "regenerative agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Dr. Bronner supports a number of great causes",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "supports",
+      "target": "Green New Deal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Dr. Bronner's Supports the Green New Deal",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner",
+      "relationship": "advocates_for",
+      "target": "agroforestry",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "this notion of agroforestry",
+      "episode_number": 69
+    },
+    {
+      "source": "federal government",
+      "relationship": "part_of",
+      "target": "Green New Deal",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "put all of the resources of the federal government behind a recovery",
+      "episode_number": 69
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "amplified",
+      "target": "discussions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "COVID-19 has really amplified certain aspects of discussions",
+      "episode_number": 69
+    },
+    {
+      "source": "climate collaborative",
+      "relationship": "located_in",
+      "target": "consumer product space",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "this is a great initiative that I am really excited about",
+      "episode_number": 69
+    },
+    {
+      "source": "David Bronner",
+      "relationship": "works_at",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "David Bronner can't make more than five times what the lowest person pays",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "advocates_for",
+      "target": "Green New Deal",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "what you guys are doing at Dr. Bronner's is such an exemplary example of what's possible",
+      "episode_number": 69
+    },
+    {
+      "source": "Dr. Bronner's",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "many of the corporations in here in the United States",
+      "episode_number": 69
+    },
+    {
+      "source": "Gandhi",
+      "relationship": "quoted_in",
+      "target": "Dr. Bronner's",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "a wonderful quote that I've seen attributed to Gandhi",
+      "episode_number": 69
+    },
+    {
+      "source": "Ryan",
+      "relationship": "works_at",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "discussion about the work done at Dr. Bronners",
+      "episode_number": 69
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Aaron is the host of the podcast",
+      "episode_number": 69
+    },
+    {
+      "source": "COVID-19",
+      "relationship": "affects",
+      "target": "Southern California",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "discussion about the impact of COVID-19 on the speaker's location",
+      "episode_number": 69
+    },
+    {
+      "source": "Gandhi",
+      "relationship": "advocates_for",
+      "target": "community connections",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "quote attributed to Gandhi about needs vs greed",
+      "episode_number": 69
+    }
+  ]
+}

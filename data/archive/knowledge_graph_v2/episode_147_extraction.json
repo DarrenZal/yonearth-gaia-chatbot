@@ -1,0 +1,2263 @@
+{
+  "episode": 147,
+  "timestamp": "2025-10-09T10:48:41.917271",
+  "entity_count": 159,
+  "relationship_count": 114,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Sheila Foster",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director of the biodynamic demeter alliance"
+    },
+    {
+      "name": "biodynamic demeter alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization discussed in the podcast"
+    },
+    {
+      "name": "southern Oregon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location where Sheila lives"
+    },
+    {
+      "name": "Takeda",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "one of the peoples that stewarded the land"
+    },
+    {
+      "name": "Lutagua",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "one of the peoples that stewarded the land"
+    },
+    {
+      "name": "Shasta",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "one of the peoples that stewarded the land"
+    },
+    {
+      "name": "Cascades",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mountain range mentioned in the podcast"
+    },
+    {
+      "name": "Siscus",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mountain range mentioned in the podcast"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where the conference will take place"
+    },
+    {
+      "name": "Westminster",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "city where the conference will take place"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "city near the conference location"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "city near the conference location"
+    },
+    {
+      "name": "North America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "region of attendees for the conference"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "biodynamics movement"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "located in the United States"
+    },
+    {
+      "name": "Westminster",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "between Denver and Boulder"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "located in Colorado"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "located in Colorado"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Austrian philosopher and scientist"
+    },
+    {
+      "name": "National Biodynamic Conference",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "conference in Westminster"
+    },
+    {
+      "name": "Demeter",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "certification for biodynamics"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where the conference is held"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "region where biodynamics started"
+    },
+    {
+      "name": "Rudolph Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing biodynamics and Waldorf education"
+    },
+    {
+      "name": "Waldorf education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "related to teaching individuality of children"
+    },
+    {
+      "name": "biodynamic practices",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "farming practices focused on individuality of the land"
+    },
+    {
+      "name": "biodynamic farmer",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the philosophy of farming"
+    },
+    {
+      "name": "ecosystem",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "related to farming and land management"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "important for microbial relationships and farming"
+    },
+    {
+      "name": "livestock",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "important part of biodynamic farming"
+    },
+    {
+      "name": "nutrient cycle",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "related to the cycle of life on the farm"
+    },
+    {
+      "name": "agro businesses",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "contrasted with biodynamic farming practices"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "located at Elkrund Farm a small drylands agri-ecology farm outside of Boulder"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "located at Elkrund Farm a small drylands agri-ecology farm outside of Boulder and Lions Colorado"
+    },
+    {
+      "name": "Elkrund Farm",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "located at Elkrund Farm a small drylands agri-ecology farm outside of Boulder"
+    },
+    {
+      "name": "Nick D. D. Domenico",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my friends Nick D. D. Domenico and Marissa Pulaski"
+    },
+    {
+      "name": "Marissa Pulaski",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "my friends Nick D. D. Domenico and Marissa Pulaski"
+    },
+    {
+      "name": "sustainable settings",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "friends brick and rose up at sustainable settings a few hours from here"
+    },
+    {
+      "name": "Rudolf Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a quick quote from here that is quoting Rudolf Steiner"
+    },
+    {
+      "name": "Veridi Toss",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "I ended up writing a novel about all of this called Veridi Toss"
+    },
+    {
+      "name": "Rudolf Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to agricultural preparations and nutrition"
+    },
+    {
+      "name": "nutrition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a problem in the context of agricultural practices"
+    },
+    {
+      "name": "agriculture",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussed as a practice that needs to change"
+    },
+    {
+      "name": "biodynamic food",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to accessibility issues"
+    },
+    {
+      "name": "grandmother",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "mentioned in relation to the speaker's creation"
+    },
+    {
+      "name": "children",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussed in the context of food accessibility and education"
+    },
+    {
+      "name": "obesity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned as a problem related to nutrition"
+    },
+    {
+      "name": "community",
+      "type": "ORG",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "mentioned in relation to tackling food accessibility issues"
+    },
+    {
+      "name": "Steiner",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing life force and equity issues"
+    },
+    {
+      "name": "biodynamic practices",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "practices related to agriculture and sustainability"
+    },
+    {
+      "name": "farmers market",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "local market for fresh produce"
+    },
+    {
+      "name": "regenerative finance",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "financial practices related to sustainability"
+    },
+    {
+      "name": "eco-seen economics",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "economic practices related to ecology"
+    },
+    {
+      "name": "biodynamicconference.com",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "website for conference registration"
+    },
+    {
+      "name": "western hotel",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "location for conference programming"
+    },
+    {
+      "name": "Liz Carlisle",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "speaker at the conference"
+    },
+    {
+      "name": "Healing Grounds",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book written by Liz Carlisle"
+    },
+    {
+      "name": "Ida Goosman",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "researcher at the conference"
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "topic of research by Ida Goosman"
+    },
+    {
+      "name": "constant washburn",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "speaker at the conference"
+    },
+    {
+      "name": "Joanna Macy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "associated with the work that reconnects"
+    },
+    {
+      "name": "Nikki Sylvestery",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "speaker at the conference"
+    },
+    {
+      "name": "people's grocery",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization founded by Nikki Sylvestery"
+    },
+    {
+      "name": "soil and shadow",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "current organization of Nikki Sylvestery"
+    },
+    {
+      "name": "Green Thrall",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "former organization of Nikki Sylvestery"
+    },
+    {
+      "name": "Woody Tash",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "speaker at the conference"
+    },
+    {
+      "name": "slow money",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "topic discussed by Woody Tash"
+    },
+    {
+      "name": "Martin King",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ED for Hawthorne Valley"
+    },
+    {
+      "name": "Hawthorne Valley",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization represented by Martin King"
+    },
+    {
+      "name": "Woody Tash",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "talking about slow money"
+    },
+    {
+      "name": "Martin King",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "ED for Hawthorne Valley"
+    },
+    {
+      "name": "Hawthorne Valley",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization associated with Martin King"
+    },
+    {
+      "name": "biodynamic farmers",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "panel of farmers discussing biodynamics"
+    },
+    {
+      "name": "Winona Ladouque",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "leading a workshop on finding your voice"
+    },
+    {
+      "name": "Betty Ladouque",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Winona's mother leading a workshop"
+    },
+    {
+      "name": "Penny Livingston",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "fan of the Dryland Ecology Center"
+    },
+    {
+      "name": "Gabby Gonzalez",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "working on a place similar to the Dryland Ecology Center in Mexico"
+    },
+    {
+      "name": "Dryland Ecology Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization related to ecology workshops"
+    },
+    {
+      "name": "Seacum and Egypt",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "created the economy of love"
+    },
+    {
+      "name": "biodynamic demeter alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization associated with Sheila Foster"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of the conference"
+    },
+    {
+      "name": "Westminster",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location of the conference"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location near the conference"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "location near the conference"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Podcast transcript"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "Podcast host"
+    },
+    {
+      "name": "Sheila Foster",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "Executive director of the biodynamic demeter alliance"
+    },
+    {
+      "name": "biodynamic demeter alliance",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Organization mentioned in the podcast"
+    },
+    {
+      "name": "biodynamicconference.com",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Website for conference registration"
+    },
+    {
+      "name": "biodynamics.com",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Website for additional information"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Publisher and sponsor"
+    },
+    {
+      "name": "Purim organic superfoods",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Sponsor mentioned in the podcast"
+    },
+    {
+      "name": "Weylay water soaking salts",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Product mentioned in the podcast"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State where farms are located"
+    },
+    {
+      "name": "Earth Heroes",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Sponsor mentioned in the podcast"
+    },
+    {
+      "name": "VeridiTos",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Book mentioned in the podcast"
+    },
+    {
+      "name": "why on earth community podcast",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Podcast series"
+    },
+    {
+      "name": "biodynamic methods",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Farming methods mentioned in the podcast"
+    },
+    {
+      "name": "ambassadors",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Network mentioned in the podcast"
+    },
+    {
+      "name": "Biden",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conference"
+    },
+    {
+      "name": "Michoacase",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "conference"
+    },
+    {
+      "name": "Demeter",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "logo"
+    },
+    {
+      "name": "Josephine Porter Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "institute"
+    },
+    {
+      "name": "by dynamic movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "movement"
+    },
+    {
+      "name": "earth and humanity foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsor"
+    },
+    {
+      "name": "Mercola",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor"
+    },
+    {
+      "name": "Demeter International",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "attendance"
+    },
+    {
+      "name": "Neil and Suns",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "sponsor"
+    },
+    {
+      "name": "Napa Valley",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "vineyards"
+    },
+    {
+      "name": "biodynamics.com",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "website"
+    },
+    {
+      "name": "biodynamicsconference.com",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "website"
+    },
+    {
+      "name": "biodynamic flavor guide",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "publication"
+    },
+    {
+      "name": "Demeter certified producers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "producers"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...this is happening here in Colorado..."
+    },
+    {
+      "name": "Lake George",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...conference at Lake George back in 2019..."
+    },
+    {
+      "name": "Sheila",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "...Sheila your your role as executive director..."
+    },
+    {
+      "name": "Rob Valley Farmed School",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "...leadership roles with Rob Valley Farmed School..."
+    },
+    {
+      "name": "Loma Cotsie restoration project",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "...development director role at Loma Cotsie restoration project..."
+    },
+    {
+      "name": "science works hands-on museum",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "...development director at science works hands-on museum..."
+    },
+    {
+      "name": "Demeter",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "...merger of Demeter on the one hand..."
+    },
+    {
+      "name": "biodynamic association",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "...merger of Demeter on the one hand in the biodynamic association..."
+    },
+    {
+      "name": "Pointe-Rays",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "...retreat in Pointe-Rays California..."
+    },
+    {
+      "name": "biodynamic federation demeter international",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "...working on that on the international level with the biodynamic federation demeter international..."
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...they're using in Europe and in Egypt and in South America..."
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...they're using in Europe and in Egypt and in South America..."
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...they're using in Europe and in Egypt and in South America..."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...bring that to the United States..."
+    },
+    {
+      "name": "biodynamic federation demeter international",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "working on that on the international level"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "using in Europe"
+    },
+    {
+      "name": "Egypt",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "using in Egypt"
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "using in South America"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "bring that to the United States"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "farmers that are able to use this technology"
+    },
+    {
+      "name": "local government entities",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "take to local government entities"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "support and grow the biodynamics in the United States"
+    },
+    {
+      "name": "demeter certification",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "what does it mean for demeter certification"
+    },
+    {
+      "name": "biodynamic community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "grow the biodynamic community"
+    },
+    {
+      "name": "biodynamic marketplace",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "grow the biodynamic marketplace"
+    },
+    {
+      "name": "biodynamic demeter alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the real work of the biodynamic demeter alliance"
+    },
+    {
+      "name": "demeter",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "one is demeter which is the certification"
+    },
+    {
+      "name": "cultural sphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the cultural sphere which is kind of the work"
+    },
+    {
+      "name": "economic development market development",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the third is economic development market development"
+    },
+    {
+      "name": "biodynamics",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "implementation of biodynamics on the ground"
+    },
+    {
+      "name": "Y Honors community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "engaged in some related similar projects"
+    },
+    {
+      "name": "biodynamic movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "serve the biodynamic movement"
+    },
+    {
+      "name": "Demeter Alliance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "leadership and management and the board of the biodynamic demeter alliance"
+    },
+    {
+      "name": "Marin Organic",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "development director from Marin organic"
+    },
+    {
+      "name": "Super Honolade",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "started by Super Honolade who has Calbrough Cheese"
+    },
+    {
+      "name": "Warren Weber",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "part of the original group that wrote the organic standard"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "first all organic county in the nation"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "farmers where they would walk in the room"
+    },
+    {
+      "name": "government agencies",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working with government agencies"
+    },
+    {
+      "name": "local government",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working with local government"
+    },
+    {
+      "name": "state governments",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working with state governments"
+    },
+    {
+      "name": "Sheila",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thank you so much I know it's an extremely busy time for you preparing in these last few weeks ahead of the conference"
+    },
+    {
+      "name": "why on earth community stewardship and sustainability podcast series",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by"
+    },
+    {
+      "name": "maryne william parry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "hosted by maryne william parry author thought leader and executive consultant"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "please visit why on earth dot org backslash support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Sheila Foster",
+      "relationship": "works_at",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Sheila's role in the organization",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila Foster",
+      "relationship": "lives_in",
+      "target": "southern Oregon",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Sheila's residence",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "part_of",
+      "target": "biodynamic agriculture",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "Focus of the organization",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Location of the upcoming conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Westminster",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "City within the state",
+      "episode_number": 147
+    },
+    {
+      "source": "Cascades",
+      "relationship": "part_of",
+      "target": "southern Oregon",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Geographical feature in the area",
+      "episode_number": 147
+    },
+    {
+      "source": "Siscus",
+      "relationship": "part_of",
+      "target": "southern Oregon",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "Geographical feature in the area",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila Foster",
+      "relationship": "advocates_for",
+      "target": "biodynamic agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Sheila's beliefs and work focus",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "contains",
+      "target": "conference",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Event organized by the alliance",
+      "episode_number": 147
+    },
+    {
+      "source": "North America",
+      "relationship": "contains",
+      "target": "conference attendees",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Region of attendees for the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "celebrated_at",
+      "target": "National Biodynamic Conference",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "conference to celebrate biodynamics",
+      "episode_number": 147
+    },
+    {
+      "source": "National Biodynamic Conference",
+      "relationship": "located_in",
+      "target": "Westminster",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "conference location",
+      "episode_number": 147
+    },
+    {
+      "source": "Westminster",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Westminster is in Colorado",
+      "episode_number": 147
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Denver is in Colorado",
+      "episode_number": 147
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Boulder is in Colorado",
+      "episode_number": 147
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocated_for",
+      "target": "biodynamics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Steiner's lectures formed the basis of biodynamics",
+      "episode_number": 147
+    },
+    {
+      "source": "Demeter",
+      "relationship": "certifies",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Demeter certification for biodynamic farms",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "originated_in",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "biodynamics started in Europe",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "celebrates",
+      "target": "100 year anniversary",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "biodynamics 100 year anniversary",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamics",
+      "relationship": "part_of",
+      "target": "organic movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "biodynamics is part of the organic movement",
+      "episode_number": 147
+    },
+    {
+      "source": "Rudolph Steiner",
+      "relationship": "advocates_for",
+      "target": "Waldorf education",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the philosophy of individuality in education",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic practices",
+      "relationship": "related_to",
+      "target": "biodynamic farmer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the philosophy of farming",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic farmer",
+      "relationship": "works_with",
+      "target": "ecosystem",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussing the holistic approach to farming",
+      "episode_number": 147
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microbial relationships",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "importance of soil in farming",
+      "episode_number": 147
+    },
+    {
+      "source": "livestock",
+      "relationship": "part_of",
+      "target": "biodynamic farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "importance of livestock in biodynamic farming",
+      "episode_number": 147
+    },
+    {
+      "source": "nutrient cycle",
+      "relationship": "is_part_of",
+      "target": "ecosystem",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussing the cycles in farming",
+      "episode_number": 147
+    },
+    {
+      "source": "agro businesses",
+      "relationship": "contrasted_with",
+      "target": "biodynamic practices",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "contrasting farming practices",
+      "episode_number": 147
+    },
+    {
+      "source": "Elkrund Farm",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "located at Elkrund Farm a small drylands agri-ecology farm outside of Boulder",
+      "episode_number": 147
+    },
+    {
+      "source": "Elkrund Farm",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "located at Elkrund Farm a small drylands agri-ecology farm outside of Boulder and Lions Colorado",
+      "episode_number": 147
+    },
+    {
+      "source": "Nick D. D. Domenico",
+      "relationship": "works_at",
+      "target": "Elkrund Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my friends Nick D. D. Domenico and Marissa Pulaski",
+      "episode_number": 147
+    },
+    {
+      "source": "Marissa Pulaski",
+      "relationship": "works_at",
+      "target": "Elkrund Farm",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "my friends Nick D. D. Domenico and Marissa Pulaski",
+      "episode_number": 147
+    },
+    {
+      "source": "sustainable settings",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "friends brick and rose up at sustainable settings a few hours from here",
+      "episode_number": 147
+    },
+    {
+      "source": "Rudolf Steiner",
+      "relationship": "advocates_for",
+      "target": "agricultural preparations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "a quick quote from here that is quoting Rudolf Steiner",
+      "episode_number": 147
+    },
+    {
+      "source": "Veridi Toss",
+      "relationship": "features",
+      "target": "Elkrund Farm",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "I ended up writing a novel about all of this called Veridi Toss",
+      "episode_number": 147
+    },
+    {
+      "source": "Rudolf Steiner",
+      "relationship": "advocates_for",
+      "target": "nutrition",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to agricultural preparations and nutrition",
+      "episode_number": 147
+    },
+    {
+      "source": "Rudolf Steiner",
+      "relationship": "advocates_for",
+      "target": "agriculture",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed as a practice that needs to change",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic food",
+      "relationship": "part_of",
+      "target": "nutrition",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to accessibility issues",
+      "episode_number": 147
+    },
+    {
+      "source": "children",
+      "relationship": "affected_by",
+      "target": "biodynamic food",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussed in the context of food accessibility and education",
+      "episode_number": 147
+    },
+    {
+      "source": "obesity",
+      "relationship": "related_to",
+      "target": "nutrition",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned as a problem related to nutrition",
+      "episode_number": 147
+    },
+    {
+      "source": "community",
+      "relationship": "advocates_for",
+      "target": "nutritious food",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to tackling food accessibility issues",
+      "episode_number": 147
+    },
+    {
+      "source": "Steiner",
+      "relationship": "advocates_for",
+      "target": "biodynamic practices",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion on life force and sustainability",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic practices",
+      "relationship": "part_of",
+      "target": "agriculture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "context of sustainable practices",
+      "episode_number": 147
+    },
+    {
+      "source": "farmers market",
+      "relationship": "located_in",
+      "target": "local community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "local market for produce",
+      "episode_number": 147
+    },
+    {
+      "source": "regenerative finance",
+      "relationship": "related_to",
+      "target": "eco-seen economics",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.65,
+      "context": "financial practices for sustainability",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamicconference.com",
+      "relationship": "hosts",
+      "target": "western hotel",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "conference registration and location",
+      "episode_number": 147
+    },
+    {
+      "source": "Liz Carlisle",
+      "relationship": "advocates_for",
+      "target": "Healing Grounds",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "speaker at the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Ida Goosman",
+      "relationship": "researches",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "researcher at the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "constant washburn",
+      "relationship": "works_with",
+      "target": "Joanna Macy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "speaker at the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Nikki Sylvestery",
+      "relationship": "founded",
+      "target": "people's grocery",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "speaker at the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Nikki Sylvestery",
+      "relationship": "founded",
+      "target": "soil and shadow",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "current organization of Nikki Sylvestery",
+      "episode_number": 147
+    },
+    {
+      "source": "Nikki Sylvestery",
+      "relationship": "was_CEO_of",
+      "target": "Green Thrall",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "former organization of Nikki Sylvestery",
+      "episode_number": 147
+    },
+    {
+      "source": "Woody Tash",
+      "relationship": "discusses",
+      "target": "slow money",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "speaker at the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Martin King",
+      "relationship": "is_ED_of",
+      "target": "Hawthorne Valley",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ED for Hawthorne Valley",
+      "episode_number": 147
+    },
+    {
+      "source": "Woody Tash",
+      "relationship": "talks_about",
+      "target": "slow money",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "talking about slow money",
+      "episode_number": 147
+    },
+    {
+      "source": "Martin King",
+      "relationship": "works_at",
+      "target": "Hawthorne Valley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ED for Hawthorne Valley",
+      "episode_number": 147
+    },
+    {
+      "source": "Hawthorne Valley",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "organization associated with Martin King",
+      "episode_number": 147
+    },
+    {
+      "source": "Winona Ladouque",
+      "relationship": "leads",
+      "target": "workshop on finding your voice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "leading a workshop",
+      "episode_number": 147
+    },
+    {
+      "source": "Betty Ladouque",
+      "relationship": "leads",
+      "target": "workshop on finding your voice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Winona's mother leading a workshop",
+      "episode_number": 147
+    },
+    {
+      "source": "Penny Livingston",
+      "relationship": "advocates_for",
+      "target": "Dryland Ecology Center",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "fan of the Dryland Ecology Center",
+      "episode_number": 147
+    },
+    {
+      "source": "Gabby Gonzalez",
+      "relationship": "works_on",
+      "target": "place similar to the Dryland Ecology Center",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "working on a place similar to the Dryland Ecology Center in Mexico",
+      "episode_number": 147
+    },
+    {
+      "source": "Seacum and Egypt",
+      "relationship": "created",
+      "target": "economy of love",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "created the economy of love",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila Foster",
+      "relationship": "works_at",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "executive director of the biodynamic demeter alliance",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "organization associated with Sheila Foster",
+      "episode_number": 147
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Westminster",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila Foster",
+      "relationship": "works_at",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Podcast segment discussing Sheila's role",
+      "episode_number": 147
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "sponsor_of",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Mentioned as a sponsor for the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "Purim organic superfoods",
+      "relationship": "sponsor_of",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mentioned as a sponsor in the podcast",
+      "episode_number": 147
+    },
+    {
+      "source": "Weylay water soaking salts",
+      "relationship": "made_by",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Product made using methods mentioned in the podcast",
+      "episode_number": 147
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Geographic location mentioned in the podcast",
+      "episode_number": 147
+    },
+    {
+      "source": "Earth Heroes",
+      "relationship": "sponsor_of",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Mentioned as a sponsor in the podcast",
+      "episode_number": 147
+    },
+    {
+      "source": "VeridiTos",
+      "relationship": "made_by",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Book discussing themes related to biodynamics",
+      "episode_number": 147
+    },
+    {
+      "source": "why on earth community podcast",
+      "relationship": "features",
+      "target": "Sheila Foster",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Podcast features Sheila Foster as a guest",
+      "episode_number": 147
+    },
+    {
+      "source": "ambassadors",
+      "relationship": "part_of",
+      "target": "biodynamic demeter alliance",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Network mentioned in relation to the organization",
+      "episode_number": 147
+    },
+    {
+      "source": "Josephine Porter Institute",
+      "relationship": "works_at",
+      "target": "by dynamic movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "institute",
+      "episode_number": 147
+    },
+    {
+      "source": "earth and humanity foundation",
+      "relationship": "sponsors",
+      "target": "conference",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsor",
+      "episode_number": 147
+    },
+    {
+      "source": "Mercola",
+      "relationship": "sponsors",
+      "target": "showcase",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsor",
+      "episode_number": 147
+    },
+    {
+      "source": "Demeter International",
+      "relationship": "attends",
+      "target": "conference",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "attendance",
+      "episode_number": 147
+    },
+    {
+      "source": "Neil and Suns",
+      "relationship": "sponsors",
+      "target": "scholarship campaign",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "sponsor",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamics.com",
+      "relationship": "provides",
+      "target": "list of sponsors",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "website",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamicsconference.com",
+      "relationship": "provides",
+      "target": "list of sponsors",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "website",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic flavor guide",
+      "relationship": "includes",
+      "target": "Demeter certified producers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "publication",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila",
+      "relationship": "works_at",
+      "target": "Rob Valley Farmed School",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "...Sheila your your role as executive director...",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila",
+      "relationship": "works_at",
+      "target": "Loma Cotsie restoration project",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...development director role at Loma Cotsie restoration project...",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila",
+      "relationship": "works_at",
+      "target": "science works hands-on museum",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...development director at science works hands-on museum...",
+      "episode_number": 147
+    },
+    {
+      "source": "Demeter",
+      "relationship": "merges_with",
+      "target": "biodynamic association",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...merger of Demeter on the one hand in the biodynamic association...",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "collaborates_with",
+      "target": "farmers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...working on that on the international level with the biodynamic federation demeter international...",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "uses",
+      "target": "app",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "...they've been piloting an app that they're using in Europe...",
+      "episode_number": 147
+    },
+    {
+      "source": "app",
+      "relationship": "is_used_in",
+      "target": "Europe",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...they've been piloting an app that they're using in Europe...",
+      "episode_number": 147
+    },
+    {
+      "source": "app",
+      "relationship": "is_used_in",
+      "target": "Egypt",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...they've been piloting an app that they're using in Egypt...",
+      "episode_number": 147
+    },
+    {
+      "source": "app",
+      "relationship": "is_used_in",
+      "target": "South America",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "...they've been piloting an app that they're using in South America...",
+      "episode_number": 147
+    },
+    {
+      "source": "app",
+      "relationship": "is_introduced_to",
+      "target": "United States",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "...we want to bring that to the United States...",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "works_at",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "working on that on the international level",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "using in Europe",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "located_in",
+      "target": "Egypt",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "using in Egypt",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "located_in",
+      "target": "South America",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "using in South America",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic federation demeter international",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "bring that to the United States",
+      "episode_number": 147
+    },
+    {
+      "source": "farmers",
+      "relationship": "advocates_for",
+      "target": "biodynamics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "farmers that are able to use this technology",
+      "episode_number": 147
+    },
+    {
+      "source": "local government entities",
+      "relationship": "supports",
+      "target": "biodynamics",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "take to local government entities",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "part_of",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the real work of the biodynamic demeter alliance",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "offers",
+      "target": "demeter certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "one is demeter which is the certification",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic demeter alliance",
+      "relationship": "develops",
+      "target": "economic development market development",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the third is economic development market development",
+      "episode_number": 147
+    },
+    {
+      "source": "biodynamic movement",
+      "relationship": "advocates_for",
+      "target": "biodynamics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "serve the biodynamic movement",
+      "episode_number": 147
+    },
+    {
+      "source": "Marin Organic",
+      "relationship": "founded",
+      "target": "Super Honolade",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "development director from Marin organic",
+      "episode_number": 147
+    },
+    {
+      "source": "Marin Organic",
+      "relationship": "founded",
+      "target": "Warren Weber",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "development director from Marin organic",
+      "episode_number": 147
+    },
+    {
+      "source": "California",
+      "relationship": "contains",
+      "target": "Marin Organic",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "first all organic county in the nation",
+      "episode_number": 147
+    },
+    {
+      "source": "farmers",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "farmers where they would walk in the room",
+      "episode_number": 147
+    },
+    {
+      "source": "government agencies",
+      "relationship": "collaborates_with",
+      "target": "biodynamic movement",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "working with government agencies",
+      "episode_number": 147
+    },
+    {
+      "source": "local government",
+      "relationship": "collaborates_with",
+      "target": "biodynamic movement",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "working with local government",
+      "episode_number": 147
+    },
+    {
+      "source": "state governments",
+      "relationship": "collaborates_with",
+      "target": "biodynamic movement",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "working with state governments",
+      "episode_number": 147
+    },
+    {
+      "source": "Sheila",
+      "relationship": "works_at",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "thank you so much I know it's an extremely busy time for you preparing in these last few weeks ahead of the conference",
+      "episode_number": 147
+    },
+    {
+      "source": "maryne william parry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the why on earth community stewardship and sustainability podcast series is hosted by maryne william parry author thought leader and executive consultant",
+      "episode_number": 147
+    },
+    {
+      "source": "why on earth",
+      "relationship": "sponsors",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the podcast series is also sponsored by several corporate and organization sponsors",
+      "episode_number": 147
+    }
+  ]
+}

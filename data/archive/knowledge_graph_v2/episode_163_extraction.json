@@ -1,0 +1,1846 @@
+{
+  "episode": 163,
+  "timestamp": "2025-10-09T11:01:40.119751",
+  "entity_count": 128,
+  "relationship_count": 94,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community Podcast"
+    },
+    {
+      "name": "Jared Myers",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "chairman of Legacy Vacation Resorts"
+    },
+    {
+      "name": "Legacy Vacation Resorts",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization led by Jared Myers"
+    },
+    {
+      "name": "B corporations",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "certified B corporations mentioned by Jared Myers"
+    },
+    {
+      "name": "B corps",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "another term for B corporations"
+    },
+    {
+      "name": "business for good movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "movement supported by Jared Myers"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where B corps operate"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where B corps operate"
+    },
+    {
+      "name": "Nevada",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where B corps operate"
+    },
+    {
+      "name": "New Jersey",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where B corps operate"
+    },
+    {
+      "name": "Big Path Capital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "organization that recognized Jared Myers"
+    },
+    {
+      "name": "University of Central Florida",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where Jared Myers is a fellow"
+    },
+    {
+      "name": "East Central Florida Regional Resilience Collaborative",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "collaborative co-chaired by Jared Myers"
+    },
+    {
+      "name": "Transformational Travel Council",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Jared Myers is a partner in"
+    },
+    {
+      "name": "Christie",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "wife of Jared Myers"
+    },
+    {
+      "name": "B local Florida",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization co-chaired by Jared Myers"
+    },
+    {
+      "name": "legacy vacation resorts",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "work that you're doing at legacy vacation resorts"
+    },
+    {
+      "name": "climate first bank",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "work that you're doing at climate first bank"
+    },
+    {
+      "name": "homo sapiens",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "ways that homo sapiens and humans have found ways to draw these distinct differences"
+    },
+    {
+      "name": "business",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "separation between business and personal"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "when we take things that are harmful to nature"
+    },
+    {
+      "name": "Legacy Vacation Resorts",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussing practices and activities employed at Legacy Vacation Resorts"
+    },
+    {
+      "name": "B-Court movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "engagement and leadership with the B-Court movement"
+    },
+    {
+      "name": "B-Certification process",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "going through the B-Certification process"
+    },
+    {
+      "name": "traditional capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about traditional capitalism"
+    },
+    {
+      "name": "wages",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "responsible wages within our organization"
+    },
+    {
+      "name": "greenhouse gas emissions",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "greenhouse gas emissions from operating hotel rooms"
+    },
+    {
+      "name": "EVV charging",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about waste and emissions"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mention of solar panels on roofs"
+    },
+    {
+      "name": "B-Corp community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about learning from best companies"
+    },
+    {
+      "name": "Jorge Fontan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "CEO of BLAB, US and Canada"
+    },
+    {
+      "name": "BLAB",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CEO of BLAB, US and Canada"
+    },
+    {
+      "name": "B-Corp community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "learned from the B-Corp community"
+    },
+    {
+      "name": "Steamboat Springs",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "stayed at one of the legacy properties in Steamboat Springs, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Steamboat Springs, Colorado"
+    },
+    {
+      "name": "Climate First Bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ask you about the Climate First Bank"
+    },
+    {
+      "name": "Ken Loro",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "founding director, chairman of Climate First Bank"
+    },
+    {
+      "name": "solar panels",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "financing solar panels for resorts"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "solar in place at our Florida properties"
+    },
+    {
+      "name": "climate first",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "climate first would be more supportive"
+    },
+    {
+      "name": "banks",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "a lot of the banks just went that interested"
+    },
+    {
+      "name": "legacy",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "standing in the way of legacy achieving its goal"
+    },
+    {
+      "name": "B quirk",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "maintained the B quirk certification"
+    },
+    {
+      "name": "first green bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first green bank was acquired"
+    },
+    {
+      "name": "acquirer",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "merged into the acquireer"
+    },
+    {
+      "name": "Iv\u00e1n Srinar",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to Patagonia"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company mentioned in relation to Iv\u00e1n Srinar"
+    },
+    {
+      "name": "Ocaquatics",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization mentioned in relation to B Corp"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of the benefit corporation"
+    },
+    {
+      "name": "climate first bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a benefit corporation and bank"
+    },
+    {
+      "name": "climate first bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "fastest growing bank from an organic growth standpoint"
+    },
+    {
+      "name": "Oneethos",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "FinTech subsidiary that is part of our bank holding company"
+    },
+    {
+      "name": "solar lending",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "fastest areas of growth"
+    },
+    {
+      "name": "real estate",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "real estate based loans"
+    },
+    {
+      "name": "Oneethos",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "FinTech subsidiary that is part of our bank holding company"
+    },
+    {
+      "name": "solar lending",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fastest areas of growth"
+    },
+    {
+      "name": "solar installers",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "user friendly for solar installers"
+    },
+    {
+      "name": "financial institution",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "money is paid back to the financial institution"
+    },
+    {
+      "name": "client first",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "doing this for other banks as well not just for client first"
+    },
+    {
+      "name": "green type loans",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "more green type loans you could call it"
+    },
+    {
+      "name": "Duane Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "quick shout out to my dad Duane Perry"
+    },
+    {
+      "name": "Lou Renieri",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "worked with Lou Renieri on Wall Street"
+    },
+    {
+      "name": "Duane Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "shout out to my dad Duane Perry"
+    },
+    {
+      "name": "Lou Renieri",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "worked with Lou Renieri on Wall Street"
+    },
+    {
+      "name": "Wall Street",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "worked with Lou Renieri on Wall Street"
+    },
+    {
+      "name": "R.M.",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "speaking with another responsible bank that was out there"
+    },
+    {
+      "name": "Global Alliance for Banking on Values",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization of banks that you're part of banks that are uh mission driven"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "a few here in the United States"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "a few that are in Canada"
+    },
+    {
+      "name": "Australia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "they're in Australia"
+    },
+    {
+      "name": "Sweden",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "they're in Sweden"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "they're in Germany"
+    },
+    {
+      "name": "Democratic Republic of Congo",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "democratic republican of Congo"
+    },
+    {
+      "name": "Russia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "general area of Russia"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...some things are here but that is not something we're you know we're dealing..."
+    },
+    {
+      "name": "Democratic Republic of the Congo",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...a bank from the democratic republic of the Congo is like you know we..."
+    },
+    {
+      "name": "Bank of Palestine",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...we're not dealing with what Bank of Palestine is dealing with right now..."
+    },
+    {
+      "name": "Jared Myers",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...we're visiting with Jared Myers a uh social entrepreneur extraordinaire..."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "...I'm your host Aaron William Perry..."
+    },
+    {
+      "name": "Global Alliance for Banking on Values",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...global alliance for banking on values uh gabv.org is the website..."
+    },
+    {
+      "name": "Legacy Vacation Resorts",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...including as chairman of legacy vacation resorts..."
+    },
+    {
+      "name": "B Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...you can learn more about the B Corp movement at bcorpiration.net..."
+    },
+    {
+      "name": "One Percent for the Planet",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...one percent for the planet um one percent for the planet.org..."
+    },
+    {
+      "name": "White Men for Racial Justice",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...work you do in an organization called white men for racial justice..."
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...big thanks to Chelsea green publishing uh you can go to chelsea green dot com..."
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...a shout out to earth coast productions uh to uh dr. Bronner's..."
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "...a shout out to earth coast productions uh to uh dr. Bronner's uh to patagonia..."
+    },
+    {
+      "name": "Profitable Purpose Consulting",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "helping many companies get be certified and maintain their be certification"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "shout out to earth coast productions"
+    },
+    {
+      "name": "Dr. Bronner's",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shout out to dr. Bronner's"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shout out to patagonia"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "growing global network of community impact ambassadors"
+    },
+    {
+      "name": "Jared",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "customary behind the scene segment with Jared"
+    },
+    {
+      "name": "Legacy Vacation Resorts",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work you're doing through legacy vacation resorts"
+    },
+    {
+      "name": "Climate First Bank",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "work you're doing through climate first bank"
+    },
+    {
+      "name": "White Men for Racial Justice",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "want to ask you specifically about white men for racial justice"
+    },
+    {
+      "name": "George Floyd",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founded after George Floyd was murdered"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "slavery came here into the United States"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "slavery came here into the United States"
+    },
+    {
+      "name": "racial justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of the ways is very specifically racial justice"
+    },
+    {
+      "name": "privileges",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "privileges or advantages that we may have received"
+    },
+    {
+      "name": "power",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "power is built and power is maintained"
+    },
+    {
+      "name": "systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the systems that exist today"
+    },
+    {
+      "name": "history",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "relearn history engage with others"
+    },
+    {
+      "name": "George Floyd",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "murder of George Floyd"
+    },
+    {
+      "name": "Dr. Janelle Allen Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "conversation we had with Dr. Janelle Allen Davis"
+    },
+    {
+      "name": "Craig Hospital",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CEO of Craig hospital"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Craig hospital in Denver, Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Craig hospital in Denver, Colorado"
+    },
+    {
+      "name": "Federal Reserve Board",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "she's also on the federal reserve board"
+    },
+    {
+      "name": "Dr. Janelle Allen Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "CEO of Craig hospital in Denver, Colorado"
+    },
+    {
+      "name": "Craig hospital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "CEO is Dr. Janelle Allen Davis"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "Located in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "State where Denver is located"
+    },
+    {
+      "name": "George Floyd",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Murder incident referenced"
+    },
+    {
+      "name": "federal reserve board",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Dr. Janelle Allen Davis is a member"
+    },
+    {
+      "name": "Saraya Ophazale",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "episode we recorded recently with Saraya Ophazale from Afghanistan originally"
+    },
+    {
+      "name": "Afghanistan",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "from Afghanistan originally"
+    },
+    {
+      "name": "Ireland",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "stationed now in Ireland"
+    },
+    {
+      "name": "white men for racial justice",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the work you're doing at white men for racial justice"
+    },
+    {
+      "name": "B-Corp movement",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "throughout the B-Corp movement globally"
+    },
+    {
+      "name": "Y-Earth.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "join the ambassador growing global network of ambassadors at Y-Earth.org"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "escaping Florida's heat"
+    },
+    {
+      "name": "B Corp",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "people think as I do and sometimes it's just about learning that these networks exist"
+    },
+    {
+      "name": "B local communities",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "there's B local communities throughout the United States"
+    },
+    {
+      "name": "B tourism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "a B tourism which we're a part of is a global travel and tourism network"
+    },
+    {
+      "name": "legacy vacation resorts",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "best URL to go to legacy vacation resorts"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...join either as an employee or on behalf of your company Florida..."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Jared Myers",
+      "relationship": "works_at",
+      "target": "Legacy Vacation Resorts",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Jared Myers is chairman of Legacy Vacation Resorts",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "advocates_for",
+      "target": "business for good movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jared Myers supports the business for good movement",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "located_in",
+      "target": "Florida",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Legacy Vacation Resorts operates in Florida",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Legacy Vacation Resorts operates in Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "located_in",
+      "target": "Nevada",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Legacy Vacation Resorts operates in Nevada",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "located_in",
+      "target": "New Jersey",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Legacy Vacation Resorts operates in New Jersey",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "founded",
+      "target": "B local Florida",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jared Myers is the founding steward of B local Florida",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "serves_as",
+      "target": "economic and environmental opportunity fellow",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jared Myers is a fellow at the University of Central Florida",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "is_a_partner_in",
+      "target": "Transformational Travel Council",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Jared Myers is a partner in the Transformational Travel Council",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "advocates_for",
+      "target": "B corporations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Jared Myers supports B corporations",
+      "episode_number": 163
+    },
+    {
+      "source": "legacy vacation resorts",
+      "relationship": "works_at",
+      "target": "B-Court movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "degree of engagement and leadership that you have with the B-Court movement",
+      "episode_number": 163
+    },
+    {
+      "source": "legacy vacation resorts",
+      "relationship": "located_in",
+      "target": "travel and tourism industries",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "practices that can occur within the travel and tourism industries",
+      "episode_number": 163
+    },
+    {
+      "source": "climate first bank",
+      "relationship": "works_at",
+      "target": "legacy vacation resorts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "work that you're doing at climate first bank",
+      "episode_number": 163
+    },
+    {
+      "source": "business",
+      "relationship": "part_of",
+      "target": "systemic challenges",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "separation between what's business and what's personal",
+      "episode_number": 163
+    },
+    {
+      "source": "nature",
+      "relationship": "supports",
+      "target": "legacy vacation resorts",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "nature itself will continue to flourish and support us",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "employs",
+      "target": "B-Certification process",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussing practices and activities employed at Legacy Vacation Resorts",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "engages_with",
+      "target": "B-Court movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "engagement and leadership with the B-Court movement",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "advocates_for",
+      "target": "traditional capitalism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "discussion about traditional capitalism",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "pays",
+      "target": "wages",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "responsible wages within our organization",
+      "episode_number": 163
+    },
+    {
+      "source": "Legacy Vacation Resorts",
+      "relationship": "creates",
+      "target": "greenhouse gas emissions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "greenhouse gas emissions from operating hotel rooms",
+      "episode_number": 163
+    },
+    {
+      "source": "EVV charging",
+      "relationship": "part_of",
+      "target": "waste management",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussion about waste and emissions",
+      "episode_number": 163
+    },
+    {
+      "source": "Florida",
+      "relationship": "contains",
+      "target": "solar panels",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mention of solar panels on roofs",
+      "episode_number": 163
+    },
+    {
+      "source": "B-Corp community",
+      "relationship": "advocates_for",
+      "target": "sustainable practices",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussion about learning from best companies",
+      "episode_number": 163
+    },
+    {
+      "source": "Jorge Fontan",
+      "relationship": "works_at",
+      "target": "BLAB",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "CEO of BLAB, US and Canada",
+      "episode_number": 163
+    },
+    {
+      "source": "BLAB",
+      "relationship": "located_in",
+      "target": "B-Corp community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "learned from the B-Corp community",
+      "episode_number": 163
+    },
+    {
+      "source": "Steamboat Springs",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "stayed at one of the legacy properties in Steamboat Springs, Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Ken Loro",
+      "relationship": "founded",
+      "target": "Climate First Bank",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "founding director, chairman of Climate First Bank",
+      "episode_number": 163
+    },
+    {
+      "source": "Climate First Bank",
+      "relationship": "advocates_for",
+      "target": "carbon reduction",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "helped to found the bank",
+      "episode_number": 163
+    },
+    {
+      "source": "legacy",
+      "relationship": "achieves_goal_of",
+      "target": "net zero by 2030",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "standing in the way of legacy achieving its goal",
+      "episode_number": 163
+    },
+    {
+      "source": "climate first",
+      "relationship": "supports",
+      "target": "renewable energy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "climate first would be more supportive of the industries",
+      "episode_number": 163
+    },
+    {
+      "source": "first green bank",
+      "relationship": "acquired_by",
+      "target": "acquirer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "first green bank was acquired",
+      "episode_number": 163
+    },
+    {
+      "source": "banks",
+      "relationship": "funds",
+      "target": "industries that cause harm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "banks are notorious for using their deposits to fund",
+      "episode_number": 163
+    },
+    {
+      "source": "first green bank",
+      "relationship": "maintains",
+      "target": "B quirk certification",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "would remain maintained the B quirk certification",
+      "episode_number": 163
+    },
+    {
+      "source": "acquirer",
+      "relationship": "merges_with",
+      "target": "first green bank",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "ended up getting merged into the acquireer",
+      "episode_number": 163
+    },
+    {
+      "source": "Iv\u00e1n Srinar",
+      "relationship": "advocates_for",
+      "target": "benefit corporation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to Patagonia and its purpose trust",
+      "episode_number": 163
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "located_in",
+      "target": "benefit corporation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to Iv\u00e1n Srinar's actions",
+      "episode_number": 163
+    },
+    {
+      "source": "Ocaquatics",
+      "relationship": "works_at",
+      "target": "B Corp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "organization mentioned in relation to adopting a similar structure",
+      "episode_number": 163
+    },
+    {
+      "source": "climate first bank",
+      "relationship": "located_in",
+      "target": "Florida",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed as a benefit corporation in Florida",
+      "episode_number": 163
+    },
+    {
+      "source": "climate first bank",
+      "relationship": "founded",
+      "target": "benefit corporation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussed as a bank with a mission",
+      "episode_number": 163
+    },
+    {
+      "source": "climate first bank",
+      "relationship": "located_in",
+      "target": "USA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "fastest growing bank from an organic growth standpoint",
+      "episode_number": 163
+    },
+    {
+      "source": "Oneethos",
+      "relationship": "made_by",
+      "target": "climate first bank",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "part of our bank holding company",
+      "episode_number": 163
+    },
+    {
+      "source": "solar lending",
+      "relationship": "advocates_for",
+      "target": "real estate",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "fastest areas of growth",
+      "episode_number": 163
+    },
+    {
+      "source": "Oneethos",
+      "relationship": "part_of",
+      "target": "bank holding company",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "FinTech subsidiary that is part of our bank holding company",
+      "episode_number": 163
+    },
+    {
+      "source": "solar installers",
+      "relationship": "advocates_for",
+      "target": "solar lending",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "user friendly for solar installers",
+      "episode_number": 163
+    },
+    {
+      "source": "financial institution",
+      "relationship": "contains",
+      "target": "kickback",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "money is paid back to the financial institution",
+      "episode_number": 163
+    },
+    {
+      "source": "client first",
+      "relationship": "works_at",
+      "target": "solar lending",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "doing this for other banks as well not just for client first",
+      "episode_number": 163
+    },
+    {
+      "source": "banks",
+      "relationship": "advocates_for",
+      "target": "green type loans",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "they want to have more green type loans you could call it",
+      "episode_number": 163
+    },
+    {
+      "source": "Duane Perry",
+      "relationship": "worked_with",
+      "target": "Lou Renieri",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "quick shout out to my dad Duane Perry",
+      "episode_number": 163
+    },
+    {
+      "source": "Duane Perry",
+      "relationship": "worked_with",
+      "target": "Lou Renieri",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "worked with Lou Renieri on Wall Street",
+      "episode_number": 163
+    },
+    {
+      "source": "R.M.",
+      "relationship": "part_of",
+      "target": "Global Alliance for Banking on Values",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "organization of banks that you're part of banks that are uh mission driven",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "a few here in the United States",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Canada",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "a few that are in Canada",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Australia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "they're in Australia",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Sweden",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "they're in Sweden",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Germany",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "they're in Germany",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Democratic Republic of Congo",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "democratic republican of Congo",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "Russia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "general area of Russia",
+      "episode_number": 163
+    },
+    {
+      "source": "Bank of Palestine",
+      "relationship": "advocates_for",
+      "target": "values",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "...we're not dealing with what Bank of Palestine is dealing with right now...",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "works_at",
+      "target": "Legacy Vacation Resorts",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...including as chairman of legacy vacation resorts...",
+      "episode_number": 163
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "...I'm your host Aaron William Perry...",
+      "episode_number": 163
+    },
+    {
+      "source": "Global Alliance for Banking on Values",
+      "relationship": "located_in",
+      "target": "values",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.75,
+      "context": "...global alliance for banking on values uh gabv.org is the website...",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "advocates_for",
+      "target": "B Corp",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...you can learn more about the B Corp movement at bcorpiration.net...",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared Myers",
+      "relationship": "works_at",
+      "target": "One Percent for the Planet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...one percent for the planet um one percent for the planet.org...",
+      "episode_number": 163
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "part_of",
+      "target": "Why on Earth Community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...big thanks to Chelsea green publishing uh you can go to chelsea green dot com...",
+      "episode_number": 163
+    },
+    {
+      "source": "Profitable Purpose Consulting",
+      "relationship": "helps",
+      "target": "companies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "helping many companies get be certified and maintain their be certification",
+      "episode_number": 163
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "has",
+      "target": "community impact ambassadors",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "growing global network of community impact ambassadors",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared",
+      "relationship": "works_at",
+      "target": "Legacy Vacation Resorts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "work you're doing through legacy vacation resorts",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared",
+      "relationship": "works_at",
+      "target": "Climate First Bank",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "work you're doing through climate first bank",
+      "episode_number": 163
+    },
+    {
+      "source": "White Men for Racial Justice",
+      "relationship": "founded_after",
+      "target": "George Floyd",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "founded after George Floyd was murdered",
+      "episode_number": 163
+    },
+    {
+      "source": "slavery",
+      "relationship": "came_to",
+      "target": "United States",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "slavery came here into the United States",
+      "episode_number": 163
+    },
+    {
+      "source": "racial justice",
+      "relationship": "advocates_for",
+      "target": "privileges",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "trying to bring justice to those who have been disadvantaged historically by means of the construct of race",
+      "episode_number": 163
+    },
+    {
+      "source": "power",
+      "relationship": "maintained_by",
+      "target": "systems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "power is built and power is maintained specifically when that power is maintained by less than the majority of people",
+      "episode_number": 163
+    },
+    {
+      "source": "history",
+      "relationship": "informs",
+      "target": "power",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "a lot of the stories that are told and that we tell ourselves aren't really accurate",
+      "episode_number": 163
+    },
+    {
+      "source": "Dr. Janelle Allen Davis",
+      "relationship": "works_at",
+      "target": "Craig Hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "CEO of Craig hospital",
+      "episode_number": 163
+    },
+    {
+      "source": "Craig Hospital",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Craig hospital in Denver, Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Craig hospital in Denver, Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Dr. Janelle Allen Davis",
+      "relationship": "part_of",
+      "target": "Federal Reserve Board",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "she's also on the federal reserve board",
+      "episode_number": 163
+    },
+    {
+      "source": "Dr. Janelle Allen Davis",
+      "relationship": "works_at",
+      "target": "Craig hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "CEO of Craig hospital",
+      "episode_number": 163
+    },
+    {
+      "source": "Craig hospital",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "Located in Denver, Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "City in Colorado",
+      "episode_number": 163
+    },
+    {
+      "source": "Dr. Janelle Allen Davis",
+      "relationship": "member_of",
+      "target": "federal reserve board",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "On the federal reserve board",
+      "episode_number": 163
+    },
+    {
+      "source": "George Floyd",
+      "relationship": "event_related_to",
+      "target": "murder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Murder incident referenced",
+      "episode_number": 163
+    },
+    {
+      "source": "Saraya Ophazale",
+      "relationship": "located_in",
+      "target": "Ireland",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "stationed now in Ireland",
+      "episode_number": 163
+    },
+    {
+      "source": "Saraya Ophazale",
+      "relationship": "originates_from",
+      "target": "Afghanistan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "from Afghanistan originally",
+      "episode_number": 163
+    },
+    {
+      "source": "white men for racial justice",
+      "relationship": "part_of",
+      "target": "B-Corp movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the work you're doing at white men for racial justice and the work you're doing throughout the B-Corp movement globally",
+      "episode_number": 163
+    },
+    {
+      "source": "Y-Earth.org",
+      "relationship": "promotes",
+      "target": "ambassador network",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "join the ambassador growing global network of ambassadors at Y-Earth.org",
+      "episode_number": 163
+    },
+    {
+      "source": "legacy vacation resorts",
+      "relationship": "located_in",
+      "target": "Florida",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "best URL to go to legacy vacation resorts",
+      "episode_number": 163
+    },
+    {
+      "source": "B Corp",
+      "relationship": "advocates_for",
+      "target": "B local communities",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "there's B local communities throughout the United States",
+      "episode_number": 163
+    },
+    {
+      "source": "B local communities",
+      "relationship": "part_of",
+      "target": "B Corp",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "regional communities of practice that are B Corp's for B Corp like companies",
+      "episode_number": 163
+    },
+    {
+      "source": "B tourism",
+      "relationship": "part_of",
+      "target": "B Corp",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "a B tourism which we're a part of is a global travel and tourism network",
+      "episode_number": 163
+    },
+    {
+      "source": "B tourism",
+      "relationship": "part_of",
+      "target": "global travel and tourism network",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "...a part of is a global travel and tourism network...",
+      "episode_number": 163
+    },
+    {
+      "source": "Jared",
+      "relationship": "leads",
+      "target": "B tourism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...thank you Jared for all of your leadership...",
+      "episode_number": 163
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community stewardship and sustainability podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "...the why on earth community stewardship and sustainability podcast series is hosted by Aaron William Perry...",
+      "episode_number": 163
+    },
+    {
+      "source": "why on earth",
+      "relationship": "sponsored_by",
+      "target": "several corporate and organization sponsors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...the podcast series is also sponsored by several corporate and organization sponsors...",
+      "episode_number": 163
+    }
+  ]
+}

@@ -1,0 +1,1275 @@
+{
+  "episode": 77,
+  "timestamp": "2025-10-09T11:35:35.935849",
+  "entity_count": 85,
+  "relationship_count": 67,
+  "entities": [
+    {
+      "name": "Aaron Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Shelby Kaminsky",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "University of Colorado Boulder",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "Shelby's alma mater"
+    },
+    {
+      "name": "Edaphic Solutions",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company owned by Shelby Kaminsky"
+    },
+    {
+      "name": "Environmental Studies",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "degree earned by Shelby Kaminsky"
+    },
+    {
+      "name": "Geography",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "degree earned by Shelby Kaminsky"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization associated with pesticide certifications"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "region mentioned in relation to Edaphic Solutions"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "state where Denver is located"
+    },
+    {
+      "name": "Fort Collins",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "city mentioned in relation to Edaphic Solutions"
+    },
+    {
+      "name": "compost tea",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "product offered by Edaphic Solutions"
+    },
+    {
+      "name": "soil food web",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "topic of Shelby's education"
+    },
+    {
+      "name": "pesticide",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "topic discussed in relation to compost tea"
+    },
+    {
+      "name": "compost tea",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the benefits of compost tea in gardening"
+    },
+    {
+      "name": "pesticides",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussing the use of pesticides and their effects"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.95,
+      "context": "mentioning the location of pets and people suffering from ailments"
+    },
+    {
+      "name": "HOAs",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussing homeowners associations and their pesticide policies"
+    },
+    {
+      "name": "Y and Earth community",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioning the organization working on projects related to pesticides"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioning the city where pesticides are still being sprayed"
+    },
+    {
+      "name": "Shelby",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioning Shelby for discount"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "metro front range of Denver region"
+    },
+    {
+      "name": "63rd Street Farm",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sprayed for them"
+    },
+    {
+      "name": "Speedwell Farms",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sprayed the other day"
+    },
+    {
+      "name": "Seeds of Power",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "work with urban farms"
+    },
+    {
+      "name": "Unity Farm",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "work with urban farms"
+    },
+    {
+      "name": "Frontline Farming",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "work with urban farms"
+    },
+    {
+      "name": "COVID-19",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "time of COVID"
+    },
+    {
+      "name": "COVID",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "time of COVID"
+    },
+    {
+      "name": "Victory Garden",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Second World War with the Victory Garden movement"
+    },
+    {
+      "name": "Botanical",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "seed company called Botanical"
+    },
+    {
+      "name": "Shelby",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you heard it here folks. Shelby's really busy."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "importance of soil"
+    },
+    {
+      "name": "humus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "it's called humus"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "fungi is really important in that carbon sequestration"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "feeding that web of microbes"
+    },
+    {
+      "name": "Paul Stamets",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed as a speaker on mushrooms and soil building"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "mentioned as a location with dry soil"
+    },
+    {
+      "name": "micro-grow",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a product used in tea for soil health"
+    },
+    {
+      "name": "humus",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to soil and carbon storage"
+    },
+    {
+      "name": "fungus",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil moisture and health"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussed in relation to climate and soil storage"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "discussed as a fundamental element for carbon storage"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed in relation to soil and carbon storage"
+    },
+    {
+      "name": "landscaper",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to carbon storage in landscapes"
+    },
+    {
+      "name": "Shelby",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "active on social media"
+    },
+    {
+      "name": "edaphixolutions.com",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "website"
+    },
+    {
+      "name": "Soil Food Web Inc.",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "company owned by Elaine Ingham"
+    },
+    {
+      "name": "Elaine Ingham",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "owner of Soil Food Web Inc."
+    },
+    {
+      "name": "Bob Postema",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "worked with Elaine Ingham"
+    },
+    {
+      "name": "Greater Earth Organics",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "company associated with Bob Postema"
+    },
+    {
+      "name": "Compost Tea",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "type of product related to composting"
+    },
+    {
+      "name": "composting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "process discussed in relation to soil health"
+    },
+    {
+      "name": "soil microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "topic of research discussed"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about microbes in the body and soil"
+    },
+    {
+      "name": "kombucha",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "people drinking kombucha"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about soil microbes"
+    },
+    {
+      "name": "microscopes",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "technology of microscopes"
+    },
+    {
+      "name": "compost tea",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about compost tea lab"
+    },
+    {
+      "name": "Leonardo da Vinci",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "quote from Leonardo da Vinci"
+    },
+    {
+      "name": "gut microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about health and well-being through gut microbiome"
+    },
+    {
+      "name": "Renaissance",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "historical reference to the Renaissance"
+    },
+    {
+      "name": "Shelby",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about soil regeneration"
+    },
+    {
+      "name": "Y-Energy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "community mobilization work"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "Earth Water Press",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "Weile waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor mention"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about starting a business"
+    },
+    {
+      "name": "Shelby",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast segment discussing soil and compost."
+    },
+    {
+      "name": "compost",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Discussion about compost tea and its importance."
+    },
+    {
+      "name": "compost tea",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a product made from compost."
+    },
+    {
+      "name": "microbe liberation chamber",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Part of the brewing process for compost tea."
+    },
+    {
+      "name": "bacteria",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Mentioned in relation to vermicompost."
+    },
+    {
+      "name": "fungal teas",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Type of tea made from compost."
+    },
+    {
+      "name": "perlite",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned as part of the brewing process."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Mentioned in the brewing process."
+    },
+    {
+      "name": "sugar",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Mentioned in relation to extracts."
+    },
+    {
+      "name": "Paul Stamets",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "reputable mycologist"
+    },
+    {
+      "name": "micro grow",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "soluble micro-risay"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reference to soil properties"
+    },
+    {
+      "name": "compost tea",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reference to types of compost teas"
+    },
+    {
+      "name": "Florida",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a location"
+    },
+    {
+      "name": "dap vaccinations",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "works_at",
+      "target": "Edaphic Solutions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Shelby owns Edaphic Solutions",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "graduated_from",
+      "target": "University of Colorado Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "Shelby graduated in 2016",
+      "episode_number": 77
+    },
+    {
+      "source": "Edaphic Solutions",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Edaphic Solutions operates in the Denver area",
+      "episode_number": 77
+    },
+    {
+      "source": "Edaphic Solutions",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "Edaphic Solutions is based in Colorado",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "advocates_for",
+      "target": "compost tea",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Shelby promotes the use of compost tea",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "earned",
+      "target": "Environmental Studies",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Shelby earned a degree in Environmental Studies",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "earned",
+      "target": "Geography",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Shelby earned a degree in Geography",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby Kaminsky",
+      "relationship": "certified_by",
+      "target": "USDA",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Shelby is pursuing pesticide certifications with USDA",
+      "episode_number": 77
+    },
+    {
+      "source": "Edaphic Solutions",
+      "relationship": "offers",
+      "target": "compost tea",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Edaphic Solutions offers compost tea as a product",
+      "episode_number": 77
+    },
+    {
+      "source": "compost tea",
+      "relationship": "made_by",
+      "target": "Y and Earth community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussing the projects and campaigns of Y and Earth community",
+      "episode_number": 77
+    },
+    {
+      "source": "Y and Earth community",
+      "relationship": "advocates_for",
+      "target": "HOAs",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioning the community's work with HOAs",
+      "episode_number": 77
+    },
+    {
+      "source": "pesticides",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing the use of pesticides in Boulder",
+      "episode_number": 77
+    },
+    {
+      "source": "pets",
+      "relationship": "suffer_from",
+      "target": "cancers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioning pets suffering from ailments",
+      "episode_number": 77
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Boulder",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mentioning the location of Boulder within the United States",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "offers",
+      "target": "10% discount",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "mentioning Shelby for discount",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_at",
+      "target": "63rd Street Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sprayed for them",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_at",
+      "target": "Speedwell Farms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sprayed the other day",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_with",
+      "target": "Seeds of Power",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "work with urban farms",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_with",
+      "target": "Unity Farm",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "work with urban farms",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_with",
+      "target": "Frontline Farming",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "work with urban farms",
+      "episode_number": 77
+    },
+    {
+      "source": "community gardening",
+      "relationship": "similar_to",
+      "target": "Victory Garden movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "resurgence in community gardening during COVID",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "works_at",
+      "target": "Botanical",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "you heard it here folks. Shelby's really busy.",
+      "episode_number": 77
+    },
+    {
+      "source": "Botanical",
+      "relationship": "located_in",
+      "target": "soil",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "seed company called Botanical",
+      "episode_number": 77
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "humus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "importance of soil",
+      "episode_number": 77
+    },
+    {
+      "source": "humus",
+      "relationship": "contains",
+      "target": "carbon",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "it's called humus",
+      "episode_number": 77
+    },
+    {
+      "source": "fungi",
+      "relationship": "advocates_for",
+      "target": "carbon sequestration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "fungi is really important in that carbon sequestration",
+      "episode_number": 77
+    },
+    {
+      "source": "microbes",
+      "relationship": "supports",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "feeding that web of microbes",
+      "episode_number": 77
+    },
+    {
+      "source": "Paul Stamets",
+      "relationship": "advocates_for",
+      "target": "fungus",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a speaker on mushrooms and soil building",
+      "episode_number": 77
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "soil",
+      "source_confidence": 0.99,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "mentioned as a location with dry soil",
+      "episode_number": 77
+    },
+    {
+      "source": "micro-grow",
+      "relationship": "made_by",
+      "target": "Paul Stamets",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed as a product used in tea for soil health",
+      "episode_number": 77
+    },
+    {
+      "source": "soil",
+      "relationship": "stores",
+      "target": "carbon",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "discussed as a fundamental element for carbon storage",
+      "episode_number": 77
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "part_of",
+      "target": "fungus",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to soil and carbon storage",
+      "episode_number": 77
+    },
+    {
+      "source": "landscaper",
+      "relationship": "advocates_for",
+      "target": "carbon farming",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to carbon storage in landscapes",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "advocates_for",
+      "target": "composting",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing soil health and composting",
+      "episode_number": 77
+    },
+    {
+      "source": "Elaine Ingham",
+      "relationship": "works_at",
+      "target": "Soil Food Web Inc.",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "owner of the organization",
+      "episode_number": 77
+    },
+    {
+      "source": "Bob Postema",
+      "relationship": "works_at",
+      "target": "Greater Earth Organics",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "collaborated with Elaine Ingham",
+      "episode_number": 77
+    },
+    {
+      "source": "Elaine Ingham",
+      "relationship": "advocates_for",
+      "target": "soil microbes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "research and courses on soil health",
+      "episode_number": 77
+    },
+    {
+      "source": "Greater Earth Organics",
+      "relationship": "made_by",
+      "target": "Bob Postema",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "company associated with Bob",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "uses",
+      "target": "edaphixolutions.com",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "resource for information",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "uses",
+      "target": "Soil Food Web Inc.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "resource for soil testing",
+      "episode_number": 77
+    },
+    {
+      "source": "kombucha",
+      "relationship": "made_by",
+      "target": "microbes",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "people drinking kombucha",
+      "episode_number": 77
+    },
+    {
+      "source": "soil",
+      "relationship": "contains",
+      "target": "microbes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about soil microbes",
+      "episode_number": 77
+    },
+    {
+      "source": "microscopes",
+      "relationship": "used_for",
+      "target": "microbes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "technology of microscopes",
+      "episode_number": 77
+    },
+    {
+      "source": "compost tea",
+      "relationship": "made_by",
+      "target": "microbes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about compost tea lab",
+      "episode_number": 77
+    },
+    {
+      "source": "Leonardo da Vinci",
+      "relationship": "quoted_in",
+      "target": "Renaissance",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "quote from Leonardo da Vinci",
+      "episode_number": 77
+    },
+    {
+      "source": "gut microbiome",
+      "relationship": "related_to",
+      "target": "health and well-being",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about health and well-being through gut microbiome",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "advocates_for",
+      "target": "soil regeneration",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about soil regeneration issue",
+      "episode_number": 77
+    },
+    {
+      "source": "Y-Energy",
+      "relationship": "located_in",
+      "target": "community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "community mobilization work",
+      "episode_number": 77
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "LIDGE Family Foundation",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "Earth Water Press",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "Weile waters",
+      "relationship": "sponsors",
+      "target": "Y-Energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "sponsor mention",
+      "episode_number": 77
+    },
+    {
+      "source": "Boulder",
+      "relationship": "part_of",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion about starting a business",
+      "episode_number": 77
+    },
+    {
+      "source": "Shelby",
+      "relationship": "advocates_for",
+      "target": "compost",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Podcast segment discussing soil and compost.",
+      "episode_number": 77
+    },
+    {
+      "source": "compost",
+      "relationship": "part_of",
+      "target": "compost tea",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Discussion about compost tea and its importance.",
+      "episode_number": 77
+    },
+    {
+      "source": "microbe liberation chamber",
+      "relationship": "part_of",
+      "target": "compost tea",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Part of the brewing process for compost tea.",
+      "episode_number": 77
+    },
+    {
+      "source": "vermicompost",
+      "relationship": "contains",
+      "target": "bacteria",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Mentioned in relation to vermicompost.",
+      "episode_number": 77
+    },
+    {
+      "source": "compost",
+      "relationship": "used_in",
+      "target": "fungal teas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Type of tea made from compost.",
+      "episode_number": 77
+    },
+    {
+      "source": "water",
+      "relationship": "used_in",
+      "target": "compost tea",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Mentioned in the brewing process.",
+      "episode_number": 77
+    },
+    {
+      "source": "extracts",
+      "relationship": "made_from",
+      "target": "sugar",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Mentioned in relation to extracts.",
+      "episode_number": 77
+    },
+    {
+      "source": "Paul Stamets",
+      "relationship": "advocates_for",
+      "target": "micro grow",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion of beneficial fungi in tea",
+      "episode_number": 77
+    },
+    {
+      "source": "micro grow",
+      "relationship": "made_by",
+      "target": "Paul Stamets",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "product associated with Paul Stamets",
+      "episode_number": 77
+    },
+    {
+      "source": "soil",
+      "relationship": "part_of",
+      "target": "compost tea",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "soil properties related to compost tea",
+      "episode_number": 77
+    },
+    {
+      "source": "Florida",
+      "relationship": "located_in",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "reference to soil sourced from Florida",
+      "episode_number": 77
+    },
+    {
+      "source": "unknown",
+      "relationship": "advocates_for",
+      "target": "dap vaccinations",
+      "source_confidence": 0.5,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "podcast discussion",
+      "episode_number": 77
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "model": "gpt-5-mini",
+  "api": "responses",
+  "timestamp": "2025-10-10T03:26:29.365896",
+  "test_episodes": [
+    10,
+    39,
+    50,
+    75,
+    100,
+    112,
+    120,
+    122,
+    150,
+    165
+  ],
+  "total_time_seconds": 14.028246402740479,
+  "episodes_successful": 10,
+  "total_relationships": 0,
+  "conflicts_detected": 0,
+  "type_violations_found": 0,
+  "api_errors": 136,
+  "conflict_rate": 0,
+  "results": [
+    {
+      "episode": 10,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 9
+    },
+    {
+      "episode": 39,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 15
+    },
+    {
+      "episode": 50,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 14
+    },
+    {
+      "episode": 75,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 13
+    },
+    {
+      "episode": 100,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 17
+    },
+    {
+      "episode": 112,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 17
+    },
+    {
+      "episode": 120,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 12
+    },
+    {
+      "episode": 122,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 15
+    },
+    {
+      "episode": 150,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 12
+    },
+    {
+      "episode": 165,
+      "status": "success",
+      "relationships": 0,
+      "conflicts": 0,
+      "type_violations": 0,
+      "api_errors": 12
+    }
+  ]
+}

@@ -1,0 +1,940 @@
+{
+  "episode": 10,
+  "model": "landingai-ade-dpt-2",
+  "approach": "landingai-schema-extraction",
+  "timestamp": "2025-10-10T06:54:28",
+  "chunks_processed": 9,
+  "unique_entities": 86,
+  "total_relationships": 71,
+  "entities": [
+    {
+      "name": "Lauren Tucker",
+      "type": "PERSON",
+      "description": "Executive Director of Kiss the Ground; grew up in West Virginia; graduated from American University; studied abroad and volunteered in Africa; wrote thesis on US food aid; helped develop Greenlight New Orleans; mother, thought leader, certified in permaculture design, trained therapist for autistic children."
+    },
+    {
+      "name": "Kiss the Ground",
+      "type": "ORG",
+      "description": "Nonprofit organization focused on inspiring participation in the regeneration of the planet, starting with soil. Offers education programs, digital media, documentary, farmer training, scholarship fund, and business education."
+    },
+    {
+      "name": "Ryland Englehart",
+      "type": "PERSON",
+      "description": "Owner manager of Cafe Gratitude; hosted the founding meeting of Kiss the Ground in his living room."
+    },
+    {
+      "name": "Cafe Gratitude",
+      "type": "ORG",
+      "description": "Organic vegan restaurant chain in California; family business of Ryland Englehart."
+    },
+    {
+      "name": "American University",
+      "type": "ORG",
+      "description": "University where Lauren Tucker graduated with a degree in psychology and international studies."
+    },
+    {
+      "name": "Greenlight New Orleans",
+      "type": "ORG",
+      "description": "Nonprofit developed by Lauren Tucker in response to Hurricane Katrina."
+    },
+    {
+      "name": "West Virginia",
+      "type": "PLACE",
+      "description": "State where Lauren Tucker grew up, surrounded by natural beauty and conventional corn and soy fields."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "description": "Continent where Lauren Tucker studied abroad and volunteered."
+    },
+    {
+      "name": "Ethiopia",
+      "type": "PLACE",
+      "description": "Country included in Lauren Tucker's thesis on US food aid."
+    },
+    {
+      "name": "North Korea",
+      "type": "PLACE",
+      "description": "Country included in Lauren Tucker's thesis on US food aid."
+    },
+    {
+      "name": "Malawi",
+      "type": "PLACE",
+      "description": "Country included in Lauren Tucker's thesis on US food aid."
+    },
+    {
+      "name": "Katrina",
+      "type": "EVENT",
+      "description": "Hurricane that devastated New Orleans, leading to the creation of Greenlight New Orleans."
+    },
+    {
+      "name": "farmer training program",
+      "type": "PRACTICE",
+      "description": "A program for training farmers, mentioned as part of a suite of initiatives."
+    },
+    {
+      "name": "scholarship fund for farmers",
+      "type": "PRODUCT",
+      "description": "A scholarship fund aimed at supporting farmers."
+    },
+    {
+      "name": "business education program",
+      "type": "PRACTICE",
+      "description": "A program providing business education, mentioned alongside other initiatives."
+    },
+    {
+      "name": "regeneration of our planet",
+      "type": "CONCEPT",
+      "description": "The idea of making it easier for people to participate in planetary regeneration."
+    },
+    {
+      "name": "agriculture",
+      "type": "PRACTICE",
+      "description": "Mentioned as both a significant emitter of greenhouse gases and as a field for regenerative practices."
+    },
+    {
+      "name": "regenerative agriculture",
+      "type": "PRACTICE",
+      "description": "Agriculture that helps sequester carbon and stabilize climate."
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "description": "A chemical element central to climate discussions, present in soils, plants, animals, and the atmosphere."
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "description": "A greenhouse gas emitted by agriculture and other sources, and absorbed by plants."
+    },
+    {
+      "name": "modern agriculture",
+      "type": "PRACTICE",
+      "description": "Agricultural practices that include tilling and use of synthetic fertilizers, contributing to carbon emissions."
+    },
+    {
+      "name": "synthetic fertilizer",
+      "type": "PRODUCT",
+      "description": "Fertilizer produced from synthetic oil, used in modern agriculture and contributing to carbon emissions."
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "description": "The upper layer of earth in which plants grow, important for carbon storage and soil health."
+    },
+    {
+      "name": "microbes and fungi",
+      "type": "CONCEPT",
+      "description": "Microorganisms in healthy soil that help store carbon and support plant growth."
+    },
+    {
+      "name": "not tilling",
+      "type": "PRACTICE",
+      "description": "A farming practice that avoids disturbing the soil, helping to retain carbon and improve soil health."
+    },
+    {
+      "name": "keeping the soil covered with living plant material",
+      "type": "PRACTICE",
+      "description": "A farming method to maintain soil health and carbon storage."
+    },
+    {
+      "name": "integrating animals and trees",
+      "type": "PRACTICE",
+      "description": "A regenerative agriculture practice to improve soil health and ecosystem diversity."
+    },
+    {
+      "name": "soil life",
+      "type": "CONCEPT",
+      "description": "Microorganisms and biological activity in soil that contribute to soil health and carbon storage."
+    },
+    {
+      "name": "living plant material",
+      "type": "CONCEPT",
+      "description": "Plants that cover the soil, contributing to soil health."
+    },
+    {
+      "name": "integrating animals and trees and annual crops",
+      "type": "PRACTICE",
+      "description": "Farming practice of combining animals, trees, and crops to improve soil health."
+    },
+    {
+      "name": "pesticides",
+      "type": "PRODUCT",
+      "description": "Chemicals used in farming that can kill soil life."
+    },
+    {
+      "name": "carbon farming movement",
+      "type": "EVENT",
+      "description": "A growing movement focused on farming practices that prioritize carbon storage in soil."
+    },
+    {
+      "name": "gardening",
+      "type": "PRACTICE",
+      "description": "Growing plants in homes, yards, and neighborhoods."
+    },
+    {
+      "name": "food choices",
+      "type": "CONCEPT",
+      "description": "Decisions made by consumers that can support soil stewardship and ecosystem regeneration."
+    },
+    {
+      "name": "soil stewardship",
+      "type": "CONCEPT",
+      "description": "Practices that maintain and regenerate healthy soils."
+    },
+    {
+      "name": "regeneration of ecosystems",
+      "type": "CONCEPT",
+      "description": "Restoring and improving the health of ecosystems through agricultural practices."
+    },
+    {
+      "name": "purchasing guide",
+      "type": "PRODUCT",
+      "description": "Guide being developed to help consumers make food choices that support healthy soils."
+    },
+    {
+      "name": "Wendell Berry",
+      "type": "PERSON",
+      "description": "Person quoted as saying 'eating is an agricultural act.'"
+    },
+    {
+      "name": "farmer's market",
+      "type": "PLACE",
+      "description": "Local market where farmers sell their produce directly to consumers."
+    },
+    {
+      "name": "Mark Gutridge",
+      "type": "PERSON",
+      "description": "A good friend who has oil in farms and is an amazing soil steward."
+    },
+    {
+      "name": "oil in farms",
+      "type": "ORG",
+      "description": "Farms associated with Mark Gutridge, known for soil stewardship."
+    },
+    {
+      "name": "corporation in the area",
+      "type": "ORG",
+      "description": "A company that held an event at Mark Gutridge's farm for employees and staff."
+    },
+    {
+      "name": "Why on Earth",
+      "type": "PRODUCT",
+      "description": "A book that discusses growing, knowing, and showing food."
+    },
+    {
+      "name": "third party certifications",
+      "type": "CONCEPT",
+      "description": "Labels and certifications that verify practices in supply and value chains."
+    },
+    {
+      "name": "supply chains",
+      "type": "CONCEPT",
+      "description": "Systems for moving food and products from farms to consumers."
+    },
+    {
+      "name": "value chains",
+      "type": "CONCEPT",
+      "description": "Systems that add value to products as they move from farm to consumer."
+    },
+    {
+      "name": "Ryland's father",
+      "type": "PERSON",
+      "description": "One of the founders of Kepaic Gratitude and a farmer in northern California."
+    },
+    {
+      "name": "Kepaic Gratitude",
+      "type": "ORG",
+      "description": "Organization founded by Ryland's father, associated with farming in northern California."
+    },
+    {
+      "name": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "type": "EVENT",
+      "description": "Podcast series focused on stewardship and sustainability, featuring Lauren Tucker as a guest."
+    },
+    {
+      "name": "kisstheground.com",
+      "type": "TECHNOLOGY",
+      "description": "Website for Kiss the Ground, providing purchasing guide and free curriculum."
+    },
+    {
+      "name": "Kiss the Ground Instagram",
+      "type": "TECHNOLOGY",
+      "description": "Social media account for Kiss the Ground on Instagram."
+    },
+    {
+      "name": "the ground CA",
+      "type": "TECHNOLOGY",
+      "description": "Social media handle for Kiss the Ground on Facebook, Twitter, and YouTube."
+    },
+    {
+      "name": "Why on Earth.org slash market",
+      "type": "TECHNOLOGY",
+      "description": "Marketplace website for Why on Earth, offering eBooks and audiobooks."
+    },
+    {
+      "name": "Santa Barbara",
+      "type": "PLACE",
+      "description": "Region included in the LA food shed, known for local foods like dry-formed prickly pear."
+    },
+    {
+      "name": "LA",
+      "type": "PLACE",
+      "description": "City whose food shed includes Santa Barbara."
+    },
+    {
+      "name": "dry-formed prickly pear",
+      "type": "PRODUCT",
+      "description": "A tequila-like product made from prickly pear grown in Santa Barbara."
+    },
+    {
+      "name": "CSA shares",
+      "type": "PRODUCT",
+      "description": "Community-supported agriculture shares purchased by companies from local farmers."
+    },
+    {
+      "name": "The Soil Story",
+      "type": "PRODUCT",
+      "description": "A four-minute educational video created by Kiss the Ground explaining the carbon cycle and the role of plants and soil in carbon movement."
+    },
+    {
+      "name": "Lifelab",
+      "type": "ORG",
+      "description": "Gardening education nonprofit based in Santa Cruz, California; partnered with Kiss the Ground to develop curriculum for middle school students."
+    },
+    {
+      "name": "Santa Cruz, California",
+      "type": "PLACE",
+      "description": "Location of Lifelab, the gardening education nonprofit."
+    },
+    {
+      "name": "carbon cycle",
+      "type": "CONCEPT",
+      "description": "Scientific concept explained in The Soil Story video and curriculum, describing how carbon moves through the environment."
+    },
+    {
+      "name": "soil microbiology",
+      "type": "CONCEPT",
+      "description": "Topic covered in the curriculum, teaching about the living components and composition of soil."
+    },
+    {
+      "name": "photosynthesis",
+      "type": "CONCEPT",
+      "description": "Scientific process taught in the curriculum, typically learned by middle school students."
+    },
+    {
+      "name": "Lauren",
+      "type": "PERSON",
+      "description": "Participant in a conversation about soil, spirituality, and environmental practices."
+    },
+    {
+      "name": "Venice",
+      "type": "PLACE",
+      "description": "Location where a soil-related ceremony was held with Lauren and her team."
+    },
+    {
+      "name": "soil carbon sequestration",
+      "type": "PRACTICE",
+      "description": "Environmental practice discussed as an opportunity to mitigate climate change by storing carbon in soil."
+    },
+    {
+      "name": "major food brands",
+      "type": "ORG",
+      "description": "Organizations looking to innovate their supply chains for environmental impact."
+    },
+    {
+      "name": "plants",
+      "type": "CONCEPT",
+      "description": "Living organisms discussed as part of the planet's ecosystem, dependent on humans and vice versa."
+    },
+    {
+      "name": "animals",
+      "type": "CONCEPT",
+      "description": "Living organisms discussed as part of the planet's ecosystem, dependent on humans and vice versa."
+    },
+    {
+      "name": "humans",
+      "type": "CONCEPT",
+      "description": "Species discussed in relation to soil, environment, and spiritual connection to the planet."
+    },
+    {
+      "name": "indigenous traditions",
+      "type": "CONCEPT",
+      "description": "Worldwide traditions referenced as having deep ecological connections."
+    },
+    {
+      "name": "Venice, California",
+      "type": "PLACE",
+      "description": "A neighborhood in Los Angeles, formerly its own city, now the site of a community garden project on city-owned property."
+    },
+    {
+      "name": "City of LA",
+      "type": "ORG",
+      "description": "The city government of Los Angeles, owner of the property where the community garden is located."
+    },
+    {
+      "name": "Poetry nonprofit",
+      "type": "ORG",
+      "description": "Nonprofit organization focused on poetry, leasing one of the historic buildings in Venice for arts purposes."
+    },
+    {
+      "name": "Mural painting nonprofit",
+      "type": "ORG",
+      "description": "Nonprofit organization focused on public art and mural painting, leasing one of the historic buildings in Venice."
+    },
+    {
+      "name": "community partner",
+      "type": "ORG",
+      "description": "A local organization that will take over and steward the community garden project, focusing on working and training homeless youth."
+    },
+    {
+      "name": "homeless youth",
+      "type": "PERSON",
+      "description": "Young people experiencing homelessness who will be trained and supported by the community partner through the garden project."
+    },
+    {
+      "name": "community garden project",
+      "type": "PRACTICE",
+      "description": "A community-driven project transforming city-owned lawns into productive gardens, involving volunteers and benefiting local residents and homeless youth."
+    },
+    {
+      "name": "serotonin production",
+      "type": "CONCEPT",
+      "description": "A neurochemical process that is increased by physical contact with soil, contributing to reduced stress and improved well-being."
+    },
+    {
+      "name": "volunteers",
+      "type": "PERSON",
+      "description": "Over 700 individuals who volunteered to help transform and maintain the community garden in Venice."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "description": "Interviewer who thanked Lauren and participated in the conversation."
+    },
+    {
+      "name": "community project",
+      "type": "PRACTICE",
+      "description": "A local initiative that brought people together to volunteer and improve a space, referenced as thriving due to community involvement."
+    },
+    {
+      "name": "national and international coalitions",
+      "type": "ORG",
+      "description": "Organizations that Lauren's group became part of, focused on forwarding regenerative agriculture."
+    },
+    {
+      "name": "brands",
+      "type": "ORG",
+      "description": "Commercial entities inspired by Lauren's group's work in regenerative agriculture."
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "description": "Individuals inspired by Lauren's group's work in regenerative agriculture."
+    },
+    {
+      "name": "consumers",
+      "type": "PERSON",
+      "description": "People inspired by Lauren's group's work in regenerative agriculture."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Lauren Tucker",
+      "relationship": "is the executive director of",
+      "target": "Kiss the Ground",
+      "context": "Lauren is the executive director of Kiss the Ground, which we'll be talking about in today's discussion.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "graduated from",
+      "target": "American University",
+      "context": "She graduated from American University with degree in psychology and international studies.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "helped develop",
+      "target": "Greenlight New Orleans",
+      "context": "She also helped to develop a nonprofit called Greenlight New Orleans. This was in response to the incredible devastation of Katrina.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Greenlight New Orleans",
+      "relationship": "was created in response to",
+      "target": "Katrina",
+      "context": "This was in response to the incredible devastation of Katrina.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "grew up in",
+      "target": "West Virginia",
+      "context": "Lauren grew up in West Virginia where she says she was surrounded by natural beauty and conventional corn and soy fields.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "studied abroad and volunteered in",
+      "target": "Africa",
+      "context": "Spent several months studying abroad and volunteering throughout Africa.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote thesis on US food aid in",
+      "target": "Ethiopia",
+      "context": "Ended up writing her thesis on the ineffectiveness of US food aid in Ethiopia, North Korea and Malawi.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote thesis on US food aid in",
+      "target": "North Korea",
+      "context": "Ended up writing her thesis on the ineffectiveness of US food aid in Ethiopia, North Korea and Malawi.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "wrote thesis on US food aid in",
+      "target": "Malawi",
+      "context": "Ended up writing her thesis on the ineffectiveness of US food aid in Ethiopia, North Korea and Malawi.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Ryland Englehart",
+      "relationship": "is owner manager of",
+      "target": "Cafe Gratitude",
+      "context": "He's an owner manager of Cafe Gratitude. It's his family business. It's an organic vegan restaurant chain in California.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "was founded in",
+      "target": "Ryland Englehart's living room",
+      "context": "We started as a group of friends in Ryland Englehart's living room.",
+      "confidence": 1.0
+    },
+    {
+      "source": "agriculture",
+      "relationship": "can be a significant emitter of greenhouse gases",
+      "target": "greenhouse gases",
+      "context": "agriculture on the one hand can be a significant emitter of greenhouse gases",
+      "confidence": 1.0
+    },
+    {
+      "source": "regenerative agriculture",
+      "relationship": "is a strategy to sequester carbon and help with climate stabilization",
+      "target": "carbon",
+      "context": "regenerative agriculture on the other hand is actually one of the big strategies we have at multiple scales to sequester carbon and help with climate stabilization",
+      "confidence": 1.0
+    },
+    {
+      "source": "modern agriculture",
+      "relationship": "emits carbon dioxide through tilling and harvesting",
+      "target": "carbon dioxide",
+      "context": "when we practice modern agriculture every time we tilt, so every time we run a plow across the field, or every time we harvest, every time we plant something in harvest, we're emitting carbon dioxide",
+      "confidence": 1.0
+    },
+    {
+      "source": "synthetic fertilizer",
+      "relationship": "is produced from synthetic oil and contributes to carbon emissions",
+      "target": "carbon emissions",
+      "context": "when we apply a synthetic fertilizer that that was produced from some sort of synthetic oil somewhere in a factory and then it was shipped",
+      "confidence": 1.0
+    },
+    {
+      "source": "plants",
+      "relationship": "breathe in carbon dioxide and exhale oxygen",
+      "target": "carbon dioxide",
+      "context": "plants, trees and you know any other plant. They actually breathe in carbon dioxide and exhale oxygen",
+      "confidence": 1.0
+    },
+    {
+      "source": "healthy soils",
+      "relationship": "store carbon with the help of diverse microbes and fungi",
+      "target": "carbon",
+      "context": "when soils are healthy, when there are diverse microbes and fungi and all these living, eating micro organisms that you can only see with a microscope, when soils are healthy, that carbon can get stored",
+      "confidence": 1.0
+    },
+    {
+      "source": "not tilling",
+      "relationship": "improves soil life and helps retain carbon",
+      "target": "soil life",
+      "context": "A lot of them include not tilling, always keeping the soil covered with living plant material",
+      "confidence": 1.0
+    },
+    {
+      "source": "keeping the soil covered with living plant material",
+      "relationship": "improves soil health and carbon storage",
+      "target": "soil health",
+      "context": "always keeping the soil covered with living plant material",
+      "confidence": 1.0
+    },
+    {
+      "source": "integrating animals and trees",
+      "relationship": "improves soil health and ecosystem diversity",
+      "target": "soil health",
+      "context": "integrating animals and trees and annual",
+      "confidence": 1.0
+    },
+    {
+      "source": "soil life",
+      "relationship": "stores carbon",
+      "target": "carbon",
+      "context": "When soils are healthy, that carbon can get stored.",
+      "confidence": 0.9
+    },
+    {
+      "source": "not tilling",
+      "relationship": "improves",
+      "target": "soil life",
+      "context": "A lot of them include not tilling, always keeping the soil covered with living plant material.",
+      "confidence": 0.9
+    },
+    {
+      "source": "living plant material",
+      "relationship": "covers",
+      "target": "soil",
+      "context": "Always keeping the soil covered with living plant material.",
+      "confidence": 0.9
+    },
+    {
+      "source": "integrating animals and trees and annual crops",
+      "relationship": "improves",
+      "target": "soil life",
+      "context": "Integrating animals and trees and annual crops, which are those crops that we harvest year after year.",
+      "confidence": 0.9
+    },
+    {
+      "source": "pesticides",
+      "relationship": "kills",
+      "target": "soil life",
+      "context": "Not using pesticides and things that would kill that soil life.",
+      "confidence": 0.9
+    },
+    {
+      "source": "carbon farming movement",
+      "relationship": "focuses on",
+      "target": "carbon",
+      "context": "Growing movement around how do we farm with carbon in mind instead of nitrogen.",
+      "confidence": 0.9
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "educates",
+      "target": "food choices",
+      "context": "Kiss the Ground is helping to educate us around ways in which we can make really good food choices that are supporting the type of agriculture just thriving that is good for the carbon cycle.",
+      "confidence": 0.9
+    },
+    {
+      "source": "purchasing guide",
+      "relationship": "helps with",
+      "target": "food choices",
+      "context": "A purchasing guide goes through how to think about our purchasing choices.",
+      "confidence": 0.9
+    },
+    {
+      "source": "Wendell Berry",
+      "relationship": "said",
+      "target": "eating is an agricultural act",
+      "context": "Wendell Berry quote where he says eating is an agricultural act.",
+      "confidence": 0.9
+    },
+    {
+      "source": "farmer's market",
+      "relationship": "sells produce to",
+      "target": "consumers",
+      "context": "I've been shopping at the farmer's market in my neighborhood for the last, I think I'm six years in and to every Sunday.",
+      "confidence": 0.9
+    },
+    {
+      "source": "Mark Gutridge",
+      "relationship": "has oil in farms",
+      "target": "oil in farms",
+      "context": "Mark Gutridge who has oil in farms and is just an amazing soil steward.",
+      "confidence": 1.0
+    },
+    {
+      "source": "corporation in the area",
+      "relationship": "held an event at",
+      "target": "oil in farms",
+      "context": "A corporation in the area wanted instead of having a regular sort of office party to commemorate an event for the employees and staff, they went to the farm.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "discusses",
+      "target": "growing, knowing and showing food",
+      "context": "I wrote about the idea of growing, knowing and showing when it comes to food.",
+      "confidence": 1.0
+    },
+    {
+      "source": "third party certifications",
+      "relationship": "verify practices in",
+      "target": "supply chains and value chains",
+      "context": "going to those those labels, those third party certifications that are helping to show and verify what practices are being used in those various supply chains and value chains.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Ryland's father",
+      "relationship": "is one of the founders of",
+      "target": "Kepaic Gratitude",
+      "context": "Ryland's father who's one of the founders of Kepaic Gratitude and a farmer in northern California.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren Tucker",
+      "relationship": "is the executive director of",
+      "target": "Kiss the Ground",
+      "context": "Lauren Tucker, the executive director of Kiss the Ground.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "provides purchasing guide and free curriculum at",
+      "target": "kisstheground.com",
+      "context": "Kiss the Ground is providing, you can find that at kisstheground.com. And there is also a free curriculum available there.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has social media account",
+      "target": "Kiss the Ground Instagram",
+      "context": "Kiss the Ground on social media is also found at Kiss the Ground Instagram.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "has social media handle",
+      "target": "the ground CA",
+      "context": "at the ground CA for Facebook, Twitter and on YouTube.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Stewardship and Sustainability Podcast Series",
+      "context": "this is the Why on Earth Community Stewardship and Sustainability Podcast Series.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "offers marketplace at",
+      "target": "Why on Earth.org slash market",
+      "context": "if you go to the Why on Earth.org slash market to our marketplace, you can get copies of the eBooks and or the audiobook version of Why on Earth.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Why on Earth.org slash market",
+      "relationship": "offers",
+      "target": "eBooks and audiobooks",
+      "context": "you can get copies of the eBooks and or the audiobook version of Why on Earth at a",
+      "confidence": 1.0
+    },
+    {
+      "source": "Santa Barbara",
+      "relationship": "is included in the food shed of",
+      "target": "LA",
+      "context": "I live in LA and so I'm really part of the surrounding food shed in Santa Barbara is included in that.",
+      "confidence": 1.0
+    },
+    {
+      "source": "dry-formed prickly pear",
+      "relationship": "is made from",
+      "target": "Santa Barbara",
+      "context": "It's like a tequila and it's made from Santa Barbara.",
+      "confidence": 1.0
+    },
+    {
+      "source": "companies",
+      "relationship": "purchase",
+      "target": "CSA shares",
+      "context": "companies doing is purchasing CSA shares from local farmers community-sort-ported agriculture.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "created",
+      "target": "The Soil Story",
+      "context": "Kiss the Ground created a four-minute video called The Soil Story explaining the carbon cycle.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground",
+      "relationship": "partnered with",
+      "target": "Lifelab",
+      "context": "Kiss the Ground partnered with Lifelab to create a curriculum for middle school students.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lifelab",
+      "relationship": "is based in",
+      "target": "Santa Cruz, California",
+      "context": "Lifelab is a gardening education nonprofit out of Santa Cruz, California.",
+      "confidence": 1.0
+    },
+    {
+      "source": "The Soil Story",
+      "relationship": "explains",
+      "target": "carbon cycle",
+      "context": "The Soil Story video explains the carbon cycle.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground curriculum",
+      "relationship": "teaches",
+      "target": "photosynthesis",
+      "context": "The curriculum is meant for middle school age because that's when you learn photosynthesis.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground curriculum",
+      "relationship": "teaches",
+      "target": "carbon cycle",
+      "context": "The curriculum teaches about the carbon cycle.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground curriculum",
+      "relationship": "teaches",
+      "target": "soil microbiology",
+      "context": "The curriculum teaches about soil microbiology.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Kiss the Ground curriculum",
+      "relationship": "teaches",
+      "target": "regenerative agriculture",
+      "context": "The curriculum discusses the opportunity of regenerative agriculture.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren",
+      "relationship": "participated in ceremony at",
+      "target": "Venice",
+      "context": "Lauren and her team shared a soil-related ceremony in Venice.",
+      "confidence": 1.0
+    },
+    {
+      "source": "major food brands",
+      "relationship": "innovate supply chains for",
+      "target": "soil carbon sequestration",
+      "context": "Major food brands are looking at how they innovate their supply chains for soil carbon sequestration.",
+      "confidence": 1.0
+    },
+    {
+      "source": "humans",
+      "relationship": "dependent on",
+      "target": "plants",
+      "context": "Humans are dependent on plants and animals, and vice versa, for thriving together on the planet.",
+      "confidence": 1.0
+    },
+    {
+      "source": "humans",
+      "relationship": "dependent on",
+      "target": "animals",
+      "context": "Humans are dependent on plants and animals, and vice versa, for thriving together on the planet.",
+      "confidence": 1.0
+    },
+    {
+      "source": "humans",
+      "relationship": "can participate in",
+      "target": "soil microbiology",
+      "context": "Humans can participate more in regenerating the planet by working with soil microbiology.",
+      "confidence": 1.0
+    },
+    {
+      "source": "indigenous traditions",
+      "relationship": "have",
+      "target": "deep ecological connections",
+      "context": "Indigenous traditions worldwide have deep ecological connections.",
+      "confidence": 1.0
+    },
+    {
+      "source": "community garden project",
+      "relationship": "is located in",
+      "target": "Venice, California",
+      "context": "The community garden project is based on city-owned property in Venice, California.",
+      "confidence": 1.0
+    },
+    {
+      "source": "community garden project",
+      "relationship": "is owned by",
+      "target": "City of LA",
+      "context": "The property used for the community garden is owned by the City of LA.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Poetry nonprofit",
+      "relationship": "leases building from",
+      "target": "City of LA",
+      "context": "Poetry nonprofit leases one of the historic buildings on the property from the City of LA.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Mural painting nonprofit",
+      "relationship": "leases building from",
+      "target": "City of LA",
+      "context": "Mural painting nonprofit leases one of the historic buildings on the property from the City of LA.",
+      "confidence": 1.0
+    },
+    {
+      "source": "community partner",
+      "relationship": "will steward",
+      "target": "community garden project",
+      "context": "The community partner will take over stewardship of the community garden project.",
+      "confidence": 1.0
+    },
+    {
+      "source": "community partner",
+      "relationship": "will work with and train",
+      "target": "homeless youth",
+      "context": "The next evolution of the project will focus on working and training homeless youth.",
+      "confidence": 1.0
+    },
+    {
+      "source": "volunteers",
+      "relationship": "helped",
+      "target": "community garden project",
+      "context": "Over 700 individuals volunteered to help transform and maintain the community garden.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren",
+      "relationship": "is part of",
+      "target": "national and international coalitions",
+      "context": "Lauren's group is now part of national and international coalitions that are forwarding regenerative agriculture.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren",
+      "relationship": "inspires",
+      "target": "brands",
+      "context": "Lauren's work is starting to inspire brands.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren",
+      "relationship": "inspires",
+      "target": "farmers",
+      "context": "Lauren's work is starting to inspire farmers.",
+      "confidence": 1.0
+    },
+    {
+      "source": "Lauren",
+      "relationship": "inspires",
+      "target": "consumers",
+      "context": "Lauren's work is starting to inspire consumers.",
+      "confidence": 1.0
+    },
+    {
+      "source": "community project",
+      "relationship": "brings together",
+      "target": "people",
+      "context": "Community project of bringing people together.",
+      "confidence": 1.0
+    }
+  ]
+}

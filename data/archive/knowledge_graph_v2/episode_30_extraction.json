@@ -1,0 +1,2006 @@
+{
+  "episode": 30,
+  "timestamp": "2025-10-09T11:15:12.984922",
+  "entity_count": 138,
+  "relationship_count": 103,
+  "entities": [
+    {
+      "name": "Dr. Jandell Allen Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "president and CEO of Craig Hospital"
+    },
+    {
+      "name": "Craig Hospital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "rehabilitation hospital in Denver, Colorado"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city in Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state in the USA"
+    },
+    {
+      "name": "Kaiser Permanente",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "healthcare organization in Colorado"
+    },
+    {
+      "name": "Dartmouth College",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "educational institution"
+    },
+    {
+      "name": "Dartmouth Medical School",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "medical school"
+    },
+    {
+      "name": "Thomas Jefferson University Hospital",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "hospital in Philadelphia"
+    },
+    {
+      "name": "Denver Botanic Gardens",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "botanic gardens in Denver"
+    },
+    {
+      "name": "Denver Metro Chamber of Commerce",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "chamber of commerce in Denver"
+    },
+    {
+      "name": "National Jewish Health",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "health organization in Denver"
+    },
+    {
+      "name": "Mile High United Way",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "nonprofit organization in Denver"
+    },
+    {
+      "name": "Geisel School of Medicine at Dartmouth",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "medical school at Dartmouth"
+    },
+    {
+      "name": "Kaiser Permanente",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I love Kaiser Permanente. It was there for 24 and a half years."
+    },
+    {
+      "name": "Craig",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "there's something about this particular culture at Craig, the hospital."
+    },
+    {
+      "name": "social justice",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "it just got my social justice hackles and my sense of being a warrior for the vulnerable."
+    },
+    {
+      "name": "patient population",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this patient population represents a level of vulnerability that needs a voice."
+    },
+    {
+      "name": "vulnerable",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "be a warrior for the underdog, for the vulnerable."
+    },
+    {
+      "name": "brain injury",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "the way that we treat people in wheelchairs and with brain injury."
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "are they safe and are they accessible?"
+    },
+    {
+      "name": "healer",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "the healer in me who doesn't touch these patients."
+    },
+    {
+      "name": "patients",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the idea of being back with patients."
+    },
+    {
+      "name": "CEO",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "your role in the position of leadership as the CEO of this institution."
+    },
+    {
+      "name": "Craig",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "here at Craig a few years ago."
+    },
+    {
+      "name": "CEO",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "your role in the position of leadership as the CEO of this institution"
+    },
+    {
+      "name": "Affordable Care Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the Affordable Care Act passed."
+    },
+    {
+      "name": "KP",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the team I had is the vice president at KP."
+    },
+    {
+      "name": "2014",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Years ago, it was 2014."
+    },
+    {
+      "name": "2009",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "when I first started that job nine and a half years ago, that was 2009."
+    },
+    {
+      "name": "2010",
+      "type": "DATE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you may remember in 2010."
+    },
+    {
+      "name": "media relations",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "even though we had somebody who was on the team who did media."
+    },
+    {
+      "name": "obstetrician",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "So I'm an obstetrician."
+    },
+    {
+      "name": "government relations",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussing the challenges faced in government relations"
+    },
+    {
+      "name": "obstetrician",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the speaker identifies as an obstetrician"
+    },
+    {
+      "name": "C-section",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "medical procedure mentioned in the context of obstetrics"
+    },
+    {
+      "name": "vaginal delivery",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "medical procedure mentioned in the context of obstetrics"
+    },
+    {
+      "name": "gynecologic surgery",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "medical procedure mentioned in the context of obstetrics"
+    },
+    {
+      "name": "Strength Space Leadership",
+      "type": "BOOK",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a book mentioned in the discussion"
+    },
+    {
+      "name": "Gallup",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "organization that studies and surveys leadership and management"
+    },
+    {
+      "name": "hope",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a need described for followers"
+    },
+    {
+      "name": "compassion",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a need described for followers"
+    },
+    {
+      "name": "stability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a need described for followers"
+    },
+    {
+      "name": "trust",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "a need described for followers"
+    },
+    {
+      "name": "patient",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the role of a clinician"
+    },
+    {
+      "name": "clinician",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the role of a clinician"
+    },
+    {
+      "name": "personal coach",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "comparing roles"
+    },
+    {
+      "name": "life coach",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "comparing roles"
+    },
+    {
+      "name": "healthcare",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the field of healthcare"
+    },
+    {
+      "name": "brain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the science of the brain"
+    },
+    {
+      "name": "spinal cord injury",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the science of spinal cord injury"
+    },
+    {
+      "name": "hope",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing contributions to recovery"
+    },
+    {
+      "name": "compassion",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing contributions to recovery"
+    },
+    {
+      "name": "stability",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing contributions to recovery"
+    },
+    {
+      "name": "trust",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussing contributions to recovery"
+    },
+    {
+      "name": "clinical practice",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "discussion about patient care"
+    },
+    {
+      "name": "hospital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "mention of rounding on the hospital"
+    },
+    {
+      "name": "leadership",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "discussion about coaching and growing teams"
+    },
+    {
+      "name": "executive teams",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "working with executive teams"
+    },
+    {
+      "name": "feedback",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about reflection and change"
+    },
+    {
+      "name": "coaching",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "serving and mentoring roles of a leader"
+    },
+    {
+      "name": "brain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about neurology and brain function"
+    },
+    {
+      "name": "neurology",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about brain and neurological systems"
+    },
+    {
+      "name": "music therapy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about therapeutic practices involving music"
+    },
+    {
+      "name": "patients",
+      "type": "PERSON",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussion about individuals receiving treatment"
+    },
+    {
+      "name": "music",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about its role in therapy and learning"
+    },
+    {
+      "name": "hospital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the hospital told it to me"
+    },
+    {
+      "name": "music therapy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "we have music therapy here"
+    },
+    {
+      "name": "brain",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is all the cool stuff that we're going to figure stuff out"
+    },
+    {
+      "name": "Craig",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the modern Craig because Craig's been around since 1907"
+    },
+    {
+      "name": "Craig culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "they talk about this thing called the Craig culture"
+    },
+    {
+      "name": "CEO",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "the then CEO actually the first CEO of this remarkable place"
+    },
+    {
+      "name": "leaders",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "a group of 20 or so actually the word that I guess 24 25 leaders today"
+    },
+    {
+      "name": "organization",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "folks in the organization this thing called the Craig recipe"
+    },
+    {
+      "name": "Alan Davis",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about leadership and organizational responsibility"
+    },
+    {
+      "name": "organizations",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "metaphor of organizations as trees"
+    },
+    {
+      "name": "resilience",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of qualities needed in organizations"
+    },
+    {
+      "name": "adaptability",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of qualities needed in organizations"
+    },
+    {
+      "name": "joy",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of qualities needed in organizations"
+    },
+    {
+      "name": "determination",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of qualities needed in organizations"
+    },
+    {
+      "name": "hope",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion of qualities needed in organizations"
+    },
+    {
+      "name": "therapeutic recreation",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion of activities for patients"
+    },
+    {
+      "name": "archery",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "discussion of activities for patients"
+    },
+    {
+      "name": "patients",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of care provided to individuals after accidents"
+    },
+    {
+      "name": "families",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion of care provided to individuals after accidents"
+    },
+    {
+      "name": "Dr. Jan Dell Allen Davis",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "visiting today with Dr. Jan Dell Allen Davis at Craig hospital in Denver Colorado"
+    },
+    {
+      "name": "Craig hospital",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "at Craig hospital in Denver Colorado"
+    },
+    {
+      "name": "Denver",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "at Craig hospital in Denver Colorado"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "at Craig hospital in Denver Colorado"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the why on earth communities stewardship and sustainability podcast series"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "generosity and collaboration with our sponsors the International Society of Sustainability Professionals"
+    },
+    {
+      "name": "Association of Waldorf schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "generosity and collaboration with our sponsors the Association of Waldorf schools of North America"
+    },
+    {
+      "name": "Wale Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Wale Waters"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Earth Coast Productions"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Purium"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "sponsors"
+    },
+    {
+      "name": "Association of Waldorf schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "sponsors"
+    },
+    {
+      "name": "Wale Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "sponsors"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsors"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "sponsors"
+    },
+    {
+      "name": "Jan Dell",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast host"
+    },
+    {
+      "name": "Craig hospital",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "microcosm"
+    },
+    {
+      "name": "VUCA",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "acronym"
+    },
+    {
+      "name": "military",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "origin of VUCA"
+    },
+    {
+      "name": "World War I",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "historical reference"
+    },
+    {
+      "name": "World War II",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "historical reference"
+    },
+    {
+      "name": "Swiss Alps",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of mission"
+    },
+    {
+      "name": "Swiss Alps",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...over in the Swiss Alps..."
+    },
+    {
+      "name": "Pyrenees",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...it was a map of the Pyrenees."
+    },
+    {
+      "name": "Buka",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "...Buka does the Buka prime attempts..."
+    },
+    {
+      "name": "microbiome",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...another aspect of the microbiome we can be grateful for."
+    },
+    {
+      "name": "New England Patriots",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a coach's organization."
+    },
+    {
+      "name": "vuka",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Described as a notion related to vision, understanding, clarity, and agility."
+    },
+    {
+      "name": "healthcare",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of changing world."
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Mentioned in the context of ranting and raving."
+    },
+    {
+      "name": "artist",
+      "type": "PERSON",
+      "name_confidence": 0.5,
+      "type_confidence": 0.5,
+      "context": "Referred to as a small artist."
+    },
+    {
+      "name": "coach",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "Referred to in relation to the New England Patriots."
+    },
+    {
+      "name": "Beth Israel",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "written in the late 70s, and it's about an intern going through his internship at the Beth Israel in Boston."
+    },
+    {
+      "name": "The House of God",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "It's called The House of God, and it was written in the late 70s."
+    },
+    {
+      "name": "Boston",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "internship at the Beth Israel in Boston."
+    },
+    {
+      "name": "toxic stress",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "chronic toxic stress that's been so well-described in kids."
+    },
+    {
+      "name": "opiate addiction",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "finding yourself addicted to opiates over time."
+    },
+    {
+      "name": "alcohol intake",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about societal issues and health"
+    },
+    {
+      "name": "sustainability",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about environmental practices"
+    },
+    {
+      "name": "composting",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about personal environmental practices"
+    },
+    {
+      "name": "earth",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about environmental issues"
+    },
+    {
+      "name": "Children's Hospital, National Medical Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "medical student doing a pediatric ICU rotation"
+    },
+    {
+      "name": "New Hampshire",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Came down from New Hampshire"
+    },
+    {
+      "name": "DC",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Children's Hospital, National Medical Center in DC"
+    },
+    {
+      "name": "1983",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "back in 1983 when they let us do a lot more as medical students"
+    },
+    {
+      "name": "pulmonary complications",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "pulmonary complications from the impreemature"
+    },
+    {
+      "name": "ICU",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "working in the ICU along with a critical care fellow"
+    },
+    {
+      "name": "critical care fellow",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "working in the ICU along with a critical care fellow"
+    },
+    {
+      "name": "nurse",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "this nurse and I had to take care of this kid all night"
+    },
+    {
+      "name": "Jan-Dill",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Thank you, Jan-Dill, so much for being with us."
+    },
+    {
+      "name": "baby",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "turn the baby's head"
+    },
+    {
+      "name": "nurse",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the nurse is doing what she does"
+    },
+    {
+      "name": "ventilator",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "he was on a ventilator because that's what had happened."
+    },
+    {
+      "name": "racism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "the backlash in this country to what's happening regarding racism"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "works_at",
+      "target": "Craig Hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "president and CEO of Craig Hospital",
+      "episode_number": 30
+    },
+    {
+      "source": "Craig Hospital",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "rehabilitation hospital in Denver, Colorado",
+      "episode_number": 30
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "city in Colorado",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "advocates_for",
+      "target": "vulnerable",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "role as a warrior for the underdog",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "worked_at",
+      "target": "Kaiser Permanente",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "vice president of government relations",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "graduated_from",
+      "target": "Dartmouth College",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "graduate of Dartmouth College",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "completed_residency_at",
+      "target": "Thomas Jefferson University Hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "completed her residency",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Denver Botanic Gardens",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "active participant in the community",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Denver Metro Chamber of Commerce",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "active participant in the community",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "National Jewish Health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "active participant in the community",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Mile High United Way",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "active participant in the community",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jandell Allen Davis",
+      "relationship": "serves_on_board_of",
+      "target": "Geisel School of Medicine at Dartmouth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "active participant in the community",
+      "episode_number": 30
+    },
+    {
+      "source": "Kaiser Permanente",
+      "relationship": "worked_at",
+      "target": "unknown",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.5,
+      "context": "I love Kaiser Permanente. It was there for 24 and a half years.",
+      "episode_number": 30
+    },
+    {
+      "source": "unknown",
+      "relationship": "advocates_for",
+      "target": "vulnerable",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "be a warrior for the underdog, for the vulnerable.",
+      "episode_number": 30
+    },
+    {
+      "source": "Craig",
+      "relationship": "located_in",
+      "target": "unknown",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.5,
+      "context": "there's something about this particular culture at Craig, the hospital.",
+      "episode_number": 30
+    },
+    {
+      "source": "patients",
+      "relationship": "needs",
+      "target": "voice",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "this patient population represents a level of vulnerability that needs a voice.",
+      "episode_number": 30
+    },
+    {
+      "source": "unknown",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.6,
+      "relationship_confidence": 0.5,
+      "target_confidence": 0.7,
+      "context": "are they safe and are they accessible?",
+      "episode_number": 30
+    },
+    {
+      "source": "CEO",
+      "relationship": "leads",
+      "target": "Craig",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "your role in the position of leadership as the CEO of this institution.",
+      "episode_number": 30
+    },
+    {
+      "source": "CEO",
+      "relationship": "works_at",
+      "target": "KP",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "your role in the position of leadership as the CEO of this institution",
+      "episode_number": 30
+    },
+    {
+      "source": "Affordable Care Act",
+      "relationship": "part_of",
+      "target": "2010",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the Affordable Care Act passed.",
+      "episode_number": 30
+    },
+    {
+      "source": "2009",
+      "relationship": "before",
+      "target": "2010",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "that was 2009, and you may remember in 2010.",
+      "episode_number": 30
+    },
+    {
+      "source": "CEO",
+      "relationship": "leads",
+      "target": "Craig",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "your role in the position of leadership as the CEO of this institution",
+      "episode_number": 30
+    },
+    {
+      "source": "obstetrician",
+      "relationship": "advocates_for",
+      "target": "government relations",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the speaker discusses the importance of understanding government relations as an obstetrician",
+      "episode_number": 30
+    },
+    {
+      "source": "Strength Space Leadership",
+      "relationship": "written_by",
+      "target": "Gallup",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "the book is associated with the Gallup organization",
+      "episode_number": 30
+    },
+    {
+      "source": "Gallup",
+      "relationship": "studies",
+      "target": "leadership",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Gallup is known for studying leadership and management",
+      "episode_number": 30
+    },
+    {
+      "source": "obstetrician",
+      "relationship": "informs_about",
+      "target": "C-section",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "the obstetrician discusses procedures like C-section in their practice",
+      "episode_number": 30
+    },
+    {
+      "source": "obstetrician",
+      "relationship": "informs_about",
+      "target": "vaginal delivery",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "the obstetrician discusses procedures like vaginal delivery in their practice",
+      "episode_number": 30
+    },
+    {
+      "source": "obstetrician",
+      "relationship": "informs_about",
+      "target": "gynecologic surgery",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "the obstetrician discusses procedures like gynecologic surgery in their practice",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "advocates_for",
+      "target": "hope",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussing contributions to recovery",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "advocates_for",
+      "target": "compassion",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussing contributions to recovery",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "advocates_for",
+      "target": "stability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussing contributions to recovery",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "advocates_for",
+      "target": "trust",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "discussing contributions to recovery",
+      "episode_number": 30
+    },
+    {
+      "source": "healthcare",
+      "relationship": "contains",
+      "target": "brain",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing the field of healthcare",
+      "episode_number": 30
+    },
+    {
+      "source": "healthcare",
+      "relationship": "contains",
+      "target": "spinal cord injury",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "discussing the field of healthcare",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "works_as",
+      "target": "personal coach",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "comparing roles",
+      "episode_number": 30
+    },
+    {
+      "source": "clinician",
+      "relationship": "works_as",
+      "target": "life coach",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "comparing roles",
+      "episode_number": 30
+    },
+    {
+      "source": "clinical practice",
+      "relationship": "advocates_for",
+      "target": "patient care",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussion about patient care and clinical practice",
+      "episode_number": 30
+    },
+    {
+      "source": "hospital",
+      "relationship": "located_in",
+      "target": "healthcare",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "mention of rounding on the hospital",
+      "episode_number": 30
+    },
+    {
+      "source": "leadership",
+      "relationship": "involves",
+      "target": "coaching",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussion about coaching and growing teams",
+      "episode_number": 30
+    },
+    {
+      "source": "executive teams",
+      "relationship": "works_at",
+      "target": "leadership",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.75,
+      "context": "working with executive teams in leadership context",
+      "episode_number": 30
+    },
+    {
+      "source": "feedback",
+      "relationship": "supports",
+      "target": "reflection",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about feedback and reflection",
+      "episode_number": 30
+    },
+    {
+      "source": "coaching",
+      "relationship": "is_part_of",
+      "target": "leadership",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "serving and mentoring roles of a leader",
+      "episode_number": 30
+    },
+    {
+      "source": "music therapy",
+      "relationship": "advocates_for",
+      "target": "music",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about using music therapy for rehabilitation",
+      "episode_number": 30
+    },
+    {
+      "source": "patients",
+      "relationship": "dealing_with",
+      "target": "neurology",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about patients in a neurological setting",
+      "episode_number": 30
+    },
+    {
+      "source": "brain",
+      "relationship": "contains",
+      "target": "neurology",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about the brain's functions and systems",
+      "episode_number": 30
+    },
+    {
+      "source": "Craig",
+      "relationship": "founded",
+      "target": "hospital",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the modern Craig because Craig's been around since 1907",
+      "episode_number": 30
+    },
+    {
+      "source": "CEO",
+      "relationship": "works_at",
+      "target": "Craig",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "the then CEO actually the first CEO of this remarkable place",
+      "episode_number": 30
+    },
+    {
+      "source": "leaders",
+      "relationship": "advocates_for",
+      "target": "Craig culture",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "they talk about this thing called the Craig culture",
+      "episode_number": 30
+    },
+    {
+      "source": "music therapy",
+      "relationship": "uses",
+      "target": "brain",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "we have music therapy here where we're using music to help people learn how to count",
+      "episode_number": 30
+    },
+    {
+      "source": "Alan Davis",
+      "relationship": "advocates_for",
+      "target": "resilience",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about leadership and organizational responsibility",
+      "episode_number": 30
+    },
+    {
+      "source": "Alan Davis",
+      "relationship": "advocates_for",
+      "target": "adaptability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about leadership and organizational responsibility",
+      "episode_number": 30
+    },
+    {
+      "source": "Alan Davis",
+      "relationship": "advocates_for",
+      "target": "joy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about leadership and organizational responsibility",
+      "episode_number": 30
+    },
+    {
+      "source": "Alan Davis",
+      "relationship": "advocates_for",
+      "target": "determination",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about leadership and organizational responsibility",
+      "episode_number": 30
+    },
+    {
+      "source": "Alan Davis",
+      "relationship": "advocates_for",
+      "target": "hope",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about leadership and organizational responsibility",
+      "episode_number": 30
+    },
+    {
+      "source": "patients",
+      "relationship": "receives_care_from",
+      "target": "therapeutic recreation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussion of activities for patients",
+      "episode_number": 30
+    },
+    {
+      "source": "patients",
+      "relationship": "receives_care_from",
+      "target": "archery",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "discussion of activities for patients",
+      "episode_number": 30
+    },
+    {
+      "source": "patients",
+      "relationship": "served_by",
+      "target": "Alan Davis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion of care provided to individuals after accidents",
+      "episode_number": 30
+    },
+    {
+      "source": "families",
+      "relationship": "served_by",
+      "target": "Alan Davis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion of care provided to individuals after accidents",
+      "episode_number": 30
+    },
+    {
+      "source": "Dr. Jan Dell Allen Davis",
+      "relationship": "works_at",
+      "target": "Craig hospital",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "visiting today with Dr. Jan Dell Allen Davis at Craig hospital in Denver Colorado",
+      "episode_number": 30
+    },
+    {
+      "source": "Craig hospital",
+      "relationship": "located_in",
+      "target": "Denver",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "at Craig hospital in Denver Colorado",
+      "episode_number": 30
+    },
+    {
+      "source": "Denver",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "at Craig hospital in Denver Colorado",
+      "episode_number": 30
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "hosts",
+      "target": "leadership summit",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the why on earth communities stewardship and sustainability podcast series",
+      "episode_number": 30
+    },
+    {
+      "source": "International Society of Sustainability Professionals",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "generosity and collaboration with our sponsors the International Society of Sustainability Professionals",
+      "episode_number": 30
+    },
+    {
+      "source": "Association of Waldorf schools of North America",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "generosity and collaboration with our sponsors the Association of Waldorf schools of North America",
+      "episode_number": 30
+    },
+    {
+      "source": "Wale Waters",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Wale Waters",
+      "episode_number": 30
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Earth Coast Productions",
+      "episode_number": 30
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "generosity and collaboration with our sponsors Purium",
+      "episode_number": 30
+    },
+    {
+      "source": "International Society of Sustainability Professionals",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsorship",
+      "episode_number": 30
+    },
+    {
+      "source": "Association of Waldorf schools of North America",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsorship",
+      "episode_number": 30
+    },
+    {
+      "source": "Wale Waters",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 30
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 30
+    },
+    {
+      "source": "Purium",
+      "relationship": "sponsors",
+      "target": "podcast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 30
+    },
+    {
+      "source": "Jan Dell",
+      "relationship": "works_at",
+      "target": "Craig hospital",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "podcast host",
+      "episode_number": 30
+    },
+    {
+      "source": "VUCA",
+      "relationship": "originated_in",
+      "target": "military",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "concept origin",
+      "episode_number": 30
+    },
+    {
+      "source": "World War I",
+      "relationship": "part_of",
+      "target": "historical context",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical reference",
+      "episode_number": 30
+    },
+    {
+      "source": "World War II",
+      "relationship": "part_of",
+      "target": "historical context",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical reference",
+      "episode_number": 30
+    },
+    {
+      "source": "military",
+      "relationship": "located_in",
+      "target": "VUCA",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "concept origin",
+      "episode_number": 30
+    },
+    {
+      "source": "Swiss Alps",
+      "relationship": "located_in",
+      "target": "PLACE",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "location of mission",
+      "episode_number": 30
+    },
+    {
+      "source": "Buka",
+      "relationship": "advocates_for",
+      "target": "microbiome",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "...Buka does the Buka prime attempts to do the same thing...",
+      "episode_number": 30
+    },
+    {
+      "source": "Swiss Alps",
+      "relationship": "part_of",
+      "target": "Switzerland",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "...over in the Swiss Alps...",
+      "episode_number": 30
+    },
+    {
+      "source": "Pyrenees",
+      "relationship": "part_of",
+      "target": "France",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "...it was a map of the Pyrenees...",
+      "episode_number": 30
+    },
+    {
+      "source": "coach",
+      "relationship": "works_at",
+      "target": "New England Patriots",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mentioned in the context of discussing the coach's actions.",
+      "episode_number": 30
+    },
+    {
+      "source": "vuka",
+      "relationship": "advocates_for",
+      "target": "clarity",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Described as a concept that requires clarity.",
+      "episode_number": 30
+    },
+    {
+      "source": "vuka",
+      "relationship": "advocates_for",
+      "target": "understanding",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Described as a concept that requires understanding.",
+      "episode_number": 30
+    },
+    {
+      "source": "vuka",
+      "relationship": "advocates_for",
+      "target": "agility",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Described as a concept that requires agility.",
+      "episode_number": 30
+    },
+    {
+      "source": "vuka",
+      "relationship": "advocates_for",
+      "target": "vision",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "Described as a concept that requires vision.",
+      "episode_number": 30
+    },
+    {
+      "source": "Facebook",
+      "relationship": "contains",
+      "target": "rant and raving",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "Mentioned in the context of social media reactions.",
+      "episode_number": 30
+    },
+    {
+      "source": "Beth Israel",
+      "relationship": "located_in",
+      "target": "Boston",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.98,
+      "context": "internship at the Beth Israel in Boston.",
+      "episode_number": 30
+    },
+    {
+      "source": "The House of God",
+      "relationship": "advocates_for",
+      "target": "toxic stress",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "It's called The House of God, and it was written in the late 70s.",
+      "episode_number": 30
+    },
+    {
+      "source": "toxic stress",
+      "relationship": "part_of",
+      "target": "opiate addiction",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "finding yourself addicted to opiates over time.",
+      "episode_number": 30
+    },
+    {
+      "source": "sustainability",
+      "relationship": "advocates_for",
+      "target": "composting",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about personal environmental practices",
+      "episode_number": 30
+    },
+    {
+      "source": "composting",
+      "relationship": "part_of",
+      "target": "earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion about environmental practices",
+      "episode_number": 30
+    },
+    {
+      "source": "alcohol intake",
+      "relationship": "affects",
+      "target": "society",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "discussion about societal health issues",
+      "episode_number": 30
+    },
+    {
+      "source": "Children's Hospital, National Medical Center",
+      "relationship": "located_in",
+      "target": "DC",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Children's Hospital, National Medical Center in DC",
+      "episode_number": 30
+    },
+    {
+      "source": "medical student",
+      "relationship": "worked_at",
+      "target": "Children's Hospital, National Medical Center",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "doing a pediatric ICU rotation at Children's Hospital, National Medical Center",
+      "episode_number": 30
+    },
+    {
+      "source": "New Hampshire",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.95,
+      "context": "Came down from New Hampshire",
+      "episode_number": 30
+    },
+    {
+      "source": "ICU",
+      "relationship": "part_of",
+      "target": "Children's Hospital, National Medical Center",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "working in the ICU along with a critical care fellow",
+      "episode_number": 30
+    },
+    {
+      "source": "nurse",
+      "relationship": "worked_with",
+      "target": "medical student",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "this nurse and I had to take care of this kid all night",
+      "episode_number": 30
+    },
+    {
+      "source": "critical care fellow",
+      "relationship": "worked_with",
+      "target": "medical student",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "talk to the fellow who was working with another critically old kid",
+      "episode_number": 30
+    },
+    {
+      "source": "nurse",
+      "relationship": "works_at",
+      "target": "hospital",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.7,
+      "context": "the nurse is doing what she does",
+      "episode_number": 30
+    },
+    {
+      "source": "Jan-Dill",
+      "relationship": "advocates_for",
+      "target": "baby",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "turn the baby's head",
+      "episode_number": 30
+    },
+    {
+      "source": "baby",
+      "relationship": "located_in",
+      "target": "hospital",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "turn the baby's head",
+      "episode_number": 30
+    },
+    {
+      "source": "racism",
+      "relationship": "part_of",
+      "target": "social issues",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "the backlash in this country to what's happening regarding racism",
+      "episode_number": 30
+    }
+  ]
+}

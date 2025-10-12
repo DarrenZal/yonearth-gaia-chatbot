@@ -1,0 +1,1511 @@
+{
+  "episode": 80,
+  "timestamp": "2025-10-09T11:37:05.232426",
+  "entity_count": 113,
+  "relationship_count": 71,
+  "entities": [
+    {
+      "name": "Adrian Alex Rodriguez",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast episode introduction"
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "gathering location"
+    },
+    {
+      "name": "Dallas, Texas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "gathering location"
+    },
+    {
+      "name": "Mexico City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Adrian Alex's residence"
+    },
+    {
+      "name": "Sea of Cortez",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "birthplace of Adrian Alex"
+    },
+    {
+      "name": "Bodai",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "organization founded by Adrian Alex"
+    },
+    {
+      "name": "Guadalajara",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of climate strike"
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of climate strike"
+    },
+    {
+      "name": "Greta Tunberg",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "global youth leader"
+    },
+    {
+      "name": "Shia Bastita",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "global youth leader"
+    },
+    {
+      "name": "mushroom festival",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "event produced by Adrian Alex"
+    },
+    {
+      "name": "Earthics Mexico",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Instagram of those NGOs"
+    },
+    {
+      "name": "Brigitte Mars",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "global advisory board member"
+    },
+    {
+      "name": "Colombia",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "course she does every year"
+    },
+    {
+      "name": "herbal medicine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "17 books about herbal medicine"
+    },
+    {
+      "name": "Colorado Micological Society",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "fungi connection it reminds me in Colorado"
+    },
+    {
+      "name": "Fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "audience favorite that is Fungi"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Colorado where I'm from."
+    },
+    {
+      "name": "Colorado Micological Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "We have the Colorado Micological Society online."
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "25,000 are in Mexico."
+    },
+    {
+      "name": "Mesoamerican Rift",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mexico with the Mesoamerican Rift is the fourth biggest biodiversity in the world."
+    },
+    {
+      "name": "Paul Stamets",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "one of my early heroes and all of this is Paul Stamets."
+    },
+    {
+      "name": "Pacific Northwest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "on the Pacific coast of the Pacific Northwest."
+    },
+    {
+      "name": "Pentagon",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "he actually went into the Pentagon of the United States."
+    },
+    {
+      "name": "Sea of Cortez",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "When that area with the Sea of Cortez."
+    },
+    {
+      "name": "Shark Island",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the biggest island in Mexico is not populated."
+    },
+    {
+      "name": "Guadalajara",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the mushroom festival in Guadalajara that you produce."
+    },
+    {
+      "name": "Jalisco",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "because Calisco, it has a really rich diversity around mushrooms."
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as a diverse group of fungi"
+    },
+    {
+      "name": "Halisco",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to mushroom diversity"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country mentioned in relation to mushroom diversity"
+    },
+    {
+      "name": "Beracruz",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "southern state in Mexico known for mushroom diversity"
+    },
+    {
+      "name": "Oaxaca",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "southern state in Mexico known for mushroom diversity"
+    },
+    {
+      "name": "Switzerland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "country mentioned in relation to mushroom identification"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "city mentioned for potential mushroom identification centers"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state mentioned in relation to mushroom diversity"
+    },
+    {
+      "name": "Maria Savina",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Asian shaman recognized for mushrooms"
+    },
+    {
+      "name": "Wautla de Humanas",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "location in Mexico known for mushrooms"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location for mushrooms."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in relation to boletos."
+    },
+    {
+      "name": "Maria Savina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Asian shaman from Wajaca."
+    },
+    {
+      "name": "Wajaca",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Location in Mexico associated with mushrooms."
+    },
+    {
+      "name": "Wautla de Humanas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Recognized place in the world for mushrooms."
+    },
+    {
+      "name": "The Beatles",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in relation to Maria Savina."
+    },
+    {
+      "name": "Aldous Huxley",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Writer mentioned in relation to a book."
+    },
+    {
+      "name": "Island",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Book written by Aldous Huxley."
+    },
+    {
+      "name": "New York City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned in relation to an art project."
+    },
+    {
+      "name": "Arcadia Earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Museum in New York."
+    },
+    {
+      "name": "Baycia",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Artist involved in environmental awareness."
+    },
+    {
+      "name": "Baycia",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "She's called Baycia and is she called these that habisualization."
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "I'll actually be in New York soon after this recording."
+    },
+    {
+      "name": "Adrian Alex Rodriguez",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "we are visiting with Adrian Alex Rodriguez from Mexico City"
+    },
+    {
+      "name": "Mexico City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Adrian Alex Rodriguez from Mexico City"
+    },
+    {
+      "name": "Dallas",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "we're in Dallas, Texas while we're recording this conversation."
+    },
+    {
+      "name": "Bodai",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Adrian Alex has Bodai."
+    },
+    {
+      "name": "eco-symbol",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "we're going to talk about eco symbol a little bit."
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "Beauty Counter",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals."
+    },
+    {
+      "name": "BioDynamic Association",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the BioDynamic Association."
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the relationships that Earth X as this big, the biggest environmental experience in the world."
+    },
+    {
+      "name": "Sea of Cortez",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "protect this biodiversity that is from the sea of Cortez."
+    },
+    {
+      "name": "Mesoamerican reef",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "American, Mesoamerican reef that actually represent almost the 15% of biodiversity in the world."
+    },
+    {
+      "name": "Earth X",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "big environmental experience in the world"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "endangered species and institutions in Mexico"
+    },
+    {
+      "name": "Pacific coast",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "event rescuing the Pacific"
+    },
+    {
+      "name": "Boda\u00ed",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "involved involving big organizations"
+    },
+    {
+      "name": "Fridays for Future",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "involved involving big organizations"
+    },
+    {
+      "name": "Fond and National Conservatory of Mexico",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "involved involving big organizations"
+    },
+    {
+      "name": "Mushroom Festival",
+      "type": "EVENT",
+      "name_confidence": 0.6,
+      "type_confidence": 0.6,
+      "context": "these ocean protection events"
+    },
+    {
+      "name": "Emily Maglone",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "interview with Emily Maglone"
+    },
+    {
+      "name": "Peaceboat",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "New York director of Peaceboat"
+    },
+    {
+      "name": "Restore Coral",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "project called Restore Coral"
+    },
+    {
+      "name": "coral",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "endemic species of coral in Mexico"
+    },
+    {
+      "name": "Restore Coral",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about coral restoration"
+    },
+    {
+      "name": "Peaceboat",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "connected with the concept of coral restoration"
+    },
+    {
+      "name": "coral bleaching",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about coral die-off"
+    },
+    {
+      "name": "South Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of coral loss"
+    },
+    {
+      "name": "Caribbean",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of coral loss"
+    },
+    {
+      "name": "coral reefs",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "discussion about coral ecosystems"
+    },
+    {
+      "name": "Mexico City",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "location of proposed showroom"
+    },
+    {
+      "name": "mushroom",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.75,
+      "context": "discussion about mushroom cultivation"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location for showing around."
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location of artists."
+    },
+    {
+      "name": "eco symbol",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Described as a project and symbol representing environmental hope."
+    },
+    {
+      "name": "LGBT movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of social movements."
+    },
+    {
+      "name": "Wyners platform",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned as a platform for promoting the eco symbol."
+    },
+    {
+      "name": "biologists",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Mentioned as experts discussing mushrooms."
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to biodiversity and properties."
+    },
+    {
+      "name": "NGOs",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mentioned in the context of activism."
+    },
+    {
+      "name": "environmental movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussed in relation to the need for unity."
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of environmental protection."
+    },
+    {
+      "name": "water rights",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of environmental issues."
+    },
+    {
+      "name": "ocean conservancy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mentioned in the context of environmental protection."
+    },
+    {
+      "name": "biodiversity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "protecting biodiversity"
+    },
+    {
+      "name": "water rights",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "protecting water rights"
+    },
+    {
+      "name": "ocean conservancy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "protecting ocean conservancy"
+    },
+    {
+      "name": "mushrooms",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "love to mushrooms and protection to them"
+    },
+    {
+      "name": "coral",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "restore coral"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "three thousand people in New York"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "came all the way from Mexico"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "girl that came from Europe"
+    },
+    {
+      "name": "climate strike",
+      "type": "EVENT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "first international climate strike"
+    },
+    {
+      "name": "youth leader",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "me as a youth leader in Mexico"
+    },
+    {
+      "name": "Adrian Alex",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Adrian Alex, it has been such a joy"
+    },
+    {
+      "name": "Adrian Alex",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conversation about environmentalism"
+    },
+    {
+      "name": "Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about returning to Mexico"
+    },
+    {
+      "name": "Why on Earth Community Stewardship and Sustainability Podcast",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast series hosting the conversation"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "whyonearth.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "website mentioned for support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "founded",
+      "target": "Bodai",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "introduction of Adrian Alex",
+      "episode_number": 80
+    },
+    {
+      "source": "Bodai",
+      "relationship": "located_in",
+      "target": "Mexico City",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "context of Bodai's operations",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "participated_in",
+      "target": "climate strike",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "climate strike participation",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "advocates_for",
+      "target": "sustainability",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "context of Adrian Alex's work",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "produces",
+      "target": "mushroom festival",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "event production by Adrian Alex",
+      "episode_number": 80
+    },
+    {
+      "source": "Earth X",
+      "relationship": "located_in",
+      "target": "Dallas, Texas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "gathering location",
+      "episode_number": 80
+    },
+    {
+      "source": "Guadalajara",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "geographical relationship",
+      "episode_number": 80
+    },
+    {
+      "source": "New York City",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "geographical relationship",
+      "episode_number": 80
+    },
+    {
+      "source": "Earthics Mexico",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Instagram of those NGOs",
+      "episode_number": 80
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "advocates_for",
+      "target": "herbal medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "global advisory board member",
+      "episode_number": 80
+    },
+    {
+      "source": "Brigitte Mars",
+      "relationship": "works_at",
+      "target": "Colombia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "course she does every year",
+      "episode_number": 80
+    },
+    {
+      "source": "Fungi",
+      "relationship": "part_of",
+      "target": "healthy lifestyle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "audience favorite that is Fungi",
+      "episode_number": 80
+    },
+    {
+      "source": "Colorado Micological Society",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "fungi connection it reminds me in Colorado",
+      "episode_number": 80
+    },
+    {
+      "source": "Colorado Micological Society",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "We have the Colorado Micological Society online.",
+      "episode_number": 80
+    },
+    {
+      "source": "Mexico",
+      "relationship": "contains",
+      "target": "25,000",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "25,000 are in Mexico.",
+      "episode_number": 80
+    },
+    {
+      "source": "Mexico",
+      "relationship": "part_of",
+      "target": "Mesoamerican Rift",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Mexico with the Mesoamerican Rift is the fourth biggest biodiversity in the world.",
+      "episode_number": 80
+    },
+    {
+      "source": "Paul Stamets",
+      "relationship": "advocates_for",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "he actually went into the Pentagon of the United States talked to the very high leaders in the military.",
+      "episode_number": 80
+    },
+    {
+      "source": "Pacific Northwest",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "on the Pacific coast of the Pacific Northwest.",
+      "episode_number": 80
+    },
+    {
+      "source": "Sea of Cortez",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "When that area with the Sea of Cortez.",
+      "episode_number": 80
+    },
+    {
+      "source": "Shark Island",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "the biggest island in Mexico is not populated.",
+      "episode_number": 80
+    },
+    {
+      "source": "Guadalajara",
+      "relationship": "located_in",
+      "target": "Jalisco",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "the mushroom festival in Guadalajara that you produce.",
+      "episode_number": 80
+    },
+    {
+      "source": "Halisco",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussed in relation to mushroom diversity",
+      "episode_number": 80
+    },
+    {
+      "source": "Beracruz",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "mentioned as a southern state",
+      "episode_number": 80
+    },
+    {
+      "source": "Oaxaca",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "mentioned as a southern state",
+      "episode_number": 80
+    },
+    {
+      "source": "Switzerland",
+      "relationship": "contains",
+      "target": "identification centers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.7,
+      "context": "discussed in relation to mushroom identification",
+      "episode_number": 80
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to mushroom diversity",
+      "episode_number": 80
+    },
+    {
+      "source": "Maria Savina",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a recognized figure for mushrooms",
+      "episode_number": 80
+    },
+    {
+      "source": "Wautla de Humanas",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "discussed as a place known for mushrooms",
+      "episode_number": 80
+    },
+    {
+      "source": "Maria Savina",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Maria Savina is a shaman associated with mushrooms in Mexico.",
+      "episode_number": 80
+    },
+    {
+      "source": "The Beatles",
+      "relationship": "visited",
+      "target": "Maria Savina",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The Beatles went to Mexico and interacted with Maria Savina.",
+      "episode_number": 80
+    },
+    {
+      "source": "Aldous Huxley",
+      "relationship": "wrote",
+      "target": "Island",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Aldous Huxley is the author of the book Island.",
+      "episode_number": 80
+    },
+    {
+      "source": "Arcadia Earth",
+      "relationship": "located_in",
+      "target": "New York City",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Arcadia Earth is a museum located in New York City.",
+      "episode_number": 80
+    },
+    {
+      "source": "Baycia",
+      "relationship": "creates",
+      "target": "art projects",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Baycia is an artist involved in environmental art projects.",
+      "episode_number": 80
+    },
+    {
+      "source": "Wautla de Humanas",
+      "relationship": "part_of",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Wautla de Humanas is a location in Mexico known for mushrooms.",
+      "episode_number": 80
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "boletos",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Colorado is mentioned in relation to boletos.",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "located_in",
+      "target": "Mexico City",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Adrian Alex Rodriguez from Mexico City",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex Rodriguez",
+      "relationship": "works_at",
+      "target": "Bodai",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Adrian Alex has Bodai",
+      "episode_number": 80
+    },
+    {
+      "source": "Bodai",
+      "relationship": "located_in",
+      "target": "Dallas",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "we're in Dallas, Texas while we're recording this conversation",
+      "episode_number": 80
+    },
+    {
+      "source": "Bodai",
+      "relationship": "advocates_for",
+      "target": "eco-symbol",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "we're going to talk about eco symbol a little bit",
+      "episode_number": 80
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "sponsors",
+      "target": "Why on Earth communities stewardship and sustainability podcast series",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "this includes Patagonia, Weylay Waters, Purium, the Lidge Family Foundation, Beauty Counter, the International Society of Sustainability Professionals",
+      "episode_number": 80
+    },
+    {
+      "source": "Earth X",
+      "relationship": "supports",
+      "target": "biodiversity project",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "the relationships that Earth X as this big, the biggest environmental experience in the world",
+      "episode_number": 80
+    },
+    {
+      "source": "Sea of Cortez",
+      "relationship": "part_of",
+      "target": "Mesoamerican reef",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "protect this biodiversity that is from the sea of Cortez to the American, Mesoamerican reef",
+      "episode_number": 80
+    },
+    {
+      "source": "Earth X",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "big environmental experience in the world",
+      "episode_number": 80
+    },
+    {
+      "source": "Emily Maglone",
+      "relationship": "works_at",
+      "target": "Peaceboat",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "interview with Emily Maglone",
+      "episode_number": 80
+    },
+    {
+      "source": "Restore Coral",
+      "relationship": "advocates_for",
+      "target": "coral",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "project called Restore Coral",
+      "episode_number": 80
+    },
+    {
+      "source": "Fridays for Future",
+      "relationship": "part_of",
+      "target": "Earth X",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "involved involving big organizations",
+      "episode_number": 80
+    },
+    {
+      "source": "Boda\u00ed",
+      "relationship": "part_of",
+      "target": "Earth X",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "involved involving big organizations",
+      "episode_number": 80
+    },
+    {
+      "source": "Fond and National Conservatory of Mexico",
+      "relationship": "part_of",
+      "target": "Earth X",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "involved involving big organizations",
+      "episode_number": 80
+    },
+    {
+      "source": "Peaceboat",
+      "relationship": "located_in",
+      "target": "Pacific coast",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "New York director of Peaceboat",
+      "episode_number": 80
+    },
+    {
+      "source": "Restore Coral",
+      "relationship": "connected_with",
+      "target": "Peaceboat",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about coral restoration",
+      "episode_number": 80
+    },
+    {
+      "source": "South Mexico",
+      "relationship": "part_of",
+      "target": "Caribbean",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "location of coral loss",
+      "episode_number": 80
+    },
+    {
+      "source": "coral bleaching",
+      "relationship": "advocates_for",
+      "target": "coral reefs",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about coral die-off",
+      "episode_number": 80
+    },
+    {
+      "source": "Mexico City",
+      "relationship": "contains",
+      "target": "mushroom",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "location of proposed showroom",
+      "episode_number": 80
+    },
+    {
+      "source": "eco symbol",
+      "relationship": "represents",
+      "target": "environmental movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Described as a symbol for the environmental movement.",
+      "episode_number": 80
+    },
+    {
+      "source": "New York",
+      "relationship": "contains",
+      "target": "artists",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Artists from New York are mentioned.",
+      "episode_number": 80
+    },
+    {
+      "source": "biologists",
+      "relationship": "advocates_for",
+      "target": "mushrooms",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Biologists discuss the properties of mushrooms.",
+      "episode_number": 80
+    },
+    {
+      "source": "eco symbol",
+      "relationship": "promoted_by",
+      "target": "Wyners platform",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "The eco symbol is mentioned in relation to the Wyners platform.",
+      "episode_number": 80
+    },
+    {
+      "source": "environmental movement",
+      "relationship": "needs",
+      "target": "eco symbol",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "The environmental movement is described as needing the eco symbol for unity.",
+      "episode_number": 80
+    },
+    {
+      "source": "mushrooms",
+      "relationship": "part_of",
+      "target": "biodiversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Mushrooms are discussed in relation to biodiversity.",
+      "episode_number": 80
+    },
+    {
+      "source": "ocean conservancy",
+      "relationship": "part_of",
+      "target": "environmental movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Ocean conservancy is part of the broader environmental movement.",
+      "episode_number": 80
+    },
+    {
+      "source": "water rights",
+      "relationship": "part_of",
+      "target": "environmental movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Water rights are part of the environmental movement's concerns.",
+      "episode_number": 80
+    },
+    {
+      "source": "New York",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "three thousand people in New York",
+      "episode_number": 80
+    },
+    {
+      "source": "Mexico",
+      "relationship": "part_of",
+      "target": "Latin America",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "came all the way from Mexico",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex",
+      "relationship": "works_at",
+      "target": "environmentalist movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Adrian Alex, it has been such a joy",
+      "episode_number": 80
+    },
+    {
+      "source": "youth leader",
+      "relationship": "advocates_for",
+      "target": "climate action",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "me as a youth leader in Mexico",
+      "episode_number": 80
+    },
+    {
+      "source": "biodiversity",
+      "relationship": "related_to",
+      "target": "ocean conservancy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "protecting biodiversity and ocean conservancy",
+      "episode_number": 80
+    },
+    {
+      "source": "climate strike",
+      "relationship": "part_of",
+      "target": "environmental movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "first international climate strike",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex",
+      "relationship": "advocates_for",
+      "target": "environmentalism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "discussion about empowering the country and nature",
+      "episode_number": 80
+    },
+    {
+      "source": "Adrian Alex",
+      "relationship": "located_in",
+      "target": "Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "returning to Mexico",
+      "episode_number": 80
+    },
+    {
+      "source": "Why on Earth Community Stewardship and Sustainability Podcast",
+      "relationship": "hosted_by",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast hosting",
+      "episode_number": 80
+    },
+    {
+      "source": "whyonearth.org",
+      "relationship": "sponsored_by",
+      "target": "Why on Earth Community Stewardship and Sustainability Podcast",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "website for support of the podcast",
+      "episode_number": 80
+    }
+  ]
+}

@@ -1,0 +1,1786 @@
+{
+  "episode": 41,
+  "timestamp": "2025-10-09T11:18:59.262418",
+  "entity_count": 138,
+  "relationship_count": 81,
+  "entities": [
+    {
+      "name": "Addison Luck",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Boulder Creek",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Morgantown",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "West Virginia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Yale University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Earth Law Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Boulder Rights of Nature",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "environmental studies",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "history",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "podcast segment"
+    },
+    {
+      "name": "rights of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "environmental law",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "Clean Water Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "endangered species act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    },
+    {
+      "name": "environmental crisis",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "facing a huge environmental crisis right now"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in the US and a lot of other western modern countries"
+    },
+    {
+      "name": "Kaiahoge River",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "specifically in the US like the Kaiahoge River"
+    },
+    {
+      "name": "Rachel Carson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "DDT and Rachel Carson"
+    },
+    {
+      "name": "Earth Day",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "creation of the first earth day"
+    },
+    {
+      "name": "Clean Water Act",
+      "type": "LAW",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "existing environmental laws that we still have today like clean water act"
+    },
+    {
+      "name": "Clean Air Act",
+      "type": "LAW",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "existing environmental laws that we still have today like clean air act"
+    },
+    {
+      "name": "Endangered Species Act",
+      "type": "LAW",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "thinking about the Endangered Species Act which obviously was really revolutionary"
+    },
+    {
+      "name": "rights of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the rights of nature is to find a much better balance"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "...if I who don't live here in Boulder wanted to protect this river..."
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.99,
+      "context": "...that created our country the United States."
+    },
+    {
+      "name": "Ben Franklin",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "...Ben Franklin in particular looked to indigenous wisdom..."
+    },
+    {
+      "name": "Eroquoid League of Confederation of Tribes",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...looked to indigenous wisdom to the wisdom of the Eroquoid League of Confederation of Tribes..."
+    },
+    {
+      "name": "Great Lakes",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "...in the Great Lakes of State New York area..."
+    },
+    {
+      "name": "Congress",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...the requirement of Congress to consent before going to war."
+    },
+    {
+      "name": "Grandmother's Council",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "...the Grandmother's Council the Grandmother's had to say yes before going to war."
+    },
+    {
+      "name": "indigenous traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...indigenous traditions all around the world have had deep rooted mechanisms..."
+    },
+    {
+      "name": "rights of nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...the overall goal of rights of the rights of nature movement..."
+    },
+    {
+      "name": "seven generations",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...some of us are familiar with this notion of seven generations in this country..."
+    },
+    {
+      "name": "river",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "...to voice to speak on behalf of river and eagle ocean mountain forest tree deer lion..."
+    },
+    {
+      "name": "future generations",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.7,
+      "context": "...to voice to speak on behalf of the future the future generations..."
+    },
+    {
+      "name": "environmental laws",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "...all of our environmental laws sort of put nature in terms of our use as a resource..."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "...we can really only litigate on behalf of nature or like represent nature..."
+    },
+    {
+      "name": "ethnic minority",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "...if there was like an ethnic minority in a really powerful country..."
+    },
+    {
+      "name": "federal government",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "...being oppressed by the federal government..."
+    },
+    {
+      "name": "environmental feature",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.65,
+      "context": "...the opportunity to protect an environmental feature based on like some sort of income."
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "New Zealand Maori people have lived there since 1300."
+    },
+    {
+      "name": "Maori",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "indigenous people of New Zealand."
+    },
+    {
+      "name": "Wonganoi River",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "first river in the world to be granted legal personhood."
+    },
+    {
+      "name": "Te Uruwera",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "former national park in New Zealand."
+    },
+    {
+      "name": "Mt. Taranaki",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "beautiful volcanic dome."
+    },
+    {
+      "name": "Euruch tribe",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "recognized the rights of the claimant river."
+    },
+    {
+      "name": "Ojibwe people",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "wider fan of the Ojibwe people in Minnesota."
+    },
+    {
+      "name": "Numen",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "wild rice that grows in Minnesota."
+    },
+    {
+      "name": "Ho-Chunk nation",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "recognized the rights of nature in their tribal constitution."
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company that does about a billion dollars of sales per year."
+    },
+    {
+      "name": "B Corp movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "mechanism for companies to care for the planet."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussed as having legal rights and standing"
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a place where nature is given a guardian"
+    },
+    {
+      "name": "law professors",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as pointing out challenges in legal recognition of nature"
+    },
+    {
+      "name": "biologist",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "mentioned as a potential representative for nature"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussed in the context of answering who represents nature"
+    },
+    {
+      "name": "Addison",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "conversation about history"
+    },
+    {
+      "name": "Emmanuel Kant",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "enlightenment philosopher"
+    },
+    {
+      "name": "German history",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "study in the realm of history"
+    },
+    {
+      "name": "philosophy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "study in the realm of history"
+    },
+    {
+      "name": "legal traditions",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "coming from Europe"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "origin of legal traditions"
+    },
+    {
+      "name": "women",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical context of legal voice"
+    },
+    {
+      "name": "indigenous peoples",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical context of legal voice"
+    },
+    {
+      "name": "peoples of color",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "historical context of legal voice"
+    },
+    {
+      "name": "Supreme Court",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "court cases regarding legal standing"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "context of corporate influence"
+    },
+    {
+      "name": "Endangered Species Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "court cases regarding nature's rights"
+    },
+    {
+      "name": "Article Three",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "requirements for legal standing"
+    },
+    {
+      "name": "Congress",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "legislative body called upon by Supreme Court"
+    },
+    {
+      "name": "Supreme Court",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the Supreme Court has said"
+    },
+    {
+      "name": "Congress",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "called upon Congress to have some sort of congressional act"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "human beings in this country"
+    },
+    {
+      "name": "1890s",
+      "type": "DATE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "codified in the 1890s"
+    },
+    {
+      "name": "universities",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "with universities and municipalities"
+    },
+    {
+      "name": "municipalities",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "with universities and municipalities"
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the rights of nature"
+    },
+    {
+      "name": "Alex Stefan",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the letter that Alex Stefan wrote"
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "studying abroad through my university in New Zealand"
+    },
+    {
+      "name": "Wongenui River",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "where the Wongenui River is"
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "studying abroad through my university in New Zealand"
+    },
+    {
+      "name": "Wongenui River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where the Wongenui River is"
+    },
+    {
+      "name": "Earth Law Center",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "started working or interning for the Earth Law Center"
+    },
+    {
+      "name": "Yale",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "got back to Yale"
+    },
+    {
+      "name": "Ecuador",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "a lawyer from Ecuador"
+    },
+    {
+      "name": "Hugo H. Evedia",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a lawyer from Ecuador and Hugo H. Evedia"
+    },
+    {
+      "name": "Galapagos",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "represented sharks in the Galapagos"
+    },
+    {
+      "name": "Clean Water Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we have the Clean Water Act"
+    },
+    {
+      "name": "Clean Air Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we have the Clean Air Act"
+    },
+    {
+      "name": "Endangered Species Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "we have the Endangered Species Act"
+    },
+    {
+      "name": "Mississippi River",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico"
+    },
+    {
+      "name": "Gulf of Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico"
+    },
+    {
+      "name": "Mississippi River",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico"
+    },
+    {
+      "name": "Gulf of Mexico",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "in Europe much of the law there has moved in the direction of the precautionary principle"
+    },
+    {
+      "name": "US",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "in this country what we've done instead is tilted the scales"
+    },
+    {
+      "name": "Christopher Stone",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "law professor from US seeing Christopher Stone published"
+    },
+    {
+      "name": "William O. Douglas",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Supreme Court Justice William O. Douglas who's the longest serving Supreme Court justice"
+    },
+    {
+      "name": "Sierra Club",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "in Sierra Club versus Morton which is a 1972 place"
+    },
+    {
+      "name": "William O. Douglas",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Supreme Court Justice"
+    },
+    {
+      "name": "Supreme Court",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Justice William O. Douglas"
+    },
+    {
+      "name": "Sierra Club",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sierra Club versus Morton"
+    },
+    {
+      "name": "Walt Disney Company",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Walt Disney was trying to build a ski resort"
+    },
+    {
+      "name": "Mineral King Valley",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mineral King Valley in California"
+    },
+    {
+      "name": "California",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mineral King Valley in California"
+    },
+    {
+      "name": "Ecuador",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "countries like Ecuador, Bolivia, India, New Zealand"
+    },
+    {
+      "name": "Bolivia",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "countries like Ecuador, Bolivia, India, New Zealand"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "countries like Ecuador, Bolivia, India, New Zealand"
+    },
+    {
+      "name": "New Zealand",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "countries like Ecuador, Bolivia, India, New Zealand"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Boulder is hoping to be one of them"
+    },
+    {
+      "name": "Pittsburgh",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Pittsburgh, Pennsylvania enacted a rights of nature law"
+    },
+    {
+      "name": "Pennsylvania",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Pittsburgh, Pennsylvania enacted a rights of nature law"
+    },
+    {
+      "name": "San Monica",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "San Monica has a rights of nature law"
+    },
+    {
+      "name": "Green Party",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Green party of the UK in like 2015"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Wheylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Lidge Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Equal Exchange",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "who are making this possible"
+    },
+    {
+      "name": "Boulder Creek Watershed",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "statement in support of the rights of the Boulder Creek watershed"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "here in Boulder"
+    },
+    {
+      "name": "Boulder County",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "the county of Boulder"
+    },
+    {
+      "name": "Boulder Rights of Nature",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the group that I'm working for called Boulder Rights of Nature"
+    },
+    {
+      "name": "City Council",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "submitting to the city council in ordinance and a resolution"
+    },
+    {
+      "name": "Addison",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "mentioning Addison in conversation"
+    },
+    {
+      "name": "Earth Law Center",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "group that I am helping work on a textbook project with"
+    },
+    {
+      "name": "UN Harmony with Nature Network",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Westpite website called the UN Harmony with Nature Network"
+    },
+    {
+      "name": "Community Environmental Legal Defense Fund",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "another group called the Community Environmental Legal Defense Fund"
+    },
+    {
+      "name": "CELDF",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "goes by Cell Death Resort for short CELDF"
+    },
+    {
+      "name": "Boulder Rights and Nature Group",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "if you're in Boulder the Boulder Rights and Nature Group"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "if you're in Boulder the Boulder Rights and Nature Group"
+    },
+    {
+      "name": "Boulder Rights and Nature",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "on Boulder Rights and Nature website"
+    },
+    {
+      "name": "Addison",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "Yeah well Addison thanks so much for visiting with us."
+    },
+    {
+      "name": "Yhonner",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "great work that you're doing at Yhonner."
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "The Yhonner earth communities stewardship and sustainability podcast series is hosted by Aaron William Perry."
+    },
+    {
+      "name": "Yhonner earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "please visit Yhonner earth.org backslash support."
+    },
+    {
+      "name": "Yhonner earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "thank you for being a part of the Yhonner earth community."
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Addison Luck",
+      "relationship": "works_at",
+      "target": "Earth Law Center",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Addison Luck",
+      "relationship": "works_at",
+      "target": "Boulder Rights of Nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Rights of Nature",
+      "relationship": "located_in",
+      "target": "Boulder Creek",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Morgantown",
+      "relationship": "located_in",
+      "target": "West Virginia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Addison Luck",
+      "relationship": "studies",
+      "target": "environmental studies",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Addison Luck",
+      "relationship": "studies",
+      "target": "history",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "rights of nature",
+      "relationship": "advocates_for",
+      "target": "environmental law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Clean Water Act",
+      "relationship": "part_of",
+      "target": "environmental law",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "endangered species act",
+      "relationship": "part_of",
+      "target": "environmental law",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 41
+    },
+    {
+      "source": "Clean Water Act",
+      "relationship": "part_of",
+      "target": "environmental laws",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "existing environmental laws that we still have today like clean water act",
+      "episode_number": 41
+    },
+    {
+      "source": "Clean Air Act",
+      "relationship": "part_of",
+      "target": "environmental laws",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "existing environmental laws that we still have today like clean air act",
+      "episode_number": 41
+    },
+    {
+      "source": "Endangered Species Act",
+      "relationship": "advocates_for",
+      "target": "species protection",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "thinking about the Endangered Species Act which obviously was really revolutionary",
+      "episode_number": 41
+    },
+    {
+      "source": "environmental crisis",
+      "relationship": "caused_by",
+      "target": "environmental laws",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "facing a huge environmental crisis right now that has not been solved by our environmental laws",
+      "episode_number": 41
+    },
+    {
+      "source": "rights of nature",
+      "relationship": "compares_to",
+      "target": "environmental laws",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "goal of rights of nature is to find a much better balance",
+      "episode_number": 41
+    },
+    {
+      "source": "Ben Franklin",
+      "relationship": "looked_to",
+      "target": "Eroquoid League of Confederation of Tribes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "...Ben Franklin in particular looked to indigenous wisdom to the wisdom of the Eroquoid League of Confederation of Tribes...",
+      "episode_number": 41
+    },
+    {
+      "source": "Eroquoid League of Confederation of Tribes",
+      "relationship": "part_of",
+      "target": "Great Lakes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "...in the Great Lakes of State New York area...",
+      "episode_number": 41
+    },
+    {
+      "source": "Congress",
+      "relationship": "consent_before",
+      "target": "going to war",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "...the requirement of Congress to consent before going to war...",
+      "episode_number": 41
+    },
+    {
+      "source": "indigenous traditions",
+      "relationship": "voice_on_behalf_of",
+      "target": "river",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "...indigenous traditions all around the world have had deep rooted mechanisms to voice to speak on behalf of river...",
+      "episode_number": 41
+    },
+    {
+      "source": "rights of nature",
+      "relationship": "goal_of",
+      "target": "rights of nature movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "...the overall goal of rights of the rights of nature movement...",
+      "episode_number": 41
+    },
+    {
+      "source": "seven generations",
+      "relationship": "concept_of",
+      "target": "future generations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "...some of us are familiar with this notion of seven generations in this country...",
+      "episode_number": 41
+    },
+    {
+      "source": "environmental laws",
+      "relationship": "put_nature_in_terms_of",
+      "target": "resource",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "...all of our environmental laws sort of put nature in terms of our use as a resource...",
+      "episode_number": 41
+    },
+    {
+      "source": "Maori",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "intrinsic belief that nature has its own rights.",
+      "episode_number": 41
+    },
+    {
+      "source": "New Zealand",
+      "relationship": "contains",
+      "target": "Wonganoi River",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "first river in the world to be granted legal personhood.",
+      "episode_number": 41
+    },
+    {
+      "source": "New Zealand",
+      "relationship": "contains",
+      "target": "Te Uruwera",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "former national park.",
+      "episode_number": 41
+    },
+    {
+      "source": "Euruch tribe",
+      "relationship": "recognizes",
+      "target": "rights of nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "recognized the rights of the claimant river.",
+      "episode_number": 41
+    },
+    {
+      "source": "Ojibwe people",
+      "relationship": "recognizes",
+      "target": "Numen",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "recognized the rights of the Numen.",
+      "episode_number": 41
+    },
+    {
+      "source": "Ho-Chunk nation",
+      "relationship": "recognizes",
+      "target": "rights of nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "recognized the rights of nature in their tribal constitution.",
+      "episode_number": 41
+    },
+    {
+      "source": "Patagonia",
+      "relationship": "makes",
+      "target": "B Corp movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "company that incorporates B certification.",
+      "episode_number": 41
+    },
+    {
+      "source": "New Zealand",
+      "relationship": "contains",
+      "target": "nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in the context of legal guardianship for nature",
+      "episode_number": 41
+    },
+    {
+      "source": "law professors",
+      "relationship": "advocates_for",
+      "target": "nature",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "pointing out challenges in legal recognition of nature",
+      "episode_number": 41
+    },
+    {
+      "source": "biologist",
+      "relationship": "represents",
+      "target": "nature",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "mentioned as a potential representative for nature",
+      "episode_number": 41
+    },
+    {
+      "source": "community",
+      "relationship": "determines",
+      "target": "who represents nature",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussed in the context of community involvement in representation",
+      "episode_number": 41
+    },
+    {
+      "source": "Emmanuel Kant",
+      "relationship": "advocates_for",
+      "target": "enlightenment",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "philosopher's response about enlightenment",
+      "episode_number": 41
+    },
+    {
+      "source": "legal traditions",
+      "relationship": "coming_from",
+      "target": "Europe",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "origin of legal traditions",
+      "episode_number": 41
+    },
+    {
+      "source": "women",
+      "relationship": "lacked_voice_in",
+      "target": "court of law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical context of legal voice",
+      "episode_number": 41
+    },
+    {
+      "source": "indigenous peoples",
+      "relationship": "lacked_voice_in",
+      "target": "court of law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical context of legal voice",
+      "episode_number": 41
+    },
+    {
+      "source": "peoples of color",
+      "relationship": "lacked_voice_in",
+      "target": "court of law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "historical context of legal voice",
+      "episode_number": 41
+    },
+    {
+      "source": "Supreme Court",
+      "relationship": "rules_on",
+      "target": "nature's rights",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "court cases regarding nature's rights",
+      "episode_number": 41
+    },
+    {
+      "source": "Supreme Court",
+      "relationship": "calls_upon",
+      "target": "Congress",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "legislative body called upon by Supreme Court",
+      "episode_number": 41
+    },
+    {
+      "source": "corporations",
+      "relationship": "granted_personhood_by",
+      "target": "Supreme Court",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "legal standing granted to corporations",
+      "episode_number": 41
+    },
+    {
+      "source": "Supreme Court",
+      "relationship": "called upon",
+      "target": "Congress",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "called upon Congress to have some sort of congressional act",
+      "episode_number": 41
+    },
+    {
+      "source": "human beings",
+      "relationship": "have legal rights",
+      "target": "nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "we as individual people human beings in this country have living have legal rights as living entities",
+      "episode_number": 41
+    },
+    {
+      "source": "nature",
+      "relationship": "could be the defining rights issue of",
+      "target": "time",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the rights of nature being the defining issue",
+      "episode_number": 41
+    },
+    {
+      "source": "Alex Stefan",
+      "relationship": "wrote",
+      "target": "letter",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "the letter that Alex Stefan wrote",
+      "episode_number": 41
+    },
+    {
+      "source": "university",
+      "relationship": "located_in",
+      "target": "New Zealand",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "studying abroad through my university in New Zealand",
+      "episode_number": 41
+    },
+    {
+      "source": "road trip",
+      "relationship": "to",
+      "target": "Wongenui River",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "we took a road trip up to the North Island of New Zealand which is where the Wongenui River is",
+      "episode_number": 41
+    },
+    {
+      "source": "Earth Law Center",
+      "relationship": "works_at",
+      "target": "Yale",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "started working or interning for the Earth Law Center",
+      "episode_number": 41
+    },
+    {
+      "source": "Ecuador",
+      "relationship": "located_in",
+      "target": "Galapagos",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "a lawyer from Ecuador and Hugo H. Evedia who has represented sharks in the Galapagos",
+      "episode_number": 41
+    },
+    {
+      "source": "Wongenui River",
+      "relationship": "part_of",
+      "target": "New Zealand",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "where the Wongenui River is",
+      "episode_number": 41
+    },
+    {
+      "source": "Yale",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "I hosted like a rights of nature panel at Yale",
+      "episode_number": 41
+    },
+    {
+      "source": "Mississippi River",
+      "relationship": "contains",
+      "target": "Gulf of Mexico",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico",
+      "episode_number": 41
+    },
+    {
+      "source": "Christopher Stone",
+      "relationship": "published",
+      "target": "should trees have standing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "law professor from US seeing Christopher Stone published",
+      "episode_number": 41
+    },
+    {
+      "source": "William O. Douglas",
+      "relationship": "cited",
+      "target": "Christopher Stone",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Supreme Court Justice William O. Douglas cited Stone's work",
+      "episode_number": 41
+    },
+    {
+      "source": "William O. Douglas",
+      "relationship": "called for",
+      "target": "nature to have legal standing",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Supreme Court Justice William O. Douglas called for nature to have legal standing",
+      "episode_number": 41
+    },
+    {
+      "source": "Sierra Club",
+      "relationship": "involved_in",
+      "target": "Sierra Club versus Morton",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "in Sierra Club versus Morton which is a 1972 place",
+      "episode_number": 41
+    },
+    {
+      "source": "Gulf of Mexico",
+      "relationship": "part_of",
+      "target": "Mississippi River",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "mouth of the Mississippi River where it flows into the Gulf of Mexico",
+      "episode_number": 41
+    },
+    {
+      "source": "Europe",
+      "relationship": "advocates_for",
+      "target": "precautionary principle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "in Europe much of the law there has moved in the direction of the precautionary principle",
+      "episode_number": 41
+    },
+    {
+      "source": "William O. Douglas",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Justice Douglas argued for the rights of nature",
+      "episode_number": 41
+    },
+    {
+      "source": "Sierra Club",
+      "relationship": "involved_in",
+      "target": "Sierra Club versus Morton",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Supreme Court case involving Sierra Club",
+      "episode_number": 41
+    },
+    {
+      "source": "Walt Disney Company",
+      "relationship": "attempted_to_build",
+      "target": "Mineral King Valley",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Walt Disney was trying to build a ski resort",
+      "episode_number": 41
+    },
+    {
+      "source": "Mineral King Valley",
+      "relationship": "located_in",
+      "target": "California",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Mineral King Valley in California",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder",
+      "relationship": "hopes_to_enact",
+      "target": "rights of nature law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Boulder is hoping to be one of them",
+      "episode_number": 41
+    },
+    {
+      "source": "Pittsburgh",
+      "relationship": "enacted",
+      "target": "rights of nature law",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Pittsburgh, Pennsylvania enacted a rights of nature law",
+      "episode_number": 41
+    },
+    {
+      "source": "San Monica",
+      "relationship": "has",
+      "target": "rights of nature law",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "San Monica has a rights of nature law",
+      "episode_number": 41
+    },
+    {
+      "source": "Green Party",
+      "relationship": "adopted",
+      "target": "rights of nature",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Green party of the UK adopted the rights of nature",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Rights of Nature",
+      "relationship": "advocates_for",
+      "target": "Boulder Creek Watershed",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "the group that I'm working for called Boulder Rights of Nature is currently campaigning to grant legal standing and legal rights to the Boulder Creek watershed",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder County",
+      "relationship": "contains",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the county of Boulder and all cities and towns there in",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Boulder County",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "here in Boulder",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Rights of Nature",
+      "relationship": "works_at",
+      "target": "Boulder Creek Watershed",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the group that I'm working for called Boulder Rights of Nature is currently campaigning to grant legal standing and legal rights to the Boulder Creek watershed",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Creek Watershed",
+      "relationship": "part_of",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "this river is part of the watershed",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Rights of Nature",
+      "relationship": "submits_to",
+      "target": "City Council",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "submitting to the city council in ordinance and a resolution",
+      "episode_number": 41
+    },
+    {
+      "source": "Addison",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "mentioning Addison in conversation",
+      "episode_number": 41
+    },
+    {
+      "source": "Earth Law Center",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "group that I am helping work on a textbook project with",
+      "episode_number": 41
+    },
+    {
+      "source": "Boulder Rights and Nature Group",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "if you're in Boulder the Boulder Rights and Nature Group",
+      "episode_number": 41
+    },
+    {
+      "source": "Community Environmental Legal Defense Fund",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "another group called the Community Environmental Legal Defense Fund",
+      "episode_number": 41
+    },
+    {
+      "source": "UN Harmony with Nature Network",
+      "relationship": "advocates_for",
+      "target": "rights of nature",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Westpite website called the UN Harmony with Nature Network",
+      "episode_number": 41
+    },
+    {
+      "source": "Earth Law Center",
+      "relationship": "part_of",
+      "target": "rights of nature movement",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "map with the earth law center that basically highlighted where rights of nature has been",
+      "episode_number": 41
+    },
+    {
+      "source": "Addison",
+      "relationship": "works_at",
+      "target": "Yhonner",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Yeah well Addison thanks so much for visiting with us.",
+      "episode_number": 41
+    },
+    {
+      "source": "Yhonner",
+      "relationship": "sponsored_by",
+      "target": "Yhonner earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "The podcast series is also sponsored by several corporate and organization sponsors.",
+      "episode_number": 41
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Yhonner",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "The Yhonner earth communities stewardship and sustainability podcast series is hosted by Aaron William Perry.",
+      "episode_number": 41
+    },
+    {
+      "source": "Yhonner earth",
+      "relationship": "part_of",
+      "target": "Yhonner earth community",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "thank you for being a part of the Yhonner earth community.",
+      "episode_number": 41
+    }
+  ]
+}

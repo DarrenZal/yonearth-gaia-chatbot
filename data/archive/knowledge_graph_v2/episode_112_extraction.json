@@ -1,0 +1,2059 @@
+{
+  "episode": 112,
+  "timestamp": "2025-10-09T10:30:50.832576",
+  "entity_count": 137,
+  "relationship_count": 109,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Lathem Matthews",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "author and guest on the podcast"
+    },
+    {
+      "name": "University of Washington",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.95,
+      "context": "university where Lathem graduated"
+    },
+    {
+      "name": "Vajra Doctube Buddhist Seminary",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "seminary attended by Lathem"
+    },
+    {
+      "name": "Rigden Financial Inc.",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company where Lathem is president"
+    },
+    {
+      "name": "College of New Caledonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "college where Lathem teaches"
+    },
+    {
+      "name": "Prince George",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of College of New Caledonia"
+    },
+    {
+      "name": "British Columbia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "province where Prince George is located"
+    },
+    {
+      "name": "The Four Noble Truths of Wealth",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Lathem"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the eco faith conference"
+    },
+    {
+      "name": "Milton Friedman",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "economist associated with the University of Washington"
+    },
+    {
+      "name": "Chokam Trungpa",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Lathem's teacher"
+    },
+    {
+      "name": "Victoria Shambhala Center",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "executive director position"
+    },
+    {
+      "name": "Buddhist concepts",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "economic and business life"
+    },
+    {
+      "name": "eightfold path",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Buddhist concepts"
+    },
+    {
+      "name": "eightfold path",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the premise of the whole book, including the eightfold path"
+    },
+    {
+      "name": "four noble truths of wealth",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the four noble truths of wealth"
+    },
+    {
+      "name": "generosity",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be generosity"
+    },
+    {
+      "name": "patience",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be patience"
+    },
+    {
+      "name": "discipline",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be discipline"
+    },
+    {
+      "name": "exertion",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be exertion"
+    },
+    {
+      "name": "meditative insight",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the six transcendent virtues, which would be meditative insight"
+    },
+    {
+      "name": "penetrating insight",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the six transcendent virtues, which would be penetrating insight"
+    },
+    {
+      "name": "transcendent wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "which we would call transcendent wisdom"
+    },
+    {
+      "name": "ego centricity",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "transcending ego centricity"
+    },
+    {
+      "name": "grief",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "grief is like this ball and inside of a jar"
+    },
+    {
+      "name": "car accident",
+      "type": "EVENT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "lost her husband many years ago in tragic car accident"
+    },
+    {
+      "name": "Dr. Robert Klonenger",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mentioned as a scientist dealing in medicine and neuro biochemistry"
+    },
+    {
+      "name": "Buddhist tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to neuro biochemistry and internal makeup"
+    },
+    {
+      "name": "neuro biochemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned in relation to internal cultivation and practices"
+    },
+    {
+      "name": "science",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned in relation to emerging awareness and practices"
+    },
+    {
+      "name": "spiritual tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to beneficial elements and convergence of traditions"
+    },
+    {
+      "name": "meditation",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about meditation"
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Buddhist way of seeing meditation"
+    },
+    {
+      "name": "neuroscientist",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "mention of neuroscientists in relation to meditation"
+    },
+    {
+      "name": "meditation community",
+      "type": "ORG",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussion about the community's knowledge"
+    },
+    {
+      "name": "life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about living life and its implications"
+    },
+    {
+      "name": "charts",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "reference to visuals and teaching charts"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the chart"
+    },
+    {
+      "name": "Keeling curve",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "related to carbon loading in the atmosphere and global climate change"
+    },
+    {
+      "name": "wealthiest part of the world",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "context of the podcast discussion"
+    },
+    {
+      "name": "life",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "general discussion about life expectations"
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussion about cyclical existence and egocentric perspective"
+    },
+    {
+      "name": "Nietzsche",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in relation to eternal recurrence"
+    },
+    {
+      "name": "Western Judeo-Christian tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in context of fear and obsession with the beyond"
+    },
+    {
+      "name": "life",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a limited time offer"
+    },
+    {
+      "name": "Buddhism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about spiritual insight and practices"
+    },
+    {
+      "name": "The Four Noble Truths of Wealth",
+      "type": "PRODUCT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a book by Lath"
+    },
+    {
+      "name": "Lath",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "author of The Four Noble Truths of Wealth"
+    },
+    {
+      "name": "Pemachodren",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a Buddhist author"
+    },
+    {
+      "name": "Teghnot Han",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned as a Buddhist author"
+    },
+    {
+      "name": "Teghnot Han",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as an author"
+    },
+    {
+      "name": "Pemachodren",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as an author"
+    },
+    {
+      "name": "Lathe",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a book"
+    },
+    {
+      "name": "Socrates",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned as a philosopher"
+    },
+    {
+      "name": "Trugum Trunkpa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as an activist"
+    },
+    {
+      "name": "City Hall",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "mentioned as a location for activism"
+    },
+    {
+      "name": "coal",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "mentioned in relation to advocacy"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why on Earth Community Podcast"
+    },
+    {
+      "name": "Lath Matthews",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the Why on Earth Community Podcast"
+    },
+    {
+      "name": "the four noble truths of wealth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Lath Matthews"
+    },
+    {
+      "name": "Amazon",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "where the book can be purchased"
+    },
+    {
+      "name": "Facebook",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "platform where Lath's content can be connected with"
+    },
+    {
+      "name": "Earth Coast productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Alpine Botanicals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earth Hero",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Liquid Trainer",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Vera Herbels",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Growing Spaces",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Soilworks",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Joyful Journey Hot Springs Spa",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Earthwater Press",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Dr. Bronners",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "1% for the planet",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Egoversity",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "whyonnereth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website for donations and support"
+    },
+    {
+      "name": "Weile waters",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "product offered as a thank you for donations"
+    },
+    {
+      "name": "Buddhist economics 090",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "article written by Lath Matthews"
+    },
+    {
+      "name": "understanding genuine prosperity",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "article written by Lath Matthews"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Podcast discussion"
+    },
+    {
+      "name": "forest bathing",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Meditation practices"
+    },
+    {
+      "name": "income versus well-being chart",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Chart discussed in the podcast"
+    },
+    {
+      "name": "students",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "Discussion about education"
+    },
+    {
+      "name": "community",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Discussion about social belonging"
+    },
+    {
+      "name": "lottery",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "Example of wealth acquisition"
+    },
+    {
+      "name": "Jacob Needleman",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "philosophy professor at University of San Francisco"
+    },
+    {
+      "name": "University of San Francisco",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "institution where Jacob Needleman works"
+    },
+    {
+      "name": "The Cobbola of Money",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.7,
+      "context": "book mentioned in the transcript"
+    },
+    {
+      "name": "Rabbi Milton Bonder",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "author of the book mentioned"
+    },
+    {
+      "name": "money",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "concept discussed throughout the transcript"
+    },
+    {
+      "name": "economic situation",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "concept discussed in relation to money and happiness"
+    },
+    {
+      "name": "open migration",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussed as a guiding star for change in the world"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mentioned in the context of helping people find a living"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned in the context of immigration and migration"
+    },
+    {
+      "name": "developed nations",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussed in relation to economies and demographics"
+    },
+    {
+      "name": "economics prof",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.6,
+      "context": "mentioned as a source of economic insight"
+    },
+    {
+      "name": "economy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "economy with a bunch of people aging out"
+    },
+    {
+      "name": "population",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "shrinking population"
+    },
+    {
+      "name": "developing world",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "developing world"
+    },
+    {
+      "name": "environment",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "ignore the environment"
+    },
+    {
+      "name": "migration",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "ignore migration"
+    },
+    {
+      "name": "virus",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the virus could make us move down that road"
+    },
+    {
+      "name": "forest bathing",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you mentioned forest bathing"
+    },
+    {
+      "name": "shinrin yokyu",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the practice of shinrin yokyu"
+    },
+    {
+      "name": "Japanese tradition",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "comes from the Japanese tradition"
+    },
+    {
+      "name": "biosphere",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the living biosphere"
+    },
+    {
+      "name": "neuro biochemistry",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "improving our neuro biochemistry"
+    },
+    {
+      "name": "Robert Heinlein",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "coined by Robert Heinlein"
+    },
+    {
+      "name": "Stranger in a Strange Land",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "science fiction piece called Stranger in a Strange Land"
+    },
+    {
+      "name": "global home",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "shared global home"
+    },
+    {
+      "name": "human family",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "entire human family"
+    },
+    {
+      "name": "brothers and sisters",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "all us brothers and sisters living on this planet"
+    },
+    {
+      "name": "Victoria",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast discussion about a book talk in Victoria"
+    },
+    {
+      "name": "Wyners Community Network",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "mention of the community network in the podcast"
+    },
+    {
+      "name": "money",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about the nature of money"
+    },
+    {
+      "name": "technology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about technological solutions for sustainable energy"
+    },
+    {
+      "name": "citizenship",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about the importance of citizenship in addressing core problems"
+    },
+    {
+      "name": "self-interest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about self-interest in economics"
+    },
+    {
+      "name": "corporations",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussion about the corporate business model and public perception"
+    },
+    {
+      "name": "self-interest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about corporate business model and psychology"
+    },
+    {
+      "name": "corporations",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about corporate business model"
+    },
+    {
+      "name": "poverty",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about corporate impact"
+    },
+    {
+      "name": "wealth",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about corporate model"
+    },
+    {
+      "name": "global community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about challenges and opportunities"
+    },
+    {
+      "name": "psychology",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the novel being written"
+    },
+    {
+      "name": "culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about the novel being written"
+    },
+    {
+      "name": "Buddhist framework",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about humor and compassion"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about work from the inside out"
+    },
+    {
+      "name": "regeneration",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about cultural evolution and health"
+    },
+    {
+      "name": "cultural evolution",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about regeneration and health"
+    },
+    {
+      "name": "health and well-being",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about responsibilities as individuals"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "podcast series"
+    },
+    {
+      "name": "yonurth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "website for support"
+    },
+    {
+      "name": "support packages",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "support options for the podcast"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Lathem Matthews",
+      "relationship": "works_at",
+      "target": "Rigden Financial Inc.",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lathem's position as president",
+      "episode_number": 112
+    },
+    {
+      "source": "Lathem Matthews",
+      "relationship": "joined",
+      "target": "College of New Caledonia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lathem's role as instructor",
+      "episode_number": 112
+    },
+    {
+      "source": "College of New Caledonia",
+      "relationship": "located_in",
+      "target": "Prince George",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "location of the college",
+      "episode_number": 112
+    },
+    {
+      "source": "Prince George",
+      "relationship": "located_in",
+      "target": "British Columbia",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "province of Prince George",
+      "episode_number": 112
+    },
+    {
+      "source": "Lathem Matthews",
+      "relationship": "authored",
+      "target": "The Four Noble Truths of Wealth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Lathem's book",
+      "episode_number": 112
+    },
+    {
+      "source": "Lathem Matthews",
+      "relationship": "attended",
+      "target": "University of Washington",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.98,
+      "context": "Lathem's education",
+      "episode_number": 112
+    },
+    {
+      "source": "Lathem Matthews",
+      "relationship": "advocates_for",
+      "target": "Buddhism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Lathem's beliefs",
+      "episode_number": 112
+    },
+    {
+      "source": "Lathem Matthews",
+      "relationship": "studied",
+      "target": "economics",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Lathem's field of study",
+      "episode_number": 112
+    },
+    {
+      "source": "Milton Friedman",
+      "relationship": "associated_with",
+      "target": "University of Washington",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.98,
+      "context": "Friedman's influence at the university",
+      "episode_number": 112
+    },
+    {
+      "source": "Chokam Trungpa",
+      "relationship": "wrote",
+      "target": "Cutting Through Spiritual Materialism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "book authored by Trungpa",
+      "episode_number": 112
+    },
+    {
+      "source": "executive director",
+      "relationship": "works_at",
+      "target": "Victoria Shambhala Center",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "position held",
+      "episode_number": 112
+    },
+    {
+      "source": "Buddhist concepts",
+      "relationship": "applied_to",
+      "target": "economic and business life",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "application in discussion",
+      "episode_number": 112
+    },
+    {
+      "source": "eightfold path",
+      "relationship": "is_part_of",
+      "target": "Buddhist concepts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "part of Buddhist teachings",
+      "episode_number": 112
+    },
+    {
+      "source": "four noble truths of wealth",
+      "relationship": "is_about",
+      "target": "view",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.7,
+      "context": "the four noble truths of wealth, it's all about the view",
+      "episode_number": 112
+    },
+    {
+      "source": "eightfold path",
+      "relationship": "is_part_of",
+      "target": "four noble truths of wealth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the eightfold path, essentially, there's a lot of different traditions present these things differently",
+      "episode_number": 112
+    },
+    {
+      "source": "generosity",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be generosity",
+      "episode_number": 112
+    },
+    {
+      "source": "patience",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be patience",
+      "episode_number": 112
+    },
+    {
+      "source": "discipline",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be discipline",
+      "episode_number": 112
+    },
+    {
+      "source": "exertion",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the six transcendent virtues, which would be exertion",
+      "episode_number": 112
+    },
+    {
+      "source": "meditative insight",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the six transcendent virtues, which would be meditative insight",
+      "episode_number": 112
+    },
+    {
+      "source": "penetrating insight",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the six transcendent virtues, which would be penetrating insight",
+      "episode_number": 112
+    },
+    {
+      "source": "transcendent wisdom",
+      "relationship": "is_a_transcendent_virtue",
+      "target": "six transcendent virtues",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "which we would call transcendent wisdom",
+      "episode_number": 112
+    },
+    {
+      "source": "grief",
+      "relationship": "is_compared_to",
+      "target": "ball inside a jar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "grief is like this ball and inside of a jar",
+      "episode_number": 112
+    },
+    {
+      "source": "car accident",
+      "relationship": "caused",
+      "target": "grief",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "lost her husband many years ago in tragic car accident",
+      "episode_number": 112
+    },
+    {
+      "source": "Dr. Robert Klonenger",
+      "relationship": "works_at",
+      "target": "medicine",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned as a scientist in the arena of medicine and neuro biochemistry",
+      "episode_number": 112
+    },
+    {
+      "source": "Buddhist tradition",
+      "relationship": "advocates_for",
+      "target": "neuro biochemistry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to internal makeup and practices",
+      "episode_number": 112
+    },
+    {
+      "source": "science",
+      "relationship": "related_to",
+      "target": "Buddhist tradition",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to emerging awareness and practices in the Buddhist community",
+      "episode_number": 112
+    },
+    {
+      "source": "spiritual tradition",
+      "relationship": "contains",
+      "target": "Buddhist tradition",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to elements that are beneficial and convergence of traditions",
+      "episode_number": 112
+    },
+    {
+      "source": "neuroscientist",
+      "relationship": "approaches",
+      "target": "meditation",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about how neuroscientists approach meditation",
+      "episode_number": 112
+    },
+    {
+      "source": "meditation community",
+      "relationship": "has",
+      "target": "experiential knowledge",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about the knowledge within the meditation community",
+      "episode_number": 112
+    },
+    {
+      "source": "meditation",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "defining meditation as a concept",
+      "episode_number": 112
+    },
+    {
+      "source": "life",
+      "relationship": "is_a",
+      "target": "CONCEPT",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "defining life as a concept",
+      "episode_number": 112
+    },
+    {
+      "source": "Buddhism",
+      "relationship": "advocates_for",
+      "target": "meditation",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Buddhism's advocacy for meditation",
+      "episode_number": 112
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "life",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussing how life is supposed to go",
+      "episode_number": 112
+    },
+    {
+      "source": "Keeling curve",
+      "relationship": "related_to",
+      "target": "global climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mentioned in relation to carbon loading",
+      "episode_number": 112
+    },
+    {
+      "source": "wealthiest part of the world",
+      "relationship": "part_of",
+      "target": "world",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.9,
+      "context": "context of the podcast discussion",
+      "episode_number": 112
+    },
+    {
+      "source": "life",
+      "relationship": "contains",
+      "target": "prosperity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "discussing expectations of life",
+      "episode_number": 112
+    },
+    {
+      "source": "Nietzsche",
+      "relationship": "advocates_for",
+      "target": "eternal recurrence of the same",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about Nietzsche's philosophical ideas",
+      "episode_number": 112
+    },
+    {
+      "source": "Buddhism",
+      "relationship": "describes",
+      "target": "cyclical existence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about the nature of existence",
+      "episode_number": 112
+    },
+    {
+      "source": "Western Judeo-Christian tradition",
+      "relationship": "has_fear_of",
+      "target": "eternal recurrence of the same",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about cultural perspectives on existence",
+      "episode_number": 112
+    },
+    {
+      "source": "life",
+      "relationship": "is_a",
+      "target": "limited time offer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion about the nature of life",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath",
+      "relationship": "advocates_for",
+      "target": "Buddhism",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussion about spiritual insights and practices",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath",
+      "relationship": "wrote",
+      "target": "The Four Noble Truths of Wealth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mention of the book",
+      "episode_number": 112
+    },
+    {
+      "source": "Pemachodren",
+      "relationship": "advocates_for",
+      "target": "Buddhism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned as a Buddhist author",
+      "episode_number": 112
+    },
+    {
+      "source": "Teghnot Han",
+      "relationship": "advocates_for",
+      "target": "Buddhism",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.9,
+      "context": "mentioned as a Buddhist author",
+      "episode_number": 112
+    },
+    {
+      "source": "Teghnot Han",
+      "relationship": "advocates_for",
+      "target": "Lathe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to the book",
+      "episode_number": 112
+    },
+    {
+      "source": "Socrates",
+      "relationship": "advocates_for",
+      "target": "action",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "mentioned in relation to wisdom leading to action",
+      "episode_number": 112
+    },
+    {
+      "source": "Trugum Trunkpa",
+      "relationship": "advocates_for",
+      "target": "activism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "mentioned in relation to activism",
+      "episode_number": 112
+    },
+    {
+      "source": "City Hall",
+      "relationship": "part_of",
+      "target": "activism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "mentioned as a location for activism",
+      "episode_number": 112
+    },
+    {
+      "source": "coal",
+      "relationship": "advocated_for_by",
+      "target": "unknown activist",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.5,
+      "context": "mentioned in relation to advocacy",
+      "episode_number": 112
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast host",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath Matthews",
+      "relationship": "authored",
+      "target": "the four noble truths of wealth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "author of the book",
+      "episode_number": 112
+    },
+    {
+      "source": "the four noble truths of wealth",
+      "relationship": "available_on",
+      "target": "Amazon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "book availability",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath Matthews",
+      "relationship": "has_content_on",
+      "target": "Facebook",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "content connection",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Earth Coast productions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "LIDGE Family Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Alpine Botanicals",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Earth Hero",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Liquid Trainer",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Vera Herbels",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Growing Spaces",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Soilworks",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Joyful Journey Hot Springs Spa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Earthwater Press",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Dr. Bronners",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "1% for the planet",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "Why on Earth Community Podcast",
+      "relationship": "sponsored_by",
+      "target": "Egoversity",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "sponsorship",
+      "episode_number": 112
+    },
+    {
+      "source": "whyonnereth.org",
+      "relationship": "provides",
+      "target": "donation_support",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "website for donations",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath Matthews",
+      "relationship": "wrote",
+      "target": "Buddhist economics 090",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "article written by Lath",
+      "episode_number": 112
+    },
+    {
+      "source": "Lath Matthews",
+      "relationship": "wrote",
+      "target": "understanding genuine prosperity",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "article written by Lath",
+      "episode_number": 112
+    },
+    {
+      "source": "Aaron",
+      "relationship": "advocates_for",
+      "target": "meditation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Podcast discussion",
+      "episode_number": 112
+    },
+    {
+      "source": "income versus well-being chart",
+      "relationship": "illustrates",
+      "target": "well-being",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Chart discussed in the podcast",
+      "episode_number": 112
+    },
+    {
+      "source": "students",
+      "relationship": "part_of",
+      "target": "community",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Discussion about education",
+      "episode_number": 112
+    },
+    {
+      "source": "community",
+      "relationship": "contains",
+      "target": "students",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Discussion about social belonging",
+      "episode_number": 112
+    },
+    {
+      "source": "lottery",
+      "relationship": "associated_with",
+      "target": "wealth",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "Example of wealth acquisition",
+      "episode_number": 112
+    },
+    {
+      "source": "Jacob Needleman",
+      "relationship": "works_at",
+      "target": "University of San Francisco",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.98,
+      "target_confidence": 0.98,
+      "context": "philosophy professor at University of San Francisco",
+      "episode_number": 112
+    },
+    {
+      "source": "Rabbi Milton Bonder",
+      "relationship": "wrote",
+      "target": "The Cobbola of Money",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "author of the book mentioned",
+      "episode_number": 112
+    },
+    {
+      "source": "money",
+      "relationship": "affects",
+      "target": "economic situation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "discussion on economic situation and happiness",
+      "episode_number": 112
+    },
+    {
+      "source": "open migration",
+      "relationship": "advocates_for",
+      "target": "change in the world",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussed as a guiding star for transformation in society",
+      "episode_number": 112
+    },
+    {
+      "source": "Amazon",
+      "relationship": "part_of",
+      "target": "developed nations",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.85,
+      "context": "mentioned in the context of helping people find a living",
+      "episode_number": 112
+    },
+    {
+      "source": "Europe",
+      "relationship": "contains",
+      "target": "immigrants",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "discussed in relation to immigration and migration",
+      "episode_number": 112
+    },
+    {
+      "source": "developed nations",
+      "relationship": "located_in",
+      "target": "economies",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "discussed in relation to demographics and sustainability",
+      "episode_number": 112
+    },
+    {
+      "source": "economics prof",
+      "relationship": "advocates_for",
+      "target": "sustainable economy",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.8,
+      "context": "mentioned as a source of economic insight",
+      "episode_number": 112
+    },
+    {
+      "source": "economy",
+      "relationship": "has_population",
+      "target": "population",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "economy with a bunch of people aging out",
+      "episode_number": 112
+    },
+    {
+      "source": "developing world",
+      "relationship": "has_environment_issue",
+      "target": "environment",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "we have that in spades in the developing world",
+      "episode_number": 112
+    },
+    {
+      "source": "environment",
+      "relationship": "affects",
+      "target": "migration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "ignore the environment we ignore migration",
+      "episode_number": 112
+    },
+    {
+      "source": "forest bathing",
+      "relationship": "is_practice_of",
+      "target": "shinrin yokyu",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "you mentioned forest bathing",
+      "episode_number": 112
+    },
+    {
+      "source": "shinrin yokyu",
+      "relationship": "originates_from",
+      "target": "Japanese tradition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the practice of shinrin yokyu comes from the Japanese tradition",
+      "episode_number": 112
+    },
+    {
+      "source": "forest bathing",
+      "relationship": "improves",
+      "target": "neuro biochemistry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "science out now showing how doing so has a variety of ways of improving our neuro biochemistry",
+      "episode_number": 112
+    },
+    {
+      "source": "Robert Heinlein",
+      "relationship": "coined",
+      "target": "grok",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "coined by Robert Heinlein in his science fiction piece",
+      "episode_number": 112
+    },
+    {
+      "source": "grok",
+      "relationship": "is_defined_as",
+      "target": "to understand something deeply",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the idea is to really understand something to deeply and comprehensively understand something",
+      "episode_number": 112
+    },
+    {
+      "source": "global home",
+      "relationship": "is_shared_by",
+      "target": "human family",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "shared global home and our entire human family",
+      "episode_number": 112
+    },
+    {
+      "source": "Victoria",
+      "relationship": "located_in",
+      "target": "British Columbia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast discussion about a book talk in Victoria",
+      "episode_number": 112
+    },
+    {
+      "source": "Wyners Community Network",
+      "relationship": "advocates_for",
+      "target": "social issues",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "mention of the community network in the podcast",
+      "episode_number": 112
+    },
+    {
+      "source": "money",
+      "relationship": "is_a",
+      "target": "resource",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about the nature of money",
+      "episode_number": 112
+    },
+    {
+      "source": "technology",
+      "relationship": "provides",
+      "target": "sustainable energy solutions",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about technological solutions for sustainable energy",
+      "episode_number": 112
+    },
+    {
+      "source": "citizenship",
+      "relationship": "is_essential_for",
+      "target": "addressing core problems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about the importance of citizenship in addressing core problems",
+      "episode_number": 112
+    },
+    {
+      "source": "self-interest",
+      "relationship": "is_a",
+      "target": "concept in economics",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about self-interest in economics",
+      "episode_number": 112
+    },
+    {
+      "source": "corporations",
+      "relationship": "are_perceived_as",
+      "target": "sociopathic",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about the corporate business model and public perception",
+      "episode_number": 112
+    },
+    {
+      "source": "corporations",
+      "relationship": "advocates_for",
+      "target": "wealth",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about corporate business model and its impact on wealth distribution",
+      "episode_number": 112
+    },
+    {
+      "source": "corporations",
+      "relationship": "advocates_for",
+      "target": "poverty",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about corporate impact on poverty",
+      "episode_number": 112
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "works_at",
+      "target": "Buddhist framework",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about the work done from the inside out",
+      "episode_number": 112
+    },
+    {
+      "source": "individuals",
+      "relationship": "responsible_for",
+      "target": "regeneration",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about responsibilities as individuals",
+      "episode_number": 112
+    },
+    {
+      "source": "individuals",
+      "relationship": "responsible_for",
+      "target": "cultural evolution",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "discussion about responsibilities as individuals",
+      "episode_number": 112
+    },
+    {
+      "source": "individuals",
+      "relationship": "responsible_for",
+      "target": "health and well-being",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about responsibilities as individuals",
+      "episode_number": 112
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "works_at",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "host of the podcast",
+      "episode_number": 112
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "sponsored_by",
+      "target": "yonurth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "support for the podcast",
+      "episode_number": 112
+    },
+    {
+      "source": "yonurth.org",
+      "relationship": "offers",
+      "target": "support packages",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "support options for the podcast",
+      "episode_number": 112
+    }
+  ]
+}

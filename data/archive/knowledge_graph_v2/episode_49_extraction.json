@@ -1,0 +1,2235 @@
+{
+  "episode": 49,
+  "timestamp": "2025-10-09T11:22:29.547912",
+  "entity_count": 165,
+  "relationship_count": 107,
+  "entities": [
+    {
+      "name": "Sally Ranny",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Introduction of Sally Ranny"
+    },
+    {
+      "name": "American Renewable Energy Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sally Ranny's affiliation"
+    },
+    {
+      "name": "R-Day Summit",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Sally Ranny's affiliation"
+    },
+    {
+      "name": "Global Choices",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Sally Ranny's affiliation"
+    },
+    {
+      "name": "National Wildlife Federation",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sally Ranny's board membership"
+    },
+    {
+      "name": "Aspen Brain Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Sally Ranny's board membership"
+    },
+    {
+      "name": "Climate Accountability Institute",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Sally Ranny's board membership"
+    },
+    {
+      "name": "Stillwater Preservation LLC",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sally Ranny's affiliation"
+    },
+    {
+      "name": "One Humanity Institute",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Sally Ranny's advisory role"
+    },
+    {
+      "name": "Women's Earth and Climate Action Network",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "Sally Ranny's advisory role"
+    },
+    {
+      "name": "President Reagan",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Sally Ranny's appointment context"
+    },
+    {
+      "name": "Horace Albright Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Awards received by Sally Ranny"
+    },
+    {
+      "name": "International Conservation Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Awards received by Sally Ranny"
+    },
+    {
+      "name": "Earth Guardians Earth Stewardship Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Awards received by Sally Ranny"
+    },
+    {
+      "name": "Children's Environmental Literacy Foundation Lifetime Achievement Award",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "Awards received by Sally Ranny"
+    },
+    {
+      "name": "Mount Soapras",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Mention of the mountain in conversation"
+    },
+    {
+      "name": "Rocky Mountain Chain",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Mention of the mountain range in conversation"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "existential risks"
+    },
+    {
+      "name": "nuclear holocaust",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "existential risks"
+    },
+    {
+      "name": "Aspen Brain Institute",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "board member"
+    },
+    {
+      "name": "ISIS",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mention of fractional hatred"
+    },
+    {
+      "name": "humanity",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mental health of humanity"
+    },
+    {
+      "name": "planet",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "life support systems"
+    },
+    {
+      "name": "education",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "differentiated consciousness"
+    },
+    {
+      "name": "culture",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "differentiated consciousness"
+    },
+    {
+      "name": "political systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "differentiated consciousness"
+    },
+    {
+      "name": "religious systems",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "differentiated consciousness"
+    },
+    {
+      "name": "clean food",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wants for families"
+    },
+    {
+      "name": "clean air",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wants for families"
+    },
+    {
+      "name": "decent, meaningful living wage",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wants for families"
+    },
+    {
+      "name": "job",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "wants for families"
+    },
+    {
+      "name": "Greta Thornberg",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "mention of youth movement and climate activism"
+    },
+    {
+      "name": "Shia Bastita",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mention of youth leaders in climate activism"
+    },
+    {
+      "name": "youth movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "discussion about climate change activism by youth"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussion about the impact of climate change"
+    },
+    {
+      "name": "Shia Bastita",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "support youth leaders"
+    },
+    {
+      "name": "Bolsonaro",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Bolsonaro in the Amazon"
+    },
+    {
+      "name": "Trump",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "similar to Trump"
+    },
+    {
+      "name": "Boris Johnson",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Boris Johnson in England"
+    },
+    {
+      "name": "The Trust Frequency",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "book called The Trust Frequency"
+    },
+    {
+      "name": "Connie Baxter",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "written by Connie Baxter, Marlow, and Andrew Cameron"
+    },
+    {
+      "name": "Andrew Cameron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "written by Connie Baxter, Marlow, and Andrew Cameron"
+    },
+    {
+      "name": "quantum science",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "quantum science, indigenous wisdom"
+    },
+    {
+      "name": "indigenous wisdom",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "quantum science, indigenous wisdom"
+    },
+    {
+      "name": "ISIS",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you get ISIS"
+    },
+    {
+      "name": "Mother Teresa",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "you get Mother Teresa"
+    },
+    {
+      "name": "Darwin",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about competition and cooperation"
+    },
+    {
+      "name": "Kogi natives",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "example of a different system than capitalism"
+    },
+    {
+      "name": "Colombia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Kogi natives"
+    },
+    {
+      "name": "trust frequency",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "book mentioned for understanding current societal issues"
+    },
+    {
+      "name": "Why on Earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book referenced in the discussion"
+    },
+    {
+      "name": "capitalism",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "economic system discussed in relation to competition"
+    },
+    {
+      "name": "mother earth",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "concept of harmony with nature"
+    },
+    {
+      "name": "Kogi natives",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Kogi natives in Colombia"
+    },
+    {
+      "name": "Colombia",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Kogi natives in Colombia"
+    },
+    {
+      "name": "R.D. conference",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "R.D. conference that you co-produce"
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "multi-sector climate change"
+    },
+    {
+      "name": "renewable energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "renewable energy and climate change"
+    },
+    {
+      "name": "youth movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "support that came forward for the youth movement"
+    },
+    {
+      "name": "Earth Guardians",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "future coalition for earth guardians"
+    },
+    {
+      "name": "UK",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "striking in the UK"
+    },
+    {
+      "name": "Sweden",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "striking in Sweden"
+    },
+    {
+      "name": "Germany",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "striking in Germany"
+    },
+    {
+      "name": "Denmark",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "striking in Denmark"
+    },
+    {
+      "name": "United Nations General Assembly",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "beginning of the United Nations General Assembly"
+    },
+    {
+      "name": "Climate Summit",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Climate Summit on the 20th of September"
+    },
+    {
+      "name": "Denmark",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.98,
+      "context": "in Denmark."
+    },
+    {
+      "name": "United Nations General Assembly",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "the beginning of the United Nations General Assembly and the Climate Summit."
+    },
+    {
+      "name": "Climate Summit",
+      "type": "EVENT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the beginning of the United Nations General Assembly and the Climate Summit."
+    },
+    {
+      "name": "AREI",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "we're excited about that at AREI."
+    },
+    {
+      "name": "hydrogen energy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "focused on hydrogen energy."
+    },
+    {
+      "name": "American Renewable Energy Institute",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "we are the American renewable energy institute."
+    },
+    {
+      "name": "hydrogen",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "we need hydrogen on in the energy mix."
+    },
+    {
+      "name": "coal-fired power plants",
+      "type": "PRODUCT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "converting coal-fired power plants without dismantling them or decommissioning them to hydrogen."
+    },
+    {
+      "name": "national hydrogen association",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "we have a national hydrogen association in this country."
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "its byproduct is water."
+    },
+    {
+      "name": "fossil fuels",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "disengaging fossil fuels, replacing with renewables."
+    },
+    {
+      "name": "renewables",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "replacing with renewables."
+    },
+    {
+      "name": "electric car",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "when you plug in your electric car."
+    },
+    {
+      "name": "Winston Churchill",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.98,
+      "context": "that great quote that I think we attribute to Winston Churchill."
+    },
+    {
+      "name": "fascism",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "engage in defeating fascism when fascism was running rampant in Europe."
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "when fascism was running rampant in Europe."
+    },
+    {
+      "name": "Winston Churchill",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "quote about Americans"
+    },
+    {
+      "name": "Shia Bastita",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "effective public speaker at R-Day Summit"
+    },
+    {
+      "name": "marchwithus.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website for marches"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of marches"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "super mega ecosystem"
+    },
+    {
+      "name": "Congo",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "super mega ecosystem"
+    },
+    {
+      "name": "Antarctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "super mega ecosystem"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "super mega ecosystem"
+    },
+    {
+      "name": "Kenya",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location of Galman nature Africa Conservancy"
+    },
+    {
+      "name": "Galman nature Africa Conservancy",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization in Kenya"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Convenience is killing us in the United States."
+    },
+    {
+      "name": "Wilderness Society",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I was a resource policy analyst for the wilderness society."
+    },
+    {
+      "name": "Papua New Guinea",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I've worked in Papua New Guinea."
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I've worked in South America."
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I've worked in Canada."
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "I've worked in Africa."
+    },
+    {
+      "name": "climate change",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Not really understanding knowing about climate change."
+    },
+    {
+      "name": "nature",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Connecting with nature."
+    },
+    {
+      "name": "wilderness",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Preserving wilderness areas."
+    },
+    {
+      "name": "Papua New Guinea",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Worked in Papua New Guinea"
+    },
+    {
+      "name": "South America",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Worked in South America"
+    },
+    {
+      "name": "Canada",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Worked in Canada"
+    },
+    {
+      "name": "Africa",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Worked in Africa"
+    },
+    {
+      "name": "Southeast Alaska",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Up in Southeast Alaska"
+    },
+    {
+      "name": "Tongass National Forest",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Tongass Forest, largest national forest"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.99,
+      "type_confidence": 0.99,
+      "context": "United States"
+    },
+    {
+      "name": "China",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Going to China"
+    },
+    {
+      "name": "Japan",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Going to Japan"
+    },
+    {
+      "name": "Pebble Mine",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Pebble Mine, a gold mine"
+    },
+    {
+      "name": "Bristle Bay",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Between two rivers, called Bristle Bay"
+    },
+    {
+      "name": "Sakai salmon fishery",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Largest Sakai salmon fishery in the world"
+    },
+    {
+      "name": "Arctic Ocean",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "In the Arctic Ocean"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Invested in Greenland"
+    },
+    {
+      "name": "Paris Accord",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Violates the intention of the Paris Accord"
+    },
+    {
+      "name": "Greenland",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "assets being invested in Greenland"
+    },
+    {
+      "name": "Arctic Ocean",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "seven countries that are, you know, have coastline on the Arctic Ocean"
+    },
+    {
+      "name": "Paris Accord",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "violates the intention of the Paris Accord"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Arctic is like, as the Arctic goes, so goes the rest of the world"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "The Amazon is drier than usual"
+    },
+    {
+      "name": "Brazilian beef",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "boycott it. Right. Boom. Right. You know, it worked, it worked on the tuna."
+    },
+    {
+      "name": "Girl Scout Cookies",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "girl scout cookies, for example, had palm oil"
+    },
+    {
+      "name": "Sally Rani",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "visiting today with Sally Rani sitting on her lovely back deck"
+    },
+    {
+      "name": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "this is the Why On Earth Communities Stewardship and Sustainability Podcast Series"
+    },
+    {
+      "name": "Mount Soepras",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "with Mount Soepras, we magua behind us in the background"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "inviting Weylay Waters to be one of the presenters at the recent summit"
+    },
+    {
+      "name": "Association of Waldorf Schools of North America",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include the Association of Waldorf Schools of North America"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include Earth Coast Productions"
+    },
+    {
+      "name": "Equal Exchange",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include Equal Exchange"
+    },
+    {
+      "name": "International Society of Sustainability Professionals",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include the International Society of Sustainability Professionals"
+    },
+    {
+      "name": "LIDGE Family Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include the LIDGE Family Foundation"
+    },
+    {
+      "name": "Madera Outdoor",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include Madera Outdoor"
+    },
+    {
+      "name": "Patagonia",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsors include Patagonia"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "sponsors include Purium"
+    },
+    {
+      "name": "Sally",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "presenter at the recent summit"
+    },
+    {
+      "name": "local community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion on community level engagement"
+    },
+    {
+      "name": "energy corridor",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "discussion on energy development"
+    },
+    {
+      "name": "Congo Forest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "global commons discussion"
+    },
+    {
+      "name": "Amazon",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "global commons discussion"
+    },
+    {
+      "name": "Arctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "global commons discussion"
+    },
+    {
+      "name": "Antarctic",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "global commons discussion"
+    },
+    {
+      "name": "UN",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion on global citizenship"
+    },
+    {
+      "name": "Congo Forest",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "global commons"
+    },
+    {
+      "name": "Amazon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "global commons"
+    },
+    {
+      "name": "Arctic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "global commons"
+    },
+    {
+      "name": "Antarctic",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "global commons"
+    },
+    {
+      "name": "Lithuanian",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "global citizenship"
+    },
+    {
+      "name": "Slovakian",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "global citizenship"
+    },
+    {
+      "name": "English",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "global citizenship"
+    },
+    {
+      "name": "American",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "global citizenship"
+    },
+    {
+      "name": "Brazilian",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "global citizenship"
+    },
+    {
+      "name": "global choices",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "non-profit organization"
+    },
+    {
+      "name": "Earth Restoration Alliance",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "previous name of global choices"
+    },
+    {
+      "name": "globalchoices.org",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "website for global choices"
+    },
+    {
+      "name": "our day",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "event organization"
+    },
+    {
+      "name": "Sally",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "guest speaker"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast host"
+    },
+    {
+      "name": "Why on Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "community organization"
+    },
+    {
+      "name": "Aspen Snowmass",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location for event"
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state where Aspen Snowmass is located"
+    },
+    {
+      "name": "why on earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast segment"
+    },
+    {
+      "name": "why on earth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "podcast segment"
+    },
+    {
+      "name": "why on earth community",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "podcast segment"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Sally Ranny",
+      "relationship": "works_at",
+      "target": "American Renewable Energy Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sally Ranny's affiliation",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "works_at",
+      "target": "R-Day Summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sally Ranny's affiliation",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "works_at",
+      "target": "Global Choices",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sally Ranny's affiliation",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "serves_on_board",
+      "target": "National Wildlife Federation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sally Ranny's board membership",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "serves_on_board",
+      "target": "Aspen Brain Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sally Ranny's board membership",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "serves_on_board",
+      "target": "Climate Accountability Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Sally Ranny's board membership",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "works_at",
+      "target": "Stillwater Preservation LLC",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sally Ranny's affiliation",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "advises",
+      "target": "One Humanity Institute",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Sally Ranny's advisory role",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "advises",
+      "target": "Women's Earth and Climate Action Network",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Sally Ranny's advisory role",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "appointed_by",
+      "target": "President Reagan",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Sally Ranny's appointment context",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "received_award",
+      "target": "Horace Albright Award",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Awards received by Sally Ranny",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "received_award",
+      "target": "International Conservation Award",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Awards received by Sally Ranny",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "received_award",
+      "target": "Earth Guardians Earth Stewardship Award",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Awards received by Sally Ranny",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Ranny",
+      "relationship": "received_award",
+      "target": "Children's Environmental Literacy Foundation Lifetime Achievement Award",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "Awards received by Sally Ranny",
+      "episode_number": 49
+    },
+    {
+      "source": "Mount Soapras",
+      "relationship": "part_of",
+      "target": "Rocky Mountain Chain",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Mention of the mountain in conversation",
+      "episode_number": 49
+    },
+    {
+      "source": "climate change",
+      "relationship": "advocates_for",
+      "target": "global community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "collaboration",
+      "episode_number": 49
+    },
+    {
+      "source": "humanity",
+      "relationship": "advocates_for",
+      "target": "mental health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "existential risks",
+      "episode_number": 49
+    },
+    {
+      "source": "Aspen Brain Institute",
+      "relationship": "associated_with",
+      "target": "mental health",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "board member",
+      "episode_number": 49
+    },
+    {
+      "source": "humanity",
+      "relationship": "relies_on",
+      "target": "planet",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "life support systems",
+      "episode_number": 49
+    },
+    {
+      "source": "education",
+      "relationship": "creates",
+      "target": "differentiated consciousness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how we relate to one another",
+      "episode_number": 49
+    },
+    {
+      "source": "culture",
+      "relationship": "creates",
+      "target": "differentiated consciousness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how we relate to one another",
+      "episode_number": 49
+    },
+    {
+      "source": "political systems",
+      "relationship": "creates",
+      "target": "differentiated consciousness",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how we relate to one another",
+      "episode_number": 49
+    },
+    {
+      "source": "religious systems",
+      "relationship": "creates",
+      "target": "differentiated consciousness",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "how we relate to one another",
+      "episode_number": 49
+    },
+    {
+      "source": "clean food",
+      "relationship": "desired_by",
+      "target": "families",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "wants for families",
+      "episode_number": 49
+    },
+    {
+      "source": "clean air",
+      "relationship": "desired_by",
+      "target": "families",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "wants for families",
+      "episode_number": 49
+    },
+    {
+      "source": "decent, meaningful living wage",
+      "relationship": "desired_by",
+      "target": "families",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "wants for families",
+      "episode_number": 49
+    },
+    {
+      "source": "job",
+      "relationship": "desired_by",
+      "target": "families",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "wants for families",
+      "episode_number": 49
+    },
+    {
+      "source": "Greta Thornberg",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "mention of youth movement and climate activism",
+      "episode_number": 49
+    },
+    {
+      "source": "Shia Bastita",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "mention of youth leaders in climate activism",
+      "episode_number": 49
+    },
+    {
+      "source": "youth movement",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion about climate change activism by youth",
+      "episode_number": 49
+    },
+    {
+      "source": "Shia Bastita",
+      "relationship": "advocates_for",
+      "target": "youth leaders",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "support youth leaders",
+      "episode_number": 49
+    },
+    {
+      "source": "Bolsonaro",
+      "relationship": "located_in",
+      "target": "Amazon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "Bolsonaro in the Amazon",
+      "episode_number": 49
+    },
+    {
+      "source": "Trump",
+      "relationship": "similar_to",
+      "target": "Bolsonaro",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "similar to Trump",
+      "episode_number": 49
+    },
+    {
+      "source": "Boris Johnson",
+      "relationship": "located_in",
+      "target": "England",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Boris Johnson in England",
+      "episode_number": 49
+    },
+    {
+      "source": "The Trust Frequency",
+      "relationship": "made_by",
+      "target": "Connie Baxter",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "book called The Trust Frequency",
+      "episode_number": 49
+    },
+    {
+      "source": "The Trust Frequency",
+      "relationship": "made_by",
+      "target": "Andrew Cameron",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "book called The Trust Frequency",
+      "episode_number": 49
+    },
+    {
+      "source": "quantum science",
+      "relationship": "part_of",
+      "target": "The Trust Frequency",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "quantum science, indigenous wisdom",
+      "episode_number": 49
+    },
+    {
+      "source": "indigenous wisdom",
+      "relationship": "part_of",
+      "target": "The Trust Frequency",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "quantum science, indigenous wisdom",
+      "episode_number": 49
+    },
+    {
+      "source": "ISIS",
+      "relationship": "contrasts_with",
+      "target": "Mother Teresa",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "you get ISIS, and you get Mother Teresa",
+      "episode_number": 49
+    },
+    {
+      "source": "Darwin",
+      "relationship": "advocates_for",
+      "target": "cooperation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about competition and cooperation",
+      "episode_number": 49
+    },
+    {
+      "source": "Kogi natives",
+      "relationship": "located_in",
+      "target": "Colombia",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "example of a different system than capitalism",
+      "episode_number": 49
+    },
+    {
+      "source": "trust frequency",
+      "relationship": "dissects",
+      "target": "societal issues",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "book mentioned for understanding current societal issues",
+      "episode_number": 49
+    },
+    {
+      "source": "Why on Earth",
+      "relationship": "discusses",
+      "target": "ecology of thinking",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "book referenced in the discussion",
+      "episode_number": 49
+    },
+    {
+      "source": "capitalism",
+      "relationship": "feeds",
+      "target": "competition",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "economic system discussed in relation to competition",
+      "episode_number": 49
+    },
+    {
+      "source": "Kogi natives",
+      "relationship": "work_in_harmony_with",
+      "target": "mother earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "concept of harmony with nature",
+      "episode_number": 49
+    },
+    {
+      "source": "Kogi natives",
+      "relationship": "located_in",
+      "target": "Colombia",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Kogi natives in Colombia",
+      "episode_number": 49
+    },
+    {
+      "source": "R.D. conference",
+      "relationship": "supports",
+      "target": "youth movement",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "R.D. conference that you co-produce",
+      "episode_number": 49
+    },
+    {
+      "source": "Earth Guardians",
+      "relationship": "advocates_for",
+      "target": "climate change",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "future coalition for earth guardians",
+      "episode_number": 49
+    },
+    {
+      "source": "Earth Guardians",
+      "relationship": "advocates_for",
+      "target": "renewable energy",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "future coalition for earth guardians",
+      "episode_number": 49
+    },
+    {
+      "source": "youth movement",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "support that came forward for the youth movement",
+      "episode_number": 49
+    },
+    {
+      "source": "UK",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "striking in the UK",
+      "episode_number": 49
+    },
+    {
+      "source": "Sweden",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "striking in Sweden",
+      "episode_number": 49
+    },
+    {
+      "source": "Germany",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "striking in Germany",
+      "episode_number": 49
+    },
+    {
+      "source": "Denmark",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "striking in Denmark",
+      "episode_number": 49
+    },
+    {
+      "source": "United Nations General Assembly",
+      "relationship": "part_of",
+      "target": "Climate Summit",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "beginning of the United Nations General Assembly",
+      "episode_number": 49
+    },
+    {
+      "source": "AREI",
+      "relationship": "advocates_for",
+      "target": "hydrogen energy",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "we're excited about that at AREI.",
+      "episode_number": 49
+    },
+    {
+      "source": "American Renewable Energy Institute",
+      "relationship": "works_at",
+      "target": "AREI",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "we are the American renewable energy institute.",
+      "episode_number": 49
+    },
+    {
+      "source": "hydrogen energy",
+      "relationship": "part_of",
+      "target": "energy mix",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "we need hydrogen on in the energy mix.",
+      "episode_number": 49
+    },
+    {
+      "source": "coal-fired power plants",
+      "relationship": "made_by",
+      "target": "hydrogen",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "converting coal-fired power plants without dismantling them or decommissioning them to hydrogen.",
+      "episode_number": 49
+    },
+    {
+      "source": "fossil fuels",
+      "relationship": "replaced_by",
+      "target": "renewables",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "disengaging fossil fuels, replacing with renewables.",
+      "episode_number": 49
+    },
+    {
+      "source": "Winston Churchill",
+      "relationship": "advocates_for",
+      "target": "defeating fascism",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "that great quote that I think we attribute to Winston Churchill.",
+      "episode_number": 49
+    },
+    {
+      "source": "Europe",
+      "relationship": "contains",
+      "target": "fascism",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "when fascism was running rampant in Europe.",
+      "episode_number": 49
+    },
+    {
+      "source": "Shia Bastita",
+      "relationship": "advocates_for",
+      "target": "marchwithus.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "encouraging engagement in marches",
+      "episode_number": 49
+    },
+    {
+      "source": "Galman nature Africa Conservancy",
+      "relationship": "located_in",
+      "target": "Kenya",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "organization's location",
+      "episode_number": 49
+    },
+    {
+      "source": "Amazon",
+      "relationship": "part_of",
+      "target": "super mega ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ecosystem classification",
+      "episode_number": 49
+    },
+    {
+      "source": "Congo",
+      "relationship": "part_of",
+      "target": "super mega ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ecosystem classification",
+      "episode_number": 49
+    },
+    {
+      "source": "Antarctic",
+      "relationship": "part_of",
+      "target": "super mega ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ecosystem classification",
+      "episode_number": 49
+    },
+    {
+      "source": "Arctic",
+      "relationship": "part_of",
+      "target": "super mega ecosystems",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "ecosystem classification",
+      "episode_number": 49
+    },
+    {
+      "source": "Wilderness Society",
+      "relationship": "founded",
+      "target": "Wilderness Society",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "I was a resource policy analyst for the wilderness society.",
+      "episode_number": 49
+    },
+    {
+      "source": "Wilderness Society",
+      "relationship": "advocates_for",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "I was a resource policy analyst for the wilderness society.",
+      "episode_number": 49
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "nature",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Not really understanding knowing about climate change.",
+      "episode_number": 49
+    },
+    {
+      "source": "United States",
+      "relationship": "contains",
+      "target": "Wilderness Society",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Convenience is killing us in the United States.",
+      "episode_number": 49
+    },
+    {
+      "source": "Papua New Guinea",
+      "relationship": "part_of",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "I've worked in Papua New Guinea.",
+      "episode_number": 49
+    },
+    {
+      "source": "South America",
+      "relationship": "part_of",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "I've worked in South America.",
+      "episode_number": 49
+    },
+    {
+      "source": "Canada",
+      "relationship": "part_of",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "I've worked in Canada.",
+      "episode_number": 49
+    },
+    {
+      "source": "Africa",
+      "relationship": "part_of",
+      "target": "wilderness",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "I've worked in Africa.",
+      "episode_number": 49
+    },
+    {
+      "source": "Tongass National Forest",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.99,
+      "target_confidence": 0.99,
+      "context": "Largest national forest in the United States",
+      "episode_number": 49
+    },
+    {
+      "source": "Pebble Mine",
+      "relationship": "made_by",
+      "target": "unknown organization",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.5,
+      "context": "A gold mine proposal",
+      "episode_number": 49
+    },
+    {
+      "source": "Sakai salmon fishery",
+      "relationship": "part_of",
+      "target": "Bristle Bay",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Largest Sakai salmon fishery in the world",
+      "episode_number": 49
+    },
+    {
+      "source": "Arctic Ocean",
+      "relationship": "contains",
+      "target": "Greenland",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Countries with coastline on the Arctic Ocean",
+      "episode_number": 49
+    },
+    {
+      "source": "current administration",
+      "relationship": "proposes",
+      "target": "clear cuts",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.8,
+      "context": "Proposal for billions of board feet to be cut",
+      "episode_number": 49
+    },
+    {
+      "source": "youth",
+      "relationship": "advocates_for",
+      "target": "climate action",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Youth rising up to stop environmental degradation",
+      "episode_number": 49
+    },
+    {
+      "source": "climate change",
+      "relationship": "affects",
+      "target": "natural resources",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Climate change impacts on natural resources",
+      "episode_number": 49
+    },
+    {
+      "source": "Greenland",
+      "relationship": "contains",
+      "target": "Arctic Ocean",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "assets being invested in Greenland and in the seven countries that are, you know, have coastline on the Arctic Ocean",
+      "episode_number": 49
+    },
+    {
+      "source": "Paris Accord",
+      "relationship": "advocates_for",
+      "target": "carbon sequester",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "violates the intention of the Paris Accord to take out any more oil and gas",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally Rani",
+      "relationship": "works_at",
+      "target": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "visiting today with Sally Rani sitting on her lovely back deck",
+      "episode_number": 49
+    },
+    {
+      "source": "Weylay Waters",
+      "relationship": "part_of",
+      "target": "Why On Earth Communities Stewardship and Sustainability Podcast Series",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "inviting Weylay Waters to be one of the presenters at the recent summit",
+      "episode_number": 49
+    },
+    {
+      "source": "Girl Scout Cookies",
+      "relationship": "made_by",
+      "target": "Association of Waldorf Schools of North America",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "girl scout cookies, for example, had palm oil",
+      "episode_number": 49
+    },
+    {
+      "source": "Brazilian beef",
+      "relationship": "advocates_for",
+      "target": "boycott",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I think to solve that problem really is every country, people in every country that eat Brazilian beef, boycott it",
+      "episode_number": 49
+    },
+    {
+      "source": "Sally",
+      "relationship": "advocates_for",
+      "target": "local community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "podcast conversation",
+      "episode_number": 49
+    },
+    {
+      "source": "local community",
+      "relationship": "part_of",
+      "target": "energy corridor",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.75,
+      "context": "discussion on energy development",
+      "episode_number": 49
+    },
+    {
+      "source": "Congo Forest",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "global commons discussion",
+      "episode_number": 49
+    },
+    {
+      "source": "Amazon",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "global commons discussion",
+      "episode_number": 49
+    },
+    {
+      "source": "Arctic",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "global commons discussion",
+      "episode_number": 49
+    },
+    {
+      "source": "Antarctic",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "global commons discussion",
+      "episode_number": 49
+    },
+    {
+      "source": "global citizenship",
+      "relationship": "developed_in",
+      "target": "UN",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussion on global citizenship",
+      "episode_number": 49
+    },
+    {
+      "source": "global choices",
+      "relationship": "founded",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "non-profit organization co-founded by Aaron William Perry",
+      "episode_number": 49
+    },
+    {
+      "source": "Congo Forest",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Congo Forest as a global commons",
+      "episode_number": 49
+    },
+    {
+      "source": "Amazon",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Amazon as a global commons",
+      "episode_number": 49
+    },
+    {
+      "source": "Arctic",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Arctic as a global commons",
+      "episode_number": 49
+    },
+    {
+      "source": "Antarctic",
+      "relationship": "part_of",
+      "target": "global commons",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Antarctic as a global commons",
+      "episode_number": 49
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why on Earth Community Stewardship and Sustainability Podcast series",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast hosted by Aaron William Perry",
+      "episode_number": 49
+    },
+    {
+      "source": "our day",
+      "relationship": "located_in",
+      "target": "Aspen Snowmass",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "event taking place in Aspen Snowmass",
+      "episode_number": 49
+    },
+    {
+      "source": "Aspen Snowmass",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Aspen Snowmass is in Colorado",
+      "episode_number": 49
+    },
+    {
+      "source": "Why on Earth Community",
+      "relationship": "supports",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "community supporting the podcast host",
+      "episode_number": 49
+    },
+    {
+      "source": "why on earth",
+      "relationship": "advocates_for",
+      "target": "why on earth community",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "podcast segment",
+      "episode_number": 49
+    },
+    {
+      "source": "why on earth",
+      "relationship": "located_in",
+      "target": "why on earth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "podcast segment",
+      "episode_number": 49
+    }
+  ]
+}

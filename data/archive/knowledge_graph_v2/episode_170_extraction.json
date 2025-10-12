@@ -1,0 +1,1866 @@
+{
+  "episode": 170,
+  "timestamp": "2025-10-09T11:10:22.529945",
+  "entity_count": 128,
+  "relationship_count": 96,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Tina Morris",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "guest on the podcast"
+    },
+    {
+      "name": "Return to the Sky",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Tina Morris"
+    },
+    {
+      "name": "bald eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "animal discussed in the podcast"
+    },
+    {
+      "name": "Oberlin College",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "college where Tina earned her undergraduate degree"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university where Tina earned her graduate degree"
+    },
+    {
+      "name": "Confederacy of Six Nations",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization Tina was inducted into"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "country where the bald eagle is a national symbol"
+    },
+    {
+      "name": "DDT",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "pesticide discussed in relation to the bald eagle's decline"
+    },
+    {
+      "name": "Silent Spring",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "book written by Rachel Carson"
+    },
+    {
+      "name": "DDT",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "causing the decline of birds"
+    },
+    {
+      "name": "Rachel Carson",
+      "type": "PERSON",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "wrote a book called Silent Spring"
+    },
+    {
+      "name": "Silent Spring",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book written by Rachel Carson"
+    },
+    {
+      "name": "bald eagle",
+      "type": "ANIMAL",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "reproductive success went way down"
+    },
+    {
+      "name": "pelican",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reproductive success went way down"
+    },
+    {
+      "name": "ospreys",
+      "type": "ANIMAL",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reproductive success went way down"
+    },
+    {
+      "name": "Endangered Species Act",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "helped protect the bald eagle"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "state government of New York"
+    },
+    {
+      "name": "Finger Lakes",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "region of New York state"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location next to Montezuma National Wildlife Refuge"
+    },
+    {
+      "name": "Montezuma National Wildlife Refuge",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "chosen place to put the birds"
+    },
+    {
+      "name": "Caugulaeque",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "northern end of Caugulaeque"
+    },
+    {
+      "name": "Cornell University",
+      "type": "ORG",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "close by for a reason"
+    },
+    {
+      "name": "New York State",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "state program in the very beginning"
+    },
+    {
+      "name": "Dr. Tom Cade",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "well known for his Paragrin Falcon Reintroduction Program"
+    },
+    {
+      "name": "bald eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "proposal to reintroduce the bald eagle"
+    },
+    {
+      "name": "US Fish and Wildlife Service",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "working with the US Fish and Wildlife Service"
+    },
+    {
+      "name": "paragrant falcon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "program with the paragrants"
+    },
+    {
+      "name": "Dr. Kade",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "He had to get me into the paragrant captive breeding facility."
+    },
+    {
+      "name": "hawk barn",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "They called the hawk barn."
+    },
+    {
+      "name": "raptors",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Teach all the things they knew about raptors."
+    },
+    {
+      "name": "Eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "There were no Eagles around."
+    },
+    {
+      "name": "Jim Weaver",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "Jim Weaver, who was sort of my savior."
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "Bringing them into New York as chicks."
+    },
+    {
+      "name": "Alaska",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "He had spent some time in Alaska studying eagles."
+    },
+    {
+      "name": "eagle nest",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "Our mission for that day was to build an eagle nest."
+    },
+    {
+      "name": "Alaska",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "in Alaska studying eagles"
+    },
+    {
+      "name": "eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "studying eagles"
+    },
+    {
+      "name": "peregrine",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "peregrance and other falcons"
+    },
+    {
+      "name": "falconry",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "hacking is a term that is used in falconry"
+    },
+    {
+      "name": "bald eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the baby bald eagles are there"
+    },
+    {
+      "name": "bald eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "baby bald eagles are there, you're there behind a blind"
+    },
+    {
+      "name": "carp",
+      "type": "PRODUCT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "the carp would all come into the trap"
+    },
+    {
+      "name": "marsh",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the nest was on top of a hill that overlooked a marsh"
+    },
+    {
+      "name": "pond",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "overlooked a big pond in the marsh"
+    },
+    {
+      "name": "tent",
+      "type": "PRODUCT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the first night we sort of had a monsoon come along and the tent blew down"
+    },
+    {
+      "name": "woman",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "I finally did get a woman to give me a"
+    },
+    {
+      "name": "Tina Morris",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "mention of the author of a book"
+    },
+    {
+      "name": "Chelsea Green Publishing",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publisher of the book mentioned"
+    },
+    {
+      "name": "the nation's bird",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "referring to a bird being observed by the speaker"
+    },
+    {
+      "name": "grad school",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "context of the speaker's education"
+    },
+    {
+      "name": "large mammals",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "type of research subjects mentioned"
+    },
+    {
+      "name": "field research",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "type of research being discussed"
+    },
+    {
+      "name": "species",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "context of conservation efforts"
+    },
+    {
+      "name": "Farley Mawhat",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "researcher in the movie 'never cry wolf'"
+    },
+    {
+      "name": "Alaska",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "location where Farley Mawhat was working"
+    },
+    {
+      "name": "Tina Morris",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "author of Return to the Sky"
+    },
+    {
+      "name": "Return to the Sky",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "book authored by Tina Morris"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "publisher of the book"
+    },
+    {
+      "name": "Earth Coast Productions",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast sponsor"
+    },
+    {
+      "name": "Patagonia's Home Planet Fund",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast sponsor"
+    },
+    {
+      "name": "Climate First Bank",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast sponsor"
+    },
+    {
+      "name": "Bluestone Life Insurance",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "podcast sponsor"
+    },
+    {
+      "name": "Why On Earth",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast network"
+    },
+    {
+      "name": "Wheylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "provider of aromatherapy soaking salts"
+    },
+    {
+      "name": "Tina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "conversation with Tina"
+    },
+    {
+      "name": "Dr. Elaine Aingham",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "interview with Dr. Elaine Aingham"
+    },
+    {
+      "name": "Cornell",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "the Cornell biologist"
+    },
+    {
+      "name": "New York State",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "New York State announced"
+    },
+    {
+      "name": "New York Times",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "reporters from all the New York papers including the New York Times"
+    },
+    {
+      "name": "New York State",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "New York State announced that this program was actually happening"
+    },
+    {
+      "name": "New York Times",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "reporters from all the New York papers including the New York Times were coming up to do interviews"
+    },
+    {
+      "name": "bald eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "successful restoration and recovery program for the bald eagle"
+    },
+    {
+      "name": "eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "take a picture of the eagles and put them on the cover because that is what you need to do in order to publicize that they are now being reintroduced"
+    },
+    {
+      "name": "the researcher",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "the researcher coming of age"
+    },
+    {
+      "name": "the media",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.75,
+      "context": "do the media yeah it's so interesting"
+    },
+    {
+      "name": "wildlife",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mindful of bird populations in general and wildlife in general"
+    },
+    {
+      "name": "bald eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "successful restoration and recovery program for the bald eagle"
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "in 1978 New York state took over from us"
+    },
+    {
+      "name": "Cornell",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Cornell kind of took a back seat"
+    },
+    {
+      "name": "Department of Environmental Conservation",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "the Department of Environmental Conservation really took over the program"
+    },
+    {
+      "name": "Tennessee",
+      "type": "PLACE",
+      "name_confidence": 0.98,
+      "type_confidence": 0.98,
+      "context": "all the way down to Tennessee which actually hacked birds until 2020"
+    },
+    {
+      "name": "DDT",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "once DDT was gone there was no stopping him"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "that's a great question Aaron"
+    },
+    {
+      "name": "Jim Weaver",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "people like Tom, Kate and Jim Weaver"
+    },
+    {
+      "name": "Tom",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "people like Tom, Kate and Jim Weaver"
+    },
+    {
+      "name": "Kate",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "people like Tom, Kate and Jim Weaver"
+    },
+    {
+      "name": "Minnesota",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location where eagles are seen."
+    },
+    {
+      "name": "Maine",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location where eagles are seen."
+    },
+    {
+      "name": "Alaska",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location with a significant number of bald eagles."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location where eagles are seen."
+    },
+    {
+      "name": "bald eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Discussed in terms of conservation success."
+    },
+    {
+      "name": "Haudenosaunee",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Mentioned as a group that honored the speaker."
+    },
+    {
+      "name": "airquay",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "Mentioned as part of the Confederacy of six nations."
+    },
+    {
+      "name": "New York",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as the region where the Haudenosaunee are located."
+    },
+    {
+      "name": "Ithaca",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a location where the speaker collected mail."
+    },
+    {
+      "name": "Syracuse",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "Mentioned as the location of the New York State Fair."
+    },
+    {
+      "name": "Senate donation",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "Mentioned as the source of the letter inviting the speaker."
+    },
+    {
+      "name": "Indian village",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "at the state fair"
+    },
+    {
+      "name": "Seneca tribe",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "from a different tribe"
+    },
+    {
+      "name": "bald eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.8,
+      "context": "their reverence of bald eagles"
+    },
+    {
+      "name": "Tina",
+      "type": "PERSON",
+      "name_confidence": 0.7,
+      "type_confidence": 0.8,
+      "context": "encourage folks to check out your book"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "go to Chelsea green dot com"
+    },
+    {
+      "name": "Eric boy",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.7,
+      "context": "first female ever honored as an Eric boy"
+    },
+    {
+      "name": "Tina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast discussion"
+    },
+    {
+      "name": "Chelsea Green",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "book promotion"
+    },
+    {
+      "name": "Return to the Sky",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "book title"
+    },
+    {
+      "name": "eagle",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "animal discussion"
+    },
+    {
+      "name": "U.S.",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "geographic reference"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "geographic reference"
+    },
+    {
+      "name": "lead",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "environmental issue"
+    },
+    {
+      "name": "avian flu",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "disease affecting eagles"
+    },
+    {
+      "name": "eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about eagles and their challenges."
+    },
+    {
+      "name": "avian flu",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "Mentioned as a significant problem for eagles."
+    },
+    {
+      "name": "Minnesota",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "State mentioned in relation to eagles."
+    },
+    {
+      "name": "bald eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Discussion about the author's work with bald eagles."
+    },
+    {
+      "name": "Jim Weaver",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Colleague mentioned who helped with eagle tagging."
+    },
+    {
+      "name": "blue gene leg",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Tool invented for securing eagles."
+    },
+    {
+      "name": "Tina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast interview"
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "podcast interview"
+    },
+    {
+      "name": "Eagles",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "discussion about wildlife"
+    },
+    {
+      "name": "Falconers",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussion about wildlife"
+    },
+    {
+      "name": "yonnorth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "website mentioned for ambassador network"
+    },
+    {
+      "name": "Tina",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "visiting with you"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "hosted by Aaron William Perry"
+    },
+    {
+      "name": "why on earth community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "why on earth community stewardship and sustainability podcast series"
+    },
+    {
+      "name": "yonurth.org",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "visit yonurth.org backslash support"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Tina Morris",
+      "relationship": "advocates_for",
+      "target": "bald eagle",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Tina discusses her work with the bald eagle in the podcast",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina Morris",
+      "relationship": "works_at",
+      "target": "Cornell University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Tina earned her graduate degree from Cornell University",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina Morris",
+      "relationship": "founded",
+      "target": "Return to the Sky",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Tina is the author of the book",
+      "episode_number": 170
+    },
+    {
+      "source": "Return to the Sky",
+      "relationship": "published_by",
+      "target": "Chelsea Green Publishing",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the book is published by Chelsea Green Publishing",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "the bald eagle is a national symbol of the United States",
+      "episode_number": 170
+    },
+    {
+      "source": "Rachel Carson",
+      "relationship": "wrote",
+      "target": "Silent Spring",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Rachel Carson wrote the book Silent Spring",
+      "episode_number": 170
+    },
+    {
+      "source": "DDT",
+      "relationship": "causes_decline_of",
+      "target": "bald eagle",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "DDT was identified as a cause of the bald eagle's decline",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina Morris",
+      "relationship": "inducted_into",
+      "target": "Confederacy of Six Nations",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Tina was inducted for her work with the bald eagle",
+      "episode_number": 170
+    },
+    {
+      "source": "Rachel Carson",
+      "relationship": "wrote",
+      "target": "Silent Spring",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "book written by Rachel Carson",
+      "episode_number": 170
+    },
+    {
+      "source": "DDT",
+      "relationship": "causes",
+      "target": "decline of birds",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "causing the decline of birds",
+      "episode_number": 170
+    },
+    {
+      "source": "Endangered Species Act",
+      "relationship": "protects",
+      "target": "bald eagle",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "helped protect the bald eagle",
+      "episode_number": 170
+    },
+    {
+      "source": "New York",
+      "relationship": "contains",
+      "target": "Finger Lakes",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "region of New York state",
+      "episode_number": 170
+    },
+    {
+      "source": "Montezuma National Wildlife Refuge",
+      "relationship": "located_in",
+      "target": "Finger Lakes",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "chosen place to put the birds",
+      "episode_number": 170
+    },
+    {
+      "source": "Cornell University",
+      "relationship": "located_in",
+      "target": "Finger Lakes",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "location next to Montezuma National Wildlife Refuge",
+      "episode_number": 170
+    },
+    {
+      "source": "Montezuma National Wildlife Refuge",
+      "relationship": "located_in",
+      "target": "Caugulaeque",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "chosen place to put the birds",
+      "episode_number": 170
+    },
+    {
+      "source": "Cornell University",
+      "relationship": "located_in",
+      "target": "New York State",
+      "source_confidence": 0.98,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "close by for a reason",
+      "episode_number": 170
+    },
+    {
+      "source": "Dr. Tom Cade",
+      "relationship": "advocates_for",
+      "target": "bald eagle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "working with the eagles",
+      "episode_number": 170
+    },
+    {
+      "source": "US Fish and Wildlife Service",
+      "relationship": "rejects",
+      "target": "bald eagle",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "turn it down for now",
+      "episode_number": 170
+    },
+    {
+      "source": "Dr. Tom Cade",
+      "relationship": "leads",
+      "target": "paragrant falcon",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "well known for his Paragrin Falcon Reintroduction Program",
+      "episode_number": 170
+    },
+    {
+      "source": "Dr. Kade",
+      "relationship": "works_at",
+      "target": "hawk barn",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "He had to get me into the paragrant captive breeding facility, which they called the hawk barn.",
+      "episode_number": 170
+    },
+    {
+      "source": "Jim Weaver",
+      "relationship": "works_with",
+      "target": "paragrant team",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "He worked with the paragrant team.",
+      "episode_number": 170
+    },
+    {
+      "source": "Eagles",
+      "relationship": "related_to",
+      "target": "raptors",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "What could I learn about the paragrants that then I would be able to transfer to the Eagles.",
+      "episode_number": 170
+    },
+    {
+      "source": "hawk barn",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Bringing them into New York as chicks.",
+      "episode_number": 170
+    },
+    {
+      "source": "Jim Weaver",
+      "relationship": "studied_in",
+      "target": "Alaska",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "He had spent some time in Alaska studying eagles.",
+      "episode_number": 170
+    },
+    {
+      "source": "eagle nest",
+      "relationship": "part_of",
+      "target": "hawk barn",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Our mission for that day was to build an eagle nest.",
+      "episode_number": 170
+    },
+    {
+      "source": "eagles",
+      "relationship": "part_of",
+      "target": "Alaska",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "in Alaska studying eagles",
+      "episode_number": 170
+    },
+    {
+      "source": "falconry",
+      "relationship": "advocates_for",
+      "target": "hacking",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "hacking is a term that is used in falconry",
+      "episode_number": 170
+    },
+    {
+      "source": "peregrine",
+      "relationship": "related_to",
+      "target": "eagles",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "raising birds without parents",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagles",
+      "relationship": "located_in",
+      "target": "Alaska",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.95,
+      "context": "the baby bald eagles are there",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagles",
+      "relationship": "fed_by",
+      "target": "PERSON",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I was basically acting like an invisible parent. I would bring them food twice a day.",
+      "episode_number": 170
+    },
+    {
+      "source": "PERSON",
+      "relationship": "catches",
+      "target": "carp",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "I had to catch fish in the marsh to be able to do that",
+      "episode_number": 170
+    },
+    {
+      "source": "nest",
+      "relationship": "located_in",
+      "target": "marsh",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the nest was on top of a hill that overlooked a marsh",
+      "episode_number": 170
+    },
+    {
+      "source": "marsh",
+      "relationship": "contains",
+      "target": "pond",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "overlooked a big pond in the marsh",
+      "episode_number": 170
+    },
+    {
+      "source": "tent",
+      "relationship": "used_by",
+      "target": "PERSON",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "the first night we sort of had a monsoon come along and the tent blew down",
+      "episode_number": 170
+    },
+    {
+      "source": "PERSON",
+      "relationship": "receives_help_from",
+      "target": "woman",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.6,
+      "target_confidence": 0.7,
+      "context": "I finally did get a woman to give me a",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina Morris",
+      "relationship": "authored",
+      "target": "Return to the Sky",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "mention of the book written by Tina Morris",
+      "episode_number": 170
+    },
+    {
+      "source": "Chelsea Green Publishing",
+      "relationship": "published",
+      "target": "Return to the Sky",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Chelsea Green Publishing is the publisher of the book",
+      "episode_number": 170
+    },
+    {
+      "source": "the nation's bird",
+      "relationship": "observed_by",
+      "target": "speaker",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the speaker is responsible for observing the nation's bird",
+      "episode_number": 170
+    },
+    {
+      "source": "grad school",
+      "relationship": "studied_in",
+      "target": "field research",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "the speaker's education related to field research",
+      "episode_number": 170
+    },
+    {
+      "source": "large mammals",
+      "relationship": "studied_by",
+      "target": "research biologists",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "research biologists study large mammals",
+      "episode_number": 170
+    },
+    {
+      "source": "species",
+      "relationship": "saved_by",
+      "target": "researchers",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.85,
+      "context": "researchers are involved in saving species",
+      "episode_number": 170
+    },
+    {
+      "source": "Farley Mawhat",
+      "relationship": "located_in",
+      "target": "Alaska",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "working with the wolves in Alaska",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina Morris",
+      "relationship": "advocates_for",
+      "target": "Return to the Sky",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "author of the book",
+      "episode_number": 170
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast host",
+      "episode_number": 170
+    },
+    {
+      "source": "Chelsea Green",
+      "relationship": "published",
+      "target": "Return to the Sky",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "publisher of the book",
+      "episode_number": 170
+    },
+    {
+      "source": "Earth Coast Productions",
+      "relationship": "sponsors",
+      "target": "Why On Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 170
+    },
+    {
+      "source": "Patagonia's Home Planet Fund",
+      "relationship": "sponsors",
+      "target": "Why On Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 170
+    },
+    {
+      "source": "Climate First Bank",
+      "relationship": "sponsors",
+      "target": "Why On Earth",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 170
+    },
+    {
+      "source": "Bluestone Life Insurance",
+      "relationship": "sponsors",
+      "target": "Why On Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast sponsor",
+      "episode_number": 170
+    },
+    {
+      "source": "Wheylay Waters",
+      "relationship": "provides",
+      "target": "aromatherapy soaking salts",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "provider of products mentioned in podcast",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina",
+      "relationship": "advocates_for",
+      "target": "women",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "conversation with Tina",
+      "episode_number": 170
+    },
+    {
+      "source": "Dr. Elaine Aingham",
+      "relationship": "works_at",
+      "target": "Cornell",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "interview with Dr. Elaine Aingham",
+      "episode_number": 170
+    },
+    {
+      "source": "New York State",
+      "relationship": "announced",
+      "target": "program",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "New York State announced that this program was actually happening",
+      "episode_number": 170
+    },
+    {
+      "source": "New York Times",
+      "relationship": "reported_on",
+      "target": "Tina",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "reporters from all the New York papers including the New York Times were coming up to do interviews",
+      "episode_number": 170
+    },
+    {
+      "source": "New York State",
+      "relationship": "announced",
+      "target": "bald eagle",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "New York State announced that this program was actually happening",
+      "episode_number": 170
+    },
+    {
+      "source": "New York Times",
+      "relationship": "reported_on",
+      "target": "the researcher",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "the New York Times were coming up to do interviews",
+      "episode_number": 170
+    },
+    {
+      "source": "the researcher",
+      "relationship": "advocates_for",
+      "target": "bald eagle",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "the researcher coming of age and had I to do it again I probably would have been a lot friendlier",
+      "episode_number": 170
+    },
+    {
+      "source": "the researcher",
+      "relationship": "interacts_with",
+      "target": "the media",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.75,
+      "context": "do the media yeah it's so interesting",
+      "episode_number": 170
+    },
+    {
+      "source": "the researcher",
+      "relationship": "concerned_about",
+      "target": "wildlife",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "mindful of bird populations in general and wildlife in general",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "successfully restored by",
+      "target": "Department of Environmental Conservation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "successful restoration and recovery program for the bald eagle",
+      "episode_number": 170
+    },
+    {
+      "source": "Department of Environmental Conservation",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.98,
+      "context": "the Department of Environmental Conservation really took over the program",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "advocated_for by",
+      "target": "Aaron",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "that's a great question Aaron",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "impacted by",
+      "target": "DDT",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "once DDT was gone there was no stopping him",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "hacked by",
+      "target": "Department of Environmental Conservation",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "the Department of Environmental Conservation really took over the program",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "migrates to",
+      "target": "Tennessee",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.98,
+      "context": "all the way down to Tennessee which actually hacked birds until 2020",
+      "episode_number": 170
+    },
+    {
+      "source": "Jim Weaver",
+      "relationship": "advises",
+      "target": "Department of Environmental Conservation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Jim Weaver still served as an advisor to them",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "increased population to",
+      "target": "72,000 pairs",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "we went from 417 pairs in 1963 to more than 72,000 pairs in the lower 48 in 2023",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagle",
+      "relationship": "symbolic_representation_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Discussed in terms of its importance to the nation.",
+      "episode_number": 170
+    },
+    {
+      "source": "airquay",
+      "relationship": "part_of",
+      "target": "Haudenosaunee",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "Mentioned as part of the Confederacy of six nations.",
+      "episode_number": 170
+    },
+    {
+      "source": "Haudenosaunee",
+      "relationship": "honors",
+      "target": "speaker",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "Discussed in terms of the honor bestowed upon the speaker.",
+      "episode_number": 170
+    },
+    {
+      "source": "Alaska",
+      "relationship": "contains",
+      "target": "bald eagle",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "Mentioned as a location where bald eagles are abundant.",
+      "episode_number": 170
+    },
+    {
+      "source": "Colorado",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a state in the U.S. where eagles are seen.",
+      "episode_number": 170
+    },
+    {
+      "source": "Minnesota",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a state in the U.S. where eagles are seen.",
+      "episode_number": 170
+    },
+    {
+      "source": "Maine",
+      "relationship": "located_in",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a state in the U.S. where eagles are seen.",
+      "episode_number": 170
+    },
+    {
+      "source": "New York",
+      "relationship": "part_of",
+      "target": "United States",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a state in the U.S. where the Haudenosaunee are located.",
+      "episode_number": 170
+    },
+    {
+      "source": "Ithaca",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a city in New York.",
+      "episode_number": 170
+    },
+    {
+      "source": "Syracuse",
+      "relationship": "located_in",
+      "target": "New York",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Mentioned as a city in New York where the State Fair is held.",
+      "episode_number": 170
+    },
+    {
+      "source": "Seneca tribe",
+      "relationship": "part_of",
+      "target": "six nations",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "the chiefs and other members of the six nations",
+      "episode_number": 170
+    },
+    {
+      "source": "bald eagles",
+      "relationship": "advocates_for",
+      "target": "reverence",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "their reverence of bald eagles",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina",
+      "relationship": "works_at",
+      "target": "Chelsea Green",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "check out your book return to the sky",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina",
+      "relationship": "honored_as",
+      "target": "Eric boy",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "first female ever honored as an Eric boy",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina",
+      "relationship": "advocates_for",
+      "target": "Return to the Sky",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "podcast discussion",
+      "episode_number": 170
+    },
+    {
+      "source": "Return to the Sky",
+      "relationship": "published_by",
+      "target": "Chelsea Green",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "book promotion",
+      "episode_number": 170
+    },
+    {
+      "source": "eagle",
+      "relationship": "located_in",
+      "target": "U.S.",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "animal discussion",
+      "episode_number": 170
+    },
+    {
+      "source": "eagle",
+      "relationship": "located_in",
+      "target": "Europe",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "animal discussion",
+      "episode_number": 170
+    },
+    {
+      "source": "eagle",
+      "relationship": "affected_by",
+      "target": "lead",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "environmental issue",
+      "episode_number": 170
+    },
+    {
+      "source": "eagle",
+      "relationship": "affected_by",
+      "target": "avian flu",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "disease discussion",
+      "episode_number": 170
+    },
+    {
+      "source": "eagles",
+      "relationship": "facing",
+      "target": "avian flu",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "Eagles are facing challenges from avian flu.",
+      "episode_number": 170
+    },
+    {
+      "source": "Minnesota",
+      "relationship": "contains",
+      "target": "bald eagles",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "Minnesota has a high population of bald eagles.",
+      "episode_number": 170
+    },
+    {
+      "source": "Jim Weaver",
+      "relationship": "works_with",
+      "target": "bald eagles",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "Jim Weaver helped with the tagging of bald eagles.",
+      "episode_number": 170
+    },
+    {
+      "source": "blue gene leg",
+      "relationship": "made_by",
+      "target": "unknown inventor",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.8,
+      "context": "The blue gene leg was invented for eagle handling.",
+      "episode_number": 170
+    },
+    {
+      "source": "Tina",
+      "relationship": "talks_to",
+      "target": "Aaron",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast interview",
+      "episode_number": 170
+    },
+    {
+      "source": "Falconers",
+      "relationship": "advocates_for",
+      "target": "Eagles",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussion about wildlife",
+      "episode_number": 170
+    },
+    {
+      "source": "yonnorth.org",
+      "relationship": "provides_access_to",
+      "target": "ambassador network",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "website mentioned",
+      "episode_number": 170
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "why on earth community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "why on earth community stewardship and sustainability podcast series",
+      "episode_number": 170
+    },
+    {
+      "source": "why on earth community",
+      "relationship": "sponsored_by",
+      "target": "yonurth.org",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "sponsored by several corporate and organization sponsors",
+      "episode_number": 170
+    }
+  ]
+}

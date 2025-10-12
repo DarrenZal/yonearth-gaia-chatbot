@@ -1,0 +1,1437 @@
+{
+  "episode": 120,
+  "timestamp": "2025-10-09T10:33:44.690330",
+  "entity_count": 101,
+  "relationship_count": 72,
+  "entities": [
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Y on Earth Community Podcast"
+    },
+    {
+      "name": "Rowdy Yates",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of High Plains Biochar"
+    },
+    {
+      "name": "High Plains Biochar",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "organization founded by Rowdy Yates"
+    },
+    {
+      "name": "Laramie",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of the podcast recording"
+    },
+    {
+      "name": "Wyoming",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Laramie is located"
+    },
+    {
+      "name": "Casper",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "Rowdy Yates' hometown"
+    },
+    {
+      "name": "Oklahoma",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Rowdy went to high school and college"
+    },
+    {
+      "name": "Oklahoma State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university Rowdy graduated from"
+    },
+    {
+      "name": "Texas",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Rowdy lived"
+    },
+    {
+      "name": "Nebraska",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where High Plains Biochar was founded"
+    },
+    {
+      "name": "Rocket Char 301",
+      "type": "PRODUCT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "technology offered by High Plains Biochar"
+    },
+    {
+      "name": "Microsoft",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "company that funded the accelerator G Beta"
+    },
+    {
+      "name": "G Beta",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "accelerator program funded by Microsoft"
+    },
+    {
+      "name": "United States Department of Energy",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "government department associated with the Technology Accelerator"
+    },
+    {
+      "name": "Reach",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "Technology Accelerator run by the United States Department of Energy"
+    },
+    {
+      "name": "Colorado State University",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "university involved in the Reach accelerator"
+    },
+    {
+      "name": "Industry Ventures",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization involved in the Reach accelerator"
+    },
+    {
+      "name": "Fort Collins",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "city where Colorado State University is located"
+    },
+    {
+      "name": "Kevin Johnson",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "team member at High Plains Biochar"
+    },
+    {
+      "name": "Rocky Mountain Farmers Union",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "organization collaborating with High Plains Biochar"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "used as a soil amendment for the plants and the water retention"
+    },
+    {
+      "name": "Amazonians",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "ancient civilization creating terapreta"
+    },
+    {
+      "name": "terapreta",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "ancient soil management technique"
+    },
+    {
+      "name": "University of Nebraska",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "conducting research on feed trial"
+    },
+    {
+      "name": "Raka Char 3.01",
+      "type": "PRODUCT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "new technology for making biochar"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "discussing the product created from pyrolysis"
+    },
+    {
+      "name": "pyrolysis",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "explaining the process used to create biochar"
+    },
+    {
+      "name": "carbon",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the composition of biochar"
+    },
+    {
+      "name": "soil",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the application of biochar in agriculture"
+    },
+    {
+      "name": "water",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing water retention in soil with biochar"
+    },
+    {
+      "name": "crops",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing agricultural outputs affected by biochar"
+    },
+    {
+      "name": "microbes",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussing the biological activity in soil with biochar"
+    },
+    {
+      "name": "fungi",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussing the biological activity in soil with biochar"
+    },
+    {
+      "name": "protozoa",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "discussing the biological activity in soil with biochar"
+    },
+    {
+      "name": "agricultural inputs",
+      "type": "CONCEPT",
+      "name_confidence": 0.75,
+      "type_confidence": 0.8,
+      "context": "discussing materials that can be used to create biochar"
+    },
+    {
+      "name": "Colorado State University",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "helped us develop this control box."
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "opportunities we have with biochar."
+    },
+    {
+      "name": "Ben",
+      "type": "PERSON",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "you and I met I think something like five, six years ago."
+    },
+    {
+      "name": "Y on Earth",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.75,
+      "context": "you've been down to a couple of our Y on Earth events."
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed as a technology for carbon offsetting and soil enhancement"
+    },
+    {
+      "name": "Routing",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.8,
+      "context": "mentioned as a machine shop involved in biochar technology"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for deploying biochar technology"
+    },
+    {
+      "name": "Indiana",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "mentioned as a location for deploying biochar technology"
+    },
+    {
+      "name": "carbon dioxide",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "discussed in the context of emissions and carbon offsetting"
+    },
+    {
+      "name": "carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed as a financial incentive related to biochar production"
+    },
+    {
+      "name": "carbon market",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.85,
+      "context": "discussed in relation to pricing and trading of carbon credits"
+    },
+    {
+      "name": "carbon market",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "active carbon market"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "role biochar is going to be playing"
+    },
+    {
+      "name": "carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "way carbon credits have evolved"
+    },
+    {
+      "name": "soil carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "a lot of our soil carbon credits have gotten popular"
+    },
+    {
+      "name": "USDA",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.9,
+      "context": "funded by USDA as part of their climate smart commodities program"
+    },
+    {
+      "name": "cover crop seed",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "applying biochar with cover crop seed"
+    },
+    {
+      "name": "climate smart commodities program",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about biochar and cover crops"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "cover crop seed",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about agricultural practices"
+    },
+    {
+      "name": "Rowdy",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about future vision and collaboration"
+    },
+    {
+      "name": "high-plains biochar",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about biochar technology"
+    },
+    {
+      "name": "Y-Ears community",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussion about community initiatives"
+    },
+    {
+      "name": "India",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about farmers producing biochar"
+    },
+    {
+      "name": "Europe",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about farmers producing biochar"
+    },
+    {
+      "name": "Midwest",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about sawmills producing biochar"
+    },
+    {
+      "name": "carbon credits",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussion about biochar and environmental impact"
+    },
+    {
+      "name": "COVID issues",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "discussion about challenges in funding"
+    },
+    {
+      "name": "United States",
+      "type": "PLACE",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "discussion about economic conditions"
+    },
+    {
+      "name": "Roughty Yates",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "founder of High Plains Biochar"
+    },
+    {
+      "name": "High Plains Biochar",
+      "type": "ORG",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "company founded by Roughty Yates"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the Why On Earth Community podcast"
+    },
+    {
+      "name": "Why On Earth Community",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast series"
+    },
+    {
+      "name": "Weylay Waters",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Purium",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "sponsor of the podcast"
+    },
+    {
+      "name": "Laramie",
+      "type": "PLACE",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "location mentioned by Roughty Yates"
+    },
+    {
+      "name": "Boulder Lions",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "location mentioned by Aaron William Perry"
+    },
+    {
+      "name": "Wyoming",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "state where Roughty Yates enjoys outdoor activities"
+    },
+    {
+      "name": "Wyoming",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "some of the wonderful Wyoming outdoors together."
+    },
+    {
+      "name": "Hunter",
+      "type": "PERSON",
+      "name_confidence": 0.8,
+      "type_confidence": 0.9,
+      "context": "my son's name is Hunter as a lot of folks know."
+    },
+    {
+      "name": "Rocky Mountain Elk Foundation",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "we were just at a Rocky Mountain Elk Foundation dinner a couple weeks ago for conservation projects."
+    },
+    {
+      "name": "Mulee Finatic Foundation",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "The Mulee Finatic Foundation is also really active as far as their conservation projects around wildlife."
+    },
+    {
+      "name": "Colorado",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.95,
+      "context": "this is a huge piece in Colorado."
+    },
+    {
+      "name": "CSU Powerhouse",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.9,
+      "context": "the folks over at CSU Powerhouse helped us design and build this control box."
+    },
+    {
+      "name": "high-plains biochar",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.85,
+      "context": "on the website for a high-plains biochar, there are also some great videos."
+    },
+    {
+      "name": "biodynamic soil activators",
+      "type": "CONCEPT",
+      "name_confidence": 0.7,
+      "type_confidence": 0.75,
+      "context": "doing some work with biodynamic soil activators."
+    },
+    {
+      "name": "Aaron",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "Roughty Yates",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "High Plains Biochar",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "podcast conversation"
+    },
+    {
+      "name": "Wild Earth",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "2018 Wild Earth event"
+    },
+    {
+      "name": "Boulder",
+      "type": "PLACE",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "location of biochar demonstration"
+    },
+    {
+      "name": "CSU nursery",
+      "type": "ORG",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "source of saplings"
+    },
+    {
+      "name": "Colorado Forestry Division",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "biochar promotion in Colorado"
+    },
+    {
+      "name": "Rocky Mountain West",
+      "type": "PLACE",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "region for appropriate tree varieties"
+    },
+    {
+      "name": "entrepreneur",
+      "type": "CONCEPT",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing the challenges and rewards of being an entrepreneur"
+    },
+    {
+      "name": "mycelial networks",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "comparing ecosystems to entrepreneur support systems"
+    },
+    {
+      "name": "regenerative agriculture movement",
+      "type": "CONCEPT",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "discussing the importance and growth of regenerative agriculture"
+    },
+    {
+      "name": "high-plane smile-chars",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "organization mentioned in relation to grassroots movements"
+    },
+    {
+      "name": "Lyon Earth",
+      "type": "ORG",
+      "name_confidence": 0.7,
+      "type_confidence": 0.7,
+      "context": "organization mentioned in relation to grassroots movements"
+    },
+    {
+      "name": "farmers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing networking with farmers and ranchers"
+    },
+    {
+      "name": "ranchers",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "discussing networking with farmers and ranchers"
+    },
+    {
+      "name": "Rowdy",
+      "type": "PERSON",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "mentioned as a person being thanked"
+    },
+    {
+      "name": "Aaron William Perry",
+      "type": "PERSON",
+      "name_confidence": 0.95,
+      "type_confidence": 0.95,
+      "context": "host of the podcast"
+    },
+    {
+      "name": "Y on Earth Community Stewardship and Sustainability Podcast",
+      "type": "ORG",
+      "name_confidence": 0.9,
+      "type_confidence": 0.9,
+      "context": "name of the podcast series"
+    },
+    {
+      "name": "YOnEarth.org",
+      "type": "ORG",
+      "name_confidence": 0.85,
+      "type_confidence": 0.85,
+      "context": "website mentioned for support"
+    },
+    {
+      "name": "biochar",
+      "type": "CONCEPT",
+      "name_confidence": 0.8,
+      "type_confidence": 0.8,
+      "context": "mentioned as a topic of discussion"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "Rowdy Yates",
+      "relationship": "founded",
+      "target": "High Plains Biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "Rowdy is the founder of High Plains Biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "located_in",
+      "target": "Nebraska",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "High Plains Biochar was founded in Nebraska",
+      "episode_number": 120
+    },
+    {
+      "source": "Rowdy Yates",
+      "relationship": "originally_from",
+      "target": "Casper",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Rowdy Yates is originally from Casper, Wyoming",
+      "episode_number": 120
+    },
+    {
+      "source": "Rowdy Yates",
+      "relationship": "went_to",
+      "target": "Oklahoma State University",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "Rowdy graduated from Oklahoma State University",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "participates_in",
+      "target": "G Beta",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "High Plains Biochar went through the G Beta accelerator",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "participates_in",
+      "target": "Reach",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "High Plains Biochar was chosen for the Reach accelerator",
+      "episode_number": 120
+    },
+    {
+      "source": "Reach",
+      "relationship": "run_by",
+      "target": "Colorado State University",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Reach is run by Colorado State University",
+      "episode_number": 120
+    },
+    {
+      "source": "Kevin Johnson",
+      "relationship": "works_at",
+      "target": "High Plains Biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.95,
+      "context": "Kevin Johnson joined the team at High Plains Biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "Rowdy Yates",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Rowdy is discussing the benefits of biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "collaborates_with",
+      "target": "Rocky Mountain Farmers Union",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "High Plains Biochar is creating a project in collaboration with the Rocky Mountain Farmers Union",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "used_as",
+      "target": "soil amendment",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "biochar is being used as a soil amendment",
+      "episode_number": 120
+    },
+    {
+      "source": "Amazonians",
+      "relationship": "created",
+      "target": "terapreta",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "ancient Amazonians were creating terapreta",
+      "episode_number": 120
+    },
+    {
+      "source": "University of Nebraska",
+      "relationship": "conducted_research_on",
+      "target": "feed trial",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "research with the University of Nebraska doing a feed trial",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "made_by",
+      "target": "Raka Char 3.01",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.7,
+      "context": "new technologies for making biochar like the Raka Char 3.01",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "created_by",
+      "target": "pyrolysis",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.85,
+      "context": "explaining the process of biochar production",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "improves",
+      "target": "soil",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing the benefits of biochar in soil",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "increases",
+      "target": "water",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussing the water retention properties of biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "supports",
+      "target": "microbes",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the habitat biochar provides for soil microbes",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "utilized_in",
+      "target": "crops",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussing the application of biochar in agriculture",
+      "episode_number": 120
+    },
+    {
+      "source": "agricultural inputs",
+      "relationship": "used_to_create",
+      "target": "biochar",
+      "source_confidence": 0.75,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "discussing materials that can be used to create biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "Colorado State University",
+      "relationship": "developed",
+      "target": "control box",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.8,
+      "context": "helped us develop this control box.",
+      "episode_number": 120
+    },
+    {
+      "source": "Ben",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "you've shown up and shared and educated folks about the opportunities we have with biochar.",
+      "episode_number": 120
+    },
+    {
+      "source": "Ben",
+      "relationship": "works_at",
+      "target": "Y on Earth",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "you've been down to a couple of our Y on Earth events.",
+      "episode_number": 120
+    },
+    {
+      "source": "Routing",
+      "relationship": "works_at",
+      "target": "biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.95,
+      "context": "discussed in relation to biochar technology",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "advocates_for",
+      "target": "carbon credits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussed as a financial incentive for using biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "located_in",
+      "target": "India",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned as a location for deploying biochar technology",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "located_in",
+      "target": "Indiana",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "mentioned as a location for deploying biochar technology",
+      "episode_number": 120
+    },
+    {
+      "source": "carbon market",
+      "relationship": "part_of",
+      "target": "carbon credits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussed in relation to trading and pricing of carbon credits",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "advocates_for",
+      "target": "carbon credits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "biochar carbon credits are worth so much",
+      "episode_number": 120
+    },
+    {
+      "source": "carbon market",
+      "relationship": "contains",
+      "target": "carbon credits",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "pricing signals coming from the global carbon market",
+      "episode_number": 120
+    },
+    {
+      "source": "USDA",
+      "relationship": "funds",
+      "target": "biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "funded by USDA as part of their climate smart commodities program",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "part_of",
+      "target": "soil building",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "stimulating a lot of additional soil building activity",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "made_by",
+      "target": "carbon credits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "the beauty of biochar carbon credits",
+      "episode_number": 120
+    },
+    {
+      "source": "high-plains biochar",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about biochar technology and its benefits",
+      "episode_number": 120
+    },
+    {
+      "source": "Rowdy",
+      "relationship": "works_at",
+      "target": "high-plains biochar",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about future vision and collaboration",
+      "episode_number": 120
+    },
+    {
+      "source": "Y-Ears community",
+      "relationship": "collaborates_with",
+      "target": "high-plains biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "discussion about community initiatives and collaboration",
+      "episode_number": 120
+    },
+    {
+      "source": "farmers in India",
+      "relationship": "producing",
+      "target": "biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.95,
+      "context": "discussion about global biochar production",
+      "episode_number": 120
+    },
+    {
+      "source": "farmers in Europe",
+      "relationship": "producing",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about global biochar production",
+      "episode_number": 120
+    },
+    {
+      "source": "sawmills in the Midwest",
+      "relationship": "producing",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about global biochar production",
+      "episode_number": 120
+    },
+    {
+      "source": "biochar",
+      "relationship": "associated_with",
+      "target": "carbon credits",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussion about biochar and environmental impact",
+      "episode_number": 120
+    },
+    {
+      "source": "COVID issues",
+      "relationship": "affects",
+      "target": "funding",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "discussion about challenges in funding",
+      "episode_number": 120
+    },
+    {
+      "source": "United States",
+      "relationship": "experiences",
+      "target": "recession",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.75,
+      "context": "discussion about economic conditions",
+      "episode_number": 120
+    },
+    {
+      "source": "Roughty Yates",
+      "relationship": "founded",
+      "target": "High Plains Biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.95,
+      "context": "founder of High Plains Biochar",
+      "episode_number": 120
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Why On Earth Community",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "host of the Why On Earth Community podcast",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "located_in",
+      "target": "Wyoming",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.9,
+      "context": "company based in Wyoming",
+      "episode_number": 120
+    },
+    {
+      "source": "Roughty Yates",
+      "relationship": "located_in",
+      "target": "Laramie",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "Roughty Yates mentions living in Laramie",
+      "episode_number": 120
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "located_in",
+      "target": "Boulder Lions",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "Aaron mentions residing in Boulder Lions area",
+      "episode_number": 120
+    },
+    {
+      "source": "Why On Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Weylay Waters",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 120
+    },
+    {
+      "source": "Why On Earth Community",
+      "relationship": "sponsored_by",
+      "target": "Purium",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "sponsor of the podcast",
+      "episode_number": 120
+    },
+    {
+      "source": "Rocky Mountain Elk Foundation",
+      "relationship": "supports",
+      "target": "conservation projects",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "we were just at a Rocky Mountain Elk Foundation dinner a couple weeks ago for conservation projects.",
+      "episode_number": 120
+    },
+    {
+      "source": "Mulee Finatic Foundation",
+      "relationship": "supports",
+      "target": "wildlife conservation projects",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "The Mulee Finatic Foundation is also really active as far as their conservation projects around wildlife.",
+      "episode_number": 120
+    },
+    {
+      "source": "Wyoming",
+      "relationship": "contains",
+      "target": "Rocky Mountain Elk Foundation",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.85,
+      "context": "we were just at a Rocky Mountain Elk Foundation dinner a couple weeks ago for conservation projects.",
+      "episode_number": 120
+    },
+    {
+      "source": "Colorado",
+      "relationship": "contains",
+      "target": "conservation projects",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "this is a huge piece in Colorado.",
+      "episode_number": 120
+    },
+    {
+      "source": "CSU Powerhouse",
+      "relationship": "designed",
+      "target": "control box",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "the folks over at CSU Powerhouse helped us design and build this control box.",
+      "episode_number": 120
+    },
+    {
+      "source": "high-plains biochar",
+      "relationship": "provides",
+      "target": "videos",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.8,
+      "context": "on the website for a high-plains biochar, there are also some great videos.",
+      "episode_number": 120
+    },
+    {
+      "source": "biodynamic soil activators",
+      "relationship": "advocates_for",
+      "target": "environmental conservation",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.75,
+      "target_confidence": 0.7,
+      "context": "doing some work with biodynamic soil activators.",
+      "episode_number": 120
+    },
+    {
+      "source": "Roughty Yates",
+      "relationship": "founded",
+      "target": "High Plains Biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast conversation",
+      "episode_number": 120
+    },
+    {
+      "source": "High Plains Biochar",
+      "relationship": "located_in",
+      "target": "Boulder",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.95,
+      "target_confidence": 0.9,
+      "context": "podcast conversation",
+      "episode_number": 120
+    },
+    {
+      "source": "Wild Earth",
+      "relationship": "part_of",
+      "target": "2018 Wild Earth event",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "2018 Wild Earth event",
+      "episode_number": 120
+    },
+    {
+      "source": "Boulder",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.9,
+      "context": "location of biochar demonstration",
+      "episode_number": 120
+    },
+    {
+      "source": "CSU nursery",
+      "relationship": "located_in",
+      "target": "Colorado",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "source of saplings",
+      "episode_number": 120
+    },
+    {
+      "source": "Colorado Forestry Division",
+      "relationship": "supports",
+      "target": "biochar",
+      "source_confidence": 0.85,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.85,
+      "context": "biochar promotion in Colorado",
+      "episode_number": 120
+    },
+    {
+      "source": "Roughty Yates",
+      "relationship": "advocates_for",
+      "target": "biochar",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "podcast conversation",
+      "episode_number": 120
+    },
+    {
+      "source": "entrepreneur",
+      "relationship": "advocates_for",
+      "target": "regenerative agriculture movement",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.85,
+      "target_confidence": 0.85,
+      "context": "discussing the challenges and rewards of being an entrepreneur",
+      "episode_number": 120
+    },
+    {
+      "source": "high-plane smile-chars",
+      "relationship": "supports",
+      "target": "regenerative agriculture movement",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organization mentioned in relation to grassroots movements",
+      "episode_number": 120
+    },
+    {
+      "source": "Lyon Earth",
+      "relationship": "supports",
+      "target": "regenerative agriculture movement",
+      "source_confidence": 0.7,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "organization mentioned in relation to grassroots movements",
+      "episode_number": 120
+    },
+    {
+      "source": "farmers",
+      "relationship": "network_with",
+      "target": "ranchers",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "discussing networking with farmers and ranchers",
+      "episode_number": 120
+    },
+    {
+      "source": "mycelial networks",
+      "relationship": "supports",
+      "target": "entrepreneur",
+      "source_confidence": 0.8,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.9,
+      "context": "comparing ecosystems to entrepreneur support systems",
+      "episode_number": 120
+    },
+    {
+      "source": "Aaron William Perry",
+      "relationship": "hosts",
+      "target": "Y on Earth Community Stewardship and Sustainability Podcast",
+      "source_confidence": 0.95,
+      "relationship_confidence": 0.9,
+      "target_confidence": 0.9,
+      "context": "Aaron William Perry is identified as the host of the podcast",
+      "episode_number": 120
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast",
+      "relationship": "sponsored_by",
+      "target": "YOnEarth.org",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.85,
+      "context": "The podcast is mentioned to be supported by YOnEarth.org",
+      "episode_number": 120
+    },
+    {
+      "source": "Rowdy",
+      "relationship": "collaborates_with",
+      "target": "Aaron William Perry",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.7,
+      "target_confidence": 0.95,
+      "context": "Rowdy is mentioned in a collaborative context with Aaron William Perry",
+      "episode_number": 120
+    },
+    {
+      "source": "Y on Earth Community Stewardship and Sustainability Podcast",
+      "relationship": "discusses",
+      "target": "biochar",
+      "source_confidence": 0.9,
+      "relationship_confidence": 0.8,
+      "target_confidence": 0.8,
+      "context": "Podcast discusses biochar as a topic",
+      "episode_number": 120
+    }
+  ]
+}
