@@ -251,17 +251,17 @@ Set `signals_conflict=true` when signals diverge significantly:
 
 For each relationship, return:
 ```json
-{
+{{
   "candidate_uid": "<UNCHANGED from input>",
   "text_confidence": 0.0-1.0,
   "p_true": 0.0-1.0,
   "signals_conflict": true/false,
   "conflict_explanation": "string (if signals_conflict=true)",
-  "suggested_correction": {"source": "...", "relationship": "...", "target": "..."} (optional),
+  "suggested_correction": {{"source": "...", "relationship": "...", "target": "..."}} (optional),
   "source_type": "entity type",
   "target_type": "entity type",
   "classification_flags": ["FACTUAL" | "TESTABLE_CLAIM" | "PHILOSOPHICAL_CLAIM" | "METAPHOR" | "OPINION" | "ABSTRACT_CONCEPT"]
-}
+}}
 ```
 
 **classification_flags** should contain all applicable flags for the relationship.
