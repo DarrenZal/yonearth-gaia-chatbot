@@ -63,7 +63,7 @@ class VagueEntityBlocker(PostProcessingModule):
             r'^(poisonous chemical inputs|ammunition manufacturers|hazardous materials suit|spraying chemicals)$',  # Too generic
 
             # Original patterns
-            r'^the (way|answer|solution|problem|challenge|issue|question|matter)$',
+            r'^the (way|answer|solution|problem|challenge|issue|question|matter|idea|concept|notion|framework)$',
             r'^the (way|path|approach|method) (through|to|from|of)',
             r'^the (reason|cause|result|outcome|consequence) (for|of|why)',
             r'^(something|someone|anything|anyone|everything|everyone)$',

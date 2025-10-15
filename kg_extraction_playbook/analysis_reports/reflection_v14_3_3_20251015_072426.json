@@ -1,0 +1,329 @@
+{
+  "extraction_metadata": {
+    "version": "v14_3_3",
+    "total_relationships": 161,
+    "analysis_timestamp": "2025-01-15T10:30:00Z"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 21,
+    "mild_issues": 13,
+    "total_issues": 35,
+    "issue_rate_percent": 21.7,
+    "estimated_false_negative_rate": 0.08,
+    "estimated_total_issues_with_fn": 38,
+    "adjusted_issue_rate_percent": 23.6,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C",
+    "note": "Significant improvement from V4 baseline. Main issues: 1 reversed authorship (CRITICAL), 21 incomplete titles from list splitting (MEDIUM), 13 semantic type mismatches (MILD). The system correctly avoided pronoun issues and vague entities. List splitting module needs refinement for book titles."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.6,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Bibliographic parser detected the citation but failed to reverse the relationship direction. The flag 'AUTHORSHIP_REVERSED' is set but the actual reversal didn't occur.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Our Biggest Deal / Aaron William Perry",
+          "page": 4,
+          "what_is_wrong": "Book title is source, author is target - relationship is backwards",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Titles from List Splitting",
+      "severity": "MEDIUM",
+      "count": 21,
+      "percentage": 13.0,
+      "description": "Book titles split on commas result in incomplete fragments that are too short or end with conjunctions",
+      "root_cause_hypothesis": "List splitting module treats book titles with commas as lists of separate items. The module doesn't recognize that commas within quoted titles or after colons are part of a single title, not list delimiters.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Dr. Robert Cloninger",
+          "relationship": "authored",
+          "target": "Happy",
+          "evidence_text": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges",
+          "page": 15,
+          "what_is_wrong": "Title split on commas, resulting in incomplete fragment 'Happy' (too short, lacks context)",
+          "should_be": {
+            "source": "Dr. Robert Cloninger",
+            "relationship": "authored",
+            "target": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges"
+          }
+        },
+        {
+          "source": "Sarah Arao",
+          "relationship": "authored",
+          "target": "Service Leadership",
+          "evidence_text": "Service Leadership, Self-Care, and Global Collaboration",
+          "page": 15,
+          "what_is_wrong": "Title split on commas into three fragments, each too short to be standalone titles",
+          "should_be": {
+            "source": "Sarah Arao",
+            "relationship": "authored",
+            "target": "Service Leadership, Self-Care, and Global Collaboration"
+          }
+        },
+        {
+          "source": "Henry Mitchell",
+          "relationship": "authored",
+          "target": "Planning",
+          "evidence_text": "Planning and Preparedness for Community Resilience",
+          "page": 15,
+          "what_is_wrong": "Title split on 'and', resulting in incomplete fragment 'Planning' (too short)",
+          "should_be": {
+            "source": "Henry Mitchell",
+            "relationship": "authored",
+            "target": "Planning and Preparedness for Community Resilience"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Semantic Type Mismatch (is-a relationships)",
+      "severity": "MILD",
+      "count": 13,
+      "percentage": 8.1,
+      "description": "Organizations classified with 'is-a Organization' relationships where source_type is already 'Organization', creating redundant/tautological statements",
+      "root_cause_hypothesis": "Pass 1 extraction creates 'is-a Organization' relationships for entities already typed as Organization. This is semantically valid but adds no information. The SEMANTIC_INCOMPATIBILITY flag is incorrectly triggered because it checks for Person source_type, but the actual issue is redundancy, not incompatibility.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Allianz Global Insurance",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes section listing organizations",
+          "page": 18,
+          "what_is_wrong": "Entity already typed as Organization, so 'is-a Organization' is redundant. Flag says 'Person cannot be-a Organization' but source_type is actually Organization.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Relationship should be omitted entirely as it conveys no new information"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Dedication List Targets Not Split",
+      "severity": "MEDIUM",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "Book dedication relationships have compound targets like 'Our Biggest Deal to Bernard Lietaer' instead of just the person's name",
+      "root_cause_hypothesis": "The dedication relationships include both the book title and dedicatee in the target field. This should either be split or the book title should be removed from the target since it's already implied by the source.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py or bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Bernard Lietaer",
+          "evidence_text": "Dedication section",
+          "page": 10,
+          "what_is_wrong": "Target includes both book title and dedicatee name, should be just the person",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Compound Dedication Targets",
+      "severity": "MEDIUM",
+      "count": 30,
+      "description": "Dedication relationships include book title in target field ('Our Biggest Deal to [Person]') instead of just the dedicatee name",
+      "root_cause_hypothesis": "Pass 1 extraction captures the full dedication phrase including the book title. Post-processing doesn't clean this up to extract just the person being honored.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Bernard Lietaer",
+          "evidence_text": "Dedication: To Bernard Lietaer...",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Bernard Lietaer', not include book title",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Redundant Type Classification",
+      "severity": "MILD",
+      "count": 13,
+      "description": "Entities already typed as Organization get additional 'is-a Organization' relationships that add no information",
+      "root_cause_hypothesis": "Pass 1 extraction creates explicit type relationships even when entity_type metadata already captures this. This is not wrong but clutters the graph with tautologies.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "examples": [
+        {
+          "source": "1% for the Planet",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes listing",
+          "page": 18,
+          "what_is_wrong": "Entity metadata already shows source_type='Organization', so this relationship is redundant",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Omit relationship, rely on entity_type metadata"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Incomplete Title Detection Failure",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Titles flagged as INCOMPLETE_TITLE but still kept in output instead of being merged back or filtered",
+      "root_cause_hypothesis": "The incomplete title detection correctly identifies fragments (too_short reason) but doesn't trigger corrective action. The flag is informational only, not actionable.",
+      "affected_module": "modules/pass2_5_postprocessing/title_validator.py",
+      "examples": [
+        {
+          "source": "John Fullerton",
+          "relationship": "authored",
+          "target": "Regenerative Capitalism",
+          "evidence_text": "Foreword mentions his work on regenerative capitalism and economics",
+          "page": 18,
+          "what_is_wrong": "Title flagged as too_short but not corrected or filtered",
+          "should_be": {
+            "source": "John Fullerton",
+            "relationship": "authored",
+            "target": "Regenerative Capitalism: How Universal Principles and Patterns Will Shape Our New Economy"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Fix the authorship reversal logic. When AUTHORSHIP_REVERSED flag is set, actually swap source and target fields, not just set the flag. Add unit test to verify reversal occurs.",
+      "expected_impact": "Fixes 1 critical reversed authorship relationship (0.6% of total)",
+      "rationale": "The module correctly detects the issue but fails to apply the correction. This is a simple swap operation that should be applied immediately after detection."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add context-aware splitting rules: (1) Don't split if target_type is 'Book' or 'Essay', (2) Don't split if comma appears after a colon (subtitle delimiter), (3) Don't split if result would be <3 words, (4) Add whitelist of conjunction patterns that indicate single titles ('X, Y, and Z' structure)",
+      "expected_impact": "Fixes 21 incomplete title issues (13% of total), preventing fragmentation of book titles",
+      "rationale": "Book titles frequently contain commas as stylistic elements, not list delimiters. The current module treats all commas equally. Adding entity type awareness and length checks will prevent over-splitting."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add dedication target cleanup: detect pattern 'Book Title to Person Name' and extract just the person name. Use regex: r'(?:.*?\\s+to\\s+)?(.+)$' to capture everything after 'to'.",
+      "expected_impact": "Fixes 30 compound dedication targets (18.6% of total)",
+      "rationale": "Dedication relationships should point to the person being honored, not include the book title. This is a simple string parsing fix."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Do NOT create is-a relationships for entity types that are already captured in the entity_type metadata. For example, if an entity is typed as Organization, do not extract (Entity, is-a, Organization).'",
+      "expected_impact": "Eliminates 13 redundant type relationships (8.1% of total), reducing graph clutter",
+      "rationale": "These relationships add no information and create noise. Preventing them at extraction time is cleaner than filtering post-hoc."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/title_validator.py",
+      "recommendation": "Make INCOMPLETE_TITLE flag actionable: (1) If too_short and part of a split, attempt to merge with adjacent fragments, (2) If standalone and too_short, mark for manual review or filter out, (3) Add confidence penalty to p_true for incomplete titles",
+      "expected_impact": "Improves handling of 8 flagged-but-not-fixed incomplete titles",
+      "rationale": "Currently the flag is informational only. Making it trigger corrective actions will improve quality automatically."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/title_merger.py",
+      "recommendation": "Create a new module that runs after list_splitter to detect and merge incorrectly split titles. Logic: (1) Group consecutive relationships with same source and 'authored' predicate, (2) If targets are short fragments (<4 words each), merge them back into single title, (3) Check if merged version appears in source text",
+      "expected_impact": "Provides safety net for list splitting errors, could recover 15-20 fragmented titles",
+      "rationale": "Rather than making list_splitter perfect, add a corrective module that can undo bad splits. This is more robust and easier to tune."
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/semantic_validator.py",
+      "recommendation": "Fix SEMANTIC_INCOMPATIBILITY detection for 'is-a' relationships. Current logic incorrectly flags Organization is-a Organization as 'Person cannot be-a Organization'. Update to check actual source_type, not assumed type.",
+      "expected_impact": "Fixes 13 false positive semantic incompatibility flags",
+      "rationale": "The flag is misleading and suggests a problem that doesn't exist. Fixing the detection logic will make flags more trustworthy."
+    },
+    {
+      "priority": "MILD",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_types.yaml",
+      "recommendation": "Add 'Book' and 'Essay' to protected entity types that should never be split by list_splitter. Create a whitelist of entity types immune to list splitting.",
+      "expected_impact": "Prevents future title splitting issues for new extractions",
+      "rationale": "Configuration-based protection is easier to maintain than code-based rules and makes the system more declarative."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Extraction creates redundant 'is-a Organization' relationships for entities already typed as Organization",
+        "current_wording": "Extract all entity types and their relationships, including classification relationships like 'is-a'",
+        "suggested_fix": "Add constraint: 'Do NOT extract is-a relationships that duplicate information already in entity_type metadata. Only extract is-a relationships that provide NEW classification information (e.g., subtypes, roles, categories not captured in entity_type).'",
+        "examples_needed": "Yes - add few-shot examples showing when to include vs omit is-a relationships"
+      },
+      {
+        "issue": "Dedication relationships capture full phrase including book title instead of just dedicatee",
+        "current_wording": "Extract dedication relationships as (Author, dedicated, Person)",
+        "suggested_fix": "Add instruction: 'For dedication relationships, the target should be ONLY the person or group being honored, not the book title. Extract (Author, dedicated, Honoree) not (Author, dedicated, Book to Honoree).'",
+        "examples_needed": "Yes - show correct extraction of dedication from phrases like 'dedicated to X' or 'in memory of Y'"
+      },
+      {
+        "issue": "Book titles with commas are being extracted as complete targets but then split by post-processing",
+        "current_wording": "Extract book titles exactly as they appear",
+        "suggested_fix": "Add guidance: 'Book titles may contain commas, semicolons, or colons as stylistic elements. Extract the COMPLETE title including all punctuation. Examples: \"What Makes People Healthy, Happy, and Fulfilled\" is ONE title, not three separate books.'",
+        "examples_needed": "Yes - show examples of complex titles that should be kept intact"
+      }
+    ],
+    "pass2_evaluation_issues": []
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.217,
+    "note": "System is 4.3x above production threshold. Main blockers: list splitting over-aggressiveness (13%), compound dedication targets (18.6%), and 1 critical reversed authorship. With recommended fixes, projected issue rate would drop to ~5-8%, approaching production readiness."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T07:24:26.935465",
+    "relationships_analyzed": 161,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14_3_3"
+  }
+}

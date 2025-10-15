@@ -1,6 +1,38 @@
 # 🧠 Knowledge Graph System Documentation
 
-## Overview
+## 🚨 **CURRENT SYSTEM: ACE Framework (October 2025)**
+
+**The YonEarth Knowledge Graph now uses the ACE (Agentic Context Engineering) Framework for autonomous quality improvement.**
+
+### Active Systems
+
+#### 📚 **Book Extraction: ACE V7 (Meta-ACE Enhanced)** ⭐ **CURRENT**
+- **Status**: V7 extraction running (October 12, 2025)
+- **Quality**: Targeting <5% issues (A- grade)
+- **Features**: Enhanced praise quote detection, multi-pass pronoun resolution, vague entity blocking
+- **See**: [ACE_CYCLE_1_COMPLETE.md](ACE_CYCLE_1_COMPLETE.md) for full system details
+
+#### 🎙️ **Episode Extraction: v3.2.2 (Production)** ✅ **COMPLETE**
+- **Status**: All 172 episodes extracted (October 12, 2025)
+- **Quality**: 93.1% high confidence relationships
+- **Data**: 45,478 relationships across all episodes
+
+---
+
+## 📖 Quick Links
+
+### ACE Framework (Book Extraction)
+- **[ACE_CYCLE_1_COMPLETE.md](ACE_CYCLE_1_COMPLETE.md)** - ACE Cycle 1 summary and results
+- **[ACE_META_TUNING_RECOMMENDATIONS.md](ACE_META_TUNING_RECOMMENDATIONS.md)** - Meta-ACE manual review findings
+- **[ACE_KG_EXTRACTION_VISION.md](ACE_KG_EXTRACTION_VISION.md)** - ACE framework vision
+
+### Episode Extraction (v3.2.2)
+- Scroll down for full v3.2.2 documentation
+- See archived docs in `../archive/knowledge_graph/pre_ace/` for historical implementations
+
+---
+
+## Overview (Episode Extraction v3.2.2)
 
 The YonEarth Knowledge Graph extraction system transforms **172 podcast episodes** into a structured, queryable knowledge base using a production-ready **three-stage extraction pipeline**.
 
@@ -12,15 +44,22 @@ The YonEarth Knowledge Graph extraction system transforms **172 podcast episodes
 - **Calibrates** confidence scores for reliability (when it says 80%, it's actually right 80% of the time)
 - **Prevents** duplicates through canonicalization and stable claim UIDs
 
-### Current Status
+### Episode Extraction Status
 
-✅ **v3.2.2 Production-Ready** - All critical bugs fixed, ready for full 172-episode deployment
+✅ **v3.2.2 COMPLETE - Full Production Extraction** (October 12, 2025)
+
+**Extraction Complete**:
+- **172/172 episodes** extracted successfully (100% coverage)
+- **45,478 total relationships** across all episodes
+- **93.1% high confidence** (42,356 relationships with p_true ≥ 0.75)
+- **43.6 hours** total extraction time (two runs combined)
+- **Zero failures** after applying critical bug fixes
 
 **Performance**:
 - **Coverage**: 3.6× improvement over baseline (347.6% on test data)
-- **Quality**: 85%+ high confidence relationships (p_true ≥ 0.75)
+- **Quality**: 93.1% high confidence relationships (p_true ≥ 0.75)
 - **Cost**: ~$6 for full 172-episode extraction
-- **Speed**: ~3 hours total with batching
+- **Speed**: ~3 hours per run with batching and caching
 
 ---
 
@@ -272,18 +311,15 @@ Partial batch failures don't kill extraction:
 - [x] NDJSON robustness
 - [x] Scorer-aware caching
 - [x] All critical bug fixes
+- [x] **Full 172-episode extraction (October 2025)**
+- [x] **Critical bug fixes for candidate_uid mismatch and token limits**
+- [x] **Unified knowledge graph dataset (45,478 relationships)**
 
-### 🔄 In Progress
+### 📋 Planned (Post-Extraction)
 
-- [ ] Testing on 5 episodes (currently running)
-- [ ] Comparison with previous batched test
-- [ ] Go/No-Go checklist validation
-
-### 📋 Planned (After v3.2.2 Deployment)
-
-- [ ] Scale to full 172 episodes
 - [ ] PostgreSQL database integration
 - [ ] Audio timestamp mapping
+- [ ] Web visualization with version dropdown
 - [ ] Post-extraction refinement phase
 - [ ] Entity resolution with Splink
 - [ ] SHACL validation with pySHACL
@@ -422,14 +458,40 @@ A: AFTER v3.2.2 is deployed and stable. Refinement adds 10-20% accuracy improvem
 
 ---
 
+## 📊 Extraction History
+
+### Full Production Extraction (October 2025)
+
+**Run 1: Initial Extraction** (October 10-11, 2025)
+- Episodes: 156 successful, 16 failed
+- Relationships: 40,686 (93.0% high confidence)
+- Time: 39.7 hours
+- Issues: candidate_uid mismatch, token limit exceeded
+
+**Run 2: Retry Extraction** (October 12, 2025)
+- Episodes: 16 previously failed, all successful
+- Relationships: 4,792 (93.9% high confidence)
+- Time: 3.8 hours
+- Fixes applied: candidate_uid handling, max_completion_tokens limit
+
+**Final Dataset**:
+- Total episodes: 172/172 (100% coverage)
+- Total relationships: 45,478
+- High confidence: 42,356 (93.1%)
+- Total time: 43.6 hours
+- Location: `/data/knowledge_graph_v3_2_2/`
+
+---
+
 ## 📝 Version History
 
-- **v3.2.2** (October 2025) - Production-ready release
+- **v3.2.2** (October 2025) - Production-ready release + Full extraction
   - All critical bugs fixed
   - Three-stage architecture
   - Evidence tracking with SHA256
   - Stable claim UIDs
   - Calibrated confidence
+  - **COMPLETE: 172 episodes, 45,478 relationships**
 
 - **v3.2.1** (October 2025) - Bug fixes and robustness
   - Mutable default fix
@@ -450,8 +512,8 @@ A: AFTER v3.2.2 is deployed and stable. Refinement adds 10-20% accuracy improvem
 
 ---
 
-**Last Updated**: October 2025
-**Current Version**: v3.2.2 (Production-Ready)
+**Last Updated**: October 12, 2025
+**Current Version**: v3.2.2 (Complete - 172 episodes extracted)
 **Maintainer**: YonEarth Team
 
 For questions or contributions, see the main project README.

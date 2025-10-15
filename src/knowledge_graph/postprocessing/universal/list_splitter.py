@@ -46,13 +46,25 @@ class ListSplitter(PostProcessingModule):
     content_types = ["all"]
     priority = 40
     dependencies = []
-    version = "1.3.0"  # V11.2.2 enhanced
+    version = "1.7.0"  # V14.3.7: Skip Book targets + min_item_chars protection
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         super().__init__(config)
 
         self.min_list_length = self.config.get('min_list_length', 15)
         self.use_pos_tagging = self.config.get('use_pos_tagging', True) and (nlp is not None)
+        # V14.3.4 NEW: Quote awareness
+        self.respect_quotes = self.config.get('respect_quotes', True)
+        # V14.3.5 NEW: Safer splitting mode (only enabled in our isolated pipeline)
+        self.safe_mode = self.config.get('safe_mode', False)
+        # V14.3.6 NEW: Minimum word count per split item (prevent fragmentation)
+        self.min_split_words = self.config.get('min_split_words', 3)
+        # V14.3.7 NEW: Minimum character count per split item
+        self.min_item_chars = self.config.get('min_item_chars', 10)
+        # V14.3.7 NEW: Protected relationships (never split these)
+        self.protected_relationships = self.config.get('protected_relationships', {
+            'authored', 'author of', 'wrote foreword for', 'endorsed', 'dedicated to', 'dedicated', 'wrote'
+        })
 
         # V8 NEW: Enhanced list patterns with 'and' conjunctions
         self.list_patterns = [
@@ -70,6 +82,28 @@ class ListSplitter(PostProcessingModule):
             logger.info("✅ ListSplitter using POS tagging for intelligent splitting + 'and' conjunctions (V8)")
         else:
             logger.info("⚠️  ListSplitter using fallback logic (no POS tagging)")
+
+    def is_inside_quotes(self, text: str, position: int) -> bool:
+        """
+        V14.3.4: Check if a character position lies within any quoted span.
+
+        Supports ASCII double/single quotes and Unicode curly quotes.
+        """
+        if not self.respect_quotes:
+            return False
+
+        patterns = [
+            r'"[^"\n]*"',      # ASCII double quotes
+            r"'[^'\n]*'",       # ASCII single quotes
+            r'“[^”\n]*”',        # Unicode curly double quotes
+            r'‘[^’\n]*’',        # Unicode curly single quotes
+        ]
+
+        for pat in patterns:
+            for m in re.finditer(pat, text):
+                if m.start() <= position < m.end():
+                    return True
+        return False
 
     def is_adjective_series(self, target: str) -> bool:
         """Use POS tagging to detect adjective series"""
@@ -218,16 +252,21 @@ class ListSplitter(PostProcessingModule):
             # Build a list of split positions (commas always split, "and" conditionally)
             split_positions = []
 
-            # Add comma positions
+            # V14.3.4 FIX: Add comma positions (but skip if inside quotes)
             for match in re.finditer(r',\s*', target):
-                split_positions.append((match.start(), match.end(), True))  # Always split
+                # Check if this comma is inside quotes
+                if not self.is_inside_quotes(target, match.start()):
+                    split_positions.append((match.start(), match.end(), True))
 
-            # Add "and" positions (check POS first)
+            # V14.3.4 FIX: Add "and" positions (check POS first, then quote awareness)
             for match in and_pattern.finditer(target):
+                # Skip if inside quotes
+                if self.is_inside_quotes(target, match.start()):
+                    continue
+
                 should_split = self.should_split_on_and(target, match.start(), match.end())
                 if should_split:
                     split_positions.append((match.start(), match.end(), True))
-                # If shouldn't split, don't add to list
 
             # Sort by position
             split_positions.sort(key=lambda x: x[0])
@@ -264,7 +303,22 @@ class ListSplitter(PostProcessingModule):
                 seen.add(item_lower)
                 unique_items.append(item.strip())
 
-        # If splitting resulted in items that are too short (< 2 characters),
+        # V14.3.6 FIX: Check minimum word count to prevent title fragmentation
+        # If any item has fewer than min_split_words words, don't split
+        for item in unique_items:
+            word_count = len(item.split())
+            if word_count < self.min_split_words:
+                logger.debug(f"Rejecting split: '{item}' has only {word_count} words (min: {self.min_split_words})")
+                return [target]
+
+        # V14.3.7 FIX: Check minimum character count
+        # If any item has fewer than min_item_chars characters, don't split
+        for item in unique_items:
+            if len(item) < self.min_item_chars:
+                logger.debug(f"Rejecting split: '{item}' has only {len(item)} chars (min: {self.min_item_chars})")
+                return [target]
+
+        # Legacy check: If splitting resulted in items that are too short (< 2 characters),
         # it's probably not a real list
         if any(len(item) < 2 for item in unique_items):
             return [target]
@@ -334,10 +388,37 @@ class ListSplitter(PostProcessingModule):
 
         for rel in relationships:
             # Track adjective series that we preserve
-            if ',' in rel.target and self.is_adjective_series(rel.target):
+            if ',' in getattr(rel, 'target', '') and self.is_adjective_series(rel.target):
                 adjective_series_preserved += 1
                 processed.append(rel)
-            elif self.is_list_target(rel.target):
+                continue
+
+            # V14.3.7: ALWAYS skip splitting for protected relationships and Book targets
+            rel_type = (getattr(rel, 'relationship', '') or '').lower()
+            rel_target_type = (getattr(rel, 'target_type', '') or '').lower()
+
+            if rel_type in self.protected_relationships or rel_target_type in {'book', 'work', 'essay'}:
+                processed.append(rel)
+                continue
+
+            # V14.3.5: Additional safety rails enabled only in safe_mode
+            if self.safe_mode:
+                # 1) Be conservative in front matter to avoid splitting subtitles
+                section = (context.document_metadata or {}).get('section', '')
+                is_front_matter = isinstance(section, str) and ('front' in section.lower())
+                if is_front_matter and (':' in getattr(rel, 'target', '')):
+                    processed.append(rel)
+                    continue
+
+                # 2) Never split when target looks like a Book or when relationship indicates titles/authorship
+                rel_type = (getattr(rel, 'relationship', '') or '').lower()
+                rel_target_type = (getattr(rel, 'target_type', '') or '').lower()
+                guard_rels = {'authored', 'author of', 'wrote foreword for', 'endorsed'}
+                if rel_target_type == 'book' or rel_type in guard_rels:
+                    processed.append(rel)
+                    continue
+
+            if self.is_list_target(rel.target):
                 split_rels = self.split_relationship(rel)
                 processed.extend(split_rels)
                 if len(split_rels) > 1:

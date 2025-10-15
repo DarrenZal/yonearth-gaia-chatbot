@@ -84,52 +84,54 @@ class FieldNormalizer(PostProcessingModule):
         Returns:
             Relationship with normalized field names
         """
-        # Convert to dict if it's an object
+        # Convert to dict view
         if hasattr(rel, '__dict__'):
-            rel_dict = rel.__dict__.copy()
-            is_object = True
-        else:
-            rel_dict = rel.copy()
-            is_object = False
+            # OBJECT PATH: mutate in place to preserve type/methods (e.g., to_dict)
+            rel_dict = rel.__dict__
 
-        # Create normalized dict
-        normalized_dict = {}
+            # Backfill canonical fields from legacy if missing
+            for legacy, canonical in self.FIELD_MAPPINGS.items():
+                if legacy in rel_dict and canonical not in rel_dict:
+                    try:
+                        setattr(rel, canonical, rel_dict[legacy])
+                    except Exception:
+                        # If attribute missing or frozen, skip
+                        pass
 
-        # First pass: Copy all fields, applying mappings
-        for key, value in rel_dict.items():
-            # Check if key needs normalization
-            canonical_key = self.FIELD_MAPPINGS.get(key, key)
-            normalized_dict[canonical_key] = value
-
-            # Optionally preserve legacy field alongside canonical
-            if self.preserve_legacy_fields and key in self.FIELD_MAPPINGS:
-                normalized_dict[key] = value
-
-        # Second pass: Backfill canonical fields from legacy if missing
-        for legacy, canonical in self.FIELD_MAPPINGS.items():
-            if legacy in rel_dict and canonical not in normalized_dict:
-                normalized_dict[canonical] = rel_dict[legacy]
-                logger.debug(f"   Backfilled {canonical} from {legacy}")
-
-        # Special handling: Mirror relationship/predicate for compatibility
-        # Most modules expect 'relationship', but some may read 'predicate'
-        if 'relationship' in normalized_dict:
-            normalized_dict['predicate'] = normalized_dict['relationship']
-        elif 'predicate' in normalized_dict:
-            normalized_dict['relationship'] = normalized_dict['predicate']
-
-        # Return in original format
-        if is_object:
-            # Create object with normalized fields
-            class NormalizedRel:
+            # Mirror relationship/predicate for compatibility
+            try:
+                if hasattr(rel, 'relationship') and getattr(rel, 'relationship') is not None:
+                    setattr(rel, 'predicate', getattr(rel, 'relationship'))
+                elif hasattr(rel, 'predicate') and getattr(rel, 'predicate') is not None:
+                    setattr(rel, 'relationship', getattr(rel, 'predicate'))
+            except Exception:
                 pass
 
-            normalized_obj = NormalizedRel()
-            for key, value in normalized_dict.items():
-                setattr(normalized_obj, key, value)
-
-            return normalized_obj
+            return rel
         else:
+            # DICT PATH: create normalized copy
+            rel_dict = rel.copy()
+            normalized_dict = {}
+
+            # Apply mappings
+            for key, value in rel_dict.items():
+                canonical_key = self.FIELD_MAPPINGS.get(key, key)
+                normalized_dict[canonical_key] = value
+                if self.preserve_legacy_fields and key in self.FIELD_MAPPINGS:
+                    normalized_dict[key] = value
+
+            # Backfill canonicals from legacy
+            for legacy, canonical in self.FIELD_MAPPINGS.items():
+                if legacy in rel_dict and canonical not in normalized_dict:
+                    normalized_dict[canonical] = rel_dict[legacy]
+                    logger.debug(f"   Backfilled {canonical} from {legacy}")
+
+            # Mirror relationship/predicate
+            if 'relationship' in normalized_dict:
+                normalized_dict['predicate'] = normalized_dict['relationship']
+            elif 'predicate' in normalized_dict:
+                normalized_dict['relationship'] = normalized_dict['predicate']
+
             return normalized_dict
 
     def process_batch(

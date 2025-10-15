@@ -1,0 +1,41 @@
+{
+  "citation_formats": {
+    "episode_reference": "Episode {number}: {title}",
+    "book_reference": "{book_title} - Chapter {chapter}: {chapter_title}",
+    "multi_source": "Referenced from {episode_count} episodes and {book_count} books"
+  },
+  "response_structures": {
+    "factual": {
+      "opening": "direct_answer",
+      "body": "evidence_and_citations",
+      "closing": "related_suggestions"
+    },
+    "exploratory": {
+      "opening": "context_setting",
+      "body": "multi_perspective",
+      "closing": "deeper_questions"
+    },
+    "philosophical": {
+      "opening": "reflective_question",
+      "body": "synthesis_of_wisdom",
+      "closing": "contemplative_invitation"
+    }
+  },
+  "personality_adjustments": {
+    "warm_mother": {
+      "tone": "nurturing",
+      "pronouns": "first_person_we",
+      "style": "conversational"
+    },
+    "wise_guide": {
+      "tone": "thoughtful",
+      "pronouns": "first_person_i",
+      "style": "reflective"
+    },
+    "earth_activist": {
+      "tone": "passionate",
+      "pronouns": "first_person_we",
+      "style": "motivational"
+    }
+  }
+}

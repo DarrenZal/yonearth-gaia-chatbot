@@ -1,0 +1,160 @@
+{
+  "test_metadata": {
+    "test_type": "full_pipeline",
+    "source_version": "v13.1",
+    "target_version": "v14.3",
+    "test_cases_total": 17,
+    "chunks_tested": 17,
+    "test_date": "2025-10-14",
+    "pipeline_stages": [
+      "Pass 1: Extract (V14.3)",
+      "Pass 2: Evaluate (V14.1 penalties)",
+      "Pass 2.5: Postprocess"
+    ]
+  },
+  "pipeline_summary": {
+    "pass1_total": 36,
+    "pass2_total": 41,
+    "final_total": 24,
+    "reduction_percent": 33.33333333333333
+  },
+  "test_summary": {
+    "total_tests": 17,
+    "pass_count": 3,
+    "fail_count": 14,
+    "pass_rate_percent": 17.647058823529413,
+    "high_severity": {
+      "pass": 1,
+      "total": 4
+    },
+    "medium_severity": {
+      "pass": 2,
+      "total": 10
+    },
+    "mild_severity": {
+      "pass": 0,
+      "total": 3
+    }
+  },
+  "test_results": [
+    {
+      "test_id": "TC001",
+      "category": "Praise Quote False Positive",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "details": "\u274c Not found: (Aaron William Perry) --[authored]--> (Soil Stewardship Handbook)"
+    },
+    {
+      "test_id": "TC002",
+      "category": "Reversed Endorsement Direction",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "details": "\u274c Not found: (Lily Sophia von \u00dcbergarten) --[wrote foreword for]--> (Soil Stewardship Handbook)"
+    },
+    {
+      "test_id": "TC003",
+      "category": "Vague Abstract Entity",
+      "severity": "HIGH",
+      "status": "PASS",
+      "details": "\u2705 Correctly filtered out: soil stewardship \u2192 aspects of life"
+    },
+    {
+      "test_id": "TC004",
+      "category": "Vague Demonstrative Pronoun",
+      "severity": "HIGH",
+      "status": "FAIL",
+      "details": "\u274c Not found: (soil stewardship) --[enables]--> (sustainable farming practices)"
+    },
+    {
+      "test_id": "TC005",
+      "category": "Predicate Fragmentation - is-a vs is",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (soil) --[is]--> (foundation of human life)"
+    },
+    {
+      "test_id": "TC006",
+      "category": "Predicate Fragmentation - Tense",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (connection with the soil) --[preserved]--> (Slovenian countryside)"
+    },
+    {
+      "test_id": "TC007",
+      "category": "Unresolved Possessive Pronoun in Target",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (connection with the soil) --[preserved]--> (Slovenian countryside)"
+    },
+    {
+      "test_id": "TC008",
+      "category": "Unresolved Possessive Pronoun in Target",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (individuals) --[can cultivate]--> (human potential)"
+    },
+    {
+      "test_id": "TC009",
+      "category": "Unresolved Generic Pronoun in Source",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (humanity) --[can]--> (reconnect with land)"
+    },
+    {
+      "test_id": "TC010",
+      "category": "Unresolved Generic Pronoun in Target",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (soil) --[heals]--> (humans)"
+    },
+    {
+      "test_id": "TC011",
+      "category": "Philosophical Claim - High Confidence",
+      "severity": "MEDIUM",
+      "status": "PASS",
+      "details": "\u2705 Correctly filtered out: soil \u2192 cosmically sacred"
+    },
+    {
+      "test_id": "TC012",
+      "category": "Philosophical Claim - Abstract",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (soil management) --[can mitigate]--> (climate change)"
+    },
+    {
+      "test_id": "TC013",
+      "category": "Testable Claim Without Confidence Adjustment",
+      "severity": "MEDIUM",
+      "status": "FAIL",
+      "details": "\u274c Not found: (getting hands in soil) --[may enhance]--> (immune systems)"
+    },
+    {
+      "test_id": "TC014",
+      "category": "Normative Statement as Factual",
+      "severity": "MEDIUM",
+      "status": "PASS",
+      "details": "\u2705 Correctly filtered out: humanity \u2192 thrive and heal"
+    },
+    {
+      "test_id": "TC015",
+      "category": "Semantic Predicate Mismatch",
+      "severity": "MILD",
+      "status": "FAIL",
+      "details": "\u274c Not found: (soil degradation) --[threatens]--> (humanity)"
+    },
+    {
+      "test_id": "TC016",
+      "category": "Incomplete List Splitting",
+      "severity": "MILD",
+      "status": "FAIL",
+      "details": "\u274c Not found: (agricultural soils) --[restores]--> (productively vital states)"
+    },
+    {
+      "test_id": "TC017",
+      "category": "Opinion Statement as Fact",
+      "severity": "MILD",
+      "status": "FAIL",
+      "details": "\u274c Not found: (living soil) --[may enhance]--> (cognitive performance)"
+    }
+  ]
+}

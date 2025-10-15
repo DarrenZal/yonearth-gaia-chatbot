@@ -1,0 +1,490 @@
+{
+  "extraction_metadata": {
+    "version": "v14.3.1",
+    "total_relationships": 449,
+    "analysis_timestamp": "2025-10-15T02:15:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 8,
+    "medium_priority_issues": 15,
+    "mild_issues": 28,
+    "total_issues": 52,
+    "issue_rate_percent": 11.6,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 59,
+    "adjusted_issue_rate_percent": 13.1,
+    "grade_confirmed": "B+",
+    "grade_adjusted": "B",
+    "note": "Significant improvement from v14.3 (16.2% \u2192 11.6%). One critical reversed authorship. Main issues: vague abstract entities (15 MEDIUM), dedication target confusion (8 HIGH), and metaphorical/philosophical content (28 MILD). Zero duplicates and excellent predicate normalization (51 unique predicates)."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.2,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may not clearly specify that authorship relationships should have Person \u2192 Book direction, not Book \u2192 Person. The bibliographic parser in Pass 2.5 may not be catching this reversal.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "This Soil Stewardship Handbook is deceptively small and simple.",
+          "page": 10,
+          "what_is_wrong": "Authorship relationship is reversed - book is source instead of author",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Dedication Target Confusion",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 1.8,
+      "description": "Dedication relationships have malformed targets that combine book title with dedicatee name (e.g., 'Soil Stewardship Handbook to Osha' instead of just 'Osha')",
+      "root_cause_hypothesis": "Pass 1 extraction is parsing dedication statements incorrectly, treating 'dedicated [book] to [person]' as a single target entity rather than extracting just the person. The bibliographic parser may need a dedicated dedication-specific handler.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha",
+          "evidence_text": "This book is dedicated to",
+          "page": 2,
+          "what_is_wrong": "Target should be just the person's name, not book title + person",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Hunter",
+          "evidence_text": "This book is dedicated to",
+          "page": 2,
+          "what_is_wrong": "Target should be just the person's name, not book title + person",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Hunter"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter",
+          "page": 6,
+          "what_is_wrong": "Target should be just the person's name",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Hunter",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter",
+          "page": 6,
+          "what_is_wrong": "Target should be just the person's name",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Hunter"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 3.3,
+      "description": "Entities are too abstract or vague to be useful in a knowledge graph (e.g., 'the amount', 'unknown', 'personal life-hacks', 'community activities')",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may not emphasize concrete, specific entities. Pass 2 evaluation may not penalize vague entities strongly enough. The entity_specificity_score is calculated but not used as a hard filter.",
+      "affected_module": "modules/pass2_evaluation/dual_signal_evaluator.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": "config/extraction_config.yaml",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "published by",
+          "target": "unknown",
+          "evidence_text": "This Soil Stewardship Handbook is deceptively small and simple.",
+          "page": 10,
+          "what_is_wrong": "'unknown' is not a useful entity - should be filtered or resolved to actual publisher",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published by",
+            "target": "Earth Water Press"
+          }
+        },
+        {
+          "source": "Soil Stewardship Guild",
+          "relationship": "involves",
+          "target": "community activities",
+          "evidence_text": "These are the activities we can do in community, work and neighborhood groups",
+          "page": 15,
+          "what_is_wrong": "'community activities' is too vague - should extract specific activities or skip",
+          "should_be": null
+        },
+        {
+          "source": "Soil Stewardship Guild",
+          "relationship": "requires",
+          "target": "personal life-hacks",
+          "evidence_text": "By incorporating these personal life-hacks and community activities",
+          "page": 15,
+          "what_is_wrong": "'personal life-hacks' is too vague and abstract",
+          "should_be": null
+        },
+        {
+          "source": "poisonous chemical inputs",
+          "relationship": "developed by",
+          "target": "ammunition manufacturers",
+          "evidence_text": "Many of our poisonous chemical 'inputs' used in this soil-destroying 'agriculture' were developed by ammunition manufacturers during WWI and WWII",
+          "page": 18,
+          "what_is_wrong": "Both entities are too vague - should be specific chemicals and specific companies",
+          "should_be": null
+        },
+        {
+          "source": "hazardous materials suit",
+          "relationship": "should not be worn while",
+          "target": "spraying chemicals",
+          "evidence_text": "if a person has to wear a hazardous materials (hazmat) suit while spraying chemicals",
+          "page": 18,
+          "what_is_wrong": "Both entities are generic - not useful for knowledge graph",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Metaphorical/Philosophical Content",
+      "severity": "MILD",
+      "count": 28,
+      "percentage": 6.2,
+      "description": "Relationships extracted from metaphorical, philosophical, or aspirational language that don't represent concrete factual claims",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may not distinguish between factual claims and philosophical/metaphorical statements. Pass 2 evaluation flags some as 'PHILOSOPHICAL_CLAIM' but doesn't filter them out. The classification_flags system identifies these but doesn't prevent extraction.",
+      "affected_module": "modules/pass2_evaluation/dual_signal_evaluator.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 17,
+          "what_is_wrong": "Metaphorical statement, not a literal classification",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "life-force",
+          "evidence_text": "Living in a time when we have decimated and destroyed the life-force in soils",
+          "page": 18,
+          "what_is_wrong": "Philosophical/metaphorical language, not a factual relationship",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "transmits",
+          "target": "healing energy",
+          "evidence_text": "while transmitting healing and stress-reducing life-force energy.",
+          "page": 22,
+          "what_is_wrong": "Philosophical claim about 'healing energy' - too abstract and unverifiable",
+          "should_be": null
+        },
+        {
+          "source": "soil microbiome",
+          "relationship": "enhances",
+          "target": "plant growth",
+          "evidence_text": "As the soil microbiome magically does its soil-building work",
+          "page": 22,
+          "what_is_wrong": "Flagged as FIGURATIVE_LANGUAGE but still extracted - 'magically' indicates metaphorical usage",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quote Misinterpretation",
+      "severity": "MILD",
+      "count": 7,
+      "percentage": 1.6,
+      "description": "Endorsement quotes from book reviews are extracted as 'endorsed' relationships, which is technically correct but may not be the most useful representation",
+      "root_cause_hypothesis": "Pass 1 extraction correctly identifies endorsements, but this may be over-extraction of promotional content. The bibliographic parser could potentially filter or consolidate these into a single 'has endorsements' relationship rather than individual person-by-person relationships.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool",
+          "page": 2,
+          "what_is_wrong": "Not wrong per se, but extracting every endorsement may clutter the graph with promotional content",
+          "should_be": null
+        },
+        {
+          "source": "Adrian Del Caro",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This is an important little book",
+          "page": 2,
+          "what_is_wrong": "Same issue - promotional content",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Overly Granular Content Relationships",
+      "severity": "MILD",
+      "count": 9,
+      "percentage": 2.0,
+      "description": "Multiple near-identical relationships stating book 'contains' various chapters/topics, which could be consolidated",
+      "root_cause_hypothesis": "Pass 1 extraction treats each mention of book content as a separate relationship. A content aggregation module could consolidate these into a single structured representation.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "chapter on composting",
+          "evidence_text": "The Handbook presents a fun and easy framework",
+          "page": 15,
+          "what_is_wrong": "Multiple 'contains chapter on X' relationships could be consolidated into structured book content metadata",
+          "should_be": null
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "chapter on cover cropping",
+          "evidence_text": "The Handbook presents a fun and easy framework",
+          "page": 15,
+          "what_is_wrong": "Same issue",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Duplicate Dedication Relationships",
+      "severity": "MILD",
+      "count": 2,
+      "percentage": 0.4,
+      "description": "Same dedication relationship appears multiple times from different pages (after fixing target format issues)",
+      "root_cause_hypothesis": "Deduplication module may not be catching semantically identical relationships that appear in different parts of the book (e.g., dedication page vs. later reference to dedication).",
+      "affected_module": "modules/pass2_5_postprocessing/deduplication.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "dedicated",
+          "target": "Osha",
+          "evidence_text": "Dedicated to my two children, Osha and Hunter",
+          "page": 17,
+          "what_is_wrong": "This dedication appears on pages 2, 6, and 17 - should be deduplicated",
+          "should_be": null
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Dedication Target Malformation",
+      "severity": "HIGH",
+      "count": 8,
+      "description": "NEW PATTERN: Dedication relationships incorrectly combine book title with dedicatee name in target field (e.g., 'Soil Stewardship Handbook to Osha'). This is a specific parsing error not seen in V4 reports.",
+      "root_cause_hypothesis": "Pass 1 extraction is treating the entire phrase 'dedicated [book] to [person]' as a single entity extraction task, rather than recognizing the syntactic structure. The bibliographic parser needs a dedicated handler for dedication statements.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha",
+          "evidence_text": "This book is dedicated to",
+          "page": 2,
+          "what_is_wrong": "Target should extract only the person name, not the book title + person",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Philosophical Energy Claims",
+      "severity": "MILD",
+      "count": 3,
+      "description": "NEW PATTERN: Extraction of relationships involving abstract concepts like 'healing energy', 'life-force energy', 'stress-reducing life-force' that are philosophical rather than scientific claims.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't distinguish between scientific claims and philosophical/spiritual language. Pass 2 flags some as 'PHILOSOPHICAL_CLAIM' but doesn't filter them. Need stronger filtering for non-falsifiable claims.",
+      "affected_module": "modules/pass2_evaluation/dual_signal_evaluator.py",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "transmits",
+          "target": "healing energy",
+          "evidence_text": "while transmitting healing and stress-reducing life-force energy",
+          "page": 22,
+          "what_is_wrong": "Philosophical/spiritual claim that cannot be verified scientifically",
+          "should_be": null
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add authorship direction validation: if relationship == 'authored' and source_type == 'Book' and target_type == 'Person', swap source and target. This should catch reversed authorship relationships.",
+      "expected_impact": "Fixes 1 critical reversed authorship issue (0.2% of relationships)",
+      "rationale": "Simple post-processing fix that catches a critical error pattern. More reliable than relying on prompt changes since this is a structural validation."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add dedication parser: if relationship == 'dedicated', extract target by parsing pattern 'dedicated [book_title] to [person]' and keep only [person] as target. Use regex: r'(?:.*?\\s+to\\s+)([A-Z][a-z]+)$' to extract final name.",
+      "expected_impact": "Fixes 8 HIGH priority dedication target issues (1.8% of relationships)",
+      "rationale": "Dedication statements have predictable syntax that can be parsed with regex. This is more reliable than prompt engineering since the pattern is consistent."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit instruction: 'Extract only CONCRETE, SPECIFIC entities. Avoid vague terms like \"unknown\", \"the amount\", \"community activities\", \"personal life-hacks\". If an entity is too abstract or generic, skip the relationship.' Add few-shot examples showing rejection of vague entities.",
+      "expected_impact": "Reduces 15 MEDIUM vague entity issues (3.3% of relationships)",
+      "rationale": "Vague entities are caught at extraction time, before Pass 2.5 modules can fix them. Prompt-level prevention is more efficient than post-processing cleanup."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/extraction_config.yaml",
+      "recommendation": "Add entity_specificity_threshold: 0.7 to config. Filter out any relationships where entity_specificity_score < 0.7 during Pass 2 evaluation. Currently entity_specificity_score is calculated but not used as a hard filter.",
+      "expected_impact": "Filters out vague entities automatically, reducing MEDIUM issues by ~10 relationships",
+      "rationale": "The entity_specificity_score is already computed but not enforced. Adding a threshold makes this signal actionable."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Distinguish between FACTUAL claims and METAPHORICAL/PHILOSOPHICAL language. Do not extract relationships from: (1) Metaphors (e.g., \"soil is medicine\"), (2) Philosophical claims (e.g., \"transmits healing energy\"), (3) Aspirational statements. Focus on verifiable, concrete facts.' Add few-shot examples.",
+      "expected_impact": "Reduces 28 MILD metaphorical/philosophical issues (6.2% of relationships)",
+      "rationale": "Metaphorical language is being extracted because the prompt doesn't distinguish factual from figurative. This is a prompt-level issue that needs upstream prevention."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/philosophical_filter.py",
+      "recommendation": "Create new module to filter relationships flagged as 'PHILOSOPHICAL_CLAIM' or 'FIGURATIVE_LANGUAGE'. Use classification_flags to identify and remove these relationships. Add config option to enable/disable this filter.",
+      "expected_impact": "Removes 28 MILD philosophical/metaphorical relationships automatically",
+      "rationale": "Pass 2 already identifies these patterns but doesn't filter them. A dedicated module can enforce this filtering consistently."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/deduplication.py",
+      "recommendation": "Enhance deduplication to catch semantically identical relationships from different pages. For dedication relationships specifically, deduplicate by (source, relationship, target) tuple regardless of page number or context text.",
+      "expected_impact": "Removes 2 MILD duplicate dedication relationships",
+      "rationale": "Deduplication is working (0 exact duplicates) but missing semantic duplicates that appear on different pages with slightly different context."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'For book endorsements/praise quotes, extract at most ONE representative endorsement relationship. Do not extract every individual endorser. Alternatively, skip endorsement extraction entirely as this is promotional content.' Add example showing consolidated endorsement handling.",
+      "expected_impact": "Reduces 7 MILD endorsement relationships, decluttering the graph",
+      "rationale": "Endorsements are technically correct but may clutter the graph. Prompt-level guidance can reduce over-extraction of promotional content."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/content_aggregator.py",
+      "recommendation": "Create module to consolidate multiple 'book contains chapter on X' relationships into a single structured representation. Could create a single relationship with a list of topics, or skip these entirely in favor of table-of-contents extraction.",
+      "expected_impact": "Consolidates 9 MILD granular content relationships",
+      "rationale": "Multiple 'contains' relationships are redundant. Aggregation would make the graph cleaner, but this is low priority since the relationships are not wrong, just verbose."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v5.txt",
+      "recommendation": "Enhance Pass 2 evaluation prompt to more strongly penalize vague entities. Add instruction: 'Reduce p_true score by 0.3 if either source or target is vague/abstract (e.g., \"unknown\", \"the amount\", \"community activities\"). Set signals_conflict=true and suggest_correction to skip the relationship.'",
+      "expected_impact": "Catches vague entities during evaluation, preventing them from reaching final output",
+      "rationale": "Pass 2 evaluation is the last chance to filter vague entities before Pass 2.5. Stronger penalties would improve filtering."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No explicit guidance on entity specificity - allows extraction of vague terms like 'unknown', 'community activities', 'personal life-hacks'",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add section: 'ENTITY SPECIFICITY REQUIREMENTS: Extract only concrete, specific entities. Reject vague terms like \"unknown\", \"the amount\", \"the process\", \"community activities\". If you cannot identify a specific entity, skip the relationship.' Include 3-5 few-shot examples showing rejection of vague entities.",
+        "examples_needed": "YES - show examples of rejecting vague entities vs. accepting specific ones"
+      },
+      {
+        "issue": "No distinction between factual and metaphorical/philosophical language - leads to extraction of statements like 'soil is medicine', 'soil transmits healing energy'",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add section: 'FACTUAL vs. FIGURATIVE LANGUAGE: Extract only verifiable, concrete facts. Do NOT extract: (1) Metaphors (\"soil is medicine\"), (2) Philosophical claims (\"transmits healing energy\"), (3) Aspirational statements (\"will heal the planet\"). Focus on scientific, historical, and biographical facts.' Include 5-7 few-shot examples.",
+        "examples_needed": "YES - critical to show distinction between factual and metaphorical"
+      },
+      {
+        "issue": "Dedication statement parsing is incorrect - extracts 'dedicated [book] to [person]' as single target entity instead of just [person]",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add specific instruction: 'For dedication relationships: Extract only the dedicatee name as target, not the book title. Example: \"This book is dedicated to my children, Osha and Hunter\" \u2192 (Author, dedicated, Osha) and (Author, dedicated, Hunter). NOT (Author, dedicated, \"book to Osha\").' Include 2-3 examples.",
+        "examples_needed": "YES - show correct dedication parsing"
+      },
+      {
+        "issue": "No guidance on handling endorsement/praise quotes - leads to extraction of every individual endorser",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add instruction: 'For book endorsements/praise quotes: Extract at most ONE representative endorsement, or skip entirely as promotional content. Do not extract every individual endorser.' Include example showing consolidated or skipped endorsement.",
+        "examples_needed": "OPTIONAL - but would help reduce over-extraction"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "entity_specificity_score is calculated but not used as a hard filter - vague entities pass through with high p_true scores",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add instruction: 'If entity_specificity_score < 0.7 for either source or target, reduce p_true by 0.3 and set signals_conflict=true with suggested_correction to skip the relationship. Vague entities like \"unknown\", \"the amount\", \"community activities\" should be filtered out.'",
+        "examples_needed": "YES - show examples of penalizing vague entities"
+      },
+      {
+        "issue": "PHILOSOPHICAL_CLAIM and FIGURATIVE_LANGUAGE flags are set but don't affect p_true scores - these relationships still pass through",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add instruction: 'If classification_flags include PHILOSOPHICAL_CLAIM or FIGURATIVE_LANGUAGE, reduce p_true by 0.4. These relationships should generally be filtered unless they convey concrete factual information despite metaphorical language.'",
+        "examples_needed": "YES - show examples of penalizing philosophical/metaphorical content"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.116,
+    "note": "System is close to production quality (11.6% vs. 5% target). Main blockers: (1) 1 CRITICAL reversed authorship, (2) 8 HIGH dedication parsing errors, (3) 15 MEDIUM vague entities. Addressing top 3 recommendations would bring issue rate to ~8%, closer to production threshold. Excellent predicate normalization (51 unique predicates) and zero duplicates indicate strong post-processing."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T02:01:14.530285",
+    "relationships_analyzed": 449,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.3.1"
+  }
+}

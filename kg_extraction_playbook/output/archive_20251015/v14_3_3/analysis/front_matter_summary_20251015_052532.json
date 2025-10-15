@@ -1,0 +1,116 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_052532",
+  "extraction_file": "front_matter_v14_3_3_20251015_051354.json",
+  "quality_metrics": {
+    "overall_grade": "C+",
+    "issue_rate": 19.7,
+    "total_relationships": 127,
+    "total_issues": 25
+  },
+  "issue_breakdown": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "MEDIUM": 23,
+    "MILD": 1
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": false,
+    "criteria": {
+      "critical_issues_zero": false,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": false
+    }
+  },
+  "actionable_issues": [
+    {
+      "severity": "CRITICAL",
+      "category": "Reversed Authorship",
+      "count": 1,
+      "percentage": 0.8,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is the source instead of the author. The flag 'AUTHORSHIP_REVERSED' indicates detection but no correction was applied.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Incomplete Titles from List Splitting",
+      "count": 22,
+      "percentage": 17.3,
+      "description": "Book/essay titles split at commas/conjunctions, creating fragments that are too short or semantically incomplete",
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Socialism",
+          "evidence_text": "4 Dr. Riane Eisler 137 \"Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts: 'Toward a Caring', 'Partnership Economy: Beyond Capitalism', 'Socialism'. The last fragment 'Socialism' is semantically incomplete and misleading.",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        },
+        {
+          "source": "Dr. Robert Cloninger",
+          "relationship": "authored",
+          "target": "Happy",
+          "evidence_text": "5 Dr. Robert Cloninger 150 \"What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts at commas. 'Happy' alone is not a valid book title.",
+          "should_be": {
+            "source": "Dr. Robert Cloninger",
+            "relationship": "authored",
+            "target": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges"
+          }
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "recommendation": "Fix the bibliographic_parser to actually swap source/target when AUTHORSHIP_REVERSED flag is set. Current code detects the pattern but doesn't apply the correction. Add: if flags.get('AUTHORSHIP_REVERSED'): relationship['source'], relationship['target'] = relationship['target'], relationship['source']"
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Add title-aware splitting logic: 1) If relationship is 'authored' and target is in quotes or follows a colon, treat as a single title unit. 2) Don't split at commas/conjunctions within quoted strings. 3) Add heuristic: if split would create fragments <3 words, keep original. 4) Check for title patterns: 'Title: Subtitle' should never split at commas in subtitle."
+    },
+    {
+      "priority": "HIGH",
+      "type": "NEW_MODULE",
+      "recommendation": "Create a new post-processing module that runs AFTER list_splitter to validate title completeness. Rules: 1) If relationship is 'authored', check target length (flag if <3 words unless it's a known single-word title like 'Dune'). 2) Check for incomplete patterns: ends with comma, starts with lowercase, ends with 'and'. 3) If INCOMPLETE_TITLE flag is set AND split_index exists, attempt to reconstruct original from split metadata. 4) Run before final output."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "recommendation": "Add context-aware filtering: Don't flag figurative language if the term appears in a title (target of 'authored' relationship) or in quoted text. Only flag when the term is used metaphorically in descriptive text. Update pattern: if relationship == 'authored' and metaphorical_term in target: skip flagging."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Add exclusion rules for list splitting: 1) exclude_patterns: ['authored'] (don't split targets of authorship relationships). 2) preserve_quoted_strings: true (never split inside quotes). 3) min_fragment_length: 3 (don't create fragments <3 words). 4) title_markers: [':', '\"', capitalized_words] (detect title structures and preserve them)."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "recommendation": "Improve the incompleteness detection heuristics: 1) Flag titles ending with prepositions ('of', 'in', 'for', 'to') as incomplete. 2) Flag titles that are single common words ('Love', 'Nature', 'Planning') unless they're known single-word titles. 3) Add a whitelist of valid single-word titles to reduce false positives."
+    }
+  ]
+}

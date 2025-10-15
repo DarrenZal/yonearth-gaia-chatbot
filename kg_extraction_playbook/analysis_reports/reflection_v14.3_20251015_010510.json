@@ -1,0 +1,552 @@
+{
+  "extraction_metadata": {
+    "version": "v14.3",
+    "total_relationships": 722,
+    "analysis_timestamp": "2025-10-15T00:51:27.009655"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 12,
+    "medium_priority_issues": 38,
+    "mild_issues": 67,
+    "total_issues": 117,
+    "issue_rate_percent": 16.2,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 132,
+    "adjusted_issue_rate_percent": 18.3,
+    "grade_confirmed": "B",
+    "grade_adjusted": "B-",
+    "note": "Significant improvement from v14.2 (27.3% \u2192 16.2%). No critical factual errors. Main issues: unresolved pronouns (12 HIGH), vague abstract entities (38 MEDIUM), and philosophical/metaphorical content (67 MILD). Zero duplicates and good predicate normalization (119 unique predicates, well below 150 threshold)."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Unresolved Pronouns",
+      "severity": "HIGH",
+      "count": 12,
+      "percentage": 1.7,
+      "description": "Pronouns ('we', 'us', 'it') remain in source or target entities despite pronoun resolution module. These make relationships unusable for querying.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module (modules/pass2_5_postprocessing/pronoun_resolver.py) is not catching all pronoun patterns, particularly in complex philosophical/aspirational statements where antecedents are abstract.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "we",
+          "relationship": "can",
+          "target": "reconnect with land",
+          "evidence_text": "We have the opportunity to reconnect with land and soil, to exercise our liberty as great steward-gardeners.",
+          "page": 10,
+          "what_is_wrong": "Source 'we' is unresolved pronoun. Should resolve to 'humanity' or 'individuals' based on context.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can",
+            "target": "reconnect with land"
+          }
+        },
+        {
+          "source": "we",
+          "relationship": "can",
+          "target": "soil",
+          "evidence_text": "We have the opportunity to reconnect with land and soil, to exercise our liberty as great steward-gardeners.",
+          "page": 10,
+          "what_is_wrong": "Source 'we' is unresolved pronoun.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can",
+            "target": "soil"
+          }
+        },
+        {
+          "source": "we",
+          "relationship": "engages in",
+          "target": "awesome adventure",
+          "evidence_text": "We are embarking on an awesome adventure together\u2014a fun-filled and health-enhancing adventure of a lifetime!",
+          "page": 10,
+          "what_is_wrong": "Source 'we' is unresolved pronoun.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "engages in",
+            "target": "awesome adventure"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "helps",
+          "target": "us",
+          "evidence_text": "An awesome miracle of creation, soil heals us.",
+          "page": 17,
+          "what_is_wrong": "Target 'us' is unresolved pronoun.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "helps",
+            "target": "humanity"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 38,
+      "percentage": 5.3,
+      "description": "Entities are too abstract or vague to be useful: 'the answer', 'the way', 'quote', 'framework', 'experience', 'impact', 'activities'. These lack specificity and make relationships less queryable.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt allows extraction of abstract nouns without requiring specificity. Pass 2 evaluation doesn't penalize vagueness enough (entity_specificity_score exists but isn't filtering these out).",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Gary Snyder",
+          "relationship": "endorsed",
+          "target": "quote",
+          "evidence_text": "\"Find your place on the planet. Dig in, and take responsibility from there.\" \u2014Gary Snyder",
+          "page": 12,
+          "what_is_wrong": "Target 'quote' is too vague. Should be the actual quote text or a more specific concept.",
+          "should_be": {
+            "source": "Gary Snyder",
+            "relationship": "authored",
+            "target": "Find your place on the planet"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "presents",
+          "target": "framework",
+          "evidence_text": "The Handbook presents a fun and easy framework to do it!",
+          "page": 15,
+          "what_is_wrong": "Target 'framework' is too vague. Should specify what kind of framework (e.g., 'soil stewardship framework').",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "presents",
+            "target": "soil stewardship framework"
+          }
+        },
+        {
+          "source": "Soil Stewardship Guild",
+          "relationship": "cultivates",
+          "target": "experience",
+          "evidence_text": "Additionally, we can engage in many group activities to cultivate our experience and enhance our impact within our communities.",
+          "page": 15,
+          "what_is_wrong": "Target 'experience' is too vague. Should specify what kind of experience.",
+          "should_be": {
+            "source": "Soil Stewardship Guild",
+            "relationship": "cultivates",
+            "target": "soil stewardship experience"
+          }
+        },
+        {
+          "source": "Soil Stewardship Guild",
+          "relationship": "expands",
+          "target": "impact",
+          "evidence_text": "By choosing to join the global Guild movement, we will heal existing soil, create more living soil, cultivate community, and reverse climate change.",
+          "page": 15,
+          "what_is_wrong": "Target 'impact' is too vague. Should specify what kind of impact (e.g., 'environmental impact', 'community impact').",
+          "should_be": {
+            "source": "Soil Stewardship Guild",
+            "relationship": "expands",
+            "target": "environmental impact"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Metaphorical Content",
+      "severity": "MILD",
+      "count": 67,
+      "percentage": 9.3,
+      "description": "Relationships extracted from philosophical, aspirational, or metaphorical language. These are flagged correctly (PHILOSOPHICAL_CLAIM, FIGURATIVE_LANGUAGE) but still extracted. While not factually wrong, they dilute the KG with subjective content.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt doesn't distinguish between factual claims and philosophical/aspirational statements. System correctly flags these in Pass 2 but doesn't filter them out.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": "config/extraction_config.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "This is a philosophical/spiritual claim, not a factual relationship. Correctly flagged as PHILOSOPHICAL_CLAIM (p_true=0.18) but still extracted.",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "living skin",
+          "evidence_text": "Since the beginning of time, of all the planets in all the galaxies in the known universe, only one has a living, breathing skin called dirt.",
+          "page": 17,
+          "what_is_wrong": "Metaphorical language ('living skin'). Correctly flagged as METAPHOR (p_true=0.3) but still extracted.",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we: Enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 12,
+          "what_is_wrong": "Aspirational/philosophical claim with metaphorical 'spirit'. Flagged as FIGURATIVE_LANGUAGE (p_true=0.45) but still extracted.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Overly Broad Predicates",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 2.5,
+      "description": "Predicates are too generic or vague: 'can', 'helps', 'makes', 'is-a'. While predicate normalization is working (119 unique predicates), some predicates remain too broad to convey specific relationships.",
+      "root_cause_hypothesis": "Pass 2.5 predicate normalization module is working but doesn't have rules to make predicates more specific. 'can' should become 'can help', 'can transform', etc. based on context.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet",
+          "page": 10,
+          "what_is_wrong": "Predicate 'can' is too vague. Should be 'can choose to' or 'has the ability to'.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can choose to",
+            "target": "thrive and heal"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "helps",
+          "target": "us",
+          "evidence_text": "An awesome miracle of creation, soil heals us.",
+          "page": 17,
+          "what_is_wrong": "Predicate 'helps' is too vague. Original text says 'heals', which is more specific.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "heals",
+            "target": "humanity"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quotes Misclassified",
+      "severity": "MILD",
+      "count": 11,
+      "percentage": 1.5,
+      "description": "Endorsement quotes are correctly identified and converted from 'authored' to 'endorsed', but some are still extracting vague targets like 'quote' or 'Soil Stewardship Handbook' when the quote itself is more valuable.",
+      "root_cause_hypothesis": "Pass 2.5 praise_quote_corrector module is working (11 instances flagged) but doesn't extract the quote content as a separate entity. Should create quote entities with the actual text.",
+      "affected_module": "modules/pass2_5_postprocessing/praise_quote_corrector.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Gary Snyder",
+          "relationship": "endorsed",
+          "target": "quote",
+          "evidence_text": "\"Find your place on the planet. Dig in, and take responsibility from there.\" \u2014Gary Snyder",
+          "page": 12,
+          "what_is_wrong": "Correctly changed from 'authored' to 'endorsed', but target 'quote' is too vague. Should extract the quote content.",
+          "should_be": {
+            "source": "Gary Snyder",
+            "relationship": "authored",
+            "target": "Find your place on the planet"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Entity Context",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 1.1,
+      "description": "Entities lack necessary context to be unambiguous: 'soil' vs 'living soil', 'health' vs 'human health', 'impact' vs 'environmental impact'.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't require entities to include disambiguating context. Pass 2 entity_specificity_score exists but isn't strict enough.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "living soil",
+          "relationship": "makes us feel better",
+          "target": "health",
+          "evidence_text": "Our physical connection with living soil literally makes us feel better and makes us smarter!",
+          "page": 18,
+          "what_is_wrong": "Target 'health' is too generic. Should be 'human health' or 'mental health'.",
+          "should_be": {
+            "source": "living soil",
+            "relationship": "improves",
+            "target": "human health"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Opinion Statements",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.4,
+      "description": "Relationships flagged as OPINION but still extracted. These are subjective claims that may not be verifiable.",
+      "root_cause_hypothesis": "Pass 2 correctly identifies opinions but doesn't filter them out. Config should specify whether to exclude OPINION-flagged relationships.",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": "config/extraction_config.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "increases",
+          "target": "serotonin",
+          "evidence_text": "and increase our production of serotonin\u2014that 'feel good' neurotransmitter that facilitates learning and causes us to experience joy.",
+          "page": 17,
+          "what_is_wrong": "Flagged as OPINION. While there may be scientific basis, the text presents this as opinion ('causes us to experience joy').",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Semantic Type Mismatches",
+      "severity": "MILD",
+      "count": 1,
+      "percentage": 0.1,
+      "description": "Entity types don't match the semantic relationship. Caught by SEMANTIC_INCOMPATIBILITY flag but still extracted.",
+      "root_cause_hypothesis": "Pass 2 type validation catches this but doesn't filter it out. Should be excluded from final output.",
+      "affected_module": "modules/pass2_type_validation.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Y on Earth Community",
+          "relationship": "is-a",
+          "target": "organization",
+          "evidence_text": "About Y on Earth",
+          "page": 6,
+          "what_is_wrong": "Flagged as SEMANTIC_INCOMPATIBILITY: 'Person' cannot be-a 'Organization'. Entity type is wrong (should be Organization, not Person).",
+          "should_be": {
+            "source": "Y on Earth Community",
+            "relationship": "is-a",
+            "target": "organization",
+            "source_type": "Organization",
+            "target_type": "Concept"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Abstract Aspirational Statements",
+      "severity": "MEDIUM",
+      "count": 15,
+      "description": "Relationships extracted from aspirational/motivational language about what 'we can do' or 'we will do'. These are future-oriented or hypothetical, not factual claims about current state.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't distinguish between factual claims (what IS) and aspirational claims (what COULD BE or SHOULD BE). These dilute the KG with hypothetical content.",
+      "affected_module": null,
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet",
+          "page": 10,
+          "what_is_wrong": "This is aspirational language about potential future actions, not a factual claim about current capabilities.",
+          "should_be": null
+        },
+        {
+          "source": "individuals",
+          "relationship": "can",
+          "target": "create the future",
+          "evidence_text": "we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "Aspirational/motivational statement, not factual.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "Overly Granular List Splitting",
+      "severity": "MILD",
+      "count": 12,
+      "description": "List splitting module creates separate relationships for items that should remain grouped (e.g., 'food, fuel, shelter' split into 3 relationships when the point is that soil provides ALL of these).",
+      "root_cause_hypothesis": "Pass 2.5 list_splitter module splits all comma-separated targets without considering whether the list is meant to be comprehensive or whether items are semantically related.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Soil",
+          "relationship": "provides",
+          "target": "food",
+          "evidence_text": "Husband it and it will grow our food, our fuel, and our shelter and surround us with beauty.",
+          "page": 15,
+          "what_is_wrong": "Split into 3 relationships (food, fuel, shelter) when the original statement emphasizes that soil provides ALL of these together.",
+          "should_be": {
+            "source": "Soil",
+            "relationship": "provides",
+            "target": "food, fuel, and shelter"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Figurative Language Extraction",
+      "severity": "MILD",
+      "count": 8,
+      "description": "Metaphorical or poetic language extracted as factual relationships. System correctly flags these (FIGURATIVE_LANGUAGE) but still extracts them.",
+      "root_cause_hypothesis": "Pass 1 extraction treats all statements equally. Should have a filter to exclude highly metaphorical language (p_true < 0.5 with FIGURATIVE_LANGUAGE flag).",
+      "affected_module": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "living skin",
+          "evidence_text": "Since the beginning of time, of all the planets in all the galaxies in the known universe, only one has a living, breathing skin called dirt.",
+          "page": 17,
+          "what_is_wrong": "Poetic metaphor ('living skin') extracted as factual. Correctly flagged (p_true=0.3) but still included.",
+          "should_be": null
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Enhance pronoun resolution to handle abstract/philosophical contexts. Add fallback resolution rules: 'we' \u2192 'humanity', 'us' \u2192 'humanity', 'our' \u2192 'human' when no specific antecedent is found within 2 sentences. Add unit tests for philosophical text.",
+      "expected_impact": "Fixes 12 HIGH-priority unresolved pronoun issues (1.7% of relationships).",
+      "rationale": "Pronouns make relationships unusable for querying. This is the highest-impact fix with clear implementation path."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add constraint to Pass 1 extraction prompt: 'Extract only FACTUAL relationships about what IS, not aspirational statements about what COULD BE or SHOULD BE. Exclude philosophical claims, metaphors, and motivational language unless they convey verifiable facts.' Add few-shot examples distinguishing factual vs. aspirational.",
+      "expected_impact": "Reduces extraction of 67 MILD philosophical/metaphorical relationships (9.3%) and 15 MEDIUM aspirational statements (2.1%). Total impact: ~11.4% of relationships.",
+      "rationale": "This is the root cause of the largest issue category. Fixing at extraction time is more efficient than filtering later."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/extraction_config.yaml",
+      "recommendation": "Add filtering rules to exclude relationships with: (1) p_true < 0.5 AND (PHILOSOPHICAL_CLAIM OR FIGURATIVE_LANGUAGE OR METAPHOR flags), (2) OPINION flag, (3) SEMANTIC_INCOMPATIBILITY flag. Add config option: 'filter_subjective_content: true'.",
+      "expected_impact": "Filters out 67 MILD philosophical relationships, 3 MILD opinions, 1 MILD semantic mismatch. Total: 71 relationships (9.8%).",
+      "rationale": "System already detects these issues but doesn't filter them. This is a low-risk, high-impact change."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add specificity requirement to Pass 1 prompt: 'Entities must be specific and unambiguous. Include disambiguating context: use \"living soil\" not \"soil\", \"human health\" not \"health\", \"environmental impact\" not \"impact\". Avoid abstract nouns like \"experience\", \"framework\", \"activities\" unless qualified with specific context.'",
+      "expected_impact": "Reduces 38 MEDIUM vague entity issues (5.3%) and 8 MILD incomplete context issues (1.1%). Total: 6.4% of relationships.",
+      "rationale": "Vague entities reduce KG utility. Fixing at extraction time prevents downstream issues."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Enhance predicate normalization with context-aware rules: 'can' + action verb \u2192 'can [action]' (e.g., 'can help', 'can transform'). 'helps' + context \u2192 more specific verb (e.g., 'heals', 'supports'). Add normalization rules for top 20 most frequent predicates.",
+      "expected_impact": "Improves specificity of 18 MEDIUM overly broad predicates (2.5%).",
+      "rationale": "Predicate normalization is already working (119 unique predicates), but needs refinement for common vague predicates."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/praise_quote_corrector.py",
+      "recommendation": "Enhance praise_quote_corrector to extract quote content as separate entity. When detecting endorsement quote, create new relationship: (Author, authored, Quote_Text) in addition to (Author, endorsed, Book). Extract first 5-10 words of quote as entity name.",
+      "expected_impact": "Improves 11 MILD praise quote relationships (1.5%) by capturing valuable quote content.",
+      "rationale": "Quotes contain valuable information that's currently lost. This preserves both the endorsement and the quote content."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add semantic grouping logic to list_splitter: Don't split lists where items are semantically related and meant to be comprehensive (e.g., 'food, fuel, shelter'). Use heuristics: (1) list length \u2264 3 items, (2) items share semantic category, (3) predicate is 'provides' or 'includes'. Add config option: 'preserve_semantic_lists: true'.",
+      "expected_impact": "Reduces 12 MILD overly granular splits (1.7%).",
+      "rationale": "Some lists convey meaning through their completeness. Splitting loses this semantic information."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_type_validation.py",
+      "recommendation": "Add entity type correction logic: When SEMANTIC_INCOMPATIBILITY is detected, attempt to infer correct type from context. For 'Y on Earth Community', context 'About Y on Earth' suggests Organization, not Person. Add type correction before final output.",
+      "expected_impact": "Fixes 1 MILD semantic mismatch (0.1%).",
+      "rationale": "Low impact but easy fix. Improves data quality with minimal effort."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/aspirational_filter.py",
+      "recommendation": "Create new module to detect and filter aspirational/hypothetical statements. Patterns: 'we can', 'we will', 'we should', 'we have the opportunity to', 'we have the choice to'. Flag as ASPIRATIONAL and optionally filter based on config.",
+      "expected_impact": "Filters 15 MEDIUM aspirational statements (2.1%).",
+      "rationale": "This is a novel pattern not caught by existing modules. Dedicated module provides clean separation of concerns."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No distinction between factual and aspirational/philosophical statements",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add explicit constraint: 'Extract only FACTUAL relationships about what IS, not aspirational statements about what COULD BE or SHOULD BE. Exclude philosophical claims, metaphors, and motivational language unless they convey verifiable facts.' Add 3-5 few-shot examples showing: (1) factual claim \u2192 extract, (2) aspirational claim \u2192 skip, (3) metaphor \u2192 skip, (4) philosophical claim \u2192 skip.",
+        "examples_needed": "Yes - critical for distinguishing factual vs. subjective content"
+      },
+      {
+        "issue": "No specificity requirement for entities",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add constraint: 'Entities must be specific and unambiguous. Include disambiguating context: use \"living soil\" not \"soil\", \"human health\" not \"health\", \"environmental impact\" not \"impact\". Avoid abstract nouns like \"experience\", \"framework\", \"activities\" unless qualified with specific context.' Add examples showing vague vs. specific entities.",
+        "examples_needed": "Yes - 2-3 examples of vague entities and their specific alternatives"
+      },
+      {
+        "issue": "No guidance on pronoun handling",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add constraint: 'Do not extract relationships with pronouns (we, us, our, it, they, them) as source or target. Resolve pronouns to their antecedents before extraction. If antecedent is unclear, use generic term (e.g., \"humanity\" for \"we\" in philosophical contexts).'",
+        "examples_needed": "Yes - 2-3 examples showing pronoun resolution"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "entity_specificity_score not strict enough",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Clarify entity_specificity_score definition: 'Score 1.0 = fully specific and unambiguous (e.g., \"Aaron William Perry\", \"Soil Stewardship Handbook\"). Score 0.5-0.7 = somewhat vague (e.g., \"soil\" without context, \"health\" without qualifier). Score < 0.5 = too vague to be useful (e.g., \"experience\", \"impact\", \"framework\", \"quote\"). Penalize abstract nouns without context.'",
+        "suggested_fix_continued": "Add threshold: relationships with entity_specificity_score < 0.7 should have lower p_true scores."
+      },
+      {
+        "issue": "p_true calibration for subjective content",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add guidance: 'Philosophical claims, metaphors, and aspirational statements should receive p_true < 0.5 even if text clearly states them. These are subjective interpretations, not verifiable facts. Reserve p_true > 0.7 for factual claims that can be verified through evidence.'",
+        "suggested_fix_continued": "Current system correctly assigns low p_true to these (e.g., 0.18 for \"cosmically sacred\") but still extracts them. Prompt should emphasize that low p_true = should not extract."
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.162,
+    "adjusted_quality_issue_rate": 0.183,
+    "key_strengths": [
+      "Zero duplicate relationships (excellent deduplication)",
+      "Good predicate normalization (119 unique predicates, well below 150 threshold)",
+      "No critical factual errors (reversed authorship, wrong facts)",
+      "Effective flagging of subjective content (PHILOSOPHICAL_CLAIM, FIGURATIVE_LANGUAGE, OPINION)",
+      "Strong bibliographic parsing (correct author, publisher, date extraction)",
+      "Effective list splitting (12 instances, working as designed)",
+      "Good pronoun resolution for most cases (17 successful resolutions)"
+    ],
+    "key_weaknesses": [
+      "12 HIGH-priority unresolved pronouns (1.7%)",
+      "38 MEDIUM-priority vague entities (5.3%)",
+      "67 MILD philosophical/metaphorical extractions (9.3%)",
+      "System flags issues but doesn't filter them out (config gap)",
+      "Pass 1 extraction doesn't distinguish factual vs. aspirational content"
+    ],
+    "path_to_production": [
+      "Implement HIGH-priority fixes (pronoun resolution, prompt enhancement, config filtering) - Expected reduction: ~13% issue rate \u2192 ~3% issue rate",
+      "Implement MEDIUM-priority fixes (entity specificity, predicate normalization) - Expected reduction: ~3% \u2192 ~1.5% issue rate",
+      "Add comprehensive unit tests for philosophical/aspirational text",
+      "Validate on 2-3 additional books with different content types (technical, narrative, mixed)",
+      "Target: < 5% issue rate for production readiness"
+    ]
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T01:05:10.310494",
+    "relationships_analyzed": 722,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.3"
+  }
+}

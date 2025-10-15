@@ -1,0 +1,81 @@
+{
+  "extraction_metadata": {
+    "version": "v7_meta_ace",
+    "total_relationships": 924,
+    "analysis_timestamp": "2025-10-12T21:30:10.094665"
+  },
+  "quality_summary": {
+    "critical_issues": 4,
+    "high_priority_issues": 12,
+    "medium_priority_issues": 28,
+    "mild_issues": 18,
+    "total_issues": 62,
+    "issue_rate_percent": 6.71,
+    "grade_confirmed": "B+",
+    "note": "V7 shows marginal improvement over V6. Main blockers: 4 CRITICAL praise quote errors, 18 HIGH/MEDIUM pronoun issues."
+  },
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Fix praise quote detector reversal logic - detector finds 13 endorsements but only reverses 1. Bug in BibliographicCitationParser at line where it checks endorsement patterns and reverses authorship relationships.",
+      "expected_impact": "Eliminates all 4 CRITICAL reversed authorship errors (0.43%)"
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Add spaCy coreference resolution to pronoun resolver. Current multi-pass window approach (100/500/1000 chars) improved but still misses distant antecedents. Need semantic coreference: 'my people' \u2192 'Slovenians', 'we' \u2192 'humanity'.",
+      "expected_impact": "Fixes 18 HIGH/MEDIUM pronoun issues (1.95%)"
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Enhance vague entity detector to REPLACE vague targets with specific entities using context, not just block. 'this wonderful place' \u2192 'Earth', 'the answer' \u2192 resolve from context.",
+      "expected_impact": "Fixes 8 vague target issues (0.87%)"
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Add Pass 2 instruction: 'Downweight abstract/philosophical statements that don't convey concrete factual information. Examples: definitions of humanity, spiritual claims, metaphysical statements.'",
+      "expected_impact": "Filters 6 philosophical statements (0.65%)"
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Enhance list splitter to handle 'A, B and C' patterns. Current regex only handles commas. Add pattern for 'and' conjunctions.",
+      "expected_impact": "Fixes 4 incomplete list splits (0.43%)"
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Add semantic predicate validation: Book entities can only {guides, informs, describes}, not {heals, cures}. Use entity type constraints.",
+      "expected_impact": "Fixes 2 wrong predicate errors (0.22%)"
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Add dedication statement detection: patterns like 'dedicated to', 'in memory of'. Extract as (Author, dedicated, Book to Recipients).",
+      "expected_impact": "Fixes 1 dedication misattribution (0.11%)"
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "scripts/extract_kg_v7_book.py",
+      "recommendation": "Normalize metaphorical predicates: 'is a road-map' \u2192 'provides guidance', 'is wedded to' \u2192 'depends on'.",
+      "expected_impact": "Normalizes 3 metaphors (0.32%)"
+    }
+  ],
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.0671,
+    "note": "Need to fix 2 CRITICAL bugs to reach <5% target"
+  }
+}

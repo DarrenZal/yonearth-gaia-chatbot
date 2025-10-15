@@ -50,6 +50,12 @@ Welcome to the comprehensive documentation for the YonEarth Gaia Chatbot project
 - Knowledge graph extraction
 - Data pipeline management
 
+**[Knowledge Graph System](knowledge_graph/README.md)** ⭐ **NEW**
+- Complete v3.2.2 extraction system
+- 172 episodes, 45,478 relationships
+- Three-stage pipeline (Extract → Validate → Score)
+- Production-ready visualization
+
 ### Specialized Topics
 
 **[Voice Integration](VOICE_INTEGRATION.md)**
@@ -143,7 +149,8 @@ yonearth-gaia-chatbot/
 ├── data/                           # 📊 Data storage
 │   ├── transcripts/                # Episode JSON files
 │   ├── processed/                  # Processed data
-│   ├── knowledge_graph/            # KG extractions
+│   ├── knowledge_graph/            # KG extractions (historical)
+│   ├── knowledge_graph_v3_2_2/     # v3.2.2 extraction (45,478 relationships)
 │   └── feedback/                   # User feedback
 │
 ├── tests/                          # 🧪 Test suite

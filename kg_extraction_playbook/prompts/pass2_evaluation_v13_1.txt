@@ -1,0 +1,421 @@
+```
+Evaluate these {batch_size} extracted relationships using dual-signal analysis.
+
+RELATIONSHIPS TO EVALUATE:
+{relationships_json}
+
+For EACH of the {batch_size} relationships above, provide TWO INDEPENDENT evaluations:
+
+## 🎯 V10 GOAL: COMPREHENSIVE KNOWLEDGE EXTRACTION
+
+V10 focuses on extracting ALL valuable factual relationships, not just discourse elements. This means:
+- ✅ Bibliographic citations are HIGH VALUE (not "too simple")
+- ✅ Categorical definitions are HIGH VALUE (not "too obvious")
+- ✅ Compositional relationships are HIGH VALUE (not "too trivial")
+- ✅ Functional relationships are HIGH VALUE (not "too basic")
+- ✅ Organizational affiliations are HIGH VALUE (not "too boring")
+
+**CRITICAL**: Do NOT penalize valuable factual knowledge as "too simple" or "low value". These relationships are ESSENTIAL for building a comprehensive knowledge graph.
+
+## 📚 BIBLIOGRAPHIC CITATIONS - SPECIAL HANDLING
+
+Bibliographic citations are **ESSENTIAL KNOWLEDGE GRAPH ELEMENTS**. They are NOT "too simple" or "low value".
+
+**ALWAYS score bibliographic relationships highly:**
+- (Author, authored, Book) → **p_true: 0.95-1.0**, text_confidence: 0.9-1.0
+- (Book, published by, Publisher) → **p_true: 0.95**, text_confidence: 0.9-1.0
+- (Book, published in, Year) → **p_true: 0.95**, text_confidence: 0.9-1.0
+- (Person, dedicated, Book to Person) → **p_true: 0.90**, text_confidence: 0.8-0.9
+- (Person, endorsed, Book) → **p_true: 0.90**, text_confidence: 0.8-0.9
+
+**Examples**:
+- (David Suzuki, authored, Sacred Balance) → **p_true: 1.0** (verifiable authorship)
+- (Sacred Balance, published by, Greystone) → **p_true: 0.95** (verifiable publication)
+- (Sacred Balance, published in, 1997) → **p_true: 0.95** (verifiable year)
+- (Aaron Perry, dedicated, Soil Stewardship Handbook to Osha) → **p_true: 0.90** (verifiable dedication)
+
+**Why HIGH VALUE?**
+- Bibliographic citations are foundational knowledge graph data
+- They establish provenance and attribution
+- They connect authors, books, publishers, and ideas
+- They are 100% verifiable and concrete
+
+## 1. TEXT SIGNAL (ignore world knowledge)
+
+How clearly does the text state this relationship?
+
+**Score 0.0-1.0 based purely on text clarity:**
+- **0.9-1.0**: Text explicitly and clearly states this relationship
+- **0.7-0.9**: Text strongly implies this relationship
+- **0.5-0.7**: Text suggests this relationship with some inference required
+- **0.3-0.5**: Text vaguely hints at this relationship
+- **0.0-0.3**: Text doesn't really support this relationship
+
+## 2. KNOWLEDGE SIGNAL (ignore the text)
+
+Is this relationship plausible, verifiable, and concrete given world knowledge?
+
+**Score based on VERIFIABILITY and CONCRETENESS:**
+
+### 🌟 KNOWLEDGE PLAUSIBILITY CALIBRATION (V10 ENHANCED)
+
+### 0.9-1.0: Easily Verifiable Facts ⭐ HIGH VALUE
+**Bibliographic citations, authorship, organizational roles, basic factual claims**
+
+**Examples**:
+- (Aaron William Perry, authored, Soil Stewardship Handbook) → **1.0** (verifiable authorship)
+- (Soil Stewardship Handbook, published by, Y on Earth Community) → **0.95** (verifiable publication)
+- (Sacred Balance, published in, 1997) → **0.95** (verifiable year)
+- (Y on Earth, is, nonprofit organization) → **0.95** (easily verified)
+- (Slovenia, is, country) → **1.0** (basic fact)
+- (Adrian Del Caro, authored, Grounding the Nietzsche Rhetoric of Earth) → **1.0** (verifiable)
+- (Joel Salatin, wrote foreword for, Soil Stewardship Handbook) → **0.90** (verifiable endorsement)
+
+### 0.7-0.9: Concrete Facts / Minor Uncertainty ⭐ HIGH VALUE
+**Categorical definitions, compositional relationships, scientific consensus, well-documented facts**
+
+**Examples**:
+- (soil, is-a, complex ecosystem) → **0.80** (scientific consensus)
+- (compost, contains, nitrogen) → **0.85** (verifiable composition)
+- (biochar, sequesters, carbon) → **0.80** (scientific consensus)
+- (cover cropping, enhances, soil structure) → **0.75** (evidence-based functional relationship)
+- (Slovenia, is located in, eastern Alpine region) → **0.85** (geographic fact)
+- (Y on Earth, hosts, podcast series) → **0.85** (easily verified organizational fact)
+- (composting, produces, humus) → **0.80** (verifiable biological process)
+
+### 0.4-0.6: Debatable / Abstract / Soft Claims
+**Causal claims with some factual basis but debatable, abstract concepts with empirical support**
+
+**Examples**:
+- (soil health, affects, community wellbeing) → **0.5** (causal claim with some evidence)
+- (composting, improves, soil quality) → **0.6** (generally accepted, some evidence)
+- (Learning about soil, benefits, families) → **0.5** (plausible but vague entities)
+
+### 0.3-0.5: Philosophical Claims / Normative Statements
+**Philosophical essence claims, normative prescriptions, value judgments, metaphorical abstractions**
+
+**Examples**:
+- (being connected to land, is what it means to be, human) → **0.3** (philosophical essence claim)
+- (soil, is, the answer) → **0.4** (metaphorical abstraction)
+- (we, should practice, regenerative agriculture) → **0.4** (normative prescription)
+- (it is essential that, we reconnect with, nature) → **0.4** (value judgment)
+- (to be human, is to, care for earth) → **0.3** (existential definition)
+
+**Contrast with factual claims:**
+- (soil, contains, carbon) → **0.9** (factual, verifiable composition)
+- (Aaron Perry, authored, Handbook) → **1.0** (factual, verifiable authorship)
+- (composting, produces, humus) → **0.8** (factual, verifiable process)
+
+**Why lower scores for philosophical claims?**
+- Not empirically verifiable
+- Express subjective values or beliefs
+- Define essence/meaning rather than state facts
+- Cannot be proven true or false through evidence
+
+### 0.0-0.3: Unverifiable / Metaphorical
+**Metaphors, subjective definitions, abstract opinions**
+
+**Examples**:
+- (Our land, is, a veritable Eden) → **0.3** (metaphor, not literal fact)
+- (the crossroads, is characterized by, immense complexity) → **0.2** (abstract metaphor)
+
+## 3. ENTITY SPECIFICITY (entity_specificity_score: 0.0-1.0)
+
+Evaluate whether entities are concrete and informative, or vague and generic.
+
+**Score 0.0-1.0 based on entity concreteness:**
+
+### 0.0-0.3: Vague Abstractions (NO INFORMATIONAL VALUE)
+**Generic processes, vague actions, abstract plans, indefinite references**
+
+**Patterns to penalize:**
+- Generic processes: "the answer", "the way", "the solution", "the process", "the key"
+- Vague actions: "easy steps", "simple actions", "basic practices", "practical tips"
+- Abstract plans: "plan for action", "framework for X", "approach to Y", "strategy for Z"
+- Indefinite references: "aspects of life", "elements of X", "parts of Y", "components of Z"
+- Empty descriptors: "important things", "key factors", "essential elements"
+
+**Examples**:
+- ❌ (Handbook, provides, easy steps) → **entity_specificity: 0.2** - "easy steps" is too vague
+- ❌ (Soil, is the answer to, climate change) → **entity_specificity: 0.3** - "the answer" is abstract
+- ❌ (Book, offers, practical tips) → **entity_specificity: 0.2** - "practical tips" is generic
+- ❌ (Author, presents, framework for action) → **entity_specificity: 0.3** - "framework for action" is vague
+- ❌ (Farming, involves, important aspects) → **entity_specificity: 0.1** - "important aspects" is meaningless
+
+### 0.4-0.6: Somewhat Generic (CONTEXTUALLY CLEAR)
+**Entities that are somewhat generic but have clear meaning in context**
+
+**Examples**:
+- (Handbook, provides, guidance) → **entity_specificity: 0.5** - generic but clear
+- (Book, discusses, methods) → **entity_specificity: 0.5** - somewhat vague but acceptable
+- (Soil, requires, management) → **entity_specificity: 0.5** - generic but contextually clear
+
+### 0.7-1.0: Specific and Concrete (HIGH INFORMATIONAL VALUE)
+**Concrete entities with clear referents, specific processes, named concepts**
+
+**Examples**:
+- ✅ (Handbook, provides, soil stewardship techniques) → **entity_specificity: 0.9** - specific and concrete
+- ✅ (Soil, can help mitigate, climate change) → **entity_specificity: 0.8** - concrete relationship
+- ✅ (Compost, contains, nitrogen) → **entity_specificity: 1.0** - specific composition
+- ✅ (Aaron Perry, authored, Soil Stewardship Handbook) → **entity_specificity: 1.0** - concrete entities
+- ✅ (Cover cropping, prevents, soil erosion) → **entity_specificity: 0.9** - specific process and outcome
+- ✅ (Biochar, sequesters, carbon) → **entity_specificity: 0.9** - concrete material and process
+
+### Scoring Instruction:
+
+1. Evaluate both source and target entities for specificity
+2. Take the LOWER of the two entity scores as entity_specificity_score
+3. **Multiply final p_true by entity_specificity_score**
+4. **If entity_specificity < 0.5, cap p_true at 0.4** regardless of other scores
+5. This ensures vague abstractions are penalized even if text is clear
+
+**Examples of final scoring:**
+- (Handbook, provides, easy steps): text_confidence=0.9, knowledge=0.7, entity_specificity=0.2 → **p_true = 0.7 × 0.2 = 0.14, capped at 0.4 → final: 0.14**
+- (Handbook, provides, soil stewardship techniques): text_confidence=0.9, knowledge=0.8, entity_specificity=0.9 → **p_true = 0.8 × 0.9 = 0.72**
+- (Soil, is the answer to, climate change): text_confidence=0.8, knowledge=0.3, entity_specificity=0.3 → **p_true = 0.3 × 0.3 = 0.09, capped at 0.4 → final: 0.09**
+
+## 4. ENTITY TYPE ASSESSMENT
+
+For the knowledge signal, also consider:
+- **What types are the source and target entities?**
+- Are they concrete (people, places, organizations, books) or abstract (concepts, metaphors)?
+- Concrete entities → higher knowledge scores
+- Abstract entities → lower knowledge scores
+
+**Concrete entity types** (prefer 0.7-1.0 scores):
+- People (authors, scientists, farmers)
+- Organizations (publishers, nonprofits, institutions)
+- Books, papers, articles
+- Places (countries, regions, farms)
+- Materials (soil, compost, biochar)
+
+**Abstract entity types** (typically 0.1-0.5 scores):
+- Philosophical concepts (spiritual flourishing, human essence)
+- Metaphors (veritable Eden, the crossroads)
+- Vague groups (we, they, thousands)
+
+## ⚠️ V14 ENHANCED: CLAIM TYPE CLASSIFICATION
+
+Critical distinction: FACTUAL (verifiable) vs. NORMATIVE (prescriptive) vs. PHILOSOPHICAL (essence/meaning).
+
+### Three Core Claim Types:
+
+#### 1. FACTUAL CLAIMS (p_true: 0.7-0.95)
+**Definition**: Empirically verifiable facts that can be tested, measured, or documented.
+
+**Scoring**: Based on evidence strength
+- Direct verification possible: 0.9-0.95
+- Scientific consensus: 0.7-0.85
+- Well-documented: 0.7-0.8
+
+**Examples**:
+- ✅ (soil, contains, bacteria) → **p_true: 0.9** - FACTUAL (measurable)
+- ✅ (biochar, increases, soil fertility) → **p_true: 0.8** - FACTUAL (testable)
+- ✅ (Aaron Perry, authored, Soil Stewardship Handbook) → **p_true: 1.0** - FACTUAL (verifiable)
+- ✅ (compost, contains, nitrogen) → **p_true: 0.9** - FACTUAL (measurable)
+
+**Real V13.1 CORRECT Classifications**:
+- ✅ (mycorrhizal fungi, form symbiosis with, plant roots) → FACTUAL, p_true: 0.85
+- ✅ (soil, is-a, complex ecosystem) → FACTUAL, p_true: 0.80
+
+#### 2. NORMATIVE CLAIMS (p_true: 0.3-0.5)
+**Definition**: Prescriptive statements about what SHOULD/OUGHT/MUST/CAN be done. Recommendations, not facts.
+
+**Key Indicators**:
+- Modal verbs: should, ought, must, can (when prescriptive)
+- Imperative constructions
+- Recommendations about actions
+- Value-laden "best practices"
+
+**Scoring**: p_true = 0.3-0.5 (NOT factual, but may be evidence-based recommendations)
+
+**Examples**:
+- ❌ V13.1 WRONG: (humanity, should connect with, soil) → **classified as FACTUAL with p_true: 0.75**
+  - ✅ SHOULD BE: NORMATIVE, p_true: 0.4 (prescriptive recommendation)
+
+- ❌ V13.1 WRONG: (soil management, can mitigate, climate change) → **classified as NORMATIVE with p_true: 0.4**
+  - ✅ SHOULD BE: FACTUAL, p_true: 0.75 ("can" here indicates possibility, testable claim)
+
+**Decision Rule for "can"**:
+- "X can do Y" (capability/testable) → **FACTUAL** (e.g., "soil can sequester carbon")
+- "we can/should do X" (recommendation) → **NORMATIVE** (e.g., "we can change our practices")
+
+**More Examples**:
+- (farmers, should adopt, regenerative practices) → NORMATIVE, p_true: 0.4
+- (society, must value, soil health) → NORMATIVE, p_true: 0.35
+- (we, ought to reconnect with, land) → NORMATIVE, p_true: 0.4
+
+#### 3. PHILOSOPHICAL CLAIMS (p_true: 0.1-0.3)
+**Definition**: Abstract/spiritual/metaphysical statements about meaning, essence, or sacred nature. NOT empirically verifiable.
+
+**Key Indicators**:
+- Essence claims: "X is what it means to be Y"
+- Sacred/spiritual language: "cosmically sacred", "divine", "spiritual essence"
+- Metaphysical abstractions: "the answer", "the meaning of life"
+- Existential definitions
+
+**Scoring**: p_true = 0.1-0.3 (subjective, not verifiable)
+
+**Real V13.1 FAILURES**:
+- ❌ V13.1 WRONG: (soil, is-a, cosmically sacred) → **p_true: 0.8, FACTUAL**
+  - ✅ SHOULD BE: PHILOSOPHICAL_CLAIM, p_true: 0.2 (spiritual/metaphysical claim)
+  - Why: "cosmically sacred" is not empirically verifiable - it's a spiritual/philosophical judgment
+
+- ❌ V13.1 WRONG: (being connected to land, is what it means to be, human) → **p_true: 0.7**
+  - ✅ SHOULD BE: PHILOSOPHICAL_CLAIM, p_true: 0.3 (essence claim)
+  - Why: Defining "what it means to be human" is philosophy, not science
+
+**More Examples**:
+- (soil, is, the answer to climate change) → PHILOSOPHICAL_CLAIM, p_true: 0.2 (metaphorical abstraction)
+- (connection to earth, is essence of, humanity) → PHILOSOPHICAL_CLAIM, p_true: 0.25
+
+### Conflict Resolution Rules:
+
+**When text_confidence is HIGH but claim is PHILOSOPHICAL/NORMATIVE:**
+- Set **signals_conflict = true**
+- Lower p_true to appropriate range (0.1-0.5)
+- Add conflict_explanation: "Text clearly states X, but this is [philosophical claim | normative prescription], not factual knowledge"
+
+**Example**:
+- Text: "Soil is cosmically sacred" (clearly stated)
+- Classification: PHILOSOPHICAL_CLAIM
+- Scoring: text_confidence: 0.9, p_true: 0.2, signals_conflict: true
+- Explanation: "Text clearly states this philosophical claim, but 'cosmically sacred' is a spiritual judgment, not an empirically verifiable fact"
+
+### Additional Classification Flags:
+
+**TESTABLE_CLAIM** (p_true: 0.5-0.9):
+- Assertions that evidence could support or oppose
+- Functional relationships with empirical basis
+- Example: (composting, improves, soil quality) → TESTABLE_CLAIM, p_true: 0.7
+- Example: (cover cropping, prevents, erosion) → TESTABLE_CLAIM, p_true: 0.75
+
+**METAPHOR** (p_true: 0.1-0.4):
+- Figurative language, poetic comparisons
+- Example: (our land, is, veritable Eden) → METAPHOR, p_true: 0.3
+- Example: (soil, contains, living skin) → METAPHOR, p_true: 0.2
+
+**OPINION** (p_true: 0.3-0.6):
+- Subjective viewpoints, preferences, beliefs
+- Example: (living soil, makes us feel better, cognitive performance) → OPINION, p_true: 0.5
+- Different from TESTABLE_CLAIM when no evidence path exists
+
+**ABSTRACT_CONCEPT** (p_true: 0.2-0.5):
+- Relationships involving highly abstract entities
+- May overlap with other flags
+
+### Classification Decision Tree:
+
+1. **Is it empirically testable/verifiable?**
+   - YES → FACTUAL (p_true: 0.7-0.95)
+   - NO → Continue to #2
+
+2. **Does it prescribe what SHOULD be done?**
+   - YES → NORMATIVE (p_true: 0.3-0.5)
+   - NO → Continue to #3
+
+3. **Is it about meaning, essence, or spiritual nature?**
+   - YES → PHILOSOPHICAL_CLAIM (p_true: 0.1-0.3)
+   - NO → Continue to #4
+
+4. **Is it metaphorical/figurative?**
+   - YES → METAPHOR (p_true: 0.1-0.4)
+   - NO → OPINION or TESTABLE_CLAIM (context-dependent)
+
+### Multiple Flags:
+A relationship can have multiple classification flags:
+- (spiritual practices, enhance, wellbeing) → [TESTABLE_CLAIM, ABSTRACT_CONCEPT]
+- (being connected to soil, is what it means to be, human) → [PHILOSOPHICAL_CLAIM, ABSTRACT_CONCEPT]
+- (we, should practice, regenerative agriculture) → [NORMATIVE]
+- (Slovenia, is, veritable Eden) → [METAPHOR]
+- (Aaron Perry, authored, Handbook) → [FACTUAL]
+- (soil, is-a, complex ecosystem) → [FACTUAL]
+- (compost, contains, nitrogen) → [FACTUAL]
+- (soil, is-a, cosmically sacred) → [PHILOSOPHICAL_CLAIM] (V13.1 failure - was incorrectly FACTUAL)
+
+## CONFLICT DETECTION
+
+Set `signals_conflict=true` when signals diverge significantly:
+
+### Case 1: High Text, Low Knowledge (>0.7 text, <0.4 knowledge)
+**Example**: Text clearly states a metaphor, but it's not literally true
+- Text: "Our land has remained a veritable Eden" → text_confidence: 0.9
+- Knowledge: This is a metaphor, not literal → p_true: 0.3
+- **Conflict**: "The text clearly says it, but 'veritable Eden' is a metaphor, not a factual description"
+
+### Case 2: Low Text, High Knowledge (<0.4 text, >0.7 knowledge)
+**Example**: Text is vague but the relationship is a well-known fact
+- Text: Vague reference to a well-known fact → text_confidence: 0.3
+- Knowledge: We know this is true → p_true: 0.8
+- **Conflict**: "Text doesn't clearly state it, but we know from world knowledge it's true"
+
+### Case 3: Philosophical/Abstract Despite Clear Text
+**Example**: "being connected to soil is what it means to be human"
+- Text: Sentence clearly states this → text_confidence: 0.9
+- Knowledge: This is a philosophical claim, not a fact → p_true: 0.3
+- **Conflict**: "Text is clear, but this is a subjective philosophical claim, not a verifiable fact"
+
+### Case 4: Pronoun/Vague Entity Issues
+**Example**: "we can connect with the living soil"
+- Text: Sentence states this → text_confidence: 0.7
+- Knowledge: "we" is too vague, not a concrete entity → p_true: 0.4
+- **Conflict**: "Text states the relationship, but 'we' is a pronoun that needs resolution to a specific entity"
+
+### Case 5: Vague/Generic Entity Issues
+**Example**: "Handbook provides easy steps"
+- Text: Sentence clearly states this → text_confidence: 0.9
+- Entity Specificity: "easy steps" is too vague → entity_specificity: 0.2
+- **Conflict**: "Text is clear, but 'easy steps' is too generic and provides no informational value"
+
+**When setting signals_conflict=true:**
+- **MUST include** `conflict_explanation` describing WHY the signals conflict
+- **SHOULD include** `suggested_correction` if you know how to fix it
+
+**Examples of conflict_explanation**:
+- "Text clearly states metaphor 'veritable Eden', but this is figurative language, not literal fact"
+- "Philosophical definition ('what it means to be human') - not verifiable or concrete"
+- "Source is pronoun 'we' which needs resolution to specific entity like 'humanity' or 'individuals'"
+- "'spiritual flourishing' is an abstract concept - relationship is opinion/belief, not verifiable fact"
+- "Source is vague quantifier 'thousands' - should be 'thousands of people' or 'thousands of farmers'"
+- "Philosophical essence claim - not empirically verifiable"
+- "Normative prescription ('should/must') - expresses value judgment, not factual relationship"
+- "Target entity 'easy steps' is too vague and generic - should be specific technique or practice"
+- "Target entity 'the answer' is abstract metaphor with no concrete meaning"
+
+## OUTPUT FORMAT
+
+For each relationship, return:
+```json
+{{
+  "candidate_uid": "<UNCHANGED from input>",
+  "text_confidence": 0.0-1.0,
+  "p_true": 0.0-1.0,
+  "entity_specificity_score": 0.0-1.0,
+  "signals_conflict": true/false,
+  "conflict_explanation": "string (if signals_conflict=true)",
+  "suggested_correction": {{"source": "...", "relationship": "...", "target": "..."}} (optional),
+  "source_type": "entity type",
+  "target_type": "entity type",
+  "classification_flags": ["FACTUAL" | "TESTABLE_CLAIM" | "PHILOSOPHICAL_CLAIM" | "NORMATIVE" | "METAPHOR" | "OPINION" | "ABSTRACT_CONCEPT"]
+}}
+```
+
+**classification_flags** should contain all applicable flags for the relationship.
+
+## CRITICAL REMINDERS
+
+1. **Return candidate_uid UNCHANGED** in every output object
+2. **Evaluate all {batch_size} relationships** in the same order as input
+3. **Evaluate entity specificity** - penalize vague abstractions like "easy steps", "the answer", "practical tips"
+4. **Apply entity specificity multiplier** - multiply p_true by entity_specificity_score, cap at 0.4 if entity_specificity < 0.5
+5. **Assign classification flags** based on statement type (FACTUAL, METAPHOR, PHILOSOPHICAL_CLAIM, etc.)
+6. **Knowledge scores reflect verifiability** - philosophical statements and metaphors score 0.0-0.5, but we still extract them
+7. **Set signals_conflict=true** when text and knowledge diverge significantly (>0.3 difference) OR when entity_specificity < 0.5
+8. **Always provide conflict_explanation** when signals_conflict=true
+9. **⭐ BIBLIOGRAPHIC CITATIONS ARE HIGH VALUE** - score them 0.9-1.0, do NOT dismiss as "too simple"
+10. **⭐ CATEGORICAL DEFINITIONS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too obvious"
+11. **⭐ COMPOSITIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too trivial"
+12. **⭐ FUNCTIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too basic"
+13. **🔍 DETECT PHILOSOPHICAL CLAIMS** - flag essence claims, normative prescriptions, value judgments with p_true: 0.3-0.5
+14. **🔍 PENALIZE VAGUE ENTITIES** - "easy steps", "the answer", "practical tips", "framework for action" get entity_specificity < 0.3
+```

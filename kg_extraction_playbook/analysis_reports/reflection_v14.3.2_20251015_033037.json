@@ -1,0 +1,508 @@
+{
+  "extraction_metadata": {
+    "version": "v14.3.2",
+    "total_relationships": 478,
+    "analysis_timestamp": "2025-10-15T10:30:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 2,
+    "high_priority_issues": 8,
+    "medium_priority_issues": 15,
+    "mild_issues": 28,
+    "total_issues": 53,
+    "issue_rate_percent": 11.1,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 60,
+    "adjusted_issue_rate_percent": 12.6,
+    "grade_confirmed": "B+",
+    "grade_adjusted": "B",
+    "note": "Strong improvement from v14.3 (16.2% \u2192 11.1%). Zero duplicates, excellent predicate normalization (46 unique predicates). Main issues: praise quotes misclassified as authorship (2 CRITICAL), unresolved pronouns (8 HIGH), list splitting artifacts (15 MEDIUM), and metaphorical language (28 MILD)."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Praise Quote Misclassification as Authorship",
+      "severity": "CRITICAL",
+      "count": 2,
+      "percentage": 0.4,
+      "description": "Endorsement quotes from the book's foreword/praise section are incorrectly extracted as authorship relationships. This creates false authorship claims.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not distinguish between praise quotes and actual authorship statements. The bibliographic parser in Pass 2.5 only catches reversed authorship (Book\u2192Author), not misclassified praise (Person\u2192Book as 'authored').",
+      "affected_module": "prompts/pass1_extraction_v7.txt",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Lily Sophia von \u00dcbergarten",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "With Love and Hope, Lily Sophia von \u00dcbergarten Slovenia, 2018",
+          "page": 10,
+          "what_is_wrong": "This is a foreword/praise quote signature, not an authorship claim. The actual author is Aaron William Perry (correctly extracted as cand_6).",
+          "should_be": {
+            "source": "Lily Sophia von \u00dcbergarten",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "Gratefully in service and celebration, Aaron William Perry Y on Earth Community Colorado 2018",
+          "page": 12,
+          "what_is_wrong": "This was flagged as PRAISE_QUOTE_CORRECTED, but Aaron William Perry IS the actual author. This should be 'authored', not 'endorsed'. The correction was wrong.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Unresolved Pronouns",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 1.7,
+      "description": "Pronouns ('we', 'our', 'us') used as entity sources/targets instead of being resolved to specific entities.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module (modules/pass2_5_postprocessing/pronoun_resolver.py) is not catching all pronoun patterns, particularly possessive pronouns ('our') and first-person plural ('we').",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we: Enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 12,
+          "what_is_wrong": "The relationship uses 'our' implicitly (from context 'we enhance our intelligence'). Should resolve to 'human intelligence' or similar.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "enhances",
+            "target": "human intelligence"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "boosts",
+          "target": "immune systems",
+          "evidence_text": "Our immune systems are boosted substantially.",
+          "page": 18,
+          "what_is_wrong": "'Our' is possessive pronoun. Should be 'human immune systems'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "boosts",
+            "target": "human immune systems"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "serotonin levels",
+          "evidence_text": "Our serotonin levels are enhanced.",
+          "page": 18,
+          "what_is_wrong": "'Our' is possessive pronoun. Should be 'human serotonin levels'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "enhances",
+            "target": "human serotonin levels"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "reduces",
+          "target": "stress levels",
+          "evidence_text": "Our stress levels are reduced and our moods are improved.",
+          "page": 18,
+          "what_is_wrong": "'Our' is possessive pronoun. Should be 'human stress levels'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "reduces",
+            "target": "human stress levels"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Artifacts",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 3.1,
+      "description": "List splitting module creates nonsensical fragments when splitting on conjunctions within titles or compound nouns.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/list_splitter.py splits on 'and' without checking if it's part of a title or compound noun. Needs context-aware splitting.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "chapter on Soil-Building Explained: Practical",
+          "evidence_text": "CONTENTS Soil-Building Explained: Practical and Awesome! 9",
+          "page": 6,
+          "what_is_wrong": "Split 'Practical and Awesome!' into two targets. 'Practical' alone is not a chapter title. Should keep as single entity 'chapter on Soil-Building Explained: Practical and Awesome!'",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "contains",
+            "target": "chapter on Soil-Building Explained: Practical and Awesome!"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "Awesome!",
+          "evidence_text": "CONTENTS Soil-Building Explained: Practical and Awesome! 9",
+          "page": 6,
+          "what_is_wrong": "'Awesome!' is not a chapter title. This is the second half of a split title.",
+          "should_be": null
+        },
+        {
+          "source": "agricultural soils",
+          "relationship": "restored to",
+          "target": "and productively vital states",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 18,
+          "what_is_wrong": "'and productively vital states' is grammatically broken. Should be 'productively vital states' or keep as compound 'natural, organic, and productively vital states'.",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restored to",
+            "target": "productively vital states"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 12,
+      "percentage": 2.5,
+      "description": "Entities are overly abstract or vague ('cognitive performance', 'community impact', 'the process') without sufficient specificity.",
+      "root_cause_hypothesis": "Pass 1 extraction allows abstract entities through. Pass 2 evaluation doesn't penalize vagueness enough. Entity specificity score exists but isn't used as a filter threshold.",
+      "affected_module": "prompts/pass1_extraction_v7.txt",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": "config/entity_specificity_threshold.yaml",
+      "examples": [
+        {
+          "source": "soil microbiome",
+          "relationship": "enhances",
+          "target": "cognitive performance",
+          "evidence_text": "how complex interactions between the soil microbiome and our neuro-biochemistry enhances the growth of neurons and our overall cognitive performance",
+          "page": 17,
+          "what_is_wrong": "'cognitive performance' is too abstract. Should be 'human cognitive performance' or 'neurological function'.",
+          "should_be": {
+            "source": "soil microbiome",
+            "relationship": "enhances",
+            "target": "human cognitive performance"
+          }
+        },
+        {
+          "source": "Soil Stewardship Guild",
+          "relationship": "enhances",
+          "target": "community impact",
+          "evidence_text": "By choosing to join the global Guild movement, we will heal existing soil, create more living soil, cultivate community, and reverse climate change",
+          "page": 15,
+          "what_is_wrong": "'community impact' is vague. The text says 'cultivate community', not 'enhance community impact'.",
+          "should_be": {
+            "source": "Soil Stewardship Guild",
+            "relationship": "cultivates",
+            "target": "community"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Metaphorical/Figurative Language Treated as Factual",
+      "severity": "MILD",
+      "count": 28,
+      "percentage": 5.9,
+      "description": "Metaphorical or philosophical statements extracted as factual relationships (e.g., 'soil is medicine', 'magically does its work').",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't distinguish between literal and figurative language. Pass 2 flags some as PHILOSOPHICAL_CLAIM but doesn't filter them. The FIGURATIVE_LANGUAGE flag exists but doesn't prevent extraction.",
+      "affected_module": "prompts/pass1_extraction_v7.txt",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine",
+          "page": 17,
+          "what_is_wrong": "This is metaphorical. Soil is not literally medicine. Flagged as PHILOSOPHICAL_CLAIM but still extracted.",
+          "should_be": null
+        },
+        {
+          "source": "soil microbiome",
+          "relationship": "enhances",
+          "target": "plant growth",
+          "evidence_text": "As the soil microbiome magically does its soil-building work, it not only enhances plant growth",
+          "page": 22,
+          "what_is_wrong": "'Magically' is figurative language. The relationship itself is factual, but the metaphorical_terms flag indicates figurative framing.",
+          "should_be": {
+            "source": "soil microbiome",
+            "relationship": "enhances",
+            "target": "plant growth"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Endorsement Relationships from Praise Quotes",
+      "severity": "MILD",
+      "count": 5,
+      "percentage": 1.0,
+      "description": "Praise quotes correctly identified as endorsements, but these are low-value relationships for a knowledge graph (they're marketing content, not factual claims about the world).",
+      "root_cause_hypothesis": "Pass 1 extraction treats all text equally. Praise quotes are correctly classified as endorsements, but the system doesn't filter them as low-utility for knowledge extraction.",
+      "affected_module": "prompts/pass1_extraction_v7.txt",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 2,
+          "what_is_wrong": "Correctly extracted, but endorsements from praise quotes are low-value for knowledge graphs. They don't convey factual information about soil, agriculture, or science.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Entity Resolution in Compound Nouns",
+      "severity": "MEDIUM",
+      "count": 3,
+      "percentage": 0.6,
+      "description": "Compound nouns or phrases are partially resolved, leaving incomplete entities (e.g., 'natural' instead of 'natural state').",
+      "root_cause_hypothesis": "List splitter creates fragments from compound nouns. Entity resolution doesn't reconstruct the full compound.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "agricultural soils",
+          "relationship": "restored to",
+          "target": "natural",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 18,
+          "what_is_wrong": "'natural' is incomplete. Should be 'natural state' or 'natural condition'.",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restored to",
+            "target": "natural state"
+          }
+        },
+        {
+          "source": "agricultural soils",
+          "relationship": "restored to",
+          "target": "organic",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 18,
+          "what_is_wrong": "'organic' is incomplete. Should be 'organic state'.",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restored to",
+            "target": "organic state"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Foreword/Praise Section Misattribution",
+      "severity": "CRITICAL",
+      "count": 2,
+      "description": "Signatures from forewords or praise sections are misclassified as authorship or endorsement when they should be 'wrote foreword for' or similar.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't have context about document structure (front matter vs. main content). Bibliographic parser only catches reversed authorship, not misclassified praise.",
+      "affected_module": "prompts/pass1_extraction_v7.txt",
+      "examples": [
+        {
+          "source": "Lily Sophia von \u00dcbergarten",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "With Love and Hope, Lily Sophia von \u00dcbergarten Slovenia, 2018",
+          "page": 10,
+          "what_is_wrong": "This is a foreword signature, not authorship.",
+          "should_be": {
+            "source": "Lily Sophia von \u00dcbergarten",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Over-Correction by Post-Processing Modules",
+      "severity": "HIGH",
+      "count": 1,
+      "description": "Post-processing modules (e.g., PRAISE_QUOTE_CORRECTED) incorrectly change valid relationships. In this case, the actual author's signature was changed from 'authored' to 'endorsed'.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/praise_quote_detector.py is too aggressive. It flags author signatures as praise quotes when they appear in similar contexts to endorsements.",
+      "affected_module": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "Gratefully in service and celebration, Aaron William Perry Y on Earth Community Colorado 2018",
+          "page": 12,
+          "what_is_wrong": "This is the author's signature in the introduction, not a praise quote. The PRAISE_QUOTE_CORRECTED flag incorrectly changed 'authored' to 'endorsed'.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "List Splitting on Titles with Conjunctions",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Chapter titles or book titles containing 'and' are split into fragments, creating nonsensical entities.",
+      "root_cause_hypothesis": "List splitter doesn't recognize that 'and' within quotes or after colons is part of a title, not a list separator.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "chapter on Soil-Building Explained: Practical",
+          "evidence_text": "CONTENTS Soil-Building Explained: Practical and Awesome! 9",
+          "page": 6,
+          "what_is_wrong": "Title 'Practical and Awesome!' was split into 'Practical' and 'Awesome!'",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "contains",
+            "target": "chapter on Soil-Building Explained: Practical and Awesome!"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/document_structure_classifier.py",
+      "recommendation": "Create a new module to classify document sections (front matter, main content, back matter). Use page numbers and content patterns to identify praise sections, forewords, acknowledgments. Tag relationships extracted from these sections with metadata (e.g., 'from_praise_section': true). Filter or reclassify authorship claims from non-author sections.",
+      "expected_impact": "Eliminates false authorship claims from forewords/praise sections (2 CRITICAL issues). Enables better handling of endorsements vs. factual claims.",
+      "rationale": "Root cause is lack of document structure awareness. Code-driven solution is more reliable than prompt-based detection."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "recommendation": "Add author whitelist check: before flagging a relationship as PRAISE_QUOTE, check if the source entity matches known authors (from copyright page, title page). If source is the book's author, do NOT flag as praise quote.",
+      "expected_impact": "Prevents over-correction of valid authorship relationships (1 HIGH issue: Aaron William Perry case).",
+      "rationale": "Simple code fix prevents false positives. Author information is already extracted, just needs to be cross-referenced."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Expand pronoun patterns to include possessive pronouns ('our', 'my', 'their') and demonstrative pronouns ('this', 'that', 'these', 'those'). When found in entity text, resolve to 'human [entity]' or use coreference resolution to find antecedent.",
+      "expected_impact": "Resolves 8 HIGH-priority pronoun issues. Improves entity specificity across the board.",
+      "rationale": "Current module only catches subject pronouns ('he', 'she', 'it'). Possessive pronouns are common and easy to detect."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit instruction: 'When extracting entities, resolve pronouns to specific entities. Replace \"our\", \"we\", \"us\" with \"human\" or the specific group referenced. Replace \"this\", \"that\" with the antecedent noun. Extract only concrete, specific entities\u2014avoid vague terms like \"the process\", \"the amount\", \"community impact\".' Add 3-5 few-shot examples showing pronoun resolution.",
+      "expected_impact": "Reduces pronoun issues at source (8 HIGH issues). Reduces vague entities (12 MEDIUM issues). Prevents issues before Pass 2.5 needs to fix them.",
+      "rationale": "Upstream prompt fix is more efficient than downstream code fixes. LLMs can resolve pronouns if explicitly instructed."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add context-aware splitting: (1) Don't split on 'and' if it appears within quotes, (2) Don't split on 'and' if it appears after a colon (likely part of a title), (3) Don't split if the result would be a single word or fragment starting with 'and'. Use regex to detect these patterns.",
+      "expected_impact": "Eliminates 15 MEDIUM-priority list splitting artifacts. Preserves compound titles and proper nouns.",
+      "rationale": "List splitting is useful but needs smarter heuristics. Code-driven solution is more reliable than prompt changes."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_specificity_threshold.yaml",
+      "recommendation": "Set entity_specificity_score threshold to 0.7. Filter out relationships where source or target has specificity < 0.7. This will remove vague entities like 'cognitive performance', 'community impact', 'the process'.",
+      "expected_impact": "Filters 12 MEDIUM-priority vague entity issues. Improves overall KG quality by removing low-specificity relationships.",
+      "rationale": "Entity specificity score already exists but isn't used as a filter. Simple config change with immediate impact."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Distinguish between literal and figurative language. Do NOT extract metaphorical statements as factual relationships. Examples of metaphors to avoid: \"X is medicine\", \"X magically does Y\", \"X is the answer\". Only extract relationships that describe concrete, testable facts about the world.' Add 2-3 few-shot examples.",
+      "expected_impact": "Reduces 28 MILD-priority metaphorical language issues. Improves factual accuracy of extracted relationships.",
+      "rationale": "Metaphorical language is a known issue. Prompt-level filtering is appropriate since it requires semantic understanding."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Deprioritize or skip praise quotes and endorsements from book forewords, back cover, or promotional sections. Focus on extracting factual claims from the main content. If you do extract endorsements, mark them as low-priority.' This reduces noise from marketing content.",
+      "expected_impact": "Reduces 5 MILD-priority endorsement relationships. Improves signal-to-noise ratio in KG.",
+      "rationale": "Endorsements are correctly extracted but low-value. Prompt-level deprioritization is appropriate."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "After splitting, check if any fragment is a single adjective or adverb (e.g., 'natural', 'organic'). If so, append the head noun from the original target (e.g., 'natural' \u2192 'natural state'). Use POS tagging to identify adjectives.",
+      "expected_impact": "Fixes 3 MEDIUM-priority incomplete entity issues. Makes split entities more meaningful.",
+      "rationale": "Post-processing fix to improve list splitting quality. Relatively low priority since it affects few relationships."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No distinction between praise quotes and factual content",
+        "current_wording": "(Prompt not available, but likely lacks instructions about document structure)",
+        "suggested_fix": "Add: 'Identify the document section (front matter, main content, back matter). Treat praise quotes, forewords, and endorsements differently from factual claims in the main text. For praise sections, extract endorsements but do NOT extract authorship claims unless from the actual author.'",
+        "examples_needed": "Yes - show examples of foreword signatures vs. author signatures"
+      },
+      {
+        "issue": "Pronouns not resolved at extraction time",
+        "current_wording": "(Likely lacks explicit pronoun resolution instructions)",
+        "suggested_fix": "Add: 'Resolve all pronouns to specific entities before extraction. Replace \"our\", \"we\", \"us\" with \"human\" or the specific group. Replace \"this\", \"that\" with the antecedent noun. Never extract a pronoun as an entity.'",
+        "examples_needed": "Yes - 3-5 examples showing pronoun resolution"
+      },
+      {
+        "issue": "Vague abstract entities allowed through",
+        "current_wording": "(Likely lacks specificity requirements)",
+        "suggested_fix": "Add: 'Extract only concrete, specific entities. Avoid vague terms like \"the process\", \"the amount\", \"community impact\", \"cognitive performance\". If an entity is abstract, make it more specific (e.g., \"cognitive performance\" \u2192 \"human cognitive performance\").'",
+        "examples_needed": "Yes - show vague vs. specific entity pairs"
+      },
+      {
+        "issue": "Metaphorical language treated as factual",
+        "current_wording": "(Likely lacks figurative language detection)",
+        "suggested_fix": "Add: 'Distinguish literal from figurative language. Do NOT extract metaphors as facts. Examples to avoid: \"X is medicine\" (metaphor), \"X magically does Y\" (figurative), \"X is the answer\" (abstract). Only extract testable, concrete facts.'",
+        "examples_needed": "Yes - 2-3 examples of metaphors to skip"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Entity specificity score not used as filter",
+        "current_wording": "(Evaluation prompt likely computes specificity but doesn't reject low scores)",
+        "suggested_fix": "Add: 'If entity_specificity_score < 0.7 for source or target, flag the relationship as LOW_SPECIFICITY and recommend rejection. Vague entities reduce knowledge graph utility.'"
+      },
+      {
+        "issue": "Metaphorical language not penalized enough",
+        "current_wording": "(PHILOSOPHICAL_CLAIM and FIGURATIVE_LANGUAGE flags exist but don't prevent extraction)",
+        "suggested_fix": "Add: 'If a relationship contains metaphorical language (FIGURATIVE_LANGUAGE flag) or is a philosophical claim (PHILOSOPHICAL_CLAIM flag), reduce p_true by 0.3. These relationships are low-priority for factual knowledge graphs.'"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.111,
+    "note": "System is close to production quality (11.1% vs. 5% target). Main blockers: 2 CRITICAL authorship issues, 8 HIGH pronoun issues. With recommended fixes, estimated issue rate would drop to ~6-7%, near production threshold."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T03:30:37.068883",
+    "relationships_analyzed": 478,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.3.2"
+  }
+}

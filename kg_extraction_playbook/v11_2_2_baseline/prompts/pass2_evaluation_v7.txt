@@ -1,0 +1,24 @@
+Evaluate these {batch_size} extracted relationships using dual-signal analysis.
+
+RELATIONSHIPS TO EVALUATE:
+{relationships_json}
+
+For EACH of the {batch_size} relationships above, provide TWO INDEPENDENT evaluations:
+
+1. TEXT SIGNAL (ignore world knowledge):
+   - How clearly does the text state this relationship?
+   - Score 0.0-1.0 based purely on text clarity
+
+2. KNOWLEDGE SIGNAL (ignore the text):
+   - Is this relationship plausible given world knowledge?
+   - What types are the source and target entities?
+   - Score 0.0-1.0 based purely on plausibility
+
+If the signals conflict:
+- Set signals_conflict = true
+- Include conflict_explanation
+- Include suggested_correction if known
+
+CRITICAL: Return candidate_uid UNCHANGED in every output object.
+
+Evaluate all {batch_size} relationships in the same order as input.

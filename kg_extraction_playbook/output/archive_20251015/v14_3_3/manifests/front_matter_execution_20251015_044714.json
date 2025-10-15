@@ -1,0 +1,47 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_044714",
+  "version": "v14_3_3",
+  "git": {
+    "commit_hash": "b021cc60f477c7d898a91346aa09b8f02e90da58",
+    "branch": "main",
+    "is_dirty": true
+  },
+  "environment": {
+    "python_version": "3.10.12",
+    "platform": "Linux-5.15.0-143-generic-x86_64-with-glibc2.35"
+  },
+  "packages": {
+    "openai": "1.93.0",
+    "pydantic": "2.11.7",
+    "pdfplumber": "0.11.7"
+  },
+  "script": {
+    "path": "scripts/extract_kg_v14_3_3_incremental.py",
+    "args": {
+      "book": "our_biggest_deal",
+      "section": "front_matter",
+      "pages": "1-30",
+      "version": "v14_3_3",
+      "author": "Aaron William Perry"
+    }
+  },
+  "prompts": {
+    "pass1_extraction": {
+      "path": "kg_extraction_playbook/prompts/pass1_extraction_v14_3_1.txt",
+      "checksum": "sha256:9ec6a0e506e2d9c9"
+    },
+    "pass2_evaluation": {
+      "path": "kg_extraction_playbook/prompts/pass2_evaluation_v13_1.txt",
+      "checksum": "sha256:fd5e29b32975ac57"
+    }
+  },
+  "model_config": {
+    "pass1_model": "gpt-4o-2024-08-06",
+    "pass2_model": "gpt-4o-2024-08-06",
+    "temperature": 0.0,
+    "max_tokens": 16384
+  },
+  "duration_seconds": 250.1213743686676,
+  "output_file": "kg_extraction_playbook/output/our_biggest_deal/v14_3_3/chapters/front_matter_v14_3_3_20251015_044714.json"
+}

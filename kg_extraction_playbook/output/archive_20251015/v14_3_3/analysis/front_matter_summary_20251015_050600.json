@@ -1,0 +1,111 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_050600",
+  "extraction_file": "front_matter_v14_3_3_20251015_044714.json",
+  "quality_metrics": {
+    "overall_grade": "D",
+    "issue_rate": 100.0,
+    "total_relationships": 126,
+    "total_issues": 126
+  },
+  "issue_breakdown": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "MEDIUM": 18,
+    "MILD": 107
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": false,
+    "criteria": {
+      "critical_issues_zero": false,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": false
+    }
+  },
+  "actionable_issues": [
+    {
+      "severity": "CRITICAL",
+      "category": "Reversed Authorship",
+      "count": 1,
+      "percentage": 0.79,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is source, author is target - relationship is backwards",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "List Splitting Over-Fragmentation",
+      "count": 18,
+      "percentage": 14.29,
+      "description": "Book titles with colons/subtitles are being incorrectly split into multiple fragments by the list_splitter module. Titles like 'Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism' are split into 3 separate relationships, treating subtitle components as separate works.",
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Socialism",
+          "evidence_text": "4 Dr. Riane Eisler 137 \"Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts: 'Toward a Caring', 'Partnership Economy: Beyond Capitalism', 'Socialism'. The word 'Socialism' alone is not a book title - it's part of the full title.",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        },
+        {
+          "source": "Sarah Arao",
+          "relationship": "authored",
+          "target": "Service Leadership",
+          "evidence_text": "6 Sarah Arao 158 \"Service Leadership, Self-Care, and Global Collaboration\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 fragments when it should be one complete title",
+          "should_be": {
+            "source": "Sarah Arao",
+            "relationship": "authored",
+            "target": "Service Leadership, Self-Care, and Global Collaboration"
+          }
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "recommendation": "Fix the bibliographic citation parser to correctly identify author-title order in citations. The pattern 'Perry, Aaron William. Our Biggest Deal...' should extract (Aaron William Perry, authored, Our Biggest Deal), not the reverse. Add regex pattern: r'^([A-Z][a-z]+,\\s+[A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)\\s*\\.\\s+([A-Z].+?)\\s*[:;/]' to capture 'LastName, FirstName. Title' format."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Add entity-type-aware pronoun detection. Before flagging 'our/my/his/her/their', check if the word appears in a source/target entity with type 'Book', 'Organization', 'Location', or other proper noun types. Skip pronoun resolution for proper nouns. Implementation: Add check `if entity_type in ['Book', 'Organization', 'Location', 'Event']: skip_pronoun_check = True`"
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Modify list splitting logic to respect quoted strings and subtitle boundaries. Add rules: (1) Do not split on 'and' if it appears within quotation marks, (2) Do not split on 'and' if it appears after a colon (subtitle context), (3) For book titles specifically, treat the entire quoted string as atomic. Implementation: Use regex lookahead/lookbehind to detect quote boundaries, or parse quotes first and mark protected regions."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "recommendation": "Add special handling for table-of-contents extraction. When extracting from TOC-style text (numbered entries with page numbers), recognize that titles may contain commas and 'and' as part of the title, not as list separators. Pattern: 'Number Author PageNumber \"Title\"' should extract title as-is without splitting."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Update severity classification guidelines to distinguish between 'flag fired correctly on bad data' vs 'flag fired incorrectly'. The INCOMPLETE_TITLE flags in this dataset are technically correct (the titles ARE incomplete), but they're symptoms of upstream splitting. Consider adding a 'CASCADING_ERROR' severity level for issues caused by earlier pipeline stages."
+    }
+  ]
+}

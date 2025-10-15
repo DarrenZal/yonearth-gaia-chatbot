@@ -4,12 +4,13 @@
  */
 
 class KnowledgeGraphVisualization {
-    constructor(containerId) {
+    constructor(containerId, version = 'current') {
         this.container = d3.select(containerId);
         this.data = null;
         this.simulation = null;
         this.svg = null;
         this.g = null;
+        this.currentVersion = version;  // Track which version is loaded
 
         // Visual elements
         this.links = null;
@@ -69,25 +70,34 @@ class KnowledgeGraphVisualization {
         console.log("Knowledge Graph Visualization initialized");
     }
 
-    async loadData() {
+    async loadData(version = this.currentVersion) {
+        // Determine which data source to use based on version
+        const apiEndpoint = version === 'v3.2.2'
+            ? '/api/knowledge-graph/data/v3.2.2'
+            : '/api/knowledge-graph/data';
+
+        const fileEndpoint = version === 'v3.2.2'
+            ? '/data/knowledge_graph_v3_2_2/visualization_data.json'
+            : '/data/knowledge_graph/visualization_data.json';
+
         try {
             // Try to load from API first
-            const response = await fetch('/api/knowledge-graph/data');
+            const response = await fetch(apiEndpoint);
             if (response.ok) {
                 this.data = await response.json();
-                console.log("Loaded data from API:", this.data);
+                console.log(`Loaded ${version} data from API:`, this.data);
             } else {
                 throw new Error("API not available");
             }
         } catch (error) {
-            console.log("Loading from local file...");
+            console.log(`Loading ${version} from local file...`);
             try {
-                const response = await fetch('/data/knowledge_graph/visualization_data.json');
+                const response = await fetch(fileEndpoint);
                 this.data = await response.json();
-                console.log("Loaded data from file:", this.data);
+                console.log(`Loaded ${version} data from file:`, this.data);
             } catch (fileError) {
                 console.error("Error loading data:", fileError);
-                this.showError("Failed to load knowledge graph data");
+                this.showError(`Failed to load knowledge graph data (${version})`);
                 return;
             }
         }
@@ -805,6 +815,46 @@ class KnowledgeGraphVisualization {
         // Select and highlight node
         this.handleNodeClick({ stopPropagation: () => {} }, nodeData);
     }
+
+    async reloadWithVersion(version) {
+        console.log(`Reloading knowledge graph with version: ${version}`);
+
+        // Show loading overlay
+        this.showLoading(true);
+
+        // Update current version
+        this.currentVersion = version;
+
+        // Clear existing visualization
+        if (this.svg) {
+            this.svg.remove();
+            this.svg = null;
+        }
+
+        // Clear filters and state
+        this.filters.domains.clear();
+        this.filters.entityTypes.clear();
+        this.selectedNode = null;
+
+        // Clear controls
+        d3.select('#domain-filters').html('');
+        d3.select('#entity-type-filters').html('');
+        d3.select('#domain-legend').html('');
+        d3.select('#type-legend').html('');
+
+        // Reload data
+        await this.loadData(version);
+
+        // Recreate visualization
+        this.setupSVG();
+        this.setupControls();
+        this.createVisualization();
+
+        // Hide loading overlay
+        this.showLoading(false);
+
+        console.log(`Knowledge graph reloaded with version: ${version}`);
+    }
 }
 
 // Global functions for HTML event handlers
@@ -853,9 +903,28 @@ function openWiki(entityId) {
     alert(`Wiki integration coming soon!\nEntity: ${entityId}`);
 }
 
+function loadKnowledgeGraphVersion(version) {
+    if (vizInstance) {
+        vizInstance.reloadWithVersion(version);
+    } else {
+        console.error("Visualization instance not available");
+    }
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    vizInstance = new KnowledgeGraphVisualization('#graph-svg-container');
+    // Check for version in URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialVersion = urlParams.get('version') || 'current';
+
+    // Set dropdown to match initial version
+    const versionSelect = document.getElementById('kg-version-select');
+    if (versionSelect) {
+        versionSelect.value = initialVersion;
+    }
+
+    // Initialize visualization with selected version
+    vizInstance = new KnowledgeGraphVisualization('#graph-svg-container', initialVersion);
     window.knowledgeGraph = vizInstance; // For debugging
 });
 

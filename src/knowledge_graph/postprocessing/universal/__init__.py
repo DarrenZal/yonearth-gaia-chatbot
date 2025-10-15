@@ -13,6 +13,7 @@ Available Modules:
 - ContextEnricher: Replace vague entities with specific ones from context
 - PredicateNormalizer: Normalize verbose predicates to standard forms
 - PredicateValidator: Validate predicates for logical consistency
+- TypeCompatibilityValidator: Validate and auto-fix entity type mismatches (V14.3.7)
 - VagueEntityBlocker: Filter out relationships with overly vague entities
 - ClaimClassifier: Classify relationships (factual, philosophical, opinion, recommendation)
 - Deduplicator: Remove duplicate relationships
@@ -27,6 +28,7 @@ from .list_splitter import ListSplitter
 from .context_enricher import ContextEnricher
 from .predicate_normalizer import PredicateNormalizer
 from .predicate_validator import PredicateValidator
+from .type_compatibility_validator import TypeCompatibilityValidator
 from .vague_entity_blocker import VagueEntityBlocker
 from .claim_classifier import ClaimClassifier
 from .deduplicator import Deduplicator
@@ -41,6 +43,7 @@ __all__ = [
     "ContextEnricher",
     "PredicateNormalizer",
     "PredicateValidator",
+    "TypeCompatibilityValidator",
     "VagueEntityBlocker",
     "ClaimClassifier",
     "Deduplicator",

@@ -1,0 +1,583 @@
+{
+  "extraction_metadata": {
+    "version": "v14.2",
+    "total_relationships": 517,
+    "analysis_timestamp": "2025-10-14T23:45:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 52,
+    "mild_issues": 89,
+    "total_issues": 141,
+    "issue_rate_percent": 27.3,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 159,
+    "adjusted_issue_rate_percent": 30.8,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C",
+    "note": "High issue rate driven primarily by philosophical/metaphorical content extraction. System is correctly flagging these as PHILOSOPHICAL_CLAIM but still extracting them. No critical factual errors detected."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Philosophical/Metaphorical Over-Extraction",
+      "severity": "MEDIUM",
+      "count": 52,
+      "percentage": 10.1,
+      "description": "System extracts metaphorical and philosophical statements as factual relationships. Examples: 'soil stewardship is-a journey to mastery', 'soil stewardship is-a slice of Eden', 'being connected to land is-a human'. These are correctly flagged as PHILOSOPHICAL_CLAIM but still included in output.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt likely lacks clear guidance to distinguish between factual claims and philosophical/metaphorical language. Pass 2 evaluation correctly identifies these (p_true scores 0.6-0.76) but doesn't filter them out. No filtering module exists for PHILOSOPHICAL_CLAIM flag.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt (hypothesized)",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "is-a",
+          "target": "journey to mastery",
+          "evidence_text": "Soil Stewardship",
+          "page": 6,
+          "what_is_wrong": "Metaphorical description treated as factual classification. 'Journey to mastery' is inspirational language, not a factual category.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out entirely - not a factual relationship"
+          }
+        },
+        {
+          "source": "soil stewardship",
+          "relationship": "is an",
+          "target": "alchemy of love",
+          "evidence_text": "Soil Stewardship",
+          "page": 6,
+          "what_is_wrong": "Poetic metaphor extracted as factual relationship. 'Alchemy of love' is figurative language.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out - purely metaphorical"
+          }
+        },
+        {
+          "source": "being connected to land",
+          "relationship": "is-a",
+          "target": "human",
+          "evidence_text": "For we are human, and being connected to land and soil is what it means to be human.",
+          "page": 6,
+          "what_is_wrong": "Philosophical statement about human nature extracted as factual classification. This is a normative claim about identity, not a factual relationship.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out - philosophical identity claim"
+          }
+        },
+        {
+          "source": "soil stewardship",
+          "relationship": "is-a",
+          "target": "slice of Eden",
+          "evidence_text": "to cultivate a little slice of Eden\u2014of heaven on Earth\u2014right in our own backyards",
+          "page": 10,
+          "what_is_wrong": "Biblical metaphor treated as factual classification.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out - religious metaphor"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague/Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 3.5,
+      "description": "Entities are too abstract or vague to be useful in a knowledge graph. Examples: 'challenges', 'choice', 'substantially', 'itself'. These lack specificity and don't convey concrete information.",
+      "root_cause_hypothesis": "Pass 1 extraction lacks entity specificity requirements. Entity specificity scores are computed (0.5-0.84) but not used for filtering. No minimum threshold enforced.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt (hypothesized)",
+      "affected_config": "config/entity_specificity_threshold.yaml (missing)",
+      "examples": [
+        {
+          "source": "challenges",
+          "relationship": "includes",
+          "target": "ecological devastation",
+          "evidence_text": "Challenges like rampant ecological devastation, staggering species loss, and climate change.",
+          "page": 10,
+          "what_is_wrong": "'challenges' is too vague as a source entity. What specific challenges? The context suggests 'environmental challenges' or 'contemporary global challenges'.",
+          "should_be": {
+            "source": "contemporary environmental challenges",
+            "relationship": "includes",
+            "target": "ecological devastation"
+          }
+        },
+        {
+          "source": "choice",
+          "relationship": "to cultivate",
+          "target": "humanity",
+          "evidence_text": "we have the choice, now, to cultivate our humanity and to heal our home.",
+          "page": 10,
+          "what_is_wrong": "'choice' is too abstract. Should specify whose choice or what kind of choice.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out - too abstract to be useful"
+          }
+        },
+        {
+          "source": "our immune systems",
+          "relationship": "enhances",
+          "target": "substantially",
+          "evidence_text": "Our immune systems are boosted substantially.",
+          "page": 18,
+          "what_is_wrong": "'substantially' is an adverb used as a target entity. Should be part of the predicate or omitted.",
+          "should_be": {
+            "source": "soil microbiome exposure",
+            "relationship": "enhances",
+            "target": "immune system function"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "destroys",
+          "target": "itself",
+          "evidence_text": "A nation that destroys its soils destroys itself.",
+          "page": 18,
+          "what_is_wrong": "'itself' is a reflexive pronoun, not a meaningful entity. The actual target should be 'the nation'.",
+          "should_be": {
+            "source": "nation",
+            "relationship": "destroys",
+            "target": "itself through soil destruction"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Possessive Pronoun Sources (Unresolved)",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 2.3,
+      "description": "Source entities contain possessive pronouns ('our', 'my') that should be resolved to specific entities. Examples: 'our immune systems', 'our serotonin levels'. While context is often clear, these reduce graph utility for cross-document linking.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module (modules/pass2_5_postprocessing/pronoun_resolver.py) likely doesn't handle possessive pronouns in source position, only subject pronouns like 'he', 'she', 'it'.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "our immune systems",
+          "relationship": "enhances",
+          "target": "substantially",
+          "evidence_text": "Our immune systems are boosted substantially.",
+          "page": 18,
+          "what_is_wrong": "'our' should be resolved to 'human immune systems' for better graph utility.",
+          "should_be": {
+            "source": "human immune systems",
+            "relationship": "are enhanced by",
+            "target": "soil microbiome exposure"
+          }
+        },
+        {
+          "source": "serotonin levels",
+          "relationship": "enhances",
+          "target": "moods",
+          "evidence_text": "Our serotonin levels are enhanced.",
+          "page": 18,
+          "what_is_wrong": "Missing 'our' context - should specify 'human serotonin levels'.",
+          "should_be": {
+            "source": "human serotonin levels",
+            "relationship": "are enhanced by",
+            "target": "soil microbiome exposure"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 100,
+      "percentage": 19.3,
+      "description": "100 unique predicates with significant fragmentation. Base predicates like 'is', 'are', 'will' have 4-6 variations each ('is key for', 'is made from', 'is toward', etc.). This reduces graph query efficiency and relationship discovery.",
+      "root_cause_hypothesis": "No predicate normalization module exists in Pass 2.5. The PREDICATE_NORMALIZED flag shows some normalization happened (e.g., 'is a' \u2192 'is-a'), but it's incomplete. Many semantically equivalent predicates remain distinct.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py (missing or incomplete)",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.yaml (missing)",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is key for",
+          "target": "agriculture",
+          "evidence_text": "Soil is the foundation of all terrestrial ecosystems",
+          "page": 10,
+          "what_is_wrong": "'is key for' should normalize to 'is-essential-for' or 'supports'",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is-essential-for",
+            "target": "agriculture"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is made manifest by",
+          "target": null,
+          "evidence_text": null,
+          "page": null,
+          "what_is_wrong": "Overly complex predicate - should normalize to simpler form like 'is-demonstrated-by' or 'is-shown-by'",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is-demonstrated-by",
+            "target": "target_entity"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quote Misinterpretation",
+      "severity": "MILD",
+      "count": 1,
+      "percentage": 0.2,
+      "description": "One praise quote was initially misinterpreted as authorship but was corrected by Pass 2.5 bibliographic parser. The correction is working correctly.",
+      "root_cause_hypothesis": "Pass 1 extraction initially misidentified endorsement as authorship, but Pass 2.5 bibliographic parser successfully corrected it. This is a success case, not an error.",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "With his inspirational, aspirational, beautifully-informed and historically grounded handbook, Perry has given us a new appreciation for soil",
+          "page": 2,
+          "what_is_wrong": "This was correctly handled - initially extracted as 'authored' but corrected to 'endorsed' by PRAISE_QUOTE_CORRECTED flag. This is working as intended.",
+          "should_be": {
+            "source": "Perry",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook",
+            "note": "Already correct - no change needed"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Opinion/Normative Statements as Factual",
+      "severity": "MILD",
+      "count": 7,
+      "percentage": 1.4,
+      "description": "Normative or opinion-based statements extracted as factual relationships. Examples: 'living soil makes us feel better', 'should not be worn while spraying chemicals'. These are correctly flagged as NORMATIVE or OPINION but still included.",
+      "root_cause_hypothesis": "Similar to philosophical claims - Pass 2 correctly identifies these (NORMATIVE, OPINION flags present) but no filtering occurs. These may be valuable for some use cases but should be clearly distinguished from factual claims.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt (hypothesized)",
+      "affected_config": "config/classification_filters.yaml (missing)",
+      "examples": [
+        {
+          "source": "living soil",
+          "relationship": "makes",
+          "target": "us feel better",
+          "evidence_text": "our physical connection with living soil literally makes us feel better and makes us smarter",
+          "page": 17,
+          "what_is_wrong": "Subjective claim presented as factual. While there may be scientific evidence for this, the phrasing 'makes us feel better' is opinion-based.",
+          "should_be": {
+            "source": "soil microbiome exposure",
+            "relationship": "is-associated-with",
+            "target": "improved mood and cognition",
+            "note": "Rephrase to indicate correlation rather than causation"
+          }
+        },
+        {
+          "source": "hazardous materials suit",
+          "relationship": "should not be worn while",
+          "target": "spraying chemicals on plants",
+          "evidence_text": "if a person has to wear a hazardous materials (hazmat) suit while spraying chemicals on the plants and soil, we shouldn't be feeding ourselves or our families these foods!",
+          "page": 18,
+          "what_is_wrong": "Normative statement ('should not') extracted as factual relationship. This is a recommendation, not a fact.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out or clearly marked as normative recommendation"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language as Factual",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.6,
+      "description": "Figurative language correctly flagged with FIGURATIVE_LANGUAGE but still extracted. Examples include 'spirit' in 'mind, body and spirit' and 'sacred' in 'cosmically sacred'.",
+      "root_cause_hypothesis": "FIGURATIVE_LANGUAGE detection is working (metaphorical_terms identified), but no filtering occurs. These relationships have lower p_true scores (0.42-0.456) indicating Pass 2 recognizes the issue.",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": "config/figurative_language_threshold.yaml (missing)",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 12,
+          "what_is_wrong": "Contains figurative term 'spirit' which makes the relationship less factual. p_true=0.42 indicates low confidence.",
+          "should_be": {
+            "source": "soil microbiome exposure",
+            "relationship": "enhances",
+            "target": "cognitive function and physical health",
+            "note": "Remove figurative 'spirit' component"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "we will come to understand that soil is cosmically sacred",
+          "page": 17,
+          "what_is_wrong": "'Sacred' is a metaphorical/religious term. This is a philosophical claim, not a factual classification.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Should be filtered out - figurative/religious language"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Success Cases",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 1.5,
+      "description": "List splitting module is working correctly. Examples show proper splitting of comma-separated targets like 'food, fuel, and shelter' into separate relationships. These are correctly flagged with LIST_SPLIT.",
+      "root_cause_hypothesis": "This is a success case - the module is working as intended. No issues detected.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "provides",
+          "target": "food",
+          "evidence_text": "Husband it and it will grow our food, our fuel, and our shelter",
+          "page": 15,
+          "what_is_wrong": "Nothing wrong - this is correctly split from 'food, fuel, and shelter'",
+          "should_be": {
+            "source": "soil",
+            "relationship": "provides",
+            "target": "food",
+            "note": "Already correct - working as intended"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Adverbs as Target Entities",
+      "severity": "MEDIUM",
+      "count": 2,
+      "description": "Adverbs like 'substantially' are being extracted as target entities instead of being incorporated into predicates or omitted. This creates meaningless relationships.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't have part-of-speech awareness or rules to exclude adverbs from entity extraction. Entity type validation may not catch this because 'substantially' could be tagged as 'concept'.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt (hypothesized)",
+      "examples": [
+        {
+          "source": "our immune systems",
+          "relationship": "enhances",
+          "target": "substantially",
+          "evidence_text": "Our immune systems are boosted substantially.",
+          "page": 18,
+          "what_is_wrong": "'substantially' is an adverb modifying 'boosted', not a target entity.",
+          "should_be": {
+            "source": "human immune systems",
+            "relationship": "are substantially enhanced by",
+            "target": "soil microbiome exposure"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Reflexive Pronouns as Targets",
+      "severity": "MEDIUM",
+      "count": 1,
+      "description": "Reflexive pronouns like 'itself' are extracted as target entities without resolution to their antecedents.",
+      "root_cause_hypothesis": "Pronoun resolution module doesn't handle reflexive pronouns ('itself', 'themselves', 'ourselves'). Only handles subject pronouns.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "destroys",
+          "target": "itself",
+          "evidence_text": "A nation that destroys its soils destroys itself.",
+          "page": 18,
+          "what_is_wrong": "'itself' refers to 'nation', not 'soil'. The relationship is backwards.",
+          "should_be": {
+            "source": "nation",
+            "relationship": "destroys itself through",
+            "target": "soil destruction"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Incomplete Context Resolution",
+      "severity": "MILD",
+      "count": 5,
+      "description": "Relationships extracted without sufficient context from surrounding text. For example, 'soil stewardship is-a conservation approach' extracted from just the heading 'Soil Stewardship' without incorporating the fuller context.",
+      "root_cause_hypothesis": "Pass 1 extraction may be using too narrow a context window or not incorporating section headings properly. Entity specificity scores are low (0.5-0.7) for these cases.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt (hypothesized)",
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "is-a",
+          "target": "conservation approach",
+          "evidence_text": "Soil Stewardship",
+          "page": 6,
+          "what_is_wrong": "Context is just a heading. The relationship may be correct but lacks supporting evidence text.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "is-a",
+            "target": "conservation approach",
+            "note": "Relationship may be correct but needs better evidence text from surrounding paragraphs"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/classification_filter.py",
+      "recommendation": "Create a new filtering module that removes relationships flagged as PHILOSOPHICAL_CLAIM, NORMATIVE, or with p_true < 0.7. Make this configurable so users can choose to include/exclude these relationship types based on their use case.",
+      "expected_impact": "Would reduce issue rate from 27.3% to ~17% by filtering out 52 philosophical/metaphorical relationships. These are correctly identified but currently not filtered.",
+      "rationale": "The system is already doing the hard work of identifying these relationships as non-factual (PHILOSOPHICAL_CLAIM flags, low p_true scores). We just need to act on these signals. This is a simple filter that would have immediate impact."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit guidance to Pass 1 extraction prompt: 'Do NOT extract metaphorical, poetic, or philosophical statements as factual relationships. Examples to AVOID: \"X is a journey\", \"X is sacred\", \"X is an alchemy of love\". Focus on concrete, verifiable facts about entities, processes, and their relationships.'",
+      "expected_impact": "Would prevent ~40 philosophical/metaphorical relationships from being extracted in the first place, reducing downstream processing load and improving precision.",
+      "rationale": "Prevention is better than cure. If we can stop these relationships from being extracted initially, we don't need to filter them later. The prompt currently lacks clear guidance on what NOT to extract."
+    },
+    {
+      "priority": "HIGH",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Create or enhance predicate normalization module with rules to map semantically equivalent predicates to canonical forms. Examples: 'is key for' \u2192 'is-essential-for', 'is made from' \u2192 'is-composed-of', 'are found in' \u2192 'are-located-in'. Target: reduce unique predicates from 100 to <50.",
+      "expected_impact": "Would improve graph queryability by 50%+. Users could find all 'essential-for' relationships without knowing all the variations ('is key for', 'is key', 'is critical for', etc.).",
+      "rationale": "100 unique predicates with significant fragmentation is a major usability issue. This is a code-driven solution that doesn't require prompt changes and would have immediate impact on graph utility."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_specificity_threshold.yaml",
+      "recommendation": "Create configuration file to set minimum entity_specificity_score threshold (recommend 0.7). Filter out relationships where source or target has specificity < threshold. This would remove vague entities like 'challenges', 'choice', 'substantially'.",
+      "expected_impact": "Would remove ~18 relationships with vague entities, improving graph precision from 72.7% to ~76%.",
+      "rationale": "Entity specificity scores are already computed but not used. This is a simple configuration change that leverages existing infrastructure."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Extend pronoun resolution to handle: (1) Possessive pronouns in source position ('our X' \u2192 'human X'), (2) Reflexive pronouns ('itself', 'themselves'), (3) Demonstrative pronouns ('this', 'that'). Add antecedent resolution using dependency parsing.",
+      "expected_impact": "Would resolve ~15 pronoun-related issues, improving entity specificity and cross-document linking capability.",
+      "rationale": "The module exists but has limited coverage. Extending it to handle more pronoun types is a natural evolution that would catch several error patterns."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add part-of-speech constraints: 'Entities must be nouns or noun phrases. Do NOT extract: adverbs (e.g., \"substantially\"), adjectives alone (e.g., \"better\"), pronouns (e.g., \"itself\", \"our\"), or verbs as entities.'",
+      "expected_impact": "Would prevent ~5 cases of adverbs/pronouns being extracted as entities.",
+      "rationale": "Simple prompt enhancement that addresses a specific error pattern (adverbs as targets). Low effort, moderate impact."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/classification_filters.yaml",
+      "recommendation": "Create filter configuration allowing users to specify which classification flags to exclude (PHILOSOPHICAL_CLAIM, NORMATIVE, OPINION, FIGURATIVE_LANGUAGE). Default to excluding PHILOSOPHICAL_CLAIM and relationships with p_true < 0.6.",
+      "expected_impact": "Gives users control over precision vs. recall tradeoff. Conservative settings would reduce issue rate to ~10%, aggressive settings to ~5%.",
+      "rationale": "Different use cases need different filtering levels. A researcher studying philosophical claims might want them included; a fact-checking system would want them excluded. Configuration makes this flexible."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add context window guidance: 'Use surrounding paragraphs for context, not just the sentence containing the relationship. For section headings, incorporate the content of that section to provide evidence.'",
+      "expected_impact": "Would improve evidence quality for ~5 relationships that currently have minimal context.",
+      "rationale": "Some relationships have very thin evidence (just headings). Better context would improve both extraction quality and user trust in the results."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Add special handling for 'is-a' relationships with abstract targets. If target contains words like 'journey', 'path', 'alchemy', 'sacred', flag as METAPHORICAL and reduce p_true score.",
+      "expected_impact": "Would catch ~10 additional metaphorical relationships that currently slip through.",
+      "rationale": "Certain target patterns are strong indicators of metaphorical language. This is a simple heuristic that could improve detection."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Enhance Pass 2 evaluation prompt to more aggressively penalize philosophical/normative statements: 'If the relationship expresses a value judgment, aspiration, or philosophical claim rather than a verifiable fact, set p_true < 0.5 and flag as PHILOSOPHICAL_CLAIM.'",
+      "expected_impact": "Would lower p_true scores for philosophical claims, making them easier to filter. Currently many have p_true 0.6-0.76.",
+      "rationale": "Pass 2 is identifying these relationships but not penalizing them enough. More aggressive scoring would make filtering more effective."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No explicit guidance on avoiding metaphorical/philosophical language",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add section: 'AVOID EXTRACTING: Metaphorical statements (\"X is a journey\"), philosophical claims (\"X is what it means to be human\"), poetic language (\"alchemy of love\"), religious metaphors (\"sacred\", \"Eden\"). Focus on concrete, verifiable facts.'",
+        "examples_needed": "Yes - provide 3-5 examples of metaphorical statements to avoid, and 3-5 examples of good factual relationships to extract"
+      },
+      {
+        "issue": "No part-of-speech constraints on entities",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add constraint: 'Entities must be nouns or noun phrases. Do NOT extract adverbs, adjectives alone, pronouns, or verbs as entities. Examples: \u274c \"substantially\" (adverb), \u274c \"itself\" (pronoun), \u2705 \"soil microbiome\" (noun phrase)'",
+        "examples_needed": "Yes - show examples of invalid entity types to avoid"
+      },
+      {
+        "issue": "Unclear guidance on entity specificity",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add requirement: 'Entities should be specific and concrete. Avoid vague terms like \"challenges\", \"choice\", \"the process\". Instead, specify what kind of challenge, whose choice, which process. Example: \u274c \"challenges include X\" \u2192 \u2705 \"environmental challenges include X\"'",
+        "examples_needed": "Yes - provide examples of vague vs. specific entity extraction"
+      },
+      {
+        "issue": "No guidance on context window usage",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add instruction: 'Use surrounding paragraphs for context, not just the sentence containing the relationship. For section headings, read the content of that section to extract relationships with proper evidence.'",
+        "examples_needed": "No - this is a procedural instruction"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Philosophical claims not penalized enough in p_true scoring",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add scoring guideline: 'Philosophical claims, value judgments, and aspirational statements should receive p_true < 0.5. Examples: \"X is a journey to mastery\" (philosophical), \"X is sacred\" (value judgment), \"we should do X\" (normative). These are not verifiable facts.'",
+        "examples_needed": "Yes - provide examples of philosophical vs. factual statements with appropriate p_true scores"
+      },
+      {
+        "issue": "PHILOSOPHICAL_CLAIM flag not consistently applied",
+        "current_wording": "Unknown - prompt not provided for analysis",
+        "suggested_fix": "Add explicit flag criteria: 'Apply PHILOSOPHICAL_CLAIM flag when: (1) Relationship expresses meaning/purpose (\"what it means to be\"), (2) Uses metaphorical language (\"journey\", \"path\", \"alchemy\"), (3) Makes normative claims (\"should\", \"ought\"), (4) Expresses aspirations (\"will heal\", \"will transform\")'",
+        "examples_needed": "Yes - provide decision tree or checklist for when to apply this flag"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.273,
+    "note": "System is far from production-ready (27.3% issue rate vs. 5% target). However, most issues are MEDIUM/MILD severity. No CRITICAL issues detected. The system correctly identifies problematic relationships (PHILOSOPHICAL_CLAIM flags, low p_true scores) but doesn't filter them. With recommended filtering module, issue rate would drop to ~10%, closer to production threshold."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T23:54:27.667125",
+    "relationships_analyzed": 517,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.2"
+  }
+}

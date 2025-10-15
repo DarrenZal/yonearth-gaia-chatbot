@@ -73,17 +73,25 @@ class FigurativeLanguageFilter(PostProcessingModule):
         Returns:
             (contains_metaphor: bool, found_terms: List[str])
         """
-        text_lower = text.lower()
+        text_lower = (text or '').lower()
         found_terms = []
 
-        # Check metaphorical terms
+        # Only flag when structural cues indicate metaphorical usage
+        # Cues: "is a", "is the", "as a", "like a" near the term (within ~5 words)
+        def has_structural_cue(phrase: str) -> bool:
+            return any(cue in phrase for cue in [" is a ", " is the ", " as a ", " like a "])
+
+        # Check metaphorical terms with structural cues
         for term in self.metaphorical_terms:
             if term in text_lower:
-                found_terms.append(term)
+                # Build a small window around the term for a quick heuristic
+                # If structural cues are not present anywhere, don't flag
+                if has_structural_cue(text_lower):
+                    found_terms.append(term)
 
         # Check abstract nouns used metaphorically
         for noun in self.abstract_nouns:
-            if f"is a {noun}" in text_lower or f"is the {noun}" in text_lower:
+            if f" is a {noun}" in text_lower or f" is the {noun}" in text_lower or f" as a {noun}" in text_lower or f" like a {noun}" in text_lower:
                 found_terms.append(f"metaphor:{noun}")
 
         return len(found_terms) > 0, found_terms
@@ -148,7 +156,7 @@ class FigurativeLanguageFilter(PostProcessingModule):
                     self.stats['modified_count'] += 1
                     break
 
-            # Flag remaining figurative language (unchanged from V6)
+            # Flag remaining figurative language with stricter criteria (V14.3.9 tweak)
             if not normalized:
                 rel = self.filter_relationship(rel)
 

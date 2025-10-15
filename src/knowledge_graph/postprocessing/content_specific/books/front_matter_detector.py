@@ -180,9 +180,21 @@ class FrontMatterDetector(PostProcessingModule):
 
             # Check if this is a front matter signature
             if self.is_front_matter_signature(evidence, page):
-                # Convert authorship to "wrote foreword for"
+                # Convert authorship to "wrote foreword for" and ensure correct DIRECTION: Person → Book
                 new_rel = copy.deepcopy(rel)
                 new_rel.relationship = 'wrote foreword for'
+
+                # Direction fix: if source is a Book and target is a Person, swap
+                src_type = (getattr(new_rel, 'source_type', '') or '').lower()
+                tgt_type = (getattr(new_rel, 'target_type', '') or '').lower()
+                if src_type == 'book' and tgt_type == 'person':
+                    new_rel.source, new_rel.target = new_rel.target, new_rel.source
+                    new_rel.source_type, new_rel.target_type = new_rel.target_type, new_rel.source_type
+                    # Swap evidence surfaces if present
+                    if isinstance(new_rel.evidence, dict):
+                        if 'source_surface' in new_rel.evidence and 'target_surface' in new_rel.evidence:
+                            new_rel.evidence['source_surface'], new_rel.evidence['target_surface'] = \
+                                new_rel.evidence.get('target_surface'), new_rel.evidence.get('source_surface')
 
                 if new_rel.flags is None:
                     new_rel.flags = {}
@@ -196,7 +208,7 @@ class FrontMatterDetector(PostProcessingModule):
                 corrected.append(new_rel)
                 logger.debug(
                     f"Corrected front matter: '{rel.source}' authored → wrote foreword for "
-                    f"'{rel.target_entity}' (page {page})"
+                    f"'{getattr(rel, 'target', '')}' (page {page})"
                 )
             else:
                 # Not in front matter, keep as-is

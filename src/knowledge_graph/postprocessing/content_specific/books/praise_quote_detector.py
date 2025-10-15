@@ -266,8 +266,21 @@ class PraiseQuoteDetector(PostProcessingModule):
                     # Already correct, keep as-is
                     corrected.append(rel)
                 elif any(verb in relationship_type for verb in self.authorship_verbs):
-                    # Correct authorship to endorsement
-                    rel.relationship = 'endorsed'
+                    # Correct authorship to appropriate praise relation
+                    evidence_low = evidence.lower()
+                    # If a foreword is mentioned, map to 'wrote foreword for'
+                    rel.relationship = 'wrote foreword for' if 'foreword' in evidence_low else 'endorsed'
+
+                    # Direction correction: ensure Person → (endorsed|wrote foreword for) → Book
+                    src_type = (getattr(rel, 'source_type', '') or '').lower()
+                    tgt_type = (getattr(rel, 'target_type', '') or '').lower()
+                    if src_type == 'book' and tgt_type == 'person':
+                        rel.source, rel.target = rel.target, rel.source
+                        rel.source_type, rel.target_type = rel.target_type, rel.source_type
+                        if isinstance(rel.evidence, dict) and 'source_surface' in rel.evidence and 'target_surface' in rel.evidence:
+                            rel.evidence['source_surface'], rel.evidence['target_surface'] = \
+                                rel.evidence.get('target_surface'), rel.evidence.get('source_surface')
+
                     if rel.flags is None:
                         rel.flags = {}
                     rel.flags['PRAISE_QUOTE_CORRECTED'] = True

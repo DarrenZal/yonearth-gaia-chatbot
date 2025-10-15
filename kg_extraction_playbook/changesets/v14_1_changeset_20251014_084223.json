@@ -1,0 +1,26 @@
+{
+  "version": "v14.1",
+  "source_version": "v14",
+  "curator_analysis": "The changes in V14.1 focus on reducing the severity of confidence penalties for hedged claims, refining entity specificity constraints to allow for resolvable demonstratives, and maintaining the effective classification flags and semantic validation from V14. These adjustments aim to improve the test pass rate and reduce the issue rate while preserving valid relationships.",
+  "target_metrics": {
+    "test_pass_rate": "90%+",
+    "issue_rate": "<5%",
+    "pipeline_reduction": "30-40%"
+  },
+  "changes": [
+    {
+      "prompt": "pass1_extraction",
+      "change_type": "refinement",
+      "description": "Refine entity specificity constraints to allow resolvable demonstratives and compound phrases.",
+      "before": "FORBIDDEN_ENTITY_PATTERNS: Demonstrative pronouns without resolution: 'this', 'that', 'these', 'those'",
+      "after": "FORBIDDEN_ENTITY_PATTERNS: Avoid auto-rejecting demonstrative pronouns; extract and allow postprocessing to resolve them when context is clear. Allow compound phrases if they provide specific context."
+    },
+    {
+      "prompt": "pass2_evaluation",
+      "change_type": "adjustment",
+      "description": "Reduce confidence penalties for TESTABLE_CLAIM, OPINION, NORMATIVE, and PHILOSOPHICAL_CLAIM to preserve valid hedged claims.",
+      "before": "TESTABLE_CLAIM: Reduce p_true by 0.15\nOPINION: Reduce p_true by 0.25\nNORMATIVE: Reduce p_true by 0.30\nPHILOSOPHICAL_CLAIM: Reduce p_true by 0.50",
+      "after": "TESTABLE_CLAIM: Reduce p_true by 0.05\nOPINION: Reduce p_true by 0.10\nNORMATIVE: Reduce p_true by 0.15\nPHILOSOPHICAL_CLAIM: Reduce p_true by 0.30"
+    }
+  ]
+}

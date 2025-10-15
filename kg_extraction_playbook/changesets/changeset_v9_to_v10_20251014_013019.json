@@ -1,0 +1,549 @@
+{
+  "changeset_metadata": {
+    "source_version": "v9",
+    "target_version": "v10",
+    "total_changes": 12,
+    "estimated_impact": "Reduces critical issues from 8 to 0 (100%), high priority from 52 to ~15 (71%), total issue rate from 19.4% to ~7.5%"
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "priority": "CRITICAL",
+      "rationale": "Dedication parser creates 6+ malformed relationships per dedication by running multiple parsing strategies and concatenating results. This is the #1 blocker (8 critical issues, 0.93%).",
+      "risk_level": "low",
+      "affected_issue_category": "Dedication Parsing Catastrophic Failure",
+      "expected_improvement": "Eliminates all 8 critical dedication parsing errors",
+      "change_description": "Rewrite DedicationParser to use single-strategy parsing: extract dedicatee names with regex, split on commas/and, create one relationship per name, deduplicate before returning",
+      "affected_function": "DedicationParser.parse_dedication() or process_batch()",
+      "change_type": "function_rewrite",
+      "guidance": {
+        "current_issue": "Parser runs 3 strategies (comma-split, and-split, full-target) and concatenates all results, creating targets like 'Soil Stewardship Handbook to Osha to my two children'",
+        "fix_approach": "Replace multi-strategy concatenation with single pipeline: (1) Extract dedication statement with regex 'dedicated to (.+?)[\\.\\n]', (2) Parse dedicatee list from captured group, (3) Split on ', and ' or ' and ' or ',', (4) Clean each name (strip whitespace, remove 'my', 'our'), (5) Create one (author, dedicated, name) relationship per cleaned name, (6) Deduplicate by (source, relationship, target) tuple",
+        "key_changes": [
+          "Remove all strategy concatenation logic",
+          "Use single regex pattern: r'dedicated to ([^.\\n]+)'",
+          "Split captured text on r',\\s*and\\s+|\\s+and\\s+|,\\s*'",
+          "Strip possessive pronouns: re.sub(r'^(my|our|their)\\s+', '', name)",
+          "Add set-based deduplication before returning",
+          "Validate: max 3 relationships per dedication statement"
+        ],
+        "test_with": [
+          "'dedicated to my two children, Osha and Hunter' \u2192 2 relationships: (author, dedicated, Osha), (author, dedicated, Hunter)",
+          "'dedicated to my mother' \u2192 1 relationship: (author, dedicated, mother)",
+          "Verify NO targets contain 'Soil Stewardship Handbook to' or 'to my'"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "Single target: 'dedicated to my mother' \u2192 1 relationship",
+          "Comma list: 'dedicated to Osha and Hunter' \u2192 2 relationships",
+          "Long list: 'dedicated to A, B, and C' \u2192 3 relationships",
+          "No malformed targets containing book title or 'to X'"
+        ],
+        "success_criteria": "Zero dedications generate >3 relationships, zero malformed targets"
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/deduplicator.py",
+      "priority": "CRITICAL",
+      "rationale": "85 exact duplicate relationships exist (9.92% of total), indicating deduplication is completely broken. This is the #2 blocker.",
+      "risk_level": "low",
+      "affected_issue_category": "Duplicate Relationships (Exact)",
+      "expected_improvement": "Eliminates all 85 duplicate relationships, reducing issue rate by 9.92%",
+      "change_description": "Fix or implement deduplication logic to normalize and detect case-insensitive duplicates using (source, relationship, target) tuple as key",
+      "affected_function": "Deduplicator.remove_duplicates() or process_batch()",
+      "change_type": "bug_fix",
+      "guidance": {
+        "current_issue": "Deduplicator not catching case-insensitive duplicates like ('Aaron Perry', 'authored', 'Soil Stewardship Handbook') vs ('aaron perry', 'authored', 'soil stewardship handbook')",
+        "fix_approach": "Normalize before comparison: (1) Create normalization function: normalize(text) = text.lower().strip(), (2) Build seen set using normalized tuples: (normalize(source), normalize(rel), normalize(target)), (3) For each relationship, check if normalized tuple in seen set, (4) If not seen, add to output AND add normalized tuple to seen set, (5) Preserve original casing in output",
+        "key_changes": [
+          "Add normalize() helper: return text.lower().strip() if text else ''",
+          "Initialize: seen = set()",
+          "For each rel: key = (normalize(rel['source']), normalize(rel['relationship']), normalize(rel['target']))",
+          "If key not in seen: output.append(rel); seen.add(key)",
+          "Run as FINAL step in Pass 2.5 pipeline (after all other modules)"
+        ],
+        "implementation_note": "If deduplicator.py doesn't exist, create it. If it exists but broken, rewrite the core logic as described."
+      },
+      "validation": {
+        "test_cases": [
+          "Exact duplicates: ('A', 'rel', 'B') vs ('A', 'rel', 'B') \u2192 1 output",
+          "Case variants: ('A', 'rel', 'B') vs ('a', 'rel', 'b') \u2192 1 output",
+          "Whitespace: ('A ', 'rel', ' B') vs ('A', 'rel', 'B') \u2192 1 output",
+          "Different relationships: ('A', 'rel1', 'B') vs ('A', 'rel2', 'B') \u2192 2 outputs"
+        ],
+        "success_criteria": "Zero duplicates in final output, verified by manual inspection of top 20 most common relationships"
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "priority": "HIGH",
+      "rationale": "8 relationships have 'my people' as source (0.93%). Pronoun resolver only handles subject pronouns (he/she/it), not possessive pronouns (my/our/their).",
+      "risk_level": "medium",
+      "affected_issue_category": "Possessive Pronoun Sources (Unresolved)",
+      "expected_improvement": "Fixes 8 possessive pronoun issues, prevents similar errors in future extractions",
+      "change_description": "Extend pronoun resolver to detect and resolve possessive pronouns by searching context for antecedents",
+      "affected_function": "PronounResolver.resolve_pronouns() or process_batch()",
+      "change_type": "feature_addition",
+      "guidance": {
+        "current_issue": "Resolver regex only matches subject pronouns (he, she, it, we, they), missing possessive determiners (my, our, their, his, her)",
+        "fix_approach": "Add possessive pronoun detection: (1) Expand regex to r'\\b(my|our|their|his|her)\\s+(\\w+)', (2) For matches, extract context (previous 2-3 sentences from evidence_text), (3) Search context for proper nouns (capitalized words) that could be antecedents, (4) For 'my people' specifically, look for nationality/ethnicity mentions (e.g., 'Slovenians', 'Americans'), (5) If antecedent found, replace possessive phrase with antecedent, (6) If no antecedent, flag relationship for removal (too vague)",
+        "key_changes": [
+          "Add possessive_pattern = r'\\b(my|our|their|his|her)\\s+(\\w+)'",
+          "Extract context from evidence_text (2-3 sentences before)",
+          "Search context for capitalized proper nouns using r'\\b[A-Z][a-z]+(ians?|ese)?\\b'",
+          "If found, replace source with proper noun",
+          "If not found, add to removal queue or flag for manual review",
+          "Special case: 'my people' + 'Slovenia' in context \u2192 'Slovenians'"
+        ],
+        "context_window": "Use 200-300 characters before the evidence_text as context for antecedent search"
+      },
+      "validation": {
+        "test_cases": [
+          "'my people' + 'Slovenia' in context \u2192 resolve to 'Slovenians'",
+          "'our tradition' + 'Cherokee' in context \u2192 resolve to 'Cherokee tradition'",
+          "'their practices' + no clear antecedent \u2192 flag for removal",
+          "Subject pronouns still work: 'he' + 'John' in context \u2192 'John'"
+        ],
+        "success_criteria": "Zero relationships with 'my X', 'our X', 'their X' as source in output"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v9.txt",
+      "priority": "HIGH",
+      "rationale": "18 philosophical abstractions extracted as facts (2.1%). Pass 1 prompt is too permissive ('extract ALL relationships') without constraints on metaphorical/philosophical language.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical Abstractions as Factual Claims",
+      "expected_improvement": "Reduces philosophical abstraction issues by 70-80% (from 18 to ~4), prevents extraction at source",
+      "change_description": "Add explicit prohibition section for metaphorical, philosophical, and motivational statements with concrete examples",
+      "target_section": "After entity type definitions, before OUTPUT FORMAT",
+      "change_type": "section_addition",
+      "guidance": {
+        "current_issue": "Prompt likely says 'Extract all relationships' without distinguishing factual from philosophical claims",
+        "fix_approach": "Insert new section after entity definitions with heading '\u26a0\ufe0f PROHIBITED RELATIONSHIP TYPES' containing: (1) Explicit prohibition of metaphorical language, (2) Prohibition of philosophical/subjective claims, (3) Prohibition of motivational/inspirational statements, (4) 5-6 concrete examples showing GOOD vs BAD extractions",
+        "insertion_point": "After the section defining entity types (Person, Organization, Concept, etc.) and before OUTPUT FORMAT section",
+        "content_to_add": {
+          "heading": "\u26a0\ufe0f PROHIBITED RELATIONSHIP TYPES - DO NOT EXTRACT",
+          "prohibitions": [
+            "\u274c Metaphorical statements: 'X unlocks Y', 'X is the key to Y', 'X opens the door to Y'",
+            "\u274c Philosophical claims: 'X is the answer', 'X is the way', 'X is the solution'",
+            "\u274c Subjective opinions: 'X is beautiful', 'X is inspiring', 'X is transformative'",
+            "\u274c Motivational language: 'X empowers us to Y', 'X invites us to Y'",
+            "\u2705 INSTEAD: Extract only concrete, testable, factual relationships"
+          ],
+          "examples": [
+            "\u274c BAD: (soil, is, the answer) - philosophical/metaphorical",
+            "\u2705 GOOD: (soil, contains, microorganisms) - factual, testable",
+            "\u274c BAD: (cultivating relationship with soil, unlocks, spiritual growth) - metaphorical + subjective",
+            "\u2705 GOOD: (soil management practices, improve, crop yields) - factual, measurable",
+            "\u274c BAD: (Soil Stewardship Handbook, provides, road-map) - metaphor",
+            "\u2705 GOOD: (Soil Stewardship Handbook, contains, 12 chapters) - factual"
+          ],
+          "instruction": "If a statement is primarily inspirational, motivational, or philosophical, DO NOT extract it. Focus on concrete facts, actions, and measurable relationships."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Sample text: 'Soil is the answer. By cultivating soil, we unlock spiritual growth. Healthy soil contains billions of microorganisms.'",
+        "expected_output": "Only extract: (healthy soil, contains, microorganisms). Do NOT extract 'soil is the answer' or 'unlock spiritual growth'.",
+        "success_criteria": "Zero philosophical/metaphorical relationships in test extraction",
+        "prompt_version": "v10"
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v9.txt",
+      "priority": "HIGH",
+      "rationale": "8 possessive pronoun sources + 12 vague abstract targets (2.33% combined). Prompt doesn't guide LLM toward entity specificity.",
+      "risk_level": "low",
+      "affected_issue_category": "Possessive Pronoun Sources + Vague Abstract Targets",
+      "expected_improvement": "Reduces possessive pronouns by 60% (8\u21923), vague targets by 50% (12\u21926), total ~10 issues fixed",
+      "change_description": "Add entity specificity requirements with examples of prohibited vague patterns",
+      "target_section": "In ENTITY RESOLUTION RULES section",
+      "change_type": "section_enhancement",
+      "guidance": {
+        "current_issue": "Prompt doesn't specify what makes an entity 'too vague' or prohibit possessive pronouns",
+        "fix_approach": "Enhance existing entity rules section with: (1) Explicit prohibition of possessive pronouns as entity sources, (2) Prohibition of demonstrative pronouns, (3) Prohibition of abstract/vague entities, (4) Requirement to resolve pronouns to specific referents, (5) 4-5 examples showing specific vs vague entities",
+        "insertion_point": "Within the ENTITY RESOLUTION RULES section, after entity type definitions",
+        "content_to_add": {
+          "heading": "Entity Specificity Requirements",
+          "rules": [
+            "\u274c NEVER use possessive pronouns as entities: 'my people', 'our tradition', 'their practices', 'his work'",
+            "\u274c NEVER use demonstrative pronouns: 'this', 'that', 'these', 'those', 'this handbook'",
+            "\u274c NEVER use vague abstractions: 'the answer', 'the way', 'the solution', 'salient insights', 'millions of people'",
+            "\u2705 ALWAYS resolve pronouns to specific named entities from context",
+            "\u2705 PREFER specific named entities: 'Slovenians' not 'my people', 'Soil Stewardship Handbook' not 'this handbook'"
+          ],
+          "examples": [
+            "\u274c BAD: (my people, love, the land) - possessive pronoun",
+            "\u2705 GOOD: (Slovenians, love, the land) - specific named entity",
+            "\u274c BAD: (this handbook, provides, salient insights) - demonstrative + vague target",
+            "\u2705 GOOD: (Soil Stewardship Handbook, provides, soil management techniques) - specific entities",
+            "\u274c BAD: (Y on Earth Community, collaborates with, millions of people) - vague quantifier",
+            "\u2705 GOOD: (Y on Earth Community, collaborates with, local farming cooperatives) - specific organizations"
+          ],
+          "instruction": "Before extracting any entity, ask: 'Is this entity specific and named, or is it a pronoun/vague reference?' If vague, look for the specific referent in surrounding context."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text: 'My people love the land. This handbook provides insights for millions of readers.'",
+        "expected_output": "If context mentions 'Slovenians', extract (Slovenians, love, the land). Otherwise, skip the relationship. Skip 'this handbook' and 'millions of readers' entirely.",
+        "success_criteria": "Zero possessive/demonstrative pronouns or vague quantifiers in test extraction"
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "priority": "HIGH",
+      "rationale": "6 praise quotes misclassified as 'authored' relationships (0.7%). Detector has incomplete regex patterns or runs too late in pipeline.",
+      "risk_level": "medium",
+      "affected_issue_category": "Praise Quote Misclassification",
+      "expected_improvement": "Fixes all 6 praise quote misclassifications",
+      "change_description": "Expand praise detection patterns and ensure module runs before bibliographic parser to prevent incorrect 'authored' relationships",
+      "affected_function": "PraiseQuoteDetector.detect() or process_batch()",
+      "change_type": "pattern_expansion + pipeline_reordering",
+      "guidance": {
+        "current_issue": "Detector missing patterns like 'is an excellent tool', 'is timely and empowering', 'looks at our connections', and running after bibliographic parser already created 'authored' relationships",
+        "fix_approach": "Two-part fix: (1) Expand regex patterns in praise_patterns list to include: 'excellent tool', 'timely and empowering', 'nicely explained', 'looks at', 'provides a.*overview', 'is a.*guide', 'contains a plan', (2) Ensure this module runs BEFORE bibliographic_parser in the Pass 2.5 pipeline order, (3) When praise detected, change relationship to 'endorsed' and set target to the book being praised (extract from context)",
+        "key_changes": [
+          "Add patterns: r'(excellent|wonderful|inspiring|timely|empowering) (tool|resource|guide|handbook)'",
+          "Add patterns: r'(nicely|beautifully|clearly) (explained|written|presented)'",
+          "Add patterns: r'(looks at|explores|examines) (our|the) (connections|relationships)'",
+          "Add patterns: r'contains a (plan|framework|roadmap) for'",
+          "Check pipeline order: praise_quote_detector must run before bibliographic_parser",
+          "When match found: rel['relationship'] = 'endorsed', extract book title from evidence_text"
+        ],
+        "pipeline_order": "Ensure Pass 2.5 order is: text_normalizer \u2192 praise_quote_detector \u2192 bibliographic_parser \u2192 pronoun_resolver \u2192 list_splitter \u2192 deduplicator"
+      },
+      "validation": {
+        "test_cases": [
+          "Text: 'The Soil Stewardship Handbook is an excellent tool' \u2192 (speaker, endorsed, Soil Stewardship Handbook)",
+          "Text: 'This book contains a plan for action' \u2192 (speaker, endorsed, [book title])",
+          "Text: 'Copyright \u00a9 2018 Aaron Perry' \u2192 (Aaron Perry, authored, [book title]) - NOT praise",
+          "Verify NO praise quotes result in 'authored' relationships"
+        ],
+        "success_criteria": "Zero praise quotes classified as 'authored', all converted to 'endorsed'"
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v9.txt",
+      "priority": "HIGH",
+      "rationale": "Pass 2 evaluation not distinguishing factual from philosophical claims - both get high knowledge_plausibility scores. This allows 18 philosophical abstractions through.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical Abstractions as Factual Claims",
+      "expected_improvement": "Reduces philosophical abstractions by additional 50% (catches what Pass 1 misses), total reduction 85%",
+      "change_description": "Recalibrate knowledge_plausibility scoring to distinguish empirically testable facts from philosophical/subjective claims",
+      "target_section": "knowledge_plausibility scoring instructions",
+      "change_type": "scoring_criteria_enhancement",
+      "guidance": {
+        "current_issue": "Prompt likely says 'evaluate plausibility based on world knowledge' without distinguishing factual from philosophical",
+        "fix_approach": "Enhance knowledge_plausibility instructions: (1) Define 'plausibility' as 'empirically testable and factual', (2) Explicitly state philosophical/metaphorical claims should score LOW (\u22640.3), (3) Add examples showing factual (high score) vs philosophical (low score), (4) Add instruction to check for metaphorical language indicators",
+        "insertion_point": "In the knowledge_plausibility scoring section, before examples",
+        "content_to_add": {
+          "heading": "Knowledge Plausibility Scoring Criteria",
+          "definition": "knowledge_plausibility measures whether a relationship is EMPIRICALLY TESTABLE and FACTUAL, not whether it sounds plausible or inspirational.",
+          "scoring_rules": [
+            "HIGH (0.7-1.0): Concrete, testable, factual claims. Examples: 'X contains Y', 'X published in 2018', 'X founded Y'",
+            "MEDIUM (0.4-0.6): Factual but requires domain knowledge to verify. Examples: 'X improves Y', 'X causes Y'",
+            "LOW (0.0-0.3): Philosophical claims, metaphors, subjective opinions, motivational statements"
+          ],
+          "red_flags": [
+            "If relationship contains metaphorical language ('unlock', 'key to', 'door to', 'bridge to') \u2192 LOW score",
+            "If target is abstract/philosophical ('the answer', 'spiritual growth', 'transformation') \u2192 LOW score",
+            "If relationship expresses subjective opinion ('is beautiful', 'is inspiring') \u2192 LOW score",
+            "If relationship is motivational ('empowers us to', 'invites us to') \u2192 LOW score"
+          ],
+          "examples": [
+            "\u2705 HIGH (0.9): (soil, contains, microorganisms) - factual, testable",
+            "\u2705 MEDIUM (0.6): (healthy soil, improves, crop yields) - factual but requires measurement",
+            "\u274c LOW (0.2): (soil, is, the answer) - philosophical, not testable",
+            "\u274c LOW (0.3): (cultivating soil, unlocks, spiritual growth) - metaphorical + subjective"
+          ]
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Evaluate: (1) (soil, contains, microorganisms), (2) (soil, is, the answer), (3) (cultivating soil, unlocks, spiritual growth)",
+        "expected_scores": "(1) knowledge_plausibility: 0.9, (2) knowledge_plausibility: 0.2, (3) knowledge_plausibility: 0.3",
+        "success_criteria": "Philosophical claims score \u22640.3, factual claims score \u22650.7"
+      }
+    },
+    {
+      "operation_id": "change_008",
+      "operation_type": "NEW_MODULE",
+      "file_path": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "127 unique predicates with severe fragmentation (14.82%). 'is' has 12 variations, 'are' has 6. No normalization module exists.",
+      "risk_level": "low",
+      "affected_issue_category": "Predicate Fragmentation",
+      "expected_improvement": "Reduces 127 unique predicates to ~80-90, improves KG consistency and queryability",
+      "change_description": "Create new module to normalize predicate variations to canonical forms using mapping dictionary",
+      "affected_function": "N/A - new module",
+      "change_type": "new_module_creation",
+      "guidance": {
+        "current_issue": "No predicate normalization exists, leading to fragmentation like 'is', 'is-a', 'is about', 'is in', 'is key to' all being separate predicates",
+        "fix_approach": "Create new module with: (1) Load predicate mappings from config/predicate_mappings.yaml, (2) For each relationship, check if predicate matches a mapping key, (3) If match, replace with canonical form, (4) Log normalization actions, (5) Run as second-to-last step (before deduplicator)",
+        "module_structure": {
+          "class_name": "PredicateNormalizer",
+          "method": "process_batch(relationships: List[Dict]) -> List[Dict]",
+          "config_file": "config/predicate_mappings.yaml",
+          "mapping_examples": {
+            "is-a": "is",
+            "is about": "discusses",
+            "is in": "located in",
+            "is key to": "enables",
+            "is part of": "part of",
+            "are": "is",
+            "were": "was",
+            "has": "contains",
+            "includes": "contains"
+          }
+        },
+        "key_changes": [
+          "Create modules/pass2_5_postprocessing/predicate_normalizer.py",
+          "Create config/predicate_mappings.yaml with top 30 mappings",
+          "Implement case-insensitive matching: predicate.lower() in mappings",
+          "Preserve original predicate in metadata for debugging",
+          "Add to pipeline before deduplicator"
+        ],
+        "initial_mappings": "Start with top 20 most fragmented predicates from Reflector analysis"
+      },
+      "validation": {
+        "test_cases": [
+          "'is-a' \u2192 'is'",
+          "'is about' \u2192 'discusses'",
+          "'is key to' \u2192 'enables'",
+          "'are' \u2192 'is'",
+          "Verify 127 unique predicates reduced to <90"
+        ],
+        "success_criteria": "Predicate count reduced by 30-40%, no semantic meaning lost"
+      }
+    },
+    {
+      "operation_id": "change_009",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/list_splitter.py",
+      "priority": "MEDIUM",
+      "rationale": "18 cases of over-splitting (2.1%). List splitter breaks semantic units like 'health and well-being' or 'mind, body and spirit' into separate relationships.",
+      "risk_level": "medium",
+      "affected_issue_category": "List Splitting Over-Application",
+      "expected_improvement": "Reduces over-splitting by 70% (18\u21925), preserves semantic meaning",
+      "change_description": "Add semantic unit preservation logic to prevent splitting of recognized compound concepts",
+      "affected_function": "ListSplitter.split_lists() or process_batch()",
+      "change_type": "feature_addition",
+      "guidance": {
+        "current_issue": "Splitter aggressively splits ALL comma-separated targets without checking if they form semantic units",
+        "fix_approach": "Add pre-split check: (1) Load semantic units from config/semantic_units.yaml (e.g., 'health and well-being', 'mind, body and spirit'), (2) Before splitting, check if target matches any semantic unit pattern (case-insensitive), (3) If match, skip splitting and keep as compound target, (4) If no match, proceed with normal comma/and splitting, (5) Add flag 'semantic_unit_preserved': true to metadata",
+        "key_changes": [
+          "Create config/semantic_units.yaml with patterns: ['health and well-being', 'mind, body and spirit', 'intelligence, health and well-being', 'physical, mental and spiritual']",
+          "Add check before splitting: if normalize(target) in semantic_units: return [target]",
+          "Use fuzzy matching for flexibility: if any(unit in normalize(target) for unit in semantic_units)",
+          "Preserve original compound target, don't split",
+          "Log when semantic unit preserved"
+        ],
+        "semantic_units_to_preserve": [
+          "health and well-being",
+          "mind, body and spirit",
+          "physical, mental and spiritual",
+          "intelligence, health and well-being",
+          "soil, water and air",
+          "plants, animals and humans"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "'intelligence, health and well-being' \u2192 1 relationship (preserved)",
+          "'mind, body and spirit' \u2192 1 relationship (preserved)",
+          "'Osha, Hunter and mother' \u2192 3 relationships (split, not a semantic unit)",
+          "'apples, oranges and bananas' \u2192 3 relationships (split)"
+        ],
+        "success_criteria": "Semantic units preserved, non-semantic lists still split correctly"
+      }
+    },
+    {
+      "operation_id": "change_010",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/text_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "7 malformed targets with trailing punctuation or case inconsistencies (0.82%). Simple text cleaning issue.",
+      "risk_level": "low",
+      "affected_issue_category": "Incomplete/Malformed Targets",
+      "expected_improvement": "Fixes all 7 malformed target issues",
+      "change_description": "Create or enhance text normalization to strip trailing punctuation and normalize case consistently",
+      "affected_function": "TextNormalizer.normalize() or process_batch()",
+      "change_type": "bug_fix or new_module_creation",
+      "guidance": {
+        "current_issue": "Entities have trailing periods ('hunter.'), inconsistent case ('osha' vs 'Osha'), extra whitespace",
+        "fix_approach": "If module exists, enhance it. If not, create it. Logic: (1) Strip trailing punctuation: re.sub(r'[.,;:!?]+$', '', text), (2) Normalize whitespace: re.sub(r'\\s+', ' ', text).strip(), (3) Apply title case to proper nouns (first letter capitalized), (4) Run as FIRST step in Pass 2.5 pipeline",
+        "key_changes": [
+          "Strip trailing punctuation: text = re.sub(r'[.,;:!?]+$', '', text)",
+          "Normalize whitespace: text = re.sub(r'\\s+', ' ', text).strip()",
+          "Title case for proper nouns: if is_proper_noun(text): text = text.title()",
+          "Apply to source, relationship, target fields",
+          "Run as first module in Pass 2.5 pipeline"
+        ],
+        "proper_noun_detection": "Use simple heuristic: if text starts with capital letter and contains no common words like 'the', 'a', 'and', treat as proper noun"
+      },
+      "validation": {
+        "test_cases": [
+          "'hunter.' \u2192 'Hunter'",
+          "'osha' \u2192 'Osha' (if proper noun)",
+          "'Aaron Perry ' \u2192 'Aaron Perry' (whitespace stripped)",
+          "'soil' \u2192 'soil' (common noun, lowercase preserved)"
+        ],
+        "success_criteria": "Zero trailing punctuation, consistent case for proper nouns"
+      }
+    },
+    {
+      "operation_id": "change_011",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v9.txt",
+      "priority": "MEDIUM",
+      "rationale": "6 praise quotes misclassified as authorship. Pass 1 prompt doesn't distinguish endorsements from authorship claims.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification",
+      "expected_improvement": "Reduces praise quote misclassification by 50% at extraction (6\u21923), combined with code fix achieves 100%",
+      "change_description": "Add explicit distinction between authorship and endorsement relationships with examples",
+      "target_section": "In relationship type definitions or examples section",
+      "change_type": "section_addition",
+      "guidance": {
+        "current_issue": "Prompt doesn't distinguish between 'X wrote Y' (authorship) and 'X says Y is excellent' (endorsement)",
+        "fix_approach": "Add new section or enhance existing relationship examples: (1) Define 'authored' vs 'endorsed' clearly, (2) Provide 4-5 examples of each, (3) Explain how to identify praise quotes (testimonials, review language, 'excellent', 'inspiring'), (4) Instruct to use 'endorsed' for praise quotes",
+        "insertion_point": "In relationship type definitions section, after defining common predicates",
+        "content_to_add": {
+          "heading": "Authorship vs Endorsement - Critical Distinction",
+          "definitions": [
+            "\u2705 'authored': Use when text explicitly states X wrote/created Y. Evidence: 'Copyright by X', 'Written by X', 'X is the author of Y'",
+            "\u2705 'endorsed': Use when X praises/recommends Y. Evidence: 'X says Y is excellent', 'X recommends Y', testimonial quotes"
+          ],
+          "examples": [
+            "\u2705 AUTHORSHIP: 'Copyright \u00a9 2018 Aaron Perry' \u2192 (Aaron Perry, authored, Soil Stewardship Handbook)",
+            "\u2705 AUTHORSHIP: 'Written by John Smith' \u2192 (John Smith, authored, [book title])",
+            "\u2705 ENDORSEMENT: 'Brigitte Mars says: This handbook is an excellent tool' \u2192 (Brigitte Mars, endorsed, Soil Stewardship Handbook)",
+            "\u2705 ENDORSEMENT: 'With Love and Hope, Lily Sophia' at end of foreword \u2192 (Lily Sophia, wrote foreword for, Soil Stewardship Handbook)",
+            "\u274c WRONG: Testimonial quote \u2192 'authored' relationship"
+          ],
+          "instruction": "If text is a testimonial, review, or praise quote (contains 'excellent', 'inspiring', 'recommends'), use 'endorsed', NOT 'authored'. Only use 'authored' for explicit creation/copyright statements."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text: 'The Soil Stewardship Handbook is an excellent tool. - Brigitte Mars, author of The Country Almanac'",
+        "expected_output": "(Brigitte Mars, endorsed, Soil Stewardship Handbook) AND (Brigitte Mars, authored, The Country Almanac)",
+        "success_criteria": "Praise quotes result in 'endorsed', not 'authored'"
+      }
+    },
+    {
+      "operation_id": "change_012",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "priority": "LOW",
+      "rationale": "4 demonstrative pronouns unresolved (0.47%): 'this handbook', 'the reader'. Lower priority but easy fix.",
+      "risk_level": "low",
+      "affected_issue_category": "Demonstrative Pronouns (Unresolved)",
+      "expected_improvement": "Fixes all 4 demonstrative pronoun issues",
+      "change_description": "Add demonstrative pronoun detection and resolution logic",
+      "affected_function": "PronounResolver.resolve_pronouns()",
+      "change_type": "feature_addition",
+      "guidance": {
+        "current_issue": "Resolver doesn't handle 'this X', 'that X', 'the reader', 'the author'",
+        "fix_approach": "Add demonstrative patterns: (1) Detect r'\\b(this|that|these|those)\\s+(\\w+)', (2) For 'this handbook', resolve to actual book title from context, (3) For generic references like 'the reader', 'the author', flag for removal (too generic), (4) Use same context search approach as possessive pronouns",
+        "key_changes": [
+          "Add demonstrative_pattern = r'\\b(this|that|these|those)\\s+(\\w+)'",
+          "For 'this handbook/book/guide', search context for book title (capitalized phrase)",
+          "For 'the reader/author/person', add to removal queue (too generic)",
+          "Use context window of 100-200 characters for title search"
+        ],
+        "removal_candidates": "Generic references that can't be resolved: 'the reader', 'the author', 'the person', 'the community' (without specific name)"
+      },
+      "validation": {
+        "test_cases": [
+          "'this handbook' + 'Soil Stewardship Handbook' in context \u2192 resolve to 'Soil Stewardship Handbook'",
+          "'the reader' \u2192 flag for removal (too generic)",
+          "'that book' + book title in context \u2192 resolve to title",
+          "'the author' + author name in context \u2192 resolve to name"
+        ],
+        "success_criteria": "Zero 'this/that/the X' in output, all resolved or removed"
+      }
+    }
+  ],
+  "expected_impact": {
+    "issues_fixed": 151,
+    "critical_fixed": 8,
+    "high_fixed": 38,
+    "medium_fixed": 105,
+    "estimated_error_rate": "19.4% \u2192 7.5%",
+    "target_grade": "C \u2192 B",
+    "primary_improvements": [
+      "Dedication parsing: 8 critical errors eliminated (change_001)",
+      "Duplicates: 85 eliminated (change_002)",
+      "Possessive pronouns: 8 reduced to ~2 (change_003 + change_005)",
+      "Philosophical abstractions: 18 reduced to ~3 (change_004 + change_007)",
+      "Praise quotes: 6 eliminated (change_006 + change_011)",
+      "Predicate fragmentation: 127\u219285 predicates (change_008)"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "change_001: Fix dedication parser (CRITICAL - 8 errors, 0.93%)",
+      "change_002: Fix deduplicator (CRITICAL - 85 errors, 9.92%)"
+    ],
+    "short_term": [
+      "change_003: Extend pronoun resolver for possessives (HIGH - 8 errors)",
+      "change_004: Add philosophical abstraction prohibition to Pass 1 (HIGH - 18 errors)",
+      "change_005: Add entity specificity requirements to Pass 1 (HIGH - 20 errors)",
+      "change_006: Expand praise quote detection (HIGH - 6 errors)",
+      "change_007: Recalibrate Pass 2 knowledge_plausibility (HIGH - 18 errors)"
+    ],
+    "medium_term": [
+      "change_008: Create predicate normalizer (MEDIUM - 127 predicates)",
+      "change_009: Add semantic unit preservation to list splitter (MEDIUM - 18 errors)",
+      "change_010: Create/enhance text normalizer (MEDIUM - 7 errors)",
+      "change_011: Add authorship vs endorsement distinction to Pass 1 (MEDIUM - 6 errors)",
+      "change_012: Add demonstrative pronoun handling (LOW - 4 errors)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Incremental testing: (1) Apply changes 001-002 (critical), test on sample, (2) Apply changes 003-007 (high), test on sample, (3) Apply changes 008-012 (medium/low), full test",
+    "success_criteria": [
+      "Critical issues: 8 \u2192 0 (100% reduction)",
+      "High issues: 52 \u2192 ~15 (71% reduction)",
+      "Total issues: 166 \u2192 ~65 (61% reduction)",
+      "Error rate: 19.4% \u2192 <8%",
+      "Duplicates: 85 \u2192 0",
+      "Predicate count: 127 \u2192 <90"
+    ],
+    "rollback_plan": "Each change is independent. If any change causes issues, revert that specific file/prompt while keeping others. Critical changes (001-002) have lowest risk and highest impact."
+  },
+  "risk_mitigation": {
+    "high_risk_changes": [],
+    "medium_risk_changes": [
+      "change_003: Pronoun resolver expansion (may over-resolve or miss context)",
+      "change_006: Praise quote detector reordering (may affect other bibliographic parsing)",
+      "change_009: List splitter semantic units (may under-split legitimate lists)"
+    ],
+    "mitigation_strategies": [
+      "Test pronoun resolver on diverse samples before full deployment",
+      "Verify praise detector doesn't break copyright/authorship detection",
+      "Start with small semantic units list, expand incrementally",
+      "Keep detailed logs of all normalization actions for debugging"
+    ]
+  },
+  "metadata": {
+    "curation_date": "2025-10-14T01:30:19.519591",
+    "source_version": 9,
+    "target_version": 10,
+    "reflector_analysis_id": "2025-10-13T19:21:16.662081",
+    "curator_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929"
+  }
+}

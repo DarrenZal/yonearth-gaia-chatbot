@@ -1,0 +1,72 @@
+{
+  "search_capabilities": {
+    "semantic_search": {
+      "status": "active",
+      "quality": "high",
+      "coverage": "18764+ vectors"
+    },
+    "bm25_keyword_search": {
+      "status": "active",
+      "quality": "high",
+      "coverage": "172 episodes + 3 books"
+    },
+    "category_matching": {
+      "status": "active",
+      "quality": "high",
+      "semantic": true,
+      "configurable": true
+    },
+    "episode_diversity": {
+      "status": "active",
+      "quality": "high",
+      "ensures_coverage": true
+    }
+  },
+  "content_capabilities": {
+    "podcast_episodes": {
+      "status": "active",
+      "count": 172,
+      "word_level_timestamps": true
+    },
+    "books": {
+      "status": "active",
+      "count": 3,
+      "chapter_accuracy": "98%"
+    },
+    "knowledge_graph": {
+      "status": "extracted",
+      "integration": "planned"
+    }
+  },
+  "interaction_capabilities": {
+    "voice_synthesis": {
+      "status": "active",
+      "provider": "ElevenLabs",
+      "quality": "high"
+    },
+    "personality_variants": {
+      "status": "active",
+      "count": 3,
+      "custom_support": true
+    },
+    "feedback_collection": {
+      "status": "active",
+      "types": ["ratings", "comments", "thumbs"]
+    }
+  },
+  "intelligence_capabilities": {
+    "citation_accuracy": {
+      "status": "active",
+      "accuracy": "99%+"
+    },
+    "conversation_awareness": {
+      "status": "partial",
+      "recommendations": true,
+      "context_integration": "planned"
+    },
+    "self_reflection": {
+      "status": "in_development",
+      "ace_framework": true
+    }
+  }
+}

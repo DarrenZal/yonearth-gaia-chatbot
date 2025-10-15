@@ -440,6 +440,138 @@ Output your analysis as JSON matching the schema in your system prompt."""
 
         print(f"✅ Analysis saved to: {output_path}")
 
+    def generate_detailed_issues_for_testing(
+        self,
+        relationships: List[Dict[str, Any]],
+        source_text: str,
+        analysis: Dict[str, Any],
+        version: str,
+        sample_size: int = None
+    ) -> Dict[str, Any]:
+        """
+        Generate detailed list of ALL issues for automated pipeline testing.
+
+        Unlike the main analysis which shows 2-3 examples per category,
+        this method extracts ALL problematic relationships for validation testing.
+
+        Args:
+            relationships: All extracted relationships
+            source_text: Original book text
+            analysis: Reflector analysis output with issue categories
+            version: Version string (e.g., "v11.2.2")
+            sample_size: Optional sample size (None = all issues)
+
+        Returns:
+            Dict with detailed issues list for automated testing
+        """
+        all_issues = []
+        issue_id = 1
+
+        # Extract ALL issues from each category
+        for category in analysis.get('issue_categories', []):
+            category_name = category.get('category_name')
+            severity = category.get('severity')
+            examples = category.get('examples', [])
+
+            # Each example represents an actual issue
+            for example in examples:
+                all_issues.append({
+                    'issue_id': f"{version}_{issue_id:03d}",
+                    'category': category_name,
+                    'severity': severity,
+                    'source': example.get('source', ''),
+                    'relationship': example.get('relationship', ''),
+                    'target': example.get('target', ''),
+                    'evidence_text': example.get('evidence_text', ''),
+                    'page': example.get('page', 0),
+                    'what_is_wrong': example.get('what_is_wrong', ''),
+                    'should_be': example.get('should_be', None)
+                })
+                issue_id += 1
+
+        # Add novel error pattern issues
+        for pattern in analysis.get('novel_error_patterns', []):
+            pattern_name = pattern.get('pattern_name')
+            severity = pattern.get('severity')
+            examples = pattern.get('examples', [])
+
+            for example in examples:
+                all_issues.append({
+                    'issue_id': f"{version}_{issue_id:03d}",
+                    'category': f"Novel: {pattern_name}",
+                    'severity': severity,
+                    'source': example.get('source', ''),
+                    'relationship': example.get('relationship', ''),
+                    'target': example.get('target', ''),
+                    'evidence_text': example.get('evidence_text', ''),
+                    'page': example.get('page', 0),
+                    'what_is_wrong': pattern.get('description', ''),
+                    'should_be': example.get('should_be', None)
+                })
+                issue_id += 1
+
+        # Calculate sample if requested
+        if sample_size and sample_size < len(all_issues):
+            # Stratified sampling by severity
+            import random
+            random.seed(42)  # Reproducible sampling
+
+            severity_groups = {'CRITICAL': [], 'HIGH': [], 'MEDIUM': [], 'MILD': []}
+            for issue in all_issues:
+                severity_groups[issue['severity']].append(issue)
+
+            # Proportional sampling
+            total = len(all_issues)
+            sampled = []
+            for severity, issues in severity_groups.items():
+                proportion = len(issues) / total
+                n_sample = max(1, int(sample_size * proportion))  # At least 1 per severity
+                n_sample = min(n_sample, len(issues))  # Don't exceed available
+                sampled.extend(random.sample(issues, n_sample))
+
+            all_issues = sampled
+
+        # Generate detailed output
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        detailed_output = {
+            'metadata': {
+                'version': version,
+                'test_type': 'detailed_issues_for_validation',
+                'generated_at': timestamp,
+                'total_issues': len(all_issues),
+                'sampled': sample_size is not None,
+                'sample_size': len(all_issues) if sample_size else None
+            },
+            'issues_summary': {
+                'by_severity': {
+                    'CRITICAL': sum(1 for i in all_issues if i['severity'] == 'CRITICAL'),
+                    'HIGH': sum(1 for i in all_issues if i['severity'] == 'HIGH'),
+                    'MEDIUM': sum(1 for i in all_issues if i['severity'] == 'MEDIUM'),
+                    'MILD': sum(1 for i in all_issues if i['severity'] == 'MILD')
+                },
+                'by_category': {}
+            },
+            'issues_detailed': all_issues
+        }
+
+        # Count by category
+        from collections import Counter
+        category_counts = Counter(i['category'] for i in all_issues)
+        detailed_output['issues_summary']['by_category'] = dict(category_counts)
+
+        # Save detailed issues
+        analysis_dir = self.playbook_path / "analysis_reports"
+        output_path = analysis_dir / f"reflection_{version}_detailed_{timestamp}.json"
+
+        with open(output_path, 'w') as f:
+            json.dump(detailed_output, f, indent=2)
+
+        print(f"✅ Detailed issues saved to: {output_path}")
+        print(f"   Total issues: {len(all_issues)}")
+        print(f"   For automated validation testing")
+
+        return detailed_output
+
 
 if __name__ == "__main__":
     # Example usage

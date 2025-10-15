@@ -1,0 +1,478 @@
+{
+  "changeset_metadata": {
+    "source_version": 9,
+    "target_version": 10,
+    "total_changes": 12,
+    "estimated_impact": "Reduces critical issues by 100% (12\u21920), high priority by 68% (38\u219212), medium by 53% (45\u219221). Total error rate: 13.6% \u2192 4.8%"
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/dedication_parser.py",
+      "priority": "CRITICAL",
+      "rationale": "Dedication parser creates 6+ malformed relationships per dedication by concatenating results from multiple parsing strategies instead of selecting one. This is the highest-impact issue (12 critical errors, 1.4% of total).",
+      "risk_level": "low",
+      "affected_issue_category": "Dedication Parsing Catastrophic Failure",
+      "expected_improvement": "Eliminates all 12 critical dedication parsing errors",
+      "change_description": "Rewrite DedicationParser.process_batch() to use single parsing strategy: (1) extract dedication text, (2) remove book title, (3) split on commas/conjunctions, (4) clean names, (5) create ONE relationship per dedicatee",
+      "affected_function": "DedicationParser.process_batch",
+      "change_type": "function_rewrite",
+      "guidance": {
+        "current_issue": "Function runs 3 strategies (comma-split, and-split, full-target) and concatenates ALL results, creating 6+ relationships with malformed targets like 'Soil Stewardship Handbook to Osha to my two children'",
+        "fix_approach": "Replace multi-strategy concatenation with single pipeline: (1) Extract dedication sentence, (2) Strip book title using regex, (3) Split remaining text on ', | and | &', (4) For each name: strip whitespace/punctuation, normalize to title case, (5) Create ONE (author, dedicated, name) relationship per cleaned name, (6) Deduplicate before returning",
+        "key_changes": [
+          "Remove all strategy concatenation logic",
+          "Implement single linear pipeline",
+          "Add book title removal: re.sub(r'\\b[A-Z][\\w\\s]+Handbook\\b', '', text)",
+          "Add name cleaning: name.strip().strip('.,;:').title()",
+          "Add deduplication by (source, relationship, target) tuple",
+          "Validate output: max 3 relationships per dedication"
+        ],
+        "test_with": "'dedicated to my two children, Osha and Hunter' \u2192 2 relationships: (author, dedicated, Osha), (author, dedicated, Hunter)"
+      },
+      "validation": {
+        "test_cases": [
+          "Single target: 'dedicated to my mother' \u2192 1 relationship",
+          "Comma list: 'dedicated to Osha and Hunter' \u2192 2 relationships",
+          "With book title: 'dedicated Handbook to A and B' \u2192 2 relationships (title removed)"
+        ],
+        "success_criteria": "Zero dedications generate >3 relationships, zero malformed targets"
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/praise_quote_corrector.py",
+      "priority": "CRITICAL",
+      "rationale": "Module converts 'authored' \u2192 'endorsed' for praise quotes but doesn't check if speaker IS the author, causing 'Aaron Perry endorsed Soil Stewardship Handbook' when he's the author (3 high-priority errors)",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misattribution",
+      "expected_improvement": "Fixes all 3 praise quote misattribution errors",
+      "change_description": "Add author-check logic before converting 'authored' \u2192 'endorsed': if source matches book author metadata, keep as 'authored'",
+      "affected_function": "PraiseQuoteCorrector.correct_relationship",
+      "change_type": "logic_enhancement",
+      "guidance": {
+        "current_issue": "Function detects praise language and converts predicate to 'endorsed' without checking if source is the book's author",
+        "fix_approach": "Before line that sets relationship.predicate = 'endorsed', add: if relationship.source.lower() == book_metadata['author'].lower(): return relationship (no change). Only convert to 'endorsed' if source \u2260 author.",
+        "key_changes": [
+          "Add book_metadata parameter to function signature",
+          "Extract author name from metadata: author_name = book_metadata.get('author', '').lower()",
+          "Add conditional: if relationship.source.lower() == author_name: return relationship",
+          "Only execute 'endorsed' conversion if author check fails"
+        ],
+        "test_with": "('Aaron Perry', 'authored', 'Handbook') + praise context \u2192 keep as 'authored'. ('John Doe', 'authored', 'Handbook') + praise context \u2192 convert to 'endorsed'."
+      },
+      "validation": {
+        "test_cases": [
+          "Author praising own book: keep 'authored'",
+          "Third party praising book: convert to 'endorsed'",
+          "Author with middle name/initial: normalize and match correctly"
+        ],
+        "success_criteria": "Zero authors shown as endorsing their own books"
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "priority": "HIGH",
+      "rationale": "Module only resolves subject pronouns (he/she/we) but not possessive pronouns (my/our/their), causing 8 high-priority errors like 'my people' instead of 'Slovenians'",
+      "risk_level": "medium",
+      "affected_issue_category": "Possessive Pronoun Sources (Unresolved)",
+      "expected_improvement": "Fixes 8 high-priority possessive pronoun errors",
+      "change_description": "Extend pronoun resolution to handle possessive pronouns by adding patterns for 'my X', 'our X', 'their X' and resolving using document context (author metadata, geographic references)",
+      "affected_function": "PronounResolver.resolve_pronouns",
+      "change_type": "feature_addition",
+      "guidance": {
+        "current_issue": "Regex pattern only matches subject pronouns: r'\\b(he|she|it|we|they)\\b'. Possessive forms not detected.",
+        "fix_approach": "Add second regex for possessive: r'\\b(my|our|their|his|her|its)\\s+(\\w+)'. For 'my/our': resolve to author's identity (check author bio for ethnicity/nationality). For 'their': resolve to most recent plural entity in context. Use document metadata and entity co-occurrence to inform resolution.",
+        "key_changes": [
+          "Add possessive_pattern = r'\\b(my|our|their|his|her|its)\\s+(\\w+)'",
+          "Extract author metadata: author_ethnicity, author_nationality",
+          "For 'my people'/'our people': resolve to author_ethnicity if available",
+          "For 'our [place]': resolve to author_nationality + place",
+          "Add context window: check previous 3 sentences for entity mentions",
+          "Fallback: if no context, mark entity for manual review rather than leaving as pronoun"
+        ],
+        "test_with": "'my people love the land' + author=Slovenian \u2192 'Slovenians love the land'"
+      },
+      "validation": {
+        "test_cases": [
+          "'my people' + Slovenian author \u2192 'Slovenians'",
+          "'our countryside' + Slovenian context \u2192 'Slovenian countryside'",
+          "'their practices' + previous mention of 'farmers' \u2192 'farmers' practices'"
+        ],
+        "success_criteria": "Zero possessive pronouns in final output, all resolved to specific entities"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v10.txt",
+      "priority": "HIGH",
+      "rationale": "Pass 1 prompt doesn't prohibit extracting philosophical/normative statements as factual relationships, causing 18 medium-priority errors like 'being connected to land is what it means to be human'",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical Claims as Factual",
+      "expected_improvement": "Reduces philosophical claim extraction by 80% (18\u21924 errors)",
+      "change_description": "Add explicit section prohibiting philosophical, normative, and metaphorical statements with 5 examples of what NOT to extract",
+      "target_section": "After ENTITY RESOLUTION RULES, before OUTPUT FORMAT",
+      "guidance": {
+        "current_issue": "Prompt lacks guidance on distinguishing factual claims from philosophical/value statements",
+        "fix_approach": "Insert new section with heading, prohibition statement, pattern list, and 5 negative examples",
+        "insertion_point": "After '## ENTITY RESOLUTION RULES' section, before '## OUTPUT FORMAT'",
+        "content_to_add": {
+          "heading": "## \u26a0\ufe0f PROHIBITED STATEMENT TYPES",
+          "prohibition": "DO NOT extract philosophical, normative, or metaphorical statements as factual relationships. ONLY extract verifiable factual claims.",
+          "patterns_to_avoid": [
+            "\u274c Philosophical essence claims: 'X is what it means to be Y'",
+            "\u274c Normative prescriptions: 'we should/must do X', 'it is essential that'",
+            "\u274c Metaphorical abstractions: 'X is the answer/key/solution'",
+            "\u274c Rhetorical constructions: 'X opens doors to Y', 'X is a crossroads'",
+            "\u274c Value judgments: 'X is beautiful/important/essential'"
+          ],
+          "examples": [
+            "\u274c REJECT: 'being connected to land is what it means to be human' (philosophical claim about human nature)",
+            "\u274c REJECT: 'soil is the answer' (metaphorical abstraction)",
+            "\u274c REJECT: 'we must regenerate the soil' (normative prescription)",
+            "\u2705 ACCEPT: 'soil contains organic matter' (verifiable fact)",
+            "\u2705 ACCEPT: 'regenerative agriculture increases soil carbon' (verifiable causal claim)"
+          ]
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text containing: 'Soil is the answer. We must act now. Being connected to land is what it means to be human. Soil contains carbon.'",
+        "success_criteria": "Only extract 'Soil contains carbon', reject all philosophical/normative statements",
+        "prompt_version": "v10"
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v10.txt",
+      "priority": "HIGH",
+      "rationale": "Prompt doesn't encourage specific over generic entities, causing 6 high-priority + 8 medium errors like 'the land' instead of 'Slovenian countryside'",
+      "risk_level": "low",
+      "affected_issue_category": "Demonstrative Pronoun Targets (Unresolved) + Abstract Vague Entities",
+      "expected_improvement": "Reduces vague entity extraction by 70% (14\u21924 errors)",
+      "change_description": "Add ENTITY SPECIFICITY section encouraging contextualized entities over generic ones, with 5 before/after examples",
+      "target_section": "Within ENTITY RESOLUTION RULES section",
+      "guidance": {
+        "current_issue": "Prompt doesn't guide LLM to prefer 'Slovenian countryside' over 'the land' or 'atmospheric carbon' over 'carbon'",
+        "fix_approach": "Add subsection within entity rules with specificity principle and concrete examples",
+        "insertion_point": "At end of '## ENTITY RESOLUTION RULES' section",
+        "content_to_add": {
+          "heading": "### Entity Specificity Principle",
+          "principle": "Always prefer SPECIFIC, CONTEXTUALIZED entities over GENERIC ones. Use document context (geographic setting, domain, author background) to add precision.",
+          "examples": [
+            "\u2705 'Slovenian countryside' > \u274c 'the land'",
+            "\u2705 'atmospheric carbon dioxide' > \u274c 'carbon'",
+            "\u2705 'regenerative agriculture practices' > \u274c 'farming'",
+            "\u2705 'Bill Mollison's permaculture system' > \u274c 'the system'",
+            "\u2705 'soil microbiome' > \u274c 'microorganisms'"
+          ],
+          "instruction": "When you encounter generic references ('the land', 'the process', 'the answer'), look at surrounding context to identify the specific entity being referenced. If context is insufficient, skip the relationship rather than extract a vague entity."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text: 'My people love the land. The land is in Slovenia. The process works well.'",
+        "success_criteria": "Extract 'Slovenians love Slovenian countryside', skip 'the process works well' (too vague)",
+        "prompt_version": "v10"
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v10.txt",
+      "priority": "MEDIUM",
+      "rationale": "Prompt doesn't detect figurative language, causing 5 medium-priority errors like 'our land is veritable Eden' extracted as literal claim",
+      "risk_level": "low",
+      "affected_issue_category": "Figurative Language as Literal",
+      "expected_improvement": "Reduces figurative language extraction by 80% (5\u21921 errors)",
+      "change_description": "Add FIGURATIVE LANGUAGE section with metaphor patterns to avoid and guidance on extracting underlying literal claims",
+      "target_section": "After PROHIBITED STATEMENT TYPES section",
+      "guidance": {
+        "current_issue": "Prompt doesn't help LLM distinguish metaphorical from literal statements",
+        "fix_approach": "Add section listing common metaphor patterns with instruction to skip or extract literal meaning",
+        "insertion_point": "After '## \u26a0\ufe0f PROHIBITED STATEMENT TYPES' section",
+        "content_to_add": {
+          "heading": "## Figurative Language Handling",
+          "instruction": "Do NOT extract metaphorical statements as literal facts. If a statement is clearly figurative, either SKIP it or extract the underlying literal claim if unambiguous.",
+          "metaphor_patterns": [
+            "\u274c 'X is a Y' where Y is figurative: Eden, crossroads, miracle, answer, key, door",
+            "\u274c 'X opens doors to Y' (metaphor for enabling)",
+            "\u274c 'X is the key to Y' (metaphor for importance)",
+            "\u274c 'X is a journey' (metaphor for process)"
+          ],
+          "examples": [
+            "\u274c SKIP: 'our land is veritable Eden' (metaphor for beauty/abundance)",
+            "\u274c SKIP: 'we are at a crossroads' (metaphor for decision point)",
+            "\u2705 EXTRACT LITERAL: 'soil is the foundation of agriculture' \u2192 (soil, supports, agriculture)",
+            "\u2705 EXTRACT LITERAL: 'trees provide oxygen' \u2192 (trees, produce, oxygen)"
+          ]
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text: 'Slovenia is a veritable Eden. Soil is the key to sustainability. Trees produce oxygen.'",
+        "success_criteria": "Skip first two (metaphors), extract only 'trees produce oxygen'",
+        "prompt_version": "v10"
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/list_splitter.py",
+      "priority": "MEDIUM",
+      "rationale": "List splitter creates noise by splitting adjective lists that don't add value (12 medium-priority errors like 'timely' + 'empowering' as separate relationships)",
+      "risk_level": "low",
+      "affected_issue_category": "List Splitting Creating Noise",
+      "expected_improvement": "Reduces list splitting noise by 75% (12\u21923 errors)",
+      "change_description": "Add trivial split filter: don't split if (1) all items are adjectives, (2) only 2 items with 'and', (3) in praise quote context",
+      "affected_function": "ListSplitter.should_split",
+      "change_type": "logic_enhancement",
+      "guidance": {
+        "current_issue": "Module splits ALL comma/and-separated targets, including adjective lists that don't add semantic value",
+        "fix_approach": "Add pre-split validation: (1) POS-tag all items, if all are adjectives \u2192 don't split, (2) If only 2 items connected by 'and' \u2192 don't split, (3) If evidence_text contains praise keywords ('timely', 'empowering', 'informative') \u2192 don't split",
+        "key_changes": [
+          "Add POS tagging: use spacy or nltk to tag items",
+          "Add adjective check: if all([tag.startswith('JJ') for tag in tags]): return False",
+          "Add count check: if len(items) == 2 and 'and' in target: return False",
+          "Add praise context check: if any(word in evidence_text for word in ['timely', 'empowering', 'informative', 'excellent']): return False",
+          "Keep splitting for: author lists, geographic lists, concept lists (3+ items)"
+        ],
+        "test_with": "'timely and empowering' \u2192 don't split. 'Bill Mollison and David Holmgren' \u2192 split. 'A, B, and C' \u2192 split."
+      },
+      "validation": {
+        "test_cases": [
+          "Adjective pair: 'timely and empowering' \u2192 no split",
+          "Author list: 'Mollison and Holmgren' \u2192 split to 2",
+          "Long list: 'A, B, and C' \u2192 split to 3"
+        ],
+        "success_criteria": "Zero adjective-only splits, all substantive lists still split"
+      }
+    },
+    {
+      "operation_id": "change_008",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v10.txt",
+      "priority": "MEDIUM",
+      "rationale": "Pass 2 evaluation doesn't flag philosophical claims, allowing them to pass with high knowledge_plausibility scores (18 medium-priority errors)",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical Claims as Factual",
+      "expected_improvement": "Improves classification of 18 philosophical claims (flags them correctly even if not removed)",
+      "change_description": "Add PHILOSOPHICAL_CLAIM detection to evaluation criteria with knowledge_plausibility penalty (0.3-0.5 range)",
+      "target_section": "Within knowledge_plausibility scoring section",
+      "guidance": {
+        "current_issue": "Evaluation prompt doesn't distinguish philosophical from factual claims when scoring plausibility",
+        "fix_approach": "Add new evaluation criterion for philosophical claims with specific patterns and scoring guidance",
+        "insertion_point": "Within 'knowledge_plausibility' scoring criteria",
+        "content_to_add": {
+          "criterion": "PHILOSOPHICAL_CLAIM Detection",
+          "description": "Flag relationships expressing philosophical, normative, or value judgments rather than verifiable facts",
+          "indicators": [
+            "'X is what it means to be Y' (essence claims)",
+            "'X is the answer/key/solution' (metaphorical abstractions)",
+            "'we should/must do X' (normative prescriptions)",
+            "'it is essential that' (value judgments)"
+          ],
+          "scoring_impact": "If philosophical claim detected: knowledge_plausibility = 0.3-0.5 (low confidence). Add flag: 'philosophical_claim': true",
+          "examples": [
+            "'being connected to land is what it means to be human' \u2192 0.3 (philosophical essence claim)",
+            "'soil is the answer' \u2192 0.4 (metaphorical abstraction)",
+            "'soil contains carbon' \u2192 0.9 (factual claim)"
+          ]
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Evaluate: (1) 'soil is the answer', (2) 'soil contains carbon'",
+        "success_criteria": "(1) gets 0.3-0.5 + philosophical_claim flag, (2) gets 0.8-0.9 + no flag",
+        "prompt_version": "v10"
+      }
+    },
+    {
+      "operation_id": "change_009",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/entity_cleaner.py",
+      "priority": "LOW",
+      "rationale": "Entity names include trailing punctuation (3 mild errors like 'hunter.'), simple regex fix needed",
+      "risk_level": "low",
+      "affected_issue_category": "Trailing Punctuation in Entities",
+      "expected_improvement": "Fixes all 3 trailing punctuation errors",
+      "change_description": "Add trailing punctuation stripping to entity cleaning: re.sub(r'[.,;:!?]+$', '', entity_name)",
+      "affected_function": "EntityCleaner.clean_entity",
+      "change_type": "bug_fix",
+      "guidance": {
+        "current_issue": "Entity cleaning doesn't strip trailing punctuation from entity names",
+        "fix_approach": "Add regex substitution at end of cleaning pipeline: entity = re.sub(r'[.,;:!?]+$', '', entity).strip()",
+        "key_changes": [
+          "Import re module if not already imported",
+          "Add line after existing cleaning: entity = re.sub(r'[.,;:!?]+$', '', entity)",
+          "Apply to both source and target entities",
+          "Ensure this runs AFTER other cleaning steps"
+        ],
+        "test_with": "'hunter.' \u2192 'hunter', 'Osha,' \u2192 'Osha', 'soil!' \u2192 'soil'"
+      },
+      "validation": {
+        "test_cases": [
+          "'hunter.' \u2192 'hunter'",
+          "'Osha,' \u2192 'Osha'",
+          "'soil!!!' \u2192 'soil'"
+        ],
+        "success_criteria": "Zero entities with trailing punctuation"
+      }
+    },
+    {
+      "operation_id": "change_010",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/deduplicator.py",
+      "priority": "LOW",
+      "rationale": "Deduplicator is case-sensitive, missing duplicates like 'osha' vs 'Osha' (4 mild errors)",
+      "risk_level": "low",
+      "affected_issue_category": "Duplicate Relationships (Case Sensitivity)",
+      "expected_improvement": "Fixes all 4 case-sensitivity duplicate errors",
+      "change_description": "Add case normalization before deduplication: normalize to lowercase for comparison, preserve original casing in output",
+      "affected_function": "Deduplicator.remove_duplicates",
+      "change_type": "bug_fix",
+      "guidance": {
+        "current_issue": "Deduplication uses exact string matching, doesn't catch case variants",
+        "fix_approach": "Create normalized tuple for comparison: (source.lower().strip(), relationship.lower().strip(), target.lower().strip()). Use set to track seen normalized tuples. Keep first occurrence with original casing.",
+        "key_changes": [
+          "Create seen_normalized = set()",
+          "For each relationship: normalized_key = (rel.source.lower().strip(), rel.relationship.lower().strip(), rel.target.lower().strip())",
+          "If normalized_key in seen_normalized: skip (duplicate)",
+          "Else: add to seen_normalized and keep relationship with ORIGINAL casing"
+        ],
+        "test_with": "('Aaron Perry', 'dedicated', 'Osha') + ('Aaron Perry', 'dedicated', 'osha') \u2192 keep first, remove second"
+      },
+      "validation": {
+        "test_cases": [
+          "Exact duplicate: ('A', 'rel', 'B') + ('A', 'rel', 'B') \u2192 keep 1",
+          "Case variant: ('A', 'rel', 'B') + ('a', 'rel', 'b') \u2192 keep 1",
+          "Whitespace variant: ('A ', 'rel', ' B') + ('A', 'rel', 'B') \u2192 keep 1"
+        ],
+        "success_criteria": "Zero case-insensitive duplicates in output"
+      }
+    },
+    {
+      "operation_id": "change_011",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "priority": "LOW",
+      "rationale": "First-person plural pronouns ('we humans', 'we have') not resolved to specific entities (7 mild errors)",
+      "risk_level": "low",
+      "affected_issue_category": "Pronoun Sources in First-Person Statements",
+      "expected_improvement": "Fixes all 7 first-person plural pronoun errors",
+      "change_description": "Add first-person plural resolution: 'we humans' \u2192 'humanity', 'we' in non-fiction \u2192 'people' or 'humans'",
+      "affected_function": "PronounResolver.resolve_pronouns",
+      "change_type": "feature_addition",
+      "guidance": {
+        "current_issue": "Module doesn't handle first-person plural pronouns in non-fiction context",
+        "fix_approach": "Add pattern for 'we humans' \u2192 replace with 'humanity'. For standalone 'we' in source position \u2192 replace with 'people' or 'humans' (check context for domain-specific group like 'farmers', 'scientists')",
+        "key_changes": [
+          "Add pattern: if source == 'we humans': source = 'humanity'",
+          "Add pattern: if source == 'we' and is_nonfiction: source = 'people' (or check context for more specific group)",
+          "Add context check: look for domain terms in surrounding sentences (agriculture \u2192 'farmers', science \u2192 'scientists')",
+          "Fallback: 'we' \u2192 'people'"
+        ],
+        "test_with": "'we humans are at a crossroads' \u2192 'humanity is at a crossroads'"
+      },
+      "validation": {
+        "test_cases": [
+          "'we humans' \u2192 'humanity'",
+          "'we' in agriculture context \u2192 'farmers' or 'people'",
+          "'we' in general context \u2192 'people'"
+        ],
+        "success_criteria": "Zero first-person plural pronouns in final output"
+      }
+    },
+    {
+      "operation_id": "change_012",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/type_validator.py",
+      "priority": "LOW",
+      "rationale": "Type validator too permissive with 'Abstract Concept' type, causing 8 mild errors like 'my people' typed as abstract instead of 'Ethnic Group'",
+      "risk_level": "low",
+      "affected_issue_category": "Incorrect Entity Types",
+      "expected_improvement": "Fixes all 8 incorrect entity type assignments",
+      "change_description": "Tighten 'Abstract Concept' rules: only use for truly abstract ideas (theories, philosophies), prefer specific types for people/places",
+      "affected_function": "TypeValidator.assign_type",
+      "change_type": "logic_enhancement",
+      "guidance": {
+        "current_issue": "Type validator assigns 'Abstract Concept' too broadly, including to concrete entities like groups of people",
+        "fix_approach": "Add type hierarchy with precedence: (1) Check for people indicators (people, group, community) \u2192 'People' or 'Ethnic Group', (2) Check for place indicators (land, sea, countryside) \u2192 'Geographic Location', (3) Only use 'Abstract Concept' for ideas/theories/philosophies",
+        "key_changes": [
+          "Add people_keywords = ['people', 'group', 'community', 'population', 'society']",
+          "Add place_keywords = ['land', 'sea', 'countryside', 'region', 'area']",
+          "Add precedence logic: if any(kw in entity.lower() for kw in people_keywords): type = 'People'",
+          "If any(kw in entity.lower() for kw in place_keywords): type = 'Geographic Location'",
+          "Only assign 'Abstract Concept' if entity matches: ['theory', 'philosophy', 'idea', 'concept', 'principle']"
+        ],
+        "test_with": "'my people' \u2192 'People', 'the land' \u2192 'Geographic Location', 'permaculture theory' \u2192 'Abstract Concept'"
+      },
+      "validation": {
+        "test_cases": [
+          "'my people' \u2192 'People' or 'Ethnic Group'",
+          "'the land' \u2192 'Geographic Location'",
+          "'permaculture theory' \u2192 'Abstract Concept'"
+        ],
+        "success_criteria": "Zero concrete entities typed as 'Abstract Concept'"
+      }
+    }
+  ],
+  "expected_impact": {
+    "issues_fixed": 105,
+    "critical_fixed": 12,
+    "high_fixed": 26,
+    "medium_fixed": 47,
+    "mild_fixed": 20,
+    "estimated_error_rate": "13.6% \u2192 4.8%",
+    "target_grade": "B- \u2192 A-",
+    "primary_improvements": [
+      "Dedication parsing: 12 critical errors eliminated (100% fix)",
+      "Possessive pronouns: 8 high-priority errors eliminated (100% fix)",
+      "Philosophical claims: 18 medium errors reduced to ~4 (78% reduction)",
+      "Vague entities: 14 errors reduced to ~4 (71% reduction)",
+      "List splitting noise: 12 errors reduced to ~3 (75% reduction)"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "change_001: Fix dedication parser (CRITICAL - 12 errors)",
+      "change_002: Fix praise quote author check (CRITICAL - 3 errors)",
+      "change_003: Extend pronoun resolution to possessive (HIGH - 8 errors)"
+    ],
+    "short_term": [
+      "change_004: Add philosophical statement prohibition (HIGH - 18 errors)",
+      "change_005: Add entity specificity guidance (HIGH - 14 errors)",
+      "change_006: Add figurative language detection (MEDIUM - 5 errors)",
+      "change_007: Add list splitting filter (MEDIUM - 12 errors)",
+      "change_008: Enhance Pass 2 philosophical detection (MEDIUM - 18 errors)"
+    ],
+    "polish": [
+      "change_009: Strip trailing punctuation (LOW - 3 errors)",
+      "change_010: Fix case-sensitive deduplication (LOW - 4 errors)",
+      "change_011: Resolve first-person plural (LOW - 7 errors)",
+      "change_012: Tighten entity type rules (LOW - 8 errors)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Implement changes in priority order, run V10 extraction after each priority tier, compare to V9 metrics",
+    "success_criteria": [
+      "Critical issues: 12 \u2192 0 (100% reduction)",
+      "High issues: 38 \u2192 12 (68% reduction)",
+      "Medium issues: 45 \u2192 21 (53% reduction)",
+      "Total issues: 117 \u2192 41 (65% reduction)",
+      "Error rate: 13.6% \u2192 <5%",
+      "Grade: B- \u2192 A-"
+    ],
+    "rollback_plan": "Each change is isolated to single function/section. If any change causes regression, revert that specific file/section and continue with remaining changes."
+  },
+  "metadata": {
+    "curation_date": "2025-10-13T08:56:38.133829",
+    "source_version": 9,
+    "target_version": 10,
+    "reflector_analysis_id": "2025-10-13T08:26:43.410997",
+    "curator_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929"
+  }
+}

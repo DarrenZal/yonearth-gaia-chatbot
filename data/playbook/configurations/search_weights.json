@@ -1,0 +1,28 @@
+{
+  "default_weights": {
+    "category_match": 0.60,
+    "semantic_similarity": 0.25,
+    "bm25_keyword": 0.15,
+    "description": "Default weights for hybrid search (category-first approach)"
+  },
+  "category_heavy_weights": {
+    "category_match": 0.80,
+    "semantic_similarity": 0.15,
+    "bm25_keyword": 0.05,
+    "description": "Used when query is clearly category-focused"
+  },
+  "keyword_heavy_weights": {
+    "category_match": 0.30,
+    "semantic_similarity": 0.30,
+    "bm25_keyword": 0.40,
+    "description": "Used when query contains specific technical terms"
+  },
+  "semantic_heavy_weights": {
+    "category_match": 0.20,
+    "semantic_similarity": 0.60,
+    "bm25_keyword": 0.20,
+    "description": "Used for conceptual or philosophical queries"
+  },
+  "weight_selection_strategy": "query_analysis",
+  "notes": "Weights can be dynamically adjusted based on query characteristics"
+}

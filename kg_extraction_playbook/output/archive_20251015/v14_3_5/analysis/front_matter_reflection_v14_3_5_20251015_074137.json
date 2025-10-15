@@ -1,0 +1,235 @@
+{
+  "extraction_metadata": {
+    "version": "v14_3_5",
+    "total_relationships": 164,
+    "analysis_timestamp": "2025-01-15T10:30:00Z"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 22,
+    "medium_priority_issues": 0,
+    "mild_issues": 0,
+    "total_issues": 23,
+    "issue_rate_percent": 14.0,
+    "estimated_false_negative_rate": 0.0,
+    "estimated_total_issues_with_fn": 23,
+    "adjusted_issue_rate_percent": 14.0,
+    "grade_confirmed": "B",
+    "grade_adjusted": "B",
+    "note": "Primary issues are reversed authorship (1 CRITICAL) and semantic incompatibility in type assignments (22 HIGH). No duplicates or predicate fragmentation detected. System is close to production quality but needs bibliographic parser fix."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.6,
+      "description": "Book title appears as source instead of author in authorship relationship. This is the classic V4 pattern where (Book, authored, Author) should be (Author, authored, Book).",
+      "root_cause_hypothesis": "The bibliographic_parser.py module detected the citation context and flagged AUTHORSHIP_REVERSED=true, but the correction was not applied. The flag exists but the relationship was not actually reversed in the output.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Bibliographic citation context on page 4",
+          "page": 4,
+          "what_is_wrong": "Book title is the source when it should be the target. The author should be the source of the 'authored' relationship.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Semantic Type Incompatibility",
+      "severity": "HIGH",
+      "count": 22,
+      "percentage": 13.4,
+      "description": "Organizations are being assigned source_type='Organization' but then creating 'is-a Organization' relationships where the predicate suggests they should be Person entities. The semantic_validator flagged these as SEMANTIC_INCOMPATIBILITY but they were not corrected.",
+      "root_cause_hypothesis": "The entity type assignment in Pass 1 extraction is inconsistent. Organizations are correctly typed as 'Organization' but then the extraction creates 'is-a Organization' relationships that imply they should be Person types. This suggests the Pass 1 prompt may be extracting redundant type assertions that conflict with the already-assigned entity types.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Allianz Global Insurance",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes section listing organizations",
+          "page": 18,
+          "what_is_wrong": "Entity is already typed as Organization in source_type field, but then creates a redundant 'is-a Organization' relationship. The semantic_validator correctly flagged this as type mismatch (Person cannot be-a Organization), suggesting the source_type should match the relationship assertion.",
+          "should_be": {
+            "source": "Allianz Global Insurance",
+            "relationship": null,
+            "target": null,
+            "note": "This relationship should be removed entirely - it's redundant with the source_type field"
+          }
+        },
+        {
+          "source": "Climate First Bank",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes section",
+          "page": 18,
+          "what_is_wrong": "Same issue - redundant type assertion that conflicts with entity typing",
+          "should_be": {
+            "source": "Climate First Bank",
+            "relationship": null,
+            "target": null,
+            "note": "Remove redundant type relationship"
+          }
+        },
+        {
+          "source": "GLS Bank",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes section",
+          "page": 18,
+          "what_is_wrong": "Same pattern - 22 total instances of this issue",
+          "should_be": {
+            "source": "GLS Bank",
+            "relationship": null,
+            "target": null,
+            "note": "Remove redundant type relationship"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Redundant Type Assertions",
+      "severity": "HIGH",
+      "count": 22,
+      "description": "The extraction is creating explicit 'is-a [Type]' relationships for entities that already have their type specified in the source_type/target_type fields. This creates redundant, low-value relationships that clutter the knowledge graph.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may be instructing the LLM to extract entity types as relationships in addition to assigning entity types. This is unnecessary and creates noise. The prompt should clarify that entity types should ONLY be assigned via source_type/target_type fields, not as separate relationships.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "examples": [
+        {
+          "source": "1% for the Planet",
+          "relationship": "is-a",
+          "target": "Organization",
+          "evidence_text": "Case Study Vignettes listing",
+          "page": 18,
+          "what_is_wrong": "Type already specified in source_type field, relationship is redundant",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "Dedication Target Concatenation",
+      "severity": "MILD",
+      "count": 2,
+      "description": "In dedication relationships, the target is being concatenated as 'Our Biggest Deal to [Person]' instead of just '[Person]'. This creates awkward, non-standard entity names.",
+      "root_cause_hypothesis": "The list_splitter or entity extraction is not properly parsing dedication statements. When the text says 'dedicated to X, Y, Z', it should create separate relationships (Author, dedicated to, X), (Author, dedicated to, Y), etc. Instead, it's creating (Author, dedicated, 'Our Biggest Deal to X').",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Bernard Lietaer",
+          "evidence_text": "Dedication section",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Bernard Lietaer', not 'Our Biggest Deal to Bernard Lietaer'",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated to",
+            "target": "Bernard Lietaer"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Wangari Maathai",
+          "evidence_text": "Dedication section",
+          "page": 10,
+          "what_is_wrong": "Same issue - book title concatenated into target entity name",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated to",
+            "target": "Wangari Maathai"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "The bibliographic_parser correctly detects reversed authorship and sets the AUTHORSHIP_REVERSED flag, but the actual reversal is not being applied. Add code to swap source and target when this flag is set:\n\nif relationship.get('flags', {}).get('AUTHORSHIP_REVERSED'):\n    relationship['source'], relationship['target'] = relationship['target'], relationship['source']\n    relationship['source_type'], relationship['target_type'] = relationship['target_type'], relationship['source_type']",
+      "expected_impact": "Fixes 1 CRITICAL reversed authorship relationship. This is a known V4 pattern that should have been caught.",
+      "rationale": "The detection logic is working correctly (flag is set), but the correction logic is missing. This is a simple swap operation that should be applied immediately after detection."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit instruction to Pass 1 extraction prompt:\n\n'IMPORTANT: Do NOT extract entity type assertions as relationships. Entity types should ONLY be specified in the source_type and target_type fields. Do not create relationships like (Entity, is-a, Type) or (Entity, is, Category). These are redundant and will be filtered out.'\n\nAlso add a few-shot example showing what NOT to do:\n\nBAD: {source: 'Apple Inc', relationship: 'is-a', target: 'Company', source_type: 'Organization'}\nGOOD: {source: 'Apple Inc', relationship: 'founded', target: 'iPhone', source_type: 'Organization', target_type: 'Product'}",
+      "expected_impact": "Eliminates 22 HIGH-severity redundant type assertion relationships (13.4% of total). Reduces noise in knowledge graph.",
+      "rationale": "The extraction is creating relationships that duplicate information already captured in entity type fields. This suggests the prompt is not clearly instructing the LLM to avoid this pattern. Adding explicit negative examples will clarify the desired behavior."
+    },
+    {
+      "priority": "HIGH",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/type_assertion_filter.py",
+      "recommendation": "Create a new post-processing module that filters out redundant type assertion relationships:\n\ndef filter_type_assertions(relationships):\n    filtered = []\n    for rel in relationships:\n        # Remove 'is-a [Type]' relationships where Type matches source_type\n        if rel['relationship'] in ['is-a', 'is a', 'is'] and rel['target'] in ['Organization', 'Person', 'Book', 'Category', 'Place']:\n            if rel['source_type'] == rel['target']:\n                continue  # Skip redundant type assertion\n        filtered.append(rel)\n    return filtered\n\nThis provides defense-in-depth even if the prompt fix doesn't fully solve the issue.",
+      "expected_impact": "Catches any remaining type assertion relationships that slip through prompt improvements. Ensures 0% redundant type relationships in output.",
+      "rationale": "Prompt improvements may not be 100% effective. A code-based filter provides a guaranteed backstop and is trivial to implement."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Enhance the list_splitter to handle dedication statements more intelligently. When processing 'dedicated to X, Y, Z' patterns:\n\n1. Detect dedication context (relationship contains 'dedicated')\n2. Parse target to extract just the person name, removing any book title prefix\n3. Use regex to strip patterns like '^[Book Title] to (.+)$' and keep only the person name\n\nExample:\nif 'dedicated' in relationship['relationship'].lower():\n    # Strip 'Book Title to ' prefix from target\n    target = re.sub(r'^.+ to (.+)$', r'\\1', relationship['target'])\n    relationship['target'] = target",
+      "expected_impact": "Fixes 2 MILD dedication target concatenation issues. Improves entity name quality.",
+      "rationale": "The list_splitter is not handling the specific pattern of dedication statements where the book title appears before 'to [Person]'. This is a straightforward regex fix."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add guidance for dedication relationships:\n\n'When extracting dedication relationships, the target should be ONLY the person/entity being dedicated to, not the book title. \n\nBAD: (Author, dedicated, \"Book Title to Person Name\")\nGOOD: (Author, dedicated to, \"Person Name\")'",
+      "expected_impact": "Prevents future dedication target concatenation issues at the source.",
+      "rationale": "While the code fix handles existing issues, improving the prompt prevents the problem from occurring in the first place."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Extraction is creating redundant type assertion relationships (e.g., 'Organization is-a Organization') that duplicate information already in entity type fields",
+        "current_wording": "Unknown - prompt not provided, but likely lacks explicit instruction to avoid type assertions as relationships",
+        "suggested_fix": "Add explicit negative instruction: 'Do NOT extract entity type assertions as relationships. Types should ONLY be in source_type/target_type fields.' Include few-shot examples showing correct vs incorrect patterns.",
+        "examples_needed": "Yes - show examples of what NOT to do (type assertions as relationships) alongside correct examples"
+      },
+      {
+        "issue": "Dedication relationships are extracting concatenated targets ('Book to Person') instead of just the person name",
+        "current_wording": "Unknown - likely lacks specific guidance for dedication statement parsing",
+        "suggested_fix": "Add specific instruction: 'For dedication relationships, extract ONLY the person/entity name as the target, not the book title or connecting words.' Provide example: 'dedicated to X, Y, Z' should create separate (Author, dedicated to, X), (Author, dedicated to, Y) relationships.",
+        "examples_needed": "Yes - show correct parsing of dedication lists"
+      }
+    ],
+    "pass2_evaluation_issues": []
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.14,
+    "notes": "System is close to production quality. The 14% issue rate is driven by 22 redundant type assertion relationships (HIGH severity but low impact on KG utility) and 1 CRITICAL reversed authorship. Fixing the bibliographic parser and adding the type assertion filter would bring the system to ~0.6% issue rate (1 remaining dedication issue out of 164 relationships), well below the 5% threshold. The system shows good entity extraction quality otherwise - no pronoun issues, no vague entities, no list targets, no duplicates, and well-controlled predicate vocabulary (44 unique predicates is excellent)."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T07:41:37.860007",
+    "relationships_analyzed": 164,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14_3_5"
+  }
+}

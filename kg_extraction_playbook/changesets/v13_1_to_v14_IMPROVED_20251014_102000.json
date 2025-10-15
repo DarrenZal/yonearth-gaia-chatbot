@@ -1,0 +1,353 @@
+{
+  "changeset_metadata": {
+    "source_version": "13.1",
+    "target_version": "14.0",
+    "curator_original_version": "14.1",
+    "total_changes": 7,
+    "estimated_impact": "Reduces issue rate from 8.6% to ~6.0% (A- → A grade). Focus on HIGH priority fixes for lower risk.",
+    "improvements_over_curator": [
+      "Fixed modal verb handling in predicate normalizer (preserves epistemic hedging)",
+      "Conservative filtering thresholds (0.5 base, strict only for flagged content)",
+      "Reduced scope to HIGH+MEDIUM priority (lower risk, proper ACE iteration)",
+      "Added specific V13.1 failure examples to prompts",
+      "Strengthened metadata filter with predicate patterns"
+    ]
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "NEW_MODULE",
+      "file_path": "src/knowledge_graph/postprocessing/content_specific/books/metadata_filter.py",
+      "priority": "HIGH",
+      "rationale": "8 HIGH priority praise quote issues + 2 MILD dedication issues = 10 metadata relationships polluting domain knowledge. Bibliographic parser detects but doesn't filter. Need dedicated module to remove book metadata entirely.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification, Dedication Relationships",
+      "expected_improvement": "Eliminates all 10 metadata relationships (1.1% of total)",
+      "change_description": "Create new MetadataFilter module to identify and remove book metadata relationships (praise quotes, dedications, publication info) from knowledge graph output",
+      "curator_improvements": [
+        "ADDED: Predicate-pattern filtering ('endorsed', 'dedicated', 'published by', 'wrote foreword for')",
+        "ADDED: Page number filtering (pages 1-10, last 10 pages = front/back matter)",
+        "STRENGTHENED: Multi-layered detection (flags + predicates + page numbers)"
+      ],
+      "guidance": {
+        "filtering_criteria": [
+          "Layer 1 - Flag-based: PRAISE_QUOTE_CORRECTED or DEDICATION_DETECTED → FILTER",
+          "Layer 2 - Predicate-based: Predicates ['endorsed', 'dedicated', 'published by', 'published in', 'wrote foreword for'] + book title in source/target → FILTER",
+          "Layer 3 - Page-based: Page < 10 OR page > (total_pages - 10) AND relationship involves book title → FILTER",
+          "Layer 4 - Combined: (book title, ANY_PREDICATE, person name) on page < 20 → LIKELY METADATA → FILTER"
+        ],
+        "implementation": "Check all layers, filter if ANY layer matches. Store filtered relationships in metadata dict for potential later use."
+      },
+      "validation": {
+        "test_cases": [
+          "('Michael Bowman', 'endorsed', 'Soil Stewardship Handbook') → FILTERED (predicate + book title)",
+          "('Soil Stewardship Handbook', 'dedicated', 'Osha') → FILTERED (predicate + flag)",
+          "('soil', 'contains', 'bacteria') → KEPT (domain knowledge)",
+          "('author', 'wrote', 'Soil Stewardship Handbook') page=6 → FILTERED (page < 10)"
+        ]
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v13_1.txt",
+      "priority": "HIGH",
+      "rationale": "8 MEDIUM philosophical/abstract claims + 6 MEDIUM normative statements = 14 issues from unclear claim type distinction. Pass 2 is best place to catch this before post-processing.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical/Abstract Claims, Normative Statements Classified as Factual",
+      "expected_improvement": "Reduces philosophical/normative issues by 10-12 relationships (1.1-1.4%)",
+      "change_description": "Add CLAIM TYPE CLASSIFICATION section with clear definitions, scoring guidelines, and REAL examples from V13.1 failures",
+      "curator_improvements": [
+        "ADDED: Specific examples from V13.1's actual failures",
+        "ADDED: Clear conflict resolution rules (text_confidence high but claim philosophical → signals_conflict=true)",
+        "IMPROVED: More actionable scoring guidelines with concrete thresholds"
+      ],
+      "guidance": {
+        "section_structure": [
+          "⚠️ CLAIM TYPE CLASSIFICATION",
+          "Three claim types: FACTUAL, NORMATIVE, PHILOSOPHICAL",
+          "Scoring guidelines for each",
+          "Real V13.1 failure examples",
+          "Conflict resolution rules"
+        ],
+        "key_definitions": {
+          "FACTUAL": "Empirically verifiable. Can be tested/measured/documented. p_true = 0.7-0.95 based on evidence.",
+          "NORMATIVE": "Prescriptive (should/ought/must/can). Recommendations, not facts. p_true = 0.3-0.5. Flag as NORMATIVE.",
+          "PHILOSOPHICAL": "Abstract/spiritual/metaphysical about meaning or essence. p_true = 0.1-0.3. Flag as PHILOSOPHICAL_CLAIM."
+        },
+        "real_v13_1_examples": [
+          "❌ V13.1 FAILURE: ('soil', 'is-a', 'cosmically sacred') classified as FACTUAL with p_true=0.8 → Should be PHILOSOPHICAL, p_true=0.2",
+          "❌ V13.1 FAILURE: ('humanity', 'should connect with', 'soil') classified as FACTUAL with p_true=0.75 → Should be NORMATIVE, p_true=0.4",
+          "❌ V13.1 FAILURE: ('soil management', 'can mitigate', 'climate change') classified as NORMATIVE with p_true=0.4 → Should be FACTUAL, p_true=0.75 (testable claim)",
+          "✅ CORRECT: ('soil', 'contains', 'bacteria') classified as FACTUAL, p_true=0.9",
+          "✅ CORRECT: ('biochar', 'increases', 'soil fertility') classified as FACTUAL, p_true=0.8"
+        ]
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v13.txt",
+      "priority": "HIGH",
+      "rationale": "12 MEDIUM vague abstract entity issues originate in Pass 1 extraction. Better to prevent extraction than fix downstream.",
+      "risk_level": "low",
+      "affected_issue_category": "Vague Abstract Entities",
+      "expected_improvement": "Reduces vague entity extraction by 8-10 relationships (0.9-1.1%)",
+      "change_description": "Add ENTITY SPECIFICITY REQUIREMENTS section with explicit prohibition of vague/abstract entities",
+      "curator_improvements": [
+        "ADDED: Real V13.1 vague entity examples",
+        "ADDED: Detection mechanism backup (VagueEntityBlocker postprocessing)",
+        "IMPROVED: Clearer decision rule (Can you define it in 1-2 sentences?)"
+      ],
+      "guidance": {
+        "prohibited_patterns": [
+          "❌ 'aspects of life' → ✅ 'human health', 'food security', 'community wellbeing'",
+          "❌ 'the answer' → ✅ specific solution being referenced",
+          "❌ 'this approach' → ✅ resolve to specific practice name",
+          "❌ 'the way' → ✅ specific method being described"
+        ],
+        "extraction_rules": [
+          "Rule 1: If entity is vague, scan 2-3 sentences for specific referent",
+          "Rule 2: If no referent found, SKIP (don't extract vague entity)",
+          "Rule 3: Test: Can you define this entity in 1-2 clear sentences? If no → too vague",
+          "Rule 4: Prefer concrete nouns (bacteria, biochar) over abstract concepts (the solution)"
+        ],
+        "real_v13_1_failures": [
+          "❌ V13.1 extracted: ('soil stewardship', 'affects', 'aspects of life') → 'aspects of life' too vague",
+          "❌ V13.1 extracted: ('regenerative agriculture', 'is', 'the answer') → 'the answer' too vague"
+        ],
+        "backup_postprocessing": "Even with prompt improvements, VagueEntityBlocker will catch remaining cases by checking entity character length and abstract noun patterns"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v13.txt",
+      "priority": "HIGH",
+      "rationale": "10 metadata relationships extracted in Pass 1. While metadata_filter will remove them, better to prevent extraction for efficiency.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification, Dedication Relationships",
+      "expected_improvement": "Prevents extraction of 8-10 metadata relationships at source",
+      "change_description": "Add EXTRACTION SCOPE section to distinguish domain knowledge from book metadata",
+      "guidance": {
+        "section_heading": "📚 EXTRACTION SCOPE: DOMAIN KNOWLEDGE ONLY",
+        "principle": "Extract relationships about SUBJECT MATTER (soil, agriculture, ecology), NOT about THE BOOK ITSELF (publication, endorsements, dedications)",
+        "what_to_skip": [
+          "Praise quotes: 'This handbook is excellent' - Reviewer → SKIP",
+          "Dedications: 'Dedicated to my children' → SKIP",
+          "Publication info: Publisher, date, ISBN → SKIP",
+          "Author bio on early pages → SKIP",
+          "Front/back matter (pages 1-10, last 5) → SKIP unless domain knowledge"
+        ],
+        "what_to_extract": [
+          "Domain facts about soil, agriculture, ecology",
+          "Scientific claims, research findings",
+          "Practical knowledge, techniques",
+          "Citations to other works (not praise for THIS book)"
+        ],
+        "decision_rule": "Ask: Is this teaching me about SOIL STEWARDSHIP or about THE BOOK? If about book → SKIP."
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/predicate_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "10 MEDIUM predicate fragmentation + 3 MILD semantic mismatches = 13 issues. 133 unique predicates shows normalization not aggressive enough.",
+      "risk_level": "medium",
+      "affected_issue_category": "Predicate Fragmentation, Wrong Semantic Predicates",
+      "expected_improvement": "Reduces unique predicates from 133 to ~90-100, fixes 5-8 semantic mismatches",
+      "change_description": "Enhance predicate normalization with tense normalization and 'is-X' variant consolidation (KEEP modal verbs for epistemic hedging)",
+      "curator_improvements": [
+        "FIXED: DO NOT strip modal verbs ('can', 'may', 'might') - they preserve epistemic information",
+        "REFINED: Focus on tense normalization only",
+        "ADDED: Semantic validation to catch nonsensical predicates"
+      ],
+      "guidance": {
+        "normalization_rules": {
+          "tense_normalization": {
+            "present_perfect_to_past": "'has preserved' → 'preserved', 'has enabled' → 'enabled'",
+            "passive_to_active": "'is produced' → 'produces'",
+            "rationale": "Simple past tense clearer for KG"
+          },
+          "is_variant_consolidation": {
+            "patterns": "'is of', 'is toward', 'is about', 'is characterized by'",
+            "action": "Normalize to 'is-a' if type relationship, else extract core verb",
+            "example": "'is about X' → 'relates to X' or 'concerns X'"
+          },
+          "modal_verbs_KEEP": {
+            "DO_NOT_STRIP": "['can', 'may', 'might', 'could']",
+            "rationale": "Modal verbs indicate epistemic uncertainty, critical for knowledge quality",
+            "examples": [
+              "✅ KEEP: 'soil management can mitigate climate change' (indicates possibility, not certainty)",
+              "✅ KEEP: 'biochar may increase fertility' (indicates research uncertainty)",
+              "❌ DO NOT CHANGE TO: 'soil management mitigates climate change' (too strong, loses hedging)"
+            ]
+          }
+        },
+        "semantic_validation": [
+          "If source is abstract + predicate is physical action → FLAG",
+          "If predicate is 'located in' + target is abstract → suggest alternative",
+          "If 'is-a' relationship with incompatible types → REJECT"
+        ]
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "CONFIG_UPDATE",
+      "file_path": "config/filtering_thresholds.yaml",
+      "priority": "MEDIUM",
+      "rationale": "5 MILD figurative + 8 MEDIUM philosophical = 13 issues where detection works but filtering too permissive.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical/Abstract Claims, Figurative Language",
+      "expected_improvement": "Filters 8-10 low-quality philosophical/metaphorical relationships",
+      "change_description": "Add flag-specific thresholds (CONSERVATIVE approach: keep base at 0.5, strict only for problematic flags)",
+      "curator_improvements": [
+        "FIXED: Keep base threshold at 0.5 (not 0.7) to avoid filtering valid domain knowledge",
+        "REFINED: Only raise thresholds for FLAGGED content (philosophical, metaphor, opinion)",
+        "ADDED: Justification for conservative approach"
+      ],
+      "guidance": {
+        "threshold_philosophy": "Conservative base, strict for problematic categories. Avoid over-filtering valid knowledge.",
+        "new_thresholds": {
+          "base_threshold": 0.5,
+          "PHILOSOPHICAL_CLAIM": 0.85,
+          "METAPHOR": 0.85,
+          "FIGURATIVE_LANGUAGE": 0.85,
+          "OPINION": 0.9,
+          "signals_conflict_true": 0.75
+        },
+        "rationale": {
+          "base_0.5_not_0.7": "V13.1's p_true scores calibrated for 0.5 threshold. Raising to 0.7 could filter 20-30% of valid relationships.",
+          "strict_for_flags": "Only relationships with problematic flags need higher thresholds",
+          "conservative_approach": "Better to keep borderline factual claims than over-filter domain knowledge"
+        }
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/pronoun_resolver.py",
+      "priority": "MEDIUM",
+      "rationale": "3 MILD possessive pronouns in targets + 4 MILD generic pronouns = 7 issues. Resolution asymmetric between sources and targets.",
+      "risk_level": "low",
+      "affected_issue_category": "Unresolved Possessive Pronouns, Unresolved Generic Pronouns",
+      "expected_improvement": "Resolves 5-7 remaining pronoun issues",
+      "change_description": "Extend pronoun resolution to targets with same rigor as sources, add fallback for unresolvable cases",
+      "curator_improvements": [
+        "ADDED: Unresolvable fallback logic (filter relationship if resolution fails)",
+        "ADDED: Context-based resolution for ambiguous possessives",
+        "IMPROVED: Clear handling of edge cases"
+      ],
+      "guidance": {
+        "fix_approach": [
+          "Ensure resolve_pronouns() called for BOTH source AND target",
+          "Apply same context window to targets as sources",
+          "For possessives ('our countryside'), extract entity from context",
+          "If resolution fails after all attempts → FLAG → FILTER if p_true < 0.7"
+        ],
+        "resolution_strategy": {
+          "possessive": "'our countryside' + context 'Slovenia' → 'Slovenian countryside'",
+          "generic": "'we', 'us' → 'humanity', 'individuals', or specific group from context",
+          "demonstrative": "'this approach' → resolve to nearest concrete noun in previous sentence",
+          "unresolvable": "If no clear antecedent after checking 3 sentences → add PRONOUN_UNRESOLVED flag → filter if p_true < 0.7"
+        }
+      }
+    }
+  ],
+  "excluded_changes": {
+    "change_008_list_splitter": {
+      "reason": "MILD priority (2 issues), low impact. Save for V14.1 polish iteration.",
+      "defer_to": "v14.1"
+    },
+    "change_009_context_enricher": {
+      "reason": "MILD priority (5 issues), consolidation logic complex. Save for V14.1 polish iteration.",
+      "defer_to": "v14.1"
+    },
+    "change_010_few_shot_examples": {
+      "reason": "MILD priority, covered by change_002 improvements. Redundant for V14.",
+      "defer_to": "v14.1"
+    }
+  },
+  "expected_impact": {
+    "issues_fixed": 42,
+    "high_fixed": 8,
+    "medium_fixed": 30,
+    "mild_fixed": 4,
+    "estimated_error_rate": "8.6% → 6.0%",
+    "target_grade": "A- → A",
+    "primary_improvements": [
+      "Metadata filtering: 10 issues eliminated (1.1%)",
+      "Philosophical/normative classification: 14 issues reduced (1.6%)",
+      "Vague entity prevention: 10 issues reduced (1.1%)",
+      "Predicate normalization: 6 issues reduced (0.7%)",
+      "Pronoun resolution: 6 issues reduced (0.7%)"
+    ],
+    "conservative_approach": "56% of issues (42/75) vs. Curator's 73% (55/75). Lower risk, proper ACE iteration."
+  },
+  "priorities": {
+    "immediate_HIGH": [
+      "change_001: Metadata filter (10 issues)",
+      "change_002: Claim type classification (14 issues)",
+      "change_003: Entity specificity (10 issues)",
+      "change_004: Extraction scope (8 issues)"
+    ],
+    "short_term_MEDIUM": [
+      "change_005: Predicate normalizer (8 issues)",
+      "change_006: Filtering thresholds (10 issues)",
+      "change_007: Pronoun resolution (7 issues)"
+    ],
+    "deferred_to_v14_1": [
+      "List splitter edge case (2 issues)",
+      "Context enricher consolidation (5 issues)",
+      "Few-shot examples (consistency improvement)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Run V14 extraction on same book, compare to V13.1",
+    "success_criteria": [
+      "High priority issues: 8 → 0-2 (75% reduction)",
+      "Medium priority issues: 22 → 8-12 (50% reduction)",
+      "Total issues: 75 → <55 (27% reduction)",
+      "Issue rate: 8.6% → 6.0%",
+      "Grade: A- → A"
+    ],
+    "less_aggressive_than_curator": "42 issues fixed (56%) vs. 55 issues (73%). Reduces overfitting risk.",
+    "rollback_plan": "If issue rate increases or new critical issues emerge, revert to V13.1. Keep only metadata_filter module.",
+    "monitoring": "Track filtered relationships by category to ensure no over-filtering"
+  },
+  "implementation_notes": {
+    "curator_improvements_summary": [
+      "✅ Fixed modal verb handling (preserves epistemic hedging)",
+      "✅ Conservative filtering thresholds (0.5 base, strict for flags)",
+      "✅ Reduced scope to 7 changes (vs. 10) for lower risk",
+      "✅ Added V13.1-specific failure examples to prompts",
+      "✅ Strengthened metadata filter with multi-layer detection",
+      "✅ Added fallback logic for unresolvable pronouns"
+    ],
+    "order_of_operations": [
+      "1. Create metadata_filter.py (change_001)",
+      "2. Update Pass 1 prompt (change_003, change_004)",
+      "3. Update Pass 2 prompt (change_002)",
+      "4. Update filtering_thresholds.yaml (change_006)",
+      "5. Enhance predicate_normalizer.py (change_005)",
+      "6. Fix pronoun_resolver.py (change_007)"
+    ],
+    "risk_mitigation": [
+      "Test each change incrementally",
+      "Monitor filtered relationships",
+      "Keep V13.1 as fallback",
+      "Defer polish changes (008-010) to V14.1 iteration"
+    ]
+  },
+  "metadata": {
+    "curation_date": "2025-10-14T10:20:00",
+    "source_version": 13.1,
+    "target_version": 14.0,
+    "curator_original_version": 14.1,
+    "improvements_over_curator": 6,
+    "reflector_analysis_id": "2025-10-14T09:52:54",
+    "improved_by": "claude-sonnet-4-5-20250929",
+    "review_notes": "Critical review identified 6 improvements over Curator's original changeset. More conservative approach with better risk/reward balance."
+  }
+}

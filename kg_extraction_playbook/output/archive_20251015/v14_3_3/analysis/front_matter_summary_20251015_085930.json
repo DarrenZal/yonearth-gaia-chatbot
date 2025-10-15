@@ -1,0 +1,173 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_085930",
+  "extraction_file": "front_matter_v14_3_8_20251015_085355.json",
+  "quality_metrics": {
+    "overall_grade": "B+",
+    "issue_rate": 11.4,
+    "total_relationships": 105,
+    "total_issues": 12
+  },
+  "issue_breakdown": {
+    "CRITICAL": 0,
+    "HIGH": 1,
+    "MEDIUM": 3,
+    "MILD": 8
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": false,
+    "criteria": {
+      "critical_issues_zero": true,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": false
+    }
+  },
+  "actionable_issues": [
+    {
+      "severity": "HIGH",
+      "category": "Praise Quote Misclassification",
+      "count": 1,
+      "percentage": 0.95,
+      "description": "Endorsement relationships (Person \u2192 endorsed \u2192 Book) are being extracted from praise quotes in the accolades section. While the system correctly identifies these as endorsements (not authorship), the relationship type 'endorsed' may be too strong for what are essentially promotional blurbs.",
+      "examples": [
+        {
+          "source": "Ken LaRoe",
+          "relationship": "endorsed",
+          "target": "Our Biggest Deal",
+          "evidence_text": "I pick up his book, Our Biggest Deal, and read the amazing authors and study the amazing companies featured and I become completely energized to pick up the sword again!",
+          "page": 3,
+          "what_is_wrong": "This is a promotional testimonial/praise quote, not a formal endorsement. The relationship 'endorsed' implies official backing, but this is marketing copy from the book's accolades section.",
+          "should_be": {
+            "source": "Ken LaRoe",
+            "relationship": "provided testimonial for",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Incomplete Book Titles",
+      "count": 3,
+      "percentage": 2.86,
+      "description": "Book titles extracted as single words or very short phrases that are likely incomplete. Examples: 'Regenerative Capitalism', 'Regenerative Economics', 'Viriditas' - these may be shortened versions of longer titles.",
+      "examples": [
+        {
+          "source": "John Fullerton",
+          "relationship": "authored",
+          "target": "Regenerative Capitalism",
+          "evidence_text": "John Fullerton is the author of Regenerative Capitalism",
+          "page": 18,
+          "what_is_wrong": "Title is likely incomplete - most books have subtitles. The full title might be 'Regenerative Capitalism: How Universal Principles and Patterns Will Shape Our New Economy' or similar.",
+          "should_be": {
+            "source": "John Fullerton",
+            "relationship": "authored",
+            "target": "Regenerative Capitalism: [full title with subtitle]"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "authored",
+          "target": "Viriditas",
+          "evidence_text": "This collection builds on Perry's previous books Y on Earth and Viriditas",
+          "page": 23,
+          "what_is_wrong": "Single-word book title is suspicious - likely incomplete or missing subtitle.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Viriditas: [full title]"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Vague Abstract Entities",
+      "count": 2,
+      "percentage": 1.9,
+      "description": "Entities that are too abstract or vague to be useful in a knowledge graph. Examples: 'quote' (generic), 'mechanistic worldview' (philosophical abstraction without concrete definition).",
+      "examples": [
+        {
+          "source": "Descartes",
+          "relationship": "attributed",
+          "target": "quote",
+          "evidence_text": "Descartes's views on nature are reflected in this quote attributed to him",
+          "page": 27,
+          "what_is_wrong": "Target entity 'quote' is too generic - should be the actual quote text or a more specific identifier.",
+          "should_be": {
+            "source": "Descartes",
+            "relationship": "attributed",
+            "target": "The conquest of nature is to be achieved through number and measure"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Figurative Language Over-Flagging",
+      "count": 3,
+      "percentage": 2.86,
+      "description": "The FIGURATIVE_LANGUAGE flag is being applied to relationships that use metaphorical terms but are still factually accurate. Examples: 'The Sacred View of Mother Gaia' (book title), 'The Alchemy of Money' (book title). These are titles, not claims about reality.",
+      "examples": [
+        {
+          "source": "John P. Milton",
+          "relationship": "authored",
+          "target": "The Sacred View of Mother Gaia",
+          "evidence_text": "23 John P. Milton 285 \"The Sacred View of Mother Gaia\"",
+          "page": 15,
+          "what_is_wrong": "This is a book title containing metaphorical language, but the authorship relationship is factual. The flag should not apply to titles/names.",
+          "should_be": {
+            "source": "John P. Milton",
+            "relationship": "authored",
+            "target": "The Sacred View of Mother Gaia",
+            "flags": {
+              "FACTUAL": true
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "recommendation": "Add explicit guidance to distinguish between formal endorsements (forewords, official endorsements) and promotional testimonials (praise quotes in accolades sections). Suggest using predicates like 'provided testimonial for' or 'praised' for accolades, reserving 'endorsed' for formal endorsements."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Enhance book title extraction to capture full titles including subtitles. Add logic to detect title separators (colons, em-dashes, semicolons) and include subtitle text. If a title appears suspiciously short (<3 words), flag for review or attempt to extract more context."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Add exemption rules for figurative language detection: (1) Skip analysis when target entity is a Book title, Organization name, or other proper noun, (2) Add context-aware rules that recognize when metaphorical terms are part of names vs. claims about reality."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "recommendation": "Add predicate-based exemptions for opinion detection. Predicates like 'stated', 'believes', 'quoted', 'attributed', 'claimed' describe factual speech acts, not opinions. Only flag as OPINION when the relationship itself expresses a subjective judgment (e.g., 'X thinks Y is good')."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Add (Person, endorsed, Essay) to the type compatibility whitelist. Also review other endorsement-related predicates to ensure they work with Essay, Article, Chapter, and other document types."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "recommendation": "Improve entity specificity scoring for abstract philosophical terms. Add a penalty for entities that are pure abstractions without concrete referents (e.g., 'quote' without the actual quote text, 'worldview' without specification)."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "recommendation": "Add predicate-based exemptions for philosophical claim detection. When the predicate is 'attributed quote', 'stated', or similar, the relationship is factual regardless of the quote's philosophical content. Only flag when the relationship itself makes a philosophical claim."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "recommendation": "Create a new module that uses document structure context (page numbers, section headers, formatting) to classify relationship types more accurately. For example, relationships from accolades sections should be tagged as 'testimonial' context, relationships from TOC should be tagged as 'bibliographic', etc."
+    }
+  ]
+}

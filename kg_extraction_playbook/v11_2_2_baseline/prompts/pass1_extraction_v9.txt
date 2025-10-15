@@ -1,0 +1,140 @@
+Extract ALL meaningful relationships from this text - including factual, philosophical, and metaphorical statements.
+
+## ⚠️ EXTRACTION GUIDELINES ⚠️
+
+**EXTRACT (Be comprehensive)**:
+✅ Factual relationships (authorship, organizational, causal)
+✅ Testable claims (even without evidence present)
+✅ Philosophical statements and opinions
+✅ Metaphors and figurative language
+✅ Abstract concepts and ideas
+✅ All types of discourse (claims, evidence, questions)
+
+**IMPORTANT - Entity Quality**:
+⚠️ Try to resolve pronouns to specific entities when context allows
+⚠️ Keep entities concise (2-5 words typically)
+⚠️ Note: We'll classify and flag different statement types in later passes
+
+## 📏 ENTITY CONCISENESS
+
+Entities should be **CONCISE NOUN PHRASES** (2-5 words typically):
+
+✅ GOOD: "soil ecosystem complexity"
+❌ BAD: "hardly anything is as complex as the living web of interconnectedness found in our planet's soil"
+
+✅ GOOD: "new generation of farmers"
+❌ BAD: "new generation of farmers, gardeners and citizens are leading the way"
+
+✅ GOOD: "biochar production methods"
+❌ BAD: "the various methods and techniques used for biochar production"
+
+## 📚 FEW-SHOT EXAMPLES
+
+### Example 1: Resolve Pronouns When Possible
+**Text**: "I hail from Slovenia. My people have lived there for centuries."
+✅ BETTER: (Aaron William Perry, hails from, Slovenia)
+✅ BETTER: (Slovenians, lived in, Slovenia)
+⚠️ ACCEPTABLE IF CONTEXT UNCLEAR: (I, hails from, Slovenia) [will be flagged for review]
+
+**Why**: Try to resolve pronouns using context, but extract even if resolution isn't clear.
+
+### Example 2: Extract Philosophical Statements
+**Text**: "Being connected to land and soil is what it means to be human."
+✅ EXTRACT: (being connected to land and soil, is what it means to be, human)
+
+**Why**: This is a philosophical claim that's part of the discourse. It will be flagged as PHILOSOPHICAL_CLAIM in Pass 2.
+
+### Example 3: Extract Abstract Concepts
+**Text**: "Spiritual flourishing is wedded to how we take care of the earth."
+✅ EXTRACT: (spiritual flourishing, depends on, earth care)
+
+**Why**: Abstract concepts are valid discourse. They'll be classified appropriately in Pass 2.
+
+### Example 4: Keep Entities Concise
+**Text**: "Learning about soil and engaging in soil-building practices is an exciting way to positively influence families."
+✅ GOOD: (soil education, benefits, families)
+⚠️ ACCEPTABLE: (learning about soil, benefits, families) [slightly verbose but extractable]
+
+**Why**: Prefer concise noun phrases, but extract even if entities are somewhat verbose.
+
+### Example 5: Extract Metaphors
+**Text**: "Our land has remained a veritable Eden through the ages."
+✅ EXTRACT: (our land, is, veritable Eden)
+
+**Why**: Metaphors are meaningful discourse. They'll be flagged as METAPHOR in Pass 2.5.
+
+## 📚 RELATIONSHIP TYPES TO EXTRACT
+
+### 1. ENTITY RELATIONSHIPS
+- **Authorship**: X authored Y, X wrote Y, X published Y
+- **Organizational**: X founded Y, X works for Y, X is affiliated with Y
+- **Location**: X is located in Y, X occurs in Y
+- **Attribution**: X said Y, X stated Y, X believes Y
+
+### 2. DISCOURSE GRAPH (MODULAR & COMPOSABLE)
+- **Claims**: ANY assertion, argument, or statement (factual, philosophical, metaphorical)
+  - Extract claims even without supporting evidence
+  - Claims can be connected to evidence later (modular design)
+  - Include testable claims, opinions, philosophical statements
+- **Evidence**: Facts, data, observations that support or oppose claims
+- **Questions**: Specific inquiries, problems, challenges posed
+- Relationships:
+  - Claim → supports → Claim
+  - Claim → opposes → Claim
+  - Evidence → supports → Claim
+  - Evidence → opposes → Claim
+  - Claim → answers → Question
+
+**KEY PRINCIPLE**: Extract all discourse elements. Classification happens in Pass 2.
+
+### 3. PROCESSES & PRACTICES
+- **Methods**: X involves Y, X requires Y, X includes Y, X produces Y
+- **Procedures**: X transforms Y, X creates Y, X converts Y into Z
+- **Practices**: X recommends Y, X suggests Y, X implements Y
+
+**Focus on**: Concrete, repeatable processes with specific entities.
+
+### 4. CAUSATION & EFFECTS
+- **Positive**: X causes Y, X leads to Y, X enables Y, X improves Y
+- **Negative**: X prevents Y, X harms Y, X destroys Y, X threatens Y
+- **Neutral**: X affects Y, X influences Y, X changes Y
+
+**Extract all causal relationships**: Including speculative, philosophical, and factual causation.
+
+### 5. DEFINITIONS & DESCRIPTIONS
+- **Identity**: X is-a Y, X is defined as Y (including metaphorical identities)
+- **Properties**: X has Y, X contains Y, X exhibits Y
+- **Comparison**: X is similar to Y, X differs from Y
+
+**Extract all definitions**: Including literal, metaphorical, and philosophical definitions.
+
+### 6. QUANTITATIVE RELATIONSHIPS
+- **Measurements**: X measures Y units, X equals Y percent
+- **Changes**: X increases by Y, X decreases by Y
+- **Comparisons**: X is greater than Y, X is equivalent to Y
+
+## 📝 OUTPUT FORMAT
+
+For each relationship provide:
+- **source**: Concise source entity (2-5 words, no pronouns)
+- **relationship**: Relationship type (supports, causes, is-a, produces, etc.)
+- **target**: Concise target entity (2-5 words, no pronouns)
+- **evidence_text**: Quote from text (100-300 characters)
+
+## 📖 TEXT TO EXTRACT FROM
+
+{text}
+
+## ⚡ BE COMPREHENSIVE AND ACCURATE
+
+Extract relationships that are:
+- Clearly stated or strongly implied in the text
+- Meaningful discourse elements (factual, philosophical, metaphorical, all types)
+- Useful for building a complete knowledge graph
+- Using concise entities (2-5 words preferred)
+
+Quality tips:
+- Try to resolve pronouns when context allows
+- Keep entities concise but don't skip extraction if unsure
+- Extract ALL types of statements - classification happens in Pass 2
+- When in doubt, extract it - we prefer completeness over filtering

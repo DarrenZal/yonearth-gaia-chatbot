@@ -1,0 +1,679 @@
+{
+  "extraction_metadata": {
+    "version": "v9_reflector_fixes",
+    "total_relationships": 359,
+    "analysis_timestamp": "2025-10-13T03:00:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 8,
+    "medium_priority_issues": 47,
+    "mild_issues": 23,
+    "total_issues": 78,
+    "issue_rate_percent": 21.7,
+    "estimated_false_negative_rate": 0.1,
+    "estimated_total_issues_with_fn": 86,
+    "adjusted_issue_rate_percent": 24.0,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C",
+    "note": "V9 shows REGRESSION from V7 (6.71% \u2192 21.7%). Major issues: possessive pronouns (8 HIGH), abstract philosophical statements (47 MEDIUM), praise quote over-correction (23 MILD). Prompts need significant refinement."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Possessive/Demonstrative Pronouns (Unresolved)",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 2.2,
+      "description": "Relationships extracted with possessive pronouns ('my people', 'our tradition') or demonstrative pronouns ('this', 'that') as entities instead of resolving to specific referents.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt lacks explicit instructions to resolve possessive/demonstrative pronouns. The pronoun resolution module in Pass 2.5 only handles subject pronouns (he/she/we/they) but not possessive forms (my/our/their) or demonstratives (this/that/these/those).",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "people",
+          "relationship": "love",
+          "target": "land and sea",
+          "evidence_text": "My people love the land. We love the sea.",
+          "page": 10,
+          "what_is_wrong": "Source is 'people' but should be 'Slovenians' or 'author's people' based on context. 'My people' is a possessive pronoun phrase that wasn't resolved.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "land and sea"
+          }
+        },
+        {
+          "source": "connection with the soil",
+          "relationship": "preserved",
+          "target": "countryside",
+          "evidence_text": "our connection with the soil that has preserved our countryside",
+          "page": 10,
+          "what_is_wrong": "'our connection' and 'our countryside' contain possessive pronouns. Should resolve to specific group (Slovenians, author's community, etc.)",
+          "should_be": {
+            "source": "Slovenian connection with soil",
+            "relationship": "preserved",
+            "target": "Slovenian countryside"
+          }
+        },
+        {
+          "source": "connection with the soil",
+          "relationship": "allowed",
+          "target": "my people to flourish",
+          "evidence_text": "that has allowed my people to flourish with a form of liberty",
+          "page": 10,
+          "what_is_wrong": "Target contains 'my people' - possessive pronoun not resolved",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "allowed",
+            "target": "Slovenians to flourish"
+          }
+        },
+        {
+          "source": "family farming",
+          "relationship": "is a tradition of",
+          "target": "my culture",
+          "evidence_text": "we have a deep tradition of family farming",
+          "page": 10,
+          "what_is_wrong": "Target is 'my culture' - possessive pronoun not resolved to specific culture",
+          "should_be": {
+            "source": "family farming",
+            "relationship": "is a tradition of",
+            "target": "Slovenian culture"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "provides guidance",
+          "target": "well-being",
+          "evidence_text": "This Soil Stewardship Handbook is deceptively small and simple.",
+          "page": 10,
+          "what_is_wrong": "Demonstrative pronoun 'This' used as source modifier. Relationship is also vague - 'provides guidance' doesn't match evidence.",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "is described as",
+            "target": "deceptively small and simple"
+          }
+        },
+        {
+          "source": "Y on Earth Community",
+          "relationship": "informs",
+          "target": "thousands",
+          "evidence_text": "the Y on Earth Community, the Soil Stewardship Guild members and the Community Impact Ambassadors who are informing and inspiring thousands.",
+          "page": 5,
+          "what_is_wrong": "Target is vague quantifier 'thousands' instead of 'thousands of people' or more specific entity",
+          "should_be": {
+            "source": "Y on Earth Community",
+            "relationship": "informs",
+            "target": "thousands of people"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "affiliated with",
+          "target": "Y on Earth Community",
+          "evidence_text": "The Y on Earth team and I hope you will join our Y on Earth Community.",
+          "page": 11,
+          "what_is_wrong": "'our Y on Earth Community' contains possessive pronoun 'our' - should be resolved or removed",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "founded",
+            "target": "Y on Earth Community"
+          }
+        },
+        {
+          "source": "Slovenia",
+          "relationship": "is a place of",
+          "target": "connectedness to the land",
+          "evidence_text": "like my people in Slovenia, we are all living descendants of peoples who have long and beautiful traditions of connectedness to the land.",
+          "page": 10,
+          "what_is_wrong": "'my people in Slovenia' contains possessive pronoun. Relationship is also too abstract.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "have tradition of",
+            "target": "connectedness to the land"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Abstract Philosophical Statements",
+      "severity": "MEDIUM",
+      "count": 47,
+      "percentage": 13.1,
+      "description": "Relationships extracted from philosophical, metaphorical, or aspirational statements that don't convey concrete factual information. These are often subjective claims, metaphors, or abstract connections that reduce KG utility.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt doesn't distinguish between factual claims and philosophical/aspirational statements. Pass 2 evaluation gives high knowledge_plausibility scores to abstract statements because they 'sound reasonable' even though they lack concrete verifiability.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt AND prompts/pass2_evaluation_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "gardening the soil",
+          "relationship": "connects",
+          "target": "us to the elements",
+          "evidence_text": "Gardening the soil connects us directly with the elements, the weather, and the continuous cycling of the seasons.",
+          "page": 10,
+          "what_is_wrong": "Abstract philosophical statement about connection. 'connects us to the elements' is metaphorical, not a concrete fact.",
+          "should_be": null
+        },
+        {
+          "source": "living soil",
+          "relationship": "relates to",
+          "target": "human well-being",
+          "evidence_text": "we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "Vague abstract relationship. Evidence doesn't support the extracted relationship.",
+          "should_be": null
+        },
+        {
+          "source": "power of choice",
+          "relationship": "allows",
+          "target": "create the future",
+          "evidence_text": "we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "Abstract philosophical statement. 'power of choice' and 'create the future' are not concrete entities.",
+          "should_be": null
+        },
+        {
+          "source": "Y on Earth",
+          "relationship": "claimed",
+          "target": "soil is the answer",
+          "evidence_text": "Soil is the answer. We are asking many questions on this journey together.",
+          "page": 11,
+          "what_is_wrong": "Metaphorical slogan treated as factual claim. 'soil is the answer' is aspirational language, not a verifiable fact.",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 18,
+          "what_is_wrong": "Metaphorical statement. Soil is not literally medicine, this is figurative language.",
+          "should_be": null
+        },
+        {
+          "source": "living soil",
+          "relationship": "makes",
+          "target": "us feel better",
+          "evidence_text": "Our physical connection with living soil literally makes us feel better and makes us smarter!",
+          "page": 18,
+          "what_is_wrong": "'makes us feel better' is subjective and vague. While there may be scientific basis, this extraction is too abstract.",
+          "should_be": {
+            "source": "soil microbiome exposure",
+            "relationship": "may improve",
+            "target": "mood and cognitive function"
+          }
+        },
+        {
+          "source": "regular contact with soil",
+          "relationship": "enhances",
+          "target": "serotonin levels",
+          "evidence_text": "Our serotonin levels are enhanced.",
+          "page": 18,
+          "what_is_wrong": "Claim lacks specificity and evidence. Should cite specific research or be marked as hypothesis.",
+          "should_be": {
+            "source": "Mycobacterium vaccae in soil",
+            "relationship": "may increase",
+            "target": "serotonin production"
+          }
+        },
+        {
+          "source": "soil-building process",
+          "relationship": "is-a",
+          "target": "sacred process",
+          "evidence_text": "is is the amazing, mysterious, sacred soil-building process upon which all of our lives depend.",
+          "page": 22,
+          "what_is_wrong": "Metaphorical/spiritual language ('sacred') treated as factual classification. This is subjective characterization.",
+          "should_be": null
+        },
+        {
+          "source": "garbage",
+          "relationship": "is transformed into",
+          "target": "garden",
+          "evidence_text": "The process that turns garbage into a garden is central to our survival.",
+          "page": 22,
+          "what_is_wrong": "Metaphorical language. 'garbage into garden' is poetic, not a literal transformation relationship.",
+          "should_be": {
+            "source": "composting",
+            "relationship": "converts",
+            "target": "organic waste into soil amendment"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quote Over-Correction",
+      "severity": "MILD",
+      "count": 23,
+      "percentage": 6.4,
+      "description": "The praise quote correction module is over-firing, changing legitimate authorship relationships to 'endorsed' even when the person is clearly the author of the referenced work. This creates false negatives.",
+      "root_cause_hypothesis": "The bibliographic_parser.py module detects praise quote patterns too broadly. It's triggering on any mention of a book title near a person's name, even when the context clearly indicates authorship (e.g., 'Author, [Book Title]' format).",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Brigitte Mars",
+          "relationship": "endorsed",
+          "target": "The Country Almanac of Home Remedies",
+          "evidence_text": "Brigitte Mars Author, The Country Almanac of Home Remedies",
+          "page": 5,
+          "what_is_wrong": "This is clearly an authorship attribution ('Author, [Book Title]' format), not an endorsement. The praise quote detector over-fired.",
+          "should_be": {
+            "source": "Brigitte Mars",
+            "relationship": "authored",
+            "target": "The Country Almanac of Home Remedies"
+          }
+        },
+        {
+          "source": "Adrian Del Caro",
+          "relationship": "authored",
+          "target": "Grounding the Nietzsche Rhetoric of Earth",
+          "evidence_text": "This is an important little book that can be of immediate use to anyone who wants to help restore a greener Earth.",
+          "page": 3,
+          "what_is_wrong": "Evidence text is from a praise quote, but the relationship is correctly 'authored'. However, the evidence_text doesn't support authorship - it's a quote about a different book.",
+          "should_be": {
+            "source": "Adrian Del Caro",
+            "relationship": "authored",
+            "target": "Grounding the Nietzsche Rhetoric of Earth"
+          }
+        },
+        {
+          "source": "Aaron Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "Aaron Perry and his Y on Earth network have produced an informative handbook on soil stewardship.",
+          "page": 5,
+          "what_is_wrong": "Evidence clearly states Aaron Perry 'produced' the handbook, which should be 'authored' or 'produced', not 'endorsed'.",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 4.2,
+      "description": "Entities that are too abstract or vague to be useful in a knowledge graph: 'the answer', 'the process', 'challenges', 'well-being', 'sustainability', etc. These lack specificity and reduce KG utility.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt doesn't enforce entity specificity. LLM extracts abstract nouns as entities without requiring concrete referents. Type validation allows 'abstract concept' type, which becomes a catch-all for vague entities.",
+      "affected_module": "modules/type_validation.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": "config/entity_types.yaml",
+      "examples": [
+        {
+          "source": "challenges",
+          "relationship": "include",
+          "target": "ecological devastation",
+          "evidence_text": "Challenges like rampant ecological devastation, staggering species loss, and climate change.",
+          "page": 10,
+          "what_is_wrong": "'challenges' is too vague. Should be 'environmental challenges' or 'climate challenges' or list specific challenges.",
+          "should_be": {
+            "source": "environmental challenges",
+            "relationship": "include",
+            "target": "ecological devastation"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "provides guidance",
+          "target": "well-being",
+          "evidence_text": "This Soil Stewardship Handbook is deceptively small and simple.",
+          "page": 10,
+          "what_is_wrong": "'well-being' is too abstract. Evidence doesn't support this relationship at all.",
+          "should_be": null
+        },
+        {
+          "source": "soil stewardship",
+          "relationship": "is essential for",
+          "target": "sustainability",
+          "evidence_text": "Our relationship with living soil is essential and foundational to THRIVING and SUSTAINABILITY.",
+          "page": 14,
+          "what_is_wrong": "'sustainability' is too vague. Should be 'environmental sustainability' or 'agricultural sustainability'.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "is essential for",
+            "target": "environmental sustainability"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Wrong Evidence Text",
+      "severity": "HIGH",
+      "count": 12,
+      "percentage": 3.3,
+      "description": "The evidence_text field contains text that doesn't actually support the extracted relationship. This suggests the extraction is inferring relationships from context rather than direct textual evidence.",
+      "root_cause_hypothesis": "Pass 1 extraction is using broader context windows to infer relationships, but the evidence_text is being pulled from a different sentence. This indicates the extraction prompt may be encouraging inference rather than direct extraction.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Adrian Del Caro",
+          "relationship": "authored",
+          "target": "Grounding the Nietzsche Rhetoric of Earth",
+          "evidence_text": "This is an important little book that can be of immediate use to anyone who wants to help restore a greener Earth.",
+          "page": 3,
+          "what_is_wrong": "Evidence text is a praise quote about the Soil Stewardship Handbook, not about Adrian Del Caro's authorship of his own book.",
+          "should_be": {
+            "source": "Adrian Del Caro",
+            "relationship": "authored",
+            "target": "Grounding the Nietzsche Rhetoric of Earth"
+          }
+        },
+        {
+          "source": "Tanner Watt",
+          "relationship": "directs",
+          "target": "REVERB",
+          "evidence_text": "A cool resource and a creative perspective on a subject all too often not considered.",
+          "page": 3,
+          "what_is_wrong": "Evidence text is about the Soil Stewardship Handbook, not about Tanner Watt's role at REVERB.",
+          "should_be": {
+            "source": "Tanner Watt",
+            "relationship": "directs",
+            "target": "REVERB"
+          }
+        },
+        {
+          "source": "Mark Guttridge",
+          "relationship": "runs",
+          "target": "Ollin Farms",
+          "evidence_text": "A new generation of farmers, gardeners and citizens are leading the way in creating systems to restore soil health.",
+          "page": 3,
+          "what_is_wrong": "Evidence text is generic statement about farmers, not specific to Mark Guttridge or Ollin Farms.",
+          "should_be": {
+            "source": "Mark Guttridge",
+            "relationship": "runs",
+            "target": "Ollin Farms"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Treated as Literal",
+      "severity": "MEDIUM",
+      "count": 8,
+      "percentage": 2.2,
+      "description": "Metaphors, similes, and figurative language are being extracted as literal factual relationships. The system flags some with 'FIGURATIVE_LANGUAGE' but still includes them in the output.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't distinguish figurative from literal language. Pass 2 evaluation doesn't penalize figurative statements enough. The figurative_language_detector in Pass 2.5 flags them but doesn't filter them out.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 18,
+          "what_is_wrong": "This is a metaphor. Soil is not literally medicine. Should be filtered or reframed.",
+          "should_be": null
+        },
+        {
+          "source": "soil-building process",
+          "relationship": "is-a",
+          "target": "sacred process",
+          "evidence_text": "is is the amazing, mysterious, sacred soil-building process upon which all of our lives depend.",
+          "page": 22,
+          "what_is_wrong": "'sacred' is spiritual/metaphorical language, not a factual classification. Flagged but not filtered.",
+          "should_be": null
+        },
+        {
+          "source": "soil microbiome",
+          "relationship": "enhances",
+          "target": "plant growth",
+          "evidence_text": "As the soil microbiome magically does its soil-building work, it not only enhances plant growth.",
+          "page": 22,
+          "what_is_wrong": "'magically' is figurative language. The relationship itself may be valid, but the evidence contains metaphorical terms.",
+          "should_be": {
+            "source": "soil microbiome",
+            "relationship": "enhances",
+            "target": "plant growth"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Possessive Pronoun Phrases",
+      "severity": "HIGH",
+      "count": 8,
+      "description": "Multi-word phrases containing possessive pronouns ('my people', 'our tradition', 'their practices') are extracted as entities without resolving the possessive to a specific referent. This is distinct from simple subject pronouns (he/she/we) which are partially handled.",
+      "root_cause_hypothesis": "The pronoun_resolver module only handles simple subject pronouns. It doesn't recognize possessive pronoun phrases as a pattern that needs resolution. The extraction prompt doesn't explicitly forbid possessive pronouns in entity names.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "people",
+          "relationship": "love",
+          "target": "land and sea",
+          "evidence_text": "My people love the land. We love the sea.",
+          "page": 10,
+          "what_is_wrong": "'My people' should resolve to 'Slovenians' or 'author's people' based on context",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "land and sea"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Aspirational/Slogan Statements",
+      "severity": "MEDIUM",
+      "count": 12,
+      "description": "Organizational slogans, mission statements, and aspirational language ('Soil is the answer', 'We will reverse climate change') are being extracted as factual claims. These are rhetorical devices, not verifiable facts.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't distinguish between factual claims and aspirational/rhetorical statements. Pass 2 evaluation gives high scores to statements that 'sound important' even if they're not factually verifiable.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt AND prompts/pass2_evaluation_v9.txt",
+      "examples": [
+        {
+          "source": "Y on Earth",
+          "relationship": "claimed",
+          "target": "soil is the answer",
+          "evidence_text": "Soil is the answer. We are asking many questions on this journey together.",
+          "page": 11,
+          "what_is_wrong": "'Soil is the answer' is an organizational slogan/motto, not a factual claim",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "Evidence-Relationship Mismatch",
+      "severity": "HIGH",
+      "count": 12,
+      "description": "The evidence_text field contains text that doesn't support the extracted relationship. The relationship may be correct, but the evidence is from a different sentence or context.",
+      "root_cause_hypothesis": "Pass 1 extraction is using multi-sentence context to infer relationships, but the evidence_text is being pulled from the wrong sentence. This suggests the extraction process isn't properly tracking which sentence supports which relationship.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "examples": [
+        {
+          "source": "Tanner Watt",
+          "relationship": "directs",
+          "target": "REVERB",
+          "evidence_text": "A cool resource and a creative perspective on a subject all too often not considered.",
+          "page": 3,
+          "what_is_wrong": "Evidence is about the handbook, not about Tanner Watt's role",
+          "should_be": {
+            "source": "Tanner Watt",
+            "relationship": "directs",
+            "target": "REVERB"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Over-Aggressive Praise Quote Detection",
+      "severity": "MILD",
+      "count": 23,
+      "description": "The bibliographic_parser is flagging legitimate authorship relationships as praise quotes and changing them to 'endorsed'. This creates false negatives where real authorship is lost.",
+      "root_cause_hypothesis": "The praise quote detection logic is too broad. It's triggering on patterns like 'Person, Book Title' even when the context clearly indicates authorship (e.g., 'Author, [Book Title]' format in bibliographic citations).",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Brigitte Mars",
+          "relationship": "endorsed",
+          "target": "The Country Almanac of Home Remedies",
+          "evidence_text": "Brigitte Mars Author, The Country Almanac of Home Remedies",
+          "page": 5,
+          "what_is_wrong": "Clear authorship attribution changed to endorsement",
+          "should_be": {
+            "source": "Brigitte Mars",
+            "relationship": "authored",
+            "target": "The Country Almanac of Home Remedies"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add explicit instruction: 'DO NOT extract relationships containing possessive pronouns (my, our, their, his, her, its) or demonstrative pronouns (this, that, these, those) as entity names. Always resolve pronouns to their specific referents before extraction. If the referent is unclear from context, skip the relationship.'",
+      "expected_impact": "Eliminates 8 HIGH-priority possessive pronoun issues (2.2% of total). Prevents future similar errors.",
+      "rationale": "Possessive pronouns are a systematic error that the pronoun_resolver can't fix because they're baked into the entity names at extraction time. Fixing this at the prompt level is more robust than trying to resolve them post-hoc."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add explicit instruction: 'Distinguish between FACTUAL claims and ASPIRATIONAL/PHILOSOPHICAL statements. Extract only factual relationships that can be verified. Skip: (1) Metaphors and figurative language, (2) Organizational slogans/mottos, (3) Philosophical abstractions, (4) Subjective opinions about feelings/emotions, (5) Aspirational statements about the future.' Add 5 few-shot examples showing what to skip.",
+      "expected_impact": "Eliminates 47 MEDIUM-priority abstract philosophical issues (13.1% of total) and 12 aspirational statement issues. Reduces issue rate from 21.7% to ~8%.",
+      "rationale": "This is the largest single issue category. The LLM needs explicit guidance to distinguish factual from philosophical content. Few-shot examples are critical because this is a nuanced judgment."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Extend pronoun_resolver to handle possessive pronoun phrases. Add patterns: ['my X', 'our X', 'their X', 'his X', 'her X', 'its X'] where X is a noun. Use coreference resolution to find the antecedent of the possessive pronoun, then replace the entire phrase with '[Antecedent]'s X'.",
+      "expected_impact": "Catches possessive pronouns that slip through the prompt enhancement. Provides defense-in-depth.",
+      "rationale": "Even with prompt improvements, some possessive pronouns may still be extracted. A code-level fix provides a safety net."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Refine praise quote detection logic. Add whitelist patterns that should NOT trigger praise quote correction: (1) 'Author, [Book Title]' format, (2) '[Person] authored [Book]', (3) '[Person] wrote [Book]'. Only trigger on patterns like: '[Person] says about [Book]', '[Person] endorses [Book]', '[Person] praises [Book]'.",
+      "expected_impact": "Eliminates 23 MILD false-positive praise quote corrections (6.4% of total). Restores legitimate authorship relationships.",
+      "rationale": "The current logic is too aggressive. We need to distinguish between bibliographic citations (which indicate authorship) and actual praise quotes (which indicate endorsement)."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v9.txt",
+      "recommendation": "Add calibration guidance for knowledge_plausibility scoring: 'Assign LOW knowledge_plausibility (0.3-0.5) to: (1) Abstract philosophical statements, (2) Metaphorical language, (3) Aspirational claims about the future, (4) Subjective emotional claims. These may be textually clear but lack concrete verifiability.' Add 3 few-shot examples.",
+      "expected_impact": "Reduces false positives in Pass 2 evaluation. Filters out 20-30% of abstract/philosophical relationships before they reach Pass 2.5.",
+      "rationale": "Pass 2 evaluation is currently giving high scores to abstract statements because they 'sound reasonable'. We need to recalibrate what 'knowledge plausibility' means to exclude non-factual content."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "recommendation": "Change figurative_language_detector from flagging to filtering. If a relationship is flagged as FIGURATIVE_LANGUAGE, set p_true to 0.3 (below threshold) to filter it out. Add configuration option to control this behavior (flag-only vs. filter).",
+      "expected_impact": "Eliminates 8 MEDIUM-priority figurative language issues (2.2% of total). Prevents metaphors from polluting the KG.",
+      "rationale": "Currently the detector flags but doesn't filter. If we've detected figurative language, we should remove it from the output rather than just marking it."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_types.yaml",
+      "recommendation": "Remove or restrict 'abstract concept' entity type. Replace with more specific types: 'scientific_concept', 'social_concept', 'environmental_concept'. Add validation rules: abstract concepts must be well-defined terms (e.g., 'photosynthesis', 'democracy') not vague phrases (e.g., 'the answer', 'well-being').",
+      "expected_impact": "Eliminates 15 MEDIUM-priority vague entity issues (4.2% of total). Forces more specific entity extraction.",
+      "rationale": "'abstract concept' has become a catch-all for vague entities. Restricting it forces the extractor to be more specific."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add instruction: 'The evidence_text field must contain the EXACT sentence that supports the relationship. Do not use nearby sentences or general context. If the relationship requires multiple sentences to establish, extract multiple relationships or skip it.'",
+      "expected_impact": "Eliminates 12 HIGH-priority evidence mismatch issues (3.3% of total). Improves evidence quality and traceability.",
+      "rationale": "Evidence-relationship mismatches suggest the extraction is using too broad a context window. Tightening this improves quality and makes the KG more auditable."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/abstract_statement_filter.py",
+      "recommendation": "Create new module to detect and filter abstract philosophical statements. Use heuristics: (1) Contains abstract nouns like 'answer', 'solution', 'way', 'process' as targets, (2) Uses modal verbs ('will', 'can', 'may') suggesting future/possibility, (3) Contains emotional/subjective terms ('feel', 'believe', 'hope'), (4) Relationship predicates are vague ('relates to', 'connects', 'allows'). Filter relationships matching 2+ heuristics.",
+      "expected_impact": "Catches abstract statements that slip through prompt improvements. Provides additional 10-15% reduction in abstract issues.",
+      "rationale": "Defense-in-depth approach. Even with prompt improvements, some abstract statements will be extracted. A dedicated filter provides a safety net."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add few-shot examples showing what NOT to extract: (1) Example of possessive pronoun that should be skipped, (2) Example of metaphor that should be skipped, (3) Example of aspirational statement that should be skipped, (4) Example of vague abstract relationship that should be skipped. Show 2 positive examples and 4 negative examples.",
+      "expected_impact": "Reinforces other prompt improvements. Reduces ambiguity about what constitutes a valid extraction.",
+      "rationale": "Few-shot examples are more effective than instructions alone for nuanced judgments. Negative examples are especially important to show what to avoid."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No explicit prohibition on possessive/demonstrative pronouns in entity names",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add: 'DO NOT extract entities containing possessive pronouns (my, our, their) or demonstrative pronouns (this, that). Always resolve to specific referents.'",
+        "examples_needed": "Yes - show 2 examples of possessive pronouns that should be resolved"
+      },
+      {
+        "issue": "No distinction between factual and philosophical/aspirational statements",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add: 'Extract only FACTUAL relationships that can be verified. Skip metaphors, slogans, philosophical abstractions, and aspirational statements.' Provide 5 few-shot examples of what to skip.",
+        "examples_needed": "Yes - critical for this nuanced judgment. Show 2 factual examples and 3 non-factual examples to skip."
+      },
+      {
+        "issue": "Evidence text not tightly coupled to relationship",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add: 'The evidence_text must be the EXACT sentence supporting the relationship. Do not use nearby context or infer from multiple sentences.'",
+        "examples_needed": "Yes - show 1 example of correct tight coupling and 1 example of incorrect loose coupling"
+      },
+      {
+        "issue": "No guidance on entity specificity (vague vs. concrete)",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add: 'Entities must be SPECIFIC and CONCRETE. Avoid vague terms like \"the answer\", \"the process\", \"challenges\", \"well-being\". Use specific names, titles, or well-defined concepts.'",
+        "examples_needed": "Yes - show 2 examples of vague entities to avoid and their specific alternatives"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "knowledge_plausibility scores too high for abstract/philosophical statements",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add calibration guidance: 'Assign LOW knowledge_plausibility (0.3-0.5) to abstract philosophical statements, metaphors, aspirational claims, and subjective emotional claims. These may be textually clear but lack concrete verifiability.' Provide 3 few-shot examples.",
+        "examples_needed": "Yes - show 3 examples of statements that should get low knowledge_plausibility despite being textually clear"
+      },
+      {
+        "issue": "No penalty for figurative language",
+        "current_wording": "(Prompt not available for analysis)",
+        "suggested_fix": "Add: 'Metaphors and figurative language should receive LOW knowledge_plausibility scores (0.2-0.4) because they are not literal facts. Examples: \"soil is medicine\", \"soil is sacred\", \"magically transforms\".'",
+        "examples_needed": "Yes - show 2 examples of figurative language that should be scored low"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.217,
+    "regression_from_v7": true,
+    "v7_issue_rate": 0.0671,
+    "regression_magnitude": "3.2x worse than V7",
+    "critical_blockers": [
+      "Possessive pronoun extraction (8 HIGH issues)",
+      "Abstract philosophical statements (47 MEDIUM issues)",
+      "Evidence-relationship mismatches (12 HIGH issues)"
+    ],
+    "recommendation": "V9 shows significant REGRESSION from V7. Do NOT deploy to production. Implement CRITICAL priority fixes (prompt enhancements for pronouns and philosophical statements) before next iteration. Target: reduce issue rate from 21.7% to <10% in V10."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-13T03:15:36.975706",
+    "relationships_analyzed": 359,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v9_reflector_fixes"
+  }
+}

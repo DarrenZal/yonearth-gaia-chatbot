@@ -1,0 +1,470 @@
+# Extract ALL meaningful relationships from this text - including factual, bibliographic, categorical, compositional, functional, organizational, and testable claims.
+
+## 🎯 V11 GOAL: COMPREHENSIVE KNOWLEDGE EXTRACTION WITH PROPER LABELING
+
+Extract ALL valuable data, information, knowledge, and wisdom that can be represented in graph/RDF format. This includes:
+- ✅ Factual relationships (authorship, publication, organizational)
+- ✅ Bibliographic citations (author-book, book-publisher, book-year)
+- ✅ Categorical relationships (is-a, is, definitions)
+- ✅ Compositional relationships (contains, includes, provides)
+- ✅ Functional relationships (produces, enhances, stimulates)
+- ✅ Testable claims (scientific assertions)
+- ✅ **NEW V11**: Philosophical statements (will be labeled as PHILOSOPHICAL_CLAIM in Pass 2)
+- ✅ **NEW V11**: Metaphorical language (will be labeled as METAPHOR in Pass 2 and normalized by postprocessing)
+- ✅ **NEW V11**: Normative prescriptions (will be labeled appropriately)
+
+**V11 LABELING APPROACH**: Extract ALL relationships. Pass 2 evaluation will add classification_flags (FACTUAL, METAPHOR, PHILOSOPHICAL_CLAIM, etc.), and Pass 2.5 postprocessing modules will normalize/label as appropriate.
+
+## 📚 RELATIONSHIP TYPES TO EXTRACT (PRIORITY ORDER)
+
+### 1. BIBLIOGRAPHIC (Authorship & Publication) ⭐ HIGH PRIORITY
+Bibliographic citations are ESSENTIAL knowledge graph elements. Extract ALL of them.
+
+✅ **Extract**: (Person)-[authored]->(Book/Paper/Article)
+✅ **Extract**: (Book)-[published by]->(Publisher)
+✅ **Extract**: (Book)-[published in]->(Year/Location)
+✅ **Extract**: (Person)-[dedicated]->(Book to Person)
+✅ **Extract**: (Person)-[endorsed]->(Book)
+
+**Example Text**: "Suzuki, David. Sacred Balance. Vancouver: Greystone, 1997."
+**Extract**:
+- (David Suzuki, authored, Sacred Balance)
+- (Sacred Balance, published by, Greystone)
+- (Sacred Balance, published in, Vancouver)
+- (Sacred Balance, published in, 1997)
+
+**Example Text**: "This handbook is dedicated to my two children, Osha and Hunter."
+**Extract**:
+- (Aaron Perry, dedicated, Soil Stewardship Handbook to Osha)
+- (Aaron Perry, dedicated, Soil Stewardship Handbook to Hunter)
+
+**Example Text**: "Foreword by Joel Salatin"
+**Extract**:
+- (Joel Salatin, wrote foreword for, Soil Stewardship Handbook)
+
+### 2. CATEGORICAL (Definitions & Classifications) ⭐ HIGH PRIORITY
+Categorical relationships define what things ARE. Extract ALL definitions.
+
+✅ **Extract**: (Entity)-[is-a]->(Category/Type)
+✅ **Extract**: (Entity)-[is]->(Definition)
+✅ **Extract**: (Entity)-[defined as]->(Definition)
+
+**Example Text**: "Soil is a complex ecosystem containing bacteria, fungi, and minerals."
+**Extract**:
+- (soil, is-a, complex ecosystem)
+- (soil, contains, bacteria)
+- (soil, contains, fungi)
+- (soil, contains, minerals)
+
+**Example Text**: "Regenerative agriculture is a conservation and rehabilitation approach to food and farming systems."
+**Extract**:
+- (regenerative agriculture, is-a, conservation approach)
+- (regenerative agriculture, is-a, rehabilitation approach)
+
+### 3. COMPOSITIONAL (Parts & Contents) ⭐ HIGH PRIORITY
+Compositional relationships describe what things CONTAIN or PROVIDE.
+
+✅ **Extract**: (Whole)-[contains]->(Part)
+✅ **Extract**: (Whole)-[includes]->(Component)
+✅ **Extract**: (Resource)-[provides]->(Service/Benefit)
+✅ **Extract**: (System)-[consists of]->(Elements)
+
+**Example Text**: "Compost contains nitrogen, phosphorus, and beneficial microorganisms."
+**Extract**:
+- (compost, contains, nitrogen)
+- (compost, contains, phosphorus)
+- (compost, contains, beneficial microorganisms)
+
+**Example Text**: "This handbook includes sections on cover cropping, composting, and no-till farming."
+**Extract**:
+- (handbook, includes, section on cover cropping)
+- (handbook, includes, section on composting)
+- (handbook, includes, section on no-till farming)
+
+### 4. FUNCTIONAL (Processes & Effects) ⭐ HIGH PRIORITY
+Functional relationships describe what things DO or how they WORK.
+
+✅ **Extract**: (Agent)-[produces]->(Product)
+✅ **Extract**: (Action)-[enhances]->(Outcome)
+✅ **Extract**: (Practice)-[stimulates]->(Effect)
+✅ **Extract**: (Process)-[increases]->(Result)
+✅ **Extract**: (Method)-[improves]->(Condition)
+
+**Example Text**: "Cover cropping enhances soil structure and prevents erosion."
+**Extract**:
+- (cover cropping, enhances, soil structure)
+- (cover cropping, prevents, erosion)
+
+**Example Text**: "Mycorrhizal fungi produce enzymes that break down organic matter."
+**Extract**:
+- (mycorrhizal fungi, produce, enzymes)
+- (enzymes, break down, organic matter)
+
+### 5. ORGANIZATIONAL (Affiliations & Roles) ⭐ HIGH PRIORITY
+Organizational relationships describe who WORKS WHERE and in what ROLE.
+
+✅ **Extract**: (Person)-[affiliated with]->(Organization)
+✅ **Extract**: (Person)-[directs]->(Organization)
+✅ **Extract**: (Person)-[founded]->(Organization)
+✅ **Extract**: (Organization)-[collaborates with]->(Organization)
+✅ **Extract**: (Person)-[works for]->(Organization)
+
+**Example Text**: "Dr. Jane Smith directs the Soil Health Institute."
+**Extract**:
+- (Dr. Jane Smith, directs, Soil Health Institute)
+
+**Example Text**: "Aaron Perry founded the Y on Earth Community in 2014."
+**Extract**:
+- (Aaron Perry, founded, Y on Earth Community)
+- (Y on Earth Community, founded in, 2014)
+
+### 6. DISCOURSE GRAPH (Claims, Evidence, Questions)
+Extract ALL discourse elements for complete conversation tracking.
+
+✅ **Extract**: (Speaker)-[claims]->(Statement)
+✅ **Extract**: (Evidence)-[supports]->(Claim)
+✅ **Extract**: (Evidence)-[opposes]->(Claim)
+✅ **Extract**: (Question)-[addresses]->(Topic)
+
+**Example Text**: "The speaker claims that soil is the answer to climate change."
+**Extract**:
+- (speaker, claims, soil is the answer to climate change)
+
+### 7. CAUSATION & EFFECTS
+Extract ALL causal relationships (factual, testable, verifiable).
+
+✅ **Extract**: (Cause)-[causes]->(Effect)
+✅ **Extract**: (Practice)-[leads to]->(Outcome)
+✅ **Extract**: (Action)-[results in]->(Consequence)
+
+**Example Text**: "Tilling destroys soil structure and releases carbon into the atmosphere."
+**Extract**:
+- (tilling, destroys, soil structure)
+- (tilling, releases, carbon into atmosphere)
+
+### 8. PROCESSES & PRACTICES
+Extract concrete, actionable methods and procedures.
+
+✅ **Extract**: (Method)-[involves]->(Steps)
+✅ **Extract**: (Practice)-[requires]->(Resources)
+✅ **Extract**: (Technique)-[transforms]->(Materials)
+
+**Example Text**: "Sheet mulching involves layering cardboard, compost, and wood chips."
+**Extract**:
+- (sheet mulching, involves, layering cardboard)
+- (sheet mulching, involves, layering compost)
+- (sheet mulching, involves, layering wood chips)
+
+### 9. QUANTITATIVE RELATIONSHIPS
+Extract specific measurements and numerical data.
+
+✅ **Extract**: (Entity)-[measures]->(Quantity)
+✅ **Extract**: (Process)-[increases by]->(Percentage)
+
+**Example Text**: "Organic matter increased by 2.5% over five years."
+**Extract**:
+- (organic matter, increased by, 2.5% over five years)
+
+## ⚠️ ENTITY QUALITY REQUIREMENTS
+
+### Specificity (CRITICAL)
+❌ **AVOID VAGUE ENTITIES**:
+- "thousands" → ✅ "thousands of people"
+- "millions" → ✅ "millions of humans"
+- "the land" → ✅ "agricultural land" or "Slovenia" (be specific)
+- "the sea" → ✅ "ocean ecosystems" or "Mediterranean Sea" (be specific)
+- "it" → ✅ Resolve to specific entity from context
+- "they" → ✅ Resolve to specific group from context
+
+### Conciseness
+✅ **KEEP ENTITIES CONCISE** (2-5 words typically):
+- ✅ GOOD: "soil ecosystem complexity"
+- ❌ BAD: "hardly anything is as complex as the living web of interconnectedness found in our planet's soil"
+
+### Pronoun Resolution
+✅ **RESOLVE PRONOUNS** when context allows:
+- "I hail from Slovenia. My people love the land."
+  - ✅ BETTER: (Aaron William Perry, hails from, Slovenia)
+  - ✅ BETTER: (Slovenians, love, agricultural land)
+  - ⚠️ ACCEPTABLE IF UNCLEAR: (my people, love, the land) [will be flagged]
+
+### Entity Specificity Principle
+Always prefer SPECIFIC, CONTEXTUALIZED entities over GENERIC ones. Use document context (geographic setting, domain, author background) to add precision.
+
+**Examples of Specific vs. Generic Entities**:
+- ✅ "Slovenian countryside" > ❌ "the land"
+- ✅ "atmospheric carbon dioxide" > ❌ "carbon"
+- ✅ "regenerative agriculture practices" > ❌ "farming"
+- ✅ "Bill Mollison's permaculture system" > ❌ "the system"
+- ✅ "soil microbiome" > ❌ "microorganisms"
+
+**Instruction**: When you encounter generic references ("the land", "the process", "the answer"), look at surrounding context to identify the specific entity being referenced. If context is insufficient, skip the relationship rather than extract a vague entity.
+
+## 📚 CONTENT TYPE HANDLING
+
+### Content Type Recognition
+Distinguish between different types of content to extract appropriately:
+
+**ENDORSEMENT QUOTES**: Praise from reviewers, typically in foreword or back cover
+**FACTUAL CONTENT**: Main text describing concepts, processes, or relationships
+**AUTHOR CLAIMS**: Author's own statements about their work
+
+### Handling Rules by Content Type
+
+#### From ENDORSEMENT QUOTES:
+✅ **Extract ONLY**: (Reviewer, endorsed, Book) relationships
+❌ **DO NOT extract**: Content claims from praise language
+❌ **DO NOT extract**: Metaphorical 'is-a' from praise ('is a compass', 'is a road-map', 'is a guide')
+❌ **DO NOT extract**: Functional claims from promotional language ('this book nourishes soil', 'helps heal the planet')
+
+**Rationale**: Endorsement quotes are promotional opinions, not factual content. They tell us WHO endorsed WHAT, but not factual information about the subject matter.
+
+#### From FACTUAL CONTENT:
+✅ **Extract**: All relevant relationships normally following all extraction rules
+
+#### From AUTHOR CLAIMS:
+✅ **Extract**: But mark as author's perspective if subjective
+
+### Detection Guidance
+
+**Endorsement Markers**:
+- Phrases: "I recommend", "This book is", "I highly encourage", "A must-read"
+- Praise adjectives: "wonderful", "essential", "invaluable", "brilliant"
+- Reviewer attribution: "— Name, Title/Organization"
+- Recommendation language: "should read", "will benefit from"
+
+**Location Indicators**:
+- First 2-3 pages (foreword, introduction)
+- Last pages (back matter, praise section)
+- Quotation blocks with attribution
+
+**Tone Indicators**:
+- Promotional, laudatory, recommendation-focused
+- Second-person address ("you will find")
+- Superlatives and emphatic language
+
+### Examples
+
+#### ❌ WRONG Extractions from Endorsements:
+- From "This handbook nourishes the soil" → ❌ (Handbook, nourishes, soil)
+- From "This book is a compass for change" → ❌ (Book, is-a, compass)
+- From "Helps heal the planet" → ❌ (Book, helps heal, planet)
+- From "A road-map to regeneration" → ❌ (Book, is-a, road-map)
+
+#### ✅ CORRECT Extractions from Endorsements:
+- From "This handbook nourishes the soil — Brigitte Mars" → ✅ (Brigitte Mars, endorsed, Handbook)
+- From "This book is a compass for change — Joel Salatin" → ✅ (Joel Salatin, endorsed, Book)
+- From "I highly recommend this work — Dr. Elaine Ingham" → ✅ (Dr. Elaine Ingham, endorsed, Book)
+
+#### ✅ CORRECT Extractions from Factual Content:
+- From main text: "Compost nourishes soil by adding organic matter" → ✅ (compost, nourishes, soil by adding organic matter)
+- From main text: "This method serves as a guide for farmers" → ✅ (method, guides, farmers)
+- From main text: "Cover crops help heal degraded soil" → ✅ (cover crops, help heal, degraded soil)
+
+### Decision Framework for Content Type:
+
+1. **Is this in a foreword, introduction, or praise section?** → Likely ENDORSEMENT
+2. **Does it contain recommendation language or praise?** → Likely ENDORSEMENT
+3. **Is there reviewer attribution?** → Definitely ENDORSEMENT
+4. **Is this describing how something works or what it contains?** → FACTUAL CONTENT
+5. **Is the author making claims about their own work?** → AUTHOR CLAIMS
+
+**When in doubt**: If the statement sounds promotional or laudatory, treat as endorsement and extract ONLY the endorsement relationship.
+
+## ✅ V11: EXTRACT ALL STATEMENT TYPES (They will be labeled)
+
+Extract ALL relationships including philosophical, normative, and metaphorical statements. They will be properly classified in Pass 2 with flags like:
+- FACTUAL (verifiable facts)
+- METAPHOR (figurative language)
+- PHILOSOPHICAL_CLAIM (essence claims, value judgments)
+- TESTABLE_CLAIM (empirical assertions)
+
+The postprocessing pipeline (Pass 2.5) will then handle these appropriately:
+- Metaphors: Normalized by FigurativeLanguageFilter
+- Philosophical claims: Labeled and flagged
+- All relationships: Properly categorized
+
+**Patterns to Extract and Label** (V11 NEW):
+- ✅ Philosophical essence claims: 'X is what it means to be Y' → Will be labeled PHILOSOPHICAL_CLAIM
+- ✅ Normative prescriptions: 'we should/must do X' → Will be labeled appropriately
+- ✅ Metaphorical abstractions: 'X is the answer/key/solution' → Will be labeled METAPHOR
+- ✅ Rhetorical constructions: 'X opens doors to Y' → Will be labeled METAPHOR
+- ✅ Value judgments: 'X is beautiful/important/essential' → Will be labeled OPINION/PHILOSOPHICAL_CLAIM
+- ✅ All factual statements: 'soil contains organic matter' → Will be labeled FACTUAL
+
+**Examples** (V11 - Extract ALL, labels added in Pass 2):
+- ✅ EXTRACT: 'being connected to land is what it means to be human' → (being connected to land, is what it means to be, human) [Will be labeled PHILOSOPHICAL_CLAIM]
+- ✅ EXTRACT: 'soil is the answer' → (soil, is, the answer) [Will be labeled METAPHOR and normalized by postprocessing]
+- ✅ EXTRACT: 'we must regenerate the soil' → (we, must regenerate, soil) [Will be labeled with appropriate classification]
+- ✅ EXTRACT: 'soil contains organic matter' → (soil, contains, organic matter) [Will be labeled FACTUAL]
+- ✅ EXTRACT: 'regenerative agriculture increases soil carbon' → (regenerative agriculture, increases, soil carbon) [Will be labeled TESTABLE_CLAIM or FACTUAL]
+
+## ✅ V11: FIGURATIVE LANGUAGE HANDLING
+
+Extract metaphorical statements - they will be labeled as METAPHOR in Pass 2 and normalized by the FigurativeLanguageFilter module in Pass 2.5 postprocessing.
+
+### Common Metaphor Patterns to AVOID:
+- ❌ 'X is a Y' where Y is figurative: Eden, paradise, crossroads, miracle, answer, key, door, journey, treasure, gold mine
+- ❌ 'X opens doors to Y' (metaphor for enabling/opportunity)
+- ❌ 'X is the key to Y' (metaphor for importance/solution)
+- ❌ 'X is a journey' (metaphor for process/experience)
+- ❌ 'X is the heart of Y' (metaphor for centrality)
+- ❌ 'X is a bridge to Y' (metaphor for connection)
+- ❌ 'X is the foundation of Y' (metaphor for importance) - UNLESS literally structural
+- ❌ 'X is a window into Y' (metaphor for insight)
+
+### Metaphor Recognition Examples:
+
+**EXTRACT - Pure Metaphor** (V11 NEW - will be labeled METAPHOR):
+- ✅ "Our land is a veritable Eden" → (our land, is, veritable Eden) [METAPHOR flag, will be normalized]
+- ✅ "We are at a crossroads" → (we, are at, crossroads) [METAPHOR flag]
+- ✅ "Soil is the answer to climate change" → (soil, is answer to, climate change) [METAPHOR flag]
+- ✅ "This opens doors to new possibilities" → (this, opens doors to, new possibilities) [METAPHOR flag]
+- ✅ "Knowledge is a treasure" → (knowledge, is, treasure) [METAPHOR flag]
+
+**EXTRACT LITERAL - Clear Underlying Fact**:
+- ✅ "Soil is the foundation of agriculture" → (soil, supports, agriculture) [literal dependency]
+- ✅ "Trees provide oxygen" → (trees, produce, oxygen) [literal process]
+- ✅ "Roots anchor plants in soil" → (roots, anchor, plants in soil) [literal function]
+
+**SKIP - Ambiguous/Unclear**:
+- ❌ "Regeneration is a journey we must take together" (metaphorical framing)
+- ❌ "This practice is the key to success" (vague metaphor)
+
+### Decision Framework:
+1. **Is the statement using figurative/poetic language?** → SKIP
+2. **Does 'X is Y' use Y as a metaphor (Eden, key, answer, journey)?** → SKIP
+3. **Can you extract a clear, testable, literal claim?** → EXTRACT
+4. **When in doubt about metaphor vs. literal?** → SKIP (err on side of caution)
+
+## 📚 FEW-SHOT EXTRACTION EXAMPLES
+
+### Example 1: Bibliographic Citation (FULL EXTRACTION)
+**Input**: "Capra, Fritjof. The Web of Life. New York: Anchor Books, 1996."
+**Output**:
+- (Fritjof Capra, authored, The Web of Life)
+- (The Web of Life, published by, Anchor Books)
+- (The Web of Life, published in, New York)
+- (The Web of Life, published in, 1996)
+
+### Example 2: Dedication (CONTEXT-AWARE)
+**Input**: "Dedicated to my two children, Osha and Hunter, who remind me daily of the importance of caring for our planet."
+**Context**: Book authored by Aaron Perry
+**Output**:
+- (Aaron Perry, dedicated, Soil Stewardship Handbook to Osha)
+- (Aaron Perry, dedicated, Soil Stewardship Handbook to Hunter)
+- (Osha, reminds, Aaron Perry of importance of caring for planet)
+- (Hunter, reminds, Aaron Perry of importance of caring for planet)
+
+### Example 3: Categorical Definition
+**Input**: "Biochar is a carbon-rich material produced by heating biomass in low-oxygen conditions."
+**Output**:
+- (biochar, is-a, carbon-rich material)
+- (biochar, produced by, heating biomass in low-oxygen conditions)
+
+### Example 4: Compositional Relationship
+**Input**: "This handbook contains chapters on composting, cover cropping, and no-till methods."
+**Output**:
+- (handbook, contains, chapter on composting)
+- (handbook, contains, chapter on cover cropping)
+- (handbook, contains, chapter on no-till methods)
+
+### Example 5: Functional Relationship
+**Input**: "No-till farming preserves soil structure and enhances water retention."
+**Output**:
+- (no-till farming, preserves, soil structure)
+- (no-till farming, enhances, water retention)
+
+### Example 6: Organizational Affiliation
+**Input**: "Dr. Elaine Ingham founded the Soil Food Web School to teach farmers about soil biology."
+**Output**:
+- (Dr. Elaine Ingham, founded, Soil Food Web School)
+- (Soil Food Web School, teaches, farmers about soil biology)
+
+### Example 7: Practical Instructions
+**Input**: "Choose appropriate seasons and species best suited for your region."
+**Output**:
+- (farmers, should choose, appropriate seasons for planting)
+- (farmers, should choose, species suited for region)
+
+### Example 8: Scientific Facts (TESTABLE CLAIM)
+**Input**: "Mycorrhizal fungi form symbiotic relationships with plant roots, enhancing nutrient uptake."
+**Output**:
+- (mycorrhizal fungi, form symbiosis with, plant roots)
+- (mycorrhizal fungi, enhance, nutrient uptake)
+
+### Example 9: Philosophical Statement (EXTRACT AND LABEL - V11 NEW)
+**Input**: "Being connected to land and soil is what it means to be human."
+**Output**:
+- (being connected to land and soil, is what it means to be, human)
+- [Will be labeled PHILOSOPHICAL_CLAIM in Pass 2, flagged appropriately]
+
+### Example 10: Metaphorical Language (EXTRACT AND LABEL - V11 NEW)
+**Input**: "Our land has remained a veritable Eden through the ages."
+**Output**:
+- (our land, remained, veritable Eden through ages)
+- [Will be labeled METAPHOR in Pass 2, normalized by FigurativeLanguageFilter]
+
+### Example 11: Figurative Language (EXTRACT AND LABEL - V11 NEW)
+**Input**: "This approach opens doors to sustainable farming practices."
+**Output**:
+- (this approach, enables, sustainable farming practices)
+- [Extracted with normalized relationship, will be labeled appropriately]
+
+### Example 12: Metaphor with Literal Meaning (EXTRACT LITERAL)
+**Input**: "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure."
+**Output**:
+- (soil, provides nutrients to, terrestrial ecosystems)
+- (soil, provides structure to, terrestrial ecosystems)
+- NOTE: "foundation" here has literal functional meaning, extract the specific functions
+
+### Example 13: Endorsement Quote (EXTRACT ONLY ENDORSEMENT)
+**Input**: "This handbook is a treasure trove of wisdom that will nourish your soil and heal the planet. I highly recommend it! — Brigitte Mars, herbalist and author"
+**Output**:
+- (Brigitte Mars, endorsed, Soil Stewardship Handbook)
+- NOTE: Do NOT extract (handbook, is-a, treasure trove) or (handbook, nourishes, soil) - these are promotional metaphors
+
+### Example 14: Endorsement vs. Factual Content
+**Input Endorsement**: "This book is a compass guiding us toward regeneration. — Joel Salatin"
+**Output**:
+- (Joel Salatin, endorsed, Book)
+
+**Input Factual**: "This compass uses magnetic north to guide navigation."
+**Output**:
+- (compass, uses, magnetic north)
+- (compass, guides, navigation)
+
+## 📝 OUTPUT FORMAT
+
+For each relationship provide:
+- **source**: Concise source entity (2-5 words, NO pronouns, NO vague quantifiers)
+- **relationship**: Relationship type (authored, published by, contains, is-a, produces, enhances, etc.)
+- **target**: Concise target entity (2-5 words, NO pronouns, NO vague quantifiers)
+- **evidence_text**: Quote from text (100-300 characters)
+
+## 📖 TEXT TO EXTRACT FROM
+
+{text}
+
+## ⚡ BE COMPREHENSIVE, SPECIFIC, AND ACCURATE
+
+Extract relationships that are:
+- ✅ **COMPREHENSIVE**: Extract ALL valuable factual relationships (bibliographic, categorical, compositional, functional, organizational)
+- ✅ **SPECIFIC**: Avoid vague entities ("thousands" → "thousands of people", "the land" → "agricultural land")
+- ✅ **ACCURATE**: Clearly stated or strongly implied in the text
+- ✅ **MEANINGFUL**: Useful for building a complete general knowledge graph (not discourse graph)
+- ✅ **CONCISE**: Use 2-5 word entities when possible
+- ✅ **CONTENT-AWARE**: Distinguish endorsements from factual content - extract only endorsement relationships from praise sections
+- ✅ **V11 APPROACH**: Extract → Label in Pass 2 → Normalize in Pass 2.5 → Properly classified output
+
+**PRIORITY**: Bibliographic citations, categorical definitions, compositional relationships, functional relationships, and organizational affiliations are HIGH VALUE. Extract ALL of them.
+
+**QUALITY TIPS** (V11 Updated):
+- Resolve pronouns to specific entities when context allows
+- Be specific with determiners and quantifiers ("the land" → "agricultural land")
+- Extract ALL relationships including philosophical, metaphorical, and normative statements (they will be labeled)
+- DO extract figurative language - it will be labeled as METAPHOR and normalized in postprocessing
+- When in doubt, DO extract - Pass 2 and Pass 2.5 will handle classification and normalization
+- Bibliographic citations are NOT "too simple" - they are ESSENTIAL knowledge graph elements
+- From endorsement quotes, extract ONLY endorsement relationships, NOT content claims
+- V11 philosophy: Extract comprehensively, label properly, process intelligently

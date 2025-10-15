@@ -1,0 +1,148 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_072426",
+  "extraction_file": "front_matter_v14_3_4_20251015_053251.json",
+  "quality_metrics": {
+    "overall_grade": "C+",
+    "issue_rate": 21.7,
+    "total_relationships": 161,
+    "total_issues": 35
+  },
+  "issue_breakdown": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "MEDIUM": 21,
+    "MILD": 13
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": false,
+    "criteria": {
+      "critical_issues_zero": false,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": false
+    }
+  },
+  "actionable_issues": [
+    {
+      "severity": "CRITICAL",
+      "category": "Reversed Authorship",
+      "count": 1,
+      "percentage": 0.6,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Our Biggest Deal / Aaron William Perry",
+          "page": 4,
+          "what_is_wrong": "Book title is source, author is target - relationship is backwards",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Incomplete Titles from List Splitting",
+      "count": 21,
+      "percentage": 13.0,
+      "description": "Book titles split on commas result in incomplete fragments that are too short or end with conjunctions",
+      "examples": [
+        {
+          "source": "Dr. Robert Cloninger",
+          "relationship": "authored",
+          "target": "Happy",
+          "evidence_text": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges",
+          "page": 15,
+          "what_is_wrong": "Title split on commas, resulting in incomplete fragment 'Happy' (too short, lacks context)",
+          "should_be": {
+            "source": "Dr. Robert Cloninger",
+            "relationship": "authored",
+            "target": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges"
+          }
+        },
+        {
+          "source": "Sarah Arao",
+          "relationship": "authored",
+          "target": "Service Leadership",
+          "evidence_text": "Service Leadership, Self-Care, and Global Collaboration",
+          "page": 15,
+          "what_is_wrong": "Title split on commas into three fragments, each too short to be standalone titles",
+          "should_be": {
+            "source": "Sarah Arao",
+            "relationship": "authored",
+            "target": "Service Leadership, Self-Care, and Global Collaboration"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Dedication List Targets Not Split",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "Book dedication relationships have compound targets like 'Our Biggest Deal to Bernard Lietaer' instead of just the person's name",
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Bernard Lietaer",
+          "evidence_text": "Dedication section",
+          "page": 10,
+          "what_is_wrong": "Target includes both book title and dedicatee name, should be just the person",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "recommendation": "Fix the authorship reversal logic. When AUTHORSHIP_REVERSED flag is set, actually swap source and target fields, not just set the flag. Add unit test to verify reversal occurs."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Add context-aware splitting rules: (1) Don't split if target_type is 'Book' or 'Essay', (2) Don't split if comma appears after a colon (subtitle delimiter), (3) Don't split if result would be <3 words, (4) Add whitelist of conjunction patterns that indicate single titles ('X, Y, and Z' structure)"
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Add dedication target cleanup: detect pattern 'Book Title to Person Name' and extract just the person name. Use regex: r'(?:.*?\\s+to\\s+)?(.+)$' to capture everything after 'to'."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "recommendation": "Add instruction: 'Do NOT create is-a relationships for entity types that are already captured in the entity_type metadata. For example, if an entity is typed as Organization, do not extract (Entity, is-a, Organization).'"
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "recommendation": "Make INCOMPLETE_TITLE flag actionable: (1) If too_short and part of a split, attempt to merge with adjacent fragments, (2) If standalone and too_short, mark for manual review or filter out, (3) Add confidence penalty to p_true for incomplete titles"
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "recommendation": "Create a new module that runs after list_splitter to detect and merge incorrectly split titles. Logic: (1) Group consecutive relationships with same source and 'authored' predicate, (2) If targets are short fragments (<4 words each), merge them back into single title, (3) Check if merged version appears in source text"
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "recommendation": "Fix SEMANTIC_INCOMPATIBILITY detection for 'is-a' relationships. Current logic incorrectly flags Organization is-a Organization as 'Person cannot be-a Organization'. Update to check actual source_type, not assumed type."
+    },
+    {
+      "priority": "MILD",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Add 'Book' and 'Essay' to protected entity types that should never be split by list_splitter. Create a whitelist of entity types immune to list splitting."
+    }
+  ]
+}

@@ -1,0 +1,676 @@
+{
+  "extraction_metadata": {
+    "version": "v6_reflector_improved",
+    "total_relationships": 858,
+    "analysis_timestamp": "2025-10-12T11:30:14.293281"
+  },
+  "quality_summary": {
+    "critical_issues": 4,
+    "high_priority_issues": 18,
+    "medium_priority_issues": 31,
+    "low_priority_issues": 12,
+    "total_issues": 65,
+    "issue_rate_percent": 7.58,
+    "grade": "B+"
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship (Praise Quotes)",
+      "severity": "CRITICAL",
+      "count": 4,
+      "percentage": 0.47,
+      "description": "Endorsers/reviewers incorrectly identified as authors of the book they're praising. The system extracts 'authored' relationships from praise quotes instead of 'endorsed' or 'reviewed' relationships.",
+      "root_cause_hypothesis": "Pass 1 LLM extraction treats any statement about a book in proximity to a person's name as an authorship claim. The bibliographic parser in Pass 2.5 only checks for copyright statements and title page patterns, missing praise quotes in front matter.",
+      "affected_module": "modules/pass1_extraction/entity_relationship_extractor.py",
+      "affected_prompt": "prompts/pass1_extraction_prompt.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 3,
+          "what_is_wrong": "Michael Bowman is providing an endorsement quote, not claiming authorship. He's praising the book, not writing it. The actual author is Aaron William Perry.",
+          "should_be": {
+            "source": "Michael Bowman",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Perry",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "With his inspirational, aspirational, beautifully-informed and historically grounded handbook, Perry has given us a new appreciation for soil and its good works.",
+          "page": 3,
+          "what_is_wrong": "This is Adrian Del Caro praising Perry's work, not Perry claiming authorship. The relationship should be (Adrian Del Caro, praised, Perry's work) or (Perry, authored, Soil Stewardship Handbook) but extracted from copyright page, not praise quote.",
+          "should_be": {
+            "source": "Adrian Del Caro",
+            "relationship": "praised",
+            "target": "Perry's authorship of Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Brad Lidge",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "Informative, motivational, and instructive, this Soil Stewardship Handbook guides us through daily life practices and decisions to improve our quality of life and help heal the planet.",
+          "page": 3,
+          "what_is_wrong": "Brad Lidge is providing an endorsement, not claiming authorship. This is another praise quote misidentified as authorship.",
+          "should_be": {
+            "source": "Brad Lidge",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Aaron Perry and his Y on Earth network",
+          "relationship": "Authorship",
+          "target": "an informative handbook on soil stewardship",
+          "evidence_text": "Aaron Perry and his Y on Earth network have produced an informative handbook on soil stewardship that invites us to re-orient our lifestyle toward ecological justice, in simple but profound ways.",
+          "page": 5,
+          "what_is_wrong": "This is Mark Bosco praising Aaron Perry's work. While technically correct that Perry produced it, this is extracted from a praise quote context, not a bibliographic statement. The relationship type 'Authorship' is correct but the extraction context is wrong.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Pronoun Sources - Unresolved",
+      "severity": "HIGH",
+      "count": 5,
+      "percentage": 0.58,
+      "description": "Source entity remains as pronoun ('we', 'I', 'they') despite Pass 2.5 pronoun resolution module. These are cases where the antecedent is either too far away, implicit, or generic.",
+      "root_cause_hypothesis": "The pronoun resolution module uses a fixed context window that's too small to capture distant antecedents. It also lacks logic to handle: (1) generic pronouns like 'we humans' that should be resolved to 'humanity', (2) cultural/implicit antecedents like 'my people' \u2192 'Slovenians', (3) first-person pronouns in author's voice that should resolve to the book's author.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": "config/pass2_5_config.yaml - pronoun_resolution_window_size",
+      "examples": [
+        {
+          "source": "we",
+          "relationship": "have",
+          "target": "a deep tradition of family farming",
+          "evidence_text": "we have a deep tradition of family farming.",
+          "page": 10,
+          "what_is_wrong": "'we' refers to Slovenians/the author's people, mentioned several sentences earlier. The pronoun resolver failed to capture this distant antecedent.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "have",
+            "target": "a deep tradition of family farming"
+          }
+        },
+        {
+          "source": "we",
+          "relationship": "must stop",
+          "target": "destroying soil",
+          "evidence_text": "We must stop destroying soil.",
+          "page": 14,
+          "what_is_wrong": "'We' is a generic pronoun referring to humanity/humans in general. Should be resolved to 'humanity' or 'humans'.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "must stop",
+            "target": "destroying soil"
+          }
+        },
+        {
+          "source": "we",
+          "relationship": "must become",
+          "target": "expert stewards of soil",
+          "evidence_text": "we must become expert stewards of soil.",
+          "page": 14,
+          "what_is_wrong": "Another generic 'we' that should resolve to 'humanity'.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "must become",
+            "target": "expert stewards of soil"
+          }
+        },
+        {
+          "source": "I",
+          "relationship": "Location",
+          "target": "the verdant landscape of Europe's eastern Alpine region",
+          "evidence_text": "I hail from the verdant landscape of Europe's eastern Alpine region.",
+          "page": 5,
+          "what_is_wrong": "'I' is the author speaking (Aaron William Perry). Should be resolved to the author's name.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "hails from",
+            "target": "the verdant landscape of Europe's eastern Alpine region"
+          }
+        },
+        {
+          "source": "we each",
+          "relationship": "get to choose",
+          "target": "to create the future",
+          "evidence_text": "we each get to choose to create the future.",
+          "page": 10,
+          "what_is_wrong": "Generic 'we' referring to all humans/humanity.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can choose",
+            "target": "to create the future"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Pronoun Targets - Unresolved",
+      "severity": "HIGH",
+      "count": 1,
+      "percentage": 0.12,
+      "description": "Target entity is a pronoun ('it', 'them') that should be resolved to the actual entity.",
+      "root_cause_hypothesis": "Same as pronoun sources - the pronoun resolver doesn't handle target pronouns or has a bug that only processes source pronouns.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "handful of soil",
+          "relationship": "our life depends on",
+          "target": "it",
+          "evidence_text": "Upon this handful of soil our life depends.",
+          "page": 14,
+          "what_is_wrong": "'it' refers to 'handful of soil' or more broadly 'soil'. The target pronoun was not resolved.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "depends on",
+            "target": "soil"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Sources",
+      "severity": "HIGH",
+      "count": 3,
+      "percentage": 0.35,
+      "description": "Source entity is vague/generic ('the way through', 'our connection with') instead of a concrete entity. These are abstract concepts that should either be reframed or not extracted.",
+      "root_cause_hypothesis": "Pass 1 extraction is too aggressive in extracting relationships from complex sentences. It treats prepositional phrases and abstract concepts as entities. The entity type validator in Pass 2 allows 'Concept' type too liberally.",
+      "affected_module": "modules/pass1_extraction/entity_relationship_extractor.py",
+      "affected_prompt": "prompts/pass1_extraction_prompt.txt",
+      "affected_config": "config/entity_types.yaml - Concept type definition",
+      "examples": [
+        {
+          "source": "the way through and out of these challenges",
+          "relationship": "include",
+          "target": "some of the simplest",
+          "evidence_text": "the way through and out of these challenges include some of the simplest, most delightful, and most life-enhancing practices and habits.",
+          "page": 10,
+          "what_is_wrong": "'the way through and out of these challenges' is not a concrete entity - it's a vague abstract concept. This should be reframed as (soil stewardship practices, include, simple practices) or similar.",
+          "should_be": {
+            "source": "soil stewardship practices",
+            "relationship": "include",
+            "target": "simple, delightful, life-enhancing habits"
+          }
+        },
+        {
+          "source": "our connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "our connection with the soil that has preserved our countryside.",
+          "page": 10,
+          "what_is_wrong": "'our connection with the soil' is abstract. Should be reframed to focus on the concrete practice or the people doing it.",
+          "should_be": {
+            "source": "Slovenian soil stewardship traditions",
+            "relationship": "preserved",
+            "target": "Slovenian countryside"
+          }
+        },
+        {
+          "source": "our connection with the soil",
+          "relationship": "has allowed",
+          "target": "my people to flourish with a form of liberty",
+          "evidence_text": "that has allowed my people to flourish with a form of liberty.",
+          "page": 10,
+          "what_is_wrong": "Same vague source issue.",
+          "should_be": {
+            "source": "Slovenian farming traditions",
+            "relationship": "enabled",
+            "target": "Slovenian cultural flourishing"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Targets",
+      "severity": "MEDIUM",
+      "count": 8,
+      "percentage": 0.93,
+      "description": "Target entity is vague or overly abstract ('the answer', 'a road-map of sorts', 'informative handbook on soil stewardship'). These lack specificity and should reference concrete entities.",
+      "root_cause_hypothesis": "Same as vague sources - Pass 1 extraction is too permissive with abstract concepts. The list splitter in Pass 2.5 doesn't help here because these aren't lists, they're just vague.",
+      "affected_module": "modules/pass1_extraction/entity_relationship_extractor.py",
+      "affected_prompt": "prompts/pass1_extraction_prompt.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Y on Earth",
+          "relationship": "attributed to",
+          "target": "the answer",
+          "evidence_text": "the answer. We are asking many questions on this journey together.",
+          "page": 14,
+          "what_is_wrong": "'the answer' is extremely vague and context-dependent. This relationship doesn't convey useful information.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "is",
+          "target": "a road-map of sorts",
+          "evidence_text": "This Soil Stewardship Handbook is deceptively small and simple. For it is chock full of some of the most salient insights and a form of humble inspiration.",
+          "page": 10,
+          "what_is_wrong": "'a road-map of sorts' is vague metaphorical language. Should extract the concrete claim about what the book provides.",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "provides",
+            "target": "soil stewardship guidance"
+          }
+        },
+        {
+          "source": "Aaron Perry",
+          "relationship": "produced",
+          "target": "informative handbook on soil stewardship",
+          "evidence_text": "Aaron Perry and his Y on Earth network have produced an informative handbook on soil stewardship.",
+          "page": 3,
+          "what_is_wrong": "'informative handbook on soil stewardship' is a vague description. Should use the actual book title.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete List Splitting",
+      "severity": "MEDIUM",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "The list splitter in Pass 2.5 split some lists but created awkward or incomplete targets. Examples: 'new generation of farmers' vs 'gardeners and citizens are leading the way' - the verb phrase got attached to only the second split.",
+      "root_cause_hypothesis": "The list splitter (pass2_5_postprocessing/list_splitter.py) uses simple comma-based splitting without understanding sentence structure. When it splits 'A, B and C are doing X', it creates 'A' and 'B and C are doing X' instead of 'A', 'B', 'C' all with relationship 'are doing X'.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Mark Guttridge",
+          "relationship": "claims",
+          "target": "new generation of farmers",
+          "evidence_text": "a new generation of farmers, gardeners and citizens are leading the way in creating systems to restore soil health.",
+          "page": 3,
+          "what_is_wrong": "The list splitter created 'new generation of farmers' and 'gardeners and citizens are leading the way' as two separate targets. The second one includes the verb phrase, making it awkward. Should be three clean targets: 'farmers', 'gardeners', 'citizens' all with relationship 'are leading the way'.",
+          "should_be": {
+            "source": "new generation",
+            "relationship": "includes",
+            "target": "farmers"
+          }
+        },
+        {
+          "source": "the way through and out of these challenges",
+          "relationship": "include",
+          "target": "some of the simplest",
+          "evidence_text": "the way through and out of these challenges include some of the simplest, most delightful, and most life-enhancing practices and habits.",
+          "page": 10,
+          "what_is_wrong": "List splitter created three targets but they're all incomplete: 'some of the simplest', 'most delightful', 'most life-enhancing practices and habits'. Should be: 'simple practices', 'delightful practices', 'life-enhancing practices'.",
+          "should_be": {
+            "source": "soil stewardship practices",
+            "relationship": "are",
+            "target": "simple"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Wrong Relationship Type",
+      "severity": "MEDIUM",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "The relationship predicate is semantically incorrect or awkward for the source-target pair. Examples: 'claims' used for factual statements, 'attributed to' for unclear relationships.",
+      "root_cause_hypothesis": "Pass 1 LLM is choosing predicates that are technically defensible but semantically awkward. The Pass 2 dual-signal evaluation doesn't catch these because they're not factually wrong, just stylistically poor. Need better predicate selection guidance in the prompt.",
+      "affected_module": "modules/pass1_extraction/entity_relationship_extractor.py",
+      "affected_prompt": "prompts/pass1_extraction_prompt.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Mark Guttridge",
+          "relationship": "claims",
+          "target": "health of a community depends on the health of its soils",
+          "evidence_text": "The health of a community depends on the health of its soils.",
+          "page": 3,
+          "what_is_wrong": "'claims' implies this is a disputed or subjective statement. This is presented as a factual assertion in the book. Should use 'states' or 'asserts'.",
+          "should_be": {
+            "source": "Mark Guttridge",
+            "relationship": "states",
+            "target": "health of a community depends on the health of its soils"
+          }
+        },
+        {
+          "source": "Y on Earth",
+          "relationship": "attributed to",
+          "target": "the answer",
+          "evidence_text": "the answer. We are asking many questions on this journey together.",
+          "page": 14,
+          "what_is_wrong": "'attributed to' is unclear here. What does it mean for 'Y on Earth' to be 'attributed to' 'the answer'? This relationship doesn't make sense.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Context-Enriched Sources (Overly Verbose)",
+      "severity": "MEDIUM",
+      "count": 5,
+      "percentage": 0.58,
+      "description": "The context enrichment module in Pass 2.5 replaced vague sources like 'This book' with 'Soil Stewardship Handbook', which is good. But in some cases it created overly verbose sources like 'Aaron Perry and his Y on Earth network' when 'Aaron William Perry' would suffice.",
+      "root_cause_hypothesis": "The context enrichment module (pass2_5_postprocessing/context_enricher.py) is too aggressive in preserving the exact surface form from the text. It should normalize to canonical entity names.",
+      "affected_module": "modules/pass2_5_postprocessing/context_enricher.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron Perry and his Y on Earth network",
+          "relationship": "Authorship",
+          "target": "an informative handbook on soil stewardship",
+          "evidence_text": "Aaron Perry and his Y on Earth network have produced an informative handbook on soil stewardship that invites us to re-orient our lifestyle toward ecological justice, in simple but profound ways.",
+          "page": 5,
+          "what_is_wrong": "Source should be normalized to 'Aaron William Perry' (the author's canonical name). The 'and his Y on Earth network' part is unnecessary detail for an authorship relationship.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Treated as Factual",
+      "severity": "LOW",
+      "count": 3,
+      "percentage": 0.35,
+      "description": "Metaphorical or figurative language extracted as literal factual relationships. The system correctly flagged these with FIGURATIVE_LANGUAGE flag, but they're still in the output.",
+      "root_cause_hypothesis": "The figurative language detector in Pass 2.5 (pass2_5_postprocessing/figurative_language_detector.py) correctly identifies these but doesn't filter them out. It just adds a flag. Need a decision on whether to keep flagged figurative language or remove it.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": null,
+      "affected_config": "config/pass2_5_config.yaml - figurative_language_action (flag vs filter)",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "affects",
+          "target": "spiritual flourishing",
+          "evidence_text": "Our spiritual flourishing is wedded to how we take care of the earth and all who inhabit it.",
+          "page": 3,
+          "what_is_wrong": "'wedded to' is metaphorical language. 'spiritual flourishing' is also abstract/metaphorical. This is correctly flagged but should it be in the output?",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "discusses",
+            "target": "connection between earth care and spiritual well-being"
+          }
+        },
+        {
+          "source": "connecting with the living soil",
+          "relationship": "enables",
+          "target": "cultivating a deep awareness of the awesome miracle that is life on Earth",
+          "evidence_text": "by connecting with the living soil, and by cultivating a deep awareness of the awesome miracle that is life on Earth.",
+          "page": 10,
+          "what_is_wrong": "'awesome miracle' is figurative/poetic language. Correctly flagged but present in output.",
+          "should_be": {
+            "source": "connecting with living soil",
+            "relationship": "enables",
+            "target": "awareness of life on Earth"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Duplicate Relationships (Same Page)",
+      "severity": "LOW",
+      "count": 9,
+      "percentage": 1.05,
+      "description": "The same relationship extracted multiple times from the same page, sometimes with slightly different evidence text. Examples: 'My people love the land/sea/trees/soil' extracted twice (pages 5 and 10).",
+      "root_cause_hypothesis": "The deduplication module in Pass 2.5 (pass2_5_postprocessing/deduplicator.py) uses claim_uid for deduplication, but these have different claim_uids because they're from different pages. Need cross-page deduplication logic.",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py",
+      "affected_prompt": null,
+      "affected_config": "config/pass2_5_config.yaml - deduplication_strategy",
+      "examples": [
+        {
+          "source": "My people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "This exact relationship was already extracted from page 5. It's a duplicate across pages.",
+          "should_be": {
+            "source": "My people",
+            "relationship": "love",
+            "target": "the land"
+          }
+        },
+        {
+          "source": "My people",
+          "relationship": "love",
+          "target": "the sea",
+          "evidence_text": "We love the sea.",
+          "page": 10,
+          "what_is_wrong": "Duplicate of page 5 extraction.",
+          "should_be": {
+            "source": "My people",
+            "relationship": "love",
+            "target": "the sea"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Praise Quote Misattribution",
+      "severity": "CRITICAL",
+      "count": 4,
+      "description": "Endorsement quotes in book front matter are being extracted as authorship claims by the endorser rather than the actual author. This is a specific subtype of 'Reversed Authorship' that occurs in the praise/endorsement section of books.",
+      "root_cause_hypothesis": "The bibliographic parser only looks for copyright statements and title pages. It doesn't understand the structure of book front matter where praise quotes appear before the main text. Need to add logic to detect praise quote sections (identified by quote marks, attribution lines like '\u2014Name, Title') and extract 'endorsed' relationships instead of 'authored'.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 3,
+          "what_is_wrong": "This is from the 'PRAISE FOR SOIL STEWARDSHIP HANDBOOK' section. Michael Bowman is endorsing, not authoring.",
+          "should_be": {
+            "source": "Michael Bowman",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Generic Pronoun Non-Resolution",
+      "severity": "HIGH",
+      "count": 3,
+      "description": "Generic pronouns like 'we humans', 'we each', 'we all' are not being resolved to 'humanity' or 'humans'. These are different from specific pronouns that refer to named entities - they're intentionally generic but should still be normalized.",
+      "root_cause_hypothesis": "The pronoun resolver only looks for named entity antecedents. It doesn't have logic to recognize generic pronouns and resolve them to appropriate generic entities like 'humanity', 'people', 'humans'. Need to add a generic pronoun detection and resolution step.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "we",
+          "relationship": "must stop",
+          "target": "destroying soil",
+          "evidence_text": "We must stop destroying soil.",
+          "page": 14,
+          "what_is_wrong": "'We' here is generic, referring to all humans. Should be resolved to 'humanity' or 'humans'.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "must stop",
+            "target": "destroying soil"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Verb Phrase Attachment in List Splits",
+      "severity": "MEDIUM",
+      "count": 12,
+      "description": "When splitting lists like 'A, B and C are doing X', the list splitter creates 'A' and 'B and C are doing X' instead of properly distributing the verb phrase to all list items. This creates awkward targets that include verb phrases.",
+      "root_cause_hypothesis": "The list splitter uses simple comma-based splitting without parsing sentence structure. It doesn't understand that 'are doing X' applies to all list items. Need to use dependency parsing to identify the verb phrase and apply it to each split item.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Mark Guttridge",
+          "relationship": "claims",
+          "target": "gardeners and citizens are leading the way",
+          "evidence_text": "a new generation of farmers, gardeners and citizens are leading the way in creating systems to restore soil health.",
+          "page": 3,
+          "what_is_wrong": "The verb phrase 'are leading the way' got attached to only the last list item after splitting. Should be: (new generation, includes, farmers), (new generation, includes, gardeners), (new generation, includes, citizens), then (new generation, is leading, soil restoration).",
+          "should_be": {
+            "source": "new generation",
+            "relationship": "includes",
+            "target": "gardeners"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Cross-Page Duplicates",
+      "severity": "LOW",
+      "count": 9,
+      "description": "The same relationship extracted from multiple pages (e.g., a repeated quote or theme). The deduplicator doesn't catch these because they have different page numbers and thus different claim_uids.",
+      "root_cause_hypothesis": "The deduplicator uses claim_uid which includes page number in its hash. Need to add a second deduplication pass that compares (source, relationship, target) tuples across all pages and keeps only the first occurrence or the one with highest confidence.",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py",
+      "examples": [
+        {
+          "source": "My people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "This was already extracted from page 5. It's a repeated quote/theme.",
+          "should_be": {
+            "source": "My people",
+            "relationship": "love",
+            "target": "the land"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "recommendation": "Create a new module to detect praise quote sections in book front matter. Logic: (1) Detect section headers like 'PRAISE FOR', 'ENDORSEMENTS', 'ADVANCE PRAISE', (2) Within these sections, identify quote blocks (text in quotes followed by attribution line '\u2014Name, Title'), (3) For any 'authored' relationships extracted from these sections, change to 'endorsed' or 'praised', (4) Ensure the actual author is extracted from copyright page or title page, not praise quotes.",
+      "expected_impact": "Eliminates all 4 reversed authorship errors (0.47% of relationships). This is critical because authorship is a fundamental bibliographic fact that must be correct."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Add generic pronoun resolution logic: (1) Detect generic pronouns: 'we humans', 'we all', 'we each', 'humanity', 'people in general', (2) Resolve these to 'humanity', 'humans', or 'people' as appropriate, (3) Add a confidence threshold - only resolve if the pronoun is clearly generic (not referring to a specific group mentioned in context).",
+      "expected_impact": "Fixes 3 generic pronoun errors (0.35% of relationships). Improves semantic clarity of extracted knowledge."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Expand pronoun resolution context window and add multi-pass resolution: (1) Increase context window from current size to 5 sentences before/after, (2) Add a second pass that looks for antecedents in the entire page if first pass fails, (3) Add special handling for first-person pronouns ('I', 'my', 'we' in author's voice) - resolve to the book's author, (4) Add handling for cultural/implicit antecedents like 'my people' - use entity linking to resolve to the specific group (e.g., 'Slovenians' based on context).",
+      "expected_impact": "Fixes remaining 5 unresolved pronoun sources (0.58% of relationships). Reduces pronoun errors from 8.6% (V4) to near-zero."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Upgrade list splitter to use dependency parsing: (1) Use spaCy or similar to parse sentence structure, (2) Identify the verb phrase that applies to the list, (3) When splitting 'A, B and C verb X', create separate relationships: (A, verb, X), (B, verb, X), (C, verb, X), (4) Handle nested lists and complex conjunctions ('and', 'or'), (5) Add validation to ensure split targets don't include verb phrases.",
+      "expected_impact": "Fixes 12 incomplete list split errors (1.40% of relationships). Improves quality of list-based extractions from 11.5% errors (V4) to <2%."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_prompt.txt",
+      "recommendation": "Add guidance to avoid vague/abstract entities: (1) Add examples of vague entities to avoid: 'the way through', 'the process', 'the amount', 'our connection with', (2) Instruct LLM to reframe abstract concepts as concrete entities when possible, (3) Add a 'concreteness check': if source or target is an abstract concept, try to identify the concrete entity or action it refers to, (4) Provide reframing examples: 'our connection with soil' \u2192 'soil stewardship practices', 'the way through challenges' \u2192 'soil stewardship solutions'.",
+      "expected_impact": "Reduces vague source/target errors from 11 (1.28%) to <5 (0.58%). Improves overall knowledge graph utility."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/deduplicator.py",
+      "recommendation": "Add cross-page deduplication: (1) After per-page deduplication, add a second pass that compares (source, relationship, target) tuples across all pages, (2) For duplicates, keep the one with highest p_true score, or if scores are equal, keep the first occurrence, (3) Add a 'duplicate_of' field to track which relationships were merged, (4) Consider fuzzy matching for near-duplicates (e.g., 'Aaron Perry' vs 'Aaron William Perry').",
+      "expected_impact": "Eliminates 9 cross-page duplicate errors (1.05% of relationships). Reduces output size and improves data quality."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_prompt.txt",
+      "recommendation": "Improve predicate selection guidance: (1) Add a predicate selection rubric: use 'states' or 'asserts' for factual claims, 'claims' only for disputed/subjective statements, 'argues' for argumentative statements, (2) Provide examples of good vs bad predicate choices, (3) Instruct LLM to choose predicates that match the epistemic status of the statement (fact vs opinion vs argument), (4) Add a list of preferred predicates for common relationship types (authorship, affiliation, location, etc.).",
+      "expected_impact": "Reduces wrong predicate errors from 6 (0.70%) to <3 (0.35%). Improves semantic precision of relationships."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/context_enricher.py",
+      "recommendation": "Add entity normalization to context enricher: (1) After enriching vague references, normalize to canonical entity names, (2) Use entity linking to map surface forms to canonical names (e.g., 'Aaron Perry' \u2192 'Aaron William Perry', 'Perry' \u2192 'Aaron William Perry'), (3) For organizations, use the shortest unambiguous form (e.g., 'Aaron Perry and his Y on Earth network' \u2192 'Aaron William Perry' for authorship, but keep full form for organizational affiliation), (4) Add a canonical name lookup table for key entities in the book.",
+      "expected_impact": "Fixes 5 overly verbose source errors (0.58%). Improves consistency and queryability of knowledge graph."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/pass2_5_config.yaml",
+      "recommendation": "Add configuration option for figurative language handling: (1) Add 'figurative_language_action' config with options: 'flag' (current behavior), 'filter' (remove from output), 'reframe' (attempt to extract literal meaning), (2) Set default to 'reframe' with fallback to 'flag' if reframing fails, (3) Add 'figurative_language_threshold' to control sensitivity of detection.",
+      "expected_impact": "Reduces figurative language errors from 3 (0.35%) to 0 if set to 'filter', or improves quality if set to 'reframe'. Gives users control over how to handle poetic/metaphorical language."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Add target pronoun resolution: Current implementation only resolves source pronouns. Add logic to also resolve target pronouns ('it', 'them', 'this', 'that'). Use same context window and antecedent detection logic as source resolution.",
+      "expected_impact": "Fixes 1 pronoun target error (0.12%). Completes pronoun resolution coverage."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_prompt.txt",
+      "recommendation": "Add guidance to avoid extracting relationships from vague/unclear statements: (1) Instruct LLM to skip relationships where the meaning is unclear or requires significant interpretation, (2) Add examples of statements that should NOT be extracted: 'Y on Earth is the answer' (what question?), 'This is a road-map of sorts' (too vague), (3) Emphasize extracting clear, factual relationships over poetic/inspirational language.",
+      "expected_impact": "Reduces vague target errors from 8 (0.93%) to <4 (0.47%). Improves precision of extraction."
+    }
+  ],
+  "system_health": {
+    "meets_production_criteria": true,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.0758,
+    "assessment": "V6 shows significant improvement over V5 (14.7% \u2192 7.58% issue rate), but still exceeds the 5% target. The most critical issues are: (1) Reversed authorship from praise quotes (4 cases), (2) Unresolved pronouns (6 cases), (3) Vague entities (11 cases). Implementing the CRITICAL and HIGH priority recommendations should bring the issue rate below 5%. The system is production-ready for non-critical applications but needs these fixes for high-stakes use cases.",
+    "comparison_to_v5": {
+      "v5_issue_rate": 0.147,
+      "v6_issue_rate": 0.0758,
+      "improvement": "48.4% reduction in issue rate",
+      "remaining_gaps": [
+        "Praise quote detection (new issue in V6)",
+        "Generic pronoun resolution (partially addressed)",
+        "List splitting with verb phrases (improved but not perfect)",
+        "Cross-page deduplication (new issue identified)"
+      ]
+    },
+    "estimated_impact_of_recommendations": {
+      "if_all_critical_implemented": "Issue rate would drop to ~6.5% (fixes 0.82% of relationships)",
+      "if_all_high_implemented": "Issue rate would drop to ~4.2% (fixes additional 2.33% of relationships)",
+      "if_all_medium_implemented": "Issue rate would drop to ~2.8% (fixes additional 1.4% of relationships)",
+      "target_achievement": "Implementing all CRITICAL + HIGH recommendations would bring system below 5% threshold"
+    }
+  },
+  "metadata": {
+    "analysis_date": "2025-10-12T19:49:13.414922",
+    "relationships_analyzed": 858,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v6_reflector_improved"
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "test_metadata": {
+    "test_type": "full_pipeline",
+    "v11_version": "v11.2.2",
+    "v11_issues_total": 16,
+    "chunks_tested": 13,
+    "test_date": "2025-10-14",
+    "pipeline_stages": [
+      "Pass 1: Extract",
+      "Pass 2: Evaluate",
+      "Pass 2.5: Postprocess"
+    ]
+  },
+  "pipeline_summary": {
+    "pass1_total": 27,
+    "pass2_total": 0,
+    "final_total": 0,
+    "reduction_percent": 100.0
+  },
+  "results": [
+    {
+      "evidence": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+      "page": 6,
+      "v11_issue_count": 3,
+      "v11_issues": [
+        {
+          "category": "Possessive Pronoun Sources",
+          "severity": "HIGH",
+          "evidence_text": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+          "page": 6,
+          "source": "my people",
+          "target": "the land",
+          "relationship": "love",
+          "what_is_wrong": "Source is possessive pronoun 'my people' instead of specific entity. Context indicates author is Slovenian, so should resolve to 'Slovenians' or 'Aaron William Perry's heritage'",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the land"
+          }
+        },
+        {
+          "category": "Possessive Pronoun Sources",
+          "severity": "HIGH",
+          "evidence_text": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+          "page": 6,
+          "source": "my people",
+          "target": "the sea",
+          "relationship": "love",
+          "what_is_wrong": "Same possessive pronoun issue across 4 relationships",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the sea"
+          }
+        },
+        {
+          "category": "Demonstrative Pronoun Targets",
+          "severity": "MILD",
+          "evidence_text": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+          "page": 6,
+          "source": "my people",
+          "target": "the land",
+          "relationship": "love",
+          "what_is_wrong": "Target 'the land' is generic. Context suggests Slovenian land. Could be more specific but not critical since context is clear.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "Slovenian land"
+          }
+        }
+      ],
+      "v12_pass1_count": 4,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "This handbook provides a nicely explained overview of the science with an inclusion of several easy steps that people can take to realize a regenerative future.",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Vague Abstract Entities",
+          "severity": "MEDIUM",
+          "evidence_text": "This handbook provides a nicely explained overview of the science with an inclusion of several easy steps that people can take to realize a regenerative future.",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "easy steps",
+          "relationship": "provides",
+          "what_is_wrong": "Target 'easy steps' is too vague. What are the steps? Should extract specific steps or use more concrete description like 'practical soil stewardship actions'",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "provides",
+            "target": "practical soil stewardship actions"
+          }
+        }
+      ],
+      "v12_pass1_count": 3,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "The Soil Stewardship Handbook contains a plan for action on what and how we must all take action now",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Vague Abstract Entities",
+          "severity": "MEDIUM",
+          "evidence_text": "The Soil Stewardship Handbook contains a plan for action on what and how we must all take action now",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "plan for action",
+          "relationship": "contains",
+          "what_is_wrong": "Target 'plan for action' is generic. Should be 'soil stewardship action plan' or similar",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "contains",
+            "target": "soil stewardship action plan"
+          }
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "Soil is the answer to climate change.",
+      "page": 10,
+      "v11_issue_count": 2,
+      "v11_issues": [
+        {
+          "category": "Vague Abstract Entities",
+          "severity": "MEDIUM",
+          "evidence_text": "Soil is the answer to climate change.",
+          "page": 10,
+          "source": "soil",
+          "target": "climate change",
+          "relationship": "is the answer to",
+          "what_is_wrong": "Predicate 'is the answer to' is overly absolute and philosophical. Should be 'can help mitigate' or 'is a solution for'",
+          "should_be": {
+            "source": "soil",
+            "relationship": "can help mitigate",
+            "target": "climate change"
+          }
+        },
+        {
+          "category": "Predicate Fragmentation - 'is' variations",
+          "severity": "MEDIUM",
+          "evidence_text": "Soil is the answer to climate change.",
+          "page": 10,
+          "source": "soil",
+          "target": "climate change",
+          "relationship": "is the answer to",
+          "what_is_wrong": "Predicate 'is the answer to' is too absolute. Should normalize to 'can help address' or filter as philosophical claim.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "can help mitigate",
+            "target": "climate change"
+          }
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "The Soil Stewardship Handbook contains a plan for action on what and how we must all take action now to help nourish the soil",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Praise Quote Misclassification",
+          "severity": "MEDIUM",
+          "evidence_text": "The Soil Stewardship Handbook contains a plan for action on what and how we must all take action now to help nourish the soil",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "soil",
+          "relationship": "nourishes",
+          "what_is_wrong": "This is from Brigitte Mars's endorsement quote. The handbook doesn't literally nourish soil - it provides guidance. This is praise language misinterpreted as factual claim.",
+          "should_be": {
+            "source": "Brigitte Mars",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ],
+      "v12_pass1_count": 2,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "this Soil Stewardship Handbook guides us through daily life practices and decisions to improve our quality of life and help heal the planet",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Praise Quote Misclassification",
+          "severity": "MEDIUM",
+          "evidence_text": "this Soil Stewardship Handbook guides us through daily life practices and decisions to improve our quality of life and help heal the planet",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "heal the planet",
+          "relationship": "helps",
+          "what_is_wrong": "From Brad Lidge's endorsement. Metaphorical praise language ('heal the planet') treated as factual claim.",
+          "should_be": {
+            "source": "Brad Lidge",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ],
+      "v12_pass1_count": 6,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "being connected to land and soil is what it means to be human.",
+      "page": 10,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Philosophical Statements as Facts",
+          "severity": "MEDIUM",
+          "evidence_text": "being connected to land and soil is what it means to be human.",
+          "page": 10,
+          "source": "soil",
+          "target": "human",
+          "relationship": "is-a",
+          "what_is_wrong": "This is a philosophical claim about human nature, not a factual relationship. The predicate 'is what it means to be' signals philosophical language. Should be filtered or reframed.",
+          "should_be": null
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "We will discover that soil is the answer to so many of these questions.",
+      "page": 12,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Philosophical Statements as Facts",
+          "severity": "MEDIUM",
+          "evidence_text": "We will discover that soil is the answer to so many of these questions.",
+          "page": 12,
+          "source": "soil",
+          "target": "answer to many questions",
+          "relationship": "is-a",
+          "what_is_wrong": "Vague philosophical statement. 'The answer' is too abstract. Should be filtered.",
+          "should_be": null
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure.",
+      "page": 10,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Predicate Fragmentation - 'is' variations",
+          "severity": "MEDIUM",
+          "evidence_text": "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure.",
+          "page": 10,
+          "source": "soil",
+          "target": "agriculture",
+          "relationship": "is key for",
+          "what_is_wrong": "Predicate 'is key for' should normalize to 'is essential for' or 'supports'. Too many variations of 'is X for' pattern.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is essential for",
+            "target": "agriculture"
+          }
+        }
+      ],
+      "v12_pass1_count": 3,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "This book is dedicated to",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Malformed Dedication Targets",
+          "severity": "MEDIUM",
+          "evidence_text": "This book is dedicated to",
+          "page": 2,
+          "source": "Aaron William Perry",
+          "target": "Soil Stewardship Handbook to",
+          "relationship": "dedicated",
+          "what_is_wrong": "Target is incomplete - ends with 'to'. Should extract the actual dedicatee or filter this relationship.",
+          "should_be": null
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "This book is dedicated to my two children, Osha and Hunter",
+      "page": 6,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Malformed Dedication Targets",
+          "severity": "MEDIUM",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter",
+          "page": 6,
+          "source": "Aaron William Perry",
+          "target": "Soil Stewardship Handbook to Osha",
+          "relationship": "dedicated",
+          "what_is_wrong": "Target includes book title. Should be just 'Osha' or use pattern (Book, dedicated to, Osha)",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "dedicated to",
+            "target": "Osha"
+          }
+        }
+      ],
+      "v12_pass1_count": 2,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Overly Generic 'is-a' Relationships",
+          "severity": "MILD",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "tool",
+          "relationship": "is-a",
+          "what_is_wrong": "Generic 'is-a tool' from praise quote. Not informative - all handbooks are tools. Should filter or require more specific type.",
+          "should_be": null
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    },
+    {
+      "evidence": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+      "page": 2,
+      "v11_issue_count": 1,
+      "v11_issues": [
+        {
+          "category": "Overly Generic 'is-a' Relationships",
+          "severity": "MILD",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 2,
+          "source": "Soil Stewardship Handbook",
+          "target": "critical mission",
+          "relationship": "is-a",
+          "what_is_wrong": "Book is not literally a mission. This is metaphorical praise language. Should filter.",
+          "should_be": null
+        }
+      ],
+      "v12_pass1_count": 1,
+      "v12_pass2_count": 0,
+      "v12_final_count": 0,
+      "v12_final_relationships": []
+    }
+  ]
+}

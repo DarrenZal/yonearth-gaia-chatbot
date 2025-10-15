@@ -1,0 +1,26 @@
+# Knowledge Graph Filtering Thresholds Configuration
+# V14.0: Conservative base threshold with flag-specific overrides
+
+# Base p_true threshold for filtering relationships
+# 0.5 = Conservative baseline (V13.1 calibrated for this value)
+# Raising to 0.7 would over-filter valid knowledge
+base_threshold: 0.5
+
+# Flag-specific thresholds (override base_threshold when flags present)
+# Higher values = more aggressive filtering for specific relationship types
+flag_specific_thresholds:
+  # Philosophical and metaphorical claims (should be rare in domain knowledge)
+  PHILOSOPHICAL_CLAIM: 0.85      # Metaphysical/spiritual statements
+  METAPHOR: 0.85                  # Figurative language
+  FIGURATIVE_LANGUAGE: 0.85       # Poetic expressions
+
+  # Subjective statements
+  OPINION: 0.9                    # Personal opinions (not expert claims)
+
+  # Conflict indicators
+  signals_conflict_true: 0.75     # When textual confidence conflicts with knowledge plausibility
+
+# Expected Impact:
+# - Filters 8-10 low-quality philosophical/metaphorical relationships (0.9-1.1% improvement)
+# - Maintains valid domain knowledge by preserving conservative 0.5 base
+# - Aggressive on clearly problematic flags (OPINION, PHILOSOPHICAL_CLAIM)

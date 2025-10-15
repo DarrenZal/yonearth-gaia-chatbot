@@ -1,0 +1,161 @@
+{
+  "summary": {
+    "total_tests": 5,
+    "extraction_failures": 0,
+    "threshold_failures": 1,
+    "successes": 4
+  },
+  "results": [
+    {
+      "test_id": "TC004",
+      "severity": "HIGH",
+      "issue": "Should extract demonstrative concept, currently missing",
+      "pass1_count": 1,
+      "pass2_count": 1,
+      "filtered_count": 1,
+      "diagnosis": "EXTRACTED_SUCCESSFULLY",
+      "pass1_relationships": [
+        {
+          "source": "soil stewardship",
+          "predicate": "enables",
+          "target": "sustainable farming practices",
+          "context": "Soil stewardship enables sustainable farming practices."
+        }
+      ],
+      "pass2_relationships": [
+        {
+          "source": "soil stewardship",
+          "predicate": "enables",
+          "target": "sustainable farming practices",
+          "context": "Soil stewardship enables sustainable farming practices.",
+          "p_true": 0.75,
+          "classification_flags": [
+            "TESTABLE_CLAIM"
+          ],
+          "reasoning": "The text clearly states that soil stewardship enables sustainable farming practices, suggesting a functional relationship. However, the claim is somewhat general and could be debated, hence it is classified as a testable claim with a slightly reduced confidence score."
+        }
+      ]
+    },
+    {
+      "test_id": "TC008",
+      "severity": "MEDIUM",
+      "issue": "Generic 'their' should resolve to 'individuals'",
+      "pass1_count": 1,
+      "pass2_count": 1,
+      "filtered_count": 0,
+      "diagnosis": "THRESHOLD_FILTERING | Highest p_true: 0.300 (below 0.5 threshold) | Confidence penalty applied: ['PHILOSOPHICAL_CLAIM', 'ABSTRACT_CONCEPT']",
+      "pass1_relationships": [
+        {
+          "source": "individuals",
+          "predicate": "cultivate",
+          "target": "human potential",
+          "context": "By working with soil, individuals can cultivate their own human potential."
+        }
+      ],
+      "pass2_relationships": [
+        {
+          "source": "individuals",
+          "predicate": "cultivate",
+          "target": "human potential",
+          "context": "By working with soil, individuals can cultivate their own human potential.",
+          "p_true": 0.3,
+          "classification_flags": [
+            "PHILOSOPHICAL_CLAIM",
+            "ABSTRACT_CONCEPT"
+          ],
+          "reasoning": "The relationship suggests that individuals can enhance their human potential through interaction with soil, which is a philosophical claim rather than a verifiable fact. The term 'human potential' is abstract and lacks concrete definition, leading to a lower confidence score."
+        }
+      ]
+    },
+    {
+      "test_id": "TC012",
+      "severity": "MEDIUM",
+      "issue": "Testable scientific claim with hedging",
+      "pass1_count": 1,
+      "pass2_count": 1,
+      "filtered_count": 1,
+      "diagnosis": "EXTRACTED_SUCCESSFULLY",
+      "pass1_relationships": [
+        {
+          "source": "regenerative soil management practices",
+          "predicate": "mitigate",
+          "target": "climate change",
+          "context": "Through regenerative soil management practices, we can mitigate climate change."
+        }
+      ],
+      "pass2_relationships": [
+        {
+          "source": "regenerative soil management practices",
+          "predicate": "mitigate",
+          "target": "climate change",
+          "context": "Through regenerative soil management practices, we can mitigate climate change.",
+          "p_true": 0.6,
+          "classification_flags": [
+            "TESTABLE_CLAIM"
+          ],
+          "reasoning": "The text suggests that regenerative soil management practices can help mitigate climate change, which is a plausible claim supported by some evidence. However, the relationship is not universally accepted as a definitive fact, hence it is classified as a testable claim with a moderate confidence score."
+        }
+      ]
+    },
+    {
+      "test_id": "TC013",
+      "severity": "MEDIUM",
+      "issue": "Testable claim with confidence hedging",
+      "pass1_count": 1,
+      "pass2_count": 1,
+      "filtered_count": 1,
+      "diagnosis": "EXTRACTED_SUCCESSFULLY",
+      "pass1_relationships": [
+        {
+          "source": "getting hands in the soil",
+          "predicate": "may enhance",
+          "target": "immune systems",
+          "context": "Research suggests getting your hands in the soil may enhance immune systems."
+        }
+      ],
+      "pass2_relationships": [
+        {
+          "source": "getting hands in the soil",
+          "predicate": "may enhance",
+          "target": "immune systems",
+          "context": "Research suggests getting your hands in the soil may enhance immune systems.",
+          "p_true": 0.75,
+          "classification_flags": [
+            "TESTABLE_CLAIM"
+          ],
+          "reasoning": "The text suggests a potential enhancement of immune systems through interaction with soil, which is a plausible claim supported by some research. However, the use of 'may' indicates uncertainty, leading to a reduction in confidence. The relationship is testable and has empirical support, hence classified as a TESTABLE_CLAIM."
+        }
+      ]
+    },
+    {
+      "test_id": "TC017",
+      "severity": "MILD",
+      "issue": "Opinion with hedging should be preserved",
+      "pass1_count": 1,
+      "pass2_count": 1,
+      "filtered_count": 1,
+      "diagnosis": "EXTRACTED_SUCCESSFULLY",
+      "pass1_relationships": [
+        {
+          "source": "living soil",
+          "predicate": "may enhance",
+          "target": "cognitive performance",
+          "context": "Some farmers believe living soil may enhance cognitive performance."
+        }
+      ],
+      "pass2_relationships": [
+        {
+          "source": "living soil",
+          "predicate": "may enhance",
+          "target": "cognitive performance",
+          "context": "Some farmers believe living soil may enhance cognitive performance.",
+          "p_true": 0.65,
+          "classification_flags": [
+            "TESTABLE_CLAIM"
+          ],
+          "reasoning": "The relationship suggests a potential benefit of living soil on cognitive performance, which is a plausible claim but not definitively proven. The use of 'may' indicates uncertainty, justifying a reduction in the confidence score. The claim is testable, as it could be supported or opposed by empirical evidence."
+        }
+      ]
+    }
+  ]
+}

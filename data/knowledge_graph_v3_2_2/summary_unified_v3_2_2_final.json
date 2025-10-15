@@ -1,0 +1,89 @@
+{
+  "summary_type": "unified_final",
+  "version": "v3.2.2",
+  "created": "2025-10-12T07:59:31.439036",
+  "status": "COMPLETE - 100% Episode Coverage",
+  "extraction_runs": {
+    "original_run": {
+      "run_id": "full_v3_2_2_20251010_103939",
+      "timestamp": "2025-10-12T02:24:14.370802",
+      "episodes_processed": 156,
+      "total_relationships": 40686,
+      "high_confidence": 37854,
+      "high_confidence_pct": 93.0,
+      "time_hours": 39.7,
+      "failed_episodes": [
+        13,
+        24,
+        32,
+        34,
+        51,
+        59,
+        71,
+        83,
+        103,
+        109,
+        112,
+        121,
+        133,
+        155,
+        164,
+        170
+      ]
+    },
+    "retry_run": {
+      "run_id": "retry_v3_2_2_20251012_040349",
+      "timestamp": "2025-10-12T04:03:49.036606",
+      "episodes_processed": 16,
+      "total_relationships": 4792,
+      "high_confidence": 4502,
+      "high_confidence_pct": 93.9,
+      "time_hours": 3.8,
+      "episodes": [
+        13,
+        24,
+        32,
+        34,
+        51,
+        59,
+        71,
+        83,
+        103,
+        109,
+        112,
+        121,
+        133,
+        155,
+        164,
+        170
+      ]
+    }
+  },
+  "final_dataset": {
+    "total_episodes": 172,
+    "coverage": "100%",
+    "total_relationships": 45478,
+    "high_confidence": 42356,
+    "high_confidence_pct": 93.1,
+    "medium_low_confidence": 3122,
+    "total_extraction_time_hours": 43.6
+  },
+  "fixes_applied": [
+    "Skip evaluations where candidate_uid lookup fails (prevents None doc_sha256 crash)",
+    "Handle None doc_sha256 gracefully with fallback to empty string",
+    "Add max_completion_tokens=10000 limit to prevent token overflow",
+    "Better error handling for token limit errors with specific messages"
+  ],
+  "file_structure": {
+    "location": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/",
+    "episode_files": "episode_0_v3_2_2.json through episode_172_v3_2_2.json",
+    "file_count": 172,
+    "format": "Consistent JSON structure with UIDs, evidence, confidence scores"
+  },
+  "notes": [
+    "All episode files are in the same directory with consistent naming",
+    "No merge operation needed - files are already unified by location",
+    "Episode 26 does not exist in the podcast series (only 172 episodes total)",
+    "All fixes have been applied and validated through successful retry extraction"
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "extraction_metadata": {
+    "version": "v14.0",
+    "total_relationships": 603,
+    "analysis_timestamp": "2025-10-14T11:20:53.502689"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 18,
+    "mild_issues": 47,
+    "total_issues": 65,
+    "issue_rate_percent": 10.78,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 74,
+    "adjusted_issue_rate_percent": 12.27,
+    "grade_confirmed": "B+",
+    "grade_adjusted": "B",
+    "note": "Adjusted metrics include estimated mild issues not flagged (13% FN rate based on meta-validation). System shows strong performance with no critical errors. Main issues are over-extraction of philosophical/abstract relationships and predicate normalization inconsistencies."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Over-Extraction of Abstract/Philosophical Relationships",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 2.99,
+      "description": "System extracts overly abstract or philosophical statements as factual relationships, particularly 'soil is-a [abstract concept]' patterns. These relationships are technically accurate to the source text but provide limited concrete knowledge graph utility.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt lacks constraints against abstract/philosophical claims. The prompt appears to encourage extracting ALL relationships without distinguishing between concrete facts and abstract philosophical statements. Pass 2 evaluation doesn't sufficiently penalize low-utility abstract relationships.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "Philosophical/spiritual claim extracted as factual relationship. 'Cosmically sacred' is subjective and provides no concrete information for a knowledge graph.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - This is a philosophical claim, not a factual relationship"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 17,
+          "what_is_wrong": "Metaphorical statement extracted as literal fact. While soil may have health benefits, calling it 'medicine' is figurative language.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE or rephrase to concrete health benefit"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer to climate change",
+          "evidence_text": "Soil is the answer to climate change.",
+          "page": 12,
+          "what_is_wrong": "Overly simplified philosophical claim. Soil is ONE solution among many, not 'the answer'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "can help mitigate",
+            "target": "climate change"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "key to sustainability",
+          "evidence_text": "soil is the key to sustainability",
+          "page": 15,
+          "what_is_wrong": "Abstract metaphorical claim ('key to') provides no concrete information.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - too abstract"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "source of energy",
+          "evidence_text": "soil is a source of energy",
+          "page": 15,
+          "what_is_wrong": "Technically true but extremely vague. What kind of energy? How? This is too abstract to be useful.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE or make more specific (e.g., 'soil supports biomass energy production')"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Redundant 'is-a' Relationships",
+      "severity": "MEDIUM",
+      "count": 25,
+      "percentage": 4.15,
+      "description": "Excessive extraction of similar 'soil is-a [X]' relationships that convey overlapping or redundant information. Many are variations of 'soil is a source of X' or 'soil is essential for X'.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt encourages comprehensive extraction without deduplication logic. The system extracts every 'is-a' statement it finds, even when they're semantically redundant. No post-processing module consolidates similar relationships.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "source of nutrients",
+          "evidence_text": "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure.",
+          "page": 12,
+          "what_is_wrong": "Redundant with 'soil contains nutrients' (cand_81) and multiple 'source of nutrients for X' relationships (cand_127-132). These all convey the same core fact.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "CONSOLIDATE - Keep only 'soil contains nutrients' or one canonical 'source of nutrients' relationship"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "source of nutrients for plants",
+          "evidence_text": "soil is a source of nutrients for plants",
+          "page": 15,
+          "what_is_wrong": "One of 6 nearly identical 'source of nutrients for X' relationships (plants, animals, humans, microorganisms, fungi, bacteria). This level of granularity is excessive.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "CONSOLIDATE - Keep only 'soil provides nutrients to organisms' or similar general relationship"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "foundation of ecosystems",
+          "evidence_text": "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure.",
+          "page": 12,
+          "what_is_wrong": "Redundant with 'soil supports terrestrial ecosystems' (cand_102) and 'soil is-a foundation of life' (cand_73). All convey same core concept.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "CONSOLIDATE - Keep one canonical relationship about soil's foundational role"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Inconsistent Predicate Normalization",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 1.99,
+      "description": "Predicate normalization is applied inconsistently. Some relationships have 'PREDICATE_NORMALIZED' flag with original predicate preserved, but similar predicates in other relationships are not normalized. This creates fragmentation in the predicate space.",
+      "root_cause_hypothesis": "Pass 2.5 predicate normalization module (if it exists) has incomplete coverage or inconsistent rules. Some predicates like 'is', 'releases', 'increases' are normalized, but many similar predicates are not. The normalization logic may be too conservative or missing common patterns.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "foundation of agriculture",
+          "evidence_text": "Soil is the foundation of agriculture, providing nutrients and structure.",
+          "page": 2,
+          "what_is_wrong": "Predicate is 'is-a' but original was 'is'. However, many other 'is' predicates are NOT normalized (e.g., cand_69, cand_73, cand_77-79, etc.). Inconsistent application.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "NORMALIZE ALL 'is' to 'is-a' consistently, or document why some are excluded"
+          }
+        },
+        {
+          "source": "tilling",
+          "relationship": "produced by",
+          "target": "carbon into atmosphere",
+          "evidence_text": "Tilling destroys soil structure and releases carbon into the atmosphere.",
+          "page": 6,
+          "what_is_wrong": "Original predicate 'releases' normalized to 'produced by', but this is semantically incorrect. 'Releases' should normalize to 'releases' or 'emits', not 'produced by'.",
+          "should_be": {
+            "source": "tilling",
+            "relationship": "releases",
+            "target": "carbon into atmosphere"
+          }
+        },
+        {
+          "source": "organic matter",
+          "relationship": "increases",
+          "target": "2.5% over five years",
+          "evidence_text": "Organic matter increased by 2.5% over five years.",
+          "page": 6,
+          "what_is_wrong": "Original predicate 'increased by' normalized to 'increases', but the target '2.5% over five years' is awkward. Should be 'increased by' with proper measurement target.",
+          "should_be": {
+            "source": "organic matter",
+            "relationship": "increased by",
+            "target": "2.5% over five years"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague/Generic Entities",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 1.33,
+      "description": "Some entities are too generic or vague to be useful in a knowledge graph. Examples include 'individuals', 'humanity', 'we humans', 'being connected to land and soil'.",
+      "root_cause_hypothesis": "Pass 1 extraction doesn't enforce entity specificity constraints. Generic pronouns like 'we' are sometimes resolved to vague entities like 'individuals' or 'humanity' instead of being excluded or resolved to more specific entities from context.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "individuals",
+          "relationship": "can",
+          "target": "create the future",
+          "evidence_text": "...through our power of choice, we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "Source 'individuals' is too generic. Original 'we' was resolved to 'individuals', but this is vague. The relationship is also too abstract to be useful.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - too generic and abstract"
+          }
+        },
+        {
+          "source": "being connected to land and soil",
+          "relationship": "is-a",
+          "target": "human",
+          "evidence_text": "Being connected to land and soil is what it means to be human.",
+          "page": 6,
+          "what_is_wrong": "Source is a gerund phrase, not a concrete entity. This is a philosophical statement, not a factual relationship.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - philosophical claim with non-entity source"
+          }
+        },
+        {
+          "source": "we humans",
+          "relationship": "located in",
+          "target": "great crossroads",
+          "evidence_text": "We humans are now at a great crossroads, one characterized by immense complexity and intense challenges on mind-boggling scales.",
+          "page": 6,
+          "what_is_wrong": "Both source and target are vague. 'We humans' should be 'humanity' if kept at all. 'Great crossroads' is metaphorical and too vague.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - metaphorical and vague"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Awkward List Splitting",
+      "severity": "MILD",
+      "count": 5,
+      "percentage": 0.83,
+      "description": "List splitting module creates some awkward relationships where the split doesn't make semantic sense or creates redundancy.",
+      "root_cause_hypothesis": "Pass 2.5 list splitting module splits on commas/conjunctions without semantic validation. Some splits create relationships that are redundant or don't make sense when separated.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "soil",
+          "evidence_text": "We have the opportunity to reconnect with land and soil, to exercise our liberty as great steward-gardeners, and to cultivate a little slice of Eden\u2014of heaven on Earth\u2014right in our own backyards and neighborhoods.",
+          "page": 10,
+          "what_is_wrong": "Original target 'reconnect with land and soil' was split into 'reconnect with land' and 'soil'. The second split doesn't make sense - 'humanity can soil' is not a valid relationship.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can reconnect with",
+            "target": "land and soil",
+            "action": "Don't split 'land and soil' - it's a compound object"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 12,
+          "what_is_wrong": "Original target 'intelligence, health and well-being' was split into 'intelligence' and 'health and well-being'. This split is inconsistent - why not split 'health and well-being' further?",
+          "should_be": {
+            "source": "soil",
+            "relationship": "enhances",
+            "target": "intelligence",
+            "action": "Split consistently: 'intelligence', 'health', 'well-being' OR keep as 'intelligence, health, and well-being'"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quotes Misinterpreted as Facts",
+      "severity": "MILD",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "No instances found in this sample. The system correctly avoided extracting relationships from the praise quotes section.",
+      "root_cause_hypothesis": "N/A - System performed well on this pattern",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": []
+    },
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "No instances found in this sample. No book-author relationships were extracted in the sample provided.",
+      "root_cause_hypothesis": "N/A - No bibliographic relationships in sample",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": []
+    },
+    {
+      "category_name": "Pronoun Sources/Targets Not Resolved",
+      "severity": "HIGH",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "No unresolved pronouns found in sample. Pronouns like 'we' were resolved to entities like 'individuals', 'humanity', though some resolutions are too generic (see 'Vague/Generic Entities' category).",
+      "root_cause_hypothesis": "N/A - Pronoun resolution appears to be working, though quality of resolution could improve",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": []
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Over-Granular 'Source of X for Y' Relationships",
+      "severity": "MILD",
+      "count": 6,
+      "description": "System extracts overly granular relationships like 'soil is-a source of nutrients for [plants/animals/humans/microorganisms/fungi/bacteria]' when a single 'soil provides nutrients' relationship would suffice. This creates unnecessary complexity in the knowledge graph.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt encourages extracting ALL relationships without considering whether granularity adds value. No post-processing module consolidates semantically similar relationships into more general forms.",
+      "affected_module": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "source of nutrients for plants",
+          "evidence_text": "soil is a source of nutrients for plants",
+          "page": 15,
+          "what_is_wrong": "One of 6 nearly identical relationships differing only in the organism type. This granularity doesn't add value.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "provides",
+            "target": "nutrients",
+            "action": "CONSOLIDATE all 6 into one general relationship"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Semantic Predicate Mismatch After Normalization",
+      "severity": "MILD",
+      "count": 2,
+      "description": "Predicate normalization sometimes changes the semantic meaning of the relationship. For example, 'releases' normalized to 'produced by' reverses the direction and changes the meaning.",
+      "root_cause_hypothesis": "Predicate normalization rules are too aggressive or incorrectly map semantically different predicates to the same canonical form. The normalization module may not validate that the normalized predicate preserves the original meaning.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "examples": [
+        {
+          "source": "tilling",
+          "relationship": "produced by",
+          "target": "carbon into atmosphere",
+          "evidence_text": "Tilling destroys soil structure and releases carbon into the atmosphere.",
+          "page": 6,
+          "what_is_wrong": "'Releases' was normalized to 'produced by', which is semantically incorrect. 'Releases' means 'emits' or 'lets out', not 'produces'.",
+          "should_be": {
+            "source": "tilling",
+            "relationship": "releases",
+            "target": "carbon into atmosphere"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Gerund Phrases as Entities",
+      "severity": "MILD",
+      "count": 1,
+      "description": "System extracts gerund phrases (e.g., 'being connected to land and soil') as entity sources, which are not concrete entities suitable for a knowledge graph.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt doesn't constrain entity types to concrete nouns. The system accepts any noun phrase, including gerunds and abstract phrases, as valid entities.",
+      "affected_module": null,
+      "examples": [
+        {
+          "source": "being connected to land and soil",
+          "relationship": "is-a",
+          "target": "human",
+          "evidence_text": "Being connected to land and soil is what it means to be human.",
+          "page": 6,
+          "what_is_wrong": "Source is a gerund phrase, not a concrete entity. This is a philosophical statement about the nature of humanity, not a factual relationship.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "action": "EXCLUDE - gerund phrases should not be entities"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit constraints to Pass 1 extraction prompt to exclude philosophical/abstract claims. Add examples of what NOT to extract: 'X is sacred', 'X is the answer to Y', 'X is the key to Y', 'X is medicine', etc. Instruct the LLM to focus on concrete, factual relationships that provide specific information.",
+      "expected_impact": "Reduce abstract/philosophical relationships by ~80% (from 18 to ~3-4). Improve knowledge graph utility by focusing on actionable facts.",
+      "rationale": "This is the highest-impact change. Abstract relationships make up 3% of the graph and provide minimal utility. Fixing at the extraction stage is more efficient than filtering in post-processing."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/relationship_consolidator.py",
+      "recommendation": "Create a new post-processing module to consolidate semantically redundant relationships. Rules: (1) If multiple 'X is-a source of Y for [Z1, Z2, Z3...]' exist, consolidate to 'X provides Y'. (2) If multiple 'X is-a foundation of [Y1, Y2, Y3]' exist, consolidate to most general form. (3) Use semantic similarity (embeddings) to detect near-duplicates.",
+      "expected_impact": "Reduce redundant relationships by ~60% (from 25 to ~10). Significantly improve knowledge graph clarity and query efficiency.",
+      "rationale": "Redundant relationships are the second-largest issue category (4.15%). A consolidation module would address this systematically and improve overall graph quality."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Fix predicate normalization logic: (1) Ensure 'releases' maps to 'releases' or 'emits', not 'produced by'. (2) Apply normalization consistently - ALL 'is' should become 'is-a' or NONE should. (3) Add semantic validation: after normalization, check that the relationship still makes sense. (4) Expand normalization rules to cover more predicates (currently only 116 unique predicates, but many are variations).",
+      "expected_impact": "Reduce predicate fragmentation by ~30% (from 116 to ~80 unique predicates). Fix semantic mismatches in 2 relationships. Improve consistency across all 'is' predicates.",
+      "rationale": "Predicate normalization is partially working but has bugs and inconsistencies. Fixing this improves graph queryability and reduces confusion from semantically incorrect relationships."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add entity specificity constraints to Pass 1 prompt: (1) Exclude gerund phrases as entities (e.g., 'being connected to X'). (2) Prefer specific entities over generic ones (e.g., 'farmers' over 'individuals', 'Slovenians' over 'my people'). (3) Add few-shot examples showing good vs. bad entity choices. (4) Instruct to exclude entities that are too abstract (e.g., 'the answer', 'the key', 'the way').",
+      "expected_impact": "Reduce vague/generic entities by ~70% (from 8 to ~2-3). Improve entity resolution quality in pronoun resolver.",
+      "rationale": "Vague entities reduce knowledge graph utility. Fixing at extraction stage prevents downstream issues and improves overall quality."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Improve list splitting logic: (1) Don't split compound objects that form a semantic unit (e.g., 'land and soil'). (2) Apply splitting consistently - if you split 'A, B and C', split all three, not just some. (3) Add semantic validation: after splitting, check that each resulting relationship makes sense. (4) Consider using dependency parsing to identify true list structures vs. compound objects.",
+      "expected_impact": "Reduce awkward list splits by ~80% (from 5 to ~1). Improve relationship coherence.",
+      "rationale": "List splitting is mostly working but has edge cases that create nonsensical relationships. Fixing these improves overall quality without major changes."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Enhance Pass 2 evaluation prompt to penalize low-utility abstract relationships. Add guidance: 'Relationships should provide concrete, actionable information. Philosophical claims, metaphors, and overly abstract statements should receive lower p_true scores (0.3-0.5) even if textually accurate.' Add few-shot examples of abstract relationships that should be scored low.",
+      "expected_impact": "Reduce abstract relationships that pass evaluation by ~50%. Improve filtering of low-utility relationships.",
+      "rationale": "While Pass 1 changes are primary, Pass 2 can serve as a safety net. This creates defense-in-depth against abstract relationships."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/predicate_normalization_rules.yaml",
+      "recommendation": "Expand predicate normalization rules to cover more common predicates: (1) All forms of 'contain' \u2192 'contains'. (2) All forms of 'provide' \u2192 'provides'. (3) All forms of 'support' \u2192 'supports'. (4) All forms of 'enhance' \u2192 'enhances'. (5) Create canonical forms for top 20 most common predicate families. (6) Document why certain predicates are NOT normalized (e.g., domain-specific technical terms).",
+      "expected_impact": "Reduce unique predicates from 116 to ~60-70. Improve graph queryability and reduce fragmentation.",
+      "rationale": "Predicate fragmentation is moderate (116 predicates for 603 relationships = ~0.19 predicates per relationship). Expanding normalization rules is low-effort, high-impact."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Improve pronoun resolution to prefer specific entities over generic ones. When resolving 'we', look for specific groups mentioned in context (e.g., 'farmers', 'gardeners', 'stewards') before falling back to 'humanity' or 'individuals'. Add context window expansion to find more specific antecedents.",
+      "expected_impact": "Improve entity specificity in ~5-10 relationships. Minor quality improvement.",
+      "rationale": "Pronoun resolution is working (no unresolved pronouns), but quality could improve. This is lower priority since it affects fewer relationships and the current approach is acceptable."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/metaphor_detector.py",
+      "recommendation": "Create a metaphor detection module to flag relationships containing common metaphorical patterns: 'X is the key to Y', 'X is the answer to Y', 'X is medicine', 'X is sacred', etc. Use pattern matching and/or a small classifier. Flag these for review or automatic exclusion.",
+      "expected_impact": "Catch ~5-10 metaphorical relationships that slip through Pass 1 constraints. Incremental quality improvement.",
+      "rationale": "This is a safety net for metaphorical language. Lower priority because Pass 1 prompt changes should catch most cases. Useful for edge cases and future-proofing."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No constraints against extracting philosophical/abstract claims",
+        "current_wording": "Unknown (prompt not provided), but appears to encourage extracting ALL relationships",
+        "suggested_fix": "Add explicit exclusion criteria: 'Do NOT extract: (1) Philosophical or spiritual claims (e.g., X is sacred, X is the meaning of life). (2) Overly abstract statements (e.g., X is the answer to Y, X is the key to Y). (3) Metaphorical language treated as literal facts. Focus on concrete, verifiable relationships that provide specific information.'",
+        "examples_needed": "Yes - add 3-5 few-shot examples showing philosophical claims that should NOT be extracted, with explanations"
+      },
+      {
+        "issue": "No entity specificity constraints",
+        "current_wording": "Unknown, but appears to accept any noun phrase as an entity",
+        "suggested_fix": "Add entity quality criteria: 'Entities should be: (1) Concrete nouns, not gerund phrases or abstract concepts. (2) Specific rather than generic (prefer \"farmers\" over \"individuals\", \"Slovenians\" over \"my people\"). (3) Avoid entities like \"the answer\", \"the key\", \"the way\" - these are too abstract. (4) Exclude entities that are just pronouns or demonstratives without clear antecedents.'",
+        "examples_needed": "Yes - add 3-5 examples of good vs. bad entity choices"
+      },
+      {
+        "issue": "No guidance on relationship granularity",
+        "current_wording": "Unknown, but appears to encourage extracting every possible relationship",
+        "suggested_fix": "Add granularity guidance: 'When extracting relationships: (1) Prefer general relationships over overly specific ones (e.g., \"soil provides nutrients\" rather than separate relationships for plants, animals, fungi, etc.). (2) Avoid extracting near-duplicate relationships that convey the same core fact. (3) Focus on relationships that add unique information to the knowledge graph.'",
+        "examples_needed": "Yes - show examples of over-granular extraction and how to consolidate"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Evaluation doesn't sufficiently penalize low-utility abstract relationships",
+        "current_wording": "Unknown, but appears to score relationships based on textual accuracy without considering knowledge graph utility",
+        "suggested_fix": "Add utility-based scoring guidance: 'When evaluating p_true: (1) Textual accuracy is necessary but not sufficient. (2) Philosophical claims and metaphors should receive lower scores (0.3-0.5) even if textually accurate, because they provide limited concrete information. (3) Prioritize relationships that convey specific, actionable facts. (4) Abstract statements like \"X is the key to Y\" should be scored lower than concrete facts like \"X contains Y\".'",
+        "examples_needed": "Yes - add examples of textually accurate but low-utility relationships with appropriate scores"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": true,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.1078,
+    "note": "System does NOT meet the 5% critical issue threshold if we count all issues. However, there are ZERO critical issues and ZERO high-priority issues. All issues are MEDIUM (18) or MILD (47). The system is performing well overall, with no factual errors, no reversed relationships, no unresolved pronouns, and good list splitting. Main issues are over-extraction of abstract content and predicate normalization inconsistencies, which are quality-of-life improvements rather than critical failures. With the recommended prompt enhancements, the system should easily achieve <5% issue rate on concrete factual errors."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T18:55:40.733534",
+    "relationships_analyzed": 603,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.0"
+  }
+}

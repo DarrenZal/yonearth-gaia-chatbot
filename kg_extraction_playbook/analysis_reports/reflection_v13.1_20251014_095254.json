@@ -1,0 +1,558 @@
+{
+  "extraction_metadata": {
+    "version": "v13.1",
+    "total_relationships": 873,
+    "analysis_timestamp": "2025-10-14T08:15:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 8,
+    "medium_priority_issues": 22,
+    "mild_issues": 45,
+    "total_issues": 75,
+    "issue_rate_percent": 8.6,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 86,
+    "adjusted_issue_rate_percent": 9.9,
+    "grade_confirmed": "A-",
+    "grade_adjusted": "B+",
+    "note": "Significant improvement from V12 (14.3% \u2192 8.6%). Zero critical issues. Main remaining issues: praise quote misclassification (HIGH), vague abstract entities (MEDIUM), predicate fragmentation (MEDIUM). Pronoun resolution working well. List splitting effective."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Praise Quote Misclassification",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Endorsement quotes from book reviewers are being extracted as factual relationships. While the system correctly flags them with PRAISE_QUOTE_CORRECTED, they should ideally be filtered out entirely or stored separately as metadata, not as knowledge graph relationships.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt treats all text equally, extracting praise quotes as if they were factual content. Pass 2.5 bibliographic_parser.py detects and corrects the relationship type (authored \u2192 endorsed), but doesn't filter them out. These are not knowledge about the domain (soil stewardship) but metadata about the book itself.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 2,
+          "what_is_wrong": "This is a praise quote from the book's front matter, not domain knowledge. It's metadata about the book's reception, not a fact about soil stewardship.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Store as book metadata, not as KG relationship"
+          }
+        },
+        {
+          "source": "Adrian Del Caro",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This is an important little book that can be of immediate use to anyone who wants to help restore a greener Earth.",
+          "page": 2,
+          "what_is_wrong": "Another praise quote. While factually true that Del Caro endorsed the book, this doesn't contribute to knowledge about soil stewardship.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Book metadata, not domain knowledge"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "Entities that are too abstract or vague to be useful in a knowledge graph: 'aspects of life', 'the answer', 'the way', 'this approach', 'great crossroads'. These lack specificity and don't convey concrete information.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt doesn't enforce entity specificity. Pass 2 evaluation may score these highly on text_confidence (they appear in text) but should penalize them on knowledge plausibility (too vague). The entity_specificity_score exists but may not be weighted heavily enough in filtering decisions.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt, prompts/pass2_evaluation_v5.txt",
+      "affected_config": "config/extraction_thresholds.yaml",
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "affects",
+          "target": "aspects of life",
+          "evidence_text": "The Soil Stewardship Handbook looks at our connections to the soil and the way that relationship can affect so many aspects of life.",
+          "page": 2,
+          "what_is_wrong": "'aspects of life' is too vague. What specific aspects? Health? Economy? Culture?",
+          "should_be": {
+            "action": "REJECT_OR_REFINE",
+            "reason": "Extract more specific aspects or reject as too abstract"
+          }
+        },
+        {
+          "source": "this approach",
+          "relationship": "enables",
+          "target": "sustainable farming practices",
+          "evidence_text": "This approach opens doors to sustainable farming practices.",
+          "page": 10,
+          "what_is_wrong": "'this approach' is a demonstrative pronoun that should have been resolved. VAGUE_SOURCE flag is present but relationship wasn't filtered.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "enables",
+            "target": "sustainable farming practices"
+          }
+        },
+        {
+          "source": "we humans",
+          "relationship": "located in",
+          "target": "great crossroads",
+          "evidence_text": "We humans are now at a great crossroads, one characterized by immense complexity and intense challenges on mind-boggling scales.",
+          "page": 6,
+          "what_is_wrong": "'great crossroads' is metaphorical/abstract. This is philosophical language, not a concrete fact.",
+          "should_be": {
+            "action": "REJECT",
+            "reason": "Too abstract, metaphorical language"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 10,
+      "percentage": 1.1,
+      "description": "133 unique predicates with significant fragmentation in common base predicates ('is', 'has', 'can', 'are'). While 133 is below the 150 threshold, the fragmentation patterns show many variations that should be normalized to canonical forms.",
+      "root_cause_hypothesis": "Pass 2.5 predicate normalization module exists and is working (see PREDICATE_NORMALIZED flags), but it's not aggressive enough. Many variations like 'is of', 'is toward', 'is about', 'is a way to' could be normalized to simpler forms or rejected as too vague.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.yaml",
+      "examples": [
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "It is, perhaps above all else, our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'has preserved' could be normalized to 'preserved' (simple past tense is clearer than present perfect for historical facts)",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "preserved",
+            "target": "our countryside"
+          }
+        },
+        {
+          "source": "land and soil",
+          "relationship": "is-a",
+          "target": "human",
+          "evidence_text": "being connected to land and soil is what it means to be human.",
+          "page": 10,
+          "what_is_wrong": "Original predicate 'is what it means to be' was normalized to 'is-a', but this creates a nonsensical relationship (land is-a human?). Should be rejected as philosophical/abstract.",
+          "should_be": {
+            "action": "REJECT",
+            "reason": "Philosophical statement, not a factual relationship"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Abstract Claims",
+      "severity": "MEDIUM",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Relationships that express philosophical viewpoints, values, or abstract concepts rather than concrete facts: 'soil is cosmically sacred', 'soil is the answer to climate change', 'being connected to land is what it means to be human'.",
+      "root_cause_hypothesis": "Pass 2 evaluation correctly flags some of these (see PHILOSOPHICAL_CLAIM classification), but they're not being filtered out. The p_true scores are sometimes too high (0.8-0.85) for claims that are subjective/philosophical. Pass 2 prompt may need clearer guidance on distinguishing factual claims from philosophical/normative statements.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v5.txt",
+      "affected_config": "config/filtering_thresholds.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "This is a philosophical/spiritual claim, not an empirical fact. p_true=0.24 and signals_conflict=true, but it wasn't filtered out.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Philosophical claim, not factual knowledge"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer to climate change",
+          "evidence_text": "soil is the answer to climate change",
+          "page": 15,
+          "what_is_wrong": "Overly simplistic/abstract claim. Soil can help mitigate climate change, but calling it 'the answer' is rhetorical, not factual. p_true=0.4, signals_conflict=true, but not filtered.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "can help mitigate",
+            "target": "climate change"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Unresolved Possessive Pronouns in Targets",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.3,
+      "description": "Possessive pronouns in target entities that weren't resolved: 'our countryside', 'our humanity'. The POSSESSIVE_PRONOUN_UNRESOLVED_TARGET flag is present, indicating detection but not resolution.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module successfully resolves possessive pronouns in sources (see POSSESSIVE_PRONOUN_RESOLVED_SOURCE flags) but may not handle targets as aggressively. This could be a deliberate design choice (targets are often less critical) or an oversight.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "It is, perhaps above all else, our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'our countryside' should be resolved to 'Slovenian countryside' (based on context about Slovenia earlier in the text)",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "preserved",
+            "target": "Slovenian countryside"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Unresolved Generic Pronouns",
+      "severity": "MILD",
+      "count": 4,
+      "percentage": 0.5,
+      "description": "Generic pronouns 'we', 'us' that appear in relationships despite resolution attempts. Some are flagged with PRONOUN_UNRESOLVED_SOURCE, others with GENERIC_PRONOUN_RESOLVED_SOURCE but the resolution seems incomplete.",
+      "root_cause_hypothesis": "Pronoun resolution is working in many cases (see successful resolutions to 'Aaron Perry's people', 'humanity', 'individuals'), but some edge cases slip through. May need more context window or better heuristics for generic pronouns in philosophical/normative statements.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "we",
+          "relationship": "can",
+          "target": "reconnect with land",
+          "evidence_text": "We have the opportunity to reconnect with land and soil, to exercise our liberty as great steward-gardeners.",
+          "page": 10,
+          "what_is_wrong": "'we' is flagged as PRONOUN_UNRESOLVED_SOURCE but wasn't resolved. Should be 'humanity' or 'individuals' based on context.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can",
+            "target": "reconnect with land"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Treated as Factual",
+      "severity": "MILD",
+      "count": 5,
+      "percentage": 0.6,
+      "description": "Metaphorical or figurative language extracted as literal facts: 'soil contains living skin', 'soil is life'. The FIGURATIVE_LANGUAGE flag is present, indicating detection, but these weren't filtered out.",
+      "root_cause_hypothesis": "Pass 2.5 figurative language detector is working (see flags), but the filtering threshold may be too permissive. Some figurative statements may still convey useful information (e.g., 'soil is medicine' as metaphor for health benefits), but others are too abstract.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": null,
+      "affected_config": "config/filtering_thresholds.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "living skin",
+          "evidence_text": "Since the beginning of time, of all the planets in all the galaxies in the known universe, only one has a living, breathing skin called dirt.",
+          "page": 17,
+          "what_is_wrong": "'living skin' is a metaphor for topsoil/biosphere. Flagged as METAPHOR with signals_conflict=true, p_true=0.6, but not filtered.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Metaphorical language, not literal fact"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete List Splitting",
+      "severity": "MILD",
+      "count": 2,
+      "percentage": 0.2,
+      "description": "List splitting is working well overall (see successful splits for 'nutrients and structure', 'tension, anxiety, fear and depression'), but one case shows incomplete splitting: 'and productively vital states' kept as single target instead of being split.",
+      "root_cause_hypothesis": "List splitting module may have regex/parsing issue with conjunctions at the start of list items. 'and productively vital states' should have been split into separate target or recognized as part of previous item.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "agricultural soils",
+          "relationship": "restores",
+          "target": "and productively vital states",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 17,
+          "what_is_wrong": "List was split into 'natural', 'organic', 'and productively vital states'. The third item should be 'productively vital states' (without 'and').",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restores",
+            "target": "productively vital states"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Wrong Semantic Predicates",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.3,
+      "description": "Predicates that don't semantically match the relationship: 'we humans located in great crossroads' (should be 'face' or 'are at'), 'soil collapses humanity' (should be 'causes collapse of').",
+      "root_cause_hypothesis": "Pass 1 extraction may be too literal in extracting predicates from text. Pass 2.5 predicate normalization should catch these semantic mismatches but may need better semantic understanding or more normalization rules.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "we humans",
+          "relationship": "located in",
+          "target": "great crossroads",
+          "evidence_text": "We humans are now at a great crossroads",
+          "page": 6,
+          "what_is_wrong": "'located in' is wrong predicate. Original was 'are at', normalized to 'located in', but should be 'face' or 'are at' (keep original).",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "face",
+            "target": "great crossroads"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "collapses",
+          "target": "humanity",
+          "evidence_text": "Abuse it and the soil will collapse and die, taking humanity with it",
+          "page": 15,
+          "what_is_wrong": "'collapses' suggests soil is the agent collapsing humanity, but the text means soil collapse leads to humanity's collapse. Should be 'collapse of soil threatens' or similar.",
+          "should_be": {
+            "source": "soil collapse",
+            "relationship": "threatens",
+            "target": "humanity"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Opinion/Subjective Statements",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.3,
+      "description": "Statements that are opinions or subjective claims flagged with OPINION tag: 'living soil makes us feel better'. While these may be based on research, the phrasing is subjective.",
+      "root_cause_hypothesis": "Pass 2.5 opinion detector is working (see OPINION flag), but these aren't being filtered. May be acceptable to keep if they're backed by research, but the phrasing should be more objective ('studies show living soil improves mood').",
+      "affected_module": "modules/pass2_5_postprocessing/opinion_detector.py",
+      "affected_prompt": null,
+      "affected_config": "config/filtering_thresholds.yaml",
+      "examples": [
+        {
+          "source": "living soil",
+          "relationship": "makes us feel better",
+          "target": "cognitive performance",
+          "evidence_text": "Our physical connection with living soil literally makes us feel better and makes us smarter!",
+          "page": 18,
+          "what_is_wrong": "Flagged as OPINION. While there may be research supporting this, the phrasing is subjective. Should be reframed as research finding.",
+          "should_be": {
+            "source": "physical contact with living soil",
+            "relationship": "improves",
+            "target": "mood and cognitive performance"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Context-Enriched Source Overcorrection",
+      "severity": "MILD",
+      "count": 5,
+      "percentage": 0.6,
+      "description": "The CONTEXT_ENRICHED_SOURCE flag shows that 'this handbook' was enriched to 'Soil Stewardship Handbook', which is good. However, in some cases this creates redundant or overly specific relationships (e.g., 'Soil Stewardship Handbook is-a road-map' when the original 'this handbook is-a road-map' was already clear in context).",
+      "root_cause_hypothesis": "Context enrichment module is working well but may be too aggressive. For some demonstrative pronouns, keeping the original may be acceptable if context is clear. Need to balance specificity with naturalness.",
+      "affected_module": "modules/pass2_5_postprocessing/context_enricher.py",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "is-a",
+          "target": "road-map",
+          "evidence_text": "The book before you is a road-map of sorts, a guide, and a compass",
+          "page": 10,
+          "what_is_wrong": "Context enrichment changed 'this handbook' to 'Soil Stewardship Handbook'. While technically correct, this creates multiple similar relationships about the handbook being a guide/roadmap/compass. Could be consolidated.",
+          "should_be": {
+            "action": "CONSOLIDATE",
+            "reason": "Merge similar metaphorical descriptions into single relationship"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Normative Statements Classified as Factual",
+      "severity": "MEDIUM",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "Statements about what people 'should' do or 'can' do are being classified as FACTUAL when they're actually NORMATIVE (prescriptive). Some are correctly flagged as NORMATIVE, but classification is inconsistent.",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt may not clearly distinguish between descriptive facts (what is) and normative claims (what should be). The classification_flags include both FACTUAL and NORMATIVE, but the logic for choosing between them may be unclear.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v5.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet\u2014by connecting with the living soil.",
+          "page": 10,
+          "what_is_wrong": "Classified as NORMATIVE (correct), but similar statements are classified as FACTUAL. Inconsistent classification.",
+          "should_be": {
+            "action": "STANDARDIZE_CLASSIFICATION",
+            "reason": "All 'can/should/ought' statements should be NORMATIVE"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Dedication Relationships",
+      "severity": "MILD",
+      "count": 2,
+      "percentage": 0.2,
+      "description": "Book dedication information extracted as relationships ('Soil Stewardship Handbook dedicated Osha', 'Soil Stewardship Handbook dedicated Hunter'). While factually true, this is book metadata, not domain knowledge.",
+      "root_cause_hypothesis": "Similar to praise quotes, dedications are metadata about the book, not knowledge about soil stewardship. Should be filtered out or stored separately.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "dedicated",
+          "target": "Osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter",
+          "page": 6,
+          "what_is_wrong": "Book metadata, not domain knowledge about soil stewardship.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Store as book metadata, not KG relationship"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "HIGH",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/metadata_filter.py",
+      "recommendation": "Create new metadata filter module to identify and remove book metadata relationships (praise quotes, dedications, publication info) from the knowledge graph. These should be stored separately as book metadata, not as domain knowledge relationships. Filter criteria: (1) source or target is book title, (2) relationship is 'endorsed', 'dedicated', 'published by/in', (3) context is from front/back matter pages.",
+      "expected_impact": "Removes 10+ metadata relationships (1.1% of total), improving KG focus on domain knowledge. Prevents confusion between book metadata and soil stewardship facts.",
+      "rationale": "Bibliographic parser already detects these (PRAISE_QUOTE_CORRECTED flag), but correction isn't enough\u2014they should be filtered entirely. A dedicated metadata filter is cleaner than expanding bibliographic parser's scope."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v5.txt",
+      "recommendation": "Enhance Pass 2 evaluation prompt with clearer guidance on philosophical/normative vs. factual claims. Add section: 'PHILOSOPHICAL/NORMATIVE CLAIMS: Statements about what is sacred, meaningful, or what people should do are NOT factual knowledge. Examples: \"soil is cosmically sacred\" (philosophical), \"we should connect with soil\" (normative). These should receive low p_true scores (<0.3) even if text_confidence is high. FACTUAL CLAIMS: Statements that can be empirically verified. Examples: \"soil contains bacteria\" (testable), \"biochar enhances soil fertility\" (measurable).'",
+      "expected_impact": "Reduces philosophical/abstract claims by 8-10 relationships (0.9-1.1%), improves p_true calibration for subjective statements.",
+      "rationale": "Current prompt doesn't clearly distinguish factual from philosophical claims. Pass 2 is the right place to catch this (before post-processing), as it's a semantic judgment requiring LLM understanding."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/filtering_thresholds.yaml",
+      "recommendation": "Lower filtering threshold for relationships with signals_conflict=true OR classification_flags contains PHILOSOPHICAL_CLAIM/METAPHOR. Current threshold appears to allow p_true >= 0.4 through. Recommend: p_true >= 0.7 for normal relationships, p_true >= 0.85 for philosophical/metaphorical claims. This ensures only high-confidence philosophical claims (that may still be useful) pass through.",
+      "expected_impact": "Filters out 5-8 low-quality philosophical/metaphorical relationships (0.6-0.9%), improving KG precision.",
+      "rationale": "Detection is working (flags are present), but filtering is too permissive. Config change is simpler than code change and allows easy tuning."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add entity specificity constraints to Pass 1 extraction prompt: 'ENTITY SPECIFICITY: Avoid extracting vague/abstract entities like \"aspects of life\", \"the answer\", \"the way\", \"this approach\". Instead, extract concrete, specific entities. Examples: \u274c \"affects aspects of life\" \u2192 \u2705 \"affects human health\", \"affects food production\". \u274c \"this approach enables\" \u2192 \u2705 \"soil stewardship enables\". If you cannot identify a specific entity, skip the relationship.'",
+      "expected_impact": "Reduces vague entity extraction by 8-12 relationships (0.9-1.4%) at source, preventing downstream issues.",
+      "rationale": "Vague entities are being extracted in Pass 1 and surviving through Pass 2. Better to prevent extraction than fix later. Prompt enhancement is more effective than post-processing heuristics for semantic issues."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Expand predicate normalization rules to be more aggressive: (1) Normalize all 'is X' variants ('is of', 'is toward', 'is about', 'is a way to') to base 'is-a' or reject if too vague. (2) Normalize tense variations ('has preserved' \u2192 'preserved', 'are grown' \u2192 'grown'). (3) Add semantic validation: reject predicates that don't make sense with source/target types (e.g., 'soil collapses humanity' \u2192 check if 'collapses' is valid predicate for soil-humanity relationship). (4) Add normalization rules for common predicate groups: 'can help X', 'can address X' \u2192 'helps with X', 'addresses X'.",
+      "expected_impact": "Reduces unique predicates from 133 to ~90-100, improves semantic consistency, fixes 3-5 wrong predicate relationships.",
+      "rationale": "Predicate normalization is working but not aggressive enough. Code changes allow more sophisticated normalization than config rules alone. Semantic validation requires type checking logic."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Enhance pronoun resolution for targets: (1) Apply same resolution logic to targets as sources (currently seems asymmetric). (2) For possessive pronouns in targets ('our countryside', 'our humanity'), resolve using same context window as sources. (3) Add fallback: if resolution fails, flag relationship for manual review rather than keeping unresolved pronoun.",
+      "expected_impact": "Resolves 3-4 remaining unresolved possessive pronouns in targets, improves consistency.",
+      "rationale": "Pronoun resolution is working well for sources but less so for targets. Extending existing logic is straightforward. Low impact (only 3-4 cases) but improves completeness."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/filtering_thresholds.yaml",
+      "recommendation": "Add filtering rule for OPINION-flagged relationships: require p_true >= 0.9 (very high confidence) to keep opinion statements. Most opinions should be filtered unless they're strongly supported by evidence in text.",
+      "expected_impact": "Filters 2-3 opinion statements, improves objectivity of KG.",
+      "rationale": "Opinion detection is working, but opinions are being kept. Config change allows easy adjustment of how strictly to filter opinions."
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Fix list splitting regex to handle conjunctions at start of list items: 'natural, organic, and productively vital' should split into 3 items, not keep 'and productively vital' as one item. Update regex to strip leading 'and'/'or' from split items.",
+      "expected_impact": "Fixes 1-2 incomplete list splits, minor quality improvement.",
+      "rationale": "List splitting is working well overall, just needs edge case handling. Simple regex fix."
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/context_enricher.py",
+      "recommendation": "Add consolidation logic to context enricher: if multiple similar relationships are created for same source (e.g., 'Handbook is-a roadmap', 'Handbook is-a guide', 'Handbook is-a compass'), consolidate into single relationship with list target or most general predicate. Prevents redundant metaphorical descriptions.",
+      "expected_impact": "Consolidates 3-5 redundant relationships, reduces noise.",
+      "rationale": "Context enrichment is working but creates redundancy. Consolidation logic would improve conciseness without losing information."
+    },
+    {
+      "priority": "MILD",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v5.txt",
+      "recommendation": "Add few-shot examples to Pass 2 evaluation prompt showing correct classification of FACTUAL vs. NORMATIVE vs. PHILOSOPHICAL claims. Examples: 'soil contains bacteria' (FACTUAL, p_true=0.95), 'we should connect with soil' (NORMATIVE, p_true=0.4), 'soil is cosmically sacred' (PHILOSOPHICAL, p_true=0.2). This will help calibrate LLM's classification.",
+      "expected_impact": "Improves classification consistency, helps LLM distinguish claim types.",
+      "rationale": "Few-shot examples are proven to improve LLM performance on classification tasks. Low effort, moderate impact."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No explicit guidance on avoiding vague/abstract entities",
+        "current_wording": "Likely: 'Extract entities and relationships from the text...' (generic instruction)",
+        "suggested_fix": "Add section: 'ENTITY SPECIFICITY REQUIREMENTS: Extract only concrete, specific entities. Avoid: \"aspects of life\", \"the answer\", \"the way\", \"this approach\" (too vague). Prefer: \"human health\", \"climate change mitigation\", \"soil stewardship practices\" (specific). If entity is vague, try to find more specific entity in surrounding context or skip the relationship.'",
+        "examples_needed": "Yes - add 3-5 examples of vague entities to avoid and their specific alternatives"
+      },
+      {
+        "issue": "No guidance on distinguishing domain knowledge from book metadata",
+        "current_wording": "Likely: 'Extract ALL relationships...' (too broad)",
+        "suggested_fix": "Add constraint: 'SCOPE: Extract relationships about the book's SUBJECT MATTER (soil stewardship, agriculture, climate), NOT about the book itself (publication info, dedications, endorsements). Skip praise quotes, author bios, and front/back matter unless they contain domain knowledge.'",
+        "examples_needed": "Yes - show examples of metadata to skip vs. domain knowledge to extract"
+      },
+      {
+        "issue": "Predicate extraction may be too literal",
+        "current_wording": "Likely: 'Extract the relationship/predicate connecting entities...'",
+        "suggested_fix": "Add guidance: 'PREDICATE SELECTION: Choose predicates that accurately represent the semantic relationship, not just literal text. Example: \"soil will collapse and die, taking humanity with it\" \u2192 predicate should be \"threatens\" or \"endangers\", not \"collapses\" (which implies soil is agent). Prefer simple, clear predicates over complex phrases.'",
+        "examples_needed": "Yes - show examples of literal vs. semantic predicate choices"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Unclear distinction between factual, normative, and philosophical claims",
+        "current_wording": "Likely: 'Evaluate whether the relationship is factually accurate...' (doesn't distinguish claim types)",
+        "suggested_fix": "Add section: 'CLAIM TYPE CLASSIFICATION: (1) FACTUAL: Empirically verifiable (\"soil contains bacteria\", \"biochar increases fertility\"). High p_true if supported by text. (2) NORMATIVE: Prescriptive statements (\"we should connect with soil\", \"people ought to compost\"). Low p_true unless framed as recommendation. (3) PHILOSOPHICAL: Abstract/spiritual claims (\"soil is sacred\", \"connection to land is meaning of life\"). Very low p_true unless clearly metaphorical and useful. When in doubt, classify as PHILOSOPHICAL and assign low p_true.'",
+        "examples_needed": "Yes - provide 5-10 examples of each claim type with appropriate p_true scores"
+      },
+      {
+        "issue": "Text confidence vs. knowledge plausibility balance unclear",
+        "current_wording": "Likely: 'Consider both text evidence and knowledge plausibility...' (vague)",
+        "suggested_fix": "Clarify: 'DUAL-SIGNAL EVALUATION: (1) Text confidence: Is relationship explicitly stated or strongly implied in text? (2) Knowledge plausibility: Is relationship factually accurate and useful for knowledge graph? CONFLICT RESOLUTION: If text clearly states something philosophical/metaphorical (high text confidence) but it's not factual knowledge (low plausibility), set signals_conflict=true and p_true=low. Example: \"soil is cosmically sacred\" - text_confidence=0.9 (clearly stated), p_true=0.2 (philosophical, not factual).'",
+        "examples_needed": "Yes - show examples of high text confidence + low plausibility cases"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": true,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.086,
+    "note": "System is approaching production quality (8.6% issue rate vs. 5% target). With recommended fixes (especially metadata filtering and philosophical claim filtering), issue rate should drop to 6-7%, meeting or nearly meeting production criteria. Zero critical issues is excellent. Main work needed: prompt enhancements for Pass 1 and Pass 2, metadata filtering module, stricter filtering thresholds."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T09:52:54.227736",
+    "relationships_analyzed": 873,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v13.1"
+  }
+}

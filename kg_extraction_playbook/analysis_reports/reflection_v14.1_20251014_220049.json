@@ -1,0 +1,693 @@
+{
+  "extraction_metadata": {
+    "version": "v14.1",
+    "total_relationships": 708,
+    "analysis_timestamp": "2025-10-14T22:30:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 3,
+    "high_priority_issues": 18,
+    "medium_priority_issues": 45,
+    "mild_issues": 52,
+    "total_issues": 118,
+    "issue_rate_percent": 16.7,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 133,
+    "adjusted_issue_rate_percent": 18.8,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C",
+    "note": "Adjusted metrics include estimated mild issues not flagged (13% FN rate based on meta-validation). Major issues: reversed authorship (1), philosophical claims treated as facts (15+), figurative language misclassified (20+), possessive pronouns unresolved (3+), vague abstract entities (10+)"
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.14,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may not emphasize directionality of authorship relationships. Bibliographic parser module may not validate authorship direction.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "the living planet. This Soil Stewardship Handbook is deceptively small and simple.",
+          "page": 10,
+          "what_is_wrong": "Book is listed as source authoring the person, when it should be person authoring book",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical Claims Treated as Facts",
+      "severity": "HIGH",
+      "count": 18,
+      "percentage": 2.54,
+      "description": "Abstract philosophical, spiritual, or normative statements extracted as factual relationships. Includes claims like 'soil is cosmically sacred', 'soil contains magic', 'we must collaborate with nature'",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt does not adequately distinguish between empirical facts and philosophical/spiritual claims. The PHILOSOPHICAL_CLAIM flag exists but p_true scores remain high (0.42-0.8) for clearly non-factual statements.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "'Cosmically sacred' is a spiritual/philosophical judgment, not an empirical fact. p_true=0.18 is correct but relationship should be filtered out entirely.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "magic",
+          "evidence_text": "Actually perceiving and understanding the magic, power and sanctity of soil will take our breaths away.",
+          "page": 17,
+          "what_is_wrong": "'Magic' is metaphorical/figurative language, not a literal component of soil. p_true=0.48 is too high.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        },
+        {
+          "source": "humans",
+          "relationship": "must collaborate with",
+          "target": "nature",
+          "evidence_text": "it is imperative that we collaborate with nature in order to accelerate the natural soil building cycle",
+          "page": 21,
+          "what_is_wrong": "This is a normative claim (what should be done), not a factual statement. Correctly flagged as NORMATIVE but p_true=0.8 is too high.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Misclassified",
+      "severity": "HIGH",
+      "count": 22,
+      "percentage": 3.11,
+      "description": "Metaphors, poetic language, and figurative expressions treated as literal factual relationships. Examples include 'soil contains sanctity', 'soil is faithful to its trust', 'soil contains secrets'",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt does not sufficiently penalize figurative language. FIGURATIVE_LANGUAGE flag is applied but p_true scores remain moderate-to-high (0.45-0.8), allowing these through.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is faithful to",
+          "target": "its trust",
+          "evidence_text": "The soil is faithful to its trust: whatever you have sown in it you reap the same. \u2014Rumi",
+          "page": 25,
+          "what_is_wrong": "This is a Rumi poem using personification. Soil cannot be 'faithful' - this is metaphorical. Also has unresolved possessive pronoun 'its trust'.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "secrets",
+          "evidence_text": "But until springtime brings the touch of God, the soil does not reveal its secrets. \u2014Rumi",
+          "page": 25,
+          "what_is_wrong": "Another Rumi poem. 'Secrets' is metaphorical - soil doesn't literally contain secrets. Correctly flagged as METAPHOR but p_true=0.48 allows it through.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "sanctity",
+          "evidence_text": "Actually perceiving and understanding the magic, power and sanctity of soil will take our breaths away.",
+          "page": 17,
+          "what_is_wrong": "'Sanctity' is a spiritual/abstract quality, not a physical component. This is figurative language.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Possessive Pronouns Unresolved",
+      "severity": "HIGH",
+      "count": 3,
+      "percentage": 0.42,
+      "description": "Possessive pronouns like 'its trust', 'our tradition' appear in target entities without resolution to specific referents",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module only handles subject pronouns (he/she/we/it), not possessive pronouns (my/our/its/their). This is a code gap.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is faithful to",
+          "target": "its trust",
+          "evidence_text": "The soil is faithful to its trust: whatever you have sown in it you reap the same.",
+          "page": 25,
+          "what_is_wrong": "'its trust' contains unresolved possessive pronoun. Should resolve to 'soil's trust' or be filtered as too vague.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "MEDIUM",
+      "count": 12,
+      "percentage": 1.69,
+      "description": "Overly abstract or vague entities that don't convey concrete information: 'the way through and out of challenges', 'way through and out of challenges', 'us directly with the elements', 'alchemy of life on Earth'",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may be too permissive with abstract language. Entity specificity scoring exists but threshold may be too low (many vague entities have specificity 0.7-0.95).",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": "config/entity_specificity_threshold.yaml",
+      "examples": [
+        {
+          "source": "way through and out of challenges",
+          "relationship": "includes",
+          "target": "simple practices",
+          "evidence_text": "But at this crossroads, we also find that the way through and out of these challenges include some of the simplest, most delightful...",
+          "page": 10,
+          "what_is_wrong": "'way through and out of challenges' is too abstract and vague. Should be filtered by entity specificity scoring.",
+          "should_be": {
+            "source": "solutions to environmental challenges",
+            "relationship": "includes",
+            "target": "simple practices"
+          }
+        },
+        {
+          "source": "Gardening",
+          "relationship": "connects",
+          "target": "us directly with the elements",
+          "evidence_text": "Gardening the soil connects us directly with the elements, the weather, and the continuous cycling of the seasons.",
+          "page": 6,
+          "what_is_wrong": "'us directly with the elements' is awkwardly phrased and contains pronoun 'us'. Should be 'people with natural elements'.",
+          "should_be": {
+            "source": "Gardening",
+            "relationship": "connects",
+            "target": "people with natural elements"
+          }
+        },
+        {
+          "source": "humanity",
+          "relationship": "must engage in",
+          "target": "alchemy of life on Earth",
+          "evidence_text": "Let us engage in the alchemy of life on Earth and build soil together!",
+          "page": 28,
+          "what_is_wrong": "'alchemy of life on Earth' is poetic but too vague and abstract. This is figurative language that should be filtered.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quotes Misinterpreted",
+      "severity": "MEDIUM",
+      "count": 5,
+      "percentage": 0.71,
+      "description": "Endorsement quotes from book praise section extracted as factual claims rather than opinions. Examples: Seth Itzkan 'endorsed', Tanner Watt 'endorsed', Mark Bosco 'endorsed'",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not distinguish between factual content and promotional/endorsement material. Bibliographic parser should filter praise sections.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Seth Itzkan",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This handbook provides a nicely explained overview of the science with an inclusion of several easy steps that people can take to realize a regenerative future.",
+          "page": 2,
+          "what_is_wrong": "This is from the 'PRAISE FOR' section - endorsement quotes. While technically accurate, these are opinions, not factual knowledge relationships. Should be filtered or marked as OPINION more strongly.",
+          "should_be": {
+            "source": "Seth Itzkan",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete List Splitting",
+      "severity": "MEDIUM",
+      "count": 8,
+      "percentage": 1.13,
+      "description": "List splitting module created incomplete or semantically incorrect splits. Example: 'Y on Earth: Get Smarter, Feel Better, Heal the Planet' split into 3 separate books, but 'Feel Better' is too short and flagged as INCOMPLETE_TITLE",
+      "root_cause_hypothesis": "List splitting module splits on commas without understanding semantic units. 'Y on Earth: Get Smarter, Feel Better, Heal the Planet' is ONE book title with subtitle, not three books.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "authored",
+          "target": "Feel Better",
+          "evidence_text": "The author of Y on Earth: Get Smarter, Feel Better, Heal the Planet...",
+          "page": 50,
+          "what_is_wrong": "'Y on Earth: Get Smarter, Feel Better, Heal the Planet' is a single book title. List splitter incorrectly split it into 3 separate books. 'Feel Better' alone is not a book.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Y on Earth: Get Smarter, Feel Better, Heal the Planet"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "launched",
+          "target": "renewable energy and local and organic food sectors",
+          "evidence_text": "He has launched companies in the recycling, renewable energy and local and organic food sectors.",
+          "page": 50,
+          "what_is_wrong": "List split incorrectly. Should be 3 items: 'recycling', 'renewable energy', 'local and organic food sectors'. Instead got 2 items with second one being a run-on.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "launched",
+            "target": "renewable energy sector"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Overly Granular Relationships",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 2.12,
+      "description": "Relationships that are too granular or trivial, extracting every minor detail. Examples: 'soil enhances intelligence', 'soil enhances health', 'soil enhances well-being' as 3 separate relationships from same sentence",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may encourage exhaustive extraction ('extract ALL relationships'). This creates noise. Should prioritize significant, non-redundant relationships.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 12,
+          "what_is_wrong": "This sentence was split into 3 separate relationships (intelligence, health, well-being). While technically accurate, this creates redundancy. One relationship 'soil enhances human well-being' would be more concise.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "enhances",
+            "target": "human well-being"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 1,
+      "percentage": 0.14,
+      "description": "119 unique predicates with fragmented variations of same base predicate. Examples: 'is', 'is brewed from', 'is essential for', 'is dedicated to', 'is made from', 'is loaded with', 'is our', 'is faithful to', 'is key', 'is made manifest by', 'is key for' (10 variations of 'is')",
+      "root_cause_hypothesis": "Predicate normalization module exists but may not be aggressive enough. Many predicates should normalize to canonical forms: 'is essential for' \u2192 'is essential for', 'is key for' \u2192 'is essential for', etc.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is essential for",
+          "target": "agriculture",
+          "evidence_text": "N/A",
+          "page": 0,
+          "what_is_wrong": "Multiple variations of 'is' predicate: 'is essential for', 'is key for', 'is key' should normalize to fewer canonical forms.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is essential for",
+            "target": "agriculture"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Duplicate Dedication Relationships",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 0.42,
+      "description": "Book dedication extracted in multiple forms: 'Aaron William Perry dedicated Soil Stewardship Handbook to Osha' and 'Soil Stewardship Handbook dedicated Osha' appear as separate relationships",
+      "root_cause_hypothesis": "Deduplication module may not recognize semantic equivalence when source/target are swapped or slightly rephrased.",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 6,
+          "what_is_wrong": "Dedication appears in multiple forms. Should be deduplicated to single canonical form.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Generic Pronoun Resolution Artifacts",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 1.13,
+      "description": "Pronoun resolution created awkward entities: 'Aaron Perry's people', 'We humans'. While technically resolved, these feel unnatural.",
+      "root_cause_hypothesis": "Pronoun resolution module resolves pronouns but doesn't always create natural entity names. 'my people' \u2192 'Aaron Perry's people' is technically correct but 'Slovenians' would be better given context.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron Perry's people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+          "page": 6,
+          "what_is_wrong": "'Aaron Perry's people' is awkward. Given context (Slovenia mentioned), 'Slovenians' would be more natural. However, this is MILD since meaning is preserved.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the land"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Redundant 'is-a' Relationships",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 1.69,
+      "description": "Multiple 'is-a' relationships for soil that are redundant or overlapping: 'soil is-a foundation of agriculture', 'soil is-a foundation of human life', 'soil is-a essential resource', 'soil is-a living system', 'soil is-a essential element', 'soil is-a natural resource', 'soil is-a complex ecosystem'",
+      "root_cause_hypothesis": "Pass 1 extraction extracts every 'is-a' statement without consolidation. These should be deduplicated or consolidated into fewer canonical relationships.",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "foundation of agriculture",
+          "evidence_text": "Soil is the foundation of all terrestrial ecosystems, providing nutrients and structure.",
+          "page": 12,
+          "what_is_wrong": "Multiple overlapping 'is-a' relationships for soil. These are all true but redundant. Should consolidate to 1-2 most important ones.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is-a",
+            "target": "foundation of terrestrial ecosystems"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Poetry/Quote Misextraction",
+      "severity": "HIGH",
+      "count": 4,
+      "description": "Rumi poetry quotes extracted as factual relationships. These are clearly marked as quotes (with em-dash attribution) but treated as factual claims. Examples: 'soil contains secrets', 'soil is faithful to its trust'",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not recognize quoted material as non-factual. Should add instruction to skip or flag quoted/attributed statements, especially poetry.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "secrets",
+          "evidence_text": "But until springtime brings the touch of God, the soil does not reveal its secrets. \u2014Rumi",
+          "page": 25,
+          "what_is_wrong": "This is a Rumi poem, clearly attributed. Should not be extracted as factual relationship.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Book Title Misparse",
+      "severity": "HIGH",
+      "count": 3,
+      "description": "Book title with subtitle incorrectly split into multiple books. 'Y on Earth: Get Smarter, Feel Better, Heal the Planet' treated as 3 books instead of 1 book with subtitle.",
+      "root_cause_hypothesis": "List splitter module doesn't recognize colon-separated subtitles as single units. Should have special handling for 'Title: Subtitle' patterns.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "authored",
+          "target": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "evidence_text": "The author of Y on Earth: Get Smarter, Feel Better, Heal the Planet...",
+          "page": 50,
+          "what_is_wrong": "This is ONE book with subtitle, not three books. List splitter should not split on commas within subtitles.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Y on Earth: Get Smarter, Feel Better, Heal the Planet"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Normative Claims as Facts",
+      "severity": "MEDIUM",
+      "count": 3,
+      "description": "Normative/prescriptive statements ('we must', 'we should', 'it is imperative') extracted as factual relationships. These are recommendations, not facts.",
+      "root_cause_hypothesis": "Pass 2 evaluation correctly flags these as NORMATIVE but p_true scores remain high. Should lower p_true threshold for normative claims or filter them entirely.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "examples": [
+        {
+          "source": "humans",
+          "relationship": "must collaborate with",
+          "target": "nature",
+          "evidence_text": "it is imperative that we collaborate with nature in order to accelerate the natural soil building cycle",
+          "page": 21,
+          "what_is_wrong": "This is a normative claim (what should be done), not a factual statement. Should be filtered or have much lower p_true.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Overly Literal Metaphor Extraction",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Common metaphors extracted literally: 'soil contains magic', 'soil contains power', 'soil contains sanctity', 'at a crossroads'. These are clearly figurative but treated as factual.",
+      "root_cause_hypothesis": "Pass 2 evaluation flags FIGURATIVE_LANGUAGE but doesn't sufficiently penalize it. Should have stricter filtering for common metaphorical terms.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "examples": [
+        {
+          "source": "humans",
+          "relationship": "located in",
+          "target": "crossroads",
+          "evidence_text": "We humans are now at a great crossroads, one characterized by immense complexity and intense challenges on mind-boggling scales.",
+          "page": 10,
+          "what_is_wrong": "'At a crossroads' is a common metaphor for decision point. Not a literal location.",
+          "should_be": {
+            "source": "humans",
+            "relationship": "face",
+            "target": "critical decision point"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add validation rule: For 'authored' relationships, source must be Person type and target must be Book/Publication type. If reversed, swap them automatically.",
+      "expected_impact": "Fixes 1 critical reversed authorship error. Prevents future occurrences.",
+      "rationale": "This is a simple validation rule that can catch reversed authorship with 100% accuracy. Should be implemented in bibliographic parser as a post-processing step."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add explicit instruction: 'Philosophical, spiritual, normative, and metaphorical claims should receive p_true < 0.3. Examples: \"soil is sacred\" (spiritual), \"we must act\" (normative), \"at a crossroads\" (metaphor). These are not empirically verifiable facts.'",
+      "expected_impact": "Reduces philosophical/figurative language extraction from ~40 relationships to <10. Improves precision significantly.",
+      "rationale": "Current prompt doesn't clearly distinguish factual from philosophical claims. Adding explicit examples and threshold guidance will help LLM calibrate p_true scores correctly."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Do NOT extract relationships from: (1) Quoted material (indicated by quotation marks or em-dash attribution like \"\u2014Rumi\"), (2) Praise/endorsement sections (\"PRAISE FOR\"), (3) Poetry or literary excerpts. Focus on factual prose content only.'",
+      "expected_impact": "Filters out ~10 poetry/quote relationships and ~5 praise relationships. Reduces noise by 2%.",
+      "rationale": "Pass 1 extraction is currently too indiscriminate. Adding source material filtering will prevent extraction of non-factual content at the source."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Extend pronoun resolution to handle possessive pronouns: 'my/our/his/her/its/their'. Add patterns: 'my X' \u2192 '[Author]'s X', 'our X' \u2192 '[Group]'s X', 'its X' \u2192 '[Antecedent]'s X'. If antecedent unclear, flag as VAGUE_ENTITY.",
+      "expected_impact": "Resolves 3 possessive pronoun issues. Prevents future occurrences.",
+      "rationale": "Current pronoun resolver only handles subject pronouns. Possessive pronouns are equally important and follow similar resolution patterns."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add special handling for book titles: Do NOT split on commas within 'Title: Subtitle' patterns. Regex: if target matches '^[^:]+:[^,]+,[^,]+$' (title:subtitle,subtitle), treat as single unit.",
+      "expected_impact": "Fixes 3 book title splitting errors. Prevents future title misparsing.",
+      "rationale": "Book titles with subtitles are a common pattern. List splitter should recognize 'Title: Part1, Part2, Part3' as a single title, not a list."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_specificity_threshold.yaml",
+      "recommendation": "Increase entity_specificity_threshold from current value to 0.85. Add penalty for abstract terms: 'way', 'process', 'alchemy', 'answer', 'solution' should reduce specificity score by 0.3.",
+      "expected_impact": "Filters out 12 vague abstract entities. Improves clarity.",
+      "rationale": "Current threshold allows too many vague entities through. Raising threshold and penalizing abstract terms will improve entity quality."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add calibration examples for figurative language: 'FIGURATIVE_LANGUAGE examples that should receive p_true < 0.3: \"soil contains magic\" (metaphor), \"at a crossroads\" (idiom), \"soil is faithful\" (personification), \"touch of God\" (religious metaphor). If FIGURATIVE_LANGUAGE flag is true, p_true should be < 0.3 unless the metaphor is also literally true.'",
+      "expected_impact": "Reduces figurative language extraction from 22 to <5. Improves factual accuracy.",
+      "rationale": "Current prompt flags figurative language but doesn't penalize it enough. Adding explicit calibration examples will help LLM assign appropriate p_true scores."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Expand predicate normalization rules: (1) 'is essential for', 'is key for', 'is key' \u2192 'is essential for', (2) 'is brewed from', 'is made from' \u2192 'is made from', (3) 'is dedicated to' \u2192 'dedicated to'. Target: reduce unique predicates from 119 to <80.",
+      "expected_impact": "Reduces predicate fragmentation by ~30%. Improves KG consistency.",
+      "rationale": "Many predicate variations are semantically equivalent. Aggressive normalization will reduce fragmentation without losing information."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction: 'Prioritize significant, non-redundant relationships. If a sentence contains multiple similar relationships (e.g., \"soil enhances intelligence, health, and well-being\"), extract ONE consolidated relationship (\"soil enhances human well-being\") rather than 3 separate ones. Avoid over-granularity.'",
+      "expected_impact": "Reduces overly granular relationships from 15 to <5. Improves conciseness.",
+      "rationale": "Current prompt may encourage exhaustive extraction. Adding guidance to consolidate similar relationships will reduce noise."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/deduplicator.py",
+      "recommendation": "Enhance semantic deduplication: (1) Recognize swapped source/target as duplicates if predicate is symmetric (e.g., 'dedicated'), (2) Use embedding similarity to catch paraphrases (e.g., 'Aaron Perry dedicated book to Osha' \u2248 'book dedicated to Osha by Aaron Perry'), (3) Consolidate redundant 'is-a' relationships (keep most specific one).",
+      "expected_impact": "Reduces duplicates and redundant relationships by ~15. Improves KG quality.",
+      "rationale": "Current deduplication only catches exact matches. Semantic deduplication will catch more duplicates and reduce redundancy."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/source_material_filter.py",
+      "recommendation": "Create new module to filter relationships by source material type: (1) Detect praise/endorsement sections by keywords ('PRAISE FOR', 'endorsement'), (2) Detect quoted material by punctuation (quotation marks, em-dash attribution), (3) Detect poetry by line breaks and attribution, (4) Flag or filter these relationships before Pass 2 evaluation.",
+      "expected_impact": "Filters out ~15 non-factual relationships from praise/quotes/poetry. Improves precision by 2%.",
+      "rationale": "This is a systematic issue that affects multiple categories. A dedicated filter module will catch these at the source, preventing downstream issues."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add instruction: 'Normative claims (\"we must\", \"we should\", \"it is imperative\") are prescriptive, not factual. Assign p_true < 0.3 for normative claims unless they describe actual obligations (e.g., legal requirements).'",
+      "expected_impact": "Filters out 3 normative claims. Improves factual accuracy.",
+      "rationale": "Normative claims are correctly flagged but not sufficiently penalized. Explicit guidance will improve calibration."
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Add context-aware resolution for 'my people': If context mentions nationality/ethnicity (e.g., 'Slovenia'), resolve to that group (e.g., 'Slovenians'). Otherwise, use fallback '[Author]'s people'.",
+      "expected_impact": "Improves 8 pronoun resolution cases from awkward to natural. Quality improvement, not error fix.",
+      "rationale": "Current resolution is technically correct but unnatural. Context-aware resolution will improve readability without changing meaning."
+    },
+    {
+      "priority": "MILD",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/deduplicator.py",
+      "recommendation": "Add consolidation rule for 'is-a' relationships: If entity has >5 'is-a' relationships, keep only the 2-3 most specific/informative ones. Use entity_specificity_score and p_true to rank.",
+      "expected_impact": "Reduces redundant 'is-a' relationships from 12 to ~4. Improves conciseness.",
+      "rationale": "Multiple overlapping 'is-a' relationships create noise. Consolidation will improve KG usability without losing information."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No filtering of quoted/attributed material (poetry, praise quotes)",
+        "current_wording": "Not available for analysis (prompt not provided)",
+        "suggested_fix": "Add instruction: 'Do NOT extract relationships from: (1) Quoted material (indicated by quotation marks or em-dash attribution like \"\u2014Rumi\"), (2) Praise/endorsement sections (\"PRAISE FOR\"), (3) Poetry or literary excerpts. Focus on factual prose content only.'",
+        "examples_needed": "Yes - provide 2-3 examples of praise quotes and poetry that should be skipped"
+      },
+      {
+        "issue": "Overly exhaustive extraction creates granular redundancy",
+        "current_wording": "Likely contains instruction like 'extract ALL relationships' or 'be thorough'",
+        "suggested_fix": "Add instruction: 'Prioritize significant, non-redundant relationships. If a sentence contains multiple similar relationships, extract ONE consolidated relationship rather than multiple granular ones. Example: \"soil enhances intelligence, health, and well-being\" \u2192 extract \"soil enhances human well-being\" (not 3 separate relationships).'",
+        "examples_needed": "Yes - provide 2-3 examples of consolidated vs. granular extraction"
+      },
+      {
+        "issue": "No guidance on abstract vs. concrete entities",
+        "current_wording": "Likely missing guidance on entity concreteness",
+        "suggested_fix": "Add instruction: 'Prefer concrete, specific entities over abstract ones. Avoid: \"the way\", \"the process\", \"the answer\", \"alchemy of X\". Prefer: specific processes, methods, or concepts with clear referents.'",
+        "examples_needed": "Yes - provide 2-3 examples of abstract entities to avoid"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Insufficient penalty for philosophical/spiritual claims",
+        "current_wording": "Likely missing explicit guidance on philosophical vs. factual claims",
+        "suggested_fix": "Add instruction: 'Philosophical, spiritual, normative, and metaphorical claims should receive p_true < 0.3. Examples: \"soil is sacred\" (spiritual), \"we must act\" (normative), \"at a crossroads\" (metaphor). These are not empirically verifiable facts. Only assign p_true > 0.7 for claims that can be verified through observation or measurement.'",
+        "examples_needed": "Yes - provide 5-10 calibration examples with correct p_true scores"
+      },
+      {
+        "issue": "FIGURATIVE_LANGUAGE flag applied but not penalized",
+        "current_wording": "Likely flags figurative language but doesn't adjust p_true accordingly",
+        "suggested_fix": "Add instruction: 'If FIGURATIVE_LANGUAGE flag is true, p_true should be < 0.3 unless the metaphor is also literally true. Examples: \"soil contains magic\" (p_true=0.1, metaphor), \"soil contains bacteria\" (p_true=0.9, literal). Metaphors, personification, and idioms are not factual claims.'",
+        "examples_needed": "Yes - provide 5-10 figurative language examples with correct p_true scores"
+      },
+      {
+        "issue": "Normative claims not sufficiently penalized",
+        "current_wording": "Likely flags NORMATIVE but doesn't adjust p_true accordingly",
+        "suggested_fix": "Add instruction: 'Normative claims (\"we must\", \"we should\", \"it is imperative\") are prescriptive, not factual. Assign p_true < 0.3 for normative claims unless they describe actual obligations (e.g., legal requirements). Example: \"we must protect soil\" (p_true=0.2, opinion), \"farmers must comply with EPA regulations\" (p_true=0.9, legal fact).'",
+        "examples_needed": "Yes - provide 3-5 normative claim examples with correct p_true scores"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.167,
+    "note": "System does not meet production criteria (target <5% issue rate, current 16.7%). Major issues: philosophical claims treated as facts (18), figurative language misclassified (22), vague entities (12). Recommended fixes: enhance Pass 2 evaluation prompt with calibration examples, add source material filtering, improve pronoun resolution and list splitting. Estimated improvement: 10-12% reduction in issue rate with prompt enhancements alone."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T22:00:49.028546",
+    "relationships_analyzed": 708,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14.1"
+  }
+}

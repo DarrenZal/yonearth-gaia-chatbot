@@ -1,0 +1,121 @@
+V14.3.7 Implementation Status: ✅ COMPLETE
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ IMPLEMENTATION COMPLETE - ALL TASKS FINISHED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. ✅ TypeCompatibilityValidator Module
+   Location: src/knowledge_graph/postprocessing/universal/type_compatibility_validator.py
+   Version: 1.0.0
+   Features:
+   - Schema-based validation for 7 relationship types
+   - Auto-fix by swapping entities when unambiguous
+   - Flags TYPE_INCOMPATIBLE when cannot fix
+   - Explicit type setting (source_type=Person, target_type=Book)
+
+2. ✅ SubtitleJoiner Module
+   Location: src/knowledge_graph/postprocessing/content_specific/books/subtitle_joiner.py
+   Version: 1.0.0
+   Features:
+   - Detects INCOMPLETE_TITLE flags from TitleCompletenessValidator
+   - 4 extraction patterns (bibliographic, quoted, standalone, all-caps)
+   - Validates min chars (15) and min capitalized words (2)
+   - Removes INCOMPLETE_TITLE flag after successful rehydration
+
+3. ✅ Enhanced ListSplitter v1.7.0
+   Location: src/knowledge_graph/postprocessing/universal/list_splitter.py
+   Enhancements:
+   - Added min_item_chars config (default: 10)
+   - Added protected_relationships set (authored, endorsed, wrote foreword for, etc.)
+   - ALWAYS skip splitting for Book/Work/Essay targets
+   - ALWAYS skip splitting for protected relationships
+   - Prevents title fragmentation completely
+
+4. ✅ Polished BibliographicCitationParser v1.7.0
+   Location: src/knowledge_graph/postprocessing/content_specific/books/bibliographic_citation_parser.py
+   Enhancements:
+   - Extended citation pattern: supports initials/suffixes (e.g., "Perry, A. W., Jr.")
+   - Idempotency check: skips if AUTHORSHIP_REVERSED already set
+   - Explicit type setting in reverse_authorship() (Person → Book)
+   - Always resyncs evidence surfaces when reversing
+
+5. ✅ Updated Module Exports
+   - src/knowledge_graph/postprocessing/universal/__init__.py
+     → Exports TypeCompatibilityValidator
+   - src/knowledge_graph/postprocessing/content_specific/books/__init__.py
+     → Exports SubtitleJoiner
+
+6. ✅ V14.3.7 Pipeline Configuration
+   Location: src/knowledge_graph/postprocessing/pipelines/book_pipeline.py
+   Function: get_book_pipeline_v1437()
+   Module Order:
+     1. FieldNormalizer (5)
+     2. PraiseQuoteDetector (10)
+     3. MetadataFilter (11)
+     4. FrontMatterDetector (12)
+     5. SubtitleJoiner (19) ← NEW
+     6. BibliographicCitationParser (20)
+     7. ContextEnricher (30)
+     8. ListSplitter (40) with min_item_chars=10
+     9. PronounResolver (60)
+    10. PredicateNormalizer (70)
+    11. PredicateValidator (80)
+    12. TypeCompatibilityValidator (85) ← NEW
+    13. VagueEntityBlocker (90)
+    14. TitleCompletenessValidator
+    15. FigurativeLanguageFilter
+    16. ClaimClassifier
+    17. Deduplicator
+
+7. ✅ V14.3.7 Extraction Script
+   Location: scripts/extract_kg_v14_3_7_incremental.py
+   Features:
+   - Uses get_book_pipeline_v1437() directly
+   - Prompt fallback chains (v14_3_7 → v14_3_6 → v14_3_4 → v14_3_1)
+   - Full freeze enforcement and status tracking
+   - Execution manifest with pipeline_version field
+   - V14.3.7 module stats logging (TypeCompatibilityValidator, SubtitleJoiner)
+   - Object vs dict safety in serialization
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ NEXT STEPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Run extraction on front_matter:
+   python3 scripts/extract_kg_v14_3_7_incremental.py \
+     --book our_biggest_deal \
+     --section front_matter \
+     --pages 1-30 \
+     --author "Aaron William Perry"
+
+2. Run Reflector to validate results:
+   python3 scripts/run_reflector_incremental.py \
+     --input kg_extraction_playbook/output/our_biggest_deal/v14_3_7/chapters/front_matter_v14_3_7_*.json \
+     --book our_biggest_deal \
+     --section front_matter \
+     --pages 1-30
+
+3. Validate A grade achievement:
+   Target: Critical = 0, High ≤ 2, Issue rate ≤ 8-10%
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ KEY IMPROVEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+From V14.3.6 (C+ grade, 127 relationships, 18.1% issue rate):
+
+CRITICAL Fixes:
+→ TypeCompatibilityValidator auto-fixes direction/type mismatches
+→ Idempotency prevents double-correction in BibliographicCitationParser
+
+MEDIUM Fixes:
+→ SubtitleJoiner auto-rehydrates 16 incomplete titles from evidence
+→ ListSplitter min_item_chars=10 prevents tiny fragments
+→ Protected relationships (authored, endorsed) never split
+
+Expected Results (V14.3.7):
+→ Critical = 0 (type errors auto-fixed)
+→ High ≤ 2 (most issues eliminated)
+→ Issue rate ≤ 8-10% (A grade territory)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

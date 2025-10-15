@@ -77,6 +77,45 @@ body {
     opacity: 0.9;
 }
 
+/* Version selector */
+.version-selector {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.version-selector label {
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    opacity: 0.9;
+}
+
+.version-selector select {
+    padding: 8px 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #667eea;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    max-width: 400px;
+}
+
+.version-selector select:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: white;
+}
+
+.version-selector select:focus {
+    outline: none;
+    border-color: white;
+    background: white;
+}
+
 /* Main content area */
 .main-content {
     display: flex;

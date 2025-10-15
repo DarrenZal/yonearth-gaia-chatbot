@@ -91,21 +91,8 @@ Is this relationship plausible, verifiable, and concrete given world knowledge?
 - (composting, improves, soil quality) → **0.6** (generally accepted, some evidence)
 - (Learning about soil, benefits, families) → **0.5** (plausible but vague entities)
 
-### 0.3-0.5: Philosophical Claims / Normative Statements 🔍 PHILOSOPHICAL_CLAIM DETECTION
+### 0.3-0.5: Philosophical Claims / Normative Statements
 **Philosophical essence claims, normative prescriptions, value judgments, metaphorical abstractions**
-
-**PHILOSOPHICAL_CLAIM Detection Criterion:**
-
-**Indicators of philosophical claims:**
-- **Essence claims**: "X is what it means to be Y" (defining essence or nature)
-- **Metaphorical abstractions**: "X is the answer/key/solution" (abstract metaphorical statements)
-- **Normative prescriptions**: "we should/must do X" (prescriptive value statements)
-- **Value judgments**: "it is essential that" (subjective importance claims)
-- **Existential definitions**: "to be X is to Y" (defining existence or being)
-
-**Scoring impact**: If philosophical claim detected → **p_true: 0.3-0.5** (low confidence, not verifiable)
-
-**Classification**: Add flag **PHILOSOPHICAL_CLAIM**
 
 **Examples**:
 - (being connected to land, is what it means to be, human) → **0.3** (philosophical essence claim)
@@ -132,7 +119,7 @@ Is this relationship plausible, verifiable, and concrete given world knowledge?
 - (Our land, is, a veritable Eden) → **0.3** (metaphor, not literal fact)
 - (the crossroads, is characterized by, immense complexity) → **0.2** (abstract metaphor)
 
-## ENTITY TYPE ASSESSMENT
+## 3. ENTITY TYPE ASSESSMENT
 
 For the knowledge signal, also consider:
 - **What types are the source and target entities?**
@@ -151,6 +138,66 @@ For the knowledge signal, also consider:
 - Philosophical concepts (spiritual flourishing, human essence)
 - Metaphors (veritable Eden, the crossroads)
 - Vague groups (we, they, thousands)
+
+## 4. CLAIM TYPE CLASSIFICATION (claim_type_penalty: 0.0-0.5)
+
+Identify whether the claim is empirically verifiable (factual) or subjective (philosophical/normative).
+
+### Claim Types:
+
+**FACTUAL** (penalty = 0.0)
+- Can be verified through observation, measurement, or documentation
+- Includes: authorship, publication facts, scientific consensus, compositional relationships, categorical definitions
+- No penalty applied to p_true score
+
+**PHILOSOPHICAL** (penalty = 0.4, cap p_true at 0.3)
+- Statements about meaning, essence, purpose, or values
+- Cannot be empirically verified
+- Expresses subjective worldview or belief system
+
+**NORMATIVE** (penalty = 0.3, cap p_true at 0.4)
+- Prescriptive statements about what should/must be done
+- Expresses value judgments about correct action
+- Cannot be proven true or false
+
+### Detection Patterns:
+
+**Philosophical Markers:**
+- Predicates: "is what it means to be", "is the essence of", "is the key to", "is the answer to", "defines", "embodies"
+- Targets: "human", "humanity", "life", "existence", "meaning", "purpose", "being"
+- Abstract absolutes: "the answer", "the solution", "the way", "the truth"
+
+**Normative Markers:**
+- Modal verbs: "must", "should", "ought to", "need to", "requires", "demands"
+- Imperatives: "take action", "do X", "stop Y", "change", "act"
+- Prescriptive targets: "action now", "immediate change", "responsibility", "duty"
+
+### Examples:
+
+❌ **PHILOSOPHICAL** (penalty=0.4, cap at 0.3):
+- (soil, is what it means to be, human) → p_true capped at 0.3
+- (soil, is the answer to, climate change) → p_true capped at 0.3
+- (connection to land, defines, humanity) → p_true capped at 0.3
+- (being connected to soil, is the essence of, human existence) → p_true capped at 0.3
+
+❌ **NORMATIVE** (penalty=0.3, cap at 0.4):
+- (we, must take, action now) → p_true capped at 0.4
+- (humanity, should practice, regenerative agriculture) → p_true capped at 0.4
+- (farmers, need to adopt, sustainable practices) → p_true capped at 0.4
+
+✅ **FACTUAL** (penalty=0.0, no cap):
+- (soil, can help mitigate, climate change) → no penalty (testable claim)
+- (Aaron Perry, authored, Soil Stewardship Handbook) → no penalty (verifiable fact)
+- (soil, contains, carbon) → no penalty (verifiable composition)
+- (composting, produces, humus) → no penalty (verifiable process)
+
+### Scoring Instruction:
+
+1. Detect claim type using patterns above
+2. If PHILOSOPHICAL: subtract 0.4 from p_true AND cap final p_true at 0.3
+3. If NORMATIVE: subtract 0.3 from p_true AND cap final p_true at 0.4
+4. If FACTUAL: no penalty, score based on verifiability
+5. Apply claim_type_penalty BEFORE final p_true calculation
 
 ## STATEMENT CLASSIFICATION
 
@@ -251,17 +298,19 @@ Set `signals_conflict=true` when signals diverge significantly:
 
 For each relationship, return:
 ```json
-{{
+{
   "candidate_uid": "<UNCHANGED from input>",
   "text_confidence": 0.0-1.0,
   "p_true": 0.0-1.0,
+  "claim_type": "FACTUAL" | "PHILOSOPHICAL" | "NORMATIVE",
+  "claim_type_penalty": 0.0-0.5,
   "signals_conflict": true/false,
   "conflict_explanation": "string (if signals_conflict=true)",
-  "suggested_correction": {{"source": "...", "relationship": "...", "target": "..."}} (optional),
+  "suggested_correction": {"source": "...", "relationship": "...", "target": "..."} (optional),
   "source_type": "entity type",
   "target_type": "entity type",
   "classification_flags": ["FACTUAL" | "TESTABLE_CLAIM" | "PHILOSOPHICAL_CLAIM" | "METAPHOR" | "OPINION" | "ABSTRACT_CONCEPT"]
-}}
+}
 ```
 
 **classification_flags** should contain all applicable flags for the relationship.
@@ -270,13 +319,16 @@ For each relationship, return:
 
 1. **Return candidate_uid UNCHANGED** in every output object
 2. **Evaluate all {batch_size} relationships** in the same order as input
-3. **Assign classification flags** based on statement type (FACTUAL, METAPHOR, PHILOSOPHICAL_CLAIM, etc.)
-4. **Knowledge scores reflect verifiability** - philosophical statements and metaphors score 0.0-0.5, but we still extract them
-5. **Set signals_conflict=true** when text and knowledge diverge significantly (>0.3 difference)
-6. **Always provide conflict_explanation** when signals_conflict=true
-7. **⭐ BIBLIOGRAPHIC CITATIONS ARE HIGH VALUE** - score them 0.9-1.0, do NOT dismiss as "too simple"
-8. **⭐ CATEGORICAL DEFINITIONS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too obvious"
-9. **⭐ COMPOSITIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too trivial"
-10. **⭐ FUNCTIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too basic"
-11. **🔍 DETECT PHILOSOPHICAL CLAIMS** - flag essence claims, normative prescriptions, value judgments with p_true: 0.3-0.5
+3. **Detect claim type** (FACTUAL, PHILOSOPHICAL, NORMATIVE) and apply appropriate penalty
+4. **Apply claim type penalties** - philosophical claims capped at 0.3, normative claims capped at 0.4
+5. **Assign classification flags** based on statement type (FACTUAL, METAPHOR, PHILOSOPHICAL_CLAIM, etc.)
+6. **Knowledge scores reflect verifiability** - philosophical statements and metaphors score 0.0-0.5, but we still extract them
+7. **Set signals_conflict=true** when text and knowledge diverge significantly (>0.3 difference)
+8. **Always provide conflict_explanation** when signals_conflict=true
+9. **⭐ BIBLIOGRAPHIC CITATIONS ARE HIGH VALUE** - score them 0.9-1.0, do NOT dismiss as "too simple"
+10. **⭐ CATEGORICAL DEFINITIONS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too obvious"
+11. **⭐ COMPOSITIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too trivial"
+12. **⭐ FUNCTIONAL RELATIONSHIPS ARE HIGH VALUE** - score them 0.7-0.9, do NOT dismiss as "too basic"
+13. **🔍 DETECT PHILOSOPHICAL CLAIMS** - flag essence claims, normative prescriptions, value judgments with p_true: 0.3-0.5
+14. **🔍 APPLY CLAIM TYPE PENALTIES** - subtract penalty and cap p_true for philosophical/normative claims
 ```

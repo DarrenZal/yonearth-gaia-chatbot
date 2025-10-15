@@ -1,0 +1,27 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_084723",
+  "extraction_file": "front_matter_v14_3_8_20251015_084052.json",
+  "quality_metrics": {
+    "overall_grade": "N/A",
+    "issue_rate": 0.0,
+    "total_relationships": 101,
+    "total_issues": 0
+  },
+  "issue_breakdown": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "MILD": 0
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": true,
+    "criteria": {
+      "critical_issues_zero": true,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": true
+    }
+  },
+  "actionable_issues": [],
+  "recommendations": []
+}

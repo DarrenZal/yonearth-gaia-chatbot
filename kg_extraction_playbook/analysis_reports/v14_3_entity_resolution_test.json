@@ -1,0 +1,72 @@
+{
+  "summary": {
+    "total_tests": 6,
+    "pass_count": 4,
+    "partial_count": 2,
+    "fail_count": 0,
+    "forbidden_pronouns_found": 0,
+    "expected_relationships_found": 4
+  },
+  "results": [
+    {
+      "test_id": "TC004",
+      "status": "PARTIAL",
+      "reason": "No forbidden pronouns, but expected relationship not found",
+      "pass1_count": 3,
+      "pass2_count": 3,
+      "final_count": 3,
+      "forbidden_found": false,
+      "expected_found": false
+    },
+    {
+      "test_id": "TC007",
+      "status": "PASS",
+      "reason": "Expected relationship found, no forbidden pronouns",
+      "pass1_count": 2,
+      "pass2_count": 2,
+      "final_count": 2,
+      "forbidden_found": false,
+      "expected_found": true
+    },
+    {
+      "test_id": "TC008",
+      "status": "PASS",
+      "reason": "Expected relationship found, no forbidden pronouns",
+      "pass1_count": 1,
+      "pass2_count": 2,
+      "final_count": 2,
+      "forbidden_found": false,
+      "expected_found": true
+    },
+    {
+      "test_id": "TC009",
+      "status": "PARTIAL",
+      "reason": "No forbidden pronouns, but expected relationship not found",
+      "pass1_count": 4,
+      "pass2_count": 4,
+      "final_count": 4,
+      "forbidden_found": false,
+      "expected_found": false
+    },
+    {
+      "test_id": "TC010",
+      "status": "PASS",
+      "reason": "Expected relationship found, no forbidden pronouns",
+      "pass1_count": 4,
+      "pass2_count": 4,
+      "final_count": 3,
+      "forbidden_found": false,
+      "expected_found": true
+    },
+    {
+      "test_id": "TC006",
+      "status": "PASS",
+      "reason": "Expected relationship found, no forbidden pronouns",
+      "pass1_count": 2,
+      "pass2_count": 2,
+      "final_count": 2,
+      "forbidden_found": false,
+      "expected_found": true
+    }
+  ]
+}

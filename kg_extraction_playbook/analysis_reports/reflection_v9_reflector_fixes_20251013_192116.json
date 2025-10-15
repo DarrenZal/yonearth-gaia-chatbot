@@ -1,0 +1,724 @@
+{
+  "extraction_metadata": {
+    "version": "v9_reflector_fixes",
+    "total_relationships": 857,
+    "analysis_timestamp": "2025-10-13T14:30:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 8,
+    "high_priority_issues": 52,
+    "medium_priority_issues": 91,
+    "mild_issues": 15,
+    "total_issues": 166,
+    "issue_rate_percent": 19.4,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 189,
+    "adjusted_issue_rate_percent": 22.1,
+    "grade_confirmed": "C",
+    "grade_adjusted": "C-",
+    "note": "V9 shows SEVERE REGRESSION from V7 (6.71% \u2192 19.4%). Critical systemic failures: dedication parsing creating 6+ duplicates per entry, possessive pronouns unresolved ('my people' 8x), praise quotes misclassified as authorship, philosophical abstractions treated as factual. Duplicate count (85) exceeds threshold. Adjusted metrics include estimated mild issues not flagged (13% FN rate)."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Dedication Parsing Catastrophic Failure",
+      "severity": "CRITICAL",
+      "count": 8,
+      "percentage": 0.93,
+      "description": "Dedication parser creating 6+ duplicate relationships per dedication statement, with malformed targets containing redundant text like 'Soil Stewardship Handbook to Osha to my two children'",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/bibliographic_parser.py dedication parsing logic is splitting on commas AND creating separate relationships for each phrase, then not deduplicating. The list splitter is running AFTER dedication parser, creating exponential duplication.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 5,
+          "what_is_wrong": "Target contains redundant 'Soil Stewardship Handbook to Osha to my two children' - should just be 'Osha' or 'Hunter'. Creates 6 duplicate relationships for a single dedication statement.",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Hunter to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 5,
+          "what_is_wrong": "Another malformed dedication target with redundant text. Part of 6-duplicate cluster.",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "dedicated",
+            "target": "Hunter"
+          }
+        },
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 5,
+          "what_is_wrong": "Duplicate of above (case variation). Appears twice in the 6-duplicate cluster.",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Possessive Pronoun Sources (Unresolved)",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 0.93,
+      "description": "Relationships with 'my people' as source entity instead of resolving to the actual referent (Slovenians, based on context). Pronoun resolution module failed to catch possessive pronouns.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/pronoun_resolver.py only checks for subject pronouns (he, she, it, we, they) but not possessive pronouns (my, our, their). Pass 1 extraction prompt may also be too permissive in allowing vague entities.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "'my people' is a possessive pronoun phrase that should resolve to 'Slovenians' based on context ('like my people in Slovenia')",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the land"
+          }
+        },
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the sea",
+          "evidence_text": "We love the sea.",
+          "page": 10,
+          "what_is_wrong": "Same unresolved possessive pronoun, appears 8 times total",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the sea"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quote Misclassification",
+      "severity": "HIGH",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "Endorsement quotes from book reviewers misclassified as 'authored' relationships instead of 'endorsed'. Praise quote detector failed or was bypassed.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/praise_quote_detector.py may have regex patterns that don't match all endorsement language, or the module is running too late (after bibliographic parser already created 'authored' relationships). Pass 1 prompt may also be extracting these incorrectly.",
+      "affected_module": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Brigitte Mars",
+          "relationship": "authored",
+          "target": "The Country Almanac of Home Remedies",
+          "evidence_text": "The Soil Stewardship Handbook contains a plan for action on what and how we must all take action now to help nourish the soil.",
+          "page": 3,
+          "what_is_wrong": "This is a praise quote about the Soil Stewardship Handbook, not a statement that Brigitte Mars authored 'The Country Almanac'. The evidence text doesn't even mention that book title.",
+          "should_be": {
+            "source": "Brigitte Mars",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Lily Sophia von \u00dcbergarten",
+          "relationship": "authored",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "With Love and Hope, Lily Sophia von \u00dcbergarten Slovenia, 2018",
+          "page": 11,
+          "what_is_wrong": "This is a foreword signature, not authorship claim. Should be 'wrote foreword for' or similar.",
+          "should_be": {
+            "source": "Lily Sophia von \u00dcbergarten",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical Abstractions as Factual Claims",
+      "severity": "HIGH",
+      "count": 18,
+      "percentage": 2.1,
+      "description": "Metaphorical or philosophical statements extracted as factual relationships. Examples: 'soil is the answer', 'soil heals Earth', 'cultivating relationship with soil unlocks spiritual growth'. These are subjective/metaphorical, not testable facts.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt is too broad ('extract ALL relationships') without sufficient constraints on metaphorical language. Pass 2 evaluation prompt may not be calibrated to flag philosophical claims as low knowledge_plausibility. The figurative language detector is catching some but not all cases.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt, prompts/pass2_evaluation_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer",
+          "evidence_text": "Soil is the answer.",
+          "page": 11,
+          "what_is_wrong": "This is a metaphorical/philosophical statement, not a factual classification. 'Answer' is too abstract and context-dependent.",
+          "should_be": null
+        },
+        {
+          "source": "cultivating a personal relationship with soil",
+          "relationship": "unlocks",
+          "target": "physical, mental and spiritual growth",
+          "evidence_text": "by cultivating a personal relationship with soil, we unlock the door to a vast realm of physical, mental and spiritual growth, health and vitality.",
+          "page": 11,
+          "what_is_wrong": "Metaphorical language ('unlock the door') treated as factual. 'Spiritual growth' is subjective and not empirically testable.",
+          "should_be": null
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "provides",
+          "target": "road-map",
+          "evidence_text": "The book before you is a road-map of sorts, a guide, and a compass...",
+          "page": 10,
+          "what_is_wrong": "Metaphor ('road-map') treated as literal content. The book doesn't literally contain a map.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Targets",
+      "severity": "HIGH",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "Relationships with overly vague/abstract targets that don't convey specific information: 'the answer', 'the way', 'salient insights', 'framework for THRIVING', 'millions of other human beings'",
+      "root_cause_hypothesis": "Pass 1 extraction prompt allows extraction of abstract concepts without requiring specificity. Vague entity detector may have thresholds that are too lenient, or it's not catching abstract phrases.",
+      "affected_module": "modules/pass2_5_postprocessing/vague_entity_detector.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "contains",
+          "target": "salient insights",
+          "evidence_text": "For it is chock full of some of the most salient insights and a form of humble inspiration...",
+          "page": 10,
+          "what_is_wrong": "'salient insights' is too vague - what specific insights? This is praise language, not factual content description.",
+          "should_be": null
+        },
+        {
+          "source": "Y on Earth Community",
+          "relationship": "collaborates with",
+          "target": "millions of other human beings",
+          "evidence_text": "who are making THRIVING and SUSTAINABILITY a priority in their lives and communities as well.",
+          "page": 11,
+          "what_is_wrong": "'millions of other human beings' is too vague and unverifiable. No specific organizations or groups named.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Duplicate Relationships (Exact)",
+      "severity": "MEDIUM",
+      "count": 85,
+      "percentage": 9.92,
+      "description": "85 exact duplicate relationship instances (79 unique patterns with duplicates). Examples: 'Aaron Perry authored Soil Stewardship Handbook' appears 2x, 'Soil Stewardship Handbook published in 2018' appears 2x. Deduplication module failed.",
+      "root_cause_hypothesis": "Deduplication logic in pipeline is either not running, running too early (before normalization), or using case-sensitive comparison. May also be extracting same relationship from multiple pages without checking for existing entries.",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py (or missing module)",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "aaron perry",
+          "relationship": "authored",
+          "target": "soil stewardship handbook",
+          "evidence_text": "Copyright \u00a9 2018 Aaron William Perry",
+          "page": 5,
+          "what_is_wrong": "This relationship appears at indices [6, 13] - exact duplicate after case normalization",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "soil stewardship handbook",
+          "relationship": "published in",
+          "target": "2018",
+          "evidence_text": "Copyright \u00a9 2018 Aaron William Perry",
+          "page": 5,
+          "what_is_wrong": "Appears at indices [15, 59] - duplicate from same evidence",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 127,
+      "percentage": 14.82,
+      "description": "127 unique predicates with significant fragmentation. 'is' has 12 variations (is, is-a, is about, is in, is key to, etc.), 'are' has 6 variations. Should normalize to canonical forms.",
+      "root_cause_hypothesis": "No predicate normalization module in Pass 2.5. Pass 1 extraction is creating too many predicate variations. Need canonical mapping (e.g., 'is key to' \u2192 'enables', 'is about' \u2192 'discusses').",
+      "affected_module": "Missing: modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": "prompts/pass1_extraction_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "healthy soil",
+          "relationship": "is key to",
+          "target": "clean drinking water",
+          "evidence_text": "Healthy soil is also key to clean drinking water...",
+          "page": 14,
+          "what_is_wrong": "'is key to' should normalize to 'enables' or 'supports'",
+          "should_be": {
+            "source": "healthy soil",
+            "relationship": "enables",
+            "target": "clean drinking water"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "is about",
+          "target": "soil stewardship",
+          "evidence_text": null,
+          "page": null,
+          "what_is_wrong": "'is about' should normalize to 'discusses' or 'covers'",
+          "should_be": {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "discusses",
+            "target": "soil stewardship"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Over-Application",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 2.1,
+      "description": "List splitter creating separate relationships for items that should remain together. Example: 'Soil enhances intelligence, health and well-being' split into 3 relationships, but these are conceptually a single claim about holistic benefits.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/list_splitter.py is too aggressive - splitting ALL comma-separated targets without semantic analysis. Need to preserve semantic units like 'health and well-being' or 'mind, body and spirit'.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": "config/list_splitting_rules.yaml (may need semantic grouping rules)",
+      "examples": [
+        {
+          "source": "Soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Soil\u2014Enhancing Intelligence, Health and Well-Being",
+          "page": 5,
+          "what_is_wrong": "Split into 3 relationships (intelligence, health, well-being) but these form a semantic unit 'holistic well-being'. Should keep together or use compound target.",
+          "should_be": {
+            "source": "Soil",
+            "relationship": "enhances",
+            "target": "intelligence, health, and well-being"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Demonstrative Pronouns (Unresolved)",
+      "severity": "MEDIUM",
+      "count": 4,
+      "percentage": 0.47,
+      "description": "Relationships with 'this handbook', 'the reader' as entities instead of resolving to specific referents. Pronoun resolver not catching demonstratives.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/pronoun_resolver.py doesn't handle demonstrative pronouns (this, that, these, those) or generic references (the reader, the author).",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "dedicated",
+          "target": "the reader",
+          "evidence_text": "Dear Friend, I am thrilled and grateful that you have this Soil Stewardship Handbook before you.",
+          "page": 11,
+          "what_is_wrong": "'the reader' is too generic - should either be removed or resolved to a more specific entity if context allows",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Wrong Semantic Predicates",
+      "severity": "MEDIUM",
+      "count": 3,
+      "percentage": 0.35,
+      "description": "Semantically incompatible predicates. Example: 'Y on Earth Community founded Aaron William Perry' (reversed causality), 'Soil Stewardship Handbook authored Aaron William Perry' (book can't author person).",
+      "root_cause_hypothesis": "Pass 2 evaluation not catching semantic incompatibility. Knowledge plausibility scoring may be too lenient. Need stronger semantic validation rules.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v9.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Y on Earth Community",
+          "relationship": "founded",
+          "target": "Aaron William Perry",
+          "evidence_text": "the Y on Earth team and I hope you will join our Y on Earth Community",
+          "page": 11,
+          "what_is_wrong": "Reversed causality - Aaron Perry founded Y on Earth Community, not the other way around",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "founded",
+            "target": "Y on Earth Community"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "I hope you'll roll up your sleeves, dive deeply into this Soil Stewardship Handbook...",
+          "page": 10,
+          "what_is_wrong": "Book can't author a person - should be reversed",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language (Metaphors)",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 0.93,
+      "description": "Metaphorical language treated as literal relationships. Examples: 'unlocks the door', 'spirit' in 'mind, body and spirit'. Figurative language detector catching some but not all.",
+      "root_cause_hypothesis": "modules/pass2_5_postprocessing/figurative_language_detector.py has limited metaphor patterns. Need expanded regex/keyword list or LLM-based metaphor detection.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": null,
+      "affected_config": "config/figurative_patterns.yaml",
+      "examples": [
+        {
+          "source": "cultivating a personal relationship with soil",
+          "relationship": "unlocks",
+          "target": "physical, mental and spiritual growth",
+          "evidence_text": "by cultivating a personal relationship with soil, we unlock the door to a vast realm...",
+          "page": 11,
+          "what_is_wrong": "'unlock the door' is a metaphor, not a literal action. Flagged correctly but still extracted.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete/Malformed Targets",
+      "severity": "MILD",
+      "count": 7,
+      "percentage": 0.82,
+      "description": "Targets ending with periods or containing formatting artifacts. Examples: 'hunter.' (with period), 'osha' (lowercase when should be 'Osha').",
+      "root_cause_hypothesis": "Text cleaning/normalization not removing punctuation from entity boundaries. Case normalization inconsistent.",
+      "affected_module": "modules/pass2_5_postprocessing/text_normalizer.py (or missing)",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "hunter.",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 5,
+          "what_is_wrong": "Target has trailing period, should be 'Hunter'",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "dedicated",
+            "target": "Hunter"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Dedication Duplication Cascade",
+      "severity": "CRITICAL",
+      "count": 8,
+      "description": "NEW PATTERN: Dedication parser creating 6+ duplicates per dedication statement by combining list splitting with phrase extraction, resulting in malformed targets like 'Soil Stewardship Handbook to Osha to my two children'. This is exponentially worse than V4's list splitting issue.",
+      "root_cause_hypothesis": "Dedication parser and list splitter running in wrong order, or dedication parser not properly isolating dedicatee names before list splitting. May also be extracting multiple interpretations of same dedication.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Aaron Perry",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to Osha to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter.",
+          "page": 5,
+          "what_is_wrong": "Catastrophic duplication - 6 relationships created for single dedication, with malformed targets",
+          "should_be": {
+            "source": "Aaron Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Possessive Pronoun Blindness",
+      "severity": "HIGH",
+      "count": 8,
+      "description": "NEW PATTERN: Pronoun resolver completely missing possessive pronouns ('my people', 'our tradition', 'their practices'). V4 reports mentioned subject pronouns (he, she, it) but not possessives.",
+      "root_cause_hypothesis": "Pronoun resolver regex only matches subject pronouns, not possessive determiners. Need to expand pattern matching and add possessive pronoun resolution logic.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "'my people' should resolve to 'Slovenians' based on context",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the land"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Philosophical Abstraction Explosion",
+      "severity": "HIGH",
+      "count": 18,
+      "description": "NEW PATTERN: Dramatic increase in philosophical/metaphorical statements extracted as factual claims (18 cases, 2.1%). V4 had 5% figurative language issues, but V9 is extracting MORE abstract claims despite having a figurative language detector.",
+      "root_cause_hypothesis": "Pass 1 prompt may be too permissive ('extract ALL relationships'). Pass 2 evaluation not calibrated to flag philosophical claims. Figurative detector catching obvious metaphors but missing abstract philosophical statements.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v9.txt, prompts/pass2_evaluation_v9.txt",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer",
+          "evidence_text": "Soil is the answer.",
+          "page": 11,
+          "what_is_wrong": "Philosophical/metaphorical statement treated as factual classification",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "Praise Quote Authorship Confusion",
+      "severity": "HIGH",
+      "count": 6,
+      "description": "NEW PATTERN: Endorsement quotes from book reviewers being misclassified as 'authored' relationships. Praise quote detector exists but failing to catch all cases or running too late in pipeline.",
+      "root_cause_hypothesis": "Praise quote detector regex patterns incomplete, or module running after bibliographic parser already created 'authored' relationships. May need to run praise detection in Pass 1 or early Pass 2.",
+      "affected_module": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "examples": [
+        {
+          "source": "Brigitte Mars",
+          "relationship": "authored",
+          "target": "The Country Almanac of Home Remedies",
+          "evidence_text": "The Soil Stewardship Handbook contains a plan for action...",
+          "page": 3,
+          "what_is_wrong": "Praise quote about Soil Stewardship Handbook misattributed as authorship of different book",
+          "should_be": {
+            "source": "Brigitte Mars",
+            "relationship": "endorsed",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Deduplication Complete Failure",
+      "severity": "MEDIUM",
+      "count": 85,
+      "description": "NEW PATTERN: 85 exact duplicate instances (9.92% of relationships). This is MUCH worse than V4's duplicate issues. Deduplication module either not running or fundamentally broken.",
+      "root_cause_hypothesis": "Deduplication logic not running, running before normalization (so case differences prevent matching), or using wrong comparison key (not normalizing source-predicate-target tuples).",
+      "affected_module": "modules/pass2_5_postprocessing/deduplicator.py (or missing)",
+      "examples": [
+        {
+          "source": "aaron perry",
+          "relationship": "authored",
+          "target": "soil stewardship handbook",
+          "evidence_text": "Copyright \u00a9 2018 Aaron William Perry",
+          "page": 5,
+          "what_is_wrong": "Exact duplicate at indices [6, 13]",
+          "should_be": null
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "EMERGENCY FIX: Rewrite dedication parsing logic. (1) Extract dedicatee names FIRST using regex for 'dedicated to X' patterns. (2) Split comma-separated names BEFORE creating relationships. (3) Add deduplication check within dedication parser. (4) Ensure list splitter doesn't re-process dedication relationships.",
+      "expected_impact": "Eliminates 8 CRITICAL dedication duplication issues (0.93% of relationships). Prevents exponential duplication cascade.",
+      "rationale": "Current implementation is catastrophically broken - creating 6+ duplicates per dedication. This is the single worst issue in V9 and must be fixed before any other improvements."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/deduplicator.py",
+      "recommendation": "Implement or fix deduplication module. (1) Normalize source/predicate/target to lowercase before comparison. (2) Create hash key from (source, predicate, target) tuple. (3) Use set/dict to track seen relationships. (4) Run deduplication as FINAL step in Pass 2.5 pipeline. (5) Log duplicate count for monitoring.",
+      "expected_impact": "Eliminates 85 duplicate relationships (9.92% of total). Reduces adjusted issue rate from 22.1% to ~12%.",
+      "rationale": "Duplicates are systematic noise that inflate issue count and degrade KG quality. This is a straightforward fix with massive impact."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Expand pronoun resolver to handle possessive pronouns. (1) Add regex patterns for 'my X', 'our X', 'their X'. (2) Implement context-based resolution (look for antecedents in previous sentences). (3) For 'my people', check for nationality/ethnicity mentions in surrounding text. (4) Add fallback: if no antecedent found, flag relationship for manual review rather than extracting with pronoun.",
+      "expected_impact": "Fixes 8 HIGH-severity possessive pronoun issues (0.93%). Improves entity specificity.",
+      "rationale": "Possessive pronouns are common in narrative text. Current resolver is blind to them, creating vague entities that harm KG utility."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add explicit constraints to Pass 1 extraction prompt: (1) 'Do NOT extract metaphorical or philosophical statements as factual relationships. Examples to AVOID: \"X is the answer\", \"X unlocks Y\", \"X is the key to Y\".' (2) 'Prefer concrete, testable relationships over abstract claims.' (3) Add few-shot examples showing GOOD (concrete) vs BAD (abstract) extractions. (4) 'If a statement is primarily motivational or inspirational, do not extract it.'",
+      "expected_impact": "Reduces 18 philosophical abstraction issues (2.1%) by preventing extraction at source. May also reduce vague entity issues.",
+      "rationale": "Fixing at extraction is more efficient than post-processing. Current prompt is too permissive ('extract ALL'), leading to noise. Clearer constraints + examples will guide LLM better."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/praise_quote_detector.py",
+      "recommendation": "Improve praise quote detection. (1) Expand regex patterns to catch: 'is an excellent tool', 'is timely and empowering', 'looks at our connections', 'provides a nicely explained overview'. (2) Check if evidence text contains praise language BEFORE checking for authorship claims. (3) If praise detected, change relationship to 'endorsed' and set target to the book being praised (not other books mentioned). (4) Run this module BEFORE bibliographic parser to prevent incorrect 'authored' relationships.",
+      "expected_impact": "Fixes 6 HIGH-severity praise quote misclassifications (0.7%). Improves relationship accuracy.",
+      "rationale": "Praise quotes are common in book front matter. Current detector is missing many patterns. Running earlier in pipeline prevents downstream errors."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v9.txt",
+      "recommendation": "Recalibrate Pass 2 evaluation prompt for philosophical claims. (1) Add instruction: 'If a relationship expresses a subjective opinion, philosophical belief, or metaphorical statement, set knowledge_plausibility to 0.3 or lower.' (2) Add examples: 'soil is the answer' (philosophical), 'soil provides nutrients' (factual). (3) Clarify: 'knowledge_plausibility should reflect whether the claim is empirically testable, not whether it sounds plausible.'",
+      "expected_impact": "Reduces philosophical abstraction issues by lowering their p_true scores, making them easier to filter. May prevent 10-15 of the 18 philosophical issues.",
+      "rationale": "Pass 2 evaluation is the gatekeeper for quality. Current prompt isn't distinguishing factual from philosophical claims. Clearer guidance will improve filtering."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Create predicate normalization module. (1) Define canonical predicate mappings: 'is key to' \u2192 'enables', 'is about' \u2192 'discusses', 'is-a' \u2192 'is', 'is in' \u2192 'located in'. (2) Load mappings from config/predicate_mappings.yaml. (3) Apply normalization after all other Pass 2.5 modules. (4) Log normalization actions for monitoring. (5) Start with top 20 most fragmented predicates.",
+      "expected_impact": "Reduces 127 unique predicates to ~80-90, improving KG consistency and queryability. Addresses 14.82% fragmentation issue.",
+      "rationale": "Predicate fragmentation is a known issue from V4. No normalization module exists. This is a systematic fix that improves KG structure without changing extraction logic."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add semantic grouping to list splitter. (1) Define semantic units that should NOT be split: 'health and well-being', 'mind, body and spirit', 'intelligence, health and well-being'. (2) Load from config/semantic_units.yaml. (3) Before splitting, check if target matches a semantic unit pattern. (4) If match, keep as compound target or use canonical form. (5) Add flag 'SEMANTIC_UNIT_PRESERVED' to track this.",
+      "expected_impact": "Reduces 18 over-splitting issues (2.1%). Preserves semantic meaning in compound concepts.",
+      "rationale": "Current list splitter is too aggressive. Some comma-separated phrases form semantic units that lose meaning when split. This fix balances granularity with semantic coherence."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/vague_entity_detector.py",
+      "recommendation": "Strengthen vague entity detection. (1) Add patterns for abstract phrases: 'the answer', 'the way', 'the solution', 'the problem', 'salient insights', 'framework for X'. (2) Flag entities with generic quantifiers: 'millions of X', 'countless X'. (3) Lower threshold for flagging (currently may be too lenient). (4) For flagged entities, either remove relationship or require more specific evidence.",
+      "expected_impact": "Reduces 12 vague target issues (1.4%). Improves entity specificity.",
+      "rationale": "Vague entities reduce KG utility - they don't convey actionable information. Current detector is missing common abstract patterns."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/text_normalizer.py",
+      "recommendation": "Create or enhance text normalization module. (1) Strip trailing punctuation from entity names (periods, commas). (2) Normalize case consistently (title case for proper nouns, lowercase for common nouns). (3) Remove extra whitespace. (4) Run as first step in Pass 2.5 pipeline. (5) Log normalization actions.",
+      "expected_impact": "Fixes 7 malformed target issues (0.82%). Improves entity consistency.",
+      "rationale": "Text artifacts (trailing periods, case inconsistencies) are low-hanging fruit. Simple regex fixes can clean these up systematically."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v9.txt",
+      "recommendation": "Add entity specificity constraints to Pass 1 prompt. (1) 'Avoid extracting vague or overly abstract entities. Examples to AVOID: \"the answer\", \"the way\", \"millions of people\", \"salient insights\".' (2) 'Prefer specific named entities over generic references.' (3) Add few-shot examples showing specific vs vague entities.",
+      "expected_impact": "Prevents vague entity extraction at source, reducing 12 vague target issues (1.4%).",
+      "rationale": "Preventing vague entities at extraction is more efficient than post-processing detection. Prompt guidance can steer LLM toward specificity."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "recommendation": "Expand figurative language detection patterns. (1) Add metaphor keywords: 'unlock', 'door', 'key', 'bridge', 'foundation' (when used metaphorically). (2) Add context checks: if 'unlock' appears with abstract target (e.g., 'growth'), flag as metaphor. (3) Consider LLM-based metaphor detection for complex cases. (4) For now, focus on expanding regex patterns in config/figurative_patterns.yaml.",
+      "expected_impact": "Reduces 8 figurative language issues (0.93%). Improves factual accuracy.",
+      "rationale": "Figurative language detector exists but has limited patterns. Expanding patterns is straightforward and improves detection coverage."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Add demonstrative pronoun handling. (1) Detect patterns: 'this X', 'that X', 'these X', 'those X', 'the X' (when X is generic like 'reader', 'author', 'book'). (2) For 'this handbook', resolve to actual book title from context. (3) For 'the reader', consider removing relationship (too generic) or flagging for review.",
+      "expected_impact": "Fixes 4 demonstrative pronoun issues (0.47%). Improves entity specificity.",
+      "rationale": "Demonstratives are common in narrative text. Current resolver doesn't handle them. This is a natural extension of existing pronoun resolution logic."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v9.txt",
+      "recommendation": "Add semantic compatibility check to Pass 2 evaluation. (1) Instruct: 'Check if the predicate makes semantic sense for the source and target types. Examples of INCOMPATIBLE relationships: \"Book authored Person\" (should be reversed), \"Organization founded Person\" (should be reversed).' (2) If incompatible, set knowledge_plausibility to 0.2 or lower. (3) Add few-shot examples of compatible vs incompatible predicates.",
+      "expected_impact": "Reduces 3 wrong predicate issues (0.35%). Catches semantic errors earlier.",
+      "rationale": "Semantic incompatibility is a quality issue that Pass 2 evaluation should catch. Current prompt doesn't explicitly check for this. Adding guidance will improve filtering."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Prompt is too permissive - 'extract ALL relationships' without sufficient constraints on metaphorical language, vague entities, or philosophical claims",
+        "current_wording": "Likely: 'Extract all relationships between entities in the text...'",
+        "suggested_fix": "Add explicit exclusions: 'Do NOT extract: (1) Metaphorical or philosophical statements (e.g., \"X is the answer\", \"X unlocks Y\"). (2) Vague or overly abstract entities (e.g., \"the answer\", \"millions of people\"). (3) Motivational or inspirational language that is not factual.' Add 3-5 few-shot examples showing GOOD (concrete, testable) vs BAD (abstract, metaphorical) extractions.",
+        "examples_needed": "YES - Show examples of: (1) Concrete factual relationship (GOOD), (2) Metaphorical statement (BAD), (3) Philosophical claim (BAD), (4) Vague entity (BAD), (5) Specific entity (GOOD)"
+      },
+      {
+        "issue": "No guidance on entity specificity - allows extraction of possessive pronouns ('my people'), demonstratives ('this handbook'), and generic references ('the reader')",
+        "current_wording": "Likely: 'Extract entities and their relationships...'",
+        "suggested_fix": "Add entity constraints: 'Prefer specific named entities over pronouns or generic references. If you encounter: (1) Possessive pronouns (my X, our X) - try to resolve to specific referent from context. (2) Demonstratives (this X, that X) - resolve to specific entity. (3) Generic references (the reader, the author) - avoid extracting unless context provides specificity.'",
+        "examples_needed": "YES - Show examples of pronoun resolution: 'my people' \u2192 'Slovenians' (based on context)"
+      },
+      {
+        "issue": "No guidance on praise quotes vs factual claims - leads to misclassification of endorsements as authorship",
+        "current_wording": "Likely: 'Extract authorship relationships...'",
+        "suggested_fix": "Add distinction: 'Distinguish between: (1) Authorship claims (\"X wrote Y\", \"Copyright by X\") - use \"authored\" predicate. (2) Endorsements/praise (\"X says Y is excellent\", \"X recommends Y\") - use \"endorsed\" predicate. If text is a testimonial or review quote, it is an endorsement, not authorship.'",
+        "examples_needed": "YES - Show examples of authorship vs endorsement"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "knowledge_plausibility scoring not calibrated to distinguish factual from philosophical claims - both get high scores",
+        "current_wording": "Likely: 'Evaluate knowledge_plausibility based on whether the claim is plausible given world knowledge...'",
+        "suggested_fix": "Clarify: 'knowledge_plausibility should reflect whether the claim is empirically testable and factual, NOT whether it sounds plausible or inspirational. Philosophical claims (\"X is the answer\"), metaphors (\"X unlocks Y\"), and subjective opinions should receive LOW knowledge_plausibility (0.3 or below), even if they sound reasonable. Factual claims (\"X contains Y\", \"X published in 2018\") should receive HIGH knowledge_plausibility (0.7+).'",
+        "examples_needed": "YES - Show examples: 'soil is the answer' (philosophical, 0.3), 'soil contains microorganisms' (factual, 0.9)"
+      },
+      {
+        "issue": "No explicit check for semantic compatibility of source-predicate-target - allows nonsensical relationships like 'Book authored Person'",
+        "current_wording": "Likely: 'Evaluate whether the relationship is supported by the text...'",
+        "suggested_fix": "Add semantic check: 'Before evaluating text confidence, check if the predicate makes semantic sense for the source and target entity types. Examples of INCOMPATIBLE relationships: \"Book authored Person\" (books don't author people), \"Organization founded Person\" (organizations don't found people). If semantically incompatible, set knowledge_plausibility to 0.2 or lower.'",
+        "examples_needed": "YES - Show examples of compatible vs incompatible predicates"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.194,
+    "adjusted_quality_issue_rate": 0.221,
+    "critical_blockers": [
+      "Dedication parsing creating 6+ duplicates per entry (CRITICAL)",
+      "Deduplication completely broken - 85 exact duplicates (CRITICAL)",
+      "Possessive pronouns unresolved - 8 cases of 'my people' (HIGH)",
+      "Philosophical abstractions extracted as facts - 18 cases (HIGH)",
+      "Praise quotes misclassified as authorship - 6 cases (HIGH)"
+    ],
+    "regression_analysis": "V9 shows SEVERE REGRESSION from V7 (6.71% \u2192 19.4% issue rate). This is the worst performance yet. Key regressions: (1) Dedication parsing catastrophically broken (new in V9), (2) Deduplication failure (85 duplicates vs V7's cleaner output), (3) Philosophical abstraction explosion (18 cases vs V4's 5%), (4) Possessive pronoun blindness (new pattern). V9's Pass 2.5 modules are either not running correctly or have introduced new bugs. URGENT: Roll back to V7 baseline and incrementally add V9 improvements with testing.",
+    "recommended_next_steps": [
+      "IMMEDIATE: Fix dedication parser (CRITICAL blocker)",
+      "IMMEDIATE: Implement/fix deduplication (CRITICAL blocker)",
+      "HIGH PRIORITY: Enhance pronoun resolver for possessives",
+      "HIGH PRIORITY: Constrain Pass 1 prompt to exclude philosophical abstractions",
+      "HIGH PRIORITY: Fix praise quote detection",
+      "MEDIUM PRIORITY: Add predicate normalization module",
+      "MEDIUM PRIORITY: Improve list splitter semantic grouping",
+      "TESTING: Add integration tests for each Pass 2.5 module to prevent regressions"
+    ]
+  },
+  "metadata": {
+    "analysis_date": "2025-10-13T19:21:16.662081",
+    "relationships_analyzed": 857,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v9_reflector_fixes"
+  }
+}

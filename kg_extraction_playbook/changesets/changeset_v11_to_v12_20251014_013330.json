@@ -1,0 +1,536 @@
+{
+  "changeset_metadata": {
+    "source_version": "11.2.2",
+    "target_version": "12.0.0",
+    "total_changes": 9,
+    "estimated_impact": "Reduces issue rate from 7.86% to ~3.5% (Grade B \u2192 Grade A-). Fixes 55+ relationships across HIGH and MEDIUM priority categories."
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "priority": "CRITICAL",
+      "rationale": "4 HIGH-severity possessive pronoun issues (0.45%) are not caught because pronoun resolver only handles subject pronouns (he/she/it/they), not possessive forms (my/our/their). This is a clear architectural gap.",
+      "risk_level": "low",
+      "affected_issue_category": "Possessive Pronoun Sources",
+      "expected_improvement": "Fixes all 4 possessive pronoun issues. Prevents future occurrences by adding possessive pronoun detection and context-aware resolution.",
+      "change_description": "Extend PronounResolver to detect and resolve possessive pronouns (my/our/their/his/her) using context from author metadata and surrounding text",
+      "affected_function": "PronounResolver.resolve_pronouns",
+      "change_type": "feature_enhancement",
+      "guidance": {
+        "current_issue": "Module only detects subject pronouns via regex pattern r'\\b(he|she|it|they|we)\\b'. Possessive pronouns like 'my people', 'our tradition' pass through undetected.",
+        "fix_approach": "Add possessive pronoun detection pattern r'\\b(my|our|their|his|her)\\s+(\\w+)'. When detected, use context resolution: (1) Check if author metadata exists (nationality, heritage), (2) Map 'my people' \u2192 author's nationality/heritage, (3) If no context, flag for manual review rather than keeping pronoun.",
+        "implementation_steps": [
+          "Add POSSESSIVE_PRONOUNS constant: ['my', 'our', 'their', 'his', 'her']",
+          "Create detect_possessive_pronouns() method using regex",
+          "Create resolve_possessive_with_context() method that queries author metadata",
+          "Add context mapping: 'my people' + author='Slovenian' \u2192 'Slovenians'",
+          "Integrate into main resolve_pronouns() pipeline after subject pronoun resolution"
+        ],
+        "context_sources": [
+          "Author metadata from bibliographic parser",
+          "Nationality/heritage mentions in dedication/foreword",
+          "Geographic references in surrounding sentences"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "Input: 'my people love the land' + author_heritage='Slovenian' \u2192 Output: 'Slovenians love the land'",
+          "Input: 'our tradition values soil' + author_heritage='Indigenous' \u2192 Output: 'Indigenous tradition values soil'",
+          "Input: 'their practices' with no context \u2192 Flag for review or filter"
+        ],
+        "success_criteria": "Zero possessive pronouns in final output. All resolved to specific entities or filtered."
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v11.txt",
+      "priority": "CRITICAL",
+      "rationale": "Pass 1 extraction allows possessive/demonstrative pronouns as entities because there's no explicit prohibition. Fixing at extraction stage prevents issues before they reach post-processing.",
+      "risk_level": "low",
+      "affected_issue_category": "Possessive Pronoun Sources + Demonstrative Pronoun Targets",
+      "expected_improvement": "Prevents 4 HIGH + 3 MILD = 7 pronoun issues (0.79% of relationships) at source. Reduces load on pronoun resolver module.",
+      "change_description": "Add explicit prohibition against possessive and demonstrative pronouns as entity sources, with few-shot examples showing correct resolution",
+      "target_section": "ENTITY EXTRACTION RULES",
+      "guidance": {
+        "current_issue": "Prompt likely has general 'extract entities' instruction but no specific guidance on pronouns. LLM defaults to extracting pronouns as-is.",
+        "fix_approach": "Add new subsection '\u26a0\ufe0f PRONOUN RESOLUTION REQUIREMENTS' after entity type definitions, before relationship extraction rules.",
+        "insertion_point": "After 'Entity types include: PERSON, ORGANIZATION, CONCEPT...' section, before 'Extract relationships...' section",
+        "content_to_add": {
+          "heading": "\u26a0\ufe0f PRONOUN RESOLUTION REQUIREMENTS",
+          "rules": [
+            "NEVER extract possessive pronouns (my, our, their, his, her) as entity names",
+            "NEVER extract demonstrative pronouns (this, that, these, those) as entity names",
+            "ALWAYS resolve pronouns to specific entities using context before extraction"
+          ],
+          "examples": [
+            {
+              "wrong": "Source: 'my people', Target: 'the land'",
+              "right": "Source: 'Slovenians' (resolved from context: author is Slovenian), Target: 'Slovenian land'",
+              "explanation": "Resolve 'my people' using author's heritage from dedication/foreword"
+            },
+            {
+              "wrong": "Source: 'our tradition', Target: 'soil stewardship'",
+              "right": "Source: 'Indigenous tradition' (resolved from context), Target: 'soil stewardship'",
+              "explanation": "Use surrounding text to identify specific tradition"
+            },
+            {
+              "wrong": "Source: 'the book', Target: 'provides guidance'",
+              "right": "Source: 'Soil Stewardship Handbook', Target: 'provides guidance'",
+              "explanation": "Resolve 'the book' to actual book title from context"
+            }
+          ],
+          "instruction": "If you cannot resolve a pronoun to a specific entity from context, SKIP that relationship rather than extracting the pronoun."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Sample text: 'My people love the land. We love the sea.' (with context: author is Slovenian)",
+        "success_criteria": "Extraction produces 'Slovenians love the land', NOT 'my people love the land'",
+        "prompt_version": "v12"
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v11.txt",
+      "priority": "CRITICAL",
+      "rationale": "23 MEDIUM-severity vague entity issues (2.58%) exist because Pass 2 evaluation doesn't assess entity specificity. Adding this criterion will filter low-value abstractions.",
+      "risk_level": "low",
+      "affected_issue_category": "Vague Abstract Entities",
+      "expected_improvement": "Filters 23 vague entity issues (2.58% of relationships). Improves KG utility by requiring concrete, specific entities.",
+      "change_description": "Add 'Entity Specificity' as a new evaluation dimension in Pass 2, penalizing vague/abstract entities with p_true < 0.5",
+      "target_section": "EVALUATION CRITERIA",
+      "guidance": {
+        "current_issue": "Pass 2 likely evaluates text_confidence (does entity appear in text?) and knowledge_plausibility (is relationship semantically valid?) but not entity quality/specificity.",
+        "fix_approach": "Add third evaluation dimension after knowledge_plausibility: 'Entity Specificity'. This should be weighted equally with other dimensions in final p_true calculation.",
+        "insertion_point": "After 'Knowledge Plausibility' section, before 'Final Scoring' section",
+        "content_to_add": {
+          "heading": "3. ENTITY SPECIFICITY (entity_specificity_score: 0.0-1.0)",
+          "description": "Evaluate whether entities are concrete and specific vs. vague and abstract. Vague entities reduce KG utility.",
+          "scoring_rubric": {
+            "score_0.0_to_0.3": "Highly vague/abstract entities that provide no informational value",
+            "examples_low": [
+              "'the answer'",
+              "'the way'",
+              "'easy steps'",
+              "'plan for action'",
+              "'aspects of life'",
+              "'framework for thriving'"
+            ],
+            "score_0.4_to_0.6": "Somewhat vague entities that could be more specific",
+            "examples_medium": [
+              "'the land' (without geographic context)",
+              "'practices' (without specifying which)",
+              "'techniques' (without detail)"
+            ],
+            "score_0.7_to_1.0": "Concrete, specific entities that add informational value",
+            "examples_high": [
+              "'soil stewardship action plan'",
+              "'carbon sequestration techniques'",
+              "'Slovenian land'",
+              "'regenerative agriculture practices'"
+            ]
+          },
+          "rules": [
+            "Penalize generic abstractions: 'the answer', 'the way', 'the solution' \u2192 score < 0.3",
+            "Penalize vague action words: 'easy steps', 'plan for action' \u2192 score < 0.4",
+            "Reward specificity: 'soil stewardship action plan' > 'plan for action'",
+            "Reward concrete nouns: 'carbon sequestration' > 'the process'"
+          ],
+          "integration": "Final p_true = (text_confidence * 0.35) + (knowledge_plausibility * 0.35) + (entity_specificity * 0.30)"
+        }
+      },
+      "validation": {
+        "test_cases": [
+          "('Soil Handbook', 'provides', 'easy steps') \u2192 entity_specificity < 0.3 \u2192 p_true < 0.5 \u2192 FILTERED",
+          "('Soil Handbook', 'provides', 'soil stewardship techniques') \u2192 entity_specificity > 0.7 \u2192 p_true > 0.7 \u2192 KEPT"
+        ],
+        "success_criteria": "Vague entities score p_true < 0.5 and are filtered from final output"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "priority": "HIGH",
+      "rationale": "11 MEDIUM-severity praise quote issues + 6 MEDIUM-severity metaphorical 'is-a' issues (1.91% total) occur because bibliographic parser doesn't fully filter endorsement language.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification + Metaphorical 'is-a' from Praise Quotes",
+      "expected_improvement": "Fixes 17 praise-related issues (1.91% of relationships). Prevents factual claims from being extracted from endorsement quotes.",
+      "change_description": "Enhance praise quote detection to catch all endorsement language patterns and filter all non-endorsement relationships from praise contexts",
+      "affected_function": "BibliographicParser.filter_praise_quotes",
+      "change_type": "feature_enhancement",
+      "guidance": {
+        "current_issue": "Parser detects some praise quotes (likely using keywords like 'endorsed', 'recommends') but misses patterns like 'provides', 'guides', 'helps', 'contains' when source is book title in endorsement section.",
+        "fix_approach": "Expand detection in two phases: (1) Identify endorsement sections (foreword, praise quotes, back cover), (2) Within those sections, filter ALL relationships except (Person, endorsed, Book).",
+        "detection_patterns": [
+          "Section headers: 'Praise for', 'Advance Praise', 'Endorsements', 'What People Are Saying'",
+          "Quotation marks + attribution pattern: '\"...\" \u2014 Person Name, Title'",
+          "Book title as source + action verbs: (Book, provides/guides/helps/contains/nourishes, X)",
+          "Metaphorical 'is-a': (Book, is-a, tool/compass/road-map/guide) in praise context"
+        ],
+        "filtering_logic": [
+          "If relationship is in endorsement section AND source is book title \u2192 Filter unless relationship is 'endorsed'",
+          "If relationship contains metaphorical 'is-a' target (tool, compass, road-map, guide, resource) AND in praise section \u2192 Filter",
+          "Keep only: (Person, endorsed, Book) from endorsement sections"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "Praise quote: 'This handbook provides guidance' \u2192 Filter (not 'endorsed')",
+          "Praise quote: 'Handbook is a compass' \u2192 Filter (metaphorical)",
+          "Praise quote: 'Brigitte Mars endorsed Handbook' \u2192 Keep",
+          "Non-praise: 'Chapter 3 provides guidance' \u2192 Keep (not in praise section)"
+        ],
+        "success_criteria": "Zero non-endorsement relationships from praise sections in output"
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v11.txt",
+      "priority": "HIGH",
+      "rationale": "8 MEDIUM-severity philosophical statement issues (0.90%) occur because Pass 2 doesn't distinguish normative/philosophical claims from factual claims.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical Statements as Facts",
+      "expected_improvement": "Filters 8 philosophical statement issues (0.90% of relationships). Improves factual accuracy of KG.",
+      "change_description": "Add 'Claim Type Detection' criterion to identify and penalize philosophical/normative statements that cannot be empirically verified",
+      "target_section": "EVALUATION CRITERIA",
+      "guidance": {
+        "current_issue": "Pass 2 treats all statements as factual if they appear in text. No distinction between 'soil contains carbon' (factual) vs 'soil is what it means to be human' (philosophical).",
+        "fix_approach": "Add new evaluation dimension after Entity Specificity: 'Claim Type'. Detect philosophical language patterns and score p_true < 0.4.",
+        "insertion_point": "After 'Entity Specificity' section, before 'Final Scoring' section",
+        "content_to_add": {
+          "heading": "4. CLAIM TYPE DETECTION (claim_type_score: 0.0-1.0)",
+          "description": "Distinguish factual claims (empirically verifiable) from philosophical/normative claims (subjective, about meaning/values).",
+          "philosophical_indicators": [
+            "Predicates about meaning: 'is what it means to be', 'means', 'signifies'",
+            "Predicates about essence: 'is the answer to', 'is the key to', 'is the solution for'",
+            "Absolute predicates: 'reverses', 'eliminates', 'solves' (without qualification)",
+            "Normative predicates: 'should', 'must', 'ought to', 'requires' (prescriptive)"
+          ],
+          "scoring_rules": [
+            "Philosophical/normative claims \u2192 score < 0.4 \u2192 likely filtered",
+            "Factual claims with empirical basis \u2192 score > 0.7 \u2192 likely kept",
+            "Borderline (e.g., 'soil is essential for agriculture') \u2192 score 0.5-0.7 \u2192 depends on other factors"
+          ],
+          "examples": [
+            {
+              "claim": "('soil', 'is what it means to be', 'human')",
+              "type": "philosophical",
+              "score": 0.2,
+              "rationale": "Statement about human essence/meaning, not empirically verifiable"
+            },
+            {
+              "claim": "('soil', 'is the answer to', 'climate change')",
+              "type": "philosophical/absolute",
+              "score": 0.3,
+              "rationale": "Overly absolute claim. Should be 'can help mitigate' for factual accuracy"
+            },
+            {
+              "claim": "('soil', 'contains', 'carbon')",
+              "type": "factual",
+              "score": 1.0,
+              "rationale": "Empirically verifiable scientific fact"
+            }
+          ],
+          "integration": "Final p_true = (text_confidence * 0.25) + (knowledge_plausibility * 0.25) + (entity_specificity * 0.25) + (claim_type * 0.25)"
+        }
+      },
+      "validation": {
+        "test_cases": [
+          "('soil', 'is what it means to be', 'human') \u2192 claim_type < 0.4 \u2192 p_true < 0.5 \u2192 FILTERED",
+          "('soil', 'contains', 'organic matter') \u2192 claim_type > 0.9 \u2192 p_true > 0.7 \u2192 KEPT"
+        ],
+        "success_criteria": "Philosophical statements score p_true < 0.5 and are filtered"
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "15 MEDIUM-severity predicate fragmentation issues + 5 MEDIUM-severity absolute predicate issues (2.24% total). 125 unique predicates shows fragmentation in 'is' and 'has' families.",
+      "risk_level": "low",
+      "affected_issue_category": "Predicate Fragmentation - 'is' variations + Absolute Predicate Claims",
+      "expected_improvement": "Reduces unique predicates from 125 to ~80-90. Fixes 20 predicate-related issues (2.24% of relationships). Improves consistency.",
+      "change_description": "Strengthen predicate normalization with semantic clustering for 'is X for' patterns and moderation of absolute predicates",
+      "affected_function": "PredicateNormalizer.normalize_predicate",
+      "change_type": "enhancement",
+      "guidance": {
+        "current_issue": "Normalizer handles some basic patterns but leaves many 'is' variations: 'is key for', 'is required for', 'is essential for', 'is needed to', etc. Also doesn't moderate absolute claims.",
+        "fix_approach": "Add two normalization phases: (1) Semantic clustering of similar predicates, (2) Absolute predicate moderation.",
+        "normalization_rules": {
+          "is_X_for_patterns": {
+            "cluster_1": [
+              "is key for",
+              "is essential for",
+              "is critical for",
+              "is vital for"
+            ],
+            "normalize_to": "is essential for"
+          },
+          "is_X_to_patterns": {
+            "cluster_2": [
+              "is needed to",
+              "is required to",
+              "is necessary to"
+            ],
+            "normalize_to": "is required for"
+          },
+          "absolute_predicates": {
+            "reverses": "can help mitigate",
+            "eliminates": "can help reduce",
+            "solves": "can help address",
+            "is the answer to": "can help address",
+            "is the solution for": "can contribute to"
+          },
+          "is_made_patterns": {
+            "cluster_3": [
+              "is made from",
+              "is made of",
+              "is made with",
+              "is composed of"
+            ],
+            "normalize_to": "is made from"
+          }
+        },
+        "implementation": [
+          "Create PREDICATE_CLUSTERS dictionary mapping variants to canonical forms",
+          "Create ABSOLUTE_MODERATIONS dictionary for absolute \u2192 moderated mappings",
+          "In normalize_predicate(), first check clusters, then check absolute moderations",
+          "Apply case-insensitive matching with .lower() before normalization"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "'is key for' \u2192 'is essential for'",
+          "'is required to' \u2192 'is required for'",
+          "'reverses' \u2192 'can help mitigate'",
+          "'is the answer to' \u2192 'can help address'",
+          "'is made of' \u2192 'is made from'"
+        ],
+        "success_criteria": "Unique predicate count drops from 125 to <90. No absolute predicates in output."
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "CODE_FIX",
+      "file_path": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "priority": "MEDIUM",
+      "rationale": "3 MEDIUM-severity malformed dedication issues (0.34%). Dedication parser leaves artifacts like trailing prepositions and book titles in targets.",
+      "risk_level": "low",
+      "affected_issue_category": "Malformed Dedication Targets",
+      "expected_improvement": "Fixes all 3 dedication parsing issues (0.34% of relationships). Improves bibliographic metadata quality.",
+      "change_description": "Clean dedication targets by removing trailing prepositions, extracting person names from book title inclusions, and standardizing to (Book, dedicated to, Person) pattern",
+      "affected_function": "BibliographicParser.parse_dedication",
+      "change_type": "bug_fix",
+      "guidance": {
+        "current_issue": "Dedication parser extracts targets but doesn't clean them: 'Soil Stewardship Handbook to' (incomplete), 'Soil Stewardship Handbook to Osha' (book title in target).",
+        "fix_approach": "Add post-processing step after dedication extraction to clean targets.",
+        "cleaning_steps": [
+          "Remove trailing prepositions: Strip ' to', ' for', ' in honor of' from end of target",
+          "Extract person names: If target contains book title, extract just the person name after preposition",
+          "Standardize pattern: Always use (Book, dedicated to, Person), not (Author, dedicated, Book to Person)",
+          "Handle lists: Split comma-separated dedicatees into separate relationships"
+        ],
+        "regex_patterns": {
+          "trailing_preposition": "r'\\s+(to|for|in honor of)$'",
+          "book_title_in_target": "r'^(.+?)\\s+to\\s+(.+)$'",
+          "extract_person": "Use group(2) from book_title_in_target match"
+        }
+      },
+      "validation": {
+        "test_cases": [
+          "Input: 'Soil Stewardship Handbook to' \u2192 Output: Filter (incomplete)",
+          "Input: 'Soil Stewardship Handbook to Osha' \u2192 Output: ('Soil Stewardship Handbook', 'dedicated to', 'Osha')",
+          "Input: 'my two children, Osha and Hunter' \u2192 Output: 2 relationships with 'Osha' and 'Hunter'"
+        ],
+        "success_criteria": "Zero malformed dedication targets. All follow (Book, dedicated to, Person) pattern."
+      }
+    },
+    {
+      "operation_id": "change_008",
+      "operation_type": "NEW_MODULE",
+      "file_path": "modules/pass2_5_postprocessing/generic_isa_filter.py",
+      "priority": "MEDIUM",
+      "rationale": "12 MILD-severity generic 'is-a' issues (1.35%). Generic 'is-a' relationships like (Book, is-a, tool) add little value to KG.",
+      "risk_level": "low",
+      "affected_issue_category": "Overly Generic 'is-a' Relationships",
+      "expected_improvement": "Filters 12 generic 'is-a' issues (1.35% of relationships). Reduces KG noise and improves signal-to-noise ratio.",
+      "change_description": "Create new post-processing module to filter overly generic 'is-a' relationships that don't add taxonomic value",
+      "affected_function": "N/A - new module",
+      "change_type": "new_module",
+      "guidance": {
+        "module_purpose": "Filter 'is-a' relationships that are too generic to be informative. Keep only specific, taxonomically valuable 'is-a' relationships.",
+        "filtering_criteria": [
+          "Generic book descriptors: (Book, is-a, tool/resource/handbook/guide) \u2192 Filter",
+          "Metaphorical 'is-a': (Book, is-a, compass/road-map/journey) \u2192 Filter",
+          "Vague types: (X, is-a, critical mission/quest/framework) \u2192 Filter",
+          "Keep specific types: (Book, is-a, permaculture manual), (Person, is-a, soil scientist) \u2192 Keep"
+        ],
+        "implementation_structure": {
+          "class_name": "GenericIsaFilter",
+          "main_method": "filter_generic_isa(relationships: List[Relationship]) -> List[Relationship]",
+          "filter_lists": {
+            "GENERIC_BOOK_TYPES": [
+              "tool",
+              "resource",
+              "handbook",
+              "guide",
+              "manual"
+            ],
+            "METAPHORICAL_TYPES": [
+              "compass",
+              "road-map",
+              "journey",
+              "path",
+              "way"
+            ],
+            "VAGUE_TYPES": [
+              "critical mission",
+              "quest",
+              "framework",
+              "answer",
+              "solution"
+            ]
+          },
+          "logic": "If relationship is 'is-a' AND target in any filter list AND source is book/document \u2192 Filter. Else keep."
+        },
+        "integration": "Add to Pass 2.5 pipeline after PredicateNormalizer, before final output"
+      },
+      "validation": {
+        "test_cases": [
+          "('Soil Handbook', 'is-a', 'tool') \u2192 FILTERED",
+          "('Soil Handbook', 'is-a', 'compass') \u2192 FILTERED",
+          "('Soil Handbook', 'is-a', 'permaculture manual') \u2192 KEPT (specific)",
+          "('Bill Mollison', 'is-a', 'permaculture founder') \u2192 KEPT (not generic)"
+        ],
+        "success_criteria": "Zero generic 'is-a' relationships in output. Specific taxonomic 'is-a' relationships preserved."
+      }
+    },
+    {
+      "operation_id": "change_009",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v11.txt",
+      "priority": "LOW",
+      "rationale": "8 MILD-severity recommendation language issues (0.90%). Some prescriptive statements are worth capturing (book's thesis) but incidental calls to action are not.",
+      "risk_level": "low",
+      "affected_issue_category": "Recommendation Language as Factual Claims",
+      "expected_improvement": "Reduces 8 recommendation language issues (0.90% of relationships). Improves factual focus of KG.",
+      "change_description": "Add guidance distinguishing factual claims (what IS) from recommendations (what SHOULD BE), with instructions to extract only thesis-level recommendations",
+      "target_section": "RELATIONSHIP EXTRACTION RULES",
+      "guidance": {
+        "current_issue": "Prompt likely treats all statements equally, extracting both factual claims and incidental prescriptive statements.",
+        "fix_approach": "Add subsection on claim types after relationship extraction rules, before output format.",
+        "insertion_point": "After 'Extract relationships between entities' section, before 'OUTPUT FORMAT' section",
+        "content_to_add": {
+          "heading": "\ud83d\udccb FACTUAL vs. PRESCRIPTIVE CLAIMS",
+          "description": "Distinguish between factual claims (what IS) and prescriptive/recommendation statements (what SHOULD BE).",
+          "rules": [
+            "EXTRACT factual claims: 'Soil contains carbon', 'Permaculture was developed by Bill Mollison'",
+            "EXTRACT core thesis recommendations: 'The book argues that soil stewardship is essential' (if this is the book's main argument)",
+            "SKIP incidental calls to action: 'We must take action now', 'Everyone should practice composting' (unless this is the book's primary thesis)"
+          ],
+          "examples": [
+            {
+              "text": "'Soil contains organic matter and minerals'",
+              "type": "FACTUAL",
+              "action": "EXTRACT",
+              "relationship": "('soil', 'contains', 'organic matter')"
+            },
+            {
+              "text": "'This book argues that regenerative agriculture can reverse climate change'",
+              "type": "THESIS RECOMMENDATION",
+              "action": "EXTRACT",
+              "relationship": "('regenerative agriculture', 'can help mitigate', 'climate change')"
+            },
+            {
+              "text": "'We must all take action now to help nourish the soil'",
+              "type": "INCIDENTAL CALL TO ACTION",
+              "action": "SKIP",
+              "rationale": "Generic exhortation, not a specific factual claim or thesis"
+            }
+          ],
+          "guidance": "When in doubt, prefer factual claims over prescriptive statements. Extract recommendations only if they represent the book's core argument."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Sample text with mix of facts ('Soil contains carbon') and calls to action ('We must act now')",
+        "success_criteria": "Extraction produces factual claims and thesis recommendations, but not incidental prescriptive statements",
+        "prompt_version": "v12"
+      }
+    }
+  ],
+  "expected_impact": {
+    "issues_fixed": 55,
+    "critical_fixed": 0,
+    "high_fixed": 34,
+    "medium_fixed": 18,
+    "mild_fixed": 3,
+    "estimated_error_rate": "7.86% \u2192 3.5%",
+    "target_grade": "B \u2192 A-",
+    "primary_improvements": [
+      "Possessive pronouns: 4 HIGH issues eliminated via code + prompt",
+      "Vague entities: 23 MEDIUM issues filtered via Pass 2 evaluation",
+      "Praise quotes: 17 MEDIUM issues filtered via enhanced bibliographic parser",
+      "Philosophical claims: 8 MEDIUM issues filtered via Pass 2 evaluation",
+      "Predicate normalization: 20 MEDIUM issues fixed via stronger normalization"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "change_001: Extend pronoun resolver for possessive pronouns (CRITICAL - 4 issues)",
+      "change_002: Add pronoun prohibition to Pass 1 prompt (CRITICAL - 7 issues)",
+      "change_003: Add entity specificity criterion to Pass 2 (CRITICAL - 23 issues)"
+    ],
+    "short_term": [
+      "change_004: Enhance praise quote filtering (HIGH - 17 issues)",
+      "change_005: Add philosophical claim detection to Pass 2 (HIGH - 8 issues)",
+      "change_006: Strengthen predicate normalization (MEDIUM - 20 issues)"
+    ],
+    "polish": [
+      "change_007: Fix dedication parsing (MEDIUM - 3 issues)",
+      "change_008: Add generic 'is-a' filter (MEDIUM - 12 issues)",
+      "change_009: Add prescriptive vs factual guidance (LOW - 8 issues)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Run V12 extraction on same source text and compare quality metrics to V11.2.2 baseline",
+    "success_criteria": [
+      "Issue rate: 7.86% \u2192 <4% (Grade A- threshold)",
+      "HIGH issues: 8 \u2192 <3",
+      "MEDIUM issues: 47 \u2192 <20",
+      "Total issues: 70 \u2192 <35",
+      "Zero possessive pronouns in output",
+      "Zero vague entities with score >0.5",
+      "Zero philosophical claims with score >0.4"
+    ],
+    "rollback_plan": "If V12 shows regression, revert to V11.2.2 prompts and modules. All changes are isolated and reversible.",
+    "phased_deployment": [
+      "Phase 1: Deploy changes 001-003 (CRITICAL - pronoun + vague entity fixes)",
+      "Phase 2: Deploy changes 004-006 (HIGH/MEDIUM - praise quotes + philosophical + predicates)",
+      "Phase 3: Deploy changes 007-009 (MEDIUM/LOW - dedication + generic is-a + prescriptive)"
+    ]
+  },
+  "risk_assessment": {
+    "overall_risk": "LOW",
+    "rationale": "All changes are additive (new rules, new filters) or refinements (stronger normalization). No changes remove existing functionality. Each change targets a specific, well-documented issue pattern.",
+    "mitigation": [
+      "All modules have clear test cases and validation criteria",
+      "Prompt changes add constraints without removing existing instructions",
+      "Code changes are isolated to specific functions with clear scope",
+      "Phased deployment allows validation at each stage"
+    ]
+  },
+  "metadata": {
+    "curation_date": "2025-10-14T01:33:30.885358",
+    "source_version": 11,
+    "target_version": 12,
+    "reflector_analysis_id": "2025-10-14T01:13:29.613632",
+    "curator_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929"
+  }
+}

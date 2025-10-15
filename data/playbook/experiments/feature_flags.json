@@ -1,0 +1,39 @@
+{
+  "active_experiments": [],
+  "available_flags": {
+    "dynamic_search_weights": {
+      "enabled": false,
+      "description": "Automatically adjust search weights based on query type",
+      "rollout_percentage": 0
+    },
+    "conversation_context_integration": {
+      "enabled": false,
+      "description": "Use conversation history to refine search results",
+      "rollout_percentage": 0
+    },
+    "knowledge_graph_enhancement": {
+      "enabled": false,
+      "description": "Integrate knowledge graph for entity-aware search",
+      "rollout_percentage": 0
+    },
+    "progressive_depth_responses": {
+      "enabled": false,
+      "description": "Adjust response depth based on user engagement",
+      "rollout_percentage": 0
+    }
+  },
+  "completed_experiments": [
+    {
+      "name": "semantic_category_matching",
+      "result": "success",
+      "promoted_to_production": "2025-07-17",
+      "impact": "Solved biochar search accuracy issue"
+    },
+    {
+      "name": "episode_diversity_algorithm",
+      "result": "success",
+      "promoted_to_production": "2025-07-17",
+      "impact": "Ensured all relevant episodes appear in results"
+    }
+  ]
+}

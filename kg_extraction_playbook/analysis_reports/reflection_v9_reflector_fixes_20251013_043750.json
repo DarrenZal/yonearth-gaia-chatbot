@@ -1,0 +1,584 @@
+{
+  "extraction_metadata": {
+    "version": "v9_reflector_fixes",
+    "total_relationships": 414,
+    "analysis_timestamp": "2025-10-13T04:30:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 6,
+    "high_priority_issues": 18,
+    "medium_priority_issues": 32,
+    "mild_issues": 28,
+    "total_issues": 84,
+    "issue_rate_percent": 20.29,
+    "estimated_false_negative_rate": 0.1,
+    "estimated_total_issues_with_fn": 93,
+    "adjusted_issue_rate_percent": 22.46,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C",
+    "note": "V9 shows REGRESSION from V7 (6.71% \u2192 20.29%). Major issues: 6 CRITICAL dedication parsing errors, 18 HIGH pronoun/vague entity issues, 32 MEDIUM philosophical/abstract claims. List splitting module created duplicate/malformed relationships."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Dedication Parsing Errors (NEW CRITICAL PATTERN)",
+      "severity": "CRITICAL",
+      "count": 6,
+      "percentage": 1.45,
+      "description": "Dedication statement 'This book is dedicated to my two children, Osha and Hunter' was incorrectly parsed, creating malformed relationships where children's names became BOTH sources AND targets, with nonsensical predicates like (Osha, dedicated, Soil Stewardship Handbook to my two children) and (Osha, dedicated, osha).",
+      "root_cause_hypothesis": "The bibliographic_parser.py module failed to recognize dedication syntax. Instead of creating (Aaron Perry, dedicated_to, Osha) and (Aaron Perry, dedicated_to, Hunter), it extracted the children as sources. Then list_splitter.py compounded the error by splitting the malformed target into multiple broken relationships.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Osha",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "Children's name extracted as SOURCE instead of TARGET. Dedication should be from author to children, not from children to book.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "Osha",
+          "relationship": "dedicated",
+          "target": "osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "Completely nonsensical self-referential relationship created by cascading errors in bibliographic parser + list splitter.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "Hunter",
+          "relationship": "dedicated",
+          "target": "hunter",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "Same self-referential error for Hunter. List splitter created lowercase duplicate.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Hunter"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Possessive Pronoun Sources (V4 Pattern Persists)",
+      "severity": "HIGH",
+      "count": 8,
+      "percentage": 1.93,
+      "description": "Extracted 'my people' as source instead of resolving to specific entity (Slovenians, author's ethnic group, etc.). This is a known V4 pattern that Pass 2.5 pronoun resolution failed to catch.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt allows possessive pronouns. Pronoun_resolver.py only handles simple pronouns (he/she/it/they) but not possessive constructions (my X, our X). The resolver needs expansion to handle possessive patterns.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "'my people' is a possessive pronoun phrase referring to Slovenians (based on earlier context about Slovenia).",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the land"
+          }
+        },
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the sea",
+          "evidence_text": "We love the sea.",
+          "page": 10,
+          "what_is_wrong": "Same possessive pronoun issue, different target.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "the sea"
+          }
+        },
+        {
+          "source": "my people",
+          "relationship": "connects with",
+          "target": "the soil",
+          "evidence_text": "our connection with the soil that has preserved our countryside.",
+          "page": 10,
+          "what_is_wrong": "Possessive pronoun not resolved to specific ethnic/national group.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "connects with",
+            "target": "the soil"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "HIGH",
+      "count": 10,
+      "percentage": 2.42,
+      "description": "Extracted overly abstract/vague entities like 'the land', 'the sea', 'the soil', 'the trees', 'thousands', 'the answer', 'the living planet' that lack specificity and utility in a knowledge graph.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not constrain against abstract entities. Entity_validator.py type checking allows 'abstract' as valid type. Need stricter prompt instructions to prefer concrete, specific entities, and post-processing to flag/reject overly abstract terms.",
+      "affected_module": "modules/pass2_5_postprocessing/entity_validator.py",
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Y on Earth Community",
+          "relationship": "informed",
+          "target": "thousands",
+          "evidence_text": "the Y on Earth Community, the Soil Stewardship Guild members and the Community Impact Ambassadors who are informing and inspiring thousands with a message of joy, celebration, gratitude and deliberate action.",
+          "page": 5,
+          "what_is_wrong": "'thousands' is too vague - thousands of what? People? Organizations? Should be 'thousands of people' or omitted if not specific.",
+          "should_be": {
+            "source": "Y on Earth Community",
+            "relationship": "informed",
+            "target": "thousands of people"
+          }
+        },
+        {
+          "source": "my people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land.",
+          "page": 10,
+          "what_is_wrong": "'the land' is too abstract - which land? Slovenian land? Agricultural land? Needs specificity.",
+          "should_be": {
+            "source": "Slovenians",
+            "relationship": "love",
+            "target": "Slovenian countryside"
+          }
+        },
+        {
+          "source": "Gardening",
+          "relationship": "connects us to",
+          "target": "the living planet",
+          "evidence_text": "Gardening the soil connects us literally and deeply to the living planet.",
+          "page": 10,
+          "what_is_wrong": "'the living planet' is poetic but vague. Should be 'Earth' or 'Earth's ecosystem'.",
+          "should_be": {
+            "source": "Gardening",
+            "relationship": "connects us to",
+            "target": "Earth's ecosystem"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Metaphorical Claims Misclassified as Factual",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 4.35,
+      "description": "Extracted subjective, philosophical, or metaphorical statements as if they were factual relationships. Examples: 'soil is the answer', 'soil is medicine', 'living soil is a miracle'. These are rhetorical/inspirational language, not verifiable facts.",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt does not distinguish between factual claims and philosophical/metaphorical language. The prompt needs explicit instructions to flag subjective/inspirational statements and classify them separately (or exclude them). Figurative_language_detector.py catches some metaphors but misses philosophical claims.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Y on Earth",
+          "relationship": "claims",
+          "target": "soil is the answer",
+          "evidence_text": "Soil is the answer. We are asking many questions on this journey together.",
+          "page": 11,
+          "what_is_wrong": "'soil is the answer' is a philosophical/rhetorical statement, not a factual claim. It's inspirational language, not a verifiable relationship.",
+          "should_be": null
+        },
+        {
+          "source": "living soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 18,
+          "what_is_wrong": "Metaphorical language. Soil is not literally medicine. This is poetic/inspirational, not factual.",
+          "should_be": null
+        },
+        {
+          "source": "living soil",
+          "relationship": "is-a",
+          "target": "miracle",
+          "evidence_text": "the awesome miracle that is life on Earth.",
+          "page": 10,
+          "what_is_wrong": "Figurative language detector flagged 'miracle' but relationship was still extracted. Should be excluded entirely.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Errors (Cascading Failures)",
+      "severity": "MEDIUM",
+      "count": 14,
+      "percentage": 3.38,
+      "description": "List_splitter.py created duplicate or malformed relationships when splitting comma-separated targets. Examples: splitting 'intelligence, health and well-being' created 3 separate relationships, but also split 'Soil Stewardship Handbook to my two children, osha and hunter' incorrectly, creating nonsensical targets.",
+      "root_cause_hypothesis": "List_splitter.py lacks context awareness. It blindly splits on commas without understanding sentence structure. In dedication case, it split 'Soil Stewardship Handbook to my two children, osha and hunter' into 3 targets, treating the entire phrase as a list. Needs smarter parsing to recognize when commas are part of a single entity vs. separating list items.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Osha",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "List splitter treated 'Soil Stewardship Handbook to my two children, osha and hunter, whose brilliance...' as a list, creating malformed target 'Soil Stewardship Handbook to my two children'.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "enhances",
+          "target": "intelligence",
+          "evidence_text": "Through soil, we: Enhance our intelligence, health and well-being\u2014for mind, body and spirit.",
+          "page": 14,
+          "what_is_wrong": "List splitting is correct here (3 separate targets), but the original relationship is too abstract/philosophical to be useful. Should have been filtered earlier.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Wrong Semantic Predicates",
+      "severity": "MEDIUM",
+      "count": 4,
+      "percentage": 0.97,
+      "description": "Extracted predicates that are semantically incompatible with source/target types. Example: (Alps, is-a, fertile plains) - Alps are mountains, not plains. This is a factual error.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not validate semantic compatibility between source, predicate, and target. Pass 2 evaluation should catch these but knowledge_plausibility score is too lenient (0.5 for clearly wrong relationship). Need stricter semantic validation in Pass 2 or new post-processing module.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Alps",
+          "relationship": "is-a",
+          "target": "fertile plains",
+          "evidence_text": "Alps, and the great, fertile plains rolling down and away to the East.",
+          "page": 10,
+          "what_is_wrong": "Alps are mountains, not plains. This is a factually incorrect relationship. The text describes Alps AND plains as separate geographic features.",
+          "should_be": {
+            "source": "Slovenia",
+            "relationship": "has_geographic_feature",
+            "target": "Alps"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Evidence Text Mismatch (MILD)",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 2.9,
+      "description": "Evidence text does not directly support the extracted relationship. Example: (Seth Itzkan, co-founded, Soil4Climate Inc.) has evidence 'Thank you for this contribution.' which doesn't mention co-founding. The relationship may be true (from author bio), but evidence is wrong.",
+      "root_cause_hypothesis": "Pass 1 extraction is pulling relationships from author bios/context but citing wrong text spans as evidence. This suggests the extraction prompt is allowing 'background knowledge' extraction without requiring direct textual support. Need stricter evidence grounding in Pass 1 prompt.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Seth Itzkan",
+          "relationship": "co-founded",
+          "target": "Soil4Climate Inc.",
+          "evidence_text": "Thank you for this contribution.",
+          "page": 3,
+          "what_is_wrong": "Evidence text does not mention co-founding. The relationship is likely true (from author bio), but evidence is mismatched.",
+          "should_be": {
+            "source": "Seth Itzkan",
+            "relationship": "co-founded",
+            "target": "Soil4Climate Inc.",
+            "evidence_text": "Seth Itzkan, Co-founder, Co-director, Soil4Climate Inc."
+          }
+        },
+        {
+          "source": "Tanner Watt",
+          "relationship": "directs",
+          "target": "REVERB",
+          "evidence_text": "A cool resource and a creative perspective on a subject all too often not considered.",
+          "page": 3,
+          "what_is_wrong": "Evidence text is a praise quote, not a statement about directorship. Relationship may be true but evidence is wrong.",
+          "should_be": {
+            "source": "Tanner Watt",
+            "relationship": "directs",
+            "target": "REVERB",
+            "evidence_text": "Tanner Watt, Director of Partnership and Development, REVERB"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Overly Broad/Abstract Relationships (MILD)",
+      "severity": "MILD",
+      "count": 16,
+      "percentage": 3.86,
+      "description": "Relationships that are technically correct but too abstract/broad to be useful. Examples: (humans, are at, crossroads), (challenges, include, ecological devastation). These lack specificity and actionable information.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt does not prioritize specificity. It extracts any relationship mentioned in text, even if abstract. Pass 2 evaluation should penalize abstract relationships, but current scoring doesn't distinguish between concrete and abstract claims. Need prompt enhancement to prefer specific, concrete relationships.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "humans",
+          "relationship": "are at",
+          "target": "crossroads",
+          "evidence_text": "We humans are now at a great crossroads.",
+          "page": 10,
+          "what_is_wrong": "'crossroads' is metaphorical/abstract. Relationship is too vague to be useful in a knowledge graph.",
+          "should_be": null
+        },
+        {
+          "source": "challenges",
+          "relationship": "include",
+          "target": "ecological devastation",
+          "evidence_text": "Challenges like rampant ecological devastation.",
+          "page": 10,
+          "what_is_wrong": "Too broad. What specific challenges? What specific devastation? Lacks actionable detail.",
+          "should_be": {
+            "source": "modern agriculture",
+            "relationship": "causes",
+            "target": "soil degradation"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Dedication Statement Parsing Failure",
+      "severity": "CRITICAL",
+      "count": 6,
+      "description": "NEW PATTERN: Dedication statements ('This book is dedicated to X and Y') are being parsed with children's names as SOURCES instead of TARGETS, creating nonsensical self-referential relationships like (Osha, dedicated, osha). This is a cascading failure: bibliographic_parser.py fails to recognize dedication syntax \u2192 extracts wrong direction \u2192 list_splitter.py compounds error by splitting malformed target.",
+      "root_cause_hypothesis": "bibliographic_parser.py lacks pattern matching for dedication syntax. It should recognize 'dedicated to [list of people]' and create (author, dedicated_to, person) relationships. Currently, it's not handling this case at all, allowing Pass 1 extraction to create backwards relationships.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Osha",
+          "relationship": "dedicated",
+          "target": "osha",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "Complete parsing failure. Children extracted as sources, then list splitter created self-referential duplicates.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Philosophical Claims Extracted as Facts",
+      "severity": "MEDIUM",
+      "count": 18,
+      "description": "NEW PATTERN (not prominent in V4): Extracting inspirational/philosophical statements as factual relationships. Examples: 'soil is the answer', 'soil is medicine', 'we are at a crossroads'. These are rhetorical devices, not verifiable facts. V7 may have over-corrected for false negatives, now extracting too much subjective content.",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt does not distinguish factual claims from philosophical/inspirational language. The prompt needs explicit instructions: 'Exclude relationships that are metaphorical, inspirational, or philosophical in nature. Focus on concrete, verifiable facts.' Figurative_language_detector.py catches some metaphors but misses broader philosophical claims.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "examples": [
+        {
+          "source": "Y on Earth",
+          "relationship": "claims",
+          "target": "soil is the answer",
+          "evidence_text": "Soil is the answer. We are asking many questions on this journey together.",
+          "page": 11,
+          "what_is_wrong": "Rhetorical statement, not a factual claim. Should be excluded.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "List Splitter Context Blindness",
+      "severity": "MEDIUM",
+      "count": 14,
+      "description": "NEW PATTERN: List_splitter.py is splitting targets without understanding sentence structure. In dedication case, it split 'Soil Stewardship Handbook to my two children, osha and hunter, whose brilliance...' treating the entire phrase as a comma-separated list, creating malformed targets like 'Soil Stewardship Handbook to my two children'.",
+      "root_cause_hypothesis": "List_splitter.py uses naive comma-splitting without syntactic parsing. It needs to recognize when commas are part of a single entity (e.g., 'book to my children, X and Y') vs. separating list items (e.g., 'X, Y, and Z'). Requires dependency parsing or more sophisticated NLP.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Osha",
+          "relationship": "dedicated",
+          "target": "Soil Stewardship Handbook to my two children",
+          "evidence_text": "This book is dedicated to my two children, Osha and Hunter, whose brilliance, courage, determination and compassion give me great hope for the future.",
+          "page": 5,
+          "what_is_wrong": "List splitter treated entire phrase as list, creating nonsensical target.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Osha"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add pattern matching for dedication syntax: 'dedicated to [person/list]', 'in memory of [person]', 'for [person]'. When detected, create (author, dedicated_to, person) relationships and DELETE any backwards relationships from Pass 1. Use regex patterns: r'dedicated to (.*?)(?:,|\\.|whose|who)', r'in memory of (.*?)(?:,|\\.)'. Extract author from book metadata, extract dedicatees from matched text, create correct relationships.",
+      "expected_impact": "Fixes 6 CRITICAL dedication errors. Prevents similar errors in future books with dedications.",
+      "rationale": "Dedication statements are common in books. This is a systematic failure that will recur. Bibliographic parser is the right place to fix it because it's a book-specific pattern."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Expand pronoun_resolver.py to handle possessive pronouns: 'my X', 'our X', 'their X'. Algorithm: (1) Detect possessive patterns with regex: r'(my|our|their|his|her)\\s+(\\w+)', (2) Look back in context (previous 3 sentences) for antecedent (person/group name), (3) Replace 'my people' \u2192 'Slovenians' (if context mentions Slovenia), 'our tradition' \u2192 'Slovenian tradition', etc. (4) If no antecedent found, flag relationship for manual review.",
+      "expected_impact": "Fixes 8 HIGH-priority possessive pronoun errors. Improves entity specificity across all extractions.",
+      "rationale": "Possessive pronouns are common in narrative text. Current resolver only handles simple pronouns. This is a straightforward extension that will catch many errors."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit constraint to Pass 1 prompt: 'AVOID ABSTRACT ENTITIES: Do not extract overly abstract or vague entities like \"the land\", \"the sea\", \"the answer\", \"the way\", \"thousands\" (without specifying thousands of what). Prefer concrete, specific entities. Examples: Instead of \"the land\" \u2192 \"Slovenian countryside\"; Instead of \"thousands\" \u2192 \"thousands of people\"; Instead of \"the answer\" \u2192 specify what the answer is to. If an entity is too abstract to be useful in a knowledge graph, do not extract it.' Add few-shot examples showing abstract entities being rejected.",
+      "expected_impact": "Reduces 10 HIGH-priority vague entity errors. Improves overall specificity of extracted entities.",
+      "rationale": "Pass 1 prompt currently has no guidance on entity specificity. This is causing extraction of many useless abstract entities. Prompt enhancement is more effective than post-processing because it prevents the error at the source."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add explicit instruction to Pass 2 prompt: 'EXCLUDE PHILOSOPHICAL/METAPHORICAL CLAIMS: Do not extract relationships that are inspirational, philosophical, metaphorical, or rhetorical in nature. Focus on concrete, verifiable facts. Examples to EXCLUDE: \"soil is the answer\", \"soil is medicine\" (metaphor), \"we are at a crossroads\" (metaphor), \"soil heals us\" (poetic language). Examples to INCLUDE: \"soil contains microorganisms\", \"biochar sequesters carbon\", \"compost improves soil fertility\". If a statement is subjective or inspirational rather than factual, set text_confidence to 0.1 and flag for exclusion.' Add few-shot examples.",
+      "expected_impact": "Reduces 18 MEDIUM-priority philosophical claim errors. Improves factual accuracy of knowledge graph.",
+      "rationale": "Pass 2 evaluation is the right place to filter out non-factual claims. Current prompt doesn't distinguish facts from philosophy. This is a major source of noise in V9."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add context-aware list splitting using dependency parsing (spaCy). Algorithm: (1) Parse sentence with spaCy to get dependency tree, (2) Identify conjunctions (e.g., 'and', 'or') that connect list items, (3) Only split on commas that separate items in a conjunction structure (e.g., 'X, Y, and Z'), (4) Do NOT split on commas that are part of a single entity (e.g., 'book to my children, X and Y' - here 'to my children' is a prepositional phrase, not a list item). (5) Use dependency labels: split on commas between 'conj' (conjunction) nodes, but not on commas within 'prep' (prepositional) or 'appos' (appositive) phrases.",
+      "expected_impact": "Fixes 14 MEDIUM-priority list splitting errors. Prevents malformed relationships from cascading failures.",
+      "rationale": "Current list splitter is too naive. Dependency parsing is the standard NLP approach for this problem. This will prevent future cascading failures like the dedication case."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/semantic_validator.py",
+      "recommendation": "Create new semantic_validator.py module to check semantic compatibility of (source, predicate, target) triples. Use knowledge base (e.g., WordNet, ConceptNet) to validate: (1) Type compatibility: Does predicate make sense for source/target types? (e.g., (Alps, is-a, plains) is invalid because Alps are mountains, not plains), (2) Semantic plausibility: Use ConceptNet relatedness scores to flag implausible relationships (e.g., (soil, is-a, medicine) has low semantic relatedness). (3) If validation fails, flag relationship for manual review or auto-reject if confidence is low.",
+      "expected_impact": "Catches 4 MEDIUM-priority semantic errors. Improves factual accuracy.",
+      "rationale": "Semantic validation is missing from current pipeline. This is a common NLP technique that will catch factual errors that slip through Pass 2 evaluation."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "recommendation": "Expand figurative_language_detector.py to catch philosophical/inspirational language, not just metaphors. Add patterns: (1) Rhetorical questions: 'What is X?' \u2192 likely philosophical, (2) Inspirational imperatives: 'We must...', 'We should...' \u2192 often philosophical, (3) Abstract predicates: 'is the answer', 'is the key', 'is the solution' \u2192 flag as abstract, (4) Poetic language: 'heals us', 'connects us to the living planet' \u2192 flag as metaphorical. Use sentiment analysis (e.g., TextBlob) to detect inspirational tone (high positive sentiment + abstract language = likely philosophical).",
+      "expected_impact": "Catches additional 10-15 philosophical claims that current detector misses. Reduces noise in knowledge graph.",
+      "rationale": "Current detector only catches obvious metaphors (e.g., 'miracle'). Philosophical claims are a broader category that needs more sophisticated detection."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction to Pass 1 prompt: 'EVIDENCE GROUNDING: The evidence text you cite MUST directly support the extracted relationship. Do not extract relationships based on background knowledge or context unless the relationship is explicitly stated in the cited text span. Example: If you extract (Seth Itzkan, co-founded, Soil4Climate Inc.), the evidence text must mention \"co-founded\" or \"co-founder\", not just a praise quote. If the relationship is implied but not stated, increase the text span to include the supporting context (e.g., author bio).'",
+      "expected_impact": "Fixes 12 MILD evidence mismatch errors. Improves traceability and verifiability of extracted relationships.",
+      "rationale": "Evidence mismatches undermine trust in the knowledge graph. This is a prompt issue - the model is extracting relationships from context but citing wrong text spans."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add instruction to Pass 1 prompt: 'PREFER SPECIFIC OVER ABSTRACT: When extracting relationships, prefer specific, concrete entities and predicates over abstract ones. Example: Instead of (humans, are at, crossroads) \u2192 extract specific challenge: (modern agriculture, threatens, soil health). Instead of (challenges, include, ecological devastation) \u2192 extract specific challenge: (chemical fertilizers, cause, soil degradation). If a relationship is too abstract to be actionable, do not extract it.'",
+      "expected_impact": "Reduces 16 MILD overly abstract relationships. Improves utility of knowledge graph for downstream applications.",
+      "rationale": "Abstract relationships are low-value noise. Prompt guidance can shift extraction toward more useful, specific relationships."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/extraction_config.yaml",
+      "recommendation": "Add configuration flag: 'exclude_philosophical_claims: true'. When enabled, automatically filter out relationships with classification_flags containing 'PHILOSOPHICAL_CLAIM' or 'METAPHOR' and p_true < 0.7. This provides a quick way to clean up the knowledge graph without re-running extraction.",
+      "expected_impact": "Allows quick filtering of 18 philosophical claims in post-processing. Improves knowledge graph quality for production use.",
+      "rationale": "Configuration-based filtering is a low-effort way to improve quality while more sophisticated fixes are being developed."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No constraint against abstract entities",
+        "current_wording": "(Prompt not available, but based on output, it likely says something like: 'Extract all entities and relationships mentioned in the text.')",
+        "suggested_fix": "Add explicit constraint: 'AVOID ABSTRACT ENTITIES: Do not extract overly abstract or vague entities like \"the land\", \"the sea\", \"the answer\", \"thousands\" (without specifying thousands of what). Prefer concrete, specific entities. If an entity is too abstract to be useful in a knowledge graph, do not extract it.' Add few-shot examples showing abstract entities being rejected.",
+        "examples_needed": "Yes - show examples of abstract entities being rejected (e.g., 'the land' \u2192 'Slovenian countryside', 'thousands' \u2192 'thousands of people')"
+      },
+      {
+        "issue": "No guidance on entity specificity",
+        "current_wording": "(Likely missing entirely from current prompt)",
+        "suggested_fix": "Add instruction: 'PREFER SPECIFIC OVER ABSTRACT: When extracting relationships, prefer specific, concrete entities and predicates over abstract ones. Example: Instead of (humans, are at, crossroads) \u2192 extract specific challenge: (modern agriculture, threatens, soil health).'",
+        "examples_needed": "Yes - show examples of abstract relationships being replaced with specific ones"
+      },
+      {
+        "issue": "No evidence grounding requirement",
+        "current_wording": "(Likely says: 'Provide evidence text that supports the relationship')",
+        "suggested_fix": "Strengthen to: 'EVIDENCE GROUNDING: The evidence text you cite MUST directly support the extracted relationship. Do not extract relationships based on background knowledge or context unless the relationship is explicitly stated in the cited text span. If the relationship is implied but not stated, increase the text span to include the supporting context (e.g., author bio).'",
+        "examples_needed": "Yes - show examples of evidence mismatches and how to fix them"
+      },
+      {
+        "issue": "Allows possessive pronouns",
+        "current_wording": "(Likely has no constraint on pronouns)",
+        "suggested_fix": "Add constraint: 'RESOLVE PRONOUNS: Do not extract pronouns (he, she, it, they, we) or possessive pronouns (my, our, their, his, her) as entities. Always resolve to the specific person, group, or entity being referred to. Example: \"my people\" \u2192 \"Slovenians\" (if context mentions Slovenia).'",
+        "examples_needed": "Yes - show examples of pronouns being resolved to specific entities"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "No distinction between factual and philosophical claims",
+        "current_wording": "(Likely evaluates all relationships equally without distinguishing claim types)",
+        "suggested_fix": "Add explicit instruction: 'EXCLUDE PHILOSOPHICAL/METAPHORICAL CLAIMS: Do not extract relationships that are inspirational, philosophical, metaphorical, or rhetorical in nature. Focus on concrete, verifiable facts. Examples to EXCLUDE: \"soil is the answer\", \"soil is medicine\" (metaphor), \"we are at a crossroads\" (metaphor). If a statement is subjective or inspirational rather than factual, set text_confidence to 0.1 and flag for exclusion.'",
+        "examples_needed": "Yes - show examples of philosophical claims being rejected vs. factual claims being accepted"
+      },
+      {
+        "issue": "Knowledge plausibility too lenient",
+        "current_wording": "(Likely says: 'Evaluate whether the relationship is plausible based on world knowledge')",
+        "suggested_fix": "Add stricter guidance: 'SEMANTIC VALIDATION: Check whether the predicate makes sense for the source and target types. Example: (Alps, is-a, plains) is INVALID because Alps are mountains, not plains. If the relationship is semantically incompatible, set knowledge_plausibility to 0.1. Use common sense and world knowledge to validate.'",
+        "examples_needed": "Yes - show examples of semantically invalid relationships being rejected"
+      },
+      {
+        "issue": "Conflict detection too sensitive or not sensitive enough",
+        "current_wording": "(Likely says: 'Set signals_conflict to true if text and knowledge signals disagree')",
+        "suggested_fix": "Clarify: 'CONFLICT DETECTION: Set signals_conflict to true ONLY if: (1) Text clearly states X, but world knowledge says NOT X (factual contradiction), OR (2) Text is ambiguous/vague, but world knowledge provides clarity. Do NOT flag conflict for: (1) Philosophical/inspirational statements (these should be excluded entirely), (2) Relationships where text and knowledge both support the claim (even if text is weak).'",
+        "examples_needed": "Yes - show examples of true conflicts vs. false positives"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.2029,
+    "regression_from_v7": true,
+    "regression_magnitude": "3.0x worse (6.71% \u2192 20.29%)",
+    "blockers_to_production": [
+      "6 CRITICAL dedication parsing errors (must fix bibliographic_parser.py)",
+      "8 HIGH possessive pronoun errors (must expand pronoun_resolver.py)",
+      "10 HIGH vague entity errors (must enhance Pass 1 prompt)",
+      "18 MEDIUM philosophical claim errors (must enhance Pass 2 prompt)"
+    ],
+    "estimated_effort_to_fix": "3-5 days of development + testing",
+    "recommended_next_steps": [
+      "1. IMMEDIATE: Fix bibliographic_parser.py to handle dedications (1 day)",
+      "2. HIGH PRIORITY: Expand pronoun_resolver.py for possessive pronouns (1 day)",
+      "3. HIGH PRIORITY: Enhance Pass 1 prompt to avoid abstract entities (0.5 days)",
+      "4. HIGH PRIORITY: Enhance Pass 2 prompt to exclude philosophical claims (0.5 days)",
+      "5. MEDIUM PRIORITY: Improve list_splitter.py with dependency parsing (2 days)",
+      "6. MEDIUM PRIORITY: Create semantic_validator.py module (2 days)",
+      "7. Re-run extraction on test set and validate improvements",
+      "8. If quality reaches <5% issue rate, proceed to production"
+    ]
+  },
+  "metadata": {
+    "analysis_date": "2025-10-13T04:37:50.355774",
+    "relationships_analyzed": 414,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v9_reflector_fixes"
+  }
+}

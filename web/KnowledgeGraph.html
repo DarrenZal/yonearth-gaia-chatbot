@@ -25,6 +25,15 @@
             <div class="title-section">
                 <h1>YonEarth Knowledge Graph</h1>
                 <p class="subtitle">Interactive visualization of concepts, people, and organizations</p>
+
+                <!-- Version selector -->
+                <div class="version-selector">
+                    <label for="kg-version-select">Version:</label>
+                    <select id="kg-version-select" onchange="loadKnowledgeGraphVersion(this.value)">
+                        <option value="current" selected>Current (Original)</option>
+                        <option value="v3.2.2">v3.2.2 - Full Extraction (172 episodes, 45,478 relationships)</option>
+                    </select>
+                </div>
             </div>
         </div>
 

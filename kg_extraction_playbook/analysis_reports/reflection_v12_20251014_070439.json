@@ -1,0 +1,664 @@
+{
+  "extraction_metadata": {
+    "version": "v12",
+    "total_relationships": 873,
+    "analysis_timestamp": "2025-10-14T10:15:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 12,
+    "medium_priority_issues": 45,
+    "mild_issues": 68,
+    "total_issues": 125,
+    "issue_rate_percent": 14.3,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 142,
+    "adjusted_issue_rate_percent": 16.3,
+    "grade_confirmed": "B",
+    "grade_adjusted": "B-",
+    "note": "Adjusted metrics include estimated mild issues not flagged (13% FN rate based on meta-validation). Major improvements: no reversed authorship, no list targets, good pronoun resolution. Main issues: praise quote misclassification, vague/abstract entities, predicate fragmentation."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Praise Quotes Misclassified as Endorsements",
+      "severity": "HIGH",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "Praise quotes from book covers/forewords are being extracted as factual 'endorsed' relationships. These are promotional endorsements, not knowledge graph facts. Examples: Michael Bowman, Adrian Del Caro, Seth Itzkan, etc. all 'endorsed' the handbook.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt treats ALL bibliographic relationships as high-value factual claims. The prompt explicitly encourages extracting endorsements but doesn't distinguish between factual endorsements (verifiable affiliations) and praise quotes (subjective opinions). Pass 2 evaluation labels these as FACTUAL/TESTABLE_CLAIM when they should be filtered or labeled as PROMOTIONAL.",
+      "affected_module": "prompts/pass1_extraction_v11.txt",
+      "affected_prompt": "prompts/pass1_extraction_v11.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Michael Bowman",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This Soil Stewardship Handbook is an excellent tool for us to engage with this critical mission and quest.",
+          "page": 2,
+          "what_is_wrong": "This is a praise quote from the book's front matter, not a factual endorsement relationship. It's promotional language, not verifiable knowledge.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Praise quotes are subjective opinions, not factual relationships suitable for knowledge graphs"
+          }
+        },
+        {
+          "source": "Adrian Del Caro",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "This is an important little book that can be of immediate use to anyone who wants to help restore a greener Earth.",
+          "page": 2,
+          "what_is_wrong": "Another praise quote. The relationship 'endorsed' suggests a factual affiliation, but this is just promotional text.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Promotional endorsements are not knowledge graph facts"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "University Copyright \u00a9 2018 Aaron William Perry All rights reserved.",
+          "page": 6,
+          "what_is_wrong": "This was incorrectly corrected from 'authored' to 'endorsed' by the praise quote detection module. The author doesn't 'endorse' their own book - they authored it. This is a false positive correction.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague/Abstract Source Entities",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 2.1,
+      "description": "Source entities are too abstract or vague: 'this approach', 'soil stewardship', 'connection with the soil', 'getting hands in soil', 'working directly in physical contact with soil'. These are activities/concepts that should be more specific or filtered.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt encourages extracting ALL relationships including compositional/functional ones. It doesn't constrain entity specificity. Pass 2.5 vague entity detection module (if it exists) is not catching these abstract sources.",
+      "affected_module": "modules/pass2_5_postprocessing/vague_entity_filter.py",
+      "affected_prompt": "prompts/pass1_extraction_v11.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "this approach",
+          "relationship": "enables",
+          "target": "sustainable farming practices",
+          "evidence_text": "This approach opens doors to sustainable farming practices.",
+          "page": 10,
+          "what_is_wrong": "'this approach' is a demonstrative pronoun that wasn't resolved. It's too vague to be useful in a knowledge graph.",
+          "should_be": {
+            "action": "RESOLVE_OR_FILTER",
+            "note": "Should resolve 'this approach' to 'soil stewardship' or filter if unresolvable"
+          }
+        },
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "It is, perhaps above all else, our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'connection with the soil' is too abstract. This is a philosophical statement about cultural practices, not a concrete entity.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Too abstract for knowledge graph utility"
+          }
+        },
+        {
+          "source": "getting hands in soil",
+          "relationship": "enhances",
+          "target": "immune systems",
+          "evidence_text": "By getting our hands in the living 'dirt,' we literally soothe the anxieties of daily stress, enhance our immune systems",
+          "page": 17,
+          "what_is_wrong": "'getting hands in soil' is an activity description, not a proper entity. Should be normalized to 'soil contact' or similar.",
+          "should_be": {
+            "source": "soil contact",
+            "relationship": "enhances",
+            "target": "immune systems"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague/Abstract Target Entities",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 1.7,
+      "description": "Target entities are too vague: 'aspects of life', 'the land', 'the sea', 'the trees', 'the soil', 'us', 'our countryside', 'thrive and heal', 'create the future', 'reconnect with land', 'cultivate our humanity'.",
+      "root_cause_hypothesis": "Same as vague sources - Pass 1 over-extracts, Pass 2.5 doesn't filter aggressively enough. Some targets with 'the' prefix should be normalized (the soil -> soil).",
+      "affected_module": "modules/pass2_5_postprocessing/vague_entity_filter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "affects",
+          "target": "aspects of life",
+          "evidence_text": "The Soil Stewardship Handbook looks at our connections to the soil and the way that relationship can affect so many aspects of life.",
+          "page": 2,
+          "what_is_wrong": "'aspects of life' is too vague. What specific aspects? This doesn't convey useful information.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Target too vague to be useful"
+          }
+        },
+        {
+          "source": "Aaron Perry's people",
+          "relationship": "love",
+          "target": "the land",
+          "evidence_text": "My people love the land. We love the sea. We love the trees. And, we love the soil.",
+          "page": 6,
+          "what_is_wrong": "'the land' is too generic. Should be 'land' or filtered as too abstract.",
+          "should_be": {
+            "source": "Aaron Perry's people",
+            "relationship": "love",
+            "target": "land"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "helps",
+          "target": "us",
+          "evidence_text": "An awesome miracle of creation, soil heals us.",
+          "page": 17,
+          "what_is_wrong": "'us' is an unresolved pronoun. Should be 'humans' or 'people'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "helps",
+            "target": "humans"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 133,
+      "percentage": 15.2,
+      "description": "133 unique predicates is high for 873 relationships (15.2% uniqueness rate). Many predicates are variations of the same base: 'is', 'is-a', 'is a', 'is of', 'is about', 'is toward', 'is worth', etc. Also 'has', 'has led to', 'has power to change', 'has preserved'. This indicates insufficient predicate normalization.",
+      "root_cause_hypothesis": "Pass 2.5 predicate normalization module is working (see flags like 'PREDICATE_NORMALIZED') but not aggressively enough. Many predicates that should be normalized to canonical forms are slipping through. The normalization rules may be too conservative.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.yaml",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "foundation of human life",
+          "evidence_text": "SOIL\u2014THE FOUNDATION OF HUMAN LIFE",
+          "page": 15,
+          "what_is_wrong": "Predicate is 'is-a' but should be normalized to 'is' (canonical form).",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is",
+            "target": "foundation of human life"
+          }
+        },
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'has preserved' should normalize to 'preserved' (remove auxiliary verb).",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "preserved",
+            "target": "our countryside"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "can help address",
+          "target": "climate change",
+          "evidence_text": "Soil is the answer to climate change.",
+          "page": 10,
+          "what_is_wrong": "'can help address' is overly specific. Should normalize to 'addresses' or 'mitigates'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "addresses",
+            "target": "climate change"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Metaphorical Statements Treated as Factual",
+      "severity": "MILD",
+      "count": 25,
+      "percentage": 2.9,
+      "description": "Philosophical or metaphorical statements are being extracted as factual relationships: 'soil is cosmically sacred', 'soil is life', 'soil is medicine', 'soil is the answer to climate change'. These are value judgments or metaphors, not verifiable facts.",
+      "root_cause_hypothesis": "Pass 1 prompt explicitly encourages extracting philosophical statements and metaphors (V11 feature). Pass 2 evaluation correctly labels some as PHILOSOPHICAL_CLAIM (e.g., 'cosmically sacred' has p_true=0.24), but many slip through as FACTUAL. The classification_flags system is working but not consistently applied.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v10.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "This is a philosophical/spiritual claim, not a factual statement. Pass 2 correctly flagged it as PHILOSOPHICAL_CLAIM with low p_true (0.24), but it's still in the output.",
+          "should_be": {
+            "action": "FILTER_OUT_OR_LABEL",
+            "note": "Either filter philosophical claims or clearly label them as non-factual"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "life",
+          "evidence_text": "Husband it and it will grow our food, our fuel, and our shelter and surround us with beauty",
+          "page": 15,
+          "what_is_wrong": "'soil is life' is a metaphorical statement, not a factual classification.",
+          "should_be": {
+            "action": "FILTER_OUT",
+            "reason": "Metaphorical, not factual"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer to climate change",
+          "evidence_text": "soil is the answer to climate change",
+          "page": 15,
+          "what_is_wrong": "This is hyperbolic advocacy language, not a factual claim. Soil can help mitigate climate change, but calling it 'the answer' is rhetorical.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "can help mitigate",
+            "target": "climate change"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Overly Granular 'is-a' Relationships",
+      "severity": "MILD",
+      "count": 22,
+      "percentage": 2.5,
+      "description": "Many 'is-a' relationships are too granular or redundant: 'soil stewardship is-a individual quest', 'soil stewardship is-a global movement', 'soil stewardship is-a adventure', 'soil stewardship is-a quest', 'soil stewardship is-a responsibility'. These are all describing the same concept from different angles.",
+      "root_cause_hypothesis": "Pass 1 extraction is too liberal with 'is-a' relationships. The prompt encourages extracting categorical relationships but doesn't constrain redundancy. A deduplication or semantic similarity module could consolidate these.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v11.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "is-a",
+          "target": "individual quest",
+          "evidence_text": "I want to personally welcome you to this individual quest and great global movement.",
+          "page": 12,
+          "what_is_wrong": "This is one of 5+ 'is-a' relationships for 'soil stewardship'. They're all valid but redundant.",
+          "should_be": {
+            "action": "CONSOLIDATE",
+            "note": "Keep the most informative 'is-a' relationship, filter redundant ones"
+          }
+        },
+        {
+          "source": "soil stewardship",
+          "relationship": "is-a",
+          "target": "global movement",
+          "evidence_text": "I want to personally welcome you to this individual quest and great global movement.",
+          "page": 12,
+          "what_is_wrong": "Redundant with 'individual quest' above. Both extracted from same sentence.",
+          "should_be": {
+            "action": "CONSOLIDATE",
+            "note": "Choose one or combine into multi-target relationship"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Possessive Pronoun Targets Not Resolved",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Some possessive pronouns in targets were not resolved: 'our countryside', 'our humanity', 'cultivate our humanity'. The POSSESSIVE_PRONOUN_UNRESOLVED_TARGET flag is present but the entities weren't fixed.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module is detecting possessive pronouns (see flags) but not resolving them. This may be because the antecedent is ambiguous or the resolution logic is too conservative.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'our countryside' should resolve to 'Slovenian countryside' or 'countryside' (context: author is Slovenian).",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "has preserved",
+            "target": "Slovenian countryside"
+          }
+        },
+        {
+          "source": "individuals",
+          "relationship": "can",
+          "target": "cultivate our humanity",
+          "evidence_text": "we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "'our humanity' should be 'humanity' (possessive adds no information).",
+          "should_be": {
+            "source": "individuals",
+            "relationship": "can",
+            "target": "cultivate humanity"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Generic Pronoun Sources",
+      "severity": "MILD",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "Some generic pronouns ('we', 'us') in sources were resolved to generic terms ('humanity', 'individuals') rather than specific entities. While better than leaving them as pronouns, these are still vague.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module is working (see GENERIC_PRONOUN_RESOLVED_SOURCE flags) but defaulting to generic resolutions when specific context is unavailable. This is acceptable but could be improved with better context tracking.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet\u2014by connecting with the living soil.",
+          "page": 10,
+          "what_is_wrong": "'we' was resolved to 'humanity', which is correct but generic. In context, 'we' might refer to 'readers' or 'soil stewards'.",
+          "should_be": {
+            "action": "ACCEPTABLE",
+            "note": "Generic resolution is better than unresolved pronoun, but could be more specific"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Artifacts",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "List splitting is working (see LIST_SPLIT flags) but creating some awkward relationships: 'agricultural soils restores and productively vital states' (should be 'productively vital states', not 'and productively vital states').",
+      "root_cause_hypothesis": "Pass 2.5 list splitting module is correctly splitting comma-separated targets but not handling conjunctions ('and', 'or') properly. The split logic needs to trim conjunctions from split items.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "agricultural soils",
+          "relationship": "restores",
+          "target": "and productively vital states",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 17,
+          "what_is_wrong": "List splitting left 'and' in the target. Should be 'productively vital states'.",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restores",
+            "target": "productively vital states"
+          }
+        },
+        {
+          "source": "working directly in physical contact with soil",
+          "relationship": "helps",
+          "target": "tension",
+          "evidence_text": "helps to alleviate the tension, anxiety, fear and depression of post-traumatic stress disorder (PTSD)",
+          "page": 18,
+          "what_is_wrong": "List split correctly but targets are too granular. 'tension, anxiety, fear, depression' could be consolidated to 'PTSD symptoms'.",
+          "should_be": {
+            "source": "working directly in physical contact with soil",
+            "relationship": "helps alleviate",
+            "target": "PTSD symptoms"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Not Normalized",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Figurative language is detected (FIGURATIVE_LANGUAGE flags present) but not normalized: 'soil is medicine', 'soil heals us', 'awesome miracle of creation'. These metaphors are kept as-is rather than being converted to literal meanings.",
+      "root_cause_hypothesis": "Pass 2.5 figurative language detection is working (see flags) but there's no normalization step. The system detects metaphors but doesn't convert them to literal equivalents.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "medicine",
+          "evidence_text": "Soil is medicine\u2014a very powerful medicine.",
+          "page": 17,
+          "what_is_wrong": "'medicine' is metaphorical. Soil isn't literally medicine, it has health benefits.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "has",
+            "target": "health benefits"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "helps",
+          "target": "us",
+          "evidence_text": "An awesome miracle of creation, soil heals us.",
+          "page": 17,
+          "what_is_wrong": "'heals' is metaphorical. Should be 'improves health of' or similar.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "improves health of",
+            "target": "humans"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "False Positive Praise Quote Correction",
+      "severity": "HIGH",
+      "count": 1,
+      "description": "The praise quote detection module incorrectly changed 'Aaron William Perry authored Soil Stewardship Handbook' to 'Aaron William Perry endorsed Soil Stewardship Handbook'. Authors don't endorse their own books - this is a false positive.",
+      "root_cause_hypothesis": "The praise quote detection module (bibliographic_parser.py or similar) is too aggressive. It's detecting the author's name in the copyright page and treating it as a praise quote. The module needs to check if the person is the actual author before changing 'authored' to 'endorsed'.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "University Copyright \u00a9 2018 Aaron William Perry All rights reserved.",
+          "page": 6,
+          "what_is_wrong": "The module changed 'authored' to 'endorsed' because it detected praise language, but this is the copyright page showing authorship.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Normative Prescriptions Mislabeled as Factual",
+      "severity": "MILD",
+      "count": 8,
+      "description": "Normative prescriptions ('we should', 'we can', 'we have the opportunity to') are being labeled as FACTUAL when they should be NORMATIVE. Pass 2 evaluation is detecting some (see NORMATIVE flags) but not consistently.",
+      "root_cause_hypothesis": "Pass 2 evaluation prompt mentions normative prescriptions but doesn't provide clear criteria for distinguishing them from factual claims. The classification is inconsistent.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v10.txt",
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet",
+          "page": 10,
+          "what_is_wrong": "This is a normative prescription (what we should do), not a factual claim. It's correctly labeled as NORMATIVE but still included in output.",
+          "should_be": {
+            "action": "FILTER_OR_LABEL_CLEARLY",
+            "note": "Normative claims should be filtered or clearly distinguished from factual claims"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Demonstrative Pronouns in Sources",
+      "severity": "MILD",
+      "count": 3,
+      "description": "Demonstrative pronouns ('this approach', 'this handbook') in sources are sometimes resolved (CONTEXT_ENRICHED_SOURCE flag) but sometimes not (VAGUE_SOURCE flag). Inconsistent handling.",
+      "root_cause_hypothesis": "Pass 2.5 pronoun resolution module handles some demonstratives but not all. The module may prioritize personal pronouns over demonstratives, or the context tracking is incomplete.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "this approach",
+          "relationship": "enables",
+          "target": "sustainable farming practices",
+          "evidence_text": "This approach opens doors to sustainable farming practices.",
+          "page": 10,
+          "what_is_wrong": "'this approach' wasn't resolved. Should be 'soil stewardship' based on context.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "enables",
+            "target": "sustainable farming practices"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v11.txt",
+      "recommendation": "Add explicit constraint to EXCLUDE praise quotes and promotional endorsements from extraction. Add to the 'DO NOT EXTRACT' section: '\u274c Praise quotes from book covers, forewords, or reviews (e.g., \"This book is excellent\" - Author Name). These are promotional, not factual relationships.' Provide 2-3 few-shot examples showing praise quotes that should be skipped.",
+      "expected_impact": "Eliminates 12 high-priority praise quote misclassifications (1.4% of relationships). Prevents promotional language from polluting the knowledge graph.",
+      "rationale": "Praise quotes are the highest-impact issue that can be fixed at the source (Pass 1). Filtering them in Pass 1 is more efficient than trying to correct them in Pass 2 or Pass 2.5. The current prompt explicitly encourages extracting endorsements without distinguishing factual from promotional."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add logic to prevent false positive praise quote corrections. Before changing 'authored' to 'endorsed', check if the source entity matches the book's known author(s). If source == author, keep 'authored' relationship. Add unit test for this case.",
+      "expected_impact": "Fixes 1 critical false positive where author's authorship was incorrectly changed to endorsement.",
+      "rationale": "This is a logic bug in the praise quote detection module. Authors can't endorse their own books - they author them. Simple fix with high impact on data quality."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/vague_entity_filter.py",
+      "recommendation": "Strengthen vague entity detection rules. Add patterns: 1) Demonstrative pronouns as sources ('this approach', 'that method', 'these practices') -> FILTER or RESOLVE. 2) Abstract activity descriptions ('getting hands in soil', 'working directly in physical contact with soil') -> NORMALIZE to simpler terms ('soil contact'). 3) Targets with 'the' prefix that are too generic ('the land', 'the sea') -> NORMALIZE by removing 'the'. Add entity_specificity_score threshold: filter entities with score < 0.6.",
+      "expected_impact": "Reduces vague entity issues by ~70% (from 33 to ~10). Improves knowledge graph utility by ensuring entities are concrete and specific.",
+      "rationale": "Vague entities are the second-largest issue category (3.8% combined source+target). The module exists but needs more aggressive filtering rules. This is a code fix, not a prompt issue, because the entities are already extracted - we need better post-processing."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/predicate_normalization_rules.yaml",
+      "recommendation": "Expand predicate normalization rules to reduce fragmentation from 133 to <80 unique predicates. Add rules: 1) Normalize all 'is-a', 'is a', 'is of', 'is about' -> 'is'. 2) Normalize 'has X', 'has led to', 'has power to' -> base verb (e.g., 'has led to' -> 'led to'). 3) Normalize modal verbs: 'can X', 'can help X' -> base verb ('X', 'helps X'). 4) Normalize 'are X by' -> passive voice to active ('X'). Test on sample data to ensure no semantic loss.",
+      "expected_impact": "Reduces predicate count from 133 to ~70-80 (40% reduction). Improves knowledge graph consistency and queryability.",
+      "rationale": "Predicate fragmentation affects 15.2% of relationships. The normalization module is working but too conservative. This is a config fix - the code exists, we just need better rules."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v10.txt",
+      "recommendation": "Clarify handling of philosophical/metaphorical statements. Add section: 'PHILOSOPHICAL & METAPHORICAL CLAIMS: Statements like \"soil is sacred\", \"soil is life\", \"soil is the answer\" are philosophical/metaphorical, not factual. Label these as PHILOSOPHICAL_CLAIM and reduce p_true to <0.3. Provide 3-4 examples of philosophical vs. factual claims.' Also add: 'NORMATIVE PRESCRIPTIONS: Statements about what we should/can/ought to do (\"we can thrive\", \"we should protect\") are normative, not factual. Label as NORMATIVE and consider filtering.'",
+      "expected_impact": "Improves classification of 25 philosophical statements and 8 normative prescriptions. Reduces false factual claims by 3.8%.",
+      "rationale": "Pass 2 evaluation is inconsistently labeling philosophical/normative claims. Some are correctly flagged (low p_true) but many slip through as FACTUAL. Clearer prompt guidance will improve consistency."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Improve list splitting to handle conjunctions. After splitting on commas, trim leading/trailing conjunctions ('and', 'or', 'nor') from each split item. Example: 'natural, organic, and vital' should split to ['natural', 'organic', 'vital'], not ['natural', 'organic', 'and vital']. Add regex: `re.sub(r'^(and|or|nor)\\s+', '', item.strip())`.",
+      "expected_impact": "Fixes 12 list splitting artifacts (1.4% of relationships). Improves target entity quality.",
+      "rationale": "List splitting is working but leaving conjunctions in split items. Simple regex fix with immediate impact."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Improve possessive pronoun resolution. For targets with 'our X', check if 'X' is generic enough to drop 'our' (e.g., 'our humanity' -> 'humanity', 'our countryside' -> 'countryside' if no specific country context). Add heuristic: if possessive adds no specificity (entity_specificity_score doesn't increase), remove it. For demonstrative pronouns ('this approach', 'that method'), prioritize resolution over filtering - track last mentioned concept in context window.",
+      "expected_impact": "Reduces possessive pronoun issues from 8 to ~2. Improves demonstrative pronoun resolution from 50% to 80%.",
+      "rationale": "Pronoun resolution is partially working but needs refinement. The module detects issues (see flags) but doesn't always fix them. This is a code enhancement to existing module."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/redundancy_filter.py",
+      "recommendation": "Create new module to filter redundant 'is-a' relationships. For each source entity, if there are >3 'is-a' relationships, use semantic similarity (sentence embeddings) to identify near-duplicates. Keep the most informative one (highest entity_specificity_score for target) and filter others. Example: 'soil stewardship is-a quest' and 'soil stewardship is-a individual quest' are redundant - keep the more specific one.",
+      "expected_impact": "Reduces redundant 'is-a' relationships from 22 to ~8 (60% reduction). Improves knowledge graph conciseness.",
+      "rationale": "Currently no deduplication for semantically similar relationships. This is a new capability needed to handle over-extraction of categorical relationships."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_normalizer.py",
+      "recommendation": "Create module to normalize figurative language. When FIGURATIVE_LANGUAGE flag is present, apply normalization rules: 1) 'X is medicine' -> 'X has health benefits'. 2) 'X heals Y' -> 'X improves health of Y'. 3) 'X is sacred' -> 'X is culturally significant'. 4) 'miracle of creation' -> remove (too abstract). Use pattern matching on metaphorical_terms list. Add config file with normalization mappings.",
+      "expected_impact": "Normalizes 8 figurative relationships to literal equivalents. Improves factual accuracy of knowledge graph.",
+      "rationale": "Figurative language detection exists but no normalization. This module would convert metaphors to literal meanings, making the KG more factual."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v11.txt",
+      "recommendation": "Add constraint on entity specificity. In the extraction guidelines, add: 'ENTITY SPECIFICITY: Prefer concrete, specific entities over abstract ones. \u274c Avoid: \"this approach\", \"the process\", \"the way\", \"aspects of life\". \u2705 Prefer: Named entities, specific concepts, measurable quantities.' Provide 3-4 examples of vague vs. specific entities.",
+      "expected_impact": "Reduces vague entity extraction at source by ~30%. Complements Pass 2.5 filtering.",
+      "rationale": "While Pass 2.5 filtering is the main fix, constraining Pass 1 extraction reduces the volume of vague entities that need filtering. Defense in depth approach."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/pass2_evaluation_thresholds.yaml",
+      "recommendation": "Add filtering threshold for philosophical claims. If classification_flags contains 'PHILOSOPHICAL_CLAIM' and p_true < 0.4, automatically filter the relationship. Similarly, if 'NORMATIVE' and p_true < 0.5, filter. This ensures low-confidence philosophical/normative claims don't pollute the KG.",
+      "expected_impact": "Filters ~15 low-confidence philosophical/normative claims automatically. Reduces manual review burden.",
+      "rationale": "Pass 2 is detecting philosophical claims but not filtering them. Adding automatic filtering based on p_true threshold is a simple config change with good impact."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Praise quotes are being extracted as factual endorsements",
+        "current_wording": "\u2705 **Extract**: (Person)-[endorsed]->(Book/Paper/Article) ... Bibliographic citations are ESSENTIAL knowledge graph elements. Extract ALL of them.",
+        "suggested_fix": "Add explicit exclusion: '\u274c **DO NOT Extract**: Praise quotes from book covers, forewords, or reviews. These are promotional opinions, not factual relationships. Example: \"This book is excellent\" - John Doe (SKIP THIS). Only extract verifiable endorsements (organizational affiliations, formal recommendations).' Add 2-3 few-shot examples showing praise quotes to skip.",
+        "examples_needed": "Yes - show 2-3 praise quotes that should be skipped vs. factual endorsements that should be extracted"
+      },
+      {
+        "issue": "Over-extraction of abstract/vague entities",
+        "current_wording": "Extract ALL valuable data, information, knowledge, and wisdom that can be represented in graph/RDF format. This includes: ... \u2705 Compositional relationships (contains, includes, provides) \u2705 Functional relationships (produces, enhances, stimulates)",
+        "suggested_fix": "Add entity specificity constraint: 'ENTITY SPECIFICITY REQUIREMENT: Entities must be concrete and specific enough to be useful in a knowledge graph. \u274c TOO VAGUE: \"this approach\", \"the process\", \"the way\", \"aspects of life\", \"the answer\". \u2705 SPECIFIC ENOUGH: Named entities (people, places, organizations), concrete concepts (soil, biochar, compost), measurable quantities (243 billion tons).' Provide examples of vague vs. specific entities.",
+        "examples_needed": "Yes - show 3-4 examples of vague entities to avoid and their specific alternatives"
+      },
+      {
+        "issue": "Philosophical/metaphorical statements extracted as factual",
+        "current_wording": "\u2705 **NEW V11**: Philosophical statements (will be labeled as PHILOSOPHICAL_CLAIM in Pass 2) \u2705 **NEW V11**: Metaphorical language (will be labeled as METAPHOR in Pass 2 and normalized by postprocessing)",
+        "suggested_fix": "This is actually working as designed - Pass 1 extracts, Pass 2 labels. The issue is Pass 2 labeling inconsistency, not Pass 1 extraction. However, could add guidance: 'NOTE: Extract philosophical/metaphorical statements, but be aware they will be evaluated differently in Pass 2. Clearly mark context as philosophical/metaphorical if obvious (e.g., \"soil is sacred\" is clearly philosophical).'",
+        "examples_needed": "No - this is a Pass 2 issue, not Pass 1"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Inconsistent labeling of philosophical/metaphorical claims",
+        "current_wording": "V10 focuses on extracting ALL valuable factual relationships, not just discourse elements. This means: \u2705 Bibliographic citations are HIGH VALUE (not \"too simple\") ... **CRITICAL**: Do NOT penalize valuable factual knowledge as \"too simple\" or \"low value\".",
+        "suggested_fix": "Add explicit section on philosophical/metaphorical claims: 'PHILOSOPHICAL & METAPHORICAL CLAIMS: Distinguish factual from philosophical/metaphorical statements. PHILOSOPHICAL: Value judgments, spiritual claims, abstract ideals (\"soil is sacred\", \"soil is the answer\"). Label as PHILOSOPHICAL_CLAIM, set p_true < 0.3. METAPHORICAL: Figurative language (\"soil is medicine\", \"soil heals us\"). Label as METAPHOR, set p_true based on literal interpretation. FACTUAL: Verifiable claims (\"soil contains bacteria\", \"biochar enhances soil fertility\"). Label as FACTUAL, set p_true based on evidence.' Provide 4-5 examples of each type.",
+        "suggested_fix_continued": "Also add: 'NORMATIVE PRESCRIPTIONS: Statements about what should/can/ought to be done (\"we should protect soil\", \"we can thrive by connecting with soil\"). These are prescriptive, not descriptive. Label as NORMATIVE, consider filtering or clearly marking as non-factual.'"
+      },
+      {
+        "issue": "Praise quotes not being filtered despite low knowledge plausibility",
+        "current_wording": "Bibliographic citations are **ESSENTIAL KNOWLEDGE GRAPH ELEMENTS**. They are NOT \"too simple\" or \"low value\".",
+        "suggested_fix": "Add distinction between factual bibliographic data and promotional endorsements: 'BIBLIOGRAPHIC DATA: Author-book, book-publisher, book-year relationships are FACTUAL and HIGH VALUE. PROMOTIONAL ENDORSEMENTS: Praise quotes from book covers/reviews (\"This book is excellent\") are PROMOTIONAL, not factual. These should have low knowledge_plausibility (<0.3) even if text_confidence is high. The text clearly states the praise, but it's not knowledge graph-worthy information.'"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.143,
+    "note": "System does not meet production criteria (14.3% issue rate vs. 5% target). However, quality has improved significantly from V4: no reversed authorship, no list targets, good pronoun resolution. Main issues are praise quotes (fixable with prompt), vague entities (fixable with stronger filtering), and predicate fragmentation (fixable with config). With recommended fixes, estimated issue rate would drop to ~6-7%, approaching production readiness."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T07:04:39.710393",
+    "relationships_analyzed": 873,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v12"
+  }
+}

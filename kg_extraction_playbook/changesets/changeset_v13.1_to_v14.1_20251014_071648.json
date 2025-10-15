@@ -1,0 +1,488 @@
+{
+  "changeset_metadata": {
+    "source_version": "13.1",
+    "target_version": "14.1",
+    "total_changes": 12,
+    "estimated_impact": "Reduces high-priority issues from 30 to <10 (67% reduction), medium-priority from 48 to <30 (38% reduction). Target: B- \u2192 B+ grade (14.5% \u2192 8% issue rate)"
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/content_specific/books/praise_quote_detector.py",
+      "priority": "CRITICAL",
+      "rationale": "12 false positive endorsements caused by praise detector triggering on copyright statements and author attributions. This undermines bibliographic accuracy - the most critical metadata in book extraction.",
+      "risk_level": "low",
+      "affected_issue_category": "Over-Aggressive Praise Quote Correction",
+      "expected_improvement": "Eliminates all 12 false positive endorsements, restoring correct authorship relationships",
+      "change_description": "Add copyright/authorship exclusion patterns to praise quote detection logic before applying endorsement conversion",
+      "affected_function": "PraiseQuoteDetector.detect_praise_quote",
+      "change_type": "logic_enhancement",
+      "guidance": {
+        "current_issue": "Detector matches on patterns like 'author name + book title' without checking if context is copyright/authorship statement vs actual praise",
+        "fix_approach": "Add pre-check before praise detection: if evidence_text contains copyright indicators (\u00a9, 'All rights reserved', 'authored by', 'written by', 'Copyright'), return False immediately. These are definitive authorship markers, never praise.",
+        "key_changes": [
+          "Add COPYRIGHT_PATTERNS list: ['\u00a9', 'copyright', 'all rights reserved', 'authored by', 'written by']",
+          "Add exclusion check at start of detect_praise_quote(): if any pattern in evidence_text.lower(), return False",
+          "Add logging for excluded cases: 'Skipped praise detection - copyright statement detected'",
+          "Ensure this check runs BEFORE any praise pattern matching"
+        ],
+        "insertion_point": "Beginning of detect_praise_quote() method, before existing pattern matching"
+      },
+      "validation": {
+        "test_cases": [
+          "Copyright \u00a9 2018 Author Name \u2192 Should NOT trigger praise detection",
+          "All rights reserved. Author Name \u2192 Should NOT trigger praise detection",
+          "Praise: 'This book is amazing!' - Reviewer \u2192 SHOULD trigger praise detection"
+        ],
+        "success_criteria": "Zero false positives on copyright/authorship statements"
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/content_specific/books/bibliographic_citation_parser.py",
+      "priority": "CRITICAL",
+      "rationale": "2 cases of reversed endorsement direction (book endorses person). This is logically impossible and indicates missing direction validation.",
+      "risk_level": "low",
+      "affected_issue_category": "Reversed Endorsement Direction",
+      "expected_improvement": "Fixes 2 reversed endorsements, prevents future occurrences",
+      "change_description": "Add direction validation for endorsement relationships to ensure person \u2192 book direction, not book \u2192 person",
+      "affected_function": "BibliographicCitationParser.process_batch",
+      "change_type": "validation_addition",
+      "guidance": {
+        "current_issue": "Parser creates endorsement relationships without validating that source is person and target is book",
+        "fix_approach": "After creating endorsement relationship, check entity types. If source appears to be book title and target is person name, swap them and adjust predicate to 'wrote foreword for' or 'introduced'.",
+        "key_changes": [
+          "Add is_book_title() helper: checks if string contains title-case words, is >3 words, matches known book patterns",
+          "Add is_person_name() helper: checks if string is 2-3 words, proper case, matches name patterns",
+          "After endorsement creation, validate: if is_book_title(source) and is_person_name(target), swap and change predicate",
+          "Log all swaps: 'Corrected reversed endorsement direction'"
+        ],
+        "heuristics": {
+          "book_indicators": "Title case, contains 'Handbook'/'Manual'/'Guide', >3 words",
+          "person_indicators": "2-3 words, proper case, no common words like 'the'/'and'"
+        }
+      },
+      "validation": {
+        "test_cases": [
+          "('Soil Stewardship Handbook', 'endorsed', 'John Smith') \u2192 Should swap to ('John Smith', 'wrote foreword for', 'Soil Stewardship Handbook')",
+          "('Jane Doe', 'endorsed', 'The Complete Guide') \u2192 Should remain as-is (correct direction)"
+        ],
+        "success_criteria": "Zero book\u2192person endorsements in output"
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v12.txt",
+      "priority": "HIGH",
+      "rationale": "18 vague abstract entities extracted ('the answer', 'aspects of life', 'this approach'). Root cause is extraction prompt not constraining entity specificity.",
+      "risk_level": "low",
+      "affected_issue_category": "Vague Abstract Entities",
+      "expected_improvement": "Reduces vague entity extraction by 70% (18 \u2192 ~5 cases)",
+      "change_description": "Add explicit entity specificity constraints with examples of prohibited abstract patterns",
+      "target_section": "ENTITY EXTRACTION RULES",
+      "guidance": {
+        "current_issue": "Prompt likely says 'extract all entities' without specificity requirements, allowing abstract terms",
+        "fix_approach": "Add new section after entity type definitions titled 'ENTITY SPECIFICITY REQUIREMENTS' with explicit prohibited patterns and examples",
+        "insertion_point": "After entity type definitions, before relationship extraction rules",
+        "content_to_add": {
+          "heading": "\u26a0\ufe0f ENTITY SPECIFICITY REQUIREMENTS",
+          "instruction": "Extract SPECIFIC, CONCRETE entities only. Avoid vague abstractions that don't convey actionable information.",
+          "prohibited_patterns": [
+            "\u274c Demonstrative pronouns: 'this', 'that', 'these', 'those' (unless immediately resolved)",
+            "\u274c Abstract philosophical terms: 'the answer', 'the way', 'the solution', 'the process'",
+            "\u274c Vague generalizations: 'aspects of life', 'things', 'stuff', 'matters'",
+            "\u274c Unresolved references: 'this approach', 'that method', 'the concept'"
+          ],
+          "correct_examples": [
+            "\u2705 Instead of 'the answer' \u2192 extract the specific solution mentioned",
+            "\u2705 Instead of 'aspects of life' \u2192 extract 'human health and agriculture'",
+            "\u2705 Instead of 'this approach' \u2192 extract 'soil stewardship' or specific method name"
+          ],
+          "rule": "If an entity feels vague or abstract, look for the specific concept it refers to in surrounding context. If you cannot identify a concrete referent, DO NOT extract it."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text containing 'this approach helps with aspects of life' \u2192 Should extract specific approach name and specific aspects, not abstract terms",
+        "success_criteria": "No demonstrative pronouns or abstract terms in extracted entities",
+        "prompt_version": "v13 (create from v12)"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/vague_entity_blocker.py",
+      "priority": "HIGH",
+      "rationale": "18 vague entities passing through with entity_specificity_score 0.8-0.89. Current threshold is too permissive.",
+      "risk_level": "low",
+      "affected_issue_category": "Vague Abstract Entities",
+      "expected_improvement": "Filters additional 10-12 vague entities that prompt changes don't catch",
+      "change_description": "Raise specificity threshold and add penalty rules for demonstrative pronouns and abstract patterns",
+      "affected_function": "VagueEntityBlocker.calculate_specificity_score",
+      "change_type": "threshold_adjustment",
+      "guidance": {
+        "current_issue": "Entities scoring 0.8-0.89 are passing through but are still too vague ('aspects of life', 'the answer')",
+        "fix_approach": "Increase base threshold from current to 0.90. Add automatic penalties: -0.15 for demonstrative pronouns, -0.20 for abstract patterns ('the answer', 'the way'), -0.10 for possessive pronouns in entity.",
+        "key_changes": [
+          "Update SPECIFICITY_THRESHOLD constant from current value to 0.90",
+          "Add ABSTRACT_PATTERNS list: ['the answer', 'the way', 'the solution', 'the process', 'aspects of', 'things', 'matters']",
+          "Add DEMONSTRATIVE_PATTERNS: ['this', 'that', 'these', 'those'] (as standalone words)",
+          "In calculate_specificity_score(), apply penalties before threshold check",
+          "Log penalty applications: 'Applied -0.15 penalty for demonstrative pronoun'"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "'the answer' \u2192 Score should be <0.90 after -0.20 penalty",
+          "'soil stewardship' \u2192 Score should remain >0.90 (no penalties)",
+          "'this approach' \u2192 Score should be <0.90 after -0.15 penalty"
+        ],
+        "success_criteria": "All vague abstract entities score <0.90 and are filtered"
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/pronoun_resolver.py",
+      "priority": "HIGH",
+      "rationale": "8 unresolved possessive pronouns in targets ('our countryside', 'our humanity'). Module only processes sources currently.",
+      "risk_level": "low",
+      "affected_issue_category": "Unresolved Possessive Pronouns in Targets",
+      "expected_improvement": "Resolves all 8 possessive pronoun cases in targets",
+      "change_description": "Extend pronoun resolution logic to process target entities in addition to sources",
+      "affected_function": "PronounResolver.process_batch",
+      "change_type": "feature_extension",
+      "guidance": {
+        "current_issue": "Module has resolve_pronoun() logic but only applies it to relationship['source'], not relationship['target']",
+        "fix_approach": "After processing source, add identical logic to process target. Use same context and resolution heuristics.",
+        "key_changes": [
+          "In process_batch(), after source resolution block, add target resolution block",
+          "Call resolve_pronoun(relationship['target'], context) same as source",
+          "Update flags: add 'POSSESSIVE_PRONOUN_RESOLVED_TARGET' flag when target is resolved",
+          "Add 'PRONOUN_UNRESOLVED_TARGET' flag when target contains pronoun but resolution fails",
+          "Ensure context includes surrounding relationships for better resolution"
+        ],
+        "code_pattern": "Mirror the existing source resolution logic but apply to target field"
+      },
+      "validation": {
+        "test_cases": [
+          "('connection', 'preserved', 'our countryside') + context='Slovenia' \u2192 Should resolve to 'Slovenian countryside'",
+          "('individuals', 'can cultivate', 'our humanity') \u2192 Should resolve to 'human potential' or 'humanity'"
+        ],
+        "success_criteria": "Zero unresolved possessive pronouns in target entities"
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/pronoun_resolver.py",
+      "priority": "HIGH",
+      "rationale": "6 generic pronouns ('we', 'us') flagged but unresolved. Context window may be too narrow for generic pronoun resolution.",
+      "risk_level": "medium",
+      "affected_issue_category": "Unresolved Generic Pronouns",
+      "expected_improvement": "Resolves 4-5 of 6 generic pronoun cases",
+      "change_description": "Expand context window and add fallback heuristics for generic pronoun resolution",
+      "affected_function": "PronounResolver.resolve_pronoun",
+      "change_type": "algorithm_enhancement",
+      "guidance": {
+        "current_issue": "Generic pronouns like 'we'/'us' require broader context than specific pronouns. Current window may be \u00b11 sentence, insufficient for resolution.",
+        "fix_approach": "Increase context window from \u00b11 to \u00b13 sentences. Add fallback heuristics: if book mentions specific organization/group in metadata, resolve to that; otherwise resolve to 'humanity'/'people'/'individuals'.",
+        "key_changes": [
+          "Update CONTEXT_WINDOW_SIZE from current to 3 (sentences before/after)",
+          "Add get_book_context() helper: extracts author, subject, organization from book metadata",
+          "Add generic pronoun fallbacks: 'we' \u2192 check book context for group, else 'humanity'; 'us' \u2192 'people'/'humans'",
+          "Update resolution logic: try context-based resolution first, then fallback heuristics",
+          "Log resolution method: 'Resolved via context' vs 'Resolved via fallback heuristic'"
+        ],
+        "risk_note": "Medium risk because broader context may introduce noise. Test carefully on diverse examples."
+      },
+      "validation": {
+        "test_cases": [
+          "'we can reconnect' + context mentions 'humanity' \u2192 Resolve to 'humanity'",
+          "'us' in health context \u2192 Resolve to 'humans' or 'people'",
+          "'we' with no clear referent \u2192 Fallback to 'individuals'"
+        ],
+        "success_criteria": "Generic pronoun resolution rate >80% (5 of 6 cases)"
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/predicate_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "133 unique predicates with significant fragmentation. Top patterns: tense variations ('has preserved' vs 'preserved'), modal auxiliaries ('can help address'), redundant forms ('is-a' vs 'is').",
+      "risk_level": "low",
+      "affected_issue_category": "Predicate Fragmentation",
+      "expected_improvement": "Reduces unique predicates from 133 to 80-90 (40% reduction), improving query efficiency",
+      "change_description": "Expand normalization rules to handle tense variations, modal auxiliaries, and redundant predicate forms",
+      "affected_function": "PredicateNormalizer.normalize_predicate",
+      "change_type": "rule_expansion",
+      "guidance": {
+        "current_issue": "Normalizer has basic rules but doesn't handle common variations like 'has preserved' \u2192 'preserved', 'is-a' \u2192 'is', 'can help address' \u2192 'can address'",
+        "fix_approach": "Add three new normalization rule categories: (1) Tense normalization, (2) Modal auxiliary simplification, (3) Redundant form canonicalization. Apply in sequence.",
+        "key_changes": [
+          "Add TENSE_RULES dict: {'has preserved': 'preserved', 'has led to': 'led to', 'has allowed': 'allowed', 'have been': 'are'}",
+          "Add MODAL_RULES dict: {'can help address': 'can address', 'can help mitigate': 'can mitigate', 'may be able to': 'may'}",
+          "Add FORM_RULES dict: {'is-a': 'is', 'is a': 'is', 'is an': 'is', 'are a': 'are', 'are an': 'are'}",
+          "Apply rules in order: FORM_RULES \u2192 TENSE_RULES \u2192 MODAL_RULES \u2192 existing rules",
+          "Log each normalization: 'Normalized \"has preserved\" \u2192 \"preserved\" (tense rule)'"
+        ],
+        "rule_priority": "Form rules first (handle 'is-a'), then tense (handle 'has X'), then modals (handle 'can help X')"
+      },
+      "validation": {
+        "test_cases": [
+          "'has preserved' \u2192 'preserved'",
+          "'is-a' \u2192 'is'",
+          "'can help address' \u2192 'can address'",
+          "'are an excellent source of' \u2192 'provides' (via existing rules)"
+        ],
+        "success_criteria": "Top 20 fragmented predicates reduced to <10 canonical forms"
+      }
+    },
+    {
+      "operation_id": "change_008",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v13_1.txt",
+      "priority": "MEDIUM",
+      "rationale": "15 philosophical claims with p_true scores 0.24-0.8. Evaluation prompt doesn't sufficiently penalize abstract/rhetorical statements.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical/Abstract Claims",
+      "expected_improvement": "Reduces philosophical claim inclusion from 15 to ~3 by lowering p_true scores below filter threshold",
+      "change_description": "Add explicit confidence penalty rules for philosophical, rhetorical, and metaphysical claims",
+      "target_section": "CONFIDENCE SCORING RULES",
+      "guidance": {
+        "current_issue": "Prompt evaluates text confidence and plausibility but doesn't distinguish factual claims from philosophical rhetoric",
+        "fix_approach": "Add new section with explicit scoring rules for claim types. Philosophical claims should get p_true <0.3, rhetorical flourishes <0.25.",
+        "insertion_point": "After main confidence scoring section, before output format",
+        "content_to_add": {
+          "heading": "\u26a0\ufe0f CLAIM TYPE CONFIDENCE ADJUSTMENTS",
+          "instruction": "Reduce p_true scores for non-factual claim types:",
+          "scoring_rules": [
+            "PHILOSOPHICAL_CLAIM (metaphysical/spiritual): Assign p_true \u22640.25",
+            "  Examples: 'soil is cosmically sacred', 'X is spiritually significant'",
+            "RHETORICAL_FLOURISH (abstract assertions): Assign p_true \u22640.30",
+            "  Examples: 'X is the answer to everything', 'Y is the key to Z' (without specifics)",
+            "TESTABLE_CLAIM (requires empirical validation): Reduce p_true by 0.15",
+            "  Examples: 'soil contact enhances immunity' (needs research validation)",
+            "OPINION (subjective judgment): Reduce p_true by 0.25",
+            "  Examples: 'this makes us feel better', 'X is the best approach'",
+            "NORMATIVE (prescriptive statement): Reduce p_true by 0.30",
+            "  Examples: 'we should do X', 'humanity must Y'"
+          ],
+          "rationale": "Factual knowledge graphs should prioritize verifiable, concrete claims over abstract philosophical statements."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "'soil is cosmically sacred' \u2192 Should score p_true \u22640.25",
+        "success_criteria": "Philosophical claims score <0.3, pushing most below inclusion threshold"
+      }
+    },
+    {
+      "operation_id": "change_009",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v12.txt",
+      "priority": "MEDIUM",
+      "rationale": "3 semantic predicate mismatches ('soil collapses humanity'). Extraction prompt doesn't emphasize semantic validation of predicates.",
+      "risk_level": "low",
+      "affected_issue_category": "Semantic Predicate Mismatch",
+      "expected_improvement": "Reduces semantic mismatches from 3 to ~1",
+      "change_description": "Add semantic predicate validation guidance with examples of correct vs incorrect predicates",
+      "target_section": "RELATIONSHIP EXTRACTION RULES",
+      "guidance": {
+        "current_issue": "Prompt likely extracts predicates literally from text without checking if they make semantic sense for entity types",
+        "fix_approach": "Add new subsection on semantic validation with clear examples of predicates that don't match entity types",
+        "insertion_point": "Within relationship extraction rules, after predicate extraction basics",
+        "content_to_add": {
+          "heading": "SEMANTIC PREDICATE VALIDATION",
+          "instruction": "Ensure predicates are semantically appropriate for the entity types they connect.",
+          "validation_rule": "The predicate should express a LOGICAL relationship between source and target. If the verb doesn't make sense for the entity types, rephrase it.",
+          "examples": [
+            "\u274c 'soil collapses humanity' \u2192 Soil cannot 'collapse' an abstract concept",
+            "\u2705 'soil degradation threatens humanity' \u2192 Degradation can threaten",
+            "\u274c 'book teaches person' \u2192 Books don't actively teach",
+            "\u2705 'book contains teachings about X' \u2192 Books contain content",
+            "\u274c 'concept runs process' \u2192 Concepts don't perform actions",
+            "\u2705 'concept underlies process' \u2192 Concepts can underlie"
+          ],
+          "guideline": "Use precise, semantically correct verbs that match the nature of the entities. Abstract entities rarely perform physical actions. Physical entities rarely perform abstract actions."
+        }
+      },
+      "validation": {
+        "test_prompt_with": "Text: 'Abuse it and the soil will collapse and die, taking humanity with it' \u2192 Should extract 'soil degradation threatens humanity', not 'soil collapses humanity'",
+        "success_criteria": "No semantically incompatible predicates in extraction"
+      }
+    },
+    {
+      "operation_id": "change_010",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/content_specific/books/figurative_language_filter.py",
+      "priority": "MEDIUM",
+      "rationale": "12 figurative language cases flagged but still included with p_true 0.57-0.72. Detector working but not filtering.",
+      "risk_level": "low",
+      "affected_issue_category": "Figurative Language as Factual",
+      "expected_improvement": "Filters 8-10 figurative language relationships currently passing through",
+      "change_description": "Add post-detection filtering logic to exclude relationships with figurative language below confidence threshold",
+      "affected_function": "FigurativeLanguageFilter.process_batch",
+      "change_type": "filter_addition",
+      "guidance": {
+        "current_issue": "Module detects figurative language (flags present) but doesn't filter relationships out, even with moderate p_true scores",
+        "fix_approach": "After detection, add filtering step: if FIGURATIVE_LANGUAGE flag present AND p_true <0.65, exclude relationship. If metaphorical terms in source/target entities (not just context), exclude regardless of p_true.",
+        "key_changes": [
+          "Add FIGURATIVE_THRESHOLD constant = 0.65",
+          "After detection loop, add filtering loop",
+          "Filter condition: (has_flag('FIGURATIVE_LANGUAGE') AND p_true < 0.65) OR (metaphor_in_entity(source) OR metaphor_in_entity(target))",
+          "Add metaphor_in_entity() helper: checks if entity text contains metaphorical terms from detection",
+          "Log filtered relationships: 'Filtered figurative language: (source, rel, target) - p_true=X'"
+        ],
+        "rationale": "Figurative language in context is acceptable if confidence is high, but metaphors in entity names themselves are never acceptable"
+      },
+      "validation": {
+        "test_cases": [
+          "('soil', 'contains', 'living skin') + METAPHOR flag + p_true=0.6 \u2192 Should filter (metaphor in target)",
+          "('author', 'uses', 'metaphor') + FIGURATIVE flag + p_true=0.8 \u2192 Should keep (high confidence, metaphor in context only)"
+        ],
+        "success_criteria": "Zero metaphorical entity names in output, <3 figurative language cases with p_true >0.65"
+      }
+    },
+    {
+      "operation_id": "change_011",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/list_splitter.py",
+      "priority": "LOW",
+      "rationale": "8 incomplete list splits where 'and' remains in split items ('and productively vital states'). Minor issue affecting <1%.",
+      "risk_level": "low",
+      "affected_issue_category": "Incomplete List Splitting",
+      "expected_improvement": "Fixes all 8 incomplete splits",
+      "change_description": "Update regex patterns to handle 'and X' cases where 'and' is part of split item vs separator",
+      "affected_function": "ListSplitter.split_list",
+      "change_type": "regex_enhancement",
+      "guidance": {
+        "current_issue": "Regex splits on commas but doesn't properly handle 'and' that's part of the item vs 'and' as conjunction separator",
+        "fix_approach": "Add preprocessing step: if 'and' is preceded by comma, it's a separator; if not preceded by comma, it's part of the term. Strip leading 'and ' from split items.",
+        "key_changes": [
+          "After splitting on commas, add cleanup step for each item",
+          "Strip leading 'and ' pattern: item = re.sub(r'^and\\s+', '', item.strip())",
+          "Only strip if 'and' is at start of item (not in middle like 'research and development')",
+          "Add test: 'natural, organic, and vital' \u2192 ['natural', 'organic', 'vital'] (not 'and vital')"
+        ],
+        "regex_pattern": "r'^and\\s+' matches 'and ' at start of string only"
+      },
+      "validation": {
+        "test_cases": [
+          "'natural, organic, and productively vital states' \u2192 ['natural', 'organic', 'productively vital states']",
+          "'research and development' \u2192 ['research and development'] (no split, 'and' is part of term)"
+        ],
+        "success_criteria": "No split items starting with 'and '"
+      }
+    },
+    {
+      "operation_id": "change_012",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v13_1.txt",
+      "priority": "LOW",
+      "rationale": "8 testable claims with p_true 0.8-0.9. These scientific claims should have moderate confidence until empirically validated.",
+      "risk_level": "low",
+      "affected_issue_category": "Testable Claims Without Confidence Adjustment",
+      "expected_improvement": "Adjusts confidence for 8 testable claims, making uncertainty explicit",
+      "change_description": "Add guidance to reduce confidence for testable scientific claims that require empirical validation",
+      "target_section": "CONFIDENCE SCORING RULES (within change_008 additions)",
+      "guidance": {
+        "current_issue": "Testable claims flagged correctly but p_true scores don't reflect uncertainty inherent in unvalidated scientific claims",
+        "fix_approach": "This is already included in change_008 (TESTABLE_CLAIM: reduce by 0.15). Ensure the instruction is clear about what constitutes a testable claim.",
+        "content_to_add": {
+          "clarification": "TESTABLE_CLAIM applies to scientific/empirical claims that can be validated through research but lack citation of specific studies. Examples:",
+          "testable_examples": [
+            "'soil contact enhances immune function' (biological claim, needs research)",
+            "'composting reduces methane emissions by X%' (quantitative claim, needs measurement)",
+            "'practice Y increases crop yield' (agricultural claim, needs field trials)"
+          ],
+          "non_testable_examples": [
+            "'Smith (2020) found that soil contact enhances immunity' (cited research - keep high confidence)",
+            "'soil is important' (value judgment, not testable - use OPINION rules)"
+          ]
+        },
+        "integration_note": "This clarification should be added to the TESTABLE_CLAIM section in change_008"
+      },
+      "validation": {
+        "test_prompt_with": "'getting hands in soil enhances immune systems' (no citation) \u2192 Should score p_true ~0.65-0.70 (reduced from 0.8)",
+        "success_criteria": "Testable claims without citations score 0.15 lower than equivalent cited claims"
+      }
+    }
+  ],
+  "expected_impact": {
+    "issues_fixed": 97,
+    "critical_fixed": 0,
+    "high_fixed": 24,
+    "medium_fixed": 46,
+    "estimated_error_rate": "14.5% \u2192 7.8%",
+    "target_grade": "B- \u2192 B+",
+    "primary_improvements": [
+      "Praise quote false positives: 12 eliminated (change_001, change_002)",
+      "Vague abstract entities: 18 \u2192 ~5 (change_003, change_004)",
+      "Predicate fragmentation: 133 \u2192 80-90 (change_007)",
+      "Unresolved pronouns: 14 \u2192 ~3 (change_005, change_006)",
+      "Philosophical claims: 15 \u2192 ~3 (change_008)"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "change_001: Fix praise quote false positives (CRITICAL - 12 errors)",
+      "change_002: Fix reversed endorsement direction (CRITICAL - 2 errors)",
+      "change_003: Add entity specificity constraints to prompt (HIGH - 18 errors)",
+      "change_004: Raise vague entity threshold (HIGH - 12 errors)"
+    ],
+    "short_term": [
+      "change_005: Extend pronoun resolution to targets (HIGH - 8 errors)",
+      "change_006: Improve generic pronoun resolution (HIGH - 6 errors)",
+      "change_007: Expand predicate normalization (MEDIUM - 133 fragmentation)",
+      "change_008: Add philosophical claim penalties (MEDIUM - 15 errors)"
+    ],
+    "polish": [
+      "change_009: Add semantic predicate validation (MEDIUM - 3 errors)",
+      "change_010: Filter figurative language (MEDIUM - 12 errors)",
+      "change_011: Fix list splitting edge cases (LOW - 8 errors)",
+      "change_012: Clarify testable claim scoring (LOW - 8 errors)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Incremental testing - implement and test changes in priority order. After each change, run extraction on test corpus and validate specific issue category.",
+    "success_criteria": [
+      "Critical issues: 0 \u2192 0 (maintain)",
+      "High-priority issues: 30 \u2192 <10 (67% reduction)",
+      "Medium-priority issues: 48 \u2192 <30 (38% reduction)",
+      "Total issues: 127 \u2192 <70 (45% reduction)",
+      "Error rate: 14.5% \u2192 <8%",
+      "Grade: B- \u2192 B+"
+    ],
+    "rollback_plan": "Each change is isolated to single file/function. If any change degrades quality, revert that file and document in changeset notes. Changes are ordered by priority so early rollback has minimal impact on overall improvement."
+  },
+  "implementation_notes": {
+    "change_dependencies": [
+      "change_003 and change_004 work together (prompt prevention + code filtering)",
+      "change_005 and change_006 both modify pronoun_resolver.py (implement together)",
+      "change_008 and change_012 both modify pass2_evaluation prompt (combine into single prompt update)"
+    ],
+    "risk_mitigation": [
+      "change_006 (generic pronoun resolution) is MEDIUM risk - test extensively on diverse examples before deploying",
+      "All other changes are LOW risk - isolated, well-defined modifications",
+      "Maintain v13.1 as rollback point - tag in version control before applying changeset"
+    ],
+    "estimated_implementation_time": {
+      "immediate_changes": "4-6 hours (changes 001-004)",
+      "short_term_changes": "6-8 hours (changes 005-008)",
+      "polish_changes": "3-4 hours (changes 009-012)",
+      "total": "13-18 hours",
+      "testing_time": "4-6 hours (validation on full corpus)"
+    }
+  },
+  "metadata": {
+    "curation_date": "2025-10-14T07:16:48.554730",
+    "source_version": 13.1,
+    "target_version": 14.1,
+    "reflector_analysis_id": "2025-10-14T07:04:30.657539",
+    "curator_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929"
+  }
+}

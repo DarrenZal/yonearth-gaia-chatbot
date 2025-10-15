@@ -1,0 +1,671 @@
+{
+  "summary": {
+    "total_chunks": 8,
+    "v14_total_relationships": 27,
+    "v14_2_total_relationships": 25,
+    "v14_wins": 2,
+    "v14_2_wins": 0,
+    "ties": 6
+  },
+  "detailed_results": [
+    {
+      "chunk_id": "chunk_1_demonstrative",
+      "page": 10,
+      "text_preview": "Soil stewardship encompasses a holistic approach to land management.\n        This approach opens doors to sustainable farming practices that can regen",
+      "v14": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 3,
+        "relationships": [
+          {
+            "source": "soil stewardship",
+            "relationship": "encompasses",
+            "target": "holistic approach to land management",
+            "p_true": 0.81,
+            "flags": [
+              "FACTUAL",
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "this approach",
+            "relationship": "opens doors to",
+            "target": "sustainable farming practices",
+            "p_true": 0.56,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "sustainable farming practices",
+            "relationship": "can regenerate",
+            "target": "degraded landscapes",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 3,
+        "relationships": [
+          {
+            "source": "soil stewardship",
+            "relationship": "encompasses",
+            "target": "holistic approach to land management",
+            "p_true": 0.81,
+            "flags": [
+              "FACTUAL",
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "this approach",
+            "relationship": "opens doors to",
+            "target": "sustainable farming practices",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "sustainable farming practices",
+            "relationship": "can regenerate",
+            "target": "degraded landscapes",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_2_pronoun_resolution",
+      "page": 15,
+      "text_preview": "By working with soil rather than against it, farmers can achieve remarkable results.\n        They report improved yields, reduced input costs, and hea",
+      "v14": {
+        "pass1_count": 4,
+        "pass2_count": 4,
+        "final_count": 4,
+        "relationships": [
+          {
+            "source": "farmers",
+            "relationship": "achieve",
+            "target": "remarkable results",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "improved yields",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "reduced input costs",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "healthier ecosystems",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 4,
+        "pass2_count": 4,
+        "final_count": 4,
+        "relationships": [
+          {
+            "source": "farmers",
+            "relationship": "achieve",
+            "target": "remarkable results",
+            "p_true": 0.81,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "improved yields",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "reduced input costs",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "farmers",
+            "relationship": "report",
+            "target": "healthier ecosystems",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_3_rhetorical_language",
+      "page": 20,
+      "text_preview": "Soil is the answer to many of our environmental challenges.\n        Through regenerative practices, we can mitigate climate change and restore biodive",
+      "v14": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 2,
+        "relationships": [
+          {
+            "source": "regenerative practices",
+            "relationship": "can mitigate",
+            "target": "climate change",
+            "p_true": 0.6,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "regenerative practices",
+            "relationship": "can restore",
+            "target": "biodiversity",
+            "p_true": 0.6,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 2,
+        "relationships": [
+          {
+            "source": "regenerative practices",
+            "relationship": "can mitigate",
+            "target": "climate change",
+            "p_true": 0.65,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "regenerative practices",
+            "relationship": "can restore",
+            "target": "biodiversity",
+            "p_true": 0.65,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_4_complex_parsing",
+      "page": 25,
+      "text_preview": "By getting our hands in the living soil, we literally enhance our immune systems,\n        reduce stress, and increase our production of beneficial hor",
+      "v14": {
+        "pass1_count": 4,
+        "pass2_count": 4,
+        "final_count": 4,
+        "relationships": [
+          {
+            "source": "soil",
+            "relationship": "enhances",
+            "target": "immune systems",
+            "p_true": 0.63,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "soil",
+            "relationship": "reduces",
+            "target": "stress",
+            "p_true": 0.63,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "soil",
+            "relationship": "increases",
+            "target": "production of beneficial hormones",
+            "p_true": 0.54,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "beneficial hormones",
+            "relationship": "is-a",
+            "target": "serotonin",
+            "p_true": 0.56,
+            "flags": [
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 3,
+        "relationships": [
+          {
+            "source": "getting our hands in the living soil",
+            "relationship": "enhances",
+            "target": "immune systems",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "getting our hands in the living soil",
+            "relationship": "reduces",
+            "target": "stress",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "getting our hands in the living soil",
+            "relationship": "increases",
+            "target": "production of beneficial hormones like serotonin",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "winner": "V14 \u2705"
+    },
+    {
+      "chunk_id": "chunk_5_bibliographic",
+      "page": 6,
+      "text_preview": "Perry, Aaron William. Soil Stewardship Handbook: A Practical Guide to Regenerative Agriculture.\n        Boulder: Y on Earth Community, 2018. Foreword ",
+      "v14": {
+        "pass1_count": 5,
+        "pass2_count": 5,
+        "final_count": 5,
+        "relationships": [
+          {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook",
+            "p_true": 1.0,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published by",
+            "target": "Y on Earth Community",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published in",
+            "target": "2018",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published in",
+            "target": "Boulder",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Joel Salatin",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook",
+            "p_true": 0.9,
+            "flags": [
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 5,
+        "pass2_count": 5,
+        "final_count": 5,
+        "relationships": [
+          {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook",
+            "p_true": 1.0,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published by",
+            "target": "Y on Earth Community",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published in",
+            "target": "2018",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Soil Stewardship Handbook",
+            "relationship": "published in",
+            "target": "Boulder",
+            "p_true": 0.95,
+            "flags": [
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "Joel Salatin",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook",
+            "p_true": 0.9,
+            "flags": [
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_6_mixed_content",
+      "page": 12,
+      "text_preview": "Cover cropping enhances soil structure, prevents erosion, and sequesters carbon.\n        These practices are essential for regenerative agriculture sy",
+      "v14": {
+        "pass1_count": 4,
+        "pass2_count": 4,
+        "final_count": 4,
+        "relationships": [
+          {
+            "source": "cover cropping",
+            "relationship": "enhances",
+            "target": "soil structure",
+            "p_true": 0.675,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "cover cropping",
+            "relationship": "prevents",
+            "target": "erosion",
+            "p_true": 0.675,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "cover cropping",
+            "relationship": "sequesters",
+            "target": "carbon",
+            "p_true": 0.64,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "these practices",
+            "relationship": "are essential for",
+            "target": "regenerative agriculture systems",
+            "p_true": 0.595,
+            "flags": [
+              "NORMATIVE",
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 4,
+        "pass2_count": 4,
+        "final_count": 4,
+        "relationships": [
+          {
+            "source": "cover cropping",
+            "relationship": "enhances",
+            "target": "soil structure",
+            "p_true": 0.675,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "cover cropping",
+            "relationship": "prevents",
+            "target": "erosion",
+            "p_true": 0.675,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "cover cropping",
+            "relationship": "sequesters",
+            "target": "carbon",
+            "p_true": 0.675,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "these practices",
+            "relationship": "are essential for",
+            "target": "regenerative agriculture systems",
+            "p_true": 0.64,
+            "flags": [
+              "NORMATIVE",
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_7_entity_specificity",
+      "page": 18,
+      "text_preview": "The connection with the soil has been preserved in the Slovenian countryside.\n        Their land remains productive and ecologically vibrant.",
+      "v14": {
+        "pass1_count": 2,
+        "pass2_count": 2,
+        "final_count": 2,
+        "relationships": [
+          {
+            "source": "Slovenian countryside",
+            "relationship": "preserved in",
+            "target": "connection with the soil",
+            "p_true": 0.72,
+            "flags": [
+              "FACTUAL",
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "Their land",
+            "relationship": "remains",
+            "target": "productive and ecologically vibrant",
+            "p_true": 0.56,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 2,
+        "pass2_count": 2,
+        "final_count": 2,
+        "relationships": [
+          {
+            "source": "connection with soil",
+            "relationship": "preserved in",
+            "target": "Slovenian countryside",
+            "p_true": 0.72,
+            "flags": [
+              "FACTUAL",
+              "TESTABLE_CLAIM"
+            ]
+          },
+          {
+            "source": "Slovenian countryside",
+            "relationship": "remains",
+            "target": "productive and ecologically vibrant",
+            "p_true": 0.56,
+            "flags": [
+              "TESTABLE_CLAIM"
+            ]
+          }
+        ]
+      },
+      "winner": "TIE"
+    },
+    {
+      "chunk_id": "chunk_8_semantic_abstraction",
+      "page": 22,
+      "text_preview": "Soil degradation threatens humanity's ability to feed itself.\n        Regenerative practices can restore agricultural soils to productively vital stat",
+      "v14": {
+        "pass1_count": 3,
+        "pass2_count": 3,
+        "final_count": 3,
+        "relationships": [
+          {
+            "source": "soil degradation",
+            "relationship": "threatens",
+            "target": "humanity",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "regenerative practices",
+            "relationship": "can restore",
+            "target": "agricultural soils",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "agricultural soils",
+            "relationship": "to",
+            "target": "productively vital states",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "v14_2": {
+        "pass1_count": 2,
+        "pass2_count": 2,
+        "final_count": 2,
+        "relationships": [
+          {
+            "source": "soil degradation",
+            "relationship": "threatens",
+            "target": "humanity",
+            "p_true": 0.72,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          },
+          {
+            "source": "regenerative practices",
+            "relationship": "can restore",
+            "target": "agricultural soils to productively vital states",
+            "p_true": 0.68,
+            "flags": [
+              "TESTABLE_CLAIM",
+              "FACTUAL"
+            ]
+          }
+        ]
+      },
+      "winner": "V14 \u2705"
+    }
+  ]
+}

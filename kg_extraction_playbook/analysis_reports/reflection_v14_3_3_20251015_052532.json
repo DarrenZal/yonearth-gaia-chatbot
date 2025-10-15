@@ -1,0 +1,281 @@
+{
+  "extraction_metadata": {
+    "version": "v14_3_3",
+    "total_relationships": 127,
+    "analysis_timestamp": "2025-10-15T05:18:36.848474"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 23,
+    "mild_issues": 1,
+    "total_issues": 25,
+    "issue_rate_percent": 19.7,
+    "estimated_false_negative_rate": 0.05,
+    "estimated_total_issues_with_fn": 26,
+    "adjusted_issue_rate_percent": 20.5,
+    "grade_confirmed": "C+",
+    "grade_adjusted": "C+",
+    "note": "Major improvement from V4 (100% issue rate). The POSSESSIVE_PRONOUN_UNRESOLVED false positive has been fixed. Main remaining issues: 1 reversed authorship (CRITICAL), 22 incomplete titles from aggressive list splitting (MEDIUM), 1 figurative language detection (MILD). System is now correctly classifying severity levels."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.8,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Pass 2.5 bibliographic_parser.py detected the citation pattern but failed to reverse the relationship. The flag AUTHORSHIP_REVERSED was set but the actual swap was not performed.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is the source instead of the author. The flag 'AUTHORSHIP_REVERSED' indicates detection but no correction was applied.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Titles from List Splitting",
+      "severity": "MEDIUM",
+      "count": 22,
+      "percentage": 17.3,
+      "description": "Book/essay titles split at commas/conjunctions, creating fragments that are too short or semantically incomplete",
+      "root_cause_hypothesis": "Pass 2.5 list_splitter.py is aggressively splitting titles at commas and 'and', treating subtitle separators as list delimiters. The module doesn't recognize that titles with colons/subtitles should remain intact.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": "config/list_splitting_rules.yaml (if exists)",
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Socialism",
+          "evidence_text": "4 Dr. Riane Eisler 137 \"Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts: 'Toward a Caring', 'Partnership Economy: Beyond Capitalism', 'Socialism'. The last fragment 'Socialism' is semantically incomplete and misleading.",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        },
+        {
+          "source": "Dr. Robert Cloninger",
+          "relationship": "authored",
+          "target": "Happy",
+          "evidence_text": "5 Dr. Robert Cloninger 150 \"What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts at commas. 'Happy' alone is not a valid book title.",
+          "should_be": {
+            "source": "Dr. Robert Cloninger",
+            "relationship": "authored",
+            "target": "What Makes People Healthy, Happy, and Fulfilled in the Face of Current World Challenges"
+          }
+        },
+        {
+          "source": "Sarah Arao",
+          "relationship": "authored",
+          "target": "Service Leadership",
+          "evidence_text": "6 Sarah Arao 158 \"Service Leadership, Self-Care, and Global Collaboration\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts. All fragments are too short to be standalone titles.",
+          "should_be": {
+            "source": "Sarah Arao",
+            "relationship": "authored",
+            "target": "Service Leadership, Self-Care, and Global Collaboration"
+          }
+        },
+        {
+          "source": "Henry Mitchell",
+          "relationship": "authored",
+          "target": "Planning",
+          "evidence_text": "22 Henry Mitchell 279 \"Planning and Preparedness for Community Resilience\"",
+          "page": 15,
+          "what_is_wrong": "Title split at 'and'. 'Planning' alone is too vague and short.",
+          "should_be": {
+            "source": "Henry Mitchell",
+            "relationship": "authored",
+            "target": "Planning and Preparedness for Community Resilience"
+          }
+        },
+        {
+          "source": "Maria Rodale",
+          "relationship": "authored",
+          "target": "Love",
+          "evidence_text": "24 Maria Rodale 290 \"Love, Nature, Women: How to Build a Regenerative Economy\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts at commas. 'Love' and 'Nature' are too vague as standalone titles.",
+          "should_be": {
+            "source": "Maria Rodale",
+            "relationship": "authored",
+            "target": "Love, Nature, Women: How to Build a Regenerative Economy"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language Detection (Mild)",
+      "severity": "MILD",
+      "count": 1,
+      "percentage": 0.8,
+      "description": "Relationship flagged as figurative language but is actually factual. The word 'sacred' in a book title is not metaphorical usage.",
+      "root_cause_hypothesis": "Pass 2.5 figurative_language_detector.py has overly broad pattern matching for words like 'sacred', 'spiritual', 'alchemy'. It doesn't distinguish between metaphorical usage in text vs. literal usage in titles.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "John P. Milton",
+          "relationship": "authored",
+          "target": "The Sacred View of Mother Gaia",
+          "evidence_text": "23 John P. Milton 285 \"The Sacred View of Mother Gaia\"",
+          "page": 15,
+          "what_is_wrong": "Flagged as FIGURATIVE_LANGUAGE with metaphorical_terms: ['sacred']. However, this is a book title, not a metaphorical statement. The authorship relationship is factual.",
+          "should_be": {
+            "source": "John P. Milton",
+            "relationship": "authored",
+            "target": "The Sacred View of Mother Gaia"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Detected But Not Applied Corrections",
+      "severity": "CRITICAL",
+      "count": 1,
+      "description": "The system correctly detects an issue (sets a flag like AUTHORSHIP_REVERSED) but fails to apply the correction. The flag indicates awareness but no action was taken.",
+      "root_cause_hypothesis": "Pass 2.5 modules are setting flags for detected issues but not modifying the relationship data. There's a disconnect between detection and correction logic.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Flag 'AUTHORSHIP_REVERSED' is set with correction_reason: 'bibliographic_citation_detected', but the source and target were not swapped.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Title Splitting Ignores Structural Markers",
+      "severity": "MEDIUM",
+      "count": 22,
+      "description": "List splitter treats commas in titles (especially after colons/subtitles) as list delimiters, breaking semantic units. It doesn't recognize that 'Title: Subtitle with, commas, and conjunctions' should remain intact.",
+      "root_cause_hypothesis": "list_splitter.py lacks context awareness. It applies comma/conjunction splitting rules uniformly without checking if the text is a title (indicated by quotes, capitalization patterns, or position after 'authored').",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Toward a Caring",
+          "evidence_text": "4 Dr. Riane Eisler 137 \"Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism\"",
+          "page": 15,
+          "what_is_wrong": "Title split at 'and' even though it's part of a cohesive title structure with a colon separator.",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Fix the bibliographic_parser to actually swap source/target when AUTHORSHIP_REVERSED flag is set. Current code detects the pattern but doesn't apply the correction. Add: if flags.get('AUTHORSHIP_REVERSED'): relationship['source'], relationship['target'] = relationship['target'], relationship['source']",
+      "expected_impact": "Eliminates the 1 CRITICAL reversed authorship issue. Ensures detected corrections are actually applied.",
+      "rationale": "The detection logic is working (flag is set), but the correction logic is missing. This is a simple fix with high impact."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add title-aware splitting logic: 1) If relationship is 'authored' and target is in quotes or follows a colon, treat as a single title unit. 2) Don't split at commas/conjunctions within quoted strings. 3) Add heuristic: if split would create fragments <3 words, keep original. 4) Check for title patterns: 'Title: Subtitle' should never split at commas in subtitle.",
+      "expected_impact": "Fixes 22 MEDIUM incomplete title issues (17.3% of relationships). Preserves semantic integrity of book/essay titles.",
+      "rationale": "The list splitter is too aggressive and lacks context. Titles have different structural rules than lists. This fix prevents semantic fragmentation while preserving legitimate list splitting."
+    },
+    {
+      "priority": "HIGH",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/title_validator.py",
+      "recommendation": "Create a new post-processing module that runs AFTER list_splitter to validate title completeness. Rules: 1) If relationship is 'authored', check target length (flag if <3 words unless it's a known single-word title like 'Dune'). 2) Check for incomplete patterns: ends with comma, starts with lowercase, ends with 'and'. 3) If INCOMPLETE_TITLE flag is set AND split_index exists, attempt to reconstruct original from split metadata. 4) Run before final output.",
+      "expected_impact": "Catches and fixes incomplete titles that slip through list_splitter. Provides a safety net for title integrity.",
+      "rationale": "Defense-in-depth approach. Even if list_splitter improves, a validator ensures no incomplete titles reach final output."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "recommendation": "Add context-aware filtering: Don't flag figurative language if the term appears in a title (target of 'authored' relationship) or in quoted text. Only flag when the term is used metaphorically in descriptive text. Update pattern: if relationship == 'authored' and metaphorical_term in target: skip flagging.",
+      "expected_impact": "Eliminates 1 MILD false positive. Improves precision of figurative language detection.",
+      "rationale": "Titles often use evocative language ('sacred', 'alchemy') literally as part of the title, not metaphorically. Context matters."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/list_splitting_rules.yaml",
+      "recommendation": "Add exclusion rules for list splitting: 1) exclude_patterns: ['authored'] (don't split targets of authorship relationships). 2) preserve_quoted_strings: true (never split inside quotes). 3) min_fragment_length: 3 (don't create fragments <3 words). 4) title_markers: [':', '\"', capitalized_words] (detect title structures and preserve them).",
+      "expected_impact": "Prevents list splitting from breaking titles at the configuration level. Complements code fixes.",
+      "rationale": "Configuration-driven rules are easier to tune and maintain than hardcoded logic. Allows rapid iteration on splitting behavior."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/incomplete_title_detector.py",
+      "recommendation": "Improve the incompleteness detection heuristics: 1) Flag titles ending with prepositions ('of', 'in', 'for', 'to') as incomplete. 2) Flag titles that are single common words ('Love', 'Nature', 'Planning') unless they're known single-word titles. 3) Add a whitelist of valid single-word titles to reduce false positives.",
+      "expected_impact": "Better detection of incomplete titles, enabling downstream fixes. Reduces false negatives.",
+      "rationale": "Current detection catches some cases (too_short) but misses others. More sophisticated heuristics improve recall."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "No evidence of Pass 1 extraction issues. The entities and relationships are correctly extracted from the source text. The problems arise in Pass 2.5 post-processing.",
+        "current_wording": "N/A - prompts not provided for analysis",
+        "suggested_fix": "No changes needed to Pass 1 extraction prompt based on this data.",
+        "examples_needed": "No"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "No evidence of Pass 2 evaluation issues. The text_confidence and p_true scores are reasonable. The problems are in Pass 2.5 code-driven modules, not prompt-driven evaluation.",
+        "current_wording": "N/A - prompts not provided for analysis",
+        "suggested_fix": "No changes needed to Pass 2 evaluation prompt based on this data."
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.197,
+    "note": "System has improved dramatically from V4 (100% issue rate) to V14 (19.7% issue rate). Main remaining issues are fixable through targeted code improvements to bibliographic_parser and list_splitter. With recommended fixes, system should reach <5% issue rate (Grade A)."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T05:25:32.176497",
+    "relationships_analyzed": 127,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14_3_3"
+  }
+}

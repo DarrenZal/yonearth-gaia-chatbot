@@ -368,7 +368,7 @@ Output your changeset as JSON matching the schema in your system prompt."""
         return prompt
 
     def _load_playbook_state(self) -> Dict[str, Any]:
-        """Load current Playbook structure and key files."""
+        """Load current Playbook structure and key files - SCANS ACTUAL FILESYSTEM."""
         state = {
             "modules": [],
             "prompts": [],
@@ -376,25 +376,38 @@ Output your changeset as JSON matching the schema in your system prompt."""
             "vocabularies": []
         }
 
-        # Scan Playbook directory structure
-        if self.playbook_path.exists():
-            # List modules
-            modules_dir = self.playbook_path / "modules"
-            if modules_dir.exists():
-                state["modules"] = [str(f.relative_to(self.playbook_path))
-                                   for f in modules_dir.rglob("*.py")]
+        # Define actual directory paths (not hypothetical)
+        project_root = Path("/home/claudeuser/yonearth-gaia-chatbot")
+        postprocessing_dir = project_root / "src" / "knowledge_graph" / "postprocessing"
+        prompts_dir = self.playbook_path / "prompts"
+        configs_dir = self.playbook_path / "config"
 
-            # List prompts
-            prompts_dir = self.playbook_path / "prompts"
-            if prompts_dir.exists():
-                state["prompts"] = [str(f.relative_to(self.playbook_path))
-                                   for f in prompts_dir.rglob("*.txt")]
+        # Scan ACTUAL postprocessing modules
+        if postprocessing_dir.exists():
+            # Get all Python files and make paths relative for readability
+            module_files = list(postprocessing_dir.rglob("*.py"))
+            # Return paths relative to project root for clarity
+            state["modules"] = [str(f.relative_to(project_root)) for f in module_files]
+        else:
+            print(f"⚠️  Warning: Postprocessing directory not found: {postprocessing_dir}")
 
-            # List configs
-            configs_dir = self.playbook_path / "config"
-            if configs_dir.exists():
-                state["configs"] = [str(f.relative_to(self.playbook_path))
-                                   for f in configs_dir.rglob("*.json")]
+        # Scan prompts (this was already correct)
+        if prompts_dir.exists():
+            prompt_files = list(prompts_dir.rglob("*.txt"))
+            state["prompts"] = [str(f.relative_to(self.playbook_path)) for f in prompt_files]
+        else:
+            print(f"⚠️  Warning: Prompts directory not found: {prompts_dir}")
+
+        # Scan configs
+        if configs_dir.exists():
+            config_files = list(configs_dir.rglob("*.json"))
+            state["configs"] = [str(f.relative_to(self.playbook_path)) for f in config_files]
+
+        # Debug output
+        print(f"📂 Scanned filesystem:")
+        print(f"   - Modules found: {len(state['modules'])}")
+        print(f"   - Prompts found: {len(state['prompts'])}")
+        print(f"   - Configs found: {len(state['configs'])}")
 
         return state
 
@@ -492,7 +505,16 @@ Output your changeset as JSON matching the schema in your system prompt."""
         """Apply a single file operation using intelligent Applicator."""
         op_type = operation.get("operation_type")
         file_path_str = operation.get("file_path")
-        file_path = self.playbook_path / file_path_str
+
+        # Smart path resolution: Check if path is relative to project root or playbook
+        project_root = Path("/home/claudeuser/yonearth-gaia-chatbot")
+
+        if file_path_str.startswith("src/") or file_path_str.startswith("/"):
+            # Module paths (src/knowledge_graph/...) are relative to project root
+            file_path = project_root / file_path_str if not file_path_str.startswith("/") else Path(file_path_str)
+        else:
+            # Prompt/config paths (prompts/..., config/...) are relative to playbook
+            file_path = self.playbook_path / file_path_str
 
         # Check if we have the new concise format (change_description + guidance)
         # vs old verbose format (old_content + new_content)

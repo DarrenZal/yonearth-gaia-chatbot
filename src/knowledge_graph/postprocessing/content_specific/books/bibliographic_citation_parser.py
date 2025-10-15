@@ -44,10 +44,17 @@ class BibliographicCitationParser(PostProcessingModule):
     content_types = ["book"]
     priority = 20
     dependencies = ["PraiseQuoteDetector"]
-    version = "1.4.0"  # V14.3.2: Enhanced authorship direction + dedication target cleaning
+    version = "1.8.0"  # V14.3.9: Fixed is_person_name() to prevent false positives on title keywords
 
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         super().__init__(config)
+
+        # V14.3.7 ENHANCED: Support initials, suffixes (Jr., Sr., III), middle names
+        # Pattern: "LastName, FirstName [Middle] [Suffix]. Title" or "LastName, A. W. Title"
+        # Examples: "Perry, Aaron William. Our Biggest Deal"
+        #          "Perry, A. W., Jr. Our Biggest Deal"
+        #          "Smith, John III. Some Title"
+        self.full_citation_pattern = r'^([A-Z][a-z]+,\s+(?:[A-Z]\.?\s*)+(?:[A-Z][a-z]+)?(?:,?\s+(?:Jr\.|Sr\.|III|II|IV))?)\s*\.\s+([A-Z][^/:;]+)(?:\s*[:;/]|$)'
 
         self.citation_patterns = self.config.get('citation_patterns', [
             r'^([A-Z][a-z]+,\s+[A-Z][a-z]+(?:\s+and\s+[A-Z][a-z]+,\s+[A-Z][a-z]+)*)\.',
@@ -155,40 +162,55 @@ class BibliographicCitationParser(PostProcessingModule):
     def is_person_name(self, text: str) -> bool:
         """
         Check if text appears to be a person's name.
-        
+
+        V14.3.9 ENHANCED: Added title keyword detection to prevent false positives.
+
         Indicators:
         - 2-3 words (First Last or First Middle Last)
         - Proper case (capitalized)
         - No book-related keywords
+        - No title keywords (deal, book, story, etc.)
         - No colons or quotes
         """
         if not text:
             return False
-        
+
         words = text.split()
-        
+
         # Person names are typically 2-3 words
         if not (2 <= len(words) <= 4):
             return False
-        
+
         # Should not contain book indicators
         if ':' in text or '"' in text:
             return False
-        
+
+        # V14.3.9 CRITICAL FIX: Check for title keywords that indicate NOT a person name
+        # This prevents "Our Biggest Deal" from being detected as a person name
+        title_keywords = [
+            'deal', 'book', 'handbook', 'manual', 'guide', 'introduction',
+            'primer', 'companion', 'reference', 'textbook', 'workbook',
+            'story', 'tale', 'journey', 'adventure', 'quest', 'essay',
+            'treatise', 'memoir', 'biography', 'autobiography', 'novel',
+            'collection', 'anthology', 'compendium', 'encyclopedia'
+        ]
+        text_lower = text.lower()
+        if any(keyword in text_lower for keyword in title_keywords):
+            return False
+
         book_keywords = ['handbook', 'manual', 'guide', 'introduction', 'primer',
                         'companion', 'reference', 'textbook', 'workbook']
-        text_lower = text.lower()
         if any(keyword in text_lower for keyword in book_keywords):
             return False
-        
+
         # All words should be capitalized (proper nouns)
         if not all(w[0].isupper() for w in words if len(w) > 0):
             return False
-        
+
         # Words should not be too long (names are typically short)
         if any(len(w) > 15 for w in words):
             return False
-        
+
         return True
 
     def validate_endorsement_direction(self, rel: Any) -> Any:
@@ -517,17 +539,86 @@ class BibliographicCitationParser(PostProcessingModule):
         should_reverse = source_is_title and target_is_author
         return should_reverse, False
 
+    def parse_full_citation(self, evidence_text: str) -> Optional[Tuple[str, str]]:
+        """
+        V14.3.4 NEW: Parse "LastName, FirstName. Title" citation format.
+
+        Returns:
+            (author_name, title) tuple if pattern matches, None otherwise
+
+        Examples:
+            "Perry, Aaron William. Our Biggest Deal : pathways..."
+            → ("Aaron William Perry", "Our Biggest Deal")
+        """
+        match = re.match(self.full_citation_pattern, evidence_text.strip())
+        if not match:
+            return None
+
+        # Group 1: "LastName, FirstName" or "LastName, FirstName MiddleName"
+        # Group 2: "Title"
+        name_part = match.group(1).strip()
+        title_part = match.group(2).strip()
+
+        # Convert "LastName, FirstName" → "FirstName LastName"
+        if ',' in name_part:
+            parts = [p.strip() for p in name_part.split(',')]
+            if len(parts) == 2:
+                # "Perry, Aaron William" → "Aaron William Perry"
+                author_name = f"{parts[1]} {parts[0]}"
+            else:
+                author_name = name_part
+        else:
+            author_name = name_part
+
+        return (author_name, title_part)
+
     def validate_authorship_direction(self, rel: Any) -> Any:
         """
-        V14.3.2 FIX: Validate that 'authored' relationship has correct direction.
+        V14.3.7 FIX: Validate that 'authored' relationship has correct direction.
 
         Correct: Author → authored → Book
         Incorrect: Book → authored → Author
+
+        V14.3.7 IDEMPOTENCY: Never re-alter if AUTHORSHIP_REVERSED already set.
+        V14.3.7 EXPLICIT TYPES: Always set source_type=Person/Org, target_type=Book.
 
         If source is book title and target is person name, reverse them.
         """
         if rel.relationship != 'authored':
             return rel
+
+        # V14.3.7 IDEMPOTENCY: Skip if already corrected
+        if hasattr(rel, 'flags') and rel.flags and rel.flags.get('AUTHORSHIP_REVERSED'):
+            return rel
+
+        # V14.3.6 NEW: Try to parse full citation format first
+        # This handles "Perry, Aaron William. Our Biggest Deal..." correctly
+        parsed_citation = self.parse_full_citation(rel.evidence_text)
+        if parsed_citation:
+            author_name, title = parsed_citation
+
+            # Check if extraction got it backwards
+            # If source is title and target is author, reverse
+            if rel.source.lower().strip() in title.lower() and author_name.lower() in rel.target.lower():
+                # V14.3.6 CRITICAL FIX: Create new relationship object
+                new_rel = copy.deepcopy(rel)
+                new_rel.source = author_name
+                new_rel.target = title
+                new_rel.source_type = "Person"
+                new_rel.target_type = "Book"
+
+                # Swap evidence surfaces
+                if 'source_surface' in new_rel.evidence and 'target_surface' in new_rel.evidence:
+                    new_rel.evidence['source_surface'], new_rel.evidence['target_surface'] = \
+                        new_rel.evidence.get('target_surface'), new_rel.evidence.get('source_surface')
+
+                if new_rel.flags is None:
+                    new_rel.flags = {}
+                new_rel.flags['AUTHORSHIP_REVERSED'] = True
+                new_rel.flags['correction_reason'] = 'bibliographic_citation_parsed'
+
+                logger.debug(f"Fixed reversed authorship from citation: {new_rel.source} → {new_rel.target}")
+                return new_rel
 
         source_is_book = self.is_book_title(rel.source)
         target_is_person = self.is_person_name(rel.target)
@@ -550,19 +641,28 @@ class BibliographicCitationParser(PostProcessingModule):
         return rel
 
     def reverse_authorship(self, rel: Any) -> Any:
-        """Reverse source and target for misattributed authorship"""
-        rel.source, rel.target = rel.target, rel.source
-        rel.source_type, rel.target_type = rel.target_type, rel.source_type
+        """
+        V14.3.7 FIX: Reverse source and target for misattributed authorship.
 
-        rel.evidence['source_surface'], rel.evidence['target_surface'] = \
+        Creates new relationship object instead of modifying in place.
+        V14.3.7 EXPLICIT TYPES: Always set source_type=Person, target_type=Book.
+        """
+        new_rel = copy.deepcopy(rel)
+        new_rel.source, new_rel.target = rel.target, rel.source
+
+        # V14.3.7 EXPLICIT TYPE SETTING: Always set corrected types
+        new_rel.source_type = "Person"  # Author is always Person (occasionally Organization)
+        new_rel.target_type = "Book"     # Target is always Book
+
+        new_rel.evidence['source_surface'], new_rel.evidence['target_surface'] = \
             rel.evidence.get('target_surface'), rel.evidence.get('source_surface')
 
-        if rel.flags is None:
-            rel.flags = {}
-        rel.flags['AUTHORSHIP_REVERSED'] = True
-        rel.flags['correction_reason'] = 'bibliographic_citation_detected'
+        if new_rel.flags is None:
+            new_rel.flags = {}
+        new_rel.flags['AUTHORSHIP_REVERSED'] = True
+        new_rel.flags['correction_reason'] = 'bibliographic_citation_detected'
 
-        return rel
+        return new_rel
 
     def process_batch(
         self,
@@ -583,6 +683,10 @@ class BibliographicCitationParser(PostProcessingModule):
         authorship_direction_count = 0
 
         for rel in relationships:
+            # If already corrected earlier, respect it (don't flip again)
+            if rel.flags and rel.flags.get('AUTHORSHIP_REVERSED'):
+                corrected.append(rel)
+                continue
             # V14.3.2 FIX: Validate authorship direction FIRST (before dedication check)
             # This catches reversed "Book authored Author" relationships
             if rel.relationship == 'authored':

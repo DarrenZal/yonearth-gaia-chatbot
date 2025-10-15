@@ -1,0 +1,148 @@
+{
+  "metadata": {
+    "book": "our_biggest_deal",
+    "section": "front_matter",
+    "pages": "1-30",
+    "extraction_version": "v14_3_8",
+    "timestamp": "20251015_082726",
+    "extraction_date": "2025-10-15T08:31:40.019894",
+    "elapsed_seconds": 253.42351412773132,
+    "document_metadata": {
+      "author": "Aaron William Perry",
+      "title": "Our Biggest Deal",
+      "section": "front_matter",
+      "pages": "1-30"
+    }
+  },
+  "extraction_stats": {
+    "pass1_candidates": 154,
+    "pass1_chunks_split": 0,
+    "pass2_evaluated": 154,
+    "pass2_5_final": 2
+  },
+  "postprocessing_stats": {
+    "initial_count": 154,
+    "modules_run": [
+      "FieldNormalizer",
+      "PraiseQuoteDetector",
+      "FrontMatterDetector",
+      "DedicationNormalizer",
+      "SubtitleJoiner"
+    ],
+    "modules_skipped": [],
+    "module_stats": {
+      "FieldNormalizer": {
+        "name": "FieldNormalizer",
+        "version": "1.0.0",
+        "stats": {
+          "processed_count": 154,
+          "modified_count": 154,
+          "filtered_count": 0,
+          "error_count": 0,
+          "normalizations_applied": 154
+        },
+        "field_mappings": {
+          "predicate": "relationship",
+          "source_entity": "source",
+          "target_entity": "target"
+        }
+      },
+      "PraiseQuoteDetector": {
+        "name": "PraiseQuoteDetector",
+        "version": "1.5.0",
+        "stats": {
+          "processed_count": 154,
+          "modified_count": 6,
+          "filtered_count": 0,
+          "error_count": 0,
+          "corrected": 2,
+          "filtered": 4,
+          "skipped_known_authors": 29
+        }
+      },
+      "FrontMatterDetector": {
+        "name": "FrontMatterDetector",
+        "version": "1.0.0",
+        "stats": {
+          "processed_count": 150,
+          "modified_count": 0,
+          "filtered_count": 0,
+          "error_count": 0,
+          "corrected": 0
+        }
+      },
+      "DedicationNormalizer": {
+        "name": "DedicationNormalizer",
+        "version": "1.0.0",
+        "stats": {
+          "processed_count": 0,
+          "modified_count": 0,
+          "filtered_count": 0,
+          "error_count": 0
+        }
+      },
+      "SubtitleJoiner": {
+        "name": "SubtitleJoiner",
+        "version": "1.0.0",
+        "stats": {
+          "processed_count": 2,
+          "modified_count": 0,
+          "filtered_count": 0,
+          "error_count": 0,
+          "rehydrated": 0
+        }
+      }
+    },
+    "final_count": 2
+  },
+  "execution_manifest": {
+    "section": "front_matter",
+    "timestamp": "20251015_082726",
+    "version": "v14_3_8",
+    "git": {
+      "commit_hash": "cf71279c61c524cc5ef032c8063917b3ed805b78",
+      "branch": "obd-incremental-extraction",
+      "is_dirty": true
+    },
+    "environment": {
+      "python_version": "3.10.12",
+      "platform": "Linux-5.15.0-143-generic-x86_64-with-glibc2.35"
+    },
+    "packages": {
+      "openai": "1.93.0",
+      "pydantic": "2.11.7",
+      "pdfplumber": "0.11.7"
+    },
+    "script": {
+      "path": "scripts/extract_kg_v14_3_8_incremental.py",
+      "args": {
+        "book": "our_biggest_deal",
+        "section": "front_matter",
+        "pages": "1-30",
+        "version": "v14_3_8",
+        "author": "Aaron William Perry"
+      }
+    },
+    "prompts": {
+      "pass1_extraction": {
+        "path": "kg_extraction_playbook/prompts/pass1_extraction_v14_3_1.txt",
+        "checksum": "sha256:9ec6a0e506e2d9c9"
+      },
+      "pass2_evaluation": {
+        "path": "kg_extraction_playbook/prompts/pass2_evaluation_v14_3.txt",
+        "checksum": "sha256:abe1cac1bbc29218"
+      }
+    },
+    "model_config": {
+      "pass1_model": "gpt-4o-2024-08-06",
+      "pass2_model": "gpt-4o-2024-08-06",
+      "temperature": 0.0,
+      "max_tokens": 16384
+    },
+    "duration_seconds": 253.42351412773132,
+    "output_file": "kg_extraction_playbook/output/our_biggest_deal/v14_3_8/chapters/front_matter_v14_3_8_20251015_082726.json",
+    "pipeline_version": "v14_3_8"
+  },
+  "relationships": [
+    [
+      

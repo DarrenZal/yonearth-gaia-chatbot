@@ -1,0 +1,62 @@
+Extract ALL relationships you can find in this text.
+
+Don't worry about whether they're correct or make sense - just extract EVERYTHING.
+We'll validate later in a separate pass.
+
+## 📚 RELATIONSHIP TYPES TO EXTRACT ##
+
+Extract ALL of these types (and more):
+
+### 1. ENTITY RELATIONSHIPS
+- Authorship: X authored Y, X wrote Y, X published Y
+- Organizational: X founded Y, X works for Y, X is affiliated with Y
+- Location: X is located in Y, X occurs in Y
+- Attribution: X said Y, X stated Y, X believes Y
+
+### 2. DISCOURSE GRAPH
+- **Claims**: Assertions, arguments, theses
+- **Evidence**: Facts, data, observations that support or oppose claims
+- **Questions**: Inquiries, problems, challenges posed
+- Relationships:
+  - Claim → supports → Claim
+  - Claim → opposes → Claim
+  - Evidence → supports → Claim
+  - Evidence → opposes → Claim
+  - Claim → answers → Question
+  - Claim → informs → Question
+
+### 3. PROCESSES & PRACTICES
+- Methods: X involves Y, X requires Y, X includes Y, X produces Y
+- Procedures: X transforms Y, X creates Y, X converts Y into Z
+- Practices: X recommends Y, X suggests Y, X implements Y
+
+### 4. CAUSATION & EFFECTS
+- Positive: X causes Y, X leads to Y, X enables Y, X improves Y
+- Negative: X prevents Y, X harms Y, X destroys Y, X threatens Y
+- Neutral: X affects Y, X influences Y, X changes Y
+
+### 5. DEFINITIONS & DESCRIPTIONS
+- Identity: X is-a Y, X is defined as Y, X means Y
+- Properties: X has Y, X contains Y, X exhibits Y
+- Comparison: X is similar to Y, X differs from Y, X equals Y
+
+### 6. QUANTITATIVE RELATIONSHIPS
+- Measurements: X measures Y units, X equals Y percent
+- Changes: X increases by Y, X decreases by Y
+- Comparisons: X is greater than Y, X is equivalent to Y
+
+## 📝 OUTPUT FORMAT ##
+
+For each relationship provide:
+- source: Complete source entity/concept/claim (with all qualifiers)
+- relationship: Relationship type (supports, causes, is-a, produces, etc.)
+- target: Complete target entity/concept/claim (with all qualifiers)
+- evidence_text: Quote from text (100-300 characters)
+
+## 📖 TEXT TO EXTRACT FROM ##
+
+{text}
+
+## ⚡ BE EXHAUSTIVE ##
+
+Extract EVERY relationship you find. Don't hold back!

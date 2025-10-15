@@ -1,0 +1,636 @@
+{
+  "extraction_metadata": {
+    "version": "v13.1",
+    "total_relationships": 873,
+    "analysis_timestamp": "2025-10-14T10:30:00.000000"
+  },
+  "quality_summary": {
+    "critical_issues": 0,
+    "high_priority_issues": 12,
+    "medium_priority_issues": 48,
+    "mild_issues": 67,
+    "total_issues": 127,
+    "issue_rate_percent": 14.5,
+    "estimated_false_negative_rate": 0.13,
+    "estimated_total_issues_with_fn": 145,
+    "adjusted_issue_rate_percent": 16.6,
+    "grade_confirmed": "B",
+    "grade_adjusted": "B-",
+    "note": "Adjusted metrics include estimated mild issues not flagged (13% FN rate based on meta-validation). Main concerns: praise quote over-correction, vague abstract entities, predicate fragmentation, and pronoun resolution gaps."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Over-Aggressive Praise Quote Correction",
+      "severity": "HIGH",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "The bibliographic parser is incorrectly flagging legitimate authorship relationships as 'praise quotes' and converting them to 'endorsed' relationships. This appears to be a false positive pattern where copyright statements or dedication pages trigger the praise detection logic.",
+      "root_cause_hypothesis": "The praise_quote_detector module is matching on context patterns that include author names near book titles, without distinguishing between actual praise quotes (endorsements from third parties) and legitimate authorship/copyright statements. The regex or heuristic is too broad.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Aaron William Perry",
+          "relationship": "endorsed",
+          "target": "Soil Stewardship Handbook",
+          "evidence_text": "University Copyright \u00a9 2018 Aaron William Perry All rights reserved. No part of this book may be reproduced in any form or by any electronic or mechanical means, including information storage and retrieval systems, without permission in writing from the publisher, except by reviewers, who may quote brief passages in a review.",
+          "page": 6,
+          "what_is_wrong": "This is a copyright statement showing authorship, not an endorsement. The flag 'PRAISE_QUOTE_CORRECTED' with note 'Changed from authorship to endorsement (praise quote detected)' indicates false positive.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Soil Stewardship Handbook"
+          }
+        },
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "endorsed",
+          "target": "Lily Sophia von \u00dcbergarten",
+          "evidence_text": "Dear Friend, I am thrilled and grateful that you have this Soil Stewardship Handbook before you.",
+          "page": 10,
+          "what_is_wrong": "The relationship direction is reversed AND incorrectly classified as endorsement. This appears to be a foreword or introduction, not an endorsement of the book by the handbook.",
+          "should_be": {
+            "source": "Lily Sophia von \u00dcbergarten",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Vague Abstract Entities",
+      "severity": "HIGH",
+      "count": 18,
+      "percentage": 2.1,
+      "description": "Entities like 'the answer', 'this approach', 'the way', 'aspects of life' are too abstract to be useful in a knowledge graph. These lack specificity and don't convey concrete information.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt allows overly abstract entity extraction. The entity specificity filter (entity_specificity_score) is not aggressive enough - scores of 0.8-0.95 are still passing for vague entities. The threshold may need to be raised or the scoring logic refined.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": "config/entity_specificity_threshold",
+      "examples": [
+        {
+          "source": "soil stewardship",
+          "relationship": "affects",
+          "target": "aspects of life",
+          "evidence_text": "The Soil Stewardship Handbook looks at our connections to the soil and the way that relationship can affect so many aspects of life.",
+          "page": 2,
+          "what_is_wrong": "'aspects of life' is too vague - which aspects? This doesn't provide actionable knowledge.",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "affects",
+            "target": "human health and agriculture"
+          }
+        },
+        {
+          "source": "this approach",
+          "relationship": "enables",
+          "target": "sustainable farming practices",
+          "evidence_text": "This approach opens doors to sustainable farming practices.",
+          "page": 10,
+          "what_is_wrong": "'this approach' is a demonstrative pronoun that should be resolved to the specific approach being discussed (soil stewardship).",
+          "should_be": {
+            "source": "soil stewardship",
+            "relationship": "enables",
+            "target": "sustainable farming practices"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Predicate Fragmentation",
+      "severity": "MEDIUM",
+      "count": 133,
+      "percentage": 15.2,
+      "description": "133 unique predicates with significant fragmentation in common base predicates like 'is', 'has', 'can', 'are'. Many variations express the same semantic relationship (e.g., 'is a', 'is-a', 'is', 'is about', 'is of', 'is toward'). This reduces query efficiency and relationship discovery.",
+      "root_cause_hypothesis": "Predicate normalization module is not aggressive enough. While some normalization is happening (flags show 'PREDICATE_NORMALIZED'), many variations are still passing through. The normalization rules may need expansion or the module needs to run earlier in the pipeline.",
+      "affected_module": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "affected_prompt": null,
+      "affected_config": "config/predicate_normalization_rules.json",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "foundation of human life",
+          "evidence_text": "SOIL\u2014THE FOUNDATION OF HUMAN LIFE",
+          "page": 15,
+          "what_is_wrong": "Uses 'is-a' while other relationships use 'is' - inconsistent predicate forms for same semantic relationship.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "is",
+            "target": "foundation of human life"
+          }
+        },
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "It is, perhaps above all else, our connection with the soil that has preserved our countryside",
+          "page": 6,
+          "what_is_wrong": "'has preserved' should normalize to 'preserved' - tense variations should be canonical.",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "preserved",
+            "target": "our countryside"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Unresolved Possessive Pronouns in Targets",
+      "severity": "MEDIUM",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Possessive pronouns like 'our countryside', 'our humanity' remain unresolved in target entities. While source pronoun resolution is working (flags show 'POSSESSIVE_PRONOUN_RESOLVED_SOURCE'), target resolution is incomplete.",
+      "root_cause_hypothesis": "The pronoun resolution module (pronoun_resolver.py) is only processing source entities, not target entities. The module logic needs to be extended to handle targets as well.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "connection with the soil",
+          "relationship": "has preserved",
+          "target": "our countryside",
+          "evidence_text": "It is, perhaps above all else, our connection with the soil that has preserved our countryside and that has allowed my people to flourish",
+          "page": 6,
+          "what_is_wrong": "'our countryside' should resolve to 'Slovenian countryside' based on context (author is from Slovenia).",
+          "should_be": {
+            "source": "connection with the soil",
+            "relationship": "preserved",
+            "target": "Slovenian countryside"
+          }
+        },
+        {
+          "source": "individuals",
+          "relationship": "can",
+          "target": "cultivate our humanity",
+          "evidence_text": "we each get to choose to create the future by incorporating ancient wisdom into our modern lifeways.",
+          "page": 10,
+          "what_is_wrong": "'our humanity' is generic and should be 'human potential' or similar concrete concept.",
+          "should_be": {
+            "source": "individuals",
+            "relationship": "can cultivate",
+            "target": "human potential"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Unresolved Generic Pronouns",
+      "severity": "MEDIUM",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "Generic pronouns like 'we', 'us' in sources/targets that remain unresolved despite flags showing 'PRONOUN_UNRESOLVED_SOURCE'. The resolution is attempted but incomplete.",
+      "root_cause_hypothesis": "The pronoun resolver is flagging these but not successfully resolving them. This suggests the context window or resolution heuristics are insufficient for generic pronouns that require broader document understanding.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "we",
+          "relationship": "can",
+          "target": "reconnect with land",
+          "evidence_text": "We have the opportunity to reconnect with land and soil, to exercise our liberty as great steward-gardeners.",
+          "page": 10,
+          "what_is_wrong": "'we' is flagged as 'PRONOUN_UNRESOLVED_SOURCE' but not resolved. Should be 'humanity' or 'individuals' based on context.",
+          "should_be": {
+            "source": "humanity",
+            "relationship": "can",
+            "target": "reconnect with land"
+          }
+        },
+        {
+          "source": "soil",
+          "relationship": "helps",
+          "target": "us",
+          "evidence_text": "An awesome miracle of creation, soil heals us.",
+          "page": 17,
+          "what_is_wrong": "'us' is flagged as 'PRONOUN_UNRESOLVED_TARGET' - should resolve to 'humans' or 'people'.",
+          "should_be": {
+            "source": "soil",
+            "relationship": "heals",
+            "target": "humans"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Abstract Claims",
+      "severity": "MEDIUM",
+      "count": 15,
+      "percentage": 1.7,
+      "description": "Overly philosophical or metaphorical statements extracted as factual relationships. Examples: 'soil is cosmically sacred', 'soil is the answer to climate change'. These are opinion/rhetoric rather than concrete knowledge.",
+      "root_cause_hypothesis": "Pass 2 evaluation is not distinguishing between factual claims and philosophical/rhetorical statements. The 'PHILOSOPHICAL_CLAIM' flag exists but p_true scores remain high (0.24-0.8), suggesting the evaluation prompt needs clearer guidance on filtering abstract claims.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "cosmically sacred",
+          "evidence_text": "To truly see soil for what it is, we will come to understand that soil is cosmically sacred.",
+          "page": 17,
+          "what_is_wrong": "This is a philosophical/spiritual claim, not a factual relationship. The flag 'PHILOSOPHICAL_CLAIM' is present but p_true=0.24 suggests it should be filtered out entirely.",
+          "should_be": null
+        },
+        {
+          "source": "soil",
+          "relationship": "is-a",
+          "target": "answer to climate change",
+          "evidence_text": "soil is the answer to climate change",
+          "page": 15,
+          "what_is_wrong": "Overly abstract and rhetorical. Should be more specific: 'soil can sequester carbon' or 'soil management can mitigate climate change'.",
+          "should_be": {
+            "source": "soil management",
+            "relationship": "can mitigate",
+            "target": "climate change"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Figurative Language as Factual",
+      "severity": "MILD",
+      "count": 12,
+      "percentage": 1.4,
+      "description": "Metaphorical or figurative language extracted as literal relationships. Examples: 'soil contains living skin', 'sacred Sanskrit scripture'. The 'FIGURATIVE_LANGUAGE' flag is present but relationships are still included.",
+      "root_cause_hypothesis": "The figurative language detector is working (flags are present) but not filtering out these relationships. The p_true scores remain high (0.57-0.72), suggesting the evaluation prompt should penalize figurative language more heavily or these should be filtered post-detection.",
+      "affected_module": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "contains",
+          "target": "living skin",
+          "evidence_text": "Since the beginning of time, of all the planets in all the galaxies in the known universe, only one has a living, breathing skin called dirt.",
+          "page": 17,
+          "what_is_wrong": "'living skin' is a metaphor for soil's surface layer. The flag 'METAPHOR' is present but relationship is still included with p_true=0.6.",
+          "should_be": null
+        },
+        {
+          "source": "Vedas",
+          "relationship": "contains",
+          "target": "sacred Sanskrit scripture",
+          "evidence_text": "\u2014From the Vedas, Sacred Sanskrit Scripture, 1500 BC",
+          "page": 15,
+          "what_is_wrong": "'sacred' is a value judgment/religious term. While technically true, it's mixing factual and evaluative language.",
+          "should_be": {
+            "source": "Vedas",
+            "relationship": "is",
+            "target": "Sanskrit scripture"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete List Splitting",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 0.9,
+      "description": "Some list targets are split correctly (flags show 'LIST_SPLIT'), but a few cases show incomplete splitting where conjunctions like 'and' remain in split items.",
+      "root_cause_hypothesis": "The list splitting module is working but the regex patterns don't handle all conjunction cases. Specifically, 'and X' patterns where 'and' is part of the split item rather than a separator.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "agricultural soils",
+          "relationship": "restores",
+          "target": "and productively vital states",
+          "evidence_text": "By restoring agricultural soils to their natural, organic, and productively vital states",
+          "page": 17,
+          "what_is_wrong": "The split item still contains 'and' prefix - should be 'productively vital states'.",
+          "should_be": {
+            "source": "agricultural soils",
+            "relationship": "restores",
+            "target": "productively vital states"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Opinion Statements as Facts",
+      "severity": "MILD",
+      "count": 5,
+      "percentage": 0.6,
+      "description": "Subjective statements flagged as 'OPINION' but still included with high p_true scores. Examples: 'living soil makes us feel better'.",
+      "root_cause_hypothesis": "The opinion detector is working (flags present) but the evaluation prompt is not penalizing opinion statements enough. These should have lower p_true scores or be filtered out if they lack empirical support.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "living soil",
+          "relationship": "makes us feel better",
+          "target": "cognitive performance",
+          "evidence_text": "Our physical connection with living soil literally makes us feel better and makes us smarter!",
+          "page": 18,
+          "what_is_wrong": "Flagged as 'OPINION' but p_true=0.85. This is a subjective claim that should have lower confidence or be reframed as a testable hypothesis.",
+          "should_be": {
+            "source": "living soil",
+            "relationship": "may enhance",
+            "target": "cognitive performance"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Context Enrichment Over-Application",
+      "severity": "MILD",
+      "count": 6,
+      "percentage": 0.7,
+      "description": "The context enrichment module is replacing demonstrative pronouns like 'this handbook' with 'Soil Stewardship Handbook', which is correct. However, in some cases this creates redundancy when the book title is already clear from context.",
+      "root_cause_hypothesis": "The context enrichment logic is working as designed but may be too aggressive. This is actually a positive pattern - better to be explicit than vague. Flagging as MILD since it improves rather than harms quality.",
+      "affected_module": "modules/pass2_5_postprocessing/context_enricher.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "is-a",
+          "target": "road-map",
+          "evidence_text": "The book before you is a road-map of sorts, a guide, and a compass",
+          "page": 10,
+          "what_is_wrong": "Not actually wrong - the flag 'CONTEXT_ENRICHED_SOURCE' shows 'this handbook' was correctly resolved to 'Soil Stewardship Handbook'. This is good behavior.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "category_name": "Duplicate Relationships",
+      "severity": "MILD",
+      "count": 0,
+      "percentage": 0.0,
+      "description": "No duplicate relationships detected. The deduplication module is working correctly.",
+      "root_cause_hypothesis": "N/A - no issues detected in this category.",
+      "affected_module": null,
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": []
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Reversed Endorsement Direction",
+      "severity": "HIGH",
+      "count": 2,
+      "description": "Endorsement relationships where the book endorses a person, rather than person endorses book. This is a logical impossibility - books cannot endorse people.",
+      "root_cause_hypothesis": "The bibliographic parser is creating endorsement relationships but not validating the direction. When it detects praise language, it should ensure the source is always a person and target is always the book.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Soil Stewardship Handbook",
+          "relationship": "endorsed",
+          "target": "Lily Sophia von \u00dcbergarten",
+          "evidence_text": "Dear Friend, I am thrilled and grateful that you have this Soil Stewardship Handbook before you.",
+          "page": 10,
+          "what_is_wrong": "The book cannot endorse a person. This should be reversed: the person wrote a foreword or introduction for the book.",
+          "should_be": {
+            "source": "Lily Sophia von \u00dcbergarten",
+            "relationship": "wrote foreword for",
+            "target": "Soil Stewardship Handbook"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Testable Claims Without Confidence Adjustment",
+      "severity": "MEDIUM",
+      "count": 8,
+      "description": "Relationships flagged as 'TESTABLE_CLAIM' but with high p_true scores (0.8-0.9). These are scientific claims that should have moderate confidence until empirically validated.",
+      "root_cause_hypothesis": "The classification system identifies testable claims but doesn't adjust p_true scores accordingly. The evaluation prompt should lower confidence for claims that require empirical validation.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "examples": [
+        {
+          "source": "getting hands in soil",
+          "relationship": "enhances",
+          "target": "immune systems",
+          "evidence_text": "By getting our hands in the living 'dirt,' we literally soothe the anxieties of daily stress, enhance our immune systems, and increase our production of serotonin.",
+          "page": 17,
+          "what_is_wrong": "Flagged as 'TESTABLE_CLAIM' but p_true=0.8. This is a scientific claim that should have moderate confidence (0.6-0.7) until validated.",
+          "should_be": {
+            "source": "getting hands in soil",
+            "relationship": "may enhance",
+            "target": "immune systems"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Normative Statements as Factual",
+      "severity": "MEDIUM",
+      "count": 4,
+      "description": "Prescriptive/normative statements (what should be) classified as 'NORMATIVE' but still included with high confidence. These are value judgments rather than facts.",
+      "root_cause_hypothesis": "The classification system identifies normative claims but doesn't filter them or adjust confidence. These should either be excluded or have very low p_true scores.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "examples": [
+        {
+          "source": "humanity",
+          "relationship": "can",
+          "target": "thrive and heal",
+          "evidence_text": "We have the choice to thrive and to heal\u2014ourselves, our communities, and our planet\u2014by connecting with the living soil.",
+          "page": 10,
+          "what_is_wrong": "Flagged as 'NORMATIVE' but p_true=0.855. This is a prescriptive statement about what we should do, not a factual claim.",
+          "should_be": null
+        }
+      ]
+    },
+    {
+      "pattern_name": "Semantic Predicate Mismatch",
+      "severity": "MILD",
+      "count": 3,
+      "description": "Predicates that don't semantically match the source-target relationship. Example: 'soil collapses humanity' (should be 'soil degradation threatens humanity').",
+      "root_cause_hypothesis": "Pass 1 extraction is too literal in extracting predicates from text without semantic validation. The evaluation prompt should check if the predicate makes logical sense for the entity types.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "examples": [
+        {
+          "source": "soil",
+          "relationship": "collapses",
+          "target": "humanity",
+          "evidence_text": "Abuse it and the soil will collapse and die, taking humanity with it",
+          "page": 15,
+          "what_is_wrong": "Soil doesn't 'collapse' humanity - soil degradation threatens or endangers humanity. The predicate is semantically incorrect.",
+          "should_be": {
+            "source": "soil degradation",
+            "relationship": "threatens",
+            "target": "humanity"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Fix praise quote detection to exclude copyright statements and author attributions. Add logic to check if the context contains copyright symbols (\u00a9), 'All rights reserved', or 'authored by' patterns. These should never trigger praise quote conversion.",
+      "expected_impact": "Eliminates 12 false positive endorsements, restoring correct authorship relationships. Prevents books from 'endorsing' people.",
+      "rationale": "Copyright statements are definitive proof of authorship, not endorsements. This is a clear false positive pattern that undermines the bibliographic data quality."
+    },
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Add direction validation for endorsement relationships. Ensure source is always Person type and target is always Book type. If reversed, swap them and change predicate to appropriate form (e.g., 'wrote foreword for' if context suggests introduction).",
+      "expected_impact": "Fixes 2 reversed endorsement relationships and prevents future occurrences.",
+      "rationale": "Books cannot endorse people - this is logically impossible. Direction validation is a simple check that prevents nonsensical relationships."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit constraints against extracting overly abstract entities. Include examples of BAD entities to avoid: 'the answer', 'the way', 'aspects of life', 'the process', 'the solution'. Add instruction: 'Extract specific, concrete entities only. Avoid abstract philosophical terms unless they are well-defined concepts.'",
+      "expected_impact": "Reduces vague entity extraction by ~70%, improving from 18 to ~5 cases.",
+      "rationale": "The extraction prompt is the root cause - if vague entities aren't extracted initially, downstream modules don't need to filter them. Prevention is better than correction."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/entity_specificity_threshold",
+      "recommendation": "Raise entity_specificity_score threshold from current value to 0.90. Add penalty rules for demonstrative pronouns ('this', 'that', 'these', 'those') and abstract patterns ('the answer', 'the way', 'aspects of').",
+      "expected_impact": "Filters out 15-18 vague entities that currently pass with scores of 0.8-0.89.",
+      "rationale": "The current threshold is too permissive. Vague entities scoring 0.8 are still making it through. A higher threshold ensures only concrete, specific entities are retained."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Extend pronoun resolution to process target entities, not just sources. Add logic to resolve possessive pronouns in targets ('our countryside' \u2192 'Slovenian countryside', 'our humanity' \u2192 'human potential').",
+      "expected_impact": "Resolves 8 unresolved possessive pronouns in target entities.",
+      "rationale": "The module currently only processes sources. Target resolution is equally important for entity specificity and requires the same context-based resolution logic."
+    },
+    {
+      "priority": "HIGH",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add explicit guidance on philosophical/rhetorical claims: 'Assign p_true < 0.3 to philosophical statements, metaphysical claims, or rhetorical flourishes that lack empirical grounding. Examples: \"soil is cosmically sacred\", \"X is the answer to Y\". These should be flagged as PHILOSOPHICAL_CLAIM and given low confidence.'",
+      "expected_impact": "Reduces philosophical claim inclusion from 15 to ~3, lowering their p_true scores to filter threshold.",
+      "rationale": "The evaluation prompt needs clearer guidance on distinguishing factual claims from rhetoric. Current p_true scores (0.24-0.8) are too high for abstract philosophical statements."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/predicate_normalizer.py",
+      "recommendation": "Expand normalization rules to handle tense variations ('has preserved' \u2192 'preserved'), modal auxiliaries ('can help address' \u2192 'can address'), and redundant forms ('is-a' \u2192 'is'). Create canonical predicate mapping for top 20 most fragmented predicates.",
+      "expected_impact": "Reduces unique predicates from 133 to ~80-90, improving query efficiency by 30-40%.",
+      "rationale": "Predicate fragmentation is the largest single issue by count. Normalization is already working but needs more comprehensive rules to handle the long tail of variations."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/predicate_normalization_rules.json",
+      "recommendation": "Add normalization rules: {'has preserved': 'preserved', 'has led to': 'led to', 'can help address': 'can address', 'can help mitigate': 'can mitigate', 'is-a': 'is', 'is a': 'is', 'is about': 'relates to', 'are an excellent source of': 'provides'}. Map all 'is X' variations to canonical forms.",
+      "expected_impact": "Normalizes 40-50 predicate variations to canonical forms.",
+      "rationale": "Configuration-based normalization is faster to implement and test than code changes. These rules target the most common fragmentation patterns identified in the data."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass2_evaluation_v7.txt",
+      "recommendation": "Add confidence adjustment rules for claim types: 'For TESTABLE_CLAIM: reduce p_true by 0.15. For OPINION: reduce p_true by 0.25. For NORMATIVE: reduce p_true by 0.30. For PHILOSOPHICAL_CLAIM: reduce p_true by 0.50. These require empirical validation or represent subjective judgments.'",
+      "expected_impact": "Adjusts confidence scores for 27 relationships (8 testable + 5 opinion + 4 normative + 15 philosophical), pushing many below inclusion threshold.",
+      "rationale": "The classification flags are working but not affecting confidence scores. Explicit confidence penalties ensure that uncertain or subjective claims are appropriately weighted."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Improve generic pronoun resolution by expanding context window from current size to \u00b13 sentences. Add heuristics for 'we'/'us' resolution: if book context mentions specific group/organization, resolve to that; otherwise resolve to 'humanity' or 'people'.",
+      "expected_impact": "Resolves 6 generic pronoun cases currently flagged but unresolved.",
+      "rationale": "Generic pronouns require broader context than specific pronouns. The current context window may be too narrow to capture the referent. Expanding it and adding fallback heuristics will improve resolution rate."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/figurative_language_detector.py",
+      "recommendation": "Add filtering logic: if FIGURATIVE_LANGUAGE flag is present AND p_true < 0.65, exclude relationship. Add post-detection filter that removes relationships with metaphorical_terms in critical positions (source or target entities).",
+      "expected_impact": "Filters out 8-10 figurative language relationships that are currently flagged but included.",
+      "rationale": "The detector is working (flags present) but not acting on detections. Figurative language rarely conveys concrete factual knowledge and should be filtered unless confidence is very high."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Update regex patterns to handle 'and X' cases where 'and' is part of the item. Add preprocessing step to identify conjunctions that are separators vs. part of compound terms. Pattern: if 'and' is preceded by comma, it's a separator; if not, it may be part of the term.",
+      "expected_impact": "Fixes 8 incomplete list splits where 'and' remains in split items.",
+      "rationale": "This is a minor issue affecting <1% of relationships. The fix is straightforward but low priority since the impact on overall quality is minimal."
+    },
+    {
+      "priority": "LOW",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add guidance on semantic predicate validation: 'Ensure predicates are semantically appropriate for the entity types. Example: soil cannot \"collapse\" humanity, but \"soil degradation threatens humanity\" is valid. Use precise, semantically correct verbs.'",
+      "expected_impact": "Reduces semantic mismatches from 3 to ~1, improving relationship logical coherence.",
+      "rationale": "Semantic validation at extraction time prevents downstream issues. This is a minor pattern but worth addressing to improve overall semantic quality."
+    },
+    {
+      "priority": "LOW",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/semantic_validator.py",
+      "recommendation": "Create new module to validate semantic compatibility of source-predicate-target triples. Use simple heuristics: check if predicate verb is compatible with source/target entity types. Flag relationships where predicate doesn't make logical sense (e.g., abstract concept as agent of physical action).",
+      "expected_impact": "Catches 3-5 semantic mismatches that slip through other filters.",
+      "rationale": "This would be a nice-to-have quality check but is low priority given the small number of cases. Consider implementing if other higher-priority fixes are completed and resources allow."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Extraction prompt allows overly abstract entities like 'the answer', 'aspects of life', 'this approach' without sufficient constraints",
+        "current_wording": "Likely contains general instruction to 'extract all entities' without specificity requirements",
+        "suggested_fix": "Add explicit constraints: 'Extract specific, concrete entities only. Avoid: (1) Demonstrative pronouns without resolution (this, that, these, those), (2) Abstract philosophical terms (the answer, the way, the solution), (3) Vague generalizations (aspects of life, the process). If an entity is abstract, try to identify the specific concept it refers to in context.'",
+        "examples_needed": "Yes - add 5-10 examples of GOOD vs BAD entity extraction showing concrete vs abstract entities"
+      },
+      {
+        "issue": "Extraction prompt may not emphasize semantic predicate validation, leading to predicates like 'soil collapses humanity' that are semantically odd",
+        "current_wording": "Likely focuses on extracting predicates from text literally without semantic checking",
+        "suggested_fix": "Add instruction: 'Ensure predicates are semantically appropriate for the entity types. The predicate should express a logical relationship. Examples: \u2713 \"soil degradation threatens humanity\", \u2717 \"soil collapses humanity\". Use precise, semantically correct verbs that match the nature of the entities.'",
+        "examples_needed": "Yes - add examples of semantically correct vs incorrect predicates for common entity type pairs"
+      },
+      {
+        "issue": "Extraction prompt may encourage extracting rhetorical/philosophical statements as factual relationships",
+        "current_wording": "Likely treats all statements equally without distinguishing factual from rhetorical",
+        "suggested_fix": "Add guidance: 'Distinguish between factual claims and rhetorical/philosophical statements. Extract factual relationships that convey concrete information. Avoid: (1) Metaphysical claims (\"X is cosmically sacred\"), (2) Rhetorical flourishes (\"X is the answer to everything\"), (3) Poetic language without factual content. When in doubt, prefer specific, testable claims over abstract assertions.'",
+        "examples_needed": "Yes - show examples of factual vs rhetorical statements and which to extract"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Evaluation prompt does not sufficiently penalize philosophical/rhetorical claims, resulting in high p_true scores (0.24-0.8) for abstract statements",
+        "current_wording": "Likely evaluates text confidence and knowledge plausibility without specific guidance on philosophical claims",
+        "suggested_fix": "Add explicit scoring rules: 'Assign low confidence (p_true < 0.3) to: (1) Philosophical/metaphysical claims without empirical grounding, (2) Rhetorical statements or poetic language, (3) Abstract assertions that cannot be verified. Examples: \"soil is cosmically sacred\" (p_true \u2264 0.2), \"X is the answer to Y\" without specifics (p_true \u2264 0.3).'",
+        "examples_needed": "Yes - provide scored examples of philosophical vs factual claims"
+      },
+      {
+        "issue": "Evaluation prompt does not adjust confidence based on claim type flags (TESTABLE_CLAIM, OPINION, NORMATIVE)",
+        "current_wording": "Likely evaluates all relationships uniformly without considering claim type",
+        "suggested_fix": "Add confidence adjustment rules: 'Reduce p_true based on claim type: (1) TESTABLE_CLAIM: -0.15 (requires empirical validation), (2) OPINION: -0.25 (subjective judgment), (3) NORMATIVE: -0.30 (prescriptive statement), (4) PHILOSOPHICAL_CLAIM: -0.50 (metaphysical assertion). Apply these penalties to base p_true score.'",
+        "examples_needed": "No - this is a clear algorithmic rule"
+      },
+      {
+        "issue": "Evaluation prompt may not emphasize filtering figurative language despite detection flags being present",
+        "current_wording": "Likely identifies figurative language but doesn't strongly penalize it in scoring",
+        "suggested_fix": "Add instruction: 'When FIGURATIVE_LANGUAGE flag is present, reduce p_true by 0.20-0.30 depending on severity. Metaphors and poetic language rarely convey concrete factual knowledge. If metaphorical_terms appear in source or target entities (not just context), apply maximum penalty.'",
+        "examples_needed": "Yes - show examples of figurative language that should be filtered vs acceptable usage"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.145,
+    "note": "System is performing at B-/B level (14.5-16.6% issue rate). Main blockers to production: (1) Praise quote false positives undermining bibliographic accuracy, (2) Vague abstract entities reducing KG utility, (3) Predicate fragmentation harming query efficiency. With recommended fixes, could reach B+/A- level (5-8% issue rate)."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-14T07:04:30.657539",
+    "relationships_analyzed": 873,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v13.1"
+  }
+}

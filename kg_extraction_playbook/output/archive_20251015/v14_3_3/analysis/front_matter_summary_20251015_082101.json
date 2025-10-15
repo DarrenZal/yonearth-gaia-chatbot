@@ -1,0 +1,143 @@
+{
+  "section": "front_matter",
+  "timestamp": "20251015_082101",
+  "extraction_file": "front_matter_v14_3_7_20251015_081048.json",
+  "quality_metrics": {
+    "overall_grade": "C",
+    "issue_rate": 30.8,
+    "total_relationships": 107,
+    "total_issues": 33
+  },
+  "issue_breakdown": {
+    "CRITICAL": 1,
+    "HIGH": 0,
+    "MEDIUM": 24,
+    "MILD": 8
+  },
+  "quality_gate": {
+    "passes_a_plus_gate": false,
+    "criteria": {
+      "critical_issues_zero": false,
+      "high_issues_lte_2": true,
+      "issue_rate_lte_2_percent": false
+    }
+  },
+  "actionable_issues": [
+    {
+      "severity": "CRITICAL",
+      "category": "Reversed Authorship",
+      "count": 1,
+      "percentage": 0.9,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is the source instead of the author. The flag 'AUTHORSHIP_REVERSED' is set to true, indicating detection but no correction was applied.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Malformed Dedication Targets",
+      "count": 24,
+      "percentage": 22.4,
+      "description": "Dedication relationships have targets in the form 'Our Biggest Deal to [Person Name]' instead of just '[Person Name]'. This appears to be a systematic failure in list splitting where the book title prefix was not removed from individual dedication targets.",
+      "examples": [
+        {
+          "source": "Our Biggest Deal to Bernard Lietaer",
+          "relationship": "dedicated",
+          "target": "Aaron William Perry",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson...",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Bernard Lietaer', not 'Our Biggest Deal to Bernard Lietaer'. The TYPE_INCOMPATIBILITY_FIXED flag shows this was swapped, but the malformed target name was preserved.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Kevin Townley",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson, Hazel Henderson, Thich Nhat Hanh, Kevin Townley...",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Kevin Townley', not 'Our Biggest Deal to Kevin Townley'. This relationship was not swapped (correct direction) but still has the malformed target.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Kevin Townley"
+          }
+        }
+      ]
+    },
+    {
+      "severity": "MEDIUM",
+      "category": "Incomplete Titles",
+      "count": 3,
+      "percentage": 2.8,
+      "description": "Book titles that are too short or appear incomplete, flagged by the system but not corrected",
+      "examples": [
+        {
+          "source": "John Fullerton",
+          "relationship": "authored",
+          "target": "Regenerative Capitalism",
+          "evidence_text": "John Fullerton is the author of Regenerative Capitalism",
+          "page": 18,
+          "what_is_wrong": "Title flagged as incomplete with reason 'too_short'. May be legitimate short title or missing subtitle.",
+          "should_be": {
+            "source": "John Fullerton",
+            "relationship": "authored",
+            "target": "Regenerative Capitalism (verify if subtitle exists)"
+          }
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "recommendation": "Fix the bibliographic_parser correction logic. The module correctly detects reversed authorship (sets AUTHORSHIP_REVERSED flag) but fails to apply the swap. Add logging to determine if the correction code path is being executed, and ensure the swap is applied when the flag is set."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Enhance list_splitter to handle dedication patterns. When splitting 'Dedicated To X, Y, Z...', extract the book title from the context and strip it from each individual target. Add regex pattern: r'(?:Book Title)\\s+to\\s+([^,]+)' -> capture group 1 only. Test with pattern: 'Our Biggest Deal to Bernard Lietaer' -> 'Bernard Lietaer'."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "recommendation": "Investigate why type_incompatibility_fixer only processed 5 of 24 dedication relationships. Check for: (1) hardcoded limits on number of fixes per page/context, (2) performance timeouts, (3) early exit conditions. Remove or increase any artificial limits. Add batch processing if needed."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "recommendation": "Add explicit guidance to Pass 1 extraction prompt about front matter content: 'When extracting from book front matter (accolades, praise quotes, testimonials), mark these as PROMOTIONAL rather than extracting as standard endorsement relationships. Focus on substantive content like forewords, introductions, and table of contents authorship.' Add few-shot examples showing promotional quotes being skipped or marked differently."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "recommendation": "Create a title_completer module that acts on INCOMPLETE_TITLE flags. For flagged titles: (1) Check if the title appears elsewhere in the document with more context, (2) Query external sources (OpenLibrary API, Google Books) to verify if subtitle exists, (3) If confirmed incomplete, append '[incomplete]' tag or fetch full title. If confirmed complete, remove the flag."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "recommendation": "Add post-processing filter to exclude or segregate relationships with PHILOSOPHICAL_CLAIM or OPINION flags. Create separate output categories: 'factual_relationships', 'philosophical_statements', 'opinions'. Allow users to choose which categories to include in their knowledge graph."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "recommendation": "Extend praise_quote_corrector to handle all promotional quotes, not just forewords. Add detection for 'Accolades & Commentary' section headers and filter out all relationships extracted from these sections, or change their relationship type to 'provided_testimonial_for' to distinguish from substantive endorsements."
+    }
+  ]
+}

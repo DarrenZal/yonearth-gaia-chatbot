@@ -1,0 +1,27 @@
+{
+  "threshold_presets": {
+    "broad": {
+      "value": 0.60,
+      "description": "Explore connections (e.g., 'dirt' → 'biochar')",
+      "use_cases": ["exploratory", "discovery", "broad_topics"]
+    },
+    "normal": {
+      "value": 0.70,
+      "description": "Balanced matching (default)",
+      "use_cases": ["general", "mixed_queries", "standard_search"]
+    },
+    "strict": {
+      "value": 0.80,
+      "description": "Only closely related categories",
+      "use_cases": ["precise", "specific_topics", "narrow_search"]
+    },
+    "disabled": {
+      "value": 1.10,
+      "description": "No category filtering",
+      "use_cases": ["keyword_only", "full_search", "troubleshooting"]
+    }
+  },
+  "current_default": "normal",
+  "auto_adjust": false,
+  "notes": "Thresholds control semantic category matching via cosine similarity"
+}

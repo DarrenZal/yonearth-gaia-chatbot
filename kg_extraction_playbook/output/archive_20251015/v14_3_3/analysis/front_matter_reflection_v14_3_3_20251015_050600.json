@@ -1,0 +1,317 @@
+{
+  "extraction_metadata": {
+    "version": "v14_3_3",
+    "total_relationships": 126,
+    "analysis_timestamp": "2025-01-15T10:30:00Z"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 18,
+    "mild_issues": 107,
+    "total_issues": 126,
+    "issue_rate_percent": 100.0,
+    "estimated_false_negative_rate": 0.0,
+    "estimated_total_issues_with_fn": 126,
+    "adjusted_issue_rate_percent": 100.0,
+    "grade_confirmed": "D",
+    "grade_adjusted": "D",
+    "note": "All 126 relationships flagged with POSSESSIVE_PRONOUN_UNRESOLVED issues, but this is a FALSE POSITIVE pattern. The flag is incorrectly triggering on book titles containing 'Our' (e.g., 'Our Biggest Deal'). Only 1 true critical issue (reversed authorship). The system is over-flagging MILD issues as problems."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.79,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Pass 1 extraction or bibliographic_parser module incorrectly parsed citation format 'Perry, Aaron William. Our Biggest Deal...' and extracted book as source",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is source, author is target - relationship is backwards",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "False Positive: Possessive Pronoun Flag on Book Titles",
+      "severity": "MILD",
+      "count": 107,
+      "percentage": 84.92,
+      "description": "The POSSESSIVE_PRONOUN_UNRESOLVED flag is incorrectly triggering on book titles containing 'Our' (e.g., 'Our Biggest Deal'). This is not a possessive pronoun requiring resolution - it's part of a proper noun title.",
+      "root_cause_hypothesis": "The pronoun_resolver module has an overly broad pattern that matches 'Our' in any context, without distinguishing between possessive pronouns ('our people') and proper nouns ('Our Biggest Deal'). The module likely uses a simple regex/keyword match without entity type awareness.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Ken LaRoe",
+          "relationship": "endorsed",
+          "target": "Our Biggest Deal",
+          "evidence_text": "I pick up his book, Our Biggest Deal, and read the amazing authors",
+          "page": 3,
+          "what_is_wrong": "Flag incorrectly fires because 'Our' appears in book title, but this is a proper noun, not a pronoun needing resolution",
+          "should_be": {
+            "source": "Ken LaRoe",
+            "relationship": "endorsed",
+            "target": "Our Biggest Deal",
+            "note": "No change needed - relationship is correct, flag should not fire"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Bernard Lietaer",
+          "evidence_text": "Dedicated To Bernard Lietaer...",
+          "page": 10,
+          "what_is_wrong": "Same false positive - 'Our' in book title triggers pronoun flag",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Our Biggest Deal to Bernard Lietaer",
+            "note": "No change needed - flag is false positive"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "List Splitting Over-Fragmentation",
+      "severity": "MEDIUM",
+      "count": 18,
+      "percentage": 14.29,
+      "description": "Book titles with colons/subtitles are being incorrectly split into multiple fragments by the list_splitter module. Titles like 'Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism' are split into 3 separate relationships, treating subtitle components as separate works.",
+      "root_cause_hypothesis": "The list_splitter module is treating 'and' as a list separator even when it appears within a single book title. It's not recognizing that quoted titles or colon-delimited subtitles should be treated as atomic units.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Socialism",
+          "evidence_text": "4 Dr. Riane Eisler 137 \"Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts: 'Toward a Caring', 'Partnership Economy: Beyond Capitalism', 'Socialism'. The word 'Socialism' alone is not a book title - it's part of the full title.",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        },
+        {
+          "source": "Sarah Arao",
+          "relationship": "authored",
+          "target": "Service Leadership",
+          "evidence_text": "6 Sarah Arao 158 \"Service Leadership, Self-Care, and Global Collaboration\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 fragments when it should be one complete title",
+          "should_be": {
+            "source": "Sarah Arao",
+            "relationship": "authored",
+            "target": "Service Leadership, Self-Care, and Global Collaboration"
+          }
+        },
+        {
+          "source": "Miranda Clendening",
+          "relationship": "authored",
+          "target": "Global Connectivity",
+          "evidence_text": "19 Miranda Clendening 254 \"The Mycelial Model for Planetary Prosperity: Community Mobilization, Global Connectivity, and Technological Amplification\"",
+          "page": 15,
+          "what_is_wrong": "Title split into 3 parts, creating incomplete fragments",
+          "should_be": {
+            "source": "Miranda Clendening",
+            "relationship": "authored",
+            "target": "The Mycelial Model for Planetary Prosperity: Community Mobilization, Global Connectivity, and Technological Amplification"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Title Detection False Positives",
+      "severity": "MILD",
+      "count": 11,
+      "percentage": 8.73,
+      "description": "The INCOMPLETE_TITLE flag is correctly identifying fragments created by list splitting, but these are symptoms of the upstream splitting problem, not independent issues. Fragments like 'Socialism', 'Happy', 'Planning' are flagged as too short because they ARE too short - they're pieces of longer titles.",
+      "root_cause_hypothesis": "This is a downstream effect of the list_splitter issue. The incomplete_title_detector is working correctly - it's detecting the fragments created by incorrect splitting.",
+      "affected_module": "modules/pass2_5_postprocessing/incomplete_title_detector.py (working correctly, but processing bad input)",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Socialism",
+          "evidence_text": "Part of: 'Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism'",
+          "page": 15,
+          "what_is_wrong": "Correctly flagged as incomplete, but root cause is upstream splitting",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quote Correction Working Correctly",
+      "severity": "MILD",
+      "count": 1,
+      "percentage": 0.79,
+      "description": "The praise_quote_corrector successfully identified and corrected John Fullerton's foreword from 'wrote foreword for' to 'endorsed'. This is working as intended.",
+      "root_cause_hypothesis": "Not an issue - this is the system working correctly",
+      "affected_module": "modules/pass2_5_postprocessing/praise_quote_corrector.py (working correctly)",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "John Fullerton",
+          "relationship": "endorsed",
+          "target": "Our Biggest Deal",
+          "evidence_text": "foreword by John Fullerton",
+          "page": 4,
+          "what_is_wrong": "Nothing - this was correctly changed from 'wrote foreword for' to 'endorsed'",
+          "should_be": {
+            "source": "John Fullerton",
+            "relationship": "endorsed",
+            "target": "Our Biggest Deal",
+            "note": "Already correct after praise_quote_corrector"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "False Positive Pronoun Detection on Proper Nouns",
+      "severity": "MILD",
+      "count": 107,
+      "description": "The pronoun_resolver module is flagging possessive pronouns in contexts where they're actually part of proper nouns (book titles). 'Our Biggest Deal' contains 'Our' but this is not a pronoun requiring resolution - it's part of the title itself. This creates massive false positive noise (85% of all relationships flagged).",
+      "root_cause_hypothesis": "The pronoun detection logic uses simple keyword matching without entity type awareness. It sees 'Our' and flags it without checking if it's part of a Book entity or other proper noun. The module needs to be entity-type-aware and skip pronoun detection for proper nouns.",
+      "affected_module": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "examples": [
+        {
+          "source": "Ken LaRoe",
+          "relationship": "endorsed",
+          "target": "Our Biggest Deal",
+          "evidence_text": "I pick up his book, Our Biggest Deal",
+          "page": 3,
+          "what_is_wrong": "POSSESSIVE_PRONOUN_UNRESOLVED_TARGET flag fires on book title",
+          "should_be": {
+            "source": "Ken LaRoe",
+            "relationship": "endorsed",
+            "target": "Our Biggest Deal",
+            "note": "Flag should not fire - 'Our' is part of title, not a pronoun"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Title Splitting on Conjunctions Within Quoted Strings",
+      "severity": "MEDIUM",
+      "count": 18,
+      "description": "The list_splitter is treating 'and' as a list separator even when it appears inside quoted book titles or after colons in subtitles. This creates nonsensical fragments like 'Socialism' or 'Happy' as standalone book titles.",
+      "root_cause_hypothesis": "The list_splitter module doesn't respect quoted strings or colon-delimited subtitle boundaries. It's applying a naive 'split on comma/and' rule without understanding that book titles (especially those in quotes or with subtitles) should be treated as atomic units.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "examples": [
+        {
+          "source": "Dr. Riane Eisler",
+          "relationship": "authored",
+          "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism",
+          "evidence_text": "Full title in quotes",
+          "page": 15,
+          "what_is_wrong": "Split into 3 parts on 'and' conjunctions",
+          "should_be": {
+            "source": "Dr. Riane Eisler",
+            "relationship": "authored",
+            "target": "Toward a Caring and Partnership Economy: Beyond Capitalism and Socialism",
+            "note": "Should remain as single title"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Fix the bibliographic citation parser to correctly identify author-title order in citations. The pattern 'Perry, Aaron William. Our Biggest Deal...' should extract (Aaron William Perry, authored, Our Biggest Deal), not the reverse. Add regex pattern: r'^([A-Z][a-z]+,\\s+[A-Z][a-z]+(?:\\s+[A-Z][a-z]+)?)\\s*\\.\\s+([A-Z].+?)\\s*[:;/]' to capture 'LastName, FirstName. Title' format.",
+      "expected_impact": "Fixes 1 critical reversed authorship relationship (0.79% of dataset)",
+      "rationale": "This is a factually incorrect relationship that breaks KG utility. Bibliographic citations have standard formats that should be reliably parseable."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/pronoun_resolver.py",
+      "recommendation": "Add entity-type-aware pronoun detection. Before flagging 'our/my/his/her/their', check if the word appears in a source/target entity with type 'Book', 'Organization', 'Location', or other proper noun types. Skip pronoun resolution for proper nouns. Implementation: Add check `if entity_type in ['Book', 'Organization', 'Location', 'Event']: skip_pronoun_check = True`",
+      "expected_impact": "Eliminates 107 false positive flags (84.92% of dataset), dramatically reducing noise and improving precision",
+      "rationale": "This is the single largest source of false positives in the system. The fix is straightforward - proper nouns should not be subject to pronoun resolution. This will clean up the vast majority of spurious flags."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Modify list splitting logic to respect quoted strings and subtitle boundaries. Add rules: (1) Do not split on 'and' if it appears within quotation marks, (2) Do not split on 'and' if it appears after a colon (subtitle context), (3) For book titles specifically, treat the entire quoted string as atomic. Implementation: Use regex lookahead/lookbehind to detect quote boundaries, or parse quotes first and mark protected regions.",
+      "expected_impact": "Fixes 18 incorrectly fragmented book titles (14.29% of dataset), eliminating downstream incomplete title flags",
+      "rationale": "Book titles with subtitles are common and should not be split. The current splitting creates nonsensical fragments that harm KG quality. This fix addresses both the MEDIUM list splitting issue and the downstream MILD incomplete title flags."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Add special handling for table-of-contents extraction. When extracting from TOC-style text (numbered entries with page numbers), recognize that titles may contain commas and 'and' as part of the title, not as list separators. Pattern: 'Number Author PageNumber \"Title\"' should extract title as-is without splitting.",
+      "expected_impact": "Prevents future TOC extraction errors, improves robustness for similar content",
+      "rationale": "The sample text shows TOC-style content where titles are in quotes. This is a predictable format that should have special handling to avoid splitting."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/quality_thresholds.yaml",
+      "recommendation": "Update severity classification guidelines to distinguish between 'flag fired correctly on bad data' vs 'flag fired incorrectly'. The INCOMPLETE_TITLE flags in this dataset are technically correct (the titles ARE incomplete), but they're symptoms of upstream splitting. Consider adding a 'CASCADING_ERROR' severity level for issues caused by earlier pipeline stages.",
+      "expected_impact": "Improves clarity of quality reports, helps prioritize root cause fixes over symptom fixes",
+      "rationale": "Current severity levels don't distinguish between root causes and cascading effects. This makes it harder to prioritize fixes."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Prompts not available for analysis in this dataset",
+        "current_wording": "N/A",
+        "suggested_fix": "Cannot analyze prompts without access to them",
+        "examples_needed": "N/A"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Prompts not available for analysis in this dataset",
+        "current_wording": "N/A",
+        "suggested_fix": "Cannot analyze prompts without access to them"
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.0159,
+    "note": "Adjusted issue rate excludes 107 false positive pronoun flags. True issue rate is 19/126 = 15.1% (1 critical + 18 medium). After fixes, expected rate would be ~0% (only the 1 critical authorship reversal, which is 0.79%)."
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T05:06:00.731126",
+    "relationships_analyzed": 126,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14_3_3"
+  }
+}

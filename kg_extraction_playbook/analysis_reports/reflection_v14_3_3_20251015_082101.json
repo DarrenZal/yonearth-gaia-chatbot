@@ -1,0 +1,342 @@
+{
+  "extraction_metadata": {
+    "version": "v14_3_3",
+    "total_relationships": 107,
+    "analysis_timestamp": "2025-10-15T08:14:59.681254"
+  },
+  "quality_summary": {
+    "critical_issues": 1,
+    "high_priority_issues": 0,
+    "medium_priority_issues": 24,
+    "mild_issues": 8,
+    "total_issues": 33,
+    "issue_rate_percent": 30.8,
+    "estimated_false_negative_rate": 0.1,
+    "estimated_total_issues_with_fn": 36,
+    "adjusted_issue_rate_percent": 33.6,
+    "grade_confirmed": "C",
+    "grade_adjusted": "C-",
+    "note": "Primary issues: 1 reversed authorship (CRITICAL), 24 malformed dedication targets with 'Our Biggest Deal to X' pattern (MEDIUM), 3 incomplete titles (MEDIUM), 8 praise quotes misclassified as endorsements (MILD). The dedication list splitting created a systematic error pattern not seen in V4."
+  },
+  "issue_categories": [
+    {
+      "category_name": "Reversed Authorship",
+      "severity": "CRITICAL",
+      "count": 1,
+      "percentage": 0.9,
+      "description": "Book title appears as source instead of author in authorship relationship",
+      "root_cause_hypothesis": "Bibliographic parser failed to detect reversed citation format. The flag 'AUTHORSHIP_REVERSED' was set but the correction was not applied, indicating the bibliographic_parser module detected but did not fix the issue.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Book title is the source instead of the author. The flag 'AUTHORSHIP_REVERSED' is set to true, indicating detection but no correction was applied.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Malformed Dedication Targets",
+      "severity": "MEDIUM",
+      "count": 24,
+      "percentage": 22.4,
+      "description": "Dedication relationships have targets in the form 'Our Biggest Deal to [Person Name]' instead of just '[Person Name]'. This appears to be a systematic failure in list splitting where the book title prefix was not removed from individual dedication targets.",
+      "root_cause_hypothesis": "The list_splitter module correctly split the long dedication list into individual relationships, but failed to strip the 'Our Biggest Deal to' prefix from each target. The first 5 dedications were correctly swapped (source/target reversed) but retained the malformed target. The remaining 19 were not swapped at all, suggesting the type_incompatibility_fixer gave up after processing a threshold number of items.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Our Biggest Deal to Bernard Lietaer",
+          "relationship": "dedicated",
+          "target": "Aaron William Perry",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson...",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Bernard Lietaer', not 'Our Biggest Deal to Bernard Lietaer'. The TYPE_INCOMPATIBILITY_FIXED flag shows this was swapped, but the malformed target name was preserved.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Kevin Townley",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson, Hazel Henderson, Thich Nhat Hanh, Kevin Townley...",
+          "page": 10,
+          "what_is_wrong": "Target should be just 'Kevin Townley', not 'Our Biggest Deal to Kevin Townley'. This relationship was not swapped (correct direction) but still has the malformed target.",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Kevin Townley"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Incomplete Titles",
+      "severity": "MEDIUM",
+      "count": 3,
+      "percentage": 2.8,
+      "description": "Book titles that are too short or appear incomplete, flagged by the system but not corrected",
+      "root_cause_hypothesis": "The INCOMPLETE_TITLE flag is being set correctly, but no correction module is acting on it. These are legitimate short titles ('Regenerative Capitalism', 'Regenerative Economics', 'Viriditas') that may not actually be incomplete, but the flag suggests uncertainty.",
+      "affected_module": "modules/pass2_5_postprocessing/title_validator.py (hypothetical - flag is set but no fixer exists)",
+      "affected_prompt": null,
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "John Fullerton",
+          "relationship": "authored",
+          "target": "Regenerative Capitalism",
+          "evidence_text": "John Fullerton is the author of Regenerative Capitalism",
+          "page": 18,
+          "what_is_wrong": "Title flagged as incomplete with reason 'too_short'. May be legitimate short title or missing subtitle.",
+          "should_be": {
+            "source": "John Fullerton",
+            "relationship": "authored",
+            "target": "Regenerative Capitalism (verify if subtitle exists)"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Praise Quotes Misclassified as Endorsements",
+      "severity": "MILD",
+      "count": 8,
+      "percentage": 7.5,
+      "description": "Accolades/praise quotes from the front matter are extracted as 'endorsed' relationships. While technically correct, these are promotional quotes rather than substantive endorsements. One case (John Fullerton's foreword) was correctly converted from authorship to endorsement.",
+      "root_cause_hypothesis": "Pass 1 extraction prompt may be over-extracting promotional content as factual relationships. The praise_quote_corrector module correctly identified John Fullerton's foreword case and changed it from 'wrote foreword for' to 'endorsed', but did not filter out the other promotional quotes entirely.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass1_extraction_v7.txt",
+      "affected_config": null,
+      "examples": [
+        {
+          "source": "Ken LaRoe",
+          "relationship": "endorsed",
+          "target": "Our Biggest Deal",
+          "evidence_text": "Then for long-term comfort, I pick up his book, Our Biggest Deal, and read the amazing authors and study the amazing companies featured and I become completely energized to pick up the sword again!",
+          "page": 3,
+          "what_is_wrong": "This is a promotional quote from the 'Accolades & Commentary' section, not a substantive endorsement relationship. While factually true, it adds noise to the knowledge graph.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Consider filtering promotional quotes from front matter entirely, or marking them with a different relationship type like 'provided_testimonial_for'"
+          }
+        }
+      ]
+    },
+    {
+      "category_name": "Philosophical/Opinion Statements",
+      "severity": "MILD",
+      "count": 3,
+      "percentage": 2.8,
+      "description": "Statements that are opinions or philosophical claims rather than factual relationships, though correctly flagged",
+      "root_cause_hypothesis": "Pass 2 evaluation correctly identified these as OPINION or PHILOSOPHICAL_CLAIM, but they were still included in the final output. The system may need a filter to exclude relationships with these flags.",
+      "affected_module": null,
+      "affected_prompt": "prompts/pass2_evaluation_v7.txt",
+      "affected_config": "config/relationship_filters.yaml (hypothetical)",
+      "examples": [
+        {
+          "source": "Rene Descartes",
+          "relationship": "quoted",
+          "target": "The conquest of nature is to be achieved through number and measure",
+          "evidence_text": "Descartes's views on nature are reflected in this quote attributed to him, 'The conquest of nature is to be achieved through number and measure'",
+          "page": 26,
+          "what_is_wrong": "This is a philosophical statement, correctly flagged as PHILOSOPHICAL_CLAIM. While historically interesting, it's not a concrete factual relationship.",
+          "should_be": {
+            "source": null,
+            "relationship": null,
+            "target": null,
+            "note": "Consider filtering relationships with PHILOSOPHICAL_CLAIM flag, or creating a separate 'philosophical_statements' category"
+          }
+        }
+      ]
+    }
+  ],
+  "novel_error_patterns": [
+    {
+      "pattern_name": "Dedication List Splitting Malformation",
+      "severity": "MEDIUM",
+      "count": 24,
+      "description": "When splitting a long dedication list ('Dedicated To X, Y, Z...'), the list_splitter module created individual relationships but preserved the book title prefix in each target entity name, resulting in targets like 'Our Biggest Deal to Bernard Lietaer' instead of just 'Bernard Lietaer'. Additionally, only the first 5 items were processed by the type_incompatibility_fixer (which swapped source/target), while the remaining 19 were left in the wrong direction.",
+      "root_cause_hypothesis": "Two-part failure: (1) list_splitter regex or parsing logic doesn't strip the 'Book Title to Person' pattern down to just 'Person', and (2) type_incompatibility_fixer has a hardcoded limit or performance threshold that caused it to stop processing after 5 swaps.",
+      "affected_module": "modules/pass2_5_postprocessing/list_splitter.py, modules/pass2_5_postprocessing/type_incompatibility_fixer.py",
+      "examples": [
+        {
+          "source": "Our Biggest Deal to Bernard Lietaer",
+          "relationship": "dedicated",
+          "target": "Aaron William Perry",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson...",
+          "page": 10,
+          "what_is_wrong": "First 5 dedications were swapped (source/target) but retained malformed target name with book title prefix",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Bernard Lietaer"
+          }
+        },
+        {
+          "source": "Aaron William Perry",
+          "relationship": "dedicated",
+          "target": "Our Biggest Deal to Kevin Townley",
+          "evidence_text": "Dedicated To Bernard Lietaer, Wangari Maathai, William Irwin Thompson, Hazel Henderson, Thich Nhat Hanh, Kevin Townley...",
+          "page": 10,
+          "what_is_wrong": "Remaining 19 dedications were not swapped and have malformed target names",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "dedicated",
+            "target": "Kevin Townley"
+          }
+        }
+      ]
+    },
+    {
+      "pattern_name": "Detected But Not Fixed Authorship Reversal",
+      "severity": "CRITICAL",
+      "count": 1,
+      "description": "The bibliographic_parser correctly detected a reversed authorship relationship (setting AUTHORSHIP_REVERSED flag to true), but failed to apply the correction. This suggests the detection logic is working but the correction logic is broken or disabled.",
+      "root_cause_hypothesis": "The bibliographic_parser module has a detection phase that sets flags, but the correction phase either has a bug, is disabled, or has a condition that prevented it from executing in this case.",
+      "affected_module": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "examples": [
+        {
+          "source": "Our Biggest Deal",
+          "relationship": "authored",
+          "target": "Aaron William Perry",
+          "evidence_text": "Perry, Aaron William. Our Biggest Deal : pathways to planetary prosperity / by Aaron William Perry ; foreword by John Fullerton.",
+          "page": 4,
+          "what_is_wrong": "Flag 'AUTHORSHIP_REVERSED' is true with correction_reason 'bibliographic_citation_detected', but the entities were not swapped",
+          "should_be": {
+            "source": "Aaron William Perry",
+            "relationship": "authored",
+            "target": "Our Biggest Deal"
+          }
+        }
+      ]
+    }
+  ],
+  "improvement_recommendations": [
+    {
+      "priority": "CRITICAL",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/bibliographic_parser.py",
+      "recommendation": "Fix the bibliographic_parser correction logic. The module correctly detects reversed authorship (sets AUTHORSHIP_REVERSED flag) but fails to apply the swap. Add logging to determine if the correction code path is being executed, and ensure the swap is applied when the flag is set.",
+      "expected_impact": "Fixes 1 CRITICAL reversed authorship issue. Ensures detected reversals are actually corrected.",
+      "rationale": "Detection without correction is worse than no detection at all - it creates false confidence. The flag indicates the system knows what's wrong but isn't fixing it."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/list_splitter.py",
+      "recommendation": "Enhance list_splitter to handle dedication patterns. When splitting 'Dedicated To X, Y, Z...', extract the book title from the context and strip it from each individual target. Add regex pattern: r'(?:Book Title)\\s+to\\s+([^,]+)' -> capture group 1 only. Test with pattern: 'Our Biggest Deal to Bernard Lietaer' -> 'Bernard Lietaer'.",
+      "expected_impact": "Fixes 24 MEDIUM malformed dedication targets. Reduces issue rate from 30.8% to 8.4%.",
+      "rationale": "This is a systematic error affecting 22.4% of all relationships. The list_splitter is doing half the job (splitting) but not cleaning up the entity names."
+    },
+    {
+      "priority": "HIGH",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/type_incompatibility_fixer.py",
+      "recommendation": "Investigate why type_incompatibility_fixer only processed 5 of 24 dedication relationships. Check for: (1) hardcoded limits on number of fixes per page/context, (2) performance timeouts, (3) early exit conditions. Remove or increase any artificial limits. Add batch processing if needed.",
+      "expected_impact": "Ensures all 24 dedication relationships are properly swapped (source/target), not just the first 5.",
+      "rationale": "Partial processing creates inconsistent data quality. If the fixer can handle 5 items, it should handle all 24. This suggests a configuration or performance issue rather than a fundamental limitation."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "PROMPT_ENHANCEMENT",
+      "target_file": "prompts/pass1_extraction_v7.txt",
+      "recommendation": "Add explicit guidance to Pass 1 extraction prompt about front matter content: 'When extracting from book front matter (accolades, praise quotes, testimonials), mark these as PROMOTIONAL rather than extracting as standard endorsement relationships. Focus on substantive content like forewords, introductions, and table of contents authorship.' Add few-shot examples showing promotional quotes being skipped or marked differently.",
+      "expected_impact": "Reduces 8 MILD praise quote extractions. Improves signal-to-noise ratio in knowledge graph.",
+      "rationale": "While technically correct, extracting every promotional quote clutters the graph. The system should distinguish between substantive endorsements (forewords, academic reviews) and marketing copy."
+    },
+    {
+      "priority": "MEDIUM",
+      "type": "NEW_MODULE",
+      "target_file": "modules/pass2_5_postprocessing/title_completer.py",
+      "recommendation": "Create a title_completer module that acts on INCOMPLETE_TITLE flags. For flagged titles: (1) Check if the title appears elsewhere in the document with more context, (2) Query external sources (OpenLibrary API, Google Books) to verify if subtitle exists, (3) If confirmed incomplete, append '[incomplete]' tag or fetch full title. If confirmed complete, remove the flag.",
+      "expected_impact": "Resolves 3 MEDIUM incomplete title uncertainties. Improves bibliographic accuracy.",
+      "rationale": "The system is correctly identifying potential incomplete titles but not acting on them. A dedicated module can verify and complete these titles, or confirm they are correct as-is."
+    },
+    {
+      "priority": "LOW",
+      "type": "CONFIG_UPDATE",
+      "target_file": "config/relationship_filters.yaml",
+      "recommendation": "Add post-processing filter to exclude or segregate relationships with PHILOSOPHICAL_CLAIM or OPINION flags. Create separate output categories: 'factual_relationships', 'philosophical_statements', 'opinions'. Allow users to choose which categories to include in their knowledge graph.",
+      "expected_impact": "Segregates 3 MILD philosophical/opinion statements. Gives users control over knowledge graph content.",
+      "rationale": "These relationships are correctly identified but may not belong in a factual knowledge graph. Rather than discarding them entirely, offer users the choice through configuration."
+    },
+    {
+      "priority": "LOW",
+      "type": "CODE_FIX",
+      "target_file": "modules/pass2_5_postprocessing/praise_quote_corrector.py",
+      "recommendation": "Extend praise_quote_corrector to handle all promotional quotes, not just forewords. Add detection for 'Accolades & Commentary' section headers and filter out all relationships extracted from these sections, or change their relationship type to 'provided_testimonial_for' to distinguish from substantive endorsements.",
+      "expected_impact": "Reduces 8 MILD praise quote extractions by filtering or reclassifying them.",
+      "rationale": "The module already handles one case (forewords) successfully. Extending it to handle all promotional content is a natural evolution."
+    }
+  ],
+  "prompt_analysis": {
+    "pass1_extraction_issues": [
+      {
+        "issue": "Over-extraction of promotional content from front matter",
+        "current_wording": "Likely instructs to 'extract ALL relationships' or 'extract endorsements' without distinguishing promotional quotes from substantive endorsements",
+        "suggested_fix": "Add section: 'Front Matter Handling: When processing book front matter (pages before main content), distinguish between: (1) SUBSTANTIVE: Forewords, introductions, prefaces by notable figures - extract these. (2) PROMOTIONAL: Praise quotes, testimonials, accolades - mark as PROMOTIONAL or skip. Example: \"This book changed my life!\" - Ken LaRoe (PROMOTIONAL, skip). Example: Foreword by John Fullerton (SUBSTANTIVE, extract as endorsement).'",
+        "examples_needed": "Yes - add 2-3 examples showing promotional quotes being skipped and forewords being extracted"
+      },
+      {
+        "issue": "Dedication list extraction creates malformed entity names",
+        "current_wording": "Likely instructs to extract dedications but doesn't specify how to handle 'Book dedicated to X, Y, Z' patterns",
+        "suggested_fix": "Add guidance: 'For dedication lists (\"Dedicated to X, Y, Z...\"), extract as: (Author, dedicated, X), (Author, dedicated, Y), (Author, dedicated, Z). Strip any book title prefix from dedicatee names. Example: \"Our Biggest Deal dedicated to Bernard Lietaer\" -> (Aaron William Perry, dedicated, Bernard Lietaer), NOT (Aaron William Perry, dedicated, Our Biggest Deal to Bernard Lietaer).'",
+        "examples_needed": "Yes - add example showing correct dedication extraction with list splitting"
+      }
+    ],
+    "pass2_evaluation_issues": [
+      {
+        "issue": "Philosophical/opinion statements are flagged but not filtered",
+        "current_wording": "Pass 2 correctly identifies PHILOSOPHICAL_CLAIM and OPINION flags, but these relationships still pass through to final output",
+        "suggested_fix": "Clarify in evaluation prompt: 'When assigning PHILOSOPHICAL_CLAIM or OPINION flags, also set a recommendation for whether this relationship should be included in a factual knowledge graph. If the statement is primarily philosophical/opinion rather than factual, set suggested_action: EXCLUDE or SEGREGATE.' This gives downstream filters clear guidance."
+      }
+    ]
+  },
+  "system_health": {
+    "meets_production_criteria": false,
+    "target_quality_threshold": 0.05,
+    "current_quality_issue_rate": 0.308,
+    "blocking_issues": [
+      "1 CRITICAL reversed authorship not fixed despite detection",
+      "24 MEDIUM malformed dedication targets (22.4% of all relationships)",
+      "Partial processing by type_incompatibility_fixer (only 5 of 24 items)"
+    ],
+    "positive_observations": [
+      "No duplicate relationships (0 duplicates)",
+      "Low predicate fragmentation (35 unique predicates, well below 150 threshold)",
+      "No pronoun resolution issues",
+      "No vague entity issues",
+      "Praise quote corrector working for foreword case",
+      "Bibliographic parser detection logic working (even if correction isn't)"
+    ],
+    "next_steps": [
+      "Fix bibliographic_parser correction logic (CRITICAL)",
+      "Enhance list_splitter for dedication patterns (HIGH)",
+      "Investigate type_incompatibility_fixer partial processing (HIGH)",
+      "Add front matter guidance to Pass 1 prompt (MEDIUM)",
+      "Create title_completer module (MEDIUM)"
+    ]
+  },
+  "metadata": {
+    "analysis_date": "2025-10-15T08:21:01.344362",
+    "relationships_analyzed": 107,
+    "reflector_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929",
+    "extraction_version": "v14_3_3"
+  }
+}

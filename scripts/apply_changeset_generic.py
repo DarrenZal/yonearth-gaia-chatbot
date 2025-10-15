@@ -28,16 +28,20 @@ def find_latest_changeset():
         print(f"❌ Changeset directory not found: {changeset_dir}")
         return None
 
-    # Find all changeset files
-    changeset_files = sorted(changeset_dir.glob("changeset_*.json"))
+    # Find all changeset files and sort by modification time (newest first)
+    changeset_files = sorted(
+        changeset_dir.glob("changeset_*.json"),
+        key=lambda p: p.stat().st_mtime,
+        reverse=True
+    )
 
     if not changeset_files:
         print("❌ No changesets found")
         return None
 
-    # Get the latest one
-    latest = changeset_files[-1]
-    print(f"📁 Found latest changeset: {latest.name}")
+    # Get the latest one (first in list since we sorted newest first)
+    latest = changeset_files[0]
+    print(f"📁 Found latest changeset: {latest.name} (most recent by timestamp)")
 
     return latest
 

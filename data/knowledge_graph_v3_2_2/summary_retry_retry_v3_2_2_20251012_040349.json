@@ -1,0 +1,126 @@
+{
+  "run_id": "retry_v3_2_2_20251012_040349",
+  "version": "v3.2.2",
+  "timestamp": "2025-10-12T04:03:49.036606",
+  "total_episodes": 16,
+  "successful": [
+    13,
+    24,
+    32,
+    34,
+    51,
+    59,
+    71,
+    83,
+    103,
+    109,
+    112,
+    121,
+    133,
+    155,
+    164,
+    170
+  ],
+  "failed": [],
+  "results": [
+    {
+      "episode": 13,
+      "relationships_count": 166,
+      "high_confidence": 164,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_13_v3_2_2.json"
+    },
+    {
+      "episode": 24,
+      "relationships_count": 237,
+      "high_confidence": 225,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_24_v3_2_2.json"
+    },
+    {
+      "episode": 32,
+      "relationships_count": 287,
+      "high_confidence": 248,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_32_v3_2_2.json"
+    },
+    {
+      "episode": 34,
+      "relationships_count": 188,
+      "high_confidence": 182,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_34_v3_2_2.json"
+    },
+    {
+      "episode": 51,
+      "relationships_count": 383,
+      "high_confidence": 365,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_51_v3_2_2.json"
+    },
+    {
+      "episode": 59,
+      "relationships_count": 257,
+      "high_confidence": 238,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_59_v3_2_2.json"
+    },
+    {
+      "episode": 71,
+      "relationships_count": 305,
+      "high_confidence": 296,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_71_v3_2_2.json"
+    },
+    {
+      "episode": 83,
+      "relationships_count": 425,
+      "high_confidence": 365,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_83_v3_2_2.json"
+    },
+    {
+      "episode": 103,
+      "relationships_count": 439,
+      "high_confidence": 421,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_103_v3_2_2.json"
+    },
+    {
+      "episode": 109,
+      "relationships_count": 261,
+      "high_confidence": 253,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_109_v3_2_2.json"
+    },
+    {
+      "episode": 112,
+      "relationships_count": 289,
+      "high_confidence": 279,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_112_v3_2_2.json"
+    },
+    {
+      "episode": 121,
+      "relationships_count": 277,
+      "high_confidence": 270,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_121_v3_2_2.json"
+    },
+    {
+      "episode": 133,
+      "relationships_count": 310,
+      "high_confidence": 305,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_133_v3_2_2.json"
+    },
+    {
+      "episode": 155,
+      "relationships_count": 276,
+      "high_confidence": 223,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_155_v3_2_2.json"
+    },
+    {
+      "episode": 164,
+      "relationships_count": 368,
+      "high_confidence": 345,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_164_v3_2_2.json"
+    },
+    {
+      "episode": 170,
+      "relationships_count": 324,
+      "high_confidence": 323,
+      "output_file": "/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph_v3_2_2/episode_170_v3_2_2.json"
+    }
+  ],
+  "total_time_seconds": 13790.078701019287,
+  "success_count": 16,
+  "failed_count": 0
+}

@@ -1,0 +1,575 @@
+{
+  "changeset_metadata": {
+    "source_version": "13.1",
+    "target_version": "14.1",
+    "total_changes": 10,
+    "estimated_impact": "Reduces issue rate from 8.6% to ~5.5% (A- \u2192 A grade). Eliminates 8 HIGH priority issues, reduces MEDIUM by ~18 issues."
+  },
+  "file_operations": [
+    {
+      "operation_id": "change_001",
+      "operation_type": "NEW_MODULE",
+      "file_path": "src/knowledge_graph/postprocessing/content_specific/books/metadata_filter.py",
+      "priority": "HIGH",
+      "rationale": "8 HIGH priority praise quote issues + 2 MILD dedication issues = 10 metadata relationships polluting domain knowledge. Bibliographic parser detects but doesn't filter. Need dedicated module to remove book metadata entirely.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification, Dedication Relationships",
+      "expected_improvement": "Eliminates all 10 metadata relationships (1.1% of total), moves from A- to A territory",
+      "change_description": "Create new MetadataFilter module to identify and remove book metadata relationships (praise quotes, dedications, publication info) from knowledge graph output",
+      "change_type": "new_module",
+      "guidance": {
+        "module_structure": {
+          "class_name": "MetadataFilter",
+          "base_class": "PostProcessingModule",
+          "process_method": "process_batch(relationships: List[Dict]) -> List[Dict]"
+        },
+        "filtering_logic": {
+          "criteria": [
+            "Relationship has PRAISE_QUOTE_CORRECTED flag \u2192 FILTER OUT",
+            "Relationship has DEDICATION_DETECTED flag \u2192 FILTER OUT",
+            "Source or target exactly matches book title AND relationship in ['endorsed', 'dedicated', 'published by', 'published in'] \u2192 FILTER OUT",
+            "Page number < 10 or > (total_pages - 10) AND relationship involves book title \u2192 FILTER OUT (front/back matter)"
+          ],
+          "preserve_metadata": "Store filtered relationships in separate metadata dict for potential later use, don't discard completely"
+        },
+        "integration": {
+          "pipeline_position": "Add to book_pipeline.py AFTER bibliographic_citation_parser (which adds the flags we filter on)",
+          "config_key": "metadata_filter_enabled: true"
+        },
+        "implementation_notes": [
+          "Check for flags: PRAISE_QUOTE_CORRECTED, DEDICATION_DETECTED in relationship['signals']",
+          "Use case-insensitive matching for book title",
+          "Return filtered relationships + metadata dict: {'filtered': [...], 'metadata': [...]}"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "Praise quote: ('Michael Bowman', 'endorsed', 'Soil Stewardship Handbook') \u2192 FILTERED",
+          "Dedication: ('Soil Stewardship Handbook', 'dedicated', 'Osha') \u2192 FILTERED",
+          "Domain knowledge: ('soil', 'contains', 'bacteria') \u2192 KEPT",
+          "Edge case: ('author', 'wrote', 'Soil Stewardship Handbook') \u2192 KEPT (authorship is domain-relevant)"
+        ],
+        "success_criteria": "Zero praise quotes or dedications in final KG output"
+      }
+    },
+    {
+      "operation_id": "change_002",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v13_1.txt",
+      "priority": "HIGH",
+      "rationale": "8 MEDIUM philosophical/abstract claims + 6 MEDIUM normative statements = 14 issues from unclear claim type distinction. Pass 2 is best place to catch this before post-processing.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical/Abstract Claims, Normative Statements Classified as Factual",
+      "expected_improvement": "Reduces philosophical/normative issues by 10-12 relationships (1.1-1.4%), improves p_true calibration",
+      "change_description": "Add comprehensive CLAIM TYPE CLASSIFICATION section to Pass 2 evaluation prompt with clear definitions and scoring guidance for factual vs. normative vs. philosophical claims",
+      "target_section": "Insert new section after 'EVALUATION CRITERIA' and before 'OUTPUT FORMAT'",
+      "guidance": {
+        "section_to_add": {
+          "heading": "\u26a0\ufe0f CLAIM TYPE CLASSIFICATION",
+          "content_structure": [
+            "Three claim types with definitions",
+            "Scoring guidelines for each type",
+            "5-7 concrete examples with p_true scores",
+            "Conflict resolution rules"
+          ]
+        },
+        "key_definitions": {
+          "FACTUAL": "Empirically verifiable statements about observable reality. Can be tested, measured, or documented. Examples: 'soil contains bacteria' (testable), 'biochar increases fertility' (measurable), 'book published in 2020' (documented). Score: p_true based on evidence strength (0.7-0.95 if well-supported).",
+          "NORMATIVE": "Prescriptive statements about what should/ought/must be done. Express values, recommendations, or obligations. Examples: 'we should connect with soil', 'farmers must compost', 'people ought to steward land'. Score: p_true = 0.3-0.5 (these are recommendations, not facts). Flag as NORMATIVE.",
+          "PHILOSOPHICAL": "Abstract, spiritual, or metaphysical claims about meaning, essence, or cosmic significance. Examples: 'soil is cosmically sacred', 'connection to land is what it means to be human', 'soil is the answer'. Score: p_true = 0.1-0.3 (subjective/abstract). Flag as PHILOSOPHICAL_CLAIM."
+        },
+        "scoring_rules": [
+          "If relationship contains 'should', 'ought', 'must', 'can' (prescriptive) \u2192 NORMATIVE, p_true \u2264 0.5",
+          "If relationship uses terms like 'sacred', 'essence', 'meaning of', 'cosmically' \u2192 PHILOSOPHICAL, p_true \u2264 0.3",
+          "If relationship is testable/measurable \u2192 FACTUAL, p_true based on evidence",
+          "When text_confidence is high but claim is philosophical/normative \u2192 set signals_conflict=true"
+        ],
+        "examples_to_include": [
+          "\u2705 FACTUAL: ('soil', 'contains', 'bacteria') | text_confidence=0.9, p_true=0.9, classification=FACTUAL",
+          "\u2705 FACTUAL: ('biochar', 'increases', 'soil fertility') | text_confidence=0.85, p_true=0.8, classification=FACTUAL",
+          "\u26a0\ufe0f NORMATIVE: ('humanity', 'should connect with', 'soil') | text_confidence=0.9, p_true=0.4, classification=NORMATIVE",
+          "\u26a0\ufe0f NORMATIVE: ('farmers', 'can thrive by', 'soil stewardship') | text_confidence=0.85, p_true=0.45, classification=NORMATIVE",
+          "\u274c PHILOSOPHICAL: ('soil', 'is-a', 'cosmically sacred') | text_confidence=0.9, p_true=0.2, classification=PHILOSOPHICAL_CLAIM, signals_conflict=true",
+          "\u274c PHILOSOPHICAL: ('connection to land', 'is-a', 'meaning of being human') | text_confidence=0.8, p_true=0.25, classification=PHILOSOPHICAL_CLAIM"
+        ]
+      },
+      "validation": {
+        "test_prompt_with": "Sample relationships: 'soil is sacred', 'we should compost', 'bacteria decompose matter'",
+        "success_criteria": "Philosophical claims get p_true < 0.3, normative claims get p_true < 0.5, factual claims get p_true > 0.7",
+        "prompt_version": "v14.1"
+      }
+    },
+    {
+      "operation_id": "change_003",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v13.txt",
+      "priority": "HIGH",
+      "rationale": "12 MEDIUM vague abstract entity issues originate in Pass 1 extraction. Better to prevent extraction than fix downstream. Prompt enhancement more effective than post-processing for semantic issues.",
+      "risk_level": "low",
+      "affected_issue_category": "Vague Abstract Entities",
+      "expected_improvement": "Reduces vague entity extraction by 8-10 relationships (0.9-1.1%) at source",
+      "change_description": "Add ENTITY SPECIFICITY REQUIREMENTS section to Pass 1 extraction prompt with explicit prohibition of vague/abstract entities and concrete examples",
+      "target_section": "Insert after 'ENTITY EXTRACTION RULES' section",
+      "guidance": {
+        "section_to_add": {
+          "heading": "\ud83c\udfaf ENTITY SPECIFICITY REQUIREMENTS",
+          "purpose": "Prevent extraction of vague, abstract, or overly general entities that don't convey concrete information"
+        },
+        "prohibited_patterns": {
+          "vague_references": [
+            "\u274c 'aspects of life' \u2192 \u2705 'human health', 'food security', 'community wellbeing'",
+            "\u274c 'the answer' \u2192 \u2705 specific solution/practice being referenced",
+            "\u274c 'the way' \u2192 \u2705 specific method/approach being described",
+            "\u274c 'this approach' \u2192 \u2705 resolve to specific practice name"
+          ],
+          "demonstrative_pronouns": [
+            "\u274c 'this', 'that', 'these', 'those' as standalone entities",
+            "\u2705 Resolve to specific entity from context before extraction"
+          ],
+          "abstract_concepts": [
+            "\u274c 'great crossroads', 'the solution', 'the process'",
+            "\u2705 Extract only if you can specify what crossroads/solution/process"
+          ]
+        },
+        "extraction_rules": [
+          "Rule 1: If entity is vague, scan surrounding 2-3 sentences for specific referent",
+          "Rule 2: If no specific referent found, SKIP the relationship (don't extract vague entity)",
+          "Rule 3: Prefer concrete nouns over abstract concepts",
+          "Rule 4: Test: Can this entity be clearly defined in 1-2 sentences? If no \u2192 too vague"
+        ],
+        "examples": [
+          "Text: 'This approach affects many aspects of life' \u2192 SKIP (both 'this approach' and 'aspects of life' too vague)",
+          "Text: 'Soil stewardship affects human health and food production' \u2192 EXTRACT (specific entities)",
+          "Text: 'The answer lies in regenerative practices' \u2192 EXTRACT ('regenerative practices' is specific, skip 'the answer')"
+        ]
+      },
+      "validation": {
+        "test_prompt_with": "Text containing 'aspects of life', 'this approach', 'the answer'",
+        "success_criteria": "No vague entities in extraction output, specific alternatives extracted instead",
+        "prompt_version": "v14.1"
+      }
+    },
+    {
+      "operation_id": "change_004",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass1_extraction_v13.txt",
+      "priority": "HIGH",
+      "rationale": "10 metadata relationships (praise quotes + dedications) are extracted in Pass 1. While metadata_filter will remove them, better to prevent extraction entirely for efficiency.",
+      "risk_level": "low",
+      "affected_issue_category": "Praise Quote Misclassification, Dedication Relationships",
+      "expected_improvement": "Prevents extraction of 8-10 metadata relationships at source, reduces downstream processing load",
+      "change_description": "Add SCOPE CONSTRAINTS section to Pass 1 extraction prompt to distinguish domain knowledge from book metadata",
+      "target_section": "Insert at beginning, right after prompt introduction",
+      "guidance": {
+        "section_to_add": {
+          "heading": "\ud83d\udcda EXTRACTION SCOPE: DOMAIN KNOWLEDGE ONLY",
+          "principle": "Extract relationships about the book's SUBJECT MATTER (soil stewardship, agriculture, ecology), NOT about the book itself (publication details, endorsements, dedications)"
+        },
+        "what_to_skip": {
+          "praise_quotes": "Endorsement quotes from reviewers/experts praising the book. Example: 'This handbook is an excellent tool' - Michael Bowman. \u2192 SKIP (this is about the book, not soil stewardship)",
+          "dedications": "Book dedication information. Example: 'This book is dedicated to my children' \u2192 SKIP (personal metadata, not domain knowledge)",
+          "publication_info": "Publisher, publication date, ISBN, edition info \u2192 SKIP unless part of citation being discussed",
+          "author_bio": "Information about author's background \u2192 SKIP unless directly relevant to domain knowledge",
+          "front_back_matter": "Acknowledgments, forewords, praise pages (typically pages 1-10, last 5 pages) \u2192 SKIP unless contains domain knowledge"
+        },
+        "what_to_extract": {
+          "domain_facts": "Facts about soil, agriculture, ecology, climate, stewardship practices",
+          "scientific_claims": "Research findings, empirical observations, cause-effect relationships",
+          "practical_knowledge": "Methods, techniques, recommendations for soil stewardship",
+          "citations": "References to other works/research (but not praise quotes about THIS book)"
+        },
+        "decision_rule": "Ask: Is this relationship teaching me about SOIL STEWARDSHIP, or about THE BOOK ITSELF? If about the book \u2192 SKIP. If about soil stewardship \u2192 EXTRACT."
+      },
+      "validation": {
+        "test_cases": [
+          "Praise quote: 'This handbook is excellent' - Reviewer \u2192 SKIP",
+          "Dedication: 'Dedicated to my children' \u2192 SKIP",
+          "Domain fact: 'Soil contains billions of microorganisms' \u2192 EXTRACT",
+          "Citation: 'Mollison authored Permaculture Manual' \u2192 EXTRACT"
+        ],
+        "success_criteria": "Zero praise quotes or dedications in Pass 1 extraction output"
+      }
+    },
+    {
+      "operation_id": "change_005",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/predicate_normalizer.py",
+      "priority": "MEDIUM",
+      "rationale": "10 MEDIUM predicate fragmentation issues + 3 MILD wrong semantic predicates = 13 issues. 133 unique predicates shows normalization not aggressive enough. Need more comprehensive rules.",
+      "risk_level": "medium",
+      "affected_issue_category": "Predicate Fragmentation, Wrong Semantic Predicates",
+      "expected_improvement": "Reduces unique predicates from 133 to ~90-100, fixes 5-8 semantic mismatches",
+      "change_description": "Enhance predicate normalization with aggressive tense normalization, 'is-X' variant consolidation, and semantic validation for common predicate-entity type mismatches",
+      "affected_function": "PredicateNormalizer.normalize_predicate, PredicateNormalizer.validate_semantic_compatibility",
+      "change_type": "function_enhancement",
+      "guidance": {
+        "normalization_rules_to_add": {
+          "tense_normalization": {
+            "present_perfect_to_past": "'has preserved' \u2192 'preserved', 'has enabled' \u2192 'enabled', 'have grown' \u2192 'grown'",
+            "passive_to_active": "'are grown' \u2192 'grown', 'is produced' \u2192 'produces'",
+            "rationale": "Simple past tense is clearer and more canonical for knowledge graphs"
+          },
+          "is_variant_consolidation": {
+            "patterns": "'is of', 'is toward', 'is about', 'is a way to', 'is characterized by'",
+            "action": "Normalize to 'is-a' if type relationship, otherwise extract core verb ('is about X' \u2192 'relates to X')",
+            "reject_if_too_vague": "If 'is-X' can't be simplified to clear relationship, reject as too vague"
+          },
+          "modal_verb_normalization": {
+            "patterns": "'can help with', 'can address', 'may enable', 'might support'",
+            "normalize_to": "'helps with', 'addresses', 'enables', 'supports'",
+            "rationale": "Modal verbs add uncertainty; KG should represent core relationship"
+          }
+        },
+        "semantic_validation_to_add": {
+          "purpose": "Catch predicates that don't make semantic sense with source/target types",
+          "validation_rules": [
+            "If source is abstract concept (soil, humanity) and predicate is physical action (collapses, walks, eats) \u2192 FLAG for review",
+            "If predicate is 'located in' but target is abstract (crossroads, situation) \u2192 suggest 'faces' or 'experiences'",
+            "If predicate is 'is-a' but source and target are incompatible types (land is-a human) \u2192 REJECT"
+          ],
+          "implementation": "Add validate_semantic_compatibility() method that checks predicate-entity type compatibility using simple heuristics"
+        },
+        "key_changes": [
+          "Expand TENSE_NORMALIZATIONS dict with present perfect \u2192 past mappings",
+          "Add IS_VARIANT_PATTERNS list and normalization logic",
+          "Add MODAL_VERB_PATTERNS and strip modal verbs",
+          "Implement validate_semantic_compatibility() with basic type checking",
+          "Add rejection logic for predicates that fail semantic validation"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "'has preserved' \u2192 'preserved'",
+          "'is about' \u2192 'relates to' or reject if too vague",
+          "'can help with' \u2192 'helps with'",
+          "('soil', 'collapses', 'humanity') \u2192 FLAG or suggest 'threatens'",
+          "('land', 'is-a', 'human') \u2192 REJECT"
+        ],
+        "success_criteria": "Unique predicates < 100, zero nonsensical semantic relationships"
+      }
+    },
+    {
+      "operation_id": "change_006",
+      "operation_type": "CONFIG_UPDATE",
+      "file_path": "config/filtering_thresholds.yaml",
+      "priority": "MEDIUM",
+      "rationale": "5 MILD figurative language issues + 8 MEDIUM philosophical claims = 13 issues where detection works but filtering is too permissive. Config change allows easy threshold tuning.",
+      "risk_level": "low",
+      "affected_issue_category": "Philosophical/Abstract Claims, Figurative Language Treated as Factual",
+      "expected_improvement": "Filters 8-10 low-quality philosophical/metaphorical relationships (0.9-1.1%)",
+      "change_description": "Add stricter filtering thresholds for relationships flagged with signals_conflict=true or classification flags indicating philosophical/metaphorical content",
+      "change_type": "threshold_adjustment",
+      "guidance": {
+        "current_thresholds": {
+          "likely_current": "p_true >= 0.4 or 0.5 for all relationships (single threshold)",
+          "problem": "Allows philosophical claims with p_true=0.4-0.6 through despite being low-quality"
+        },
+        "new_thresholds_to_add": {
+          "default_threshold": "p_true >= 0.7 (raise from likely 0.5)",
+          "philosophical_threshold": "p_true >= 0.85 if PHILOSOPHICAL_CLAIM flag present",
+          "metaphor_threshold": "p_true >= 0.85 if METAPHOR or FIGURATIVE_LANGUAGE flag present",
+          "signals_conflict_threshold": "p_true >= 0.75 if signals_conflict=true",
+          "opinion_threshold": "p_true >= 0.9 if OPINION flag present"
+        },
+        "config_structure": {
+          "filtering": {
+            "base_threshold": 0.7,
+            "flag_specific_thresholds": {
+              "PHILOSOPHICAL_CLAIM": 0.85,
+              "METAPHOR": 0.85,
+              "FIGURATIVE_LANGUAGE": 0.85,
+              "OPINION": 0.9
+            },
+            "signals_conflict_threshold": 0.75,
+            "rationale": "Higher thresholds for subjective/abstract content ensures only high-confidence cases pass"
+          }
+        },
+        "implementation_notes": [
+          "Add flag-specific threshold checking in filtering logic",
+          "Check signals_conflict field and apply stricter threshold",
+          "Log filtered relationships with reason for monitoring"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "p_true=0.6, PHILOSOPHICAL_CLAIM \u2192 FILTERED (< 0.85 threshold)",
+          "p_true=0.9, PHILOSOPHICAL_CLAIM \u2192 KEPT (\u2265 0.85 threshold)",
+          "p_true=0.65, signals_conflict=true \u2192 FILTERED (< 0.75 threshold)",
+          "p_true=0.8, FACTUAL \u2192 KEPT (\u2265 0.7 base threshold)"
+        ],
+        "success_criteria": "Philosophical/metaphorical relationships only kept if p_true \u2265 0.85"
+      }
+    },
+    {
+      "operation_id": "change_007",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/pronoun_resolver.py",
+      "priority": "MEDIUM",
+      "rationale": "3 MILD unresolved possessive pronouns in targets + 4 MILD generic pronouns = 7 issues. Pronoun resolution works well for sources but asymmetric for targets.",
+      "risk_level": "low",
+      "affected_issue_category": "Unresolved Possessive Pronouns in Targets, Unresolved Generic Pronouns",
+      "expected_improvement": "Resolves 5-7 remaining pronoun issues, improves consistency",
+      "change_description": "Extend pronoun resolution logic to handle targets with same rigor as sources, add fallback for unresolvable pronouns",
+      "affected_function": "PronounResolver.resolve_pronouns, PronounResolver.resolve_target_pronouns",
+      "change_type": "function_enhancement",
+      "guidance": {
+        "current_issue": "Pronoun resolution likely only processes source entities, or processes targets with less aggressive resolution strategy",
+        "fix_approach": {
+          "step_1": "Ensure resolve_pronouns() is called for BOTH source AND target entities",
+          "step_2": "Apply same context window and resolution heuristics to targets as sources",
+          "step_3": "For possessive pronouns ('our countryside'), use same entity resolution as possessive sources",
+          "step_4": "Add fallback: if resolution fails after all attempts, flag relationship for filtering rather than keeping unresolved pronoun"
+        },
+        "key_changes": [
+          "Add resolve_target_pronouns() method if not exists, or ensure existing resolution applies to targets",
+          "Check for possessive pronouns in targets: 'our', 'their', 'his', 'her'",
+          "Use same context extraction and entity matching logic as source resolution",
+          "Add PRONOUN_UNRESOLVED_TARGET flag if resolution fails, mark for potential filtering",
+          "Consider filtering relationships with unresolved pronouns in targets if confidence is low"
+        ],
+        "resolution_strategy": {
+          "possessive_pronouns": "Extract entity from context (e.g., 'our countryside' + earlier mention of 'Slovenia' \u2192 'Slovenian countryside')",
+          "generic_pronouns": "'we', 'us' \u2192 resolve to 'humanity', 'individuals', or specific group mentioned in context",
+          "demonstrative_pronouns": "'this', 'that' \u2192 resolve to nearest concrete noun in previous sentence"
+        }
+      },
+      "validation": {
+        "test_cases": [
+          "('connection', 'preserved', 'our countryside') + context about Slovenia \u2192 ('connection', 'preserved', 'Slovenian countryside')",
+          "('we', 'can', 'reconnect') \u2192 ('humanity', 'can', 'reconnect')",
+          "('this approach', 'enables', 'farming') + context about soil stewardship \u2192 ('soil stewardship', 'enables', 'farming')"
+        ],
+        "success_criteria": "Zero unresolved pronouns in targets, or flagged for filtering if unresolvable"
+      }
+    },
+    {
+      "operation_id": "change_008",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/list_splitter.py",
+      "priority": "MILD",
+      "rationale": "2 MILD incomplete list splitting issues. List splitting works well overall, just needs edge case handling for leading conjunctions.",
+      "risk_level": "low",
+      "affected_issue_category": "Incomplete List Splitting",
+      "expected_improvement": "Fixes 1-2 edge cases, improves completeness",
+      "change_description": "Fix list splitting regex to strip leading 'and'/'or' from split items to handle conjunctions at start of list items",
+      "affected_function": "ListSplitter.split_list_targets",
+      "change_type": "bug_fix",
+      "guidance": {
+        "current_issue": "List 'natural, organic, and productively vital states' splits into 3 items but keeps 'and productively vital states' instead of 'productively vital states'",
+        "fix_approach": {
+          "step_1": "After splitting on commas/semicolons, iterate through split items",
+          "step_2": "For each item, strip leading/trailing whitespace",
+          "step_3": "Check if item starts with 'and ' or 'or ' (with space) and strip it",
+          "step_4": "Also handle 'and/or' patterns"
+        },
+        "regex_pattern": "After split, apply: item = re.sub(r'^(and|or)\\s+', '', item.strip(), flags=re.IGNORECASE)",
+        "key_changes": [
+          "Add post-processing step after list splitting",
+          "Strip leading conjunctions from each split item",
+          "Preserve original casing of remaining text",
+          "Handle both 'and' and 'or' conjunctions"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "'natural, organic, and productively vital' \u2192 ['natural', 'organic', 'productively vital']",
+          "'A, B, or C' \u2192 ['A', 'B', 'C']",
+          "'first, second and third' \u2192 ['first', 'second', 'third']"
+        ],
+        "success_criteria": "No split items contain leading 'and' or 'or'"
+      }
+    },
+    {
+      "operation_id": "change_009",
+      "operation_type": "CODE_FIX",
+      "file_path": "src/knowledge_graph/postprocessing/universal/context_enricher.py",
+      "priority": "MILD",
+      "rationale": "5 MILD context-enriched source overcorrection issues. Context enrichment creates redundant metaphorical descriptions that should be consolidated.",
+      "risk_level": "low",
+      "affected_issue_category": "Context-Enriched Source Overcorrection",
+      "expected_improvement": "Consolidates 3-5 redundant relationships, reduces noise",
+      "change_description": "Add consolidation logic to detect and merge multiple similar metaphorical relationships for same source entity",
+      "affected_function": "ContextEnricher.consolidate_similar_relationships",
+      "change_type": "new_function",
+      "guidance": {
+        "current_issue": "Context enrichment changes 'this handbook' to 'Soil Stewardship Handbook' in multiple relationships, creating: 'Handbook is-a roadmap', 'Handbook is-a guide', 'Handbook is-a compass'",
+        "consolidation_strategy": {
+          "detection": "After enrichment, group relationships by (source, predicate_base) where predicate_base is normalized form (e.g., all 'is-a' variants)",
+          "similarity_check": "If 3+ relationships have same source and similar predicates (is-a, is-like, serves-as), check if targets are synonyms/related concepts",
+          "consolidation": "Merge into single relationship with most general target, or create list target: 'Handbook is-a guide (roadmap, compass)'"
+        },
+        "implementation": {
+          "step_1": "Add consolidate_similar_relationships() method called after enrichment",
+          "step_2": "Group relationships by (source, normalized_predicate)",
+          "step_3": "For groups with 3+ items, check target similarity using simple keyword matching",
+          "step_4": "If targets are similar (guide/roadmap/compass), keep most general or consolidate",
+          "step_5": "Add CONSOLIDATED flag to merged relationships"
+        },
+        "key_changes": [
+          "Add similarity detection for metaphorical descriptions",
+          "Implement target consolidation logic",
+          "Preserve most informative relationship, mark others as consolidated",
+          "Add configuration option to enable/disable consolidation"
+        ]
+      },
+      "validation": {
+        "test_cases": [
+          "('Handbook', 'is-a', 'roadmap'), ('Handbook', 'is-a', 'guide'), ('Handbook', 'is-a', 'compass') \u2192 Consolidate to ('Handbook', 'is-a', 'guide')",
+          "('soil', 'contains', 'bacteria'), ('soil', 'contains', 'fungi') \u2192 Keep separate (not metaphorical, distinct facts)"
+        ],
+        "success_criteria": "No more than 2 similar metaphorical relationships per source entity"
+      }
+    },
+    {
+      "operation_id": "change_010",
+      "operation_type": "PROMPT_ENHANCEMENT",
+      "file_path": "prompts/pass2_evaluation_v13_1.txt",
+      "priority": "MILD",
+      "rationale": "6 MEDIUM normative statements classified as factual shows inconsistent classification. Few-shot examples proven to improve LLM classification accuracy.",
+      "risk_level": "low",
+      "affected_issue_category": "Normative Statements Classified as Factual",
+      "expected_improvement": "Improves classification consistency, helps standardize FACTUAL vs. NORMATIVE distinction",
+      "change_description": "Add few-shot examples section to Pass 2 evaluation prompt showing correct classification of different claim types with appropriate p_true scores",
+      "target_section": "Add after CLAIM TYPE CLASSIFICATION section (from change_002)",
+      "guidance": {
+        "section_to_add": {
+          "heading": "\ud83d\udccb CLASSIFICATION EXAMPLES (Few-Shot Learning)",
+          "purpose": "Concrete examples to calibrate your classification and scoring"
+        },
+        "examples_to_include": [
+          {
+            "relationship": "('soil', 'contains', 'bacteria')",
+            "classification": "FACTUAL",
+            "text_confidence": 0.9,
+            "p_true": 0.9,
+            "reasoning": "Empirically verifiable, well-documented scientific fact"
+          },
+          {
+            "relationship": "('biochar', 'increases', 'soil fertility')",
+            "classification": "FACTUAL",
+            "text_confidence": 0.85,
+            "p_true": 0.8,
+            "reasoning": "Measurable effect, supported by research"
+          },
+          {
+            "relationship": "('humanity', 'should connect with', 'soil')",
+            "classification": "NORMATIVE",
+            "text_confidence": 0.9,
+            "p_true": 0.4,
+            "reasoning": "Prescriptive statement (should), expresses value/recommendation, not empirical fact"
+          },
+          {
+            "relationship": "('farmers', 'can thrive by', 'soil stewardship')",
+            "classification": "NORMATIVE",
+            "text_confidence": 0.85,
+            "p_true": 0.45,
+            "reasoning": "Prescriptive possibility (can), recommendation for action"
+          },
+          {
+            "relationship": "('soil', 'is-a', 'cosmically sacred')",
+            "classification": "PHILOSOPHICAL_CLAIM",
+            "text_confidence": 0.9,
+            "p_true": 0.2,
+            "signals_conflict": true,
+            "reasoning": "Spiritual/metaphysical claim, not empirically verifiable, subjective"
+          },
+          {
+            "relationship": "('connection to land', 'is-a', 'meaning of being human')",
+            "classification": "PHILOSOPHICAL_CLAIM",
+            "text_confidence": 0.8,
+            "p_true": 0.25,
+            "signals_conflict": true,
+            "reasoning": "Abstract existential claim about meaning, philosophical not factual"
+          },
+          {
+            "relationship": "('living soil', 'improves', 'mood')",
+            "classification": "FACTUAL",
+            "text_confidence": 0.75,
+            "p_true": 0.7,
+            "reasoning": "Testable claim (research on soil microbiome and mental health exists), though emerging science"
+          }
+        ],
+        "formatting": "Present as table or structured list with clear labels for each field"
+      },
+      "validation": {
+        "test_prompt_with": "Mix of factual, normative, and philosophical relationships",
+        "success_criteria": "Classification matches examples, p_true scores follow guidelines",
+        "prompt_version": "v14.1"
+      }
+    }
+  ],
+  "expected_impact": {
+    "issues_fixed": 55,
+    "high_fixed": 8,
+    "medium_fixed": 30,
+    "mild_fixed": 17,
+    "estimated_error_rate": "8.6% \u2192 5.5%",
+    "target_grade": "A- \u2192 A",
+    "primary_improvements": [
+      "Metadata filtering: 10 issues eliminated (1.1%)",
+      "Philosophical/normative classification: 14 issues reduced (1.6%)",
+      "Vague entity prevention: 10 issues reduced (1.1%)",
+      "Predicate normalization: 8 issues reduced (0.9%)",
+      "Stricter filtering thresholds: 10 issues reduced (1.1%)"
+    ]
+  },
+  "priorities": {
+    "immediate": [
+      "change_001: Create metadata filter (HIGH - 10 issues)",
+      "change_002: Add claim type classification to Pass 2 (HIGH - 14 issues)",
+      "change_003: Add entity specificity to Pass 1 (HIGH - 10 issues)",
+      "change_004: Add scope constraints to Pass 1 (HIGH - 10 issues)"
+    ],
+    "short_term": [
+      "change_005: Enhance predicate normalizer (MEDIUM - 13 issues)",
+      "change_006: Update filtering thresholds (MEDIUM - 13 issues)",
+      "change_007: Fix pronoun resolution for targets (MEDIUM - 7 issues)"
+    ],
+    "polish": [
+      "change_008: Fix list splitter edge case (MILD - 2 issues)",
+      "change_009: Add consolidation to context enricher (MILD - 5 issues)",
+      "change_010: Add few-shot examples to Pass 2 (MILD - improves consistency)"
+    ]
+  },
+  "testing_strategy": {
+    "validation_approach": "Run V14.1 extraction on same book, compare quality metrics to V13.1",
+    "success_criteria": [
+      "High priority issues: 8 \u2192 0-2",
+      "Medium priority issues: 22 \u2192 <10",
+      "Total issues: 75 \u2192 <50",
+      "Issue rate: 8.6% \u2192 <5.5%",
+      "Grade: A- \u2192 A"
+    ],
+    "rollback_plan": "If issue rate increases or critical issues emerge, revert to V13.1 prompts/configs, keep only metadata_filter module",
+    "monitoring": "Track filtered relationships by category to ensure no over-filtering of valid domain knowledge"
+  },
+  "implementation_notes": {
+    "order_of_operations": [
+      "1. Create metadata_filter.py module (change_001)",
+      "2. Update Pass 1 prompt with scope + specificity (change_003, change_004)",
+      "3. Update Pass 2 prompt with claim classification (change_002, change_010)",
+      "4. Update filtering thresholds config (change_006)",
+      "5. Enhance predicate_normalizer.py (change_005)",
+      "6. Fix pronoun_resolver.py (change_007)",
+      "7. Polish: list_splitter, context_enricher (change_008, change_009)"
+    ],
+    "integration_points": [
+      "Add metadata_filter to book_pipeline.py after bibliographic_citation_parser",
+      "Ensure filtering logic reads new thresholds from config",
+      "Update pipeline to use v14.1 prompts"
+    ],
+    "risk_mitigation": [
+      "Test each change incrementally on sample data",
+      "Monitor filtered relationships to catch over-filtering",
+      "Keep V13.1 as fallback configuration"
+    ]
+  },
+  "metadata": {
+    "curation_date": "2025-10-14T10:03:26.953661",
+    "source_version": 13.1,
+    "target_version": 14.1,
+    "reflector_analysis_id": "2025-10-14T09:52:54.227736",
+    "curator_version": "1.0_claude",
+    "model_used": "claude-sonnet-4-5-20250929"
+  }
+}
