@@ -17,6 +17,9 @@ from .bibliographic_citation_parser import BibliographicCitationParser
 from .title_completeness_validator import TitleCompletenessValidator
 from .figurative_language_filter import FigurativeLanguageFilter
 from .subjective_content_filter import SubjectiveContentFilter
+from .author_placeholder_resolver import AuthorPlaceholderResolver
+from .rhetorical_reclassifier import RhetoricalReclassifier
+from .statement_conciseness_normalizer import StatementConcisenessNormalizer
 
 __all__ = [
     "PraiseQuoteDetector",
@@ -28,4 +31,7 @@ __all__ = [
     "TitleCompletenessValidator",
     "FigurativeLanguageFilter",
     "SubjectiveContentFilter",
+    "AuthorPlaceholderResolver",
+    "RhetoricalReclassifier",
+    "StatementConcisenessNormalizer",
 ]

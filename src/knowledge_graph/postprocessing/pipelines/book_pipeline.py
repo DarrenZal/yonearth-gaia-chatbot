@@ -31,6 +31,7 @@ from typing import Optional, Dict, Any
 from ..base import PipelineOrchestrator
 from ..universal import (
     FieldNormalizer,
+    MarketStatNormalizer,
     VagueEntityBlocker,
     ListSplitter,
     ContextEnricher,
@@ -43,11 +44,13 @@ from ..universal import (
     SemanticDeduplicator,
     ConfidenceFilter,
 )
+from ..universal.vague_demographic_reclassifier import VagueDemographicReclassifier
 from ..content_specific.books import (
     PraiseQuoteDetector,
     MetadataFilter,
     FrontMatterDetector,
     DedicationNormalizer,
+    AuthorPlaceholderResolver,
     SubtitleJoiner,
     BibliographicCitationParser,
     TitleCompletenessValidator,
@@ -278,6 +281,8 @@ def get_book_pipeline_v1435(config: Optional[Dict[str, Any]] = None) -> Pipeline
         ListSplitter({**config.get('list_splitter', {}), 'respect_quotes': True, 'safe_mode': True}),
         PronounResolver(config.get('pronoun_resolver', {})),
         PredicateNormalizer(config.get('predicate_normalizer', {})),
+        # NEW: Normalize market stats and social-post predicates
+        MarketStatNormalizer(config.get('market_stat_normalizer', {})),
         PredicateValidator(config.get('predicate_validator', {})),
         VagueEntityBlocker(config.get('vague_entity_blocker', {})),
 
@@ -329,6 +334,8 @@ def get_book_pipeline_v1436(config: Optional[Dict[str, Any]] = None) -> Pipeline
         }),
         PronounResolver(config.get('pronoun_resolver', {})),
         PredicateNormalizer(config.get('predicate_normalizer', {})),
+        # NEW: Normalize market stats and social-post predicates
+        MarketStatNormalizer(config.get('market_stat_normalizer', {})),
         PredicateValidator(config.get('predicate_validator', {})),
         VagueEntityBlocker(config.get('vague_entity_blocker', {})),
 
@@ -382,6 +389,7 @@ def get_book_pipeline_v1437(config: Optional[Dict[str, Any]] = None) -> Pipeline
 
         # Universal processing (resolve-then-block order)
         ContextEnricher(config.get('context_enricher', {})),
+        AuthorPlaceholderResolver(config.get('author_placeholder_resolver', {})),
         ListSplitter({
             **config.get('list_splitter', {}),
             'respect_quotes': True,
@@ -404,6 +412,10 @@ def get_book_pipeline_v1437(config: Optional[Dict[str, Any]] = None) -> Pipeline
 
         # V11.2: Classification and deduplication
         ClaimClassifier(config.get('claim_classifier', {})),
+        # V14.3.10: Normalize/flag rhetorical and vague demographics before dedup
+        VagueDemographicReclassifier(config.get('vague_demographic_reclassifier', {})),
+        StatementConcisenessNormalizer(config.get('statement_conciseness_normalizer', {})),
+        RhetoricalReclassifier(config.get('rhetorical_reclassifier', {})),
         Deduplicator(config.get('deduplicator', {})),
     ]
 

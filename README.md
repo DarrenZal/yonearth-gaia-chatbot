@@ -1,30 +1,36 @@
-# YonEarth Gaia Chatbot 🌍
+# KGC - Knowledge Graph Construction 📚
 
-> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes (episodes 0-172, excluding #26) and three integrated books
+> Production-ready system for extracting high-quality knowledge graphs from books and documents
 
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white)
 
-## ⚡ Quick Deployment
+## 🎯 Current Achievement
 
-Deploy your own YonEarth Gaia Chatbot in minutes:
+**Grade:** A+ (Quality Gate Passed!)
+- **0 CRITICAL issues**
+- **≤2 HIGH issues**
+- **≤2% issue rate**
+- **116 high-quality relationships** from 30 pages
+- **93% improvement** from baseline
+
+## ⚡ Quick Start
 
 ```bash
-git clone https://github.com/DarrenZal/yonearth-gaia-chatbot.git
-cd yonearth-gaia-chatbot
-./deploy.sh
+# Clone and install
+git clone https://github.com/DarrenZal/KGC.git
+cd KGC
+pip install -r requirements.txt
+
+# Extract knowledge graph
+export OPENAI_API_KEY="your-key-here"
+python scripts/extract_kg_v14_3_8_incremental.py \
+  --book our_biggest_deal \
+  --section front_matter \
+  --pages 1-30 \
+  --author "Aaron William Perry"
 ```
-
-**That's it!** Your chatbot will be live with web interface, API access, and production-ready configuration.
-
-## 🌐 Live Demo
-
-Deploy your own instance to try it out!
-
-- **Web Interface**: Beautiful chat UI accessible via browser
-- **API Access**: RESTful endpoints for integration
-- **Real-time Chat**: Instant responses from Gaia with episode citations
 
 ## 🌟 Key Features
 

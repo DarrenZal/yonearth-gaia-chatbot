@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YonEarth Knowledge Graph</title>
-    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251008b">
+    <title>Our Biggest Deal - Knowledge Graph</title>
+    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251015">
 </head>
 <body>
     <div id="knowledge-graph-container">
@@ -14,10 +14,10 @@
                 <button class="view-btn" data-view="podcast-map" onclick="switchView('podcast-map')">
                     📍 Podcast Map
                 </button>
-                <button class="view-btn active" data-view="knowledge-graph">
+                <button class="view-btn" data-view="knowledge-graph" onclick="switchView('knowledge-graph')">
                     🕸️ YonEarth KG
                 </button>
-                <button class="view-btn" data-view="book-kg" onclick="switchView('book-kg')">
+                <button class="view-btn active" data-view="book-kg">
                     📚 Our Biggest Deal KG
                 </button>
                 <button class="view-btn" data-view="chat" onclick="window.location.href='/'">
@@ -26,15 +26,18 @@
             </div>
 
             <div class="title-section">
-                <h1>YonEarth Knowledge Graph</h1>
-                <p class="subtitle">Interactive visualization of concepts, people, and organizations</p>
+                <h1>📚 Our Biggest Deal - Knowledge Graph</h1>
+                <p class="subtitle">Interactive visualization of people, organizations, and concepts from the book</p>
+                <p style="font-size: 14px; color: #666; margin-top: 8px;">
+                    Author: Aaron William Perry | Currently showing: Front Matter (Pages 1-30)
+                </p>
 
-                <!-- Version selector -->
-                <div class="version-selector">
-                    <label for="kg-version-select">Version:</label>
-                    <select id="kg-version-select" onchange="loadKnowledgeGraphVersion(this.value)">
-                        <option value="current" selected>Current (Original)</option>
-                        <option value="v3.2.2">v3.2.2 - Full Extraction (172 episodes, 45,478 relationships)</option>
+                <!-- Section selector -->
+                <div class="version-selector" style="margin-top: 12px;">
+                    <label for="section-select">Book Section:</label>
+                    <select id="section-select" onchange="loadBookSection(this.value)">
+                        <option value="front_matter" selected>Front Matter (Pages 1-30)</option>
+                        <option value="full_book" disabled>Full Book (Coming soon...)</option>
                     </select>
                 </div>
             </div>
@@ -67,13 +70,13 @@
                 <div class="control-section">
                     <h3>⭐ Importance</h3>
                     <div class="slider-container">
-                        <label>Minimum: <span id="importance-value">0.7</span></label>
+                        <label>Minimum: <span id="importance-value">0.5</span></label>
                         <input type="range" id="importance-slider"
-                               min="0" max="1" step="0.05" value="0.7"
+                               min="0" max="1" step="0.05" value="0.5"
                                oninput="updateImportanceFilter(this.value)" />
                     </div>
                     <p style="font-size: 11px; color: #666; margin-top: 8px;">
-                        ⚠️ Lower values may impact performance (10,000+ entities total)
+                        Lower threshold for book visualization (smaller dataset)
                     </p>
                 </div>
 
@@ -172,19 +175,30 @@
 
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js?v=20251008c"></script>
+    <!-- Load our book-specific visualization script -->
+    <script src="OurBiggestDealKG.js?v=20251015"></script>
 
     <script>
         // View switching functionality
         function switchView(view) {
             if (view === 'podcast-map') {
                 window.location.href = '/PodcastMap.html';
-            } else if (view === 'book-kg') {
-                window.location.href = '/OurBiggestDealKG.html';
+            } else if (view === 'knowledge-graph') {
+                window.location.href = '/KnowledgeGraph.html';
             } else if (view === 'chat') {
                 window.location.href = '/';
             }
+        }
+
+        // Section loading functionality
+        function loadBookSection(section) {
+            if (section === 'full_book') {
+                alert('Full book extraction is in progress. Check back soon!');
+                document.getElementById('section-select').value = 'front_matter';
+                return;
+            }
+            // For now, only front_matter is available
+            console.log('Loading section:', section);
         }
     </script>
 </body>

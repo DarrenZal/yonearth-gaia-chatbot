@@ -79,6 +79,11 @@ class PredicateNormalizer(PostProcessingModule):
             # V11.2.2 NEW: Variations of "include"
             'include': 'includes',
 
+            # Domain additions
+            'reveals': 'shown',
+            'reveal': 'shown',
+            'reminds': 'stated',
+
             # V11.2.2 NEW: Variations of "increase"
             'increased': 'increases',
             'increased by': 'increases',

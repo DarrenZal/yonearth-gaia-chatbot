@@ -1,0 +1,42 @@
+Extract graph-ready relationships from the TEXT below.
+
+Return ONLY a valid JSON object with a single top-level key "relationships" and nothing else.
+
+Schema (strict):
+{
+  "relationships": [
+    {
+      "source": string,
+      "relationship": string,
+      "target": string,
+      "source_type": "PERSON"|"ORGANIZATION"|"BOOK"|"CONCEPT"|"PLACE"|"MATERIAL"|"PROCESS"|"SECTION",
+      "target_type": "PERSON"|"ORGANIZATION"|"BOOK"|"CONCEPT"|"PLACE"|"MATERIAL"|"PROCESS"|"STATEMENT"|"QUOTE",
+      "context": string,
+      "page": 0
+    }
+  ]
+}
+
+Guidelines:
+- Capture factual AND attributable content present in the text.
+- Prefer named entities over vague pronouns; avoid generic sources/targets (we, they, people) unless clearly resolved.
+- Canonical predicates to use when applicable: authored, published, said, poses question, defined, is-a, includes, has, founded, launched, located in.
+- Quotes: PERSON → said → QUOTE (target_type=QUOTE); keep minimal quote span (<= 240 chars).
+- Questions: AUTHOR/SECTION → poses question → STATEMENT (target_type=STATEMENT).
+- Case-study facts: For organizations mentioned (e.g., banks, funds, programs), extract concrete facts (type, launch year, notable descriptors) using predicates like is-a, launched, founded, located in.
+- Market stats: Extract sector metrics and shares using predicates like has (annual sales/revenue) and includes (share of population/participants). Normalize numbers (e.g., “half a trillion dollars” → “$500 billion”).
+- Social posts/articles: For attributions like “X posted on LinkedIn,” use published as the predicate and target_type=ARTICLE with a concise description (e.g., “LinkedIn post about …”).
+- Definitions/identity: Only when explicit in text; avoid philosophical comparisons as facts.
+- If nothing valid, return {"relationships": []}.
+
+Few-shot patterns (illustrative):
+- {"source":"Climate First Bank","relationship":"is-a","target":"bank","source_type":"ORGANIZATION","target_type":"ROLE","context":"case study mention","page":N}
+- {"source":"Climate First Bank","relationship":"launched","target":"2021","source_type":"ORGANIZATION","target_type":"CONCEPT","context":"launched in the summer of 2021","page":N}
+- {"source":"Lifestyles of Health and Sustainability (LOHAS)","relationship":"has","target":"approximately $500 billion annual sales worldwide","source_type":"CONCEPT","target_type":"CONCEPT","context":"sector size","page":N}
+- {"source":"Lifestyles of Health and Sustainability (LOHAS)","relationship":"includes","target":"about 20% of people in the United States","source_type":"CONCEPT","target_type":"CONCEPT","context":"US share","page":N}
+- {"source":"Tom Steyer","relationship":"published","target":"LinkedIn post about renewable energy and cleantech growth","source_type":"PERSON","target_type":"ARTICLE","context":"LinkedIn post","page":N}
+
+TEXT:
+"""
+{text}
+"""

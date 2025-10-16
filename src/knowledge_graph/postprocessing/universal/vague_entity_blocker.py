@@ -146,6 +146,12 @@ class VagueEntityBlocker(PostProcessingModule):
         Returns:
             (should_block: bool, reason: str)
         """
+        # V14.3.10: Always allow quotes/attributed statements to pass
+        pred = (getattr(rel, 'relationship', '') or '').strip().lower()
+        tgt_type = (getattr(rel, 'target_type', '') or '').strip().lower()
+        if tgt_type == 'quote' or pred in {'said', 'stated', 'wrote'}:
+            return False, ""
+
         # V14.3.2 NEW: Check if ContextEnricher flagged as unresolvable
         # If ContextEnricher set VAGUE_SOURCE/VAGUE_TARGET flag, that means it
         # tried to resolve the entity but FAILED. We should block these.

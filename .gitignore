@@ -101,6 +101,7 @@ data/feedback/
 data/processed/
 data/knowledge_graph/
 data/books/
+data/knowledge_graph_books/
 
 # Node modules (if using JavaScript tools)
 node_modules/
@@ -121,6 +122,10 @@ wiki-quartz/
 *.svg
 !web/assets/*.png
 !web/assets/*.jpg
+
+# Knowledge graph extraction outputs (generated)
+kg_extraction_playbook/output/
+kg_extraction_playbook/analysis_reports/
 
 # Backup files
 *.bak

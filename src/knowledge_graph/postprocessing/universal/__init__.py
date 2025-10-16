@@ -28,6 +28,7 @@ from .list_splitter import ListSplitter
 from .context_enricher import ContextEnricher
 from .predicate_normalizer import PredicateNormalizer
 from .predicate_validator import PredicateValidator
+from .market_stat_normalizer import MarketStatNormalizer
 from .type_compatibility_validator import TypeCompatibilityValidator
 from .vague_entity_blocker import VagueEntityBlocker
 from .claim_classifier import ClaimClassifier
@@ -43,6 +44,7 @@ __all__ = [
     "ContextEnricher",
     "PredicateNormalizer",
     "PredicateValidator",
+    "MarketStatNormalizer",
     "TypeCompatibilityValidator",
     "VagueEntityBlocker",
     "ClaimClassifier",

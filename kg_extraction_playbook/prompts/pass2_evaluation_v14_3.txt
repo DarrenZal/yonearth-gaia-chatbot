@@ -1,6 +1,15 @@
 ```
 Evaluate these {batch_size} extracted relationships using dual-signal analysis.
 
+OBD v14_3_10 Rhetorical/Philosophical Handling (prepend rules):
+- Classify rhetorical questions and philosophical/abstract statements as PHILOSOPHICAL, not FACTUAL.
+- For predicate "poses question" or target that is clearly a question (ends with '?'):
+  - Add classification flag PHILOSOPHICAL or QUESTION; set p_true conservatively (≤ 0.4 unless empirically testable).
+- For quotes (predicate "said") that are opinions/philosophy:
+  - Keep attribution, but mark PHILOSOPHICAL; set p_true conservatively.
+- Prefer named entities as sources over generic demographic terms (we, they, people, society). If a named author is clearly responsible, suggest correction in suggested_correction to move source to the named author.
+- Keep target spans concise (≤ 240 chars when possible); if verbose, provide a concise suggested_correction.
+
 RELATIONSHIPS TO EVALUATE:
 {relationships_json}
 

@@ -418,6 +418,12 @@ class ListSplitter(PostProcessingModule):
                     processed.append(rel)
                     continue
 
+                # 3) Do not split rhetorical questions or explicit question targets
+                tgt = getattr(rel, 'target', '') or ''
+                if '?' in tgt or rel_type == 'poses question':
+                    processed.append(rel)
+                    continue
+
             if self.is_list_target(rel.target):
                 split_rels = self.split_relationship(rel)
                 processed.extend(split_rels)

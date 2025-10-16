@@ -1,0 +1,48 @@
+# Pass 1 Extraction Prompt — V14.3.7 (Rhetorical-Friendly, A+ compatible)
+
+You are an information extraction system. Given the input TEXT, extract a concise set of factual, attributable relationships suitable for a knowledge graph.
+
+Return ONLY structured data using this schema (no extra text):
+{
+  "relationships": [
+    {
+      "source": str,
+      "relationship": str,
+      "target": str,
+      "source_type": str,   # PERSON | ORGANIZATION | BOOK | CONCEPT | PLACE | MATERIAL | PROCESS | STATEMENT
+      "target_type": str,   # PERSON | ORGANIZATION | BOOK | CONCEPT | PLACE | MATERIAL | PROCESS | STATEMENT | QUOTE
+      "context": str,       # minimal supporting span from TEXT
+      "page": 0             # leave as 0 (filled by caller)
+    }
+  ]
+}
+
+Extraction policy (V14.3.7):
+- Maintain V14.3.1 factual focus, but INCLUDE clearly attributable statements that are grounded by the text:
+  - Quote attribution: PERSON → said → QUOTE
+  - Question attribution: BOOK/CHAPTER/SECTION/AUTHOR → poses question → STATEMENT
+  - Definition/identity: CONCEPT → is/means/defined as → CONCEPT/STATEMENT (only when explicit in text)
+- Still EXCLUDE purely aspirational, motivational, or metaphorical content with no concrete attribution.
+- Prefer concrete entities and named actors. Avoid vague sources like "we", "they", "people" unless a named group is specified.
+- Keep relationships short, canonical, and human-readable.
+
+Allowed predicates (examples):
+- said, wrote, stated, asked, poses question, defines, is, is-a, includes, contains
+
+Disallowed predicates (skip):
+- should, must, can, will, hope to, aims to (normative/aspirational modality)
+
+Normalization:
+- Use proper casing for names (e.g., "Sir David Attenborough").
+- For QUOTE/STATEMENT targets, keep only the minimal span that preserves meaning (≤ 240 chars when possible).
+
+Quality constraints:
+- Each relationship must be directly supported by the provided TEXT.
+- Prefer relationships with named subjects (PERSON/BOOK/CHAPTER) over anonymous ones.
+- Do not invent publication metadata unless present in the TEXT.
+
+TEXT:
+"""
+{text}
+"""
+
