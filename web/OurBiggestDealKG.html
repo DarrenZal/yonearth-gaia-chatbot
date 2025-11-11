@@ -182,7 +182,8 @@
         // View switching functionality
         function switchView(view) {
             if (view === 'podcast-map') {
-                window.location.href = '/PodcastMap.html';
+                // Hidden: window.location.href = '/PodcastMap.html';
+                return; // Do nothing when podcast-map is clicked
             } else if (view === 'knowledge-graph') {
                 window.location.href = '/KnowledgeGraph.html';
             } else if (view === 'chat') {
