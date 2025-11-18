@@ -16,8 +16,9 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 
 from ..config import settings
+from pathlib import Path
 from ..rag.chain import get_rag_chain
-from ..voice.elevenlabs_client import ElevenLabsVoiceClient
+from ..voice.piper_client import PiperVoiceClient
 from .models import (
     ChatRequest, ChatResponse, Citation,
     RecommendationsRequest, RecommendationsResponse, EpisodeRecommendation,
@@ -28,7 +29,9 @@ from .models import (
 )
 from .bm25_endpoints import router as bm25_router
 from .voice_endpoints import router as voice_router
+from .qa_hybrid_endpoints import router as qa_hybrid_router
 from .podcast_map_route_local import router as podcast_map_router
+from .graph_endpoints import router as graph_router
 
 # Configure logging
 logging.basicConfig(
@@ -55,6 +58,19 @@ async def lifespan(app: FastAPI):
         rag_chain = get_rag_chain()
         rag_chain.initialize()
         logger.info("RAG chain initialized successfully")
+
+        # Warmup query to prewarm caches
+        logger.info("Running warmup query to prewarm caches...")
+        try:
+            warmup_result = rag_chain.query(
+                user_input="What is regenerative agriculture?",
+                k=3,
+                session_id="warmup"
+            )
+            logger.info(f"Warmup query completed in {warmup_result.get('graph_retrieval_ms', 0)}ms (graph) with {warmup_result.get('retrieval_count', 0)} docs")
+        except Exception as warmup_error:
+            logger.warning(f"Warmup query failed (non-critical): {warmup_error}")
+
     except Exception as e:
         logger.error(f"Failed to initialize RAG chain: {e}")
         # Continue anyway - will initialize on first request
@@ -124,6 +140,19 @@ try:
 except Exception as e:
     logger.error(f"❌ Failed to load podcast map router: {e}")
 
+# Include Hybrid QA router (GraphRAG + BM25/Vector)
+try:
+    app.include_router(qa_hybrid_router)
+
+    # Include graph endpoints
+    app.include_router(graph_router)
+    logger.info("✅ Hybrid QA router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load Hybrid QA router: {e}")
+
+
+# Note: Static files are served by nginx in production (see nginx.conf).
+
 
 def get_rag_dependency():
     """Dependency to get RAG chain instance"""
@@ -138,39 +167,46 @@ def get_rag_dependency():
 async def health_check():
     """Health check endpoint"""
     try:
-        # Simple health check without RAG dependency issues
-        global rag_chain
-        rag_status = rag_chain is not None
-        
+        # Use the RAG dependency so tests can patch it and so we can report
+        # meaningful initialization and vectorstore stats.
+        rag = get_rag_dependency()
+        stats: Dict[str, Any] = {}
+        try:
+            stats = rag.get_stats() or {}
+        except Exception as stats_error:  # pragma: no cover - defensive
+            logger.warning(f"Health stats collection failed: {stats_error}")
+
         return {
             "status": "healthy",
             "version": "1.0.0",
-            "rag_initialized": rag_status,
-            "service": "YonEarth Gaia Chatbot",
-            "timestamp": int(time.time())
+            "rag_initialized": bool(stats.get("initialized", False)),
+            "gaia_personality": stats.get("gaia_personality"),
+            "vectorstore_stats": stats.get("vectorstore_stats", {}),
         }
     except Exception as e:
         logger.error(f"Health check failed: {e}")
-        return {
-            "status": "error",
-            "version": "1.0.0",
-            "error": str(e)
-        }
+        raise HTTPException(
+            status_code=503,
+            detail=f"Service unhealthy: {e}",
+        )
 
 
-@app.post("/chat", response_model=ChatResponse)
+@app.post("/api/chat", response_model=ChatResponse)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def chat_with_gaia(
     request: Request,
     chat_request: ChatRequest,
-    rag: Any = Depends(get_rag_dependency)
+    rag: Any = Depends(get_rag_dependency)  # kept for initialization side-effects
 ):
     """Chat with Gaia using RAG pipeline"""
     start_time = time.time()
     
     try:
         logger.info(f"Processing chat request: {chat_request.message[:50]}...")
-        
+        # Always resolve RAG via the module-level function so tests that patch
+        # src.api.main.get_rag_dependency see the mocked instance.
+        rag = get_rag_dependency()
+
         # Process query through RAG chain
         response = rag.query(
             user_input=chat_request.message,
@@ -200,37 +236,24 @@ async def chat_with_gaia(
         # Get cost breakdown from response (if available)
         cost_breakdown = response.get("cost_breakdown")
 
-        if chat_request.enable_voice and settings.elevenlabs_api_key:
+        if chat_request.enable_voice:
             try:
-                # Use voice_id from request if provided, otherwise use default from settings
-                voice_id = chat_request.voice_id or settings.elevenlabs_voice_id
-                logger.info(f"Generating voice with voice_id: {voice_id}")
+                logger.info(f"Generating voice with Piper TTS (en_US-kristin-medium)")
 
-                voice_client = ElevenLabsVoiceClient(
-                    api_key=settings.elevenlabs_api_key,
-                    voice_id=voice_id
-                )
+                voice_client = PiperVoiceClient(voice_name="en_US-kristin-medium")
                 # Preprocess response for better speech
                 speech_text = voice_client.preprocess_text_for_speech(response["response"])
                 audio_data = voice_client.generate_speech_base64(speech_text)
 
-                # Add voice cost to breakdown if we have one
+                # Note: Piper is free/open-source, no cost tracking needed
                 if cost_breakdown and audio_data:
-                    from ..utils.cost_calculator import calculate_elevenlabs_cost
-                    voice_cost = calculate_elevenlabs_cost(speech_text, settings.elevenlabs_model_id)
-
-                    # Add voice cost detail
+                    # Add voice generation note (no cost for Piper)
                     cost_breakdown["details"].append({
-                        "service": "ElevenLabs Voice",
-                        "model": voice_cost["model"],
-                        "usage": f"{voice_cost['characters']} characters",
-                        "cost": f"${voice_cost['cost']:.4f}"
+                        "service": "Piper Voice (Open Source)",
+                        "model": "en_US-kristin-medium",
+                        "usage": f"{len(speech_text)} characters",
+                        "cost": "$0.0000"
                     })
-
-                    # Update total cost
-                    current_total = float(cost_breakdown["summary"].replace("$", ""))
-                    new_total = current_total + voice_cost["cost"]
-                    cost_breakdown["summary"] = f"${new_total:.4f}"
 
             except Exception as voice_error:
                 logger.error(f"Voice generation failed: {voice_error}")
@@ -257,7 +280,18 @@ async def chat_with_gaia(
         )
 
 
-@app.post("/recommendations", response_model=RecommendationsResponse)
+@app.post("/chat", response_model=ChatResponse)
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def chat_with_gaia_compat(
+    request: Request,
+    chat_request: ChatRequest,
+    rag: Any = Depends(get_rag_dependency),
+):
+    """Compatibility chat endpoint without /api prefix (test and legacy clients)."""
+    return await chat_with_gaia(request, chat_request, rag)  # type: ignore[arg-type]
+
+
+@app.post("/api/recommendations", response_model=RecommendationsResponse)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def get_episode_recommendations(
     request: Request,
@@ -267,7 +301,8 @@ async def get_episode_recommendations(
     """Get episode recommendations based on query"""
     try:
         logger.info(f"Getting recommendations for: {rec_request.query[:50]}...")
-        
+        rag = get_rag_dependency()
+
         recommendations = rag.get_episode_recommendations(
             user_input=rec_request.query,
             k=rec_request.max_recommendations
@@ -297,7 +332,18 @@ async def get_episode_recommendations(
         raise HTTPException(status_code=500, detail="Failed to get recommendations")
 
 
-@app.post("/conversation-recommendations", response_model=ConversationRecommendationsResponse)
+@app.post("/recommendations", response_model=RecommendationsResponse)
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def get_episode_recommendations_compat(
+    request: Request,
+    rec_request: RecommendationsRequest,
+    rag: Any = Depends(get_rag_dependency),
+):
+    """Compatibility recommendations endpoint without /api prefix (test and legacy clients)."""
+    return await get_episode_recommendations(request, rec_request, rag)  # type: ignore[arg-type]
+
+
+@app.post("/api/conversation-recommendations", response_model=ConversationRecommendationsResponse)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def get_conversation_recommendations(
     request: Request,
@@ -353,7 +399,7 @@ async def get_conversation_recommendations(
         raise HTTPException(status_code=500, detail="Failed to get conversation recommendations")
 
 
-@app.post("/search", response_model=SearchResponse)
+@app.post("/api/search", response_model=SearchResponse)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def search_episodes(
     request: Request,
@@ -363,7 +409,8 @@ async def search_episodes(
     """Search episodes with optional filters"""
     try:
         logger.info(f"Searching episodes for: {search_request.query[:50]}...")
-        
+        rag = get_rag_dependency()
+
         results = rag.search_episodes(
             query=search_request.query,
             filters=search_request.filters,
@@ -396,7 +443,18 @@ async def search_episodes(
         raise HTTPException(status_code=500, detail="Search failed")
 
 
-@app.post("/chat/compare", response_model=ModelComparisonResponse)
+@app.post("/search", response_model=SearchResponse)
+@limiter.limit(f"{settings.rate_limit_per_minute}/minute")
+async def search_episodes_compat(
+    request: Request,
+    search_request: SearchRequest,
+    rag: Any = Depends(get_rag_dependency),
+):
+    """Compatibility search endpoint without /api prefix (test and legacy clients)."""
+    return await search_episodes(request, search_request, rag)  # type: ignore[arg-type]
+
+
+@app.post("/api/chat/compare", response_model=ModelComparisonResponse)
 @limiter.limit(f"{settings.rate_limit_per_minute}/minute")
 async def compare_models(
     request: Request,
@@ -485,7 +543,7 @@ async def compare_models(
         )
 
 
-@app.post("/reset-conversation")
+@app.post("/api/reset-conversation")
 @limiter.limit("5/minute")
 async def reset_conversation(
     request: Request,
@@ -494,6 +552,7 @@ async def reset_conversation(
 ):
     """Reset conversation memory for a session"""
     try:
+        rag = get_rag_dependency()
         rag.reset_conversation(session_id=session_id)
         return {"message": "Conversation reset successfully", "session_id": session_id}
     except Exception as e:
@@ -501,7 +560,18 @@ async def reset_conversation(
         raise HTTPException(status_code=500, detail="Failed to reset conversation")
 
 
-@app.post("/feedback", response_model=FeedbackResponse)
+@app.post("/reset-conversation")
+@limiter.limit("5/minute")
+async def reset_conversation_compat(
+    request: Request,
+    session_id: str = None,
+    rag: Any = Depends(get_rag_dependency),
+):
+    """Compatibility reset endpoint without /api prefix (test and legacy clients)."""
+    return await reset_conversation(request, session_id=session_id, rag=rag)  # type: ignore[arg-type]
+
+
+@app.post("/api/feedback", response_model=FeedbackResponse)
 @limiter.limit("10/minute")
 async def submit_feedback(
     request: Request,
@@ -603,9 +673,7 @@ async def get_knowledge_graph_data():
     """Get knowledge graph visualization data"""
     try:
         import json
-        from pathlib import Path
-
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = PROJECT_ROOT / "data/knowledge_graph/visualization_data.json"
 
         if not data_file.exists():
             raise HTTPException(
@@ -628,18 +696,73 @@ async def get_knowledge_graph_data():
         )
 
 
+@app.get("/api/knowledge-graph/data/v3.2.2")
+async def get_knowledge_graph_data_v3_2_2():
+    """Get knowledge graph v3.2.2 visualization data"""
+    try:
+        import json
+        data_file = PROJECT_ROOT / "data/knowledge_graph_v3_2_2/visualization_data.json"
+
+        if not data_file.exists():
+            raise HTTPException(
+                status_code=404,
+                detail="Knowledge graph v3.2.2 data not found. Please run the generation script first."
+            )
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        return data
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error loading knowledge graph v3.2.2 data: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to load knowledge graph v3.2.2 data"
+        )
+
+
+@app.get("/api/knowledge-graph/data/unified")
+async def get_knowledge_graph_data_unified():
+    """Get unified knowledge graph with discourse overlay data"""
+    try:
+        import json
+        data_file = PROJECT_ROOT / "data/knowledge_graph_unified/visualization_data.json"
+
+        if not data_file.exists():
+            raise HTTPException(
+                status_code=404,
+                detail="Unified knowledge graph data not found. Please run the unified KG builder first."
+            )
+
+        with open(data_file, 'r') as f:
+            data = json.load(f)
+
+        return data
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"Error loading unified knowledge graph data: {e}")
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to load unified knowledge graph data"
+        )
+
+
 @app.get("/api/knowledge-graph/entity/{entity_id}")
 async def get_entity_details(entity_id: str):
     """Get detailed information about a specific entity"""
     try:
         import json
-        from pathlib import Path
         from urllib.parse import unquote
 
         # Decode URL-encoded entity_id
         entity_id = unquote(entity_id)
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = PROJECT_ROOT / "data/knowledge_graph/visualization_data.json"
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
@@ -667,13 +790,12 @@ async def get_entity_neighborhood(entity_id: str, depth: int = 1):
     """Get the neighborhood (connected entities) of a specific entity"""
     try:
         import json
-        from pathlib import Path
         from urllib.parse import unquote
 
         # Decode URL-encoded entity_id
         entity_id = unquote(entity_id)
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = PROJECT_ROOT / "data/knowledge_graph/visualization_data.json"
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
@@ -733,12 +855,11 @@ async def search_knowledge_graph(q: str, limit: int = 20):
     """Search for entities in the knowledge graph"""
     try:
         import json
-        from pathlib import Path
 
         if not q or len(q) < 2:
             raise HTTPException(status_code=400, detail="Query must be at least 2 characters")
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = PROJECT_ROOT / "data/knowledge_graph/visualization_data.json"
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
@@ -810,3 +931,5 @@ if __name__ == "__main__":
         reload=settings.api_reload,
         log_level=settings.log_level.lower()
     )
+# Project root (repo) directory
+PROJECT_ROOT = Path(__file__).resolve().parents[2]

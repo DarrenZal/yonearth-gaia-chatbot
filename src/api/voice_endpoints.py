@@ -9,7 +9,7 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 
 from ..config import settings
-from ..voice.elevenlabs_client import ElevenLabsVoiceClient
+from ..voice.piper_client import PiperVoiceClient
 from .models import VoiceGenerationRequest, VoiceGenerationResponse
 
 logger = logging.getLogger(__name__)
@@ -21,26 +21,24 @@ router = APIRouter(prefix="/api/voice", tags=["voice"])
 limiter = Limiter(key_func=get_remote_address)
 
 # Global voice client
-voice_client: Optional[ElevenLabsVoiceClient] = None
+voice_client: Optional[PiperVoiceClient] = None
 
 
 def get_voice_client():
     """Get or create voice client"""
     global voice_client
-    
-    if not settings.elevenlabs_api_key:
-        raise HTTPException(
-            status_code=503,
-            detail="Voice service not configured"
-        )
-    
+
     if voice_client is None:
-        voice_client = ElevenLabsVoiceClient(
-            api_key=settings.elevenlabs_api_key,
-            voice_id=settings.elevenlabs_voice_id,
-            model_id=settings.elevenlabs_model_id
-        )
-    
+        try:
+            voice_client = PiperVoiceClient(
+                voice_name="en_US-kristin-medium"
+            )
+        except Exception as e:
+            raise HTTPException(
+                status_code=503,
+                detail=f"Voice service initialization failed: {str(e)}"
+            )
+
     return voice_client
 
 
@@ -48,7 +46,7 @@ def get_voice_client():
 @limiter.limit("10/minute")
 async def generate_voice(
     request: VoiceGenerationRequest,
-    client: ElevenLabsVoiceClient = Depends(get_voice_client)
+    client: PiperVoiceClient = Depends(get_voice_client)
 ) -> VoiceGenerationResponse:
     """
     Generate voice audio from text
@@ -91,23 +89,23 @@ async def generate_voice(
 
 @router.get("/test")
 async def test_voice_connection(
-    client: ElevenLabsVoiceClient = Depends(get_voice_client)
+    client: PiperVoiceClient = Depends(get_voice_client)
 ) -> dict:
     """
     Test voice service connectivity
-    
+
     Returns:
         Connection status
     """
     try:
         success = client.test_connection()
-        
+
         return {
             "connected": success,
-            "voice_id": settings.elevenlabs_voice_id,
-            "model_id": settings.elevenlabs_model_id
+            "voice_name": "en_US-kristin-medium",
+            "tts_engine": "Piper"
         }
-        
+
     except Exception as e:
         logger.error(f"Voice test error: {str(e)}")
         return {

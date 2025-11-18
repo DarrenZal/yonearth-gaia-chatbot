@@ -1,0 +1,149 @@
+# Knowledge Graph Operations Makefile
+# Usage: make -f Makefile.kg <target>
+
+.PHONY: help merge validate triage clean backup deploy test
+
+# Variables
+PROJECT_ROOT := /home/claudeuser/yonearth-gaia-chatbot
+KG_DIR := $(PROJECT_ROOT)/data/knowledge_graph_unified
+SCRIPTS_DIR := $(PROJECT_ROOT)/scripts
+BUILD_ID := $(shell date +%Y%m%d_%H%M%S)_$(shell git rev-parse --short HEAD 2>/dev/null || echo "nogit")
+
+help:
+	@echo "Knowledge Graph Management Commands:"
+	@echo "  make -f Makefile.kg merge      - Rebuild unified knowledge graph"
+	@echo "  make -f Makefile.kg validate   - Run CI validation checks"
+	@echo "  make -f Makefile.kg triage     - Analyze orphan edges"
+	@echo "  make -f Makefile.kg backup     - Backup current KG with build ID"
+	@echo "  make -f Makefile.kg deploy     - Deploy KG to production"
+	@echo "  make -f Makefile.kg test       - Run performance tests"
+	@echo "  make -f Makefile.kg clean      - Remove temporary files"
+	@echo "  make -f Makefile.kg full       - Full rebuild pipeline"
+	@echo ""
+	@echo "Phase 2 Commands:"
+	@echo "  make -f Makefile.kg normalize  - Apply entity normalization"
+	@echo "  make -f Makefile.kg discourse  - Extract discourse elements"
+	@echo "  make -f Makefile.kg links      - Build cross-content links"
+	@echo "  make -f Makefile.kg perf       - Run performance tests"
+
+# Phase 1 Operations
+merge:
+	@echo "🔄 Merging knowledge graphs..."
+	@python3 $(SCRIPTS_DIR)/kg_merge_unified.py
+	@echo "✅ Merge complete"
+
+validate:
+	@echo "🔍 Running validation checks..."
+	@python3 $(SCRIPTS_DIR)/validate_kg_thresholds.py
+	@echo "✅ Validation complete"
+
+triage:
+	@echo "🔍 Analyzing orphan edges..."
+	@python3 $(SCRIPTS_DIR)/triage_orphan_edges.py
+	@echo "✅ Triage complete"
+
+backup:
+	@echo "💾 Backing up knowledge graph..."
+	@mkdir -p $(KG_DIR)/builds/build_$(BUILD_ID)
+	@cp -r $(KG_DIR)/*.json $(KG_DIR)/builds/build_$(BUILD_ID)/
+	@echo "✅ Backed up to build_$(BUILD_ID)"
+
+# Phase 2 Operations (stubs for now)
+normalize:
+	@echo "🔄 Applying entity normalization..."
+	@if [ -f $(SCRIPTS_DIR)/apply_entity_normalization.py ]; then \
+		python3 $(SCRIPTS_DIR)/apply_entity_normalization.py; \
+	else \
+		echo "⚠️  Normalization script not yet implemented"; \
+	fi
+
+discourse:
+	@echo "📝 Extracting discourse elements..."
+	@if [ -f $(SCRIPTS_DIR)/extract_episode_discourse.py ]; then \
+		python3 $(SCRIPTS_DIR)/extract_episode_discourse.py; \
+	else \
+		echo "⚠️  Discourse extraction not yet implemented"; \
+	fi
+
+links:
+	@echo "🔗 Building cross-content links..."
+	@if [ -f $(SCRIPTS_DIR)/build_cross_content_links.py ]; then \
+		python3 $(SCRIPTS_DIR)/build_cross_content_links.py; \
+	else \
+		echo "⚠️  Cross-content linking not yet implemented"; \
+	fi
+
+perf:
+	@echo "⚡ Running performance tests..."
+	@if [ -f $(PROJECT_ROOT)/tests/locustfile.py ]; then \
+		cd $(PROJECT_ROOT) && locust -f tests/locustfile.py --headless \
+			--users 10 --spawn-rate 2 --run-time 60s \
+			--host http://localhost:8000; \
+	else \
+		echo "⚠️  Performance tests not yet implemented"; \
+	fi
+
+# Combined operations
+full: backup merge validate triage
+	@echo "✅ Full rebuild complete with build ID: $(BUILD_ID)"
+
+phase2: normalize discourse links validate
+	@echo "✅ Phase 2 operations complete"
+
+# Deployment
+deploy: validate
+	@echo "🚀 Deploying to production..."
+	@# Create symlink to current build
+	@ln -sfn $(KG_DIR)/builds/build_$(BUILD_ID) $(KG_DIR)/current
+	@# Copy to production directories
+	@sudo cp -r $(KG_DIR)/*.json /root/yonearth-gaia-chatbot/data/knowledge_graph_unified/
+	@# Restart service
+	@sudo systemctl restart yonearth-api
+	@echo "✅ Deployed build_$(BUILD_ID)"
+
+# Testing
+test:
+	@echo "🧪 Running KG tests..."
+	@python3 -m pytest $(PROJECT_ROOT)/tests/test_knowledge_graph.py -v --tb=short
+
+# Cleanup
+clean:
+	@echo "🧹 Cleaning temporary files..."
+	@find $(KG_DIR) -name "*.tmp" -delete
+	@find $(KG_DIR) -name "*.bak" -delete
+	@echo "✅ Cleanup complete"
+
+# Monitoring
+stats:
+	@echo "📊 Knowledge Graph Statistics:"
+	@echo "=========================="
+	@cat $(KG_DIR)/stats.json | python3 -m json.tool | grep -E "entity_count|relationship_count|orphan.*rate|build_id" | head -10
+	@echo ""
+	@echo "Top Entity Types:"
+	@cat $(KG_DIR)/stats.json | python3 -m json.tool | grep -A 8 "top_entity_types"
+	@echo ""
+	@echo "Latest Build:"
+	@ls -la $(KG_DIR)/builds/ | tail -3
+
+# Rollback
+rollback:
+	@echo "⏮️ Rolling back to previous build..."
+	@if [ -d $(KG_DIR)/builds ]; then \
+		PREV_BUILD=$$(ls -t $(KG_DIR)/builds/ | head -2 | tail -1); \
+		echo "Rolling back to $$PREV_BUILD"; \
+		cp -r $(KG_DIR)/builds/$$PREV_BUILD/* $(KG_DIR)/; \
+		sudo cp -r $(KG_DIR)/*.json /root/yonearth-gaia-chatbot/data/knowledge_graph_unified/; \
+		sudo systemctl restart yonearth-api; \
+		echo "✅ Rolled back to $$PREV_BUILD"; \
+	else \
+		echo "❌ No previous builds found"; \
+	fi
+
+# Watch for changes and auto-rebuild
+watch:
+	@echo "👁️ Watching for changes..."
+	@while true; do \
+		inotifywait -e modify $(SCRIPTS_DIR)/*.py $(PROJECT_ROOT)/kg_unified_discourse/outputs/book_extractions/*.json; \
+		make -f Makefile.kg full; \
+		sleep 5; \
+	done

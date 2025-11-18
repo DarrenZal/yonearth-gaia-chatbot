@@ -55,7 +55,7 @@ class GaiaChat {
         // Voice state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
-        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'YcVr5DmTjJ2cEVwNiuhU';
+        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'piper-kristin';
         this.currentAudio = null;
         this.audioQueue = [];
         
@@ -264,8 +264,10 @@ class GaiaChat {
                     citations: allCitations
                 });
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             } 
             // Handle RAG comparison mode
             else if (response.comparison) {
@@ -278,24 +280,32 @@ class GaiaChat {
                     citations: [...(response.original.citations || response.original.sources || []), ...(response.bm25.sources || response.bm25.citations || [])]
                 });
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             } else {
+                // Handle hybrid QA response format
+                const responseText = response.answer || response.response;
+                const responseCitations = response.sources || response.citations || [];
+
                 // Add Gaia's response to conversation history
                 this.conversationHistory.push({
                     role: 'gaia',
-                    content: response.response,
-                    citations: response.citations || response.sources || []
+                    content: responseText,
+                    citations: responseCitations
                 });
                 console.log('Added Gaia response to conversation history. Total messages:', this.conversationHistory.length);
-                console.log('Citations in response:', response.citations || response.sources || []);
+                console.log('Citations in response:', responseCitations);
                 console.log('Audio data in response:', !!response.audio_data, 'Length:', response.audio_data ? response.audio_data.length : 0);
-                
+
                 // Add Gaia's response WITH inline citations, audio, and cost breakdown
-                this.addMessage(response.response, 'gaia', response.citations || response.sources, false, response.audio_data, response.cost_breakdown);
+                this.addMessage(responseText, 'gaia', responseCitations, false, response.audio_data, response.cost_breakdown);
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             }
             
         } catch (error) {
@@ -314,45 +324,65 @@ class GaiaChat {
     async callChatAPI(message) {
         const ragType = this.ragTypeSelect.value;
         const modelType = this.modelTypeSelect.value;
-        
+
         // Handle model comparison mode
         if (modelType === 'compare') {
             console.log('🤖 Model comparison mode selected!');
             console.log('📊 Will compare 3 models: gpt-3.5-turbo, gpt-4o-mini, gpt-4');
             return await this.callModelComparisonAPI(message);
         }
-        
+
         // Handle RAG comparison mode
         if (ragType === 'both') {
             return await this.callBothAPIs(message);
         }
-        
-        // Determine which endpoint to use
-        const endpoint = ragType === 'bm25' ? '/bm25/chat' : '/chat';
-        
-        const maxReferences = parseInt(this.maxReferencesSelect.value);
-        
-        const requestBody = {
-            message: message,
-            session_id: this.sessionId,
-            personality: this.personalitySelect.value,
-            max_results: 5,
-            model: modelType !== 'compare' ? modelType : undefined,
-            max_references: maxReferences,
-            enable_voice: this.voiceEnabled,
-            voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined
-        };
 
-        console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
-        
-        // Add custom prompt if custom personality is selected
-        if (this.personalitySelect.value === 'custom') {
-            const customPrompt = this.customPromptEditor.value.trim();
-            if (customPrompt) {
-                requestBody.custom_prompt = customPrompt;
-            }
+        // Determine which endpoint to use
+        let endpoint;
+        if (ragType === 'hybrid') {
+            endpoint = '/qa/hybrid';
+        } else if (ragType === 'bm25') {
+            endpoint = '/bm25/chat';
+        } else {
+            endpoint = '/chat';
         }
         
+        const maxReferences = parseInt(this.maxReferencesSelect.value);
+
+        let requestBody;
+
+        // Build request body based on endpoint
+        if (ragType === 'hybrid') {
+            // Hybrid QA endpoint uses different parameter names
+            requestBody = {
+                query: message,
+                k: maxReferences,
+                category_threshold: parseFloat(this.categoryThresholdSelect.value)
+            };
+        } else {
+            // Original and BM25 endpoints
+            requestBody = {
+                message: message,
+                session_id: this.sessionId,
+                personality: this.personalitySelect.value,
+                max_results: 5,
+                model: modelType !== 'compare' ? modelType : undefined,
+                max_references: maxReferences,
+                enable_voice: this.voiceEnabled,
+                voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined
+            };
+
+            console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
+
+            // Add custom prompt if custom personality is selected
+            if (this.personalitySelect.value === 'custom') {
+                const customPrompt = this.customPromptEditor.value.trim();
+                if (customPrompt) {
+                    requestBody.custom_prompt = customPrompt;
+                }
+            }
+        }
+
         // Add BM25-specific parameters
         if (ragType === 'bm25') {
             requestBody.search_method = 'hybrid';
@@ -1029,7 +1059,11 @@ class GaiaChat {
         const title = document.createElement('div');
         title.className = 'citations-title';
         // Check if any citations are books
-        const hasBooks = citations.some(c => c.episode_number?.toString().startsWith('Book:'));
+        const hasBooks = citations.some(c =>
+            c.episode_number?.toString().startsWith('Book:') ||
+            c.metadata?.book_title ||
+            c.chunk_id?.includes(':')
+        );
         title.textContent = hasBooks ? 'References:' : 'Referenced Episodes:';
         citationsDiv.appendChild(title);
         
@@ -1047,8 +1081,20 @@ class GaiaChat {
                 const chapterMatch = citation.title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
                 const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
                 titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
-            } else {
+            } else if (citation.metadata?.book_title || citation.chunk_id?.includes(':')) {
+                // Handle hybrid QA book citations
+                const bookTitle = citation.metadata?.book_title || 'Book';
+                const chapterInfo = citation.metadata?.chapter_title || citation.title || '';
+                titleDiv.textContent = `Book: ${bookTitle} - ${chapterInfo}`;
+            } else if (citation.metadata?.episode_number) {
+                // Handle hybrid QA episode citations with metadata
+                titleDiv.textContent = `Episode ${citation.metadata.episode_number}: ${citation.title}`;
+            } else if (citation.episode_number) {
+                // Standard episode citation
                 titleDiv.textContent = `Episode ${citation.episode_number}: ${citation.title}`;
+            } else {
+                // Fallback for citations without episode number
+                titleDiv.textContent = citation.title || 'Reference';
             }
             
             citationDiv.appendChild(titleDiv);
@@ -1442,9 +1488,10 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         const descriptions = {
             'original': '🌿 Original uses meaning-based search to find related concepts',
             'bm25': '🔍 BM25 combines keyword matching with semantic understanding for precise results',
+            'hybrid': '🧬 Hybrid QA fuses knowledge graph data with BM25/vector search for enhanced accuracy',
             'both': '⚖️ Compare both methods side-by-side to see different perspectives'
         };
-        
+
         this.ragDescText.textContent = descriptions[this.ragTypeSelect.value] || descriptions['original'];
     }
     
@@ -2037,8 +2084,8 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
                 this.voicePlayer.pause();
             }
             
-            // Convert base64 to blob
-            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            // Convert base64 to blob (Piper generates WAV files)
+            const audioBlob = this.base64ToBlob(audioData, 'audio/wav');
             const audioUrl = URL.createObjectURL(audioBlob);
             
             // Store current audio URL for cleanup
@@ -2127,42 +2174,63 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     createAudioControls(audioData, messageId) {
         const audioDiv = document.createElement('div');
         audioDiv.className = 'audio-controls';
-        
+
         const playButton = document.createElement('button');
         playButton.className = 'audio-button';
         playButton.id = `play-${messageId}`;
         playButton.innerHTML = '<span>▶️</span> Play Gaia\'s Voice';
         playButton.setAttribute('data-audio', audioData);
         playButton.onclick = () => this.playAudio(audioData, messageId);
-        
+
+        // Add speed control dropdown
+        const speedSelect = document.createElement('select');
+        speedSelect.className = 'audio-speed-select';
+        speedSelect.id = `speed-${messageId}`;
+        speedSelect.innerHTML = `
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="1.75">1.75x</option>
+            <option value="2">2x</option>
+        `;
+        speedSelect.onchange = () => this.changePlaybackSpeed(parseFloat(speedSelect.value));
+
         const downloadButton = document.createElement('button');
         downloadButton.className = 'audio-button';
         downloadButton.innerHTML = '<span>💾</span> Download';
         downloadButton.onclick = () => this.downloadAudio(audioData, messageId);
-        
+
         const statusDiv = document.createElement('div');
         statusDiv.className = 'audio-status';
         statusDiv.id = `audio-status-${messageId}`;
-        
+
         audioDiv.appendChild(playButton);
+        audioDiv.appendChild(speedSelect);
         audioDiv.appendChild(downloadButton);
         audioDiv.appendChild(statusDiv);
-        
+
         return audioDiv;
     }
     
+    changePlaybackSpeed(speed) {
+        this.voicePlayer.playbackRate = speed;
+        console.log(`Playback speed changed to ${speed}x`);
+    }
+
     downloadAudio(audioData, messageId) {
         try {
-            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            const audioBlob = this.base64ToBlob(audioData, 'audio/wav');
             const url = URL.createObjectURL(audioBlob);
-            
+
             const a = document.createElement('a');
             a.href = url;
-            a.download = `gaia-response-${messageId}.mp3`;
+            a.download = `gaia-response-${messageId}.wav`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            
+
             URL.revokeObjectURL(url);
         } catch (error) {
             console.error('Error downloading audio:', error);

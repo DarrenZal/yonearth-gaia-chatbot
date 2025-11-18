@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Knowledge Graph</title>
-    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251008b">
+    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251112a">
 </head>
 <body>
     <div id="knowledge-graph-container">
@@ -35,6 +35,7 @@
                     <select id="kg-version-select" onchange="loadKnowledgeGraphVersion(this.value)">
                         <option value="current" selected>Current (Original)</option>
                         <option value="v3.2.2">v3.2.2 - Full Extraction (172 episodes, 45,478 relationships)</option>
+                        <option value="unified">Unified + Discourse (49,554 nodes, 53,125 relationships)</option>
                     </select>
                 </div>
             </div>
@@ -173,7 +174,7 @@
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js?v=20251008c"></script>
+    <script src="KnowledgeGraph.js?v=20251112a"></script>
 
     <script>
         // View switching functionality

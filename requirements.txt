@@ -1,10 +1,11 @@
 # Core dependencies
-langchain>=0.1.0
-langchain-openai>=0.0.5
-langchain-pinecone>=0.0.3
+langchain==0.1.20
+langchain-openai==0.0.5
+langchain-pinecone==0.0.3
 openai>=1.12.0
 pinecone-client>=3.0.0
-tiktoken>=0.5.2
+# Align with langchain-openai 0.0.5 which requires tiktoken < 0.6.0
+tiktoken==0.5.2
 
 # API and Web
 fastapi>=0.109.0
@@ -43,12 +44,13 @@ jinja2>=3.1.0
 
 # Voice generation
 elevenlabs>=2.0.0
-tiktoken>=0.8.0
 
 # Testing
 pytest>=7.4.0
 pytest-asyncio>=0.21.0
 locust>=2.17.0
+playwright>=1.49.0
+requests>=2.31.0
 
 # Monitoring
 python-json-logger>=2.0.0
@@ -60,4 +62,3 @@ jupyter>=1.0.0
 pykeen>=1.11.0
 pyshacl>=0.30.0
 splink>=4.0.0
-

@@ -5,7 +5,7 @@ import re
 import logging
 from typing import List, Dict, Any, Optional
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from ..utils.lc_compat import Document
 
 from ..config import settings
 from .episode_processor import Episode
@@ -205,6 +205,12 @@ class TranscriptChunker:
                 "chunk_total": len(chunks),
                 "chunk_type": "speaker_turn" if self.preserve_speaker_turns else "standard"
             })
+            # Assign deterministic chunk_id for cross-linking with KG/GraphRAG
+            try:
+                epnum = int(episode.metadata.get('episode_number', episode.episode_number))
+            except Exception:
+                epnum = episode.episode_number
+            metadata["chunk_id"] = f"ep{epnum}:ck{i:03d}"
 
             doc = Document(
                 page_content=chunk,
@@ -250,6 +256,13 @@ class TranscriptChunker:
                     "timestamp_end": current_chunk_end_time,  # End timestamp
                 })
 
+                # Assign deterministic chunk_id for cross-linking with KG/GraphRAG
+                try:
+                    epnum = int(episode.metadata.get('episode_number', episode.episode_number))
+                except Exception:
+                    epnum = episode.episode_number
+                metadata["chunk_id"] = f"ep{epnum}:ck{len(documents):03d}"
+
                 doc = Document(page_content=chunk_text, metadata=metadata)
                 documents.append(doc)
 
@@ -283,6 +296,13 @@ class TranscriptChunker:
                 "timestamp": current_chunk_start_time,
                 "timestamp_end": current_chunk_end_time,
             })
+
+            # Assign deterministic chunk_id for cross-linking with KG/GraphRAG
+            try:
+                epnum = int(episode.metadata.get('episode_number', episode.episode_number))
+            except Exception:
+                epnum = episode.episode_number
+            metadata["chunk_id"] = f"ep{epnum}:ck{len(documents):03d}"
 
             doc = Document(page_content=chunk_text, metadata=metadata)
             documents.append(doc)

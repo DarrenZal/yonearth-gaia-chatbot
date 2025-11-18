@@ -11,12 +11,13 @@ from typing import List, Dict, Any, Optional, Tuple, Set
 from rank_bm25 import BM25Okapi
 import nltk
 import numpy as np
-from langchain.schema import Document
+from ..utils.lc_compat import Document
 from sentence_transformers import CrossEncoder
 
 from .vectorstore import YonEarthVectorStore
 from .episode_categorizer import EpisodeCategorizer
 from .semantic_category_matcher import SemanticCategoryMatcher, CategoryMatch
+from .graph_retriever import GraphRetriever, GraphRetrievalResult
 from ..config import settings
 
 logger = logging.getLogger(__name__)
@@ -26,6 +27,15 @@ try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
     nltk.download('punkt', quiet=True)
+
+# Some NLTK versions require 'punkt_tab' (3.8+)
+try:
+    nltk.data.find('tokenizers/punkt_tab')
+except LookupError:
+    try:
+        nltk.download('punkt_tab', quiet=True)
+    except Exception:
+        pass
 
 try:
     nltk.data.find('corpora/stopwords')
@@ -83,11 +93,27 @@ class BM25HybridRetriever:
             "sustainable", "organic", "ecosystem", "biodiversity",
             "climate", "soil", "farming", "agriculture", "garden"
         }
+
+        # Heuristics for detecting book-oriented queries where book chunks should
+        # not be aggressively deprioritized in favour of episodes.
+        self._book_query_hints: Set[str] = {
+            "y on earth",
+            "viriditas",
+            "soil stewardship",
+            "soil stewardship handbook",
+            "our biggest deal",
+        }
+        self._last_query_book_oriented: bool = False
         
         # Episode categorizer for enhanced search
         self.categorizer: Optional[EpisodeCategorizer] = None
         self.semantic_matcher: Optional[SemanticCategoryMatcher] = None
         self._load_categorizer()
+
+        # Graph retriever for entity-aware search
+        self.graph_retriever: Optional[GraphRetriever] = None
+        self._last_graph_result: Optional[GraphRetrievalResult] = None
+        self._load_graph_retriever()
         
         # Load or build BM25 index
         self._load_or_build_bm25_index()
@@ -102,7 +128,23 @@ class BM25HybridRetriever:
             logger.warning(f"Failed to load episode categorizer: {e}")
             self.categorizer = None
             self.semantic_matcher = None
-    
+
+    def _load_graph_retriever(self):
+        """Load GraphRetriever for entity-aware retrieval"""
+        # Respect feature flag
+        if not settings.enable_graph_retrieval:
+            logger.info("Graph retrieval disabled via settings.enable_graph_retrieval=false")
+            self.graph_retriever = None
+            return
+
+        try:
+            self.graph_retriever = GraphRetriever(max_edges=settings.graph_max_edges)
+            entity_count = len(self.graph_retriever.graph.entities_lexicon.get("alias_index", {}))
+            logger.info(f"Loaded GraphRetriever with {entity_count} entity aliases")
+        except Exception as e:
+            logger.warning(f"Failed to load GraphRetriever: {e}. Graph-enhanced search will be disabled.")
+            self.graph_retriever = None
+
     def _get_bm25_cache_path(self) -> Path:
         """Get path for BM25 index cache"""
         cache_dir = settings.data_dir / "cache"
@@ -306,7 +348,91 @@ class BM25HybridRetriever:
         except Exception as e:
             logger.error(f"Error in semantic search: {e}")
             return []
-    
+
+    def graph_search(self, query: str, k: int = 20) -> List[Tuple[Document, float]]:
+        """
+        Perform entity-aware search using knowledge graph
+
+        This retrieves chunks based on entities mentioned in the query,
+        expanding to multi-hop neighbors and scoring based on entity and cluster relevance.
+        """
+        mode = getattr(settings, "graph_mode", "full")
+        if mode == "off":
+            logger.debug("Graph mode=off; skipping graph search")
+            self._last_graph_result = None
+            return []
+
+        if not self.graph_retriever:
+            logger.debug("Graph retriever not available, skipping graph search")
+            self._last_graph_result = None
+            return []
+
+        try:
+            # Use GraphRetriever to find entity-related chunks
+            graph_result = self.graph_retriever.retrieve(query, k=k)
+            self._last_graph_result = graph_result
+
+            if not graph_result.matched_entities and not graph_result.matched_clusters:
+                logger.debug(f"No entities or clusters matched in query: {query}")
+                return []
+
+            logger.info(f"Graph search matched entities: {graph_result.matched_entities[:5]}")
+            logger.info(f"Found {len(graph_result.chunks)} chunks and {len(graph_result.triples)} triples")
+            if graph_result.matched_clusters:
+                cluster_ids = [c.get("cluster_id") for c in graph_result.matched_clusters[:3]]
+                logger.info(f"Graph search matched clusters: {cluster_ids}")
+
+            # Convert Graph chunks to scored tuples
+            # Graph-retrieved chunks get high base score since they're entity-relevant
+            scored_docs = []
+            base_score = 0.9  # High relevance for entity-matched chunks
+
+            for i, doc in enumerate(graph_result.chunks):
+                # Decay score slightly for lower-ranked chunks
+                score = base_score * (1.0 - (i * 0.05))
+                scored_docs.append((doc, max(score, 0.5)))  # Minimum score of 0.5
+
+            return scored_docs
+
+        except Exception as e:
+            logger.error(f"Error in graph search: {e}")
+            self._last_graph_result = None
+            return []
+
+    def _compute_graph_weight(self, base_weight: float) -> float:
+        """Compute an adaptive graph weight based on entity/cluster signal.
+
+        When adaptive weighting is disabled, the provided base_weight is used.
+        """
+        if not settings.graph_enable_adaptive_weight:
+            return base_weight
+
+        result = self._last_graph_result
+        if not result:
+            return 0.0
+
+        entity_count = len(result.matched_entities or [])
+        cluster_count = len(result.matched_clusters or [])
+        if entity_count == 0 and cluster_count == 0:
+            return 0.0
+
+        # Treat cluster-only matches as a weak signal
+        effective_entities = entity_count
+        if entity_count == 0 and cluster_count > 0:
+            effective_entities = 1
+
+        cap = max(settings.graph_weight_entity_cap, 1)
+        strength = min(effective_entities, cap) / cap
+
+        # Interpolate between configured min/max weights, biased towards base_weight
+        min_w = settings.graph_min_weight
+        max_w = settings.graph_max_weight
+        base_clamped = max(min_w, min(max_w, base_weight))
+        raw = min_w + (max_w - min_w) * strength
+        weight = 0.5 * base_clamped + 0.5 * raw
+
+        return max(min_w, min(max_w, weight))
+
     def category_search(self, query: str, k: int = 20, category_threshold: float = 0.7) -> List[Tuple[Document, float]]:
         """Perform category-based search using semantic category matching"""
         if not self.semantic_matcher and not self.categorizer:
@@ -495,110 +621,152 @@ class BM25HybridRetriever:
         keyword_results: List[Tuple[Document, float]],
         semantic_results: List[Tuple[Document, float]],
         category_results: List[Tuple[Document, float]],
-        k: int = 60
+        graph_results: Optional[List[Tuple[Document, float]]] = None,
+        k: int = 60,
+        graph_weight: float = 0.2
     ) -> List[Document]:
         """
-        Category-first fusion: Prioritize category matches, then use semantic/BM25 for ranking
+        Category-first fusion: Prioritize category matches, then use semantic/BM25/graph for ranking
         This ensures ALL category matches appear in results
         """
-        logger.info(f"Using category-first fusion with {len(category_results)} category matches")
-        
+        logger.info(f"Using category-first fusion with {len(category_results)} category matches and {len(graph_results or [])} graph matches")
+
         # Step 1: Get all category-matched documents (these get priority)
         category_docs = {self._get_document_id(doc): doc for doc, score in category_results}
-        
+
         # Step 2: Create combined scoring for category matches
         category_scores = {}
-        
+
         # Score category matches with heavy category weighting
         for rank, (doc, score) in enumerate(category_results):
             doc_id = self._get_document_id(doc)
             category_scores[doc_id] = self.category_weight * (1.0 / (k + rank + 1))
-        
+
         # Add semantic scores for category matches
         for rank, (doc, score) in enumerate(semantic_results):
             doc_id = self._get_document_id(doc)
             if doc_id in category_docs:  # Only for category matches
                 category_scores[doc_id] = category_scores.get(doc_id, 0) + self.semantic_weight * (1.0 / (k + rank + 1))
-        
+
         # Add BM25 scores for category matches
         for rank, (doc, score) in enumerate(keyword_results):
             doc_id = self._get_document_id(doc)
             if doc_id in category_docs:  # Only for category matches
                 category_scores[doc_id] = category_scores.get(doc_id, 0) + self.keyword_weight * (1.0 / (k + rank + 1))
+
+        # Add graph scores for category matches (modest boost)
+        if graph_results and graph_weight > 0:
+            for rank, (doc, score) in enumerate(graph_results):
+                doc_id = self._get_document_id(doc)
+                if doc_id in category_docs:  # Only for category matches
+                    category_scores[doc_id] = category_scores.get(doc_id, 0) + graph_weight * (1.0 / (k + rank + 1))
         
         # Step 3: Sort category matches by combined score
         sorted_category_ids = sorted(category_scores.keys(), key=lambda x: category_scores[x], reverse=True)
         
         # Step 4: Add non-category matches if we need more results
         non_category_scores = {}
-        
+
         # Score non-category documents with traditional weighting
         for rank, (doc, score) in enumerate(semantic_results):
             doc_id = self._get_document_id(doc)
             if doc_id not in category_docs:
                 non_category_scores[doc_id] = self.semantic_weight * (1.0 / (k + rank + 1))
-        
+
         for rank, (doc, score) in enumerate(keyword_results):
             doc_id = self._get_document_id(doc)
             if doc_id not in category_docs:
                 non_category_scores[doc_id] = non_category_scores.get(doc_id, 0) + self.keyword_weight * (1.0 / (k + rank + 1))
-        
+
+        # Add graph scores for non-category documents too
+        if graph_results and graph_weight > 0:
+            for rank, (doc, score) in enumerate(graph_results):
+                doc_id = self._get_document_id(doc)
+                if doc_id not in category_docs:
+                    non_category_scores[doc_id] = non_category_scores.get(doc_id, 0) + graph_weight * (1.0 / (k + rank + 1))
+
         # Sort non-category matches
         sorted_non_category_ids = sorted(non_category_scores.keys(), key=lambda x: non_category_scores[x], reverse=True)
-        
+
         # Step 5: Combine results with category matches first
         final_order = sorted_category_ids + sorted_non_category_ids
-        
+
         # Step 6: Convert to documents, avoiding duplicates
         seen_content = set()
         results = []
-        
+
+        all_results = [keyword_results, semantic_results, category_results]
+        if graph_results:
+            all_results.append(graph_results)
+
         for doc_id in final_order:
             # Find the document
-            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results, category_results)
+            doc = self._find_document_by_id(doc_id, *all_results)
             if doc and doc.page_content not in seen_content:
                 seen_content.add(doc.page_content)
                 results.append(doc)
-        
+
         logger.info(f"Category-first fusion: {len(sorted_category_ids)} category matches + {len(sorted_non_category_ids)} other matches")
+        # Prefer episode documents over book-only chunks in the final ordering
+        try:
+            results = self._prefer_episodes(results)
+        except Exception:
+            pass
         return results
     
     def reciprocal_rank_fusion(
-        self, 
-        keyword_results: List[Tuple[Document, float]], 
-        semantic_results: List[Tuple[Document, float]], 
-        k: int = 60
+        self,
+        keyword_results: List[Tuple[Document, float]],
+        semantic_results: List[Tuple[Document, float]],
+        graph_results: Optional[List[Tuple[Document, float]]] = None,
+        k: int = 60,
+        graph_weight: float = 1.2
     ) -> List[Document]:
         """
         Combine results using Reciprocal Rank Fusion (RRF) algorithm
-        As outlined in ImplimentationPlan.md
+        As outlined in ImplimentationPlan.md, now with graph-aware retrieval
         """
         scores = {}
-        
+
         # Process keyword results
         for rank, (doc, score) in enumerate(keyword_results):
             doc_id = self._get_document_id(doc)
             scores[doc_id] = scores.get(doc_id, 0) + 1.0 / (k + rank + 1)
-            
-        # Process semantic results  
+
+        # Process semantic results
         for rank, (doc, score) in enumerate(semantic_results):
             doc_id = self._get_document_id(doc)
             scores[doc_id] = scores.get(doc_id, 0) + 1.0 / (k + rank + 1)
-            
+
+        # Process graph results with a configurable boost (default 1.2x)
+        if graph_results and graph_weight > 0:
+            for rank, (doc, score) in enumerate(graph_results):
+                doc_id = self._get_document_id(doc)
+                scores[doc_id] = scores.get(doc_id, 0) + graph_weight / (k + rank + 1)
+
         # Sort by combined score
         sorted_ids = sorted(scores.keys(), key=lambda x: scores[x], reverse=True)
-        
+
         # Return documents (avoiding duplicates)
         seen_content = set()
         results = []
-        
+
+        all_results = [keyword_results, semantic_results]
+        if graph_results:
+            all_results.append(graph_results)
+
         for doc_id in sorted_ids:
             # Find the document
-            doc = self._find_document_by_id(doc_id, keyword_results, semantic_results)
+            doc = self._find_document_by_id(doc_id, *all_results)
             if doc and doc.page_content not in seen_content:
                 seen_content.add(doc.page_content)
                 results.append(doc)
-                
+
+        # Prefer episode documents over book-only chunks in the final ordering
+        try:
+            results = self._prefer_episodes(results)
+        except Exception:
+            pass
         return results
     
     def _get_document_id(self, doc: Document) -> str:
@@ -609,22 +777,168 @@ class BM25HybridRetriever:
             # Fallback to content hash
             doc_id = hashlib.md5(doc.page_content.encode()).hexdigest()[:12]
         return str(doc_id)
+
+    def _ensure_backbone_coverage(
+        self,
+        backbone_docs: List[Document],
+        candidate_docs: List[Document],
+        k: int
+    ) -> List[Document]:
+        """
+        Ensure that all top-k backbone (BM25+semantic+category) documents remain
+        present in the final top-k after adding graph-based signals.
+
+        This provides a "do no harm" guarantee: graph-enhanced fusion may add
+        additional documents, but will not drop backbone hits from the top-k.
+        """
+        if not backbone_docs or not candidate_docs:
+            return candidate_docs[:k]
+
+        # Only enforce coverage for the top-k backbone docs
+        backbone_top = backbone_docs[:k]
+        backbone_ids = {self._get_document_id(d) for d in backbone_top}
+
+        final = list(candidate_docs[:k])
+        final_ids = {self._get_document_id(d) for d in final}
+
+        # Find backbone docs missing from the current final set
+        missing = [d for d in backbone_top if self._get_document_id(d) not in final_ids]
+        if not missing:
+            return final
+
+        for doc in missing:
+            doc_id = self._get_document_id(doc)
+            if doc_id in final_ids:
+                continue
+
+            if len(final) < k:
+                final.append(doc)
+                final_ids.add(doc_id)
+                continue
+
+            # Replace the lowest-ranked non-backbone doc, if any
+            replaced = False
+            for idx in range(len(final) - 1, -1, -1):
+                cand_id = self._get_document_id(final[idx])
+                if cand_id not in backbone_ids:
+                    final[idx] = doc
+                    final_ids.add(doc_id)
+                    replaced = True
+                    break
+            if not replaced:
+                # All docs are backbone docs already; nothing to replace safely
+                break
+
+        return final[:k]
+
+    def _ensure_book_episode_mix(self, final_docs: List[Document], candidate_docs: List[Document], k: int) -> List[Document]:
+        """Ensure at least one book and one episode are present in final top-k when available.
+
+        If missing a type, pull the highest-ranked candidate of the missing type
+        from candidate_docs (that isn't already in final_docs), replace the last
+        item in final_docs if length == k, otherwise append.
+        """
+        if not final_docs:
+            return final_docs
+
+        has_episode = any(self._is_episode_doc(d) for d in final_docs)
+        has_book = any(self._is_book_doc(d) for d in final_docs)
+        if has_episode and has_book:
+            return final_docs
+
+        # Build a set of seen IDs to avoid duplicates
+        seen_ids = set()
+        for d in final_docs:
+            seen_ids.add(self._get_document_id(d))
+
+        need_episode = not has_episode
+        need_book = not has_book
+
+        def first_candidate(is_ok) -> Optional[Document]:
+            for d in candidate_docs:
+                if self._get_document_id(d) in seen_ids:
+                    continue
+                if is_ok(d):
+                    return d
+            return None
+
+        ep_cand = first_candidate(self._is_episode_doc) if need_episode else None
+        bk_cand = first_candidate(self._is_book_doc) if need_book else None
+
+        updated = list(final_docs)
+
+        def insert_candidate(cand: Optional[Document]):
+            nonlocal updated
+            if not cand:
+                return
+            if len(updated) < k:
+                updated.append(cand)
+            else:
+                # Replace the last item (lowest-ranked) to guarantee presence
+                updated[-1] = cand
+
+        # Prefer adding missing episode first, then book
+        if need_episode:
+            insert_candidate(ep_cand)
+        if need_book:
+            insert_candidate(bk_cand)
+
+        # If we added items beyond k, trim
+        return updated[:k]
     
-    def _find_document_by_id(
-        self, 
-        doc_id: str, 
-        keyword_results: List[Tuple[Document, float]], 
-        semantic_results: List[Tuple[Document, float]],
-        category_results: List[Tuple[Document, float]] = None
-    ) -> Optional[Document]:
-        """Helper to find document by ID from results"""
-        for doc, _ in keyword_results:
-            if self._get_document_id(doc) == doc_id:
-                return doc
-        for doc, _ in semantic_results:
-            if self._get_document_id(doc) == doc_id:
-                return doc
+    def _find_document_by_id(self, doc_id: str, *result_sets: List[Tuple[Document, float]]) -> Optional[Document]:
+        """Find a document by ID across any number of (doc, score) result sets."""
+        for result_set in result_sets:
+            if not result_set:
+                continue
+            for doc, _ in result_set:
+                if self._get_document_id(doc) == doc_id:
+                    return doc
         return None
+
+    def _is_book_oriented_query(self, query: str) -> bool:
+        """Detect whether the query is primarily about books/chapters instead of episodes."""
+        q = (query or "").lower()
+        if "book" in q or "chapter" in q:
+            return True
+        for hint in self._book_query_hints:
+            if hint in q:
+                return True
+        return False
+    
+    def _is_episode_doc(self, doc: Document) -> bool:
+        """Heuristic to detect episode-derived documents vs. book chunks."""
+        md = getattr(doc, 'metadata', {}) or {}
+        epn = md.get('episode_number')
+        return epn not in (None, '', 'unknown')
+
+    def _is_book_doc(self, doc: Document) -> bool:
+        """Heuristic to detect book-derived documents."""
+        if self._is_episode_doc(doc):
+            return False
+        md = getattr(doc, 'metadata', {}) or {}
+        if md.get('book_title') or md.get('book_slug') or md.get('chapter_title'):
+            return True
+        cid = md.get('chunk_id') or ''
+        return isinstance(cid, str) and not cid.startswith('ep')
+
+    def _prefer_episodes(self, docs: List[Document]) -> List[Document]:
+        """Stable-partition documents to prefer episode chunks over book-only chunks.
+
+        For book-oriented queries, keep the original ordering so that book chunks
+        are not deprioritized relative to episode chunks.
+        """
+        if self._last_query_book_oriented:
+            return docs
+
+        eps: List[Document] = []
+        books: List[Document] = []
+        for d in docs:
+            if self._is_episode_doc(d):
+                eps.append(d)
+            else:
+                books.append(d)
+        return eps + books
     
     def rerank_results(self, query: str, documents: List[Document]) -> List[Document]:
         """
@@ -657,6 +971,10 @@ class BM25HybridRetriever:
         Implements the complete pipeline from ImplimentationPlan.md
         """
         logger.info(f"Performing hybrid search for: {query[:50]}...")
+
+        # Track whether this query appears book-oriented so that downstream
+        # fusion can avoid over-prioritizing episodes.
+        self._last_query_book_oriented = self._is_book_oriented_query(query)
         
         # 1. Analyze query
         query_analysis = self.analyze_query(query, category_threshold)
@@ -683,18 +1001,72 @@ class BM25HybridRetriever:
         
         # 3. BM25 keyword search
         keyword_results = self.bm25_search(query, k=20)
-        
+
         # 4. Semantic search
         semantic_results = self.semantic_search(query, k=20)
-        
+
         # 5. Category search
         category_results = self.category_search(query, k=20, category_threshold=category_threshold)
-        
-        # 6. Combine results using Category-First or Reciprocal Rank Fusion
+
+        # 5b. Build a backbone fusion (BM25 + semantic + categories) WITHOUT graph
         if self.category_first_mode and category_results:
-            fused_results = self.category_first_fusion(keyword_results, semantic_results, category_results)
+            backbone_docs = self.category_first_fusion(
+                keyword_results,
+                semantic_results,
+                category_results,
+                graph_results=None,
+                k=60,
+                graph_weight=0.0
+            )
         else:
-            fused_results = self.reciprocal_rank_fusion(keyword_results, semantic_results)
+            backbone_docs = self.reciprocal_rank_fusion(
+                keyword_results,
+                semantic_results,
+                graph_results=None,
+                k=60,
+                graph_weight=0.0
+            )
+
+        # 6. Graph-based entity/cluster search
+        graph_results = self.graph_search(query, k=20)
+
+        # Determine graph weight for fusion based on entity/cluster signal and mode
+        mode = getattr(settings, "graph_mode", "full")
+        graph_weight = 0.0
+        if graph_results and mode == "full":
+            # Use a lower base weight when running in category-first mode to
+            # keep categories primary; otherwise use the default graph base.
+            base_weight = (
+                settings.graph_min_weight
+                if self.category_first_mode and category_results
+                else settings.graph_default_weight
+            )
+            graph_weight = self._compute_graph_weight(base_weight)
+            logger.info(f"Adaptive graph weight for fusion (mode=full): {graph_weight:.3f}")
+        elif graph_results and mode == "evidence_only":
+            logger.info("Graph mode=evidence_only; graph results will not affect ranking (weight=0).")
+
+        # 7. Combine results using Category-First or Reciprocal Rank Fusion (with graph)
+        # If graph results are available and mode=full, blend them in with a boost;
+        # in evidence_only/off modes, graph_weight will be 0 and graph_results will
+        # not influence ranking.
+        if self.category_first_mode and category_results:
+            fused_results = self.category_first_fusion(
+                keyword_results,
+                semantic_results,
+                category_results,
+                graph_results,
+                k=60,
+                graph_weight=graph_weight,
+            )
+        else:
+            fused_results = self.reciprocal_rank_fusion(
+                keyword_results,
+                semantic_results,
+                graph_results,
+                k=60,
+                graph_weight=graph_weight,
+            )
         
         # 7. Rerank top candidates with cross-encoder
         if len(fused_results) > k and self.use_reranker:
@@ -702,6 +1074,85 @@ class BM25HybridRetriever:
             final_results = reranked[:k]
         else:
             final_results = fused_results[:k]
+        
+        # 7b. Ensure at least one episode and one book are present when available.
+        # In graph_mode='off' or 'evidence_only', we avoid pulling in additional
+        # graph chunks to influence recall and rely purely on the backbone +
+        # existing fusion; in 'full' mode we keep the existing diversity logic.
+        try:
+            mode = getattr(settings, "graph_mode", "full")
+            if mode == "full":
+                # Build candidate pool preserving order: fused_results first, then others
+                candidate_pool = list(fused_results)
+                # Flatten other result sets and append
+                for src in (graph_results or []):
+                    candidate_pool.append(src[0])
+                for src in semantic_results:
+                    candidate_pool.append(src[0])
+                for src in keyword_results:
+                    candidate_pool.append(src[0])
+                # Remove duplicates while preserving order
+                seen = set()
+                uniq_pool = []
+                for d in candidate_pool:
+                    did = self._get_document_id(d)
+                    if did in seen:
+                        continue
+                    seen.add(did)
+                    uniq_pool.append(d)
+
+                # If book or episode missing from final_results, expand pool using GraphRetriever at higher k
+                need_episode = not any(self._is_episode_doc(d) for d in final_results)
+                need_book = not any(self._is_book_doc(d) for d in final_results)
+                if (need_episode or need_book) and self.graph_retriever:
+                    try:
+                        # Expand graph candidates aggressively for diversity
+                        k_extra = max(300, settings.graph_retrieval_k * 10)
+                        extra = self.graph_retriever.retrieve(query, k=k_extra)
+                        # Append in rank order, skipping dups
+                        for d in extra.chunks:
+                            did = self._get_document_id(d)
+                            if did in seen:
+                                continue
+                            seen.add(did)
+                            uniq_pool.append(d)
+                    except Exception:
+                        pass
+                    # Absolute fallback: pick any book/episode doc from the graph index if still missing
+                    try:
+                        # Refresh flags based on pool + final
+                        has_ep = any(self._is_episode_doc(d) for d in final_results)
+                        has_bk = any(self._is_book_doc(d) for d in final_results)
+                        if self.graph_retriever and hasattr(self.graph_retriever, 'graph'):
+                            # helper to add first matching chunk from hierarchy
+                            def add_first(predicate):
+                                nonlocal uniq_pool, seen
+                                for cid in self.graph_retriever.graph.hierarchy.keys():
+                                    is_ep = isinstance(cid, str) and cid.startswith('ep')
+                                    if predicate(is_ep):
+                                        doc = self.graph_retriever._chunk_to_document(cid)  # type: ignore
+                                        if doc:
+                                            did = self._get_document_id(doc)
+                                            if did not in seen:
+                                                seen.add(did)
+                                                uniq_pool.append(doc)
+                                                return True
+                                return False
+                            if not has_bk:
+                                add_first(lambda is_ep: not is_ep)
+                            if not has_ep:
+                                add_first(lambda is_ep: is_ep)
+                    except Exception:
+                        pass
+                final_results = self._ensure_book_episode_mix(final_results, uniq_pool, k)
+        except Exception:
+            pass
+
+        # 7c. Guarantee backbone coverage: all backbone top-k docs remain in final top-k
+        try:
+            final_results = self._ensure_backbone_coverage(backbone_docs, final_results, k)
+        except Exception:
+            logger.debug("Backbone coverage enforcement failed; returning original hybrid results")
         
         logger.info(f"Hybrid search completed: {len(final_results)} final results")
         return final_results

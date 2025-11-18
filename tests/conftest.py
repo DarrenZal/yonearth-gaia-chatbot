@@ -170,7 +170,7 @@ def mock_pinecone():
 @pytest.fixture
 def sample_documents():
     """Sample LangChain documents for testing"""
-    from langchain.schema import Document
+    from src.utils.lc_compat import Document
     
     return [
         Document(

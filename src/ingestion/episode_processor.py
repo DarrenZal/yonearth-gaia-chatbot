@@ -4,10 +4,10 @@ Episode processor for loading and preparing podcast episodes
 import json
 import logging
 from pathlib import Path
-from typing import List, Dict, Any, Optional
+from typing import Any, Dict, List, Optional
 from datetime import datetime
 
-from ..config import settings
+from .. import config as app_config
 
 logger = logging.getLogger(__name__)
 
@@ -76,13 +76,19 @@ class EpisodeProcessor:
     """Process podcast episodes for ingestion into vector database"""
     
     def __init__(self):
-        self.episodes_dir = settings.episodes_dir
-        self.processed_dir = settings.processed_dir
+        # Read settings from the config module at initialization time so that
+        # test fixtures can patch src.config.settings and have those changes
+        # reflected here.
+        self.episodes_dir = app_config.settings.episodes_dir
+        self.processed_dir = app_config.settings.processed_dir
         self.processed_dir.mkdir(parents=True, exist_ok=True)
         
     def load_episodes(self, limit: Optional[int] = None) -> List[Episode]:
         """Load episodes from JSON files"""
-        episode_files = settings.get_episode_files(limit=limit or settings.episodes_to_process)
+        settings_obj = app_config.settings
+        episode_files = settings_obj.get_episode_files(
+            limit=limit or settings_obj.episodes_to_process
+        )
         episodes = []
         
         for file_path in episode_files:
@@ -101,6 +107,13 @@ class EpisodeProcessor:
                 logger.error(f"Error loading {file_path}: {e}")
                 
         logger.info(f"Loaded {len(episodes)} episodes with transcripts")
+
+        # Apply an additional limit at the episode level to guard against
+        # settings.get_episode_files returning more files than requested
+        # (as is done in unit tests).
+        if limit is not None and len(episodes) > limit:
+            episodes = episodes[:limit]
+
         return episodes
     
     def get_diverse_episodes(self, episodes: List[Episode], count: int = 20) -> List[Episode]:

@@ -1381,6 +1381,29 @@ body {
     cursor: not-allowed;
 }
 
+.audio-speed-select {
+    background: var(--soft-white);
+    border: 2px solid var(--sage-green);
+    color: var(--earth-green);
+    padding: 0.4rem 0.6rem;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.audio-speed-select:hover {
+    border-color: var(--forest-green);
+    background: linear-gradient(135deg, #f9fdf9, #f0f8f0);
+}
+
+.audio-speed-select:focus {
+    outline: none;
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
 .audio-status {
     font-size: 0.9rem;
     color: var(--warm-gray);

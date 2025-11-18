@@ -11,6 +11,7 @@ class KnowledgeGraphVisualization {
         this.svg = null;
         this.g = null;
         this.currentVersion = version;  // Track which version is loaded
+        this.nodeTypes = []; // Unique node types from data
 
         // Visual elements
         this.links = null;
@@ -72,13 +73,18 @@ class KnowledgeGraphVisualization {
 
     async loadData(version = this.currentVersion) {
         // Determine which data source to use based on version
-        const apiEndpoint = version === 'v3.2.2'
-            ? '/api/knowledge-graph/data/v3.2.2'
-            : '/api/knowledge-graph/data';
+        let apiEndpoint, fileEndpoint;
 
-        const fileEndpoint = version === 'v3.2.2'
-            ? '/data/knowledge_graph_v3_2_2/visualization_data.json'
-            : '/data/knowledge_graph/visualization_data.json';
+        if (version === 'v3.2.2') {
+            apiEndpoint = '/api/knowledge-graph/data/v3.2.2';
+            fileEndpoint = '/data/knowledge_graph_v3_2_2/visualization_data.json';
+        } else if (version === 'unified') {
+            apiEndpoint = '/api/knowledge-graph/data/unified';
+            fileEndpoint = '/data/knowledge_graph_unified/visualization_data.json';
+        } else {
+            apiEndpoint = '/api/knowledge-graph/data';
+            fileEndpoint = '/data/knowledge_graph/visualization_data.json';
+        }
 
         try {
             // Try to load from API first
@@ -102,9 +108,23 @@ class KnowledgeGraphVisualization {
             }
         }
 
-        // Initialize filters with all domains and types enabled
+        // Initialize filters with all domains and actual node types enabled
+        this.filters.domains.clear();
+        this.filters.entityTypes.clear();
         this.data.domains.forEach(d => this.filters.domains.add(d.name));
-        this.data.entity_types.forEach(t => this.filters.entityTypes.add(t));
+        // Build unique node type list from nodes for accurate filtering/UI
+        this.nodeTypes = Array.from(new Set((this.data.nodes || []).map(n => n.type))).sort();
+        this.nodeTypes.forEach(t => this.filters.entityTypes.add(t));
+
+        // Adjust default importance threshold to match dataset distribution
+        const avgImp = this.data.statistics && typeof this.data.statistics.avg_importance === 'number'
+            ? this.data.statistics.avg_importance : null;
+        if (version === 'unified' || (avgImp !== null && avgImp <= 0.55)) {
+            // Unified dataset centers around ~0.5; start lower so nodes appear
+            this.filters.minImportance = Math.max(0, (avgImp ?? 0.5) - 0.1);
+        } else {
+            this.filters.minImportance = 0.7;
+        }
     }
 
     setupSVG() {
@@ -153,9 +173,9 @@ class KnowledgeGraphVisualization {
                 .html(`<span class="color-indicator" style="background:${domain.color}"></span> ${domain.name}`);
         });
 
-        // Entity type filters
+        // Entity type filters (use actual node types, not the full catalog)
         const typeContainer = d3.select('#entity-type-filters');
-        this.data.entity_types.forEach(type => {
+        this.nodeTypes.forEach(type => {
             const item = typeContainer.append('div')
                 .attr('class', 'filter-item');
 
@@ -172,11 +192,26 @@ class KnowledgeGraphVisualization {
 
         // Display statistics
         this.updateStatistics();
+
+        // Sync importance slider to current threshold
+        const slider = d3.select('#importance-slider');
+        const label = d3.select('#importance-value');
+        if (!slider.empty()) slider.property('value', this.filters.minImportance);
+        if (!label.empty()) label.text(this.filters.minImportance.toFixed(2));
     }
 
     createVisualization() {
         // Filter data based on current filters
         const filteredData = this.getFilteredData();
+        
+        // If filters hide everything, prompt the user and exit
+        if (filteredData.nodes.length === 0) {
+            this.showError('No nodes match current filters. Try lowering the Importance slider or clearing filters.');
+            return;
+        } else {
+            // Ensure any prior overlay is hidden
+            this.showLoading(false);
+        }
 
         // Create force simulation
         this.simulation = d3.forceSimulation(filteredData.nodes)
@@ -185,8 +220,8 @@ class KnowledgeGraphVisualization {
                 .distance(this.params.linkDistance))
             .force('charge', d3.forceManyBody()
                 .strength(this.params.charge))
-            .force('center', d3.forceCenter(this.width / 2, this.height / 2)
-                .strength(this.params.gravity))
+            // Center force (no strength API on forceCenter)
+            .force('center', d3.forceCenter(this.width / 2, this.height / 2))
             .force('collision', d3.forceCollide()
                 .radius(d => this.getNodeRadius(d) + this.params.collisionRadius));
 
@@ -713,6 +748,7 @@ class KnowledgeGraphVisualization {
 
     showError(message) {
         const overlay = d3.select('#loading-overlay');
+        overlay.classed('hidden', false);
         overlay.html(`
             <div style="text-align:center; color:#e74c3c;">
                 <h2>Error</h2>
@@ -726,8 +762,8 @@ class KnowledgeGraphVisualization {
     updateGravity(value) {
         this.params.gravity = parseFloat(value);
         d3.select('#gravity-value').text(value);
+        // Note: d3.forceCenter has no strength; nudge simulation instead
         if (this.simulation) {
-            this.simulation.force('center').strength(this.params.gravity);
             this.simulation.alpha(0.3).restart();
         }
     }
@@ -835,6 +871,7 @@ class KnowledgeGraphVisualization {
         this.filters.domains.clear();
         this.filters.entityTypes.clear();
         this.selectedNode = null;
+        this.nodeTypes = [];
 
         // Clear controls
         d3.select('#domain-filters').html('');

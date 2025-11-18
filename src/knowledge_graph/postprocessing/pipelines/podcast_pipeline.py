@@ -26,6 +26,10 @@ from ..universal import (
     PredicateNormalizer,
     PredicateValidator,
 )
+from ..content_specific.podcasts import (
+    PodcastSpeakerResolver,
+    ContactInfoFilter,
+)
 
 
 def get_podcast_pipeline(config: Optional[Dict[str, Any]] = None) -> PipelineOrchestrator:
@@ -46,12 +50,19 @@ def get_podcast_pipeline(config: Optional[Dict[str, Any]] = None) -> PipelineOrc
 
     # Create universal modules only
     modules = [
-        VagueEntityBlocker(config.get('vague_entity_blocker', {})),
+        # Early filters before enrichment
+        ContactInfoFilter(config.get('contact_info_filter', {})),
+        # Universal + enrichment
         ListSplitter(config.get('list_splitter', {})),
         ContextEnricher(config.get('context_enricher', {})),
+        # Resolve podcast-specific placeholders, then pronouns
+        PodcastSpeakerResolver(config.get('podcast_speaker_resolver', {})),
         PronounResolver(config.get('pronoun_resolver', {})),
+        # Normalize predicates and validate
         PredicateNormalizer(config.get('predicate_normalizer', {})),
         PredicateValidator(config.get('predicate_validator', {})),
+        # Block unresolved vagueness last (after enrichment/resolution)
+        VagueEntityBlocker(config.get('vague_entity_blocker', {})),
     ]
 
     # Create and return orchestrator

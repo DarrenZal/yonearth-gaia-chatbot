@@ -1,0 +1,91 @@
+{
+  "description": "Prompt set for comparing graph-augmented hybrid search vs BM25/semantic-only search in the YonEarth Gaia chatbot.",
+  "version": 1,
+  "prompts": [
+    {
+      "id": "person_vandana_shiva",
+      "query": "Tell me about Vandana Shiva's work on biodiversity and seed saving.",
+      "tags": ["person", "biodiversity", "seeds", "graph_expected"]
+    },
+    {
+      "id": "person_paul_hawken",
+      "query": "What did Paul Hawken say about regenerative agriculture on the YonEarth podcast?",
+      "tags": ["person", "regenerative_agriculture", "graph_expected"]
+    },
+    {
+      "id": "person_joel_salatin",
+      "query": "Which interviews with Joel Salatin discuss soil health and grazing?",
+      "tags": ["person", "soil_health", "grazing", "graph_expected"]
+    },
+    {
+      "id": "org_regeneration_international",
+      "query": "Tell me about the work of Regeneration International and how it relates to farmers.",
+      "tags": ["organization", "regeneration_international", "graph_expected"]
+    },
+    {
+      "id": "org_bfi",
+      "query": "What is the Buckminster Fuller Institute and how does it connect to regenerative projects mentioned in the podcast?",
+      "tags": ["organization", "projects", "graph_expected"]
+    },
+    {
+      "id": "concept_regenerative_agriculture_intro",
+      "query": "What is regenerative agriculture and why is it important?",
+      "tags": ["concept_definition", "regenerative_agriculture", "bm25_semantic_expected"]
+    },
+    {
+      "id": "concept_biochar_intro",
+      "query": "Explain biochar and how it is made.",
+      "tags": ["concept_definition", "biochar", "bm25_semantic_expected"]
+    },
+    {
+      "id": "concept_permaculture_principles",
+      "query": "Describe key permaculture design principles mentioned in the YonEarth conversations.",
+      "tags": ["concept", "permaculture", "bm25_semantic_expected"]
+    },
+    {
+      "id": "howto_composting",
+      "query": "How can I start composting at home according to the guidance in the podcast and books?",
+      "tags": ["how_to", "composting", "bm25_semantic_expected"]
+    },
+    {
+      "id": "howto_soil_health",
+      "query": "What practices are recommended for improving soil health on a small farm?",
+      "tags": ["how_to", "soil_health", "bm25_semantic_expected"]
+    },
+    {
+      "id": "relationship_fungi_regen_ag",
+      "query": "How are mycorrhizal fungi connected to regenerative agriculture techniques discussed in the YonEarth materials?",
+      "tags": ["relationship", "mycorrhizal_fungi", "regenerative_agriculture", "graph_expected"]
+    },
+    {
+      "id": "relationship_carbon_biodiversity",
+      "query": "Across the YonEarth content, how do carbon sequestration strategies relate to biodiversity and ecosystem health?",
+      "tags": ["relationship", "carbon", "biodiversity", "ecosystem", "graph_expected"]
+    },
+    {
+      "id": "episode_specific",
+      "query": "In episode 147, what were the main permaculture techniques discussed?",
+      "tags": ["episode_specific", "permaculture", "bm25_semantic_expected"]
+    },
+    {
+      "id": "book_viriditas_link_episode",
+      "query": "Connect the themes from the book VIRIDITAS: THE GREAT HEALING with relevant YonEarth podcast episodes.",
+      "tags": ["book", "viriditas", "episodes", "graph_expected"]
+    },
+    {
+      "id": "community_resilience",
+      "query": "What does the YonEarth project say about building community resilience in the face of climate change?",
+      "tags": ["theme", "community_resilience", "climate_change", "bm25_semantic_expected"]
+    },
+    {
+      "id": "youth_education",
+      "query": "Which stories or episodes focus on educating children and youth about soil stewardship and ecology?",
+      "tags": ["theme", "education", "soil_stewardship", "graph_expected"]
+    },
+    {
+      "id": "book_our_biggest_deal_summary",
+      "query": "Can you give a summary of Our Biggest Deal?",
+      "tags": ["book", "our_biggest_deal", "graph_expected"]
+    }
+  ]
+}

@@ -12,13 +12,16 @@ The chatbot uses a sophisticated hybrid search approach that combines multiple s
 
 #### Search Methods
 
+**Default: 🔍 BM25 (Keyword + Semantic)**  
+This is the default search method in the web UI and is the trusted backbone for all modes.
+
 **1. 🌿 Original (Semantic Search)**
 - Pure meaning-based understanding
 - Uses OpenAI embeddings for context
 - Best for conceptual questions
 - Example: "regenerative practices" matches similar concepts
 
-**2. 🔍 BM25 (Category-First Hybrid)**
+**2. 🔍 BM25 (Category-First Hybrid)** *(default in UI)*
 - **Category Matching (60-80%)**: Episodes tagged with relevant categories
 - **Semantic Search (15-25%)**: OpenAI embedding similarity
 - **Keyword Search (5-15%)**: BM25 term frequency
@@ -26,7 +29,17 @@ The chatbot uses a sophisticated hybrid search approach that combines multiple s
 - Best for specific topic queries
 - Example: "biochar" matches BIOCHAR category episodes
 
-**3. ⚖️ Both (Side-by-Side)**
+**3. 🕸️ Hybrid QA (Graph + BM25)**
+- Uses the BM25 backbone for safety ("do no harm")
+- Optionally augments results with:
+  - Entity-centric GraphRAG (`GraphRetriever`)
+  - Topic clusters from `cluster_index.json` (when enabled)
+- Controlled via `GRAPH_MODE`:
+  - `evidence_only` (default): graph used only for evidence/triples
+  - `full`: graph + clusters can influence ranking (with safeguards)
+- Best for complex, multi-hop, or KG-heavy queries
+
+**4. ⚖️ Both (Side-by-Side)**
 - Compare results from both methods
 - See differences in episode selection
 - Helpful for understanding search behavior
@@ -253,8 +266,9 @@ Transparent breakdown of API costs:
 - See "Semantic Category Matching" above
 
 **Search Method**
-- Choose Original, BM25, or Both
-- Compare different approaches
+- Choose BM25 (default), Original, Hybrid QA, or Both
+- BM25 is the safe backbone; Hybrid QA adds optional GraphRAG on top
+- Compare different approaches to understand behavior
 
 ### Browser Cache-Busting
 

@@ -11,7 +11,7 @@ from slowapi.util import get_remote_address
 from ..config import settings
 from ..rag.chain import get_rag_chain
 from ..rag.bm25_chain import BM25RAGChain
-from ..voice.elevenlabs_client import ElevenLabsVoiceClient
+from ..voice.piper_client import PiperVoiceClient
 from .bm25_models import (
     BM25ChatRequest, BM25ChatResponse, BM25Source,
     SearchMethodComparisonRequest, SearchMethodComparisonResponse, SearchMethodResult,
@@ -23,7 +23,7 @@ from .bm25_models import (
 logger = logging.getLogger(__name__)
 
 # Create router for BM25 endpoints
-router = APIRouter(prefix="/bm25", tags=["BM25 RAG"])
+router = APIRouter(prefix="/api/bm25", tags=["BM25 RAG"])
 
 # Rate limiter
 limiter = Limiter(key_func=get_remote_address)
@@ -137,37 +137,24 @@ async def bm25_chat(
         # Get cost breakdown from result (if available)
         cost_breakdown = result.get("cost_breakdown")
 
-        if chat_request.enable_voice and settings.elevenlabs_api_key:
+        if chat_request.enable_voice:
             try:
-                # Use voice_id from request if provided, otherwise use default from settings
-                voice_id = chat_request.voice_id or settings.elevenlabs_voice_id
-                logger.info(f"Generating voice with voice_id: {voice_id}")
+                logger.info(f"Generating voice with Piper TTS (en_US-kristin-medium)")
 
-                voice_client = ElevenLabsVoiceClient(
-                    api_key=settings.elevenlabs_api_key,
-                    voice_id=voice_id
-                )
+                voice_client = PiperVoiceClient(voice_name="en_US-kristin-medium")
                 # Preprocess response for better speech
                 speech_text = voice_client.preprocess_text_for_speech(result.get('response', ''))
                 audio_data = voice_client.generate_speech_base64(speech_text)
 
-                # Add voice cost to breakdown if we have one
+                # Note: Piper is free/open-source, no cost tracking needed
                 if cost_breakdown and audio_data:
-                    from ..utils.cost_calculator import calculate_elevenlabs_cost
-                    voice_cost = calculate_elevenlabs_cost(speech_text, settings.elevenlabs_model_id)
-
-                    # Add voice cost detail
+                    # Add voice generation note (no cost for Piper)
                     cost_breakdown["details"].append({
-                        "service": "ElevenLabs Voice",
-                        "model": voice_cost["model"],
-                        "usage": f"{voice_cost['characters']} characters",
-                        "cost": f"${voice_cost['cost']:.4f}"
+                        "service": "Piper Voice (Open Source)",
+                        "model": "en_US-kristin-medium",
+                        "usage": f"{len(speech_text)} characters",
+                        "cost": "$0.0000"
                     })
-
-                    # Update total cost
-                    current_total = float(cost_breakdown["summary"].replace("$", ""))
-                    new_total = current_total + voice_cost["cost"]
-                    cost_breakdown["summary"] = f"${new_total:.4f}"
 
             except Exception as voice_error:
                 logger.error(f"Voice generation failed: {voice_error}")

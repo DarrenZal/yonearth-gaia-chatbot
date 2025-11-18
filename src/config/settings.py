@@ -76,6 +76,54 @@ class Settings(BaseSettings):
     elevenlabs_model_id: str = Field(default="eleven_multilingual_v2", description="ElevenLabs model ID")
     enable_voice_generation: bool = Field(default=False, description="Enable voice generation for responses")
     
+    # Knowledge Graph Configuration
+    enable_graph_retrieval: bool = Field(default=True, description="Enable GraphRAG retrieval alongside hybrid search")
+    graph_max_edges: int = Field(default=50, description="Maximum edges to expand in graph retrieval")
+    graph_retrieval_k: int = Field(default=20, description="Number of graph chunks to retrieve")
+    graph_retrieval_max_hops: int = Field(default=2, description="Maximum graph hops to explore for multi-hop expansion")
+    graph_hop_decay: float = Field(default=0.7, description="Per-hop decay factor when scoring multi-hop neighbors")
+    graph_enable_semantic_entity_match: bool = Field(
+        default=True,
+        description="Use lightweight semantic/fuzzy matching for entity aliases in addition to lexical match",
+    )
+    graph_semantic_entity_jaccard_threshold: float = Field(
+        default=0.7,
+        description="Minimum token-level Jaccard similarity to treat a multi-word alias as matched",
+    )
+    graph_enable_cluster_retrieval: bool = Field(
+        default=False,
+        description="Enable semantic cluster/topic retrieval using cluster_index.json when available",
+    )
+    graph_enable_adaptive_weight: bool = Field(
+        default=True,
+        description="Adapt graph fusion weight based on entity/cluster signal in the query",
+    )
+    graph_default_weight: float = Field(
+        default=1.2,
+        description="Default graph weight used in hybrid fusion when adaptive weighting is disabled",
+    )
+    graph_min_weight: float = Field(
+        default=0.2,
+        description="Minimum graph weight when adaptive weighting is enabled",
+    )
+    graph_max_weight: float = Field(
+        default=2.0,
+        description="Maximum graph weight when adaptive weighting is enabled",
+    )
+    graph_weight_entity_cap: int = Field(
+        default=5,
+        description="Number of matched entities at which graph weight saturates in adaptive mode",
+    )
+    graph_mode: str = Field(
+        default="evidence_only",
+        description="Graph usage mode: 'off' (disable), 'evidence_only' (evidence/triples only), or 'full' (recall + evidence).",
+    )
+
+    # Evidence Capping Configuration
+    graph_evidence_max_total: int = Field(default=10, description="Maximum total evidence triples to include")
+    graph_evidence_min_confidence: float = Field(default=0.6, description="Minimum p_true for evidence inclusion")
+    graph_evidence_per_predicate: int = Field(default=2, description="Maximum evidence examples per predicate type")
+
     # Paths
     @property
     def project_root(self) -> Path:

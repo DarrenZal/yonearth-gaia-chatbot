@@ -84,6 +84,76 @@ uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 
 ---
 
+## 🕸️ Building the GraphRAG Cluster Index (Optional)
+
+The GraphRAG retriever can use an additional multi-level topic index stored at `data/graph_index/cluster_index.json`. This file is built offline and consumed at query time when `graph_enable_cluster_retrieval=True` in your `.env`.
+
+### Build or Refresh `cluster_index.json`
+
+```bash
+source venv/bin/activate        # or .venv, depending on your setup
+export OPENAI_API_KEY=...       # ensure embeddings + chat model can run
+
+# Build multi-level clusters with default settings
+python scripts/build_cluster_index.py
+
+# (Optional) override coarse cluster count
+python scripts/build_cluster_index.py --coarse-k 60
+```
+
+The builder will:
+- Read `data/graph_index/{hierarchy,previews,chunk_entity_map}.json`
+- Embed chunk previews using `settings.openai_embedding_model`
+- Create coarse and fine topic clusters with centroids
+- Summarize each cluster using `settings.openai_model`
+- Write `data/graph_index/cluster_index.json` with:
+  - `clusters[cluster_id].chunk_ids`, `summary`, and `embedding` (used at runtime)
+  - Optional multi-level metadata: `levels`, `parent`, `children`, `meta`
+
+To sanity-check cluster behavior alongside entity-centric GraphRAG:
+
+```bash
+python scripts/compare_cluster_vs_graph.py          # cluster-only vs full graph
+python scripts/compare_graph_vs_no_graph.py --limit 10
+```
+
+> Note: Cluster building can be moderately expensive (embeddings + LLM summaries) but is designed as an occasional maintenance job, not a per-request operation.
+
+### Graph Usage Modes and Safety Settings
+
+GraphRAG is designed to be **additive** on top of the BM25 + semantic backbone and to follow a strict "do no harm" policy in production.
+
+- Core controls (from `src/config/settings.py`, set via environment variables):
+  - `ENABLE_GRAPH_RETRIEVAL` (default: `true`) – turn GraphRAG on/off globally.
+  - `GRAPH_ENABLE_CLUSTER_RETRIEVAL` (default: `false`) – enable topic clusters when `cluster_index.json` exists.
+  - `GRAPH_MODE` (default: `evidence_only`) – how graph results are used:
+    - `off` – completely disable graph (no graph docs or evidence).
+    - `evidence_only` – **recommended production default**; graph is used only for evidence/triples and context, backbone ranking remains unchanged.
+    - `full` – allow graph + clusters to influence ranking (still with backbone coverage guards).
+
+#### Recommended production configuration
+
+In `.env` for production, start with:
+
+```bash
+ENABLE_GRAPH_RETRIEVAL=true
+GRAPH_ENABLE_CLUSTER_RETRIEVAL=true     # if you have built cluster_index.json
+GRAPH_MODE=evidence_only                # safe-by-default; graph used as evidence only
+```
+
+To evaluate graph impact on ranking (while keeping backbone coverage safe):
+
+```bash
+GRAPH_MODE=full GRAPH_ENABLE_CLUSTER_RETRIEVAL=true \
+python scripts/compare_graph_vs_no_graph.py --limit 10 --strict-backbone
+```
+
+This script verifies that graph-enhanced retrieval:
+- Never drops top‑k backbone documents (`backbone_ok` stays `True`), and
+- Actually adds useful new episodes/books for some queries before you enable `GRAPH_MODE=full` in production.
+
+---
+
 ## 🖥️ VPS Production Deployment
 
 ### Server Setup (Ubuntu 20.04+)

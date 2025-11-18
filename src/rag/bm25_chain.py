@@ -6,7 +6,7 @@ import logging
 import json
 import os
 from typing import List, Dict, Any, Optional, Tuple
-from langchain.schema import Document
+from ..utils.lc_compat import Document
 
 from ..config import settings
 from ..character.gaia import GaiaCharacter
@@ -358,10 +358,19 @@ class BM25RAGChain:
                     'print_url': print_url
                 }
             else:
+                episode_number = metadata.get('episode_number')
+                # Skip synthetic or non-episode docs that lack a real episode_number
+                # (or use placeholders like "Unknown") to avoid confusing
+                # "Episode unknown" references in the UI.
+                if not episode_number:
+                    continue
+                if str(episode_number).strip().lower() == "unknown":
+                    continue
+
                 source = {
                     'content_type': 'episode',
                     'episode_id': metadata.get('episode_id', 'Unknown'),
-                    'episode_number': metadata.get('episode_number', 'Unknown'),
+                    'episode_number': str(episode_number),
                     'title': metadata.get('title', 'Unknown Title'),
                     'guest_name': metadata.get('guest_name', 'Unknown Guest'),
                     'url': metadata.get('url', ''),

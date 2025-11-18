@@ -28,56 +28,109 @@ python scripts/start_local.py
 
 # Or manual startup
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
-
-# Production deployment (nginx + uvicorn + systemd)
-# Web interface available at http://152.53.194.214/
-
-# Production server management (systemd service)
-sudo systemctl status yonearth-api       # Check status
-sudo systemctl start yonearth-api        # Start service
-sudo systemctl stop yonearth-api         # Stop service
-sudo systemctl restart yonearth-api      # Restart service
-sudo systemctl enable yonearth-api       # Enable on boot (already enabled)
-
-# View logs
-sudo journalctl -u yonearth-api -f       # Follow logs
-sudo journalctl -u yonearth-api --since "1 hour ago"
-
-# Service configuration
-# Location: /etc/systemd/system/yonearth-api.service
-# Runs: uvicorn src.api.main:app --host 127.0.0.1 --port 8000 --workers 4
-# Nginx (port 80) serves static files and proxies /api/* to uvicorn (port 8000)
-
-# ⚠️ IMPORTANT: Deployment Directory Structure
-# Development: /home/claudeuser/yonearth-gaia-chatbot/ (edit files here)
-# Production API: /root/yonearth-gaia-chatbot/ (systemd runs from here)
-# Production Web: /var/www/yonearth/ (nginx serves from here)
-
-# After making code changes, deploy to production:
-# 1. Backend API changes (Python files in src/):
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/src/api/*.py /root/yonearth-gaia-chatbot/src/api/
-sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
-
-# 2. Frontend changes (HTML/JS/CSS in web/):
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.html /var/www/yonearth/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.js /var/www/yonearth/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.css /var/www/yonearth/
-sudo systemctl reload nginx
-
-# ⚠️ IMPORTANT: Browser Cache-Busting
-# When updating JS/CSS files, browsers may cache old versions. To force updates:
-# 1. Add version query parameter to script/link tags in HTML:
-#    <link rel="stylesheet" href="styles.css?v=2">
-#    <script src="app.js?v=2"></script>
-# 2. Increment version number (v=2 -> v=3) each time you update JS/CSS
-# 3. This forces browsers to load the new version instead of using cached files
-
-# 3. Full deployment (both backend and frontend):
-sudo cp -r /home/claudeuser/yonearth-gaia-chatbot/src/* /root/yonearth-gaia-chatbot/src/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/* /var/www/yonearth/
-sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
-sudo systemctl reload nginx
 ```
+
+### Production Deployment
+
+**⚠️ CRITICAL: Production runs via Docker, NOT system nginx/systemd!**
+
+The production site (https://earthdo.me) is served by Docker containers:
+- **yonearth-nginx** (nginx:alpine) - Serves web files on ports 80/443
+- **yonearth-gaia-chatbot** - FastAPI application on port 8000
+- **yonearth-redis** - Redis cache on port 6379
+
+#### Production Directory Structure
+```bash
+# Development (edit files here)
+/home/claudeuser/yonearth-gaia-chatbot/
+
+# Docker Production Web Files (what Docker nginx serves)
+/opt/yonearth-chatbot/web/          # Static files (HTML, JS, CSS, data/)
+/opt/yonearth-chatbot/nginx.conf    # Docker nginx configuration
+/opt/yonearth-chatbot/ssl/          # SSL certificates
+
+# Legacy/Backup (NOT actively served by Docker)
+/var/www/yonearth/                  # Old system nginx location (data files stored here)
+```
+
+#### Deploying Changes to Production
+
+**1. Frontend changes (HTML/JS/CSS):**
+```bash
+# Copy web files to Docker mount
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.html /opt/yonearth-chatbot/web/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.js /opt/yonearth-chatbot/web/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.css /opt/yonearth-chatbot/web/
+
+# Restart nginx container
+sudo docker restart yonearth-nginx
+```
+
+**2. Backend API changes (Python):**
+```bash
+# Docker containers run from /root/yonearth-gaia-chatbot/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/src/api/*.py /root/yonearth-gaia-chatbot/src/api/
+
+# Restart API container
+sudo docker restart yonearth-gaia-chatbot
+```
+
+**3. Adding new web content (wiki, handbook, data files):**
+```bash
+# IMPORTANT: Docker nginx only serves files from /opt/yonearth-chatbot/web/
+# New directories MUST be copied here to be accessible
+
+# Example: Adding a new wiki or data directory
+sudo cp -r /var/www/yonearth/new-content /opt/yonearth-chatbot/web/
+
+# If special routing needed, edit nginx config:
+sudo nano /opt/yonearth-chatbot/nginx.conf
+
+# Test and restart nginx
+sudo docker exec yonearth-nginx nginx -t
+sudo docker restart yonearth-nginx
+```
+
+**4. Full deployment (backend + frontend):**
+```bash
+# Backend
+sudo cp -r /home/claudeuser/yonearth-gaia-chatbot/src/* /root/yonearth-gaia-chatbot/src/
+
+# Frontend
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/* /opt/yonearth-chatbot/web/
+
+# Restart both containers
+sudo docker restart yonearth-gaia-chatbot yonearth-nginx
+```
+
+#### Production Container Management
+```bash
+# View running containers
+sudo docker ps
+
+# Check logs
+sudo docker logs yonearth-nginx -f
+sudo docker logs yonearth-gaia-chatbot -f
+
+# Restart containers
+sudo docker restart yonearth-nginx
+sudo docker restart yonearth-gaia-chatbot
+
+# Stop/start all services
+cd /root/yonearth-gaia-chatbot
+sudo docker-compose down
+sudo docker-compose up -d
+```
+
+#### ⚠️ Browser Cache-Busting
+When updating JS/CSS files, browsers may cache old versions. To force updates:
+1. Add version query parameter to script/link tags in HTML:
+   ```html
+   <link rel="stylesheet" href="styles.css?v=2">
+   <script src="app.js?v=2"></script>
+   ```
+2. Increment version number (v=2 → v=3) each time you update JS/CSS
+3. This forces browsers to load the new version instead of using cached files
 
 ### Testing
 ```bash
