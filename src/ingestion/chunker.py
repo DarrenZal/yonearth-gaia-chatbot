@@ -5,7 +5,7 @@ import re
 import logging
 from typing import List, Dict, Any, Optional
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 from ..config import settings
 from .episode_processor import Episode
@@ -174,7 +174,16 @@ class TranscriptChunker:
     def chunk_episode(self, episode: Episode) -> List[Document]:
         """Chunk a single episode into documents"""
         documents = []
-        
+
+        # Check if episode has timestamped segments (from Whisper transcription)
+        segments = episode.data.get('segments', [])
+        if segments and isinstance(segments, list) and len(segments) > 0:
+            logger.info(f"Episode {episode.episode_number} has {len(segments)} timestamped segments")
+            return self._chunk_from_segments(episode, segments)
+
+        # Fallback to original chunking for episodes without segments
+        logger.info(f"Episode {episode.episode_number} has no segments, using text-based chunking")
+
         # Check if we should preserve speaker turns
         if self.preserve_speaker_turns:
             format_type = self._detect_speaker_format(episode.transcript)
@@ -186,7 +195,7 @@ class TranscriptChunker:
                 chunks = self.text_splitter.split_text(episode.transcript)
         else:
             chunks = self.text_splitter.split_text(episode.transcript)
-            
+
         # Create documents with metadata
         for i, chunk in enumerate(chunks):
             metadata = episode.metadata.copy()
@@ -196,14 +205,94 @@ class TranscriptChunker:
                 "chunk_total": len(chunks),
                 "chunk_type": "speaker_turn" if self.preserve_speaker_turns else "standard"
             })
-            
+
             doc = Document(
                 page_content=chunk,
                 metadata=metadata
             )
             documents.append(doc)
-            
+
         logger.info(f"Created {len(documents)} chunks for episode {episode.episode_number}")
+        return documents
+
+    def _chunk_from_segments(self, episode: Episode, segments: List[Dict]) -> List[Document]:
+        """Chunk episode using timestamped segments from Whisper transcription"""
+        documents = []
+        current_chunk = []
+        current_chunk_start_time = None
+        current_chunk_end_time = None
+        current_chunk_length = 0
+
+        for segment in segments:
+            segment_text = segment.get('text', '').strip()
+            segment_start = segment.get('start', 0)
+            segment_end = segment.get('end', 0)
+
+            if not segment_text:
+                continue
+
+            # Initialize chunk start time
+            if current_chunk_start_time is None:
+                current_chunk_start_time = segment_start
+
+            # Check if adding this segment would exceed chunk size
+            segment_length = len(segment_text)
+            if current_chunk and (current_chunk_length + segment_length) > self.chunk_size:
+                # Save current chunk
+                chunk_text = ' '.join(current_chunk)
+                metadata = episode.metadata.copy()
+                metadata.update({
+                    "content_type": "episode",
+                    "chunk_index": len(documents),
+                    "chunk_total": -1,  # Will update at the end
+                    "chunk_type": "timestamped_segment",
+                    "timestamp": current_chunk_start_time,  # Precise start timestamp
+                    "timestamp_end": current_chunk_end_time,  # End timestamp
+                })
+
+                doc = Document(page_content=chunk_text, metadata=metadata)
+                documents.append(doc)
+
+                # Start new chunk (with overlap if configured)
+                if self.chunk_overlap > 0 and current_chunk:
+                    # Keep last few segments for overlap
+                    overlap_text = ' '.join(current_chunk[-2:]) if len(current_chunk) >= 2 else current_chunk[-1] if current_chunk else ''
+                    current_chunk = [overlap_text, segment_text] if overlap_text else [segment_text]
+                    current_chunk_length = len(overlap_text) + segment_length
+                else:
+                    current_chunk = [segment_text]
+                    current_chunk_length = segment_length
+
+                current_chunk_start_time = segment_start
+                current_chunk_end_time = segment_end
+            else:
+                # Add segment to current chunk
+                current_chunk.append(segment_text)
+                current_chunk_length += segment_length
+                current_chunk_end_time = segment_end
+
+        # Add final chunk
+        if current_chunk:
+            chunk_text = ' '.join(current_chunk)
+            metadata = episode.metadata.copy()
+            metadata.update({
+                "content_type": "episode",
+                "chunk_index": len(documents),
+                "chunk_total": -1,  # Will update below
+                "chunk_type": "timestamped_segment",
+                "timestamp": current_chunk_start_time,
+                "timestamp_end": current_chunk_end_time,
+            })
+
+            doc = Document(page_content=chunk_text, metadata=metadata)
+            documents.append(doc)
+
+        # Update chunk_total for all documents
+        total_chunks = len(documents)
+        for doc in documents:
+            doc.metadata['chunk_total'] = total_chunks
+
+        logger.info(f"Created {len(documents)} timestamped chunks for episode {episode.episode_number}")
         return documents
     
     def chunk_episodes(self, episodes: List[Episode]) -> List[Document]:

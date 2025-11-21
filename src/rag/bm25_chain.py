@@ -6,7 +6,7 @@ import logging
 import json
 import os
 from typing import List, Dict, Any, Optional, Tuple
-from langchain.schema import Document
+from langchain_core.documents import Document
 
 from ..config import settings
 from ..character.gaia import GaiaCharacter

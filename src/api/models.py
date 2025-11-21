@@ -14,6 +14,7 @@ class ChatRequest(BaseModel):
     max_results: Optional[int] = Field(5, description="Maximum number of retrieved documents", ge=1, le=10)
     model: Optional[str] = Field(None, description="OpenAI model to use for response generation")
     enable_voice: bool = Field(False, description="Enable voice generation for the response")
+    voice_id: Optional[str] = Field(None, description="ElevenLabs voice ID to use for speech generation")
 
 
 class Citation(BaseModel):
@@ -23,6 +24,20 @@ class Citation(BaseModel):
     guest_name: str
     url: str
     relevance: str
+
+
+class CostDetail(BaseModel):
+    """Cost detail for a specific service"""
+    service: str = Field(..., description="Service name (e.g., 'OpenAI LLM', 'ElevenLabs Voice')")
+    model: str = Field(..., description="Model used")
+    usage: str = Field(..., description="Usage description")
+    cost: str = Field(..., description="Cost in dollars")
+
+
+class CostBreakdown(BaseModel):
+    """Cost breakdown for API usage"""
+    summary: str = Field(..., description="Total cost summary")
+    details: List[CostDetail] = Field(default_factory=list, description="Detailed cost breakdown")
 
 
 class ChatResponse(BaseModel):
@@ -36,6 +51,7 @@ class ChatResponse(BaseModel):
     processing_time: Optional[float] = Field(None, description="Processing time in seconds")
     model_used: Optional[str] = Field(None, description="OpenAI model used for response generation")
     audio_data: Optional[str] = Field(None, description="Base64 encoded audio data if voice was enabled")
+    cost_breakdown: Optional[CostBreakdown] = Field(None, description="Cost breakdown for this response")
 
 
 class EpisodeRecommendation(BaseModel):

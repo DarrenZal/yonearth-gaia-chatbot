@@ -91,4 +91,39 @@ htmlcov/
 # mypy
 .mypy_cache/
 .dmypy.json
-dmypy.jsondata/feedback/
+dmypy.json
+
+# Environment backups
+.env.backup
+.env.*
+
+# Data directories
+data/feedback/
+data/backups/
+data/graph_index/
+data/graph_index_part1/
+data/graph_index_part2/
+data/graph_index_part3/
+data/knowledge_graph/
+data/knowledge_graph_unified/
+data/graphrag_hierarchy/
+data/voices/
+data/processed/podcast_map*.json
+data/processed/nomic*.json
+data/processed/nomic*.csv
+data/processed/category_embeddings.json
+data/processed/hierarchical_checkpoints/
+web/data/
+web/graph/
+web/soil-handbook/
+web/wiki/
+web/wiki/_indexes/
+web/wiki/concepts/
+web/wiki/episodes/
+web/wiki/locations/
+web/wiki/organizations/
+web/wiki/people/
+web/wiki/practices/
+web/wiki/static/
+web/wiki/tags/
+web/wiki/technologies/

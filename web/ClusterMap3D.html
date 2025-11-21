@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Cluster Map 3D</title>
+    <!-- Reuse existing 3D map styles for layout/look-and-feel -->
+    <link rel="stylesheet" href="PodcastMap3D.css?v=36">
+</head>
+<body>
+    <div id="podcast-map-3d-container">
+        <!-- Header with navigation and level toggles -->
+        <div class="map-header">
+            <div class="project-selector">
+                <button class="project-dropdown-btn">
+                    <span class="project-name">Semantic Topic Clusters (Books + Episodes)</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-icon">☰</span>
+            </button>
+
+            <div class="header-controls" id="header-controls">
+                <a href="/" class="nav-link">
+                    💬 Chat with Gaia
+                </a>
+                <a href="/PodcastMap3D.html" class="nav-link">
+                    🎧 Podcast Map 3D
+                </a>
+                <a href="/KnowledgeGraph.html" class="nav-link">
+                    🕸️ Knowledge Graph
+                </a>
+                <a href="/wiki/" class="nav-link">
+                    📚 Podcast Wiki
+                </a>
+                <a href="/soil-handbook/" class="nav-link">
+                    🌿 Soil Handbook
+                </a>
+            </div>
+
+            <div class="mobile-controls">
+                <div class="cluster-control">
+                    <label>
+                        Levels:
+                        <span style="margin-left: 8px;">
+                            <input type="checkbox" id="show-coarse" checked>
+                            <label for="show-coarse">Coarse</label>
+                            <input type="checkbox" id="show-fine" checked style="margin-left: 12px;">
+                            <label for="show-fine">Fine</label>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main 3D visualization area -->
+        <div id="3d-graph"></div>
+
+        <!-- Simple info panel for selected cluster -->
+        <div class="audio-player-container" id="cluster-info-panel" style="display: none;">
+            <div class="player-controls">
+                <button class="close-player" onclick="window.clusterMap3D && window.clusterMap3D.closeInfoPanel()">×</button>
+                <div class="episode-info">
+                    <h3 id="cluster-title"></h3>
+                    <p id="cluster-summary"></p>
+                    <p id="cluster-meta"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls hint -->
+        <div class="controls-hint">
+            <p>🖱️ Drag to rotate • Scroll to zoom • Click node for cluster summary</p>
+        </div>
+    </div>
+
+    <!-- Load dependencies -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <!-- Cluster visualization script -->
+    <script src="ClusterMap3D.js?v=1"></script>
+</body>
+</html>
+

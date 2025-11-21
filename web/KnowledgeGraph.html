@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Knowledge Graph</title>
+    <link rel="stylesheet" href="KnowledgeGraph.css">
+</head>
+<body>
+    <div id="knowledge-graph-container">
+        <!-- Header with view selector -->
+        <div class="graph-header">
+            <div class="view-selector">
+                <button class="view-btn" data-view="podcast-map" onclick="switchView('podcast-map')">
+                    📍 Podcast Map
+                </button>
+                <button class="view-btn active" data-view="knowledge-graph">
+                    🕸️ Knowledge Graph
+                <button class="view-btn" data-view="cluster-map" onclick="window.location.href="/ClusterMap3D.html"">
+                    🧭 Semantic Clusters
+                </button>
+                </button>
+                <button class="view-btn" data-view="chat" onclick="window.location.href='/'">
+                    💬 Chat with Gaia
+                </button>
+            </div>
+
+            <div class="title-section">
+                <h1>YonEarth Knowledge Graph</h1>
+                <p class="subtitle">Interactive visualization of concepts, people, and organizations</p>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <div class="main-content">
+            <!-- Left sidebar - Controls -->
+            <div class="controls-panel">
+                <div class="control-section">
+                    <h3>🔍 Search</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search entities..." />
+                        <button id="search-btn" onclick="searchEntities()">Search</button>
+                        <button id="clear-search-btn" onclick="clearSearch()">Clear</button>
+                    </div>
+                    <div id="search-results"></div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎨 Domains</h3>
+                    <div id="domain-filters" class="filter-group"></div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🏷️ Entity Types</h3>
+                    <div id="entity-type-filters" class="filter-group scrollable"></div>
+                </div>
+
+                <div class="control-section">
+                    <h3>⭐ Importance</h3>
+                    <div class="slider-container">
+                        <label>Minimum: <span id="importance-value">0.0</span></label>
+                        <input type="range" id="importance-slider"
+                               min="0" max="1" step="0.05" value="0"
+                               oninput="updateImportanceFilter(this.value)" />
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>⚙️ Layout</h3>
+                    <div class="layout-controls">
+                        <div class="slider-container">
+                            <label>Gravity: <span id="gravity-value">0.1</span></label>
+                            <input type="range" id="gravity-slider"
+                                   min="0" max="0.5" step="0.01" value="0.1"
+                                   oninput="updateGravity(this.value)" />
+                        </div>
+                        <div class="slider-container">
+                            <label>Charge: <span id="charge-value">-300</span></label>
+                            <input type="range" id="charge-slider"
+                                   min="-1000" max="-50" step="10" value="-300"
+                                   oninput="updateCharge(this.value)" />
+                        </div>
+                        <div class="slider-container">
+                            <label>Link Distance: <span id="link-distance-value">100</span></label>
+                            <input type="range" id="link-distance-slider"
+                                   min="20" max="300" step="10" value="100"
+                                   oninput="updateLinkDistance(this.value)" />
+                        </div>
+                    </div>
+                    <button id="reset-view-btn" onclick="resetView()">Reset View</button>
+                </div>
+
+                <div class="control-section">
+                    <h3>📊 Statistics</h3>
+                    <div id="stats-display" class="stats-display"></div>
+                </div>
+            </div>
+
+            <!-- Center - Visualization -->
+            <div class="visualization-area">
+                <div id="graph-svg-container"></div>
+
+                <!-- Legend -->
+                <div class="legend-panel">
+                    <div class="legend-section">
+                        <h4>Domains</h4>
+                        <div id="domain-legend"></div>
+                    </div>
+                    <div class="legend-section">
+                        <h4>Entity Types</h4>
+                        <div id="type-legend"></div>
+                    </div>
+                    <div class="legend-section">
+                        <h4>Size</h4>
+                        <div class="size-legend">
+                            <div class="size-item">
+                                <svg width="30" height="20">
+                                    <circle cx="10" cy="10" r="3" fill="#999" />
+                                </svg>
+                                <span>Low importance</span>
+                            </div>
+                            <div class="size-item">
+                                <svg width="30" height="20">
+                                    <circle cx="10" cy="10" r="6" fill="#999" />
+                                </svg>
+                                <span>Medium importance</span>
+                            </div>
+                            <div class="size-item">
+                                <svg width="30" height="20">
+                                    <circle cx="10" cy="10" r="9" fill="#999" />
+                                </svg>
+                                <span>High importance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading overlay -->
+                <div id="loading-overlay" class="loading-overlay">
+                    <div class="loader"></div>
+                    <p>Loading knowledge graph...</p>
+                </div>
+            </div>
+
+            <!-- Right sidebar - Entity Details -->
+            <div class="details-panel" id="details-panel">
+                <div class="details-header">
+                    <h3>Entity Details</h3>
+                    <button class="close-btn" onclick="closeDetails()">×</button>
+                </div>
+                <div class="details-content" id="details-content">
+                    <p class="empty-state">Select an entity to view details</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tooltip (positioned absolutely) -->
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- Load D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Load our visualization script -->
+    <script src="KnowledgeGraph.js"></script>
+
+    <script>
+        // View switching functionality
+        function switchView(view) {
+            if (view === 'podcast-map') {
+                window.location.href = '/PodcastMap.html';
+            } else if (view === 'chat') {
+                window.location.href = '/';
+            }
+        }
+    </script>
+</body>
+</html>

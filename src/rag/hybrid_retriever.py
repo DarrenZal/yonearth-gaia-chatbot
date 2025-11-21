@@ -3,7 +3,7 @@ Hybrid retriever combining keyword-based and semantic search
 """
 import logging
 from typing import List, Dict, Any, Optional, Tuple, Set
-from langchain.schema import Document
+from langchain_core.documents import Document
 import re
 
 from .keyword_indexer import KeywordIndexer

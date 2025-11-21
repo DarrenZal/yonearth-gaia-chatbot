@@ -2,6 +2,23 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 📂 Repository Structure
+
+**For complete file-by-file documentation**, see **[REPO_STRUCTURE.md](REPO_STRUCTURE.md)**
+
+This comprehensive guide describes every file in the repository, what it does, and how it fits into the system.
+
+### Quick Navigation
+
+- **Main Chat Flow**: `web/index.html` → `web/chat.js` → `src/api/bm25_endpoints.py` → `src/rag/bm25_chain.py` → `src/character/gaia.py`
+- **Search System**: `src/rag/bm25_hybrid_retriever.py` + `src/rag/semantic_category_matcher.py` + `src/rag/vectorstore.py`
+- **Voice Integration**: `src/voice/elevenlabs_client.py` + `src/api/voice_endpoints.py`
+- **Data Processing**: `src/ingestion/` (episode_processor, book_processor, chunker)
+- **Configuration**: `src/config/settings.py` (centralized settings from .env)
+- **Documentation**: `docs/` (setup, features, deployment guides)
+- **Active Scripts**: `scripts/` (6 utility scripts)
+- **Archived Scripts**: `scripts/archive/` (43 historical scripts organized by category)
+
 ## Development Commands
 
 ### Local Development
@@ -11,30 +28,109 @@ python scripts/start_local.py
 
 # Or manual startup
 uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
-
-# Current production server (simple_server.py on port 80)
-# Web interface available at http://152.53.194.214/
-
-# Production server management (systemd service)
-sudo systemctl status yonearth-gaia      # Check status
-sudo systemctl start yonearth-gaia       # Start service
-sudo systemctl stop yonearth-gaia        # Stop service  
-sudo systemctl restart yonearth-gaia     # Restart service
-sudo systemctl enable yonearth-gaia      # Enable on boot
-
-# View logs
-sudo journalctl -u yonearth-gaia -f      # Follow logs
-sudo journalctl -u yonearth-gaia --since "1 hour ago"
-tail -f /var/log/yonearth-gaia.log       # Direct log file
-
-# Manual management (legacy method)
-python3 simple_server.py                 # Run in foreground
-python3 simple_server.py &               # Run in background (not recommended)
-
-# Service configuration
-# Location: /etc/systemd/system/yonearth-gaia.service
-# Health monitoring: Cron job runs every 5 minutes to check /health endpoint
 ```
+
+### Production Deployment
+
+**⚠️ CRITICAL: Production runs via Docker, NOT system nginx/systemd!**
+
+The production site (https://earthdo.me) is served by Docker containers:
+- **yonearth-nginx** (nginx:alpine) - Serves web files on ports 80/443
+- **yonearth-gaia-chatbot** - FastAPI application on port 8000
+- **yonearth-redis** - Redis cache on port 6379
+
+#### Production Directory Structure
+```bash
+# Development (edit files here)
+/home/claudeuser/yonearth-gaia-chatbot/
+
+# Docker Production Web Files (what Docker nginx serves)
+/opt/yonearth-chatbot/web/          # Static files (HTML, JS, CSS, data/)
+/opt/yonearth-chatbot/nginx.conf    # Docker nginx configuration
+/opt/yonearth-chatbot/ssl/          # SSL certificates
+
+# Legacy/Backup (NOT actively served by Docker)
+/var/www/yonearth/                  # Old system nginx location (data files stored here)
+```
+
+#### Deploying Changes to Production
+
+**1. Frontend changes (HTML/JS/CSS):**
+```bash
+# Copy web files to Docker mount
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.html /opt/yonearth-chatbot/web/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.js /opt/yonearth-chatbot/web/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.css /opt/yonearth-chatbot/web/
+
+# Restart nginx container
+sudo docker restart yonearth-nginx
+```
+
+**2. Backend API changes (Python):**
+```bash
+# Docker containers run from /root/yonearth-gaia-chatbot/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/src/api/*.py /root/yonearth-gaia-chatbot/src/api/
+
+# Restart API container
+sudo docker restart yonearth-gaia-chatbot
+```
+
+**3. Adding new web content (wiki, handbook, data files):**
+```bash
+# IMPORTANT: Docker nginx only serves files from /opt/yonearth-chatbot/web/
+# New directories MUST be copied here to be accessible
+
+# Example: Adding a new wiki or data directory
+sudo cp -r /var/www/yonearth/new-content /opt/yonearth-chatbot/web/
+
+# If special routing needed, edit nginx config:
+sudo nano /opt/yonearth-chatbot/nginx.conf
+
+# Test and restart nginx
+sudo docker exec yonearth-nginx nginx -t
+sudo docker restart yonearth-nginx
+```
+
+**4. Full deployment (backend + frontend):**
+```bash
+# Backend
+sudo cp -r /home/claudeuser/yonearth-gaia-chatbot/src/* /root/yonearth-gaia-chatbot/src/
+
+# Frontend
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/* /opt/yonearth-chatbot/web/
+
+# Restart both containers
+sudo docker restart yonearth-gaia-chatbot yonearth-nginx
+```
+
+#### Production Container Management
+```bash
+# View running containers
+sudo docker ps
+
+# Check logs
+sudo docker logs yonearth-nginx -f
+sudo docker logs yonearth-gaia-chatbot -f
+
+# Restart containers
+sudo docker restart yonearth-nginx
+sudo docker restart yonearth-gaia-chatbot
+
+# Stop/start all services
+cd /root/yonearth-gaia-chatbot
+sudo docker-compose down
+sudo docker-compose up -d
+```
+
+#### ⚠️ Browser Cache-Busting
+When updating JS/CSS files, browsers may cache old versions. To force updates:
+1. Add version query parameter to script/link tags in HTML:
+   ```html
+   <link rel="stylesheet" href="styles.css?v=2">
+   <script src="app.js?v=2"></script>
+   ```
+2. Increment version number (v=2 → v=3) each time you update JS/CSS
+3. This forces browsers to load the new version instead of using cached files
 
 ### Testing
 ```bash
@@ -106,7 +202,7 @@ python3 -m src.ingestion.process_books
 8. **Update BM25 index** to include book content for keyword-based search
 
 **Important Notes:**
-- **Episode location**: Episodes must be in `/data/transcripts/` directory  
+- **Episode location**: Episodes must be in `/data/transcripts/` directory
 - **Episode format**: JSON files with `full_transcript` field
 - **Episode processing time**: ~172 episodes takes 5-10 minutes depending on API limits
 - **Episode output**: Creates 14,000+ text chunks ready for RAG search
@@ -114,6 +210,30 @@ python3 -m src.ingestion.process_books
 - **Book format**: PDF files with corresponding `metadata.json` file
 - **Book processing time**: Depends on book size (~2,000 chunks for 568-page book)
 - **Book output**: Creates book chunks with chapter-level metadata for precise citations
+
+#### ✅ Re-Transcription with Precise Timestamps (COMPLETE)
+
+**Status: All 172 episodes now have word-level timestamps!**
+
+See **[docs/TRANSCRIPTION_SETUP.md](docs/TRANSCRIPTION_SETUP.md)** for complete setup instructions.
+
+**Completed October 2025:**
+- ✅ **172/172 episodes** transcribed with word-level timestamps
+- ✅ **14 episodes** transcribed from YouTube (broken/missing audio URLs)
+  - Episodes: 0, 16, 48, 53, 58, 62, 63, 73, 75, 101, 105, 165, 171, 172
+- ✅ **158 episodes** transcribed from original audio
+- ✅ Only episode #26 missing (doesn't exist in series)
+
+**What This Provides:**
+- **Exact timestamps** for every segment (no estimation)
+- **Word-level timestamps** for ultra-precise navigation
+- **Improved 3D map** - clicking nodes jumps to exact moments in audio
+- **100% coverage** of all publishable episodes
+
+**Implementation Used:**
+- Lightweight Whisper (base model) - timestamps only, lower memory
+- YouTube fallback for episodes with broken audio URLs
+- ~3-4 minutes per episode processing time
 
 **Troubleshooting:**
 ```bash
@@ -138,6 +258,45 @@ python scripts/test_api.py
 - Set `OPENAI_API_KEY` environment variable
 - Set `PINECONE_API_KEY` environment variable
 - Ensure Pinecone index `yonearth-episodes` exists (1536 dimensions, cosine metric)
+
+#### Knowledge Graph Extraction Workflow
+
+**Extract knowledge graph from episode transcripts:**
+```bash
+# Extract entities and relationships from all episodes
+python3 scripts/extract_knowledge_graph_episodes.py
+
+# Extract from specific episodes
+python3 scripts/extract_remaining_7_episodes.py
+
+# Build unified knowledge graph from extractions
+python3 scripts/build_unified_knowledge_graph.py
+```
+
+**Knowledge Graph Extraction Pipeline:**
+1. **Load transcripts** from `/data/transcripts/episode_*.json`
+2. **Chunk transcripts** into 800-token segments with 100-token overlap
+3. **Extract entities** using OpenAI with structured outputs (gpt-4o-mini)
+   - Entity types: PERSON, ORGANIZATION, CONCEPT, PLACE, PRACTICE, PRODUCT, etc.
+   - Pydantic schema validation ensures 100% valid JSON
+4. **Extract relationships** between entities using structured outputs
+   - Relationship types: FOUNDED, WORKS_FOR, PRACTICES, ADVOCATES_FOR, etc.
+   - Context-aware relationship identification
+5. **Store extractions** in `/data/knowledge_graph/entities/` and `/relationships/`
+6. **Build unified graph** combining all episodes into single knowledge graph
+
+**Extraction Performance:**
+- **Model**: gpt-4o-mini (fast, cost-effective)
+- **Rate limiting**: 0.05s delay between API calls (1,200 requests/min)
+- **Speed**: ~30 seconds - 1 minute per episode
+- **Output**: JSON files with entities, relationships, and metadata
+- **Structured Outputs**: Guaranteed valid JSON using Pydantic schemas (no parsing errors)
+
+**Knowledge Graph Output:**
+- **Entity files**: `/data/knowledge_graph/entities/episode_*_extraction.json`
+- **Relationship files**: `/data/knowledge_graph/relationships/episode_*_extraction.json`
+- **Unified graph**: `/data/knowledge_graph/graph/unified_knowledge_graph.json`
+- **Total episodes**: 172 (0-172, excluding #26)
 
 ## Architecture Overview
 
@@ -185,6 +344,10 @@ This is a **Dual RAG Chatbot** that allows users to chat with "Gaia" (the spirit
 - `index.html`: Beautiful responsive chat interface with personality selection
 - `chat.js`: Advanced JavaScript with dual search modes, smart recommendations, custom prompts
 - `styles.css`: Earth-themed CSS with comparison views and responsive design
+
+**Deployment** (`/etc/systemd/system/`):
+- `yonearth-api.service`: Systemd service for production uvicorn management
+- Nginx configuration: `/etc/nginx/sites-enabled/yonearth`
 
 ### Dual Search Architecture
 
@@ -266,7 +429,7 @@ The system provides two complementary RAG approaches:
 
 **Voice System**:
 - `src/voice/elevenlabs_client.py`: ElevenLabs TTS client with text preprocessing
-- `simple_server.py`: Production server with voice generation support
+- Voice integration available via `/api/chat` endpoint with `enable_voice` parameter
 
 **Web Interface**:
 - `web/chat.js`: Advanced frontend with dual search, smart recommendations, voice playback
@@ -349,20 +512,127 @@ Both RAG systems are designed to solve the citation hallucination problem. Test 
 - **Result**: VIRIDITAS book now correctly shows "Chapter 30: Gaia Speaks" instead of wrong page numbers
 - **Affected Methods**: `_extract_episode_references`, `_format_sources`, `search_episodes`, and `_format_comparison_result` in `bm25_chain.py`
 
+## Podcast Episode Visualization Maps
+
+The system provides multiple interactive 2D visualizations of podcast episode embeddings, each using different dimensionality reduction algorithms. All maps use **6000 text chunks from 170 episodes** (standardized for fair comparison).
+
+### Available Visualizations
+
+#### 1. **t-SNE Map** (`/PodcastMap.html`)
+- **Algorithm**: t-SNE (t-Distributed Stochastic Neighbor Embedding)
+- **Parameters**:
+  - `perplexity=30`: Balance between local and global structure
+  - `n_iter=1000`: Number of optimization iterations
+  - `n_clusters=9`: K-means clustering for topic groups
+- **Script**: `scripts/archive/visualization/generate_map_semantic_topics.py`
+- **Best For**: Discovering local cluster structures and fine-grained topic boundaries
+- **Output**: `/data/processed/podcast_map_data.json`
+
+#### 2. **UMAP Map** (`/PodcastMapUMAP.html`) ✨ **Interactive Parameters**
+- **Algorithm**: UMAP (Uniform Manifold Approximation and Projection)
+- **Default Parameters**:
+  - `n_points=6000`: Number of text chunks to visualize
+  - `n_neighbors=15`: Controls local vs. global structure (5-200)
+  - `min_dist=0.1`: Minimum distance between points (0.0-0.99)
+  - `n_epochs=500`: Optimization iterations
+  - `n_clusters=9`: K-means clustering for topics
+- **Interactive Controls**: Users can adjust `n_points`, `min_dist`, and `n_neighbors` in the UI
+  - Higher `n_neighbors` (50-100): Pulls clusters closer together globally
+  - Higher `min_dist` (0.3-0.5): Spreads points more evenly
+  - Fewer points (3000): Cleaner aesthetics with tighter clusters
+- **Script**: `scripts/archive/visualization/generate_map_umap_topics.py`
+- **API Endpoints**:
+  - `POST /api/regenerate_umap`: Trigger UMAP generation with custom parameters
+  - `GET /api/umap_generation_status`: Poll generation progress
+- **Best For**: Preserving global structure while maintaining local relationships
+- **Output**: `/data/processed/podcast_map_umap_data.json`
+- **Features**: Real-time progress monitoring, automatic page refresh on completion
+
+#### 3. **Hierarchical Map** (`/PodcastMapHierarchical.html`)
+- **Algorithm**: UMAP with hierarchical clustering
+- **Parameters**:
+  - `n_neighbors=15`
+  - `min_dist=0.1`
+  - `n_clusters_level1=3`: Top-level categories
+  - `n_clusters_level2=9`: Mid-level topics
+  - `n_clusters_level3=27`: Fine-grained subtopics
+- **Script**: `scripts/archive/visualization/generate_map_hierarchical.py`
+- **Best For**: Exploring topic hierarchies and nested relationships
+- **Output**: `/data/processed/podcast_map_hierarchical_data.json`
+
+#### 4. **Nomic Atlas Map** (`/PodcastMapNomic.html`)
+- **Algorithm**: Nomic's proprietary UMAP implementation with automatic topic modeling
+- **Parameters**:
+  - `n_points=6000`: Standardized dataset size
+  - Automatic hierarchical topic detection
+- **Script**: `scripts/archive/visualization/upload_to_nomic_atlas.py`
+- **Best For**: Cloud-based visualization with automatic topic labeling
+- **Output**: `/data/processed/nomic_projections.json`
+- **Features**: Hosted on Nomic Atlas cloud, automatic topic hierarchies
+
+### UMAP Parameter Effects
+
+**`n_neighbors`** (Number of Neighbors):
+- **5-15**: Emphasizes local structure, creates tight small clusters
+- **50-100**: Emphasizes global structure, pulls clusters closer together
+- **Effect**: Higher values reduce gaps between distant clusters (e.g., "Accounting" cluster gap)
+
+**`min_dist`** (Minimum Distance):
+- **0.0-0.1**: Points cluster very tightly, clumped appearance
+- **0.3-0.5**: Points spread more evenly, looser clusters
+- **Effect**: Higher values create more aesthetically balanced layouts
+
+**`n_points`** (Number of Data Points):
+- **3000**: Faster generation (~2min), cleaner aesthetics, fewer outliers
+- **6000**: Better content coverage (~3min), more comprehensive but may have outlier clusters
+- **Effect**: Fewer points often produce more visually pleasing layouts
+
+### Visualization Generation Workflow
+
+1. **Fetch vectors** from Pinecone with embeddings
+2. **Apply dimensionality reduction** (t-SNE, UMAP, or Hierarchical UMAP)
+3. **Cluster** using K-means or hierarchical clustering
+4. **Label clusters** using GPT-4 based on representative chunks
+5. **Save** to `/data/processed/` as JSON
+6. **Serve** via API endpoints for web visualization
+
+### Common Visualization Tasks
+
+**Regenerate UMAP with custom parameters**:
+```bash
+# Via environment variables
+MAX_VECTORS=3000 UMAP_MIN_DIST=0.4 UMAP_N_NEIGHBORS=75 \
+python3 scripts/archive/visualization/generate_map_umap_topics.py
+```
+
+**Upload new dataset to Nomic Atlas**:
+```bash
+python3 scripts/archive/visualization/upload_to_nomic_atlas.py
+```
+
+**Generate hierarchical visualization**:
+```bash
+python3 scripts/archive/visualization/generate_map_hierarchical.py
+```
+
 ## Deployment Notes
 
 - **VPS**: Use `./deploy.sh` for complete Docker setup with nginx, SSL, Redis
-- **Render**: Use `render.yaml` blueprint for cloud deployment  
+- **Render**: Use `render.yaml` blueprint for cloud deployment
 - **Local**: Use `scripts/start_local.py` for development
 
 ### Current Production Status
 
-**Active Deployment**: `simple_server.py` running on port 80
+**Active Deployment**: Nginx + Uvicorn + Systemd
 - **URL**: http://152.53.194.214/
-- **Purpose**: Workaround for Docker Pydantic validation issues
-- **Features**: Full web interface + working API endpoints (/chat, /api/chat, /api/bm25/chat)
+- **Architecture**:
+  - Nginx (port 80): Serves static files and proxies API requests
+  - Uvicorn (port 8000): FastAPI with 4 workers
+  - Systemd service: `yonearth-api` (auto-restart, boot persistence)
+- **Features**: Full web interface + working API endpoints (/api/chat, /api/bm25/chat)
 - **Vector Database**: 18,764+ vectors (episodes + books combined)
 - **Book Integration**: All 3 books successfully processed and searchable
+- **Episode Coverage**: 172 episodes (0-172, excluding #26)
 
 ## Technical Innovation
 
@@ -398,12 +668,13 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 
 ## Current System Status
 
-**System Health (2025-08-29)**:
+**System Health (2025-10-07)**:
+- **Transcription Dataset**: ✅ **172/172 episodes with word-level timestamps (100% complete)**
 - **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
 - **Category Embeddings**: 24 semantic category embeddings cached locally
 - **Book Integration**: 3 books fully processed with correct chapter references
   - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
-  - Soil Stewardship Handbook (136 chunks)  
+  - Soil Stewardship Handbook (136 chunks)
   - Y on Earth: Get Smarter, Feel Better, Heal the Planet (2,124 chunks)
 - **Search Methods**: Both Original RAG and BM25 Hybrid with semantic category matching
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
@@ -413,6 +684,11 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - **API Endpoints**: Full REST API with both original and BM25 endpoints + voice generation support
 
 **Recent Achievements**:
+- ✅ **COMPLETE: All 172 episodes re-transcribed with word-level timestamps (2025-10-07)**
+  - 14 episodes transcribed from YouTube fallback (broken/missing audio)
+  - 158 episodes transcribed from original audio
+  - 100% coverage of all publishable episodes
+  - Ready for 3D map navigation with precise timestamps
 - ✅ Fixed book chapter reference mapping for accurate citations
 - ✅ Dual RAG system (Original + BM25) fully operational
 - ✅ Multi-content search across episodes AND books

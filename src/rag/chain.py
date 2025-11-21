@@ -2,14 +2,17 @@
 RAG chain implementation connecting retrieval, character, and generation
 """
 import logging
+import time
 from typing import List, Dict, Any, Optional, Tuple
-from langchain.schema import Document
+from collections import defaultdict
+from langchain_core.documents import Document
 
 from ..config import settings
 from ..character.gaia import GaiaCharacter
 from .vectorstore import YonEarthVectorStore, create_vectorstore
 from .hybrid_retriever import HybridRetriever
 from ..ingestion.process_episodes import process_episodes_for_ingestion
+from .graph_retriever import GraphRetriever, GraphRetrievalResult
 
 logger = logging.getLogger(__name__)
 
@@ -20,9 +23,10 @@ class YonEarthRAGChain:
     def __init__(self, initialize_data: bool = False):
         self.vectorstore = None
         self.hybrid_retriever = None
+        self.graph_retriever = None
         self.gaia = None
         self.is_initialized = False
-        
+
         if initialize_data:
             self.initialize()
     
@@ -47,8 +51,18 @@ class YonEarthRAGChain:
             # Step 3: Initialize hybrid retriever
             logger.info("Setting up hybrid retriever...")
             self.hybrid_retriever = HybridRetriever(self.vectorstore)
-            
-            # Step 4: Initialize Gaia character
+
+            # Step 4: Initialize graph retriever if enabled
+            if settings.enable_graph_retrieval:
+                logger.info("Setting up graph retriever...")
+                try:
+                    self.graph_retriever = GraphRetriever(max_edges=settings.graph_max_edges)
+                    logger.info("Graph retriever initialized successfully")
+                except Exception as e:
+                    logger.warning(f"Could not initialize graph retriever: {e}. Continuing with hybrid retrieval only.")
+                    self.graph_retriever = None
+
+            # Step 5: Initialize Gaia character
             logger.info("Initializing Gaia character...")
             self.gaia = GaiaCharacter()
             
@@ -86,10 +100,37 @@ class YonEarthRAGChain:
                 query=user_input,
                 k=k
             )
-            
+
             # Extract documents and scores
             docs = [doc for doc, score in retrieved_docs]
             scores = [score for doc, score in retrieved_docs]
+
+            # Step 1b: Optionally retrieve using graph if enabled
+            graph_evidence = []
+            graph_retrieval_ms = 0
+            if settings.enable_graph_retrieval and self.graph_retriever:
+                try:
+                    graph_start = time.time()
+                    graph_result = self.graph_retriever.retrieve(
+                        query=user_input,
+                        k=settings.graph_retrieval_k
+                    )
+
+                    # Merge graph chunks with hybrid results using RRF
+                    docs, scores = self._merge_retrieval_results(
+                        hybrid_docs=list(zip(docs, scores)),
+                        graph_docs=graph_result.chunks,
+                        k=k
+                    )
+
+                    # Store graph evidence (triples) for context with capping
+                    graph_evidence = self._cap_evidence(graph_result.triples)
+                    graph_retrieval_ms = int((time.time() - graph_start) * 1000)
+
+                    logger.info(f"Graph retrieval: {len(graph_result.chunks)} chunks, {len(graph_evidence)} triples (capped from {len(graph_result.triples)}) in {graph_retrieval_ms}ms")
+
+                except Exception as e:
+                    logger.warning(f"Graph retrieval failed: {e}. Using hybrid retrieval only.")
             
             # Step 2: Create Gaia instance with the specified model if different
             gaia_instance = self.gaia
@@ -115,7 +156,10 @@ class YonEarthRAGChain:
             response.update({
                 "retrieval_scores": scores,
                 "query": user_input,
-                "retrieval_count": len(docs)
+                "retrieval_count": len(docs),
+                "graph_evidence": graph_evidence if graph_evidence else [],
+                "graph_evidence_count": len(graph_evidence),
+                "graph_retrieval_ms": graph_retrieval_ms
             })
             
             logger.info(f"Successfully processed query with {len(docs)} retrieved documents")
@@ -131,6 +175,96 @@ class YonEarthRAGChain:
                 "citations": []
             }
     
+    def _merge_retrieval_results(
+        self,
+        hybrid_docs: List[Tuple[Document, float]],
+        graph_docs: List[Document],
+        k: int
+    ) -> Tuple[List[Document], List[float]]:
+        """Merge hybrid and graph retrieval results using Reciprocal Rank Fusion"""
+
+        # Create rank maps
+        hybrid_ranks = {}
+        for rank, (doc, score) in enumerate(hybrid_docs):
+            doc_id = doc.metadata.get('chunk_id', doc.page_content[:50])
+            hybrid_ranks[doc_id] = rank + 1
+
+        graph_ranks = {}
+        for rank, doc in enumerate(graph_docs):
+            doc_id = doc.metadata.get('chunk_id', doc.page_content[:50])
+            graph_ranks[doc_id] = rank + 1
+
+        # Combine all documents
+        all_docs = {}
+        for doc, score in hybrid_docs:
+            doc_id = doc.metadata.get('chunk_id', doc.page_content[:50])
+            all_docs[doc_id] = (doc, score)
+
+        for doc in graph_docs:
+            doc_id = doc.metadata.get('chunk_id', doc.page_content[:50])
+            if doc_id not in all_docs:
+                all_docs[doc_id] = (doc, 0.0)
+
+        # Calculate RRF scores
+        rrf_scores = {}
+        k_rrf = 60  # Standard RRF constant
+
+        for doc_id in all_docs:
+            hybrid_rank = hybrid_ranks.get(doc_id, 1000)
+            graph_rank = graph_ranks.get(doc_id, 1000)
+
+            # Weight hybrid slightly more than graph
+            rrf_score = (0.6 / (k_rrf + hybrid_rank)) + (0.4 / (k_rrf + graph_rank))
+            rrf_scores[doc_id] = rrf_score
+
+        # Sort by RRF score and return top k
+        sorted_docs = sorted(rrf_scores.items(), key=lambda x: x[1], reverse=True)[:k]
+
+        result_docs = []
+        result_scores = []
+        for doc_id, rrf_score in sorted_docs:
+            doc, original_score = all_docs[doc_id]
+            result_docs.append(doc)
+            result_scores.append(rrf_score)
+
+        return result_docs, result_scores
+
+    def _cap_evidence(self, triples: List[Dict[str, Any]],
+                     min_confidence: float = None,
+                     max_per_predicate: int = None,
+                     max_total: int = None) -> List[Dict[str, Any]]:
+        """Cap evidence to high-confidence assertions and limit per predicate"""
+
+        # Use settings if not provided
+        min_confidence = min_confidence or settings.graph_evidence_min_confidence
+        max_per_predicate = max_per_predicate or settings.graph_evidence_per_predicate
+        max_total = max_total or settings.graph_evidence_max_total
+
+        # Filter by confidence
+        high_confidence = [t for t in triples if t.get('p_true', 0) >= min_confidence]
+
+        # Group by predicate
+        by_predicate = defaultdict(list)
+        for triple in high_confidence:
+            by_predicate[triple.get('predicate', 'unknown')].append(triple)
+
+        # Cap per predicate and collect results
+        capped = []
+        for predicate, predicate_triples in by_predicate.items():
+            # Sort by confidence and take top N per predicate
+            sorted_triples = sorted(predicate_triples,
+                                   key=lambda x: x.get('p_true', 0),
+                                   reverse=True)
+            capped.extend(sorted_triples[:max_per_predicate])
+
+        # Final cap on total
+        capped = sorted(capped, key=lambda x: x.get('p_true', 0), reverse=True)[:max_total]
+
+        # Log for analysis
+        logger.debug(f"Evidence capping: {len(triples)} -> {len(high_confidence)} (confidence) -> {len(capped)} (capped)")
+
+        return capped
+
     def get_episode_recommendations(
         self, 
         user_input: str, 

@@ -14,7 +14,8 @@ class Settings(BaseSettings):
     model_config = SettingsConfigDict(
         env_file='.env',
         env_file_encoding='utf-8',
-        case_sensitive=False
+        case_sensitive=False,
+        extra='ignore'  # Ignore extra fields in .env
     )
     
     # OpenAI Configuration
@@ -75,6 +76,16 @@ class Settings(BaseSettings):
     elevenlabs_model_id: str = Field(default="eleven_multilingual_v2", description="ElevenLabs model ID")
     enable_voice_generation: bool = Field(default=False, description="Enable voice generation for responses")
     
+    # Knowledge Graph Configuration
+    enable_graph_retrieval: bool = Field(default=True, description="Enable GraphRAG retrieval alongside hybrid search")
+    graph_max_edges: int = Field(default=50, description="Maximum edges to expand in graph retrieval")
+    graph_retrieval_k: int = Field(default=20, description="Number of graph chunks to retrieve")
+
+    # Evidence Capping Configuration
+    graph_evidence_max_total: int = Field(default=10, description="Maximum total evidence triples to include")
+    graph_evidence_min_confidence: float = Field(default=0.6, description="Minimum p_true for evidence inclusion")
+    graph_evidence_per_predicate: int = Field(default=2, description="Maximum evidence examples per predicate type")
+
     # Paths
     @property
     def project_root(self) -> Path:

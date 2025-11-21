@@ -14,8 +14,9 @@ logger = logging.getLogger(__name__)
 
 class Episode:
     """Represents a podcast episode with metadata and content"""
-    
+
     def __init__(self, data: Dict[str, Any]):
+        self.data = data  # Store raw data for access to segments
         self.episode_number = data.get("episode_number", "unknown")
         self.title = data.get("title", "")
         self.subtitle = data.get("subtitle", "")

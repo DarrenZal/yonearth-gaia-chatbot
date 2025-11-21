@@ -5,7 +5,7 @@ import logging
 from typing import List, Dict, Any, Optional, Tuple
 from langchain_openai import OpenAIEmbeddings
 from langchain_pinecone import PineconeVectorStore
-from langchain.schema import Document
+from langchain_core.documents import Document
 import tiktoken
 
 from ..config import settings
@@ -34,8 +34,11 @@ class YonEarthVectorStore:
             text_key="text"
         )
         
-        # Token counter for cost estimation
-        self.encoding = tiktoken.encoding_for_model(settings.openai_embedding_model)
+        # Token counter for cost estimation (fallback to cl100k_base if model not mapped)
+        try:
+            self.encoding = tiktoken.encoding_for_model(settings.openai_embedding_model)
+        except Exception:
+            self.encoding = tiktoken.get_encoding("cl100k_base")
         
     def estimate_embedding_cost(self, documents: List[Document]) -> Dict[str, Any]:
         """Estimate the cost of embedding documents"""
