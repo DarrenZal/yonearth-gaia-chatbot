@@ -1,104 +1,27 @@
 # GraphRAG 3D Embedding View - Design Document
 
-**Status**: Phase 1B Complete, Phase 1A Partial (UMAP pending)
+**Status**: Frontend updated for discourse graph + Leiden communities (backend GraphRAG job running)
 **Author**: Claude Code
 **Date**: November 2025
-**Version**: 1.1
-**Last Updated**: November 20, 2025
+**Version**: 1.2
+**Last Updated**: November 22, 2025
 
 ---
 
-## 🎯 Implementation Status (November 20, 2025)
+## 🎯 Implementation Status (November 22, 2025)
 
-### ✅ Phase 1B: Frontend - COMPLETE
+### ✅ Frontend: GraphRAG 3D Embedding View
+- CLAIM entity type added (pink) with filter toggle
+- Betweenness centrality color mode (blue → yellow → red) toggle in controls
+- Relationship strength-driven edges (thickness/opacity) plus dashed pink `MAKES_CLAIM` attribution edges
+- Leiden hierarchy summary surfaced in UI (L2/L1/L0 counts; legacy L3 shown when present)
+- Cluster membranes, hover info, FPS/visible counters retained
+- Backward-compatible with PCA-only datasets (gracefully handles missing betweenness/strengths)
 
-**Production Deployed:** https://earthdo.me/graph/GraphRAG3D_EmbeddingView.html
-
-**Files Created:**
-- `web/graph/GraphRAG3D_EmbeddingView.html` - Complete UI with controls, search, keyboard shortcuts
-- `web/graph/GraphRAG3D_EmbeddingView.js` - Full visualization with Fresnel shaders
-
-**Features Implemented:**
-- ✅ Three.js scene setup with OrbitControls
-- ✅ **Fresnel shader cluster membranes** (cellular aesthetic with depth fade)
-- ✅ Entity node rendering (39,054 entities capable)
-- ✅ Cluster ellipsoid fitting algorithm (3 hierarchy levels)
-- ✅ Hover interactions with entity info panel
-- ✅ Entity type filtering (8 types with color coding)
-- ✅ Mode switching UI (Embedding/Force)
-- ✅ Keyboard shortcuts (E/F/ESC/Ctrl+K)
-- ✅ Performance monitoring (FPS counter, visible entity count)
-- ✅ Loading screen with progress indicator
-- ✅ Responsive design with collapsible panels
-
-**Current Data Source:**
-- Using existing PCA positions from `data/graphrag_hierarchy/graphrag_hierarchy.json`
-- Works perfectly with 39,054 entities
-- Achieves 60 FPS with all entities visible
-
-### ⏸️ Phase 1A: Backend - PARTIAL (UMAP Pending)
-
-**Completed:**
-- ✅ `scripts/compute_graphrag_umap_embeddings.py` - Full pipeline script
-- ✅ `scripts/compute_graphrag_umap_embeddings_test.py` - Test version (100 entities)
-- ✅ Graph-enriched embedding generation (39,046 embeddings created)
-- ✅ Test validation with 100 sample entities
-
-**Blocked by Memory Constraint:**
-- ❌ UMAP 3D computation requires 16GB+ RAM (server has 8GB)
-- ❌ Betweenness centrality computation (depends on UMAP completion)
-- ❌ Relationship strength weights (depends on UMAP completion)
-
-**What Happened:**
-1. Embeddings generated successfully for all 39,046 entities
-2. UMAP process killed by OOM (Out of Memory) killer during dimensionality reduction
-3. System ran out of RAM (6.9Gi / 7.8Gi used, only 174Mi free)
-4. Log: `logs/umap_full_20251120_061315.log`
-
-### 🔄 Next Session TODO (After 16GB RAM Upgrade)
-
-**Step 1: Complete UMAP Computation**
-
-Run the full UMAP script (will now have enough memory):
-```bash
-# Create logs directory
-mkdir -p logs
-
-# Run UMAP computation (will take ~30-40 minutes)
-nohup bash -c 'set -a && source .env && set +a && python3 scripts/compute_graphrag_umap_embeddings.py' > logs/umap_full_$(date +%Y%m%d_%H%M%S).log 2>&1 &
-
-# Monitor progress
-tail -f logs/umap_full_*.log
-```
-
-**Expected Output:**
-- Updated `data/graphrag_hierarchy/graphrag_hierarchy.json` with:
-  - `umap_position: [x, y, z]` for each entity (replaces PCA)
-  - `betweenness: 0.0-1.0` centrality scores
-  - `relationship_strengths: {target: weight}` for edges
-- Backup: `data/graphrag_hierarchy/graphrag_hierarchy_backup_pre_umap.json`
-- File size: ~48-50MB
-
-**Step 2: Deploy Full UMAP Dataset to Production**
-```bash
-# Copy updated hierarchy to production
-sudo cp data/graphrag_hierarchy/graphrag_hierarchy.json \
-        /opt/yonearth-chatbot/web/data/graphrag_hierarchy/
-
-# Set permissions
-sudo chown www-data:www-data /opt/yonearth-chatbot/web/data/graphrag_hierarchy/graphrag_hierarchy.json
-sudo chmod 644 /opt/yonearth-chatbot/web/data/graphrag_hierarchy/graphrag_hierarchy.json
-
-# Verify
-curl -s -o /dev/null -w "%{http_code}" https://earthdo.me/data/graphrag_hierarchy/graphrag_hierarchy.json
-# Should return 200
-```
-
-**Step 3: Test Full Dataset Rendering**
-1. Open https://earthdo.me/graph/GraphRAG3D_EmbeddingView.html
-2. Verify all 39,054 entities load with UMAP positions
-3. Check FPS (should maintain 60 FPS)
-4. Test betweenness centrality coloring (if implemented)
+### 🔄 Backend: GraphRAG + Discourse Graph (Leiden)
+- `scripts/build_proper_graphrag.py` running with Leiden L0/L1/L2 communities, UMAP positions, betweenness, and `relationship_strengths`
+- Discourse graph data included: CLAIM nodes and `MAKES_CLAIM` attribution edges
+- Testing still uses `data/graphrag_hierarchy/graphrag_hierarchy.json` (PCA) until the Leiden run finishes; metadata now reports `clustering_method: hierarchical_leiden`
 
 ### 📋 Remaining Work (Phase 2 & 3)
 
@@ -118,21 +41,19 @@ curl -s -o /dev/null -w "%{http_code}" https://earthdo.me/data/graphrag_hierarch
 
 **Phase 4: Advanced Features** (Optional)
 - [ ] Search with autocomplete
-- [ ] Betweenness centrality color mode toggle
+- [x] Betweenness centrality color mode toggle
 - [ ] Cluster navigation (click membrane → zoom to cluster)
 - [ ] Export view/screenshot functionality
 - [ ] Animation of graph growth over time (if temporal data available)
 
 ### 🐛 Known Issues
 
-1. **Memory Limitation (RESOLVED AFTER 16GB UPGRADE)**
-   - UMAP requires more RAM than 8GB system provides
-   - Workaround: Using PCA positions until upgrade
+1. **Leiden export in progress**
+   - `build_proper_graphrag.py` is running; PCA hierarchy remains the public fixture until the new file lands
+   - Validate betweenness/relationship_strengths fields once the export finishes
 
-2. **Edge Rendering Disabled**
-   - 43,297 edges not rendered in default embedding view (intentional)
-   - Will be enabled in Context Lens and Force modes only
-   - Rendering all edges tanks FPS to <10
+2. **Edge density performance**
+   - Relationship rendering is enabled; very dense neighborhoods may still benefit from future edge LOD/toggles
 
 3. **Search Not Fully Implemented**
    - UI present but autocomplete not hooked up
@@ -194,11 +115,11 @@ Text Embeddings (name + description + [future: key relationships])
     ↓
 Dimensionality Reduction (UMAP → 3D positions)
     ↓
-Hierarchical Clustering (7 → 30 → 300 → 39,054)
+Leiden Communities (L2 → L1 → L0)
     ↓
 Bridge Scoring (Betweenness Centrality for interdisciplinary nodes)
     ↓
-GraphRAG Hierarchy JSON (49MB)
+GraphRAG Hierarchy JSON (Leiden L2/L1/L0)
     ↓
 3D Visualization (Dual Modes + Context Lens)
     ├─ Fixed Embedding View (global semantic structure)
@@ -208,25 +129,30 @@ GraphRAG Hierarchy JSON (49MB)
 
 ### Current Data Assets
 
-**Available Now** (`data/graphrag_hierarchy/graphrag_hierarchy.json`):
-- 39,054 entities with metadata (type, description, sources)
-- 43,297 relationships (edges between entities)
-- 4-level hierarchical clustering:
-  - **Level 3**: 7 top-level categories
-  - **Level 2**: 30 coarse clusters
-  - **Level 1**: 300 fine clusters
-  - **Level 0**: 39,054 individual entities
-- **3D PCA positions** for all entities (currently computed)
+**Available Now (PCA fallback while Leiden export runs)** (`data/graphrag_hierarchy/graphrag_hierarchy.json`):
+- 39,054 entities with metadata (type, description, sources); discourse CLAIM nodes now allowed
+- 43,297 relationships (includes `MAKES_CLAIM` attribution edges)
+- Leiden community tiers stored in legacy keys for compatibility:
+  - **L2** (coarse communities) → stored at `clusters.level_2`
+  - **L1** (fine communities) → stored at `clusters.level_1`
+  - **L0** (entities) → stored at `clusters.level_0`
+- Positions: PCA today; new export will provide UMAP positions, `betweenness`, and `relationship_strengths`
 
-**Phase 1 Enhancements** (to be computed):
-- **UMAP 3D positions** (preserves local neighborhood structure better than PCA)
-- **Betweenness centrality scores** (identifies "bridge" nodes connecting disparate domains)
-- **Graph-enriched embeddings** (entity + neighborhood context)
-- **Relationship strength weights** (based on co-occurrence frequency)
+**Leiden Export (running via `scripts/build_proper_graphrag.py`):**
+- UMAP 3D positions + betweenness centrality + per-entity `relationship_strengths`
+- Metadata: `clustering_method: hierarchical_leiden` with L0/L1/L2 resolutions
+- Discourse graph integration: CLAIM nodes + `MAKES_CLAIM` edges included in relationships
 
 **Future Extensions**:
 - Temporal evolution data (animate graph growth over time)
 - Community detection overlays (Louvain/Leiden algorithms)
+
+### Discourse Graph Features
+
+- CLAIM entities render as pink nodes with standard filters and stats
+- `MAKES_CLAIM` attribution edges draw as dashed pink lines; relationship strength drives thickness and opacity
+- Betweenness centrality toggle supports discourse nodes alongside existing entity types
+- Data source: generated by `build_proper_graphrag.py` alongside the Leiden community hierarchy
 
 ## Design Decisions
 
@@ -1371,42 +1297,71 @@ async function loadProgressively() {
 ```json
 {
   "entities": {
-    "Aaron Perry": {
+    "person_1": {
       "type": "PERSON",
-      "description": "Author of VIRIDITAS novel",
-      "sources": ["episode_120", "veriditas"],
+      "description": "Founder of YonEarth",
+      "sources": ["episode_120"],
       "original_type": "PERSON"
+    },
+    "claim_1": {
+      "type": "CLAIM",
+      "description": "Regenerative agriculture improves soil health",
+      "sources": ["episode_120"]
     }
   },
   "relationships": [
     {
-      "source": "Aaron Perry",
-      "target": "VIRIDITAS",
-      "type": "AUTHORED",
+      "source": "person_1",
+      "target": "claim_1",
+      "type": "MAKES_CLAIM",
+      "weight": 0.85,
       "sources": ["episode_120"]
     }
   ],
   "clusters": {
-    "level_0": {
-      "cluster_0_0": {
-        "id": "cluster_0_0",
+    "L0": {
+      "person_1": {
+        "id": "person_1",
         "type": "entity",
-        "entity": "Aaron Perry",
-        "embedding_idx": 0,
-        "position": [310.7, -76.9, 40.6]
+        "entity": "person_1",
+        "position": [310.7, -76.9, 40.6],
+        "umap_position": [310.7, -76.9, 40.6],
+        "betweenness": 0.18,
+        "relationship_strengths": {
+          "claim_1": 0.85
+        }
+      },
+      "claim_1": {
+        "id": "claim_1",
+        "type": "entity",
+        "entity": "claim_1",
+        "position": [308.4, -75.0, 42.0],
+        "umap_position": [308.4, -75.0, 42.0],
+        "betweenness": 0.12,
+        "relationship_strengths": {}
       }
     },
-    "level_1": {
-      "cluster_1_5": {
-        "id": "cluster_1_5",
+    "L1": {
+      "community_12": {
+        "id": "community_12",
         "type": "fine_cluster",
-        "children": ["cluster_0_0", "cluster_0_1", ...],
-        "position": [305.2, -80.1, 38.9]
+        "children": ["person_1", "claim_1"],
+        "position": [309.5, -75.8, 41.2]
+      }
+    },
+    "L2": {
+      "community_2": {
+        "id": "community_2",
+        "type": "coarse_cluster",
+        "children": ["community_12"],
+        "position": [300.0, -70.0, 38.0]
       }
     }
   }
 }
 ```
+
+Legacy exports may still use `level_0`/`level_1`/`level_2`/`level_3` keys; the frontend tolerates both naming schemes while the Leiden pipeline standardizes on `L0`/`L1`/`L2`.
 
 ### Glossary
 
