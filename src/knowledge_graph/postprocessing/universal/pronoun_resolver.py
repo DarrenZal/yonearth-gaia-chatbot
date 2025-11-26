@@ -477,7 +477,7 @@ class PronounResolver(PostProcessingModule):
 
     def resolve_pronouns(self, rel: Any) -> Any:
         """Resolve pronouns in a single relationship"""
-        page_num = rel.evidence.get('page_number', 0)
+        page_num = rel.evidence.get('page_number', 0) if rel.evidence else 0
         evidence_text = rel.evidence_text
 
         # Resolve source

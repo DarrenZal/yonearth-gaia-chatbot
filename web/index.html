@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat with Gaia - YonEarth Community</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css?v=5">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -21,118 +21,132 @@
 
             <!-- Navigation Links -->
             <div class="header-nav">
-                <a href="/PodcastMap.html" class="nav-link">📍 Podcast Map</a>
-                <a href="/KnowledgeGraph.html" class="nav-link">🕸️ Knowledge Graph</a>
-                <a href="/ClusterMap3D.html" class="nav-link">🧭 Semantic Clusters</a>
-                <a href="/wiki/" class="nav-link">📚 Wiki</a>
+                <a href="podcast/" class="nav-link">🌐 3D Podcast Map</a>
+                <a href="graph/" class="nav-link">🕸️ Knowledge Graph</a>
             </div>
             
-            <!-- Personality Selector -->
-            <div class="personality-selector">
-                <label for="personality">Gaia's Voice:</label>
-                <select id="personality">
-                    <option value="warm_mother">Nurturing Mother</option>
-                    <option value="wise_guide">Ancient Sage</option>
-                    <option value="earth_activist">Earth Guardian</option>
-                    <option value="custom">Custom</option>
-                </select>
-                <a href="#" id="personalityDetails" class="details-link">details</a>
-            </div>
-            
-            <!-- Personality Details -->
-            <div id="personalityDetailsSection" class="personality-details" style="display: none;">
-                <div class="details-content">
-                    <h4 id="personalityTitle">About this Voice</h4>
-                    <div id="personalityPrompt" class="prompt-text"></div>
-                    <textarea id="customPromptEditor" class="custom-prompt-editor" style="display: none;" 
-                        placeholder="Enter your custom system prompt for Gaia here..."></textarea>
-                    <div id="customPromptActions" class="custom-prompt-actions" style="display: none;">
-                        <button id="saveCustomPrompt" class="save-button">Save Custom Prompt</button>
-                        <button id="resetCustomPrompt" class="reset-button">Reset to Default</button>
+            <!-- Controls toggle -->
+            <button id="controlsToggle" class="controls-toggle" aria-expanded="false" aria-controls="chatControls" style="display: none;">
+                <span class="controls-toggle-icon">⚙️</span>
+                <span id="controlsToggleText">Show settings</span>
+            </button>
+
+            <!-- Collapsible chat controls -->
+            <div id="chatControls" class="chat-controls">
+                <!-- Personality Selector -->
+                <div class="personality-selector">
+                    <label for="personality">Gaia's Voice:</label>
+                    <select id="personality">
+                        <option value="warm_mother">Nurturing Mother</option>
+                        <option value="wise_guide">Ancient Sage</option>
+                        <option value="earth_activist">Earth Guardian</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                    <a href="#" id="personalityDetails" class="details-link">details</a>
+                </div>
+                
+                <!-- Personality Details -->
+                <div id="personalityDetailsSection" class="personality-details" style="display: none;">
+                    <div class="details-content">
+                        <h4 id="personalityTitle">About this Voice</h4>
+                        <div id="personalityPrompt" class="prompt-text"></div>
+                        <textarea id="customPromptEditor" class="custom-prompt-editor" style="display: none;" 
+                            placeholder="Enter your custom system prompt for Gaia here..."></textarea>
+                        <div id="customPromptActions" class="custom-prompt-actions" style="display: none;">
+                            <button id="saveCustomPrompt" class="save-button">Save Custom Prompt</button>
+                            <button id="resetCustomPrompt" class="reset-button">Reset to Default</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Model Selector -->
-            <div class="model-selector">
-                <div>
-                    <label for="modelType">AI Model:</label>
-                    <select id="modelType" title="Choose which OpenAI model Gaia uses to respond">
-                        <option value="gpt-3.5-turbo" selected>GPT-3.5 Turbo (Fast & Affordable)</option>
-                        <option value="gpt-4o-mini">GPT-4o Mini (Balanced)</option>
-                        <option value="gpt-4">GPT-4 (Highest Quality)</option>
-                        <option value="compare">Compare All Models</option>
-                    </select>
+                
+                <!-- Model Selector -->
+                <div class="model-selector">
+                    <div>
+                        <label for="modelType">AI Model:</label>
+                        <select id="modelType" title="Choose which OpenAI model Gaia uses to respond">
+                            <option value="gpt-3.5-turbo">GPT-3.5 Turbo (Fast & Affordable)</option>
+                            <option value="gpt-4o-mini" selected>GPT-4o Mini (Balanced)</option>
+                            <option value="gpt-4">GPT-4 (Highest Quality)</option>
+                            <option value="compare">Compare All Models</option>
+                        </select>
+                    </div>
+                    <div class="model-description" id="modelDescription">
+                        <small>🤖 <span id="modelDescText">GPT-4o Mini: Balanced performance with improved reasoning</span></small>
+                    </div>
                 </div>
-                <div class="model-description" id="modelDescription">
-                    <small>🤖 <span id="modelDescText">GPT-3.5 Turbo: Fast, affordable, and great for most conversations</span></small>
-                </div>
-            </div>
 
-            <!-- RAG Type Selector -->
-            <div class="rag-selector">
-                <div>
-                    <label for="ragType">Search Method:</label>
-                    <select id="ragType" title="Choose how Gaia searches through the podcast episodes">
-                        <option value="bm25" selected>BM25 (Keyword + Semantic)</option>
-                        <option value="original">Original (Semantic Search)</option>
-                        <option value="both">Both (Side-by-side Comparison)</option>
-                    </select>
+                <!-- RAG Type Selector -->
+                <div class="rag-selector">
+                    <div>
+                        <label for="ragType">Search Method:</label>
+                        <select id="ragType" title="Choose how Gaia searches through the podcast episodes">
+                            <option value="bm25" selected>BM25 (Keyword + Semantic)</option>
+                            <option value="original">Original (Semantic Search)</option>
+                            <option value="hybrid">Hybrid QA (Graph + BM25)</option>
+                            <option value="both">Both (Side-by-side Comparison)</option>
+                        </select>
+                    </div>
+                    <div class="rag-description" id="ragDescription">
+                        <small>🔍 <span id="ragDescText">BM25 combines keyword matching with semantic understanding for precise results</span></small>
+                    </div>
                 </div>
-                <div class="rag-description" id="ragDescription">
-                    <small>🔍 <span id="ragDescText">BM25 combines keyword matching with semantic understanding for precise results</span></small>
+                
+                <!-- Max References Selector -->
+                <div class="references-selector">
+                    <div>
+                        <label for="maxReferences">Max References:</label>
+                        <select id="maxReferences" title="Choose how many episode references to include in responses">
+                            <option value="1">1 Reference</option>
+                            <option value="2">2 References</option>
+                            <option value="3">3 References (Default)</option>
+                            <option value="4">4 References</option>
+                            <option value="5" selected>5 References</option>
+                            <option value="6">6 References</option>
+                            <option value="7">7 References</option>
+                            <option value="8">8 References</option>
+                            <option value="9">9 References</option>
+                            <option value="10">10 References</option>
+                        </select>
+                    </div>
+                    <div class="references-description" id="referencesDescription">
+                        <small>📚 <span id="referencesDescText">Show 5 most relevant episodes per response</span></small>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Max References Selector -->
-            <div class="references-selector">
-                <div>
-                    <label for="maxReferences">Max References:</label>
-                    <select id="maxReferences" title="Choose how many episode references to include in responses">
-                        <option value="1">1 Reference</option>
-                        <option value="2">2 References</option>
-                        <option value="3" selected>3 References (Default)</option>
-                        <option value="4">4 References</option>
-                        <option value="5">5 References</option>
-                        <option value="6">6 References</option>
-                        <option value="7">7 References</option>
-                        <option value="8">8 References</option>
-                        <option value="9">9 References</option>
-                        <option value="10">10 References</option>
-                    </select>
+                
+                <!-- Category Matching Threshold Selector -->
+                <div class="category-threshold-selector">
+                    <div>
+                        <label for="categoryThreshold">Category Matching:</label>
+                        <select id="categoryThreshold" title="Control how strictly categories are matched to your questions">
+                            <option value="0.6">Broad (0.6) - Explore connections</option>
+                            <option value="0.7" selected>Normal (0.7) - Balanced matching</option>
+                            <option value="0.8">Strict (0.8) - Exact matches only</option>
+                            <option value="1.1">Disabled - No category filtering</option>
+                        </select>
+                    </div>
+                    <div class="category-description" id="categoryDescription">
+                        <small>📂 <span id="categoryDescText">Normal category matching finds related topics like soil → biochar</span></small>
+                    </div>
                 </div>
-                <div class="references-description" id="referencesDescription">
-                    <small>📚 <span id="referencesDescText">Show 3 most relevant episodes per response</span></small>
-                </div>
-            </div>
-            
-            <!-- Category Matching Threshold Selector -->
-            <div class="category-threshold-selector">
-                <div>
-                    <label for="categoryThreshold">Category Matching:</label>
-                    <select id="categoryThreshold" title="Control how strictly categories are matched to your questions">
-                        <option value="0.6">Broad (0.6) - Explore connections</option>
-                        <option value="0.7" selected>Normal (0.7) - Balanced matching</option>
-                        <option value="0.8">Strict (0.8) - Exact matches only</option>
-                        <option value="1.1">Disabled - No category filtering</option>
-                    </select>
-                </div>
-                <div class="category-description" id="categoryDescription">
-                    <small>📂 <span id="categoryDescText">Normal category matching finds related topics like soil → biochar</span></small>
-                </div>
-            </div>
-            
-            <!-- Voice Controls -->
-            <div class="voice-controls">
-                <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
-                    <span class="voice-icon">🔊</span>
-                    <span id="voiceToggleText">Enable Voice</span>
-                </button>
-                <div class="voice-settings" id="voiceSettings" style="display: none;">
-                    <label>
-                        <input type="checkbox" id="autoPlayVoice" checked>
-                        Auto-play responses
-                    </label>
+                
+                <!-- Voice Controls -->
+                <div class="voice-controls">
+                    <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
+                        <span class="voice-icon">🔊</span>
+                        <span id="voiceToggleText">Enable Voice</span>
+                    </button>
+                    <div class="voice-settings" id="voiceSettings" style="display: none;">
+                        <div>
+                            <label for="voiceSelection">Voice Type:</label>
+                            <select id="voiceSelection" title="Choose Gaia's voice">
+                                <option value="piper-kristin">Kristin (Natural Voice)</option>
+                            </select>
+                        </div>
+                        <label>
+                            <input type="checkbox" id="autoPlayVoice" checked>
+                            Auto-play responses
+                        </label>
+                    </div>
                 </div>
             </div>
         </header>
@@ -214,6 +228,6 @@
         </div>
     </div>
 
-    <script src="/chat.js?v=2.5"></script>
+    <script src="chat.js?v=3.5"></script>
 </body>
 </html>

@@ -142,11 +142,12 @@ class KnowledgeGraphVisualization {
                 .html(`<span class="color-indicator" style="background:${domain.color}"></span> ${domain.name}`);
         });
 
-        // Entity type filters
+        // Entity type filters (render but keep hidden; searchable)
         const typeContainer = d3.select('#entity-type-filters');
         this.data.entity_types.forEach(type => {
             const item = typeContainer.append('div')
-                .attr('class', 'filter-item');
+                .attr('class', 'filter-item')
+                .attr('data-type', type.toLowerCase());
 
             const checkbox = item.append('input')
                 .attr('type', 'checkbox')
@@ -161,6 +162,15 @@ class KnowledgeGraphVisualization {
 
         // Display statistics
         this.updateStatistics();
+    }
+
+    // Filter entity types via search box (UI is hidden by default)
+    filterEntityTypesList(query) {
+        const q = (query || '').toLowerCase();
+        d3.selectAll('#entity-type-filters .filter-item').style('display', function() {
+            const type = d3.select(this).attr('data-type') || '';
+            return type.includes(q) ? 'flex' : 'none';
+        });
     }
 
     createVisualization() {
@@ -746,6 +756,22 @@ document.addEventListener('DOMContentLoaded', () => {
     vizInstance = new KnowledgeGraphVisualization('#graph-svg-container');
     window.knowledgeGraph = vizInstance; // For debugging
 });
+
+// Helpers for entity type search (section is hidden, but searchable)
+function filterEntityTypes() {
+    const input = document.getElementById('entity-type-search');
+    if (vizInstance && input) {
+        vizInstance.filterEntityTypesList(input.value);
+    }
+}
+
+function clearEntityTypeSearch() {
+    const input = document.getElementById('entity-type-search');
+    if (input) {
+        input.value = '';
+    }
+    filterEntityTypes();
+}
 
 // Handle search input Enter key
 document.addEventListener('DOMContentLoaded', () => {

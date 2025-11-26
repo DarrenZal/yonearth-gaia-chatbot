@@ -43,7 +43,7 @@ ENABLE_VOICE_GENERATION=true
 ## How to Use
 
 ### Web Interface
-1. Navigate to http://152.53.194.214/
+1. Navigate to your deployed chatbot URL
 2. Click "Enable Voice" button in the header
 3. Send a message to Gaia
 4. Voice controls will appear below the response

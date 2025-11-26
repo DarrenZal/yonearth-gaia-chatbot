@@ -78,4 +78,4 @@ The `chapter_title` field in Pinecone contains "| Aaron William Perry" instead o
 ## Service Restart
 
 - Restarted systemd service: `sudo systemctl restart yonearth-gaia`
-- Server now running with correct book formatting at http://152.53.194.214/
+- Server now running with correct book formatting

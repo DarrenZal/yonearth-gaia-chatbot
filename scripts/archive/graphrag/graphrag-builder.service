@@ -1,0 +1,21 @@
+[Unit]
+Description=GraphRAG Hierarchy Builder
+After=network.target
+
+[Service]
+Type=simple
+User=claudeuser
+WorkingDirectory=/home/claudeuser/yonearth-gaia-chatbot
+Environment="OPENAI_API_KEY=${OPENAI_API_KEY}"
+Environment="AUTO_CONFIRM_LLM=yes"
+ExecStart=/usr/bin/python3 /home/claudeuser/yonearth-gaia-chatbot/scripts/build_proper_graphrag.py
+Restart=no
+StandardOutput=append:/home/claudeuser/yonearth-gaia-chatbot/logs/graphrag_build.log
+StandardError=append:/home/claudeuser/yonearth-gaia-chatbot/logs/graphrag_build.log
+
+# Resource limits
+MemoryMax=22G
+CPUQuota=200%
+
+[Install]
+WantedBy=multi-user.target

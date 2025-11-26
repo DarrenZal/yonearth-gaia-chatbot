@@ -32,25 +32,62 @@ uvicorn src.api.main:app --host 0.0.0.0 --port 8000 --reload
 
 ### Production Deployment
 
-**⚠️ CRITICAL: Production runs via Docker, NOT system nginx/systemd!**
+**⚠️ CRITICAL: There are TWO production sites with DIFFERENT deployment paths!**
 
-The production site (https://earthdo.me) is served by Docker containers:
+#### Site 1: earthdo.me (Docker-based)
+
+The earthdo.me site is served by Docker containers:
 - **yonearth-nginx** (nginx:alpine) - Serves web files on ports 80/443
 - **yonearth-gaia-chatbot** - FastAPI application on port 8000
 - **yonearth-redis** - Redis cache on port 6379
 
-#### Production Directory Structure
+**earthdo.me Directory Structure:**
 ```bash
 # Development (edit files here)
 /home/claudeuser/yonearth-gaia-chatbot/
 
-# Docker Production Web Files (what Docker nginx serves)
+# Docker Production Web Files (what Docker nginx serves for earthdo.me)
 /opt/yonearth-chatbot/web/          # Static files (HTML, JS, CSS, data/)
 /opt/yonearth-chatbot/nginx.conf    # Docker nginx configuration
 /opt/yonearth-chatbot/ssl/          # SSL certificates
+```
 
-# Legacy/Backup (NOT actively served by Docker)
-/var/www/yonearth/                  # Old system nginx location (data files stored here)
+#### Site 2: gaiaai.xyz (System nginx)
+
+**⚠️ IMPORTANT: gaiaai.xyz uses DIFFERENT paths than earthdo.me!**
+
+The gaiaai.xyz site is served by system nginx (not Docker):
+- Root: `/var/www/symbiocenelabs/`
+- GraphRAG 3D viewer: `/var/www/symbiocenelabs/YonEarth/graph/`
+- GraphRAG data files: `/var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/`
+
+**gaiaai.xyz Directory Structure:**
+```bash
+# GraphRAG 3D Viewer files (HTML, JS)
+/var/www/symbiocenelabs/YonEarth/graph/
+
+# GraphRAG data files (JSON hierarchy, layouts)
+/var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
+```
+
+**Deploying GraphRAG changes to gaiaai.xyz:**
+```bash
+# Deploy GraphRAG viewer files
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/GraphRAG3D_EmbeddingView.js /var/www/symbiocenelabs/YonEarth/graph/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/GraphRAG3D_EmbeddingView.html /var/www/symbiocenelabs/YonEarth/graph/
+
+# Deploy GraphRAG data files
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/data/graphrag_hierarchy/graphrag_hierarchy.json /var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/data/graphrag_hierarchy/graphsage_layout.json /var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
+
+# Reload nginx to clear caches
+sudo systemctl reload nginx
+```
+
+#### Legacy/Backup Paths (NOT actively served)
+```bash
+/var/www/yonearth/                  # Old system nginx location
+/var/www/yonearth-migrated/         # earthdo.me migrated files (served by system nginx on earthdo.me)
 ```
 
 #### Deploying Changes to Production
@@ -624,7 +661,7 @@ python3 scripts/archive/visualization/generate_map_hierarchical.py
 ### Current Production Status
 
 **Active Deployment**: Nginx + Uvicorn + Systemd
-- **URL**: http://152.53.194.214/
+- **URL**: Production deployment (configure in deployment settings)
 - **Architecture**:
   - Nginx (port 80): Serves static files and proxies API requests
   - Uvicorn (port 8000): FastAPI with 4 workers

@@ -50,8 +50,12 @@
                     <div id="domain-filters" class="filter-group"></div>
                 </div>
 
-                <div class="control-section">
+                <div class="control-section" id="entity-type-section" style="display: none;">
                     <h3>🏷️ Entity Types</h3>
+                    <div class="search-box">
+                        <input type="text" id="entity-type-search" placeholder="Filter entity types..." oninput="filterEntityTypes()" />
+                        <button onclick="clearEntityTypeSearch()">Clear</button>
+                    </div>
                     <div id="entity-type-filters" class="filter-group scrollable"></div>
                 </div>
 

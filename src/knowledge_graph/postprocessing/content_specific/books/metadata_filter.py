@@ -88,8 +88,8 @@ class MetadataFilter(PostProcessingModule):
             return False
 
         # Check if source or target matches book title (case-insensitive)
-        source_matches = book_title.lower() in rel.source_entity.lower()
-        target_matches = book_title.lower() in rel.target_entity.lower()
+        source_matches = book_title.lower() in rel.source.lower()
+        target_matches = book_title.lower() in rel.target.lower()
 
         return source_matches or target_matches
 
@@ -106,8 +106,8 @@ class MetadataFilter(PostProcessingModule):
 
         # Check if relationship involves book title
         book_title_lower = book_title.lower()
-        source_has_title = book_title_lower in rel.source_entity.lower()
-        target_has_title = book_title_lower in rel.target_entity.lower()
+        source_has_title = book_title_lower in rel.source.lower()
+        target_has_title = book_title_lower in rel.target.lower()
 
         return source_has_title or target_has_title
 
@@ -122,12 +122,12 @@ class MetadataFilter(PostProcessingModule):
         book_title_lower = book_title.lower()
 
         # Check if one entity is book title and other is a person name
-        source_is_title = book_title_lower in rel.source_entity.lower()
-        target_is_title = book_title_lower in rel.target_entity.lower()
+        source_is_title = book_title_lower in rel.source.lower()
+        target_is_title = book_title_lower in rel.target.lower()
 
         # Person name heuristic: capitalized words (likely proper nouns)
-        source_is_person = bool(re.match(r'^[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+$', rel.source_entity))
-        target_is_person = bool(re.match(r'^[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+$', rel.target_entity))
+        source_is_person = bool(re.match(r'^[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+$', rel.source))
+        target_is_person = bool(re.match(r'^[A-Z][a-z]+(?:\s+[A-Z][a-z]+)+$', rel.target))
 
         # If book title + person name on early page → likely metadata
         return (
@@ -181,8 +181,8 @@ class MetadataFilter(PostProcessingModule):
                 self.stats['modified_count'] += 1
 
                 logger.debug(
-                    f"Filtered metadata: ({rel.source_entity}) --[{rel.relationship}]--> "
-                    f"({rel.target_entity}) on page {rel.evidence.get('page_number', '?')}"
+                    f"Filtered metadata: ({rel.source}) --[{rel.relationship}]--> "
+                    f"({rel.target}) on page {rel.evidence.get('page_number', '?') if rel.evidence else '?'}"
                 )
             else:
                 # Keep relationship (domain knowledge)

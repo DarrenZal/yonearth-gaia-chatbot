@@ -176,20 +176,59 @@ IMPORTANT: Always cite your sources using this exact format:
             }
     
     def _extract_citations(self, retrieved_docs: List[Any], max_references: int = 3) -> List[Dict[str, Any]]:
-        """Extract citation information from retrieved documents with deduplication by episode"""
-        citations = []
-        seen_episodes = set()
-        
-        for doc in retrieved_docs:  # Check all retrieved docs for unique episodes
+        """
+        Extract citation information from retrieved documents with deduplication.
+        Prefer to include one book reference if available in the retrieved set.
+        """
+        citations: List[Dict[str, Any]] = []
+        seen_keys = set()
+
+        # Track first book citation candidate
+        book_citation = None
+        # Fallback URLs for known books
+        book_url_map = {
+            "viriditas": "https://yonearth.org/product/viriditas-ebook/",
+            "our biggest deal": "https://yonearth.org/product/clone-of-our-biggest-deal-pre-order-e-book/",
+            "y on earth": "https://yonearth.org/product/y-on-earth-e-book/",
+            "soil stewardship handbook": "https://yonearth.org/product/soil-stewardship-handbook-ebook-digital-download/"
+        }
+
+        for doc in retrieved_docs:
             metadata = getattr(doc, 'metadata', {})
-            episode_number = metadata.get('episode_number', 'Unknown')
-            
-            # Skip if we've already seen this episode
-            if episode_number in seen_episodes:
+            content_type = metadata.get('content_type', 'episode')
+
+            if content_type == 'book' and book_citation is None:
+                book_title = metadata.get('book_title') or metadata.get('title') or 'Book'
+                chapter_title = metadata.get('chapter_title') or metadata.get('title') or book_title
+                book_episode_number = f"Book: {book_title}"
+                # Use provided URL or fall back to known products
+                url = metadata.get('url') or metadata.get('ebook_url') or metadata.get('print_url') or ''
+                if not url:
+                    key = book_title.lower()
+                    for name, link in book_url_map.items():
+                        if name in key:
+                            url = link
+                            break
+
+                book_citation = {
+                    "episode_number": book_episode_number,
+                    "title": chapter_title,
+                    "guest_name": metadata.get('author') or metadata.get('guest_name') or 'Author',
+                    "url": url,
+                    "relevance": "High"
+                }
+                # Do not continue; still consider this doc for episode metadata if present
+                # (rare, but safer to just continue to next)
                 continue
-                
-            seen_episodes.add(episode_number)
-            
+
+            # Handle episodes and other non-book content
+            episode_number = metadata.get('episode_number', 'Unknown')
+            key = episode_number
+
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+
             citation = {
                 "episode_number": episode_number,
                 "title": metadata.get('title', 'Unknown Episode'),
@@ -198,11 +237,19 @@ IMPORTANT: Always cite your sources using this exact format:
                 "relevance": "High"  # Could add scoring later
             }
             citations.append(citation)
-            
-            # Limit to configured number of unique episodes
+
             if len(citations) >= max_references:
                 break
-        
+
+        # If no book was included and we have a candidate, prepend it (respect max_references)
+        if book_citation:
+            book_key = book_citation["episode_number"]
+            if book_key not in seen_keys:
+                citations.insert(0, book_citation)
+                # Trim to max_references if necessary
+                if len(citations) > max_references:
+                    citations = citations[:max_references]
+
         return citations
     
     def clear_memory(self):

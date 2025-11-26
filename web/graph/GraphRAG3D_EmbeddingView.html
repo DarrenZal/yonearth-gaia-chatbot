@@ -25,6 +25,100 @@
             position: relative;
         }
 
+        /* SVG Container for 2D modes */
+        #svg-container-2d {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        #svg-container-2d.active {
+            display: block;
+        }
+
+        #graph-container.hidden {
+            display: none;
+        }
+
+        #webgl-warning {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(520px, calc(100vw - 40px));
+            padding: 18px 20px;
+            background: rgba(20, 20, 35, 0.95);
+            border: 1px solid rgba(255, 120, 120, 0.35);
+            border-radius: 10px;
+            color: #f5dede;
+            z-index: 2500;
+            display: none;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+        }
+
+        #webgl-warning.visible {
+            display: block;
+        }
+
+        .warning-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #ff9d9d;
+            margin-bottom: 6px;
+        }
+
+        .warning-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: #ffdede;
+        }
+
+        .warning-details {
+            margin-top: 6px;
+            font-size: 12px;
+            color: #ffbaba;
+        }
+
+        .warning-actions {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #ffcccc;
+        }
+
+        /* Tooltip for 2D organic views */
+        .organic-tooltip {
+            position: absolute;
+            pointer-events: none;
+            padding: 10px 14px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 8px;
+            color: #e0e0e0;
+            font-size: 12px;
+            line-height: 1.4;
+            z-index: 1500;
+            display: none;
+            max-width: 320px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+        }
+
+        .organic-tooltip.visible {
+            display: block;
+        }
+
+        .organic-tooltip-title {
+            font-weight: 600;
+            color: #00ffff;
+            margin-bottom: 4px;
+        }
+
+        .organic-tooltip-content {
+            color: #a8b6d8;
+        }
+
         /* Loading Screen */
         #loading-screen {
             position: fixed;
@@ -85,6 +179,7 @@
             top: 20px;
             right: 20px;
             max-width: 380px;
+            max-height: calc(100vh - 40px);
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
             border: 1px solid rgba(100, 200, 255, 0.3);
@@ -92,6 +187,7 @@
             backdrop-filter: blur(15px);
             z-index: 1000;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
         }
 
         #info-panel.collapsed {
@@ -248,6 +344,7 @@
             top: 20px;
             left: 20px;
             max-width: 320px;
+            max-height: calc(100vh - 40px);
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
             border: 1px solid rgba(100, 200, 255, 0.3);
@@ -255,6 +352,7 @@
             backdrop-filter: blur(15px);
             z-index: 1000;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
         }
 
         .control-section {
@@ -272,7 +370,7 @@
 
         .mode-selector {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
             gap: 8px;
         }
 
@@ -296,6 +394,28 @@
 
         .mode-btn:hover:not(.active) {
             background: rgba(100, 200, 255, 0.2);
+        }
+        .mode-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .mode-btn .mode-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+            color: inherit;
+        }
+
+        .mode-btn .mode-subtitle {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .mode-btn:not(.active) .mode-subtitle {
+            color: #7d8ab8;
         }
 
         .filter-controls {
@@ -328,6 +448,49 @@
             color: #606060;
         }
 
+        /* Multi-Lens Selector */
+        .multi-lens-select {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 10px;
+            color: #e0e0e0;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .multi-lens-select:hover {
+            border-color: rgba(100, 200, 255, 0.5);
+            background: rgba(20, 25, 40, 0.98);
+        }
+
+        .multi-lens-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .multi-lens-select optgroup {
+            font-weight: 700;
+            color: #00ffff;
+            background: rgba(10, 14, 26, 0.95);
+            padding: 8px 0;
+        }
+
+        .multi-lens-select option {
+            padding: 10px 16px;
+            background: rgba(15, 20, 35, 0.95);
+            color: #e0e0e0;
+            font-weight: 400;
+        }
+
+        .multi-lens-select option:hover {
+            background: rgba(100, 200, 255, 0.2);
+        }
+
         /* Search */
         #search-container {
             position: absolute;
@@ -358,6 +521,194 @@
 
         #search-input::placeholder {
             color: #606060;
+        }
+
+        /* Autocomplete Dropdown */
+        .autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 8px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(15, 20, 35, 0.98);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            display: none;
+            z-index: 2000;
+        }
+
+        .autocomplete-dropdown.show {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+            transition: background 0.2s ease;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.selected {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .autocomplete-item-name {
+            color: #e0e0e0;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .autocomplete-item-type {
+            color: #808080;
+            font-size: 12px;
+        }
+
+        .autocomplete-no-results {
+            padding: 20px;
+            text-align: center;
+            color: #808080;
+            font-size: 14px;
+        }
+
+        /* Cluster Search & Focus */
+        .cluster-search-container {
+            position: relative;
+            margin-bottom: 12px;
+        }
+
+        .cluster-search-input {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(15, 20, 35, 0.9);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 13px;
+            transition: all 0.3s ease;
+        }
+
+        .cluster-search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .cluster-autocomplete-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 6px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: rgba(15, 20, 35, 0.98);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 8px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
+            display: none;
+            z-index: 2000;
+        }
+
+        .cluster-autocomplete-dropdown.show {
+            display: block;
+        }
+
+        .cluster-group {
+            margin-top: 8px;
+        }
+
+        .cluster-group:first-child {
+            margin-top: 0;
+        }
+
+        .cluster-group-header {
+            padding: 8px 16px;
+            background: rgba(102, 126, 234, 0.15);
+            color: #667eea;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.1);
+        }
+
+        .cluster-autocomplete-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.05);
+            transition: background 0.2s ease;
+        }
+
+        .cluster-autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .cluster-autocomplete-item:hover,
+        .cluster-autocomplete-item.selected {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .cluster-item-name {
+            color: #e0e0e0;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .cluster-item-stats {
+            color: #808080;
+            font-size: 11px;
+            margin-top: 2px;
+        }
+
+        .clear-focus-btn {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(244, 67, 54, 0.1);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            border-radius: 6px;
+            color: #f44336;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+        }
+
+        .clear-focus-btn:hover {
+            background: rgba(244, 67, 54, 0.2);
+            border-color: #f44336;
+        }
+
+        .cluster-focus-info {
+            padding: 10px 12px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 6px;
+            margin-top: 8px;
+        }
+
+        .focus-info-title {
+            font-size: 10px;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .focused-cluster-name {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 500;
         }
 
         /* Keyboard Shortcuts */
@@ -401,11 +752,49 @@
             z-index: 1000;
             font-family: monospace;
         }
+
+        /* Mobile tweaks */
+        @media (max-width: 768px) {
+            #controls-panel {
+                display: none;
+            }
+            #info-panel {
+                top: auto;
+                bottom: 20px;
+                left: 10px;
+                right: 10px;
+                width: calc(100vw - 20px);
+                max-width: none;
+                max-height: 50vh;
+                overflow: auto;
+            }
+            #panel-content .hierarchy-block {
+                display: none;
+            }
+            #search-container {
+                top: 10px;
+                left: 10px;
+                transform: none;
+                width: calc(100vw - 20px);
+            }
+            #shortcuts-hint {
+                display: none;
+            }
+            #stats-overlay {
+                bottom: 10px;
+                right: 10px;
+                font-size: 11px;
+                padding: 8px 10px;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Graph Container -->
+    <!-- Graph Container (3D) -->
     <div id="graph-container"></div>
+
+    <!-- SVG Container (2D) -->
+    <svg id="svg-container-2d"></svg>
 
     <!-- Loading Screen -->
     <div id="loading-screen">
@@ -413,6 +802,25 @@
             <div class="loading-title">Loading Knowledge Graph</div>
             <div class="loading-spinner"></div>
             <div class="loading-status" id="loading-status">Initializing...</div>
+        </div>
+    </div>
+
+    <!-- WebGL Warning -->
+    <div id="webgl-warning">
+        <div class="warning-title">⚠️ WebGL Not Available</div>
+        <div class="warning-text">
+            Your browser has WebGL disabled or running in a restricted mode. The 3D network views (Semantic, Contextual, Structural) require WebGL hardware acceleration.
+        </div>
+        <div class="warning-details" id="webgl-warning-details"></div>
+        <div class="warning-actions">
+            <strong>✅ Good News:</strong> Circle Pack and Voronoi modes work without WebGL!<br>
+            The page has automatically switched to Circle Pack mode. You can explore the full hierarchy visualization using the Multi-Lens dropdown.<br><br>
+            <strong>To enable 3D modes:</strong>
+            <ul style="margin: 8px 0; padding-left: 20px; text-align: left;">
+                <li>Enable hardware acceleration in browser settings</li>
+                <li>Try Chrome, Firefox, or Safari</li>
+                <li>Check GPU drivers are up to date</li>
+            </ul>
         </div>
     </div>
 
@@ -424,6 +832,7 @@
             placeholder="Search entities (Ctrl+K)..."
             autocomplete="off"
         />
+        <div id="autocomplete-dropdown" class="autocomplete-dropdown"></div>
     </div>
 
     <!-- Info Panel -->
@@ -439,33 +848,33 @@
                 <div class="entity-description" id="entity-description">Click a node to view details here.</div>
                 <div class="entity-stats">
                     <div class="stat-item">
-                        <div class="stat-label">Connections</div>
+                        <div class="stat-label" id="stat-label-connections">Connections</div>
                         <div class="stat-value" id="entity-connections">0</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-label">Centrality</div>
+                        <div class="stat-label" id="stat-label-centrality">Centrality</div>
                         <div class="stat-value" id="entity-centrality">0.00</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-label">Degree</div>
+                        <div class="stat-label" id="stat-label-degree">Degree</div>
                         <div class="stat-value" id="entity-degree">0</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-label">Weighted</div>
+                        <div class="stat-label" id="stat-label-weighted">Weighted</div>
                         <div class="stat-value" id="entity-weighted-degree">0</div>
                     </div>
                 </div>
                 <div style="margin-top: 10px;">
-                    <div class="stat-label">Top neighbors</div>
+                    <div class="stat-label" id="neighbors-title">Top neighbors</div>
                     <ul id="entity-neighbors" style="margin-top: 6px; padding-left: 18px; color: #c0d8ff; line-height: 1.3;"></ul>
                 </div>
                 <div style="margin-top: 12px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div>
-                        <div class="stat-label">Incoming</div>
+                        <div class="stat-label" id="incoming-title">Incoming</div>
                         <ul id="entity-incoming" style="margin-top: 6px; padding-left: 16px; color: #c0d8ff; line-height: 1.3;"></ul>
                     </div>
                     <div>
-                        <div class="stat-label">Outgoing</div>
+                        <div class="stat-label" id="outgoing-title">Outgoing</div>
                         <ul id="entity-outgoing" style="margin-top: 6px; padding-left: 16px; color: #c0d8ff; line-height: 1.3;"></ul>
                     </div>
                 </div>
@@ -509,11 +918,19 @@
     <!-- Controls Panel -->
     <div id="controls-panel">
         <div class="control-section">
-            <label class="control-label">Visualization Mode</label>
-            <div class="mode-selector">
-                <div class="mode-btn active" data-mode="embedding">Embedding</div>
-                <div class="mode-btn" data-mode="force">Force Graph</div>
-            </div>
+            <label class="control-label">Multi-Lens Visualization</label>
+            <select id="multi-lens-selector" class="multi-lens-select">
+                <optgroup label="───── NETWORK LAYOUTS ─────">
+                    <option value="semantic" selected>Semantic (Text UMAP)</option>
+                    <option value="contextual">Contextual (GraphSAGE)</option>
+                    <option value="structural">Structural (Force Graph)</option>
+                    <option value="holographic">Holographic Elevator (Legacy 3D)</option>
+                </optgroup>
+                <optgroup label="──── HIERARCHY LAYOUTS ────">
+                    <option value="circle-pack">Circle Pack (Zoomable Hierarchy)</option>
+                    <option value="voronoi">Voronoi (Cellular Organic)</option>
+                </optgroup>
+            </select>
         </div>
 
         <div class="control-section">
@@ -529,8 +946,8 @@
             <div class="filter-item" style="justify-content: space-between; gap: 8px;">
                 <span class="filter-label">Sizing mode</span>
                 <select id="size-mode" style="flex: 1; padding: 6px 8px; background: rgba(15,20,35,0.9); border: 1px solid rgba(100,200,255,0.2); color: #e0e0e0; border-radius: 6px;">
-                    <option value="connectivity" selected>Connectivity</option>
-                    <option value="betweenness">Betweenness</option>
+                    <option value="connectivity">Connectivity</option>
+                    <option value="betweenness" selected>Betweenness</option>
                 </select>
             </div>
         </div>
@@ -543,20 +960,43 @@
         <div class="control-section">
             <label class="control-label">Display</label>
             <div class="filter-item">
-                <input type="checkbox" id="show-clusters" class="filter-checkbox">
-                <label for="show-clusters" class="filter-label">Cluster Membranes</label>
+                <input type="checkbox" id="show-clusters-l3" class="filter-checkbox" checked>
+                <label for="show-clusters-l3" class="filter-label">Cluster Membranes (L3 coarse)</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="show-clusters-l2" class="filter-checkbox" checked>
+                <label for="show-clusters-l2" class="filter-label">Cluster Membranes (L2 medium)</label>
+            </div>
+            <div class="filter-item">
+                <input type="checkbox" id="show-clusters-l1" class="filter-checkbox">
+                <label for="show-clusters-l1" class="filter-label">Cluster Membranes (L1 fine)</label>
             </div>
             <div class="filter-item">
                 <input type="checkbox" id="show-labels" class="filter-checkbox" checked>
                 <label for="show-labels" class="filter-label">Entity Labels</label>
             </div>
         </div>
+
+        <div class="control-section">
+            <label class="control-label">🔍 Omni-Search</label>
+            <div class="cluster-search-container">
+                <input type="text" id="cluster-search" class="cluster-search-input" placeholder="Search themes, communities, entities...">
+                <div id="cluster-autocomplete-dropdown" class="cluster-autocomplete-dropdown"></div>
+            </div>
+            <button id="clear-cluster-focus" class="clear-focus-btn" style="display: none;">Clear Focus</button>
+            <div id="cluster-focus-info" class="cluster-focus-info" style="display: none;">
+                <div class="focus-info-title">Focused:</div>
+                <div id="focused-cluster-name" class="focused-cluster-name"></div>
+            </div>
+        </div>
+
     </div>
 
     <!-- Keyboard Shortcuts Hint -->
     <div id="shortcuts-hint">
-        <span class="shortcut-key">E</span> Embedding view
-        <span class="shortcut-key">F</span> Force view
+        <span class="shortcut-key">E</span> Semantic
+        <span class="shortcut-key">C</span> Contextual
+        <span class="shortcut-key">S</span> Structural
         <span class="shortcut-key">ESC</span> Deselect
         <span class="shortcut-key">Ctrl+K</span> Search
     </div>
@@ -567,7 +1007,17 @@
         <div>Visible: <span id="visible-count">0</span> / <span id="total-count">0</span></div>
     </div>
 
+    <!-- Tooltip for 2D modes -->
+    <div id="organic-tooltip" class="organic-tooltip">
+        <div class="organic-tooltip-title" id="organic-tooltip-title"></div>
+        <div class="organic-tooltip-content" id="organic-tooltip-content"></div>
+    </div>
+
     <!-- Dependencies -->
+    <!-- D3.js for 2D visualizations -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-delaunay@6"></script>
+
     <script type="importmap">
         {
             "imports": {
@@ -585,16 +1035,12 @@
         window.THREE = THREE;
         window.OrbitControls = OrbitControls;
 
-        // Load main script after dependencies
-        import('./GraphRAG3D_EmbeddingView.js').then(() => {
+        // Load main script after dependencies (cache-busting v=10)
+        import('./GraphRAG3D_EmbeddingView.js?v=10').then(() => {
             const viewer = new GraphRAG3DEmbeddingView('graph-container');
             window.viewer = viewer; // debug handle for inspections
             viewer.init();
         });
     </script>
-    <script src="https://unpkg.com/3d-force-graph@1.73.3/dist/3d-force-graph.min.js"></script>
-
-    <!-- Our Code (loaded as module above) -->
-    <script src="/graph/GraphRAG3D_EmbeddingView.js"></script>
 </body>
 </html>

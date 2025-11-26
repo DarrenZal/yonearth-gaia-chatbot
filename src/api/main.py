@@ -32,6 +32,7 @@ from .voice_endpoints import router as voice_router
 from .qa_hybrid_endpoints import router as qa_hybrid_router
 from .podcast_map_route_local import router as podcast_map_router
 from .graph_endpoints import router as graph_router
+from .graphrag_api import router as graphrag_router
 
 # Configure logging
 logging.basicConfig(
@@ -146,9 +147,13 @@ try:
 
     # Include graph endpoints
     app.include_router(graph_router)
-    logger.info("✅ Hybrid QA router loaded successfully")
+
+    # Include GraphRAG cluster API
+    app.include_router(graphrag_router)
+
+    logger.info("✅ Hybrid QA and GraphRAG routers loaded successfully")
 except Exception as e:
-    logger.error(f"❌ Failed to load Hybrid QA router: {e}")
+    logger.error(f"❌ Failed to load Hybrid QA/GraphRAG router: {e}")
 
 
 # Note: Static files are served by nginx in production (see nginx.conf).
@@ -211,16 +216,32 @@ async def chat_with_gaia(
         )
         
         # Convert citations to response model
-        citations = [
-            Citation(
-                episode_number=cite["episode_number"],
-                title=cite["title"],
-                guest_name=cite["guest_name"],
-                url=cite["url"],
-                relevance=cite.get("relevance", "High")
+        # Normalize and de-duplicate citations; skip empty/unknown entries
+        citations = []
+        seen_keys = set()
+        for cite in response.get("citations", []):
+            episode_number = str(cite.get("episode_number", "")).strip()
+            title = str(cite.get("title", "")).strip()
+            url = str(cite.get("url", "")).strip()
+
+            # Skip placeholder/empty citations (unknown title + no URL + unknown episode id)
+            if (not title or title.lower() == "unknown episode") and not url and (not episode_number or episode_number.lower() == "unknown"):
+                continue
+
+            key = (episode_number or "unknown", title or "unknown", url or "unknown")
+            if key in seen_keys:
+                continue
+            seen_keys.add(key)
+
+            citations.append(
+                Citation(
+                    episode_number=episode_number or "Unknown",
+                    title=title or "Unknown Episode",
+                    guest_name=str(cite.get("guest_name", "")).strip() or "Guest",
+                    url=url,
+                    relevance=str(cite.get("relevance", "High"))
+                )
             )
-            for cite in response.get("citations", [])
-        ]
         
         processing_time = time.time() - start_time
         

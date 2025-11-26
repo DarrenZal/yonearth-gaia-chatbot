@@ -103,12 +103,41 @@ def extract_book_with_ace(book_slug: str, books_dir: Path, output_dir: Path):
     entity_extractor = EntityExtractor()
     relationship_extractor = RelationshipExtractor()
 
-    # Extract entities and relationships
-    logger.info("Extracting entities and relationships...")
+    # Check for existing checkpoint
+    checkpoint_file = output_dir / f"{book_slug}_checkpoint.json"
+    start_chunk = 0
     all_entities = []
     all_relationships = []
 
-    for i, chunk in enumerate(chunks):
+    if checkpoint_file.exists():
+        logger.info(f"📥 Found checkpoint file: {checkpoint_file}")
+        try:
+            with open(checkpoint_file, 'r') as f:
+                checkpoint = json.load(f)
+                start_chunk = checkpoint.get("chunks_processed", 0)
+
+                # Reconstruct Entity objects from checkpoint
+                from src.knowledge_graph.extractors.entity_extractor import Entity
+                from src.knowledge_graph.extractors.relationship_extractor import Relationship
+
+                checkpoint_entities = checkpoint.get("entities", [])
+                all_entities = [Entity(**e) for e in checkpoint_entities]
+
+                checkpoint_rels = checkpoint.get("relationships", [])
+                all_relationships = [Relationship(**r) for r in checkpoint_rels]
+
+            logger.info(f"📥 Resuming from chunk {start_chunk}/{len(chunks)}")
+            logger.info(f"📥 Loaded {len(all_entities)} entities, {len(all_relationships)} relationships from checkpoint")
+        except Exception as e:
+            logger.error(f"Failed to load checkpoint: {e}, starting from scratch")
+            start_chunk = 0
+            all_entities = []
+            all_relationships = []
+
+    # Extract entities and relationships
+    logger.info("Extracting entities and relationships...")
+
+    for i, chunk in enumerate(chunks[start_chunk:], start=start_chunk):
         if (i + 1) % 10 == 0:
             logger.info(f"  Processing chunk {i+1}/{len(chunks)}")
 
@@ -138,6 +167,39 @@ def extract_book_with_ace(book_slug: str, books_dir: Path, output_dir: Path):
         )
         all_relationships.extend(rel_result.relationships)
 
+        # Save checkpoint every 50 chunks
+        if (i + 1) % 50 == 0:
+            checkpoint_data = {
+                "book": book_slug,
+                "chunks_processed": i + 1,
+                "total_chunks": len(chunks),
+                "entities": [
+                    {
+                        "name": e.name,
+                        "type": e.type,
+                        "description": e.description,
+                        "aliases": e.aliases if hasattr(e, 'aliases') else [],
+                        "metadata": e.metadata if hasattr(e, 'metadata') else {}
+                    }
+                    for e in all_entities
+                ],
+                "relationships": [
+                    {
+                        "source_entity": r.source_entity,
+                        "relationship_type": r.relationship_type,
+                        "target_entity": r.target_entity,
+                        "description": r.description,
+                        "metadata": r.metadata if hasattr(r, 'metadata') else {}
+                    }
+                    for r in all_relationships
+                ]
+            }
+
+            with open(checkpoint_file, 'w') as f:
+                json.dump(checkpoint_data, f, indent=2)
+
+            logger.info(f"  💾 Checkpoint saved: {i+1}/{len(chunks)} chunks")
+
     logger.info(f"Extracted {len(all_entities)} entities")
     logger.info(f"Extracted {len(all_relationships)} relationships")
 
@@ -145,36 +207,77 @@ def extract_book_with_ace(book_slug: str, books_dir: Path, output_dir: Path):
     logger.info("Applying ACE V14.3.8 postprocessing...")
     pipeline = get_book_pipeline_v1438()
 
-    # Convert to pipeline format
+    # Convert to pipeline format - use dataclass objects like episode postprocessing
+    from dataclasses import dataclass
+    from typing import Optional, Dict, List, Any
+
+    @dataclass
+    class SimpleRel:
+        source: str
+        relationship: str
+        target: str
+        source_type: Optional[str] = None
+        target_type: Optional[str] = None
+        evidence_text: Optional[str] = None
+        evidence: Optional[Dict[str, Any]] = None
+        flags: Optional[Dict[str, Any]] = None
+        context: Optional[str] = None
+        page: int = 0
+        text_confidence: float = 1.0
+        p_true: float = 1.0
+        signals_conflict: bool = False
+        conflict_explanation: Optional[str] = None
+        suggested_correction: Optional[str] = None
+        classification_flags: Optional[List[str]] = None
+        candidate_uid: str = "cand"
+
     pipeline_rels = []
     for rel in all_relationships:
-        pipeline_rels.append({
-            "source": rel.source_entity,
-            "relationship": rel.relationship_type,
-            "target": rel.target_entity,
-            "context": rel.description,
-            "metadata": rel.metadata
-        })
+        pipeline_rels.append(SimpleRel(
+            source=rel.source_entity,
+            relationship=rel.relationship_type,
+            target=rel.target_entity,
+            evidence_text=rel.description,
+            context=rel.description,
+            flags={},  # Dict, not set!
+            evidence=rel.metadata if hasattr(rel, 'metadata') else {}
+        ))
 
-    # Create context object
-    class Context:
-        def __init__(self, book_title, author):
-            self.document_metadata = {
-                "title": book_title,
-                "author": author,
-                "content_type": "book"
-            }
+    # Create context object using ProcessingContext
+    from src.knowledge_graph.postprocessing.base import ProcessingContext
 
-    context = Context(book_info["title"], book_info["author"])
+    context = ProcessingContext(
+        content_type="book",
+        document_metadata={
+            "title": book_info["title"],
+            "author": book_info["author"]
+        }
+    )
 
     # Run pipeline
-    processed_rels = pipeline.process(pipeline_rels, context)
+    processed_rels, stats = pipeline.run(pipeline_rels, context)
 
     logger.info(f"After postprocessing: {len(processed_rels)} relationships")
 
     # Save output
     output_file = output_dir / f"{book_slug}_ace_v14_3_8.json"
     output_file.parent.mkdir(parents=True, exist_ok=True)
+
+    # Convert processed rels back to dicts for JSON
+    final_rels = []
+    for r in processed_rels:
+        if hasattr(r, 'source'):
+            # It's a dataclass or object
+            final_rels.append({
+                "source_entity": r.source,
+                "relationship_type": r.relationship,
+                "target_entity": r.target,
+                "description": r.context or r.evidence_text or "",
+                "metadata": r.evidence if isinstance(r.evidence, dict) else {}
+            })
+        elif isinstance(r, dict):
+            # Already a dict
+            final_rels.append(r)
 
     output_data = {
         "book": book_slug,
@@ -192,14 +295,20 @@ def extract_book_with_ace(book_slug: str, books_dir: Path, output_dir: Path):
             }
             for e in all_entities
         ],
-        "relationships": processed_rels,
-        "postprocessing_stats": pipeline.get_stats()
+        "relationships": final_rels,
+        "postprocessing_stats": stats  # Use stats from pipeline.run(), not pipeline.get_stats()
     }
 
     with open(output_file, 'w') as f:
         json.dump(output_data, f, indent=2)
 
     logger.info(f"Saved: {output_file}")
+
+    # Delete checkpoint file after successful completion
+    if checkpoint_file.exists():
+        checkpoint_file.unlink()
+        logger.info("  🗑️  Checkpoint file removed after successful completion")
+
     logger.info(f"✅ {book_info['title']} complete!")
 
 

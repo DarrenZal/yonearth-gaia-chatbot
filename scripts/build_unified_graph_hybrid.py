@@ -19,11 +19,18 @@ import sys
 from pathlib import Path
 import argparse
 from datetime import datetime
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
+
+import numpy as np
 
 # Add project root to path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
+
+# Paths for graph embeddings (used for graph-informed deduplication)
+ROOT = Path(__file__).parent.parent
+GRAPHSAGE_EMB_PATH = ROOT / "data/graphrag_hierarchy/graphsage_embeddings.npy"
+GRAPHSAGE_IDS_PATH = ROOT / "data/graphrag_hierarchy/graphsage_entity_ids.json"
 
 from src.knowledge_graph.validators.entity_merge_validator import EntityMergeValidator
 
@@ -38,6 +45,69 @@ logger = logging.getLogger(__name__)
 class HybridGraphBuilder:
     """Builds unified graph from ACE episodes + fresh book extractions"""
 
+    # Type normalization mapping - fixes case inconsistency from different extractors
+    TYPE_NORMALIZATION = {
+        # Concept/abstract
+        'concept': 'CONCEPT', 'Concept': 'CONCEPT', 'idea': 'CONCEPT', 'Idea': 'CONCEPT',
+        # People
+        'person': 'PERSON', 'Person': 'PERSON', 'individual': 'PERSON', 'Individual': 'PERSON',
+        'human': 'PERSON', 'Human': 'PERSON', 'people': 'PERSON',
+        # Organizations
+        'organization': 'ORGANIZATION', 'Organization': 'ORGANIZATION',
+        'company': 'ORGANIZATION', 'Company': 'ORGANIZATION',
+        'business': 'ORGANIZATION', 'Business': 'ORGANIZATION',
+        'group': 'ORGANIZATION', 'Group': 'ORGANIZATION',
+        # Locations
+        'place': 'PLACE', 'Place': 'PLACE', 'location': 'PLACE', 'Location': 'PLACE',
+        'region': 'PLACE', 'Region': 'PLACE',
+        # Products
+        'product': 'PRODUCT', 'Product': 'PRODUCT',
+        # Events
+        'event': 'EVENT', 'Event': 'EVENT',
+        # Practices/Activities
+        'practice': 'PRACTICE', 'Practice': 'PRACTICE',
+        'activity': 'PRACTICE', 'Activity': 'PRACTICE',
+        'action': 'PRACTICE', 'Action': 'PRACTICE',
+        # Species/organisms
+        'species': 'SPECIES', 'Species': 'SPECIES',
+        'plant': 'SPECIES', 'Plant': 'SPECIES',
+        'animal': 'SPECIES', 'Animal': 'SPECIES',
+        # Technology
+        'technology': 'TECHNOLOGY', 'Technology': 'TECHNOLOGY',
+        'website': 'TECHNOLOGY', 'Website': 'TECHNOLOGY',
+        # Ecosystem
+        'ecosystem': 'ECOSYSTEM', 'Ecosystem': 'ECOSYSTEM',
+        # Misc/plurals/variants
+        'organizations': 'ORGANIZATION', 'Organizations': 'ORGANIZATION',
+        'communities': 'COMMUNITY', 'Communities': 'COMMUNITY',
+        'families': 'FAMILY', 'Families': 'FAMILY',
+        'stories': 'STORY', 'Stories': 'STORY',
+        'archives': 'ARCHIVE', 'Archives': 'ARCHIVE',
+        'roles': 'ROLE', 'Roles': 'ROLE',
+        'communications': 'COMMUNICATION', 'Communications': 'COMMUNICATION',
+        'projects': 'PROJECT', 'Projects': 'PROJECT',
+        'technologies': 'TECHNOLOGY', 'Technologies': 'TECHNOLOGY',
+        'countries': 'PLACE', 'Countries': 'PLACE', 'country': 'PLACE', 'Country': 'PLACE',
+        'locations': 'PLACE', 'Locations': 'PLACE',
+        'places': 'PLACE', 'Places': 'PLACE',
+        # Generic fallback
+        'string': 'CONCEPT', 'entity': 'CONCEPT', 'object': 'CONCEPT', 'noun': 'CONCEPT',
+    }
+
+    # Canonical labels for country ids (ids follow validator COUNTRY_SYNONYMS values)
+    COUNTRY_LABELS = {
+        'usa': 'United States',
+        'gbr': 'United Kingdom',
+        'are': 'United Arab Emirates',
+        'cod': 'Democratic Republic of the Congo',
+        'cog': 'Republic of the Congo',
+        'kor': 'South Korea',
+        'prk': 'North Korea',
+        'rus': 'Russia',
+        'irn': 'Iran',
+        'irq': 'Iraq',
+    }
+
     def __init__(
         self,
         similarity_threshold: int = 95,
@@ -50,10 +120,23 @@ class HybridGraphBuilder:
         self.entity_id_counter = 0
         self.name_to_entity_id: Dict[str, str] = {}
 
+    def _normalize_type(self, entity_type: str) -> str:
+        """Normalize entity type to canonical uppercase form."""
+        if not entity_type:
+            return 'UNKNOWN'
+        # Check normalization map first, otherwise uppercase
+        return self.TYPE_NORMALIZATION.get(entity_type, entity_type.upper())
+
     def _ensure_entity(self, name: str, entity_type: str, source: str, episode_number: Any = None, book_slug: str = None):
         """Create or update an entity synthesized from ACE relationships."""
         if not name:
             return
+
+        # Filter out sentence-like or overly long phrases posing as entities
+        if self._should_filter_name(name):
+            logger.debug(f"Skipping entity that looks like a sentence/phrase: '{name}'")
+            return
+
         key = name.lower()
         if key in self.name_to_entity_id:
             return
@@ -61,10 +144,13 @@ class HybridGraphBuilder:
         entity_id = f"ace_entity_{self.entity_id_counter}"
         self.entity_id_counter += 1
 
+        # Normalize type to canonical form
+        normalized_type = self._normalize_type(entity_type)
+
         self.entities[entity_id] = {
             'id': entity_id,
             'name': name,
-            'type': entity_type or 'UNKNOWN',
+            'type': normalized_type,
             'description': '',
             'aliases': [],
             'metadata': {
@@ -88,6 +174,69 @@ class HybridGraphBuilder:
         if ent_id and ent_id in self.entities:
             return self.entities[ent_id].get('type')
         return None
+
+    @staticmethod
+    def _should_filter_name(name: str) -> bool:
+        """
+        Heuristic filter to drop sentence-like or noisy entity names.
+
+        Criteria:
+        - Very long (> 8 tokens)
+        - Long and no proper-case tokens (likely a phrase)
+        - Contains sentence punctuation (comma/semicolon/colon)
+        - Looks like a clause or question (e.g., starts with "what is", "how to", "why we", etc.)
+        """
+        if not name:
+            return True
+
+        lower = name.strip().lower()
+        tokens = lower.split()
+
+        if len(tokens) > 8:
+            return True
+
+        # If name is long and has no capital letters, likely a phrase
+        if len(tokens) > 6 and not any(ch.isupper() for ch in name):
+            return True
+
+        if any(p in name for p in [',', ';', ':']):
+            return True
+
+        # Generic clause/question detection
+        clause_prefixes = (
+            "what is",
+            "what are",
+            "how to",
+            "why we",
+            "people who",
+            "things that",
+            "ideas about",
+            "learning about",
+            "learn about",
+            "looking at",
+            "talking about",
+            "discussion of",
+            "particular area of",
+            "other parts of",
+            "part of the",
+            "two different parts",
+            "many different regions",
+            "the woods in the",
+            "two days boat ride",
+            "the global south in",
+            "the town they were born in",
+        )
+        if any(lower.startswith(p) for p in clause_prefixes):
+            return True
+
+        # Reject names that are mostly stop/connector words and >5 tokens
+        stop_like = {"the", "a", "an", "of", "in", "on", "for", "with", "and", "to", "at", "by", "from", "about"}
+        if len(tokens) > 5:
+            non_stop = [t for t in tokens if t not in stop_like]
+            if len(non_stop) <= 2:
+                return True
+
+        return False
 
     def load_ace_episodes(self, episodes_dir: Path) -> Dict[str, Any]:
         """Load ACE-postprocessed episode files"""
@@ -189,10 +338,13 @@ class HybridGraphBuilder:
                     entity_id = f"book_{book_slug}_{self.entity_id_counter}"
                     self.entity_id_counter += 1
 
+                    # Normalize type to canonical form
+                    normalized_type = self._normalize_type(entity.get('type', 'UNKNOWN'))
+
                     self.entities[entity_id] = {
                         'id': entity_id,
                         'name': entity.get('name', ''),
-                        'type': entity.get('type', 'UNKNOWN'),
+                        'type': normalized_type,
                         'description': entity.get('description', ''),
                         'aliases': entity.get('aliases', []),
                         'metadata': {
@@ -262,38 +414,169 @@ class HybridGraphBuilder:
         entity_id_mapping = {}
         name_canonical_map = {}
 
+        # Normalization helper for candidate generation (aligns with validator)
+        if self.validator:
+            normalize_name = self.validator._normalize_name
+            flexible_types = getattr(self.validator, "FLEXIBLE_TYPES", set())
+            country_id_fn = getattr(self.validator, "_country_id", lambda _: None)
+        else:
+            normalize_name = lambda n: n.lower() if isinstance(n, str) else ""
+            flexible_types = set()
+            country_id_fn = lambda _: None
+
+        def _token_overlap(tok1, tok2):
+            if not tok1 or not tok2:
+                return 0.0
+            shared = len(tok1.intersection(tok2))
+            return shared / max(len(tok1), len(tok2))
+
+        # Load GraphSAGE embeddings if available (for graph-informed deduplication)
+        graph_emb_lookup = None
+        if GRAPHSAGE_EMB_PATH.exists() and GRAPHSAGE_IDS_PATH.exists():
+            try:
+                graphsage_embeddings = np.load(GRAPHSAGE_EMB_PATH)
+                with GRAPHSAGE_IDS_PATH.open() as f:
+                    graphsage_ids = json.load(f)
+                graph_emb_lookup = {name: graphsage_embeddings[i] for i, name in enumerate(graphsage_ids)}
+                logger.info(f"  Loaded GraphSAGE embeddings for {len(graph_emb_lookup):,} entities (graph-informed deduplication enabled)")
+            except Exception as e:
+                logger.warning(f"  Could not load GraphSAGE embeddings: {e}")
+                graph_emb_lookup = None
+        else:
+            logger.info("  GraphSAGE embeddings not available - using string-based deduplication only")
+
+        def _graph_similarity(name1: str, name2: str) -> float:
+            """Compute cosine similarity between two entities using graph embeddings"""
+            if graph_emb_lookup is None:
+                return 0.0
+            emb1 = graph_emb_lookup.get(name1)
+            emb2 = graph_emb_lookup.get(name2)
+            if emb1 is None or emb2 is None:
+                return 0.0
+            dot = np.dot(emb1, emb2)
+            norm1 = np.linalg.norm(emb1)
+            norm2 = np.linalg.norm(emb2)
+            if norm1 == 0 or norm2 == 0:
+                return 0.0
+            return float(dot / (norm1 * norm2))
+
         for entity_type, entity_list in entities_by_type.items():
             logger.info(f"  Deduplicating {len(entity_list)} entities of type {entity_type}")
 
             processed = set()
+
+            # Precompute normalized names for this type bucket to avoid repeated work
+            normalized_names = {
+                ent_id: normalize_name(ent.get('name', ''))
+                for ent_id, ent in entity_list
+            }
+            country_ids = {
+                ent_id: country_id_fn(normalized_names[ent_id])
+                for ent_id, _ in entity_list
+            }
+            norm_tokens = {
+                ent_id: set(normalized_names[ent_id].split()) if normalized_names[ent_id] else set()
+                for ent_id, _ in entity_list
+            }
 
             for entity_id, entity in entity_list:
                 if entity_id in processed:
                     continue
 
                 similar_entities = [(entity_id, entity)]
-                entity_name = entity['name'].lower()
+                entity_name = entity.get('name', '')
+                entity_name_lower = entity_name.lower()
+                entity_name_norm = normalized_names.get(entity_id, "")
 
                 for other_id, other_entity in entity_list:
                     if other_id == entity_id or other_id in processed:
                         continue
 
-                    other_name = other_entity['name'].lower()
-                    similarity = fuzz.ratio(entity_name, other_name)
+                    other_name = other_entity.get('name', '')
+                    other_name_lower = other_name.lower()
+                    other_name_norm = normalized_names.get(other_id, "")
+                    entity_country = country_ids.get(entity_id)
+                    other_country = country_ids.get(other_id)
+                    tokens_self = norm_tokens.get(entity_id, set())
+                    tokens_other = norm_tokens.get(other_id, set())
 
-                    if entity_name == other_name or similarity >= self.similarity_threshold:
-                        # Validate merge if validator provided
-                        if self.validator:
-                            can_merge, reason = self.validator.can_merge(entity, other_entity, log_rejection=False)
-                            if not can_merge:
-                                continue
+                    raw_similarity = fuzz.ratio(entity_name_lower, other_name_lower)
+                    norm_similarity = fuzz.ratio(entity_name_norm, other_name_norm) if entity_name_norm and other_name_norm else raw_similarity
 
-                        similar_entities.append((other_id, other_entity))
-                        processed.add(other_id)
+                    # Candidate selection:
+                    # - Always accept exact raw match
+                    # - Accept raw_score >= threshold
+                    # - For flexible types, also accept normalized_score >= 85 to let Tier 2 fire
+                    # - For PLACE, accept if both normalize to same canonical country id
+                    # - For flexible types, accept moderate matches with token overlap (abbreviation cases)
+                    is_candidate = False
+                    if entity_name_lower == other_name_lower or raw_similarity >= self.similarity_threshold:
+                        is_candidate = True
+                    elif entity_type == 'PLACE' and entity_country and entity_country == other_country:
+                        is_candidate = True
+                    elif entity_type in flexible_types and norm_similarity >= 85:
+                        is_candidate = True
+                    elif entity_type in flexible_types:
+                        overlap = _token_overlap(tokens_self, tokens_other)
+                        if overlap >= 0.5 and norm_similarity >= 60:
+                            is_candidate = True
+                    elif entity_type == 'PERSON':
+                        # Special handling for person names: "Aaron Perry" vs "Aaron William Perry"
+                        # Check if one name is a subset of the other (first+last vs first+middle+last)
+                        # NOTE: Use original names for ordering (sets don't preserve order)
+                        entity_tokens_ordered = entity_name_lower.split()
+                        other_tokens_ordered = other_name_lower.split()
+
+                        # If both have 2+ tokens and one is a subset of the other, consider merging
+                        if len(entity_tokens_ordered) >= 2 and len(other_tokens_ordered) >= 2:
+                            # Check if shorter name's tokens are all in longer name (use sets for subset check)
+                            if tokens_self.issubset(tokens_other) or tokens_other.issubset(tokens_self):
+                                # Use ordered lists for first/last comparison
+                                shorter_tokens = entity_tokens_ordered if len(entity_tokens_ordered) < len(other_tokens_ordered) else other_tokens_ordered
+                                longer_tokens = other_tokens_ordered if len(entity_tokens_ordered) < len(other_tokens_ordered) else entity_tokens_ordered
+
+                                # Check if first token (first name) and last token (last name) match
+                                if shorter_tokens[0] == longer_tokens[0] and shorter_tokens[-1] == longer_tokens[-1]:
+                                    is_candidate = True
+
+                    # UNCERTAINTY ZONE: String similarity 60-90%
+                    # Use graph embedding similarity as tiebreaker
+                    if not is_candidate and 60 <= raw_similarity < 90 and graph_emb_lookup is not None:
+                        graph_sim = _graph_similarity(entity_name, other_name)
+                        if graph_sim > 0.9:
+                            is_candidate = True
+                            logger.debug(f"    Graph-informed merge: '{entity_name}' <-> '{other_name}' "
+                                       f"(string={raw_similarity}%, graph={graph_sim:.3f})")
+
+                    if not is_candidate:
+                        continue
+
+                    # Validate merge if validator provided
+                    if self.validator:
+                        can_merge, reason = self.validator.can_merge(entity, other_entity, log_rejection=False)
+                        if not can_merge:
+                            continue
+
+                    similar_entities.append((other_id, other_entity))
+                    processed.add(other_id)
 
                 # Merge
                 merged_entity = self._merge_entities(similar_entities)
                 canonical_id = similar_entities[0][0]
+
+                # If PLACE with known country id, force canonical country label
+                entity_country = country_ids.get(canonical_id)
+                if entity_type == 'PLACE' and entity_country:
+                    canonical_label = self.COUNTRY_LABELS.get(entity_country)
+                    if canonical_label:
+                        current_name = merged_entity.get('name')
+                        if current_name != canonical_label:
+                            alias_set = set(merged_entity.get('aliases', []))
+                            if current_name:
+                                alias_set.add(current_name)
+                            merged_entity['name'] = canonical_label
+                            merged_entity['aliases'] = sorted(alias_set)
+
                 merged_entities[canonical_id] = merged_entity
                 name_canonical_map[merged_entity['name'].lower()] = merged_entity['name']
 
