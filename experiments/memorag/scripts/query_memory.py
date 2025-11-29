@@ -1,0 +1,185 @@
+#!/usr/bin/env python3
+"""
+Query MemoRAG Memory Index
+
+This script loads a pre-built MemoRAG memory index and runs queries against it.
+
+Usage:
+    python query_memory.py "Your question here"
+    python query_memory.py --interactive  # Interactive mode
+"""
+
+import argparse
+import pickle
+import sys
+from pathlib import Path
+
+
+def load_pipeline(pipeline_path: Path):
+    """Load saved MemoRAG pipeline from disk."""
+    if not pipeline_path.exists():
+        print(f"❌ Pipeline not found: {pipeline_path}")
+        print(f"\n   Please run build_memory.py first to create the index:")
+        print(f"   python experiments/memorag/scripts/build_memory.py")
+        sys.exit(1)
+
+    print(f"📥 Loading MemoRAG pipeline from: {pipeline_path}")
+
+    with open(pipeline_path, 'rb') as f:
+        pipe = pickle.load(f)
+
+    print(f"   ✅ Pipeline loaded successfully!")
+    return pipe
+
+
+def query_memory(pipe, question: str, context_length: int = 2000, top_k: int = 5):
+    """
+    Query the MemoRAG memory.
+
+    Args:
+        pipe: MemoRAG pipeline
+        question: User question
+        context_length: Maximum context length for retrieval
+        top_k: Number of relevant passages to retrieve
+
+    Returns:
+        Answer string
+    """
+    print(f"\n🔍 Query: {question}")
+    print(f"   Retrieving relevant context (top_k={top_k})...")
+
+    # Query the memorized content
+    answer = pipe.query(
+        question,
+        context_length=context_length,
+        top_k=top_k
+    )
+
+    return answer
+
+
+def interactive_mode(pipe):
+    """Run interactive query session."""
+    print("\n" + "=" * 60)
+    print("🧠 MemoRAG Interactive Mode - Our Biggest Deal")
+    print("=" * 60)
+    print("\nType your questions below. Type 'quit' or 'exit' to stop.")
+    print("Commands:")
+    print("  /context <n>  - Set context length (default: 2000)")
+    print("  /topk <n>     - Set top_k passages (default: 5)")
+    print("=" * 60)
+
+    context_length = 2000
+    top_k = 5
+
+    while True:
+        try:
+            question = input("\n💭 Question: ").strip()
+
+            if not question:
+                continue
+
+            if question.lower() in ('quit', 'exit', 'q'):
+                print("\n👋 Goodbye!")
+                break
+
+            # Handle commands
+            if question.startswith('/context '):
+                try:
+                    context_length = int(question.split()[1])
+                    print(f"   ✅ Context length set to: {context_length}")
+                    continue
+                except (ValueError, IndexError):
+                    print("   ❌ Invalid context length. Usage: /context 2000")
+                    continue
+
+            if question.startswith('/topk '):
+                try:
+                    top_k = int(question.split()[1])
+                    print(f"   ✅ Top-k set to: {top_k}")
+                    continue
+                except (ValueError, IndexError):
+                    print("   ❌ Invalid top-k. Usage: /topk 5")
+                    continue
+
+            # Query
+            answer = query_memory(pipe, question, context_length, top_k)
+
+            print(f"\n💡 Answer:\n")
+            print(answer)
+            print("\n" + "-" * 60)
+
+        except KeyboardInterrupt:
+            print("\n\n👋 Goodbye!")
+            break
+        except Exception as e:
+            print(f"\n❌ Error: {e}")
+            import traceback
+            traceback.print_exc()
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Query MemoRAG memory index for Our Biggest Deal"
+    )
+    parser.add_argument(
+        "question",
+        nargs="*",
+        help="Question to ask (optional if using --interactive)"
+    )
+    parser.add_argument(
+        "--pipeline",
+        type=Path,
+        default=Path(__file__).parent.parent / "indices" / "memorag_pipeline.pkl",
+        help="Path to pickled pipeline"
+    )
+    parser.add_argument(
+        "--interactive",
+        "-i",
+        action="store_true",
+        help="Run in interactive mode"
+    )
+    parser.add_argument(
+        "--context-length",
+        type=int,
+        default=2000,
+        help="Maximum context length for retrieval (default: 2000)"
+    )
+    parser.add_argument(
+        "--top-k",
+        type=int,
+        default=5,
+        help="Number of relevant passages to retrieve (default: 5)"
+    )
+
+    args = parser.parse_args()
+
+    # Load pipeline
+    pipe = load_pipeline(args.pipeline)
+
+    # Interactive mode
+    if args.interactive:
+        interactive_mode(pipe)
+        return
+
+    # Single query mode
+    if not args.question:
+        print("❌ No question provided.")
+        print("\nUsage:")
+        print('  python query_memory.py "Your question here"')
+        print('  python query_memory.py --interactive')
+        sys.exit(1)
+
+    question = " ".join(args.question)
+
+    # Query
+    answer = query_memory(pipe, question, args.context_length, args.top_k)
+
+    # Display answer
+    print(f"\n💡 Answer:\n")
+    print(answer)
+    print("\n" + "=" * 60)
+
+
+if __name__ == "__main__":
+    main()

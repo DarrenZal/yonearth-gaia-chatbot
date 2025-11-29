@@ -1,0 +1,33 @@
+# MemoRAG Experiment - Git Ignore
+
+# Model cache and indices (large files)
+indices/
+!indices/.gitkeep
+
+# Downloaded data files
+data/chapters/
+!data/chapters/.gitkeep
+
+# Results and logs
+results/
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# OS files
+.DS_Store
+Thumbs.db

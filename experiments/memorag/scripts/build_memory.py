@@ -1,0 +1,241 @@
+#!/usr/bin/env python3
+"""
+Build MemoRAG Memory Index for "Our Biggest Deal"
+
+This script extracts text from the book PDF and builds a MemoRAG memory index
+for efficient long-context question answering.
+
+The text extraction uses pdfplumber (same as ACE pipeline) to ensure clean text.
+"""
+
+import argparse
+import json
+import pickle
+import sys
+from pathlib import Path
+from typing import List, Dict
+
+import pdfplumber
+
+# Add project root to path
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+
+def extract_book_text(pdf_path: Path) -> str:
+    """
+    Extract text from PDF using pdfplumber (same method as ACE pipeline).
+
+    Args:
+        pdf_path: Path to PDF file
+
+    Returns:
+        Full book text as string
+    """
+    print(f"📖 Extracting text from: {pdf_path}")
+
+    with pdfplumber.open(pdf_path) as pdf:
+        full_text = "\n\n".join(
+            page.extract_text() or ""
+            for page in pdf.pages
+        )
+        total_pages = len(pdf.pages)
+
+    print(f"   ✅ Extracted {len(full_text):,} characters from {total_pages} pages")
+    return full_text
+
+
+def chunk_text_by_chapters(text: str) -> List[Dict[str, str]]:
+    """
+    Attempt to split text into chapters while preserving structure.
+
+    This helps MemoRAG understand the book's organization, even though
+    it can handle long context natively.
+
+    Args:
+        text: Full book text
+
+    Returns:
+        List of chapter dicts with 'chapter_num', 'title', 'text'
+    """
+    # Simple chapter detection - look for "Chapter N" or "CHAPTER N" patterns
+    import re
+
+    # Pattern to match chapter headers
+    chapter_pattern = r'(?:Chapter|CHAPTER)\s+(\d+|[IVX]+)(?:\s*[:\-]\s*(.+?))?(?=\n)'
+
+    matches = list(re.finditer(chapter_pattern, text))
+
+    if not matches:
+        print("   ⚠️  No chapter markers found, treating as single document")
+        return [{'chapter_num': 1, 'title': 'Full Book', 'text': text}]
+
+    chunks = []
+    for i, match in enumerate(matches):
+        chapter_num = match.group(1)
+        chapter_title = match.group(2) or ""
+
+        # Get text from this chapter to next chapter (or end)
+        start = match.start()
+        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
+        chapter_text = text[start:end].strip()
+
+        chunks.append({
+            'chapter_num': chapter_num,
+            'title': chapter_title.strip(),
+            'text': chapter_text
+        })
+
+    print(f"   ✅ Split into {len(chunks)} chapters")
+    return chunks
+
+
+def build_memorag_index(
+    text: str,
+    model_name: str = "memorag-qwen2-7b-inst",
+    use_api: bool = False,
+    cache_dir: str = None
+):
+    """
+    Build MemoRAG memory index from book text.
+
+    Args:
+        text: Full book text (or concatenated chapters)
+        model_name: MemoRAG model to use
+        use_api: If True, use API instead of local model
+        cache_dir: Directory to cache models
+
+    Returns:
+        MemoRAG pipeline object with memorized content
+    """
+    try:
+        from memorag import MemoRAG
+    except ImportError:
+        print("❌ MemoRAG not installed. Installing now...")
+        import subprocess
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install",
+            "memorag", "torch", "transformers"
+        ])
+        from memorag import MemoRAG
+
+    print(f"\n🧠 Initializing MemoRAG with model: {model_name}")
+
+    # Initialize pipeline
+    pipe = MemoRAG(
+        model_name=model_name,
+        cache_dir=cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache"),
+        api_mode=use_api
+    )
+
+    print(f"   ✅ Pipeline initialized")
+    print(f"\n📝 Memorizing book content ({len(text):,} characters)...")
+    print(f"   This may take several minutes depending on hardware...")
+
+    # Memorize the content
+    pipe.memorize(text)
+
+    print(f"   ✅ Memory index built successfully!")
+
+    return pipe
+
+
+def save_pipeline(pipe, output_path: Path):
+    """Save MemoRAG pipeline to disk."""
+    print(f"\n💾 Saving pipeline to: {output_path}")
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with open(output_path, 'wb') as f:
+        pickle.dump(pipe, f)
+
+    print(f"   ✅ Pipeline saved!")
+    print(f"   Size: {output_path.stat().st_size / 1024 / 1024:.2f} MB")
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Build MemoRAG memory index for Our Biggest Deal"
+    )
+    parser.add_argument(
+        "--pdf",
+        type=Path,
+        default=PROJECT_ROOT / "data" / "books" / "OurBiggestDeal" / "our_biggest_deal.pdf",
+        help="Path to PDF file"
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=Path(__file__).parent.parent / "indices" / "memorag_pipeline.pkl",
+        help="Output path for pickled pipeline"
+    )
+    parser.add_argument(
+        "--model",
+        default="memorag-qwen2-7b-inst",
+        help="MemoRAG model name"
+    )
+    parser.add_argument(
+        "--api",
+        action="store_true",
+        help="Use API mode instead of local model"
+    )
+    parser.add_argument(
+        "--cache-dir",
+        type=Path,
+        help="Model cache directory"
+    )
+
+    args = parser.parse_args()
+
+    print("=" * 60)
+    print("🚀 MemoRAG Memory Builder - Our Biggest Deal")
+    print("=" * 60)
+
+    # Check if PDF exists
+    if not args.pdf.exists():
+        print(f"❌ PDF not found: {args.pdf}")
+        print(f"   Please ensure the book PDF is at the correct location.")
+        sys.exit(1)
+
+    # Extract text
+    text = extract_book_text(args.pdf)
+
+    # Optional: Split by chapters for better context
+    chapters = chunk_text_by_chapters(text)
+
+    # Concatenate chapters with clear markers
+    formatted_text = "\n\n".join(
+        f"### Chapter {ch['chapter_num']}: {ch['title']}\n\n{ch['text']}"
+        for ch in chapters
+    )
+
+    # Build MemoRAG index
+    try:
+        pipe = build_memorag_index(
+            text=formatted_text,
+            model_name=args.model,
+            use_api=args.api,
+            cache_dir=str(args.cache_dir) if args.cache_dir else None
+        )
+
+        # Save pipeline
+        save_pipeline(pipe, args.output)
+
+        print("\n" + "=" * 60)
+        print("✅ SUCCESS! MemoRAG memory index is ready.")
+        print("=" * 60)
+        print(f"\nNext steps:")
+        print(f"  1. Test the index with query_memory.py")
+        print(f"  2. Example query:")
+        print(f'     python experiments/memorag/scripts/query_memory.py \\')
+        print(f'       "What is the narrative arc of Planetary Prosperity?"')
+
+    except Exception as e:
+        print(f"\n❌ Error building MemoRAG index: {e}")
+        import traceback
+        traceback.print_exc()
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

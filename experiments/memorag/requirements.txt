@@ -1,0 +1,19 @@
+# MemoRAG Experiment Requirements
+
+# Core dependencies
+memorag>=0.1.5
+pdfplumber>=0.11.0
+torch>=2.0.0
+transformers>=4.43.1
+
+# Optional but recommended
+accelerate>=0.24.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
+
+# For GPU support (Linux only)
+# deepspeed>=0.14.0  # Included with memorag on Linux
+
+# Development tools
+ipython>=8.0.0
+jupyter>=1.0.0
