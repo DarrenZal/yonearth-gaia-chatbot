@@ -43,21 +43,28 @@
 
 ## 🔄 Current Status
 
-### Ready to Build Index
-The system is now properly configured and ready to build the MemoRAG memory index:
+### BUILD IN PROGRESS (2025-11-28 21:23 PST)
 
-```bash
-ssh claudeuser@152.53.37.180
-cd /home/claudeuser/yonearth-gaia-chatbot
-python3 experiments/memorag/scripts/build_memory.py
-```
+The memory index build is currently running on the server:
+
+**Process Status**:
+- PID: 1612989
+- CPU Usage: 742% (7-8 cores)
+- Memory: 7.4GB / 24GB (30.2%)
+- Runtime: 25+ minutes
+- Log: `/tmp/memorag_chunked_build.log`
+
+**Recent Fix Applied**:
+- Fixed memory allocation error by implementing text chunking
+- Book text (998K chars) now split into ~13 chunks of 80K chars each
+- Each chunk memorized iteratively to stay within Qwen2-1.5B's 32K token limit
 
 **Expected Process**:
-1. Extract text from `our_biggest_deal.pdf` (~998,299 characters, 480 pages)
-2. Download Qwen2-1.5B-Instruct model (~3GB, first run only)
-3. Initialize hybrid pipeline (local retrieval + OpenAI generation)
-4. Memorize book content (5-15 minutes on CPU)
-5. Save pipeline to `experiments/memorag/indices/memorag_pipeline.pkl`
+1. ✅ Extract text from `our_biggest_deal.pdf` (~998,299 characters, 480 pages)
+2. ✅ Download Qwen2-1.5B-Instruct model (~3GB, first run only)
+3. ✅ Initialize hybrid pipeline (local retrieval + GPT-4.1-mini generation)
+4. 🔄 Memorize book content in chunks (~30-45 minutes on CPU)
+5. ⏳ Save pipeline to `experiments/memorag/indices/memorag_pipeline.pkl`
 
 ## 🧪 Testing Plan
 
@@ -97,6 +104,16 @@ python3 experiments/memorag/scripts/query_memory.py --interactive
 ### Issue 5: PyNVML Missing
 **Problem**: `ModuleNotFoundError: No module named 'pynvml'`
 **Solution**: Installed pynvml-13.0.1
+
+### Issue 6: Memory Allocation Error (Context Window Overflow)
+**Problem**: `RuntimeError: can't allocate memory: you tried to allocate 101354426912 bytes (101GB)`
+**Root Cause**: Book text (998K chars = 225K tokens) exceeded Qwen2-1.5B's 32K token context window
+**Stack Trace**: `qwen2/modeling_qwen2.py:734 in _prepare_4d_causal_attention_mask_with_cache_position`
+**Solution**: Implemented intelligent text chunking in `build_memory.py`:
+  - Split text into 80K character chunks (~20K tokens each)
+  - Break at paragraph boundaries for coherence
+  - Iteratively memorize each chunk separately
+  - Results in ~13 chunks for the full book
 
 ## 📊 Performance Expectations
 
