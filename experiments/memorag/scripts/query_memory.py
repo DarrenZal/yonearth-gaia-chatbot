@@ -86,28 +86,23 @@ def load_pipeline(memory_dir: Path, model_name: str = "Qwen/Qwen2-1.5B-Instruct"
     return pipe
 
 
-def query_memory(pipe, question: str, context_length: int = 2000, top_k: int = 5):
+def query_memory(pipe, question: str, max_new_tokens: int = 512):
     """
     Query the MemoRAG memory.
 
     Args:
         pipe: MemoRAG pipeline
         question: User question
-        context_length: Maximum context length for retrieval
-        top_k: Number of relevant passages to retrieve
+        max_new_tokens: Maximum tokens in generated answer
 
     Returns:
         Answer string
     """
     print(f"\n🔍 Query: {question}")
-    print(f"   Retrieving relevant context (top_k={top_k})...")
+    print(f"   Generating answer from memory...")
 
-    # Query the memorized content
-    answer = pipe.query(
-        question,
-        context_length=context_length,
-        top_k=top_k
-    )
+    # Query the memorized content using mem_model.answer()
+    answer = pipe.mem_model.answer(question, max_new_tokens=max_new_tokens)
 
     return answer
 
@@ -119,12 +114,10 @@ def interactive_mode(pipe):
     print("=" * 60)
     print("\nType your questions below. Type 'quit' or 'exit' to stop.")
     print("Commands:")
-    print("  /context <n>  - Set context length (default: 2000)")
-    print("  /topk <n>     - Set top_k passages (default: 5)")
+    print("  /tokens <n>   - Set max tokens in answer (default: 512)")
     print("=" * 60)
 
-    context_length = 2000
-    top_k = 5
+    max_new_tokens = 512
 
     while True:
         try:
@@ -138,26 +131,17 @@ def interactive_mode(pipe):
                 break
 
             # Handle commands
-            if question.startswith('/context '):
+            if question.startswith('/tokens '):
                 try:
-                    context_length = int(question.split()[1])
-                    print(f"   ✅ Context length set to: {context_length}")
+                    max_new_tokens = int(question.split()[1])
+                    print(f"   ✅ Max tokens set to: {max_new_tokens}")
                     continue
                 except (ValueError, IndexError):
-                    print("   ❌ Invalid context length. Usage: /context 2000")
-                    continue
-
-            if question.startswith('/topk '):
-                try:
-                    top_k = int(question.split()[1])
-                    print(f"   ✅ Top-k set to: {top_k}")
-                    continue
-                except (ValueError, IndexError):
-                    print("   ❌ Invalid top-k. Usage: /topk 5")
+                    print("   ❌ Invalid token count. Usage: /tokens 512")
                     continue
 
             # Query
-            answer = query_memory(pipe, question, context_length, top_k)
+            answer = query_memory(pipe, question, max_new_tokens)
 
             print(f"\n💡 Answer:\n")
             print(answer)
@@ -199,16 +183,10 @@ def main():
         help="Run in interactive mode"
     )
     parser.add_argument(
-        "--context-length",
+        "--max-tokens",
         type=int,
-        default=2000,
-        help="Maximum context length for retrieval (default: 2000)"
-    )
-    parser.add_argument(
-        "--top-k",
-        type=int,
-        default=5,
-        help="Number of relevant passages to retrieve (default: 5)"
+        default=512,
+        help="Maximum tokens in generated answer (default: 512)"
     )
 
     args = parser.parse_args()
@@ -232,7 +210,7 @@ def main():
     question = " ".join(args.question)
 
     # Query
-    answer = query_memory(pipe, question, args.context_length, args.top_k)
+    answer = query_memory(pipe, question, args.max_tokens)
 
     # Display answer
     print(f"\n💡 Answer:\n")
