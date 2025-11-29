@@ -10,11 +10,17 @@ Usage:
 """
 
 import argparse
-import pickle
 import sys
 import os
 from pathlib import Path
 from dotenv import load_dotenv
+
+# Use dill instead of pickle for better serialization
+try:
+    import dill as pickle
+except ImportError:
+    import pickle
+    print("⚠️  Warning: dill not installed, using pickle (may fail on complex objects)")
 
 # Load environment variables (OPENAI_API_KEY)
 load_dotenv()

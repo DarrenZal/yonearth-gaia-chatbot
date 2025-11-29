@@ -10,7 +10,6 @@ The text extraction uses pdfplumber (same as ACE pipeline) to ensure clean text.
 
 import argparse
 import json
-import pickle
 import sys
 import os
 from pathlib import Path
@@ -18,6 +17,13 @@ from typing import List, Dict
 
 import pdfplumber
 from dotenv import load_dotenv
+
+# Use dill instead of pickle for better serialization of complex objects
+try:
+    import dill as pickle
+except ImportError:
+    import pickle
+    print("⚠️  Warning: dill not installed, using pickle (may fail on complex objects)")
 
 # Load environment variables (OPENAI_API_KEY)
 load_dotenv()

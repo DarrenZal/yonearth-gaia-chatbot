@@ -22,5 +22,8 @@ accelerate>=0.24.0
 sentencepiece>=0.1.99
 protobuf>=3.20.0
 
+# Serialization (dill handles threading objects better than pickle)
+dill>=0.3.7
+
 # Development tools
 ipython>=8.0.0
