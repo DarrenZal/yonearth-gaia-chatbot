@@ -140,9 +140,9 @@ def build_memorag_index(
             print("   ⚠️  Warning: OPENAI_API_KEY not found in environment")
             print("   ⚠️  Falling back to local generation (will be slow)")
         else:
-            print(f"   Generation Model (Cloud): gpt-4o-mini (OpenAI)")
+            print(f"   Generation Model (Cloud): gpt-4.1-mini (OpenAI)")
             customized_gen_model = Agent(
-                model="gpt-4o-mini",
+                model="gpt-4.1-mini",
                 source="openai",
                 api_dict={"api_key": openai_key}
             )
