@@ -150,10 +150,14 @@ def build_memorag_index(
     cache_path = cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache")
 
     # Initialize pipeline with hybrid setup
+    #  MemoRAG requires both memory and retrieval models
+    # Use same model for both memory and retrieval for simplicity
     pipe = MemoRAG(
         mem_model_name_or_path=model_name,
+        ret_model_name_or_path=model_name,  # Use same model for retrieval
         cache_dir=cache_path,
-        customized_gen_model=customized_gen_model
+        customized_gen_model=customized_gen_model,
+        enable_flash_attn=False  # Disable flash attention for CPU
     )
 
     print(f"   ✅ Pipeline initialized")
