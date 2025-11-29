@@ -203,8 +203,8 @@ def main():
     )
     parser.add_argument(
         "--model",
-        default="memorag-qwen2-7b-inst",
-        help="MemoRAG model name"
+        default="Qwen/Qwen2-1.5B-Instruct",  # Using smaller public model for CPU
+        help="MemoRAG memory/retrieval model name (use smaller models for CPU)"
     )
     parser.add_argument(
         "--no-openai",
