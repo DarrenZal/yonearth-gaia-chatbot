@@ -34,9 +34,9 @@ print(f"✓ Environment loaded")
 print(f"✓ Index: {PINECONE_INDEX_NAME}")
 
 # Topic modeling parameters
-MAX_VECTORS = 5000  # Memory-safe limit (reduced for UMAP performance)
-TARGET_TOPICS = 8  # Target number of topics (will auto-adjust)
-MIN_TOPIC_SIZE = 40  # Minimum chunks per topic
+MAX_VECTORS = 10000  # Memory-safe limit
+TARGET_TOPICS = 10  # Target number of topics (will auto-adjust)
+MIN_TOPIC_SIZE = 50  # Minimum chunks per topic
 
 
 def fetch_vectors_from_pinecone():

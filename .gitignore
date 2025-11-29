@@ -97,6 +97,10 @@ dmypy.json
 .env.backup
 .env.*
 
+# Playwright artifacts
+.playwright-mcp/
+playwright_artifacts/
+
 # Data directories
 data/feedback/
 data/backups/

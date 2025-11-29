@@ -652,6 +652,20 @@ python3 scripts/archive/visualization/upload_to_nomic_atlas.py
 python3 scripts/archive/visualization/generate_map_hierarchical.py
 ```
 
+### WebGL Context Management
+
+The 3D visualizations use Three.js with WebGL. Chrome limits active WebGL contexts (~16 across all tabs), which can cause "WebGL Not Available" errors after heavy usage or repeated page refreshes.
+
+**Current solution**: The viewer includes a `dispose()` method that properly releases WebGL resources on page unload, helping Chrome recycle contexts faster.
+
+**Future consideration**: WebGPU migration could provide significant benefits:
+- Now supported in all major browsers (Chrome, Firefox, Safari as of 2025)
+- Up to 10x faster rendering with Render Bundles
+- GPU-accelerated compute for physics simulations
+- Modern shader language (WGSL)
+- Would require switching from `WebGLRenderer` to `WebGPURenderer` in Three.js
+- See: https://web.dev/blog/webgpu-supported-major-browsers
+
 ## Deployment Notes
 
 - **VPS**: Use `./deploy.sh` for complete Docker setup with nginx, SSL, Redis

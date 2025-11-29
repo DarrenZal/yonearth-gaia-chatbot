@@ -176,14 +176,13 @@
         /* Info Panel */
         #info-panel {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 0;
+            right: 0;
             max-width: 380px;
-            max-height: calc(100vh - 40px);
+            max-height: 100vh;
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
-            border: 1px solid rgba(100, 200, 255, 0.3);
-            border-radius: 12px;
+            border-left: 1px solid rgba(100, 200, 255, 0.3);
             backdrop-filter: blur(15px);
             z-index: 1000;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -341,14 +340,13 @@
         /* Controls Panel */
         #controls-panel {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 0;
+            left: 0;
             max-width: 320px;
-            max-height: calc(100vh - 40px);
+            max-height: 100vh;
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
-            border: 1px solid rgba(100, 200, 255, 0.3);
-            border-radius: 12px;
+            border-right: 1px solid rgba(100, 200, 255, 0.3);
             backdrop-filter: blur(15px);
             z-index: 1000;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
@@ -416,6 +414,35 @@
 
         .mode-btn:not(.active) .mode-subtitle {
             color: #7d8ab8;
+        }
+
+        /* Color Legend */
+        .color-legend {
+            margin-top: 12px;
+            padding: 10px;
+            background: rgba(100, 200, 255, 0.05);
+            border: 1px solid rgba(100, 200, 255, 0.15);
+            border-radius: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: #e0e0e0;
+        }
+
+        .legend-color {
+            width: 14px;
+            height: 14px;
+            border-radius: 3px;
+            display: inline-block;
+            flex-shrink: 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .filter-controls {
@@ -491,32 +518,27 @@
             background: rgba(100, 200, 255, 0.2);
         }
 
-        /* Search */
+        /* Search (moved to controls panel) */
         #search-container {
-            position: absolute;
-            top: 20px;
-            left: 360px;
-            width: 360px;
-            max-width: 40vw;
+            position: relative;
             z-index: 1000;
         }
 
         #search-input {
             width: 100%;
-            padding: 15px 20px;
-            background: rgba(15, 20, 35, 0.95);
-            border: 1px solid rgba(100, 200, 255, 0.3);
-            border-radius: 25px;
+            padding: 10px 12px;
+            background: rgba(15, 20, 35, 0.9);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 6px;
             color: #e0e0e0;
-            font-size: 15px;
-            backdrop-filter: blur(15px);
+            font-size: 13px;
             transition: all 0.3s ease;
         }
 
         #search-input:focus {
             outline: none;
             border-color: #667eea;
-            box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
         }
 
         #search-input::placeholder {
@@ -529,14 +551,14 @@
             top: 100%;
             left: 0;
             right: 0;
-            margin-top: 8px;
-            max-height: 400px;
+            margin-top: 6px;
+            max-height: 300px;
             overflow-y: auto;
             background: rgba(15, 20, 35, 0.98);
             border: 1px solid rgba(100, 200, 255, 0.3);
-            border-radius: 12px;
+            border-radius: 8px;
             backdrop-filter: blur(15px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
             display: none;
             z-index: 2000;
         }
@@ -578,6 +600,36 @@
             text-align: center;
             color: #808080;
             font-size: 14px;
+        }
+
+        /* Sources Section */
+        .sources-select {
+            width: 100%;
+            padding: 8px 10px;
+            background: rgba(15, 20, 35, 0.9);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 6px;
+            color: #e0e0e0;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 8px;
+        }
+
+        .sources-select:hover {
+            border-color: rgba(100, 200, 255, 0.4);
+        }
+
+        .sources-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .sources-note {
+            font-size: 11px;
+            color: #7a8ca8;
+            margin-top: 8px;
         }
 
         /* Cluster Search & Focus */
@@ -711,20 +763,9 @@
             font-weight: 500;
         }
 
-        /* Keyboard Shortcuts */
+        /* Keyboard Shortcuts - hidden */
         #shortcuts-hint {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px 20px;
-            background: rgba(15, 20, 35, 0.8);
-            border: 1px solid rgba(100, 200, 255, 0.2);
-            border-radius: 20px;
-            font-size: 12px;
-            color: #808080;
-            backdrop-filter: blur(10px);
-            z-index: 1000;
+            display: none;
         }
 
         .shortcut-key {
@@ -787,9 +828,84 @@
                 padding: 8px 10px;
             }
         }
+
+        /* Banner Header */
+        .kg-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background: rgba(2, 10, 25, 0.95);
+            border-bottom: 1px solid rgba(0, 200, 255, 0.25);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 2000;
+            color: #e0f7ff;
+        }
+
+        .kg-title-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .kg-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .kg-subtitle {
+            font-size: 0.85rem;
+            color: #9ecfff;
+        }
+
+        .kg-nav {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .kg-nav a {
+            padding: 6px 12px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            color: #e0f7ff;
+            border: 1px solid rgba(0, 200, 255, 0.4);
+            background: rgba(0, 30, 60, 0.7);
+            transition: background 0.2s;
+        }
+
+        .kg-nav a:hover {
+            background: rgba(0, 200, 255, 0.15);
+        }
+
+        /* Adjust for header - add padding-top to account for fixed header */
+        body {
+            padding-top: 60px;
+        }
     </style>
 </head>
 <body>
+    <!-- Banner Header -->
+    <header class="kg-header">
+        <div class="kg-title-block">
+            <div class="kg-title">YonEarth Knowledge Graph</div>
+            <div class="kg-subtitle">17,280 entities with hierarchical clusters</div>
+        </div>
+        <nav class="kg-nav">
+            <a href="../">Chat with Gaia</a>
+            <a href="../podcast/">3D Podcast Map</a>
+        </nav>
+    </header>
+
     <!-- Graph Container (3D) -->
     <div id="graph-container"></div>
 
@@ -822,17 +938,6 @@
                 <li>Check GPU drivers are up to date</li>
             </ul>
         </div>
-    </div>
-
-    <!-- Search -->
-    <div id="search-container">
-        <input
-            type="text"
-            id="search-input"
-            placeholder="Search entities (Ctrl+K)..."
-            autocomplete="off"
-        />
-        <div id="autocomplete-dropdown" class="autocomplete-dropdown"></div>
     </div>
 
     <!-- Info Panel -->
@@ -880,6 +985,9 @@
                 </div>
             </div>
 
+            <!-- Voronoi cluster info (hidden by default, shown when clicking clusters in voronoi view) -->
+            <div id="voronoi-cluster-info" style="display: none;"></div>
+
             <div class="hierarchy-block" style="margin-top: 16px;">
                 <div class="hierarchy-title">Graph overview</div>
                 <div style="margin-top: 6px; font-size: 13px; color: #808080;">
@@ -917,6 +1025,34 @@
 
     <!-- Controls Panel -->
     <div id="controls-panel">
+        <!-- Search Section -->
+        <div class="control-section">
+            <label class="control-label">Search Entities</label>
+            <div id="search-container">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search entities (Ctrl+K)..."
+                    autocomplete="off"
+                />
+                <div id="autocomplete-dropdown" class="autocomplete-dropdown"></div>
+            </div>
+        </div>
+
+        <!-- Sources Section -->
+        <div class="control-section">
+            <label class="control-label">Sources</label>
+            <select id="episode-filter" class="sources-select">
+                <option value="">All episodes</option>
+            </select>
+            <select id="book-filter" class="sources-select">
+                <option value="">All books</option>
+            </select>
+            <div class="sources-note">
+                Filter entities by episode or book source
+            </div>
+        </div>
+
         <div class="control-section">
             <label class="control-label">Multi-Lens Visualization</label>
             <select id="multi-lens-selector" class="multi-lens-select">
@@ -929,6 +1065,11 @@
                 <optgroup label="──── HIERARCHY LAYOUTS ────">
                     <option value="circle-pack">Circle Pack (Zoomable Hierarchy)</option>
                     <option value="voronoi">Voronoi (Cellular Organic)</option>
+                    <option value="voronoi-2">Voronoi 2 (Semantic Landscape)</option>
+                    <option value="voronoi-3">Voronoi 3 (Constrained Cells)</option>
+                    <option value="voronoi4">Voronoi 4 (Progressive Disclosure)</option>
+                    <option value="voronoi5">Voronoi 5 (Subset, 1k nodes)</option>
+                    <option value="hierarchical">Hierarchical (L3→L2→L1→Entities)</option>
                 </optgroup>
             </select>
         </div>
@@ -938,6 +1079,25 @@
             <div class="mode-selector">
                 <div class="mode-btn active" data-color-mode="type">By Type</div>
                 <div class="mode-btn" data-color-mode="centrality">By Centrality</div>
+                <div class="mode-btn" data-color-mode="l3cluster">By Cluster</div>
+            </div>
+            <!-- Color Legend for "By Type" -->
+            <div id="color-legend-type" class="color-legend">
+                <div class="legend-item"><span class="legend-color" style="background: #4CAF50;"></span> PERSON</div>
+                <div class="legend-item"><span class="legend-color" style="background: #2196F3;"></span> ORGANIZATION</div>
+                <div class="legend-item"><span class="legend-color" style="background: #9C27B0;"></span> CONCEPT</div>
+                <div class="legend-item"><span class="legend-color" style="background: #FF9800;"></span> PRACTICE</div>
+                <div class="legend-item"><span class="legend-color" style="background: #F44336;"></span> PRODUCT</div>
+                <div class="legend-item"><span class="legend-color" style="background: #00BCD4;"></span> PLACE</div>
+                <div class="legend-item"><span class="legend-color" style="background: #FFEB3B;"></span> EVENT</div>
+                <div class="legend-item"><span class="legend-color" style="background: #795548;"></span> WORK</div>
+                <div class="legend-item"><span class="legend-color" style="background: #E91E63;"></span> CLAIM</div>
+            </div>
+            <!-- Color Legend for "By Centrality" -->
+            <div id="color-legend-centrality" class="color-legend" style="display: none;">
+                <div class="legend-item"><span class="legend-color" style="background: #00FF88;"></span> Low Centrality</div>
+                <div class="legend-item"><span class="legend-color" style="background: #00DDFF;"></span> Medium Centrality</div>
+                <div class="legend-item"><span class="legend-color" style="background: #0088FF;"></span> High Centrality</div>
             </div>
         </div>
 
@@ -1022,7 +1182,8 @@
         {
             "imports": {
                 "three": "https://unpkg.com/three@0.159.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/"
+                "three/addons/": "https://unpkg.com/three@0.159.0/examples/jsm/",
+                "d3-force-3d": "https://esm.sh/d3-force-3d@3.0.5"
             }
         }
     </script>
@@ -1035,8 +1196,8 @@
         window.THREE = THREE;
         window.OrbitControls = OrbitControls;
 
-        // Load main script after dependencies (cache-busting v=10)
-        import('./GraphRAG3D_EmbeddingView.js?v=10').then(() => {
+        // Load main script after dependencies (cache-busting v=68 - stricttreemap label toggle)
+        import('./GraphRAG3D_EmbeddingView.js?v=68').then(() => {
             const viewer = new GraphRAG3DEmbeddingView('graph-container');
             window.viewer = viewer; // debug handle for inspections
             viewer.init();

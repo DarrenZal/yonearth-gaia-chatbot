@@ -1,10 +1,11 @@
 # YonEarth Gaia Chatbot 🌍
 
-> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes and three integrated books
+> Chat with Gaia, the spirit of Earth, using wisdom from 172 YonEarth Community podcast episodes, three integrated books, and an interactive 3D knowledge graph
 
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Three.js](https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white)
 
 ## ⚡ Quick Deployment
 
@@ -28,20 +29,28 @@ Deploy your own instance to try it out!
 
 ## 🌟 Key Features
 
-### 🧠 **Advanced Category-First RAG System**
+### 🧠 **Advanced Hybrid RAG System**
 - **✨ Semantic Category Matching**: TRUE semantic understanding using OpenAI embeddings
   - Solves "soil" → BIOCHAR matching automatically (32.1% similarity)
-  - Cached embeddings for performance (`/data/processed/category_embeddings.json`)
+  - Cached embeddings for performance
   - User-configurable thresholds: Broad (0.6), Normal (0.7), Strict (0.8), Disabled (1.1)
 - **Episode Diversity Algorithm**: Ensures all relevant episodes appear, not just one with many chunks
-- **Dual Search Methods**: 
+- **Dual Search Methods**:
   - 🌿 **Original (Semantic Search)**: Meaning-based context understanding
   - 🔍 **BM25 (Category-First Hybrid)**: Category matching (80%) + semantic (15%) + keyword (5%)
   - ⚖️ **Side-by-Side Comparison**: Compare both methods simultaneously
-- **Guaranteed Category Matches**: ALL episodes tagged with matching categories appear in results
-- **Multi-Content Integration**: Search across both podcast episodes AND books simultaneously
-- **Accurate Citations**: No more hallucinated episode references
-- **Smart Recommendations**: Dynamic suggestions from episodes and books based on conversation context
+- **Multi-Content Integration**: Search across podcast episodes AND books simultaneously
+- **Accurate Citations**: No hallucinated episode references
+- **Smart Recommendations**: Dynamic suggestions based on conversation context
+
+### 🎨 **Interactive 3D Knowledge Graph**
+- **Hierarchical GraphRAG Visualization**: Explore 85,000+ entities and relationships in 3D space
+- **Three.js WebGL Rendering**: Smooth, interactive navigation with GPU acceleration
+- **Tri-Mode Interface**: Switch between 2D Organic, 3D, and Hybrid 2.5D views
+- **Multi-Level Hierarchy**: Navigate from super-categories → categories → entities
+- **Entity Deduplication**: Graph-informed merging of similar entities for cleaner visualization
+- **Interactive Node Selection**: Click entities to explore details and relationships
+- **Real-time Search**: Find and highlight entities across the knowledge graph
 
 ### 🌱 **Gaia Character Personalities**
 - **🤱 Nurturing Mother**: Warm, caring, and patient guidance
@@ -378,15 +387,17 @@ Try these queries that demonstrate the system's accuracy:
 - **Book Integration**: Shows chapter-specific citations with author information and clickable links
 
 ### Content Database
-- **172 Podcast Episodes**: 14,475+ searchable chunks with full transcripts
+- **172 Podcast Episodes**: 14,475+ searchable chunks with full transcripts and word-level timestamps
 - **3 Books**: 4,289+ searchable chunks with chapter-level citations
   - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
   - Soil Stewardship Handbook (136 chunks)
   - Y on Earth (2,124 chunks)
+- **Knowledge Graph**: 85,000+ entities and relationships extracted from episodes and books
 - **Total Vectors**: 18,764+ indexed for hybrid search
 
 ## 🎨 Web Interface Features
 
+### Chat Interface
 - **🌿 Personality Selection**: Choose Gaia's voice and communication style
 - **⚙️ Search Method Toggle**: Switch between Original, BM25, or Both
 - **🔊 Voice Toggle**: Enable/disable text-to-speech for Gaia's responses
@@ -396,31 +407,48 @@ Try these queries that demonstrate the system's accuracy:
 - **📱 Responsive Design**: Works on desktop, tablet, and mobile
 - **🎤 Audio Controls**: Automatic playback with manual replay option
 
+### 3D Knowledge Graph Viewer
+- **🌐 Interactive 3D Navigation**: Zoom, pan, rotate, and explore the knowledge graph
+- **🎯 Multi-Mode Display**: Toggle between 2D organic, 3D hierarchical, and hybrid views
+- **🔍 Entity Search**: Find and highlight specific entities across all levels
+- **📊 Hierarchical Levels**: Explore super-categories, categories, and individual entities
+- **💡 Node Details**: Click entities to see descriptions, relationships, and sources
+- **🎨 Visual Clustering**: Color-coded categories with semantic spatial organization
+
 ## 🧠 Technical Innovation
 
-### Category-First Hybrid RAG Architecture
+### Hybrid RAG Architecture
 - **Episode Categorization**: CSV-driven topic classification as PRIMARY search guide (80% weight)
 - **Category-First Fusion**: Guarantees ALL category-matching episodes appear in results
 - **BM25 Keyword Search**: Finds episodes that actually contain search terms
-- **Semantic Vector Search**: Understanding context and meaning  
+- **Semantic Vector Search**: Understanding context and meaning
 - **Reciprocal Rank Fusion**: Intelligently combines category + keyword + semantic results
 - **Cross-Encoder Reranking**: Final relevance scoring for optimal results
 - **Query-Adaptive Strategy**: Automatically chooses best search approach
 - **Multi-Content Integration**: Seamlessly searches across podcast episodes AND books
 
-### Book Processing Pipeline
+### GraphRAG Knowledge Extraction
+- **ACE Framework**: Action-Centric Entity extraction with structured outputs
+- **Hierarchical Organization**: 3-level hierarchy (super-categories → categories → entities)
+- **Leiden Community Detection**: Algorithmically discovers natural topic clusters
+- **Entity Deduplication**: Graph-informed merging using semantic similarity and relationships
+- **85,000+ Entities**: Comprehensive knowledge base extracted from all episodes and books
+- **Relationship Mapping**: Entities connected through typed relationships (ADVOCATES_FOR, FOUNDED, etc.)
+
+### 3D Visualization Engine
+- **Three.js WebGL**: Hardware-accelerated rendering for smooth interaction
+- **Hierarchical Layouts**: Force-directed, treemap, and voronoi tessellation algorithms
+- **Tri-Mode Display**: 2D Organic, 3D Hierarchical, and Hybrid 2.5D views
+- **Dynamic LOD**: Level-of-detail optimization for performance with large graphs
+- **Interactive Navigation**: Zoom, pan, rotate with mouse and keyboard controls
+- **Real-time Search**: Instant entity highlighting and focus
+
+### Content Processing Pipeline
 - **PDF Text Extraction**: Advanced processing using pdfplumber for clean text extraction
 - **Chapter Detection**: Intelligent regex-based chapter boundary detection
 - **Optimized Chunking**: Larger chunks (750 tokens) for book content vs episodes (500 tokens)
-- **Metadata Preservation**: Author, title, chapter information maintained throughout pipeline
+- **Word-Level Timestamps**: Precise temporal alignment for all 172 episodes
 - **Unified Vector Storage**: Books and episodes stored together in same vector database
-
-### Conversation Intelligence
-- **Topic Extraction**: Automatically identifies conversation themes
-- **Episode Tracking**: Remembers which episodes were discussed
-- **Dynamic Context**: Recommendations evolve with conversation
-- **Duplicate Prevention**: Clean, non-redundant suggestions
-- **Cross-Content Citations**: References both podcast episodes and book chapters
 
 ## 📚 Documentation
 
@@ -428,27 +456,28 @@ For detailed documentation, visit the [`docs/` folder](docs/):
 
 - **[🚀 VPS Deployment Guide](docs/VPS_DEPLOYMENT.md)** - Complete step-by-step deployment
 - **[🔧 Development Guide](CLAUDE.md)** - Technical architecture and development
+- **[🎨 3D Knowledge Graph](docs/GRAPHRAG_3D_EMBEDDING_VIEW.md)** - Interactive visualization guide
 - **[🎤 Voice Integration Guide](docs/VOICE_INTEGRATION.md)** - ElevenLabs TTS setup and usage
 - **[💰 Cost Tracking Guide](docs/COST_TRACKING.md)** - API usage cost transparency
-- **[📋 Implementation Plan](docs/IMPLEMENTATION_PLAN.md)** - BM25 system development history
+- **[📊 Content Processing Pipeline](docs/CONTENT_PROCESSING_PIPELINE.md)** - Data ingestion and processing
 
-## 🚧 Roadmap & Upcoming Features
+## 🚧 Roadmap & Future Enhancements
 
-### High Priority
-- **✅ Content Categorization**: ✅ COMPLETED - Category-first search with 170 episodes categorized across 28 topics
-- **📊 Recommended Content Alignment**: Ensure recommended episodes precisely match referenced sources
-- **✅ Cost Calculator**: ✅ COMPLETED - Track and display response generation costs for budget management
+### Completed Features ✅
+- **✅ Content Categorization**: Category-first search with 170 episodes categorized across 28 topics
+- **✅ Cost Calculator**: Track and display response generation costs for budget management
+- **✅ Voice Integration**: Voice responses using ElevenLabs API with custom voice
+- **✅ Max References Setting**: Configurable limit for maximum episode/book references per response
+- **✅ 3D Knowledge Graph**: Interactive GraphRAG visualization with 85,000+ entities
+- **✅ Hierarchical Graph Navigation**: Multi-level exploration with tri-mode display
 
-### Medium Priority  
-- **✅ Voice Integration**: ✅ COMPLETED - Voice responses using ElevenLabs API with custom voice
-- **🔗 Knowledge Graph Links**: Implement hyperlinks within responses linking to YonEarth resources and related content
-- **✅ Max References Setting**: ✅ COMPLETED - Configurable limit for maximum episode/book references per response
-
-### Long Term
-- **🧠 Advanced Knowledge Graph**: Create interconnected content relationships for deeper context discovery
-- **📱 Mobile App**: Native mobile application for better mobile experience
-- **🔍 Advanced Search Filters**: Filter by guest, topic, date range, and content type
+### Planned Enhancements
+- **🔗 Graph-Chat Integration**: Link chat responses to knowledge graph entities
+- **🎯 Entity-Based Search**: Search starting from graph entities instead of text queries
+- **📱 Mobile Optimization**: Touch-friendly controls for 3D graph navigation
+- **🔍 Advanced Filtering**: Filter by guest, topic, date range, and content type
 - **📈 Analytics Dashboard**: Usage statistics and popular topics tracking
+- **🌐 Graph Sharing**: Export and share knowledge graph subsets
 
 ## 🤝 Contributing
 
