@@ -12,7 +12,12 @@ Usage:
 import argparse
 import pickle
 import sys
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables (OPENAI_API_KEY)
+load_dotenv()
 
 
 def load_pipeline(pipeline_path: Path):
@@ -29,6 +34,14 @@ def load_pipeline(pipeline_path: Path):
         pipe = pickle.load(f)
 
     print(f"   ✅ Pipeline loaded successfully!")
+
+    # Check if using hybrid architecture
+    if hasattr(pipe, 'gen_model') and pipe.gen_model is not None:
+        if hasattr(pipe.gen_model, 'source') and pipe.gen_model.source == 'openai':
+            print(f"   🌐 Hybrid Mode: Local retrieval + OpenAI generation (fast)")
+        else:
+            print(f"   💻 Local Mode: CPU-only generation (slow)")
+
     return pipe
 
 

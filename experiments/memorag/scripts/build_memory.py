@@ -12,10 +12,15 @@ import argparse
 import json
 import pickle
 import sys
+import os
 from pathlib import Path
 from typing import List, Dict
 
 import pdfplumber
+from dotenv import load_dotenv
+
+# Load environment variables (OPENAI_API_KEY)
+load_dotenv()
 
 # Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
@@ -93,23 +98,28 @@ def chunk_text_by_chapters(text: str) -> List[Dict[str, str]]:
 def build_memorag_index(
     text: str,
     model_name: str = "memorag-qwen2-7b-inst",
-    use_api: bool = False,
+    use_openai_generation: bool = True,
     cache_dir: str = None
 ):
     """
-    Build MemoRAG memory index from book text.
+    Build MemoRAG memory index from book text with hybrid architecture.
+
+    HYBRID ARCHITECTURE:
+    - Local retrieval: Uses CPU for memory/context retrieval
+    - Cloud generation: Uses OpenAI API (GPT-4o-mini) for answer generation
+    This avoids 30s+ per-query latency on CPU-only servers.
 
     Args:
         text: Full book text (or concatenated chapters)
-        model_name: MemoRAG model to use
-        use_api: If True, use API instead of local model
+        model_name: MemoRAG memory model to use for retrieval
+        use_openai_generation: If True, use OpenAI for generation (recommended)
         cache_dir: Directory to cache models
 
     Returns:
         MemoRAG pipeline object with memorized content
     """
     try:
-        from memorag import MemoRAG
+        from memorag import MemoRAG, Agent
     except ImportError:
         print("❌ MemoRAG not installed. Installing now...")
         import subprocess
@@ -117,15 +127,33 @@ def build_memorag_index(
             sys.executable, "-m", "pip", "install",
             "memorag", "torch", "transformers"
         ])
-        from memorag import MemoRAG
+        from memorag import MemoRAG, Agent
 
-    print(f"\n🧠 Initializing MemoRAG with model: {model_name}")
+    print(f"\n🧠 Initializing MemoRAG (Hybrid Architecture)")
+    print(f"   Memory Model (Local CPU): {model_name}")
 
-    # Initialize pipeline
+    # Configure generation model
+    customized_gen_model = None
+    if use_openai_generation:
+        openai_key = os.getenv("OPENAI_API_KEY")
+        if not openai_key:
+            print("   ⚠️  Warning: OPENAI_API_KEY not found in environment")
+            print("   ⚠️  Falling back to local generation (will be slow)")
+        else:
+            print(f"   Generation Model (Cloud): gpt-4o-mini (OpenAI)")
+            customized_gen_model = Agent(
+                model="gpt-4o-mini",
+                source="openai",
+                token=openai_key
+            )
+
+    cache_path = cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache")
+
+    # Initialize pipeline with hybrid setup
     pipe = MemoRAG(
-        model_name=model_name,
-        cache_dir=cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache"),
-        api_mode=use_api
+        mem_model_name_or_path=model_name,
+        cache_dir=cache_path,
+        customized_gen_model=customized_gen_model
     )
 
     print(f"   ✅ Pipeline initialized")
@@ -175,9 +203,9 @@ def main():
         help="MemoRAG model name"
     )
     parser.add_argument(
-        "--api",
+        "--no-openai",
         action="store_true",
-        help="Use API mode instead of local model"
+        help="Disable OpenAI generation (use local model, will be slow)"
     )
     parser.add_argument(
         "--cache-dir",
@@ -214,7 +242,7 @@ def main():
         pipe = build_memorag_index(
             text=formatted_text,
             model_name=args.model,
-            use_api=args.api,
+            use_openai_generation=not args.no_openai,
             cache_dir=str(args.cache_dir) if args.cache_dir else None
         )
 
