@@ -99,14 +99,15 @@ def build_memorag_index(
     text: str,
     model_name: str = "memorag-qwen2-7b-inst",
     use_openai_generation: bool = True,
-    cache_dir: str = None
+    cache_dir: str = None,
+    max_chunk_chars: int = 80000  # ~20K tokens for Qwen2's 32K context window
 ):
     """
     Build MemoRAG memory index from book text with hybrid architecture.
 
     HYBRID ARCHITECTURE:
     - Local retrieval: Uses CPU for memory/context retrieval
-    - Cloud generation: Uses OpenAI API (GPT-4o-mini) for answer generation
+    - Cloud generation: Uses OpenAI API (GPT-4.1-mini) for answer generation
     This avoids 30s+ per-query latency on CPU-only servers.
 
     Args:
@@ -114,6 +115,7 @@ def build_memorag_index(
         model_name: MemoRAG memory model to use for retrieval
         use_openai_generation: If True, use OpenAI for generation (recommended)
         cache_dir: Directory to cache models
+        max_chunk_chars: Maximum characters per chunk (default: 80K chars ~= 20K tokens)
 
     Returns:
         MemoRAG pipeline object with memorized content
@@ -162,13 +164,45 @@ def build_memorag_index(
     )
 
     print(f"   ✅ Pipeline initialized")
-    print(f"\n📝 Memorizing book content ({len(text):,} characters)...")
-    print(f"   This may take several minutes depending on hardware...")
 
-    # Memorize the content
-    pipe.memorize(text)
+    # Check if text needs chunking
+    total_chars = len(text)
+    if total_chars <= max_chunk_chars:
+        # Text fits in one chunk
+        print(f"\n📝 Memorizing book content ({total_chars:,} characters)...")
+        print(f"   Processing as single chunk...")
+        pipe.memorize(text)
+        print(f"   ✅ Memory index built successfully!")
+    else:
+        # Split into chunks
+        chunks = []
+        start = 0
+        while start < total_chars:
+            end = min(start + max_chunk_chars, total_chars)
+            # Try to break at paragraph boundaries
+            if end < total_chars:
+                # Look for paragraph break within last 5000 chars
+                break_point = text.rfind('\n\n', end - 5000, end)
+                if break_point > start:
+                    end = break_point + 2  # Include the newlines
+            chunks.append(text[start:end])
+            start = end
 
-    print(f"   ✅ Memory index built successfully!")
+        print(f"\n📝 Memorizing book content ({total_chars:,} characters)...")
+        print(f"   Split into {len(chunks)} chunks for processing...")
+        print(f"   This may take several minutes depending on hardware...")
+
+        # Memorize each chunk
+        for i, chunk in enumerate(chunks, 1):
+            print(f"   📄 Processing chunk {i}/{len(chunks)} ({len(chunk):,} chars)...")
+            try:
+                pipe.memorize(chunk)
+                print(f"      ✅ Chunk {i}/{len(chunks)} memorized")
+            except Exception as e:
+                print(f"      ❌ Error on chunk {i}: {e}")
+                raise
+
+        print(f"   ✅ All {len(chunks)} chunks memorized successfully!")
 
     return pipe
 
