@@ -144,7 +144,7 @@ def build_memorag_index(
             customized_gen_model = Agent(
                 model="gpt-4o-mini",
                 source="openai",
-                token=openai_key
+                api_dict={"api_key": openai_key}
             )
 
     cache_path = cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache")
