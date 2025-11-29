@@ -3,10 +3,12 @@
 Query MemoRAG Memory Index
 
 This script loads a pre-built MemoRAG memory index and runs queries against it.
+Uses native MemoRAG load for robust memory loading.
 
 Usage:
     python query_memory.py "Your question here"
     python query_memory.py --interactive  # Interactive mode
+    python query_memory.py --memory-dir path/to/indices  # Custom memory location
 """
 
 import argparse
@@ -15,38 +17,71 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-# Use dill instead of pickle for better serialization
-try:
-    import dill as pickle
-except ImportError:
-    import pickle
-    print("⚠️  Warning: dill not installed, using pickle (may fail on complex objects)")
-
 # Load environment variables (OPENAI_API_KEY)
 load_dotenv()
 
 
-def load_pipeline(pipeline_path: Path):
-    """Load saved MemoRAG pipeline from disk."""
-    if not pipeline_path.exists():
-        print(f"❌ Pipeline not found: {pipeline_path}")
+def load_pipeline(memory_dir: Path, model_name: str = "Qwen/Qwen2-1.5B-Instruct"):
+    """Load saved MemoRAG pipeline from disk using native load.
+
+    Args:
+        memory_dir: Directory containing memory index files (memory.bin, etc.)
+        model_name: Model name to use for the pipeline
+
+    Returns:
+        MemoRAG pipeline object
+    """
+    if not memory_dir.exists():
+        print(f"❌ Memory directory not found: {memory_dir}")
         print(f"\n   Please run build_memory.py first to create the index:")
         print(f"   python experiments/memorag/scripts/build_memory.py")
         sys.exit(1)
 
-    print(f"📥 Loading MemoRAG pipeline from: {pipeline_path}")
+    # Check for expected files
+    expected_files = ["memory.bin"]  # MemoRAG creates these
+    found_files = list(memory_dir.glob("*.bin")) + list(memory_dir.glob("*.json"))
 
-    with open(pipeline_path, 'rb') as f:
-        pipe = pickle.load(f)
+    if not found_files:
+        print(f"❌ No memory files found in: {memory_dir}")
+        print(f"   Expected files like memory.bin")
+        print(f"\n   Please run build_memory.py first to create the index:")
+        print(f"   python experiments/memorag/scripts/build_memory.py")
+        sys.exit(1)
+
+    print(f"📥 Loading MemoRAG memory from: {memory_dir}")
+    print(f"   Found files: {[f.name for f in found_files]}")
+
+    # Import MemoRAG and configure hybrid generation
+    from memorag import MemoRAG, Agent
+
+    # Configure OpenAI generation if available
+    openai_key = os.getenv("OPENAI_API_KEY")
+    customized_gen_model = None
+    if openai_key:
+        print(f"   🌐 Hybrid Mode: Local retrieval + OpenAI generation (fast)")
+        customized_gen_model = Agent(
+            model="gpt-4.1-mini",
+            source="openai",
+            api_dict={"api_key": openai_key}
+        )
+    else:
+        print(f"   💻 Local Mode: CPU-only generation (will be slow)")
+
+    # Initialize pipeline and load memory
+    cache_path = str(memory_dir.parent / "model_cache")
+    pipe = MemoRAG(
+        mem_model_name_or_path=model_name,
+        ret_model_name_or_path=model_name,
+        cache_dir=cache_path,
+        customized_gen_model=customized_gen_model,
+        enable_flash_attn=False,
+        load_in_4bit=False
+    )
+
+    # Load the memory from saved directory
+    pipe.load(str(memory_dir))
 
     print(f"   ✅ Pipeline loaded successfully!")
-
-    # Check if using hybrid architecture
-    if hasattr(pipe, 'gen_model') and pipe.gen_model is not None:
-        if hasattr(pipe.gen_model, 'source') and pipe.gen_model.source == 'openai':
-            print(f"   🌐 Hybrid Mode: Local retrieval + OpenAI generation (fast)")
-        else:
-            print(f"   💻 Local Mode: CPU-only generation (slow)")
 
     return pipe
 
@@ -147,10 +182,15 @@ def main():
         help="Question to ask (optional if using --interactive)"
     )
     parser.add_argument(
-        "--pipeline",
+        "--memory-dir",
         type=Path,
-        default=Path(__file__).parent.parent / "indices" / "memorag_pipeline.pkl",
-        help="Path to pickled pipeline"
+        default=Path(__file__).parent.parent / "indices",
+        help="Directory containing MemoRAG memory files"
+    )
+    parser.add_argument(
+        "--model",
+        default="Qwen/Qwen2-1.5B-Instruct",
+        help="MemoRAG memory/retrieval model name"
     )
     parser.add_argument(
         "--interactive",
@@ -173,8 +213,8 @@ def main():
 
     args = parser.parse_args()
 
-    # Load pipeline
-    pipe = load_pipeline(args.pipeline)
+    # Load pipeline with native load
+    pipe = load_pipeline(args.memory_dir, args.model)
 
     # Interactive mode
     if args.interactive:

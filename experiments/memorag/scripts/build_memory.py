@@ -18,13 +18,6 @@ from typing import List, Dict
 import pdfplumber
 from dotenv import load_dotenv
 
-# Use dill instead of pickle for better serialization of complex objects
-try:
-    import dill as pickle
-except ImportError:
-    import pickle
-    print("⚠️  Warning: dill not installed, using pickle (may fail on complex objects)")
-
 # Load environment variables (OPENAI_API_KEY)
 load_dotenv()
 
@@ -106,6 +99,7 @@ def build_memorag_index(
     model_name: str = "memorag-qwen2-7b-inst",
     use_openai_generation: bool = True,
     cache_dir: str = None,
+    save_dir: str = None,  # Native MemoRAG save directory
     max_chunk_chars: int = 80000  # ~20K tokens for Qwen2's 32K context window
 ):
     """
@@ -121,10 +115,11 @@ def build_memorag_index(
         model_name: MemoRAG memory model to use for retrieval
         use_openai_generation: If True, use OpenAI for generation (recommended)
         cache_dir: Directory to cache models
+        save_dir: Directory to save memory index (native MemoRAG save)
         max_chunk_chars: Maximum characters per chunk (default: 80K chars ~= 20K tokens)
 
     Returns:
-        MemoRAG pipeline object with memorized content
+        MemoRAG pipeline object with memorized content (also saves to save_dir)
     """
     try:
         from memorag import MemoRAG, Agent
@@ -171,14 +166,19 @@ def build_memorag_index(
 
     print(f"   ✅ Pipeline initialized")
 
+    # Ensure save_dir exists
+    if save_dir:
+        os.makedirs(save_dir, exist_ok=True)
+        print(f"   💾 Will save memory to: {save_dir}")
+
     # Check if text needs chunking
     total_chars = len(text)
     if total_chars <= max_chunk_chars:
         # Text fits in one chunk
         print(f"\n📝 Memorizing book content ({total_chars:,} characters)...")
         print(f"   Processing as single chunk...")
-        pipe.memorize(text)
-        print(f"   ✅ Memory index built successfully!")
+        pipe.memorize(text, save_dir=save_dir, print_stats=True)
+        print(f"   ✅ Memory index built and saved!")
     else:
         # Split into chunks
         chunks = []
@@ -198,32 +198,25 @@ def build_memorag_index(
         print(f"   Split into {len(chunks)} chunks for processing...")
         print(f"   This may take several minutes depending on hardware...")
 
-        # Memorize each chunk
+        # Memorize each chunk (save only on last chunk to persist everything)
         for i, chunk in enumerate(chunks, 1):
+            is_last_chunk = (i == len(chunks))
             print(f"   📄 Processing chunk {i}/{len(chunks)} ({len(chunk):,} chars)...")
             try:
-                pipe.memorize(chunk)
-                print(f"      ✅ Chunk {i}/{len(chunks)} memorized")
+                if is_last_chunk and save_dir:
+                    # Save memory index on final chunk
+                    pipe.memorize(chunk, save_dir=save_dir, print_stats=True)
+                    print(f"      ✅ Chunk {i}/{len(chunks)} memorized and saved!")
+                else:
+                    pipe.memorize(chunk)
+                    print(f"      ✅ Chunk {i}/{len(chunks)} memorized")
             except Exception as e:
                 print(f"      ❌ Error on chunk {i}: {e}")
                 raise
 
-        print(f"   ✅ All {len(chunks)} chunks memorized successfully!")
+        print(f"   ✅ All {len(chunks)} chunks memorized and saved successfully!")
 
     return pipe
-
-
-def save_pipeline(pipe, output_path: Path):
-    """Save MemoRAG pipeline to disk."""
-    print(f"\n💾 Saving pipeline to: {output_path}")
-
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-
-    with open(output_path, 'wb') as f:
-        pickle.dump(pipe, f)
-
-    print(f"   ✅ Pipeline saved!")
-    print(f"   Size: {output_path.stat().st_size / 1024 / 1024:.2f} MB")
 
 
 def main():
@@ -237,10 +230,10 @@ def main():
         help="Path to PDF file"
     )
     parser.add_argument(
-        "--output",
+        "--save-dir",
         type=Path,
-        default=Path(__file__).parent.parent / "indices" / "memorag_pipeline.pkl",
-        help="Output path for pickled pipeline"
+        default=Path(__file__).parent.parent / "indices",
+        help="Directory to save native MemoRAG memory index"
     )
     parser.add_argument(
         "--model",
@@ -282,21 +275,21 @@ def main():
         for ch in chapters
     )
 
-    # Build MemoRAG index
+    # Build MemoRAG index with native save
     try:
+        save_dir = str(args.save_dir)
         pipe = build_memorag_index(
             text=formatted_text,
             model_name=args.model,
             use_openai_generation=not args.no_openai,
-            cache_dir=str(args.cache_dir) if args.cache_dir else None
+            cache_dir=str(args.cache_dir) if args.cache_dir else None,
+            save_dir=save_dir
         )
-
-        # Save pipeline
-        save_pipeline(pipe, args.output)
 
         print("\n" + "=" * 60)
         print("✅ SUCCESS! MemoRAG memory index is ready.")
         print("=" * 60)
+        print(f"\nMemory saved to: {save_dir}")
         print(f"\nNext steps:")
         print(f"  1. Test the index with query_memory.py")
         print(f"  2. Example query:")
