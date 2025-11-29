@@ -1,8 +1,28 @@
 # MemoRAG Deployment Status
 
-**Date**: November 28, 2025
+**Date**: November 29, 2025
 **Branch**: `experiment/memorag-integration`
 **Server**: 152.53.37.180 (claudeuser)
+
+## ✅ DEPLOYMENT COMPLETE
+
+MemoRAG is fully operational for "Our Biggest Deal" book Q&A.
+
+### Memory Index Files
+- `experiments/memorag/indices/memory.bin` - 382MB (core memory embeddings)
+- `experiments/memorag/indices/index.bin` - 205KB (FAISS search index)
+- `experiments/memorag/indices/chunks.json` - 53KB (text chunk metadata)
+
+### Verified Working
+```bash
+# Test query
+python3 experiments/memorag/scripts/query_memory.py "What is Planetary Prosperity?"
+
+# Sample output:
+# Planetary prosperity refers to achieving a state of well-being and abundance
+# for all people and ecosystems on Earth, while maintaining ecological integrity
+# and sustainability...
+```
 
 ## ✅ Completed Tasks
 
@@ -11,11 +31,11 @@
 - ✅ Added OpenAI dependencies (openai, python-dotenv, tiktoken)
 - ✅ Modified `build_memory.py` for hybrid architecture:
   - Local CPU retrieval using Qwen2-1.5B-Instruct model
-  - Cloud generation using OpenAI GPT-4o-mini
+  - Cloud generation using OpenAI GPT-4.1-mini
   - Proper Agent initialization with `api_dict` parameter
   - Both `mem_model_name_or_path` and `ret_model_name_or_path` configured
   - Disabled flash attention for CPU compatibility
-- ✅ Modified `query_memory.py` to load environment variables and detect hybrid mode
+- ✅ Modified `query_memory.py` to use correct API (`pipe.mem_model.answer()`)
 - ✅ Committed and pushed all changes to GitHub
 
 ### 2. Server Deployment
@@ -33,42 +53,23 @@
 - ✅ Installed MemoRAG-0.1.5 (with workarounds for minference)
 - ✅ Created mock minference module to bypass CUDA requirements
 - ✅ Installed pynvml for compatibility
+- ✅ Patched memorag.py for PyTorch 2.6 compatibility (weights_only=False)
 
 ### 3. Model Configuration
 - ✅ Changed from private `memorag-qwen2-7b-inst` to public `Qwen/Qwen2-1.5B-Instruct`
 - ✅ Configured hybrid architecture:
   - **Memory/Retrieval**: Qwen2-1.5B-Instruct (CPU, local)
-  - **Generation**: GPT-4o-mini (OpenAI API, cloud)
+  - **Generation**: GPT-4.1-mini (OpenAI API, cloud)
 - ✅ Disabled flash attention for CPU compatibility
 
-## 🔄 Current Status
+### 4. Build Completed (2025-11-29)
+- ✅ Extract text from `our_biggest_deal.pdf` (~998,299 characters, 480 pages)
+- ✅ Download Qwen2-1.5B-Instruct model (~3GB)
+- ✅ Initialize hybrid pipeline (local retrieval + GPT-4.1-mini generation)
+- ✅ Memorize book content in 13 chunks (~80K chars each)
+- ✅ Save memory index using native MemoRAG format (memory.bin, index.bin, chunks.json)
 
-### BUILD IN PROGRESS (2025-11-28 21:23 PST)
-
-The memory index build is currently running on the server:
-
-**Process Status**:
-- PID: 1612989
-- CPU Usage: 742% (7-8 cores)
-- Memory: 7.4GB / 24GB (30.2%)
-- Runtime: 25+ minutes
-- Log: `/tmp/memorag_chunked_build.log`
-
-**Recent Fix Applied**:
-- Fixed memory allocation error by implementing text chunking
-- Book text (998K chars) now split into ~13 chunks of 80K chars each
-- Each chunk memorized iteratively to stay within Qwen2-1.5B's 32K token limit
-
-**Expected Process**:
-1. ✅ Extract text from `our_biggest_deal.pdf` (~998,299 characters, 480 pages)
-2. ✅ Download Qwen2-1.5B-Instruct model (~3GB, first run only)
-3. ✅ Initialize hybrid pipeline (local retrieval + GPT-4.1-mini generation)
-4. 🔄 Memorize book content in chunks (~30-45 minutes on CPU)
-5. ⏳ Save pipeline to `experiments/memorag/indices/memorag_pipeline.pkl`
-
-## 🧪 Testing Plan
-
-Once the index is built, test with:
+## 🧪 Testing Commands
 
 ```bash
 # Test Query 1: Narrative arc
@@ -81,6 +82,9 @@ python3 experiments/memorag/scripts/query_memory.py \
 
 # Interactive Mode
 python3 experiments/memorag/scripts/query_memory.py --interactive
+
+# Custom max tokens
+python3 experiments/memorag/scripts/query_memory.py --max-tokens 1024 "Your question here"
 ```
 
 ## 🔍 Key Fixes Applied
@@ -114,6 +118,38 @@ python3 experiments/memorag/scripts/query_memory.py --interactive
   - Break at paragraph boundaries for coherence
   - Iteratively memorize each chunk separately
   - Results in ~13 chunks for the full book
+
+### Issue 7: PyTorch 2.6 weights_only Default Change
+**Problem**: `_pickle.UnpicklingError: Weights only load failed... GLOBAL transformers.cache_utils.DynamicCache was not an allowed global`
+**Root Cause**: PyTorch 2.6 changed `torch.load()` default to `weights_only=True`
+**Solution**: Patched server-side memorag.py (see Server-Side Patches section)
+
+### Issue 8: Wrong MemoRAG API Method
+**Problem**: `AttributeError: 'MemoRAG' object has no attribute 'query'`
+**Solution**: Changed from `pipe.query()` to `pipe.mem_model.answer(query, max_new_tokens=N)`
+
+## ⚠️ Server-Side Patches (Not in Git)
+
+These patches are applied directly on the server and will need to be reapplied if the packages are reinstalled:
+
+### 1. MemoRAG PyTorch 2.6 Compatibility
+**File**: `/home/claudeuser/.local/lib/python3.10/site-packages/memorag/memorag.py`
+**Lines 304 and 306**: Changed `torch.load(path)` to `torch.load(path, weights_only=False)`
+
+```python
+# Line 304:
+self.memory = torch.load(path, weights_only=False)
+# Line 306:
+_cache = torch.load(path, weights_only=False)
+```
+
+### 2. MemoRAG FAISS GPU Check
+**File**: `/home/claudeuser/.local/lib/python3.10/site-packages/memorag/retrieval.py`
+**Purpose**: Skip GPU index check when using faiss-cpu
+
+These patches are required because:
+- PyTorch 2.6 security changes break MemoRAG's model loading
+- MemoRAG expects GPU-enabled FAISS but server uses CPU-only version
 
 ## 📊 Performance Expectations
 
