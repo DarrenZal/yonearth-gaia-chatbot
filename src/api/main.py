@@ -33,6 +33,7 @@ from .qa_hybrid_endpoints import router as qa_hybrid_router
 from .podcast_map_route_local import router as podcast_map_router
 from .graph_endpoints import router as graph_router
 from .graphrag_api import router as graphrag_router
+from .memorag_endpoints import router as memorag_router
 
 # Configure logging
 logging.basicConfig(
@@ -154,6 +155,13 @@ try:
     logger.info("✅ Hybrid QA and GraphRAG routers loaded successfully")
 except Exception as e:
     logger.error(f"❌ Failed to load Hybrid QA/GraphRAG router: {e}")
+
+# Include MemoRAG router (Our Biggest Deal book Q&A)
+try:
+    app.include_router(memorag_router)
+    logger.info("✅ MemoRAG router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load MemoRAG router: {e}")
 
 
 # Note: Static files are served by nginx in production (see nginx.conf).
