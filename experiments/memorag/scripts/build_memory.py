@@ -157,7 +157,9 @@ def build_memorag_index(
         ret_model_name_or_path=model_name,  # Use same model for retrieval
         cache_dir=cache_path,
         customized_gen_model=customized_gen_model,
-        enable_flash_attn=False  # Disable flash attention for CPU
+        enable_flash_attn=False,  # Disable flash attention for CPU
+        load_in_4bit=False,  # Disable 4-bit quantization for CPU
+        load_in_8bit=False   # Disable 8-bit quantization for CPU
     )
 
     print(f"   ✅ Pipeline initialized")
