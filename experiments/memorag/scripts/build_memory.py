@@ -216,7 +216,62 @@ def build_memorag_index(
 
         print(f"   ✅ All {len(chunks)} chunks memorized and saved successfully!")
 
+    # FIX: Create proper chunks.json with ALL book content for retrieval
+    # MemoRAG's native save only keeps the LAST chunk's retrieval data
+    if save_dir:
+        create_full_retrieval_chunks(text, save_dir)
+
     return pipe
+
+
+def create_full_retrieval_chunks(text: str, save_dir: str, chunk_size: int = 2000):
+    """
+    Create a proper chunks.json with retrieval chunks covering the FULL book.
+
+    MemoRAG's native memorize() overwrites chunks.json on each call, so when
+    processing multiple chunks, only the last chunk's retrieval data is saved.
+    This function fixes that by creating comprehensive retrieval chunks.
+
+    Args:
+        text: Full book text
+        save_dir: Directory where chunks.json should be saved
+        chunk_size: Size of each retrieval chunk in characters (default 2000 ~= 500 tokens)
+    """
+    import json
+
+    print(f"\n📚 Creating comprehensive retrieval chunks...")
+
+    # Split text into smaller retrieval chunks with overlap
+    chunks = []
+    overlap = chunk_size // 4  # 25% overlap
+    start = 0
+
+    while start < len(text):
+        end = min(start + chunk_size, len(text))
+
+        # Try to break at sentence boundaries
+        if end < len(text):
+            # Look for sentence end within last 200 chars
+            for sep in ['. ', '.\n', '? ', '?\n', '! ', '!\n']:
+                break_point = text.rfind(sep, end - 200, end)
+                if break_point > start:
+                    end = break_point + 2
+                    break
+
+        chunk = text[start:end].strip()
+        if chunk:  # Don't add empty chunks
+            chunks.append(chunk)
+
+        # Move forward with overlap
+        start = end - overlap if end < len(text) else end
+
+    # Save chunks.json
+    chunks_path = Path(save_dir) / "chunks.json"
+    with open(chunks_path, 'w') as f:
+        json.dump(chunks, f, indent=2)
+
+    print(f"   ✅ Created {len(chunks)} retrieval chunks")
+    print(f"   📁 Saved to: {chunks_path}")
 
 
 def main():
