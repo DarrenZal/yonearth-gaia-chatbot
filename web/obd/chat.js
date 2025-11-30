@@ -8,7 +8,7 @@
 // API Configuration
 const API_BASE_URL = window.location.hostname === 'localhost'
     ? 'http://localhost:8000'
-    : 'https://earthdo.me';
+    : 'https://gaiaai.xyz';
 
 const MEMORAG_ENDPOINT = `${API_BASE_URL}/api/memorag/chat`;
 
@@ -85,12 +85,13 @@ async function sendMessage() {
 
         // Remove loading and show response
         loadingEl.remove();
-        addMessage('gaia', data.answer, data.query_time_ms);
+        addMessage('gaia', data.answer, data.query_time_ms, data.shards_queried);
 
         // Store in history
         conversationHistory.push({
             user: message,
             assistant: data.answer,
+            shards_queried: data.shards_queried,
             timestamp: new Date().toISOString()
         });
 
@@ -108,12 +109,21 @@ async function sendMessage() {
 /**
  * Add message to chat
  */
-function addMessage(type, content, queryTimeMs = null) {
+function addMessage(type, content, queryTimeMs = null, shardsQueried = null) {
     const messageDiv = document.createElement('div');
     messageDiv.className = `message ${type}-message`;
 
     // Format content with markdown-like processing
     const formattedContent = formatContent(content);
+
+    // Build metadata line (shards + time)
+    let metadataHtml = '';
+    if (shardsQueried && shardsQueried.length > 0) {
+        metadataHtml += `<span class="shards-info">Shards: [${shardsQueried.join(', ')}]</span>`;
+    }
+    if (queryTimeMs) {
+        metadataHtml += `<span class="query-time">${queryTimeMs}ms</span>`;
+    }
 
     let html = '';
     if (type === 'gaia') {
@@ -124,10 +134,10 @@ function addMessage(type, content, queryTimeMs = null) {
             <div class="message-content">
                 <div class="message-header">
                     <span class="message-author">Gaia</span>
-                    ${queryTimeMs ? `<span class="query-time">${queryTimeMs}ms</span>` : ''}
+                    ${metadataHtml}
                 </div>
                 <div class="message-text">${formattedContent}</div>
-                <div class="message-source">Source: Our Biggest Deal</div>
+                <div class="message-source">Source: Our Biggest Deal (MemoRAG)</div>
             </div>
         `;
     } else if (type === 'user') {

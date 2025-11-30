@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 """
-Build MemoRAG Memory Index for "Our Biggest Deal"
+Build MemoRAG Memory Index for "Our Biggest Deal" - SHARDED ARCHITECTURE
 
-This script extracts text from the book PDF and builds a MemoRAG memory index
-for efficient long-context question answering.
+This script builds memory shards for each chunk of the book, enabling
+MemoRAG's full reasoning capabilities across the entire book content.
 
-The text extraction uses pdfplumber (same as ACE pipeline) to ensure clean text.
+Each chunk gets its own memory shard in indices/shard_{i}/ containing:
+- memory.bin: MemoRAG memory embeddings
+- index.bin: FAISS retrieval index
+- chunks.json: Text chunks for retrieval
 """
 
 import argparse
@@ -25,16 +28,13 @@ load_dotenv()
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+# Configuration
+MAX_CHUNK_CHARS = 80000  # ~20K tokens for Qwen2's 32K context window
+
 
 def extract_book_text(pdf_path: Path) -> str:
     """
-    Extract text from PDF using pdfplumber (same method as ACE pipeline).
-
-    Args:
-        pdf_path: Path to PDF file
-
-    Returns:
-        Full book text as string
+    Extract text from PDF using pdfplumber.
     """
     print(f"📖 Extracting text from: {pdf_path}")
 
@@ -49,77 +49,95 @@ def extract_book_text(pdf_path: Path) -> str:
     return full_text
 
 
-def chunk_text_by_chapters(text: str) -> List[Dict[str, str]]:
+def split_into_chunks(text: str, max_chunk_chars: int = MAX_CHUNK_CHARS) -> List[str]:
     """
-    Attempt to split text into chapters while preserving structure.
-
-    This helps MemoRAG understand the book's organization, even though
-    it can handle long context natively.
-
-    Args:
-        text: Full book text
-
-    Returns:
-        List of chapter dicts with 'chapter_num', 'title', 'text'
+    Split text into chunks that fit within the model's context window.
+    Breaks at paragraph boundaries for coherence.
     """
-    # Simple chapter detection - look for "Chapter N" or "CHAPTER N" patterns
-    import re
-
-    # Pattern to match chapter headers
-    chapter_pattern = r'(?:Chapter|CHAPTER)\s+(\d+|[IVX]+)(?:\s*[:\-]\s*(.+?))?(?=\n)'
-
-    matches = list(re.finditer(chapter_pattern, text))
-
-    if not matches:
-        print("   ⚠️  No chapter markers found, treating as single document")
-        return [{'chapter_num': 1, 'title': 'Full Book', 'text': text}]
-
     chunks = []
-    for i, match in enumerate(matches):
-        chapter_num = match.group(1)
-        chapter_title = match.group(2) or ""
+    start = 0
+    total_chars = len(text)
 
-        # Get text from this chapter to next chapter (or end)
-        start = match.start()
-        end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
-        chapter_text = text[start:end].strip()
+    while start < total_chars:
+        end = min(start + max_chunk_chars, total_chars)
 
-        chunks.append({
-            'chapter_num': chapter_num,
-            'title': chapter_title.strip(),
-            'text': chapter_text
-        })
+        # Try to break at paragraph boundaries
+        if end < total_chars:
+            # Look for paragraph break within last 5000 chars
+            break_point = text.rfind('\n\n', end - 5000, end)
+            if break_point > start:
+                end = break_point + 2  # Include the newlines
 
-    print(f"   ✅ Split into {len(chunks)} chapters")
+        chunk = text[start:end].strip()
+        if chunk:
+            chunks.append(chunk)
+        start = end
+
     return chunks
 
 
-def build_memorag_index(
-    text: str,
-    model_name: str = "memorag-qwen2-7b-inst",
+def create_shard_metadata(chunks: List[str], save_dir: Path) -> Dict:
+    """
+    Create metadata file describing all shards.
+    """
+    metadata = {
+        "num_shards": len(chunks),
+        "total_chars": sum(len(c) for c in chunks),
+        "shards": []
+    }
+
+    for i, chunk in enumerate(chunks):
+        # Extract a preview (first 200 chars)
+        preview = chunk[:200].replace('\n', ' ')
+
+        # Extract key terms for routing (simple word frequency)
+        words = chunk.lower().split()
+        word_freq = {}
+        for word in words:
+            word = ''.join(c for c in word if c.isalnum())
+            if len(word) > 4:
+                word_freq[word] = word_freq.get(word, 0) + 1
+
+        top_terms = sorted(word_freq.items(), key=lambda x: -x[1])[:20]
+
+        metadata["shards"].append({
+            "index": i,
+            "path": f"shard_{i}",
+            "char_count": len(chunk),
+            "preview": preview,
+            "top_terms": [term for term, count in top_terms]
+        })
+
+    # Save metadata
+    metadata_path = save_dir / "shard_metadata.json"
+    with open(metadata_path, 'w') as f:
+        json.dump(metadata, f, indent=2)
+
+    print(f"   📋 Saved shard metadata to: {metadata_path}")
+    return metadata
+
+
+def build_memorag_shards(
+    chunks: List[str],
+    model_name: str = "Qwen/Qwen2-1.5B-Instruct",
     use_openai_generation: bool = True,
     cache_dir: str = None,
-    save_dir: str = None,  # Native MemoRAG save directory
-    max_chunk_chars: int = 80000  # ~20K tokens for Qwen2's 32K context window
+    indices_dir: str = None
 ):
     """
-    Build MemoRAG memory index from book text with hybrid architecture.
+    Build MemoRAG memory shards - one per chunk.
 
-    HYBRID ARCHITECTURE:
-    - Local retrieval: Uses CPU for memory/context retrieval
-    - Cloud generation: Uses OpenAI API (GPT-4.1-mini) for answer generation
-    This avoids 30s+ per-query latency on CPU-only servers.
+    SHARDING ARCHITECTURE:
+    - Each chunk gets its own memory shard in indices/shard_{i}/
+    - Avoids the overwrite bug in memorize()
+    - Enables full book coverage with MemoRAG's reasoning
 
     Args:
-        text: Full book text (or concatenated chapters)
-        model_name: MemoRAG memory model to use for retrieval
-        use_openai_generation: If True, use OpenAI for generation (recommended)
-        cache_dir: Directory to cache models
-        save_dir: Directory to save memory index (native MemoRAG save)
-        max_chunk_chars: Maximum characters per chunk (default: 80K chars ~= 20K tokens)
-
-    Returns:
-        MemoRAG pipeline object with memorized content (also saves to save_dir)
+        chunks: List of text chunks to memorize
+        model_name: MemoRAG memory model
+        use_openai_generation: Use OpenAI for generation (faster)
+        cache_dir: Model cache directory
+        indices_dir: Directory to save shard subdirectories
     """
     try:
         from memorag import MemoRAG, Agent
@@ -132,151 +150,83 @@ def build_memorag_index(
         ])
         from memorag import MemoRAG, Agent
 
-    print(f"\n🧠 Initializing MemoRAG (Hybrid Architecture)")
-    print(f"   Memory Model (Local CPU): {model_name}")
+    indices_path = Path(indices_dir)
+    indices_path.mkdir(parents=True, exist_ok=True)
+
+    print(f"\n🧠 Building MemoRAG Shards (Sharded Architecture)")
+    print(f"   Memory Model: {model_name}")
+    print(f"   Number of shards: {len(chunks)}")
 
     # Configure generation model
     customized_gen_model = None
     if use_openai_generation:
         openai_key = os.getenv("OPENAI_API_KEY")
         if not openai_key:
-            print("   ⚠️  Warning: OPENAI_API_KEY not found in environment")
+            print("   ⚠️  Warning: OPENAI_API_KEY not found")
             print("   ⚠️  Falling back to local generation (will be slow)")
         else:
-            print(f"   Generation Model (Cloud): gpt-4.1-mini (OpenAI)")
+            print(f"   Generation Model: gpt-4.1-mini (OpenAI)")
             customized_gen_model = Agent(
                 model="gpt-4.1-mini",
                 source="openai",
                 api_dict={"api_key": openai_key}
             )
 
-    cache_path = cache_dir or str(Path(__file__).parent.parent / "indices" / "model_cache")
+    cache_path = cache_dir or str(indices_path.parent / "model_cache")
 
-    # Initialize pipeline with hybrid setup
-    # MemoRAG requires both memory and retrieval models
-    # Use same model for both memory and retrieval for simplicity
+    # Initialize pipeline ONCE (model loading is slow)
+    print(f"\n   🔄 Loading Qwen model (this takes a few minutes)...")
     pipe = MemoRAG(
         mem_model_name_or_path=model_name,
-        ret_model_name_or_path=model_name,  # Use same model for retrieval
+        ret_model_name_or_path=model_name,
         cache_dir=cache_path,
         customized_gen_model=customized_gen_model,
-        enable_flash_attn=False,  # Disable flash attention for CPU
-        load_in_4bit=False  # Disable 4-bit quantization for CPU (avoids bitsandbytes/CUDA dependency)
+        enable_flash_attn=False,
+        load_in_4bit=False
     )
-
     print(f"   ✅ Pipeline initialized")
 
-    # Ensure save_dir exists
-    if save_dir:
-        os.makedirs(save_dir, exist_ok=True)
-        print(f"   💾 Will save memory to: {save_dir}")
+    # Create shard metadata
+    create_shard_metadata(chunks, indices_path)
 
-    # Check if text needs chunking
-    total_chars = len(text)
-    if total_chars <= max_chunk_chars:
-        # Text fits in one chunk
-        print(f"\n📝 Memorizing book content ({total_chars:,} characters)...")
-        print(f"   Processing as single chunk...")
-        pipe.memorize(text, save_dir=save_dir, print_stats=True)
-        print(f"   ✅ Memory index built and saved!")
-    else:
-        # Split into chunks
-        chunks = []
-        start = 0
-        while start < total_chars:
-            end = min(start + max_chunk_chars, total_chars)
-            # Try to break at paragraph boundaries
-            if end < total_chars:
-                # Look for paragraph break within last 5000 chars
-                break_point = text.rfind('\n\n', end - 5000, end)
-                if break_point > start:
-                    end = break_point + 2  # Include the newlines
-            chunks.append(text[start:end])
-            start = end
+    # Build each shard
+    print(f"\n📝 Building {len(chunks)} memory shards...")
 
-        print(f"\n📝 Memorizing book content ({total_chars:,} characters)...")
-        print(f"   Split into {len(chunks)} chunks for processing...")
-        print(f"   This may take several minutes depending on hardware...")
+    for i, chunk in enumerate(chunks):
+        shard_dir = indices_path / f"shard_{i}"
+        shard_dir.mkdir(parents=True, exist_ok=True)
 
-        # Memorize each chunk (save only on last chunk to persist everything)
-        for i, chunk in enumerate(chunks, 1):
-            is_last_chunk = (i == len(chunks))
-            print(f"   📄 Processing chunk {i}/{len(chunks)} ({len(chunk):,} chars)...")
-            try:
-                if is_last_chunk and save_dir:
-                    # Save memory index on final chunk
-                    pipe.memorize(chunk, save_dir=save_dir, print_stats=True)
-                    print(f"      ✅ Chunk {i}/{len(chunks)} memorized and saved!")
-                else:
-                    pipe.memorize(chunk)
-                    print(f"      ✅ Chunk {i}/{len(chunks)} memorized")
-            except Exception as e:
-                print(f"      ❌ Error on chunk {i}: {e}")
-                raise
+        print(f"\n   🧩 Shard {i}/{len(chunks)-1} ({len(chunk):,} chars)")
+        print(f"      Preview: {chunk[:80].replace(chr(10), ' ')}...")
 
-        print(f"   ✅ All {len(chunks)} chunks memorized and saved successfully!")
+        try:
+            # Memorize this chunk to its own shard directory
+            pipe.memorize(chunk, save_dir=str(shard_dir), print_stats=True)
 
-    # FIX: Create proper chunks.json with ALL book content for retrieval
-    # MemoRAG's native save only keeps the LAST chunk's retrieval data
-    if save_dir:
-        create_full_retrieval_chunks(text, save_dir)
+            # Verify files were created
+            expected_files = ["memory.bin", "index.bin", "chunks.json"]
+            missing = [f for f in expected_files if not (shard_dir / f).exists()]
 
-    return pipe
+            if missing:
+                print(f"      ⚠️  Missing files: {missing}")
+            else:
+                # Check file sizes
+                sizes = {f: (shard_dir / f).stat().st_size for f in expected_files}
+                print(f"      ✅ Saved: memory.bin={sizes['memory.bin']//1024}KB, "
+                      f"index.bin={sizes['index.bin']//1024}KB, "
+                      f"chunks.json={sizes['chunks.json']//1024}KB")
 
+        except Exception as e:
+            print(f"      ❌ Error: {e}")
+            raise
 
-def create_full_retrieval_chunks(text: str, save_dir: str, chunk_size: int = 2000):
-    """
-    Create a proper chunks.json with retrieval chunks covering the FULL book.
-
-    MemoRAG's native memorize() overwrites chunks.json on each call, so when
-    processing multiple chunks, only the last chunk's retrieval data is saved.
-    This function fixes that by creating comprehensive retrieval chunks.
-
-    Args:
-        text: Full book text
-        save_dir: Directory where chunks.json should be saved
-        chunk_size: Size of each retrieval chunk in characters (default 2000 ~= 500 tokens)
-    """
-    import json
-
-    print(f"\n📚 Creating comprehensive retrieval chunks...")
-
-    # Split text into smaller retrieval chunks with overlap
-    chunks = []
-    overlap = chunk_size // 4  # 25% overlap
-    start = 0
-
-    while start < len(text):
-        end = min(start + chunk_size, len(text))
-
-        # Try to break at sentence boundaries
-        if end < len(text):
-            # Look for sentence end within last 200 chars
-            for sep in ['. ', '.\n', '? ', '?\n', '! ', '!\n']:
-                break_point = text.rfind(sep, end - 200, end)
-                if break_point > start:
-                    end = break_point + 2
-                    break
-
-        chunk = text[start:end].strip()
-        if chunk:  # Don't add empty chunks
-            chunks.append(chunk)
-
-        # Move forward with overlap
-        start = end - overlap if end < len(text) else end
-
-    # Save chunks.json
-    chunks_path = Path(save_dir) / "chunks.json"
-    with open(chunks_path, 'w') as f:
-        json.dump(chunks, f, indent=2)
-
-    print(f"   ✅ Created {len(chunks)} retrieval chunks")
-    print(f"   📁 Saved to: {chunks_path}")
+    print(f"\n✅ Built {len(chunks)} memory shards successfully!")
+    return len(chunks)
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Build MemoRAG memory index for Our Biggest Deal"
+        description="Build MemoRAG memory shards for Our Biggest Deal"
     )
     parser.add_argument(
         "--pdf",
@@ -285,74 +235,76 @@ def main():
         help="Path to PDF file"
     )
     parser.add_argument(
-        "--save-dir",
+        "--indices-dir",
         type=Path,
         default=Path(__file__).parent.parent / "indices",
-        help="Directory to save native MemoRAG memory index"
+        help="Directory to save shard subdirectories"
     )
     parser.add_argument(
         "--model",
-        default="Qwen/Qwen2-1.5B-Instruct",  # Using smaller public model for CPU
-        help="MemoRAG memory/retrieval model name (use smaller models for CPU)"
+        default="Qwen/Qwen2-1.5B-Instruct",
+        help="MemoRAG memory model name"
     )
     parser.add_argument(
         "--no-openai",
         action="store_true",
-        help="Disable OpenAI generation (use local model, will be slow)"
+        help="Disable OpenAI generation (use local model, slow)"
     )
     parser.add_argument(
         "--cache-dir",
         type=Path,
         help="Model cache directory"
     )
+    parser.add_argument(
+        "--max-chunk-chars",
+        type=int,
+        default=MAX_CHUNK_CHARS,
+        help="Maximum characters per chunk (default: 80000)"
+    )
 
     args = parser.parse_args()
 
     print("=" * 60)
-    print("🚀 MemoRAG Memory Builder - Our Biggest Deal")
+    print("🚀 MemoRAG Sharded Memory Builder - Our Biggest Deal")
     print("=" * 60)
 
     # Check if PDF exists
     if not args.pdf.exists():
         print(f"❌ PDF not found: {args.pdf}")
-        print(f"   Please ensure the book PDF is at the correct location.")
         sys.exit(1)
 
     # Extract text
     text = extract_book_text(args.pdf)
 
-    # Optional: Split by chapters for better context
-    chapters = chunk_text_by_chapters(text)
+    # Split into chunks
+    chunks = split_into_chunks(text, args.max_chunk_chars)
+    print(f"\n📚 Split into {len(chunks)} chunks")
+    for i, chunk in enumerate(chunks):
+        print(f"   Chunk {i}: {len(chunk):,} chars")
 
-    # Concatenate chapters with clear markers
-    formatted_text = "\n\n".join(
-        f"### Chapter {ch['chapter_num']}: {ch['title']}\n\n{ch['text']}"
-        for ch in chapters
-    )
-
-    # Build MemoRAG index with native save
+    # Build shards
     try:
-        save_dir = str(args.save_dir)
-        pipe = build_memorag_index(
-            text=formatted_text,
+        num_shards = build_memorag_shards(
+            chunks=chunks,
             model_name=args.model,
             use_openai_generation=not args.no_openai,
             cache_dir=str(args.cache_dir) if args.cache_dir else None,
-            save_dir=save_dir
+            indices_dir=str(args.indices_dir)
         )
 
         print("\n" + "=" * 60)
-        print("✅ SUCCESS! MemoRAG memory index is ready.")
+        print("✅ SUCCESS! MemoRAG shards are ready.")
         print("=" * 60)
-        print(f"\nMemory saved to: {save_dir}")
+        print(f"\nShards saved to: {args.indices_dir}")
+        print(f"Total shards: {num_shards}")
         print(f"\nNext steps:")
-        print(f"  1. Test the index with query_memory.py")
+        print(f"  1. Test with query_memory.py")
         print(f"  2. Example query:")
         print(f'     python experiments/memorag/scripts/query_memory.py \\')
-        print(f'       "What is the narrative arc of Planetary Prosperity?"')
+        print(f'       "What is Bernard Lietaer\'s vision for the future of money?"')
 
     except Exception as e:
-        print(f"\n❌ Error building MemoRAG index: {e}")
+        print(f"\n❌ Error building MemoRAG shards: {e}")
         import traceback
         traceback.print_exc()
         sys.exit(1)
