@@ -1,3 +1,33 @@
+> **STATUS: ✅ COMPLETED (December 2025)**
+>
+> This plan has been fully implemented through a more comprehensive approach than originally specified.
+>
+> ### Verification Results (2025-12-03):
+>
+> | Entity | Status | Details |
+> |--------|--------|---------|
+> | **Moscow** | ✅ CLEAN | Type: PLACE, Aliases: [] (NO soil/moon) |
+> | **Soil** | ✅ CLEAN | Type: ECOSYSTEM, Aliases: ['soil'] (NO stove/skin/show) |
+> | **Earth** | ✅ CLEAN | Type: ECOSYSTEM, Aliases: [] (NO mars/paris/farm) |
+> | **DIA** | ✅ CLEAN | Type: PLACE, Aliases: ['Denver Airport', 'Denver International Airport'] (NO dubai/india) |
+>
+> ### Root Cause Fixed:
+> - `src/knowledge_graph/validators/entity_merge_validator.py` implements:
+>   - Explicit blocklist for problematic pairs (moscow/soil, earth/mars, etc.)
+>   - Type strict matching (only merge same types)
+>   - Higher threshold (95 vs original 90)
+>   - Two-tier validation strategy
+>   - Semantic compatibility checks
+>
+> ### Current Data Quality:
+> - Max aliases per entity: 9 (Dr. Bronner's - legitimate)
+> - No entity has >500 relationships
+> - All catastrophic merges eliminated
+>
+> **This document is archived for historical reference.**
+
+---
+
 # Knowledge Graph Regeneration Plan (Option D)
 
 ## Executive Summary
