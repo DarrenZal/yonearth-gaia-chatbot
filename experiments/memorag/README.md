@@ -23,8 +23,15 @@ Using high-quality text extractions from the ACE V14.3.10 pipeline:
 
 ## Installation
 
+See **[INSTALLATION.md](INSTALLATION.md)** for detailed setup instructions.
+
+**Quick start (CPU serving):**
 ```bash
-pip install memorag torch transformers
+python3 -m venv venv-memorag
+source venv-memorag/bin/activate
+pip install torch --index-url https://download.pytorch.org/whl/cpu
+pip install faiss-cpu
+pip install -r experiments/memorag/requirements.txt
 ```
 
 ## Usage
