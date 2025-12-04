@@ -132,5 +132,7 @@ web/wiki/static/
 web/wiki/tags/
 web/wiki/technologies/
 
-# MemoRAG model cache (large model files)
+# MemoRAG experiment (large binary files)
 experiments/memorag/model_cache/
+experiments/memorag/indices/*
+!experiments/memorag/indices/.gitkeep

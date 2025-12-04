@@ -1,0 +1,5 @@
+# This file ensures the indices/ directory is tracked by git
+# while the actual index files (memory.bin, index.bin, chunks.json) are ignored.
+#
+# Memory indices are large (often 40GB+) and should be built locally
+# or transferred separately.

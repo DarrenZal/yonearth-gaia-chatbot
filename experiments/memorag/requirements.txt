@@ -1,15 +1,33 @@
 # MemoRAG Experiment Requirements
+# ================================
+# This project has TWO deployment paths. See README_SETUP.md for full details.
+#
+# IMPORTANT: FAISS and PyTorch have platform-specific versions.
+# Do NOT use this file directly with `pip install -r`. Instead:
+#
+#   For CPU-only servers (serving):
+#     pip install torch --index-url https://download.pytorch.org/whl/cpu
+#     pip install faiss-cpu
+#     pip install -r experiments/memorag/requirements.txt
+#
+#   For GPU servers (building indices):
+#     pip install torch --index-url https://download.pytorch.org/whl/cu121
+#     pip install faiss-gpu
+#     pip install -r experiments/memorag/requirements.txt
+#
+# ============================================================================
 
-# Core dependencies
+# Core MemoRAG package
 memorag>=0.1.5
-pdfplumber>=0.11.0
-transformers>=4.43.1
 
-# CPU-only dependencies (NO GPU on server)
-faiss-cpu>=1.7.4
-torch>=2.0.0  # Will install CPU version explicitly
-torchvision>=0.15.0
-torchaudio>=2.0.0
+# PDF extraction
+pdfplumber>=0.11.0
+
+# Transformers and ML
+transformers>=4.43.1
+accelerate>=0.24.0
+sentencepiece>=0.1.99
+protobuf>=3.20.0
 
 # OpenAI for hybrid generation
 openai>=1.0.0
@@ -18,12 +36,22 @@ tiktoken>=0.5.0
 
 # Retrieval dependencies
 sentence-transformers>=2.2.0
-accelerate>=0.24.0
-sentencepiece>=0.1.99
-protobuf>=3.20.0
 
 # Serialization (dill handles threading objects better than pickle)
 dill>=0.3.7
+
+# Language detection (used by MemoRAGLite)
+langdetect>=1.0.9
+
+# Text chunking
+semantic-text-splitter>=0.9.0
+
+# GPU monitoring (optional, only needed for GPU builds)
+# pynvml>=11.5.0
+
+# Inference optimization (optional, for GPU builds)
+# minference>=0.1.0
+# bitsandbytes>=0.42.0
 
 # Development tools
 ipython>=8.0.0
