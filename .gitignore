@@ -112,13 +112,19 @@ data/knowledge_graph/
 data/knowledge_graph_unified/
 data/graphrag_hierarchy/
 data/voices/
+data/analysis/
+data/batch_jobs/
+data/ontology/
+data/canonical_entities.json
+data/fictional_characters.json
 data/processed/podcast_map*.json
 data/processed/nomic*.json
 data/processed/nomic*.csv
 data/processed/category_embeddings.json
 data/processed/hierarchical_checkpoints/
 web/data/
-web/graph/
+# Allow graph HTML/JS files but ignore data
+web/graph/data/
 web/soil-handbook/
 web/wiki/
 web/wiki/_indexes/

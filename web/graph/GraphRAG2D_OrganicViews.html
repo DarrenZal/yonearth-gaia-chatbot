@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphRAG 2D Organic Views - YonEarth Knowledge Graph</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #0a0e1a 0%, #1a1a2e 100%);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            overflow: hidden;
+            color: #e0e0e0;
+        }
+
+        #visualization-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Loading Screen */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 3000;
+            backdrop-filter: blur(10px);
+        }
+
+        #loading-screen.hidden {
+            display: none;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-title {
+            font-size: 32px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .loading-spinner {
+            border: 4px solid rgba(100, 200, 255, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #00ffff;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        .loading-status {
+            color: #00ffff;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Controls Panel */
+        #controls-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            max-width: 320px;
+            max-height: calc(100vh - 40px);
+            padding: 20px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+        }
+
+        .panel-title {
+            font-size: 20px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .control-section {
+            margin-bottom: 20px;
+        }
+
+        .control-label {
+            font-size: 13px;
+            color: #a0a0a0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .mode-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+
+        .mode-btn {
+            padding: 12px;
+            background: rgba(100, 200, 255, 0.1);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 6px;
+            color: #a0a0a0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .mode-btn.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .mode-btn:hover:not(.active) {
+            background: rgba(100, 200, 255, 0.2);
+        }
+
+        .mode-btn .mode-title {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .mode-btn .mode-subtitle {
+            display: block;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .mode-btn:not(.active) .mode-subtitle {
+            color: #7d8ab8;
+        }
+
+        /* Side Panel for Summaries */
+        #summary-panel {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 400px;
+            max-height: calc(100vh - 40px);
+            padding: 20px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            display: none;
+        }
+
+        #summary-panel.visible {
+            display: block;
+        }
+
+        .summary-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .summary-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #00ffff;
+        }
+
+        .close-btn {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.3);
+            color: #f44336;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .close-btn:hover {
+            background: rgba(244, 67, 54, 0.3);
+        }
+
+        .summary-content {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .summary-metadata {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(100, 200, 255, 0.2);
+        }
+
+        .metadata-item {
+            margin-bottom: 8px;
+        }
+
+        .metadata-label {
+            font-size: 11px;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .metadata-value {
+            font-size: 14px;
+            color: #00ffff;
+            margin-top: 2px;
+        }
+
+        /* SVG Container */
+        #svg-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            padding: 10px;
+            background: rgba(15, 20, 35, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 8px;
+            pointer-events: none;
+            font-size: 13px;
+            color: #e0e0e0;
+            z-index: 2000;
+            display: none;
+            max-width: 300px;
+        }
+
+        .tooltip.visible {
+            display: block;
+        }
+
+        .tooltip-title {
+            font-weight: 600;
+            color: #00ffff;
+            margin-bottom: 4px;
+        }
+
+        .tooltip-content {
+            color: #b0b0b0;
+            font-size: 12px;
+        }
+
+        /* Stats Overlay */
+        #stats-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 12px 20px;
+            background: rgba(15, 20, 35, 0.9);
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            border-radius: 8px;
+            font-size: 12px;
+            color: #808080;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            #controls-panel {
+                max-width: calc(100vw - 40px);
+            }
+            #summary-panel {
+                width: calc(100vw - 40px);
+                max-height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Visualization Container -->
+    <div id="visualization-container">
+        <svg id="svg-container"></svg>
+    </div>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-title">Loading Knowledge Graph</div>
+            <div class="loading-spinner"></div>
+            <div class="loading-status" id="loading-status">Initializing...</div>
+        </div>
+    </div>
+
+    <!-- Controls Panel -->
+    <div id="controls-panel">
+        <div class="panel-title">Organic Views</div>
+
+        <div class="control-section">
+            <label class="control-label">Visualization Mode</label>
+            <div class="mode-selector">
+                <div class="mode-btn active" data-mode="circle-pack">
+                    <div class="mode-title">Circle Pack</div>
+                    <div class="mode-subtitle">Zoomable Hierarchy</div>
+                </div>
+                <div class="mode-btn" data-mode="voronoi">
+                    <div class="mode-title">Voronoi</div>
+                    <div class="mode-subtitle">Cellular View</div>
+                </div>
+                <div class="mode-btn" data-mode="holographic">
+                    <div class="mode-title">Holographic</div>
+                    <div class="mode-subtitle">3D Elevator</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <label class="control-label">Color By</label>
+            <div class="mode-selector">
+                <div class="mode-btn active" data-color-mode="category">Top Category</div>
+                <div class="mode-btn" data-color-mode="size">Entity Count</div>
+            </div>
+        </div>
+
+        <div class="control-section">
+            <label class="control-label">Instructions</label>
+            <div style="font-size: 12px; color: #808080; line-height: 1.5;">
+                <strong>Circle Pack:</strong> Click to zoom in/out<br>
+                <strong>Voronoi:</strong> Organic cells sized by entities<br>
+                <strong>Both:</strong> Click cluster to see summary
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary Panel -->
+    <div id="summary-panel">
+        <div class="summary-header">
+            <div class="summary-title" id="summary-title">Cluster Summary</div>
+            <button class="close-btn" id="close-summary">×</button>
+        </div>
+        <div class="summary-content" id="summary-content">
+            Click a cluster to view its summary
+        </div>
+        <div class="summary-metadata" id="summary-metadata"></div>
+    </div>
+
+    <!-- Tooltip -->
+    <div class="tooltip" id="tooltip">
+        <div class="tooltip-title" id="tooltip-title"></div>
+        <div class="tooltip-content" id="tooltip-content"></div>
+    </div>
+
+    <!-- Stats Overlay -->
+    <div id="stats-overlay">
+        <div>80 Root Categories • 762 Communities • 39,054 Entities</div>
+    </div>
+
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/d3-delaunay@6"></script>
+
+    <!-- Main Script -->
+    <script type="module" src="./GraphRAG2D_OrganicViews.js?v=1"></script>
+</body>
+</html>

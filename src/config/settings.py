@@ -86,6 +86,14 @@ class Settings(BaseSettings):
     graph_evidence_min_confidence: float = Field(default=0.6, description="Minimum p_true for evidence inclusion")
     graph_evidence_per_predicate: int = Field(default=2, description="Maximum evidence examples per predicate type")
 
+    # Knowledge Graph Extraction Pipeline
+    graph_extraction_model: str = Field(default="gpt-5.1", description="Model for knowledge graph extraction")
+    graph_extraction_mode: str = Field(default="batch", description="Extraction mode: 'batch' or 'realtime'")
+    parent_chunk_size: int = Field(default=3000, description="Soft target for parent chunks (tokens)")
+    parent_chunk_max: int = Field(default=6000, description="Hard limit for parent chunks (tokens)")
+    child_chunk_size: int = Field(default=600, description="Size for RAG vector child chunks (tokens)")
+    child_chunk_overlap: int = Field(default=100, description="Overlap between child chunks (tokens)")
+
     # Paths
     @property
     def project_root(self) -> Path:

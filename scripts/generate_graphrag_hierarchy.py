@@ -49,7 +49,15 @@ except ImportError:
 # --------------------------------------------------------------------------------------
 
 ROOT = Path("/home/claudeuser/yonearth-gaia-chatbot")
+# Support both old discourse_graph_hybrid.json and new unified_v2.json
+UNIFIED_GRAPH_PATH = ROOT / "data/knowledge_graph_unified/unified_v2.json"
 DISCOURSE_GRAPH_PATH = ROOT / "data/knowledge_graph_unified/discourse_graph_hybrid.json"
+# Use unified_v2 if it exists and is newer, otherwise fall back to discourse_graph
+if UNIFIED_GRAPH_PATH.exists():
+    INPUT_GRAPH_PATH = UNIFIED_GRAPH_PATH
+else:
+    INPUT_GRAPH_PATH = DISCOURSE_GRAPH_PATH
+
 OUTPUT_PATH = ROOT / "data/graphrag_hierarchy/graphrag_hierarchy.json"
 CLUSTER_REGISTRY_PATH = ROOT / "data/graphrag_hierarchy/cluster_registry.json"
 BACKUP_PATH = ROOT / "data/graphrag_hierarchy/graphrag_hierarchy_backup_pre_generation.json"
@@ -68,8 +76,13 @@ UMAP_METRIC = "cosine"
 UMAP_RANDOM_STATE = 42
 
 # Hierarchical Leiden clustering
-MAX_CLUSTER_SIZE = 100  # Maximum entities per cluster (controls granularity)
+# NOTE: max_cluster_size removed - let algorithm find natural community sizes
+# Super-hubs (like "Regenerative Agriculture" with 700+ connections) were causing stalls
 TOP_ENTITIES_FOR_SUMMARY = 50  # Number of top entities to use for cluster summaries
+MIN_CLUSTER_SIZE_FOR_SUMMARY = 5  # Only generate LLM summaries for clusters >= this size
+
+# Cluster summarization model (configurable via env var)
+CLUSTER_SUMMARY_MODEL = os.getenv("GRAPHRAG_SUMMARY_MODEL", "gpt-4.1-mini")
 
 # Betweenness centrality
 # Full centrality on 44k nodes is very expensive; sample for a faster approximation.
@@ -80,14 +93,22 @@ BETWEENNESS_SAMPLE = 512  # set to None to compute exact centrality (slow)
 # Data loading & preprocessing
 # --------------------------------------------------------------------------------------
 
-def load_discourse_graph(path: Path):
-    """Load discourse graph JSON."""
-    print(f"Loading discourse graph from {path}")
+def load_discourse_graph(path: Path = None):
+    """Load discourse graph JSON (supports both unified_v2 and discourse_graph formats)."""
+    if path is None:
+        path = INPUT_GRAPH_PATH
+    print(f"Loading graph from {path}")
     with path.open() as f:
         data = json.load(f)
 
     entities = data.get("entities", {})
     relationships = data.get("relationships", [])
+
+    # Count reality tags if present
+    fictional_count = sum(1 for e in entities.values() if e.get("reality_tag") == "fictional" or e.get("is_fictional"))
+    if fictional_count > 0:
+        print(f"  Found {fictional_count:,} fictional entities (from VIRIDITAS)")
+
     print(f"  Loaded {len(entities):,} entities and {len(relationships):,} relationships")
     return entities, relationships
 
@@ -226,7 +247,7 @@ def create_embeddings(entities: Dict[str, dict], rel_index: Dict[str, List[dict]
 
 def compute_umap_positions(embeddings: np.ndarray) -> np.ndarray:
     """Reduce embeddings to 3D using UMAP."""
-    print("\nComputing UMAP 3D positions...")
+    print("\nComputing UMAP 3D positions...", flush=True)
     reducer = umap.UMAP(
         n_components=UMAP_N_COMPONENTS,
         n_neighbors=UMAP_N_NEIGHBORS,
@@ -236,10 +257,10 @@ def compute_umap_positions(embeddings: np.ndarray) -> np.ndarray:
         verbose=True,
     )
     positions = reducer.fit_transform(embeddings)
-    print("  ✓ UMAP complete")
+    print("  ✓ UMAP complete", flush=True)
     print(f"  Position ranges: x[{positions[:,0].min():.2f}, {positions[:,0].max():.2f}], "
           f"y[{positions[:,1].min():.2f}, {positions[:,1].max():.2f}], "
-          f"z[{positions[:,2].min():.2f}, {positions[:,2].max():.2f}]")
+          f"z[{positions[:,2].min():.2f}, {positions[:,2].max():.2f}]", flush=True)
     return positions
 
 
@@ -303,17 +324,22 @@ def run_hierarchical_leiden(G: nx.Graph):
     """
     Run hierarchical Leiden clustering on the graph.
 
+    Uses natural community detection without max_cluster_size constraint.
+    This allows super-hubs to remain in their natural communities rather than
+    forcing artificial splits that cause algorithm stalls.
+
     Returns a HierarchicalClusters list of node assignments.
     """
-    print(f"\nRunning hierarchical Leiden clustering (max_cluster_size={MAX_CLUSTER_SIZE})...")
-    print(f"  Graph: {G.number_of_nodes():,} nodes, {G.number_of_edges():,} edges")
+    print(f"\nRunning hierarchical Leiden clustering (natural communities)...", flush=True)
+    print(f"  Graph: {G.number_of_nodes():,} nodes, {G.number_of_edges():,} edges", flush=True)
 
-    # Run hierarchical Leiden
-    hierarchy = hierarchical_leiden(G, max_cluster_size=MAX_CLUSTER_SIZE, random_seed=42)
+    # Run hierarchical Leiden without max_cluster_size constraint
+    # This uses modularity optimization to find natural community structure
+    hierarchy = hierarchical_leiden(G, random_seed=42)
 
-    print(f"  ✓ Leiden clustering complete")
-    print(f"    Total assignments: {len(hierarchy):,}")
-    print(f"    Levels found: {max(entry.level for entry in hierarchy) + 1}")
+    print(f"  ✓ Leiden clustering complete", flush=True)
+    print(f"    Total assignments: {len(hierarchy):,}", flush=True)
+    print(f"    Levels found: {max(entry.level for entry in hierarchy) + 1}", flush=True)
 
     return hierarchy
 
@@ -571,7 +597,7 @@ async def generate_cluster_metadata_async(entity_ids: List[str], G: nx.Graph, le
             level_desc = level_names.get(level, "cluster")
 
             response = await client.chat.completions.create(
-                model="gpt-4.1-mini",
+                model=CLUSTER_SUMMARY_MODEL,
                 messages=[
                     {
                         "role": "system",
@@ -632,8 +658,8 @@ def generate_cluster_metadata(entity_ids: List[str], G: nx.Graph, level: int) ->
     if not entity_ids:
         return {"title": "Empty Cluster", "summary": "No entities in this cluster."}
 
-    # For very small clusters, use simple fallback
-    if len(entity_ids) < 5:
+    # For very small clusters, use simple fallback (no LLM call)
+    if len(entity_ids) < MIN_CLUSTER_SIZE_FOR_SUMMARY:
         subgraph = G.subgraph(entity_ids)
         degree_centrality = nx.degree_centrality(subgraph)
         top_entity = max(entity_ids, key=lambda eid: degree_centrality.get(eid, 0.0))
@@ -680,7 +706,7 @@ def generate_cluster_metadata(entity_ids: List[str], G: nx.Graph, level: int) ->
         level_desc = level_names.get(level, "cluster")
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model=CLUSTER_SUMMARY_MODEL,
             messages=[
                 {
                     "role": "system",
@@ -819,14 +845,22 @@ def build_level_0_clusters(entity_ids: List[str],
     """Create level_0 cluster entries (individual entities)."""
     level_0 = {}
     for idx, eid in enumerate(entity_ids):
+        entity_data = entities[eid]
+        # Determine reality_tag for coloring in visualization
+        # Check for reality_tag field or is_fictional flag
+        reality_tag = entity_data.get("reality_tag", "factual")
+        if entity_data.get("is_fictional"):
+            reality_tag = "fictional"
+
         level_0[eid] = {
             "id": eid,
             "type": "entity",
-            "entity": entities[eid],
+            "entity": entity_data,
             "embedding_idx": idx,
             "position": umap_positions[idx].tolist(),
             "umap_position": umap_positions[idx].tolist(),
             "betweenness": betweenness.get(eid, 0.0),
+            "reality_tag": reality_tag,  # For color mapping in 3D viewer
         }
     return level_0
 
@@ -853,7 +887,7 @@ def build_metadata(entities: Dict[str, dict],
         "levels": 4,
         "timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
         "multi_membership": False,
-        "source_graph": str(DISCOURSE_GRAPH_PATH),
+        "source_graph": str(INPUT_GRAPH_PATH),
         "umap": {
             "n_components": UMAP_N_COMPONENTS,
             "n_neighbors": UMAP_N_NEIGHBORS,
@@ -867,7 +901,7 @@ def build_metadata(entities: Dict[str, dict],
         },
         "clustering": {
             "algorithm": "Hierarchical Leiden (graspologic)",
-            "max_cluster_size": MAX_CLUSTER_SIZE,
+            "max_cluster_size": "natural",  # No constraint - uses modularity optimization
             "level_1_clusters": cluster_counts.get("level_1", 0),
             "level_2_clusters": cluster_counts.get("level_2", 0),
             "level_3_clusters": cluster_counts.get("level_3", 0),
@@ -911,7 +945,7 @@ async def regenerate_titles_async():
         hierarchy = json.load(f)
 
     # Load discourse graph for entity data
-    entities, relationships = load_discourse_graph(DISCOURSE_GRAPH_PATH)
+    entities, relationships = load_discourse_graph(INPUT_GRAPH_PATH)
     G = build_networkx_graph(entities, relationships)
 
     # Create async OpenAI client
@@ -920,7 +954,7 @@ async def regenerate_titles_async():
     # Semaphore to limit concurrent requests (50 concurrent)
     semaphore = asyncio.Semaphore(50)
 
-    print(f"\nRegenerating titles for {len(cluster_registry)} clusters using gpt-4.1-mini...")
+    print(f"\nRegenerating titles for {len(cluster_registry)} clusters using {CLUSTER_SUMMARY_MODEL}...")
     print(f"  Concurrency: 50 parallel requests")
     sys.stdout.flush()
 
@@ -1025,7 +1059,6 @@ def main_cluster_only():
 
     This is useful when:
     - You've changed the level mapping logic
-    - You want to try different MAX_CLUSTER_SIZE values
     - You want to regenerate LLM titles with different prompts
 
     Saves ~3-4 minutes by skipping embedding generation and UMAP computation.
@@ -1078,7 +1111,7 @@ def main_cluster_only():
     print(f"  Count: {len(entity_ids)}")
 
     # Load discourse graph (needed for clustering and titles)
-    entities, relationships = load_discourse_graph(DISCOURSE_GRAPH_PATH)
+    entities, relationships = load_discourse_graph(INPUT_GRAPH_PATH)
     G = build_networkx_graph(entities, relationships)
 
     # Graph metrics (fast)
@@ -1147,7 +1180,7 @@ def main_cluster_only():
     print(f"   Cluster registry: {registry_size_mb:.2f} MB ({CLUSTER_REGISTRY_PATH})")
     print(f"\n📊 Clustering Summary:")
     print(f"   Algorithm: Hierarchical Leiden (graspologic)")
-    print(f"   Max cluster size: {MAX_CLUSTER_SIZE}")
+    print(f"   Max cluster size: natural (modularity-optimized)")
     print(f"   Level 1: {cluster_counts['level_1']} communities")
     print(f"   Level 2: {cluster_counts['level_2']} sub-communities")
     print(f"   Level 3: {cluster_counts['level_3']} leaf clusters")
@@ -1173,7 +1206,7 @@ def main():
     client = OpenAI(api_key=api_key)
 
     # Load data
-    entities, relationships = load_discourse_graph(DISCOURSE_GRAPH_PATH)
+    entities, relationships = load_discourse_graph(INPUT_GRAPH_PATH)
 
     # Build NetworkX graph (needed for both clustering and metrics)
     G = build_networkx_graph(entities, relationships)
@@ -1260,7 +1293,7 @@ def main():
     print(f"   Cluster registry: {registry_size_mb:.2f} MB ({CLUSTER_REGISTRY_PATH})")
     print(f"\n📊 Clustering Summary:")
     print(f"   Algorithm: Hierarchical Leiden (graspologic)")
-    print(f"   Max cluster size: {MAX_CLUSTER_SIZE}")
+    print(f"   Max cluster size: natural (modularity-optimized)")
     print(f"   Level 1: {cluster_counts['level_1']} communities")
     print(f"   Level 2: {cluster_counts['level_2']} sub-communities")
     print(f"   Level 3: {cluster_counts['level_3']} leaf clusters")

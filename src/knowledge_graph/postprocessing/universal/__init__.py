@@ -10,6 +10,7 @@ Available Modules:
 - FieldNormalizer: Normalize field naming inconsistencies (relationship/predicate) (V14.3.3)
 - PronounResolver: Resolve pronouns to their antecedents
 - ListSplitter: Split list targets into individual relationships
+- EnhancedListSplitter: Detect and split list ENTITIES into individual entities (Phase 2)
 - ContextEnricher: Replace vague entities with specific ones from context
 - PredicateNormalizer: Normalize verbose predicates to standard forms
 - PredicateValidator: Validate predicates for logical consistency
@@ -25,6 +26,13 @@ Available Modules:
 from .field_normalizer import FieldNormalizer
 from .pronoun_resolver import PronounResolver
 from .list_splitter import ListSplitter
+from .enhanced_list_splitter import (
+    is_list_entity,
+    split_list_entity,
+    split_compound_entity,
+    process_entities_for_splitting,
+    analyze_list_entities,
+)
 from .context_enricher import ContextEnricher
 from .predicate_normalizer import PredicateNormalizer
 from .predicate_validator import PredicateValidator
@@ -41,6 +49,12 @@ __all__ = [
     "FieldNormalizer",
     "PronounResolver",
     "ListSplitter",
+    # Enhanced List Splitter - Entity-level splitting (Phase 2)
+    "is_list_entity",
+    "split_list_entity",
+    "split_compound_entity",
+    "process_entities_for_splitting",
+    "analyze_list_entities",
     "ContextEnricher",
     "PredicateNormalizer",
     "PredicateValidator",

@@ -903,6 +903,7 @@
         <nav class="kg-nav">
             <a href="../">Chat with Gaia</a>
             <a href="../podcast/">3D Podcast Map</a>
+            <a href="GraphRAG3D_EmbeddingView.html">All Views</a>
         </nav>
     </header>
 
@@ -1056,21 +1057,9 @@
         <div class="control-section">
             <label class="control-label">Multi-Lens Visualization</label>
             <select id="multi-lens-selector" class="multi-lens-select">
-                <optgroup label="───── NETWORK LAYOUTS ─────">
-                    <option value="semantic" selected>Semantic (Text UMAP)</option>
-                    <option value="contextual">Contextual (GraphSAGE)</option>
-                    <option value="structural">Structural (Force Graph)</option>
-                    <option value="holographic">Holographic Elevator (Legacy 3D)</option>
-                </optgroup>
-                <optgroup label="──── HIERARCHY LAYOUTS ────">
-                    <option value="circle-pack">Circle Pack (Zoomable Hierarchy)</option>
-                    <option value="voronoi">Voronoi (Cellular Organic)</option>
-                    <option value="voronoi-2">Voronoi 2 (Semantic Landscape)</option>
-                    <option value="voronoi-3">Voronoi 3 (Constrained Cells)</option>
-                    <option value="voronoi4">Voronoi 4 (Progressive Disclosure)</option>
-                    <option value="voronoi5">Voronoi 5 (Subset, 1k nodes)</option>
-                    <option value="hierarchical">Hierarchical (L3→L2→L1→Entities)</option>
-                </optgroup>
+                <option value="semantic" selected>Semantic (Text UMAP)</option>
+                <option value="structural">Structural (Force Graph)</option>
+                <option value="voronoi">Voronoi (Cellular Organic)</option>
             </select>
         </div>
 

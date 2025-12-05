@@ -65,20 +65,47 @@ The gaiaai.xyz site is served by system nginx (not Docker):
 ```bash
 # GraphRAG 3D Viewer files (HTML, JS)
 /var/www/symbiocenelabs/YonEarth/graph/
+  ├── index.html                          # LIMITED VIEW (Semantic, Structural, Voronoi only)
+  ├── GraphRAG3D_EmbeddingView.html       # FULL VIEW (all visualization modes)
+  └── GraphRAG3D_EmbeddingView.js         # Main viewer JavaScript
 
 # GraphRAG data files (JSON hierarchy, layouts)
 /var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
+
+# ⚠️ IMPORTANT: community_id_mapping.json exists in TWO locations!
+# The JS code tries BOTH paths in order - update BOTH when changing cluster titles:
+/var/www/symbiocenelabs/YonEarth/graph/data/community_id_mapping.json  # PRIMARY (loaded first)
+/var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/community_id_mapping.json  # FALLBACK
 ```
 
+**GraphRAG Viewer Pages:**
+- **https://gaiaai.xyz/YonEarth/graph/** - Limited view with 3 core visualization modes (recommended for most users)
+- **https://gaiaai.xyz/YonEarth/graph/GraphRAG3D_EmbeddingView.html** - Full view with all experimental modes
+
 **Deploying GraphRAG changes to gaiaai.xyz:**
+
+**⚠️ RECOMMENDED: Use the deployment script after regenerating clusters:**
+```bash
+# This script handles everything: deploys data, regenerates community_id_mapping.json,
+# updates cache buster, and reloads nginx
+./scripts/deploy_graphrag.sh
+```
+
+**Manual deployment (if needed):**
 ```bash
 # Deploy GraphRAG viewer files
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/GraphRAG3D_EmbeddingView.js /var/www/symbiocenelabs/YonEarth/graph/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/index.html /var/www/symbiocenelabs/YonEarth/graph/
 sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/GraphRAG3D_EmbeddingView.html /var/www/symbiocenelabs/YonEarth/graph/
+sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/graph/GraphRAG3D_EmbeddingView.js /var/www/symbiocenelabs/YonEarth/graph/
 
 # Deploy GraphRAG data files
 sudo cp /home/claudeuser/yonearth-gaia-chatbot/data/graphrag_hierarchy/graphrag_hierarchy.json /var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
 sudo cp /home/claudeuser/yonearth-gaia-chatbot/data/graphrag_hierarchy/graphsage_layout.json /var/www/symbiocenelabs/YonEarth/graph/data/graphrag_hierarchy/
+
+# ⚠️ CRITICAL: Regenerate community_id_mapping.json from the new hierarchy!
+# The voronoi view uses this file for cluster titles. If not regenerated,
+# you'll see OLD cluster names in the UI.
+# Run: ./scripts/deploy_graphrag.sh (which does this automatically)
 
 # Reload nginx to clear caches
 sudo systemctl reload nginx

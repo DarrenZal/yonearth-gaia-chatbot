@@ -96,7 +96,7 @@ Text to analyze:
 
 Return ONLY a valid JSON array of relationships. Return an empty array [] if no relationships are found."""
 
-    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-4o-mini"):
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         """Initialize the relationship extractor
 
         Args:
@@ -108,7 +108,8 @@ Return ONLY a valid JSON array of relationships. Return an empty array [] if no 
             raise ValueError("OpenAI API key required")
 
         self.client = OpenAI(api_key=self.api_key)
-        self.model = model
+        # Allow configuration via env var, defaulting to the prior hardcoded model
+        self.model = model or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
         self.rate_limit_delay = 0.05  # seconds between API calls (was 1.0 - very conservative)
 
     def extract_relationships(

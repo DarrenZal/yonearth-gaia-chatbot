@@ -176,10 +176,10 @@
         /* Info Panel */
         #info-panel {
             position: absolute;
-            top: 60px;
+            top: 0;
             right: 0;
             max-width: 380px;
-            max-height: calc(100vh - 60px);
+            max-height: 100vh;
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
             border-left: 1px solid rgba(100, 200, 255, 0.3);
@@ -340,10 +340,10 @@
         /* Controls Panel */
         #controls-panel {
             position: absolute;
-            top: 60px;
+            top: 0;
             left: 0;
             max-width: 320px;
-            max-height: calc(100vh - 60px);
+            max-height: 100vh;
             padding: 20px;
             background: rgba(15, 20, 35, 0.95);
             border-right: 1px solid rgba(100, 200, 255, 0.3);
@@ -1196,7 +1196,12 @@
         window.THREE = THREE;
         window.OrbitControls = OrbitControls;
 
-        // Load main script after dependencies (cache-busting v=68 - stricttreemap label toggle)
+        // Force strict treemap view if no hash provided
+        if (!window.location.hash) {
+            window.location.hash = '#view=stricttreemap';
+        }
+
+        // Load main script after dependencies (cache-busting v=68 for fresh load on alt URL)
         import('./GraphRAG3D_EmbeddingView.js?v=68').then(() => {
             const viewer = new GraphRAG3DEmbeddingView('graph-container');
             window.viewer = viewer; // debug handle for inspections

@@ -16,10 +16,17 @@ from pydantic import BaseModel
 class Entity(BaseModel):
     """Represents an extracted entity"""
     name: str
-    type: str  # PERSON, ORGANIZATION, CONCEPT, PLACE, PRACTICE, PRODUCT, etc.
+    type: str  # PERSON, FORMAL_ORGANIZATION, COMMUNITY, NETWORK, CONCEPT, PLACE, PRODUCT, URL
     description: str
     aliases: List[str] = []
     metadata: Dict[str, Any] = {}
+
+
+class RelationshipTriple(BaseModel):
+    """Represents a relationship extracted between entities"""
+    source: str
+    predicate: str
+    target: str
 
 
 class EntityForExtraction(BaseModel):
@@ -33,79 +40,151 @@ class EntityForExtraction(BaseModel):
 class EntityExtractionResult(BaseModel):
     """Result of entity extraction from a chunk"""
     entities: List[Entity]
+    relationships: List[RelationshipTriple] = []
     chunk_id: str = ""
     episode_number: int = 0
 
 
-class EntityListResponse(BaseModel):
-    """Schema for OpenAI structured output - list of entities without metadata"""
+class ExtractionResponse(BaseModel):
+    """Schema for OpenAI structured output - entities and relationships"""
     entities: List[EntityForExtraction]
+    relationships: List[RelationshipTriple] = []
+
+
+# Legacy alias for backwards compatibility
+EntityListResponse = ExtractionResponse
 
 
 class EntityExtractor:
     """Extracts entities from text using OpenAI GPT models"""
 
+    # Core entity types from the consolidated ontology
     ENTITY_TYPES = [
-        "PERSON",           # Individuals mentioned
-        "ORGANIZATION",     # Companies, nonprofits, institutions
-        "CONCEPT",          # Abstract ideas, theories, movements
-        "PLACE",            # Locations, regions
-        "PRACTICE",         # Techniques, methods, activities
-        "PRODUCT",          # Specific products or services
-        "EVENT",            # Conferences, gatherings, initiatives
-        "TECHNOLOGY",       # Tools, software, hardware
-        "ECOSYSTEM",        # Natural systems, biomes
-        "SPECIES",          # Plants, animals, organisms
+        "PERSON",               # Named individuals only
+        "FORMAL_ORGANIZATION",  # Legal entities: nonprofits, companies, agencies, universities
+        "COMMUNITY",            # Informal groups based on shared interest
+        "NETWORK",              # Distributed connections between entities
+        "PLACE",                # Geographic locations
+        "CONCEPT",              # Abstract ideas, practices, movements, topics
+        "PRODUCT",              # Books, podcasts, tools, creations
+        "URL",                  # Websites and domains
     ]
 
-    EXTRACTION_PROMPT = """You are an expert at extracting structured entities from podcast transcripts about sustainability, regenerative agriculture, and environmental topics.
+    # Core relationship types
+    RELATIONSHIP_TYPES = [
+        "FOUNDED",          # Person founded organization
+        "WORKS_FOR",        # Person works for organization
+        "LEADS",            # Person leads organization
+        "MEMBER_OF",        # Entity is member of group
+        "HAS_COMMUNITY",    # Organization has community
+        "PRODUCES",         # Entity produces product
+        "AUTHORED",         # Person authored book/article
+        "HAS_WEBSITE",      # Entity has website
+        "LOCATED_IN",       # Entity located in place
+        "FOCUSES_ON",       # Entity focuses on concept
+        "ADVOCATES_FOR",    # Entity advocates for cause
+        "INTERVIEWED_ON",   # Person interviewed on show
+        "PARTNERS_WITH",    # Org partners with org
+        "PART_OF",          # Entity part of larger entity
+        "RELATES_TO",       # Concepts relate to each other
+    ]
 
-Extract ALL significant entities from this text. For each entity, provide:
-1. name: The exact name/term as it appears
-2. type: One of {entity_types}
-3. description: A concise description (1-2 sentences) of what/who this is
-4. aliases: Any alternative names or spellings mentioned (optional)
+    EXTRACTION_PROMPT = """You are an expert at extracting structured entities and relationships from podcast transcripts about sustainability, regenerative agriculture, and environmental topics.
 
-Focus on:
-- People (guests, hosts, researchers, activists)
-- Organizations (nonprofits, companies, institutions)
-- Concepts (regenerative agriculture, permaculture, biochar, etc.)
-- Places (farms, regions, countries, ecosystems)
-- Practices (composting, cover cropping, soil testing)
-- Products (specific brands, tools, materials)
-- Events (conferences, gatherings, initiatives)
-- Technologies (tools, software, equipment)
-- Ecosystems (forests, wetlands, grasslands)
-- Species (plants, animals, microorganisms)
+=== ENTITY TYPES ===
 
-Return ONLY a valid JSON array of entities. Example format:
-[
-  {{
-    "name": "Joel Salatin",
-    "type": "PERSON",
-    "description": "Farmer and author known for regenerative agriculture and rotational grazing practices.",
-    "aliases": ["Joel"]
-  }},
-  {{
-    "name": "Polyface Farm",
-    "type": "ORGANIZATION",
-    "description": "Regenerative farm in Virginia demonstrating holistic management practices.",
-    "aliases": []
-  }},
-  {{
-    "name": "Rotational Grazing",
-    "type": "PRACTICE",
-    "description": "A livestock management technique where animals are moved between pastures to improve soil health.",
-    "aliases": ["mob grazing", "management-intensive grazing"]
-  }}
-]
+Extract entities using these SPECIFIC types (not generic "ORGANIZATION"):
+
+PERSON: Named individuals only
+  - EXTRACT: "Aaron William Perry", "Vandana Shiva", "Paul Stamets"
+  - DO NOT EXTRACT: "farmers", "scientists", "activists", "the speaker", "she", "he", "they"
+
+FORMAL_ORGANIZATION: Legal entities (nonprofits, companies, agencies, universities)
+  - EXTRACT: "Y on Earth", "Patagonia", "Rodale Institute", "EPA", "Stanford University"
+  - Use for 501(c)(3)s, B-Corps, LLCs, government agencies
+
+COMMUNITY: Informal groups based on shared interest (no formal legal status)
+  - EXTRACT: "Y on Earth Community", "local permaculture guild", "transition town movement"
+
+NETWORK: Distributed connections between entities
+  - EXTRACT: "regenerative agriculture network", "B Corp network", "seed library network"
+
+PLACE: Geographic locations
+  - EXTRACT: "Boulder, Colorado", "Amazon rainforest", "Findhorn, Scotland"
+
+CONCEPT: Abstract ideas, practices, movements, technologies, materials
+  - EXTRACT: "regenerative agriculture", "permaculture", "biochar", "carbon sequestration"
+
+PRODUCT: Books, podcasts, tools, creations
+  - EXTRACT: "Y on Earth Podcast", "VIRIDITAS", "Mycelium Running"
+
+URL: Websites and domains
+  - EXTRACT: "yonearth.org", "patagonia.com"
+  - NOTE: Always link URLs to their owner with HAS_WEBSITE relationship
+
+=== RELATIONSHIPS ===
+
+For each relationship found, extract a triple:
+{{"source": "entity name", "predicate": "RELATIONSHIP_TYPE", "target": "entity name"}}
+
+Valid predicates:
+- FOUNDED: Person founded organization
+- WORKS_FOR: Person works for organization
+- LEADS: Person leads/directs organization
+- MEMBER_OF: Entity is member of community/network
+- HAS_COMMUNITY: Organization has associated community
+- HAS_WEBSITE: Entity has website (use when URL mentioned)
+- PRODUCES: Entity produces product
+- AUTHORED: Person authored book/article
+- LOCATED_IN: Entity located in place
+- FOCUSES_ON: Entity focuses on concept
+- ADVOCATES_FOR: Entity advocates for cause
+- INTERVIEWED_ON: Person interviewed on show
+- PARTNERS_WITH: Org partners with org
+- PART_OF: Entity is part of larger entity
+- RELATES_TO: Concepts relate to each other
+
+=== SPECIAL HANDLING ===
+
+URLs: When you see a website like "yonearth.org":
+1. Extract: {{"name": "yonearth.org", "type": "URL"}}
+2. Create: {{"source": "Y on Earth", "predicate": "HAS_WEBSITE", "target": "yonearth.org"}}
+
+Org vs Community: These are SEPARATE entities that should be linked:
+- "Y on Earth" (nonprofit) -> FORMAL_ORGANIZATION
+- "Y on Earth Community" (the people) -> COMMUNITY
+- Create: {{"source": "Y on Earth", "predicate": "HAS_COMMUNITY", "target": "Y on Earth Community"}}
+
+=== DO NOT EXTRACT ===
+
+- Pronouns: we, she, he, they, I
+- Generic groups: farmers, scientists, activists, researchers
+- Roles: the founder, the CEO, the speaker, the guest
+- Combined names: "John and Jane Smith" -> extract as TWO separate PERSON entities
+
+=== OUTPUT FORMAT ===
+
+Return entities AND relationships. Example:
+{{
+  "entities": [
+    {{"name": "Aaron William Perry", "type": "PERSON", "description": "Founder of Y on Earth", "aliases": ["Aaron Perry"]}},
+    {{"name": "Y on Earth", "type": "FORMAL_ORGANIZATION", "description": "Nonprofit focused on regenerative sustainability", "aliases": []}},
+    {{"name": "Y on Earth Community", "type": "COMMUNITY", "description": "Community of sustainability practitioners", "aliases": []}},
+    {{"name": "yonearth.org", "type": "URL", "description": "Official website for Y on Earth", "aliases": []}}
+  ],
+  "relationships": [
+    {{"source": "Aaron William Perry", "predicate": "FOUNDED", "target": "Y on Earth"}},
+    {{"source": "Y on Earth", "predicate": "HAS_COMMUNITY", "target": "Y on Earth Community"}},
+    {{"source": "Y on Earth", "predicate": "HAS_WEBSITE", "target": "yonearth.org"}}
+  ]
+}}
 
 Text to analyze:
 {text}
 
-Return ONLY the JSON array, no other text."""
+Extract all entities and relationships following the guidelines above."""
 
-    def __init__(self, api_key: Optional[str] = None, model: str = "gpt-4o-mini"):
+    def __init__(self, api_key: Optional[str] = None, model: Optional[str] = None):
         """Initialize the entity extractor
 
         Args:
@@ -117,7 +196,10 @@ Return ONLY the JSON array, no other text."""
             raise ValueError("OpenAI API key required")
 
         self.client = OpenAI(api_key=self.api_key)
-        self.model = model
+        # Priority: explicit model > GRAPH_EXTRACTION_MODEL > OPENAI_MODEL > default
+        self.model = model or os.getenv("GRAPH_EXTRACTION_MODEL") or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+        # Extraction mode: "batch" for Batch API, "realtime" for direct API calls
+        self.extraction_mode = os.getenv("GRAPH_EXTRACTION_MODE", "realtime")
         self.rate_limit_delay = 0.05  # seconds between API calls (was 1.0 - very conservative)
 
     def extract_entities(
@@ -127,7 +209,7 @@ Return ONLY the JSON array, no other text."""
         chunk_id: str,
         retry_attempts: int = 3
     ) -> EntityExtractionResult:
-        """Extract entities from a text chunk
+        """Extract entities and relationships from a text chunk
 
         Args:
             text: The text to extract entities from
@@ -136,12 +218,9 @@ Return ONLY the JSON array, no other text."""
             retry_attempts: Number of times to retry on failure
 
         Returns:
-            EntityExtractionResult containing extracted entities
+            EntityExtractionResult containing extracted entities and relationships
         """
-        prompt = self.EXTRACTION_PROMPT.format(
-            entity_types=", ".join(self.ENTITY_TYPES),
-            text=text
-        )
+        prompt = self.EXTRACTION_PROMPT.format(text=text)
 
         for attempt in range(retry_attempts):
             try:
@@ -151,14 +230,14 @@ Return ONLY the JSON array, no other text."""
                     messages=[
                         {
                             "role": "system",
-                            "content": "You are an expert at extracting structured information from text."
+                            "content": "You are an expert at extracting structured information from text. Extract entities using SPECIFIC types (FORMAL_ORGANIZATION, not just ORGANIZATION). Also extract relationships between entities."
                         },
                         {
                             "role": "user",
                             "content": prompt
                         }
                     ],
-                    response_format=EntityListResponse,
+                    response_format=ExtractionResponse,
                     temperature=0.1,  # Low temperature for consistency
                 )
 
@@ -172,7 +251,7 @@ Return ONLY the JSON array, no other text."""
                         continue
                     else:
                         print("All retry attempts returned empty responses")
-                        return EntityExtractionResult(entities=[])
+                        return EntityExtractionResult(entities=[], relationships=[])
 
                 # Convert to Entity objects with metadata
                 entities = []
@@ -189,11 +268,15 @@ Return ONLY the JSON array, no other text."""
                     )
                     entities.append(entity)
 
+                # Extract relationships
+                relationships = parsed.relationships if parsed.relationships else []
+
                 # Rate limiting
                 time.sleep(self.rate_limit_delay)
 
                 return EntityExtractionResult(
                     entities=entities,
+                    relationships=relationships,
                     chunk_id=chunk_id,
                     episode_number=episode_number
                 )
@@ -208,6 +291,7 @@ Return ONLY the JSON array, no other text."""
         # Return empty result if all attempts failed
         return EntityExtractionResult(
             entities=[],
+            relationships=[],
             chunk_id=chunk_id,
             episode_number=episode_number
         )
@@ -251,3 +335,155 @@ Return ONLY the JSON array, no other text."""
                     entity_map[key] = entity
 
         return list(entity_map.values())
+
+    # ==========================================================================
+    # Batch Mode Methods
+    # ==========================================================================
+
+    def extract_entities_batch(
+        self,
+        parent_chunks: List,  # List[ParentChunk] from chunking module
+        collector,  # BatchCollector
+        content_profile: Optional[Any] = None  # ContentProfile from extract_content_batch.py
+    ) -> None:
+        """
+        Add parent chunks to batch collector for later submission.
+
+        This method queues extraction requests for the Batch API instead of
+        making real-time API calls. Use this for large-scale extraction jobs.
+
+        Args:
+            parent_chunks: List of ParentChunk objects to extract from
+            collector: BatchCollector instance to add requests to
+            content_profile: Optional ContentProfile for customizing extraction prompts
+                             Has attributes: content_type, reality_tag, system_prompt_focus
+        """
+        # Base system prompt
+        base_system_prompt = (
+            "You are an expert at extracting structured information from text. "
+            "Extract entities using SPECIFIC types (FORMAL_ORGANIZATION, not just ORGANIZATION). "
+            "Also extract relationships between entities."
+        )
+
+        # Customize prompt based on content profile if provided
+        if content_profile is not None:
+            profile_additions = f"""
+
+=== CONTENT PROFILE: {content_profile.content_type.upper()} ===
+Reality Tag: {content_profile.reality_tag}
+
+{content_profile.system_prompt_focus}
+
+IMPORTANT: Tag all extracted entities with:
+- content_type: "{content_profile.content_type}"
+- reality_tag: "{content_profile.reality_tag}"
+"""
+            system_prompt = base_system_prompt + profile_additions
+        else:
+            system_prompt = base_system_prompt
+
+        for chunk in parent_chunks:
+            collector.add_extraction_request(
+                parent_chunk=chunk,
+                system_prompt=system_prompt,
+                user_prompt_template=self.EXTRACTION_PROMPT
+            )
+
+    def process_batch_results(
+        self,
+        results: List[Dict]
+    ) -> Dict[str, EntityExtractionResult]:
+        """
+        Process downloaded batch results, keyed by parent_chunk_id.
+
+        This method parses the raw batch API results and converts them into
+        EntityExtractionResult objects that can be used with the post-processing
+        pipeline (quality filters, entity resolver, etc.).
+
+        Args:
+            results: List of batch result objects from BatchCollector.download_results()
+                    Each result has 'custom_id' (parent chunk ID) and 'response' (API response)
+
+        Returns:
+            Dict mapping parent_chunk_id to EntityExtractionResult
+        """
+        processed = {}
+
+        for result in results:
+            custom_id = result.get("custom_id")
+            if not custom_id:
+                continue
+
+            response = result.get("response", {})
+            body = response.get("body", {})
+            choices = body.get("choices", [])
+
+            if not choices:
+                # No response - add empty result
+                processed[custom_id] = EntityExtractionResult(
+                    entities=[],
+                    relationships=[],
+                    chunk_id=custom_id,
+                    episode_number=0
+                )
+                continue
+
+            message = choices[0].get("message", {})
+            content = message.get("content", "{}")
+
+            try:
+                parsed = json.loads(content)
+            except json.JSONDecodeError:
+                print(f"Warning: Could not parse JSON for chunk {custom_id}")
+                processed[custom_id] = EntityExtractionResult(
+                    entities=[],
+                    relationships=[],
+                    chunk_id=custom_id,
+                    episode_number=0
+                )
+                continue
+
+            # Convert to Entity objects
+            entities = []
+            for entity_data in parsed.get("entities", []):
+                entity = Entity(
+                    name=entity_data.get("name", ""),
+                    type=entity_data.get("type", "CONCEPT"),
+                    description=entity_data.get("description", ""),
+                    aliases=entity_data.get("aliases", []),
+                    metadata={"parent_chunk_id": custom_id}
+                )
+                entities.append(entity)
+
+            # Convert relationships
+            relationships = []
+            for rel_data in parsed.get("relationships", []):
+                relationships.append(RelationshipTriple(
+                    source=rel_data.get("source", ""),
+                    predicate=rel_data.get("predicate", "RELATES_TO"),
+                    target=rel_data.get("target", "")
+                ))
+
+            # Extract episode number from chunk ID if present
+            # Format: "episode_120_parent_0" or "book_viriditas_parent_0"
+            episode_number = 0
+            if custom_id.startswith("episode_"):
+                try:
+                    parts = custom_id.split("_")
+                    if len(parts) >= 2:
+                        episode_number = int(parts[1])
+                except (ValueError, IndexError):
+                    pass
+
+            processed[custom_id] = EntityExtractionResult(
+                entities=entities,
+                relationships=relationships,
+                chunk_id=custom_id,
+                episode_number=episode_number
+            )
+
+        return processed
+
+    def is_batch_mode(self) -> bool:
+        """Check if extractor is configured for batch mode"""
+        return self.extraction_mode.lower() == "batch"

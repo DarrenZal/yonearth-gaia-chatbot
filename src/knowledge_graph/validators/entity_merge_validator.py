@@ -6,9 +6,10 @@ Semantic validation for entity merging to prevent catastrophic merges like:
 - Earth = Mars + Paris + farms (unrelated entities)
 - DIA = Dubai + Red + Sun + India (nonsensical)
 
-Version: 2.0.0
+Version: 2.1.0
 Created: 2025-11-20
 Updated: 2025-11-21 - Added normalization, token overlap, type-specific thresholds, neighbor veto
+Updated: 2025-12-04 - Added SEMANTIC_BLOCKLIST for known bad merges (Phase 6)
 """
 
 import logging
@@ -60,6 +61,86 @@ class EntityMergeValidator:
         ('soil', 'moon'),  # Both short, but different semantic domains
         ('mars', 'paris'),  # Similar spelling, different entities
         ('leaders', 'healers'),  # Similar ending, different concepts
+    ]
+
+    # SEMANTIC_BLOCKLIST: Known bad merges identified from merge history analysis
+    # These pairs look similar due to string metrics but have different meanings
+    # Checked FIRST in can_merge() before any other validation
+    # Added in Phase 6 (2025-12-04) based on entity_merges.json analysis
+    SEMANTIC_BLOCKLIST = [
+        # Core problematic pairs from original specification
+        ('mood', 'food'),
+        ('floods', 'food'),
+        ('future revelations', 'future generations'),
+        ('older generations', 'future generations'),
+        ('country', 'community'),
+        ('commune', 'community'),
+        ('joanna macy', 'chris johnstone'),
+        ('y on earth', 'earth water press'),
+        # Discovered from merge history analysis
+        ('water', 'nature'),
+        ('ocean', 'japan'),
+        ('delta', 'dia'),
+        ('corn', 'imax'),
+        ('trees', 'imax'),
+        ('char', 'imax'),
+        ('yoga', 'tour'),
+        ('work', 'tour'),
+        ('tour', 'talk'),
+        ('study', 'ted'),
+        ('society', 'soviets'),
+        ('brands', 'brics'),
+        ('nations', 'nazi ss'),
+        ('cooking', 'coaching'),
+        ('parenting', 'gardening'),
+        ('schools', 'scholars'),
+        ('mothers', 'vendors'),
+        ('eating', 'satsang'),
+        ('cacao', 'jetta'),
+        ('allies', 'allianz'),
+        ('board', 'norad'),
+        ('dirt', 'dvds'),
+        ('zoom', 'cocoa'),
+        ('zeal', 'terna'),
+        ('true', 'terna'),
+        ('interns', 'terna'),
+        ('salt', 'wahl'),
+        ('kale', 'wahl'),
+        ('nettles', 'metals'),
+        ('mountain', 'montana'),
+        ('mountains', 'montana'),
+        ('poisons', 'poisonous'),
+        ('go', 'hft'),
+        ('women', 'dove'),
+        ('berry', 'wendell berry'),  # Generic term vs proper name
+        ('price', 'steven price'),  # Generic term vs proper name
+        ('grace', 'stephen grace'),  # Generic term vs proper name
+        ('northern california', 'southern california'),
+        ('southern europe', 'northern europe'),
+        ('washington state', 'washington square'),
+        ('patagonia', 'adagonia'),
+        ('demeter', 'domtar'),
+        ('saraya', 'santana'),
+        ('valerian', 'material'),
+        ('skiers', 'waners'),
+        ('plastics', 'plastic'),  # Singular/plural should not cross-domain merge
+        # Additional confirmed bad merges from analyze_bad_merges.py (2025-12-04)
+        ('the past', 'the earth'),
+        ('the west', 'the earth'),
+        ('the south', 'earth'),
+        ('personal health', 'soil health'),
+        ('fridays', 'friends'),
+        ('a tree', 'a future'),
+        ('the water', 'the work'),
+        ('other years', 'mother earth'),
+        ('hearth experience', 'human experience'),
+        ('y-north.org', 'yonearth.org'),  # Different websites
+        ('soil', 'moscow'),
+        ('sun', 'dia'),
+        ('legacy', 'we act'),
+        ('people', 'mohawk people'),  # Generic vs specific
+        ('compost', 'composting'),  # Noun vs verb form in different contexts
+        ('educators', 'education'),
     ]
 
     # Common abbreviations to expand before comparison
@@ -175,13 +256,21 @@ class EntityMergeValidator:
             'failed_similarity_check': 0,
             'failed_blocklist_check': 0,
             'failed_semantic_check': 0,
+            'failed_semantic_blocklist': 0,  # Phase 6: Semantic blocklist rejections
         }
 
-        # Build normalized blocklist for fast lookup
+        # Build normalized blocklist for fast lookup (MERGE_BLOCKLIST)
         self._blocklist_set: Set[Tuple[str, str]] = set()
         for name1, name2 in self.MERGE_BLOCKLIST:
             self._blocklist_set.add((name1.lower().strip(), name2.lower().strip()))
             self._blocklist_set.add((name2.lower().strip(), name1.lower().strip()))
+
+        # Build semantic blocklist set for fast lookup (Phase 6)
+        # This is checked FIRST in can_merge() - bidirectional and case-insensitive
+        self._semantic_blocklist_set: Set[Tuple[str, str]] = set()
+        for name1, name2 in self.SEMANTIC_BLOCKLIST:
+            self._semantic_blocklist_set.add((name1.lower().strip(), name2.lower().strip()))
+            self._semantic_blocklist_set.add((name2.lower().strip(), name1.lower().strip()))
 
         # Cache of canonical country ids
         self._country_ids: Set[str] = set(self.COUNTRY_SYNONYMS.values())
@@ -399,7 +488,20 @@ class EntityMergeValidator:
         if not name1 or not name2:
             return False, "empty_name"
 
-        # Check 2: Type compatibility (strict)
+        # Check 2: SEMANTIC BLOCKLIST (Phase 6) - checked FIRST before all other checks
+        # Case-insensitive, bidirectional lookup
+        norm1_lower = name1.lower().strip()
+        norm2_lower = name2.lower().strip()
+        if (norm1_lower, norm2_lower) in self._semantic_blocklist_set:
+            self.stats['failed_semantic_blocklist'] += 1
+            reason = "semantic_blocklist"
+            if log_rejection:
+                logger.warning(
+                    f"REJECT merge (SEMANTIC_BLOCKLIST): '{name1}' + '{name2}'"
+                )
+            return False, reason
+
+        # Check 3: Type compatibility (strict)
         if self.type_strict_matching and type1 != type2:
             self.stats['failed_type_check'] += 1
             reason = f"type_mismatch: {type1} != {type2}"
@@ -409,11 +511,9 @@ class EntityMergeValidator:
                 )
             return False, reason
 
-        # Check 3: Explicit blocklist (early exit - before expensive normalization)
-        norm1_simple = name1.lower().strip()
-        norm2_simple = name2.lower().strip()
-
-        if (norm1_simple, norm2_simple) in self._blocklist_set:
+        # Check 4: Explicit blocklist (early exit - before expensive normalization)
+        # Note: norm1_lower and norm2_lower already computed for semantic blocklist check
+        if (norm1_lower, norm2_lower) in self._blocklist_set:
             self.stats['failed_blocklist_check'] += 1
             reason = "explicit_blocklist"
             if log_rejection:
@@ -422,7 +522,7 @@ class EntityMergeValidator:
                 )
             return False, reason
 
-        # Check 4: Advanced normalization
+        # Check 5: Advanced normalization
         norm1 = self._normalize_name(name1)
         norm2 = self._normalize_name(name2)
 
@@ -437,7 +537,7 @@ class EntityMergeValidator:
         overlap = self._token_overlap(tokens1, tokens2)
         single_word = len(tokens1) == 1 or len(tokens2) == 1
 
-        # Check 5: Length ratio after normalization (prevent "I" -> "India")
+        # Check 6: Length ratio after normalization (prevent "I" -> "India")
         # Skip if decent token overlap (abbreviation cases like "Dr. Bronner's" + "Bronners")
         # Also skip if only 1-2 tokens total (short names have naturally low length ratios)
         len1_norm, len2_norm = len(norm1), len(norm2)
@@ -456,13 +556,13 @@ class EntityMergeValidator:
         # Calculate fuzzy similarity on normalized names
         char_score = fuzz.ratio(norm1, norm2)
 
-        # Check 6: Punctuation-only difference (special case)
+        # Check 7: Punctuation-only difference (special case)
         if self._has_punctuation_only_difference(name1, name2, norm1, norm2):
             if char_score >= 92:  # Lower threshold for punctuation diffs
                 self.stats['passed_validations'] += 1
                 return True, f"punctuation_only: score={char_score}"
 
-        # Check 7: Substring/contains relationship (special case for abbreviations)
+        # Check 8: Substring/contains relationship (special case for abbreviations)
         # "Bronners" contains "Bronner", "Dr Bronners" contains "Bronner"
         if norm1 in norm2 or norm2 in norm1:
             # For substring matches, require high token overlap
@@ -470,10 +570,10 @@ class EntityMergeValidator:
                 self.stats['passed_validations'] += 1
                 return True, f"substring_match: overlap={overlap:.2f}"
 
-        # Check 8: Title-only differences for flexible types (recovers Dr./Doctor abbreviations)
+        # Check 9: Title-only differences for flexible types (recovers Dr./Doctor abbreviations)
         if type1 in self.FLEXIBLE_TYPES and overlap >= 0.5 and char_score >= 60:
             if self._only_title_difference(tokens1, tokens2):
-                if self.semantic_validation and not self._check_semantic_compatibility(norm1_simple, norm2_simple):
+                if self.semantic_validation and not self._check_semantic_compatibility(norm1_lower, norm2_lower):
                     self.stats['failed_semantic_check'] += 1
                     reason = "title_only_semantic_block"
                     if log_rejection:
@@ -483,7 +583,7 @@ class EntityMergeValidator:
                 self.stats['passed_validations'] += 1
                 return True, f"title_only_difference: overlap={overlap:.2f}, score={char_score}"
 
-        # Check 9: PERSON name variations (first+last vs first+middle+last)
+        # Check 10: PERSON name variations (first+last vs first+middle+last)
         # "Aaron Perry" should merge with "Aaron William Perry"
         if type1 == 'PERSON' and len(tokens1) >= 2 and len(tokens2) >= 2:
             # Check if one is a subset of the other (all tokens in shorter are in longer)
@@ -504,7 +604,7 @@ class EntityMergeValidator:
         # TIER 1: High confidence (≥95%)
         if char_score >= 95:
             # Still check semantic compatibility
-            if self.semantic_validation and not self._check_semantic_compatibility(norm1_simple, norm2_simple):
+            if self.semantic_validation and not self._check_semantic_compatibility(norm1_lower, norm2_lower):
                 self.stats['failed_semantic_check'] += 1
                 reason = "semantic_incompatibility"
                 if log_rejection:
@@ -550,7 +650,7 @@ class EntityMergeValidator:
                     return False, reason
 
             # Semantic compatibility check
-            if self.semantic_validation and not self._check_semantic_compatibility(norm1_simple, norm2_simple):
+            if self.semantic_validation and not self._check_semantic_compatibility(norm1_lower, norm2_lower):
                 self.stats['failed_semantic_check'] += 1
                 reason = "tier2_semantic_incompatibility"
                 if log_rejection:
@@ -673,6 +773,7 @@ class EntityMergeValidator:
         logger.info(f"Rejected merges: {total - stats['passed_validations']} ({stats['rejection_rate']:.1%})")
         logger.info("")
         logger.info("Rejection reasons:")
+        logger.info(f"  - Semantic blocklist: {stats['failed_semantic_blocklist']}")
         logger.info(f"  - Type mismatch: {stats['failed_type_check']}")
         logger.info(f"  - Length mismatch: {stats['failed_length_check']}")
         logger.info(f"  - Low similarity: {stats['failed_similarity_check']}")

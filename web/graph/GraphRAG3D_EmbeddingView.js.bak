@@ -204,12 +204,11 @@ class GraphRAG3DEmbeddingView {
         const urls = Array.isArray(paths) ? paths : [paths];
         let lastError = null;
         // Cache-bust version - increment when deploying new data
-        const cacheBuster = 'v=20251204i';
+        const cacheBuster = 'v=20251204e';
 
         for (const url of urls) {
             try {
                 const bustUrl = url + (url.includes('?') ? '&' : '?') + cacheBuster;
-                console.log(`Fetching ${label}: ${bustUrl}`);
                 const response = await fetch(bustUrl);
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
@@ -390,14 +389,11 @@ class GraphRAG3DEmbeddingView {
     }
 
     async fetchHierarchyData() {
-        // Use original hierarchy file - it has correct structure
-        // level_1.children contains parent refs to level_2 IDs
-        // level_2.children contains entity names
-        // Note: cache buster is added by fetchJsonWithFallback
         return this.fetchJsonWithFallback([
-            this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy.json'),
+            this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy_fixed_links.json'),
             this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy_v6_fixed.json'),
             this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy_v2.json'),
+            this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy.json'),
             this.resolveAssetPath('data/graphrag_hierarchy/graphrag_hierarchy_test_sample.json')
         ], 'hierarchy');
     }
@@ -604,8 +600,7 @@ class GraphRAG3DEmbeddingView {
                     rawCenter: [...center],
                     children: cluster.children || [],
                     entities: cluster.entities || [],
-                    node_count: (cluster.entities || []).length,
-                    summary_text: cluster.summary_text || cluster.summary || null
+                    node_count: (cluster.entities || []).length
                 };
                 this.clusters[key].push(entry);
                 if (this.clusterLookup[key]) {
@@ -4018,14 +4013,10 @@ class GraphRAG3DEmbeddingView {
         const level2Clusters = Object.values(clusters.level_2 || {});  // 73 coarse
         const level1Clusters = Object.values(clusters.level_1 || {});  // 573 fine
 
-        // Create lookup maps by ID
+        // Create lookup map for level_1 by ID
         const level1ById = new Map();
         for (const c of level1Clusters) {
             level1ById.set(c.id, c);
-        }
-        const level2ById = new Map();
-        for (const c of level2Clusters) {
-            level2ById.set(c.id, c);
         }
 
         console.log('Building hierarchy from clusters:', {
@@ -4045,81 +4036,42 @@ class GraphRAG3DEmbeddingView {
             console.log('Using 3-level hierarchy: L3 → L2 → L1');
             // ... (L3 handling code - kept for future use)
         }
-        // Data structure analysis:
-        // - Only 3 level_1 clusters have 'children' that point to level_2 IDs
-        // - These 3 mega-clusters contain all 73 level_2 sub-clusters
-        // - Hierarchy: 3 mega-clusters (L3) → 73 sub-clusters (L2) → entities
+        // Standard case: level_2 (coarse) → level_1 (fine) with entities
         else if (level2Clusters.length > 0 && level1Clusters.length > 0) {
-            console.log('Building hierarchy from mega-clusters');
+            console.log('Using 2-level hierarchy: level_2 (73 coarse) → level_1 (573 fine)');
 
-            // Find level_1 clusters that have children pointing to level_2
-            const megaClusters = level1Clusters.filter(c => (c.children || []).length > 0);
-            console.log(`Found ${megaClusters.length} mega-clusters (level_1 with level_2 children)`);
+            for (const coarseCluster of level2Clusters) {
+                const topNode = {
+                    name: coarseCluster.title || coarseCluster.name || coarseCluster.id,
+                    id: coarseCluster.id,
+                    level: 2,
+                    color: '#FF4444',
+                    value: coarseCluster.node_count || coarseCluster.entities?.length || 10,
+                    children: []
+                };
 
-            if (megaClusters.length > 0) {
-                // Build hierarchy: mega-clusters (L3) → level_2 (L2)
-                for (const megaCluster of megaClusters) {
-                    // Debug: log raw cluster data
-                    console.log(`  Raw mega-cluster:`, {
-                        id: megaCluster.id,
-                        title: megaCluster.title,
-                        name: megaCluster.name,
-                        childrenCount: (megaCluster.children || []).length
-                    });
+                // coarseCluster.children contains level_1 cluster IDs
+                const coarseChildren = coarseCluster.children || [];
+                for (const fineChildId of coarseChildren.slice(0, 30)) {
+                    const fineCluster = level1ById.get(fineChildId);
+                    if (!fineCluster) continue;
 
-                    const topNode = {
-                        name: megaCluster.title || megaCluster.name || megaCluster.id,
-                        id: megaCluster.id,
-                        level: 3,  // L3 = top visible level
-                        color: '#FF4444',
-                        value: megaCluster.entities?.length || 100,
-                        children: [],
-                        summary_text: megaCluster.summary_text || megaCluster.summary || null,
-                    };
-
-                    // Add level_2 children (the sub-clusters)
-                    const childIds = megaCluster.children || [];
-                    console.log(`  Mega "${topNode.name}": ${childIds.length} level_2 children`);
-
-                    for (const childId of childIds) {
-                        const l2Cluster = level2ById.get(childId);
-                        if (!l2Cluster) continue;
-
-                        // level_2.children contains entity names directly
-                        const entityNames = l2Cluster.children || [];
-                        const subNode = {
-                            name: l2Cluster.title || l2Cluster.name || childId,
-                            id: childId,
-                            level: 2,  // L2 = revealed on hover
-                            color: '#FFCC00',
-                            value: entityNames.length || 1,
-                            entityIds: entityNames,  // These are entity names
-                            summary_text: l2Cluster.summary_text || l2Cluster.summary || null,
-                        };
-                        topNode.children.push(subNode);
-                    }
-
-                    if (topNode.children.length > 0) {
-                        root.children.push(topNode);
-                    }
-                }
-
-                console.log(`Built ${root.children.length} top-level clusters (mega-clusters)`);
-            } else {
-                // Fallback: use level_2 clusters directly as flat list
-                console.log('No mega-clusters found, using level_2 as flat list');
-                for (const l2Cluster of level2Clusters.slice(0, 100)) {
-                    const entityNames = l2Cluster.children || [];
-                    const node = {
-                        name: l2Cluster.title || l2Cluster.name || l2Cluster.id,
-                        id: l2Cluster.id,
-                        level: 3,
-                        color: '#FF4444',
-                        value: entityNames.length || 1,
-                        entityIds: entityNames,
+                    // Fine cluster has entities directly
+                    const entityIds = fineCluster.entities || [];
+                    const fineNode = {
+                        name: fineCluster.title || fineCluster.name || fineChildId,
+                        id: fineChildId,
+                        level: 1,
+                        color: '#FFCC00',
+                        value: fineCluster.node_count || entityIds.length || 1,
+                        entityIds: entityIds,
                         children: []
                     };
-                    root.children.push(node);
+                    topNode.children.push(fineNode);
+                }
+
+                if (topNode.children.length > 0) {
+                    root.children.push(topNode);
                 }
             }
         }
@@ -4441,9 +4393,8 @@ class GraphRAG3DEmbeddingView {
                          cell.level === 2 ? 'Community Cluster (L2)' :
                          cell.level === 1 ? 'Fine Cluster (L1)' : 'Entity';
 
-        // Get cluster name and summary
+        // Get cluster name
         const clusterName = cell.data.name || cell.data.id || 'Unknown';
-        const clusterSummary = cell.data.summary_text || cell.data.summary || null;
 
         // Count entities from entityIds (stored during hierarchy building)
         let entityCount = 0;
@@ -4481,114 +4432,40 @@ class GraphRAG3DEmbeddingView {
             }
         };
 
-        // Build hierarchy HTML with clickable parent links
+        // Build hierarchy HTML
         let hierarchyHtml = '';
-        // Store cell references for hierarchy navigation
-        const cellsByLevel = {};
-        let currentCell = cell;
-        while (currentCell) {
-            if (currentCell.level !== undefined) {
-                cellsByLevel[currentCell.level] = currentCell;
-            }
-            currentCell = currentCell.parent;
-        }
-
         if (hierarchyPath.length > 0) {
             hierarchyHtml = `
                 <div style="margin-top: 16px; padding: 12px; background: rgba(100, 200, 255, 0.05); border: 1px solid rgba(100, 200, 255, 0.15); border-radius: 10px;">
                     <div style="font-size: 12px; color: #a0a0a0; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Hierarchical Path</div>
-                    ${hierarchyPath.map((h, idx) => {
-                        const isCurrentLevel = h.level === cell.level;
-                        const isClickable = !isCurrentLevel && h.level > 0;
-                        return `
+                    ${hierarchyPath.map((h, idx) => `
                         <div style="display: flex; align-items: center; margin: 6px 0; padding-left: ${idx * 12}px;">
                             <span style="color: #00ffff; font-size: 11px; font-weight: 600; min-width: 70px;">${getLevelLabel(h.level)}</span>
-                            <span class="${isClickable ? 'hierarchy-link' : ''}"
-                                  data-level="${h.level}"
-                                  style="color: ${isCurrentLevel ? '#64b5f6' : '#ccc'}; font-size: 13px; ${isCurrentLevel ? 'font-weight: 600;' : ''} ${isClickable ? 'cursor: pointer; text-decoration: underline; text-decoration-style: dotted;' : ''}"
-                                  ${isClickable ? `onmouseover="this.style.color='#64b5f6'" onmouseout="this.style.color='#ccc'"` : ''}
-                            >${h.name}</span>
+                            <span style="color: ${h.level === cell.level ? '#64b5f6' : '#ccc'}; font-size: 13px; ${h.level === cell.level ? 'font-weight: 600;' : ''}">${h.name}</span>
                         </div>
-                    `;}).join('')}
+                    `).join('')}
                 </div>
             `;
-
-            // Store cell references for click handling
-            this._hierarchyCells = cellsByLevel;
         }
 
-        // Get children info if available - show clickable list for L3 clusters
+        // Get children info if available
         let childrenHtml = '';
         if (cell.children && cell.children.length > 0) {
             const childCount = cell.children.length;
             const childLevel = cell.level - 1;
             const childLevelName = childLevel === 2 ? 'communities' : childLevel === 1 ? 'fine clusters' : 'entities';
-
-            // For L3 clusters, show clickable list of nested L2 clusters
-            if (cell.level === 3) {
-                // Sort children by entity count (largest first)
-                const sortedChildren = [...cell.children].sort((a, b) => {
-                    const aCount = a.data?.entityIds?.length || a.data?.entities?.length || 0;
-                    const bCount = b.data?.entityIds?.length || b.data?.entities?.length || 0;
-                    return bCount - aCount;
-                });
-
-                // Store children for click handling
-                this._nestedClusters = {};
-                sortedChildren.forEach((child, idx) => {
-                    this._nestedClusters[idx] = child;
-                });
-
-                childrenHtml = `
-                    <div style="margin-top: 16px; padding: 12px; background: rgba(255, 204, 0, 0.08); border: 1px solid rgba(255, 204, 0, 0.2); border-radius: 10px;">
-                        <div style="font-size: 12px; color: #FFCC00; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
-                            <span>Nested Communities</span>
-                            <span style="color: #ccc; font-size: 11px;">${childCount} clusters</span>
-                        </div>
-                        ${childCount > 10 ? `
-                            <div style="margin-bottom: 12px;">
-                                <input type="text" id="voronoi-cluster-search" placeholder="Search clusters..."
-                                       style="width: 100%; padding: 8px 12px; border: 1px solid rgba(255, 204, 0, 0.3); border-radius: 6px; background: rgba(0,0,0,0.3); color: #fff; font-size: 12px; outline: none;"
-                                       onfocus="this.style.borderColor='rgba(255, 204, 0, 0.6)'"
-                                       onblur="this.style.borderColor='rgba(255, 204, 0, 0.3)'">
-                            </div>
-                        ` : ''}
-                        <div id="voronoi-cluster-list" style="max-height: 350px; overflow-y: auto;">
-                            ${sortedChildren.map((child, idx) => {
-                                const childName = child.data?.name || child.data?.id || 'Unknown';
-                                const childEntityCount = child.data?.entityIds?.length || child.data?.entities?.length || 0;
-                                return `
-                                    <div class="nested-cluster-item" data-cluster-idx="${idx}" data-cluster-name="${childName.toLowerCase()}"
-                                         style="padding: 8px 10px; margin: 3px 0; background: rgba(255,255,255,0.03); border-radius: 6px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: background 0.2s;"
-                                         onmouseover="this.style.background='rgba(255,204,0,0.15)'"
-                                         onmouseout="this.style.background='rgba(255,255,255,0.03)'">
-                                        <span style="color: #ccc; font-size: 13px;">${childName}</span>
-                                        <span style="color: #888; font-size: 11px;">${childEntityCount} entities</span>
-                                    </div>
-                                `;
-                            }).join('')}
-                        </div>
-                    </div>
-                `;
-            } else {
-                childrenHtml = `
-                    <div style="color: #ccc; margin: 4px 0;">
-                        <strong>Contains:</strong> ${childCount} ${childLevelName}
-                    </div>
-                `;
-            }
+            childrenHtml = `
+                <div style="color: #ccc; margin: 4px 0;">
+                    <strong>Contains:</strong> ${childCount} ${childLevelName}
+                </div>
+            `;
         }
 
-        // Build entity list HTML for leaf clusters (L1 or L2 depending on hierarchy)
-        // In 2-level voronoi: L2 is the leaf level with entities
-        // In 3-level hierarchy: L1 is the leaf level
+        // Build entity list HTML for L1 clusters (fine clusters)
         let entitiesHtml = '';
-        const isLeafCluster = (cell.level === 1 || cell.level === 2) && entityIds.length > 0;
-
-        if (isLeafCluster) {
+        if (cell.level === 1 && entityIds.length > 0) {
             // Group entities by type
             const entitiesByType = {};
-            const allEntities = [];
             for (const entityId of entityIds) {
                 const entity = this.entities.get(entityId);
                 if (entity) {
@@ -4596,13 +4473,11 @@ class GraphRAG3DEmbeddingView {
                     if (!entitiesByType[type]) {
                         entitiesByType[type] = [];
                     }
-                    const entityData = {
+                    entitiesByType[type].push({
                         id: entityId,
                         name: entity.name || entity.title || entityId,
                         type: type
-                    };
-                    entitiesByType[type].push(entityData);
-                    allEntities.push(entityData);
+                    });
                 }
             }
 
@@ -4623,56 +4498,35 @@ class GraphRAG3DEmbeddingView {
                 'UNKNOWN': '#95A5A6'
             };
 
-            // Store entities for search filtering
-            this._currentClusterEntities = allEntities;
-            this._currentEntitiesByType = entitiesByType;
-            this._typeColors = typeColors;
-
             entitiesHtml = `
                 <div style="margin-top: 16px; padding: 12px; background: rgba(136, 255, 136, 0.05); border: 1px solid rgba(136, 255, 136, 0.2); border-radius: 10px;">
                     <div style="font-size: 12px; color: #88FF88; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
                         <span>Entities in Cluster</span>
                         <span style="color: #ccc; font-size: 11px;">${entityIds.length} total</span>
                     </div>
-                    ${entityIds.length > 10 ? `
-                        <div style="margin-bottom: 12px;">
-                            <input type="text" id="voronoi-entity-search" placeholder="Search entities..."
-                                   style="width: 100%; padding: 8px 12px; border: 1px solid rgba(100, 180, 246, 0.3); border-radius: 6px; background: rgba(0,0,0,0.3); color: #fff; font-size: 12px; outline: none;"
-                                   onfocus="this.style.borderColor='rgba(100, 180, 246, 0.6)'"
-                                   onblur="this.style.borderColor='rgba(100, 180, 246, 0.3)'">
-                        </div>
-                    ` : ''}
-                    <div id="voronoi-entity-list" style="max-height: 350px; overflow-y: auto;">
+                    <div style="max-height: 300px; overflow-y: auto;">
                         ${sortedTypes.map(type => `
-                            <div class="entity-type-group" data-type="${type}" style="margin-bottom: 12px;">
+                            <div style="margin-bottom: 12px;">
                                 <div style="font-size: 11px; color: ${typeColors[type] || '#95A5A6'}; font-weight: 600; margin-bottom: 6px; display: flex; align-items: center;">
                                     <span style="width: 8px; height: 8px; border-radius: 50%; background: ${typeColors[type] || '#95A5A6'}; margin-right: 6px;"></span>
-                                    ${type} (<span class="type-count">${entitiesByType[type].length}</span>)
+                                    ${type} (${entitiesByType[type].length})
                                 </div>
-                                <div class="entity-items">
-                                    ${entitiesByType[type].map(e => `
-                                        <div class="entity-item" data-entity-id="${e.id}" data-entity-name="${e.name.toLowerCase()}"
-                                             style="padding: 6px 8px; margin: 2px 0; background: rgba(255,255,255,0.03); border-radius: 4px; cursor: pointer; font-size: 12px; color: #ccc; transition: background 0.2s;"
-                                             onmouseover="this.style.background='rgba(100,180,246,0.15)'"
-                                             onmouseout="this.style.background='rgba(255,255,255,0.03)'">
-                                            ${e.name}
-                                        </div>
-                                    `).join('')}
-                                </div>
+                                ${entitiesByType[type].slice(0, 20).map(e => `
+                                    <div class="entity-item" data-entity-id="${e.id}"
+                                         style="padding: 6px 8px; margin: 2px 0; background: rgba(255,255,255,0.03); border-radius: 4px; cursor: pointer; font-size: 12px; color: #ccc; transition: background 0.2s;"
+                                         onmouseover="this.style.background='rgba(100,180,246,0.15)'"
+                                         onmouseout="this.style.background='rgba(255,255,255,0.03)'">
+                                        ${e.name}
+                                    </div>
+                                `).join('')}
+                                ${entitiesByType[type].length > 20 ? `
+                                    <div style="font-size: 11px; color: #666; padding: 4px 8px; font-style: italic;">
+                                        ...and ${entitiesByType[type].length - 20} more
+                                    </div>
+                                ` : ''}
                             </div>
                         `).join('')}
                     </div>
-                </div>
-            `;
-        }
-
-        // Build summary HTML if available
-        let summaryHtml = '';
-        if (clusterSummary) {
-            summaryHtml = `
-                <div style="margin-top: 16px; padding: 12px; background: rgba(100, 180, 246, 0.08); border: 1px solid rgba(100, 180, 246, 0.2); border-radius: 10px;">
-                    <div style="font-size: 12px; color: #64b5f6; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Summary</div>
-                    <div style="color: #d0d0d0; font-size: 13px; line-height: 1.5;">${clusterSummary}</div>
                 </div>
             `;
         }
@@ -4687,94 +4541,23 @@ class GraphRAG3DEmbeddingView {
                     </div>` : ''}
                     ${childrenHtml}
                 </div>
-                ${summaryHtml}
                 ${hierarchyHtml}
                 ${entitiesHtml}
-                ${cell.level !== 1 && !isLeafCluster ? `<div style="margin-top: 12px; font-size: 12px; color: #7a8ca8;">
+                ${cell.level !== 1 ? `<div style="margin-top: 12px; font-size: 12px; color: #7a8ca8;">
                     Click on nested cells to explore deeper levels
                 </div>` : ''}
             </div>
         `;
 
-        // Add click handlers for entity items (works for both L1 and L2 leaf clusters)
-        if (isLeafCluster) {
+        // Add click handlers for entity items
+        if (cell.level === 1) {
             const entityItems = voronoiInfo.querySelectorAll('.entity-item');
             entityItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const entityId = item.getAttribute('data-entity-id');
                     if (entityId) {
-                        // Show entity info in the same panel (like semantic view)
-                        this.showEntityInfo(entityId, true);
+                        this.selectEntity(entityId);
                     }
-                });
-            });
-
-            // Add search functionality
-            const searchInput = voronoiInfo.querySelector('#voronoi-entity-search');
-            if (searchInput) {
-                searchInput.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
-                    const entityList = voronoiInfo.querySelector('#voronoi-entity-list');
-                    const typeGroups = entityList.querySelectorAll('.entity-type-group');
-
-                    typeGroups.forEach(group => {
-                        const items = group.querySelectorAll('.entity-item');
-                        let visibleCount = 0;
-
-                        items.forEach(item => {
-                            const name = item.getAttribute('data-entity-name') || '';
-                            const matches = !query || name.includes(query);
-                            item.style.display = matches ? 'block' : 'none';
-                            if (matches) visibleCount++;
-                        });
-
-                        // Update type count and hide empty groups
-                        const countSpan = group.querySelector('.type-count');
-                        if (countSpan) {
-                            countSpan.textContent = visibleCount;
-                        }
-                        group.style.display = visibleCount > 0 ? 'block' : 'none';
-                    });
-                });
-            }
-        }
-
-        // Add click handlers for hierarchy links (parent clusters)
-        const hierarchyLinks = voronoiInfo.querySelectorAll('.hierarchy-link');
-        hierarchyLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                const level = parseInt(link.getAttribute('data-level'));
-                const parentCell = this._hierarchyCells?.[level];
-                if (parentCell) {
-                    this.showVoronoiClusterInfo(parentCell);
-                }
-            });
-        });
-
-        // Add click handlers for nested cluster items (L3 → L2 navigation)
-        const nestedClusterItems = voronoiInfo.querySelectorAll('.nested-cluster-item');
-        nestedClusterItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const clusterIdx = parseInt(item.getAttribute('data-cluster-idx'));
-                const childCell = this._nestedClusters?.[clusterIdx];
-                if (childCell) {
-                    this.showVoronoiClusterInfo(childCell);
-                }
-            });
-        });
-
-        // Add search functionality for nested clusters
-        const clusterSearchInput = voronoiInfo.querySelector('#voronoi-cluster-search');
-        if (clusterSearchInput) {
-            clusterSearchInput.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                const clusterList = voronoiInfo.querySelector('#voronoi-cluster-list');
-                const items = clusterList.querySelectorAll('.nested-cluster-item');
-
-                items.forEach(item => {
-                    const name = item.getAttribute('data-cluster-name') || '';
-                    const matches = !query || name.includes(query);
-                    item.style.display = matches ? 'flex' : 'none';
                 });
             });
         }
@@ -5356,28 +5139,39 @@ class GraphRAG3DEmbeddingView {
                 });
             });
 
-        // Update visibility function - 2-level hierarchy: L3 (coarse) visible, L2 (fine) on hover
-        // L2 is the leaf level - entities shown in info panel on click
+        // Update visibility function - recursive reveal on hover (now includes L0 entities)
         const updateVisibility = () => {
             cells
                 .transition()
                 .duration(250)
                 .attr('fill-opacity', d => {
-                    // L3 (coarse clusters) always visible
+                    // L3 always visible
                     if (d.level === 3) return 0.35;
 
-                    // L2 (fine clusters) visible if parent L3 is hovered
+                    // L2 visible if parent L3 is hovered
                     if (d.level === 2) {
-                        if (hoveredL3 && d.parent === hoveredL3) return 0.6;
+                        if (hoveredL3 && d.parent === hoveredL3) return 0.5;
                         return 0;
                     }
 
-                    // L1 and L0 not used in 2-level hierarchy
+                    // L1 visible if parent L2 is hovered
+                    if (d.level === 1) {
+                        if (hoveredL2 && d.parent === hoveredL2) return 0.6;
+                        return 0;
+                    }
+
+                    // L0 (entities) visible if parent L1 is hovered
+                    if (d.level === 0) {
+                        if (hoveredL1 && d.parent === hoveredL1) return 0.7;
+                        return 0;
+                    }
                     return 0;
                 })
                 .attr('stroke-opacity', d => {
                     if (d.level === 3) return 1;
                     if (d.level === 2 && hoveredL3 && d.parent === hoveredL3) return 1;
+                    if (d.level === 1 && hoveredL2 && d.parent === hoveredL2) return 1;
+                    if (d.level === 0 && hoveredL1 && d.parent === hoveredL1) return 1;
                     return 0;
                 });
 
@@ -5385,86 +5179,111 @@ class GraphRAG3DEmbeddingView {
                 .transition()
                 .duration(250)
                 .style('opacity', d => {
-                    // L3: hide label when this L3 is hovered (so we can see nested L2 labels)
+                    // L3: hide label when hovered (to see children inside), show otherwise
                     if (d.level === 3) {
-                        // Hide this L3's label if it's the one being hovered
-                        if (hoveredL3 && d === hoveredL3) {
-                            return 0;
-                        }
-                        return 1;
+                        if (hoveredL3 === d) return 0; // Hide - we're looking inside
+                        return 1; // Show
                     }
 
-                    // L2 (fine clusters): show when parent L3 is hovered
-                    // L2 is the leaf level - labels always visible when revealed
+                    // L2: show when parent L3 is hovered, hide when this L2 is hovered
                     if (d.level === 2) {
                         if (hoveredL3 && d.parent === hoveredL3) {
+                            if (hoveredL2 === d) return 0; // Hide - we're looking inside this one
+                            return 1; // Show sibling L2 labels
+                        }
+                        return 0; // Hidden when parent not hovered
+                    }
+
+                    // L1: show when parent L2 is hovered (L1 is now leaf level - don't hide on hover)
+                    if (d.level === 1) {
+                        if (hoveredL2 && d.parent === hoveredL2) {
+                            // L1 is now the leaf level - keep label visible even when hovered
                             return 1;
                         }
                         return 0;
                     }
 
-                    // L1 and L0 not used in 2-level hierarchy
+                    // L0 (entities): no longer rendered in voronoi - entities shown in info panel
+                    if (d.level === 0) {
+                        return 0;
+                    }
+
                     return 0;
                 });
         };
 
-        // Add interactions - simplified for 2-level hierarchy (L3 coarse, L2 fine)
+        // Add interactions
         cells
             .on('mouseover', function(event, d) {
                 event.stopPropagation();
 
-                console.log(`HOVER: level=${d.level}, name="${d.data?.name}", has parent=${!!d.parent}, parent name="${d.parent?.data?.name}"`);
-
-                // 2-level hierarchy: only track L3 hover
                 if (d.level === 3) {
                     hoveredL3 = d;
-                    console.log(`  -> Set hoveredL3 to "${d.data?.name}"`);
+                    hoveredL2 = null;
+                    hoveredL1 = null;
                 } else if (d.level === 2) {
-                    // When hovering L2, keep parent L3 as hovered to maintain visibility
                     hoveredL3 = d.parent;
-                    console.log(`  -> Set hoveredL3 to parent "${d.parent?.data?.name}"`);
+                    hoveredL2 = d;
+                    hoveredL1 = null;
+                } else if (d.level === 1) {
+                    hoveredL3 = d.parent?.parent;
+                    hoveredL2 = d.parent;
+                    hoveredL1 = d;
+                } else if (d.level === 0) {
+                    hoveredL3 = d.parent?.parent?.parent;
+                    hoveredL2 = d.parent?.parent;
+                    hoveredL1 = d.parent;
                 }
-
-                // Count visible L2 children
-                const l2Children = allCells.filter(c => c.level === 2 && c.parent === hoveredL3);
-                console.log(`  -> L2 children to reveal: ${l2Children.length}`);
 
                 updateVisibility();
 
                 // Highlight stroke
-                d3.select(this).attr('stroke-width', d.level === 3 ? 4 : 3);
+                d3.select(this).attr('stroke-width', d.level === 3 ? 4 : (d.level === 0 ? 2 : 3));
             })
             .on('mouseout', function(event, d) {
-                // Check if moving to related cell within same L3
+                // Check if moving to related cell
                 const related = event.relatedTarget;
                 if (related && related.__data__) {
                     const relData = related.__data__;
-                    // If moving within same L3 cluster or to a sibling L2, don't reset
+                    // If moving within same hierarchy, don't reset
                     if (d.level === 3 && relData.parent === d) return;
+                    if (d.level === 2 && (relData === d.parent || relData.parent === d)) return;
                     if (d.level === 2 && relData.parent === d.parent) return;
-                    if (d.level === 2 && relData === d.parent) return;
+                    if (d.level === 1 && (relData === d.parent || relData.parent === d)) return;
+                    if (d.level === 1 && relData.parent === d.parent) return;
+                    if (d.level === 0 && relData.parent === d.parent) return;
                 }
 
-                // Reset when leaving L3 cluster entirely
-                if (d.level === 3) {
-                    hoveredL3 = null;
+                // Reset based on what we're leaving
+                if (d.level === 0) {
+                    // Just leaving L0 entity, keep L1, L2, L3 visible
+                } else if (d.level === 1) {
+                    hoveredL1 = null;
                 } else if (d.level === 2) {
-                    // Only reset if not moving to another cell in same L3
-                    if (!related || !related.__data__ || related.__data__.parent !== d.parent) {
-                        hoveredL3 = null;
-                    }
+                    hoveredL2 = null;
+                    hoveredL1 = null;
+                } else if (d.level === 3) {
+                    hoveredL3 = null;
+                    hoveredL2 = null;
+                    hoveredL1 = null;
                 }
 
                 updateVisibility();
-                const strokeWidth = d.level === 3 ? 2.5 : 2;
+                const strokeWidth = d.level === 3 ? 2.5 : (d.level === 2 ? 2 : (d.level === 1 ? 1.5 : 1));
                 d3.select(this).attr('stroke-width', strokeWidth);
             })
             .on('click', (event, d) => {
                 event.stopPropagation();
                 console.log('Voronoi cell clicked:', d.level, d.data?.name || d.data?.id);
 
-                // Show cluster info in the side panel (entities for L2, sub-clusters for L3)
-                self.showVoronoiClusterInfo(d);
+                // For L0 entities, select the actual entity using its ID
+                if (d.level === 0 && d.data.id) {
+                    self.selectEntity(d.data.id);
+                } else {
+                    // For clusters, show cluster info panel with hierarchy
+                    console.log('Calling showVoronoiClusterInfo for level', d.level);
+                    self.showVoronoiClusterInfo(d);
+                }
             });
 
         // Background click resets
@@ -5506,13 +5325,6 @@ class GraphRAG3DEmbeddingView {
         const l2Count = allCells.filter(c => c.level === 2).length;
         const l1Count = allCells.filter(c => c.level === 1).length;
         console.log(`Rendered Hierarchical Voronoi: ${l3Count2} L3, ${l2Count} L2, ${l1Count} L1 cells`);
-
-        // Debug: Log sample L3 and their L2 children
-        const sampleL3 = allCells.filter(c => c.level === 3).slice(0, 3);
-        sampleL3.forEach(l3 => {
-            const l2Kids = allCells.filter(c => c.level === 2 && c.parent === l3);
-            console.log(`L3 "${l3.data?.name}" has ${l2Kids.length} L2 children (from l3.children: ${l3.children?.length})`);
-        });
     }
 
     /**
