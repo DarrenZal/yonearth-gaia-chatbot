@@ -20,20 +20,38 @@ logger = logging.getLogger(__name__)
 def load_book_metadata() -> Dict[str, Dict[str, Any]]:
     """Load book metadata from JSON files"""
     book_metadata = {}
-    books_dir = "/root/yonearth-gaia-chatbot/data/books"
-    
-    if os.path.exists(books_dir):
-        for book_folder in os.listdir(books_dir):
-            metadata_path = os.path.join(books_dir, book_folder, "metadata.json")
-            if os.path.exists(metadata_path):
-                try:
-                    with open(metadata_path, 'r') as f:
-                        metadata = json.load(f)
-                        book_title = metadata.get('title', book_folder)
-                        book_metadata[book_title] = metadata
-                except Exception as e:
-                    logger.warning(f"Failed to load metadata for {book_folder}: {e}")
-    
+
+    # Try multiple possible paths for books directory
+    possible_paths = [
+        "/root/yonearth-gaia-chatbot/data/books",
+        "/home/claudeuser/yonearth-gaia-chatbot/data/books",
+        os.path.join(os.path.dirname(__file__), "..", "..", "data", "books"),
+    ]
+
+    books_dir = None
+    for path in possible_paths:
+        if os.path.exists(path):
+            books_dir = path
+            logger.info(f"Found books directory at: {books_dir}")
+            break
+
+    if not books_dir:
+        logger.warning(f"Books directory not found in any of: {possible_paths}")
+        return book_metadata
+
+    for book_folder in os.listdir(books_dir):
+        metadata_path = os.path.join(books_dir, book_folder, "metadata.json")
+        if os.path.exists(metadata_path):
+            try:
+                with open(metadata_path, 'r') as f:
+                    metadata = json.load(f)
+                    book_title = metadata.get('title', book_folder)
+                    book_metadata[book_title] = metadata
+                    logger.info(f"Loaded metadata for book: {book_title}")
+            except Exception as e:
+                logger.warning(f"Failed to load metadata for {book_folder}: {e}")
+
+    logger.info(f"Loaded metadata for {len(book_metadata)} books")
     return book_metadata
 
 
@@ -290,15 +308,15 @@ class BM25RAGChain:
                         
                         # Find which chapter this chunk belongs to
                         chapter_int = 1  # Default
-                        for start_page, end_page, chapter_num in chapter_ranges:
+                        for start_page, end_page, ch_num in chapter_ranges:
                             if start_page <= chunk_num <= end_page:
-                                chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                chapter_int = max(1, ch_num)  # Ensure minimum chapter 1
                                 break
-                        
+
                         # If chunk number is very high, estimate based on position
                         if chunk_num > 568:
                             chapter_int = 33  # Last chapter
-                            
+
                     except (ValueError, IndexError):
                         chapter_int = 1  # Default to chapter 1 if parsing fails
                 else:
@@ -444,15 +462,15 @@ class BM25RAGChain:
                             ]
                             
                             # Find which chapter this chunk belongs to
-                            for start_page, end_page, chapter_num in chapter_ranges:
+                            for start_page, end_page, ch_num in chapter_ranges:
                                 if start_page <= chunk_num <= end_page:
-                                    chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                    chapter_int = max(1, ch_num)  # Ensure minimum chapter 1
                                     break
-                            
+
                             # If chunk number is very high, estimate based on position
                             if chunk_num > 568:
                                 chapter_int = 33  # Last chapter
-                                
+
                         except (ValueError, IndexError):
                             chapter_int = 1  # Default to chapter 1 if parsing fails
                     else:
@@ -462,7 +480,7 @@ class BM25RAGChain:
                                 chapter_int = int(float(chapter_number))
                             except (ValueError, TypeError):
                                 chapter_int = 1
-                    
+
                     references.add(f"Book: {book_title} - Chapter {chapter_int}")
             else:
                 episode_id = metadata.get('episode_id')
@@ -513,8 +531,8 @@ class BM25RAGChain:
                 if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_number is not None:
                     # chapter_number field contains page numbers for VIRIDITAS book
                     try:
-                        chunk_num = int(float(chapter_num))  # Convert page number to int
-                        
+                        chunk_num = int(float(chapter_number))  # Convert page number to int
+
                         # Map chunk numbers to actual chapters based on table of contents
                         chapter_ranges = [
                             (0, 10, 0),      # Prelude
@@ -552,27 +570,27 @@ class BM25RAGChain:
                             (496, 520, 32),  # Chapter 32: Birthing a New World—Water of Life
                             (521, 568, 33),  # Chapter 33: Weaving A New Culture Together
                         ]
-                        
+
                         # Find which chapter this chunk belongs to
-                        for start_page, end_page, chapter_num in chapter_ranges:
+                        for start_page, end_page, ch_num in chapter_ranges:
                             if start_page <= chunk_num <= end_page:
-                                chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                                chapter_int = max(1, ch_num)  # Ensure minimum chapter 1
                                 break
-                        
+
                         # If chunk number is very high, estimate based on position
                         if chunk_num > 568:
                             chapter_int = 33  # Last chapter
-                            
+
                     except (ValueError, IndexError):
                         chapter_int = 1  # Default to chapter 1 if parsing fails
                 else:
                     # For non-VIRIDITAS books or if parsing fails, use original chapter number
-                    if chapter_num and chapter_num != 'Unknown':
+                    if chapter_number and chapter_number != 'Unknown':
                         try:
-                            chapter_int = int(float(chapter_num))
+                            chapter_int = int(float(chapter_number))
                         except (ValueError, TypeError):
                             chapter_int = 1
-                
+
                 content_id = f"book_{book_title}_ch{chapter_int}"
             else:
                 content_id = metadata.get('episode_id', 'unknown')
@@ -724,15 +742,15 @@ class BM25RAGChain:
                     ]
                     
                     # Find which chapter this chunk belongs to
-                    for start_page, end_page, chapter_num in chapter_ranges:
+                    for start_page, end_page, ch_num in chapter_ranges:
                         if start_page <= chunk_num <= end_page:
-                            chapter_int = max(1, chapter_num)  # Ensure minimum chapter 1
+                            chapter_int = max(1, ch_num)  # Ensure minimum chapter 1
                             break
-                    
+
                     # If chunk number is very high, estimate based on position
                     if chunk_num > 568:
                         chapter_int = 33  # Last chapter
-                        
+
                 except (ValueError, IndexError):
                     chapter_int = 1  # Default to chapter 1 if parsing fails
             else:
@@ -742,7 +760,7 @@ class BM25RAGChain:
                         chapter_int = int(float(chapter_number))
                     except (ValueError, TypeError):
                         chapter_int = 1
-            
+
             return {
                 'content_type': 'book',
                 'id': f"book_{book_title}_ch{chapter_int}",

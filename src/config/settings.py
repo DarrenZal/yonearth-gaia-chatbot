@@ -81,6 +81,12 @@ class Settings(BaseSettings):
     graph_max_edges: int = Field(default=50, description="Maximum edges to expand in graph retrieval")
     graph_retrieval_k: int = Field(default=20, description="Number of graph chunks to retrieve")
 
+    # GraphRAG Backend Version (for rollout/rollback)
+    # "v2" = new improved backend with KG boost, entity filtering, typed relations
+    # "v1" = original implementation (fallback)
+    graphrag_backend_version: str = Field(default="v2", description="GraphRAG backend version: 'v1' or 'v2'")
+    graphrag_kg_boost_factor: float = Field(default=1.3, description="KG boost factor for chunk retrieval (1.0-2.0)")
+
     # Evidence Capping Configuration
     graph_evidence_max_total: int = Field(default=10, description="Maximum total evidence triples to include")
     graph_evidence_min_confidence: float = Field(default=0.6, description="Minimum p_true for evidence inclusion")

@@ -246,3 +246,122 @@ async def get_entity_types() -> Dict[str, int]:
                               reverse=True))
 
     return sorted_types
+
+# Load relationships data
+def load_relationships():
+    """Load relationships data"""
+    try:
+        with open(DATA_DIR / "relationships_processed.json", 'r') as f:
+            return json.load(f)
+    except Exception as e:
+        logger.error(f"Failed to load relationships: {e}")
+        return []
+
+# Cache relationships
+RELATIONSHIPS = load_relationships()
+
+@router.get("/episode/{episode_number}")
+async def get_episode_knowledge_graph(
+    episode_number: int,
+    include_relationships: bool = Query(True, description="Include relationships"),
+    max_entities: int = Query(30, ge=1, le=100, description="Maximum entities to return"),
+    max_relationships: int = Query(15, ge=1, le=50, description="Maximum relationships to return")
+) -> Dict[str, Any]:
+    """
+    Get entities and relationships for a specific episode.
+
+    Returns entities mentioned in the episode along with their relationships.
+    """
+    if not UNIFIED:
+        raise HTTPException(status_code=503, detail="Graph data not available")
+
+    source_id = f"episode_{episode_number}"
+
+    # Filter entities for this episode
+    episode_entities = []
+    for name, data in UNIFIED.get('entities', {}).items():
+        if source_id in data.get('sources', []):
+            episode_entities.append({
+                'name': name,
+                'type': data.get('type', 'UNKNOWN'),
+                'description': data.get('description', ''),
+                'aliases': data.get('aliases', []),
+                'is_fictional': data.get('is_fictional', False)
+            })
+
+    # Limit to max_entities
+    episode_entities = episode_entities[:max_entities]
+
+    # Filter relationships for this episode
+    episode_relationships = []
+    if include_relationships and RELATIONSHIPS:
+        for rel in RELATIONSHIPS:
+            if rel.get('source_id') == str(episode_number):
+                episode_relationships.append({
+                    'source': rel.get('source'),
+                    'target': rel.get('target'),
+                    'predicate': rel.get('predicate')
+                })
+
+        # Limit to max_relationships
+        episode_relationships = episode_relationships[:max_relationships]
+
+    return {
+        'episode_number': episode_number,
+        'entity_count': len(episode_entities),
+        'relationship_count': len(episode_relationships),
+        'entities': episode_entities,
+        'relationships': episode_relationships
+    }
+
+@router.get("/entity/{entity_name}/details")
+async def get_entity_details(
+    entity_name: str,
+    include_relationships: bool = Query(True, description="Include relationships")
+) -> Dict[str, Any]:
+    """
+    Get full details for a specific entity.
+
+    Returns entity metadata, all episodes/books where it appears, and relationships.
+    """
+    if not UNIFIED:
+        raise HTTPException(status_code=503, detail="Graph data not available")
+
+    entity = UNIFIED.get('entities', {}).get(entity_name)
+    if not entity:
+        raise HTTPException(status_code=404, detail="Entity not found")
+
+    # Find all relationships involving this entity
+    entity_relationships = []
+    if include_relationships and RELATIONSHIPS:
+        for rel in RELATIONSHIPS:
+            if rel.get('source') == entity_name or rel.get('target') == entity_name:
+                entity_relationships.append({
+                    'source': rel.get('source'),
+                    'target': rel.get('target'),
+                    'predicate': rel.get('predicate'),
+                    'source_id': rel.get('source_id')
+                })
+
+    # Parse sources into episodes vs books
+    episodes = []
+    books = []
+    for source in entity.get('sources', []):
+        if source.startswith('episode_'):
+            episode_num = int(source.replace('episode_', ''))
+            episodes.append(episode_num)
+        else:
+            books.append(source)
+
+    return {
+        'name': entity_name,
+        'type': entity.get('type'),
+        'description': entity.get('description', ''),
+        'aliases': entity.get('aliases', []),
+        'is_fictional': entity.get('is_fictional', False),
+        'resolution_confidence': entity.get('resolution_confidence', 1.0),
+        'episodes': sorted(episodes),
+        'books': books,
+        'relationship_count': len(entity_relationships),
+        'relationships': entity_relationships[:50]  # Limit to 50 relationships
+    }

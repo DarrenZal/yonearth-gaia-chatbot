@@ -155,32 +155,96 @@ class BM25HybridRetriever:
             self._build_bm25_index()
     
     def _build_bm25_index(self):
-        """Build BM25 index from vectorstore documents"""
+        """Build BM25 index from vectorstore documents using Pinecone list/fetch APIs"""
         try:
-            # Get all documents from vectorstore
-            # Note: This is a simplified approach. In production, you might want to
-            # load documents more efficiently or from a dedicated document store
-            logger.info("Fetching documents from vectorstore...")
-            
-            # Get ALL documents from vectorstore by using a very generic query
-            # We use multiple generic queries to ensure we capture all content types
+            logger.info("Fetching ALL documents from Pinecone for BM25 indexing...")
+
+            # Use Pinecone's list() and fetch() APIs to get ALL vectors
+            # This is much more comprehensive than similarity search
+            index = self.vectorstore.pinecone_manager.get_index()
+
             all_documents = []
-            
-            # Query 1: Get episode-related content
-            episode_query = "episode podcast guest interview"
-            episode_results = self.vectorstore.similarity_search(episode_query, k=5000)
-            all_documents.extend(episode_results)
-            
-            # Query 2: Get book-related content
-            book_query = "chapter book viriditas healing nature"
-            book_results = self.vectorstore.similarity_search(book_query, k=5000)
-            all_documents.extend(book_results)
-            
-            # Query 3: Get any remaining content with generic terms
-            generic_query = "the and of to in is that with for on"
-            generic_results = self.vectorstore.similarity_search(generic_query, k=5000)
-            all_documents.extend(generic_results)
-            
+            vector_ids = []
+
+            # List all vector IDs using pagination
+            logger.info("Listing all vector IDs from Pinecone...")
+            try:
+                # Use list() with pagination to get all IDs
+                for ids_batch in index.list(namespace=""):
+                    vector_ids.extend(ids_batch)
+                    if len(vector_ids) % 10000 == 0:
+                        logger.info(f"Listed {len(vector_ids)} vector IDs so far...")
+            except Exception as list_error:
+                logger.warning(f"list() API not available or failed: {list_error}")
+                # Fallback to the old approach with higher limits
+                vector_ids = None
+
+            if vector_ids:
+                logger.info(f"Found {len(vector_ids)} total vector IDs in Pinecone")
+
+                # Fetch vectors in batches (Pinecone allows up to 100 at a time)
+                batch_size = 100
+                for i in range(0, len(vector_ids), batch_size):
+                    batch_ids = vector_ids[i:i + batch_size]
+                    try:
+                        response = index.fetch(ids=batch_ids, namespace="")
+
+                        # Handle both dict-style and object-style FetchResponse
+                        vectors = getattr(response, 'vectors', None) or response.get('vectors', {})
+
+                        for vec_id, vec_data in vectors.items():
+                            # Handle both dict and object for vector data
+                            if hasattr(vec_data, 'metadata'):
+                                metadata = vec_data.metadata
+                            else:
+                                metadata = vec_data.get('metadata', {})
+
+                            # Handle metadata as dict or object
+                            if hasattr(metadata, 'get'):
+                                text = metadata.get('text', '')
+                            else:
+                                text = getattr(metadata, 'text', '')
+
+                            if text:
+                                # Convert metadata to dict if it's an object
+                                if not isinstance(metadata, dict):
+                                    metadata = dict(metadata) if hasattr(metadata, '__iter__') else {}
+                                doc = Document(
+                                    page_content=text,
+                                    metadata=metadata
+                                )
+                                all_documents.append(doc)
+
+                        if len(all_documents) % 5000 == 0:
+                            logger.info(f"Fetched {len(all_documents)} documents so far...")
+
+                    except Exception as fetch_error:
+                        logger.warning(f"Error fetching batch {i//batch_size}: {fetch_error}")
+                        continue
+
+                logger.info(f"Successfully fetched {len(all_documents)} documents from Pinecone")
+
+            # Fallback: if list/fetch didn't work, use enhanced similarity search
+            if not all_documents:
+                logger.info("Using fallback similarity search method...")
+
+                # Use multiple diverse queries with higher k limit
+                queries = [
+                    ("episode podcast guest interview discussion", 10000),
+                    ("chapter book viriditas healing nature earth", 10000),
+                    ("soil agriculture regenerative farming organic", 10000),
+                    ("climate sustainability environment community", 10000),
+                    ("the and of to in is that with for on a", 10000),
+                ]
+
+                for query, k in queries:
+                    try:
+                        results = self.vectorstore.similarity_search(query, k=k)
+                        all_documents.extend(results)
+                        logger.info(f"Query '{query[:30]}...' returned {len(results)} results")
+                    except Exception as e:
+                        logger.warning(f"Query failed: {e}")
+
             # Remove duplicates based on page content
             seen_content = set()
             search_results = []
@@ -189,13 +253,13 @@ class BM25HybridRetriever:
                 if content_hash not in seen_content:
                     seen_content.add(content_hash)
                     search_results.append(doc)
-            
+
             if not search_results:
                 logger.warning("No documents found in vectorstore for BM25 indexing")
                 return
-            
+
             self.documents = search_results
-            logger.info(f"Found {len(self.documents)} documents for BM25 indexing")
+            logger.info(f"Found {len(self.documents)} unique documents for BM25 indexing")
             
             # Tokenize documents for BM25
             self.tokenized_docs = []

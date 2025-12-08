@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Podcast Map 3D</title>
+    <link rel="stylesheet" href="PodcastMap3D.css?v=20251206214044">
+</head>
+<body>
+    <div id="podcast-map-3d-container">
+        <!-- Header with project selector and episode filter -->
+        <div class="map-header">
+            <div class="project-selector">
+                <button class="project-dropdown-btn">
+                    <span class="project-name">YonEarth Podcast Episodes (3D)</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-icon">☰</span>
+            </button>
+
+            <div class="header-controls" id="header-controls">
+                <a href="../" class="nav-link">💬 Chat with Gaia</a>
+                <a href="../graph/" class="nav-link">🕸️ Knowledge Graph</a>
+            </div>
+
+            <div class="mobile-controls">
+                <div class="cluster-control">
+                    <label for="cluster-slider">Clusters: <span id="cluster-count">9</span></label>
+                    <input type="range" id="cluster-slider" min="9" max="18" step="9" value="9">
+                </div>
+
+                <div class="episode-filter">
+                    <select id="episode-select" class="episode-dropdown">
+                        <option value="">Select an episode...</option>
+                    </select>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+
+                <div class="topic-filter">
+                    <select id="topic-select" class="topic-dropdown">
+                        <option value="">Select a topic...</option>
+                    </select>
+                    <span class="dropdown-arrow">▼</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main 3D visualization area -->
+        <div id="3d-graph"></div>
+
+        <!-- Audio player (hidden initially) -->
+        <div class="audio-player-container" id="audio-player" style="display: none;">
+            <div class="player-controls">
+                <button class="close-player" onclick="closeAudioPlayer()">×</button>
+                <div class="episode-info">
+                    <h3 id="current-episode-title"></h3>
+                    <p id="current-chunk-text"></p>
+                </div>
+                <div class="audio-controls">
+                    <audio id="audio-element" controls></audio>
+                    <div class="playback-controls">
+                        <div class="time-display">
+                            <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                        </div>
+                        <div class="speed-control">
+                            <label for="playback-speed">Speed:</label>
+                            <select id="playback-speed">
+                                <option value="0.8">0.8x</option>
+                                <option value="0.9">0.9x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="1.5">1.5x</option>
+                                <option value="2">2x</option>
+                                <option value="2.5">2.5x</option>
+                                <option value="3">3x</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Knowledge Graph Section -->
+                <div class="knowledge-graph-section" id="kg-section" style="display: none;">
+                    <h4 class="kg-title">Knowledge Graph</h4>
+
+                    <!-- Relationship Section -->
+                    <div class="kg-relationships" id="kg-relationships">
+                        <h5>Key Relationships:</h5>
+                        <div class="kg-relationship-list">
+                            <!-- Dynamic relationship items will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Entity Section -->
+                    <div class="kg-entities">
+                        <h5>Mentioned in this Episode:</h5>
+                        <div class="kg-entity-container" id="kg-entities">
+                            <!-- Dynamic entity pills will be inserted here -->
+                        </div>
+                    </div>
+
+                    <!-- Loading/Error States -->
+                    <div class="kg-loading" id="kg-loading" style="display: none;">
+                        Loading knowledge graph...
+                    </div>
+                    <div class="kg-error" id="kg-error" style="display: none;">
+                        Knowledge graph unavailable
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls hint -->
+        <div class="controls-hint">
+            <p>🖱️ Drag to rotate • Scroll to zoom • Click node to play</p>
+        </div>
+
+        <!-- Entity Knowledge Panel (right side) -->
+        <div id="entity-panel" class="entity-panel" style="display: none;">
+            <div class="panel-header">
+                <div class="panel-title">Entity Details</div>
+                <button class="panel-close-btn" id="entity-panel-close">×</button>
+            </div>
+            <div id="entity-panel-content">
+                <div class="entity-panel-name" id="entity-panel-name"></div>
+                <div class="entity-panel-type" id="entity-panel-type"></div>
+                <div class="entity-panel-description" id="entity-panel-description"></div>
+
+                <div class="entity-panel-section">
+                    <div class="section-label">Sources</div>
+                    <div id="entity-panel-sources" class="entity-sources-list"></div>
+                </div>
+
+                <div class="entity-panel-section" id="entity-relationships-section" style="display: none;">
+                    <div class="section-label">Relationships</div>
+                    <div id="entity-panel-relationships" class="entity-relationships-list"></div>
+                </div>
+
+                <div class="entity-panel-section" id="entity-aliases-section" style="display: none;">
+                    <div class="section-label">Also known as</div>
+                    <div id="entity-panel-aliases" class="entity-aliases-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load dependencies -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- Load 3D Force Graph library (includes Three.js) -->
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <!-- Load our 3D visualization script -->
+    <script src="PodcastMap3D.js?v=20251206214802"></script>
+</body>
+</html>

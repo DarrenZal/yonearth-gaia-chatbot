@@ -5204,7 +5204,12 @@ class GraphRAG3DEmbeddingView {
                 return 'M' + d.polygon.map(p => p.join(',')).join('L') + 'Z';
             })
             .attr('fill', d => getColor(d))
-            .attr('fill-opacity', d => d.level === 3 ? 0.35 : 0)
+            .attr('fill-opacity', d => {
+                // L2 (fine clusters) visible by default, L3 hidden until hover
+                if (d.level === 2) return 0.5;
+                if (d.level === 3) return 0.15;  // Very subtle L3 background
+                return 0;
+            })
             .attr('stroke', d => getColor(d))
             .attr('stroke-width', d => {
                 // Scale stroke widths relative to internal canvas for consistent appearance
@@ -5214,7 +5219,12 @@ class GraphRAG3DEmbeddingView {
                 if (d.level === 1) return baseStroke * 2;
                 return baseStroke * 1.5; // L0 entities
             })
-            .attr('stroke-opacity', d => d.level === 3 ? 1 : 0)
+            .attr('stroke-opacity', d => {
+                // L2 strokes visible by default
+                if (d.level === 2) return 1;
+                if (d.level === 3) return 0.5;  // Subtle L3 borders
+                return 0;
+            })
             .style('cursor', 'pointer');
 
         // Helper function to calculate polygon width at a given y position
@@ -5331,7 +5341,11 @@ class GraphRAG3DEmbeddingView {
             .attr('fill', '#ffffff')
             .attr('font-weight', d => d.level === 3 ? '700' : (d.level === 2 ? '600' : '500'))
             .attr('pointer-events', 'none')
-            .style('opacity', d => d.level === 3 ? 1 : 0)
+            .style('opacity', d => {
+                // L2 labels visible by default, L3 labels hidden until hover
+                if (d.level === 2) return 1;
+                return 0;
+            })
             .style('text-shadow', '0 1px 3px rgba(0,0,0,0.9), 0 0 8px rgba(0,0,0,0.5)')
             .each(function(d) {
                 const text = d3.select(this);
@@ -5356,107 +5370,23 @@ class GraphRAG3DEmbeddingView {
                 });
             });
 
-        // Update visibility function - 2-level hierarchy: L3 (coarse) visible, L2 (fine) on hover
-        // L2 is the leaf level - entities shown in info panel on click
-        const updateVisibility = () => {
-            cells
-                .transition()
-                .duration(250)
-                .attr('fill-opacity', d => {
-                    // L3 (coarse clusters) always visible
-                    if (d.level === 3) return 0.35;
+        // No hover visibility changes - L2 always visible
+        const updateVisibility = () => {};
 
-                    // L2 (fine clusters) visible if parent L3 is hovered
-                    if (d.level === 2) {
-                        if (hoveredL3 && d.parent === hoveredL3) return 0.6;
-                        return 0;
-                    }
-
-                    // L1 and L0 not used in 2-level hierarchy
-                    return 0;
-                })
-                .attr('stroke-opacity', d => {
-                    if (d.level === 3) return 1;
-                    if (d.level === 2 && hoveredL3 && d.parent === hoveredL3) return 1;
-                    return 0;
-                });
-
-            labels
-                .transition()
-                .duration(250)
-                .style('opacity', d => {
-                    // L3: hide label when this L3 is hovered (so we can see nested L2 labels)
-                    if (d.level === 3) {
-                        // Hide this L3's label if it's the one being hovered
-                        if (hoveredL3 && d === hoveredL3) {
-                            return 0;
-                        }
-                        return 1;
-                    }
-
-                    // L2 (fine clusters): show when parent L3 is hovered
-                    // L2 is the leaf level - labels always visible when revealed
-                    if (d.level === 2) {
-                        if (hoveredL3 && d.parent === hoveredL3) {
-                            return 1;
-                        }
-                        return 0;
-                    }
-
-                    // L1 and L0 not used in 2-level hierarchy
-                    return 0;
-                });
-        };
-
-        // Add interactions - simplified for 2-level hierarchy (L3 coarse, L2 fine)
+        // Simple interactions - just highlight on hover, no visibility changes
         cells
             .on('mouseover', function(event, d) {
                 event.stopPropagation();
-
-                console.log(`HOVER: level=${d.level}, name="${d.data?.name}", has parent=${!!d.parent}, parent name="${d.parent?.data?.name}"`);
-
-                // 2-level hierarchy: only track L3 hover
-                if (d.level === 3) {
-                    hoveredL3 = d;
-                    console.log(`  -> Set hoveredL3 to "${d.data?.name}"`);
-                } else if (d.level === 2) {
-                    // When hovering L2, keep parent L3 as hovered to maintain visibility
-                    hoveredL3 = d.parent;
-                    console.log(`  -> Set hoveredL3 to parent "${d.parent?.data?.name}"`);
-                }
-
-                // Count visible L2 children
-                const l2Children = allCells.filter(c => c.level === 2 && c.parent === hoveredL3);
-                console.log(`  -> L2 children to reveal: ${l2Children.length}`);
-
-                updateVisibility();
-
-                // Highlight stroke
-                d3.select(this).attr('stroke-width', d.level === 3 ? 4 : 3);
+                // Just highlight the hovered cell
+                const baseStroke = internalWidth / 1000;
+                d3.select(this).attr('stroke-width', baseStroke * 5);
             })
             .on('mouseout', function(event, d) {
-                // Check if moving to related cell within same L3
-                const related = event.relatedTarget;
-                if (related && related.__data__) {
-                    const relData = related.__data__;
-                    // If moving within same L3 cluster or to a sibling L2, don't reset
-                    if (d.level === 3 && relData.parent === d) return;
-                    if (d.level === 2 && relData.parent === d.parent) return;
-                    if (d.level === 2 && relData === d.parent) return;
-                }
-
-                // Reset when leaving L3 cluster entirely
-                if (d.level === 3) {
-                    hoveredL3 = null;
-                } else if (d.level === 2) {
-                    // Only reset if not moving to another cell in same L3
-                    if (!related || !related.__data__ || related.__data__.parent !== d.parent) {
-                        hoveredL3 = null;
-                    }
-                }
-
-                updateVisibility();
-                const strokeWidth = d.level === 3 ? 2.5 : 2;
+                // Reset stroke width
+                const baseStroke = internalWidth / 1000;
+                let strokeWidth = baseStroke * 3;
+                if (d.level === 3) strokeWidth = baseStroke * 4;
+                if (d.level === 1) strokeWidth = baseStroke * 2;
                 d3.select(this).attr('stroke-width', strokeWidth);
             })
             .on('click', (event, d) => {
@@ -5859,7 +5789,7 @@ class GraphRAG3DEmbeddingView {
             });
 
         // Draw L3 labels FIRST (so they can be referenced in polygon hover handlers)
-        // Labels are always visible by default
+        // L3 labels are HIDDEN by default, shown on hover
         // Use labelPosition (polygon centroid) if available, else fall back to centroid (data centroid)
         const l3Labels = g.selectAll('.voronoi2-label-l3')
             .data(level3Clusters.filter(c => c.labelPosition || c.centroid))
@@ -5873,7 +5803,7 @@ class GraphRAG3DEmbeddingView {
             .attr('fill', '#ffffff')
             .attr('font-size', '14px')
             .attr('font-weight', '700')
-            .attr('opacity', 1)  // Always visible
+            .attr('opacity', 0)  // Hidden by default, shown on L3 polygon hover
             .attr('pointer-events', 'none')
             .style('text-shadow', '0 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.7)')
             .text(d => {
@@ -5909,25 +5839,25 @@ class GraphRAG3DEmbeddingView {
                 // Highlight this L3
                 d3.select(this)
                     .attr('stroke-width', 5)
-                    .attr('fill-opacity', 0.15);
+                    .attr('fill-opacity', 0.5);
 
-                // Show L2 children of this L3
+                // Hide L2 children when hovering L3 (show L3 label instead)
                 l2Polygons
                     .transition()
                     .duration(200)
-                    .attr('stroke-opacity', c => c.parentL3 === d.id ? 0.8 : 0)
-                    .attr('fill-opacity', c => c.parentL3 === d.id ? 0.4 : 0);
+                    .attr('stroke-opacity', c => c.parentL3 === d.id ? 0 : 0.8)
+                    .attr('fill-opacity', c => c.parentL3 === d.id ? 0 : 0.25);
 
                 l2Labels
                     .transition()
                     .duration(200)
-                    .attr('opacity', c => c.parentL3 === d.id ? 0.9 : 0);
+                    .attr('opacity', c => c.parentL3 === d.id ? 0 : 1);
 
-                // Hide L3 label when hovering (to see children)
+                // Show L3 label when hovering
                 l3Labels
                     .transition()
                     .duration(200)
-                    .attr('opacity', c => c === d ? 0 : 1);
+                    .attr('opacity', c => c === d ? 1 : 0);
 
                 self.showOrganicTooltip(event, {
                     title: d.title || d.name || d.id,
@@ -5938,7 +5868,7 @@ class GraphRAG3DEmbeddingView {
                 // Check if moving to a child L2
                 const related = event.relatedTarget;
                 if (related && related.__data__ && related.__data__.parentL3 === d.id) {
-                    return; // Don't hide children if moving within
+                    return; // Don't restore if moving within
                 }
 
                 hoveredL3 = null;
@@ -5948,23 +5878,23 @@ class GraphRAG3DEmbeddingView {
                     .attr('stroke-width', 3)
                     .attr('fill-opacity', 0.35);
 
-                // Hide all L2 children
+                // Show all L2 clusters again (default state)
                 l2Polygons
                     .transition()
                     .duration(200)
-                    .attr('stroke-opacity', 0)
-                    .attr('fill-opacity', 0);
+                    .attr('stroke-opacity', 0.8)
+                    .attr('fill-opacity', 0.25);
 
                 l2Labels
                     .transition()
                     .duration(200)
-                    .attr('opacity', 0);
+                    .attr('opacity', 1);
 
-                // Show all L3 labels again
+                // Hide all L3 labels again (default state)
                 l3Labels
                     .transition()
                     .duration(200)
-                    .attr('opacity', 1);
+                    .attr('opacity', 0);
 
                 self.hideOrganicTooltip();
             })

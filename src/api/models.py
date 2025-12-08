@@ -112,11 +112,27 @@ class HealthResponse(BaseModel):
     gaia_personality: Optional[str] = None
 
 
+class ConversationCitation(BaseModel):
+    """Loose citation model for conversation history - accepts partial data from frontend"""
+    episode_number: Optional[str] = None
+    title: Optional[str] = None
+    guest_name: Optional[str] = None
+    url: Optional[str] = None
+    relevance: Optional[str] = None
+    content_type: Optional[str] = None
+    book_title: Optional[str] = None
+    author: Optional[str] = None
+    chapter_number: Optional[str] = None
+
+    class Config:
+        extra = "allow"  # Allow additional fields from frontend
+
+
 class ConversationMessage(BaseModel):
     """Individual conversation message"""
     role: str = Field(..., description="Role: 'user' or 'gaia'")
     content: str = Field(..., description="Message content")
-    citations: Optional[List[Citation]] = Field(default_factory=list, description="Citations from response")
+    citations: Optional[List[ConversationCitation]] = Field(default_factory=list, description="Citations from response")
 
 
 class ConversationRecommendationsRequest(BaseModel):
@@ -128,7 +144,7 @@ class ConversationRecommendationsRequest(BaseModel):
 
 class ConversationRecommendationsResponse(BaseModel):
     """Response model for conversation-based recommendations"""
-    recommendations: List[Citation] = Field(..., description="Recommended content based on conversation")
+    recommendations: List[ConversationCitation] = Field(default_factory=list, description="Recommended content based on conversation")
     conversation_topics: List[str] = Field(default_factory=list, description="Extracted topics from conversation")
     total_found: int = Field(..., description="Total recommendations found")
 

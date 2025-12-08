@@ -33,6 +33,7 @@ from .qa_hybrid_endpoints import router as qa_hybrid_router
 from .podcast_map_route_local import router as podcast_map_router
 from .graph_endpoints import router as graph_router
 from .graphrag_api import router as graphrag_router
+from .graphrag_chat_endpoints import router as graphrag_chat_router
 from .memorag_endpoints import router as memorag_router
 
 # Configure logging
@@ -151,6 +152,9 @@ try:
 
     # Include GraphRAG cluster API
     app.include_router(graphrag_router)
+
+    # Include GraphRAG Chat API (DRIFT-style global+local search)
+    app.include_router(graphrag_chat_router)
 
     logger.info("✅ Hybrid QA and GraphRAG routers loaded successfully")
 except Exception as e:

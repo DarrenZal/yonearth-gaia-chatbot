@@ -10,8 +10,9 @@ This comprehensive guide describes every file in the repository, what it does, a
 
 ### Quick Navigation
 
-- **Main Chat Flow**: `web/index.html` → `web/chat.js` → `src/api/bm25_endpoints.py` → `src/rag/bm25_chain.py` → `src/character/gaia.py`
-- **Search System**: `src/rag/bm25_hybrid_retriever.py` + `src/rag/semantic_category_matcher.py` + `src/rag/vectorstore.py`
+- **Main Chat Flow**: `web/index.html` → `web/chat.js` → `src/api/graphrag_chat_endpoints.py` → `src/rag/graphrag_chain.py` → `src/character/gaia.py`
+- **GraphRAG System**: `src/rag/graphrag_chain.py` + `src/rag/graphrag_local_search.py` + `src/rag/graphrag_community_search.py`
+- **Legacy BM25 System**: `src/rag/bm25_hybrid_retriever.py` + `src/rag/semantic_category_matcher.py` + `src/rag/vectorstore.py`
 - **Voice Integration**: `src/voice/elevenlabs_client.py` + `src/api/voice_endpoints.py`
 - **Data Processing**: `src/ingestion/` (episode_processor, book_processor, chunker)
 - **Configuration**: `src/config/settings.py` (centralized settings from .env)
@@ -704,10 +705,11 @@ The 3D visualizations use Three.js with WebGL. Chrome limits active WebGL contex
 **Active Deployment**: Nginx + Uvicorn + Systemd
 - **URL**: Production deployment (configure in deployment settings)
 - **Architecture**:
-  - Nginx (port 80): Serves static files and proxies API requests
-  - Uvicorn (port 8000): FastAPI with 4 workers
-  - Systemd service: `yonearth-api` (auto-restart, boot persistence)
-- **Features**: Full web interface + working API endpoints (/api/chat, /api/bm25/chat)
+  - Nginx (port 80/443): Serves static files and proxies API requests
+  - Uvicorn (port 8001): FastAPI with 1 worker (single worker for consistent GraphRAG state)
+  - Systemd service: `yonearth-api-migrated` (auto-restart, boot persistence)
+- **Features**: Full web interface + GraphRAG-powered chat (/api/chat → /api/graphrag/chat)
+- **Search Backend**: GraphRAG v2 with knowledge graph entity/relationship extraction
 - **Vector Database**: 18,764+ vectors (episodes + books combined)
 - **Book Integration**: All 3 books successfully processed and searchable
 - **Episode Coverage**: 172 episodes (0-172, excluding #26)
@@ -746,7 +748,7 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 
 ## Current System Status
 
-**System Health (2025-10-07)**:
+**System Health (2025-12-08)**:
 - **Transcription Dataset**: ✅ **172/172 episodes with word-level timestamps (100% complete)**
 - **Vector Database**: 18,764+ vectors (episodes + books) in Pinecone
 - **Category Embeddings**: 24 semantic category embeddings cached locally
@@ -754,12 +756,14 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
   - VIRIDITAS: THE GREAT HEALING (2,029 chunks)
   - Soil Stewardship Handbook (136 chunks)
   - Y on Earth: Get Smarter, Feel Better, Heal the Planet (2,124 chunks)
-- **Search Methods**: Both Original RAG and BM25 Hybrid with semantic category matching
+- **Search Methods**: GraphRAG v2 (primary) with knowledge graph entity extraction + BM25 (fallback)
+- **Knowledge Graph**: 26,219 entities, 39,118 relationships, 45,673 aliases
 - **Citation Accuracy**: 99%+ accuracy with proper episode and book chapter references
 - **Episode Diversity**: All relevant episodes appear through diverse search algorithm
 - **Voice Integration**: ElevenLabs TTS with custom voice for natural speech responses
-- **Web Interface**: Responsive UI with personality selection, dual search modes, voice toggle, and category controls
-- **API Endpoints**: Full REST API with both original and BM25 endpoints + voice generation support
+- **Web Interface**: Responsive UI with personality selection, voice toggle, and feedback
+- **API Endpoints**: GraphRAG chat (`/api/graphrag/chat`), BM25 fallback (`/api/bm25/chat`), voice support
+- **LLM Model**: `gpt-4.1-mini` with temperature=0 for consistent responses
 
 **Recent Achievements**:
 - ✅ **COMPLETE: All 172 episodes re-transcribed with word-level timestamps (2025-10-07)**
@@ -784,6 +788,13 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
 - ✅ **Implemented voice integration with ElevenLabs TTS (2025-08-29)**
 - ✅ **Added voice toggle controls and audio playback in web UI (2025-08-29)**
 - ✅ **Text preprocessing for natural speech generation (2025-08-29)**
+- ✅ **Deployed GraphRAG v2 as primary search backend (2025-12-08)**
+  - Knowledge graph with 26,219 entities and 39,118 relationships
+  - Entity extraction from queries with 1-hop relationship expansion
+  - Switched `/api/chat` to use `/api/graphrag/chat` endpoint
+  - Fixed entity attribution (e.g., "Samantha Power founded BioFi Project")
+- ✅ **Upgraded to gpt-4.1-mini model for better accuracy (2025-12-08)**
+- ✅ **Set temperature=0 for deterministic, consistent responses (2025-12-08)**
 
 ## ✅ Recent Major Improvements (July 2025)
 

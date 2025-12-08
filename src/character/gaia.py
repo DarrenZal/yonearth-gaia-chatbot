@@ -23,12 +23,17 @@ class GaiaCharacter:
         self.model_name = model_name or settings.openai_model
         
         # Initialize LLM
-        self.llm = ChatOpenAI(
-            model_name=self.model_name,
-            temperature=settings.gaia_temperature,
-            max_tokens=settings.gaia_max_tokens,
-            openai_api_key=settings.openai_api_key
-        )
+        # Note: gpt-5-mini doesn't support temperature parameter (only temp=1)
+        llm_kwargs = {
+            "model_name": self.model_name,
+            "max_tokens": settings.gaia_max_tokens,
+            "openai_api_key": settings.openai_api_key
+        }
+        # Only set temperature for models that support it
+        if "gpt-5" not in self.model_name:
+            llm_kwargs["temperature"] = settings.gaia_temperature
+
+        self.llm = ChatOpenAI(**llm_kwargs)
         
         # Initialize memory
         self.memory = ConversationSummaryBufferMemory(
@@ -54,33 +59,52 @@ class GaiaCharacter:
     def _format_context(self, retrieved_docs: List[Any]) -> str:
         """Format retrieved documents as context for Gaia"""
         if not retrieved_docs:
-            return "No specific episode content found for this query."
-        
+            return "No specific content found for this query."
+
         context_parts = []
         for i, doc in enumerate(retrieved_docs[:5]):  # Limit to top 5 results
             metadata = getattr(doc, 'metadata', {})
             content = getattr(doc, 'page_content', str(doc))
-            
-            episode_num = metadata.get('episode_number', 'Unknown')
-            title = metadata.get('title', 'Unknown Episode')
-            guest = metadata.get('guest_name', 'Guest')
-            
-            # Truncate content for context
-            content_preview = content[:300] + "..." if len(content) > 300 else content
-            
-            context_parts.append(
-                f"Episode {episode_num} - \"{title}\" with {guest}:\n{content_preview}"
-            )
-        
+            content_type = metadata.get('content_type', 'episode')
+
+            # Increased context size to 500 chars for better extraction of names/details
+            content_preview = content[:500] + "..." if len(content) > 500 else content
+
+            if content_type == 'book':
+                # Format for book content
+                book_title = metadata.get('book_title', 'Unknown Book')
+                chapter = metadata.get('chapter_number', 'Unknown')
+                author = metadata.get('author', 'Unknown Author')
+                context_parts.append(
+                    f"[BOOK] \"{book_title}\" by {author}, Chapter {chapter}:\n{content_preview}"
+                )
+            else:
+                # Format for episode content
+                episode_num = metadata.get('episode_number', 'Unknown')
+                title = metadata.get('title', 'Unknown Episode')
+                guest = metadata.get('guest_name', 'Guest')
+                context_parts.append(
+                    f"[EPISODE {episode_num}] \"{title}\" with {guest}:\n{content_preview}"
+                )
+
         return "\n\n".join(context_parts)
     
     def _create_citation_reminder(self) -> str:
         """Create reminder about proper citation format"""
         return """
-IMPORTANT: Always cite your sources using this exact format:
-- For specific quotes: "As [Guest Name] explained in Episode [Number], '[specific quote or insight]'..."
-- For general concepts: "In Episode [Number] with [Guest Name], we learned about [topic]..."
-- Always include episode numbers and guest names when referencing information.
+CRITICAL INSTRUCTIONS - READ CAREFULLY:
+1. ANSWER BASED ON THE CONTEXT ABOVE. The context contains the correct answer.
+2. For "who founded X" or "who is the founder of X" questions:
+   - Look for phrases like "[Name] is Founder" or "[Name] founded" in the context
+   - The FIRST person mentioned as founder/director IS the answer
+   - Do NOT confuse different people mentioned in the same text
+3. READ THE CONTEXT LITERALLY:
+   - If context says "Samantha Power is Founder and Director of the BioFi Project" -> Samantha Power founded it
+   - If context says "Dr. Stephanie Gripne is the Founder and CEO of Impact Finance Center" -> She founded Impact Finance Center, NOT BioFi
+4. Cite your sources:
+   - For books: "In [Book Title] by [Author], Chapter [X]..."
+   - For episodes: "As [Guest Name] shared in Episode [Number]..."
+5. Be PRECISE - match people to their actual roles from the context.
 """
     
     def generate_response(
