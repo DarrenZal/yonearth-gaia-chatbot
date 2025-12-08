@@ -68,21 +68,34 @@ The YonEarth Knowledge Graph contains extracted entities and relationships from 
 
 ### Phase 1: Content Extraction (Batch API)
 
-**Script**: `scripts/extract_episodes_batch.py`
+**Script**: `scripts/extract_content_batch.py`
 
+This unified script handles **both episodes AND books** with content-specific extraction profiles:
+- **Episodes**: Standard entity/relationship extraction
+- **Technical books** (Soil Stewardship): Process/Tool/Instruction focus
+- **Fiction books** (VIRIDITAS): Character/Location/Event focus with fictional tagging
+- **Rhetorical books** (Y on Earth, Our Biggest Deal): Concept/Argument focus
+
+**Process**:
 1. **Parent-Child Chunking**: Content split into ~3,000 token parent chunks
 2. **Batch Submission**: Submitted to OpenAI Batch API with gpt-5.1
 3. **Entity Extraction**: Structured outputs with Pydantic schema validation
 
 ```bash
-# Submit batch job
-python scripts/extract_episodes_batch.py --submit
+# Submit batch job (all content: episodes + books)
+python scripts/extract_content_batch.py --submit
+
+# Submit only books
+python scripts/extract_content_batch.py --submit-books
 
 # Poll status
-python scripts/extract_episodes_batch.py --poll
+python scripts/extract_content_batch.py --poll
 
 # Download results
-python scripts/extract_episodes_batch.py --download
+python scripts/extract_content_batch.py --download
+
+# Retry failed chunks
+python scripts/extract_content_batch.py --retry-failed
 ```
 
 ### Phase 2: Post-Processing Pipeline
