@@ -494,7 +494,9 @@ The system provides two complementary RAG approaches:
 
 **Voice System**:
 - `src/voice/elevenlabs_client.py`: ElevenLabs TTS client with text preprocessing
-- Voice integration available via `/api/chat` endpoint with `enable_voice` parameter
+- `src/voice/piper_client.py`: Piper TTS client (local, open-source voice synthesis)
+- Voice integration available via `/api/chat`, `/api/graphrag/chat`, and `/api/bm25/chat` endpoints with `enable_voice` parameter
+- Supports both cloud-based (ElevenLabs) and local (Piper) voice generation
 
 **Web Interface**:
 - `web/chat.js`: Advanced frontend with dual search, smart recommendations, voice playback
@@ -550,7 +552,12 @@ Edit `src/character/gaia_personalities.py` to add new personality prompts. The s
 
 **BM25 System**: Add endpoints in `src/api/bm25_endpoints.py` and models in `src/api/bm25_models.py`
 
-**Voice System**: Voice generation is integrated into existing chat endpoints via `enable_voice` parameter
+**GraphRAG System**: GraphRAG endpoints in `src/api/graphrag_chat_endpoints.py` now include:
+- Voice generation support via `enable_voice` parameter
+- Enhanced source citations with `SourceCitation` model for frontend display
+- Metadata loading for episodes and books with URLs, guest info, and chapter details
+
+**Voice System**: Voice generation is integrated into all chat endpoints (`/api/chat`, `/api/graphrag/chat`, `/api/bm25/chat`) via `enable_voice` parameter
 
 ### Web Interface Updates
 **Frontend Logic**: Edit `web/chat.js` for new features, search methods, or UI behavior
@@ -795,6 +802,11 @@ The system handles 172 podcast episodes and 3 integrated books with 18,764+ tota
   - Fixed entity attribution (e.g., "Samantha Power founded BioFi Project")
 - ✅ **Upgraded to gpt-4.1-mini model for better accuracy (2025-12-08)**
 - ✅ **Set temperature=0 for deterministic, consistent responses (2025-12-08)**
+- ✅ **Enhanced GraphRAG endpoints with voice and source citations (2025-12-11)**
+  - Added Piper TTS client for local, open-source voice synthesis
+  - Improved Piper client with Python API fallback to CLI
+  - Added SourceCitation model for rich frontend source display (URLs, guest info, chapters)
+  - Integrated voice support across all chat endpoints (GraphRAG, BM25, legacy)
 
 ## ✅ Recent Major Improvements (July 2025)
 

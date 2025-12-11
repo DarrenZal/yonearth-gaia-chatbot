@@ -74,7 +74,7 @@ class GaiaChat {
         // Voice state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
-        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'piper-kristin';
+        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'piper-gaia';
         this.currentAudio = null;
         this.audioQueue = [];
         

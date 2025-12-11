@@ -68,6 +68,13 @@ class PiperVoiceClient:
         Returns:
             Audio data as bytes or None if generation fails
         """
+        # Try Python API first (preferred method)
+        result = self.generate_speech_python_api(text, voice_settings, output_format)
+        if result:
+            return result
+
+        # Fall back to CLI if Python API fails
+        logger.info("Falling back to Piper CLI...")
         try:
             # Preprocess text
             processed_text = self.preprocess_text_for_speech(text)
@@ -80,8 +87,6 @@ class PiperVoiceClient:
 
             try:
                 # Use Piper CLI to generate speech
-                # Note: Piper can be used as a Python module or CLI
-                # Using CLI for simplicity and compatibility
                 process = subprocess.Popen(
                     ['piper', '--model', self.model_path, '--config', self.config_path, '--output_file', temp_path],
                     stdin=subprocess.PIPE,
@@ -93,14 +98,14 @@ class PiperVoiceClient:
                 stdout, stderr = process.communicate(input=processed_text)
 
                 if process.returncode != 0:
-                    logger.error(f"Piper generation failed: {stderr}")
+                    logger.error(f"Piper CLI generation failed: {stderr}")
                     return None
 
                 # Read the generated audio file
                 with open(temp_path, 'rb') as f:
                     audio_data = f.read()
 
-                logger.info(f"Generated audio: {len(audio_data)} bytes")
+                logger.info(f"Generated audio via CLI: {len(audio_data)} bytes")
                 return audio_data
 
             finally:
@@ -109,7 +114,7 @@ class PiperVoiceClient:
                     os.remove(temp_path)
 
         except Exception as e:
-            logger.error(f"Error generating speech: {str(e)}")
+            logger.error(f"Error generating speech via CLI: {str(e)}")
             return None
 
     def generate_speech_base64(
@@ -268,8 +273,11 @@ class PiperVoiceClient:
             # Handle AudioChunk objects if that's what's returned
             audio_samples = []
             for chunk in audio_generator:
-                if hasattr(chunk, 'audio'):
-                    # AudioChunk object
+                if hasattr(chunk, 'audio_int16_bytes'):
+                    # Piper 1.3.0+ AudioChunk object
+                    audio_samples.append(chunk.audio_int16_bytes)
+                elif hasattr(chunk, 'audio'):
+                    # Older Piper AudioChunk object
                     audio_samples.append(chunk.audio)
                 else:
                     # Raw bytes
@@ -290,8 +298,8 @@ class PiperVoiceClient:
             return audio_data
 
         except ImportError:
-            logger.warning("Piper Python API not available, falling back to CLI")
-            return self.generate_speech(text, voice_settings, output_format)
+            logger.warning("Piper Python API not available")
+            return None  # CLI fallback happens in generate_speech()
         except Exception as e:
             logger.error(f"Error generating speech with Python API: {str(e)}")
             return None

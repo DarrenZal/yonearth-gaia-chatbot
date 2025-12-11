@@ -18,12 +18,21 @@ class ChatRequest(BaseModel):
 
 
 class Citation(BaseModel):
-    """Citation information"""
-    episode_number: str
-    title: str
-    guest_name: str
-    url: str
-    relevance: str
+    """Citation information - flexible model that accepts various citation formats"""
+    # Core fields - made optional to accept different frontend formats
+    episode_number: Optional[str] = Field(None, description="Episode number or book identifier")
+    title: Optional[str] = Field(None, description="Episode or chapter title")
+    guest_name: Optional[str] = Field(None, description="Guest name or author")
+    url: Optional[str] = Field(None, description="Primary URL")
+    relevance: Optional[str] = Field(None, description="Relevance score or description")
+    # Additional fields from SourceCitation format
+    content_type: Optional[str] = Field(None, description="Content type: 'episode' or 'book'")
+    ebook_url: Optional[str] = Field(None, description="eBook URL for books")
+    audiobook_url: Optional[str] = Field(None, description="Audiobook URL for books")
+    print_url: Optional[str] = Field(None, description="Print book URL")
+
+    class Config:
+        extra = "allow"  # Allow any additional fields from frontend
 
 
 class CostDetail(BaseModel):

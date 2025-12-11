@@ -34,6 +34,18 @@ class RelationshipContext(BaseModel):
     weight: float = Field(1.0, description="Relationship weight/strength")
 
 
+class SourceCitation(BaseModel):
+    """Source citation formatted for frontend display"""
+    content_type: str = Field("episode", description="Content type: 'episode' or 'book'")
+    episode_number: Optional[str] = Field(None, description="Episode number or 'Book: Title' for books")
+    title: str = Field(..., description="Episode or chapter title")
+    guest_name: Optional[str] = Field(None, description="Guest name or author")
+    url: Optional[str] = Field(None, description="Primary URL (episode or ebook)")
+    ebook_url: Optional[str] = Field(None, description="eBook URL for books")
+    audiobook_url: Optional[str] = Field(None, description="Audiobook URL for books")
+    print_url: Optional[str] = Field(None, description="Print book URL")
+
+
 class GraphRAGChatRequest(BaseModel):
     """Request model for GraphRAG chat endpoint"""
     message: str = Field(..., description="User's message/question")
@@ -74,6 +86,15 @@ class GraphRAGChatRequest(BaseModel):
         description="Custom system prompt for Gaia",
         max_length=5000
     )
+    # Voice parameters
+    enable_voice: bool = Field(
+        default=False,
+        description="Enable text-to-speech voice generation for response"
+    )
+    voice_id: Optional[str] = Field(
+        None,
+        description="Voice ID to use for TTS (e.g., 'piper-kristin')"
+    )
 
 
 class GraphRAGChatResponse(BaseModel):
@@ -100,9 +121,19 @@ class GraphRAGChatResponse(BaseModel):
         default_factory=list,
         description="Book sources referenced"
     )
+    # Frontend-compatible sources format
+    sources: List[SourceCitation] = Field(
+        default_factory=list,
+        description="Formatted source citations for frontend display"
+    )
     processing_time: float = Field(..., description="Response time in seconds")
     success: bool = Field(True, description="Whether the request succeeded")
     error: Optional[str] = Field(None, description="Error message if failed")
+    # Voice response
+    audio_data: Optional[str] = Field(
+        None,
+        description="Base64-encoded audio data for TTS response"
+    )
 
 
 class GraphRAGCompareRequest(BaseModel):

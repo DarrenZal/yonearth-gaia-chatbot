@@ -6,9 +6,11 @@ Provides endpoints for:
 - Comparison between GraphRAG and BM25 systems
 - Health checks and community browsing
 """
+import json
 import logging
+import os
 import time
-from typing import Optional
+from typing import Optional, Dict, List
 
 from fastapi import APIRouter, HTTPException, Depends
 
@@ -23,14 +25,140 @@ from .graphrag_chat_models import (
     EntitySearchRequest,
     EntitySearchResponse,
     CommunityContext,
-    EntityContext
+    EntityContext,
+    SourceCitation
 )
 from ..rag.graphrag_chain import GraphRAGChain, get_graphrag_chain
 from ..rag.bm25_chain import BM25RAGChain
+from ..voice.piper_client import PiperVoiceClient
 
 logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/api/graphrag", tags=["GraphRAG Chat"])
+
+# Cache for episode and book metadata
+_episode_metadata_cache: Dict[int, Dict] = {}
+_book_metadata_cache: Dict[str, Dict] = {}
+
+
+def load_episode_metadata() -> Dict[int, Dict]:
+    """Load episode metadata from processed data."""
+    global _episode_metadata_cache
+    if _episode_metadata_cache:
+        return _episode_metadata_cache
+
+    try:
+        # Get base directory (where the repo root is)
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        metadata_path = os.path.join(base_dir, 'data/processed/episode_metadata.json')
+
+        if os.path.exists(metadata_path):
+            with open(metadata_path, 'r') as f:
+                data = json.load(f)
+                for ep in data.get('episodes', []):
+                    _episode_metadata_cache[ep['number']] = ep
+            logger.info(f"Loaded metadata for {len(_episode_metadata_cache)} episodes")
+    except Exception as e:
+        logger.error(f"Failed to load episode metadata: {e}")
+
+    return _episode_metadata_cache
+
+
+def load_book_metadata() -> Dict[str, Dict]:
+    """Load book metadata from data/books directories."""
+    global _book_metadata_cache
+    if _book_metadata_cache:
+        return _book_metadata_cache
+
+    try:
+        # Get base directory (where the repo root is)
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        books_dir = os.path.join(base_dir, 'data/books')
+
+        if os.path.exists(books_dir):
+            for book_name in os.listdir(books_dir):
+                book_path = os.path.join(books_dir, book_name)
+                metadata_path = os.path.join(book_path, 'metadata.json')
+                if os.path.isdir(book_path) and os.path.exists(metadata_path):
+                    with open(metadata_path, 'r') as f:
+                        metadata = json.load(f)
+                        # Key by various possible book IDs
+                        book_id = book_name.lower().replace(' ', '-').replace('_', '-')
+                        _book_metadata_cache[book_id] = metadata
+                        _book_metadata_cache[book_name] = metadata
+                        if metadata.get('title'):
+                            _book_metadata_cache[metadata['title'].lower()] = metadata
+            logger.info(f"Loaded metadata for {len(_book_metadata_cache)} books")
+    except Exception as e:
+        logger.error(f"Failed to load book metadata: {e}")
+
+    return _book_metadata_cache
+
+
+def transform_sources_for_frontend(
+    source_episodes: List[str],
+    source_books: List[str]
+) -> List[SourceCitation]:
+    """Transform source_episodes and source_books into frontend-compatible format."""
+    sources = []
+    episode_meta = load_episode_metadata()
+    book_meta = load_book_metadata()
+
+    # Process episodes
+    for ep_id in source_episodes:
+        try:
+            # Extract episode number from ID like "episode_120"
+            ep_num = int(ep_id.replace('episode_', ''))
+            meta = episode_meta.get(ep_num, {})
+
+            sources.append(SourceCitation(
+                content_type="episode",
+                episode_number=str(ep_num),
+                title=meta.get('title', f'Episode {ep_num}'),
+                guest_name=meta.get('guest'),
+                url=f"https://yonearth.org/episodes/episode-{ep_num}/"
+            ))
+        except (ValueError, AttributeError) as e:
+            logger.warning(f"Could not parse episode ID {ep_id}: {e}")
+
+    # Process books
+    for book_id in source_books:
+        try:
+            # Extract book name from ID like "book_soil-stewardship-handbook"
+            book_name = book_id.replace('book_', '').replace('-', ' ')
+
+            # Try to find metadata
+            meta = None
+            for key, value in book_meta.items():
+                if book_name.lower() in key.lower() or key.lower() in book_name.lower():
+                    meta = value
+                    break
+
+            if meta:
+                book_title = meta.get('title', book_name.title())
+                sources.append(SourceCitation(
+                    content_type="book",
+                    episode_number=f"Book: {book_title}",
+                    title=book_title,
+                    guest_name=meta.get('author'),
+                    url=meta.get('ebook_url') or meta.get('url'),
+                    ebook_url=meta.get('ebook_url'),
+                    audiobook_url=meta.get('audiobook_url'),
+                    print_url=meta.get('print_url')
+                ))
+            else:
+                # Fallback without metadata
+                sources.append(SourceCitation(
+                    content_type="book",
+                    episode_number=f"Book: {book_name.title()}",
+                    title=book_name.title(),
+                    guest_name=None,
+                    url=None
+                ))
+        except Exception as e:
+            logger.warning(f"Could not parse book ID {book_id}: {e}")
+
+    return sources
 
 # Lazy-loaded chain instances
 _graphrag_chain: Optional[GraphRAGChain] = None
@@ -85,6 +213,29 @@ async def graphrag_chat(request: GraphRAGChatRequest):
             custom_prompt=request.custom_prompt
         )
 
+        # Generate voice if requested
+        audio_data = None
+        if request.enable_voice:
+            try:
+                logger.info("Generating voice with Piper TTS (Gaia voice)")
+                voice_client = PiperVoiceClient(voice_name="en_US-kristin-medium")
+                # Preprocess response for better speech
+                speech_text = voice_client.preprocess_text_for_speech(result.get('response', ''))
+                audio_data = voice_client.generate_speech_base64(speech_text)
+                if audio_data:
+                    logger.info(f"Voice generated successfully: {len(audio_data)} bytes base64")
+                else:
+                    logger.warning("Voice generation returned None")
+            except Exception as voice_error:
+                logger.error(f"Voice generation failed: {voice_error}")
+                # Continue without voice rather than failing the entire request
+
+        # Transform sources for frontend (limit to top 3)
+        source_episodes = result.get('source_episodes', [])
+        source_books = result.get('source_books', [])
+        all_sources = transform_sources_for_frontend(source_episodes, source_books)
+        sources = all_sources[:3]  # Limit to top 3 references
+
         return GraphRAGChatResponse(
             response=result.get('response', ''),
             search_mode=result.get('search_mode', request.search_mode),
@@ -95,11 +246,13 @@ async def graphrag_chat(request: GraphRAGChatRequest):
                 EntityContext(**e) for e in result.get('entities_matched', [])
             ],
             relationships=result.get('relationships', []),
-            source_episodes=result.get('source_episodes', []),
-            source_books=result.get('source_books', []),
+            source_episodes=source_episodes,
+            source_books=source_books,
+            sources=sources,
             processing_time=result.get('processing_time', 0),
             success=result.get('success', True),
-            error=result.get('error')
+            error=result.get('error'),
+            audio_data=audio_data
         )
 
     except Exception as e:
