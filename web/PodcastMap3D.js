@@ -51,9 +51,10 @@ class PodcastMap3D {
         this.startAutoRotation();
     }
 
-    async loadData(clusterCount = 9) {
+    async loadData(clusterCount = null) {
         try {
-            const filename = `/data/processed/podcast_map_3d_umap_multi_cluster.json`;
+            // Use relative path for subpath deployments (e.g., /YonEarth/podcast/)
+            const filename = `../data/processed/podcast_map_3d_umap_multi_cluster.json`;
             const response = await fetch(filename, {
                 cache: 'no-store',  // Bypass cache
                 headers: {
@@ -68,12 +69,47 @@ class PodcastMap3D {
 
             const data = await response.json();
             this.rawData = data; // Store raw data
+
+            // Determine available cluster levels from data
+            this.availableClusterLevels = data.cluster_levels || [9, 18];
+
+            // Use provided clusterCount, or default_level from data, or first available level
+            if (clusterCount === null) {
+                clusterCount = data.default_level && this.availableClusterLevels.includes(data.default_level)
+                    ? data.default_level
+                    : this.availableClusterLevels[0];
+            }
+
+            // If requested level isn't available, use closest available
+            if (!this.availableClusterLevels.includes(clusterCount)) {
+                clusterCount = this.availableClusterLevels.reduce((prev, curr) =>
+                    Math.abs(curr - clusterCount) < Math.abs(prev - clusterCount) ? curr : prev
+                );
+                console.log(`Requested cluster level not available, using ${clusterCount}`);
+            }
+
+            this.currentClusterCount = clusterCount;
             this.data = this.transformDataFor3D(data, clusterCount);
-            console.log(`Loaded 3D UMAP map data (${clusterCount} clusters):`, this.data);
+            console.log(`Loaded 3D UMAP map data (${clusterCount} clusters, available: ${this.availableClusterLevels}):`, this.data);
+
+            // Update slider to match available levels
+            this.updateClusterSlider();
         } catch (error) {
             console.error('Error loading map data:', error);
             // Use dummy data for testing
             this.data = this.generateDummy3DData();
+        }
+    }
+
+    updateClusterSlider() {
+        const slider = document.getElementById('cluster-slider');
+        const display = document.getElementById('cluster-count');
+        if (slider && this.availableClusterLevels && this.availableClusterLevels.length >= 2) {
+            slider.min = this.availableClusterLevels[0];
+            slider.max = this.availableClusterLevels[this.availableClusterLevels.length - 1];
+            slider.step = this.availableClusterLevels[1] - this.availableClusterLevels[0];
+            slider.value = this.currentClusterCount;
+            if (display) display.textContent = this.currentClusterCount;
         }
     }
 
