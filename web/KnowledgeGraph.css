@@ -346,6 +346,16 @@ body {
     stroke-width: 4px;
 }
 
+/* Connected nodes (neighbors of highlighted) */
+.node.connected {
+    opacity: 0.8;
+}
+
+.node.connected circle {
+    stroke: #90caf9;
+    stroke-width: 2px;
+}
+
 .node.dimmed {
     opacity: 0.2;
 }
@@ -368,6 +378,13 @@ body {
     stroke: #667eea;
     stroke-opacity: 0.8;
     stroke-width: 2px;
+}
+
+/* Connected links (from highlighted to neighbors) */
+.link.connected {
+    stroke: #90caf9;
+    stroke-opacity: 0.5;
+    stroke-width: 1.5px;
 }
 
 .link.dimmed {

@@ -68,13 +68,14 @@ class YonEarthRAGChain:
             self.initialize()
     
     def query(
-        self, 
+        self,
         user_input: str,
         k: int = 5,
         session_id: Optional[str] = None,
         personality_variant: Optional[str] = None,
         custom_prompt: Optional[str] = None,
-        model_name: Optional[str] = None
+        model_name: Optional[str] = None,
+        mentioned_episodes: List[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """Process a user query through the complete RAG pipeline"""
         self.ensure_initialized()
@@ -108,7 +109,8 @@ class YonEarthRAGChain:
                 user_input=user_input,
                 retrieved_docs=docs,
                 session_id=session_id,
-                custom_prompt=custom_prompt
+                custom_prompt=custom_prompt,
+                mentioned_episodes=mentioned_episodes
             )
             
             # Step 4: Add retrieval metadata

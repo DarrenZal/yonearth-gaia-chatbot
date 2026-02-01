@@ -756,6 +756,18 @@ class PodcastMap3D {
                 }
             });
         }
+
+        // Play from start button
+        const playFromStartBtn = document.getElementById('play-from-start');
+        if (playFromStartBtn) {
+            playFromStartBtn.addEventListener('click', () => {
+                if (this.audioPlayer && this.selectedEpisode) {
+                    this.audioPlayer.currentTime = 0;
+                    this.audioPlayer.play();
+                    console.log('Playing from start (0:00)');
+                }
+            });
+        }
     }
 
     focusOnEpisode(episodeId) {

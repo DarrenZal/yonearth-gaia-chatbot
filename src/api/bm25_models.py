@@ -23,20 +23,20 @@ class BM25ChatRequest(BaseModel):
     """Request model for BM25 chat endpoint"""
     message: str = Field(..., description="User's message/question")
     search_method: Literal["auto", "bm25", "semantic", "hybrid"] = Field(
-        default="auto", 
+        default="auto",
         description="Search method to use"
     )
     k: int = Field(default=5, ge=1, le=20, description="Number of documents to retrieve")
     include_sources: bool = Field(default=True, description="Include source citations")
     gaia_personality: Optional[str] = Field(
-        default="warm_mother", 
+        default="warm_mother",
         description="Gaia personality variant"
     )
     custom_prompt: Optional[str] = Field(None, description="Custom system prompt for Gaia (when personality is 'custom')", max_length=5000)
     temperature: Optional[float] = Field(
-        default=0.7, 
-        ge=0.0, 
-        le=2.0, 
+        default=0.7,
+        ge=0.0,
+        le=2.0,
         description="Response creativity level"
     )
     category_threshold: Optional[float] = Field(
@@ -47,6 +47,10 @@ class BM25ChatRequest(BaseModel):
     )
     enable_voice: bool = Field(False, description="Enable voice generation for the response")
     voice_id: Optional[str] = Field(None, description="ElevenLabs voice ID to use for speech generation")
+    mentioned_episodes: Optional[List[Dict[str, Any]]] = Field(
+        default=None,
+        description="Episodes mentioned in previous conversation turns (for follow-up context)"
+    )
 
 
 class BM25Source(BaseModel):

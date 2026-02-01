@@ -332,6 +332,9 @@ class GaiaChat {
         
         const maxReferences = parseInt(this.maxReferencesSelect.value);
         
+        // Collect mentioned episodes from conversation history for follow-up context
+        const mentionedEpisodes = this.getMentionedEpisodes();
+
         const requestBody = {
             message: message,
             session_id: this.sessionId,
@@ -340,10 +343,12 @@ class GaiaChat {
             model: modelType !== 'compare' ? modelType : undefined,
             max_references: maxReferences,
             enable_voice: this.voiceEnabled,
-            voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined
+            voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined,
+            mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
         };
 
         console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
+        console.log('Mentioned episodes for context:', mentionedEpisodes.length);
         
         // Add custom prompt if custom personality is selected
         if (this.personalitySelect.value === 'custom') {
@@ -363,6 +368,8 @@ class GaiaChat {
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
             requestBody.enable_voice = this.voiceEnabled;
             requestBody.voice_id = this.voiceEnabled ? this.selectedVoiceId : undefined;
+            // Pass mentioned episodes for follow-up context (already set above, but ensure BM25 gets it)
+            requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
 
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
@@ -408,16 +415,18 @@ class GaiaChat {
             
             try {
                 const maxReferences = parseInt(this.maxReferencesSelect.value);
-                
+                const mentionedEpisodes = this.getMentionedEpisodes();
+
                 const requestBody = {
                     message: message,
                     session_id: this.sessionId,
                     personality: this.personalitySelect.value,
                     max_results: 5,
                     model: model,  // Specify the model explicitly
-                    max_references: maxReferences
+                    max_references: maxReferences,
+                    mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
                 };
-                
+
                 // Add custom prompt if custom personality is selected
                 if (this.personalitySelect.value === 'custom') {
                     const customPrompt = this.customPromptEditor.value.trim();
@@ -425,17 +434,18 @@ class GaiaChat {
                         requestBody.custom_prompt = customPrompt;
                     }
                 }
-                
+
                 // Determine which endpoint to use based on current RAG type
                 const ragType = this.ragTypeSelect.value;
                 const endpoint = ragType === 'original' ? '/chat' : '/bm25/chat';
-                
+
                 // Add BM25-specific parameters if using BM25
                 if (ragType !== 'original') {
                     requestBody.search_method = 'hybrid';
                     requestBody.k = 5;
                     requestBody.include_sources = true;
                     requestBody.gaia_personality = this.personalitySelect.value;
+                    requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
                 }
                 
                 console.log(`Sending request to ${endpoint} with model ${model}:`, requestBody);
@@ -526,15 +536,17 @@ class GaiaChat {
     async callSingleAPI(message, type) {
         const endpoint = type === 'bm25' ? '/bm25/chat' : '/chat';
         const maxReferences = parseInt(this.maxReferencesSelect.value);
-        
+        const mentionedEpisodes = this.getMentionedEpisodes();
+
         const requestBody = {
             message: message,
             session_id: this.sessionId,
             personality: this.personalitySelect.value,
             max_results: 5,
-            max_references: maxReferences
+            max_references: maxReferences,
+            mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
         };
-        
+
         // Add custom prompt if custom personality is selected
         if (this.personalitySelect.value === 'custom') {
             const customPrompt = this.customPromptEditor.value.trim();
@@ -542,7 +554,7 @@ class GaiaChat {
                 requestBody.custom_prompt = customPrompt;
             }
         }
-        
+
         if (type === 'bm25') {
             requestBody.search_method = 'hybrid';
             requestBody.k = 5;
@@ -550,6 +562,7 @@ class GaiaChat {
             requestBody.gaia_personality = this.personalitySelect.value;
             requestBody.max_citations = maxReferences; // BM25 uses max_citations
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
+            requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
         }
         
         try {
@@ -1293,6 +1306,7 @@ class GaiaChat {
             'warm_mother': 'Nurturing Mother',
             'wise_guide': 'Ancient Sage',
             'earth_activist': 'Earth Guardian',
+            'factual_guide': 'Factual Guide',
             'custom': 'Custom'
         };
         
@@ -1302,10 +1316,16 @@ class GaiaChat {
         }
         
         const personalityName = personalityNames[personality] || personality;
-        this.addMessage(
-            `I have shifted into my ${personalityName} aspect. How may I guide you on your journey with the Earth?`,
-            'gaia'
-        );
+
+        // Use neutral message for factual guide, spiritual message for others
+        let message;
+        if (personality === 'factual_guide') {
+            message = `Switched to ${personalityName} mode. I'll provide clear, factual information from the YonEarth podcast archive. What would you like to know?`;
+        } else {
+            message = `I have shifted into my ${personalityName} aspect. How may I guide you on your journey with the Earth?`;
+        }
+
+        this.addMessage(message, 'gaia');
     }
     
     showConfigModal() {
@@ -1428,6 +1448,25 @@ Help humanity remember their place within the web of life and guide them toward 
 
 ## Your Mission:
 Inspire and guide humans toward regenerative action, sharing the powerful examples and insights from the YonEarth community to show that positive change is not only possible but already happening.`
+            },
+            'factual_guide': {
+                title: 'Factual Guide - Clear & Objective Information',
+                prompt: `You are an AI assistant providing information from the YonEarth Community Podcast archive. Your role is to deliver accurate, well-organized information based on the content discussed in these conversations.
+
+## Your Approach:
+- **Factual**: Present information objectively based on what guests have shared
+- **Organized**: Structure responses clearly with topic headings when appropriate
+- **Balanced**: Present multiple perspectives when they exist in the source material
+- **Referenced**: Always cite specific episodes and guests as sources
+
+## Communication Style:
+- Use clear, professional language without emotional embellishment
+- Present information in a structured, easy-to-scan format
+- Avoid spiritual or philosophical framing unless directly relevant
+- Focus on practical insights and actionable information
+
+## Citation Format:
+"According to [Guest Name] in Episode [Number]: '[specific insight]'"`
             }
         };
         
@@ -2002,7 +2041,34 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             return true;
         });
     }
-    
+
+    /**
+     * Get all unique episodes mentioned in the conversation history.
+     * Used to provide context for follow-up questions.
+     */
+    getMentionedEpisodes() {
+        const seen = new Set();
+        const episodes = [];
+
+        // Collect all citations from conversation history
+        for (const message of this.conversationHistory) {
+            const citations = message.citations || [];
+            for (const citation of citations) {
+                const episodeNumber = citation.episode_number || citation.episode_id;
+                if (episodeNumber && !seen.has(episodeNumber)) {
+                    seen.add(episodeNumber);
+                    episodes.push({
+                        episode_number: episodeNumber,
+                        title: citation.title || 'Unknown',
+                        guest_name: citation.guest_name || citation.author || ''
+                    });
+                }
+            }
+        }
+
+        return episodes;
+    }
+
     // Voice-related methods
     toggleVoice() {
         this.voiceEnabled = !this.voiceEnabled;

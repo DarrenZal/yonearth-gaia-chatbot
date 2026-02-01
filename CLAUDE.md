@@ -2,6 +2,20 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 📋 Project Context
+
+**Project Name**: Ecoscene (formerly YonEarth)
+
+This is the codebase for Aaron Perry's Ecoscene platform - a global digital platform building agentic AI guides and connectivity infrastructure for the regenerative movement.
+
+**Project Notes & Meeting History**: `/Users/darrenzal/Documents/Notes/Projects/Ecoscene.md`
+
+The Obsidian vault contains:
+- Project overview and key team members
+- Meeting notes with Aaron Perry (dataview table in project file)
+- Action items, decisions, and next steps from all meetings
+- Related transcripts in `Transcripts/` folder
+
 ## 📂 Repository Structure
 
 **For complete file-by-file documentation**, see **[REPO_STRUCTURE.md](REPO_STRUCTURE.md)**
@@ -20,6 +34,27 @@ This comprehensive guide describes every file in the repository, what it does, a
 - **Archived Scripts**: `scripts/archive/` (43 historical scripts organized by category)
 
 ## Development Commands
+
+### Server Access (SSH)
+
+SSH key-based authentication is configured for passwordless login:
+
+```bash
+# Connect to the production server
+ssh claudeuser@152.53.194.214
+
+# Run a single command on the server
+ssh claudeuser@152.53.194.214 "command here"
+
+# Example: Check API service status
+ssh claudeuser@152.53.194.214 "sudo systemctl status yonearth-api"
+```
+
+**Server Details:**
+- **Host**: `152.53.194.214`
+- **User**: `claudeuser`
+- **Auth**: RSA key (`~/.ssh/id_rsa`) - no password required
+- **Sudo access**: Available for system commands
 
 ### Local Development
 ```bash

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat with Gaia - YonEarth Community</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tutorial.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -38,6 +39,7 @@
                     <option value="warm_mother">Nurturing Mother</option>
                     <option value="wise_guide">Ancient Sage</option>
                     <option value="earth_activist">Earth Guardian</option>
+                    <option value="factual_guide">Factual Guide</option>
                     <option value="custom">Custom</option>
                 </select>
                 <a href="#" id="personalityDetails" class="details-link">details</a>
@@ -146,6 +148,12 @@
                     </label>
                 </div>
             </div>
+
+            <!-- Split View Toggle -->
+            <button id="splitViewToggle" class="split-view-toggle" title="Show Knowledge Graph alongside chat">
+                <span class="toggle-icon">🕸️</span>
+                <span id="splitViewText">Show Knowledge Graph</span>
+            </button>
         </header>
 
         <!-- Chat Container -->
@@ -225,6 +233,31 @@
         </div>
     </div>
 
+    <!-- Split View Container (hidden by default, activated by toggle) -->
+    <div id="splitViewContainer" class="split-view-container" style="display: none;">
+        <div class="chat-panel" id="splitChatPanel">
+            <!-- Chat content will be moved here when split view is active -->
+        </div>
+        <div class="kg-panel" id="splitKgPanel">
+            <div class="kg-panel-header">
+                <h3><span>🕸️</span> Knowledge Graph</h3>
+                <button class="kg-panel-close" onclick="toggleSplitView()">Close</button>
+            </div>
+            <iframe id="kgIframe" src="KnowledgeGraph.html" title="Knowledge Graph"></iframe>
+        </div>
+    </div>
+
     <script src="chat.js?v=2.6"></script>
+    <script src="chat-kg-bridge.js?v=1.0"></script>
+    <script src="tutorial.js"></script>
+    <script>
+        // Initialize tutorial after page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Short delay to let chat.js initialize first
+            setTimeout(() => {
+                Tutorial.init('chat');
+            }, 500);
+        });
+    </script>
 </body>
 </html>

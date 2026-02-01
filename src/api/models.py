@@ -15,6 +15,10 @@ class ChatRequest(BaseModel):
     model: Optional[str] = Field(None, description="OpenAI model to use for response generation")
     enable_voice: bool = Field(False, description="Enable voice generation for the response")
     voice_id: Optional[str] = Field(None, description="ElevenLabs voice ID to use for speech generation")
+    mentioned_episodes: Optional[List[Dict[str, Any]]] = Field(
+        default=None,
+        description="Episodes mentioned in previous conversation turns (for follow-up context)"
+    )
 
 
 class Citation(BaseModel):

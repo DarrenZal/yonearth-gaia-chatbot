@@ -119,15 +119,18 @@ class ElevenLabsVoiceClient:
     def preprocess_text_for_speech(self, text: str) -> str:
         """
         Preprocess text for better speech generation
-        
+
         Args:
             text: Original text
-            
+
         Returns:
             Preprocessed text
         """
         import re
-        
+
+        # Pronunciation fixes
+        text = re.sub(r'yonearth', 'Y on Earth', text, flags=re.IGNORECASE)
+
         # Remove markdown formatting
         text = re.sub(r'\*\*(.*?)\*\*', r'\1', text)  # Bold
         text = re.sub(r'\*(.*?)\*', r'\1', text)      # Italic

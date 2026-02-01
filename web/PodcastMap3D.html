@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Podcast Map 3D</title>
-    <link rel="stylesheet" href="PodcastMap3D.css?v=35">
+    <link rel="stylesheet" href="PodcastMap3D.css?v=36">
+    <link rel="stylesheet" href="tutorial.css">
 </head>
 <body>
     <div id="podcast-map-3d-container">
@@ -82,6 +83,7 @@
                     <p id="current-chunk-text"></p>
                 </div>
                 <div class="audio-controls">
+                    <button id="play-from-start" class="play-from-start-btn">Play from start (0:00)</button>
                     <audio id="audio-element" controls></audio>
                     <div class="playback-controls">
                         <div class="time-display">
@@ -106,7 +108,7 @@
 
         <!-- Controls hint -->
         <div class="controls-hint">
-            <p>🖱️ Drag to rotate • Scroll to zoom • Click node to play</p>
+            <p>Drag to rotate | Scroll to zoom | Click node to play from that moment | Use dropdown for full episode</p>
         </div>
     </div>
 
@@ -115,6 +117,16 @@
     <!-- Load 3D Force Graph library (includes Three.js) -->
     <script src="https://unpkg.com/3d-force-graph"></script>
     <!-- Load our 3D visualization script -->
-    <script src="PodcastMap3D.js?v=33"></script>
+    <script src="PodcastMap3D.js?v=34"></script>
+    <script src="tutorial.js"></script>
+    <script>
+        // Initialize tutorial after 3D graph loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for 3D graph to initialize
+            setTimeout(() => {
+                Tutorial.init('podcastmap');
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

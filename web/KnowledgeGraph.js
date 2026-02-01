@@ -459,13 +459,175 @@ class KnowledgeGraphVisualization {
             });
     }
 
+    /**
+     * Highlight multiple entities by name/alias
+     * Used by chat-kg-bridge.js to highlight entities mentioned in chat responses
+     * @param {string[]} entityNames - Array of entity names to highlight
+     * @returns {string[]} - Array of matched entity names (for feedback to user)
+     */
+    highlightEntities(entityNames) {
+        if (!entityNames || entityNames.length === 0) {
+            this.clearHighlight();
+            return [];
+        }
+
+        // Normalize search terms
+        const searchTerms = entityNames.map(name => name.toLowerCase().trim());
+
+        // Track which nodes we match
+        const matchedNodes = new Set();
+        const matchedNames = [];
+
+        // Find matching nodes by name or alias
+        this.data.nodes.forEach(node => {
+            const nodeName = node.name.toLowerCase();
+            const nodeId = node.id.toLowerCase();
+            const aliases = (node.aliases || []).map(a => a.toLowerCase());
+
+            for (const term of searchTerms) {
+                // Check exact match on name
+                if (nodeName === term || nodeId === term) {
+                    matchedNodes.add(node.id);
+                    matchedNames.push(node.name);
+                    break;
+                }
+
+                // Check alias match
+                if (aliases.some(alias => alias === term)) {
+                    matchedNodes.add(node.id);
+                    matchedNames.push(node.name);
+                    break;
+                }
+
+                // Check partial match (for multi-word entities)
+                if (nodeName.includes(term) || term.includes(nodeName)) {
+                    matchedNodes.add(node.id);
+                    matchedNames.push(node.name);
+                    break;
+                }
+            }
+        });
+
+        if (matchedNodes.size === 0) {
+            console.log('highlightEntities: No matches found for', entityNames);
+            return [];
+        }
+
+        console.log('highlightEntities: Matched', matchedNames);
+
+        // Get all connected node IDs for the matched nodes
+        const connectedIds = new Set(matchedNodes);
+        this.data.links.forEach(link => {
+            const sourceId = link.source.id || link.source;
+            const targetId = link.target.id || link.target;
+
+            if (matchedNodes.has(sourceId)) connectedIds.add(targetId);
+            if (matchedNodes.has(targetId)) connectedIds.add(sourceId);
+        });
+
+        // Apply multi-highlight visual style
+        this.nodes
+            .classed('highlighted', node => matchedNodes.has(node.id))
+            .classed('connected', node => connectedIds.has(node.id) && !matchedNodes.has(node.id))
+            .classed('dimmed', node => !connectedIds.has(node.id));
+
+        // Add glow effect to highlighted nodes
+        this.nodes.selectAll('circle')
+            .style('filter', node => matchedNodes.has(node.id) ? 'drop-shadow(0 0 8px #667eea) drop-shadow(0 0 12px #764ba2)' : null)
+            .style('stroke', node => matchedNodes.has(node.id) ? '#667eea' : null)
+            .style('stroke-width', node => matchedNodes.has(node.id) ? '3px' : null);
+
+        // Highlight links between matched nodes
+        this.links
+            .classed('highlighted', link => {
+                const sourceId = link.source.id || link.source;
+                const targetId = link.target.id || link.target;
+                return matchedNodes.has(sourceId) && matchedNodes.has(targetId);
+            })
+            .classed('connected', link => {
+                const sourceId = link.source.id || link.source;
+                const targetId = link.target.id || link.target;
+                return (matchedNodes.has(sourceId) || matchedNodes.has(targetId)) &&
+                       !(matchedNodes.has(sourceId) && matchedNodes.has(targetId));
+            })
+            .classed('dimmed', link => {
+                const sourceId = link.source.id || link.source;
+                const targetId = link.target.id || link.target;
+                return !connectedIds.has(sourceId) || !connectedIds.has(targetId);
+            });
+
+        // Pan/zoom to show highlighted nodes (optional, only if more than one match)
+        if (matchedNodes.size > 0 && matchedNodes.size <= 5) {
+            this.focusOnNodes(Array.from(matchedNodes));
+        }
+
+        return matchedNames;
+    }
+
+    /**
+     * Focus/zoom the view to show a set of nodes
+     * @param {string[]} nodeIds - Array of node IDs to focus on
+     */
+    focusOnNodes(nodeIds) {
+        // Find the matching node data
+        const matchingNodes = this.data.nodes.filter(n => nodeIds.includes(n.id));
+
+        if (matchingNodes.length === 0) return;
+
+        // Calculate bounding box of all matched nodes
+        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+        matchingNodes.forEach(node => {
+            if (node.x !== undefined && node.y !== undefined) {
+                minX = Math.min(minX, node.x);
+                maxX = Math.max(maxX, node.x);
+                minY = Math.min(minY, node.y);
+                maxY = Math.max(maxY, node.y);
+            }
+        });
+
+        // If we couldn't find positions, skip zooming
+        if (!isFinite(minX)) return;
+
+        // Calculate center and scale
+        const centerX = (minX + maxX) / 2;
+        const centerY = (minY + maxY) / 2;
+        const padding = 100;
+        const boxWidth = Math.max(maxX - minX + padding * 2, 200);
+        const boxHeight = Math.max(maxY - minY + padding * 2, 200);
+
+        const scale = Math.min(
+            this.width / boxWidth,
+            this.height / boxHeight,
+            2 // Max zoom level
+        );
+
+        const x = this.width / 2 - centerX * scale;
+        const y = this.height / 2 - centerY * scale;
+
+        // Animate to the new view
+        this.svg.transition()
+            .duration(750)
+            .call(
+                this.zoom.transform,
+                d3.zoomIdentity.translate(x, y).scale(scale)
+            );
+    }
+
     clearHighlight() {
         this.nodes
             .classed('highlighted', false)
+            .classed('connected', false)
             .classed('dimmed', false);
+
+        // Clear glow effects
+        this.nodes.selectAll('circle')
+            .style('filter', null)
+            .style('stroke', null)
+            .style('stroke-width', null);
 
         this.links
             .classed('highlighted', false)
+            .classed('connected', false)
             .classed('dimmed', false);
     }
 
@@ -584,7 +746,7 @@ class KnowledgeGraphVisualization {
 
     closeDetails() {
         const detailsContent = d3.select('#details-content');
-        detailsContent.html('<p class="empty-state">Select an entity to view details</p>');
+        detailsContent.html('<p class="empty-state">Click a node to view details</p>');
     }
 
     createLegend() {
@@ -673,7 +835,7 @@ class KnowledgeGraphVisualization {
         const stats = d3.select('#stats-display');
         stats.html(`
             <div class="stat-item">
-                <span class="stat-label">Visible Nodes:</span>
+                <span class="stat-label">Visible:</span>
                 <span class="stat-value">${filteredData.nodes.length}${hitLimit ? ' (limited)' : ''}</span>
             </div>
             ${hitLimit ? `
@@ -682,15 +844,15 @@ class KnowledgeGraphVisualization {
                 </div>
             ` : ''}
             <div class="stat-item">
-                <span class="stat-label">Visible Links:</span>
+                <span class="stat-label">Connections:</span>
                 <span class="stat-value">${filteredData.links.length}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Total Entities:</span>
+                <span class="stat-label">Total Topics & People:</span>
                 <span class="stat-value">${this.data.nodes.length.toLocaleString()}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Communities:</span>
+                <span class="stat-label">Topic Groups:</span>
                 <span class="stat-value">${this.data.statistics.total_communities}</span>
             </div>
         `);
@@ -868,5 +1030,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 searchEntities();
             }
         });
+    }
+
+    // Listen for highlight messages from parent window (when embedded in iframe)
+    window.addEventListener('message', (event) => {
+        if (!event.data || !event.data.type) return;
+
+        switch (event.data.type) {
+            case 'highlightEntities':
+                if (vizInstance && event.data.entities) {
+                    const matched = vizInstance.highlightEntities(event.data.entities);
+                    // Send back the result
+                    if (event.source) {
+                        event.source.postMessage({
+                            type: 'highlightResult',
+                            matched: matched,
+                            requested: event.data.entities
+                        }, '*');
+                    }
+                }
+                break;
+
+            case 'clearHighlights':
+                if (vizInstance) {
+                    vizInstance.clearHighlight();
+                }
+                break;
+        }
+    });
+
+    // Notify parent window that KG is ready
+    if (window.parent !== window) {
+        window.parent.postMessage({ type: 'kgReady' }, '*');
+    }
+
+    // Also listen on BroadcastChannel for cross-frame communication
+    try {
+        const channel = new BroadcastChannel('chat-kg-sync');
+        channel.onmessage = (event) => {
+            if (!event.data || !event.data.type) return;
+
+            if (event.data.type === 'highlight' || event.data.type === 'highlightEntities') {
+                const entities = event.data.entities || event.data.nodeIds;
+                if (vizInstance && entities) {
+                    vizInstance.highlightEntities(entities);
+                }
+            } else if (event.data.type === 'clear-highlights' || event.data.type === 'clearHighlights') {
+                if (vizInstance) {
+                    vizInstance.clearHighlight();
+                }
+            }
+        };
+    } catch (e) {
+        console.log('BroadcastChannel not supported');
     }
 });

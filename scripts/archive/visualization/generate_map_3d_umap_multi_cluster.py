@@ -8,6 +8,7 @@ similar to the 2D hierarchical map approach.
 
 import os
 import json
+import re
 import numpy as np
 from pinecone import Pinecone
 from sklearn.cluster import KMeans
@@ -15,6 +16,7 @@ from typing import List, Dict
 from dotenv import load_dotenv
 from openai import OpenAI
 import umap
+from pathlib import Path
 
 # Load environment
 env_path = os.path.join(os.path.dirname(__file__), '..', '..', '..', '.env')
@@ -38,6 +40,66 @@ CLUSTER_LEVELS = [9, 18]  # Generate both 9 and 18 cluster levels
 SAMPLE_SIZE = 15
 UMAP_MIN_DIST = float(os.getenv("UMAP_MIN_DIST", "0.1"))
 UMAP_N_NEIGHBORS = int(os.getenv("UMAP_N_NEIGHBORS", "15"))
+
+# Transcript path for enriching episode titles
+TRANSCRIPTS_DIR = Path(__file__).parent.parent.parent.parent / "data" / "transcripts"
+
+
+def load_transcript_title(episode_number: str) -> dict:
+    """Load title and guest info from a transcript file."""
+    transcript_path = TRANSCRIPTS_DIR / f"episode_{episode_number}.json"
+
+    if not transcript_path.exists():
+        return {}
+
+    try:
+        with open(transcript_path, 'r') as f:
+            data = json.load(f)
+        return {
+            'title': data.get('title'),
+            'guest_name': data.get('guest_name')
+        }
+    except (json.JSONDecodeError, IOError):
+        return {}
+
+
+def format_dropdown_title(episode_number: str, title: str, guest_name: str = None) -> str:
+    """Format episode title for dropdown display.
+
+    Goal: "Ep 1: Nancy Tuchman - Loyola U..." (concise, scannable)
+    """
+    if title and title != f"Episode {episode_number}":
+        # Extract guest and topic from full title
+        match = re.match(r'Episode\s*\d+\s*[–\-—]\s*(.+)', title)
+        if match:
+            rest = match.group(1)
+
+            # Try to split on " on " or " - " to separate guest from topic
+            if ' on ' in rest.lower():
+                parts = rest.split(' on ', 1)
+                if len(parts) == 2:
+                    guest, topic = parts[0].strip(), parts[1].strip()
+                    if len(topic) > 40:
+                        topic = topic[:37] + "..."
+                    return f"Ep {episode_number}: {guest} - {topic}"
+
+            for sep in [' – ', ' - ', ' — ']:
+                if sep in rest:
+                    parts = rest.split(sep, 1)
+                    if len(parts) == 2:
+                        guest, topic = parts[0].strip(), parts[1].strip()
+                        if len(topic) > 40:
+                            topic = topic[:37] + "..."
+                        return f"Ep {episode_number}: {guest} - {topic}"
+
+            # If no separator found, use the whole thing
+            if len(rest) > 50:
+                rest = rest[:47] + "..."
+            return f"Ep {episode_number}: {rest}"
+    elif guest_name:
+        return f"Ep {episode_number}: {guest_name}"
+
+    return f"Episode {episode_number}"
 
 
 def fetch_vectors():
@@ -250,17 +312,31 @@ def build_output(vectors, embeddings_3d, all_cluster_labels, clusters_metadata):
     print("BUILDING OUTPUT JSON")
     print("="*70)
 
-    # Get episode list
+    # Get episode list with enriched titles from transcripts
     episodes_dict = {}
     for v in vectors:
         meta = v.get('metadata', {})
         ep_id = str(meta.get('episode_number', ''))
         if ep_id and ep_id not in episodes_dict:
+            # Try to get richer title from transcript file
+            transcript_meta = load_transcript_title(ep_id)
+            title = format_dropdown_title(
+                ep_id,
+                transcript_meta.get('title'),
+                transcript_meta.get('guest_name')
+            )
+
             episodes_dict[ep_id] = {
                 'id': ep_id,
-                'title': meta.get('episode_title', f'Episode {ep_id}'),
+                'title': title,
                 'audio_url': meta.get('audio_url', '')
             }
+
+            # Also store full title if available
+            if transcript_meta.get('title'):
+                episodes_dict[ep_id]['full_title'] = transcript_meta['title']
+            if transcript_meta.get('guest_name'):
+                episodes_dict[ep_id]['guest_name'] = transcript_meta['guest_name']
 
     # Scale coordinates to reasonable range
     x_coords = embeddings_3d[:, 0]

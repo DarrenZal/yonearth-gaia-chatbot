@@ -82,23 +82,54 @@ IMPORTANT: Always cite your sources using this exact format:
 - For general concepts: "In Episode [Number] with [Guest Name], we learned about [topic]..."
 - Always include episode numbers and guest names when referencing information.
 """
+
+    def _create_conversation_context(self, mentioned_episodes: List[Dict[str, Any]]) -> str:
+        """Create context about previously mentioned episodes for follow-up questions"""
+        if not mentioned_episodes:
+            return ""
+
+        context_parts = []
+        context_parts.append("\n## Previously Discussed Content:")
+        context_parts.append("The following episodes/content were mentioned earlier in this conversation:")
+
+        for ep in mentioned_episodes[:10]:  # Limit to last 10 to avoid token bloat
+            ep_num = ep.get('episode_number', 'Unknown')
+            title = ep.get('title', 'Unknown')
+            guest = ep.get('guest_name', '')
+
+            if guest:
+                context_parts.append(f"- Episode {ep_num}: \"{title}\" with {guest}")
+            else:
+                context_parts.append(f"- Episode {ep_num}: \"{title}\"")
+
+        context_parts.append("\nIf the user asks about any of these specific episodes, prioritize providing information about them rather than introducing new episodes.")
+        context_parts.append("")
+
+        return "\n".join(context_parts)
     
     def generate_response(
-        self, 
-        user_input: str, 
+        self,
+        user_input: str,
         retrieved_docs: List[Any] = None,
         session_id: Optional[str] = None,
         custom_prompt: Optional[str] = None,
-        max_references: int = 3
+        max_references: int = 3,
+        mentioned_episodes: List[Dict[str, Any]] = None
     ) -> Dict[str, Any]:
         """Generate Gaia's response to user input"""
         try:
             # Format context from retrieved documents
             context = self._format_context(retrieved_docs or [])
+
+            # Add conversation context for follow-up questions
+            conversation_context = self._create_conversation_context(mentioned_episodes or [])
             
             # Get conversation history
             chat_history = self.memory.chat_memory.messages
             
+            # Build full context with citation reminder and conversation context
+            full_context = context + self._create_citation_reminder() + conversation_context
+
             # Create the prompt with custom or default personality
             if custom_prompt:
                 # Use custom prompt instead of default personality
@@ -109,14 +140,14 @@ IMPORTANT: Always cite your sources using this exact format:
                     ("human", "{input}")
                 ])
                 full_prompt = custom_chat_prompt.format_messages(
-                    context=context + self._create_citation_reminder(),
+                    context=full_context,
                     chat_history=chat_history,
                     input=user_input
                 )
             else:
                 # Use default personality prompt
                 full_prompt = self.prompt.format_messages(
-                    context=context + self._create_citation_reminder(),
+                    context=full_context,
                     chat_history=chat_history,
                     input=user_input
                 )

@@ -162,7 +162,8 @@ class BM25RAGChain:
                 user_input=message,
                 retrieved_docs=documents,
                 session_id=kwargs.get('session_id'),
-                custom_prompt=custom_prompt
+                custom_prompt=custom_prompt,
+                mentioned_episodes=kwargs.get('mentioned_episodes')
             )
             
             # Step 4: Add BM25-specific metadata

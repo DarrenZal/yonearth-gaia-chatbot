@@ -178,7 +178,8 @@ async def chat_with_gaia(
             session_id=chat_request.session_id,
             personality_variant=chat_request.personality,
             custom_prompt=chat_request.custom_prompt,
-            model_name=chat_request.model
+            model_name=chat_request.model,
+            mentioned_episodes=chat_request.mentioned_episodes
         )
         
         # Convert citations to response model
