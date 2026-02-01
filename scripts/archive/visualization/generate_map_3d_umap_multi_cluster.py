@@ -12,6 +12,7 @@ import re
 import numpy as np
 from pinecone import Pinecone
 from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
 from typing import List, Dict
 from dotenv import load_dotenv
 from openai import OpenAI
@@ -36,10 +37,11 @@ print(f"✓ Environment loaded")
 
 # Parameters
 MAX_VECTORS = int(os.getenv("MAX_VECTORS", "6000"))
-CLUSTER_LEVELS = [9, 18]  # Generate both 9 and 18 cluster levels
+CLUSTER_LEVELS = [9, 18]  # Default cluster levels (may be overridden by optimal K analysis)
 SAMPLE_SIZE = 15
 UMAP_MIN_DIST = float(os.getenv("UMAP_MIN_DIST", "0.1"))
 UMAP_N_NEIGHBORS = int(os.getenv("UMAP_N_NEIGHBORS", "15"))
+USE_OPTIMAL_K = os.getenv("USE_OPTIMAL_K", "true").lower() == "true"  # Enable silhouette analysis
 
 # Transcript path for enriching episode titles
 TRANSCRIPTS_DIR = Path(__file__).parent.parent.parent.parent / "data" / "transcripts"
@@ -217,11 +219,65 @@ def reduce_to_3d(vectors):
     return embeddings_3d
 
 
+def find_optimal_k(embeddings_3d, k_range=range(5, 16)):
+    """
+    Find optimal K using silhouette score analysis.
+
+    Silhouette score measures how similar objects are to their own cluster vs other clusters.
+    Score ranges from -1 to 1:
+      - Score > 0.5: Good separation
+      - Score 0.25-0.5: Reasonable structure
+      - Score < 0.25: Poor clustering
+
+    Returns: (best_k, scores_dict) - optimal K value and all scores
+    """
+    print("\n" + "="*70)
+    print("SILHOUETTE ANALYSIS FOR OPTIMAL K")
+    print("="*70)
+    print(f"Testing K values from {k_range.start} to {k_range.stop - 1}...")
+
+    scores = {}
+
+    for k in k_range:
+        kmeans = KMeans(n_clusters=k, random_state=42, n_init=10)
+        labels = kmeans.fit_predict(embeddings_3d)
+        score = silhouette_score(embeddings_3d, labels)
+        scores[k] = score
+
+        # Visual indicator of quality
+        if score >= 0.5:
+            quality = "★★★ Excellent"
+        elif score >= 0.35:
+            quality = "★★☆ Good"
+        elif score >= 0.25:
+            quality = "★☆☆ Fair"
+        else:
+            quality = "☆☆☆ Poor"
+
+        print(f"  K={k:2d}: silhouette={score:.4f} {quality}")
+
+    # Find best K (highest silhouette score)
+    best_k = max(scores, key=scores.get)
+    best_score = scores[best_k]
+
+    print(f"\n✓ Optimal K: {best_k} (silhouette score: {best_score:.4f})")
+
+    if best_score < 0.25:
+        print("⚠️  Warning: Even the best K has a low silhouette score.")
+        print("   This may indicate that the data doesn't cluster well naturally.")
+
+    return best_k, scores
+
+
 def cluster_at_level(embeddings_3d, n_clusters):
     """Cluster at specific level"""
     print(f"\nClustering into {n_clusters} semantic topics...")
     kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
     cluster_labels = kmeans.fit_predict(embeddings_3d)
+
+    # Calculate and print silhouette score for this clustering
+    score = silhouette_score(embeddings_3d, cluster_labels)
+    print(f"  Silhouette score: {score:.4f}")
 
     # Print cluster distribution
     unique, counts = np.unique(cluster_labels, return_counts=True)
@@ -439,6 +495,8 @@ def build_output(vectors, embeddings_3d, all_cluster_labels, clusters_metadata):
 
 
 def main():
+    global CLUSTER_LEVELS
+
     print("="*70)
     print("3D PODCAST MAP GENERATION (MULTI-CLUSTER)")
     print("="*70)
@@ -449,7 +507,26 @@ def main():
     # Step 2: Reduce to 3D ONCE
     embeddings_3d = reduce_to_3d(vectors)
 
-    # Step 3: Cluster at multiple levels
+    # Step 3: Determine cluster levels
+    if USE_OPTIMAL_K:
+        # Run silhouette analysis to find optimal K
+        optimal_k, scores = find_optimal_k(embeddings_3d, k_range=range(5, 16))
+
+        # Use optimal K as primary level, and double it for secondary level
+        # But cap secondary at 18 to avoid too many clusters
+        secondary_k = min(optimal_k * 2, 18)
+
+        # If optimal K is already high, just use it and a smaller level
+        if optimal_k >= 12:
+            CLUSTER_LEVELS = [optimal_k // 2, optimal_k]
+        else:
+            CLUSTER_LEVELS = [optimal_k, secondary_k]
+
+        print(f"\n✓ Using cluster levels: {CLUSTER_LEVELS} (based on silhouette analysis)")
+    else:
+        print(f"\n✓ Using default cluster levels: {CLUSTER_LEVELS}")
+
+    # Step 4: Cluster at multiple levels
     print("\n" + "="*70)
     print("CLUSTERING AT MULTIPLE LEVELS")
     print("="*70)

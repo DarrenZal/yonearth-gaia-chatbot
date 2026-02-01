@@ -1019,7 +1019,78 @@ function openWiki(entityId) {
 document.addEventListener('DOMContentLoaded', () => {
     vizInstance = new KnowledgeGraphVisualization('#graph-svg-container');
     window.knowledgeGraph = vizInstance; // For debugging
+
+    // Handle URL parameters for deep-linking (e.g., ?entity=biochar or ?search=permaculture)
+    handleUrlParams();
 });
+
+/**
+ * Handle URL parameters for entity deep-linking
+ * Supports:
+ *   ?entity=<name> - Highlight and focus on a specific entity
+ *   ?search=<query> - Populate search and filter results
+ */
+function handleUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const entityName = params.get('entity');
+    const searchQuery = params.get('search');
+
+    if (entityName) {
+        // Wait for graph to fully initialize and load data
+        const checkAndHighlight = () => {
+            if (vizInstance && vizInstance.data && vizInstance.data.nodes) {
+                // Find matching node by id, name, or alias
+                const searchTerm = entityName.toLowerCase().trim();
+                const node = vizInstance.data.nodes.find(n => {
+                    const nodeId = n.id.toLowerCase();
+                    const nodeName = n.name.toLowerCase();
+                    const aliases = (n.aliases || []).map(a => a.toLowerCase());
+
+                    return nodeId === searchTerm ||
+                           nodeName === searchTerm ||
+                           nodeId.includes(searchTerm) ||
+                           nodeName.includes(searchTerm) ||
+                           aliases.some(a => a === searchTerm || a.includes(searchTerm));
+                });
+
+                if (node) {
+                    console.log('Deep-link: Found entity', node.name);
+                    // Highlight the entity
+                    vizInstance.highlightEntities([node.name]);
+                    // Show details panel
+                    vizInstance.showDetails(node);
+                    vizInstance.selectedNode = node;
+                    // Focus on the node after a short delay for simulation to stabilize
+                    setTimeout(() => {
+                        vizInstance.focusOnNode(node);
+                    }, 1500);
+                } else {
+                    console.log('Deep-link: Entity not found:', entityName);
+                    // Try a search instead
+                    document.getElementById('search-input').value = entityName;
+                    vizInstance.searchEntities(entityName);
+                }
+            } else {
+                // Retry until graph is ready
+                setTimeout(checkAndHighlight, 200);
+            }
+        };
+        // Start checking after initial load
+        setTimeout(checkAndHighlight, 500);
+
+    } else if (searchQuery) {
+        // Wait for graph to load, then perform search
+        const checkAndSearch = () => {
+            if (vizInstance && vizInstance.data) {
+                document.getElementById('search-input').value = searchQuery;
+                vizInstance.searchEntities(searchQuery);
+            } else {
+                setTimeout(checkAndSearch, 200);
+            }
+        };
+        setTimeout(checkAndSearch, 500);
+    }
+}
 
 // Handle search input Enter key
 document.addEventListener('DOMContentLoaded', () => {
