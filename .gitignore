@@ -131,3 +131,20 @@ wiki-quartz/
 *.db
 *.sqlite
 *.sqlite3
+
+# Large graph data files (served from server, not repo)
+data/graphrag_hierarchy/
+data/graphrag_hierarchy_original.json
+data/graphrag_hierarchy_old_flat.json
+data/force_layout.json
+data/force_layout_clean.json
+data/force_layout_original.json
+data/integrated/
+data/server_copy/
+
+# CLAUDE.md files in subdirectories (auto-generated)
+data/CLAUDE.md
+scripts/CLAUDE.md
+scripts/archive/old_processing_scripts/CLAUDE.md
+src/knowledge_graph/visualization/CLAUDE.md
+web/CLAUDE.md

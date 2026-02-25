@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth Voronoi Map</title>
+    <link rel="stylesheet" href="VoronoiMap.css?v=3">
+</head>
+<body>
+    <script>
+        // Detect embed mode from query parameter
+        if (new URLSearchParams(window.location.search).get('embed') === '1') {
+            document.body.classList.add('embed-mode');
+        }
+    </script>
+    <div id="voronoi-container">
+        <!-- Header with view selector -->
+        <div class="graph-header">
+            <div class="view-selector">
+                <a class="view-btn" href="/PodcastMap.html">
+                    📍 Podcast Map
+                </a>
+                <a class="view-btn" href="/KnowledgeGraph.html">
+                    🕸️ Knowledge Graph
+                </a>
+                <a class="view-btn" href="/ClusterMap3D.html">
+                    🧭 Semantic Clusters
+                </a>
+                <a class="view-btn active">
+                    🔷 Voronoi Map
+                </a>
+                <a class="view-btn" href="/">
+                    💬 Chat with Gaia
+                </a>
+            </div>
+            <div class="title-section">
+                <h1>YonEarth Voronoi Map</h1>
+                <p class="subtitle">Hierarchical exploration of 26,000+ knowledge graph entities</p>
+            </div>
+        </div>
+
+        <!-- Main content -->
+        <div class="main-content">
+            <!-- Left sidebar -->
+            <div class="controls-panel">
+                <div class="control-section">
+                    <h3>📍 Navigation</h3>
+                    <div class="breadcrumb" id="breadcrumb">
+                        <span class="breadcrumb-item current">All Groups</span>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🔍 Search Entities</h3>
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search entities..." />
+                    </div>
+                    <div id="search-results"></div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎨 Legend</h3>
+                    <div class="legend-items" id="legend"></div>
+                </div>
+
+                <div class="control-section">
+                    <h3>📊 Statistics</h3>
+                    <div class="stats-display" id="stats"></div>
+                </div>
+            </div>
+
+            <!-- Center visualization -->
+            <div class="visualization-area">
+                <div id="voronoi-svg-container"></div>
+
+                <div id="loading-overlay" class="loading-overlay">
+                    <div class="loader"></div>
+                    <p>Loading Voronoi map...</p>
+                </div>
+            </div>
+
+            <!-- Right sidebar - details -->
+            <div class="details-panel" id="details-panel">
+                <div class="details-header">
+                    <h3 id="details-title">Details</h3>
+                    <button class="close-btn" onclick="voronoiMap.closeDetails()">×</button>
+                </div>
+                <div class="details-content" id="details-content"></div>
+            </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="VoronoiMap.js?v=3"></script>
+</body>
+</html>
