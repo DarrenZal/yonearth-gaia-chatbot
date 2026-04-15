@@ -76,9 +76,9 @@ data/books/**/*.PDF
 temp/
 tmp/
 
-# Debug and test files
-debug_*.py
-test_*.py
+# Debug and test files (root-level scratch only — not under tests/)
+/debug_*.py
+/test_*.py
 
 # Jupyter Notebook
 .ipynb_checkpoints
