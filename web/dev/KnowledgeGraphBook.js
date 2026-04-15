@@ -500,7 +500,7 @@ class BookKnowledgeGraph {
     }
 
     closeDetails() {
-        d3.select('#details-content').html('<p class="empty-state">Select an entity to view details</p>');
+        d3.select('#details-content').html('<p class="empty-state">Select a resource to view details</p>');
     }
 
     handleTypeFilter(type, checked) {
