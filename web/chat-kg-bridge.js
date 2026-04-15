@@ -99,7 +99,8 @@ const ChatKGBridge = {
         // Search for each term
         for (const term of terms) {
             try {
-                const response = await fetch(`/api/knowledge-graph/search?q=${encodeURIComponent(term)}&limit=5`);
+                const apiBase = window.API_BASE || './api';
+                const response = await fetch(`${apiBase}/knowledge-graph/search?q=${encodeURIComponent(term)}&limit=5`);
 
                 if (response.ok) {
                     const data = await response.json();
@@ -143,7 +144,7 @@ const ChatKGBridge = {
         // Ensure we have cached KG data
         if (!this.kgDataCache || (Date.now() - this.kgDataCacheTime) > this.CACHE_TTL) {
             try {
-                const response = await fetch('/api/knowledge-graph/data');
+                const response = await fetch(`${window.API_BASE || './api'}/knowledge-graph/data`);
                 if (response.ok) {
                     this.kgDataCache = await response.json();
                     this.kgDataCacheTime = Date.now();

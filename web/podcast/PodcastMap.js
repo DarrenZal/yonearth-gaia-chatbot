@@ -88,8 +88,7 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const apiBase = window.API_BASE || './api';
-            const response = await fetch(`${apiBase}/map_data`);
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data`);
             const data = await response.json();
             this.data = data;
             console.log('Loaded map data:', data);
@@ -98,59 +97,6 @@ class PodcastMapVisualization {
             // Use dummy data for testing
             this.data = this.generateDummyData();
         }
-
-        // Load YOE taxonomy for topic dropdown (§8)
-        await this.loadTopics();
-    }
-
-    async loadTopics() {
-        const select = document.getElementById('topic-select');
-        if (!select) return;
-
-        try {
-            const apiBase = window.API_BASE || './api';
-            const resp = await fetch(`${apiBase}/taxonomy`);
-            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-            const data = await resp.json();
-
-            // data.taxonomy is { "PILLAR": ["secondary", ...], ... }
-            // data.pillars is ["COMMUNITY", "CULTURE", ...]
-            const taxonomy = data.taxonomy || {};
-            const pillars = data.pillars || Object.keys(taxonomy);
-
-            select.innerHTML = '<option value="">All Topics</option>';
-            pillars.forEach(pillar => {
-                const group = document.createElement('optgroup');
-                group.label = pillar;
-                (taxonomy[pillar] || []).forEach(secondary => {
-                    const opt = document.createElement('option');
-                    opt.value = secondary;
-                    opt.textContent = secondary;
-                    group.appendChild(opt);
-                });
-                select.appendChild(group);
-            });
-
-            select.addEventListener('change', () => {
-                this.selectedTopic = select.value;
-                this.filterByTopic();
-            });
-        } catch (err) {
-            console.warn('Could not load taxonomy for topic dropdown:', err);
-        }
-    }
-
-    filterByTopic() {
-        if (!this.data || !this.data.points) return;
-        const topic = this.selectedTopic;
-        this.svg.selectAll('.point, .data-point, circle[data-cluster]')
-            .attr('opacity', d => {
-                if (!topic) return 1;  // no filter
-                // Match against cluster_name or categories metadata
-                const name = (d.cluster_name || '').toUpperCase();
-                const cats = (d.categories || []).map(c => c.toUpperCase());
-                return (name.includes(topic.toUpperCase()) || cats.includes(topic.toUpperCase())) ? 1 : 0.1;
-            });
     }
 
     generateDummyData() {
@@ -412,7 +358,7 @@ class PodcastMapVisualization {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
@@ -776,7 +722,7 @@ class PodcastMapVisualization {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;

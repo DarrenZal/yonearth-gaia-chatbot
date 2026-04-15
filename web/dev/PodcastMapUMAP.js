@@ -88,7 +88,7 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const response = await fetch('/api/map_data_umap');
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data_umap`);
             const data = await response.json();
             this.data = data;
             console.log('Loaded map data:', data);
@@ -358,7 +358,7 @@ class PodcastMapVisualization {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
@@ -634,7 +634,7 @@ class PodcastMapVisualization {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;
@@ -853,7 +853,7 @@ function setupUMAPControls() {
 
             try {
                 // Call the backend API to regenerate UMAP
-                const response = await fetch(`/api/regenerate_umap?n_points=${nPoints}&min_dist=${minDist}&n_neighbors=${nNeighbors}`, {
+                const response = await fetch(`${window.API_BASE || '../api'}/regenerate_umap?n_points=${nPoints}&min_dist=${minDist}&n_neighbors=${nNeighbors}`, {
                     method: 'POST'
                 });
 
@@ -891,7 +891,7 @@ function pollForCompletion(statusMessage, regenerateBtn) {
         pollCount++;
 
         try {
-            const response = await fetch('/api/umap_generation_status');
+            const response = await fetch(`${window.API_BASE || '../api'}/umap_generation_status`);
             const status = await response.json();
 
             if (status.status === 'completed') {

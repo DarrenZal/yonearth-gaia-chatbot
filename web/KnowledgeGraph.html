@@ -18,7 +18,7 @@
                 <button class="view-btn active" data-view="knowledge-graph">
                     🕸️ Knowledge Graph
                 </button>
-                <button class="view-btn" data-view="chat" onclick="window.location.href='/'">
+                <button class="view-btn" data-view="chat" onclick="window.location.href='./'">
                     💬 Chat with Gaia
                 </button>
             </div>
@@ -169,9 +169,9 @@
         // View switching functionality
         function switchView(view) {
             if (view === 'podcast-map') {
-                window.location.href = '/PodcastMap.html';
+                window.location.href = './podcast/';
             } else if (view === 'chat') {
-                window.location.href = '/';
+                window.location.href = './';
             }
         }
 
