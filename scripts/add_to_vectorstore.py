@@ -9,6 +9,13 @@ from pathlib import Path
 # Add src to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+# Migration lockfile check — must run BEFORE heavy imports (langchain/openai)
+# so it aborts cleanly even if a dep is temporarily unavailable. Only runs
+# when invoked as a script; importing this module is still cheap.
+if __name__ == "__main__":
+    from src.utils.migration_lock import abort_if_migration_in_progress
+    abort_if_migration_in_progress()
+
 from src.rag.vectorstore import create_vectorstore
 from src.ingestion.process_episodes import process_episodes_for_ingestion
 
@@ -22,31 +29,31 @@ def main():
     """Add processed episodes to vector database"""
     print("🌍 Adding Episodes to Vector Database")
     print("=" * 40)
-    
+
     try:
         # Process episodes to get documents
         print("📊 Processing episodes...")
         documents = process_episodes_for_ingestion()
-        
+
         print(f"✅ Created {len(documents)} document chunks")
-        
+
         # Create vectorstore and add documents
         print("🔄 Adding to vector database...")
         vectorstore = create_vectorstore(documents=documents, recreate_index=False)
-        
+
         # Get final stats
         stats = vectorstore.get_stats()
         print(f"\n🎉 Vector Database Updated!")
         print(f"📈 Final Stats:")
         print(f"   - Total vectors: {stats.get('total_vector_count', 0)}")
         print(f"   - Index dimension: {stats.get('dimension', 0)}")
-        
+
         print(f"\n✅ Ready for chatbot use!")
-        
+
     except Exception as e:
         logger.error(f"Failed to add to vectorstore: {e}", exc_info=True)
         return 1
-    
+
     return 0
 
 if __name__ == "__main__":

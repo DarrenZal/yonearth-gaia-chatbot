@@ -7,9 +7,11 @@ from pathlib import Path
 from datetime import datetime
 from typing import List, Dict, Any
 
-from .book_processor import BookProcessor
-from .chunker import DocumentChunker
+# Keep module-top imports light so the migration-lockfile guard fires even when
+# heavier deps (langchain, openai) are unavailable. BookProcessor + DocumentChunker
+# are imported lazily inside the functions that need them.
 from ..config import settings
+from ..utils.migration_lock import abort_if_migration_in_progress
 
 logging.basicConfig(
     level=getattr(logging, settings.log_level),
@@ -20,8 +22,11 @@ logger = logging.getLogger(__name__)
 
 def process_books_for_ingestion():
     """Process books and prepare chunks for vector database"""
+    from .book_processor import BookProcessor
+    from .chunker import DocumentChunker
+
     logger.info("Starting book processing for vector database ingestion")
-    
+
     # Initialize processors
     book_processor = BookProcessor()
     chunker = DocumentChunker()
@@ -97,9 +102,10 @@ Book Processing Complete:
 
 def add_books_to_vectorstore():
     """Process books and add them to the vector database"""
+    abort_if_migration_in_progress()
     from ..rag.vectorstore import YonEarthVectorStore
     from ..rag.pinecone_setup import setup_pinecone
-    
+
     logger.info("Adding books to vector database")
     
     # Setup Pinecone
