@@ -1012,7 +1012,7 @@ function closeDetails() {
 function openWiki(entityId) {
     // Navigate to wiki page (to be implemented)
     console.log("Opening wiki for:", entityId);
-    alert(`Wiki integration coming soon!\nEntity: ${entityId}`);
+    alert(`Wiki integration coming soon!\nResource: ${entityId}`);
 }
 
 // Initialize when DOM is ready

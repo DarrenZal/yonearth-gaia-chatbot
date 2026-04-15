@@ -35,7 +35,7 @@
                 <div class="control-section">
                     <h3>🔍 Search</h3>
                     <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search entities..." />
+                        <input type="text" id="search-input" placeholder="Search resources..." />
                         <button id="search-btn" onclick="searchEntities()">Search</button>
                         <button id="clear-search-btn" onclick="clearSearch()">Clear</button>
                     </div>
@@ -48,7 +48,7 @@
                 </div>
 
                 <div class="control-section">
-                    <h3>🏷️ Entity Types</h3>
+                    <h3>🏷️ Resource Types</h3>
                     <div id="entity-type-filters" class="filter-group scrollable"></div>
                 </div>
 
@@ -61,7 +61,7 @@
                                oninput="updateImportanceFilter(this.value)" />
                     </div>
                     <p style="font-size: 11px; color: #666; margin-top: 8px;">
-                        ⚠️ Lower values may show more entities (5,000+ total)
+                        ⚠️ Lower values may show more resources (5,000+ total)
                     </p>
                 </div>
 
@@ -107,7 +107,7 @@
                         <div id="domain-legend"></div>
                     </div>
                     <div class="legend-section">
-                        <h4>Entity Types</h4>
+                        <h4>Resource Types</h4>
                         <div id="type-legend"></div>
                     </div>
                     <div class="legend-section">
@@ -145,11 +145,11 @@
             <!-- Right sidebar - Entity Details -->
             <div class="details-panel" id="details-panel">
                 <div class="details-header">
-                    <h3>Entity Details</h3>
+                    <h3>Resource Details</h3>
                     <button class="close-btn" onclick="closeDetails()">×</button>
                 </div>
                 <div class="details-content" id="details-content">
-                    <p class="empty-state">Select an entity to view details</p>
+                    <p class="empty-state">Select a resource to view details</p>
                 </div>
             </div>
         </div>
