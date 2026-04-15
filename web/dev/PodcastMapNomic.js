@@ -92,7 +92,7 @@ class PodcastMapNomic {
 
     async loadData() {
         try {
-            const response = await fetch('/api/map_data_nomic');
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data_nomic`);
             const data = await response.json();
             this.data = data;
             console.log('Loaded Nomic map data:', data);
@@ -298,7 +298,7 @@ class PodcastMapNomic {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
@@ -538,7 +538,7 @@ class PodcastMapNomic {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;

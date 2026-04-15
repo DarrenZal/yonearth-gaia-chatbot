@@ -74,7 +74,7 @@ class BookKnowledgeGraph {
 
     async loadData() {
         try {
-            const response = await fetch('/data/knowledge_graph_books_v3_2_2/our_biggest_deal_v3_2_2.json');
+            const response = await fetch('../data/knowledge_graph_books_v3_2_2/our_biggest_deal_v3_2_2.json');
             this.bookData = await response.json();
             console.log("Loaded book data:", this.bookData);
 

@@ -112,7 +112,7 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const response = await fetch('/api/map_data_hierarchical');
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data_hierarchical`);
             const data = await response.json();
             this.data = data;
             this.hierarchy = data.hierarchy;
@@ -456,7 +456,7 @@ class PodcastMapVisualization {
         document.getElementById('current-chunk-text').textContent = point.text.substring(0, 200) + '...';
 
         // Set audio source (you'll need to configure actual audio URLs)
-        const audioUrl = `/audio/episodes/${point.episode_id}.mp3`;
+        const audioUrl = `../audio/episodes/${point.episode_id}.mp3`;
         this.audioPlayer.src = audioUrl;
 
         // Seek to timestamp
@@ -717,7 +717,7 @@ class PodcastMapVisualization {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;

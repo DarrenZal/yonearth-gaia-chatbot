@@ -1646,3 +1646,93 @@ body {
         height: 50vh;
     }
 }
+
+/* =====================================================
+   Landing page: welcome banner + always-on split layout
+   ===================================================== */
+
+.welcome-banner {
+    background: linear-gradient(135deg, var(--earth-beige, #f4efe1) 0%, #e8f5e8 100%);
+    border-bottom: 2px solid var(--sage-green, #88a37a);
+    padding: 18px 32px;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.welcome-banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-banner .welcome-title {
+    margin: 0 0 6px 0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2d4a2a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-banner .earth-icon {
+    font-size: 1.5rem;
+}
+
+.welcome-banner .welcome-body {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.45;
+    color: #3a3a3a;
+    max-width: 900px;
+}
+
+/* Override split-view-container when used as the primary landing layout
+   (not as a modal overlay). Keeps the modal behavior intact for the dev panel. */
+.split-view-container.landing-split {
+    position: static;
+    height: calc(100vh - 170px);
+    z-index: auto;
+}
+
+.split-view-container.landing-split .kg-panel {
+    order: 0;
+    border-left: none;
+    border-right: 2px solid var(--sage-green, #88a37a);
+}
+
+.split-view-container.landing-split .chat-panel {
+    order: 1;
+    max-width: 50%;
+}
+
+.landing-voice-controls {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.landing-footer {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    text-align: center;
+    background: var(--earth-beige, #f4efe1);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Elements chat.js still references on the landing must exist in the DOM
+   but aren't part of the simplified UI. Keep them fully hidden. */
+.landing-hidden-state {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    .welcome-banner { padding: 14px 18px; }
+    .welcome-banner .welcome-title { font-size: 1.3rem; }
+    .welcome-banner .welcome-body { font-size: 0.9rem; }
+    .split-view-container.landing-split {
+        height: auto;
+        min-height: calc(100vh - 180px);
+    }
+    .split-view-container.landing-split .chat-panel,
+    .split-view-container.landing-split .kg-panel {
+        max-width: 100%;
+    }
+}

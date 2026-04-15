@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Podcast Map</title>
     <link rel="stylesheet" href="PodcastMap.css?v=8">
+    <script>
+        window.API_BASE = '../api';
+        window.DATA_BASE = '../data';
+    </script>
 </head>
 <body>
     <div id="podcast-map-container">
@@ -18,28 +22,16 @@
             </div>
 
             <div class="header-controls">
-                <a href="/" class="nav-link">
-                    💬 Chat with Gaia
+                <a href="../" class="nav-link">
+                    💬 Chat with Aaron's Guide
                 </a>
-                <a href="/PodcastMapUMAP.html" class="nav-link">
-                    🌊 UMAP Map
-                </a>
-                <a href="/PodcastMapNomic.html" class="nav-link">
-                    🔮 Nomic Map
-                </a>
-                <a href="/PodcastMapHierarchical.html" class="nav-link">
-                    🌱 Hierarchical Map
-                </a>
-                <a href="/PodcastMap3D.html" class="nav-link">
-                    🌐 3D Map
-                </a>
-                <a href="/KnowledgeGraph.html" class="nav-link">
+                <a href="../graph/" class="nav-link">
                     🕸️ Knowledge Graph
                 </a>
-                <a href="/wiki/" class="nav-link">
+                <a href="../wiki/" class="nav-link">
                     📚 Podcast Wiki
                 </a>
-                <a href="/soil-handbook/" class="nav-link">
+                <a href="../soil-handbook/" class="nav-link">
                     🌿 Soil Handbook
                 </a>
             </div>
@@ -86,7 +78,7 @@
 
         <!-- Magic/Chat button (optional) -->
         <button class="magic-btn" onclick="toggleChat()">
-            <img src="/assets/magic-icon.svg" alt="Chat">
+            <img src="../assets/magic-icon.svg" alt="Chat">
         </button>
 
         <!-- Chat modal (optional) -->

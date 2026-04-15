@@ -72,7 +72,7 @@ class KnowledgeGraphVisualization {
     async loadData() {
         try {
             // Try to load from API first
-            const response = await fetch('/api/knowledge-graph/data');
+            const response = await fetch(`${window.API_BASE || './api'}/knowledge-graph/data`);
             if (response.ok) {
                 this.data = await response.json();
                 console.log("Loaded data from API:", this.data);
@@ -82,7 +82,7 @@ class KnowledgeGraphVisualization {
         } catch (error) {
             console.log("Loading from local file...");
             try {
-                const response = await fetch('/data/knowledge_graph/visualization_data.json');
+                const response = await fetch(`${window.DATA_BASE || './data'}/knowledge_graph/visualization_data.json`);
                 this.data = await response.json();
                 console.log("Loaded data from file:", this.data);
             } catch (fileError) {

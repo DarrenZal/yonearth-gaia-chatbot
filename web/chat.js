@@ -4,7 +4,7 @@
 
 class GaiaChat {
     constructor() {
-        this.apiUrl = localStorage.getItem('gaiaApiUrl') || '/api';
+        this.apiUrl = localStorage.getItem('gaiaApiUrl') || window.API_BASE || './api';
         this.sessionId = this.generateSessionId();
         this.isLoading = false;
         this.conversationEpisodes = new Set(); // Track episodes mentioned in conversation

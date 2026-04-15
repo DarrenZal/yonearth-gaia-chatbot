@@ -88,7 +88,7 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const response = await fetch('/api/map_data');
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data`);
             const data = await response.json();
             this.data = data;
             console.log('Loaded map data:', data);
@@ -358,7 +358,7 @@ class PodcastMapVisualization {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
@@ -722,7 +722,7 @@ class PodcastMapVisualization {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;
