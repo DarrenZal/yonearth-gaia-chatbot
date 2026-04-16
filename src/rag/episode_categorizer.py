@@ -128,23 +128,26 @@ class EpisodeCategorizer:
     def _build_category_synonyms(self):
         """Build category synonyms for better matching"""
         # Define synonym mappings for better query matching
+        # Keys MUST match the canonical labels in data/yoe_taxonomy.json verbatim
+        # (including misspellings POLICY & GOVERNMT, PERMA-CULTURE, SUSTAIN-ABILITY,
+        # which are Aaron's spreadsheet conventions).
         synonyms = {
             'HERBAL MEDICINE': {'herbs', 'herbalist', 'herbal', 'medicine', 'plant medicine', 'botanicals'},
             'FARMING & FOOD': {'farming', 'agriculture', 'food', 'crops', 'grow', 'cultivation'},
             'BIOCHAR': {'biochar', 'charcoal', 'carbon sequestration', 'soil carbon'},
             'HEALTH & WELLNESS': {'health', 'wellness', 'healing', 'medicine', 'therapeutic'},
             'CLIMATE & SCIENCE': {'climate', 'science', 'global warming', 'carbon', 'research'},
-            'PERMACULTURE': {'permaculture', 'sustainable design', 'ecological design'},
-            'SOIL': {'soil', 'earth', 'ground', 'dirt', 'soil health'},
-            'ECOLOGY & NATURE': {'ecology', 'nature', 'environment', 'natural', 'ecological'},
-            'BIODYNAMICS': {'biodynamic', 'biodynamics', 'rudolf steiner'},
-            'REGENERATIVE': {'regenerative', 'regeneration', 'restoration', 'healing'},
+            'PERMA-CULTURE': {'permaculture', 'sustainable design', 'ecological design'},
+            'SOIL': {'soil', 'earth', 'ground', 'dirt', 'soil health', 'compost', 'composting'},
+            'ECOLOGY & NATURE': {'ecology', 'nature', 'environment', 'natural', 'ecological', 'water', 'watershed'},
+            'BIO-DYNAMICS': {'biodynamic', 'biodynamics', 'rudolf steiner'},
+            'REGEN / SOCIAL ENTERPRISE': {'regenerative', 'regeneration', 'restoration', 'social enterprise', 'benefit corporation', 'triple bottom line', 'mission-driven'},
             'INDIGENOUS WISDOM': {'indigenous', 'traditional', 'ancestral', 'native'},
             'BUSINESS': {'business', 'entrepreneurship', 'enterprise', 'company'},
-            'POLICY & GOVERNMENT': {'policy', 'government', 'politics', 'governance'},
+            'POLICY & GOVERNMT': {'policy', 'government', 'politics', 'governance'},
             'EDUCATION': {'education', 'teaching', 'learning', 'school'},
-            'TECHNOLOGY & MATERIALS': {'technology', 'materials', 'innovation', 'tech'},
-            'SUSTAINABILITY': {'sustainability', 'sustainable', 'green', 'eco'},
+            'TECHNOLOGY & MATERIALS': {'technology', 'materials', 'innovation', 'tech', 'renewable energy', 'solar', 'wind'},
+            'SUSTAIN-ABILITY': {'sustainability', 'sustainable', 'green', 'eco'},
             'COMMUNITY': {'community', 'social', 'collective', 'group'},
             'IMPACT INVESTING': {'investing', 'investment', 'finance', 'capital'},
             'GREEN BUILDING': {'building', 'construction', 'architecture', 'green building'},

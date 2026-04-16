@@ -29,6 +29,7 @@ from .models import (
 from .bm25_endpoints import router as bm25_router
 from .voice_endpoints import router as voice_router
 from .podcast_map_route_local import router as podcast_map_router
+from .taxonomy_endpoint import router as taxonomy_router
 
 # Configure logging
 logging.basicConfig(
@@ -123,6 +124,13 @@ try:
     logger.info("✅ Podcast map router loaded successfully")
 except Exception as e:
     logger.error(f"❌ Failed to load podcast map router: {e}")
+
+# Include taxonomy router
+try:
+    app.include_router(taxonomy_router)
+    logger.info("✅ Taxonomy router loaded successfully")
+except Exception as e:
+    logger.error(f"❌ Failed to load taxonomy router: {e}")
 
 
 def get_rag_dependency():

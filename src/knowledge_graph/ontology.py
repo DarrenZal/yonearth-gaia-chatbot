@@ -250,25 +250,3 @@ class RelationshipSchema:
         schema = cls.SCHEMAS[relationship_type]
         return (source_type in schema["source_types"] and
                 target_type in schema["target_types"])
-
-
-# Predefined topics for YonEarth content
-YONEARTH_TOPICS = {
-    "REGENERATIVE_AGRICULTURE": "Regenerative Agriculture",
-    "SOIL_HEALTH": "Soil Health",
-    "CARBON_SEQUESTRATION": "Carbon Sequestration",
-    "BIOCHAR": "Biochar",
-    "COMPOSTING": "Composting",
-    "PERMACULTURE": "Permaculture",
-    "CLIMATE_CHANGE": "Climate Change",
-    "SUSTAINABILITY": "Sustainability",
-    "ORGANIC_FARMING": "Organic Farming",
-    "WATER_CONSERVATION": "Water Conservation",
-    "BIODIVERSITY": "Biodiversity",
-    "RENEWABLE_ENERGY": "Renewable Energy",
-    "CIRCULAR_ECONOMY": "Circular Economy",
-    "INDIGENOUS_KNOWLEDGE": "Indigenous Knowledge",
-    "COMMUNITY_RESILIENCE": "Community Resilience",
-    "FOOD_SYSTEMS": "Food Systems",
-    "ECOSYSTEM_RESTORATION": "Ecosystem Restoration",
-}
