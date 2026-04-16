@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Podcast Map 3D</title>
-    <link rel="stylesheet" href="PodcastMap3D.css?v=20260201">
+    <link rel="stylesheet" href="PodcastMap3D.css?v=36">
     <link rel="stylesheet" href="tutorial.css">
 </head>
 <body>
@@ -23,8 +23,30 @@
             </button>
 
             <div class="header-controls" id="header-controls">
-                <a href="../" class="nav-link">💬 Chat with Gaia</a>
-                <a href="../graph/" class="nav-link">🕸️ Knowledge Graph</a>
+                <a href="/" class="nav-link">
+                    💬 Chat with Gaia
+                </a>
+                <a href="/PodcastMap.html" class="nav-link">
+                    🗺️ t-SNE Map
+                </a>
+                <a href="/PodcastMapUMAP.html" class="nav-link">
+                    🌊 UMAP Map
+                </a>
+                <a href="/PodcastMapNomic.html" class="nav-link">
+                    🔮 Nomic Map
+                </a>
+                <a href="/PodcastMapHierarchical.html" class="nav-link">
+                    🌱 Hierarchical Map
+                </a>
+                <a href="/KnowledgeGraph.html" class="nav-link">
+                    🕸️ Knowledge Graph
+                </a>
+                <a href="/wiki/" class="nav-link">
+                    📚 Podcast Wiki
+                </a>
+                <a href="/soil-handbook/" class="nav-link">
+                    🌿 Soil Handbook
+                </a>
             </div>
 
             <div class="mobile-controls">
@@ -81,69 +103,12 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Knowledge Graph Section -->
-                <div class="knowledge-graph-section" id="kg-section" style="display: none;">
-                    <h4 class="kg-title">Knowledge Graph</h4>
-
-                    <!-- Relationship Section -->
-                    <div class="kg-relationships" id="kg-relationships">
-                        <h5>Key Relationships:</h5>
-                        <div class="kg-relationship-list">
-                            <!-- Dynamic relationship items will be inserted here -->
-                        </div>
-                    </div>
-
-                    <!-- Entity Section -->
-                    <div class="kg-entities">
-                        <h5>Mentioned in this Episode:</h5>
-                        <div class="kg-entity-container" id="kg-entities">
-                            <!-- Dynamic entity pills will be inserted here -->
-                        </div>
-                    </div>
-
-                    <!-- Loading/Error States -->
-                    <div class="kg-loading" id="kg-loading" style="display: none;">
-                        Loading knowledge graph...
-                    </div>
-                    <div class="kg-error" id="kg-error" style="display: none;">
-                        Knowledge graph unavailable
-                    </div>
-                </div>
             </div>
         </div>
 
         <!-- Controls hint -->
         <div class="controls-hint">
             <p>Drag to rotate | Scroll to zoom | Click node to play from that moment | Use dropdown for full episode</p>
-        </div>
-
-        <!-- Entity Knowledge Panel (right side) -->
-        <div id="entity-panel" class="entity-panel" style="display: none;">
-            <div class="panel-header">
-                <div class="panel-title">Entity Details</div>
-                <button class="panel-close-btn" id="entity-panel-close">×</button>
-            </div>
-            <div id="entity-panel-content">
-                <div class="entity-panel-name" id="entity-panel-name"></div>
-                <div class="entity-panel-type" id="entity-panel-type"></div>
-                <div class="entity-panel-description" id="entity-panel-description"></div>
-
-                <div class="entity-panel-section">
-                    <div class="section-label">Sources</div>
-                    <div id="entity-panel-sources" class="entity-sources-list"></div>
-                </div>
-
-                <div class="entity-panel-section" id="entity-relationships-section" style="display: none;">
-                    <div class="section-label">Relationships</div>
-                    <div id="entity-panel-relationships" class="entity-relationships-list"></div>
-                </div>
-
-                <div class="entity-panel-section" id="entity-aliases-section" style="display: none;">
-                    <div class="section-label">Also known as</div>
-                    <div id="entity-panel-aliases" class="entity-aliases-list"></div>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -152,8 +117,16 @@
     <!-- Load 3D Force Graph library (includes Three.js) -->
     <script src="https://unpkg.com/3d-force-graph"></script>
     <!-- Load our 3D visualization script -->
-    <script src="PodcastMap3D.js?v=20260202a"></script>
+    <script src="PodcastMap3D.js?v=34"></script>
     <script src="tutorial.js"></script>
-    <script>document.addEventListener("DOMContentLoaded", () => { setTimeout(() => { if(typeof Tutorial !== "undefined") Tutorial.init("podcast"); }, 2000); });</script>
+    <script>
+        // Initialize tutorial after 3D graph loads
+        document.addEventListener('DOMContentLoaded', () => {
+            // Wait for 3D graph to initialize
+            setTimeout(() => {
+                Tutorial.init('podcastmap');
+            }, 1500);
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Debug Test</title>
+</head>
+<body>
+    <h1>Voice Feature Debug</h1>
+    <p>Open the browser console (F12) to see debug information</p>
+    
+    <script>
+        console.log('🔍 Checking for voice elements...');
+        
+        // Check if elements exist
+        const elements = {
+            voiceToggle: document.getElementById('voiceToggle'),
+            voiceToggleText: document.getElementById('voiceToggleText'),
+            voiceSettings: document.getElementById('voiceSettings'),
+            autoPlayVoice: document.getElementById('autoPlayVoice'),
+            voicePlayer: document.getElementById('voicePlayer'),
+            voiceIcon: document.querySelector('.voice-icon')
+        };
+        
+        console.log('Voice elements found:', elements);
+        
+        // Check localStorage
+        console.log('Voice enabled in storage:', localStorage.getItem('voiceEnabled'));
+        console.log('Auto-play enabled:', localStorage.getItem('autoPlayVoice'));
+        
+        // Check if GaiaChat is loaded
+        setTimeout(() => {
+            if (window.gaiaChat) {
+                console.log('✅ GaiaChat instance found');
+                console.log('Voice enabled state:', window.gaiaChat.voiceEnabled);
+                console.log('Voice methods available:', {
+                    toggleVoice: typeof window.gaiaChat.toggleVoice,
+                    updateVoiceUI: typeof window.gaiaChat.updateVoiceUI,
+                    playAudio: typeof window.gaiaChat.playAudio
+                });
+            } else {
+                console.log('❌ GaiaChat instance not found');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

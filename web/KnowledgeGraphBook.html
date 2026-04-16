@@ -3,22 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YonEarth Knowledge Graph</title>
-    <link rel="stylesheet" href="KnowledgeGraph.css">
+    <title>Our Biggest Deal - Knowledge Graph</title>
+    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251011a">
 </head>
 <body>
     <div id="knowledge-graph-container">
         <!-- Header with view selector -->
         <div class="graph-header">
             <div class="view-selector">
-                <button class="view-btn" data-view="podcast-map" onclick="switchView('podcast-map')">
-                    📍 Podcast Map
+                <button class="view-btn" data-view="knowledge-graph" onclick="window.location.href='/KnowledgeGraph.html'">
+                    🕸️ Podcast Knowledge Graph
                 </button>
-                <button class="view-btn active" data-view="knowledge-graph">
-                    🕸️ Knowledge Graph
-                <button class="view-btn" data-view="cluster-map" onclick="window.location.href="/ClusterMap3D.html"">
-                    🧭 Semantic Clusters
-                </button>
+                <button class="view-btn active" data-view="book-knowledge-graph">
+                    📖 Book Knowledge Graph
                 </button>
                 <button class="view-btn" data-view="chat" onclick="window.location.href='/'">
                     💬 Chat with Gaia
@@ -26,8 +23,8 @@
             </div>
 
             <div class="title-section">
-                <h1>YonEarth Knowledge Graph</h1>
-                <p class="subtitle">Interactive visualization of concepts, people, and organizations</p>
+                <h1>Our Biggest Deal - Knowledge Graph</h1>
+                <p class="subtitle">Interactive visualization of concepts, people, and organizations from the book</p>
             </div>
         </div>
 
@@ -50,23 +47,22 @@
                     <div id="domain-filters" class="filter-group"></div>
                 </div>
 
-                <div class="control-section" id="entity-type-section" style="display: none;">
-                    <h3>🏷️ Categories</h3>
-                    <div class="search-box">
-                        <input type="text" id="entity-type-search" placeholder="Filter entity types..." oninput="filterEntityTypes()" />
-                        <button onclick="clearEntityTypeSearch()">Clear</button>
-                    </div>
+                <div class="control-section">
+                    <h3>🏷️ Entity Types</h3>
                     <div id="entity-type-filters" class="filter-group scrollable"></div>
                 </div>
 
                 <div class="control-section">
                     <h3>⭐ Importance</h3>
                     <div class="slider-container">
-                        <label>Minimum: <span id="importance-value">0.0</span></label>
+                        <label>Minimum: <span id="importance-value">0.5</span></label>
                         <input type="range" id="importance-slider"
-                               min="0" max="1" step="0.05" value="0"
+                               min="0" max="1" step="0.05" value="0.5"
                                oninput="updateImportanceFilter(this.value)" />
                     </div>
+                    <p style="font-size: 11px; color: #666; margin-top: 8px;">
+                        ⚠️ Lower values may show more entities (5,000+ total)
+                    </p>
                 </div>
 
                 <div class="control-section">
@@ -111,7 +107,7 @@
                         <div id="domain-legend"></div>
                     </div>
                     <div class="legend-section">
-                        <h4>Categories</h4>
+                        <h4>Entity Types</h4>
                         <div id="type-legend"></div>
                     </div>
                     <div class="legend-section">
@@ -165,17 +161,6 @@
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js"></script>
-
-    <script>
-        // View switching functionality
-        function switchView(view) {
-            if (view === 'podcast-map') {
-                window.location.href = '/PodcastMap.html';
-            } else if (view === 'chat') {
-                window.location.href = '/';
-            }
-        }
-    </script>
+    <script src="KnowledgeGraphBook.js?v=20251011d"></script>
 </body>
 </html>

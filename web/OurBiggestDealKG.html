@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YonEarth Knowledge Graph</title>
-    <link rel="stylesheet" href="KnowledgeGraph.css">
+    <title>Our Biggest Deal - Knowledge Graph</title>
+    <link rel="stylesheet" href="KnowledgeGraph.css?v=20251015">
 </head>
 <body>
     <div id="knowledge-graph-container">
@@ -14,11 +14,11 @@
                 <button class="view-btn" data-view="podcast-map" onclick="switchView('podcast-map')">
                     📍 Podcast Map
                 </button>
-                <button class="view-btn active" data-view="knowledge-graph">
-                    🕸️ Knowledge Graph
-                <button class="view-btn" data-view="cluster-map" onclick="window.location.href="/ClusterMap3D.html"">
-                    🧭 Semantic Clusters
+                <button class="view-btn" data-view="knowledge-graph" onclick="switchView('knowledge-graph')">
+                    🕸️ YonEarth KG
                 </button>
+                <button class="view-btn active" data-view="book-kg">
+                    📚 Our Biggest Deal KG
                 </button>
                 <button class="view-btn" data-view="chat" onclick="window.location.href='/'">
                     💬 Chat with Gaia
@@ -26,8 +26,20 @@
             </div>
 
             <div class="title-section">
-                <h1>YonEarth Knowledge Graph</h1>
-                <p class="subtitle">Interactive visualization of concepts, people, and organizations</p>
+                <h1>📚 Our Biggest Deal - Knowledge Graph</h1>
+                <p class="subtitle">Interactive visualization of people, organizations, and concepts from the book</p>
+                <p style="font-size: 14px; color: #666; margin-top: 8px;">
+                    Author: Aaron William Perry | Currently showing: Front Matter (Pages 1-30)
+                </p>
+
+                <!-- Section selector -->
+                <div class="version-selector" style="margin-top: 12px;">
+                    <label for="section-select">Book Section:</label>
+                    <select id="section-select" onchange="loadBookSection(this.value)">
+                        <option value="front_matter" selected>Front Matter (Pages 1-30)</option>
+                        <option value="full_book" disabled>Full Book (Coming soon...)</option>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -50,23 +62,22 @@
                     <div id="domain-filters" class="filter-group"></div>
                 </div>
 
-                <div class="control-section" id="entity-type-section" style="display: none;">
-                    <h3>🏷️ Categories</h3>
-                    <div class="search-box">
-                        <input type="text" id="entity-type-search" placeholder="Filter entity types..." oninput="filterEntityTypes()" />
-                        <button onclick="clearEntityTypeSearch()">Clear</button>
-                    </div>
+                <div class="control-section">
+                    <h3>🏷️ Entity Types</h3>
                     <div id="entity-type-filters" class="filter-group scrollable"></div>
                 </div>
 
                 <div class="control-section">
                     <h3>⭐ Importance</h3>
                     <div class="slider-container">
-                        <label>Minimum: <span id="importance-value">0.0</span></label>
+                        <label>Minimum: <span id="importance-value">0.5</span></label>
                         <input type="range" id="importance-slider"
-                               min="0" max="1" step="0.05" value="0"
+                               min="0" max="1" step="0.05" value="0.5"
                                oninput="updateImportanceFilter(this.value)" />
                     </div>
+                    <p style="font-size: 11px; color: #666; margin-top: 8px;">
+                        Lower threshold for book visualization (smaller dataset)
+                    </p>
                 </div>
 
                 <div class="control-section">
@@ -111,7 +122,7 @@
                         <div id="domain-legend"></div>
                     </div>
                     <div class="legend-section">
-                        <h4>Categories</h4>
+                        <h4>Entity Types</h4>
                         <div id="type-legend"></div>
                     </div>
                     <div class="legend-section">
@@ -164,17 +175,31 @@
 
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js"></script>
+    <!-- Load our book-specific visualization script -->
+    <script src="OurBiggestDealKG.js?v=20251015"></script>
 
     <script>
         // View switching functionality
         function switchView(view) {
             if (view === 'podcast-map') {
-                window.location.href = '/PodcastMap.html';
+                // Hidden: window.location.href = '/PodcastMap.html';
+                return; // Do nothing when podcast-map is clicked
+            } else if (view === 'knowledge-graph') {
+                window.location.href = '/KnowledgeGraph.html';
             } else if (view === 'chat') {
                 window.location.href = '/';
             }
+        }
+
+        // Section loading functionality
+        function loadBookSection(section) {
+            if (section === 'full_book') {
+                alert('Full book extraction is in progress. Check back soon!');
+                document.getElementById('section-select').value = 'front_matter';
+                return;
+            }
+            // For now, only front_matter is available
+            console.log('Loading section:', section);
         }
     </script>
 </body>

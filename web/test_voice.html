@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Feature Test</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" style="padding: 2rem;">
+        <h1>Voice Feature Test</h1>
+        
+        <div class="voice-controls">
+            <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
+                <span class="voice-icon">🔊</span>
+                <span id="voiceToggleText">Enable Voice</span>
+            </button>
+            <div class="voice-settings" id="voiceSettings" style="display: none;">
+                <label>
+                    <input type="checkbox" id="autoPlayVoice" checked>
+                    Auto-play responses
+                </label>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: #f0f0f0; border-radius: 8px;">
+            <h3>Debug Info:</h3>
+            <pre id="debugInfo"></pre>
+        </div>
+        
+        <audio id="voicePlayer" style="display: none;" controls></audio>
+    </div>
+    
+    <script>
+        // Simple test of voice toggle
+        const voiceToggle = document.getElementById('voiceToggle');
+        const voiceToggleText = document.getElementById('voiceToggleText');
+        const voiceSettings = document.getElementById('voiceSettings');
+        const voiceIcon = document.querySelector('.voice-icon');
+        const debugInfo = document.getElementById('debugInfo');
+        
+        let voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
+        
+        function updateDebugInfo() {
+            debugInfo.textContent = JSON.stringify({
+                voiceEnabled: voiceEnabled,
+                voiceToggle: voiceToggle ? 'found' : 'missing',
+                voiceToggleText: voiceToggleText ? 'found' : 'missing',
+                voiceSettings: voiceSettings ? 'found' : 'missing',
+                voiceIcon: voiceIcon ? 'found' : 'missing',
+                localStorage_voiceEnabled: localStorage.getItem('voiceEnabled'),
+                toggle_classList: voiceToggle ? voiceToggle.className : 'N/A'
+            }, null, 2);
+        }
+        
+        function updateVoiceUI() {
+            if (voiceEnabled) {
+                voiceToggle.classList.add('active');
+                voiceToggleText.textContent = 'Voice Enabled';
+                voiceSettings.style.display = 'block';
+                voiceIcon.textContent = '🔊';
+            } else {
+                voiceToggle.classList.remove('active');
+                voiceToggleText.textContent = 'Enable Voice';
+                voiceSettings.style.display = 'none';
+                voiceIcon.textContent = '🔇';
+            }
+            updateDebugInfo();
+        }
+        
+        voiceToggle.addEventListener('click', () => {
+            voiceEnabled = !voiceEnabled;
+            localStorage.setItem('voiceEnabled', voiceEnabled);
+            updateVoiceUI();
+            console.log('Voice toggled:', voiceEnabled);
+        });
+        
+        // Initial UI update
+        updateVoiceUI();
+    </script>
+</body>
+</html>

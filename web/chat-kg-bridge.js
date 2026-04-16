@@ -5,6 +5,7 @@
  * Extracts entities from chat responses and finds matching nodes in the KG.
  *
  * Session 4A of GaiaAI Feedback Implementation
+ * Enhanced with entity linking and episode/book navigation (Session 5)
  */
 
 const ChatKGBridge = {
@@ -12,6 +13,299 @@ const ChatKGBridge = {
     kgDataCache: null,
     kgDataCacheTime: null,
     CACHE_TTL: 5 * 60 * 1000, // 5 minutes
+
+    // Episode/book entity data cache
+    episodeBookCache: null,
+    episodeBookCacheTime: null,
+
+    /**
+     * Load episode and book entity data for linking
+     */
+    async loadEpisodeBookData() {
+        if (this.episodeBookCache && (Date.now() - this.episodeBookCacheTime) < this.CACHE_TTL) {
+            return this.episodeBookCache;
+        }
+
+        try {
+            // Try API endpoint first
+            let response = await fetch('/api/knowledge-graph/episodes-books');
+            if (!response.ok) {
+                // Fall back to static file
+                response = await fetch('/data/episode_book_entities.json');
+            }
+            if (response.ok) {
+                this.episodeBookCache = await response.json();
+                this.episodeBookCacheTime = Date.now();
+                console.log('ChatKGBridge: Loaded episode/book data');
+                return this.episodeBookCache;
+            }
+        } catch (error) {
+            console.warn('ChatKGBridge: Could not load episode/book data:', error);
+        }
+        return null;
+    },
+
+    /**
+     * Get sorted entity names from cache (longest first for matching)
+     */
+    async getEntityNames() {
+        await this.loadEpisodeBookData();
+        if (!this.kgDataCache) {
+            try {
+                const response = await fetch('/api/knowledge-graph/data');
+                if (response.ok) {
+                    this.kgDataCache = await response.json();
+                    this.kgDataCacheTime = Date.now();
+                }
+            } catch (e) {
+                console.warn('ChatKGBridge: Could not load KG data');
+            }
+        }
+
+        const entityNames = new Set();
+
+        // Add KG entity names
+        if (this.kgDataCache?.nodes) {
+            this.kgDataCache.nodes.forEach(node => {
+                if (node.name && node.name.length >= 4) {
+                    entityNames.add(node.name);
+                }
+            });
+        }
+
+        // Sort longest first to match longer names before shorter substrings
+        return Array.from(entityNames).sort((a, b) => b.length - a.length);
+    },
+
+    /**
+     * Escape special characters for regex
+     */
+    escapeRegex(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    },
+
+    /**
+     * Add clickable entity links to response text
+     * Entities link to their KG nodes
+     *
+     * @param {string} htmlText - HTML-escaped response text
+     * @returns {Promise<string>} - Text with entity links added
+     */
+    async addEntityLinksToResponse(htmlText) {
+        const entityNames = await this.getEntityNames();
+
+        // Track what we've already linked to avoid double-linking
+        const linkedRanges = [];
+
+        for (const entityName of entityNames) {
+            // Skip very short names (likely false positives)
+            if (entityName.length < 4) continue;
+
+            // Create regex for whole-word matching
+            const regex = new RegExp('\\b(' + this.escapeRegex(entityName) + ')\\b', 'gi');
+
+            htmlText = htmlText.replace(regex, (match, p1, offset) => {
+                // Skip if this position was already linked
+                if (linkedRanges.some(r => offset >= r.start && offset < r.end)) {
+                    return match;
+                }
+
+                // Skip if inside an HTML tag or already in a link
+                const before = htmlText.substring(Math.max(0, offset - 100), offset);
+                if (before.match(/<[^>]*$/) || before.match(/<a[^>]*>[^<]*$/i)) {
+                    return match;
+                }
+
+                // Track this range as linked
+                linkedRanges.push({ start: offset, end: offset + match.length });
+
+                // Create clickable entity link
+                return `<span class="kg-entity-link" data-entity="${this.escapeRegex(entityName)}" onclick="ChatKGBridge.navigateToEntity('${this.escapeRegex(entityName)}')">${match}</span>`;
+            });
+        }
+
+        return htmlText;
+    },
+
+    /**
+     * Add episode and book links that navigate to KG nodes
+     *
+     * @param {string} htmlText - HTML text to process
+     * @returns {Promise<string>} - Text with episode/book links
+     */
+    async addEpisodeBookLinks(htmlText) {
+        const data = await this.loadEpisodeBookData();
+
+        // Match "Episode 120" or "Ep 120" patterns
+        htmlText = htmlText.replace(/\b(Episode|Ep\.?)\s+(\d+)(?:\s*[:\-]\s*[^.!?,\n<]*)?\b/gi, (match, prefix, num) => {
+            const episodeId = `episode_${num}`;
+            // Check if episode exists in our data
+            if (data?.episodes?.[episodeId]) {
+                return `<span class="kg-episode-link" data-episode="${num}" onclick="ChatKGBridge.navigateToEpisode(${num})">${match}</span>`;
+            }
+            return match;
+        });
+
+        // Match book titles
+        const bookPatterns = [
+            { pattern: /\bY\s+on\s+Earth(?:[:\s]+Get\s+Smarter[^<.!?]*)?\b/gi, id: 'book_y-on-earth' },
+            { pattern: /\bVIRIDITAS(?:[:\s]+THE\s+GREAT\s+HEALING)?\b/gi, id: 'book_veriditas' },
+            { pattern: /\bViriditas(?:[:\s]+The\s+Great\s+Healing)?\b/g, id: 'book_veriditas' },
+            { pattern: /\bSoil\s+Stewardship\s+Handbook\b/gi, id: 'book_soil-stewardship-handbook' }
+        ];
+
+        for (const { pattern, id } of bookPatterns) {
+            if (data?.books?.[id]) {
+                htmlText = htmlText.replace(pattern, (match) => {
+                    return `<span class="kg-book-link" data-book="${id}" onclick="ChatKGBridge.navigateToBook('${id}')">${match}</span>`;
+                });
+            }
+        }
+
+        return htmlText;
+    },
+
+    /**
+     * Navigate to an entity in the Knowledge Graph
+     * @param {string} entityName - The entity name to navigate to
+     */
+    navigateToEntity(entityName) {
+        console.log('ChatKGBridge: Navigating to entity:', entityName);
+
+        // Activate split view if not active
+        if (window.SplitViewController && !window.SplitViewController.splitViewActive) {
+            window.SplitViewController.toggle();
+        }
+
+        // Highlight in KG
+        setTimeout(() => {
+            this.highlightInKG([entityName]);
+            if (window.SplitViewController) {
+                window.SplitViewController.highlightInIframe([entityName]);
+            }
+        }, 300);
+    },
+
+    /**
+     * Navigate to an episode in the Knowledge Graph
+     * @param {number} episodeNum - The episode number
+     */
+    navigateToEpisode(episodeNum) {
+        const entityId = `episode_${episodeNum}`;
+        const entityName = `Episode ${episodeNum}`;
+        console.log('ChatKGBridge: Navigating to episode:', entityId);
+
+        // Activate split view if not active
+        if (window.SplitViewController && !window.SplitViewController.splitViewActive) {
+            window.SplitViewController.toggle();
+        }
+
+        // Highlight in KG
+        setTimeout(() => {
+            this.highlightInKG([entityId, entityName]);
+            if (window.SplitViewController) {
+                window.SplitViewController.highlightInIframe([entityId, entityName]);
+            }
+        }, 300);
+    },
+
+    /**
+     * Navigate to a book in the Knowledge Graph
+     * @param {string} bookId - The book ID (e.g., 'book_y-on-earth')
+     */
+    navigateToBook(bookId) {
+        console.log('ChatKGBridge: Navigating to book:', bookId);
+
+        // Get book name from cache
+        const bookName = this.episodeBookCache?.books?.[bookId]?.name || bookId;
+
+        // Activate split view if not active
+        if (window.SplitViewController && !window.SplitViewController.splitViewActive) {
+            window.SplitViewController.toggle();
+        }
+
+        // Highlight in KG
+        setTimeout(() => {
+            this.highlightInKG([bookId, bookName]);
+            if (window.SplitViewController) {
+                window.SplitViewController.highlightInIframe([bookId, bookName]);
+            }
+        }, 300);
+    },
+
+    /**
+     * Create citations section HTML for KG chat
+     * @param {Object[]} citations - Array of citation objects
+     * @returns {string} - HTML for citations section
+     */
+    createCitationsSection(citations) {
+        if (!citations || citations.length === 0) return '';
+
+        let html = '<div class="kg-citations-section">';
+        html += '<div class="kg-citations-header">References:</div>';
+        html += '<div class="kg-citations-list">';
+
+        citations.forEach(citation => {
+            const isBook = citation.episode_number?.toString().startsWith('Book:');
+
+            if (isBook) {
+                const bookTitle = citation.episode_number.substring(5).trim();
+                let bookId = 'book_unknown';
+                if (bookTitle.toLowerCase().includes('viriditas')) {
+                    bookId = 'book_veriditas';
+                } else if (bookTitle.toLowerCase().includes('soil')) {
+                    bookId = 'book_soil-stewardship-handbook';
+                } else if (bookTitle.toLowerCase().includes('earth')) {
+                    bookId = 'book_y-on-earth';
+                }
+
+                html += `<div class="kg-citation-item kg-citation-book" onclick="ChatKGBridge.navigateToBook('${bookId}')">`;
+                html += `<span class="kg-citation-icon">📖</span>`;
+                html += `<span class="kg-citation-text">${bookTitle}</span>`;
+                html += '</div>';
+            } else {
+                const episodeNum = citation.episode_number || citation.episode_id;
+                const episodeTitle = citation.title || `Episode ${episodeNum}`;
+
+                html += `<div class="kg-citation-item kg-citation-episode" onclick="ChatKGBridge.navigateToEpisode(${episodeNum})">`;
+                html += `<span class="kg-citation-icon">🎙️</span>`;
+                html += `<span class="kg-citation-text">Episode ${episodeNum}: ${episodeTitle.replace(/Episode\s*\d+\s*[-–:]\s*/i, '')}</span>`;
+                html += '</div>';
+            }
+        });
+
+        html += '</div></div>';
+        return html;
+    },
+
+    /**
+     * Process response text with all entity linking features
+     * @param {string} text - Raw response text
+     * @param {Object[]} citations - Optional citations array
+     * @returns {Promise<Object>} - { html, citations_html }
+     */
+    async processResponseWithLinks(text, citations = []) {
+        // Escape HTML first
+        let htmlText = text.replace(/&/g, '&amp;')
+                          .replace(/</g, '&lt;')
+                          .replace(/>/g, '&gt;')
+                          .replace(/"/g, '&quot;')
+                          .replace(/'/g, '&#039;');
+
+        // Add episode/book links first (they have specific patterns)
+        htmlText = await this.addEpisodeBookLinks(htmlText);
+
+        // Add entity links
+        htmlText = await this.addEntityLinksToResponse(htmlText);
+
+        // Create citations section
+        const citationsHtml = this.createCitationsSection(citations);
+
+        return {
+            html: htmlText,
+            citations_html: citationsHtml
+        };
+    },
 
     /**
      * Extract potential entity names from a chat response
@@ -99,8 +393,7 @@ const ChatKGBridge = {
         // Search for each term
         for (const term of terms) {
             try {
-                const apiBase = window.API_BASE || './api';
-                const response = await fetch(`${apiBase}/knowledge-graph/search?q=${encodeURIComponent(term)}&limit=5`);
+                const response = await fetch(`/api/knowledge-graph/search?q=${encodeURIComponent(term)}&limit=5`);
 
                 if (response.ok) {
                     const data = await response.json();
@@ -144,7 +437,7 @@ const ChatKGBridge = {
         // Ensure we have cached KG data
         if (!this.kgDataCache || (Date.now() - this.kgDataCacheTime) > this.CACHE_TTL) {
             try {
-                const response = await fetch(`${window.API_BASE || './api'}/knowledge-graph/data`);
+                const response = await fetch('/api/knowledge-graph/data');
                 if (response.ok) {
                     this.kgDataCache = await response.json();
                     this.kgDataCacheTime = Date.now();

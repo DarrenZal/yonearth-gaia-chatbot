@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphRAG Comparison - YonEarth Gaia</title>
+    <link rel="stylesheet" href="../styles.css?v=5">
+    <link rel="stylesheet" href="styles-graphrag.css?v=1">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container graphrag-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="title">
+                    <span class="earth-icon">🕸️</span>
+                    GraphRAG Comparison
+                </h1>
+                <p class="subtitle">Compare BM25 vs GraphRAG search - See how knowledge graphs enhance responses</p>
+            </div>
+
+            <!-- Navigation Links -->
+            <div class="header-nav">
+                <a href="../" class="nav-link">💬 Original Chat</a>
+                <a href="../graph/" class="nav-link">🕸️ Knowledge Graph</a>
+                <a href="../podcast/" class="nav-link">🌐 3D Podcast Map</a>
+            </div>
+
+            <!-- GraphRAG Controls -->
+            <div id="chatControls" class="chat-controls graphrag-controls">
+                <!-- Personality Selector -->
+                <div class="personality-selector">
+                    <label for="personality">Gaia's Voice:</label>
+                    <select id="personality">
+                        <option value="warm_mother">Nurturing Mother</option>
+                        <option value="wise_guide">Ancient Sage</option>
+                        <option value="earth_activist">Earth Guardian</option>
+                    </select>
+                </div>
+
+                <!-- GraphRAG Search Mode -->
+                <div class="graphrag-mode-selector">
+                    <div>
+                        <label for="searchMode">GraphRAG Mode:</label>
+                        <select id="searchMode" title="Choose GraphRAG search strategy">
+                            <option value="drift" selected>DRIFT (Hybrid)</option>
+                            <option value="global">Global (Communities)</option>
+                            <option value="local">Local (Entities)</option>
+                            <option value="auto">Auto-detect</option>
+                        </select>
+                    </div>
+                    <div class="mode-description">
+                        <small id="modeDescText">DRIFT combines community summaries with entity details for comprehensive answers</small>
+                    </div>
+                </div>
+
+                <!-- Community Level -->
+                <div class="community-level-selector">
+                    <div>
+                        <label for="communityLevel">Community Level:</label>
+                        <select id="communityLevel" title="Choose granularity of community search">
+                            <option value="1" selected>Level 1 (573 fine-grained)</option>
+                            <option value="2">Level 2 (73 themes)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- K Parameters -->
+                <div class="k-params-selector">
+                    <div>
+                        <label for="kCommunities">Communities:</label>
+                        <select id="kCommunities">
+                            <option value="3">3</option>
+                            <option value="5" selected>5</option>
+                            <option value="7">7</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="kEntities">Entities:</label>
+                        <select id="kEntities">
+                            <option value="5">5</option>
+                            <option value="10" selected>10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Comparison Chat Container -->
+        <div class="comparison-chat-container">
+            <!-- Left Panel: BM25 -->
+            <div class="comparison-panel bm25-panel">
+                <div class="panel-header">
+                    <h3>🔍 BM25 (Current System)</h3>
+                    <span class="panel-badge bm25-badge">Keyword + Semantic</span>
+                </div>
+                <div class="chat-messages" id="bm25Messages">
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                BM25 responses will appear here. This uses keyword matching combined with semantic understanding.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: GraphRAG -->
+            <div class="comparison-panel graphrag-panel">
+                <div class="panel-header">
+                    <h3>🕸️ GraphRAG (Experimental)</h3>
+                    <span class="panel-badge graphrag-badge">Knowledge Graph</span>
+                </div>
+                <div class="chat-messages" id="graphragMessages">
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                GraphRAG responses will appear here. This uses community summaries and entity relationships from the knowledge graph.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading indicators -->
+        <div class="comparison-loading" id="comparisonLoading" style="display: none;">
+            <div class="loading-panel">
+                <div class="loading-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span>BM25 is searching...</span>
+            </div>
+            <div class="loading-panel">
+                <div class="loading-dots">
+                    <span></span><span></span><span></span>
+                </div>
+                <span>GraphRAG is searching...</span>
+            </div>
+        </div>
+
+        <!-- Input area -->
+        <div class="input-container comparison-input">
+            <form class="input-form" id="chatForm">
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="Ask a question to compare BM25 vs GraphRAG responses..."
+                    autocomplete="off"
+                    maxlength="1000"
+                >
+                <button type="submit" id="sendButton">
+                    <span class="send-icon">⚡</span>
+                    Compare
+                </button>
+            </form>
+        </div>
+
+        <!-- Comparison Metrics -->
+        <div class="comparison-metrics" id="comparisonMetrics" style="display: none;">
+            <h3>Comparison Metrics</h3>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Response Time</div>
+                    <div class="metric-value" id="metricTime">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Episode Overlap</div>
+                    <div class="metric-value" id="metricOverlap">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">GraphRAG Communities</div>
+                    <div class="metric-value" id="metricCommunities">-</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">GraphRAG Entities</div>
+                    <div class="metric-value" id="metricEntities">-</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GraphRAG Metadata Panel -->
+        <div class="graphrag-metadata" id="graphragMetadata" style="display: none;">
+            <h3>GraphRAG Context Used</h3>
+
+            <!-- Communities -->
+            <div class="metadata-section" id="communitiesSection">
+                <h4>🏘️ Communities Matched</h4>
+                <div class="metadata-items" id="communitiesList"></div>
+            </div>
+
+            <!-- Entities -->
+            <div class="metadata-section" id="entitiesSection">
+                <h4>👤 Entities Extracted</h4>
+                <div class="metadata-items" id="entitiesList"></div>
+            </div>
+
+            <!-- Relationships -->
+            <div class="metadata-section" id="relationshipsSection">
+                <h4>🔗 Relationships Found</h4>
+                <div class="metadata-items" id="relationshipsList"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>
+                GraphRAG Experiment • <a href="https://yonearth.org" target="_blank">YonEarth Community</a>
+                • <span id="status">Connected</span>
+            </p>
+        </footer>
+    </div>
+
+    <script src="chat-graphrag.js?v=1"></script>
+</body>
+</html>

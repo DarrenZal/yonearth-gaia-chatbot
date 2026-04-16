@@ -1,15 +1,16 @@
 /**
- * Knowledge Graph Visualization
- * Interactive D3.js force-directed graph for YonEarth entities
+ * Our Biggest Deal - Knowledge Graph Visualization
+ * Book-specific adaptation of D3.js force-directed graph
  */
 
-class KnowledgeGraphVisualization {
-    constructor(containerId) {
+class BookKnowledgeGraphVisualization {
+    constructor(containerId, section = 'front_matter') {
         this.container = d3.select(containerId);
         this.data = null;
         this.simulation = null;
         this.svg = null;
         this.g = null;
+        this.currentSection = section;
 
         // Visual elements
         this.links = null;
@@ -21,9 +22,9 @@ class KnowledgeGraphVisualization {
         this.filters = {
             domains: new Set(),
             entityTypes: new Set(),
-            minImportance: 0.7,  // Start with higher threshold to avoid rendering too many nodes
+            minImportance: 0.5,  // Lower threshold for book (smaller dataset)
             searchQuery: "",
-            maxNodes: 1000  // Hard limit on nodes to prevent browser freeze
+            maxNodes: 500  // Lower limit for better performance
         };
 
         // Layout parameters
@@ -46,7 +47,7 @@ class KnowledgeGraphVisualization {
     }
 
     async init() {
-        console.log("Initializing Knowledge Graph Visualization...");
+        console.log("Initializing Book Knowledge Graph Visualization...");
 
         // Show loading overlay
         this.showLoading(true);
@@ -66,30 +67,25 @@ class KnowledgeGraphVisualization {
         // Hide loading overlay
         this.showLoading(false);
 
-        console.log("Knowledge Graph Visualization initialized");
+        console.log("Book Knowledge Graph Visualization initialized");
     }
 
-    async loadData() {
+    async loadData(section = this.currentSection) {
+        // Book-specific data endpoint
+        const dataFile = '/data/knowledge_graph_books/our_biggest_deal_visualization.json';
+
         try {
-            // Try to load from API first
-            const response = await fetch('/api/knowledge-graph/data');
+            const response = await fetch(dataFile);
             if (response.ok) {
                 this.data = await response.json();
-                console.log("Loaded data from API:", this.data);
+                console.log('Loaded book data:', this.data);
             } else {
-                throw new Error("API not available");
+                throw new Error(`Failed to load: ${response.status}`);
             }
         } catch (error) {
-            console.log("Loading from local file...");
-            try {
-                const response = await fetch('/data/knowledge_graph/visualization_data.json');
-                this.data = await response.json();
-                console.log("Loaded data from file:", this.data);
-            } catch (fileError) {
-                console.error("Error loading data:", fileError);
-                this.showError("Failed to load knowledge graph data");
-                return;
-            }
+            console.error("Error loading book data:", error);
+            this.showError('Failed to load book knowledge graph data');
+            return;
         }
 
         // Initialize filters with all domains and types enabled
@@ -204,7 +200,7 @@ class KnowledgeGraphVisualization {
             this.addNodeShape(node, d);
         });
 
-        // Add labels (only for important nodes to avoid clutter)
+        // Add labels (for important nodes)
         this.labels = this.g.append('g')
             .attr('class', 'labels')
             .selectAll('text')
@@ -248,42 +244,25 @@ class KnowledgeGraphVisualization {
                 .attr('r', radius)
                 .attr('fill', color);
         } else {
-            // Multiple domains - pie chart or gradient
-            if (d.domains.length === 2) {
-                // Gradient for 2 domains
-                const gradientId = `gradient-${d.id.replace(/\s+/g, '-')}`;
-                const defs = this.svg.select('defs').empty() ?
-                    this.svg.append('defs') : this.svg.select('defs');
+            // Multiple domains - gradient
+            const gradientId = `gradient-${d.id.replace(/\s+/g, '-')}`;
+            const defs = this.svg.select('defs').empty() ?
+                this.svg.append('defs') : this.svg.select('defs');
 
-                const gradient = defs.append('linearGradient')
-                    .attr('id', gradientId);
+            const gradient = defs.append('linearGradient')
+                .attr('id', gradientId);
 
-                gradient.append('stop')
-                    .attr('offset', '0%')
-                    .attr('stop-color', d.domain_colors[0]);
+            gradient.append('stop')
+                .attr('offset', '0%')
+                .attr('stop-color', d.domain_colors[0]);
 
-                gradient.append('stop')
-                    .attr('offset', '100%')
-                    .attr('stop-color', d.domain_colors[1]);
+            gradient.append('stop')
+                .attr('offset', '100%')
+                .attr('stop-color', d.domain_colors[d.domain_colors.length - 1]);
 
-                node.append('circle')
-                    .attr('r', radius)
-                    .attr('fill', `url(#${gradientId})`);
-            } else {
-                // Pie chart for 3+ domains
-                const pie = d3.pie().value(1);
-                const arc = d3.arc()
-                    .innerRadius(0)
-                    .outerRadius(radius);
-
-                const pieData = pie(d.domain_colors);
-
-                node.selectAll('path')
-                    .data(pieData)
-                    .join('path')
-                    .attr('d', arc)
-                    .attr('fill', (_, i) => d.domain_colors[i]);
-            }
+            node.append('circle')
+                .attr('r', radius)
+                .attr('fill', `url(#${gradientId})`);
         }
 
         // Add white border
@@ -317,7 +296,7 @@ class KnowledgeGraphVisualization {
                 return false;
             }
 
-            // Check domain filter (node must have at least one matching domain)
+            // Check domain filter
             const hasMatchingDomain = node.domains.some(d => this.filters.domains.has(d));
             if (!hasMatchingDomain) {
                 return false;
@@ -336,18 +315,17 @@ class KnowledgeGraphVisualization {
             return true;
         });
 
-        // Apply hard limit on number of nodes (performance protection)
+        // Apply hard limit on number of nodes
         if (filteredNodes.length > this.filters.maxNodes) {
-            // Sort by importance and take top N
             filteredNodes = filteredNodes
                 .sort((a, b) => b.importance - a.importance)
                 .slice(0, this.filters.maxNodes);
         }
 
-        // Create a set of filtered node IDs for quick lookup
+        // Create a set of filtered node IDs
         const nodeIds = new Set(filteredNodes.map(n => n.id));
 
-        // Filter links (both source and target must be in filtered nodes)
+        // Filter links
         const filteredLinks = this.data.links.filter(link => {
             return nodeIds.has(link.source.id || link.source) &&
                    nodeIds.has(link.target.id || link.target);
@@ -396,15 +374,12 @@ class KnowledgeGraphVisualization {
                 <span style="font-size:11px">${d.description.substring(0, 150)}...</span>
             `);
 
-        // Highlight node and connections
+        // Highlight node
         this.highlightNode(d);
     }
 
     handleMouseOut() {
-        // Hide tooltip
         d3.select('#tooltip').classed('visible', false);
-
-        // Reset highlighting
         if (!this.selectedNode) {
             this.clearHighlight();
         }
@@ -413,7 +388,6 @@ class KnowledgeGraphVisualization {
     handleNodeClick(event, d) {
         event.stopPropagation();
 
-        // If clicking the same node, deselect
         if (this.selectedNode === d) {
             this.selectedNode = null;
             this.clearHighlight();
@@ -421,14 +395,12 @@ class KnowledgeGraphVisualization {
             return;
         }
 
-        // Select new node
         this.selectedNode = d;
         this.highlightNode(d);
         this.showDetails(d);
     }
 
     highlightNode(d) {
-        // Get connected node IDs
         const connectedIds = new Set();
         connectedIds.add(d.id);
 
@@ -440,12 +412,10 @@ class KnowledgeGraphVisualization {
             if (targetId === d.id) connectedIds.add(sourceId);
         });
 
-        // Highlight nodes
         this.nodes
             .classed('highlighted', node => node.id === d.id)
             .classed('dimmed', node => !connectedIds.has(node.id));
 
-        // Highlight links
         this.links
             .classed('highlighted', link => {
                 const sourceId = link.source.id || link.source;
@@ -459,182 +429,20 @@ class KnowledgeGraphVisualization {
             });
     }
 
-    /**
-     * Highlight multiple entities by name/alias
-     * Used by chat-kg-bridge.js to highlight entities mentioned in chat responses
-     * @param {string[]} entityNames - Array of entity names to highlight
-     * @returns {string[]} - Array of matched entity names (for feedback to user)
-     */
-    highlightEntities(entityNames) {
-        if (!entityNames || entityNames.length === 0) {
-            this.clearHighlight();
-            return [];
-        }
-
-        // Normalize search terms
-        const searchTerms = entityNames.map(name => name.toLowerCase().trim());
-
-        // Track which nodes we match
-        const matchedNodes = new Set();
-        const matchedNames = [];
-
-        // Find matching nodes by name or alias
-        this.data.nodes.forEach(node => {
-            const nodeName = node.name.toLowerCase();
-            const nodeId = node.id.toLowerCase();
-            const aliases = (node.aliases || []).map(a => a.toLowerCase());
-
-            for (const term of searchTerms) {
-                // Check exact match on name
-                if (nodeName === term || nodeId === term) {
-                    matchedNodes.add(node.id);
-                    matchedNames.push(node.name);
-                    break;
-                }
-
-                // Check alias match
-                if (aliases.some(alias => alias === term)) {
-                    matchedNodes.add(node.id);
-                    matchedNames.push(node.name);
-                    break;
-                }
-
-                // Check partial match (for multi-word entities)
-                if (nodeName.includes(term) || term.includes(nodeName)) {
-                    matchedNodes.add(node.id);
-                    matchedNames.push(node.name);
-                    break;
-                }
-            }
-        });
-
-        if (matchedNodes.size === 0) {
-            console.log('highlightEntities: No matches found for', entityNames);
-            return [];
-        }
-
-        console.log('highlightEntities: Matched', matchedNames);
-
-        // Get all connected node IDs for the matched nodes
-        const connectedIds = new Set(matchedNodes);
-        this.data.links.forEach(link => {
-            const sourceId = link.source.id || link.source;
-            const targetId = link.target.id || link.target;
-
-            if (matchedNodes.has(sourceId)) connectedIds.add(targetId);
-            if (matchedNodes.has(targetId)) connectedIds.add(sourceId);
-        });
-
-        // Apply multi-highlight visual style
-        this.nodes
-            .classed('highlighted', node => matchedNodes.has(node.id))
-            .classed('connected', node => connectedIds.has(node.id) && !matchedNodes.has(node.id))
-            .classed('dimmed', node => !connectedIds.has(node.id));
-
-        // Add glow effect to highlighted nodes
-        this.nodes.selectAll('circle')
-            .style('filter', node => matchedNodes.has(node.id) ? 'drop-shadow(0 0 8px #667eea) drop-shadow(0 0 12px #764ba2)' : null)
-            .style('stroke', node => matchedNodes.has(node.id) ? '#667eea' : null)
-            .style('stroke-width', node => matchedNodes.has(node.id) ? '3px' : null);
-
-        // Highlight links between matched nodes
-        this.links
-            .classed('highlighted', link => {
-                const sourceId = link.source.id || link.source;
-                const targetId = link.target.id || link.target;
-                return matchedNodes.has(sourceId) && matchedNodes.has(targetId);
-            })
-            .classed('connected', link => {
-                const sourceId = link.source.id || link.source;
-                const targetId = link.target.id || link.target;
-                return (matchedNodes.has(sourceId) || matchedNodes.has(targetId)) &&
-                       !(matchedNodes.has(sourceId) && matchedNodes.has(targetId));
-            })
-            .classed('dimmed', link => {
-                const sourceId = link.source.id || link.source;
-                const targetId = link.target.id || link.target;
-                return !connectedIds.has(sourceId) || !connectedIds.has(targetId);
-            });
-
-        // Pan/zoom to show highlighted nodes (optional, only if more than one match)
-        if (matchedNodes.size > 0 && matchedNodes.size <= 5) {
-            this.focusOnNodes(Array.from(matchedNodes));
-        }
-
-        return matchedNames;
-    }
-
-    /**
-     * Focus/zoom the view to show a set of nodes
-     * @param {string[]} nodeIds - Array of node IDs to focus on
-     */
-    focusOnNodes(nodeIds) {
-        // Find the matching node data
-        const matchingNodes = this.data.nodes.filter(n => nodeIds.includes(n.id));
-
-        if (matchingNodes.length === 0) return;
-
-        // Calculate bounding box of all matched nodes
-        let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
-        matchingNodes.forEach(node => {
-            if (node.x !== undefined && node.y !== undefined) {
-                minX = Math.min(minX, node.x);
-                maxX = Math.max(maxX, node.x);
-                minY = Math.min(minY, node.y);
-                maxY = Math.max(maxY, node.y);
-            }
-        });
-
-        // If we couldn't find positions, skip zooming
-        if (!isFinite(minX)) return;
-
-        // Calculate center and scale
-        const centerX = (minX + maxX) / 2;
-        const centerY = (minY + maxY) / 2;
-        const padding = 100;
-        const boxWidth = Math.max(maxX - minX + padding * 2, 200);
-        const boxHeight = Math.max(maxY - minY + padding * 2, 200);
-
-        const scale = Math.min(
-            this.width / boxWidth,
-            this.height / boxHeight,
-            2 // Max zoom level
-        );
-
-        const x = this.width / 2 - centerX * scale;
-        const y = this.height / 2 - centerY * scale;
-
-        // Animate to the new view
-        this.svg.transition()
-            .duration(750)
-            .call(
-                this.zoom.transform,
-                d3.zoomIdentity.translate(x, y).scale(scale)
-            );
-    }
-
     clearHighlight() {
         this.nodes
             .classed('highlighted', false)
-            .classed('connected', false)
             .classed('dimmed', false);
-
-        // Clear glow effects
-        this.nodes.selectAll('circle')
-            .style('filter', null)
-            .style('stroke', null)
-            .style('stroke-width', null);
 
         this.links
             .classed('highlighted', false)
-            .classed('connected', false)
             .classed('dimmed', false);
     }
 
     showDetails(d) {
         const detailsContent = d3.select('#details-content');
 
-        // Find all relationships (edges) involving this node
+        // Find relationships
         const outgoingRelationships = [];
         const incomingRelationships = [];
 
@@ -643,23 +451,21 @@ class KnowledgeGraphVisualization {
             const targetId = link.target.id || link.target;
 
             if (sourceId === d.id) {
-                // Outgoing: this node → relationship → target
                 const targetNode = this.data.nodes.find(n => n.id === targetId);
                 if (targetNode) {
                     outgoingRelationships.push({
                         type: link.type || link.relationship_type || 'RELATED_TO',
                         target: targetNode.name,
-                        strength: link.strength || 1.0
+                        page: link.page
                     });
                 }
             } else if (targetId === d.id) {
-                // Incoming: source → relationship → this node
                 const sourceNode = this.data.nodes.find(n => n.id === sourceId);
                 if (sourceNode) {
                     incomingRelationships.push({
                         type: link.type || link.relationship_type || 'RELATED_TO',
                         source: sourceNode.name,
-                        strength: link.strength || 1.0
+                        page: link.page
                     });
                 }
             }
@@ -681,10 +487,11 @@ class KnowledgeGraphVisualization {
                                     <span class="relationship-subject">${d.name}</span>
                                     <span class="relationship-type">${rel.type}</span>
                                     <span class="relationship-object">${rel.target}</span>
+                                    <span style="font-size:10px; opacity:0.7">(p.${rel.page})</span>
                                 </div>
                             `).join('')}
                             ${outgoingRelationships.length > 10 ? `
-                                <div class="relationship-more">+ ${outgoingRelationships.length - 10} more outgoing</div>
+                                <div class="relationship-more">+ ${outgoingRelationships.length - 10} more</div>
                             ` : ''}
                         </div>
                     </div>
@@ -701,10 +508,11 @@ class KnowledgeGraphVisualization {
                                     <span class="relationship-subject">${rel.source}</span>
                                     <span class="relationship-type">${rel.type}</span>
                                     <span class="relationship-object">${d.name}</span>
+                                    <span style="font-size:10px; opacity:0.7">(p.${rel.page})</span>
                                 </div>
                             `).join('')}
                             ${incomingRelationships.length > 10 ? `
-                                <div class="relationship-more">+ ${incomingRelationships.length - 10} more incoming</div>
+                                <div class="relationship-more">+ ${incomingRelationships.length - 10} more</div>
                             ` : ''}
                         </div>
                     </div>
@@ -726,27 +534,21 @@ class KnowledgeGraphVisualization {
             <div class="entity-meta">
                 <strong>Importance:</strong> ${(d.importance * 100).toFixed(0)}%<br/>
                 <strong>Mentions:</strong> ${d.mention_count}<br/>
-                <strong>Episodes:</strong> ${d.episode_count}
+                <strong>Pages:</strong> ${d.page_count}
                 <div class="episodes-list">
-                    ${d.episodes.slice(0, 10).map(ep =>
-                        `<span class="episode-badge">Ep ${ep}</span>`
+                    ${d.pages.slice(0, 15).map(page =>
+                        `<span class="episode-badge">p.${page}</span>`
                     ).join('')}
-                    ${d.episodes.length > 10 ? `<span class="episode-badge">+${d.episodes.length - 10} more</span>` : ''}
+                    ${d.pages.length > 15 ? `<span class="episode-badge">+${d.pages.length - 15} more</span>` : ''}
                 </div>
-                ${d.aliases && d.aliases.length > 0 ? `
-                    <br/><strong>Aliases:</strong> ${d.aliases.join(', ')}
-                ` : ''}
             </div>
             ${relationshipsHtml}
-            <a href="#" class="wiki-link" onclick="openWiki('${d.id}'); return false;">
-                View in Wiki →
-            </a>
         `);
     }
 
     closeDetails() {
         const detailsContent = d3.select('#details-content');
-        detailsContent.html('<p class="empty-state">Click a node to view details</p>');
+        detailsContent.html('<p class="empty-state">Select an entity to view details</p>');
     }
 
     createLegend() {
@@ -758,7 +560,7 @@ class KnowledgeGraphVisualization {
                 .html(`<span class="color-indicator" style="background:${domain.color}"></span> ${domain.name}`);
         });
 
-        // Type legend (show top types only)
+        // Type legend (top types)
         const typeCounts = {};
         this.data.nodes.forEach(n => {
             typeCounts[n.type] = (typeCounts[n.type] || 0) + 1;
@@ -805,7 +607,7 @@ class KnowledgeGraphVisualization {
         // Clear existing
         this.g.selectAll('*').remove();
 
-        // Recreate visualization with filtered data
+        // Recreate visualization
         this.createVisualization();
 
         // Update statistics
@@ -815,44 +617,26 @@ class KnowledgeGraphVisualization {
     updateStatistics() {
         const filteredData = this.getFilteredData();
 
-        // Count nodes before max limit
-        const preFilterCount = this.data.nodes.filter(node => {
-            if (node.importance < this.filters.minImportance) return false;
-            if (!this.filters.entityTypes.has(node.type)) return false;
-            const hasMatchingDomain = node.domains.some(d => this.filters.domains.has(d));
-            if (!hasMatchingDomain) return false;
-            if (this.filters.searchQuery) {
-                const query = this.filters.searchQuery.toLowerCase();
-                const nameMatch = node.name.toLowerCase().includes(query);
-                const descMatch = node.description.toLowerCase().includes(query);
-                if (!nameMatch && !descMatch) return false;
-            }
-            return true;
-        }).length;
-
-        const hitLimit = preFilterCount > this.filters.maxNodes;
-
         const stats = d3.select('#stats-display');
         stats.html(`
             <div class="stat-item">
-                <span class="stat-label">Visible:</span>
-                <span class="stat-value">${filteredData.nodes.length}${hitLimit ? ' (limited)' : ''}</span>
+                <span class="stat-label">Visible Nodes:</span>
+                <span class="stat-value">${filteredData.nodes.length}</span>
             </div>
-            ${hitLimit ? `
-                <div class="stat-item" style="color: #e67e22; font-size: 11px; margin-top: 5px;">
-                    ⚠️ Showing top ${this.filters.maxNodes} by importance
-                </div>
-            ` : ''}
             <div class="stat-item">
-                <span class="stat-label">Connections:</span>
+                <span class="stat-label">Visible Links:</span>
                 <span class="stat-value">${filteredData.links.length}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Total Topics & People:</span>
-                <span class="stat-value">${this.data.nodes.length.toLocaleString()}</span>
+                <span class="stat-label">Total Entities:</span>
+                <span class="stat-value">${this.data.nodes.length}</span>
             </div>
             <div class="stat-item">
-                <span class="stat-label">Topic Groups:</span>
+                <span class="stat-label">Total Relationships:</span>
+                <span class="stat-value">${this.data.links.length}</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Domains:</span>
                 <span class="stat-value">${this.data.statistics.total_communities}</span>
             </div>
         `);
@@ -873,8 +657,7 @@ class KnowledgeGraphVisualization {
         `);
     }
 
-    // Public methods for controls
-
+    // Public control methods
     updateGravity(value) {
         this.params.gravity = parseFloat(value);
         d3.select('#gravity-value').text(value);
@@ -903,12 +686,10 @@ class KnowledgeGraphVisualization {
     }
 
     resetView() {
-        // Reset zoom
         this.svg.transition()
             .duration(750)
             .call(this.zoom.transform, d3.zoomIdentity);
 
-        // Restart simulation
         if (this.simulation) {
             this.simulation.alpha(1).restart();
         }
@@ -918,7 +699,6 @@ class KnowledgeGraphVisualization {
         this.filters.searchQuery = query;
         this.updateVisualization();
 
-        // Also show search results list
         const results = this.data.nodes.filter(n => {
             const q = query.toLowerCase();
             return n.name.toLowerCase().includes(q) ||
@@ -948,11 +728,9 @@ class KnowledgeGraphVisualization {
     }
 
     focusOnNode(node) {
-        // Find node position
         const nodeData = this.data.nodes.find(n => n.id === node.id);
         if (!nodeData || !nodeData.x || !nodeData.y) return;
 
-        // Zoom to node
         const scale = 2;
         const x = -nodeData.x * scale + this.width / 2;
         const y = -nodeData.y * scale + this.height / 2;
@@ -964,7 +742,6 @@ class KnowledgeGraphVisualization {
                 d3.zoomIdentity.translate(x, y).scale(scale)
             );
 
-        // Select and highlight node
         this.handleNodeClick({ stopPropagation: () => {} }, nodeData);
     }
 }
@@ -1009,88 +786,11 @@ function closeDetails() {
     }
 }
 
-function openWiki(entityId) {
-    // Navigate to wiki page (to be implemented)
-    console.log("Opening wiki for:", entityId);
-    alert(`Wiki integration coming soon!\nEntity: ${entityId}`);
-}
-
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    vizInstance = new KnowledgeGraphVisualization('#graph-svg-container');
-    window.knowledgeGraph = vizInstance; // For debugging
-
-    // Handle URL parameters for deep-linking (e.g., ?entity=biochar or ?search=permaculture)
-    handleUrlParams();
+    vizInstance = new BookKnowledgeGraphVisualization('#graph-svg-container', 'front_matter');
+    window.bookKnowledgeGraph = vizInstance; // For debugging
 });
-
-/**
- * Handle URL parameters for entity deep-linking
- * Supports:
- *   ?entity=<name> - Highlight and focus on a specific entity
- *   ?search=<query> - Populate search and filter results
- */
-function handleUrlParams() {
-    const params = new URLSearchParams(window.location.search);
-    const entityName = params.get('entity');
-    const searchQuery = params.get('search');
-
-    if (entityName) {
-        // Wait for graph to fully initialize and load data
-        const checkAndHighlight = () => {
-            if (vizInstance && vizInstance.data && vizInstance.data.nodes) {
-                // Find matching node by id, name, or alias
-                const searchTerm = entityName.toLowerCase().trim();
-                const node = vizInstance.data.nodes.find(n => {
-                    const nodeId = n.id.toLowerCase();
-                    const nodeName = n.name.toLowerCase();
-                    const aliases = (n.aliases || []).map(a => a.toLowerCase());
-
-                    return nodeId === searchTerm ||
-                           nodeName === searchTerm ||
-                           nodeId.includes(searchTerm) ||
-                           nodeName.includes(searchTerm) ||
-                           aliases.some(a => a === searchTerm || a.includes(searchTerm));
-                });
-
-                if (node) {
-                    console.log('Deep-link: Found entity', node.name);
-                    // Highlight the entity
-                    vizInstance.highlightEntities([node.name]);
-                    // Show details panel
-                    vizInstance.showDetails(node);
-                    vizInstance.selectedNode = node;
-                    // Focus on the node after a short delay for simulation to stabilize
-                    setTimeout(() => {
-                        vizInstance.focusOnNode(node);
-                    }, 1500);
-                } else {
-                    console.log('Deep-link: Entity not found:', entityName);
-                    // Try a search instead
-                    document.getElementById('search-input').value = entityName;
-                    vizInstance.searchEntities(entityName);
-                }
-            } else {
-                // Retry until graph is ready
-                setTimeout(checkAndHighlight, 200);
-            }
-        };
-        // Start checking after initial load
-        setTimeout(checkAndHighlight, 500);
-
-    } else if (searchQuery) {
-        // Wait for graph to load, then perform search
-        const checkAndSearch = () => {
-            if (vizInstance && vizInstance.data) {
-                document.getElementById('search-input').value = searchQuery;
-                vizInstance.searchEntities(searchQuery);
-            } else {
-                setTimeout(checkAndSearch, 200);
-            }
-        };
-        setTimeout(checkAndSearch, 500);
-    }
-}
 
 // Handle search input Enter key
 document.addEventListener('DOMContentLoaded', () => {
@@ -1101,58 +801,5 @@ document.addEventListener('DOMContentLoaded', () => {
                 searchEntities();
             }
         });
-    }
-
-    // Listen for highlight messages from parent window (when embedded in iframe)
-    window.addEventListener('message', (event) => {
-        if (!event.data || !event.data.type) return;
-
-        switch (event.data.type) {
-            case 'highlightEntities':
-                if (vizInstance && event.data.entities) {
-                    const matched = vizInstance.highlightEntities(event.data.entities);
-                    // Send back the result
-                    if (event.source) {
-                        event.source.postMessage({
-                            type: 'highlightResult',
-                            matched: matched,
-                            requested: event.data.entities
-                        }, '*');
-                    }
-                }
-                break;
-
-            case 'clearHighlights':
-                if (vizInstance) {
-                    vizInstance.clearHighlight();
-                }
-                break;
-        }
-    });
-
-    // Notify parent window that KG is ready
-    if (window.parent !== window) {
-        window.parent.postMessage({ type: 'kgReady' }, '*');
-    }
-
-    // Also listen on BroadcastChannel for cross-frame communication
-    try {
-        const channel = new BroadcastChannel('chat-kg-sync');
-        channel.onmessage = (event) => {
-            if (!event.data || !event.data.type) return;
-
-            if (event.data.type === 'highlight' || event.data.type === 'highlightEntities') {
-                const entities = event.data.entities || event.data.nodeIds;
-                if (vizInstance && entities) {
-                    vizInstance.highlightEntities(entities);
-                }
-            } else if (event.data.type === 'clear-highlights' || event.data.type === 'clearHighlights') {
-                if (vizInstance) {
-                    vizInstance.clearHighlight();
-                }
-            }
-        };
-    } catch (e) {
-        console.log('BroadcastChannel not supported');
     }
 });

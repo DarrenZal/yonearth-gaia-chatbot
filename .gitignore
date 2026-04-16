@@ -148,3 +148,14 @@ scripts/CLAUDE.md
 scripts/archive/old_processing_scripts/CLAUDE.md
 src/knowledge_graph/visualization/CLAUDE.md
 web/CLAUDE.md
+
+# WebP images (binary, large — soil-handbook og-images etc.)
+*.webp
+
+# Soil handbook static site (generated, tracked separately)
+web/soil-handbook/
+
+# Local Claude Code / MCP config (machine-specific)
+.claude/
+.mcp.json
+ecoscene-kickoff-canvas.excalidraw

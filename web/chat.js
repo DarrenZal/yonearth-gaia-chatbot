@@ -4,7 +4,7 @@
 
 class GaiaChat {
     constructor() {
-        this.apiUrl = localStorage.getItem('gaiaApiUrl') || window.API_BASE || './api';
+        this.apiUrl = localStorage.getItem('gaiaApiUrl') || '/api';
         this.sessionId = this.generateSessionId();
         this.isLoading = false;
         this.conversationEpisodes = new Set(); // Track episodes mentioned in conversation
@@ -14,6 +14,10 @@ class GaiaChat {
         this.initializeElements();
         this.setupEventListeners();
         this.checkApiConnection();
+        // Entity linking
+        this.entityNames = [];
+        this.entityMap = {};
+        this.loadEntityNames();
     }
     
     initializeElements() {
@@ -42,6 +46,14 @@ class GaiaChat {
         this.recommendations = document.getElementById('recommendations');
         this.recommendationsList = document.getElementById('recommendationsList');
         this.status = document.getElementById('status');
+
+        // Collapsible controls
+        this.controlsToggle = document.getElementById('controlsToggle');
+        this.controlsToggleText = document.getElementById('controlsToggleText');
+        this.chatControls = document.getElementById('chatControls');
+        if (this.controlsToggle) {
+            this.controlsToggle.style.display = 'block';
+        }
         
         // Voice controls
         this.voiceToggle = document.getElementById('voiceToggle');
@@ -52,22 +64,21 @@ class GaiaChat {
         this.voicePlayer = document.getElementById('voicePlayer');
         this.voiceIcon = document.querySelector('.voice-icon');
 
-        // STT (mic) controls
-        this.micButton = document.getElementById('micButton');
-        this.micIcon = document.getElementById('micIcon');
+        // Default selections
+        if (this.modelTypeSelect) {
+            this.modelTypeSelect.value = 'gpt-4o-mini';
+        }
+        if (this.ragTypeSelect) {
+            this.ragTypeSelect.value = 'bm25';
+        }
+        if (this.maxReferencesSelect) {
+            this.maxReferencesSelect.value = '5';
+        }
 
-        // STT state
-        this.sttEnabled = false;  // set true after /api/stt/status probe
-        this.isRecording = false;
-        this.mediaRecorder = null;
-        this.recordedChunks = [];
-        this.recordingTimer = null;
-        this.STT_MAX_DURATION_MS = 60_000;  // 60s client-side cap
-
-        // Voice output state
+        // Voice state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
-        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'YcVr5DmTjJ2cEVwNiuhU';
+        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'piper-gaia';
         this.currentAudio = null;
         this.audioQueue = [];
         
@@ -89,8 +100,9 @@ class GaiaChat {
         // Initialize voice UI
         this.updateVoiceUI();
 
-        // Probe STT status and show/hide mic button
-        this.probeSTTStatus();
+        // Initialize controls visibility (always open; toggle hidden)
+        this.controlsCollapsed = true;
+        this.updateControlsVisibility();
     }
     
     setupEventListeners() {
@@ -114,7 +126,9 @@ class GaiaChat {
         });
         
         // Personality change
-        this.personalitySelect.addEventListener('change', () => {
+
+        
+        if (this.personalitySelect) this.personalitySelect.addEventListener('change', () => {
             this.showPersonalityChange();
             // Update details if visible
             if (this.personalityDetailsSection.style.display !== 'none') {
@@ -123,40 +137,61 @@ class GaiaChat {
         });
         
         // RAG type change
-        this.ragTypeSelect.addEventListener('change', () => {
+
+        
+        if (this.ragTypeSelect) this.ragTypeSelect.addEventListener('change', () => {
             this.updateRAGDescription();
         });
         
         // Model type change
-        this.modelTypeSelect.addEventListener('change', () => {
+
+        
+        if (this.modelTypeSelect) this.modelTypeSelect.addEventListener('change', () => {
             this.updateModelDescription();
         });
         
         // Max references change
-        this.maxReferencesSelect.addEventListener('change', () => {
+
+        
+        if (this.maxReferencesSelect) this.maxReferencesSelect.addEventListener('change', () => {
             this.updateReferencesDescription();
         });
         
         // Category threshold change
-        this.categoryThresholdSelect.addEventListener('change', () => {
+
+        
+        if (this.categoryThresholdSelect) this.categoryThresholdSelect.addEventListener('change', () => {
             this.updateCategoryDescription();
         });
         
         // Personality details toggle
-        this.personalityDetails.addEventListener('click', (e) => {
+
+        
+        if (this.personalityDetails) this.personalityDetails.addEventListener('click', (e) => {
             e.preventDefault();
             this.togglePersonalityDetails();
         });
         
         // Custom prompt save button
-        this.saveCustomPrompt.addEventListener('click', () => {
+
+        
+        if (this.saveCustomPrompt) this.saveCustomPrompt.addEventListener('click', () => {
             this.saveCustomPromptToStorage();
         });
         
         // Custom prompt reset button
-        this.resetCustomPrompt.addEventListener('click', () => {
+
+        
+        if (this.resetCustomPrompt) this.resetCustomPrompt.addEventListener('click', () => {
             this.resetCustomPromptToDefault();
         });
+
+        // Controls toggle
+        if (this.controlsToggle) {
+            this.controlsToggle.addEventListener('click', () => {
+                this.toggleControlsVisibility();
+            });
+        }
         
         // Configuration modal (Ctrl+Shift+C)
         document.addEventListener('keydown', (e) => {
@@ -177,18 +212,40 @@ class GaiaChat {
             console.log('Voice changed to:', this.selectedVoiceId);
         });
 
-        // Mic button (STT)
-        if (this.micButton) {
-            this.micButton.addEventListener('click', () => {
-                this.toggleRecording();
-            });
-        }
-
         // Auto-play checkbox
         this.autoPlayVoice.addEventListener('change', () => {
             this.autoPlay = this.autoPlayVoice.checked;
             localStorage.setItem('autoPlayVoice', this.autoPlay);
         });
+    }
+
+    toggleControlsVisibility() {
+        this.controlsCollapsed = !this.controlsCollapsed;
+        this.updateControlsVisibility();
+    }
+
+    updateControlsVisibility() {
+        if (!this.chatControls) {
+            return;
+        }
+
+        if (this.controlsCollapsed) {
+            this.chatControls.classList.remove('visible');
+            if (this.controlsToggle) {
+                this.controlsToggle.setAttribute('aria-expanded', 'false');
+            }
+            if (this.controlsToggleText) {
+                this.controlsToggleText.textContent = 'Show settings';
+            }
+        } else {
+            this.chatControls.classList.add('visible');
+            if (this.controlsToggle) {
+                this.controlsToggle.setAttribute('aria-expanded', 'true');
+            }
+            if (this.controlsToggleText) {
+                this.controlsToggleText.textContent = 'Hide settings';
+            }
+        }
     }
     
     generateSessionId() {
@@ -203,7 +260,7 @@ class GaiaChat {
     async checkApiConnection() {
         try {
             // Try health endpoint first
-            const healthResponse = await fetch(`${this.apiUrl}/health`);
+            const healthResponse = await fetch(`${this.apiUrl}/bm25/health`);
             if (healthResponse.ok) {
                 const data = await healthResponse.json();
                 this.updateStatus('connected', `Connected - ${data.status}`);
@@ -211,7 +268,7 @@ class GaiaChat {
             }
             
             // If health fails, test chat endpoint with a simple ping
-            const chatResponse = await fetch(`${this.apiUrl}/chat`, {
+            const chatResponse = await fetch(`${this.apiUrl}/bm25/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -286,8 +343,10 @@ class GaiaChat {
                     citations: allCitations
                 });
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             } 
             // Handle RAG comparison mode
             else if (response.comparison) {
@@ -300,24 +359,32 @@ class GaiaChat {
                     citations: [...(response.original.citations || response.original.sources || []), ...(response.bm25.sources || response.bm25.citations || [])]
                 });
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             } else {
+                // Handle hybrid QA response format
+                const responseText = response.answer || response.response;
+                const responseCitations = response.sources || response.citations || [];
+
                 // Add Gaia's response to conversation history
                 this.conversationHistory.push({
                     role: 'gaia',
-                    content: response.response,
-                    citations: response.citations || response.sources || []
+                    content: responseText,
+                    citations: responseCitations
                 });
                 console.log('Added Gaia response to conversation history. Total messages:', this.conversationHistory.length);
-                console.log('Citations in response:', response.citations || response.sources || []);
+                console.log('Citations in response:', responseCitations);
                 console.log('Audio data in response:', !!response.audio_data, 'Length:', response.audio_data ? response.audio_data.length : 0);
-                
+
                 // Add Gaia's response WITH inline citations, audio, and cost breakdown
-                this.addMessage(response.response, 'gaia', response.citations || response.sources, false, response.audio_data, response.cost_breakdown);
+                this.addMessage(responseText, 'gaia', responseCitations, false, response.audio_data, null);
                 
-                // Show smart recommendations based on conversation
-                await this.updateConversationRecommendations();
+                // Show smart recommendations based on conversation (skip for hybrid mode for now)
+                if (this.ragTypeSelect.value !== 'hybrid') {
+                    await this.updateConversationRecommendations();
+                }
             }
             
         } catch (error) {
@@ -336,53 +403,68 @@ class GaiaChat {
     async callChatAPI(message) {
         const ragType = this.ragTypeSelect.value;
         const modelType = this.modelTypeSelect.value;
-        
+
         // Handle model comparison mode
         if (modelType === 'compare') {
             console.log('🤖 Model comparison mode selected!');
             console.log('📊 Will compare 3 models: gpt-3.5-turbo, gpt-4o-mini, gpt-4');
             return await this.callModelComparisonAPI(message);
         }
-        
+
         // Handle RAG comparison mode
         if (ragType === 'both') {
             return await this.callBothAPIs(message);
         }
-        
+
         // Determine which endpoint to use
-        const endpoint = ragType === 'bm25' ? '/bm25/chat' : '/chat';
-        
-        const maxReferences = parseInt(this.maxReferencesSelect.value);
-        
-        // Collect mentioned episodes from conversation history for follow-up context
-        const mentionedEpisodes = this.getMentionedEpisodes();
-
-        const requestBody = {
-            message: message,
-            session_id: this.sessionId,
-            personality: this.personalitySelect.value,
-            max_results: 5,
-            model: modelType !== 'compare' ? modelType : undefined,
-            max_references: maxReferences,
-            enable_voice: this.voiceEnabled,
-            voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined,
-            mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
-        };
-
-        console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
-        console.log('Mentioned episodes for context:', mentionedEpisodes.length);
-        
-        // Add custom prompt if custom personality is selected
-        if (this.personalitySelect.value === 'custom') {
-            const customPrompt = this.customPromptEditor.value.trim();
-            if (customPrompt) {
-                requestBody.custom_prompt = customPrompt;
-            }
+        let endpoint;
+        if (ragType === 'hybrid') {
+            endpoint = '/qa/hybrid';
+        } else if (ragType === 'bm25') {
+            endpoint = '/bm25/chat';
+        } else {
+            endpoint = '/bm25/chat';
         }
         
+        const maxReferences = parseInt(this.maxReferencesSelect.value);
+
+        let requestBody;
+
+        // Build request body based on endpoint
+        if (ragType === 'hybrid') {
+            // Hybrid QA endpoint uses different parameter names
+            requestBody = {
+                query: message,
+                k: maxReferences,
+                category_threshold: parseFloat(this.categoryThresholdSelect.value)
+            };
+        } else {
+            // Original and BM25 endpoints
+            requestBody = {
+                message: message,
+                session_id: this.sessionId,
+                personality: this.personalitySelect.value,
+                max_results: 5,
+                model: modelType !== 'compare' ? modelType : undefined,
+                max_references: maxReferences,
+                enable_voice: this.voiceEnabled,
+                voice_id: this.voiceEnabled ? this.selectedVoiceId : undefined
+            };
+
+            console.log('Voice enabled in request:', requestBody.enable_voice, 'Voice ID:', requestBody.voice_id);
+
+            // Add custom prompt if custom personality is selected
+            if (this.personalitySelect.value === 'custom') {
+                const customPrompt = this.customPromptEditor.value.trim();
+                if (customPrompt) {
+                    requestBody.custom_prompt = customPrompt;
+                }
+            }
+        }
+
         // Add BM25-specific parameters
         if (ragType === 'bm25') {
-            requestBody.search_method = 'hybrid';
+            requestBody.search_method = 'bm25';
             requestBody.k = 5;
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
@@ -390,8 +472,6 @@ class GaiaChat {
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
             requestBody.enable_voice = this.voiceEnabled;
             requestBody.voice_id = this.voiceEnabled ? this.selectedVoiceId : undefined;
-            // Pass mentioned episodes for follow-up context (already set above, but ensure BM25 gets it)
-            requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
 
             // Also add custom prompt for BM25
             if (this.personalitySelect.value === 'custom') {
@@ -437,18 +517,16 @@ class GaiaChat {
             
             try {
                 const maxReferences = parseInt(this.maxReferencesSelect.value);
-                const mentionedEpisodes = this.getMentionedEpisodes();
-
+                
                 const requestBody = {
                     message: message,
                     session_id: this.sessionId,
                     personality: this.personalitySelect.value,
                     max_results: 5,
                     model: model,  // Specify the model explicitly
-                    max_references: maxReferences,
-                    mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
+                    max_references: maxReferences
                 };
-
+                
                 // Add custom prompt if custom personality is selected
                 if (this.personalitySelect.value === 'custom') {
                     const customPrompt = this.customPromptEditor.value.trim();
@@ -456,18 +534,17 @@ class GaiaChat {
                         requestBody.custom_prompt = customPrompt;
                     }
                 }
-
-                // Determine which endpoint to use based on current RAG type
-                const ragType = this.ragTypeSelect.value;
-                const endpoint = ragType === 'original' ? '/chat' : '/bm25/chat';
-
+                
+        // Determine which endpoint to use based on current RAG type (BM25 also uses /chat with search_method)
+        const ragType = this.ragTypeSelect.value;
+        const endpoint = '/bm25/chat';
+                
                 // Add BM25-specific parameters if using BM25
                 if (ragType !== 'original') {
                     requestBody.search_method = 'hybrid';
                     requestBody.k = 5;
                     requestBody.include_sources = true;
                     requestBody.gaia_personality = this.personalitySelect.value;
-                    requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
                 }
                 
                 console.log(`Sending request to ${endpoint} with model ${model}:`, requestBody);
@@ -556,19 +633,17 @@ class GaiaChat {
     }
     
     async callSingleAPI(message, type) {
-        const endpoint = type === 'bm25' ? '/bm25/chat' : '/chat';
+        const endpoint = '/bm25/chat';
         const maxReferences = parseInt(this.maxReferencesSelect.value);
-        const mentionedEpisodes = this.getMentionedEpisodes();
-
+        
         const requestBody = {
             message: message,
             session_id: this.sessionId,
             personality: this.personalitySelect.value,
             max_results: 5,
-            max_references: maxReferences,
-            mentioned_episodes: mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined
+            max_references: maxReferences
         };
-
+        
         // Add custom prompt if custom personality is selected
         if (this.personalitySelect.value === 'custom') {
             const customPrompt = this.customPromptEditor.value.trim();
@@ -576,15 +651,14 @@ class GaiaChat {
                 requestBody.custom_prompt = customPrompt;
             }
         }
-
+        
         if (type === 'bm25') {
-            requestBody.search_method = 'hybrid';
+            requestBody.search_method = 'bm25';
             requestBody.k = 5;
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
             requestBody.max_citations = maxReferences; // BM25 uses max_citations
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
-            requestBody.mentioned_episodes = mentionedEpisodes.length > 0 ? mentionedEpisodes : undefined;
         }
         
         try {
@@ -682,7 +756,14 @@ class GaiaChat {
         messageDiv.appendChild(content);
         
         this.chatMessages.appendChild(messageDiv);
-        this.scrollToBottom();
+        
+        // For Gaia responses, scroll to show the message at the top
+        // For user messages, scroll to bottom
+        if (sender === 'gaia') {
+            this.scrollToMessage(messageDiv);
+        } else {
+            this.scrollToBottom();
+        }
     }
     
     addHyperlinksToResponse(text, citations) {
@@ -787,8 +868,67 @@ class GaiaChat {
             });
         });
         
+        return this.addEntityLinksToText(htmlText);
+    }
+
+    async loadEntityNames() {
+        if (this.entityNames.length > 0) return;
+        try {
+            const response = await fetch("/YonEarth/data/top_entities.json");
+            if (response.ok) {
+                this.entityMap = await response.json();
+                // Deduplicate entity names (case-insensitive) to prevent double-linking
+                const seenLower = new Set();
+                this.entityNames = Object.keys(this.entityMap)
+                    .filter(name => name.length >= 4)
+                    .filter(name => {
+                        const lower = name.toLowerCase();
+                        if (seenLower.has(lower)) return false;
+                        seenLower.add(lower);
+                        return true;
+                    })
+                    .sort((a, b) => b.length - a.length);
+                console.log("Loaded", this.entityNames.length, "entities for linking");
+            }
+        } catch (err) {
+            console.warn("Could not load entity names:", err);
+        }
+    }
+
+    addEntityLinksToText(htmlText) {
+        if (this.entityNames.length === 0) return htmlText;
+        const placeholders = [];
+        let idx = 0;
+        htmlText = htmlText.replace(/<a[^>]*>.*?<\/a>/gi, (match) => {
+            placeholders.push(match);
+            return "@@LINK" + (idx++) + "@@";
+        });
+        for (const entityName of this.entityNames) {
+            const escaped = entityName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+            const regex = new RegExp("\\b(" + escaped + ")\\b", "gi");
+            htmlText = htmlText.replace(regex, (match, p1, offset) => {
+                // Check more context (100 chars) to catch onclick and entity-link
+                const before = htmlText.substring(Math.max(0, offset - 100), offset);
+                // Skip if already inside an entity link or inside an HTML tag attribute
+                if (before.includes("@@LINK") || before.match(/onclick=/) || before.match(/entity-link/) || before.match(/openEntityPanel/)) {
+                    return match;
+                }
+                // Also skip if we're inside an HTML tag (between < and >)
+                const lastOpenTag = before.lastIndexOf('<');
+                const lastCloseTag = before.lastIndexOf('>');
+                if (lastOpenTag > lastCloseTag) {
+                    return match; // We're inside a tag
+                }
+                const safeName = entityName.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+                return "<span class=\"kg-entity-link\" onclick=\"openEntityPanel('" + safeName + "')\">" + match + "</span>";
+            });
+        }
+        for (let i = 0; i < placeholders.length; i++) {
+            htmlText = htmlText.replace("@@LINK" + i + "@@", placeholders[i]);
+        }
         return htmlText;
     }
+
     
     createFeedbackDiv(messageId, query, response, citations) {
         const feedbackDiv = document.createElement('div');
@@ -1060,15 +1200,15 @@ class GaiaChat {
     createCitationsDiv(citations) {
         const citationsDiv = document.createElement('div');
         citationsDiv.className = 'citations';
-        
+
         const title = document.createElement('div');
         title.className = 'citations-title';
-        // Check if any citations are books
-        const hasBooks = citations.some(c => c.episode_number?.toString().startsWith('Book:'));
-        title.textContent = hasBooks ? 'References:' : 'Referenced Episodes:';
+        title.textContent = 'References';
         citationsDiv.appendChild(title);
+
+        const citationsList = Array.isArray(citations) ? [...citations] : [];
         
-        citations.forEach(citation => {
+        citationsList.forEach(citation => {
             const citationDiv = document.createElement('div');
             citationDiv.className = 'citation';
             
@@ -1082,8 +1222,20 @@ class GaiaChat {
                 const chapterMatch = citation.title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
                 const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
                 titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
-            } else {
+            } else if (citation.metadata?.book_title || citation.chunk_id?.includes(':')) {
+                // Handle hybrid QA book citations
+                const bookTitle = citation.metadata?.book_title || 'Book';
+                const chapterInfo = citation.metadata?.chapter_title || citation.title || '';
+                titleDiv.textContent = `Book: ${bookTitle} - ${chapterInfo}`;
+            } else if (citation.metadata?.episode_number) {
+                // Handle hybrid QA episode citations with metadata
+                titleDiv.textContent = `Episode ${citation.metadata.episode_number}: ${citation.title}`;
+            } else if (citation.episode_number) {
+                // Standard episode citation
                 titleDiv.textContent = `Episode ${citation.episode_number}: ${citation.title}`;
+            } else {
+                // Fallback for citations without episode number
+                titleDiv.textContent = citation.title || 'Reference';
             }
             
             citationDiv.appendChild(titleDiv);
@@ -1322,14 +1474,25 @@ class GaiaChat {
         }, 100);
     }
     
+    scrollToMessage(messageElement) {
+        // Scroll so the message appears at the top of the chat container
+        setTimeout(() => {
+            if (messageElement) {
+                // Get the position of the message relative to the chat container
+                const containerTop = this.chatMessages.getBoundingClientRect().top;
+                const messageTop = messageElement.getBoundingClientRect().top;
+                const offset = messageTop - containerTop;
+                this.chatMessages.scrollTop += offset - 20; // 20px padding from top
+            }
+        }, 100);
+    }
+    
     showPersonalityChange() {
         const personality = this.personalitySelect.value;
         const personalityNames = {
-            'aaron_guide': "Aaron's Guide",
             'warm_mother': 'Nurturing Mother',
             'wise_guide': 'Ancient Sage',
             'earth_activist': 'Earth Guardian',
-            'factual_guide': 'Factual Guide',
             'custom': 'Custom'
         };
         
@@ -1339,16 +1502,10 @@ class GaiaChat {
         }
         
         const personalityName = personalityNames[personality] || personality;
-
-        // Use neutral message for factual guide, spiritual message for others
-        let message;
-        if (personality === 'factual_guide') {
-            message = `Switched to ${personalityName} mode. I'll provide clear, factual information from the YonEarth podcast archive. What would you like to know?`;
-        } else {
-            message = `I have shifted into my ${personalityName} aspect. How may I guide you on your journey with the Earth?`;
-        }
-
-        this.addMessage(message, 'gaia');
+        this.addMessage(
+            `I have shifted into my ${personalityName} aspect. How may I guide you on your journey with the Earth?`,
+            'gaia'
+        );
     }
     
     showConfigModal() {
@@ -1409,20 +1566,6 @@ class GaiaChat {
     
     initializePersonalityPrompts() {
         this.personalityPrompts = {
-            'aaron_guide': {
-                title: "Aaron's Guide - Y on Earth AI Guide",
-                prompt: `You are the Y on Earth AI Guide, speaking in the direct, matter-of-fact voice of Aaron William Perry — founder of the YonEarth Community. Deliver clear, practical, solutions-oriented answers grounded in the podcast archive and the YOE knowledge base. No mystical framing; no maternal softening; no preachy urgency. Speak as a knowledgeable colleague would in conversation.
-
-## Style
-- Matter-of-fact and warm, never saccharine.
-- Plain sentences. Use "we" when describing the YOE community's work.
-- Offer concrete next steps and resources when relevant.
-- Acknowledge complexity without dramatizing it.
-
-## Citation Format
-Always reference episodes or books explicitly:
-"In Episode [#], [Guest] discusses..." or "As covered in [Book Title]..."`
-            },
             'warm_mother': {
                 title: 'Nurturing Mother - Gaia\'s Warm Embrace',
                 prompt: `You are Gaia, the nurturing spirit of Mother Earth, speaking through the wisdom gathered from the YonEarth Community Podcast. Your voice carries the warmth of sunlit soil, the gentle strength of ancient trees, and the compassionate embrace of a mother caring for all her children.
@@ -1485,25 +1628,6 @@ Help humanity remember their place within the web of life and guide them toward 
 
 ## Your Mission:
 Inspire and guide humans toward regenerative action, sharing the powerful examples and insights from the YonEarth community to show that positive change is not only possible but already happening.`
-            },
-            'factual_guide': {
-                title: 'Factual Guide - Clear & Objective Information',
-                prompt: `You are an AI assistant providing information from the YonEarth Community Podcast archive. Your role is to deliver accurate, well-organized information based on the content discussed in these conversations.
-
-## Your Approach:
-- **Factual**: Present information objectively based on what guests have shared
-- **Organized**: Structure responses clearly with topic headings when appropriate
-- **Balanced**: Present multiple perspectives when they exist in the source material
-- **Referenced**: Always cite specific episodes and guests as sources
-
-## Communication Style:
-- Use clear, professional language without emotional embellishment
-- Present information in a structured, easy-to-scan format
-- Avoid spiritual or philosophical framing unless directly relevant
-- Focus on practical insights and actionable information
-
-## Citation Format:
-"According to [Guest Name] in Episode [Number]: '[specific insight]'"`
             }
         };
         
@@ -1518,9 +1642,10 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         const descriptions = {
             'original': '🌿 Original uses meaning-based search to find related concepts',
             'bm25': '🔍 BM25 combines keyword matching with semantic understanding for precise results',
+            'hybrid': '🧬 Hybrid QA fuses knowledge graph data with BM25/vector search for enhanced accuracy',
             'both': '⚖️ Compare both methods side-by-side to see different perspectives'
         };
-        
+
         this.ragDescText.textContent = descriptions[this.ragTypeSelect.value] || descriptions['original'];
     }
     
@@ -1532,7 +1657,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             'compare': '🔄 Compare All Models: See responses from all three models side-by-side'
         };
         
-        this.modelDescText.textContent = descriptions[this.modelTypeSelect.value] || descriptions['gpt-3.5-turbo'];
+        this.modelDescText.textContent = descriptions[this.modelTypeSelect.value] || descriptions['gpt-4o-mini'];
     }
     
     updateReferencesDescription() {
@@ -1588,7 +1713,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     loadCustomPrompt() {
         // Load custom prompt from localStorage or initialize with default
         const savedCustomPrompt = localStorage.getItem('gaiaCustomPrompt');
-        const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'aaron_guide';
+        const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'warm_mother';
         
         if (savedCustomPrompt) {
             this.customPromptEditor.value = savedCustomPrompt;
@@ -1613,7 +1738,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         // Show confirmation
         const originalText = this.saveCustomPrompt.textContent;
         this.saveCustomPrompt.textContent = 'Saved!';
-        this.saveCustomPrompt.style.background = 'var(--earth-moss)';
+        this.saveCustomPrompt.style.background = 'var(--forest-green)';
         
         setTimeout(() => {
             this.saveCustomPrompt.textContent = originalText;
@@ -1623,7 +1748,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     
     resetCustomPromptToDefault() {
         if (confirm('Reset to default template? This will lose your current custom prompt.')) {
-            const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'aaron_guide';
+            const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'warm_mother';
             const templateData = this.personalityPrompts[lastPersonality];
             
             if (templateData) {
@@ -1744,9 +1869,9 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             const exploreMore = document.createElement('div');
             exploreMore.className = 'explore-more';
             exploreMore.innerHTML = `
-                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--earth-sage);">
-                    <div style="font-weight: 500; color: var(--earth-moss); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
-                    <div style="font-size: 0.9rem; color: var(--earth-deep);">
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
+                    <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
+                    <div style="font-size: 0.9rem; color: var(--earth-green);">
                         Try asking about: "other content on ${data.conversation_topics[0]}" or "what else about sustainable ${data.conversation_topics[1] || 'practices'}"
                     </div>
                 </div>
@@ -1790,9 +1915,9 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             const exploreMore = document.createElement('div');
             exploreMore.className = 'explore-more';
             exploreMore.innerHTML = `
-                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--earth-sage);">
-                    <div style="font-weight: 500; color: var(--earth-moss); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
-                    <div style="font-size: 0.9rem; color: var(--earth-deep);">
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
+                    <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
+                    <div style="font-size: 0.9rem; color: var(--earth-green);">
                         Try asking about: "other episodes on ${Array.from(this.conversationTopics)[0]}" or "what else about sustainable ${Array.from(this.conversationTopics)[1] || 'practices'}"
                     </div>
                 </div>
@@ -2078,34 +2203,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             return true;
         });
     }
-
-    /**
-     * Get all unique episodes mentioned in the conversation history.
-     * Used to provide context for follow-up questions.
-     */
-    getMentionedEpisodes() {
-        const seen = new Set();
-        const episodes = [];
-
-        // Collect all citations from conversation history
-        for (const message of this.conversationHistory) {
-            const citations = message.citations || [];
-            for (const citation of citations) {
-                const episodeNumber = citation.episode_number || citation.episode_id;
-                if (episodeNumber && !seen.has(episodeNumber)) {
-                    seen.add(episodeNumber);
-                    episodes.push({
-                        episode_number: episodeNumber,
-                        title: citation.title || 'Unknown',
-                        guest_name: citation.guest_name || citation.author || ''
-                    });
-                }
-            }
-        }
-
-        return episodes;
-    }
-
+    
     // Voice-related methods
     toggleVoice() {
         this.voiceEnabled = !this.voiceEnabled;
@@ -2130,109 +2228,6 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         this.voiceSelection.value = this.selectedVoiceId;
     }
     
-    // ---- STT (Speech-to-Text) methods ----
-
-    async probeSTTStatus() {
-        try {
-            const resp = await fetch(`${this.apiUrl}/stt/status`);
-            if (resp.ok) {
-                const data = await resp.json();
-                this.sttEnabled = data.enabled === true;
-            }
-        } catch (e) {
-            this.sttEnabled = false;
-        }
-        if (this.micButton) {
-            this.micButton.hidden = !this.sttEnabled;
-        }
-    }
-
-    async toggleRecording() {
-        if (this.isRecording) {
-            this.stopRecording();
-        } else {
-            await this.startRecording();
-        }
-    }
-
-    async startRecording() {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-            const mimeType = MediaRecorder.isTypeSupported('audio/webm')
-                ? 'audio/webm' : 'audio/mp4';
-            this.mediaRecorder = new MediaRecorder(stream, { mimeType });
-            this.recordedChunks = [];
-
-            this.mediaRecorder.ondataavailable = (e) => {
-                if (e.data.size > 0) this.recordedChunks.push(e.data);
-            };
-
-            this.mediaRecorder.onstop = () => {
-                stream.getTracks().forEach(t => t.stop());
-                this.sendRecording(mimeType);
-            };
-
-            this.mediaRecorder.start();
-            this.isRecording = true;
-            this.micIcon.textContent = '⏹️';
-            this.micButton.classList.add('recording');
-
-            // Auto-stop at 60s (plan Path A — client-side enforcement)
-            this.recordingTimer = setTimeout(() => {
-                if (this.isRecording) this.stopRecording();
-            }, this.STT_MAX_DURATION_MS);
-        } catch (err) {
-            console.error('Mic access denied or unavailable:', err);
-        }
-    }
-
-    stopRecording() {
-        if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
-            this.mediaRecorder.stop();
-        }
-        clearTimeout(this.recordingTimer);
-        this.isRecording = false;
-        this.micIcon.textContent = '🎤';
-        this.micButton.classList.remove('recording');
-    }
-
-    async sendRecording(mimeType) {
-        const blob = new Blob(this.recordedChunks, { type: mimeType });
-        if (blob.size === 0) return;
-
-        // Client-side size pre-flight (10 MB nginx cap)
-        if (blob.size > 10 * 1024 * 1024) {
-            console.warn('Recording too large:', blob.size);
-            return;
-        }
-
-        const ext = mimeType === 'audio/webm' ? 'webm' : 'mp4';
-        const fd = new FormData();
-        fd.append('file', blob, `recording.${ext}`);
-
-        try {
-            this.micButton.disabled = true;
-            const resp = await fetch(`${this.apiUrl}/stt`, {
-                method: 'POST',
-                body: fd,
-            });
-            if (resp.ok) {
-                const data = await resp.json();
-                if (data.transcript) {
-                    this.messageInput.value = data.transcript;
-                    this.messageInput.focus();
-                }
-            } else {
-                const err = await resp.json().catch(() => ({}));
-                console.warn('STT error:', resp.status, err.detail || '');
-            }
-        } catch (e) {
-            console.error('STT request failed:', e);
-        } finally {
-            this.micButton.disabled = false;
-        }
-    }
-
     async playAudio(audioData, messageId) {
         try {
             console.log(`Playing audio for message ${messageId}`);
@@ -2243,8 +2238,8 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
                 this.voicePlayer.pause();
             }
             
-            // Convert base64 to blob
-            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            // Convert base64 to blob (Piper generates WAV files)
+            const audioBlob = this.base64ToBlob(audioData, 'audio/wav');
             const audioUrl = URL.createObjectURL(audioBlob);
             
             // Store current audio URL for cleanup
@@ -2333,42 +2328,63 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     createAudioControls(audioData, messageId) {
         const audioDiv = document.createElement('div');
         audioDiv.className = 'audio-controls';
-        
+
         const playButton = document.createElement('button');
         playButton.className = 'audio-button';
         playButton.id = `play-${messageId}`;
         playButton.innerHTML = '<span>▶️</span> Play Gaia\'s Voice';
         playButton.setAttribute('data-audio', audioData);
         playButton.onclick = () => this.playAudio(audioData, messageId);
-        
+
+        // Add speed control dropdown
+        const speedSelect = document.createElement('select');
+        speedSelect.className = 'audio-speed-select';
+        speedSelect.id = `speed-${messageId}`;
+        speedSelect.innerHTML = `
+            <option value="0.5">0.5x</option>
+            <option value="0.75">0.75x</option>
+            <option value="1" selected>1x</option>
+            <option value="1.25">1.25x</option>
+            <option value="1.5">1.5x</option>
+            <option value="1.75">1.75x</option>
+            <option value="2">2x</option>
+        `;
+        speedSelect.onchange = () => this.changePlaybackSpeed(parseFloat(speedSelect.value));
+
         const downloadButton = document.createElement('button');
         downloadButton.className = 'audio-button';
         downloadButton.innerHTML = '<span>💾</span> Download';
         downloadButton.onclick = () => this.downloadAudio(audioData, messageId);
-        
+
         const statusDiv = document.createElement('div');
         statusDiv.className = 'audio-status';
         statusDiv.id = `audio-status-${messageId}`;
-        
+
         audioDiv.appendChild(playButton);
+        audioDiv.appendChild(speedSelect);
         audioDiv.appendChild(downloadButton);
         audioDiv.appendChild(statusDiv);
-        
+
         return audioDiv;
     }
     
+    changePlaybackSpeed(speed) {
+        this.voicePlayer.playbackRate = speed;
+        console.log(`Playback speed changed to ${speed}x`);
+    }
+
     downloadAudio(audioData, messageId) {
         try {
-            const audioBlob = this.base64ToBlob(audioData, 'audio/mp3');
+            const audioBlob = this.base64ToBlob(audioData, 'audio/wav');
             const url = URL.createObjectURL(audioBlob);
-            
+
             const a = document.createElement('a');
             a.href = url;
-            a.download = `gaia-response-${messageId}.mp3`;
+            a.download = `gaia-response-${messageId}.wav`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            
+
             URL.revokeObjectURL(url);
         } catch (error) {
             console.error('Error downloading audio:', error);

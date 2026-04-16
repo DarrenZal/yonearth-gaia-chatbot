@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YonEarth GraphRAG Knowledge Explorer</title>
+    <link rel="stylesheet" href="PodcastMap3D.css?v=38">
+    <style>
+        /* GraphRAG specific styles */
+        .entity-type-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+        .type-PERSON { background: #4CAF50; color: white; }
+        .type-ORGANIZATION { background: #2196F3; color: white; }
+        .type-CONCEPT { background: #9C27B0; color: white; }
+        .type-PLACE { background: #FF9800; color: white; }
+        .type-PRACTICE { background: #00BCD4; color: white; }
+        .type-PRODUCT { background: #795548; color: white; }
+        .type-EVENT { background: #F44336; color: white; }
+
+        .cluster-info {
+            background: rgba(0, 20, 40, 0.9);
+            border: 1px solid rgba(100, 200, 255, 0.3);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .multi-membership {
+            background: rgba(255, 200, 0, 0.1);
+            border-left: 3px solid #FFC107;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 12px;
+        }
+
+        .level-indicator {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            align-items: center;
+        }
+
+        .level-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .level-dot.active {
+            opacity: 1;
+            box-shadow: 0 0 10px currentColor;
+        }
+
+        /* Search bar styles */
+        .search-container {
+            position: relative;
+            margin-right: 15px;
+        }
+
+        #graph-search {
+            background: rgba(0, 20, 40, 0.8);
+            border: 1px solid rgba(100, 200, 255, 0.5);
+            color: #00ffff;
+            padding: 8px 12px;
+            border-radius: 20px;
+            width: 250px;
+            font-size: 14px;
+        }
+
+        #graph-search::placeholder {
+            color: rgba(100, 200, 255, 0.5);
+        }
+
+        #search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(0, 20, 40, 0.95);
+            border: 1px solid rgba(100, 200, 255, 0.5);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+            z-index: 1000;
+        }
+
+        .search-result {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(100, 200, 255, 0.2);
+        }
+
+        .search-result:hover {
+            background: rgba(100, 200, 255, 0.1);
+        }
+
+        #reset-view {
+            background: rgba(255, 100, 0, 0.2);
+            border: 1px solid #ff6400;
+            color: #ff6400;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+
+        #reset-view:hover {
+            background: rgba(255, 100, 0, 0.3);
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 3px solid rgba(0, 255, 255, 0.3);
+            border-top: 3px solid #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div id="graphrag-container">
+        <div class="map-header">
+            <div class="project-selector">
+                <button class="project-dropdown-btn">
+                    <span class="project-name">GraphRAG Knowledge Explorer</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+            </div>
+
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span class="hamburger-icon">☰</span>
+            </button>
+
+            <div class="header-controls" id="header-controls">
+                <a href="/" class="nav-link">💬 Chat with Gaia</a>
+                <a href="/ClusterMap3D.html" class="nav-link">🧭 Text Clusters</a>
+                <a href="/KnowledgeGraph.html" class="nav-link">🕸️ Knowledge Graph</a>
+                <a href="/PodcastMap3D.html" class="nav-link">🎧 Podcast Map</a>
+            </div>
+
+            <div class="mobile-controls">
+                <div class="search-container">
+                    <input type="text" id="graph-search" placeholder="Search entities...">
+                    <div id="search-results"></div>
+                </div>
+                <button id="reset-view">Reset View</button>
+            </div>
+        </div>
+
+        <!-- Main 3D visualization -->
+        <div id="3d-graph"></div>
+
+        <!-- Info panel for selected node -->
+        <div class="audio-player-container" id="node-info-panel" style="display: none;">
+            <div class="player-controls">
+                <button class="close-player" onclick="window.graphRAG3D && window.graphRAG3D.closeInfoPanel()">×</button>
+                <div class="episode-info">
+                    <h3 id="node-title"></h3>
+                    <div class="level-indicator">
+                        <span>Level:</span>
+                        <div class="level-dot" data-level="3" style="background: #FF5722;"></div>
+                        <div class="level-dot" data-level="2" style="background: #FFC107;"></div>
+                        <div class="level-dot" data-level="1" style="background: #4CAF50;"></div>
+                        <div class="level-dot" data-level="0" style="background: #2196F3;"></div>
+                    </div>
+                    <div id="node-details"></div>
+                    <div id="multi-membership" class="multi-membership" style="display: none;">
+                        <strong>Also appears in:</strong>
+                        <div id="related-clusters"></div>
+                    </div>
+                    <div id="node-relationships"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls hint -->
+        <div class="controls-hint">
+            <p>🖱️ Click to expand/collapse • Scroll to zoom • Press '/' to search • 'R' to reset view</p>
+        </div>
+    </div>
+
+    <!-- Dependencies -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+    <script src="https://unpkg.com/3d-force-graph"></script>
+    <script src="GraphRAG3D_v2.js?v=4"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manual Voice Test</title>
+</head>
+<body>
+    <h1>Manual Voice API Test</h1>
+    <button onclick="testVoice()">Test Voice Generation</button>
+    <div id="result"></div>
+    <audio id="player" controls style="display:none;"></audio>
+    
+    <script>
+    async function testVoice() {
+        const result = document.getElementById('result');
+        const player = document.getElementById('player');
+        
+        result.innerHTML = 'Testing voice generation...';
+        
+        try {
+            const response = await fetch('/api/bm25/chat', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    message: 'Hello, I am Gaia. Welcome to Earth wisdom.',
+                    enable_voice: true,
+                    search_method: 'hybrid',
+                    k: 3
+                })
+            });
+            
+            const data = await response.json();
+            console.log('Response:', data);
+            
+            if (data.audio_data) {
+                result.innerHTML = '✅ Voice data received! Length: ' + data.audio_data.length;
+                
+                // Convert base64 to blob and play
+                const audioBlob = base64ToBlob(data.audio_data, 'audio/mp3');
+                const audioUrl = URL.createObjectURL(audioBlob);
+                player.src = audioUrl;
+                player.style.display = 'block';
+                player.play();
+            } else {
+                result.innerHTML = '❌ No voice data in response';
+            }
+        } catch (e) {
+            result.innerHTML = '❌ Error: ' + e.message;
+            console.error(e);
+        }
+    }
+    
+    function base64ToBlob(base64, mimeType) {
+        const byteCharacters = atob(base64);
+        const byteNumbers = new Array(byteCharacters.length);
+        for (let i = 0; i < byteCharacters.length; i++) {
+            byteNumbers[i] = byteCharacters.charCodeAt(i);
+        }
+        const byteArray = new Uint8Array(byteNumbers);
+        return new Blob([byteArray], { type: mimeType });
+    }
+    </script>
+</body>
+</html>
