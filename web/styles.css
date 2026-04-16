@@ -1739,3 +1739,49 @@ body {
         max-width: 100%;
     }
 }
+
+/* =====================================================
+   Mic button (STT)
+   ===================================================== */
+
+.mic-button {
+    background: none;
+    border: 2px solid var(--earth-sage);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: var(--transition);
+    font-size: 1.1rem;
+}
+
+.mic-button:hover {
+    border-color: var(--earth-moss);
+    background: rgba(107, 142, 107, 0.1);
+}
+
+.mic-button.recording {
+    border-color: #c0392b;
+    background: rgba(192, 57, 43, 0.1);
+    animation: pulse-recording 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-recording {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(192, 57, 43, 0); }
+}
+
+.mic-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.privacy-disclosure {
+    font-size: 0.75rem;
+    color: var(--warm-gray);
+    margin-top: 4px;
+}
