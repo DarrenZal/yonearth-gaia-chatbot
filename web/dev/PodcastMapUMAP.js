@@ -88,8 +88,7 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const apiBase = window.API_BASE || './api';
-            const response = await fetch(`${apiBase}/map_data`);
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data_umap`);
             const data = await response.json();
             this.data = data;
             console.log('Loaded map data:', data);
@@ -98,59 +97,6 @@ class PodcastMapVisualization {
             // Use dummy data for testing
             this.data = this.generateDummyData();
         }
-
-        // Load YOE taxonomy for topic dropdown (§8)
-        await this.loadTopics();
-    }
-
-    async loadTopics() {
-        const select = document.getElementById('topic-select');
-        if (!select) return;
-
-        try {
-            const apiBase = window.API_BASE || './api';
-            const resp = await fetch(`${apiBase}/taxonomy`);
-            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-            const data = await resp.json();
-
-            // data.taxonomy is { "PILLAR": ["secondary", ...], ... }
-            // data.pillars is ["COMMUNITY", "CULTURE", ...]
-            const taxonomy = data.taxonomy || {};
-            const pillars = data.pillars || Object.keys(taxonomy);
-
-            select.innerHTML = '<option value="">All Topics</option>';
-            pillars.forEach(pillar => {
-                const group = document.createElement('optgroup');
-                group.label = pillar;
-                (taxonomy[pillar] || []).forEach(secondary => {
-                    const opt = document.createElement('option');
-                    opt.value = secondary;
-                    opt.textContent = secondary;
-                    group.appendChild(opt);
-                });
-                select.appendChild(group);
-            });
-
-            select.addEventListener('change', () => {
-                this.selectedTopic = select.value;
-                this.filterByTopic();
-            });
-        } catch (err) {
-            console.warn('Could not load taxonomy for topic dropdown:', err);
-        }
-    }
-
-    filterByTopic() {
-        if (!this.data || !this.data.points) return;
-        const topic = this.selectedTopic;
-        this.svg.selectAll('.point, .data-point, circle[data-cluster]')
-            .attr('opacity', d => {
-                if (!topic) return 1;  // no filter
-                // Match against cluster_name or categories metadata
-                const name = (d.cluster_name || '').toUpperCase();
-                const cats = (d.categories || []).map(c => c.toUpperCase());
-                return (name.includes(topic.toUpperCase()) || cats.includes(topic.toUpperCase())) ? 1 : 0.1;
-            });
     }
 
     generateDummyData() {
@@ -412,54 +358,21 @@ class PodcastMapVisualization {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
             if (this.audioPlayer && audioUrl) {
-                const needsNewSource = this.audioPlayer.src !== audioUrl;
-
                 // Only change source if it's a different episode
-                if (needsNewSource) {
+                if (this.audioPlayer.src !== audioUrl) {
                     this.audioPlayer.src = audioUrl;
-
-                    // Wait for metadata to load so we know the duration
-                    await new Promise((resolve, reject) => {
-                        const onLoadedMetadata = () => {
-                            this.audioPlayer.removeEventListener('loadedmetadata', onLoadedMetadata);
-                            this.audioPlayer.removeEventListener('error', onError);
-                            resolve();
-                        };
-                        const onError = (e) => {
-                            this.audioPlayer.removeEventListener('loadedmetadata', onLoadedMetadata);
-                            this.audioPlayer.removeEventListener('error', onError);
-                            reject(e);
-                        };
-
-                        this.audioPlayer.addEventListener('loadedmetadata', onLoadedMetadata);
-                        this.audioPlayer.addEventListener('error', onError);
-                        this.audioPlayer.load();
-                    });
+                    await this.audioPlayer.load();
                 }
 
-                // Validate timestamp is within bounds
-                const targetTime = point.timestamp || 0;
-                const duration = this.audioPlayer.duration;
-
-                // If timestamp is invalid or too close to the end (within 5 seconds), cap it
-                const safeTimestamp = Math.min(targetTime, Math.max(0, duration - 5));
-
-                console.log(`Seeking to timestamp: ${targetTime}s (safe: ${safeTimestamp}s, duration: ${duration}s)`);
-
-                // Seek to timestamp
-                this.audioPlayer.currentTime = safeTimestamp;
-
-                // Wait a bit for seek to complete before playing
-                await new Promise(resolve => setTimeout(resolve, 100));
-
-                // Play the audio
+                // Seek to timestamp and play
+                this.audioPlayer.currentTime = point.timestamp || 0;
                 await this.audioPlayer.play();
-                console.log('Playing audio at timestamp:', safeTimestamp);
+                console.log('Playing audio at timestamp:', point.timestamp);
             }
         } catch (error) {
             console.error('Error loading audio:', error);
@@ -557,63 +470,8 @@ class PodcastMapVisualization {
             });
         }
 
-        // Make audio player draggable
-        this.setupDraggablePlayer();
-
         // Window resize
         window.addEventListener('resize', () => this.handleResize());
-    }
-
-    setupDraggablePlayer() {
-        const player = document.getElementById('audio-player');
-        if (!player) return;
-
-        let isDragging = false;
-        let currentX;
-        let currentY;
-        let initialX;
-        let initialY;
-
-        player.addEventListener('mousedown', (e) => {
-            // Only drag if clicking on the player container, not on controls
-            if (e.target === player || e.target.closest('.episode-info')) {
-                isDragging = true;
-                player.style.cursor = 'grabbing';
-
-                // Get current position
-                const rect = player.getBoundingClientRect();
-                initialX = e.clientX - rect.left;
-                initialY = e.clientY - rect.top;
-            }
-        });
-
-        document.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-
-            e.preventDefault();
-
-            currentX = e.clientX - initialX;
-            currentY = e.clientY - initialY;
-
-            // Keep player within viewport bounds
-            const maxX = window.innerWidth - player.offsetWidth;
-            const maxY = window.innerHeight - player.offsetHeight;
-
-            currentX = Math.max(0, Math.min(currentX, maxX));
-            currentY = Math.max(0, Math.min(currentY, maxY));
-
-            player.style.left = currentX + 'px';
-            player.style.top = currentY + 'px';
-            player.style.bottom = 'auto';
-            player.style.right = 'auto';
-        });
-
-        document.addEventListener('mouseup', () => {
-            if (isDragging) {
-                isDragging = false;
-                player.style.cursor = 'move';
-            }
-        });
     }
 
     loadEpisodeList() {
@@ -776,7 +634,7 @@ class PodcastMapVisualization {
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;
@@ -939,4 +797,142 @@ function sendChatMessage() {
 document.addEventListener('DOMContentLoaded', () => {
     const viz = new PodcastMapVisualization('#map-svg-container');
     window.podcastViz = viz; // Make it globally accessible for debugging
+
+    // Setup UMAP parameter controls
+    setupUMAPControls();
 });
+
+function setupUMAPControls() {
+    // Get slider elements
+    const nPointsSlider = document.getElementById('n-points');
+    const minDistSlider = document.getElementById('min-dist');
+    const nNeighborsSlider = document.getElementById('n-neighbors');
+
+    // Get value display elements
+    const nPointsValue = document.getElementById('n-points-value');
+    const minDistValue = document.getElementById('min-dist-value');
+    const nNeighborsValue = document.getElementById('n-neighbors-value');
+
+    // Get regenerate button and status message
+    const regenerateBtn = document.getElementById('regenerate-btn');
+    const statusMessage = document.getElementById('status-message');
+
+    // Update value displays when sliders change
+    if (nPointsSlider) {
+        nPointsSlider.addEventListener('input', (e) => {
+            nPointsValue.textContent = e.target.value;
+        });
+    }
+
+    if (minDistSlider) {
+        minDistSlider.addEventListener('input', (e) => {
+            minDistValue.textContent = parseFloat(e.target.value).toFixed(2);
+        });
+    }
+
+    if (nNeighborsSlider) {
+        nNeighborsSlider.addEventListener('input', (e) => {
+            nNeighborsValue.textContent = e.target.value;
+        });
+    }
+
+    // Handle regenerate button click
+    if (regenerateBtn) {
+        regenerateBtn.addEventListener('click', async () => {
+            const nPoints = parseInt(nPointsSlider.value);
+            const minDist = parseFloat(minDistSlider.value);
+            const nNeighbors = parseInt(nNeighborsSlider.value);
+
+            // Disable button and show status
+            regenerateBtn.disabled = true;
+            regenerateBtn.style.background = '#999';
+            regenerateBtn.textContent = 'Generating...';
+            statusMessage.style.display = 'block';
+            statusMessage.style.color = '#2196F3';
+            statusMessage.textContent = 'Starting UMAP generation... This may take 2-5 minutes.';
+
+            try {
+                // Call the backend API to regenerate UMAP
+                const response = await fetch(`${window.API_BASE || '../api'}/regenerate_umap?n_points=${nPoints}&min_dist=${minDist}&n_neighbors=${nNeighbors}`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    statusMessage.style.color = '#4CAF50';
+                    statusMessage.textContent = `✓ ${result.message} Monitoring progress...`;
+
+                    // Poll for completion
+                    pollForCompletion(statusMessage, regenerateBtn);
+                } else {
+                    throw new Error(result.detail || 'Generation failed');
+                }
+
+            } catch (error) {
+                console.error('Error regenerating UMAP:', error);
+                statusMessage.style.color = '#f44336';
+                statusMessage.textContent = `✗ Error: ${error.message}`;
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            }
+        });
+    }
+}
+
+function pollForCompletion(statusMessage, regenerateBtn) {
+    let pollCount = 0;
+    const maxPolls = 60; // Poll for up to 5 minutes (5 seconds * 60 = 300s)
+
+    const pollInterval = setInterval(async () => {
+        pollCount++;
+
+        try {
+            const response = await fetch(`${window.API_BASE || '../api'}/umap_generation_status`);
+            const status = await response.json();
+
+            if (status.status === 'completed') {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#4CAF50';
+                statusMessage.textContent = '✓ Generation complete! Refreshing page...';
+
+                // Refresh after 2 seconds
+                setTimeout(() => {
+                    location.reload();
+                }, 2000);
+            } else if (status.status === 'failed') {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#f44336';
+                statusMessage.textContent = '✗ Generation failed. Please try again.';
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            } else if (status.status === 'running') {
+                // Update progress message
+                const elapsed = Math.floor((Date.now() / 1000) - (status.start_time || 0));
+                statusMessage.textContent = `⏳ Generating... (${elapsed}s elapsed)`;
+            }
+
+            // Stop polling after max attempts
+            if (pollCount >= maxPolls) {
+                clearInterval(pollInterval);
+                statusMessage.style.color = '#FF9800';
+                statusMessage.textContent = '⚠ Generation is taking longer than expected. Refresh manually in a few minutes.';
+
+                // Re-enable button
+                regenerateBtn.disabled = false;
+                regenerateBtn.style.background = '#4CAF50';
+                regenerateBtn.textContent = 'Regenerate Map';
+            }
+
+        } catch (error) {
+            console.error('Error polling status:', error);
+        }
+
+    }, 5000); // Poll every 5 seconds
+}

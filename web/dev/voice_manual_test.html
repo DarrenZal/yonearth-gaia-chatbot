@@ -18,7 +18,7 @@
         result.innerHTML = 'Testing voice generation...';
         
         try {
-            const response = await fetch('/api/bm25/chat', {
+            const response = await fetch(`${window.API_BASE || '../api'}/bm25/chat`, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({

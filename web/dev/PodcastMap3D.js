@@ -494,7 +494,7 @@ class PodcastMap3D {
             if (typeof episodeNumber === 'string' && episodeNumber.includes('Episode')) {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;

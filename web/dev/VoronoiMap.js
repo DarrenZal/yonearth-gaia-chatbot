@@ -84,10 +84,10 @@ class VoronoiMapVisualization {
         try {
             let response;
             try {
-                response = await fetch('/api/voronoi_data');
+                response = await fetch(`${window.API_BASE || '../api'}/voronoi_data`);
                 if (!response.ok) throw new Error('API not available');
             } catch {
-                response = await fetch('/data/processed/voronoi_hierarchy.json');
+                response = await fetch('../data/processed/voronoi_hierarchy.json');
             }
             this.data = await response.json();
             console.log('Loaded voronoi data:', this.data.metadata);
@@ -107,7 +107,7 @@ class VoronoiMapVisualization {
         try {
             let response;
             try {
-                response = await fetch('/data/processed/voronoi_entity_index.json');
+                response = await fetch('../data/processed/voronoi_entity_index.json');
                 if (!response.ok) throw new Error();
             } catch {
                 response = await fetch('data/processed/voronoi_entity_index.json');

@@ -1,9 +1,9 @@
 /**
- * Podcast Map Visualization
- * Interactive D3.js visualization for podcast episode exploration
+ * Podcast Map Visualization - Nomic Atlas Version
+ * Interactive D3.js visualization using Nomic's UMAP projections and topic clustering
  */
 
-class PodcastMapVisualization {
+class PodcastMapNomic {
     constructor(containerId) {
         this.container = d3.select(containerId);
         this.data = null;
@@ -31,8 +31,9 @@ class PodcastMapVisualization {
         // Animation settings
         this.transitionDuration = 300;
 
-        // Audio synchronization
-        this.audioSyncInterval = null;
+        // Nomic topic colors
+        this.topicColors = {};
+        this.allTopics = [];
 
         // Initialize
         this.init();
@@ -45,14 +46,17 @@ class PodcastMapVisualization {
         // Load data from backend
         await this.loadData();
 
+        // Extract topics and assign colors
+        this.setupTopicColors();
+
         // Set up scales
         this.setupScales();
 
         // Create visualization
         this.createVisualization();
 
-        // Populate legend
-        this.populateLegend();
+        // Update cluster labels
+        this.updateClusterLabels();
 
         // Set up event listeners
         this.setupEventListeners();
@@ -88,102 +92,33 @@ class PodcastMapVisualization {
 
     async loadData() {
         try {
-            const response = await fetch('/api/map_data_umap');
+            const response = await fetch(`${window.API_BASE || '../api'}/map_data_nomic`);
             const data = await response.json();
             this.data = data;
-            console.log('Loaded map data:', data);
+            console.log('Loaded Nomic map data:', data);
+            console.log(`Total points: ${data.points.length}`);
         } catch (error) {
-            console.error('Error loading map data:', error);
-            // Use dummy data for testing
-            this.data = this.generateDummyData();
+            console.error('Error loading Nomic map data:', error);
+            alert('Failed to load Nomic map data. Please ensure the data file exists.');
         }
     }
 
-    generateDummyData() {
-        // Generate dummy data for testing without backend
-        const points = [];
-        const numPoints = 266;
-        const clusters = 7;
-
-        for (let i = 0; i < numPoints; i++) {
-            const cluster = Math.floor(Math.random() * clusters);
-            const angle = (cluster / clusters) * 2 * Math.PI + (Math.random() - 0.5);
-            const radius = 100 + Math.random() * 100;
-
-            points.push({
-                id: `point-${i}`,
-                text: `This is chunk ${i} from the podcast discussing various topics...`,
-                x: Math.cos(angle) * radius + this.width / 2,
-                y: Math.sin(angle) * radius + this.height / 2,
-                episode_id: `ep-${Math.floor(i / 30)}`,
-                episode_title: `Episode ${Math.floor(i / 30) + 1}`,
-                timestamp: (i % 30) * 120, // 2 minutes per chunk
-                cluster: cluster,
-                cluster_name: this.getClusterName(cluster)
-            });
-        }
-
-        return {
-            points: points,
-            clusters: this.getClusterInfo(),
-            episodes: this.extractEpisodesFromPoints(points),
-            total_points: points.length
-        };
-    }
-
-    getClusterName(clusterId) {
-        // Use semantic labels from data instead of hardcoded names
-        if (this.data && this.data.clusters) {
-            const cluster = this.data.clusters.find(c => c.id === clusterId);
-            if (cluster && cluster.name) {
-                return cluster.name;
-            }
-        }
-        // Fallback for old data format
-        const names = [
-            "Community",
-            "Culture",
-            "Economy",
-            "Ecology",
-            "Health"
-        ];
-        return names[clusterId % names.length];
-    }
-
-    getClusterInfo() {
-        // Use clusters from data if available (includes semantic topic names)
-        if (this.data && this.data.clusters) {
-            return this.data.clusters;
-        }
-        // Fallback for old data format
-        const colors = [
-            "#81C784",  // Light Green - Community
-            "#BA68C8",  // Light Purple - Culture
-            "#FFB74D",  // Light Orange - Economy
-            "#64B5F6",  // Light Blue - Ecology
-            "#E57373"   // Light Red - Health
-        ];
-        return colors.map((color, i) => ({
-            id: i,
-            name: this.getClusterName(i),
-            color: color,
-            count: 0
-        }));
-    }
-
-    extractEpisodesFromPoints(points) {
-        const episodeMap = new Map();
-        points.forEach(p => {
-            if (!episodeMap.has(p.episode_id)) {
-                episodeMap.set(p.episode_id, {
-                    id: p.episode_id,
-                    title: p.episode_title,
-                    chunk_count: 0
-                });
-            }
-            episodeMap.get(p.episode_id).chunk_count++;
+    setupTopicColors() {
+        // Extract all unique topics from the data
+        const topicsSet = new Set();
+        this.data.points.forEach(p => {
+            if (p.topic_depth_1) topicsSet.add(p.topic_depth_1);
         });
-        return Array.from(episodeMap.values());
+        this.allTopics = Array.from(topicsSet).sort();
+
+        // Generate a color palette for topics
+        const colorScale = d3.scaleOrdinal(d3.schemeTableau10);
+
+        this.allTopics.forEach((topic, i) => {
+            this.topicColors[topic] = colorScale(i);
+        });
+
+        console.log('Topics found:', this.allTopics);
     }
 
     setupScales() {
@@ -193,11 +128,11 @@ class PodcastMapVisualization {
 
         this.xScale = d3.scaleLinear()
             .domain(xExtent)
-            .range([0, this.width]);
+            .range([this.margin.left, this.width - this.margin.right]);
 
         this.yScale = d3.scaleLinear()
             .domain(yExtent)
-            .range([0, this.height]);
+            .range([this.margin.top, this.height - this.margin.bottom]);
     }
 
     createVisualization() {
@@ -214,25 +149,25 @@ class PodcastMapVisualization {
     }
 
     createVoronoiRegions() {
-        // Group points by cluster
-        const clusterCentroids = d3.rollup(
+        // Group points by topic_depth_1
+        const topicCentroids = d3.rollup(
             this.data.points,
             points => ({
                 x: d3.mean(points, p => this.xScale(p.x)),
                 y: d3.mean(points, p => this.yScale(p.y)),
-                cluster: points[0].cluster,
-                color: this.data.clusters.find(c => c.id === points[0].cluster)?.color || '#999'
+                topic: points[0].topic_depth_1,
+                color: this.getPointColor(points[0])
             }),
-            d => d.cluster
+            d => d.topic_depth_1
         );
 
-        const centroids = Array.from(clusterCentroids.values());
+        const centroids = Array.from(topicCentroids.values());
 
         // Create Voronoi diagram
         const delaunay = d3.Delaunay.from(centroids, d => d.x, d => d.y);
         this.voronoi = delaunay.voronoi([0, 0, this.width, this.height]);
 
-        // Draw Voronoi cells - use selectOrAppend pattern to avoid duplicates
+        // Draw Voronoi cells
         let voronoiGroup = this.g.select('.voronoi-cells');
         if (voronoiGroup.empty()) {
             voronoiGroup = this.g.append('g').attr('class', 'voronoi-cells');
@@ -242,11 +177,11 @@ class PodcastMapVisualization {
             .data(centroids)
             .join('path')
             .attr('d', (d, i) => this.voronoi.renderCell(i))
-            .attr('fill', 'none')  // White background - no colored regions
+            .attr('fill', 'none')
             .attr('opacity', 0)
             .attr('stroke', 'none');
 
-        // Add text labels for each cluster region - use selectOrAppend pattern
+        // Add text labels for each topic region
         let labelsGroup = this.g.select('.cluster-labels');
         if (labelsGroup.empty()) {
             labelsGroup = this.g.append('g').attr('class', 'cluster-labels');
@@ -260,10 +195,10 @@ class PodcastMapVisualization {
             .attr('text-anchor', 'middle')
             .attr('dominant-baseline', 'middle')
             .attr('class', 'cluster-label')
-            .style('font-size', '18px')
+            .style('font-size', '16px')
             .style('font-weight', '600')
             .style('pointer-events', 'none')
-            .text(d => this.getClusterName(d.cluster));
+            .text(d => d.topic || 'Unknown');
     }
 
     createPoints() {
@@ -277,14 +212,19 @@ class PodcastMapVisualization {
             .attr('cx', d => this.xScale(d.x))
             .attr('cy', d => this.yScale(d.y))
             .attr('r', 3)
-            .attr('fill', d => this.data.clusters.find(c => c.id === d.cluster)?.color || '#999')
+            .attr('fill', d => this.getPointColor(d))
             .attr('opacity', 0.7)
             .attr('class', 'point')
             .attr('data-episode', d => d.episode_id)
-            .attr('data-cluster', d => d.cluster)
+            .attr('data-topic', d => d.topic_depth_1)
             .on('mouseover', (event, d) => this.handleMouseOver(event, d))
             .on('mouseout', () => this.handleMouseOut())
             .on('click', (event, d) => this.handleClick(event, d));
+    }
+
+    getPointColor(point) {
+        const topic = point.topic_depth_1;
+        return this.topicColors[topic] || '#999999';
     }
 
     handleMouseOver(event, d) {
@@ -298,7 +238,7 @@ class PodcastMapVisualization {
 
         this.tooltip.select('.tooltip-episode').text(d.episode_title || 'Unknown Episode');
         this.tooltip.select('.tooltip-text').text(d.text.substring(0, 150) + '...');
-        this.tooltip.select('.tooltip-cluster').text(d.cluster_name);
+        this.tooltip.select('.tooltip-cluster').text(`Topic: ${d.topic_depth_1 || 'Unknown'}`);
 
         // Highlight point
         d3.select(event.target)
@@ -358,7 +298,7 @@ class PodcastMapVisualization {
                 episodeNumber = episodeNumber.split(' ')[0].replace('Episode', '').trim();
             }
 
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
             const audioUrl = transcriptData.audio_url;
 
@@ -385,7 +325,7 @@ class PodcastMapVisualization {
 
     showEpisodeTrajectory(episodeId) {
         this.selectedEpisode = episodeId;
-        this.currentActiveChunk = null; // Reset active chunk
+        this.currentActiveChunk = null;
 
         // Get all points for this episode, sorted by timestamp
         const episodePoints = this.data.points
@@ -411,20 +351,20 @@ class PodcastMapVisualization {
             this.trajectoryGroup.append('path')
                 .datum([episodePoints[i], episodePoints[i + 1]])
                 .attr('d', line)
-                .attr('stroke', this.data.clusters.find(c => c.id === episodePoints[i].cluster)?.color || '#999')
+                .attr('stroke', this.getPointColor(episodePoints[i]))
                 .attr('stroke-width', isAdjacent ? 3 : 1)
                 .attr('fill', 'none')
                 .attr('opacity', isAdjacent ? 0.6 : 0.3);
         }
 
-        // Highlight episode points - improved contrast
+        // Highlight episode points
         this.circles
             .transition()
             .duration(this.transitionDuration)
             .attr('r', d => d.episode_id === episodeId ? 5 : 3)
             .attr('opacity', d => {
-                if (d.episode_id === episodeId) return 1.0; // Full opacity for selected
-                return 0.25; // Visible but clearly secondary
+                if (d.episode_id === episodeId) return 1.0;
+                return 0.25;
             })
             .attr('stroke', d => d.episode_id === episodeId ? '#ffffff' : 'none')
             .attr('stroke-width', d => d.episode_id === episodeId ? 1 : 0);
@@ -453,20 +393,10 @@ class PodcastMapVisualization {
                 }
             });
 
-            // Also listen for seeked event (when user manually changes position)
             this.audioPlayer.addEventListener('seeked', () => {
                 if (this.selectedEpisode) {
-                    console.log('Audio seeked to:', this.audioPlayer.currentTime);
                     this.syncVisualizationWithAudio();
                 }
-            });
-
-            this.audioPlayer.addEventListener('play', () => {
-                console.log('Audio started playing');
-            });
-
-            this.audioPlayer.addEventListener('pause', () => {
-                console.log('Audio paused');
             });
         }
 
@@ -480,9 +410,21 @@ class PodcastMapVisualization {
         // Clear existing options
         select.innerHTML = '<option value="">Select an episode...</option>';
 
-        // Sort episodes numerically by episode number
-        const sortedEpisodes = [...this.data.episodes].sort((a, b) => {
-            // Extract episode numbers - IDs can be just numbers or "Episode X" format
+        // Extract unique episodes from points
+        const episodeMap = new Map();
+        this.data.points.forEach(p => {
+            if (!episodeMap.has(p.episode_id)) {
+                episodeMap.set(p.episode_id, {
+                    id: p.episode_id,
+                    title: p.episode_title
+                });
+            }
+        });
+
+        const episodes = Array.from(episodeMap.values());
+
+        // Sort episodes numerically
+        const sortedEpisodes = episodes.sort((a, b) => {
             const numA = parseInt(a.id) || parseInt(a.id.match(/\d+/)?.[0] || '999999');
             const numB = parseInt(b.id) || parseInt(b.id.match(/\d+/)?.[0] || '999999');
             return numA - numB;
@@ -508,7 +450,8 @@ class PodcastMapVisualization {
             .transition()
             .duration(this.transitionDuration)
             .attr('r', 3)
-            .attr('opacity', 0.7);
+            .attr('opacity', 0.7)
+            .attr('stroke', 'none');
     }
 
     handleResize() {
@@ -517,54 +460,19 @@ class PodcastMapVisualization {
         this.width = containerRect.width;
         this.height = containerRect.height;
 
-        // Update SVG viewBox for responsive scaling
-        this.svg
-            .attr('viewBox', `0 0 ${this.width} ${this.height}`);
+        // Update SVG viewBox
+        this.svg.attr('viewBox', `0 0 ${this.width} ${this.height}`);
 
         // Update scales
-        this.xScale.range([0, this.width]);
-        this.yScale.range([0, this.height]);
+        this.xScale.range([this.margin.left, this.width - this.margin.right]);
+        this.yScale.range([this.margin.top, this.height - this.margin.bottom]);
 
-        // Redraw visualization smoothly
+        // Redraw visualization
         this.updateVisualization();
     }
 
-    populateLegend() {
-        const legendContainer = document.getElementById('clusters-legend');
-        if (!legendContainer || !this.data || !this.data.clusters) return;
-
-        // Clear existing legend
-        legendContainer.innerHTML = '';
-
-        // Create legend items from data
-        this.data.clusters.forEach(cluster => {
-            const legendItem = document.createElement('div');
-            legendItem.className = 'legend-item';
-            legendItem.setAttribute('data-cluster', cluster.id);
-
-            // Add color box
-            const colorBox = document.createElement('span');
-            colorBox.className = 'color-box';
-            colorBox.style.backgroundColor = cluster.color;
-
-            // Add label
-            const label = document.createElement('span');
-            label.textContent = cluster.name;
-
-            legendItem.appendChild(colorBox);
-            legendItem.appendChild(label);
-
-            // Add hover tooltip with themes if available
-            if (cluster.themes && cluster.themes.length > 0) {
-                legendItem.title = `Themes: ${cluster.themes.join(', ')}`;
-            }
-
-            legendContainer.appendChild(legendItem);
-        });
-    }
-
     updateVisualization() {
-        // Update Voronoi regions and labels (createVoronoiRegions now handles reuse)
+        // Update Voronoi regions and labels
         this.createVoronoiRegions();
 
         // Update point positions
@@ -612,14 +520,11 @@ class PodcastMapVisualization {
             playerContainer.style.display = 'block';
         }
 
-        // Get episode info
-        const episode = this.data.episodes.find(ep => ep.id === episodeId);
-        if (!episode) return;
-
-        // Update episode info in player
+        // Update episode title
+        const point = this.data.points.find(p => p.episode_id === episodeId);
         const titleElement = document.getElementById('current-episode-title');
-        if (titleElement) {
-            titleElement.textContent = episode.title;
+        if (titleElement && point) {
+            titleElement.textContent = point.episode_title;
         }
 
         const chunkText = document.getElementById('current-chunk-text');
@@ -629,12 +534,11 @@ class PodcastMapVisualization {
 
         // Fetch the actual audio URL from the transcript file
         try {
-            // Episode ID might be just a number or "Episode X" format
             let episodeNumber = episodeId;
             if (episodeId.includes('Episode')) {
                 episodeNumber = episodeId.split(' ')[0].replace('Episode', '').trim();
             }
-            const response = await fetch(`/data/transcripts/episode_${episodeNumber}.json`);
+            const response = await fetch(`../data/transcripts/episode_${episodeNumber}.json`);
             const transcriptData = await response.json();
 
             const audioUrl = transcriptData.audio_url;
@@ -650,11 +554,8 @@ class PodcastMapVisualization {
             }
         } catch (error) {
             console.error('Error loading audio URL:', error);
-            if (this.audioPlayer) {
-                const chunkText = document.getElementById('current-chunk-text');
-                if (chunkText) {
-                    chunkText.textContent = 'Audio not available for this episode.';
-                }
+            if (chunkText) {
+                chunkText.textContent = 'Audio not available for this episode.';
             }
         }
     }
@@ -667,7 +568,6 @@ class PodcastMapVisualization {
         // Find the chunk that corresponds to current audio time
         const episodePoints = this.data.points.filter(p => p.episode_id === this.selectedEpisode);
 
-        // Find the chunk closest to current time
         let activeChunk = null;
         let minDiff = Infinity;
 
@@ -706,27 +606,27 @@ class PodcastMapVisualization {
         const prevChunk = activeIndex > 0 ? episodePoints[activeIndex - 1] : null;
         const nextChunk = activeIndex < episodePoints.length - 1 ? episodePoints[activeIndex + 1] : null;
 
-        // Highlight the current, previous, and next chunks - better visibility
+        // Highlight the current, previous, and next chunks
         this.circles
             .transition()
             .duration(200)
             .attr('r', d => {
-                if (d.id === activeChunk.id) return 10; // Active chunk - largest
+                if (d.id === activeChunk.id) return 10;
                 if (d.episode_id === this.selectedEpisode) {
-                    if (prevChunk && d.id === prevChunk.id) return 7; // Previous chunk
-                    if (nextChunk && d.id === nextChunk.id) return 7; // Next chunk
-                    return 5; // Other episode chunks
+                    if (prevChunk && d.id === prevChunk.id) return 7;
+                    if (nextChunk && d.id === nextChunk.id) return 7;
+                    return 5;
                 }
-                return 3; // All other points
+                return 3;
             })
             .attr('opacity', d => {
-                if (d.id === activeChunk.id) return 1.0; // Active chunk - fully visible
+                if (d.id === activeChunk.id) return 1.0;
                 if (d.episode_id === this.selectedEpisode) {
                     if (prevChunk && d.id === prevChunk.id) return 0.9;
                     if (nextChunk && d.id === nextChunk.id) return 0.9;
                     return 0.7;
                 }
-                return 0.2; // Visible but clearly secondary
+                return 0.2;
             })
             .attr('stroke', d => {
                 if (d.id === activeChunk.id) return '#ffffff';
@@ -736,38 +636,53 @@ class PodcastMapVisualization {
                 if (d.id === activeChunk.id) return 2;
                 return 0;
             });
+    }
 
-        // Emphasize edges to/from active chunk
-        this.trajectoryGroup.selectAll('path')
-            .transition()
-            .duration(200)
-            .attr('stroke-width', (d, i) => {
-                // Check if this path connects to the active chunk
-                const pathPoints = d; // d is array of 2 points
-                if (pathPoints.some(p => p.id === activeChunk.id)) {
-                    return 5; // Thick line for active connections
-                }
-                if (prevChunk && pathPoints.some(p => p.id === prevChunk.id)) {
-                    return 3;
-                }
-                if (nextChunk && pathPoints.some(p => p.id === nextChunk.id)) {
-                    return 3;
-                }
-                return 1; // Thin line for others
-            })
-            .attr('opacity', (d) => {
-                const pathPoints = d;
-                if (pathPoints.some(p => p.id === activeChunk.id)) {
-                    return 0.9; // Highly visible for active connections
-                }
-                if (prevChunk && pathPoints.some(p => p.id === prevChunk.id)) {
-                    return 0.7;
-                }
-                if (nextChunk && pathPoints.some(p => p.id === nextChunk.id)) {
-                    return 0.7;
-                }
-                return 0.3; // Dim other lines
+    updateClusterLabels() {
+        // Group points by topic
+        const topicGroups = d3.group(this.data.points, d => d.topic_depth_1);
+
+        // Calculate centroids for each topic
+        const centroids = [];
+        topicGroups.forEach((points, topic) => {
+            centroids.push({
+                topic: topic,
+                x: d3.mean(points, p => this.xScale(p.x)),
+                y: d3.mean(points, p => this.yScale(p.y))
             });
+        });
+
+        // Update labels
+        const labelsGroup = this.g.select('.cluster-labels');
+        labelsGroup.selectAll('text')
+            .data(centroids, d => d.topic)
+            .join(
+                enter => enter.append('text')
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y)
+                    .attr('text-anchor', 'middle')
+                    .attr('dominant-baseline', 'middle')
+                    .attr('class', 'cluster-label')
+                    .style('font-size', '16px')
+                    .style('font-weight', '600')
+                    .style('pointer-events', 'none')
+                    .style('opacity', 0)
+                    .text(d => d.topic)
+                    .transition()
+                    .duration(500)
+                    .style('opacity', 1),
+                update => update
+                    .transition()
+                    .duration(500)
+                    .attr('x', d => d.x)
+                    .attr('y', d => d.y)
+                    .text(d => d.topic),
+                exit => exit
+                    .transition()
+                    .duration(500)
+                    .style('opacity', 0)
+                    .remove()
+            );
     }
 }
 
@@ -787,7 +702,6 @@ function sendChatMessage() {
     const input = document.getElementById('chat-input');
     const message = input.value.trim();
     if (message) {
-        // Send to chat API
         console.log('Sending message:', message);
         input.value = '';
     }
@@ -795,144 +709,6 @@ function sendChatMessage() {
 
 // Initialize visualization when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
-    const viz = new PodcastMapVisualization('#map-svg-container');
-    window.podcastViz = viz; // Make it globally accessible for debugging
-
-    // Setup UMAP parameter controls
-    setupUMAPControls();
+    const viz = new PodcastMapNomic('#map-svg-container');
+    window.podcastViz = viz;
 });
-
-function setupUMAPControls() {
-    // Get slider elements
-    const nPointsSlider = document.getElementById('n-points');
-    const minDistSlider = document.getElementById('min-dist');
-    const nNeighborsSlider = document.getElementById('n-neighbors');
-
-    // Get value display elements
-    const nPointsValue = document.getElementById('n-points-value');
-    const minDistValue = document.getElementById('min-dist-value');
-    const nNeighborsValue = document.getElementById('n-neighbors-value');
-
-    // Get regenerate button and status message
-    const regenerateBtn = document.getElementById('regenerate-btn');
-    const statusMessage = document.getElementById('status-message');
-
-    // Update value displays when sliders change
-    if (nPointsSlider) {
-        nPointsSlider.addEventListener('input', (e) => {
-            nPointsValue.textContent = e.target.value;
-        });
-    }
-
-    if (minDistSlider) {
-        minDistSlider.addEventListener('input', (e) => {
-            minDistValue.textContent = parseFloat(e.target.value).toFixed(2);
-        });
-    }
-
-    if (nNeighborsSlider) {
-        nNeighborsSlider.addEventListener('input', (e) => {
-            nNeighborsValue.textContent = e.target.value;
-        });
-    }
-
-    // Handle regenerate button click
-    if (regenerateBtn) {
-        regenerateBtn.addEventListener('click', async () => {
-            const nPoints = parseInt(nPointsSlider.value);
-            const minDist = parseFloat(minDistSlider.value);
-            const nNeighbors = parseInt(nNeighborsSlider.value);
-
-            // Disable button and show status
-            regenerateBtn.disabled = true;
-            regenerateBtn.style.background = '#999';
-            regenerateBtn.textContent = 'Generating...';
-            statusMessage.style.display = 'block';
-            statusMessage.style.color = '#2196F3';
-            statusMessage.textContent = 'Starting UMAP generation... This may take 2-5 minutes.';
-
-            try {
-                // Call the backend API to regenerate UMAP
-                const response = await fetch(`/api/regenerate_umap?n_points=${nPoints}&min_dist=${minDist}&n_neighbors=${nNeighbors}`, {
-                    method: 'POST'
-                });
-
-                const result = await response.json();
-
-                if (response.ok) {
-                    statusMessage.style.color = '#4CAF50';
-                    statusMessage.textContent = `✓ ${result.message} Monitoring progress...`;
-
-                    // Poll for completion
-                    pollForCompletion(statusMessage, regenerateBtn);
-                } else {
-                    throw new Error(result.detail || 'Generation failed');
-                }
-
-            } catch (error) {
-                console.error('Error regenerating UMAP:', error);
-                statusMessage.style.color = '#f44336';
-                statusMessage.textContent = `✗ Error: ${error.message}`;
-
-                // Re-enable button
-                regenerateBtn.disabled = false;
-                regenerateBtn.style.background = '#4CAF50';
-                regenerateBtn.textContent = 'Regenerate Map';
-            }
-        });
-    }
-}
-
-function pollForCompletion(statusMessage, regenerateBtn) {
-    let pollCount = 0;
-    const maxPolls = 60; // Poll for up to 5 minutes (5 seconds * 60 = 300s)
-
-    const pollInterval = setInterval(async () => {
-        pollCount++;
-
-        try {
-            const response = await fetch('/api/umap_generation_status');
-            const status = await response.json();
-
-            if (status.status === 'completed') {
-                clearInterval(pollInterval);
-                statusMessage.style.color = '#4CAF50';
-                statusMessage.textContent = '✓ Generation complete! Refreshing page...';
-
-                // Refresh after 2 seconds
-                setTimeout(() => {
-                    location.reload();
-                }, 2000);
-            } else if (status.status === 'failed') {
-                clearInterval(pollInterval);
-                statusMessage.style.color = '#f44336';
-                statusMessage.textContent = '✗ Generation failed. Please try again.';
-
-                // Re-enable button
-                regenerateBtn.disabled = false;
-                regenerateBtn.style.background = '#4CAF50';
-                regenerateBtn.textContent = 'Regenerate Map';
-            } else if (status.status === 'running') {
-                // Update progress message
-                const elapsed = Math.floor((Date.now() / 1000) - (status.start_time || 0));
-                statusMessage.textContent = `⏳ Generating... (${elapsed}s elapsed)`;
-            }
-
-            // Stop polling after max attempts
-            if (pollCount >= maxPolls) {
-                clearInterval(pollInterval);
-                statusMessage.style.color = '#FF9800';
-                statusMessage.textContent = '⚠ Generation is taking longer than expected. Refresh manually in a few minutes.';
-
-                // Re-enable button
-                regenerateBtn.disabled = false;
-                regenerateBtn.style.background = '#4CAF50';
-                regenerateBtn.textContent = 'Regenerate Map';
-            }
-
-        } catch (error) {
-            console.error('Error polling status:', error);
-        }
-
-    }, 5000); // Poll every 5 seconds
-}
