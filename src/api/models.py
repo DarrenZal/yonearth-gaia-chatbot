@@ -2,7 +2,7 @@
 Pydantic models for API requests and responses
 """
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 
 
 class ChatRequest(BaseModel):
@@ -28,6 +28,11 @@ class Citation(BaseModel):
     guest_name: str
     url: str
     relevance: str
+
+    @field_validator("episode_number", mode="before")
+    @classmethod
+    def coerce_episode_number(cls, v):
+        return str(v) if v is not None else ""
 
 
 class CostDetail(BaseModel):
