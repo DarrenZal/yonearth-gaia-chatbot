@@ -9,6 +9,16 @@
         /* Simple/embedded mode: hide nav header and controls sidebar */
         .simple-mode .graph-header { display: none !important; }
         .simple-mode .controls-panel { display: none !important; }
+
+        /* Override responsive slide-in behaviour — details panel stays in
+           the flex row as a fixed-width right column, regardless of iframe width */
+        .simple-mode .details-panel {
+            position: static !important;
+            transform: none !important;
+            width: 260px !important;
+            min-width: 260px !important;
+            height: auto !important;
+        }
     </style>
 </head>
 <body>
