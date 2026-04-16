@@ -2065,3 +2065,83 @@ body {
     .welcome-banner .welcome-body { font-size: 0.88rem; }
 }
 
+/* Guide split layout — KG left + chat right */
+body.guide-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body.guide-layout .welcome-banner {
+    flex-shrink: 0;
+}
+
+.guide-split {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+    min-height: 0;
+}
+
+.guide-kg-panel {
+    flex: 0 0 55%;
+    position: relative;
+    border-right: 2px solid var(--sage-green, #88a37a);
+    overflow: hidden;
+}
+
+.guide-kg-panel iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.guide-chat-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: 0;
+}
+
+.guide-header {
+    flex-shrink: 0;
+}
+
+/* Chat fills remaining vertical space in the panel */
+.guide-chat-panel .chat-container {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.guide-chat-panel .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+/* Lean guide header: no subtitle needed */
+.guide-header .subtitle { display: none; }
+
+/* Mobile: stack vertically, chat on top */
+@media (max-width: 900px) {
+    .guide-split {
+        flex-direction: column-reverse;
+    }
+    .guide-kg-panel {
+        flex: 0 0 45vh;
+        border-right: none;
+        border-top: 2px solid var(--sage-green, #88a37a);
+    }
+    .guide-chat-panel {
+        flex: 1;
+    }
+}
+

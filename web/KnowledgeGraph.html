@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Knowledge Graph</title>
     <link rel="stylesheet" href="KnowledgeGraph.css">
+    <style>
+        /* Simple/embedded mode: hide nav header and controls sidebar */
+        .simple-mode .graph-header { display: none !important; }
+        .simple-mode .controls-panel { display: none !important; }
+    </style>
 </head>
 <body>
     <div id="knowledge-graph-container">
@@ -172,6 +177,11 @@
             } else if (view === 'chat') {
                 window.location.href = '/';
             }
+        }
+
+        // Simple/embedded mode — hide chrome when loaded inside the guide split layout
+        if (new URLSearchParams(window.location.search).get('simple') === '1') {
+            document.documentElement.classList.add('simple-mode');
         }
     </script>
 </body>

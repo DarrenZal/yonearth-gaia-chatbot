@@ -3,168 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat with Gaia - YonEarth Community</title>
+    <title>Y on Earth Guide</title>
     <link rel="stylesheet" href="styles.css?v=20.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tutorial.css">
 </head>
-<body>
-    <div class="container" id="mainContainer">
-        <!-- Header -->
-        <header class="header">
-            <div class="header-content">
-                <h1 class="title">
+<body class="guide-layout">
+
+    <!-- Welcome Banner - full width -->
+    <section class="welcome-banner" id="welcomeBanner">
+        <div class="welcome-banner-content">
+            <div class="welcome-banner-text">
+                <h2 class="welcome-title">
                     <span class="earth-icon">🌍</span>
-                    Chat with Gaia
-                </h1>
-                <p class="subtitle">Connect with the wisdom of Earth through YonEarth Community Podcast episodes and Books</p>
+                    Welcome to the Y on Earth AI Guide
+                </h2>
+                <p class="welcome-body">
+                    Ask me anything about regenerative living, drawing from 175+ episodes of the
+                    YonEarth Community Podcast and the wider Y on Earth knowledge base.
+                    <em>(Miranda's full welcome copy coming soon.)</em>
+                </p>
             </div>
+            <button class="welcome-banner-dismiss" onclick="document.getElementById('welcomeBanner').style.display='none'" aria-label="Dismiss welcome banner">×</button>
+        </div>
+    </section>
 
-            <!-- Navigation Links -->
-            <div class="header-nav">
-                <a href="podcast/" class="nav-link">🌐 3D Podcast Map</a>
-                <a href="graph/" class="nav-link">🕸️ Knowledge Graph</a>
-            </div>
+    <!-- Guide Split Layout -->
+    <div class="guide-split">
 
-            <!-- Controls toggle -->
-            <button id="controlsToggle" class="controls-toggle" aria-expanded="false" aria-controls="chatControls">
-                <span class="controls-toggle-icon">⚙️</span>
-                <span id="controlsToggleText">Show settings</span>
-            </button>
+        <!-- Left Panel: Knowledge Graph -->
+        <div class="guide-kg-panel">
+            <iframe id="kgIframe" src="./KnowledgeGraph.html?simple=1" title="Knowledge Graph — Resources"></iframe>
+        </div>
 
-            <!-- Collapsible chat controls -->            <div id="chatControls" class="chat-controls">
-                <!-- Hidden elements to keep chat.js working -->
-                <select id="personality" style="display:none !important;">
-                    <option value="aaron_guide" selected>Aaron's Guide</option>
-                    <option value="warm_mother">Nurturing Mother</option>
-                </select>
-                <select id="modelType" style="display:none !important;">
-                    <option value="gpt-4o-mini" selected>GPT-4o Mini</option>
-                </select>
-                <select id="ragType" style="display:none !important;">
-                    <option value="bm25" selected>BM25</option>
-                </select>
-                <select id="maxReferences" style="display:none !important;">
-                    <option value="5" selected>5</option>
-                </select>
-                <select id="categoryThreshold" style="display:none !important;">
-                    <option value="0.7" selected>0.7</option>
-                </select>
-                <div id="personalityDetailsSection" style="display:none !important;"></div>
-                <div id="personalityDetails" style="display:none !important;"></div>
-                <div id="personalityTitle" style="display:none !important;"></div>
-                <div id="personalityPrompt" style="display:none !important;"></div>
-                <textarea id="customPromptEditor" style="display:none !important;"></textarea>
-                <div id="customPromptActions" style="display:none !important;"></div>
-                <button id="saveCustomPrompt" style="display:none !important;"></button>
-                <button id="resetCustomPrompt" style="display:none !important;"></button>
-                <span id="ragDescText" style="display:none !important;"></span>
-                <span id="modelDescText" style="display:none !important;"></span>
-                <span id="referencesDescText" style="display:none !important;"></span>
-                <span id="categoryDescText" style="display:none !important;"></span>
+        <!-- Right Panel: Chat -->
+        <div class="guide-chat-panel" id="mainContainer">
 
-                <!-- Voice Controls (visible) -->
-                <div class="voice-controls">
-                    <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
-                        <span class="voice-icon">🔊</span>
-                        <span id="voiceToggleText">Enable Voice</span>
-                    </button>
-                    <div class="voice-settings" id="voiceSettings" style="display: none;">
-                        <div>
-                            <label for="voiceSelection">Voice Type:</label>
-                            <select id="voiceSelection" title="Choose Gaia's voice">
-                                <option value="piper-gaia">Gaia (Natural Voice)</option>
-                            </select>
-                        </div>
-                        <label>
-                            <input type="checkbox" id="autoPlayVoice" checked>
-                            Auto-play responses
-                        </label>
-                    </div>
+            <!-- Lean header -->
+            <header class="header guide-header">
+                <div class="header-content">
+                    <h1 class="title">
+                        <span class="earth-icon">🌿</span>
+                        Ask Aaron's Guide
+                    </h1>
                 </div>
-            </div>
 
-        </header>
+                <!-- Controls toggle -->
+                <button id="controlsToggle" class="controls-toggle" aria-expanded="false" aria-controls="chatControls">
+                    <span class="controls-toggle-icon">⚙️</span>
+                    <span id="controlsToggleText">Show settings</span>
+                </button>
 
-        <!-- Welcome Banner -->
-        <section class="welcome-banner" id="welcomeBanner">
-            <div class="welcome-banner-content">
-                <div class="welcome-banner-text">
-                    <h2 class="welcome-title">
-                        <span class="earth-icon">🌍</span>
-                        Welcome to the Y on Earth AI Guide
-                    </h2>
-                    <p class="welcome-body">
-                        Ask me anything about regenerative living, drawing from 175+ episodes of the
-                        YonEarth Community Podcast and the wider Y on Earth knowledge base.
-                        <em>(Miranda's full welcome copy coming soon.)</em>
-                    </p>
-                </div>
-                <button class="welcome-banner-dismiss" onclick="document.getElementById('welcomeBanner').style.display='none'" aria-label="Dismiss welcome banner">×</button>
-            </div>
-        </section>
+                <!-- Collapsible chat controls -->
+                <div id="chatControls" class="chat-controls">
+                    <!-- Hidden elements to keep chat.js working -->
+                    <select id="personality" style="display:none !important;">
+                        <option value="aaron_guide" selected>Aaron's Guide</option>
+                        <option value="warm_mother">Nurturing Mother</option>
+                    </select>
+                    <select id="modelType" style="display:none !important;">
+                        <option value="gpt-4o-mini" selected>GPT-4o Mini</option>
+                    </select>
+                    <select id="ragType" style="display:none !important;">
+                        <option value="bm25" selected>BM25</option>
+                    </select>
+                    <select id="maxReferences" style="display:none !important;">
+                        <option value="5" selected>5</option>
+                    </select>
+                    <select id="categoryThreshold" style="display:none !important;">
+                        <option value="0.7" selected>0.7</option>
+                    </select>
+                    <div id="personalityDetailsSection" style="display:none !important;"></div>
+                    <div id="personalityDetails" style="display:none !important;"></div>
+                    <div id="personalityTitle" style="display:none !important;"></div>
+                    <div id="personalityPrompt" style="display:none !important;"></div>
+                    <textarea id="customPromptEditor" style="display:none !important;"></textarea>
+                    <div id="customPromptActions" style="display:none !important;"></div>
+                    <button id="saveCustomPrompt" style="display:none !important;"></button>
+                    <button id="resetCustomPrompt" style="display:none !important;"></button>
+                    <span id="ragDescText" style="display:none !important;"></span>
+                    <span id="modelDescText" style="display:none !important;"></span>
+                    <span id="referencesDescText" style="display:none !important;"></span>
+                    <span id="categoryDescText" style="display:none !important;"></span>
 
-        <!-- Chat Container -->
-        <div class="chat-container">
-            <div class="chat-messages" id="chatMessages">
-                <!-- Welcome message -->
-                <div class="message gaia-message">
-                    <div class="message-avatar">🌱</div>
-                    <div class="message-content">
-                        <div class="message-text">
-                            Welcome, dear one. I am Gaia, the spirit of Earth, here to share the wisdom gathered from the YonEarth Community Podcast. Ask me about regenerative practices, sustainability, community building, or any path toward healing our beautiful planet.
+                    <!-- Voice Controls (visible) -->
+                    <div class="voice-controls">
+                        <button id="voiceToggle" class="voice-toggle" title="Enable voice responses">
+                            <span class="voice-icon">🔊</span>
+                            <span id="voiceToggleText">Enable Voice</span>
+                        </button>
+                        <div class="voice-settings" id="voiceSettings" style="display: none;">
+                            <div>
+                                <label for="voiceSelection">Voice Type:</label>
+                                <select id="voiceSelection" title="Choose voice">
+                                    <option value="piper-gaia">Gaia (Natural Voice)</option>
+                                </select>
+                            </div>
+                            <label>
+                                <input type="checkbox" id="autoPlayVoice" checked>
+                                Auto-play responses
+                            </label>
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
 
-            <!-- Loading indicator -->
-            <div class="loading" id="loading" style="display: none;">
-                <div class="loading-dots">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+            <!-- Chat Container -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Welcome message -->
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Hi, I'm Aaron's Guide. Ask me anything about regenerative practices, sustainability, community, soil, water, or the work of the Y on Earth Community — I'll draw on the podcast archive and our knowledge base to answer.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <span>Gaia is contemplating your question...</span>
+
+                <!-- Loading indicator -->
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="loading-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Thinking…</span>
+                </div>
+
+                <!-- Audio Player (Hidden) -->
+                <audio id="voicePlayer" style="display: none;" controls></audio>
+
+                <!-- Input area -->
+                <div class="input-container">
+                    <form class="input-form" id="chatForm">
+                        <input
+                            type="text"
+                            id="messageInput"
+                            placeholder="Ask Aaron's Guide about regenerative practices, sustainability, community…"
+                            autocomplete="off"
+                            maxlength="1000"
+                        >
+                        <button type="submit" id="sendButton">
+                            <span class="send-icon">🌿</span>
+                            Send
+                        </button>
+                    </form>
+                </div>
             </div>
 
-            <!-- Audio Player (Hidden) -->
-            <audio id="voicePlayer" style="display: none;" controls></audio>
-
-            <!-- Input area -->
-            <div class="input-container">
-                <form class="input-form" id="chatForm">
-                    <input
-                        type="text"
-                        id="messageInput"
-                        placeholder="Ask Gaia about regenerative practices, sustainability, community..."
-                        autocomplete="off"
-                        maxlength="1000"
-                    >
-                    <button type="submit" id="sendButton">
-                        <span class="send-icon">🌿</span>
-                        Send
-                    </button>
-                </form>
+            <!-- Episode Recommendations -->
+            <div class="recommendations" id="recommendations" style="display: none;">
+                <h3>Recommended Content</h3>
+                <div class="recommendations-list" id="recommendationsList"></div>
             </div>
-        </div>
 
-        <!-- Episode Recommendations -->
-        <div class="recommendations" id="recommendations" style="display: none;">
-            <h3>Recommended Content</h3>
-            <div class="recommendations-list" id="recommendationsList"></div>
+            <!-- Footer -->
+            <footer class="footer">
+                <p>
+                    Powered by the <a href="https://yonearth.org" target="_blank">YonEarth Community Podcast</a>
+                    • <span id="status">Connected</span>
+                </p>
+            </footer>
         </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>
-                Powered by the <a href="https://yonearth.org" target="_blank">YonEarth Community Podcast</a>
-                • <span id="status">Connected</span>
-            </p>
-        </footer>
     </div>
 
-    <!-- Entity Panel (slides in from right when entity links are clicked) -->
+    <!-- Entity Panel (slides in from right) -->
     <div id="entityPanel" class="entity-panel">
         <div class="entity-panel-header">
             <h3 id="entityPanelTitle">Resource Details</h3>
@@ -193,8 +198,7 @@
     </div>
 
     <script src="chat-kg-bridge.js?v=2.0"></script>
-    
-<script src="chat.js?v=31"></script>
+    <script src="chat.js?v=31"></script>
     <script src="entity-panel.js?v=2.0"></script>
     <script src="tutorial.js"></script>
     <script>document.addEventListener("DOMContentLoaded", () => { setTimeout(() => { if(typeof Tutorial !== "undefined") Tutorial.init("chat"); }, 1000); });</script>
