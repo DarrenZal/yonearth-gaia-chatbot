@@ -100,6 +100,51 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Topic filter — YOE taxonomy dropdown (§8) */
+.topic-filter {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.topic-dropdown {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    color: #1a1a1a;
+    padding: 10px 40px 10px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    min-width: 240px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    transition: all 0.2s ease;
+    font-weight: 400;
+}
+
+.topic-dropdown:hover {
+    background: #fafafa;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.topic-dropdown:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.topic-filter .dropdown-arrow {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.4;
+}
+
 /* Episode filter - clean dropdown */
 .episode-filter {
     position: relative;
