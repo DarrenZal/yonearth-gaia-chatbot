@@ -2007,3 +2007,61 @@ body {
     display: none !important;
 }
 
+/* Welcome Banner */
+.welcome-banner {
+    background: linear-gradient(135deg, var(--earth-beige, #f4efe1) 0%, #e8f5e8 100%);
+    border-bottom: 2px solid var(--sage-green, #88a37a);
+    padding: 16px 32px;
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+.welcome-banner-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.welcome-banner-text {
+    flex: 1;
+}
+
+.welcome-banner .welcome-title {
+    margin: 0 0 6px 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2d4a2a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.welcome-banner .welcome-body {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    color: #3a3a3a;
+}
+
+.welcome-banner-dismiss {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #666;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.welcome-banner-dismiss:hover {
+    color: #2d4a2a;
+}
+
+@media (max-width: 768px) {
+    .welcome-banner { padding: 12px 18px; }
+    .welcome-banner .welcome-title { font-size: 1.1rem; }
+    .welcome-banner .welcome-body { font-size: 0.88rem; }
+}
+
