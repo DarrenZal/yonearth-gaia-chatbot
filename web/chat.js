@@ -52,7 +52,19 @@ class GaiaChat {
         this.voicePlayer = document.getElementById('voicePlayer');
         this.voiceIcon = document.querySelector('.voice-icon');
 
-        // Voice state
+        // STT (mic) controls
+        this.micButton = document.getElementById('micButton');
+        this.micIcon = document.getElementById('micIcon');
+
+        // STT state
+        this.sttEnabled = false;  // set true after /api/stt/status probe
+        this.isRecording = false;
+        this.mediaRecorder = null;
+        this.recordedChunks = [];
+        this.recordingTimer = null;
+        this.STT_MAX_DURATION_MS = 60_000;  // 60s client-side cap
+
+        // Voice output state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
         this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'YcVr5DmTjJ2cEVwNiuhU';
@@ -76,6 +88,9 @@ class GaiaChat {
         
         // Initialize voice UI
         this.updateVoiceUI();
+
+        // Probe STT status and show/hide mic button
+        this.probeSTTStatus();
     }
     
     setupEventListeners() {
@@ -161,6 +176,13 @@ class GaiaChat {
             localStorage.setItem('selectedVoiceId', this.selectedVoiceId);
             console.log('Voice changed to:', this.selectedVoiceId);
         });
+
+        // Mic button (STT)
+        if (this.micButton) {
+            this.micButton.addEventListener('click', () => {
+                this.toggleRecording();
+            });
+        }
 
         // Auto-play checkbox
         this.autoPlayVoice.addEventListener('change', () => {
@@ -2108,6 +2130,109 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         this.voiceSelection.value = this.selectedVoiceId;
     }
     
+    // ---- STT (Speech-to-Text) methods ----
+
+    async probeSTTStatus() {
+        try {
+            const resp = await fetch(`${this.apiUrl}/stt/status`);
+            if (resp.ok) {
+                const data = await resp.json();
+                this.sttEnabled = data.enabled === true;
+            }
+        } catch (e) {
+            this.sttEnabled = false;
+        }
+        if (this.micButton) {
+            this.micButton.hidden = !this.sttEnabled;
+        }
+    }
+
+    async toggleRecording() {
+        if (this.isRecording) {
+            this.stopRecording();
+        } else {
+            await this.startRecording();
+        }
+    }
+
+    async startRecording() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            const mimeType = MediaRecorder.isTypeSupported('audio/webm')
+                ? 'audio/webm' : 'audio/mp4';
+            this.mediaRecorder = new MediaRecorder(stream, { mimeType });
+            this.recordedChunks = [];
+
+            this.mediaRecorder.ondataavailable = (e) => {
+                if (e.data.size > 0) this.recordedChunks.push(e.data);
+            };
+
+            this.mediaRecorder.onstop = () => {
+                stream.getTracks().forEach(t => t.stop());
+                this.sendRecording(mimeType);
+            };
+
+            this.mediaRecorder.start();
+            this.isRecording = true;
+            this.micIcon.textContent = '⏹️';
+            this.micButton.classList.add('recording');
+
+            // Auto-stop at 60s (plan Path A — client-side enforcement)
+            this.recordingTimer = setTimeout(() => {
+                if (this.isRecording) this.stopRecording();
+            }, this.STT_MAX_DURATION_MS);
+        } catch (err) {
+            console.error('Mic access denied or unavailable:', err);
+        }
+    }
+
+    stopRecording() {
+        if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
+            this.mediaRecorder.stop();
+        }
+        clearTimeout(this.recordingTimer);
+        this.isRecording = false;
+        this.micIcon.textContent = '🎤';
+        this.micButton.classList.remove('recording');
+    }
+
+    async sendRecording(mimeType) {
+        const blob = new Blob(this.recordedChunks, { type: mimeType });
+        if (blob.size === 0) return;
+
+        // Client-side size pre-flight (10 MB nginx cap)
+        if (blob.size > 10 * 1024 * 1024) {
+            console.warn('Recording too large:', blob.size);
+            return;
+        }
+
+        const ext = mimeType === 'audio/webm' ? 'webm' : 'mp4';
+        const fd = new FormData();
+        fd.append('file', blob, `recording.${ext}`);
+
+        try {
+            this.micButton.disabled = true;
+            const resp = await fetch(`${this.apiUrl}/stt`, {
+                method: 'POST',
+                body: fd,
+            });
+            if (resp.ok) {
+                const data = await resp.json();
+                if (data.transcript) {
+                    this.messageInput.value = data.transcript;
+                    this.messageInput.focus();
+                }
+            } else {
+                const err = await resp.json().catch(() => ({}));
+                console.warn('STT error:', resp.status, err.detail || '');
+            }
+        } catch (e) {
+            console.error('STT request failed:', e);
+        } finally {
+            this.micButton.disabled = false;
+        }
+    }
+
     async playAudio(audioData, messageId) {
         try {
             console.log(`Playing audio for message ${messageId}`);

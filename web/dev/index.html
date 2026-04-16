@@ -139,7 +139,7 @@
                     <div>
                         <label for="voiceSelection">Voice Type:</label>
                         <select id="voiceSelection" title="Choose Gaia's voice">
-                            <option value="YcVr5DmTjJ2cEVwNiuhU">Original Voice</option>
+                            <option value="YcVr5DmTjJ2cEVwNiuhU" selected>Aaron's Voice</option>
                             <option value="qFDUJpHU7blleGwAFtqZ">Mother Gaia Voice</option>
                         </select>
                     </div>
@@ -177,6 +177,10 @@
 
             <div class="input-container">
                 <form class="input-form" id="chatForm">
+                    <button type="button" id="micButton" class="mic-button" hidden
+                        title="Voice input sends your audio to OpenAI for transcription.">
+                        <span class="mic-icon" id="micIcon">🎤</span>
+                    </button>
                     <input
                         type="text"
                         id="messageInput"
