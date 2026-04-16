@@ -29,6 +29,7 @@ from .models import (
 from .bm25_endpoints import router as bm25_router
 from .voice_endpoints import router as voice_router
 from .podcast_map_route_local import router as podcast_map_router
+from .stt_endpoints import stt_status_router, stt_router
 
 # Configure logging
 logging.basicConfig(
@@ -110,12 +111,29 @@ except Exception as e:
             "restart_needed": True
         }
 
-# Include voice router
+# Include voice router (TTS)
 try:
     app.include_router(voice_router)
     logger.info("✅ Voice router loaded successfully")
 except Exception as e:
     logger.error(f"❌ Failed to load voice router: {e}")
+
+# STT status endpoint — always mounted so the frontend can discover the flag
+try:
+    app.include_router(stt_status_router)
+    logger.info("✅ STT status router loaded")
+except Exception as e:
+    logger.error(f"❌ Failed to load STT status router: {e}")
+
+# STT transcription endpoint — conditionally mounted on WHISPER_ENABLED
+if settings.whisper_enabled:
+    try:
+        app.include_router(stt_router)
+        logger.info("✅ STT router loaded (WHISPER_ENABLED=true)")
+    except Exception as e:
+        logger.error(f"❌ Failed to load STT router: {e}")
+else:
+    logger.info("ℹ️ STT router not loaded (WHISPER_ENABLED=false)")
 
 # Include podcast map router
 try:
