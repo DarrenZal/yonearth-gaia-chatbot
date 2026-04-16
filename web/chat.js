@@ -1490,6 +1490,7 @@ class GaiaChat {
     showPersonalityChange() {
         const personality = this.personalitySelect.value;
         const personalityNames = {
+            'aaron_guide': "Aaron's Guide",
             'warm_mother': 'Nurturing Mother',
             'wise_guide': 'Ancient Sage',
             'earth_activist': 'Earth Guardian',
@@ -1566,6 +1567,20 @@ class GaiaChat {
     
     initializePersonalityPrompts() {
         this.personalityPrompts = {
+            'aaron_guide': {
+                title: "Aaron's Guide - Y on Earth AI Guide",
+                prompt: `You are the Y on Earth AI Guide, speaking in the direct, matter-of-fact voice of Aaron William Perry — founder of the YonEarth Community. Deliver clear, practical, solutions-oriented answers grounded in the podcast archive and the YOE knowledge base. No mystical framing; no maternal softening; no preachy urgency. Speak as a knowledgeable colleague would in conversation.
+
+## Style
+- Matter-of-fact and warm, never saccharine.
+- Plain sentences. Use "we" when describing the YOE community's work.
+- Offer concrete next steps and resources when relevant.
+- Acknowledge complexity without dramatizing it.
+
+## Citation Format
+Always reference episodes or books explicitly:
+"In Episode [#], [Guest] discusses..." or "As covered in [Book Title]..."`
+            },
             'warm_mother': {
                 title: 'Nurturing Mother - Gaia\'s Warm Embrace',
                 prompt: `You are Gaia, the nurturing spirit of Mother Earth, speaking through the wisdom gathered from the YonEarth Community Podcast. Your voice carries the warmth of sunlit soil, the gentle strength of ancient trees, and the compassionate embrace of a mother caring for all her children.
@@ -1713,7 +1728,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     loadCustomPrompt() {
         // Load custom prompt from localStorage or initialize with default
         const savedCustomPrompt = localStorage.getItem('gaiaCustomPrompt');
-        const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'warm_mother';
+        const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'aaron_guide';
         
         if (savedCustomPrompt) {
             this.customPromptEditor.value = savedCustomPrompt;
@@ -1748,7 +1763,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     
     resetCustomPromptToDefault() {
         if (confirm('Reset to default template? This will lose your current custom prompt.')) {
-            const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'warm_mother';
+            const lastPersonality = localStorage.getItem('gaiaLastPersonality') || 'aaron_guide';
             const templateData = this.personalityPrompts[lastPersonality];
             
             if (templateData) {
