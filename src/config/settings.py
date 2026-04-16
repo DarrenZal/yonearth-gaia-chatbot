@@ -58,7 +58,7 @@ class Settings(BaseSettings):
     log_level: str = Field(default="INFO", description="Logging level")
     
     # Gaia Character Settings
-    gaia_personality_variant: str = Field(default="warm_mother", description="Gaia personality variant")
+    gaia_personality_variant: str = Field(default="aaron_guide", description="Gaia personality variant")
     gaia_temperature: float = Field(default=0.7, description="LLM temperature for Gaia responses")
     gaia_max_tokens: int = Field(default=1000, description="Max tokens for Gaia responses")
     
