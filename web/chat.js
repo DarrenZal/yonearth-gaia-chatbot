@@ -1591,7 +1591,7 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         // Show confirmation
         const originalText = this.saveCustomPrompt.textContent;
         this.saveCustomPrompt.textContent = 'Saved!';
-        this.saveCustomPrompt.style.background = 'var(--forest-green)';
+        this.saveCustomPrompt.style.background = 'var(--earth-moss)';
         
         setTimeout(() => {
             this.saveCustomPrompt.textContent = originalText;
@@ -1722,9 +1722,9 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             const exploreMore = document.createElement('div');
             exploreMore.className = 'explore-more';
             exploreMore.innerHTML = `
-                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
-                    <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
-                    <div style="font-size: 0.9rem; color: var(--earth-green);">
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--earth-sage);">
+                    <div style="font-weight: 500; color: var(--earth-moss); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
+                    <div style="font-size: 0.9rem; color: var(--earth-deep);">
                         Try asking about: "other content on ${data.conversation_topics[0]}" or "what else about sustainable ${data.conversation_topics[1] || 'practices'}"
                     </div>
                 </div>
@@ -1768,9 +1768,9 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             const exploreMore = document.createElement('div');
             exploreMore.className = 'explore-more';
             exploreMore.innerHTML = `
-                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
-                    <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
-                    <div style="font-size: 0.9rem; color: var(--earth-green);">
+                <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--earth-sage);">
+                    <div style="font-weight: 500; color: var(--earth-moss); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
+                    <div style="font-size: 0.9rem; color: var(--earth-deep);">
                         Try asking about: "other episodes on ${Array.from(this.conversationTopics)[0]}" or "what else about sustainable ${Array.from(this.conversationTopics)[1] || 'practices'}"
                     </div>
                 </div>
