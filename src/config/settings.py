@@ -75,6 +75,10 @@ class Settings(BaseSettings):
     elevenlabs_voice_id: Optional[str] = Field(default="YcVr5DmTjJ2cEVwNiuhU", description="ElevenLabs voice ID")
     elevenlabs_model_id: str = Field(default="eleven_multilingual_v2", description="ElevenLabs model ID")
     enable_voice_generation: bool = Field(default=False, description="Enable voice generation for responses")
+
+    # STT (Speech-to-Text) Configuration
+    whisper_enabled: bool = Field(default=False, description="Enable /api/stt endpoint (OpenAI Whisper)")
+    stt_daily_budget: float = Field(default=5.0, description="Daily STT cost cap in USD (Whisper @ $0.006/min)")
     
     # Paths
     @property
