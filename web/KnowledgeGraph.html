@@ -10,14 +10,10 @@
         .simple-mode .graph-header { display: none !important; }
         .simple-mode .controls-panel { display: none !important; }
 
-        /* Override responsive slide-in behaviour — details panel stays in
-           the flex row as a fixed-width right column, regardless of iframe width */
+        /* In /guide/ simple-mode, hide center details panel — resource
+           details flow through the chat resource card renderer instead. */
         .simple-mode .details-panel {
-            position: static !important;
-            transform: none !important;
-            width: 260px !important;
-            min-width: 260px !important;
-            height: auto !important;
+            display: none !important;
         }
 
         /* Filter chip strip — only visible in simple-mode, sits above the graph */
@@ -237,7 +233,7 @@
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js"></script>
+    <script src="KnowledgeGraph.js?v=2.1"></script>
 
     <script>
         // View switching functionality

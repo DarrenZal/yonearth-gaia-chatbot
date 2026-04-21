@@ -120,7 +120,7 @@ const ChatKGBridge = {
                 linkedRanges.push({ start: offset, end: offset + match.length });
 
                 // Create clickable entity link
-                return `<span class="kg-entity-link" data-entity="${this.escapeRegex(entityName)}" onclick="ChatKGBridge.navigateToEntity('${this.escapeRegex(entityName)}')">${match}</span>`;
+                return `<span class="kg-entity-link" data-entity="${this.escapeRegex(entityName)}" onclick="openResourceCard('${this.escapeRegex(entityName)}')">${match}</span>`;
             });
         }
 
@@ -614,6 +614,76 @@ const ChatKGBridge = {
         } catch (e) {
             // BroadcastChannel not supported - that's okay
         }
+    },
+
+    // -----------------------------------------------------------------------
+    // Resource card request/response — postMessage bridge to KG iframe
+    // -----------------------------------------------------------------------
+
+    kgReadyReceived: false,
+    _latestRequestId: null,
+    _requestTimer: null,
+    _pendingRequestName: null,
+
+    /**
+     * Send a message to the KG iframe with same-origin enforcement.
+     */
+    sendToKG(msg) {
+        const iframe = document.getElementById('kgIframe');
+        if (iframe && iframe.contentWindow) {
+            iframe.contentWindow.postMessage(msg, window.location.origin);
+        }
+    },
+
+    /**
+     * Request resource data from KG iframe by entity name.
+     * Handles kgReady gate and 2s timeout.
+     */
+    requestResource(name) {
+        if (!this.kgReadyReceived) {
+            // Buffer: store and retry when kgReady fires
+            this._pendingRequestName = name;
+            console.log('ChatKGBridge: KG not ready yet, buffering request for:', name);
+            return;
+        }
+        const requestId = (typeof crypto !== 'undefined' && crypto.randomUUID)
+            ? crypto.randomUUID()
+            : Math.random().toString(36).slice(2);
+        this._latestRequestId = requestId;
+        this._pendingRequestName = null;
+
+        // Clear any previous timeout
+        if (this._requestTimer) clearTimeout(this._requestTimer);
+
+        this.sendToKG({ type: 'requestResource', requestId, query: { name } });
+
+        // 2 second timeout — show error card if no response
+        this._requestTimer = setTimeout(() => {
+            if (this._latestRequestId === requestId) {
+                this._latestRequestId = null;
+                if (typeof addResourceCardError === 'function') addResourceCardError(name);
+            }
+        }, 2000);
+    },
+
+    /**
+     * Handle incoming resourceSelected / resourceError from KG iframe.
+     * Called by SplitViewController.handleKGMessage.
+     */
+    handleResourceMessage(type, data) {
+        if (type === 'resourceSelected') {
+            // node-click has no requestId — always render
+            if (data.requestId && data.requestId !== this._latestRequestId) return;
+            if (this._requestTimer) { clearTimeout(this._requestTimer); this._requestTimer = null; }
+            this._latestRequestId = null;
+            if (typeof addResourceCard === 'function') addResourceCard(data.resource);
+        } else if (type === 'resourceError') {
+            if (data.requestId !== this._latestRequestId) return;
+            if (this._requestTimer) { clearTimeout(this._requestTimer); this._requestTimer = null; }
+            this._latestRequestId = null;
+            const name = (data.query && data.query.name) || 'Unknown';
+            if (typeof addResourceCardError === 'function') addResourceCardError(name);
+        }
     }
 };
 
@@ -729,7 +799,7 @@ const SplitViewController = {
             this.kgIframe.contentWindow.postMessage({
                 type: 'highlightEntities',
                 entities: entityNames
-            }, '*');
+            }, window.location.origin);
         }
 
         if (this.channel) {
@@ -745,10 +815,29 @@ const SplitViewController = {
      */
     handleKGMessage(event) {
         if (!event.data || !event.data.type) return;
+        if (event.origin !== window.location.origin) {
+            console.warn('SplitViewController: postMessage from unexpected origin dropped:', event.origin);
+            return;
+        }
 
         switch (event.data.type) {
             case 'kgReady':
                 console.log('SplitViewController: KG iframe ready');
+                ChatKGBridge.kgReadyReceived = true;
+                // Flush any buffered resource request
+                if (ChatKGBridge._pendingRequestName) {
+                    const name = ChatKGBridge._pendingRequestName;
+                    ChatKGBridge._pendingRequestName = null;
+                    ChatKGBridge.requestResource(name);
+                }
+                break;
+
+            case 'resourceSelected':
+                ChatKGBridge.handleResourceMessage('resourceSelected', event.data);
+                break;
+
+            case 'resourceError':
+                ChatKGBridge.handleResourceMessage('resourceError', event.data);
                 break;
 
             case 'entitySelected':
