@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Card Prototype — /guide/</title>
+
+    <!-- Reuse the live /guide/ stylesheet so the chat container + Aaron messages look exactly like production -->
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* ===================================================================
+           Prototype-only scaffolding — not going to ship.
+           =================================================================== */
+        body.prototype {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+        .prototype-header {
+            padding: 12px 20px;
+            background: rgba(0, 188, 212, 0.08);
+            border-bottom: 1px solid rgba(0, 188, 212, 0.3);
+            font-size: 0.9rem;
+            color: #c0c8d4;
+            flex-shrink: 0;
+        }
+        .prototype-header strong { color: #00bcd4; }
+        .prototype-stage {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            min-height: 0;
+        }
+        .prototype-chat-panel {
+            flex: 0 0 700px;
+            max-width: 700px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border-left: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid rgba(255,255,255,0.05);
+        }
+        .prototype-chat-panel .chat-container {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+        .prototype-chat-panel .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            max-height: none;
+            min-height: 0;
+            padding: 1.5rem;
+        }
+
+        /* ===================================================================
+           Resource Card — candidate visual genre.
+           Clearly metadata, not conversation.
+           ===================================================================*/
+        .message.resource-card-message {
+            display: block;
+            margin-bottom: 1.25rem;
+            animation: rcFadeIn 0.25s ease-out;
+        }
+
+        @keyframes rcFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .resource-card {
+            position: relative;
+            background: linear-gradient(180deg, rgba(0, 188, 212, 0.035) 0%, rgba(15, 20, 35, 0.6) 100%);
+            border: 1px solid rgba(0, 188, 212, 0.22);
+            border-left: 3px solid var(--resource-accent, #00bcd4);
+            border-radius: 8px;
+            padding: 14px 16px 12px 16px;
+            color: #e0e0e0;
+        }
+
+        .resource-card-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--resource-accent, #00bcd4);
+            margin-bottom: 8px;
+        }
+        .resource-card-label .icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 1px solid currentColor;
+            font-size: 9px;
+            font-style: italic;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        .resource-card-source {
+            margin-left: auto;
+            font-size: 0.65rem;
+            font-weight: 400;
+            color: var(--warm-gray, #9ba3b8);
+            letter-spacing: 0.04em;
+        }
+
+        .resource-card-name {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.3;
+            margin-bottom: 6px;
+            padding-right: 32px; /* room for × */
+        }
+
+        .resource-card-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: transparent;
+            border: none;
+            color: #9ba3b8;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.15s ease;
+        }
+        .resource-card-close:hover {
+            background: rgba(255,255,255,0.08);
+            color: #e0e0e0;
+        }
+
+        .resource-card-chips {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .resource-card-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #c0c8d4;
+        }
+        .resource-card-chip.type {
+            background: rgba(0, 188, 212, 0.12);
+            border-color: rgba(0, 188, 212, 0.35);
+            color: #4dd0e1;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        .resource-card-chip.domain .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--domain-color, #9ba3b8);
+        }
+
+        .resource-card-description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #c0c8d4;
+            margin-bottom: 10px;
+        }
+
+        .resource-card-meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            font-size: 0.75rem;
+            color: #9ba3b8;
+            margin-bottom: 10px;
+        }
+        .resource-card-meta span strong {
+            color: #e0e0e0;
+            font-weight: 600;
+        }
+
+        .resource-card-disclosure {
+            background: transparent;
+            border: 1px solid rgba(0, 188, 212, 0.4);
+            color: #4dd0e1;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.15s ease;
+            margin-right: 6px;
+            font-family: inherit;
+        }
+        .resource-card-disclosure:hover {
+            background: rgba(0, 188, 212, 0.12);
+            color: #00bcd4;
+        }
+        .resource-card-disclosure.primary {
+            background: rgba(0, 188, 212, 0.18);
+        }
+
+        .resource-card-relationships {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255,255,255,0.08);
+            display: none;
+        }
+        .resource-card.expanded .resource-card-relationships {
+            display: block;
+        }
+        .resource-card-rel-group {
+            margin-bottom: 10px;
+        }
+        .resource-card-rel-group:last-child { margin-bottom: 0; }
+        .resource-card-rel-group h5 {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #9ba3b8;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+        .resource-card-rel-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 0;
+            font-size: 0.82rem;
+            color: #c0c8d4;
+        }
+        .resource-card-rel-item a {
+            color: #4dd0e1;
+            text-decoration: none;
+            cursor: pointer;
+            border-bottom: 1px dotted rgba(77, 208, 225, 0.4);
+            transition: all 0.15s ease;
+        }
+        .resource-card-rel-item a:hover {
+            color: #00bcd4;
+            border-bottom-style: solid;
+        }
+        .resource-card-rel-type {
+            font-size: 0.65rem;
+            padding: 1px 5px;
+            background: rgba(0, 188, 212, 0.15);
+            color: #4dd0e1;
+            border-radius: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        /* Error variant */
+        .resource-card.error {
+            --resource-accent: #ef5350;
+            background: linear-gradient(180deg, rgba(239, 83, 80, 0.04) 0%, rgba(15, 20, 35, 0.6) 100%);
+            border-color: rgba(239, 83, 80, 0.3);
+        }
+        .resource-card.error .resource-card-label { color: #ef5350; }
+        .resource-card.error .resource-card-description { color: #c0c8d4; margin-bottom: 0; }
+
+        /* Domain color vars (from KG) — same as .chip-dot colors in simple-filter-strip */
+        .domain-community { --domain-color: #4caf50; --resource-accent: #4caf50; }
+        .domain-culture   { --domain-color: #9c27b0; --resource-accent: #9c27b0; }
+        .domain-economy   { --domain-color: #ff9800; --resource-accent: #ff9800; }
+        .domain-ecology   { --domain-color: #2196f3; --resource-accent: #2196f3; }
+        .domain-health    { --domain-color: #f44336; --resource-accent: #f44336; }
+    </style>
+</head>
+<body class="prototype">
+    <div class="prototype-header">
+        <strong>Resource-Card-in-Chat Prototype</strong> — step 1 of
+        <code>yoe-guide-resource-card-in-chat.md</code>. Reviewing visual genre only;
+        no JS wiring. Mock Aaron messages + card variants interleaved for contrast.
+    </div>
+
+    <div class="prototype-stage">
+        <div class="prototype-chat-panel">
+            <div class="chat-container">
+                <div class="chat-messages">
+
+                    <!-- Aaron intro (matches live chat) -->
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Hi, I'm Aaron's Guide. Ask me anything about regenerative practices, sustainability, community, soil, water, or the work of the Y on Earth Community — I'll draw on the podcast archive and our knowledge base to answer.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User prompt -->
+                    <div class="message user-message">
+                        <div class="message-avatar">👤</div>
+                        <div class="message-content">
+                            <div class="message-text">Tell me about biodynamic farming.</div>
+                        </div>
+                    </div>
+
+                    <!-- Aaron response (matches live chat; has kg-entity-link) -->
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Biodynamic farming is a holistic approach to agriculture that treats the farm as a self-contained, self-sustaining organism. It was developed by <span class="kg-entity-link" style="color:var(--forest-green);background:rgba(74,124,89,0.08);padding:1px 4px;border-radius:4px;cursor:pointer;border-bottom:1px dotted var(--forest-green);">Rudolf Steiner</span> in 1924 and builds on organic practices by incorporating cosmic rhythms, biodynamic preparations, and strong soil stewardship. Several Y on Earth guests, including those working with <span class="kg-entity-link" style="color:var(--forest-green);background:rgba(74,124,89,0.08);padding:1px 4px;border-radius:4px;cursor:pointer;border-bottom:1px dotted var(--forest-green);">Demeter USA</span>, have spoken about the certification process and why it goes beyond organic.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE CARD: compact, Ecology domain -->
+                    <div class="message resource-card-message">
+                        <div class="resource-card domain-ecology">
+                            <button class="resource-card-close" title="Dismiss">×</button>
+                            <div class="resource-card-label">
+                                <span class="icon">i</span>
+                                <span>Resource</span>
+                                <span class="resource-card-source">from knowledge graph</span>
+                            </div>
+                            <div class="resource-card-name">United Nations</div>
+                            <div class="resource-card-chips">
+                                <span class="resource-card-chip type">Organization</span>
+                                <span class="resource-card-chip domain"><span class="dot"></span>Ecology</span>
+                            </div>
+                            <div class="resource-card-description">
+                                An international organization founded to promote peace, security, and cooperation among countries, which holds annual meetings to address global challenges including climate change.
+                            </div>
+                            <div class="resource-card-meta">
+                                <span>Mentions: <strong>16</strong></span>
+                                <span>Episodes: <strong>16</strong></span>
+                                <span>Importance: <strong>100%</strong></span>
+                            </div>
+                            <button class="resource-card-disclosure">+35 relationships ↓</button>
+                            <button class="resource-card-disclosure primary">→ Ask Aaron about this</button>
+                        </div>
+                    </div>
+
+                    <!-- Aaron follow-up -->
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Worth adding: the UN's Sustainable Development Goals, adopted in 2015, shape a lot of the regenerative-agriculture funding landscape that guests like Wes Jackson and Vandana Shiva engage with.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE CARD: expanded, multi-domain -->
+                    <div class="message resource-card-message">
+                        <div class="resource-card domain-community expanded" style="--resource-accent: linear-gradient(180deg, #4caf50 0%, #9c27b0 100%);">
+                            <button class="resource-card-close" title="Dismiss">×</button>
+                            <div class="resource-card-label">
+                                <span class="icon">i</span>
+                                <span>Resource</span>
+                                <span class="resource-card-source">from knowledge graph</span>
+                            </div>
+                            <div class="resource-card-name">Permaculture</div>
+                            <div class="resource-card-chips">
+                                <span class="resource-card-chip type">Concept</span>
+                                <span class="resource-card-chip domain"><span class="dot" style="background:#4caf50"></span>Community</span>
+                                <span class="resource-card-chip domain"><span class="dot" style="background:#9c27b0"></span>Culture</span>
+                                <span class="resource-card-chip domain"><span class="dot" style="background:#2196f3"></span>Ecology</span>
+                            </div>
+                            <div class="resource-card-description">
+                                A design system for creating sustainable human settlements and agricultural systems, modeling the relationships found in natural ecosystems. Coined by Bill Mollison and David Holmgren in the 1970s.
+                            </div>
+                            <div class="resource-card-meta">
+                                <span>Mentions: <strong>48</strong></span>
+                                <span>Episodes: <strong>22</strong></span>
+                                <span>Importance: <strong>95%</strong></span>
+                            </div>
+                            <button class="resource-card-disclosure">−Hide relationships ↑</button>
+                            <button class="resource-card-disclosure primary">→ Ask Aaron about this</button>
+
+                            <div class="resource-card-relationships">
+                                <div class="resource-card-rel-group">
+                                    <h5>→ Outgoing (shown 4 of 23)</h5>
+                                    <div class="resource-card-rel-item">
+                                        <a>Bill Mollison</a>
+                                        <span class="resource-card-rel-type">FOUNDED_BY</span>
+                                    </div>
+                                    <div class="resource-card-rel-item">
+                                        <a>Regenerative Agriculture</a>
+                                        <span class="resource-card-rel-type">RELATED_TO</span>
+                                    </div>
+                                    <div class="resource-card-rel-item">
+                                        <a>Food Forests</a>
+                                        <span class="resource-card-rel-type">INCLUDES</span>
+                                    </div>
+                                    <div class="resource-card-rel-item">
+                                        <a>Water Harvesting</a>
+                                        <span class="resource-card-rel-type">INCLUDES</span>
+                                    </div>
+                                    <button class="resource-card-disclosure" style="margin-top:6px">Show all 23 →</button>
+                                </div>
+                                <div class="resource-card-rel-group">
+                                    <h5>← Incoming (shown 3 of 12)</h5>
+                                    <div class="resource-card-rel-item">
+                                        <a>Elk Run Farm</a>
+                                        <span class="resource-card-rel-type">PRACTICES</span>
+                                    </div>
+                                    <div class="resource-card-rel-item">
+                                        <a>Soil Stewardship Handbook</a>
+                                        <span class="resource-card-rel-type">DISCUSSES</span>
+                                    </div>
+                                    <div class="resource-card-rel-item">
+                                        <a>Lidge Family Foundation</a>
+                                        <span class="resource-card-rel-type">FUNDS</span>
+                                    </div>
+                                    <button class="resource-card-disclosure" style="margin-top:6px">Show all 12 →</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- User prompt to show cards don't block chat -->
+                    <div class="message user-message">
+                        <div class="message-avatar">👤</div>
+                        <div class="message-content">
+                            <div class="message-text">What about biochar?</div>
+                        </div>
+                    </div>
+
+                    <!-- Aaron response after cards to show chat continues fine -->
+                    <div class="message gaia-message">
+                        <div class="message-avatar">🌱</div>
+                        <div class="message-content">
+                            <div class="message-text">
+                                Biochar is a stable form of carbon produced by heating organic material in a low-oxygen environment (pyrolysis). When added to soil it sequesters carbon for centuries while improving soil fertility, water retention, and microbial habitat.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESOURCE CARD: error variant -->
+                    <div class="message resource-card-message">
+                        <div class="resource-card error">
+                            <button class="resource-card-close" title="Dismiss">×</button>
+                            <div class="resource-card-label">
+                                <span class="icon">!</span>
+                                <span>Resource not found</span>
+                            </div>
+                            <div class="resource-card-description">
+                                Couldn't load details for <strong>Fictional Entity XYZ</strong>. The resource may not be in the knowledge graph.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Make disclosure buttons actually toggle, just for the prototype demo -->
+    <script>
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.resource-card-disclosure');
+            if (!btn) return;
+            const card = btn.closest('.resource-card');
+            if (!card || btn.textContent.includes('Show all')) return;
+            card.classList.toggle('expanded');
+            // Toggle the button label
+            if (card.classList.contains('expanded')) {
+                if (btn.textContent.includes('+')) {
+                    btn.dataset.original = btn.textContent;
+                    btn.textContent = btn.textContent.replace('+', '−').replace('↓', '↑').replace(/^(\+\d+)/, '−Hide').replace('relationships', 'relationships');
+                }
+            } else {
+                if (btn.dataset.original) btn.textContent = btn.dataset.original;
+            }
+        });
+
+        // × buttons remove the card message
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('.resource-card-close');
+            if (!btn) return;
+            const msg = btn.closest('.resource-card-message');
+            if (msg) msg.remove();
+        });
+    </script>
+</body>
+</html>
