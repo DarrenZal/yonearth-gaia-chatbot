@@ -3,6 +3,11 @@
  * Clean, elegant, full-window 3D experience with auto-rotation
  */
 
+/* Delta #7 — hide "Select a Topic" dropdown (AI-generated cluster labels, not YOE taxonomy) */
+.topic-filter,
+.topic-dropdown,
+#topic-select { display: none !important; }
+
 /* Base styles */
 * {
     margin: 0;
@@ -60,7 +65,7 @@ body {
 
 .nav-link {
     padding: 8px 16px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -72,7 +77,7 @@ body {
 
 .nav-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.4);
 }
 
 /* Project selector - elegant and clean */
@@ -145,7 +150,7 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
     cursor: pointer;
 }
 
@@ -153,7 +158,7 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
     cursor: pointer;
     border: none;
 }
@@ -416,7 +421,7 @@ body {
 
 /* Play from start button */
 .play-from-start-btn {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -431,7 +436,7 @@ body {
 
 .play-from-start-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
 }
 
 .play-from-start-btn:active {
