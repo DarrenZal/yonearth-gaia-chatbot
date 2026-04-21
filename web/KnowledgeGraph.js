@@ -16,22 +16,28 @@ class KnowledgeGraphVisualization {
         this.nodes = null;
         this.labels = null;
 
+        // Detect embedded/simple mode (iframe in /guide/) — tightens defaults for legibility
+        this.isSimpleMode =
+            new URLSearchParams(window.location.search).get('simple') === '1' ||
+            document.documentElement.classList.contains('simple-mode');
+
         // State
         this.selectedNode = null;
         this.filters = {
             domains: new Set(),
             entityTypes: new Set(),
-            minImportance: 0.7,  // Start with higher threshold to avoid rendering too many nodes
+            minImportance: this.isSimpleMode ? 0.9 : 0.7,
             searchQuery: "",
-            maxNodes: 1000  // Hard limit on nodes to prevent browser freeze
+            maxNodes: this.isSimpleMode ? 80 : 1000
         };
 
-        // Layout parameters
+        // Layout parameters — stronger repulsion + longer links in simple-mode so
+        // the small iframe viewport doesn't render as a hairball.
         this.params = {
             gravity: 0.1,
-            charge: -300,
-            linkDistance: 100,
-            collisionRadius: 15
+            charge: this.isSimpleMode ? -600 : -300,
+            linkDistance: this.isSimpleMode ? 140 : 100,
+            collisionRadius: this.isSimpleMode ? 22 : 15
         };
 
         // Dimensions
@@ -59,6 +65,12 @@ class KnowledgeGraphVisualization {
 
         // Set up controls
         this.setupControls();
+
+        // Simple/embedded mode gets a compact filter strip since the
+        // full left-sidebar controls are hidden by CSS.
+        if (this.isSimpleMode) {
+            this.setupSimpleFilterStrip();
+        }
 
         // Create visualization
         this.createVisualization();
@@ -771,6 +783,42 @@ class KnowledgeGraphVisualization {
             typeLegend.append('div')
                 .attr('class', 'legend-item')
                 .html(`<span>${type}</span> <span style="opacity:0.6">(${count})</span>`);
+        });
+    }
+
+    setupSimpleFilterStrip() {
+        const strip = d3.select('#simple-filter-strip');
+        if (strip.empty() || !this.data || !this.data.domains) return;
+
+        strip.append('span').attr('class', 'strip-label').text('Show');
+
+        const setActive = (domainName) => {
+            strip.selectAll('.filter-chip').classed('active', function () {
+                return this.dataset.domain === domainName;
+            });
+        };
+
+        const allChip = strip.append('button')
+            .attr('class', 'filter-chip active')
+            .attr('data-domain', 'all')
+            .text('All domains')
+            .on('click', () => {
+                this.data.domains.forEach(d => this.filters.domains.add(d.name));
+                setActive('all');
+                this.updateVisualization();
+            });
+
+        this.data.domains.forEach(domain => {
+            strip.append('button')
+                .attr('class', 'filter-chip')
+                .attr('data-domain', domain.name)
+                .html(`<span class="chip-dot" style="background:${domain.color}"></span>${domain.name}`)
+                .on('click', () => {
+                    this.filters.domains.clear();
+                    this.filters.domains.add(domain.name);
+                    setActive(domain.name);
+                    this.updateVisualization();
+                });
         });
     }
 
