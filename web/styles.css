@@ -1346,6 +1346,14 @@ body {
     cursor: pointer;
 }
 
+.voice-cost-note {
+    display: block;
+    margin-top: 0.5rem;
+    color: var(--warm-gray);
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
 /* Audio Controls in Messages */
 .audio-controls {
     margin-top: 1rem;
