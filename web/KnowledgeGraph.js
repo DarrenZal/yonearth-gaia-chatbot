@@ -649,6 +649,34 @@ class KnowledgeGraphVisualization {
             .classed('dimmed', false);
     }
 
+    _buildResourcePayload(d) {
+        const outgoing = [];
+        const incoming = [];
+        this.data.links.forEach(link => {
+            const sourceId = link.source.id || link.source;
+            const targetId = link.target.id || link.target;
+            if (sourceId === d.id) {
+                const targetNode = this.data.nodes.find(n => n.id === targetId);
+                if (targetNode) outgoing.push({ type: link.type || link.relationship_type || 'RELATED_TO', target: targetNode.name });
+            } else if (targetId === d.id) {
+                const sourceNode = this.data.nodes.find(n => n.id === sourceId);
+                if (sourceNode) incoming.push({ type: link.type || link.relationship_type || 'RELATED_TO', source: sourceNode.name });
+            }
+        });
+        return {
+            id: d.id,
+            name: d.name,
+            type: d.type,
+            domains: d.domains || [],
+            description: d.description || '',
+            importance: d.importance,
+            mentions: d.mention_count,
+            episodes: d.episode_count,
+            aliases: d.aliases || [],
+            relationships: { outgoing, incoming }
+        };
+    }
+
     showDetails(d) {
         const detailsContent = d3.select('#details-content');
 
@@ -757,6 +785,15 @@ class KnowledgeGraphVisualization {
             </div>
             ${relationshipsHtml}
         `);
+
+        // Also notify parent window (chat /guide/ layout) with structured resource data
+        if (window.parent !== window) {
+            window.parent.postMessage({
+                type: 'resourceSelected',
+                resource: this._buildResourcePayload(d),
+                source: 'node-click'
+            }, window.location.origin);
+        }
     }
 
     closeDetails() {
@@ -1148,36 +1185,74 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Listen for highlight messages from parent window (when embedded in iframe)
+    // Listen for messages from parent window (when embedded in iframe)
     window.addEventListener('message', (event) => {
         if (!event.data || !event.data.type) return;
+        if (event.origin !== window.location.origin) {
+            console.warn('KG: postMessage from unexpected origin dropped:', event.origin);
+            return;
+        }
 
         switch (event.data.type) {
             case 'highlightEntities':
                 if (vizInstance && event.data.entities) {
                     const matched = vizInstance.highlightEntities(event.data.entities);
-                    // Send back the result
                     if (event.source) {
                         event.source.postMessage({
                             type: 'highlightResult',
                             matched: matched,
                             requested: event.data.entities
-                        }, '*');
+                        }, window.location.origin);
                     }
                 }
                 break;
 
             case 'clearHighlights':
-                if (vizInstance) {
-                    vizInstance.clearHighlight();
+            case 'clearSelection':
+                if (vizInstance) vizInstance.clearHighlight();
+                if (vizInstance) vizInstance.selectedNode = null;
+                break;
+
+            case 'requestResource': {
+                if (!vizInstance || !vizInstance.data) {
+                    if (event.source) {
+                        event.source.postMessage({
+                            type: 'resourceError',
+                            requestId: event.data.requestId,
+                            error: 'not_found',
+                            query: event.data.query
+                        }, window.location.origin);
+                    }
+                    break;
+                }
+                const queryName = event.data.query && event.data.query.name ? event.data.query.name.toLowerCase() : '';
+                const matches = vizInstance.data.nodes.filter(n => n.name && n.name.toLowerCase() === queryName);
+                const node = matches.length > 0
+                    ? matches.reduce((best, n) => (n.importance || 0) > (best.importance || 0) ? n : best, matches[0])
+                    : null;
+                if (node) {
+                    event.source.postMessage({
+                        type: 'resourceSelected',
+                        requestId: event.data.requestId,
+                        resource: vizInstance._buildResourcePayload(node),
+                        source: 'link-click'
+                    }, window.location.origin);
+                } else {
+                    event.source.postMessage({
+                        type: 'resourceError',
+                        requestId: event.data.requestId,
+                        error: 'not_found',
+                        query: event.data.query
+                    }, window.location.origin);
                 }
                 break;
+            }
         }
     });
 
     // Notify parent window that KG is ready
     if (window.parent !== window) {
-        window.parent.postMessage({ type: 'kgReady' }, '*');
+        window.parent.postMessage({ type: 'kgReady' }, window.location.origin);
     }
 
     // Also listen on BroadcastChannel for cross-frame communication

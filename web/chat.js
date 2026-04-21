@@ -923,7 +923,7 @@ class GaiaChat {
                     return match; // We're inside a tag
                 }
                 const safeName = entityName.replace(/"/g, "&quot;").replace(/'/g, "&#39;");
-                return "<span class=\"kg-entity-link\" onclick=\"openEntityPanel('" + safeName + "')\">" + match + "</span>";
+                return "<span class=\"kg-entity-link\" onclick=\"openResourceCard('" + safeName + "')\">" + match + "</span>";
             });
         }
         for (let i = 0; i < placeholders.length; i++) {
@@ -2413,6 +2413,175 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
 // Global function for modal
 function closeConfig() {
     document.getElementById('configModal').style.display = 'none';
+}
+
+// -----------------------------------------------------------------------
+// Resource Card — renders KG metadata inline in the /guide/ chat stream.
+// Called by ChatKGBridge when a resourceSelected or resourceError arrives.
+// -----------------------------------------------------------------------
+
+const RESOURCE_CARD_INSERT_MODE = 'replace'; // 'replace' | 'stack'
+
+const _DOMAIN_COLORS = {
+    community: '#4caf50',
+    culture:   '#9c27b0',
+    economy:   '#ff9800',
+    ecology:   '#2196f3',
+    health:    '#f44336',
+};
+
+let _latestResourceCardEl = null;
+
+function _rcEscHtml(str) {
+    if (!str) return '';
+    return String(str)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+function _rcEscAttr(str) {
+    if (!str) return '';
+    return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+}
+
+function openResourceCard(name) {
+    if (window.ChatKGBridge && ChatKGBridge.requestResource) {
+        ChatKGBridge.requestResource(name);
+    }
+}
+
+function _removeExistingCard(chatMessages) {
+    if (RESOURCE_CARD_INSERT_MODE !== 'replace') return;
+    const existing = chatMessages.querySelector('.resource-card-message');
+    if (existing) {
+        if (existing === _latestResourceCardEl) _latestResourceCardEl = null;
+        existing.remove();
+    }
+}
+
+function addResourceCard(resource) {
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+
+    _removeExistingCard(chatMessages);
+
+    const primaryDomain = (resource.domains && resource.domains[0]) ? resource.domains[0].toLowerCase() : '';
+    const domainClass = _DOMAIN_COLORS[primaryDomain] ? `domain-${primaryDomain}` : '';
+
+    const typeChip = `<span class="resource-card-chip type">${_rcEscHtml(resource.type || 'Entity')}</span>`;
+    const domainChips = (resource.domains || []).map(d => {
+        const color = _DOMAIN_COLORS[d.toLowerCase()] || '#9ba3b8';
+        return `<span class="resource-card-chip domain"><span class="dot" style="background:${color}"></span>${_rcEscHtml(d)}</span>`;
+    }).join('');
+
+    const outgoing = (resource.relationships && resource.relationships.outgoing) || [];
+    const incoming = (resource.relationships && resource.relationships.incoming) || [];
+    const totalRels = outgoing.length + incoming.length;
+
+    const renderRelGroup = (rels, label, dir) => {
+        const capped = rels.slice(0, 20);
+        const rest = rels.length - capped.length;
+        const items = capped.map(r => {
+            const n = dir === 'out' ? (r.target || '') : (r.source || '');
+            return `<div class="resource-card-rel-item">
+                <a onclick="openResourceCard('${_rcEscAttr(n)}')">${_rcEscHtml(n)}</a>
+                <span class="resource-card-rel-type">${_rcEscHtml(r.type || 'RELATED_TO')}</span>
+            </div>`;
+        }).join('');
+        const showAllBtn = rest > 0
+            ? `<button class="resource-card-disclosure rc-show-all" style="margin-top:6px">Showing top 20 of ${rels.length}</button>` : '';
+        return `<div class="resource-card-rel-group"><h5>${label} (${rels.length})</h5>${items}${showAllBtn}</div>`;
+    };
+
+    const relsHtml = totalRels > 0 ? `<div class="resource-card-relationships">
+        ${outgoing.length > 0 ? renderRelGroup(outgoing, '→ Outgoing', 'out') : ''}
+        ${incoming.length > 0 ? renderRelGroup(incoming, '← Incoming', 'in') : ''}
+    </div>` : '';
+
+    const meta = [];
+    if (resource.mentions != null) meta.push(`<span>Mentions: <strong>${resource.mentions}</strong></span>`);
+    if (resource.episodes != null) meta.push(`<span>Episodes: <strong>${resource.episodes}</strong></span>`);
+    if (resource.importance != null) meta.push(`<span>Importance: <strong>${(resource.importance * 100).toFixed(0)}%</strong></span>`);
+    const metaHtml = meta.length ? `<div class="resource-card-meta">${meta.join('')}</div>` : '';
+
+    const toggleBtn = totalRels > 0 ? `<button class="resource-card-disclosure rc-toggle">+${totalRels} relationships ↓</button>` : '';
+    const askBtn = `<button class="resource-card-disclosure primary rc-ask-about">→ Ask Aaron about this</button>`;
+
+    const el = document.createElement('div');
+    el.className = 'message resource-card-message';
+    el.innerHTML = `
+        <div class="resource-card ${domainClass}">
+            <button class="resource-card-close" title="Dismiss">×</button>
+            <div class="resource-card-label">
+                <span class="icon">i</span>
+                <span>Resource</span>
+                <span class="resource-card-source">from knowledge graph</span>
+            </div>
+            <div class="resource-card-name">${_rcEscHtml(resource.name)}</div>
+            <div class="resource-card-chips">${typeChip}${domainChips}</div>
+            ${resource.description ? `<div class="resource-card-description">${_rcEscHtml(resource.description)}</div>` : ''}
+            ${metaHtml}
+            <div class="resource-card-actions">${toggleBtn}${askBtn}</div>
+            ${relsHtml}
+        </div>`;
+
+    el.querySelector('.resource-card-close').addEventListener('click', () => {
+        const wasMostRecent = (el === _latestResourceCardEl);
+        el.remove();
+        if (wasMostRecent) {
+            _latestResourceCardEl = null;
+            if (window.ChatKGBridge && ChatKGBridge.sendToKG) {
+                ChatKGBridge.sendToKG({ type: 'clearSelection' });
+            }
+        }
+    });
+
+    const toggleBtnEl = el.querySelector('.rc-toggle');
+    if (toggleBtnEl) {
+        toggleBtnEl.addEventListener('click', () => {
+            const card = el.querySelector('.resource-card');
+            const isExpanded = card.classList.toggle('expanded');
+            toggleBtnEl.textContent = isExpanded ? `−Hide relationships ↑` : `+${totalRels} relationships ↓`;
+        });
+    }
+
+    el.querySelector('.rc-ask-about').addEventListener('click', () => {
+        const input = document.getElementById('messageInput');
+        if (input) { input.value = `Tell me more about ${resource.name}`; input.focus(); }
+    });
+
+    chatMessages.appendChild(el);
+    el.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    _latestResourceCardEl = el;
+}
+
+function addResourceCardError(name) {
+    const chatMessages = document.getElementById('chatMessages');
+    if (!chatMessages) return;
+
+    _removeExistingCard(chatMessages);
+
+    const el = document.createElement('div');
+    el.className = 'message resource-card-message';
+    el.innerHTML = `
+        <div class="resource-card error">
+            <button class="resource-card-close" title="Dismiss">×</button>
+            <div class="resource-card-label">
+                <span class="icon">!</span>
+                <span>Resource not found</span>
+            </div>
+            <div class="resource-card-description">
+                Couldn't load details for <strong>${_rcEscHtml(name)}</strong>. The resource may not be in the knowledge graph.
+            </div>
+        </div>`;
+
+    el.querySelector('.resource-card-close').addEventListener('click', () => {
+        if (el === _latestResourceCardEl) _latestResourceCardEl = null;
+        el.remove();
+    });
+
+    chatMessages.appendChild(el);
+    el.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    _latestResourceCardEl = el;
 }
 
 // Initialize chat when DOM is loaded
