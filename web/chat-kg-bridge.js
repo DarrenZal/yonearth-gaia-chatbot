@@ -637,15 +637,10 @@ const ChatKGBridge = {
 
     /**
      * Request resource data from KG iframe by entity name.
-     * Handles kgReady gate and 2s timeout.
+     * Sends immediately; KG replies resourceError if data not yet loaded.
+     * 2s timeout renders an error card if no response arrives.
      */
     requestResource(name) {
-        if (!this.kgReadyReceived) {
-            // Buffer: store and retry when kgReady fires
-            this._pendingRequestName = name;
-            console.log('ChatKGBridge: KG not ready yet, buffering request for:', name);
-            return;
-        }
         const requestId = (typeof crypto !== 'undefined' && crypto.randomUUID)
             ? crypto.randomUUID()
             : Math.random().toString(36).slice(2);
@@ -709,22 +704,29 @@ const SplitViewController = {
      * Initialize the split view controller
      */
     init() {
-        const toggleButton = document.getElementById('splitViewToggle');
-
-        if (!toggleButton) {
-            console.log('SplitViewController: Toggle button not found');
-            return;
-        }
-
-        // Store references
+        // Store references (work with or without toggle button — guide layout has no toggle)
         this.originalContainer = document.querySelector('.container');
         this.kgIframe = document.getElementById('kgIframe');
 
-        // Set up toggle button
-        toggleButton.addEventListener('click', () => this.toggle());
+        const toggleButton = document.getElementById('splitViewToggle');
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => this.toggle());
+        }
 
         // Listen for messages from KG iframe
         window.addEventListener('message', (event) => this.handleKGMessage(event));
+
+        // If the iframe has already loaded (race with DOMContentLoaded), mark KG ready
+        if (this.kgIframe) {
+            if (this.kgIframe.contentDocument && this.kgIframe.contentDocument.readyState === 'complete') {
+                ChatKGBridge.kgReadyReceived = true;
+                console.log('SplitViewController: KG iframe already loaded on init');
+            }
+            this.kgIframe.addEventListener('load', () => {
+                ChatKGBridge.kgReadyReceived = true;
+                console.log('SplitViewController: KG iframe load event fired');
+            });
+        }
 
         // Set up BroadcastChannel for cross-frame communication
         try {
