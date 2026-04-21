@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Y on Earth Guide</title>
-    <link rel="stylesheet" href="styles.css?v=20.0">
+    <link rel="stylesheet" href="styles.css?v=21.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tutorial.css">
 </head>
@@ -96,6 +96,7 @@
                             <div>
                                 <label for="voiceSelection">Voice Type:</label>
                                 <select id="voiceSelection" title="Choose voice">
+                                    <option value="YcVr5DmTjJ2cEVwNiuhU">Aaron (Matter-of-Fact)</option>
                                     <option value="piper-gaia">Gaia (Natural Voice)</option>
                                 </select>
                             </div>
@@ -103,6 +104,7 @@
                                 <input type="checkbox" id="autoPlayVoice" checked>
                                 Auto-play responses
                             </label>
+                            <small class="voice-cost-note">ElevenLabs Aaron voice: ~$0.30 / 1k characters.</small>
                         </div>
                     </div>
                 </div>
@@ -198,7 +200,7 @@
     </div>
 
     <script src="chat-kg-bridge.js?v=2.0"></script>
-    <script src="chat.js?v=31"></script>
+    <script src="chat.js?v=32"></script>
     <script src="entity-panel.js?v=2.0"></script>
     <script src="tutorial.js"></script>
     <script>document.addEventListener("DOMContentLoaded", () => { setTimeout(() => { if(typeof Tutorial !== "undefined") Tutorial.init("chat"); }, 1000); });</script>

@@ -738,9 +738,6 @@ class KnowledgeGraphVisualization {
                 ` : ''}
             </div>
             ${relationshipsHtml}
-            <a href="#" class="wiki-link" onclick="openWiki('${d.id}'); return false;">
-                View in Wiki →
-            </a>
         `);
     }
 
@@ -1007,12 +1004,6 @@ function closeDetails() {
         vizInstance.clearHighlight();
         vizInstance.closeDetails();
     }
-}
-
-function openWiki(entityId) {
-    // Navigate to wiki page (to be implemented)
-    console.log("Opening wiki for:", entityId);
-    alert(`Wiki integration coming soon!\nEntity: ${entityId}`);
 }
 
 // Initialize when DOM is ready

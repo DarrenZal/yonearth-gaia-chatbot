@@ -78,7 +78,10 @@ class GaiaChat {
         // Voice state
         this.voiceEnabled = localStorage.getItem('voiceEnabled') === 'true';
         this.autoPlay = localStorage.getItem('autoPlayVoice') !== 'false'; // Default true
-        this.selectedVoiceId = localStorage.getItem('selectedVoiceId') || 'piper-gaia';
+        // Default to Aaron's ElevenLabs voice (YcVr5DmTjJ2cEVwNiuhU).
+        // Migrate legacy 'piper-gaia' default off prior users' localStorage once.
+        const storedVoice = localStorage.getItem('selectedVoiceId');
+        this.selectedVoiceId = (storedVoice && storedVoice !== 'piper-gaia') ? storedVoice : 'YcVr5DmTjJ2cEVwNiuhU';
         this.currentAudio = null;
         this.audioQueue = [];
         
