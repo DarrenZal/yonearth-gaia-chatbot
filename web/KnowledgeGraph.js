@@ -1231,6 +1231,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     ? matches.reduce((best, n) => (n.importance || 0) > (best.importance || 0) ? n : best, matches[0])
                     : null;
                 if (node) {
+                    // Highlight and focus the node in the graph
+                    vizInstance.selectedNode = node;
+                    vizInstance.highlightEntities([node.name]);
                     event.source.postMessage({
                         type: 'resourceSelected',
                         requestId: event.data.requestId,
