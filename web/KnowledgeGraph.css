@@ -382,6 +382,18 @@ body {
     font-weight: 500;
 }
 
+/* Floating labels in the force graph (rendered in a separate g.labels group) */
+.node-label {
+    font-size: 11px;
+    pointer-events: none;
+    fill: #c8e6c9;
+    font-weight: 500;
+    paint-order: stroke;
+    stroke: rgba(10, 14, 26, 0.85);
+    stroke-width: 3px;
+    stroke-linejoin: round;
+}
+
 .link {
     stroke: #5a6a80;
     stroke-opacity: 0.4;

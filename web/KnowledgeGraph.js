@@ -28,16 +28,18 @@ class KnowledgeGraphVisualization {
             entityTypes: new Set(),
             minImportance: this.isSimpleMode ? 0.9 : 0.7,
             searchQuery: "",
-            maxNodes: this.isSimpleMode ? 80 : 1000
+            maxNodes: this.isSimpleMode ? 50 : 1000
         };
 
-        // Layout parameters — stronger repulsion + longer links in simple-mode so
-        // the small iframe viewport doesn't render as a hairball.
+        // Layout parameters.
+        // Simple-mode: stronger repulsion, minimal collision padding (let charge handle
+        // spacing — uniform collision radius was causing the geometric grid pattern).
         this.params = {
-            gravity: 0.1,
-            charge: this.isSimpleMode ? -600 : -300,
-            linkDistance: this.isSimpleMode ? 140 : 100,
-            collisionRadius: this.isSimpleMode ? 22 : 15
+            gravity: this.isSimpleMode ? 0.05 : 0.1,
+            charge: this.isSimpleMode ? -900 : -300,
+            linkDistance: this.isSimpleMode ? 110 : 100,
+            collisionRadius: this.isSimpleMode ? 4 : 15,
+            maxEdgesPerNode: this.isSimpleMode ? 5 : Infinity
         };
 
         // Dimensions
@@ -190,7 +192,10 @@ class KnowledgeGraphVisualization {
             .force('center', d3.forceCenter(this.width / 2, this.height / 2)
                 .strength(this.params.gravity))
             .force('collision', d3.forceCollide()
-                .radius(d => this.getNodeRadius(d) + this.params.collisionRadius));
+                // Small fixed padding — collision handles overlap only; charge handles spacing.
+                // The old 22px uniform radius caused the geometric grid pattern.
+                .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
+            .velocityDecay(0.35);
 
         // Create links
         this.links = this.g.append('g')
@@ -216,12 +221,13 @@ class KnowledgeGraphVisualization {
             this.addNodeShape(node, d);
         });
 
-        // Add labels (only for important nodes to avoid clutter).
-        // Simple-mode uses a tighter cap — only the top 30 by importance — since
-        // the viewport is small and every node would otherwise get a label.
+        // Label only the most-discussed nodes so the graph stays legible.
+        // Simple-mode: top 15 by episode_count (the topics Aaron covers most).
         const labelCandidates = filteredData.nodes.filter(d => d.importance > 0.3);
         const labeledNodes = this.isSimpleMode
-            ? [...labelCandidates].sort((a, b) => b.importance - a.importance).slice(0, 30)
+            ? [...labelCandidates]
+                .sort((a, b) => (b.episode_count || 0) - (a.episode_count || 0))
+                .slice(0, 15)
             : labelCandidates;
         this.labels = this.g.append('g')
             .attr('class', 'labels')
@@ -313,8 +319,11 @@ class KnowledgeGraphVisualization {
     }
 
     getNodeRadius(d) {
-        // Scale radius based on importance
-        return 4 + (d.importance * 12);
+        // Scale by episode_count so size reflects how often Aaron discusses this topic.
+        // sqrt gives a perceptually-linear area scale (2× episodes → ~1.4× radius).
+        // Range: ep=1 → 7px, ep=10 → 13.5px, ep=30 → 20px, ep=50+ → 25px.
+        const count = d.episode_count || d.mention_count || 1;
+        return 4 + Math.sqrt(count) * 3;
     }
 
     getNodeColor(d) {
@@ -366,10 +375,30 @@ class KnowledgeGraphVisualization {
         const nodeIds = new Set(filteredNodes.map(n => n.id));
 
         // Filter links (both source and target must be in filtered nodes)
-        const filteredLinks = this.data.links.filter(link => {
+        let filteredLinks = this.data.links.filter(link => {
             return nodeIds.has(link.source.id || link.source) &&
                    nodeIds.has(link.target.id || link.target);
         });
+
+        // Simple-mode: cap edges per node so hub nodes don't create a visual hairball.
+        // Greedy: sort by strength descending, add edge only if both endpoints still have
+        // room. This preserves the strongest connections for every node.
+        if (this.isSimpleMode && this.params.maxEdgesPerNode < Infinity) {
+            const cap = this.params.maxEdgesPerNode;
+            const edgeCount = new Map();
+            filteredLinks.sort((a, b) => (b.strength || 0) - (a.strength || 0));
+            const sparse = [];
+            for (const link of filteredLinks) {
+                const s = link.source.id || link.source;
+                const t = link.target.id || link.target;
+                if ((edgeCount.get(s) || 0) < cap && (edgeCount.get(t) || 0) < cap) {
+                    sparse.push(link);
+                    edgeCount.set(s, (edgeCount.get(s) || 0) + 1);
+                    edgeCount.set(t, (edgeCount.get(t) || 0) + 1);
+                }
+            }
+            filteredLinks = sparse;
+        }
 
         return {
             nodes: filteredNodes,
