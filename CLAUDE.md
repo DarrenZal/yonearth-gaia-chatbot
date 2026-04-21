@@ -84,20 +84,48 @@ sudo journalctl -u yonearth-api --since "1 hour ago"
 # Nginx (port 80) serves static files and proxies /api/* to uvicorn (port 8000)
 
 # ⚠️ IMPORTANT: Deployment Directory Structure
-# Development: /home/claudeuser/yonearth-gaia-chatbot/ (edit files here)
+# Development: local repo on your laptop / /home/claudeuser/yonearth-gaia-chatbot/
 # Production API: /root/yonearth-gaia-chatbot/ (systemd runs from here)
-# Production Web: /var/www/yonearth/ (nginx serves from here)
+# Production Web (public `/`): /var/www/yonearth/
+# Sandbox Web    (public `/guide/`): /var/www/yonearth-guide/
 
-# After making code changes, deploy to production:
-# 1. Backend API changes (Python files in src/):
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/src/api/*.py /root/yonearth-gaia-chatbot/src/api/
-sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
+# =============================================================================
+# ⚠️ MANDATORY: ALL PRODUCTION FILE DEPLOYS GO THROUGH scripts/deploy-prod.sh
+# =============================================================================
+#
+# DO NOT `rsync` / `sudo cp` files to /var/www/... directly. Always wrap the
+# deploy so every push is (1) snapshotted for rollback and (2) logged to
+# /root/deploy-log/deploys.jsonl with commit SHA, branch, files, and a reason.
+#
+# Why this exists: on 2026-04-15 an un-logged edit replaced /var/www/yonearth/
+# graph/index.html with a 460-byte stub; the next day's "capture drift" commit
+# baked that regression into git as the new baseline, and the real multi-lens
+# viewer was recovered from commit eca979a only after hours of archaeology.
+# The log+snapshot is what makes that never happen silently again.
+#
+# Deploy (frontend, typical case):
+./scripts/deploy-prod.sh \
+    -t claudeuser@152.53.194.214:/var/www/yonearth-guide/ \
+    -m "short reason — e.g. Delta #3 palette fix" \
+    web/styles.css web/KnowledgeGraph.css
 
-# 2. Frontend changes (HTML/JS/CSS in web/):
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.html /var/www/yonearth/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.js /var/www/yonearth/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/*.css /var/www/yonearth/
-sudo systemctl reload nginx
+# Deploy into a subdirectory:
+./scripts/deploy-prod.sh \
+    -t claudeuser@152.53.194.214:/var/www/yonearth-guide/podcast/ \
+    -m "hide topic dropdown" \
+    web/podcast/PodcastMap3D.css
+
+# Backend API changes still need a service restart afterwards:
+./scripts/deploy-prod.sh \
+    -t claudeuser@152.53.194.214:/root/yonearth-gaia-chatbot/src/api/ \
+    -m "voice_id passthrough fix" \
+    src/api/voice_endpoints.py
+ssh claudeuser@152.53.194.214 'sudo systemctl restart yonearth-fastapi'
+
+# Inspect + roll back deploys:
+./scripts/deploy-prod-rollback.py list          # last 20 deploys, human-readable
+./scripts/deploy-prod-rollback.py show  <snap>  # full JSON + file listing
+./scripts/deploy-prod-rollback.py restore <snap>  # copies snapshot back (with its own pre-rollback snapshot)
 
 # ⚠️ IMPORTANT: Browser Cache-Busting
 # When updating JS/CSS files, browsers may cache old versions. To force updates:
@@ -106,12 +134,6 @@ sudo systemctl reload nginx
 #    <script src="app.js?v=2"></script>
 # 2. Increment version number (v=2 -> v=3) each time you update JS/CSS
 # 3. This forces browsers to load the new version instead of using cached files
-
-# 3. Full deployment (both backend and frontend):
-sudo cp -r /home/claudeuser/yonearth-gaia-chatbot/src/* /root/yonearth-gaia-chatbot/src/
-sudo cp /home/claudeuser/yonearth-gaia-chatbot/web/* /var/www/yonearth/
-sudo systemctl stop yonearth-api && sleep 2 && sudo systemctl start yonearth-api
-sudo systemctl reload nginx
 ```
 
 ### Testing
