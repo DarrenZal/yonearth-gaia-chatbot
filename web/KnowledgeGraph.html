@@ -73,6 +73,9 @@
             display: flex;
             flex-direction: column;
         }
+        /* Legend becomes redundant in simple-mode — the filter chips already carry
+           the same affordance and the types list is just noise at this size. */
+        .simple-mode .legend-panel { display: none !important; }
     </style>
 </head>
 <body>

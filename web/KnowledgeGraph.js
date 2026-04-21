@@ -216,11 +216,17 @@ class KnowledgeGraphVisualization {
             this.addNodeShape(node, d);
         });
 
-        // Add labels (only for important nodes to avoid clutter)
+        // Add labels (only for important nodes to avoid clutter).
+        // Simple-mode uses a tighter cap — only the top 30 by importance — since
+        // the viewport is small and every node would otherwise get a label.
+        const labelCandidates = filteredData.nodes.filter(d => d.importance > 0.3);
+        const labeledNodes = this.isSimpleMode
+            ? [...labelCandidates].sort((a, b) => b.importance - a.importance).slice(0, 30)
+            : labelCandidates;
         this.labels = this.g.append('g')
             .attr('class', 'labels')
             .selectAll('text')
-            .data(filteredData.nodes.filter(d => d.importance > 0.3))
+            .data(labeledNodes)
             .join('text')
             .attr('class', 'node-label')
             .text(d => d.name)
