@@ -47,7 +47,7 @@
 
         <!-- Left Panel: Knowledge Graph -->
         <div class="guide-kg-panel">
-            <iframe id="kgIframe" src="./KnowledgeGraph.html?simple=1&v=7" title="Knowledge Graph — Resources"></iframe>
+            <iframe id="kgIframe" src="./KnowledgeGraph.html?simple=1&v=8" title="Knowledge Graph — Resources"></iframe>
         </div>
 
         <!-- Right Panel: Chat -->
@@ -223,15 +223,16 @@
                     b.setAttribute('aria-pressed', active ? 'true' : 'false');
                 });
                 // Give the iframe a tick to re-measure when its container
-                // changes size (Explore tab swaps chat→graph).
+                // changes size (Explore tab swaps chat→graph). The KG iframe
+                // listens for its *own* window's resize event — we need to
+                // fire it inside the iframe, not on the parent.
                 if (tab === 'explore') {
                     setTimeout(() => {
                         const iframe = document.getElementById('kgIframe');
-                        if (iframe && iframe.contentWindow && iframe.contentWindow.knowledgeGraph) {
-                            // Force D3 to pick up new container size.
-                            window.dispatchEvent(new Event('resize'));
+                        if (iframe && iframe.contentWindow) {
+                            iframe.contentWindow.dispatchEvent(new Event('resize'));
                         }
-                    }, 50);
+                    }, 80);
                 }
             });
         });

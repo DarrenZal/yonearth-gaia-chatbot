@@ -301,6 +301,15 @@ class KnowledgeGraphVisualization {
         this.width = containerRect.width;
         this.height = containerRect.height;
 
+        // Re-measure + re-center on window resize (fires when the iframe's
+        // parent container changes size — e.g. mobile tab switch from chat
+        // to explore, or phone rotation). Debounced to avoid thrashing.
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => this.handleResize(), 120);
+        });
+
         // Create SVG
         this.svg = this.container.append('svg')
             .attr('width', this.width)
@@ -548,6 +557,29 @@ class KnowledgeGraphVisualization {
             .style('opacity', 0);
         labelEnter.transition().duration(300).style('opacity', 1);
         this.labels = labelEnter.merge(labelSel);
+    }
+
+    handleResize() {
+        if (!this.container) return;
+        const rect = this.container.node().getBoundingClientRect();
+        if (rect.width <= 1 || rect.height <= 1) return;  // still hidden
+        const changed = Math.abs(rect.width - this.width) > 2 || Math.abs(rect.height - this.height) > 2;
+        if (!changed) return;
+        this.width = rect.width;
+        this.height = rect.height;
+        if (this.svg) {
+            this.svg.attr('width', this.width).attr('height', this.height);
+        }
+        if (this.simulation) {
+            // Re-anchor forceX/forceY to the new center and nudge the layout.
+            const cx = this.width / 2;
+            const cy = this.height / 2;
+            const fx = this.simulation.force('x');
+            const fy = this.simulation.force('y');
+            if (fx) fx.x(cx);
+            if (fy) fy.y(cy);
+            this.simulation.alpha(0.3).restart();
+        }
     }
 
     _onTick() {
