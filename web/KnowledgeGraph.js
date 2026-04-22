@@ -28,9 +28,16 @@ class KnowledgeGraphVisualization {
             entityTypes: new Set(),
             themes: new Set(),    // YOE secondary themes (simple-mode only). Empty = all.
             pillars: new Set(),   // YOE primary pillars (simple-mode only). Empty = all.
+            // Design 3: EPISODE nodes are hidden by default and auto-revealed when a
+            // pillar/theme chip is active. forceShowEpisodes=true overrides (shows all
+            // 170 regardless of filter state).
+            forceShowEpisodes: false,
             minImportance: this.isSimpleMode ? 0.9 : 0.7,
             searchQuery: "",
-            maxNodes: this.isSimpleMode ? 50 : 1000
+            // Bumped from 50 → 200 because a pillar/theme click now adds up to ~120
+            // episode nodes alongside the ~30 concepts. Edge-cap + force-layout keep
+            // the render legible.
+            maxNodes: this.isSimpleMode ? 200 : 1000
         };
 
         // YOE taxonomy (loaded async in loadTaxonomy()). Null until available.
@@ -123,15 +130,21 @@ class KnowledgeGraphVisualization {
         // content now, more emphasis on places, locations, and people" —
         // wait no, the opposite: knowledge/topic/theme-centric, places/people
         // less prominent. This matches his Apr 12 email + Apr 21 voice memo.
+        // EPISODE is always in entityTypes when in simple-mode — the episode-specific
+        // visibility rule (forceShowEpisodes OR narrow-filter active) happens in
+        // getFilteredData() below, not via the type-filter Set.
         const KNOWLEDGE_CENTRIC_TYPES = new Set([
             'CONCEPT', 'PRACTICE', 'EVENT',
-            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM'
+            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM',
+            'EPISODE'
         ]);
         this.data.entity_types.forEach(t => {
             if (!this.isSimpleMode || KNOWLEDGE_CENTRIC_TYPES.has(t)) {
                 this.filters.entityTypes.add(t);
             }
         });
+        // EPISODE is injected after loadData() completes, so explicitly seed it.
+        if (this.isSimpleMode) this.filters.entityTypes.add('EPISODE');
 
         // Load YOE taxonomy (pillars + themes ↔ episode IDs) for /guide/
         // secondary chip filters. Client-side join against entity.episodes.
@@ -150,11 +163,94 @@ class KnowledgeGraphVisualization {
             if (!response.ok) throw new Error(`taxonomy fetch: ${response.status}`);
             this.taxonomy = await response.json();
             this.buildTaxonomyIndex();
+            // Design 3: promote episodes to first-class nodes.
+            this.injectEpisodeNodes();
             console.log(`Loaded YOE taxonomy: ${Object.keys(this.taxonomy.pillars).length} pillars, ${this.taxonomy.themes.length} themes, ${Object.keys(this.taxonomy.episodes).length} episodes`);
         } catch (err) {
             console.warn("YOE taxonomy unavailable; theme/pillar filters disabled:", err);
             this.taxonomy = null;
         }
+    }
+
+    /**
+     * Inject one EPISODE node per taxonomy episode + MENTIONED_IN edges from
+     * every existing entity that lists the episode number in its `episodes: [...]`.
+     * Edges are low-strength so the greedy per-node edge cap keeps entity-entity
+     * edges preferred when both compete for the same hub.
+     */
+    injectEpisodeNodes() {
+        if (!this.taxonomy || !this.data) return;
+
+        // Map pillar names (uppercase in taxonomy) → KG domain color (title-case in KG).
+        const domainColorMap = {};
+        (this.data.domains || []).forEach(d => { domainColorMap[d.name.toUpperCase()] = d.color; });
+
+        const existingIds = new Set(this.data.nodes.map(n => n.id));
+        const episodeNodes = [];
+        Object.values(this.taxonomy.episodes).forEach(ep => {
+            const id = `ep_${ep.episode_number}`;
+            if (existingIds.has(id)) return;
+            const domainsTitleCase = (ep.pillars || []).map(p =>
+                p.charAt(0) + p.slice(1).toLowerCase()
+            );
+            const domainColors = (ep.pillars || [])
+                .map(p => domainColorMap[p.toUpperCase()])
+                .filter(Boolean);
+            const guest = ep.guest || '';
+            const display = guest ? `Ep ${ep.episode_number}: ${guest}` : `Ep ${ep.episode_number}`;
+            episodeNodes.push({
+                id,
+                name: `Ep ${ep.episode_number}`,
+                display_name: display,
+                type: 'EPISODE',
+                shape: 'circle',
+                description: guest
+                    ? `${display}${ep.org ? ' — ' + ep.org : ''}${ep.location ? ' (' + ep.location + ')' : ''}`
+                    : display,
+                aliases: [],
+                domains: domainsTitleCase.length ? domainsTitleCase : ['Community'],
+                domain_colors: domainColors.length ? domainColors : ['#a8917a'],
+                importance: 1.0,                       // always passes min-importance
+                mention_count: 0,
+                episode_count: 1,
+                episodes: [ep.episode_number],         // self-ref — pillar/theme set-intersect still works
+                episode_number: ep.episode_number,
+                guest: ep.guest || '',
+                org: ep.org || '',
+                location: ep.location || '',
+                themes: ep.themes || [],
+                pillars: ep.pillars || [],
+                url: `https://yonearth.org/podcast/episode-${ep.episode_number}/`,
+                community: 'episodes'
+            });
+        });
+
+        this.data.nodes.push(...episodeNodes);
+        if (!this.data.entity_types.includes('EPISODE')) {
+            this.data.entity_types.push('EPISODE');
+        }
+
+        // Synthesize MENTIONED_IN edges from each existing entity to its episodes.
+        const synthEdges = [];
+        const epNumsInjected = new Set(episodeNodes.map(n => n.episode_number));
+        this.data.nodes.forEach(n => {
+            if (n.type === 'EPISODE') return;
+            const eps = n.episodes;
+            if (!Array.isArray(eps)) return;
+            eps.forEach(num => {
+                if (!epNumsInjected.has(num)) return;
+                synthEdges.push({
+                    source: n.id,
+                    target: `ep_${num}`,
+                    type: 'MENTIONED_IN',
+                    relationship_type: 'MENTIONED_IN',
+                    strength: 0.1
+                });
+            });
+        });
+        this.data.links.push(...synthEdges);
+
+        console.log(`Injected ${episodeNodes.length} EPISODE nodes + ${synthEdges.length} MENTIONED_IN edges`);
     }
 
     buildTaxonomyIndex() {
@@ -281,14 +377,17 @@ class KnowledgeGraphVisualization {
                 .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
             .velocityDecay(0.35);
 
-        // Create links
+        // Create links. MENTIONED_IN edges (concept→episode) get a thinner dashed
+        // stroke so they read as "loose association" vs the solid entity-entity edges.
         this.links = this.g.append('g')
             .attr('class', 'links')
             .selectAll('line')
             .data(filteredData.links)
             .join('line')
-            .attr('class', 'link')
-            .attr('stroke-width', d => Math.max(1, d.strength * 3));
+            .attr('class', d => 'link' + (d.type === 'MENTIONED_IN' ? ' link-mentioned' : ''))
+            .attr('stroke-width', d => d.type === 'MENTIONED_IN' ? 0.8 : Math.max(1, d.strength * 3))
+            .attr('stroke-dasharray', d => d.type === 'MENTIONED_IN' ? '2,3' : null)
+            .attr('stroke-opacity', d => d.type === 'MENTIONED_IN' ? 0.35 : null);
 
         // Create nodes
         this.nodes = this.g.append('g')
@@ -403,6 +502,9 @@ class KnowledgeGraphVisualization {
     }
 
     getNodeRadius(d) {
+        // EPISODE nodes get a uniform smaller radius so they read as a distinct
+        // "layer" of the graph (50+ of them, sitting alongside concepts).
+        if (d.type === 'EPISODE') return 5;
         // Scale by episode_count so size reflects how often Aaron discusses this topic.
         // sqrt gives a perceptually-linear area scale (2× episodes → ~1.4× radius).
         // Range: ep=1 → 7px, ep=10 → 13.5px, ep=30 → 20px, ep=50+ → 25px.
@@ -427,6 +529,8 @@ class KnowledgeGraphVisualization {
             ? this.unionEpisodeSet(this.filters.themes, this.themeEpisodeIndex)
             : null;
 
+        const narrowActive = !!activePillarEpisodes || !!activeThemeEpisodes;
+
         // Filter nodes
         let filteredNodes = this.data.nodes.filter(node => {
             // Check importance threshold
@@ -437,6 +541,14 @@ class KnowledgeGraphVisualization {
             // Check entity type filter
             if (!this.filters.entityTypes.has(node.type)) {
                 return false;
+            }
+
+            // Episode-specific rule (Design 3): episodes hidden by default, shown when
+            //   (a) a pillar or theme chip is active, OR
+            //   (b) the user has explicitly force-toggled Episodes on.
+            // Without this rule the default view would pull in all 170 episode nodes.
+            if (node.type === 'EPISODE') {
+                if (!this.filters.forceShowEpisodes && !narrowActive) return false;
             }
 
             // Check domain filter (node must have at least one matching domain)
@@ -799,7 +911,7 @@ class KnowledgeGraphVisualization {
                 if (sourceNode) incoming.push({ type: link.type || link.relationship_type || 'RELATED_TO', source: sourceNode.name });
             }
         });
-        return {
+        const payload = {
             id: d.id,
             name: d.name,
             type: d.type,
@@ -815,6 +927,21 @@ class KnowledgeGraphVisualization {
             aliases: d.aliases || [],
             relationships: { outgoing, incoming }
         };
+
+        // Design 3: pass through EPISODE-specific fields so the resource card can
+        // render the listen link + guest + theme chips.
+        if (d.type === 'EPISODE') {
+            payload.episode_number = d.episode_number;
+            payload.display_name = d.display_name || d.name;
+            payload.guest = d.guest || '';
+            payload.org = d.org || '';
+            payload.location = d.location || '';
+            payload.themes = d.themes || [];
+            payload.pillars = d.pillars || [];
+            payload.url = d.url || '';
+        }
+
+        return payload;
     }
 
     showDetails(d) {
@@ -1096,6 +1223,22 @@ class KnowledgeGraphVisualization {
                 knowledgeChip.classed('active', on);
                 this.updateVisualization();
             });
+
+        // Episodes chip: force-show toggle for all 170 podcast episode nodes.
+        // OFF (default): episodes appear only when a pillar/theme chip narrows.
+        // ON: episodes always visible regardless of filter state.
+        if (this.data.entity_types.includes('EPISODE')) {
+            const epChip = strip.append('button')
+                .attr('class', 'filter-chip' + (this.filters.forceShowEpisodes ? ' active' : ''))
+                .attr('data-type', '__episodes__')
+                .attr('title', 'Always show podcast episode nodes (off = show only when a pillar or theme is selected)')
+                .html('Episodes')
+                .on('click', () => {
+                    this.filters.forceShowEpisodes = !this.filters.forceShowEpisodes;
+                    epChip.classed('active', this.filters.forceShowEpisodes);
+                    this.updateVisualization();
+                });
+        }
 
         INDIVIDUAL_TYPES.forEach(type => {
             // Skip types absent from the data.

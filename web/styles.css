@@ -2318,6 +2318,34 @@ body.guide-layout .welcome-banner {
     text-transform: uppercase;
     font-weight: 600;
 }
+.resource-card-chip.theme {
+    background: rgba(168, 145, 122, 0.12);
+    border-color: rgba(168, 145, 122, 0.35);
+    color: var(--accent-warm);
+}
+
+/* Episode card — warm earth-tone left border to distinguish from concept cards. */
+.resource-card.resource-card-episode {
+    border-left-color: var(--accent-warm);
+    background: linear-gradient(180deg, rgba(168, 145, 122, 0.04) 0%, rgba(15, 20, 35, 0.6) 100%);
+}
+.resource-card.resource-card-episode .rc-listen {
+    background: rgba(13, 148, 136, 0.18);
+    border: 1px solid rgba(13, 148, 136, 0.4);
+    color: #99f6e4;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-family: inherit;
+}
+.resource-card.resource-card-episode .rc-listen:hover {
+    background: rgba(13, 148, 136, 0.28);
+}
+
 .resource-card-chip.domain .dot {
     width: 7px;
     height: 7px;
