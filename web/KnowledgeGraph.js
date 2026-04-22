@@ -185,6 +185,10 @@ class KnowledgeGraphVisualization {
         const domainColorMap = {};
         (this.data.domains || []).forEach(d => { domainColorMap[d.name.toUpperCase()] = d.color; });
 
+        // Theme display lookup: raw name ('FARMING & FOOD') → display ('Farming & Food').
+        const themeDisplayMap = {};
+        (this.taxonomy.themes || []).forEach(t => { themeDisplayMap[t.name] = t.display; });
+
         const existingIds = new Set(this.data.nodes.map(n => n.id));
         const episodeNodes = [];
         Object.values(this.taxonomy.episodes).forEach(ep => {
@@ -218,8 +222,8 @@ class KnowledgeGraphVisualization {
                 guest: ep.guest || '',
                 org: ep.org || '',
                 location: ep.location || '',
-                themes: ep.themes || [],
-                pillars: ep.pillars || [],
+                themes: (ep.themes || []).map(t => themeDisplayMap[t] || t),
+                pillars: (ep.pillars || []).map(p => p.charAt(0) + p.slice(1).toLowerCase()),
                 url: `https://yonearth.org/podcast/episode-${ep.episode_number}/`,
                 community: 'episodes'
             });
