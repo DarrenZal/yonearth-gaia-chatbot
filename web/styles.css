@@ -2160,13 +2160,54 @@ body.guide-layout .welcome-banner {
         flex-direction: column-reverse;
     }
     .guide-kg-panel {
-        flex: 0 0 50vh;
+        flex: 0 0 45vh;
         border-right: none;
         border-top: 2px solid var(--sage-green, #88a37a);
     }
     .guide-chat-panel {
         flex: 1;
-        min-height: 260px;
+        min-height: 320px;
+    }
+}
+
+/* Mobile-specific chat panel compactions: the desktop header + controls
+   toggle + footer eat ~180px of the 312px panel, leaving no room for
+   messages or input. Hide non-essential chrome at <768px. */
+@media (max-width: 768px) {
+    .guide-chat-panel .guide-header {
+        padding: 8px 14px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        margin-bottom: 0 !important;
+    }
+    .guide-chat-panel .guide-header .title {
+        font-size: 1rem !important;
+        gap: 0.35rem !important;
+        margin-bottom: 0 !important;
+        padding: 0 !important;
+    }
+    .guide-chat-panel .guide-header .earth-icon {
+        font-size: 1.1rem !important;
+    }
+    /* Settings toggle + voice controls hidden on mobile — voice needs a bigger
+       UI to be useful, and chat controls are all defaults anyway. */
+    .guide-chat-panel #controlsToggle,
+    .guide-chat-panel .chat-controls {
+        display: none !important;
+    }
+    /* Footer is just "Powered by… • Connected" — low-value on mobile. */
+    .guide-chat-panel .footer {
+        display: none !important;
+    }
+    .guide-chat-panel .chat-container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    .guide-chat-panel .chat-messages {
+        padding: 8px 12px !important;
+    }
+    .guide-chat-panel .input-container {
+        padding: 8px 10px !important;
     }
 }
 
