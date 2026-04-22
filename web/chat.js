@@ -2458,11 +2458,93 @@ function _removeExistingCard(chatMessages) {
     }
 }
 
+function _renderEpisodeCard(resource, chatMessages) {
+    const primaryDomain = (resource.domains && resource.domains[0]) ? resource.domains[0].toLowerCase() : '';
+    const domainClass = _DOMAIN_COLORS[primaryDomain] ? `domain-${primaryDomain}` : '';
+
+    const domainChips = (resource.domains || []).map(d => {
+        const color = _DOMAIN_COLORS[d.toLowerCase()] || '#9ba3b8';
+        return `<span class="resource-card-chip domain"><span class="dot" style="background:${color}"></span>${_rcEscHtml(d)}</span>`;
+    }).join('');
+
+    // Theme chips (from spreadsheet columns M–AJ, stored on the episode).
+    const themeChips = (resource.themes || []).map(t =>
+        `<span class="resource-card-chip theme">${_rcEscHtml(t)}</span>`
+    ).join('');
+
+    const metaRows = [];
+    if (resource.guest) metaRows.push(`<span><strong>Guest:</strong> ${_rcEscHtml(resource.guest)}</span>`);
+    if (resource.org) metaRows.push(`<span><strong>Org:</strong> ${_rcEscHtml(resource.org)}</span>`);
+    if (resource.location) metaRows.push(`<span><strong>Location:</strong> ${_rcEscHtml(resource.location)}</span>`);
+    const metaHtml = metaRows.length ? `<div class="resource-card-meta">${metaRows.join('')}</div>` : '';
+
+    const listenBtn = resource.url
+        ? `<a class="resource-card-disclosure primary rc-listen" href="${_rcEscHtml(resource.url)}" target="_blank" rel="noopener">→ Listen on YonEarth</a>`
+        : '';
+    const askBtn = resource.guest
+        ? `<button class="resource-card-disclosure rc-ask-about">Ask about this episode</button>`
+        : '';
+
+    const headerName = resource.display_name || resource.name;
+
+    const el = document.createElement('div');
+    el.className = 'message resource-card-message';
+    el.innerHTML = `
+        <div class="resource-card ${domainClass} resource-card-episode">
+            <button class="resource-card-close" title="Dismiss">×</button>
+            <div class="resource-card-label">
+                <span class="icon">i</span>
+                <span>Episode</span>
+                <span class="resource-card-source">YonEarth Community Podcast</span>
+            </div>
+            <div class="resource-card-name">${_rcEscHtml(headerName)}</div>
+            <div class="resource-card-chips">${domainChips}${themeChips}</div>
+            ${resource.description ? `<div class="resource-card-description">${_rcEscHtml(resource.description)}</div>` : ''}
+            ${metaHtml}
+            <div class="resource-card-actions">${listenBtn}${askBtn}</div>
+        </div>`;
+
+    el.querySelector('.resource-card-close').addEventListener('click', () => {
+        const wasMostRecent = (el === _latestResourceCardEl);
+        el.remove();
+        if (wasMostRecent) {
+            _latestResourceCardEl = null;
+            if (window.ChatKGBridge && ChatKGBridge.sendToKG) {
+                ChatKGBridge.sendToKG({ type: 'clearSelection' });
+            }
+        }
+    });
+
+    const askEl = el.querySelector('.rc-ask-about');
+    if (askEl) {
+        askEl.addEventListener('click', () => {
+            const input = document.getElementById('messageInput');
+            if (input) {
+                const q = resource.guest
+                    ? `Tell me about episode ${resource.episode_number} with ${resource.guest}`
+                    : `Tell me about episode ${resource.episode_number}`;
+                input.value = q;
+                input.focus();
+            }
+        });
+    }
+
+    chatMessages.appendChild(el);
+    el.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    _latestResourceCardEl = el;
+}
+
 function addResourceCard(resource) {
     const chatMessages = document.getElementById('chatMessages');
     if (!chatMessages) return;
 
     _removeExistingCard(chatMessages);
+
+    // Design 3: EPISODE nodes get their own card layout — listen-link CTA instead
+    // of Ask-Aaron, guest/org/location meta, themes as chips.
+    if (resource.type === 'EPISODE') {
+        return _renderEpisodeCard(resource, chatMessages);
+    }
 
     const primaryDomain = (resource.domains && resource.domains[0]) ? resource.domains[0].toLowerCase() : '';
     const domainClass = _DOMAIN_COLORS[primaryDomain] ? `domain-${primaryDomain}` : '';
@@ -2472,6 +2554,25 @@ function addResourceCard(resource) {
         const color = _DOMAIN_COLORS[d.toLowerCase()] || '#9ba3b8';
         return `<span class="resource-card-chip domain"><span class="dot" style="background:${color}"></span>${_rcEscHtml(d)}</span>`;
     }).join('');
+
+    // Episode chips — Aaron's Apr 21 direction puts podcast episodes at the top
+    // of the card, right under type/domain chips. Cap 4 inline, rest behind a
+    // "+N more" disclosure.
+    const epList = Array.isArray(resource.episodeList) ? resource.episodeList : [];
+    const EP_INLINE = 4;
+    let episodeChipsHtml = '';
+    if (epList.length > 0) {
+        const inline = epList.slice(0, EP_INLINE);
+        const rest = epList.length - inline.length;
+        const inlineChips = inline.map(n => `<span class="resource-card-ep-chip">Ep ${_rcEscHtml(n)}</span>`).join('');
+        const restBtn = rest > 0
+            ? `<button class="resource-card-ep-more" type="button">+${rest} more ↓</button>`
+            : '';
+        const hiddenChips = rest > 0
+            ? epList.slice(EP_INLINE).map(n => `<span class="resource-card-ep-chip hidden">Ep ${_rcEscHtml(n)}</span>`).join('')
+            : '';
+        episodeChipsHtml = `<div class="resource-card-episodes">${inlineChips}${hiddenChips}${restBtn}</div>`;
+    }
 
     const outgoing = (resource.relationships && resource.relationships.outgoing) || [];
     const incoming = (resource.relationships && resource.relationships.incoming) || [];
@@ -2518,6 +2619,7 @@ function addResourceCard(resource) {
             </div>
             <div class="resource-card-name">${_rcEscHtml(resource.name)}</div>
             <div class="resource-card-chips">${typeChip}${domainChips}</div>
+            ${episodeChipsHtml}
             ${resource.description ? `<div class="resource-card-description">${_rcEscHtml(resource.description)}</div>` : ''}
             ${metaHtml}
             <div class="resource-card-actions">${toggleBtn}${askBtn}</div>
@@ -2548,6 +2650,15 @@ function addResourceCard(resource) {
         const input = document.getElementById('messageInput');
         if (input) { input.value = `Tell me more about ${resource.name}`; input.focus(); }
     });
+
+    const epMoreBtn = el.querySelector('.resource-card-ep-more');
+    if (epMoreBtn) {
+        epMoreBtn.addEventListener('click', () => {
+            const hidden = el.querySelectorAll('.resource-card-ep-chip.hidden');
+            hidden.forEach(c => c.classList.remove('hidden'));
+            epMoreBtn.remove();
+        });
+    }
 
     chatMessages.appendChild(el);
     el.scrollIntoView({ behavior: 'smooth', block: 'end' });

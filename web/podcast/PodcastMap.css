@@ -51,7 +51,7 @@ body {
 
 .nav-link {
     padding: 8px 16px;
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -461,20 +461,20 @@ body {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     border: none;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.4);
     transition: all 0.3s ease;
     z-index: 90;
 }
 
 .magic-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
+    box-shadow: 0 6px 20px rgba(13, 148, 136, 0.6);
 }
 
 .magic-btn img {
@@ -557,7 +557,7 @@ body {
 }
 
 .chat-container button {
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     border: none;
     color: #ffffff;
     padding: 10px 20px;
@@ -570,7 +570,7 @@ body {
 
 .chat-container button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
 }
 
 .chat-messages {

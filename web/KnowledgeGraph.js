@@ -26,10 +26,24 @@ class KnowledgeGraphVisualization {
         this.filters = {
             domains: new Set(),
             entityTypes: new Set(),
+            themes: new Set(),    // YOE secondary themes (simple-mode only). Empty = all.
+            pillars: new Set(),   // YOE primary pillars (simple-mode only). Empty = all.
+            // Design 3: EPISODE nodes are hidden by default and auto-revealed when a
+            // pillar/theme chip is active. forceShowEpisodes=true overrides (shows all
+            // 170 regardless of filter state).
+            forceShowEpisodes: false,
             minImportance: this.isSimpleMode ? 0.9 : 0.7,
             searchQuery: "",
-            maxNodes: this.isSimpleMode ? 50 : 1000
+            // Bumped from 50 → 200 because a pillar/theme click now adds up to ~120
+            // episode nodes alongside the ~30 concepts. Edge-cap + force-layout keep
+            // the render legible.
+            maxNodes: this.isSimpleMode ? 200 : 1000
         };
+
+        // YOE taxonomy (loaded async in loadTaxonomy()). Null until available.
+        this.taxonomy = null;
+        this.themeEpisodeIndex = null;
+        this.pillarEpisodeIndex = null;
 
         // Layout parameters.
         // Simple-mode: stronger repulsion, minimal collision padding (let charge handle
@@ -108,7 +122,177 @@ class KnowledgeGraphVisualization {
 
         // Initialize filters with all domains and types enabled
         this.data.domains.forEach(d => this.filters.domains.add(d.name));
-        this.data.entity_types.forEach(t => this.filters.entityTypes.add(t));
+
+        // Simple-mode default is knowledge-centric: only CONCEPT / PRACTICE / EVENT /
+        // TECHNOLOGY / SPECIES / ECOSYSTEM visible on load. PLACE / PERSON /
+        // ORGANIZATION / PRODUCT / WORK are opt-in via the type chip strip.
+        // Aaron's Apr 21 direction: "less focus on podcast episodes and book
+        // content now, more emphasis on places, locations, and people" —
+        // wait no, the opposite: knowledge/topic/theme-centric, places/people
+        // less prominent. This matches his Apr 12 email + Apr 21 voice memo.
+        // EPISODE is always in entityTypes when in simple-mode — the episode-specific
+        // visibility rule (forceShowEpisodes OR narrow-filter active) happens in
+        // getFilteredData() below, not via the type-filter Set.
+        const KNOWLEDGE_CENTRIC_TYPES = new Set([
+            'CONCEPT', 'PRACTICE', 'EVENT',
+            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM',
+            'EPISODE'
+        ]);
+        this.data.entity_types.forEach(t => {
+            if (!this.isSimpleMode || KNOWLEDGE_CENTRIC_TYPES.has(t)) {
+                this.filters.entityTypes.add(t);
+            }
+        });
+        // EPISODE is injected after loadData() completes, so explicitly seed it.
+        if (this.isSimpleMode) this.filters.entityTypes.add('EPISODE');
+
+        // Load YOE taxonomy (pillars + themes ↔ episode IDs) for /guide/
+        // secondary chip filters. Client-side join against entity.episodes.
+        if (this.isSimpleMode) {
+            await this.loadTaxonomy();
+        }
+    }
+
+    async loadTaxonomy() {
+        try {
+            // Fetched from /guide/yoe_taxonomy.json — served by the generic
+            // /guide/ nginx alias. Avoids /guide/data/ and /guide/assets/,
+            // both of which are aliased to the production /var/www/yonearth/
+            // tree for shared content.
+            const response = await fetch('./yoe_taxonomy.json?v=1');
+            if (!response.ok) throw new Error(`taxonomy fetch: ${response.status}`);
+            this.taxonomy = await response.json();
+            this.buildTaxonomyIndex();
+            // Design 3: promote episodes to first-class nodes.
+            this.injectEpisodeNodes();
+            console.log(`Loaded YOE taxonomy: ${Object.keys(this.taxonomy.pillars).length} pillars, ${this.taxonomy.themes.length} themes, ${Object.keys(this.taxonomy.episodes).length} episodes`);
+        } catch (err) {
+            console.warn("YOE taxonomy unavailable; theme/pillar filters disabled:", err);
+            this.taxonomy = null;
+        }
+    }
+
+    /**
+     * Inject one EPISODE node per taxonomy episode + MENTIONED_IN edges from
+     * every existing entity that lists the episode number in its `episodes: [...]`.
+     * Edges are low-strength so the greedy per-node edge cap keeps entity-entity
+     * edges preferred when both compete for the same hub.
+     */
+    injectEpisodeNodes() {
+        if (!this.taxonomy || !this.data) return;
+
+        // Map pillar names (uppercase in taxonomy) → KG domain color (title-case in KG).
+        const domainColorMap = {};
+        (this.data.domains || []).forEach(d => { domainColorMap[d.name.toUpperCase()] = d.color; });
+
+        // Theme display lookup: raw name ('FARMING & FOOD') → display ('Farming & Food').
+        const themeDisplayMap = {};
+        (this.taxonomy.themes || []).forEach(t => { themeDisplayMap[t.name] = t.display; });
+
+        const existingIds = new Set(this.data.nodes.map(n => n.id));
+        const episodeNodes = [];
+        Object.values(this.taxonomy.episodes).forEach(ep => {
+            const id = `ep_${ep.episode_number}`;
+            if (existingIds.has(id)) return;
+            const domainsTitleCase = (ep.pillars || []).map(p =>
+                p.charAt(0) + p.slice(1).toLowerCase()
+            );
+            const domainColors = (ep.pillars || [])
+                .map(p => domainColorMap[p.toUpperCase()])
+                .filter(Boolean);
+            const guest = ep.guest || '';
+            const display = guest ? `Ep ${ep.episode_number}: ${guest}` : `Ep ${ep.episode_number}`;
+            episodeNodes.push({
+                id,
+                name: `Ep ${ep.episode_number}`,
+                display_name: display,
+                type: 'EPISODE',
+                shape: 'circle',
+                description: guest
+                    ? `${display}${ep.org ? ' — ' + ep.org : ''}${ep.location ? ' (' + ep.location + ')' : ''}`
+                    : display,
+                aliases: [],
+                domains: domainsTitleCase.length ? domainsTitleCase : ['Community'],
+                domain_colors: domainColors.length ? domainColors : ['#a8917a'],
+                importance: 1.0,                       // always passes min-importance
+                mention_count: 0,
+                episode_count: 1,
+                episodes: [ep.episode_number],         // self-ref — pillar/theme set-intersect still works
+                episode_number: ep.episode_number,
+                guest: ep.guest || '',
+                org: ep.org || '',
+                location: ep.location || '',
+                themes: (ep.themes || []).map(t => themeDisplayMap[t] || t),
+                pillars: (ep.pillars || []).map(p => p.charAt(0) + p.slice(1).toLowerCase()),
+                url: `https://yonearth.org/podcast/episode-${ep.episode_number}/`,
+                community: 'episodes'
+            });
+        });
+
+        this.data.nodes.push(...episodeNodes);
+        if (!this.data.entity_types.includes('EPISODE')) {
+            this.data.entity_types.push('EPISODE');
+        }
+
+        // Synthesize MENTIONED_IN edges from each existing entity to its episodes.
+        const synthEdges = [];
+        const epNumsInjected = new Set(episodeNodes.map(n => n.episode_number));
+        this.data.nodes.forEach(n => {
+            if (n.type === 'EPISODE') return;
+            const eps = n.episodes;
+            if (!Array.isArray(eps)) return;
+            eps.forEach(num => {
+                if (!epNumsInjected.has(num)) return;
+                synthEdges.push({
+                    source: n.id,
+                    target: `ep_${num}`,
+                    type: 'MENTIONED_IN',
+                    relationship_type: 'MENTIONED_IN',
+                    strength: 0.1
+                });
+            });
+        });
+        this.data.links.push(...synthEdges);
+
+        console.log(`Injected ${episodeNodes.length} EPISODE nodes + ${synthEdges.length} MENTIONED_IN edges`);
+    }
+
+    buildTaxonomyIndex() {
+        // Index: theme name (upper) → Set<episode_id>; pillar name → Set<episode_id>
+        this.themeEpisodeIndex = new Map();
+        this.pillarEpisodeIndex = new Map();
+
+        this.taxonomy.themes.forEach(t => {
+            this.themeEpisodeIndex.set(t.name, new Set(t.episode_ids));
+        });
+        Object.entries(this.taxonomy.pillars).forEach(([name, p]) => {
+            this.pillarEpisodeIndex.set(name, new Set(p.episode_ids));
+        });
+    }
+
+    /**
+     * Does this entity appear in any of the given episode IDs?
+     * Entity.episodes is typically an int or array of ints (from the KG dataset).
+     */
+    entityInEpisodeSet(entity, episodeSet) {
+        if (!entity || !episodeSet || episodeSet.size === 0) return false;
+        const eps = entity.episodes;
+        if (Array.isArray(eps)) {
+            for (const id of eps) if (episodeSet.has(id)) return true;
+            return false;
+        }
+        if (typeof eps === 'number') return episodeSet.has(eps);
+        return false;
+    }
+
+    /** Union all episode-id sets for the selected keys (pillar or theme names). */
+    unionEpisodeSet(selectedKeys, index) {
+        const union = new Set();
+        selectedKeys.forEach(key => {
+            const set = index.get(key);
+            if (set) set.forEach(id => union.add(id));
+        });
+        return union;
     }
 
     setupSVG() {
@@ -116,6 +300,15 @@ class KnowledgeGraphVisualization {
         const containerRect = this.container.node().getBoundingClientRect();
         this.width = containerRect.width;
         this.height = containerRect.height;
+
+        // Re-measure + re-center on window resize (fires when the iframe's
+        // parent container changes size — e.g. mobile tab switch from chat
+        // to explore, or phone rotation). Debounced to avoid thrashing.
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            if (resizeTimer) clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => this.handleResize(), 120);
+        });
 
         // Create SVG
         this.svg = this.container.append('svg')
@@ -125,6 +318,14 @@ class KnowledgeGraphVisualization {
 
         // Create main group for zoom/pan
         this.g = this.svg.append('g');
+
+        // Stable container groups: created once so the D3 enter/update/exit
+        // join pattern in createVisualization() has persistent parents to
+        // attach to. This is what lets persisting nodes keep their positions
+        // across filter changes instead of flying in from (0,0).
+        this.linksGroup = this.g.append('g').attr('class', 'links');
+        this.nodesGroup = this.g.append('g').attr('class', 'nodes');
+        this.labelsGroup = this.g.append('g').attr('class', 'labels');
 
         // Set up zoom behavior
         this.zoom = d3.zoom()
@@ -179,87 +380,235 @@ class KnowledgeGraphVisualization {
     }
 
     createVisualization() {
-        // Filter data based on current filters
+        // Idempotent: first call creates DOM + simulation; subsequent calls
+        // (re-entered via updateVisualization) merge new data into the existing
+        // simulation and apply enter/update/exit to DOM elements. Persisting
+        // nodes keep their positions and velocities — no fly-in from (0,0).
+
         const filteredData = this.getFilteredData();
+        const cx = this.width / 2;
+        const cy = this.height / 2;
 
-        // Create force simulation
-        this.simulation = d3.forceSimulation(filteredData.nodes)
-            .force('link', d3.forceLink(filteredData.links)
-                .id(d => d.id)
-                .distance(this.params.linkDistance))
-            .force('charge', d3.forceManyBody()
-                .strength(this.params.charge))
-            .force('center', d3.forceCenter(this.width / 2, this.height / 2)
-                .strength(this.params.gravity))
-            .force('collision', d3.forceCollide()
-                // Small fixed padding — collision handles overlap only; charge handles spacing.
-                // The old 22px uniform radius caused the geometric grid pattern.
-                .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
-            .velocityDecay(0.35);
+        // Build an id → existing-node index from the current simulation (if any).
+        // Used to:
+        //   (a) preserve positions for nodes that survive the filter change
+        //   (b) seed new nodes near an already-placed connected neighbor
+        const existingById = new Map();
+        if (this.simulation) {
+            this.simulation.nodes().forEach(n => existingById.set(n.id, n));
+        }
 
-        // Create links
-        this.links = this.g.append('g')
-            .attr('class', 'links')
-            .selectAll('line')
-            .data(filteredData.links)
-            .join('line')
-            .attr('class', 'link')
-            .attr('stroke-width', d => Math.max(1, d.strength * 3));
-
-        // Create nodes
-        this.nodes = this.g.append('g')
-            .attr('class', 'nodes')
-            .selectAll('g')
-            .data(filteredData.nodes)
-            .join('g')
-            .attr('class', 'node')
-            .call(this.drag());
-
-        // Add shapes to nodes
-        this.nodes.each((d, i, nodes) => {
-            const node = d3.select(nodes[i]);
-            this.addNodeShape(node, d);
+        // Prepare node list: reuse existing node objects in-place so D3's
+        // forceSimulation preserves their x/y/vx/vy. For new nodes, seed from
+        // a connected existing node if one survived; otherwise random disc around center.
+        const linksByNodeId = new Map();
+        if (this.simulation) {
+            filteredData.links.forEach(l => {
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                if (!linksByNodeId.has(sId)) linksByNodeId.set(sId, []);
+                if (!linksByNodeId.has(tId)) linksByNodeId.set(tId, []);
+                linksByNodeId.get(sId).push(tId);
+                linksByNodeId.get(tId).push(sId);
+            });
+        }
+        const seedRadius = Math.min(this.width, this.height) * 0.32;
+        const preparedNodes = filteredData.nodes.map(n => {
+            const existing = existingById.get(n.id);
+            if (existing) {
+                // Copy any new fields onto the existing datum object so reference
+                // identity is stable (simulation + DOM bindings keep working).
+                Object.assign(existing, n);
+                return existing;
+            }
+            // New node: seed near a placed neighbor, else random disc around center.
+            const neighbors = (linksByNodeId.get(n.id) || [])
+                .map(id => existingById.get(id))
+                .filter(nb => nb && typeof nb.x === 'number' && isFinite(nb.x));
+            if (neighbors.length) {
+                const nb = neighbors[0];
+                n.x = nb.x + (Math.random() - 0.5) * 40;
+                n.y = nb.y + (Math.random() - 0.5) * 40;
+            } else {
+                const theta = Math.random() * 2 * Math.PI;
+                const r = seedRadius * Math.sqrt(Math.random());
+                n.x = cx + r * Math.cos(theta);
+                n.y = cy + r * Math.sin(theta);
+            }
+            n.vx = 0;
+            n.vy = 0;
+            return n;
         });
 
-        // Label only the most-discussed nodes so the graph stays legible.
-        // Simple-mode: top 15 by episode_count (the topics Aaron covers most).
-        const labelCandidates = filteredData.nodes.filter(d => d.importance > 0.3);
+        // Re-link link objects to the live node references so D3's forceLink can
+        // resolve them without re-running `.id(d => d.id)` indexing on stale strings.
+        const nodesById = new Map(preparedNodes.map(n => [n.id, n]));
+        const preparedLinks = filteredData.links.map(l => ({
+            ...l,
+            source: nodesById.get(l.source.id || l.source) || l.source,
+            target: nodesById.get(l.target.id || l.target) || l.target,
+        }));
+
+        // Scale charge down for big node sets. 30 nodes → full charge, 200 → ~15%.
+        const nodeCount = preparedNodes.length || 1;
+        const chargeScale = Math.min(1, 30 / nodeCount);
+        const effectiveCharge = this.params.charge * chargeScale;
+        const positionStrength = Math.min(0.25, 0.03 + nodeCount / 800);
+        const effectiveLinkDistance = nodeCount > 50
+            ? Math.max(30, this.params.linkDistance * (50 / nodeCount))
+            : this.params.linkDistance;
+
+        // Simulation: create once, then mutate on subsequent calls.
+        if (!this.simulation) {
+            this.simulation = d3.forceSimulation(preparedNodes)
+                .force('link', d3.forceLink(preparedLinks)
+                    .id(d => d.id)
+                    .distance(effectiveLinkDistance)
+                    .strength(l => l.type === 'MENTIONED_IN' ? 0.15 : 0.6))
+                .force('charge', d3.forceManyBody()
+                    .strength(effectiveCharge)
+                    .distanceMax(300))
+                .force('x', d3.forceX(cx).strength(positionStrength))
+                .force('y', d3.forceY(cy).strength(positionStrength))
+                .force('collision', d3.forceCollide()
+                    .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
+                .velocityDecay(0.45);
+            this.simulation.on('tick', () => this._onTick());
+        } else {
+            this.simulation.nodes(preparedNodes);
+            this.simulation.force('link')
+                .links(preparedLinks)
+                .distance(effectiveLinkDistance);
+            this.simulation.force('charge').strength(effectiveCharge);
+            this.simulation.force('x').strength(positionStrength);
+            this.simulation.force('y').strength(positionStrength);
+            // Gentle reheat — persistent nodes barely move, new ones settle into place.
+            // Alpha scales with topology change: if everything is new, warmer reheat;
+            // if most nodes persist, keep alpha low so existing positions stay stable.
+            const existingIds = new Set(existingById.keys());
+            const newCount = preparedNodes.filter(n => !existingIds.has(n.id)).length;
+            const changeRatio = newCount / Math.max(1, preparedNodes.length);
+            const alpha = 0.15 + changeRatio * 0.35; // 0.15 if no change, 0.5 if all new
+            this.simulation.alpha(alpha).restart();
+        }
+
+        // DOM join — keyed by id so D3 knows which DOM elements to keep.
+        // Links
+        const linkSel = this.linksGroup
+            .selectAll('line')
+            .data(preparedLinks, d => `${d.source.id || d.source}__${d.target.id || d.target}__${d.type || ''}`);
+        linkSel.exit()
+            .transition().duration(250)
+            .attr('stroke-opacity', 0)
+            .remove();
+        const linkEnter = linkSel.enter()
+            .append('line')
+            .attr('class', d => 'link' + (d.type === 'MENTIONED_IN' ? ' link-mentioned' : ''))
+            .attr('stroke-width', d => d.type === 'MENTIONED_IN' ? 0.8 : Math.max(1, d.strength * 3))
+            .attr('stroke-dasharray', d => d.type === 'MENTIONED_IN' ? '2,3' : null)
+            .attr('stroke-opacity', 0);
+        linkEnter.transition().duration(350)
+            .attr('stroke-opacity', d => d.type === 'MENTIONED_IN' ? 0.35 : 1);
+        this.links = linkEnter.merge(linkSel);
+
+        // Nodes
+        const nodeSel = this.nodesGroup
+            .selectAll('g.node')
+            .data(preparedNodes, d => d.id);
+        nodeSel.exit()
+            .transition().duration(250)
+            .style('opacity', 0)
+            .remove();
+        const nodeEnter = nodeSel.enter()
+            .append('g')
+            .attr('class', 'node')
+            .attr('transform', d => `translate(${d.x || cx},${d.y || cy})`)
+            .style('opacity', 0)
+            .call(this.drag())
+            .on('mouseover', (event, d) => this.handleMouseOver(event, d))
+            .on('mouseout', () => this.handleMouseOut())
+            .on('click', (event, d) => this.handleNodeClick(event, d));
+        nodeEnter.each((d, i, nodes) => {
+            this.addNodeShape(d3.select(nodes[i]), d);
+        });
+        nodeEnter.transition().duration(350).style('opacity', 1);
+        this.nodes = nodeEnter.merge(nodeSel);
+
+        // Labels — only for the most-discussed nodes. Rebuild on each call (cheap).
+        const labelCandidates = preparedNodes.filter(d => d.importance > 0.3);
         const labeledNodes = this.isSimpleMode
             ? [...labelCandidates]
                 .sort((a, b) => (b.episode_count || 0) - (a.episode_count || 0))
                 .slice(0, 15)
             : labelCandidates;
-        this.labels = this.g.append('g')
-            .attr('class', 'labels')
-            .selectAll('text')
-            .data(labeledNodes)
-            .join('text')
+        const labelSel = this.labelsGroup
+            .selectAll('text.node-label')
+            .data(labeledNodes, d => d.id);
+        labelSel.exit()
+            .transition().duration(200).style('opacity', 0).remove();
+        const labelEnter = labelSel.enter()
+            .append('text')
             .attr('class', 'node-label')
             .text(d => d.name)
             .attr('dx', 12)
-            .attr('dy', 4);
+            .attr('dy', 4)
+            .attr('x', d => d.x)
+            .attr('y', d => d.y)
+            .style('opacity', 0);
+        labelEnter.transition().duration(300).style('opacity', 1);
+        this.labels = labelEnter.merge(labelSel);
+    }
 
-        // Add interactions
-        this.nodes
-            .on('mouseover', (event, d) => this.handleMouseOver(event, d))
-            .on('mouseout', () => this.handleMouseOut())
-            .on('click', (event, d) => this.handleNodeClick(event, d));
+    handleResize() {
+        if (!this.container) return;
+        const rect = this.container.node().getBoundingClientRect();
+        if (rect.width <= 1 || rect.height <= 1) return;  // still hidden
+        const changed = Math.abs(rect.width - this.width) > 2 || Math.abs(rect.height - this.height) > 2;
+        if (!changed) return;
+        this.width = rect.width;
+        this.height = rect.height;
+        if (this.svg) {
+            this.svg.attr('width', this.width).attr('height', this.height);
+        }
+        if (this.simulation) {
+            // Re-anchor forceX/forceY to the new center and nudge the layout.
+            const cx = this.width / 2;
+            const cy = this.height / 2;
+            const fx = this.simulation.force('x');
+            const fy = this.simulation.force('y');
+            if (fx) fx.x(cx);
+            if (fy) fy.y(cy);
+            this.simulation.alpha(0.3).restart();
+        }
+    }
 
-        // Update positions on simulation tick
-        this.simulation.on('tick', () => {
+    _onTick() {
+        // Soft boundary clamp: only hard-stop beyond a generous outer bound
+        // (1.15 × viewport). Inside, forceX/forceY handle the pull.
+        const padX = 30;
+        const padY = 30;
+        const outerW = this.width * 1.15;
+        const outerH = this.height * 1.15;
+        if (!this.nodes) return;
+        this.nodes.each(d => {
+            if (d.x < -outerW * 0.15 + padX) d.x = -outerW * 0.15 + padX;
+            else if (d.x > outerW - padX) d.x = outerW - padX;
+            if (d.y < -outerH * 0.15 + padY) d.y = -outerH * 0.15 + padY;
+            else if (d.y > outerH - padY) d.y = outerH - padY;
+        });
+        if (this.links) {
             this.links
                 .attr('x1', d => d.source.x)
                 .attr('y1', d => d.source.y)
                 .attr('x2', d => d.target.x)
                 .attr('y2', d => d.target.y);
-
-            this.nodes
-                .attr('transform', d => `translate(${d.x},${d.y})`);
-
+        }
+        this.nodes.attr('transform', d => `translate(${d.x},${d.y})`);
+        if (this.labels) {
             this.labels
                 .attr('x', d => d.x)
                 .attr('y', d => d.y);
-        });
+        }
     }
 
     addNodeShape(node, d) {
@@ -319,11 +668,16 @@ class KnowledgeGraphVisualization {
     }
 
     getNodeRadius(d) {
+        // Touch devices: bigger minimum radius for reliable tap targets.
+        const touchBoost = (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ? 2 : 0;
+        // EPISODE nodes get a uniform smaller radius so they read as a distinct
+        // "layer" of the graph (50+ of them, sitting alongside concepts).
+        if (d.type === 'EPISODE') return 5 + touchBoost;
         // Scale by episode_count so size reflects how often Aaron discusses this topic.
         // sqrt gives a perceptually-linear area scale (2× episodes → ~1.4× radius).
         // Range: ep=1 → 7px, ep=10 → 13.5px, ep=30 → 20px, ep=50+ → 25px.
         const count = d.episode_count || d.mention_count || 1;
-        return 4 + Math.sqrt(count) * 3;
+        return 4 + Math.sqrt(count) * 3 + touchBoost;
     }
 
     getNodeColor(d) {
@@ -332,6 +686,19 @@ class KnowledgeGraphVisualization {
     }
 
     getFilteredData() {
+        // Union of episode_ids from currently-active pillar chips (OR across pillars).
+        const activePillarEpisodes = (this.filters.pillars.size && this.pillarEpisodeIndex)
+            ? this.unionEpisodeSet(this.filters.pillars, this.pillarEpisodeIndex)
+            : null;
+        // Union of episode_ids from currently-active theme chips (OR across themes).
+        // (The plan says themes are exclusive-select so this set will have ≤1 entry,
+        // but the union form makes the code robust to future multi-select.)
+        const activeThemeEpisodes = (this.filters.themes.size && this.themeEpisodeIndex)
+            ? this.unionEpisodeSet(this.filters.themes, this.themeEpisodeIndex)
+            : null;
+
+        const narrowActive = !!activePillarEpisodes || !!activeThemeEpisodes;
+
         // Filter nodes
         let filteredNodes = this.data.nodes.filter(node => {
             // Check importance threshold
@@ -344,9 +711,29 @@ class KnowledgeGraphVisualization {
                 return false;
             }
 
+            // Episode-specific rule (Design 3): episodes hidden by default, shown when
+            //   (a) a pillar or theme chip is active, OR
+            //   (b) the user has explicitly force-toggled Episodes on.
+            // Without this rule the default view would pull in all 170 episode nodes.
+            if (node.type === 'EPISODE') {
+                if (!this.filters.forceShowEpisodes && !narrowActive) return false;
+            }
+
             // Check domain filter (node must have at least one matching domain)
             const hasMatchingDomain = node.domains.some(d => this.filters.domains.has(d));
             if (!hasMatchingDomain) {
+                return false;
+            }
+
+            // Check pillar filter (YOE primary pillar — simple-mode only).
+            // Node passes iff at least one of its episodes is in an active pillar.
+            if (activePillarEpisodes && !this.entityInEpisodeSet(node, activePillarEpisodes)) {
+                return false;
+            }
+
+            // Check theme filter (YOE secondary theme — simple-mode only).
+            // ANDed against pillars: both must pass.
+            if (activeThemeEpisodes && !this.entityInEpisodeSet(node, activeThemeEpisodes)) {
                 return false;
             }
 
@@ -692,7 +1079,7 @@ class KnowledgeGraphVisualization {
                 if (sourceNode) incoming.push({ type: link.type || link.relationship_type || 'RELATED_TO', source: sourceNode.name });
             }
         });
-        return {
+        const payload = {
             id: d.id,
             name: d.name,
             type: d.type,
@@ -700,10 +1087,29 @@ class KnowledgeGraphVisualization {
             description: d.description || '',
             importance: d.importance,
             mentions: d.mention_count,
+            // `episodes` is the count (preserves existing UI); `episodeList` is
+            // the raw int array of episode numbers used by the resource card's
+            // episode-chip row.
             episodes: d.episode_count,
+            episodeList: Array.isArray(d.episodes) ? d.episodes.slice() : [],
             aliases: d.aliases || [],
             relationships: { outgoing, incoming }
         };
+
+        // Design 3: pass through EPISODE-specific fields so the resource card can
+        // render the listen link + guest + theme chips.
+        if (d.type === 'EPISODE') {
+            payload.episode_number = d.episode_number;
+            payload.display_name = d.display_name || d.name;
+            payload.guest = d.guest || '';
+            payload.org = d.org || '';
+            payload.location = d.location || '';
+            payload.themes = d.themes || [];
+            payload.pillars = d.pillars || [];
+            payload.url = d.url || '';
+        }
+
+        return payload;
     }
 
     showDetails(d) {
@@ -859,9 +1265,16 @@ class KnowledgeGraphVisualization {
     }
 
     setupSimpleFilterStrip() {
+        this.setupPrimaryPillarStrip();
+        this.setupThemeStrip();
+        this.setupTypeStrip();
+    }
+
+    setupPrimaryPillarStrip() {
         const strip = d3.select('#simple-filter-strip');
         if (strip.empty() || !this.data || !this.data.domains) return;
 
+        strip.selectAll('*').remove();
         strip.append('span').attr('class', 'strip-label').text('Show');
 
         const setActive = (domainName) => {
@@ -870,12 +1283,14 @@ class KnowledgeGraphVisualization {
             });
         };
 
-        const allChip = strip.append('button')
+        strip.append('button')
             .attr('class', 'filter-chip active')
             .attr('data-domain', 'all')
             .text('All domains')
             .on('click', () => {
                 this.data.domains.forEach(d => this.filters.domains.add(d.name));
+                // Clear the pillar filter (pillar === domain via YOE taxonomy)
+                this.filters.pillars.clear();
                 setActive('all');
                 this.updateVisualization();
             });
@@ -888,7 +1303,135 @@ class KnowledgeGraphVisualization {
                 .on('click', () => {
                     this.filters.domains.clear();
                     this.filters.domains.add(domain.name);
+                    // If the taxonomy provides this domain as a pillar, also
+                    // narrow by pillar.episode_ids (intersection with entity.episodes).
+                    // pillarEpisodeIndex keys are UPPERCASE ('CULTURE'); KG domain.name
+                    // is Title-case ('Culture'), so normalize before the lookup.
+                    this.filters.pillars.clear();
+                    const pillarKey = (domain.name || '').toUpperCase();
+                    if (this.pillarEpisodeIndex && this.pillarEpisodeIndex.has(pillarKey)) {
+                        this.filters.pillars.add(pillarKey);
+                    }
                     setActive(domain.name);
+                    this.updateVisualization();
+                });
+        });
+    }
+
+    setupThemeStrip() {
+        const strip = d3.select('#theme-filter-strip');
+        if (strip.empty() || !this.taxonomy || !this.taxonomy.themes) {
+            // No taxonomy — hide the row entirely so it doesn't take vertical space.
+            strip.style('display', 'none');
+            return;
+        }
+
+        strip.selectAll('*').remove();
+        strip.append('span').attr('class', 'strip-label').text('Themes');
+
+        const setActive = (themeName) => {
+            strip.selectAll('.filter-chip').classed('active', function () {
+                return this.dataset.theme === themeName;
+            });
+        };
+
+        strip.append('button')
+            .attr('class', 'filter-chip active')
+            .attr('data-theme', 'all')
+            .text('All themes')
+            .on('click', () => {
+                this.filters.themes.clear();
+                setActive('all');
+                this.updateVisualization();
+            });
+
+        // Exclusive-select: only one theme at a time (plan §architecture).
+        this.taxonomy.themes.forEach(theme => {
+            strip.append('button')
+                .attr('class', 'filter-chip')
+                .attr('data-theme', theme.name)
+                .attr('title', `${theme.count} episodes`)
+                .text(theme.display)
+                .on('click', () => {
+                    this.filters.themes.clear();
+                    this.filters.themes.add(theme.name);
+                    setActive(theme.name);
+                    this.updateVisualization();
+                });
+        });
+    }
+
+    setupTypeStrip() {
+        const strip = d3.select('#type-filter-strip');
+        if (strip.empty() || !this.data || !this.data.entity_types) return;
+
+        strip.selectAll('*').remove();
+        strip.append('span').attr('class', 'strip-label').text('Types');
+
+        // Knowledge bundle = CONCEPT + PRACTICE + EVENT + TECHNOLOGY + SPECIES + ECOSYSTEM
+        const KNOWLEDGE_BUNDLE = new Set([
+            'CONCEPT', 'PRACTICE', 'EVENT',
+            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM'
+        ]);
+        // Individual toggle types — the ones Aaron wants hidden by default.
+        const INDIVIDUAL_TYPES = ['PLACE', 'PERSON', 'ORGANIZATION', 'PRODUCT', 'WORK'];
+
+        const knowledgeTypesInData = this.data.entity_types.filter(t => KNOWLEDGE_BUNDLE.has(t));
+
+        const isKnowledgeActive = () =>
+            knowledgeTypesInData.every(t => this.filters.entityTypes.has(t));
+
+        const knowledgeChip = strip.append('button')
+            .attr('class', 'filter-chip' + (isKnowledgeActive() ? ' active' : ''))
+            .attr('data-type', '__knowledge__')
+            .html('Knowledge')
+            .on('click', () => {
+                const on = !isKnowledgeActive();
+                knowledgeTypesInData.forEach(t => {
+                    if (on) this.filters.entityTypes.add(t);
+                    else this.filters.entityTypes.delete(t);
+                });
+                knowledgeChip.classed('active', on);
+                this.updateVisualization();
+            });
+
+        // Episodes chip: force-show toggle for all 170 podcast episode nodes.
+        // OFF (default): episodes appear only when a pillar/theme chip narrows.
+        // ON: episodes always visible regardless of filter state.
+        if (this.data.entity_types.includes('EPISODE')) {
+            const epChip = strip.append('button')
+                .attr('class', 'filter-chip' + (this.filters.forceShowEpisodes ? ' active' : ''))
+                .attr('data-type', '__episodes__')
+                .attr('title', 'Always show podcast episode nodes (off = show only when a pillar or theme is selected)')
+                .html('Episodes')
+                .on('click', () => {
+                    this.filters.forceShowEpisodes = !this.filters.forceShowEpisodes;
+                    epChip.classed('active', this.filters.forceShowEpisodes);
+                    this.updateVisualization();
+                });
+        }
+
+        INDIVIDUAL_TYPES.forEach(type => {
+            // Skip types absent from the data.
+            if (!this.data.entity_types.includes(type)) return;
+            // Aaron-friendly plural labels — avoid autogenerated "Persons" etc.
+            const LABEL_OVERRIDE = {
+                PERSON: 'People',
+                PLACE: 'Places',
+                ORGANIZATION: 'Organizations',
+                PRODUCT: 'Products',
+                WORK: 'Works'
+            };
+            const label = LABEL_OVERRIDE[type] || (type.charAt(0) + type.slice(1).toLowerCase() + 's');
+            const chip = strip.append('button')
+                .attr('class', 'filter-chip' + (this.filters.entityTypes.has(type) ? ' active' : ''))
+                .attr('data-type', type)
+                .text(label)
+                .on('click', () => {
+                    const on = !this.filters.entityTypes.has(type);
+                    if (on) this.filters.entityTypes.add(type);
+                    else this.filters.entityTypes.delete(type);
+                    chip.classed('active', on);
                     this.updateVisualization();
                 });
         });
@@ -919,13 +1462,10 @@ class KnowledgeGraphVisualization {
     }
 
     updateVisualization() {
-        // Clear existing
-        this.g.selectAll('*').remove();
-
-        // Recreate visualization with filtered data
+        // Idempotent update: createVisualization() does enter/update/exit on the
+        // existing DOM + mutates the live simulation, so nodes that persist
+        // across filter changes keep their positions. No zoom reset, no wipe.
         this.createVisualization();
-
-        // Update statistics
         this.updateStatistics();
     }
 
@@ -1254,11 +1794,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     break;
                 }
-                const queryName = event.data.query && event.data.query.name ? event.data.query.name.toLowerCase() : '';
-                const matches = vizInstance.data.nodes.filter(n => n.name && n.name.toLowerCase() === queryName);
-                const node = matches.length > 0
-                    ? matches.reduce((best, n) => (n.importance || 0) > (best.importance || 0) ? n : best, matches[0])
-                    : null;
+                const queryName = event.data.query && event.data.query.name ? event.data.query.name.toLowerCase().trim() : '';
+                const nodes = vizInstance.data.nodes;
+                const pickBest = (arr) => arr.reduce(
+                    (best, n) => (n.importance || 0) > (best.importance || 0) ? n : best,
+                    arr[0]
+                );
+                // Tier 1: exact match (case-insensitive)
+                let matches = nodes.filter(n => n.name && n.name.toLowerCase() === queryName);
+                // Tier 2: prefix match — e.g. "regenerative" → "Regenerative Agriculture"
+                if (matches.length === 0 && queryName.length >= 3) {
+                    matches = nodes.filter(n => n.name && n.name.toLowerCase().startsWith(queryName + ' '));
+                }
+                // Tier 3: substring match, word-boundary — catches "soil" → "Soil Health"
+                if (matches.length === 0 && queryName.length >= 4) {
+                    const wordRegex = new RegExp('\\b' + queryName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+                    matches = nodes.filter(n => n.name && wordRegex.test(n.name));
+                }
+                const node = matches.length > 0 ? pickBest(matches) : null;
                 if (node) {
                     // Highlight and focus the node in the graph
                     vizInstance.selectedNode = node;
