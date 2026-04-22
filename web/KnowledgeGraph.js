@@ -474,7 +474,13 @@ class KnowledgeGraphVisualization {
             this.simulation.force('x').strength(positionStrength);
             this.simulation.force('y').strength(positionStrength);
             // Gentle reheat — persistent nodes barely move, new ones settle into place.
-            this.simulation.alpha(0.5).restart();
+            // Alpha scales with topology change: if everything is new, warmer reheat;
+            // if most nodes persist, keep alpha low so existing positions stay stable.
+            const existingIds = new Set(existingById.keys());
+            const newCount = preparedNodes.filter(n => !existingIds.has(n.id)).length;
+            const changeRatio = newCount / Math.max(1, preparedNodes.length);
+            const alpha = 0.15 + changeRatio * 0.35; // 0.15 if no change, 0.5 if all new
+            this.simulation.alpha(alpha).restart();
         }
 
         // DOM join — keyed by id so D3 knows which DOM elements to keep.
