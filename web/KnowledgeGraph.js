@@ -26,10 +26,17 @@ class KnowledgeGraphVisualization {
         this.filters = {
             domains: new Set(),
             entityTypes: new Set(),
+            themes: new Set(),    // YOE secondary themes (simple-mode only). Empty = all.
+            pillars: new Set(),   // YOE primary pillars (simple-mode only). Empty = all.
             minImportance: this.isSimpleMode ? 0.9 : 0.7,
             searchQuery: "",
             maxNodes: this.isSimpleMode ? 50 : 1000
         };
+
+        // YOE taxonomy (loaded async in loadTaxonomy()). Null until available.
+        this.taxonomy = null;
+        this.themeEpisodeIndex = null;
+        this.pillarEpisodeIndex = null;
 
         // Layout parameters.
         // Simple-mode: stronger repulsion, minimal collision padding (let charge handle
@@ -108,7 +115,80 @@ class KnowledgeGraphVisualization {
 
         // Initialize filters with all domains and types enabled
         this.data.domains.forEach(d => this.filters.domains.add(d.name));
-        this.data.entity_types.forEach(t => this.filters.entityTypes.add(t));
+
+        // Simple-mode default is knowledge-centric: only CONCEPT / PRACTICE / EVENT /
+        // TECHNOLOGY / SPECIES / ECOSYSTEM visible on load. PLACE / PERSON /
+        // ORGANIZATION / PRODUCT / WORK are opt-in via the type chip strip.
+        // Aaron's Apr 21 direction: "less focus on podcast episodes and book
+        // content now, more emphasis on places, locations, and people" —
+        // wait no, the opposite: knowledge/topic/theme-centric, places/people
+        // less prominent. This matches his Apr 12 email + Apr 21 voice memo.
+        const KNOWLEDGE_CENTRIC_TYPES = new Set([
+            'CONCEPT', 'PRACTICE', 'EVENT',
+            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM'
+        ]);
+        this.data.entity_types.forEach(t => {
+            if (!this.isSimpleMode || KNOWLEDGE_CENTRIC_TYPES.has(t)) {
+                this.filters.entityTypes.add(t);
+            }
+        });
+
+        // Load YOE taxonomy (pillars + themes ↔ episode IDs) for /guide/
+        // secondary chip filters. Client-side join against entity.episodes.
+        if (this.isSimpleMode) {
+            await this.loadTaxonomy();
+        }
+    }
+
+    async loadTaxonomy() {
+        try {
+            const response = await fetch('./data/yoe_taxonomy.json?v=1');
+            if (!response.ok) throw new Error(`taxonomy fetch: ${response.status}`);
+            this.taxonomy = await response.json();
+            this.buildTaxonomyIndex();
+            console.log(`Loaded YOE taxonomy: ${Object.keys(this.taxonomy.pillars).length} pillars, ${this.taxonomy.themes.length} themes, ${Object.keys(this.taxonomy.episodes).length} episodes`);
+        } catch (err) {
+            console.warn("YOE taxonomy unavailable; theme/pillar filters disabled:", err);
+            this.taxonomy = null;
+        }
+    }
+
+    buildTaxonomyIndex() {
+        // Index: theme name (upper) → Set<episode_id>; pillar name → Set<episode_id>
+        this.themeEpisodeIndex = new Map();
+        this.pillarEpisodeIndex = new Map();
+
+        this.taxonomy.themes.forEach(t => {
+            this.themeEpisodeIndex.set(t.name, new Set(t.episode_ids));
+        });
+        Object.entries(this.taxonomy.pillars).forEach(([name, p]) => {
+            this.pillarEpisodeIndex.set(name, new Set(p.episode_ids));
+        });
+    }
+
+    /**
+     * Does this entity appear in any of the given episode IDs?
+     * Entity.episodes is typically an int or array of ints (from the KG dataset).
+     */
+    entityInEpisodeSet(entity, episodeSet) {
+        if (!entity || !episodeSet || episodeSet.size === 0) return false;
+        const eps = entity.episodes;
+        if (Array.isArray(eps)) {
+            for (const id of eps) if (episodeSet.has(id)) return true;
+            return false;
+        }
+        if (typeof eps === 'number') return episodeSet.has(eps);
+        return false;
+    }
+
+    /** Union all episode-id sets for the selected keys (pillar or theme names). */
+    unionEpisodeSet(selectedKeys, index) {
+        const union = new Set();
+        selectedKeys.forEach(key => {
+            const set = index.get(key);
+            if (set) set.forEach(id => union.add(id));
+        });
+        return union;
     }
 
     setupSVG() {
@@ -332,6 +412,17 @@ class KnowledgeGraphVisualization {
     }
 
     getFilteredData() {
+        // Union of episode_ids from currently-active pillar chips (OR across pillars).
+        const activePillarEpisodes = (this.filters.pillars.size && this.pillarEpisodeIndex)
+            ? this.unionEpisodeSet(this.filters.pillars, this.pillarEpisodeIndex)
+            : null;
+        // Union of episode_ids from currently-active theme chips (OR across themes).
+        // (The plan says themes are exclusive-select so this set will have ≤1 entry,
+        // but the union form makes the code robust to future multi-select.)
+        const activeThemeEpisodes = (this.filters.themes.size && this.themeEpisodeIndex)
+            ? this.unionEpisodeSet(this.filters.themes, this.themeEpisodeIndex)
+            : null;
+
         // Filter nodes
         let filteredNodes = this.data.nodes.filter(node => {
             // Check importance threshold
@@ -347,6 +438,18 @@ class KnowledgeGraphVisualization {
             // Check domain filter (node must have at least one matching domain)
             const hasMatchingDomain = node.domains.some(d => this.filters.domains.has(d));
             if (!hasMatchingDomain) {
+                return false;
+            }
+
+            // Check pillar filter (YOE primary pillar — simple-mode only).
+            // Node passes iff at least one of its episodes is in an active pillar.
+            if (activePillarEpisodes && !this.entityInEpisodeSet(node, activePillarEpisodes)) {
+                return false;
+            }
+
+            // Check theme filter (YOE secondary theme — simple-mode only).
+            // ANDed against pillars: both must pass.
+            if (activeThemeEpisodes && !this.entityInEpisodeSet(node, activeThemeEpisodes)) {
                 return false;
             }
 
@@ -700,7 +803,11 @@ class KnowledgeGraphVisualization {
             description: d.description || '',
             importance: d.importance,
             mentions: d.mention_count,
+            // `episodes` is the count (preserves existing UI); `episodeList` is
+            // the raw int array of episode numbers used by the resource card's
+            // episode-chip row.
             episodes: d.episode_count,
+            episodeList: Array.isArray(d.episodes) ? d.episodes.slice() : [],
             aliases: d.aliases || [],
             relationships: { outgoing, incoming }
         };
@@ -859,9 +966,16 @@ class KnowledgeGraphVisualization {
     }
 
     setupSimpleFilterStrip() {
+        this.setupPrimaryPillarStrip();
+        this.setupThemeStrip();
+        this.setupTypeStrip();
+    }
+
+    setupPrimaryPillarStrip() {
         const strip = d3.select('#simple-filter-strip');
         if (strip.empty() || !this.data || !this.data.domains) return;
 
+        strip.selectAll('*').remove();
         strip.append('span').attr('class', 'strip-label').text('Show');
 
         const setActive = (domainName) => {
@@ -870,12 +984,14 @@ class KnowledgeGraphVisualization {
             });
         };
 
-        const allChip = strip.append('button')
+        strip.append('button')
             .attr('class', 'filter-chip active')
             .attr('data-domain', 'all')
             .text('All domains')
             .on('click', () => {
                 this.data.domains.forEach(d => this.filters.domains.add(d.name));
+                // Clear the pillar filter (pillar === domain via YOE taxonomy)
+                this.filters.pillars.clear();
                 setActive('all');
                 this.updateVisualization();
             });
@@ -888,7 +1004,107 @@ class KnowledgeGraphVisualization {
                 .on('click', () => {
                     this.filters.domains.clear();
                     this.filters.domains.add(domain.name);
+                    // If the taxonomy provides this domain as a pillar, also
+                    // narrow by pillar.episode_ids (intersection with entity.episodes).
+                    this.filters.pillars.clear();
+                    if (this.pillarEpisodeIndex && this.pillarEpisodeIndex.has(domain.name)) {
+                        this.filters.pillars.add(domain.name);
+                    }
                     setActive(domain.name);
+                    this.updateVisualization();
+                });
+        });
+    }
+
+    setupThemeStrip() {
+        const strip = d3.select('#theme-filter-strip');
+        if (strip.empty() || !this.taxonomy || !this.taxonomy.themes) {
+            // No taxonomy — hide the row entirely so it doesn't take vertical space.
+            strip.style('display', 'none');
+            return;
+        }
+
+        strip.selectAll('*').remove();
+        strip.append('span').attr('class', 'strip-label').text('Themes');
+
+        const setActive = (themeName) => {
+            strip.selectAll('.filter-chip').classed('active', function () {
+                return this.dataset.theme === themeName;
+            });
+        };
+
+        strip.append('button')
+            .attr('class', 'filter-chip active')
+            .attr('data-theme', 'all')
+            .text('All themes')
+            .on('click', () => {
+                this.filters.themes.clear();
+                setActive('all');
+                this.updateVisualization();
+            });
+
+        // Exclusive-select: only one theme at a time (plan §architecture).
+        this.taxonomy.themes.forEach(theme => {
+            strip.append('button')
+                .attr('class', 'filter-chip')
+                .attr('data-theme', theme.name)
+                .attr('title', `${theme.count} episodes`)
+                .text(theme.display)
+                .on('click', () => {
+                    this.filters.themes.clear();
+                    this.filters.themes.add(theme.name);
+                    setActive(theme.name);
+                    this.updateVisualization();
+                });
+        });
+    }
+
+    setupTypeStrip() {
+        const strip = d3.select('#type-filter-strip');
+        if (strip.empty() || !this.data || !this.data.entity_types) return;
+
+        strip.selectAll('*').remove();
+        strip.append('span').attr('class', 'strip-label').text('Types');
+
+        // Knowledge bundle = CONCEPT + PRACTICE + EVENT + TECHNOLOGY + SPECIES + ECOSYSTEM
+        const KNOWLEDGE_BUNDLE = new Set([
+            'CONCEPT', 'PRACTICE', 'EVENT',
+            'TECHNOLOGY', 'SPECIES', 'ECOSYSTEM'
+        ]);
+        // Individual toggle types — the ones Aaron wants hidden by default.
+        const INDIVIDUAL_TYPES = ['PLACE', 'PERSON', 'ORGANIZATION', 'PRODUCT', 'WORK'];
+
+        const knowledgeTypesInData = this.data.entity_types.filter(t => KNOWLEDGE_BUNDLE.has(t));
+
+        const isKnowledgeActive = () =>
+            knowledgeTypesInData.every(t => this.filters.entityTypes.has(t));
+
+        const knowledgeChip = strip.append('button')
+            .attr('class', 'filter-chip' + (isKnowledgeActive() ? ' active' : ''))
+            .attr('data-type', '__knowledge__')
+            .html('Knowledge')
+            .on('click', () => {
+                const on = !isKnowledgeActive();
+                knowledgeTypesInData.forEach(t => {
+                    if (on) this.filters.entityTypes.add(t);
+                    else this.filters.entityTypes.delete(t);
+                });
+                knowledgeChip.classed('active', on);
+                this.updateVisualization();
+            });
+
+        INDIVIDUAL_TYPES.forEach(type => {
+            // Skip types absent from the data.
+            if (!this.data.entity_types.includes(type)) return;
+            const chip = strip.append('button')
+                .attr('class', 'filter-chip' + (this.filters.entityTypes.has(type) ? ' active' : ''))
+                .attr('data-type', type)
+                .text(type.charAt(0) + type.slice(1).toLowerCase() + 's')
+                .on('click', () => {
+                    const on = !this.filters.entityTypes.has(type);
+                    if (on) this.filters.entityTypes.add(type);
+                    else this.filters.entityTypes.delete(type);
+                    chip.classed('active', on);
                     this.updateVisualization();
                 });
         });

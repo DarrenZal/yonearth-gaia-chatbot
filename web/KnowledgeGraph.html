@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YonEarth Knowledge Graph</title>
-    <link rel="stylesheet" href="KnowledgeGraph.css">
+    <link rel="stylesheet" href="KnowledgeGraph.css?v=2.3">
     <style>
         /* Simple/embedded mode: hide nav header and controls sidebar */
         .simple-mode .graph-header { display: none !important; }
@@ -78,8 +78,11 @@
 </head>
 <body>
     <div id="knowledge-graph-container">
-        <!-- Compact filter chip strip (simple-mode only) -->
+        <!-- Compact filter chip strips (simple-mode only). Three stacked rows:
+             primary YOE pillars, secondary YOE themes, entity types. -->
         <div id="simple-filter-strip" class="simple-filter-strip"></div>
+        <div id="theme-filter-strip" class="simple-filter-strip theme-filter-strip"></div>
+        <div id="type-filter-strip" class="simple-filter-strip type-filter-strip"></div>
 
         <!-- Header with view selector -->
         <div class="graph-header">
@@ -235,7 +238,7 @@
     <!-- Load D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Load our visualization script -->
-    <script src="KnowledgeGraph.js?v=2.2"></script>
+    <script src="KnowledgeGraph.js?v=2.3"></script>
 
     <script>
         // View switching functionality

@@ -2262,6 +2262,42 @@ body.guide-layout .welcome-banner {
     flex-wrap: wrap;
     margin-bottom: 10px;
 }
+
+/* Episode chips row — lifted above the description in Aaron's Apr 21 direction.
+   Inline chips for the first 4 eps, rest behind a "+N more" disclosure. */
+.resource-card-episodes {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.resource-card-ep-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: rgba(62, 82, 120, 0.22);
+    border: 1px solid var(--accent-secondary);
+    color: var(--text-light);
+    font-variant-numeric: tabular-nums;
+}
+.resource-card-ep-chip.hidden { display: none; }
+.resource-card-ep-more {
+    background: transparent;
+    border: none;
+    color: var(--accent-secondary);
+    font-size: 0.72rem;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-family: inherit;
+}
+.resource-card-ep-more:hover {
+    color: var(--accent-primary);
+}
 .resource-card-chip {
     display: inline-flex;
     align-items: center;

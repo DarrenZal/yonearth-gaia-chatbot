@@ -2473,6 +2473,25 @@ function addResourceCard(resource) {
         return `<span class="resource-card-chip domain"><span class="dot" style="background:${color}"></span>${_rcEscHtml(d)}</span>`;
     }).join('');
 
+    // Episode chips — Aaron's Apr 21 direction puts podcast episodes at the top
+    // of the card, right under type/domain chips. Cap 4 inline, rest behind a
+    // "+N more" disclosure.
+    const epList = Array.isArray(resource.episodeList) ? resource.episodeList : [];
+    const EP_INLINE = 4;
+    let episodeChipsHtml = '';
+    if (epList.length > 0) {
+        const inline = epList.slice(0, EP_INLINE);
+        const rest = epList.length - inline.length;
+        const inlineChips = inline.map(n => `<span class="resource-card-ep-chip">Ep ${_rcEscHtml(n)}</span>`).join('');
+        const restBtn = rest > 0
+            ? `<button class="resource-card-ep-more" type="button">+${rest} more ↓</button>`
+            : '';
+        const hiddenChips = rest > 0
+            ? epList.slice(EP_INLINE).map(n => `<span class="resource-card-ep-chip hidden">Ep ${_rcEscHtml(n)}</span>`).join('')
+            : '';
+        episodeChipsHtml = `<div class="resource-card-episodes">${inlineChips}${hiddenChips}${restBtn}</div>`;
+    }
+
     const outgoing = (resource.relationships && resource.relationships.outgoing) || [];
     const incoming = (resource.relationships && resource.relationships.incoming) || [];
     const totalRels = outgoing.length + incoming.length;
@@ -2518,6 +2537,7 @@ function addResourceCard(resource) {
             </div>
             <div class="resource-card-name">${_rcEscHtml(resource.name)}</div>
             <div class="resource-card-chips">${typeChip}${domainChips}</div>
+            ${episodeChipsHtml}
             ${resource.description ? `<div class="resource-card-description">${_rcEscHtml(resource.description)}</div>` : ''}
             ${metaHtml}
             <div class="resource-card-actions">${toggleBtn}${askBtn}</div>
@@ -2548,6 +2568,15 @@ function addResourceCard(resource) {
         const input = document.getElementById('messageInput');
         if (input) { input.value = `Tell me more about ${resource.name}`; input.focus(); }
     });
+
+    const epMoreBtn = el.querySelector('.resource-card-ep-more');
+    if (epMoreBtn) {
+        epMoreBtn.addEventListener('click', () => {
+            const hidden = el.querySelectorAll('.resource-card-ep-chip.hidden');
+            hidden.forEach(c => c.classList.remove('hidden'));
+            epMoreBtn.remove();
+        });
+    }
 
     chatMessages.appendChild(el);
     el.scrollIntoView({ behavior: 'smooth', block: 'end' });

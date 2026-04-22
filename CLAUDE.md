@@ -134,6 +134,10 @@ ssh claudeuser@152.53.194.214 'sudo systemctl restart yonearth-fastapi'
 #    <script src="app.js?v=2"></script>
 # 2. Increment version number (v=2 -> v=3) each time you update JS/CSS
 # 3. This forces browsers to load the new version instead of using cached files
+
+# YOE taxonomy rebuild (Aaron/Miranda edit the sheet):
+# Re-run `python3 scripts/build_yoe_taxonomy.py`, commit the regenerated
+# web/data/yoe_taxonomy.json, then deploy via scripts/deploy-prod.sh.
 ```
 
 ### Testing
