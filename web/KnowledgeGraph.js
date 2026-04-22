@@ -1794,11 +1794,24 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     break;
                 }
-                const queryName = event.data.query && event.data.query.name ? event.data.query.name.toLowerCase() : '';
-                const matches = vizInstance.data.nodes.filter(n => n.name && n.name.toLowerCase() === queryName);
-                const node = matches.length > 0
-                    ? matches.reduce((best, n) => (n.importance || 0) > (best.importance || 0) ? n : best, matches[0])
-                    : null;
+                const queryName = event.data.query && event.data.query.name ? event.data.query.name.toLowerCase().trim() : '';
+                const nodes = vizInstance.data.nodes;
+                const pickBest = (arr) => arr.reduce(
+                    (best, n) => (n.importance || 0) > (best.importance || 0) ? n : best,
+                    arr[0]
+                );
+                // Tier 1: exact match (case-insensitive)
+                let matches = nodes.filter(n => n.name && n.name.toLowerCase() === queryName);
+                // Tier 2: prefix match — e.g. "regenerative" → "Regenerative Agriculture"
+                if (matches.length === 0 && queryName.length >= 3) {
+                    matches = nodes.filter(n => n.name && n.name.toLowerCase().startsWith(queryName + ' '));
+                }
+                // Tier 3: substring match, word-boundary — catches "soil" → "Soil Health"
+                if (matches.length === 0 && queryName.length >= 4) {
+                    const wordRegex = new RegExp('\\b' + queryName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '\\b', 'i');
+                    matches = nodes.filter(n => n.name && wordRegex.test(n.name));
+                }
+                const node = matches.length > 0 ? pickBest(matches) : null;
                 if (node) {
                     // Highlight and focus the node in the graph
                     vizInstance.selectedNode = node;
