@@ -17,7 +17,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-    background-color: #0a0e1a;
+    background-color: #030712;
     color: #ffffff;
     overflow: hidden;
 }
@@ -65,7 +65,7 @@ body {
 
 .nav-link {
     padding: 8px 16px;
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     color: white;
     text-decoration: none;
     border-radius: 20px;
@@ -77,7 +77,7 @@ body {
 
 .nav-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 4px 8px rgba(13, 148, 136, 0.4);
 }
 
 /* Project selector - elegant and clean */
@@ -150,7 +150,7 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     cursor: pointer;
 }
 
@@ -158,7 +158,7 @@ body {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     cursor: pointer;
     border: none;
 }
@@ -217,7 +217,7 @@ body {
 
 .episode-dropdown option,
 .topic-dropdown option {
-    background: #1a1f2e;
+    background: #0b1220;
     color: #ffffff;
 }
 
@@ -250,7 +250,7 @@ body {
     flex: 1;
     position: relative;
     width: 100%;
-    background: radial-gradient(ellipse at center, #1a1f2e 0%, #0a0e1a 100%);
+    background: radial-gradient(ellipse at center, #0b1220 0%, #030712 100%);
 }
 
 
@@ -415,13 +415,13 @@ body {
 }
 
 .speed-control option {
-    background: #1a1f2e;
+    background: #0b1220;
     color: #ffffff;
 }
 
 /* Play from start button */
 .play-from-start-btn {
-    background: linear-gradient(135deg, #00bcd4 0%, #0097a7 100%);
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
     color: #ffffff;
     border: none;
     padding: 10px 20px;
@@ -436,7 +436,7 @@ body {
 
 .play-from-start-btn:hover {
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+    box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
 }
 
 .play-from-start-btn:active {

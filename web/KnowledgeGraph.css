@@ -1,17 +1,20 @@
 /**
  * Knowledge Graph Visualization Styles
- * Dark earth-tones + teal palette (Earth Month v2)
+ * Palette-v2 — muted earth/slate palette (Earth Month, Apr 21 night revision)
+ * Principle: --accent-primary for CTAs + active-state only; slate for secondary UI;
+ * one warm tone for resource-label accent.
  */
 
 :root {
-    --accent-primary: #00bcd4;   /* teal */
-    --accent-secondary: #0097a7; /* deeper teal */
-    --bg-page: #0a0e1a;
-    --bg-panel: #1a1a2e;
-    --bg-raised: #252542;
-    --text-light: #e0e0e0;
-    --text-muted: #9ba3b8;
-    --border-subtle: #2a2a4a;
+    --accent-primary: #0d9488;    /* deep muted teal — CTAs, active chip */
+    --accent-secondary: #3e5278;  /* slate blue — secondary UI, chip borders */
+    --accent-warm: #a8917a;       /* subdued tan — Resource label, entity-link border */
+    --bg-page: #030712;           /* near-black, cooler */
+    --bg-panel: #0b1220;          /* panel / card bg base */
+    --bg-raised: #141a2a;         /* input fields / raised surfaces */
+    --text-light: #e5e7eb;        /* cool off-white */
+    --text-muted: #94a3b8;        /* meta / placeholders */
+    --border-subtle: #1e293b;     /* panel dividers, card borders */
 }
 
 /* Base styles */
@@ -191,7 +194,7 @@ body {
 }
 
 .search-result-item:hover {
-    background: rgba(0, 188, 212, 0.15);
+    background: rgba(62, 82, 120, 0.18);
 }
 
 /* Filter groups */
@@ -217,7 +220,7 @@ body {
 }
 
 .filter-item:hover {
-    background: rgba(0, 188, 212, 0.08);
+    background: rgba(62, 82, 120, 0.12);
 }
 
 .filter-item input[type="checkbox"] {
@@ -581,8 +584,8 @@ body {
 }
 
 .episode-badge {
-    background: rgba(0, 188, 212, 0.15);
-    color: var(--accent-primary);
+    background: rgba(62, 82, 120, 0.22);
+    color: var(--text-light);
     padding: 2px 8px;
     border-radius: 8px;
     font-size: 11px;

@@ -16,15 +16,17 @@
             display: none !important;
         }
 
-        /* Filter chip strip — only visible in simple-mode, sits above the graph */
+        /* Filter chip strip — only visible in simple-mode, sits above the graph.
+           Three stacked rows: primary pillars, themes, entity types.
+           Palette-v2: slate borders, teal reserved for active state only. */
         .simple-filter-strip { display: none; }
         .simple-mode .simple-filter-strip {
             display: flex !important;
             align-items: center;
             gap: 6px;
             padding: 8px 12px;
-            background: #0f1423;
-            border-bottom: 1px solid var(--border-subtle, #2a2a4a);
+            background: var(--bg-panel, #0b1220);
+            border-bottom: 1px solid var(--border-subtle, #1e293b);
             flex-wrap: wrap;
             flex-shrink: 0;
         }
@@ -33,7 +35,7 @@
             font-weight: 600;
             letter-spacing: 0.5px;
             text-transform: uppercase;
-            color: var(--text-muted, #9ba3b8);
+            color: var(--text-muted, #94a3b8);
             margin-right: 4px;
         }
         .simple-filter-strip .filter-chip {
@@ -42,8 +44,8 @@
             gap: 6px;
             padding: 4px 10px;
             background: transparent;
-            border: 1px solid var(--border-subtle, #2a2a4a);
-            color: var(--text-light, #e0e0e0);
+            border: 1px solid var(--accent-secondary, #3e5278);
+            color: var(--text-light, #e5e7eb);
             border-radius: 14px;
             font-size: 12px;
             cursor: pointer;
@@ -51,12 +53,12 @@
             font-family: inherit;
         }
         .simple-filter-strip .filter-chip:hover {
-            border-color: var(--accent-primary, #00bcd4);
+            border-color: var(--accent-primary, #0d9488);
         }
         .simple-filter-strip .filter-chip.active {
-            background: var(--accent-primary, #00bcd4);
-            border-color: var(--accent-primary, #00bcd4);
-            color: #0a0e1a;
+            background: var(--accent-primary, #0d9488);
+            border-color: var(--accent-primary, #0d9488);
+            color: #030712;
             font-weight: 600;
         }
         .simple-filter-strip .filter-chip .chip-dot {
