@@ -366,20 +366,47 @@ class KnowledgeGraphVisualization {
         // Filter data based on current filters
         const filteredData = this.getFilteredData();
 
+        // Seed node positions near viewport center so the fresh force sim doesn't
+        // fling them off-screen on filter changes. Random offset inside a small disc.
+        // Without this, d3 spawns nodes at (undefined, undefined) which it treats as
+        // 0,0 before the first tick, and the force layout can push them to ±4000px
+        // with 100+ nodes + -900 charge.
+        const cx = this.width / 2;
+        const cy = this.height / 2;
+        const seedRadius = Math.min(this.width, this.height) * 0.35;
+        filteredData.nodes.forEach(n => {
+            if (typeof n.x !== 'number' || typeof n.y !== 'number' ||
+                !isFinite(n.x) || !isFinite(n.y) ||
+                Math.hypot(n.x - cx, n.y - cy) > seedRadius * 3) {
+                const theta = Math.random() * 2 * Math.PI;
+                const r = seedRadius * Math.sqrt(Math.random());
+                n.x = cx + r * Math.cos(theta);
+                n.y = cy + r * Math.sin(theta);
+            }
+        });
+
+        // Scale charge strength down for big node sets so the layout stays inside
+        // the viewport. 30 nodes → full charge; 200 nodes → ~30% of charge.
+        const nodeCount = filteredData.nodes.length || 1;
+        const chargeScale = Math.min(1, 30 / nodeCount);
+        const effectiveCharge = this.params.charge * chargeScale;
+        // Bump gravity when there are many nodes so the cluster stays centered.
+        const effectiveGravity = Math.min(0.5, this.params.gravity * (1 + nodeCount / 100));
+
         // Create force simulation
         this.simulation = d3.forceSimulation(filteredData.nodes)
             .force('link', d3.forceLink(filteredData.links)
                 .id(d => d.id)
                 .distance(this.params.linkDistance))
             .force('charge', d3.forceManyBody()
-                .strength(this.params.charge))
-            .force('center', d3.forceCenter(this.width / 2, this.height / 2)
-                .strength(this.params.gravity))
+                .strength(effectiveCharge))
+            .force('center', d3.forceCenter(cx, cy)
+                .strength(effectiveGravity))
             .force('collision', d3.forceCollide()
                 // Small fixed padding — collision handles overlap only; charge handles spacing.
                 // The old 22px uniform radius caused the geometric grid pattern.
                 .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
-            .velocityDecay(0.35);
+            .velocityDecay(0.4);
 
         // Create links. MENTIONED_IN edges (concept→episode) get a thinner dashed
         // stroke so they read as "loose association" vs the solid entity-entity edges.
@@ -432,8 +459,22 @@ class KnowledgeGraphVisualization {
             .on('mouseout', () => this.handleMouseOut())
             .on('click', (event, d) => this.handleNodeClick(event, d));
 
-        // Update positions on simulation tick
+        // Update positions on simulation tick. Clamp to a generous viewport-sized
+        // bounding box so nodes never drift far off-screen. Pad so labels on the
+        // right stay inside the window.
+        const padX = 20;
+        const padY = 20;
+        const boundW = this.width;
+        const boundH = this.height;
         this.simulation.on('tick', () => {
+            // Clamp positions in-place so force-layout re-uses the clamped values.
+            this.nodes.each(d => {
+                if (d.x < padX) d.x = padX;
+                else if (d.x > boundW - padX) d.x = boundW - padX;
+                if (d.y < padY) d.y = padY;
+                else if (d.y > boundH - padY) d.y = boundH - padY;
+            });
+
             this.links
                 .attr('x1', d => d.source.x)
                 .attr('y1', d => d.source.y)
@@ -1298,6 +1339,14 @@ class KnowledgeGraphVisualization {
     }
 
     updateVisualization() {
+        // Reset any pan/zoom so freshly-laid nodes are centered in the viewport.
+        // Without this, a user who has zoomed in will click a filter chip and
+        // end up staring at empty space while the new nodes spawn near the
+        // world origin (the pre-zoom center).
+        if (this.svg && this.zoom) {
+            this.svg.call(this.zoom.transform, d3.zoomIdentity);
+        }
+
         // Clear existing
         this.g.selectAll('*').remove();
 
