@@ -385,28 +385,35 @@ class KnowledgeGraphVisualization {
             }
         });
 
-        // Scale charge strength down for big node sets so the layout stays inside
-        // the viewport. 30 nodes → full charge; 200 nodes → ~30% of charge.
+        // Scale charge down for big node sets. 30 nodes → full charge, 200 → ~15%.
+        // Use forceX/forceY anchoring (stronger than forceCenter for big sets) —
+        // this lets charge spread things *within* the viewport without piling
+        // nodes against a boundary-clamp wall.
         const nodeCount = filteredData.nodes.length || 1;
         const chargeScale = Math.min(1, 30 / nodeCount);
         const effectiveCharge = this.params.charge * chargeScale;
-        // Bump gravity when there are many nodes so the cluster stays centered.
-        const effectiveGravity = Math.min(0.5, this.params.gravity * (1 + nodeCount / 100));
+        // Strength scales from 0.04 (30 nodes) to ~0.25 (200 nodes) for the x/y pull.
+        const positionStrength = Math.min(0.25, 0.03 + nodeCount / 800);
+        // Link distance shrinks as crowd grows so episodes huddle near their concepts
+        // rather than spreading across the canvas.
+        const effectiveLinkDistance = nodeCount > 50
+            ? Math.max(30, this.params.linkDistance * (50 / nodeCount))
+            : this.params.linkDistance;
 
         // Create force simulation
         this.simulation = d3.forceSimulation(filteredData.nodes)
             .force('link', d3.forceLink(filteredData.links)
                 .id(d => d.id)
-                .distance(this.params.linkDistance))
+                .distance(effectiveLinkDistance)
+                .strength(l => l.type === 'MENTIONED_IN' ? 0.15 : 0.6))
             .force('charge', d3.forceManyBody()
-                .strength(effectiveCharge))
-            .force('center', d3.forceCenter(cx, cy)
-                .strength(effectiveGravity))
+                .strength(effectiveCharge)
+                .distanceMax(300))   // charge falls off past 300px so distant nodes don't repel
+            .force('x', d3.forceX(cx).strength(positionStrength))
+            .force('y', d3.forceY(cy).strength(positionStrength))
             .force('collision', d3.forceCollide()
-                // Small fixed padding — collision handles overlap only; charge handles spacing.
-                // The old 22px uniform radius caused the geometric grid pattern.
                 .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
-            .velocityDecay(0.4);
+            .velocityDecay(0.45);
 
         // Create links. MENTIONED_IN edges (concept→episode) get a thinner dashed
         // stroke so they read as "loose association" vs the solid entity-entity edges.
@@ -459,20 +466,19 @@ class KnowledgeGraphVisualization {
             .on('mouseout', () => this.handleMouseOut())
             .on('click', (event, d) => this.handleNodeClick(event, d));
 
-        // Update positions on simulation tick. Clamp to a generous viewport-sized
-        // bounding box so nodes never drift far off-screen. Pad so labels on the
-        // right stay inside the window.
-        const padX = 20;
-        const padY = 20;
-        const boundW = this.width;
-        const boundH = this.height;
+        // Soft boundary clamp: only hard-stop beyond a generous outer bound
+        // (1.15 × viewport). Inside the viewport, forceX/forceY handle the pull.
+        // This avoids the "nodes piled along the wall" look a hard clamp creates.
+        const padX = 30;
+        const padY = 30;
+        const outerW = this.width * 1.15;
+        const outerH = this.height * 1.15;
         this.simulation.on('tick', () => {
-            // Clamp positions in-place so force-layout re-uses the clamped values.
             this.nodes.each(d => {
-                if (d.x < padX) d.x = padX;
-                else if (d.x > boundW - padX) d.x = boundW - padX;
-                if (d.y < padY) d.y = padY;
-                else if (d.y > boundH - padY) d.y = boundH - padY;
+                if (d.x < -outerW * 0.15 + padX) d.x = -outerW * 0.15 + padX;
+                else if (d.x > outerW - padX) d.x = outerW - padX;
+                if (d.y < -outerH * 0.15 + padY) d.y = -outerH * 0.15 + padY;
+                else if (d.y > outerH - padY) d.y = outerH - padY;
             });
 
             this.links
