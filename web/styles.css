@@ -2081,9 +2081,12 @@ body {
 }
 
 @media (max-width: 768px) {
-    .welcome-banner { padding: 12px 18px; }
-    .welcome-banner .welcome-title { font-size: 1.1rem; }
-    .welcome-banner .welcome-body { font-size: 0.88rem; }
+    .welcome-banner { padding: 10px 14px; }
+    .welcome-banner .welcome-title { font-size: 1rem; margin-bottom: 2px; }
+    .welcome-banner .welcome-body { font-size: 0.8rem; line-height: 1.35; }
+    /* Banner collapses to ~60px vertical on mobile — the copy is long on
+       narrow widths, so trim what shows until the user dismisses it. */
+    .welcome-banner .welcome-body { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 }
 
 /* Guide split layout — KG left + chat right */
@@ -2157,12 +2160,13 @@ body.guide-layout .welcome-banner {
         flex-direction: column-reverse;
     }
     .guide-kg-panel {
-        flex: 0 0 45vh;
+        flex: 0 0 50vh;
         border-right: none;
         border-top: 2px solid var(--sage-green, #88a37a);
     }
     .guide-chat-panel {
         flex: 1;
+        min-height: 260px;
     }
 }
 

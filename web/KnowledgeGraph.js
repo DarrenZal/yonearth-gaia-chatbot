@@ -636,14 +636,16 @@ class KnowledgeGraphVisualization {
     }
 
     getNodeRadius(d) {
+        // Touch devices: bigger minimum radius for reliable tap targets.
+        const touchBoost = (window.matchMedia && window.matchMedia('(pointer: coarse)').matches) ? 2 : 0;
         // EPISODE nodes get a uniform smaller radius so they read as a distinct
         // "layer" of the graph (50+ of them, sitting alongside concepts).
-        if (d.type === 'EPISODE') return 5;
+        if (d.type === 'EPISODE') return 5 + touchBoost;
         // Scale by episode_count so size reflects how often Aaron discusses this topic.
         // sqrt gives a perceptually-linear area scale (2× episodes → ~1.4× radius).
         // Range: ep=1 → 7px, ep=10 → 13.5px, ep=30 → 20px, ep=50+ → 25px.
         const count = d.episode_count || d.mention_count || 1;
-        return 4 + Math.sqrt(count) * 3;
+        return 4 + Math.sqrt(count) * 3 + touchBoost;
     }
 
     getNodeColor(d) {
