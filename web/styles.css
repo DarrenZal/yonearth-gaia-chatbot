@@ -2170,11 +2170,58 @@ body.guide-layout .welcome-banner {
     }
 }
 
+/* Mobile tab bar — hidden on desktop, shown below welcome banner on mobile. */
+.mobile-tabs {
+    display: none;
+    flex: 0 0 auto;
+    background: var(--bg-panel, #0b1220);
+    border-bottom: 1px solid var(--border-subtle, #1e293b);
+}
+.mobile-tab {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 10px 8px;
+    color: var(--text-muted, #94a3b8);
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+.mobile-tab.active {
+    color: var(--text-light, #e5e7eb);
+    border-bottom-color: var(--accent-primary, #0d9488);
+}
+.mobile-tab-icon { font-size: 1rem; line-height: 1; }
+
 /* Chat panel compactions while stacked-layout is active (same 900px
    breakpoint as .guide-split flex-direction: column-reverse). The desktop
    header + controls toggle + footer eat ~180px of the chat panel, leaving
    no room for messages or input in the stacked layout. */
 @media (max-width: 900px) {
+    /* Show the tab bar on mobile. */
+    .mobile-tabs { display: flex; }
+
+    /* One panel at a time on mobile — cleaner than squeezing both at once.
+       Body class controls which is visible; the tab-bar JS toggles the class. */
+    body.mobile-tab-chat .guide-kg-panel { display: none !important; }
+    body.mobile-tab-explore .guide-chat-panel { display: none !important; }
+
+    /* Active panel takes full remaining height since the other is hidden.
+       Override the 45vh split — we want everything. */
+    body.mobile-tab-chat .guide-chat-panel { flex: 1 !important; }
+    body.mobile-tab-explore .guide-kg-panel { flex: 1 !important; }
+    /* Unstack when one-panel mode is active so flex:1 works. */
+    body.mobile-tab-chat .guide-split,
+    body.mobile-tab-explore .guide-split { flex-direction: column !important; }
+
     .guide-chat-panel .guide-header {
         padding: 8px 14px !important;
         background: transparent !important;

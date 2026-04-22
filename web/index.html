@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Y on Earth Guide</title>
-    <link rel="stylesheet" href="styles.css?v=25.1">
+    <link rel="stylesheet" href="styles.css?v=26.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tutorial.css">
 </head>
@@ -27,6 +27,20 @@
             <button class="welcome-banner-dismiss" onclick="document.getElementById('welcomeBanner').style.display='none'" aria-label="Dismiss welcome banner">×</button>
         </div>
     </section>
+
+    <!-- Mobile-only tab bar (hidden on desktop via CSS). Toggles which panel
+         is visible on <900px widths — chat OR explore, one at a time, so the
+         user isn't fighting three competing sections in a phone viewport. -->
+    <nav class="mobile-tabs" aria-label="Primary">
+        <button class="mobile-tab active" data-tab="chat" aria-pressed="true">
+            <span class="mobile-tab-icon">💬</span>
+            <span class="mobile-tab-label">Chat</span>
+        </button>
+        <button class="mobile-tab" data-tab="explore" aria-pressed="false">
+            <span class="mobile-tab-icon">🌐</span>
+            <span class="mobile-tab-label">Explore</span>
+        </button>
+    </nav>
 
     <!-- Guide Split Layout -->
     <div class="guide-split">
@@ -192,5 +206,36 @@
     <script src="chat.js?v=35"></script>
     <script src="tutorial.js"></script>
     <script>document.addEventListener("DOMContentLoaded", () => { setTimeout(() => { if(typeof Tutorial !== "undefined") Tutorial.init("chat"); }, 1000); });</script>
+    <script>
+    // Mobile tab toggle — Chat vs Explore. Applies body class which the CSS
+    // uses to show/hide panels at <900px. Desktop ignores the class entirely.
+    (function() {
+        const body = document.body;
+        body.classList.add('mobile-tab-chat'); // default to chat on mobile load
+        document.querySelectorAll('.mobile-tab').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                body.classList.remove('mobile-tab-chat', 'mobile-tab-explore');
+                body.classList.add('mobile-tab-' + tab);
+                document.querySelectorAll('.mobile-tab').forEach(b => {
+                    const active = b === btn;
+                    b.classList.toggle('active', active);
+                    b.setAttribute('aria-pressed', active ? 'true' : 'false');
+                });
+                // Give the iframe a tick to re-measure when its container
+                // changes size (Explore tab swaps chat→graph).
+                if (tab === 'explore') {
+                    setTimeout(() => {
+                        const iframe = document.getElementById('kgIframe');
+                        if (iframe && iframe.contentWindow && iframe.contentWindow.knowledgeGraph) {
+                            // Force D3 to pick up new container size.
+                            window.dispatchEvent(new Event('resize'));
+                        }
+                    }, 50);
+                }
+            });
+        });
+    })();
+    </script>
 </body>
 </html>
