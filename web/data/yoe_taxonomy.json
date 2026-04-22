@@ -1,0 +1,4403 @@
+{
+  "generated_at": "2026-04-22T02:30:33Z",
+  "source": {
+    "google_sheet_id": "1LpBxvzLD7rbR2XZV7gEBmf6NykhGhSEHJwBu2qDfduM",
+    "url": "https://docs.google.com/spreadsheets/d/1LpBxvzLD7rbR2XZV7gEBmf6NykhGhSEHJwBu2qDfduM/edit"
+  },
+  "pillars": {
+    "COMMUNITY": {
+      "color": "#4caf50",
+      "episode_ids": [
+        6,
+        7,
+        11,
+        13,
+        15,
+        16,
+        18,
+        19,
+        21,
+        22,
+        23,
+        30,
+        32,
+        33,
+        39,
+        45,
+        47,
+        48,
+        57,
+        62,
+        65,
+        68,
+        73,
+        74,
+        75,
+        77,
+        80,
+        85,
+        90,
+        92,
+        99,
+        100,
+        103,
+        104,
+        105,
+        107,
+        110,
+        113,
+        115,
+        116,
+        117,
+        118,
+        121,
+        123,
+        124,
+        129,
+        132,
+        133,
+        134,
+        141,
+        143,
+        145,
+        147,
+        148,
+        149,
+        152,
+        154,
+        156,
+        157,
+        160,
+        161,
+        163,
+        164,
+        167,
+        168,
+        169
+      ]
+    },
+    "CULTURE": {
+      "color": "#9c27b0",
+      "episode_ids": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        9,
+        11,
+        13,
+        14,
+        15,
+        18,
+        19,
+        21,
+        22,
+        23,
+        26,
+        27,
+        30,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38,
+        39,
+        40,
+        42,
+        45,
+        50,
+        51,
+        53,
+        54,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        66,
+        67,
+        68,
+        69,
+        71,
+        72,
+        75,
+        76,
+        79,
+        84,
+        85,
+        87,
+        91,
+        92,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        109,
+        110,
+        111,
+        112,
+        115,
+        118,
+        121,
+        123,
+        124,
+        127,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        137,
+        139,
+        140,
+        141,
+        142,
+        143,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        154,
+        155,
+        156,
+        157,
+        160,
+        163,
+        164,
+        166,
+        167,
+        169,
+        170
+      ]
+    },
+    "ECONOMY": {
+      "color": "#ff9800",
+      "episode_ids": [
+        8,
+        12,
+        14,
+        18,
+        20,
+        23,
+        25,
+        35,
+        36,
+        43,
+        48,
+        49,
+        55,
+        56,
+        63,
+        65,
+        69,
+        72,
+        83,
+        85,
+        88,
+        92,
+        93,
+        94,
+        96,
+        100,
+        105,
+        108,
+        109,
+        111,
+        112,
+        114,
+        117,
+        118,
+        119,
+        127,
+        128,
+        129,
+        133,
+        137,
+        138,
+        141,
+        148,
+        149,
+        150,
+        151,
+        154,
+        155,
+        158,
+        163,
+        164,
+        168
+      ]
+    },
+    "ECOLOGY": {
+      "color": "#2196f3",
+      "episode_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16,
+        17,
+        18,
+        20,
+        22,
+        23,
+        24,
+        25,
+        27,
+        28,
+        29,
+        34,
+        35,
+        36,
+        41,
+        43,
+        44,
+        46,
+        47,
+        48,
+        49,
+        50,
+        52,
+        55,
+        56,
+        57,
+        58,
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        77,
+        78,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        95,
+        98,
+        100,
+        102,
+        103,
+        104,
+        106,
+        108,
+        109,
+        110,
+        111,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        126,
+        127,
+        128,
+        129,
+        130,
+        132,
+        133,
+        135,
+        136,
+        138,
+        139,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        150,
+        151,
+        152,
+        153,
+        154,
+        156,
+        158,
+        159,
+        162,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ]
+    },
+    "HEALTH": {
+      "color": "#f44336",
+      "episode_ids": [
+        18,
+        19,
+        21,
+        23,
+        26,
+        29,
+        30,
+        36,
+        37,
+        40,
+        42,
+        44,
+        47,
+        54,
+        63,
+        69,
+        70,
+        75,
+        79,
+        89,
+        90,
+        91,
+        92,
+        97,
+        98,
+        99,
+        100,
+        102,
+        103,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        114,
+        116,
+        117,
+        118,
+        121,
+        123,
+        124,
+        125,
+        129,
+        133,
+        135,
+        140,
+        141,
+        142,
+        143,
+        147,
+        148,
+        151,
+        152,
+        153,
+        154,
+        156,
+        158,
+        159,
+        161,
+        162,
+        164,
+        165,
+        167,
+        169
+      ]
+    }
+  },
+  "themes": [
+    {
+      "name": "SUSTAIN-ABILITY",
+      "display": "Sustain-Ability",
+      "episode_ids": [
+        12,
+        15,
+        16,
+        17,
+        20,
+        24,
+        25,
+        28,
+        31,
+        35,
+        36,
+        38,
+        41,
+        43,
+        44,
+        46,
+        48,
+        49,
+        51,
+        52,
+        53,
+        55,
+        56,
+        59,
+        60,
+        61,
+        62,
+        63,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        98,
+        99,
+        102,
+        103,
+        108,
+        109,
+        110,
+        111,
+        112,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        126,
+        127,
+        128,
+        129,
+        130,
+        132,
+        133,
+        134,
+        135,
+        136,
+        138,
+        139,
+        140,
+        141,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        158,
+        159,
+        160,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "count": 115
+    },
+    {
+      "name": "EDUCATION",
+      "display": "Education",
+      "episode_ids": [
+        1,
+        15,
+        24,
+        25,
+        27,
+        28,
+        30,
+        31,
+        33,
+        41,
+        42,
+        43,
+        44,
+        46,
+        47,
+        49,
+        50,
+        51,
+        52,
+        53,
+        56,
+        58,
+        59,
+        60,
+        61,
+        62,
+        64,
+        65,
+        66,
+        67,
+        68,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        78,
+        79,
+        80,
+        81,
+        82,
+        84,
+        85,
+        86,
+        87,
+        91,
+        92,
+        95,
+        96,
+        97,
+        98,
+        99,
+        101,
+        102,
+        103,
+        104,
+        106,
+        108,
+        109,
+        110,
+        113,
+        115,
+        116,
+        120,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        164,
+        165,
+        167,
+        169,
+        170
+      ],
+      "count": 111
+    },
+    {
+      "name": "ECOLOGY & NATURE",
+      "display": "Ecology & Nature",
+      "episode_ids": [
+        24,
+        27,
+        28,
+        34,
+        41,
+        44,
+        46,
+        47,
+        50,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        84,
+        85,
+        89,
+        91,
+        92,
+        94,
+        95,
+        96,
+        98,
+        102,
+        103,
+        104,
+        108,
+        109,
+        111,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        120,
+        121,
+        122,
+        123,
+        124,
+        126,
+        127,
+        128,
+        129,
+        130,
+        132,
+        133,
+        134,
+        135,
+        136,
+        138,
+        139,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        150,
+        151,
+        152,
+        153,
+        154,
+        156,
+        158,
+        159,
+        160,
+        162,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "count": 95
+    },
+    {
+      "name": "BUSINESS",
+      "display": "Business",
+      "episode_ids": [
+        8,
+        20,
+        25,
+        31,
+        34,
+        35,
+        36,
+        45,
+        48,
+        55,
+        61,
+        63,
+        65,
+        68,
+        69,
+        70,
+        73,
+        75,
+        76,
+        77,
+        80,
+        81,
+        83,
+        85,
+        88,
+        90,
+        92,
+        93,
+        94,
+        96,
+        97,
+        106,
+        107,
+        108,
+        109,
+        111,
+        112,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        125,
+        127,
+        128,
+        137,
+        138,
+        141,
+        143,
+        145,
+        146,
+        148,
+        149,
+        150,
+        151,
+        153,
+        154,
+        155,
+        158,
+        161,
+        163,
+        164,
+        168
+      ],
+      "count": 65
+    },
+    {
+      "name": "CLIMATE & SCIENCE",
+      "display": "Climate & Science",
+      "episode_ids": [
+        1,
+        2,
+        10,
+        15,
+        16,
+        17,
+        24,
+        25,
+        28,
+        70,
+        78,
+        82,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        91,
+        92,
+        94,
+        95,
+        96,
+        98,
+        99,
+        102,
+        104,
+        109,
+        115,
+        119,
+        120,
+        122,
+        124,
+        126,
+        127,
+        128,
+        129,
+        130,
+        132,
+        136,
+        138,
+        139,
+        141,
+        144,
+        145,
+        146,
+        148,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        158,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        170
+      ],
+      "count": 62
+    },
+    {
+      "name": "FARMING & FOOD",
+      "display": "Farming & Food",
+      "episode_ids": [
+        2,
+        8,
+        10,
+        36,
+        44,
+        47,
+        59,
+        62,
+        63,
+        70,
+        73,
+        79,
+        81,
+        84,
+        89,
+        91,
+        92,
+        95,
+        98,
+        99,
+        103,
+        106,
+        111,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        121,
+        122,
+        123,
+        124,
+        125,
+        132,
+        136,
+        139,
+        142,
+        143,
+        146,
+        147,
+        151,
+        152,
+        153,
+        154,
+        158,
+        159,
+        161,
+        162,
+        165,
+        169
+      ],
+      "count": 51
+    },
+    {
+      "name": "HEALTH & WELLNESS",
+      "display": "Health & Wellness",
+      "episode_ids": [
+        9,
+        21,
+        26,
+        30,
+        37,
+        39,
+        40,
+        42,
+        54,
+        59,
+        62,
+        67,
+        69,
+        73,
+        75,
+        79,
+        90,
+        92,
+        97,
+        106,
+        107,
+        109,
+        110,
+        111,
+        112,
+        115,
+        116,
+        117,
+        118,
+        121,
+        123,
+        124,
+        125,
+        129,
+        135,
+        143,
+        146,
+        151,
+        152,
+        153,
+        154,
+        156,
+        158,
+        159,
+        161,
+        162,
+        164,
+        165,
+        167,
+        169
+      ],
+      "count": 50
+    },
+    {
+      "name": "MEDIA BOOKS & CONTENT",
+      "display": "Media Books & Content",
+      "episode_ids": [
+        2,
+        6,
+        13,
+        19,
+        21,
+        24,
+        25,
+        31,
+        33,
+        35,
+        40,
+        53,
+        55,
+        58,
+        61,
+        68,
+        72,
+        80,
+        84,
+        91,
+        95,
+        96,
+        108,
+        109,
+        110,
+        111,
+        112,
+        115,
+        125,
+        126,
+        127,
+        129,
+        130,
+        133,
+        134,
+        136,
+        137,
+        140,
+        142,
+        144,
+        146,
+        150,
+        151,
+        152,
+        153,
+        155,
+        156,
+        158,
+        167,
+        169
+      ],
+      "count": 50
+    },
+    {
+      "name": "SOIL",
+      "display": "Soil",
+      "episode_ids": [
+        2,
+        3,
+        10,
+        16,
+        44,
+        47,
+        59,
+        62,
+        63,
+        70,
+        73,
+        77,
+        78,
+        79,
+        81,
+        84,
+        89,
+        91,
+        92,
+        95,
+        98,
+        111,
+        113,
+        114,
+        115,
+        116,
+        117,
+        120,
+        121,
+        122,
+        123,
+        124,
+        128,
+        133,
+        136,
+        139,
+        147,
+        151,
+        152,
+        153,
+        158,
+        159,
+        162,
+        165,
+        166,
+        169
+      ],
+      "count": 46
+    },
+    {
+      "name": "REGEN / SOCIAL ENTERPRISE",
+      "display": "Regen / Social Enterprise",
+      "episode_ids": [
+        36,
+        45,
+        63,
+        65,
+        69,
+        73,
+        85,
+        92,
+        96,
+        111,
+        113,
+        114,
+        115,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        128,
+        129,
+        133,
+        139,
+        141,
+        143,
+        147,
+        148,
+        151,
+        152,
+        153,
+        158,
+        162,
+        163,
+        166,
+        168
+      ],
+      "count": 37
+    },
+    {
+      "name": "POLICY & GOVERNMT",
+      "display": "Policy & Governmt",
+      "episode_ids": [
+        25,
+        28,
+        41,
+        46,
+        49,
+        51,
+        63,
+        65,
+        70,
+        71,
+        82,
+        88,
+        96,
+        99,
+        102,
+        106,
+        122,
+        131,
+        132,
+        139,
+        140,
+        144,
+        145,
+        148,
+        150,
+        155,
+        157,
+        158,
+        167,
+        170
+      ],
+      "count": 30
+    },
+    {
+      "name": "TECHNOLOGY & MATERIALS",
+      "display": "Technology & Materials",
+      "episode_ids": [
+        17,
+        43,
+        49,
+        54,
+        59,
+        63,
+        65,
+        69,
+        81,
+        88,
+        93,
+        94,
+        116,
+        117,
+        119,
+        120,
+        122,
+        128,
+        129,
+        138,
+        145,
+        150,
+        155,
+        165,
+        168
+      ],
+      "count": 25
+    },
+    {
+      "name": "INDIGENOUS WISDOM",
+      "display": "Indigenous Wisdom",
+      "episode_ids": [
+        7,
+        46,
+        50,
+        57,
+        66,
+        72,
+        84,
+        115,
+        123,
+        124,
+        125,
+        127,
+        132,
+        133,
+        135,
+        139,
+        154,
+        160,
+        165,
+        166,
+        167,
+        170
+      ],
+      "count": 22
+    },
+    {
+      "name": "HERBAL MEDICINE",
+      "display": "Herbal Medicine",
+      "episode_ids": [
+        5,
+        19,
+        26,
+        29,
+        44,
+        90,
+        98,
+        108,
+        110,
+        115,
+        116,
+        118,
+        123,
+        125,
+        135,
+        146,
+        152,
+        161
+      ],
+      "count": 18
+    },
+    {
+      "name": "PERMA-CULTURE",
+      "display": "Perma-Culture",
+      "episode_ids": [
+        44,
+        62,
+        77,
+        95,
+        113,
+        115,
+        121,
+        123,
+        124,
+        136,
+        143,
+        146,
+        153,
+        159,
+        162,
+        165
+      ],
+      "count": 16
+    },
+    {
+      "name": "GREEN FAITH",
+      "display": "Green Faith",
+      "episode_ids": [
+        4,
+        6,
+        7,
+        13,
+        22,
+        32,
+        40,
+        50,
+        62,
+        71,
+        101,
+        115,
+        134,
+        154,
+        158
+      ],
+      "count": 15
+    },
+    {
+      "name": "BIO-DYNAMICS",
+      "display": "Bio-Dynamics",
+      "episode_ids": [
+        3,
+        44,
+        47,
+        59,
+        98,
+        115,
+        123,
+        124,
+        147,
+        152,
+        169
+      ],
+      "count": 11
+    },
+    {
+      "name": "ESOTERICA",
+      "display": "Esoterica",
+      "episode_ids": [
+        33,
+        40,
+        58,
+        59,
+        90,
+        101,
+        115,
+        152,
+        167,
+        169
+      ],
+      "count": 10
+    },
+    {
+      "name": "GREEN BUILDING",
+      "display": "Green Building",
+      "episode_ids": [
+        11,
+        17,
+        48,
+        55,
+        59,
+        79,
+        81,
+        145
+      ],
+      "count": 8
+    },
+    {
+      "name": "IMPACT INVESTING",
+      "display": "Impact Investing",
+      "episode_ids": [
+        8,
+        25,
+        88,
+        94,
+        96,
+        138,
+        168
+      ],
+      "count": 7
+    },
+    {
+      "name": "BIOCHAR",
+      "display": "Biochar",
+      "episode_ids": [
+        120,
+        122,
+        124,
+        165
+      ],
+      "count": 4
+    }
+  ],
+  "episodes": {
+    "1": {
+      "episode_number": 1,
+      "guest": "Nancy Tuchman",
+      "org": "Loyola University",
+      "location": "Chicago, IL",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION"
+      ]
+    },
+    "2": {
+      "episode_number": 2,
+      "guest": "Judith Schwartz",
+      "org": "Author, \"Cows Save the Planet\"",
+      "location": "Bennington, VT",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "FARMING & FOOD",
+        "MEDIA BOOKS & CONTENT",
+        "SOIL"
+      ]
+    },
+    "3": {
+      "episode_number": 3,
+      "guest": "Brook Le Van",
+      "org": "Sustainable Settings",
+      "location": "Carbondale, CO",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "SOIL"
+      ]
+    },
+    "4": {
+      "episode_number": 4,
+      "guest": "Rev. Fletcher Harper",
+      "org": "Green Faith",
+      "location": "Highland Park, NJ",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "GREEN FAITH"
+      ]
+    },
+    "5": {
+      "episode_number": 5,
+      "guest": "Stephanie Syson",
+      "org": "Sustainable Settings",
+      "location": "Carbondale, CO",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "HERBAL MEDICINE"
+      ]
+    },
+    "6": {
+      "episode_number": 6,
+      "guest": "Safi Kaskas",
+      "org": "Author, \"Koran with References to the Bible\"",
+      "location": "Jeddah, Saudi Arabia",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "GREEN FAITH",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "7": {
+      "episode_number": 7,
+      "guest": "Rev. M. Kalani Souza",
+      "org": "Olohana Foundation",
+      "location": "Paauilo, HI",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "GREEN FAITH",
+        "INDIGENOUS WISDOM"
+      ]
+    },
+    "8": {
+      "episode_number": 8,
+      "guest": "Mark Retzloff",
+      "org": "Founder, Horizon Dairy",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "FARMING & FOOD",
+        "IMPACT INVESTING"
+      ]
+    },
+    "9": {
+      "episode_number": 9,
+      "guest": "Katie Garces",
+      "org": "katiegarces.com",
+      "location": "Denver, CO",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "10": {
+      "episode_number": 10,
+      "guest": "Lauren Tucker",
+      "org": "Kiss the Ground",
+      "location": "Venice, CA",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "FARMING & FOOD",
+        "SOIL"
+      ]
+    },
+    "11": {
+      "episode_number": 11,
+      "guest": "Angela Ortiz",
+      "org": "FLOWS",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "GREEN BUILDING"
+      ]
+    },
+    "12": {
+      "episode_number": 12,
+      "guest": "Maureen Hart",
+      "org": "International Society of Sustainability Professionals",
+      "location": "Portland, OR",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "13": {
+      "episode_number": 13,
+      "guest": "Sarah Davison Tracy",
+      "org": "Seeds of Exchange",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "GREEN FAITH",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "14": {
+      "episode_number": 14,
+      "guest": "Aaron William Perry",
+      "org": "Y on Earth Community",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": []
+    },
+    "15": {
+      "episode_number": 15,
+      "guest": "Ghita Carroll",
+      "org": "Boulder Valley School District",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "16": {
+      "episode_number": 16,
+      "guest": "Brett KenCairn",
+      "org": "City of Boulder Senior Climate Advisor",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "17": {
+      "episode_number": 17,
+      "guest": "Adam Stenftnagel",
+      "org": "Fuel Switch",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "GREEN BUILDING",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "18": {
+      "episode_number": 18,
+      "guest": "Aaron William Perry",
+      "org": "Y on Earth Community",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": []
+    },
+    "19": {
+      "episode_number": 19,
+      "guest": "Brigitte Mars",
+      "org": "Author, Herbalist",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "20": {
+      "episode_number": 20,
+      "guest": "Christine Robinson",
+      "org": "Deloitte & Touche",
+      "location": "Milwaukee, WI",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "21": {
+      "episode_number": 21,
+      "guest": "Maria Cooper",
+      "org": "Highland City Club",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "22": {
+      "episode_number": 22,
+      "guest": "Sahar Alsahani",
+      "org": "Community of Living Traditions",
+      "location": "Stony Point, NY",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "GREEN FAITH"
+      ]
+    },
+    "23": {
+      "episode_number": 23,
+      "guest": "Aaron William Perry",
+      "org": "Y on Earth Community",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": []
+    },
+    "24": {
+      "episode_number": 24,
+      "guest": "David G. Haskell",
+      "org": "Author, \"The Songs of Trees\"",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "25": {
+      "episode_number": 25,
+      "guest": "Hunter Lovins",
+      "org": "Natural Capitalism Solutions",
+      "location": "Hygiene, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "IMPACT INVESTING",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "26": {
+      "episode_number": 26,
+      "guest": "Dr. Dana McGrady",
+      "org": "Purium",
+      "location": "Florida",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE"
+      ]
+    },
+    "27": {
+      "episode_number": 27,
+      "guest": "Jennifer Menke",
+      "org": "Regenerative Earth",
+      "location": "Osa Peninsula, Costa Rica",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION"
+      ]
+    },
+    "28": {
+      "episode_number": 28,
+      "guest": "Scott Black",
+      "org": "Xerces Society",
+      "location": "Portland, OR",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "29": {
+      "episode_number": 29,
+      "guest": "Courtney Cosgriff",
+      "org": "Honeybee Herbals",
+      "location": "Nederland, CO",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "HERBAL MEDICINE"
+      ]
+    },
+    "30": {
+      "episode_number": 30,
+      "guest": "Dr. Jandel Allen-Davis",
+      "org": "Craig Hospital",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "EDUCATION",
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "31": {
+      "episode_number": 31,
+      "guest": "Artem Nikulkov",
+      "org": "Earth Coast Productions",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "32": {
+      "episode_number": 32,
+      "guest": "Lila Tresemer",
+      "org": "Star House",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "GREEN FAITH"
+      ]
+    },
+    "33": {
+      "episode_number": 33,
+      "guest": "Kevin Townley",
+      "org": "Grand Masonic Lodge of Colorado",
+      "location": "Colorado Springs, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "ESOTERICA",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "34": {
+      "episode_number": 34,
+      "guest": "Maija West",
+      "org": "Law Office of Maija West",
+      "location": "Monterey, CA",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE"
+      ]
+    },
+    "35": {
+      "episode_number": 35,
+      "guest": "Bud Sorenson",
+      "org": "Author, \"An Entrepreneurial Journey\"",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "36": {
+      "episode_number": 36,
+      "guest": "Nicole Vitello",
+      "org": "Equal Exchange",
+      "location": "Bridgewater, MA",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "FARMING & FOOD",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "37": {
+      "episode_number": 37,
+      "guest": "Dr. Nicola Siso",
+      "org": "Aspen Talks Health",
+      "location": "Aspen, CO",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "38": {
+      "episode_number": 38,
+      "guest": "Brad Lidge",
+      "org": "Philadelphia Phillies (Ret'd)",
+      "location": "Philadelphia, PA",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "39": {
+      "episode_number": 39,
+      "guest": "Dayna Seraye",
+      "org": "Hanuman Festival",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "40": {
+      "episode_number": 40,
+      "guest": "Kimba Arem",
+      "org": "Gaiearth",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "ESOTERICA",
+        "GREEN FAITH",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "41": {
+      "episode_number": 41,
+      "guest": "Addison Luck",
+      "org": "Yale University",
+      "location": "New Haven, CT",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "42": {
+      "episode_number": 42,
+      "guest": "Osha Chesnutt-Perry",
+      "org": "St. Louis University",
+      "location": "St. Louis, MO",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "EDUCATION",
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "43": {
+      "episode_number": 43,
+      "guest": "Chip Comins",
+      "org": "AREDAY Summit",
+      "location": "Aspen, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "EDUCATION",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "44": {
+      "episode_number": 44,
+      "guest": "Pat Frazier",
+      "org": "Peace & Plenty Farm",
+      "location": "Hotchkiss, CO",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HERBAL MEDICINE",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "45": {
+      "episode_number": 45,
+      "guest": "Adam Eggleston & Alex Martin",
+      "org": "Madera Outdoor",
+      "location": "Oakland, CA",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "BUSINESS",
+        "REGEN / SOCIAL ENTERPRISE"
+      ]
+    },
+    "46": {
+      "episode_number": 46,
+      "guest": "Xiye Bastida",
+      "org": "Earth Guardians, Extinction Rebellion, Youth Leader",
+      "location": "New York, NY",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "47": {
+      "episode_number": 47,
+      "guest": "Thea Maria",
+      "org": "Biodynamic Association",
+      "location": "Santa Rosa, Ca",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "SOIL"
+      ]
+    },
+    "48": {
+      "episode_number": 48,
+      "guest": "Matt Gray",
+      "org": "City of Cleveland",
+      "location": "Cleveland, OH",
+      "pillars": [
+        "COMMUNITY",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "GREEN BUILDING",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "49": {
+      "episode_number": 49,
+      "guest": "Sally Ranney",
+      "org": "AREDAY",
+      "location": "Carbondale, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "50": {
+      "episode_number": 50,
+      "guest": "Anita Sanchez",
+      "org": "Pachamama Alliance & Bioneers",
+      "location": "Upstate, Ny",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "GREEN FAITH",
+        "INDIGENOUS WISDOM"
+      ]
+    },
+    "51": {
+      "episode_number": 51,
+      "guest": "Jonathan Granoff",
+      "org": "Global Security Institute",
+      "location": "Bala-Cynwyd, Pa",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "52": {
+      "episode_number": 52,
+      "guest": "Emilie McGlone",
+      "org": "Peace Boat",
+      "location": "New york, NY",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "53": {
+      "episode_number": 53,
+      "guest": "DJ Spooky",
+      "org": "Google & Global Brain",
+      "location": "New York, NY",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "54": {
+      "episode_number": 54,
+      "guest": "Katie Garces",
+      "org": "Beautycounter",
+      "location": "Denver, Co",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "HEALTH & WELLNESS",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "55": {
+      "episode_number": 55,
+      "guest": "Trammell Crow",
+      "org": "EarthX",
+      "location": "Dallas, TX",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "GREEN BUILDING",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "56": {
+      "episode_number": 56,
+      "guest": "Brain Czech",
+      "org": "CASSE",
+      "location": "Tucson, AZ",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "57": {
+      "episode_number": 57,
+      "guest": "Three Sisters",
+      "org": "Mohawk Women - Three Sisters Sovereignty Project",
+      "location": "Hogansburg, NY",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "INDIGENOUS WISDOM"
+      ]
+    },
+    "58": {
+      "episode_number": 58,
+      "guest": "Sarah Drew",
+      "org": "Gaia Codex",
+      "location": "Hudson Vally, NY",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "59": {
+      "episode_number": 59,
+      "guest": "Stone Hunter",
+      "org": "Biodynamic Builder",
+      "location": "Paonia, Co",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "FARMING & FOOD",
+        "GREEN BUILDING",
+        "HEALTH & WELLNESS",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "60": {
+      "episode_number": 60,
+      "guest": "Ludovica",
+      "org": "New School",
+      "location": "New York, NY",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "61": {
+      "episode_number": 61,
+      "guest": "Michael Cain",
+      "org": "EarthX Film",
+      "location": "New York, NY",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "62": {
+      "episode_number": 62,
+      "guest": "Pastor Brian Kunkler",
+      "org": "Cleveland Food Forest",
+      "location": "San Jose, CA",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "GREEN FAITH",
+        "HEALTH & WELLNESS",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "63": {
+      "episode_number": 63,
+      "guest": "David Bronner",
+      "org": "Dr. Bronners",
+      "location": "Los Angeles, Ca",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "64": {
+      "episode_number": 64,
+      "guest": "Bethany Yarrow",
+      "org": "Waterfall Unity Alliance",
+      "location": "New York, NY",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION"
+      ]
+    },
+    "65": {
+      "episode_number": 65,
+      "guest": "Eric Lombardi",
+      "org": "EcoCycle",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "66": {
+      "episode_number": 66,
+      "guest": "Meadow Cook",
+      "org": "Three Sisters Youth Board",
+      "location": "Hogansburg, NY",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "INDIGENOUS WISDOM"
+      ]
+    },
+    "67": {
+      "episode_number": 67,
+      "guest": "Hunter Chesnutt Perry",
+      "org": "Youth Activist",
+      "location": "Boulder,CO",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "68": {
+      "episode_number": 68,
+      "guest": "Artem Nikulkov",
+      "org": "COVID Special",
+      "location": "Boulder, Co",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "69": {
+      "episode_number": 69,
+      "guest": "Ryan Zinn",
+      "org": "Dr. Bronner's",
+      "location": "Santa Ana, CA",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "HEALTH & WELLNESS",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "70": {
+      "episode_number": 70,
+      "guest": "Jeff Moyer",
+      "org": "Rodale Institute",
+      "location": "Kutztown, PA",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "POLICY & GOVERNMT",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "71": {
+      "episode_number": 71,
+      "guest": "Karenna Gore",
+      "org": "Center for Earth Ethics",
+      "location": "New York, NY",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "GREEN FAITH",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "72": {
+      "episode_number": 72,
+      "guest": "John Perkins",
+      "org": "Author, \"Touching the Jaguar\"",
+      "location": "Hanover, NH",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "73": {
+      "episode_number": 73,
+      "guest": "Sydney Harrison",
+      "org": "Colorado Rooted",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "74": {
+      "episode_number": 74,
+      "guest": "Oak Thorne",
+      "org": "Thorne Nature Experience",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "75": {
+      "episode_number": 75,
+      "guest": "Dr. Jandel Allen-Davis",
+      "org": "Reflecting: BLM",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "76": {
+      "episode_number": 76,
+      "guest": "Charles Orgbon",
+      "org": "Deloitte",
+      "location": "San Francisco,CA",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "77": {
+      "episode_number": 77,
+      "guest": "Shelby Kaminsky",
+      "org": "Edaphic Solutions",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "78": {
+      "episode_number": 78,
+      "guest": "Maria Nikulkova",
+      "org": "Microbiology",
+      "location": "Fort Collins, Co",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "SOIL"
+      ]
+    },
+    "79": {
+      "episode_number": 79,
+      "guest": "Brian Dillon",
+      "org": "Growing Spaces",
+      "location": "Jamestown, CO",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "GREEN BUILDING",
+        "HEALTH & WELLNESS",
+        "SOIL"
+      ]
+    },
+    "80": {
+      "episode_number": 80,
+      "guest": "Adrian Alex Rodriguez",
+      "org": "EarthX Mexico, etc.",
+      "location": "Mexico City, Mexico",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "81": {
+      "episode_number": 81,
+      "guest": "Lem Tingley",
+      "org": "Growing Spaces",
+      "location": "Golden, Co",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "GREEN BUILDING",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "82": {
+      "episode_number": 82,
+      "guest": "Julienne Stroeve",
+      "org": "Climate Science",
+      "location": "Nederland, CO",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "83": {
+      "episode_number": 83,
+      "guest": "Ryan Lewis",
+      "org": "Earth Hero!",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "84": {
+      "episode_number": 84,
+      "guest": "Judith Schwartz",
+      "org": "\"The Reindeer Chronicles\"",
+      "location": "Bennington, VT",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "85": {
+      "episode_number": 85,
+      "guest": "Kate Williams",
+      "org": "1% for the Planet",
+      "location": "Burlington, Vt",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "86": {
+      "episode_number": 86,
+      "guest": "Jacquelyne Francis",
+      "org": "Keeling Curve Prize",
+      "location": "Aspen, CO",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "87": {
+      "episode_number": 87,
+      "guest": "Rennie Davis",
+      "org": "Foundation for Humanity",
+      "location": "Weld County, CO",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "88": {
+      "episode_number": 88,
+      "guest": "General Wesley Clark",
+      "org": "Supreme Commander NATO (Former)",
+      "location": "Little Rock, AR",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "IMPACT INVESTING",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "89": {
+      "episode_number": 89,
+      "guest": "Yichao Rui",
+      "org": "Rodale Institute",
+      "location": "Kutztown, PA",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "90": {
+      "episode_number": 90,
+      "guest": "Nicole Wallace & Tyler Bell",
+      "org": "Vera Herbals",
+      "location": "Carbondale, CO",
+      "pillars": [
+        "COMMUNITY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ESOTERICA",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE"
+      ]
+    },
+    "91": {
+      "episode_number": 91,
+      "guest": "Finian Makepeace",
+      "org": "Kiss the Ground Movie",
+      "location": "Los Angeles, Ca",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "MEDIA BOOKS & CONTENT",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "92": {
+      "episode_number": 92,
+      "guest": "Aaron William Perry",
+      "org": "Thanksgiving / Holiday Special - Regen Econ",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "93": {
+      "episode_number": 93,
+      "guest": "Mike Lewis",
+      "org": "Zeal Optics",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "94": {
+      "episode_number": 94,
+      "guest": "Tom Chi",
+      "org": "GoogleX",
+      "location": "San Francisco,CA",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "IMPACT INVESTING",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "95": {
+      "episode_number": 95,
+      "guest": "John Liu",
+      "org": "Ecosystem Restoration Camps",
+      "location": "Chaoyang Qu, Beijing, China",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "MEDIA BOOKS & CONTENT",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "96": {
+      "episode_number": 96,
+      "guest": "John Fullerton",
+      "org": "Capital Institute",
+      "location": "Rye, NY",
+      "pillars": [
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "IMPACT INVESTING",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "97": {
+      "episode_number": 97,
+      "guest": "Ron Lemire",
+      "org": "Liquid Trainer",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "98": {
+      "episode_number": 98,
+      "guest": "Lin Bautze",
+      "org": "Goetheanum / Global Biodynamic Conference",
+      "location": "Zeihen, Aargau, Switzerland",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HERBAL MEDICINE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "99": {
+      "episode_number": 99,
+      "guest": "David Beasley",
+      "org": "World Food Program",
+      "location": "Rome, Italy",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "100": {
+      "episode_number": 100,
+      "guest": "Aaron William Perry",
+      "org": "Vision, Invitation",
+      "location": "Lyons, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": []
+    },
+    "101": {
+      "episode_number": 101,
+      "guest": "William (Sandy) Karstens",
+      "org": "Esoterica / SRICF",
+      "location": "Colchester, VT",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "ESOTERICA",
+        "GREEN FAITH"
+      ]
+    },
+    "102": {
+      "episode_number": 102,
+      "guest": "Julie & Louise",
+      "org": "PPAN - People & Pollinators",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "103": {
+      "episode_number": 103,
+      "guest": "Nick Chambers",
+      "org": "Homesteading & Micro Technology",
+      "location": "Crestone, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "104": {
+      "episode_number": 104,
+      "guest": "Geoffrey May",
+      "org": "Wildlands Restoration Volunteers",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION"
+      ]
+    },
+    "105": {
+      "episode_number": 105,
+      "guest": "Aaron Perry",
+      "org": "Intro to Accounting",
+      "location": "Lyons, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECONOMY"
+      ],
+      "themes": []
+    },
+    "106": {
+      "episode_number": 106,
+      "guest": "Jackie Bowen",
+      "org": "Clean Label Project",
+      "location": "Boulder, CO",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "POLICY & GOVERNMT"
+      ]
+    },
+    "107": {
+      "episode_number": 107,
+      "guest": "Elaine Blumenhein",
+      "org": "Joyful Journey Hot Springs Spa",
+      "location": "Moffat, CO",
+      "pillars": [
+        "COMMUNITY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "HEALTH & WELLNESS"
+      ]
+    },
+    "108": {
+      "episode_number": 108,
+      "guest": "Ann Armbrecht",
+      "org": "\"Business of Botanicals\"",
+      "location": "Central Vermont",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "109": {
+      "episode_number": 109,
+      "guest": "Dr. Robert Cloninger",
+      "org": "Anthropedia, etc.",
+      "location": "St. Louis, MO",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "110": {
+      "episode_number": 110,
+      "guest": "Brigitte Mars",
+      "org": "Hemp episode",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "111": {
+      "episode_number": 111,
+      "guest": "Gero Leson",
+      "org": "Dr Bronner's - Honor Thy Label; Dr. Bronner's",
+      "location": "Santa Ana, CA",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "112": {
+      "episode_number": 112,
+      "guest": "Layth Matthews",
+      "org": "Four Noble Truths of Wealth",
+      "location": "Vancouver, BC, Canada",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "113": {
+      "episode_number": 113,
+      "guest": "Stephen Brooks",
+      "org": "EcoVersity",
+      "location": "Costa Rica",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL"
+      ]
+    },
+    "114": {
+      "episode_number": 114,
+      "guest": "Elizabeth Whitlow",
+      "org": "Regenerative Organic Alliance",
+      "location": "California",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "115": {
+      "episode_number": 115,
+      "guest": "Brad Lidge & Aaron Perry",
+      "org": "Y on Earth Community",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "FARMING & FOOD",
+        "GREEN FAITH",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "116": {
+      "episode_number": 116,
+      "guest": "David Sandoval",
+      "org": "CEO, Purium",
+      "location": "Los Angeles, CA",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "117": {
+      "episode_number": 117,
+      "guest": "Michael Bronner",
+      "org": "President, Dr Bronner's (Chocolate Episode)",
+      "location": "Santa Ana, CA",
+      "pillars": [
+        "COMMUNITY",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "118": {
+      "episode_number": 118,
+      "guest": "Miguel Gil",
+      "org": "CEO, Organic India USA",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "119": {
+      "episode_number": 119,
+      "guest": "Richard Hardiman",
+      "org": "CEO, RanMarine Technology",
+      "location": "Rotterdam, Netherlands",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "120": {
+      "episode_number": 120,
+      "guest": "Rowdy Yeats",
+      "org": "CEO, High Plains Biochar",
+      "location": "Laramie, WY",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BIOCHAR",
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "121": {
+      "episode_number": 121,
+      "guest": "Oliver Retzloff w/ Eric Knutson",
+      "org": "Wild Nectar Farms",
+      "location": "Hygiene, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "122": {
+      "episode_number": 122,
+      "guest": "David Laird",
+      "org": "Biochar Science",
+      "location": "Ames, IA",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BIOCHAR",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "123": {
+      "episode_number": 123,
+      "guest": "Marissa Pulaski",
+      "org": "Drylands Agroecology Research",
+      "location": "Lyons, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "INDIGENOUS WISDOM",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "124": {
+      "episode_number": 124,
+      "guest": "Nick DiDomenico",
+      "org": "Drylands Agroecology Research",
+      "location": "Lyons, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIOCHAR",
+        "BIO-DYNAMICS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "INDIGENOUS WISDOM",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "125": {
+      "episode_number": 125,
+      "guest": "Danielle Ryan Broida",
+      "org": "Author, \"Healing Adaptogens\"",
+      "location": "Los Angeles, CA",
+      "pillars": [
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "126": {
+      "episode_number": 126,
+      "guest": "David George Haskell",
+      "org": "Author, \"Sounds Wild & Broken\"",
+      "location": "Sewanee, TN",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "127": {
+      "episode_number": 127,
+      "guest": "John Perkins",
+      "org": "Author, \"Confessions of an Economic Hit Man\"",
+      "location": "Bainbridge Island, WA",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "128": {
+      "episode_number": 128,
+      "guest": "Ruby Au",
+      "org": "Head of North America, Ecosia",
+      "location": "Berlin, Germany",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "129": {
+      "episode_number": 129,
+      "guest": "Bernard Amadei",
+      "org": "Engineers Without Borders",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "130": {
+      "episode_number": 130,
+      "guest": "Hayley Nenadal",
+      "org": "EarthX Film",
+      "location": "Telluride, CO",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "131": {
+      "episode_number": 131,
+      "guest": "Douglas Gardner",
+      "org": "Highland Institute",
+      "location": "Boulder, CO",
+      "pillars": [
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "POLICY & GOVERNMT"
+      ]
+    },
+    "132": {
+      "episode_number": 132,
+      "guest": "Hanne Strong",
+      "org": "Manitou Foundation",
+      "location": "Crestone, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "INDIGENOUS WISDOM",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "133": {
+      "episode_number": 133,
+      "guest": "Aaron Perry",
+      "org": "Y on Earth Community",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "134": {
+      "episode_number": 134,
+      "guest": "Matthew Fox",
+      "org": "Order of the Sacred Earth",
+      "location": "San Francisco, CA",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "GREEN FAITH",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "135": {
+      "episode_number": 135,
+      "guest": "Chief Tuwe & Ari Brasil",
+      "org": "Amazonian Indigenous Chief",
+      "location": "Brasil",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "INDIGENOUS WISDOM",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "136": {
+      "episode_number": 136,
+      "guest": "Ben Raskin",
+      "org": "Author, \"Wood Chip Handbook\"",
+      "location": "Chippenham, Wiltshire, UK",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "MEDIA BOOKS & CONTENT",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "137": {
+      "episode_number": 137,
+      "guest": "Georgia Kelly, Mondragon Cooperatives",
+      "org": "Praxis Institute",
+      "location": "Bilbao, Spain",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "138": {
+      "episode_number": 138,
+      "guest": "Tom Chi",
+      "org": "At One Ventures",
+      "location": "San Francisco, CA",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "IMPACT INVESTING",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "139": {
+      "episode_number": 139,
+      "guest": "Nisha Poulose",
+      "org": "Regenerative Rising",
+      "location": "Kottayam, Kerala, India",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "INDIGENOUS WISDOM",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "140": {
+      "episode_number": 140,
+      "guest": "Dr. James Gordon, MD",
+      "org": "Center for Mind-Body Medicine",
+      "location": "Washington, D.C.",
+      "pillars": [
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "141": {
+      "episode_number": 141,
+      "guest": "Nathan Stuck, B-Lab",
+      "org": "Profitable Purpose Consulting",
+      "location": "Athens, GA",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "142": {
+      "episode_number": 142,
+      "guest": "Maria Rodale",
+      "org": "Author, \"Love, Nature, Magic\"",
+      "location": "Pennsylvania",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "143": {
+      "episode_number": 143,
+      "guest": "Cynthia Tina",
+      "org": "Community Finders",
+      "location": "Vermont",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "144": {
+      "episode_number": 144,
+      "guest": "Vicki Hird",
+      "org": "Author, \"Rebugging the Planet\"",
+      "location": "UK",
+      "pillars": [
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "145": {
+      "episode_number": 145,
+      "guest": "Jerry Tinianow",
+      "org": "Founder, Western Urban Sustainability Advisors",
+      "location": "Denver, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "GREEN BUILDING",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "146": {
+      "episode_number": 146,
+      "guest": "Matthew Derr",
+      "org": "Executive Director, Chelsea Green Foundation",
+      "location": "Vermont",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT",
+        "PERMA-CULTURE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "147": {
+      "episode_number": 147,
+      "guest": "Sheila Foster",
+      "org": "Executive Director, Biodynamic Demeter Alliance",
+      "location": "Ashland, OR",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "148": {
+      "episode_number": 148,
+      "guest": "Jorge Fontanez",
+      "org": "Executive Director, B-Lab USA & Can",
+      "location": "Brooklyn, New York",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "149": {
+      "episode_number": 149,
+      "guest": "Ander Etxeberria Otadui",
+      "org": "Head of Co-op Dissemination, Mondragon Corporation",
+      "location": "Basque Country, Spain",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "150": {
+      "episode_number": 150,
+      "guest": "Hunter Lovins",
+      "org": "Executive Director, Natural Capitalism - on COP 28",
+      "location": "Hygiene, CO",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "151": {
+      "episode_number": 151,
+      "guest": "Nicolette Hahn Niman",
+      "org": "Author, \"Defending Beef\"",
+      "location": "Bolinas, California",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "152": {
+      "episode_number": 152,
+      "guest": "Ueli Hurter & Jean-Michel Florin",
+      "org": "Co-Directors, Goetheanum Sektion fur Agrikultur - Biodynamics",
+      "location": "Dornach, Switzerland",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "153": {
+      "episode_number": 153,
+      "guest": "Joy & Eric McEwen",
+      "org": "Authors, \"Raising Resilient Bees\"",
+      "location": "Cave Junction, Oregon",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "154": {
+      "episode_number": 154,
+      "guest": "Sarah Arao",
+      "org": "Founder, Mantle of Hope",
+      "location": "Lira District, Uganda",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "GREEN FAITH",
+        "HEALTH & WELLNESS",
+        "INDIGENOUS WISDOM",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "155": {
+      "episode_number": 155,
+      "guest": "John Rogers",
+      "org": "Author, \"The Renaissance Campaign\"",
+      "location": "Wisconsin",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "156": {
+      "episode_number": 156,
+      "guest": "Lisa Bronner",
+      "org": "Author, \"Soap & Soul\"",
+      "location": "San Diego, California",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "157": {
+      "episode_number": 157,
+      "guest": "Soraya Afzali",
+      "org": "Expert Political Scientist - Dangers of Autocracy & Charismatic Leadership",
+      "location": "Dublin Ireland / Afghanistan",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "EDUCATION",
+        "POLICY & GOVERNMT"
+      ]
+    },
+    "158": {
+      "episode_number": 158,
+      "guest": "Gabe Brown",
+      "org": "Author, \"Dirt to Soil\"",
+      "location": "North Dakota",
+      "pillars": [
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "GREEN FAITH",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "159": {
+      "episode_number": 159,
+      "guest": "Helen Atthowe",
+      "org": "Author, \"The Ecological Farm\"",
+      "location": "Stevensville, MT",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "160": {
+      "episode_number": 160,
+      "guest": "Sophie Monpeyssen & Olivier Girard",
+      "org": "Co-Founders, Le Ciel Foundation",
+      "location": "London, England",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "161": {
+      "episode_number": 161,
+      "guest": "Jake Plummer",
+      "org": "Co-Founder, Umbo",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE"
+      ]
+    },
+    "162": {
+      "episode_number": 162,
+      "guest": "Dr. Elaine Ingham",
+      "org": "Founder, Soil Food Web",
+      "location": "Corvalis, OR",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "PERMA-CULTURE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "163": {
+      "episode_number": 163,
+      "guest": "Jared Meyers",
+      "org": "Chairman, Legacy Vacation Resorts",
+      "location": "Orlando, FL",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "164": {
+      "episode_number": 164,
+      "guest": "Kate Wilson",
+      "org": "VP - Environmental & Social Responsibliity, Vail Resorts",
+      "location": "Broomfield, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "HEALTH & WELLNESS",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "165": {
+      "episode_number": 165,
+      "guest": "Kelpie Wilson",
+      "org": "Author, \"The Biochar Handbook\"",
+      "location": "Cave Junction, Oregon",
+      "pillars": [
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIOCHAR",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "INDIGENOUS WISDOM",
+        "PERMA-CULTURE",
+        "SOIL",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "166": {
+      "episode_number": 166,
+      "guest": "Dahr Jamail",
+      "org": "Communications & Media Relations Lead, Home Planet Fund",
+      "location": "Ventura, CA",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "INDIGENOUS WISDOM",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "167": {
+      "episode_number": 167,
+      "guest": "John Milton",
+      "org": "Founder, Way of Nature",
+      "location": "Crestone, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "HEALTH & WELLNESS",
+        "INDIGENOUS WISDOM",
+        "MEDIA BOOKS & CONTENT",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "168": {
+      "episode_number": 168,
+      "guest": "Ken LaRoe",
+      "org": "Founder & Chairman, Climate First Bank",
+      "location": "Eustis, Florida",
+      "pillars": [
+        "COMMUNITY",
+        "ECONOMY",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "IMPACT INVESTING",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SUSTAIN-ABILITY",
+        "TECHNOLOGY & MATERIALS"
+      ]
+    },
+    "169": {
+      "episode_number": 169,
+      "guest": "Jeff Poppen",
+      "org": "Author, \"Barefoot Farmer\"",
+      "location": "Red Boiling Springs, TN",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BIO-DYNAMICS",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "ESOTERICA",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "MEDIA BOOKS & CONTENT",
+        "SOIL",
+        "SUSTAIN-ABILITY"
+      ]
+    },
+    "170": {
+      "episode_number": 170,
+      "guest": "Tina Morris",
+      "org": "Author, \"Return To The Sky\"",
+      "location": "Boxford, Massachusetts",
+      "pillars": [
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "INDIGENOUS WISDOM",
+        "POLICY & GOVERNMT",
+        "SUSTAIN-ABILITY"
+      ]
+    }
+  },
+  "stats": {
+    "episode_count": 170,
+    "pillar_count": 5,
+    "theme_count": 21
+  }
+}
