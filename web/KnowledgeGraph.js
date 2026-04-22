@@ -310,6 +310,14 @@ class KnowledgeGraphVisualization {
         // Create main group for zoom/pan
         this.g = this.svg.append('g');
 
+        // Stable container groups: created once so the D3 enter/update/exit
+        // join pattern in createVisualization() has persistent parents to
+        // attach to. This is what lets persisting nodes keep their positions
+        // across filter changes instead of flying in from (0,0).
+        this.linksGroup = this.g.append('g').attr('class', 'links');
+        this.nodesGroup = this.g.append('g').attr('class', 'nodes');
+        this.labelsGroup = this.g.append('g').attr('class', 'labels');
+
         // Set up zoom behavior
         this.zoom = d3.zoom()
             .scaleExtent([0.1, 10])
@@ -363,137 +371,206 @@ class KnowledgeGraphVisualization {
     }
 
     createVisualization() {
-        // Filter data based on current filters
-        const filteredData = this.getFilteredData();
+        // Idempotent: first call creates DOM + simulation; subsequent calls
+        // (re-entered via updateVisualization) merge new data into the existing
+        // simulation and apply enter/update/exit to DOM elements. Persisting
+        // nodes keep their positions and velocities — no fly-in from (0,0).
 
-        // Seed node positions near viewport center so the fresh force sim doesn't
-        // fling them off-screen on filter changes. Random offset inside a small disc.
-        // Without this, d3 spawns nodes at (undefined, undefined) which it treats as
-        // 0,0 before the first tick, and the force layout can push them to ±4000px
-        // with 100+ nodes + -900 charge.
+        const filteredData = this.getFilteredData();
         const cx = this.width / 2;
         const cy = this.height / 2;
-        const seedRadius = Math.min(this.width, this.height) * 0.35;
-        filteredData.nodes.forEach(n => {
-            if (typeof n.x !== 'number' || typeof n.y !== 'number' ||
-                !isFinite(n.x) || !isFinite(n.y) ||
-                Math.hypot(n.x - cx, n.y - cy) > seedRadius * 3) {
+
+        // Build an id → existing-node index from the current simulation (if any).
+        // Used to:
+        //   (a) preserve positions for nodes that survive the filter change
+        //   (b) seed new nodes near an already-placed connected neighbor
+        const existingById = new Map();
+        if (this.simulation) {
+            this.simulation.nodes().forEach(n => existingById.set(n.id, n));
+        }
+
+        // Prepare node list: reuse existing node objects in-place so D3's
+        // forceSimulation preserves their x/y/vx/vy. For new nodes, seed from
+        // a connected existing node if one survived; otherwise random disc around center.
+        const linksByNodeId = new Map();
+        if (this.simulation) {
+            filteredData.links.forEach(l => {
+                const sId = l.source.id || l.source;
+                const tId = l.target.id || l.target;
+                if (!linksByNodeId.has(sId)) linksByNodeId.set(sId, []);
+                if (!linksByNodeId.has(tId)) linksByNodeId.set(tId, []);
+                linksByNodeId.get(sId).push(tId);
+                linksByNodeId.get(tId).push(sId);
+            });
+        }
+        const seedRadius = Math.min(this.width, this.height) * 0.32;
+        const preparedNodes = filteredData.nodes.map(n => {
+            const existing = existingById.get(n.id);
+            if (existing) {
+                // Copy any new fields onto the existing datum object so reference
+                // identity is stable (simulation + DOM bindings keep working).
+                Object.assign(existing, n);
+                return existing;
+            }
+            // New node: seed near a placed neighbor, else random disc around center.
+            const neighbors = (linksByNodeId.get(n.id) || [])
+                .map(id => existingById.get(id))
+                .filter(nb => nb && typeof nb.x === 'number' && isFinite(nb.x));
+            if (neighbors.length) {
+                const nb = neighbors[0];
+                n.x = nb.x + (Math.random() - 0.5) * 40;
+                n.y = nb.y + (Math.random() - 0.5) * 40;
+            } else {
                 const theta = Math.random() * 2 * Math.PI;
                 const r = seedRadius * Math.sqrt(Math.random());
                 n.x = cx + r * Math.cos(theta);
                 n.y = cy + r * Math.sin(theta);
             }
+            n.vx = 0;
+            n.vy = 0;
+            return n;
         });
 
+        // Re-link link objects to the live node references so D3's forceLink can
+        // resolve them without re-running `.id(d => d.id)` indexing on stale strings.
+        const nodesById = new Map(preparedNodes.map(n => [n.id, n]));
+        const preparedLinks = filteredData.links.map(l => ({
+            ...l,
+            source: nodesById.get(l.source.id || l.source) || l.source,
+            target: nodesById.get(l.target.id || l.target) || l.target,
+        }));
+
         // Scale charge down for big node sets. 30 nodes → full charge, 200 → ~15%.
-        // Use forceX/forceY anchoring (stronger than forceCenter for big sets) —
-        // this lets charge spread things *within* the viewport without piling
-        // nodes against a boundary-clamp wall.
-        const nodeCount = filteredData.nodes.length || 1;
+        const nodeCount = preparedNodes.length || 1;
         const chargeScale = Math.min(1, 30 / nodeCount);
         const effectiveCharge = this.params.charge * chargeScale;
-        // Strength scales from 0.04 (30 nodes) to ~0.25 (200 nodes) for the x/y pull.
         const positionStrength = Math.min(0.25, 0.03 + nodeCount / 800);
-        // Link distance shrinks as crowd grows so episodes huddle near their concepts
-        // rather than spreading across the canvas.
         const effectiveLinkDistance = nodeCount > 50
             ? Math.max(30, this.params.linkDistance * (50 / nodeCount))
             : this.params.linkDistance;
 
-        // Create force simulation
-        this.simulation = d3.forceSimulation(filteredData.nodes)
-            .force('link', d3.forceLink(filteredData.links)
-                .id(d => d.id)
-                .distance(effectiveLinkDistance)
-                .strength(l => l.type === 'MENTIONED_IN' ? 0.15 : 0.6))
-            .force('charge', d3.forceManyBody()
-                .strength(effectiveCharge)
-                .distanceMax(300))   // charge falls off past 300px so distant nodes don't repel
-            .force('x', d3.forceX(cx).strength(positionStrength))
-            .force('y', d3.forceY(cy).strength(positionStrength))
-            .force('collision', d3.forceCollide()
-                .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
-            .velocityDecay(0.45);
+        // Simulation: create once, then mutate on subsequent calls.
+        if (!this.simulation) {
+            this.simulation = d3.forceSimulation(preparedNodes)
+                .force('link', d3.forceLink(preparedLinks)
+                    .id(d => d.id)
+                    .distance(effectiveLinkDistance)
+                    .strength(l => l.type === 'MENTIONED_IN' ? 0.15 : 0.6))
+                .force('charge', d3.forceManyBody()
+                    .strength(effectiveCharge)
+                    .distanceMax(300))
+                .force('x', d3.forceX(cx).strength(positionStrength))
+                .force('y', d3.forceY(cy).strength(positionStrength))
+                .force('collision', d3.forceCollide()
+                    .radius(d => this.getNodeRadius(d) + this.params.collisionRadius))
+                .velocityDecay(0.45);
+            this.simulation.on('tick', () => this._onTick());
+        } else {
+            this.simulation.nodes(preparedNodes);
+            this.simulation.force('link')
+                .links(preparedLinks)
+                .distance(effectiveLinkDistance);
+            this.simulation.force('charge').strength(effectiveCharge);
+            this.simulation.force('x').strength(positionStrength);
+            this.simulation.force('y').strength(positionStrength);
+            // Gentle reheat — persistent nodes barely move, new ones settle into place.
+            this.simulation.alpha(0.5).restart();
+        }
 
-        // Create links. MENTIONED_IN edges (concept→episode) get a thinner dashed
-        // stroke so they read as "loose association" vs the solid entity-entity edges.
-        this.links = this.g.append('g')
-            .attr('class', 'links')
+        // DOM join — keyed by id so D3 knows which DOM elements to keep.
+        // Links
+        const linkSel = this.linksGroup
             .selectAll('line')
-            .data(filteredData.links)
-            .join('line')
+            .data(preparedLinks, d => `${d.source.id || d.source}__${d.target.id || d.target}__${d.type || ''}`);
+        linkSel.exit()
+            .transition().duration(250)
+            .attr('stroke-opacity', 0)
+            .remove();
+        const linkEnter = linkSel.enter()
+            .append('line')
             .attr('class', d => 'link' + (d.type === 'MENTIONED_IN' ? ' link-mentioned' : ''))
             .attr('stroke-width', d => d.type === 'MENTIONED_IN' ? 0.8 : Math.max(1, d.strength * 3))
             .attr('stroke-dasharray', d => d.type === 'MENTIONED_IN' ? '2,3' : null)
-            .attr('stroke-opacity', d => d.type === 'MENTIONED_IN' ? 0.35 : null);
+            .attr('stroke-opacity', 0);
+        linkEnter.transition().duration(350)
+            .attr('stroke-opacity', d => d.type === 'MENTIONED_IN' ? 0.35 : 1);
+        this.links = linkEnter.merge(linkSel);
 
-        // Create nodes
-        this.nodes = this.g.append('g')
-            .attr('class', 'nodes')
-            .selectAll('g')
-            .data(filteredData.nodes)
-            .join('g')
+        // Nodes
+        const nodeSel = this.nodesGroup
+            .selectAll('g.node')
+            .data(preparedNodes, d => d.id);
+        nodeSel.exit()
+            .transition().duration(250)
+            .style('opacity', 0)
+            .remove();
+        const nodeEnter = nodeSel.enter()
+            .append('g')
             .attr('class', 'node')
-            .call(this.drag());
-
-        // Add shapes to nodes
-        this.nodes.each((d, i, nodes) => {
-            const node = d3.select(nodes[i]);
-            this.addNodeShape(node, d);
+            .attr('transform', d => `translate(${d.x || cx},${d.y || cy})`)
+            .style('opacity', 0)
+            .call(this.drag())
+            .on('mouseover', (event, d) => this.handleMouseOver(event, d))
+            .on('mouseout', () => this.handleMouseOut())
+            .on('click', (event, d) => this.handleNodeClick(event, d));
+        nodeEnter.each((d, i, nodes) => {
+            this.addNodeShape(d3.select(nodes[i]), d);
         });
+        nodeEnter.transition().duration(350).style('opacity', 1);
+        this.nodes = nodeEnter.merge(nodeSel);
 
-        // Label only the most-discussed nodes so the graph stays legible.
-        // Simple-mode: top 15 by episode_count (the topics Aaron covers most).
-        const labelCandidates = filteredData.nodes.filter(d => d.importance > 0.3);
+        // Labels — only for the most-discussed nodes. Rebuild on each call (cheap).
+        const labelCandidates = preparedNodes.filter(d => d.importance > 0.3);
         const labeledNodes = this.isSimpleMode
             ? [...labelCandidates]
                 .sort((a, b) => (b.episode_count || 0) - (a.episode_count || 0))
                 .slice(0, 15)
             : labelCandidates;
-        this.labels = this.g.append('g')
-            .attr('class', 'labels')
-            .selectAll('text')
-            .data(labeledNodes)
-            .join('text')
+        const labelSel = this.labelsGroup
+            .selectAll('text.node-label')
+            .data(labeledNodes, d => d.id);
+        labelSel.exit()
+            .transition().duration(200).style('opacity', 0).remove();
+        const labelEnter = labelSel.enter()
+            .append('text')
             .attr('class', 'node-label')
             .text(d => d.name)
             .attr('dx', 12)
-            .attr('dy', 4);
+            .attr('dy', 4)
+            .attr('x', d => d.x)
+            .attr('y', d => d.y)
+            .style('opacity', 0);
+        labelEnter.transition().duration(300).style('opacity', 1);
+        this.labels = labelEnter.merge(labelSel);
+    }
 
-        // Add interactions
-        this.nodes
-            .on('mouseover', (event, d) => this.handleMouseOver(event, d))
-            .on('mouseout', () => this.handleMouseOut())
-            .on('click', (event, d) => this.handleNodeClick(event, d));
-
+    _onTick() {
         // Soft boundary clamp: only hard-stop beyond a generous outer bound
-        // (1.15 × viewport). Inside the viewport, forceX/forceY handle the pull.
-        // This avoids the "nodes piled along the wall" look a hard clamp creates.
+        // (1.15 × viewport). Inside, forceX/forceY handle the pull.
         const padX = 30;
         const padY = 30;
         const outerW = this.width * 1.15;
         const outerH = this.height * 1.15;
-        this.simulation.on('tick', () => {
-            this.nodes.each(d => {
-                if (d.x < -outerW * 0.15 + padX) d.x = -outerW * 0.15 + padX;
-                else if (d.x > outerW - padX) d.x = outerW - padX;
-                if (d.y < -outerH * 0.15 + padY) d.y = -outerH * 0.15 + padY;
-                else if (d.y > outerH - padY) d.y = outerH - padY;
-            });
-
+        if (!this.nodes) return;
+        this.nodes.each(d => {
+            if (d.x < -outerW * 0.15 + padX) d.x = -outerW * 0.15 + padX;
+            else if (d.x > outerW - padX) d.x = outerW - padX;
+            if (d.y < -outerH * 0.15 + padY) d.y = -outerH * 0.15 + padY;
+            else if (d.y > outerH - padY) d.y = outerH - padY;
+        });
+        if (this.links) {
             this.links
                 .attr('x1', d => d.source.x)
                 .attr('y1', d => d.source.y)
                 .attr('x2', d => d.target.x)
                 .attr('y2', d => d.target.y);
-
-            this.nodes
-                .attr('transform', d => `translate(${d.x},${d.y})`);
-
+        }
+        this.nodes.attr('transform', d => `translate(${d.x},${d.y})`);
+        if (this.labels) {
             this.labels
                 .attr('x', d => d.x)
                 .attr('y', d => d.y);
-        });
+        }
     }
 
     addNodeShape(node, d) {
@@ -1345,21 +1422,10 @@ class KnowledgeGraphVisualization {
     }
 
     updateVisualization() {
-        // Reset any pan/zoom so freshly-laid nodes are centered in the viewport.
-        // Without this, a user who has zoomed in will click a filter chip and
-        // end up staring at empty space while the new nodes spawn near the
-        // world origin (the pre-zoom center).
-        if (this.svg && this.zoom) {
-            this.svg.call(this.zoom.transform, d3.zoomIdentity);
-        }
-
-        // Clear existing
-        this.g.selectAll('*').remove();
-
-        // Recreate visualization with filtered data
+        // Idempotent update: createVisualization() does enter/update/exit on the
+        // existing DOM + mutates the live simulation, so nodes that persist
+        // across filter changes keep their positions. No zoom reset, no wipe.
         this.createVisualization();
-
-        // Update statistics
         this.updateStatistics();
     }
 
