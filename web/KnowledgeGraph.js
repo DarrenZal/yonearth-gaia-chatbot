@@ -142,7 +142,11 @@ class KnowledgeGraphVisualization {
 
     async loadTaxonomy() {
         try {
-            const response = await fetch('./data/yoe_taxonomy.json?v=1');
+            // Fetched from /guide/yoe_taxonomy.json — served by the generic
+            // /guide/ nginx alias. Avoids /guide/data/ and /guide/assets/,
+            // both of which are aliased to the production /var/www/yonearth/
+            // tree for shared content.
+            const response = await fetch('./yoe_taxonomy.json?v=1');
             if (!response.ok) throw new Error(`taxonomy fetch: ${response.status}`);
             this.taxonomy = await response.json();
             this.buildTaxonomyIndex();
