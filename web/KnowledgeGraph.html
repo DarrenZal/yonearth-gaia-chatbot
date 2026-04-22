@@ -75,10 +75,11 @@
            the same affordance and the types list is just noise at this size. */
         .simple-mode .legend-panel { display: none !important; }
 
-        /* Mobile — compact strips, horizontal-scroll instead of wrap, touch padding.
-           Hide the Types strip by default; user can re-enable via body class if
-           desired. This keeps more vertical space for the actual graph canvas. */
-        @media (max-width: 768px) {
+        /* Mobile / stacked layout — compact strips, horizontal-scroll instead of
+           wrap, touch padding. Breakpoint aligned with the main layout's
+           column-reverse stack (900px). Hide the Types strip at this size so
+           more vertical space goes to the actual graph canvas. */
+        @media (max-width: 900px) {
             .simple-mode .simple-filter-strip {
                 flex-wrap: nowrap !important;
                 overflow-x: auto;

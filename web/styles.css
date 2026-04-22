@@ -2080,7 +2080,7 @@ body {
     color: #0d9488;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .welcome-banner { padding: 10px 14px; }
     .welcome-banner .welcome-title { font-size: 1rem; margin-bottom: 2px; }
     .welcome-banner .welcome-body { font-size: 0.8rem; line-height: 1.35; }
@@ -2170,10 +2170,11 @@ body.guide-layout .welcome-banner {
     }
 }
 
-/* Mobile-specific chat panel compactions: the desktop header + controls
-   toggle + footer eat ~180px of the 312px panel, leaving no room for
-   messages or input. Hide non-essential chrome at <768px. */
-@media (max-width: 768px) {
+/* Chat panel compactions while stacked-layout is active (same 900px
+   breakpoint as .guide-split flex-direction: column-reverse). The desktop
+   header + controls toggle + footer eat ~180px of the chat panel, leaving
+   no room for messages or input in the stacked layout. */
+@media (max-width: 900px) {
     .guide-chat-panel .guide-header {
         padding: 8px 14px !important;
         background: transparent !important;
