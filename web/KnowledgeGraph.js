@@ -1137,9 +1137,12 @@ class KnowledgeGraphVisualization {
                     this.filters.domains.add(domain.name);
                     // If the taxonomy provides this domain as a pillar, also
                     // narrow by pillar.episode_ids (intersection with entity.episodes).
+                    // pillarEpisodeIndex keys are UPPERCASE ('CULTURE'); KG domain.name
+                    // is Title-case ('Culture'), so normalize before the lookup.
                     this.filters.pillars.clear();
-                    if (this.pillarEpisodeIndex && this.pillarEpisodeIndex.has(domain.name)) {
-                        this.filters.pillars.add(domain.name);
+                    const pillarKey = (domain.name || '').toUpperCase();
+                    if (this.pillarEpisodeIndex && this.pillarEpisodeIndex.has(pillarKey)) {
+                        this.filters.pillars.add(pillarKey);
                     }
                     setActive(domain.name);
                     this.updateVisualization();
