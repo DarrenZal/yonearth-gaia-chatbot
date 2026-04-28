@@ -965,11 +965,12 @@ class KnowledgeGraphVisualization {
             .classed('connected', node => connectedIds.has(node.id) && !matchedNodes.has(node.id))
             .classed('dimmed', node => !connectedIds.has(node.id));
 
-        // Add glow effect to highlighted nodes
+        // Add glow effect to highlighted nodes — prominent halo per Aaron's Apr 24 ask.
+        // Teal contrasts strongly against all 5 earth-tone domain colors.
         this.nodes.selectAll('circle')
-            .style('filter', node => matchedNodes.has(node.id) ? 'drop-shadow(0 0 8px #667eea) drop-shadow(0 0 12px #764ba2)' : null)
-            .style('stroke', node => matchedNodes.has(node.id) ? '#667eea' : null)
-            .style('stroke-width', node => matchedNodes.has(node.id) ? '3px' : null);
+            .style('filter', node => matchedNodes.has(node.id) ? 'drop-shadow(0 0 14px #14b8a6) drop-shadow(0 0 22px #0d9488)' : null)
+            .style('stroke', node => matchedNodes.has(node.id) ? '#5eead4' : null)
+            .style('stroke-width', node => matchedNodes.has(node.id) ? '4px' : null);
 
         // Highlight links between matched nodes
         this.links

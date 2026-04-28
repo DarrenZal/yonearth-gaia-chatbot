@@ -51,11 +51,11 @@ HEADER_ROW_IDX = 1
 # Primary pillars in the exact order / color we want them surfaced.
 # Colors match web/KnowledgeGraph.js domain palette so KG and taxonomy agree.
 PILLAR_COLORS = {
-    "COMMUNITY": "#4caf50",
-    "CULTURE":   "#9c27b0",
-    "ECONOMY":   "#ff9800",
-    "ECOLOGY":   "#2196f3",
-    "HEALTH":    "#f44336",
+    "COMMUNITY": "#E1CAB2",
+    "CULTURE":   "#BA986D",
+    "ECONOMY":   "#829591",
+    "ECOLOGY":   "#86A37C",
+    "HEALTH":    "#AF9D66",
 }
 
 # Columns whose headers we want to EXCLUDE from the "themes" list even when

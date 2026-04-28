@@ -2423,11 +2423,11 @@ function closeConfig() {
 const RESOURCE_CARD_INSERT_MODE = 'replace'; // 'replace' | 'stack'
 
 const _DOMAIN_COLORS = {
-    community: '#4caf50',
-    culture:   '#9c27b0',
-    economy:   '#ff9800',
-    ecology:   '#2196f3',
-    health:    '#f44336',
+    community: '#E1CAB2',
+    culture:   '#BA986D',
+    economy:   '#829591',
+    ecology:   '#86A37C',
+    health:    '#AF9D66',
 };
 
 let _latestResourceCardEl = null;

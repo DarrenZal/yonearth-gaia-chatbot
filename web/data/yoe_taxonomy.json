@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-22T02:30:33Z",
+  "generated_at": "2026-04-28T23:02:20Z",
   "source": {
     "google_sheet_id": "1LpBxvzLD7rbR2XZV7gEBmf6NykhGhSEHJwBu2qDfduM",
     "url": "https://docs.google.com/spreadsheets/d/1LpBxvzLD7rbR2XZV7gEBmf6NykhGhSEHJwBu2qDfduM/edit"
   },
   "pillars": {
     "COMMUNITY": {
-      "color": "#4caf50",
+      "color": "#E1CAB2",
       "episode_ids": [
         6,
         7,
@@ -73,11 +73,17 @@
         164,
         167,
         168,
-        169
+        169,
+        171,
+        172,
+        173,
+        174,
+        175,
+        177
       ]
     },
     "CULTURE": {
-      "color": "#9c27b0",
+      "color": "#BA986D",
       "episode_ids": [
         1,
         4,
@@ -181,11 +187,17 @@
         166,
         167,
         169,
-        170
+        170,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177
       ]
     },
     "ECONOMY": {
-      "color": "#ff9800",
+      "color": "#829591",
       "episode_ids": [
         8,
         12,
@@ -238,11 +250,13 @@
         158,
         163,
         164,
-        168
+        168,
+        172,
+        176
       ]
     },
     "ECOLOGY": {
-      "color": "#2196f3",
+      "color": "#86A37C",
       "episode_ids": [
         1,
         2,
@@ -367,11 +381,13 @@
         167,
         168,
         169,
-        170
+        170,
+        171,
+        173
       ]
     },
     "HEALTH": {
-      "color": "#f44336",
+      "color": "#AF9D66",
       "episode_ids": [
         18,
         19,
@@ -438,14 +454,19 @@
         164,
         165,
         167,
-        169
+        169,
+        170,
+        171,
+        174,
+        175,
+        177
       ]
     }
   },
   "themes": [
     {
-      "name": "SUSTAIN-ABILITY",
-      "display": "Sustain-Ability",
+      "name": "SUSTAINABILITY",
+      "display": "Sustainability",
       "episode_ids": [
         12,
         15,
@@ -561,9 +582,14 @@
         167,
         168,
         169,
-        170
+        170,
+        171,
+        173,
+        174,
+        176,
+        177
       ],
-      "count": 115
+      "count": 120
     },
     {
       "name": "EDUCATION",
@@ -679,9 +705,15 @@
         165,
         167,
         169,
-        170
+        170,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177
       ],
-      "count": 111
+      "count": 117
     },
     {
       "name": "ECOLOGY & NATURE",
@@ -781,9 +813,11 @@
         167,
         168,
         169,
-        170
+        170,
+        171,
+        173
       ],
-      "count": 95
+      "count": 97
     },
     {
       "name": "BUSINESS",
@@ -853,9 +887,11 @@
         161,
         163,
         164,
-        168
+        168,
+        171,
+        176
       ],
-      "count": 65
+      "count": 67
     },
     {
       "name": "CLIMATE & SCIENCE",
@@ -922,9 +958,12 @@
         166,
         167,
         168,
-        170
+        170,
+        174,
+        176,
+        177
       ],
-      "count": 62
+      "count": 65
     },
     {
       "name": "FARMING & FOOD",
@@ -980,9 +1019,13 @@
         161,
         162,
         165,
-        169
+        169,
+        171,
+        173,
+        174,
+        177
       ],
-      "count": 51
+      "count": 55
     },
     {
       "name": "HEALTH & WELLNESS",
@@ -1037,9 +1080,12 @@
         164,
         165,
         167,
-        169
+        169,
+        171,
+        174,
+        175
       ],
-      "count": 50
+      "count": 53
     },
     {
       "name": "MEDIA BOOKS & CONTENT",
@@ -1094,9 +1140,12 @@
         156,
         158,
         167,
-        169
+        169,
+        172,
+        175,
+        177
       ],
-      "count": 50
+      "count": 53
     },
     {
       "name": "SOIL",
@@ -1147,9 +1196,11 @@
         162,
         165,
         166,
-        169
+        169,
+        171,
+        173
       ],
-      "count": 46
+      "count": 48
     },
     {
       "name": "REGEN / SOCIAL ENTERPRISE",
@@ -1191,9 +1242,11 @@
         162,
         163,
         166,
-        168
+        168,
+        171,
+        173
       ],
-      "count": 37
+      "count": 39
     },
     {
       "name": "POLICY & GOVERNMT",
@@ -1228,9 +1281,10 @@
         157,
         158,
         167,
-        170
+        170,
+        174
       ],
-      "count": 30
+      "count": 31
     },
     {
       "name": "TECHNOLOGY & MATERIALS",
@@ -1289,9 +1343,10 @@
         165,
         166,
         167,
-        170
+        170,
+        173
       ],
-      "count": 22
+      "count": 23
     },
     {
       "name": "HERBAL MEDICINE",
@@ -1314,13 +1369,16 @@
         135,
         146,
         152,
-        161
+        161,
+        173,
+        175,
+        177
       ],
-      "count": 18
+      "count": 21
     },
     {
-      "name": "PERMA-CULTURE",
-      "display": "Perma-Culture",
+      "name": "PERMACULTURE",
+      "display": "Permaculture",
       "episode_ids": [
         44,
         62,
@@ -1337,9 +1395,10 @@
         153,
         159,
         162,
-        165
+        165,
+        177
       ],
-      "count": 16
+      "count": 17
     },
     {
       "name": "GREEN FAITH",
@@ -1394,9 +1453,25 @@
         115,
         152,
         167,
-        169
+        169,
+        175
       ],
-      "count": 10
+      "count": 11
+    },
+    {
+      "name": "FINANCE, PHILANTHROPY & IMPACT INVESTING",
+      "display": "Finance, Philanthropy & Impact Investing",
+      "episode_ids": [
+        8,
+        25,
+        88,
+        94,
+        96,
+        138,
+        168,
+        176
+      ],
+      "count": 8
     },
     {
       "name": "GREEN BUILDING",
@@ -1414,16 +1489,16 @@
       "count": 8
     },
     {
-      "name": "IMPACT INVESTING",
-      "display": "Impact Investing",
+      "name": "PREPAREDNESS & RESILIENCE",
+      "display": "Preparedness & Resilience",
       "episode_ids": [
-        8,
-        25,
-        88,
-        94,
-        96,
-        138,
-        168
+        3,
+        19,
+        87,
+        113,
+        145,
+        174,
+        177
       ],
       "count": 7
     },
@@ -1479,6 +1554,7 @@
       ],
       "themes": [
         "BIO-DYNAMICS",
+        "PREPAREDNESS & RESILIENCE",
         "SOIL"
       ]
     },
@@ -1549,7 +1625,7 @@
       "themes": [
         "BUSINESS",
         "FARMING & FOOD",
-        "IMPACT INVESTING"
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING"
       ]
     },
     "9": {
@@ -1602,7 +1678,7 @@
         "ECOLOGY"
       ],
       "themes": [
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "13": {
@@ -1644,7 +1720,7 @@
       "themes": [
         "CLIMATE & SCIENCE",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "16": {
@@ -1659,7 +1735,7 @@
       "themes": [
         "CLIMATE & SCIENCE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "17": {
@@ -1673,7 +1749,7 @@
       "themes": [
         "CLIMATE & SCIENCE",
         "GREEN BUILDING",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -1703,7 +1779,8 @@
       ],
       "themes": [
         "HERBAL MEDICINE",
-        "MEDIA BOOKS & CONTENT"
+        "MEDIA BOOKS & CONTENT",
+        "PREPAREDNESS & RESILIENCE"
       ]
     },
     "20": {
@@ -1717,7 +1794,7 @@
       ],
       "themes": [
         "BUSINESS",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "21": {
@@ -1776,7 +1853,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "25": {
@@ -1792,10 +1869,10 @@
         "BUSINESS",
         "CLIMATE & SCIENCE",
         "EDUCATION",
-        "IMPACT INVESTING",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "26": {
@@ -1839,7 +1916,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "29": {
@@ -1882,7 +1959,7 @@
         "BUSINESS",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "32": {
@@ -1939,7 +2016,7 @@
       "themes": [
         "BUSINESS",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "36": {
@@ -1957,7 +2034,7 @@
         "BUSINESS",
         "FARMING & FOOD",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "37": {
@@ -1982,7 +2059,7 @@
         "CULTURE"
       ],
       "themes": [
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "39": {
@@ -2026,7 +2103,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "42": {
@@ -2054,7 +2131,7 @@
       ],
       "themes": [
         "EDUCATION",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2073,9 +2150,9 @@
         "EDUCATION",
         "FARMING & FOOD",
         "HERBAL MEDICINE",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "45": {
@@ -2105,7 +2182,7 @@
         "EDUCATION",
         "INDIGENOUS WISDOM",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "47": {
@@ -2139,7 +2216,7 @@
       "themes": [
         "BUSINESS",
         "GREEN BUILDING",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "49": {
@@ -2154,7 +2231,7 @@
       "themes": [
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2185,7 +2262,7 @@
       "themes": [
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "52": {
@@ -2198,7 +2275,7 @@
       ],
       "themes": [
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "53": {
@@ -2212,7 +2289,7 @@
       "themes": [
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "54": {
@@ -2242,7 +2319,7 @@
         "BUSINESS",
         "GREEN BUILDING",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "56": {
@@ -2256,7 +2333,7 @@
       ],
       "themes": [
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "57": {
@@ -2307,7 +2384,7 @@
         "GREEN BUILDING",
         "HEALTH & WELLNESS",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2322,7 +2399,7 @@
       "themes": [
         "ECOLOGY & NATURE",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "61": {
@@ -2339,7 +2416,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "62": {
@@ -2358,9 +2435,9 @@
         "FARMING & FOOD",
         "GREEN FAITH",
         "HEALTH & WELLNESS",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "63": {
@@ -2381,7 +2458,7 @@
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2415,7 +2492,7 @@
         "EDUCATION",
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2445,7 +2522,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "HEALTH & WELLNESS",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "68": {
@@ -2462,7 +2539,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "69": {
@@ -2481,7 +2558,7 @@
         "ECOLOGY & NATURE",
         "HEALTH & WELLNESS",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2502,7 +2579,7 @@
         "FARMING & FOOD",
         "POLICY & GOVERNMT",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "71": {
@@ -2519,7 +2596,7 @@
         "EDUCATION",
         "GREEN FAITH",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "72": {
@@ -2537,7 +2614,7 @@
         "EDUCATION",
         "INDIGENOUS WISDOM",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "73": {
@@ -2557,7 +2634,7 @@
         "HEALTH & WELLNESS",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "74": {
@@ -2572,7 +2649,7 @@
       "themes": [
         "ECOLOGY & NATURE",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "75": {
@@ -2589,7 +2666,7 @@
         "BUSINESS",
         "EDUCATION",
         "HEALTH & WELLNESS",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "76": {
@@ -2603,7 +2680,7 @@
       "themes": [
         "BUSINESS",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "77": {
@@ -2618,9 +2695,9 @@
       "themes": [
         "BUSINESS",
         "ECOLOGY & NATURE",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "78": {
@@ -2687,7 +2764,7 @@
         "FARMING & FOOD",
         "GREEN BUILDING",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2704,7 +2781,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "83": {
@@ -2718,7 +2795,7 @@
       ],
       "themes": [
         "BUSINESS",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "84": {
@@ -2738,7 +2815,7 @@
         "INDIGENOUS WISDOM",
         "MEDIA BOOKS & CONTENT",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "85": {
@@ -2758,7 +2835,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "86": {
@@ -2772,7 +2849,7 @@
       "themes": [
         "CLIMATE & SCIENCE",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "87": {
@@ -2786,7 +2863,8 @@
       "themes": [
         "CLIMATE & SCIENCE",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "PREPAREDNESS & RESILIENCE",
+        "SUSTAINABILITY"
       ]
     },
     "88": {
@@ -2801,9 +2879,9 @@
       "themes": [
         "BUSINESS",
         "CLIMATE & SCIENCE",
-        "IMPACT INVESTING",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2821,7 +2899,7 @@
         "ECOLOGY & NATURE",
         "FARMING & FOOD",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "90": {
@@ -2857,7 +2935,7 @@
         "FARMING & FOOD",
         "MEDIA BOOKS & CONTENT",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "92": {
@@ -2881,7 +2959,7 @@
         "HEALTH & WELLNESS",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "93": {
@@ -2895,7 +2973,7 @@
       ],
       "themes": [
         "BUSINESS",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2912,8 +2990,8 @@
         "BUSINESS",
         "CLIMATE & SCIENCE",
         "ECOLOGY & NATURE",
-        "IMPACT INVESTING",
-        "SUSTAIN-ABILITY",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -2931,9 +3009,9 @@
         "EDUCATION",
         "FARMING & FOOD",
         "MEDIA BOOKS & CONTENT",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "96": {
@@ -2949,11 +3027,11 @@
         "CLIMATE & SCIENCE",
         "ECOLOGY & NATURE",
         "EDUCATION",
-        "IMPACT INVESTING",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "97": {
@@ -2989,7 +3067,7 @@
         "FARMING & FOOD",
         "HERBAL MEDICINE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "99": {
@@ -3007,7 +3085,7 @@
         "EDUCATION",
         "FARMING & FOOD",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "100": {
@@ -3053,7 +3131,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "103": {
@@ -3071,7 +3149,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "FARMING & FOOD",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "104": {
@@ -3147,7 +3225,7 @@
         "EDUCATION",
         "HERBAL MEDICINE",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "109": {
@@ -3168,7 +3246,7 @@
         "EDUCATION",
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "110": {
@@ -3187,7 +3265,7 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "111": {
@@ -3209,7 +3287,7 @@
         "MEDIA BOOKS & CONTENT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "112": {
@@ -3226,7 +3304,7 @@
         "BUSINESS",
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "113": {
@@ -3242,7 +3320,8 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "FARMING & FOOD",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
+        "PREPAREDNESS & RESILIENCE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL"
       ]
@@ -3263,7 +3342,7 @@
         "FARMING & FOOD",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "115": {
@@ -3289,10 +3368,10 @@
         "HERBAL MEDICINE",
         "INDIGENOUS WISDOM",
         "MEDIA BOOKS & CONTENT",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "116": {
@@ -3313,7 +3392,7 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3335,7 +3414,7 @@
         "HEALTH & WELLNESS",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3358,7 +3437,7 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "119": {
@@ -3374,7 +3453,7 @@
         "BUSINESS",
         "CLIMATE & SCIENCE",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3394,7 +3473,7 @@
         "EDUCATION",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3413,10 +3492,10 @@
         "ECOLOGY & NATURE",
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "122": {
@@ -3436,7 +3515,7 @@
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3459,10 +3538,10 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "INDIGENOUS WISDOM",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "124": {
@@ -3485,10 +3564,10 @@
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
         "INDIGENOUS WISDOM",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "125": {
@@ -3522,7 +3601,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "127": {
@@ -3542,7 +3621,7 @@
         "EDUCATION",
         "INDIGENOUS WISDOM",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "128": {
@@ -3560,7 +3639,7 @@
         "ECOLOGY & NATURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3583,7 +3662,7 @@
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3601,7 +3680,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "131": {
@@ -3634,7 +3713,7 @@
         "FARMING & FOOD",
         "INDIGENOUS WISDOM",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "133": {
@@ -3656,7 +3735,7 @@
         "MEDIA BOOKS & CONTENT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "134": {
@@ -3673,7 +3752,7 @@
         "EDUCATION",
         "GREEN FAITH",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "135": {
@@ -3692,7 +3771,7 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "INDIGENOUS WISDOM",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "136": {
@@ -3709,9 +3788,9 @@
         "EDUCATION",
         "FARMING & FOOD",
         "MEDIA BOOKS & CONTENT",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "137": {
@@ -3743,8 +3822,8 @@
         "CLIMATE & SCIENCE",
         "ECOLOGY & NATURE",
         "EDUCATION",
-        "IMPACT INVESTING",
-        "SUSTAIN-ABILITY",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3766,7 +3845,7 @@
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "140": {
@@ -3782,7 +3861,7 @@
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "141": {
@@ -3803,7 +3882,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "142": {
@@ -3840,9 +3919,9 @@
         "EDUCATION",
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "144": {
@@ -3859,7 +3938,7 @@
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "145": {
@@ -3878,7 +3957,8 @@
         "EDUCATION",
         "GREEN BUILDING",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY",
+        "PREPAREDNESS & RESILIENCE",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -3900,8 +3980,8 @@
         "HEALTH & WELLNESS",
         "HERBAL MEDICINE",
         "MEDIA BOOKS & CONTENT",
-        "PERMA-CULTURE",
-        "SUSTAIN-ABILITY"
+        "PERMACULTURE",
+        "SUSTAINABILITY"
       ]
     },
     "147": {
@@ -3922,7 +4002,7 @@
         "FARMING & FOOD",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "148": {
@@ -3944,7 +4024,7 @@
         "EDUCATION",
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "149": {
@@ -3960,7 +4040,7 @@
       "themes": [
         "BUSINESS",
         "EDUCATION",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "150": {
@@ -3980,7 +4060,7 @@
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -4005,7 +4085,7 @@
         "MEDIA BOOKS & CONTENT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "152": {
@@ -4031,7 +4111,7 @@
         "MEDIA BOOKS & CONTENT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "153": {
@@ -4051,10 +4131,10 @@
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "154": {
@@ -4078,7 +4158,7 @@
         "GREEN FAITH",
         "HEALTH & WELLNESS",
         "INDIGENOUS WISDOM",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "155": {
@@ -4096,7 +4176,7 @@
         "EDUCATION",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -4116,7 +4196,7 @@
         "EDUCATION",
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "157": {
@@ -4155,7 +4235,7 @@
         "POLICY & GOVERNMT",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "159": {
@@ -4172,9 +4252,9 @@
         "EDUCATION",
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "160": {
@@ -4190,7 +4270,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "INDIGENOUS WISDOM",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "161": {
@@ -4225,10 +4305,10 @@
         "EDUCATION",
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "163": {
@@ -4245,7 +4325,7 @@
         "BUSINESS",
         "CLIMATE & SCIENCE",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "164": {
@@ -4266,7 +4346,7 @@
         "ECOLOGY & NATURE",
         "EDUCATION",
         "HEALTH & WELLNESS",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "165": {
@@ -4286,9 +4366,9 @@
         "FARMING & FOOD",
         "HEALTH & WELLNESS",
         "INDIGENOUS WISDOM",
-        "PERMA-CULTURE",
+        "PERMACULTURE",
         "SOIL",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -4307,7 +4387,7 @@
         "INDIGENOUS WISDOM",
         "REGEN / SOCIAL ENTERPRISE",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "167": {
@@ -4330,7 +4410,7 @@
         "INDIGENOUS WISDOM",
         "MEDIA BOOKS & CONTENT",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "168": {
@@ -4347,9 +4427,9 @@
         "BUSINESS",
         "CLIMATE & SCIENCE",
         "ECOLOGY & NATURE",
-        "IMPACT INVESTING",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
         "REGEN / SOCIAL ENTERPRISE",
-        "SUSTAIN-ABILITY",
+        "SUSTAINABILITY",
         "TECHNOLOGY & MATERIALS"
       ]
     },
@@ -4373,7 +4453,7 @@
         "HEALTH & WELLNESS",
         "MEDIA BOOKS & CONTENT",
         "SOIL",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
       ]
     },
     "170": {
@@ -4383,7 +4463,8 @@
       "location": "Boxford, Massachusetts",
       "pillars": [
         "CULTURE",
-        "ECOLOGY"
+        "ECOLOGY",
+        "HEALTH"
       ],
       "themes": [
         "CLIMATE & SCIENCE",
@@ -4391,13 +4472,145 @@
         "EDUCATION",
         "INDIGENOUS WISDOM",
         "POLICY & GOVERNMT",
-        "SUSTAIN-ABILITY"
+        "SUSTAINABILITY"
+      ]
+    },
+    "171": {
+      "episode_number": 171,
+      "guest": "Cynthia James",
+      "org": "James Ranch Grill",
+      "location": "Durango, CO",
+      "pillars": [
+        "COMMUNITY",
+        "ECOLOGY",
+        "HEALTH"
+      ],
+      "themes": [
+        "BUSINESS",
+        "ECOLOGY & NATURE",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAINABILITY"
+      ]
+    },
+    "172": {
+      "episode_number": 172,
+      "guest": "Dr. Riane Eisler",
+      "org": "Center for Partnership Systems",
+      "location": "Carmel, CA",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "EDUCATION",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "173": {
+      "episode_number": 173,
+      "guest": "Kawenniosta Jock",
+      "org": "Sky Woman's Forever Farm",
+      "location": "Scoharie, NY",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "ECOLOGY"
+      ],
+      "themes": [
+        "ECOLOGY & NATURE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HERBAL MEDICINE",
+        "INDIGENOUS WISDOM",
+        "REGEN / SOCIAL ENTERPRISE",
+        "SOIL",
+        "SUSTAINABILITY"
+      ]
+    },
+    "174": {
+      "episode_number": 174,
+      "guest": "Henry Mitchell IV",
+      "org": "Be World Aware",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HEALTH & WELLNESS",
+        "POLICY & GOVERNMT",
+        "PREPAREDNESS & RESILIENCE",
+        "SUSTAINABILITY"
+      ]
+    },
+    "175": {
+      "episode_number": 175,
+      "guest": "Brigitte Mars & Ron Lemire",
+      "org": "50 Years Retrospective: Natural Foods & Holistic Healing in Boulder",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "EDUCATION",
+        "ESOTERICA",
+        "HEALTH & WELLNESS",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT"
+      ]
+    },
+    "176": {
+      "episode_number": 176,
+      "guest": "Martin Rohner",
+      "org": "Global Alliance for Banking on Values",
+      "location": "Basel, Switzerland",
+      "pillars": [
+        "CULTURE",
+        "ECONOMY"
+      ],
+      "themes": [
+        "BUSINESS",
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "FINANCE, PHILANTHROPY & IMPACT INVESTING",
+        "SUSTAINABILITY"
+      ]
+    },
+    "177": {
+      "episode_number": 177,
+      "guest": "Miranda Clendening, Henry Mitchell, Don Hall",
+      "org": "Unify, The Riverside, Be World Aware, Transition International",
+      "location": "Boulder, CO",
+      "pillars": [
+        "COMMUNITY",
+        "CULTURE",
+        "HEALTH"
+      ],
+      "themes": [
+        "CLIMATE & SCIENCE",
+        "EDUCATION",
+        "FARMING & FOOD",
+        "HERBAL MEDICINE",
+        "MEDIA BOOKS & CONTENT",
+        "PERMACULTURE",
+        "PREPAREDNESS & RESILIENCE",
+        "SUSTAINABILITY"
       ]
     }
   },
   "stats": {
-    "episode_count": 170,
+    "episode_count": 177,
     "pillar_count": 5,
-    "theme_count": 21
+    "theme_count": 22
   }
 }
