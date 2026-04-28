@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Y on Earth Guide</title>
-    <link rel="stylesheet" href="styles.css?v=27.0">
+    <link rel="stylesheet" href="styles.css?v=28.0">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="tutorial.css">
 </head>
@@ -161,6 +161,7 @@
                             autocomplete="off"
                             maxlength="1000"
                         >
+                        <!-- Mic button — created by chat.js if /api/stt/status returns enabled -->
                         <button type="submit" id="sendButton">
                             <span class="send-icon">🌿</span>
                             Send
@@ -203,7 +204,7 @@
     </div>
 
     <script src="chat-kg-bridge.js?v=2.3"></script>
-    <script src="chat.js?v=36"></script>
+    <script src="chat.js?v=37"></script>
     <script src="tutorial.js"></script>
     <script>document.addEventListener("DOMContentLoaded", () => { setTimeout(() => { if(typeof Tutorial !== "undefined") Tutorial.init("chat"); }, 1000); });</script>
     <script>

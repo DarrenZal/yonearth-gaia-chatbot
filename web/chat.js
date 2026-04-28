@@ -18,6 +18,121 @@ class GaiaChat {
         this.entityNames = [];
         this.entityMap = {};
         this.loadEntityNames();
+        // STT mic button — gated on backend status, fail-closed on any error
+        this.setupSttMicButton();
+    }
+
+    // -------- STT mic button --------
+    // Visibility rule: backend `/api/stt/status.enabled === true` AND browser
+    // has working MediaRecorder + getUserMedia → render. Anything else (network
+    // error, timeout, disabled, missing API) → button is never created.
+    async setupSttMicButton() {
+        const hasMediaRecorder = typeof MediaRecorder !== 'undefined'
+            && navigator.mediaDevices
+            && typeof navigator.mediaDevices.getUserMedia === 'function';
+        if (!hasMediaRecorder) return;
+
+        let enabled = false;
+        try {
+            const ctrl = new AbortController();
+            const t = setTimeout(() => ctrl.abort(), 3000);
+            const resp = await fetch(`${this.apiUrl}/stt/status`, { signal: ctrl.signal });
+            clearTimeout(t);
+            if (!resp.ok) return;
+            const j = await resp.json();
+            enabled = j && j.enabled === true;
+        } catch {
+            return; // fail-closed
+        }
+        if (!enabled) return;
+
+        // Render button before #sendButton
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.id = 'micButton';
+        btn.className = 'mic-button';
+        btn.setAttribute('aria-label', 'Speak your question');
+        btn.title = 'Speak your question';
+        btn.innerHTML = '<span class="mic-icon">🎤</span>';
+        this.sendButton.parentNode.insertBefore(btn, this.sendButton);
+        this.micButton = btn;
+        this._micState = 'idle'; // idle | recording | uploading
+        this._mediaRecorder = null;
+        this._micChunks = [];
+        this._micTimer = null;
+        btn.addEventListener('click', () => this._toggleMic());
+    }
+
+    async _toggleMic() {
+        if (this._micState === 'idle') {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                const mime = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : '';
+                const rec = new MediaRecorder(stream, mime ? { mimeType: mime } : undefined);
+                this._mediaRecorder = rec;
+                this._micChunks = [];
+                rec.ondataavailable = (e) => { if (e.data && e.data.size) this._micChunks.push(e.data); };
+                rec.onstop = () => {
+                    stream.getTracks().forEach(t => t.stop());
+                    this._uploadMicAudio();
+                };
+                rec.start();
+                this._micState = 'recording';
+                this.micButton.classList.add('mic-recording');
+                this.micButton.setAttribute('aria-label', 'Stop recording');
+                this.micButton.title = 'Stop recording';
+                // Hard cap at 60s per server contract
+                this._micTimer = setTimeout(() => { if (this._micState === 'recording') this._toggleMic(); }, 60000);
+            } catch (err) {
+                console.warn('Mic access denied or failed:', err);
+                this._setMicError('Mic permission denied');
+            }
+        } else if (this._micState === 'recording') {
+            clearTimeout(this._micTimer);
+            this._micTimer = null;
+            try { this._mediaRecorder.stop(); } catch {}
+            this._micState = 'uploading';
+            this.micButton.classList.remove('mic-recording');
+            this.micButton.classList.add('mic-uploading');
+        }
+    }
+
+    async _uploadMicAudio() {
+        const blob = new Blob(this._micChunks, { type: this._mediaRecorder.mimeType || 'audio/webm' });
+        this._micChunks = [];
+        const fd = new FormData();
+        fd.append('file', blob, 'speech.webm');
+        try {
+            const resp = await fetch(`${this.apiUrl}/stt`, { method: 'POST', body: fd });
+            if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+            const j = await resp.json();
+            const transcript = (j && j.transcript) ? j.transcript : '';
+            if (transcript) {
+                const cur = this.messageInput.value;
+                this.messageInput.value = cur ? (cur.replace(/\s+$/, '') + ' ' + transcript) : transcript;
+                this.messageInput.focus();
+                this.autoResizeInput && this.autoResizeInput();
+            }
+            this._resetMic();
+        } catch (err) {
+            console.warn('STT upload failed:', err);
+            this._setMicError('Transcription unavailable');
+        }
+    }
+
+    _resetMic() {
+        this._micState = 'idle';
+        this.micButton.classList.remove('mic-recording', 'mic-uploading', 'mic-error');
+        this.micButton.setAttribute('aria-label', 'Speak your question');
+        this.micButton.title = 'Speak your question';
+    }
+
+    _setMicError(msg) {
+        this._micState = 'idle';
+        this.micButton.classList.remove('mic-recording', 'mic-uploading');
+        this.micButton.classList.add('mic-error');
+        this.micButton.title = msg;
+        setTimeout(() => this._resetMic(), 2500);
     }
     
     initializeElements() {
