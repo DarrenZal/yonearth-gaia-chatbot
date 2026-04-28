@@ -159,7 +159,7 @@ class KnowledgeGraphVisualization {
             // /guide/ nginx alias. Avoids /guide/data/ and /guide/assets/,
             // both of which are aliased to the production /var/www/yonearth/
             // tree for shared content.
-            const response = await fetch('./yoe_taxonomy.json?v=1');
+            const response = await fetch('./yoe_taxonomy.json?v=2');
             if (!response.ok) throw new Error(`taxonomy fetch: ${response.status}`);
             this.taxonomy = await response.json();
             this.buildTaxonomyIndex();
