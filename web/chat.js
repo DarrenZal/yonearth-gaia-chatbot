@@ -381,7 +381,8 @@ class GaiaChat {
             const healthResponse = await fetch(`${this.apiUrl}/bm25/health`);
             if (healthResponse.ok) {
                 const data = await healthResponse.json();
-                this.updateStatus('connected', `Connected - ${data.status}`);
+                const statusLabel = data.status || data.message || 'ready';
+                this.updateStatus('connected', `Connected - ${statusLabel}`);
                 return;
             }
             

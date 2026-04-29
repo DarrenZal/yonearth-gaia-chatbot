@@ -1814,6 +1814,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 const node = matches.length > 0 ? pickBest(matches) : null;
                 if (node) {
+                    // If the requested node's type isn't in the current filter,
+                    // auto-include it so the halo actually has a circle to apply
+                    // to. Otherwise the default knowledge-centric simple-mode
+                    // filter hides ORGANIZATION/PERSON/PLACE/PRODUCT nodes and
+                    // chat-link clicks silently fail to highlight.
+                    if (vizInstance.filters && vizInstance.filters.entityTypes &&
+                        !vizInstance.filters.entityTypes.has(node.type)) {
+                        vizInstance.filters.entityTypes.add(node.type);
+                        if (typeof vizInstance.updateVisualization === 'function') {
+                            try { vizInstance.updateVisualization(); } catch (e) { console.warn('autotype updateViz failed', e); }
+                        }
+                    }
                     // Highlight and focus the node in the graph
                     vizInstance.selectedNode = node;
                     vizInstance.highlightEntities([node.name]);
