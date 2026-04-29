@@ -3,8 +3,30 @@ FastAPI main application for YonEarth Gaia chatbot
 """
 import time
 import logging
+import os
+from pathlib import Path
 from typing import Dict, Any, List
 from contextlib import asynccontextmanager
+
+
+def _kg_data_file() -> Path:
+    """Resolve the path to data/knowledge_graph/visualization_data.json.
+
+    Production server has the file under /home/claudeuser/...; local dev
+    keeps it inside the repo. Probe in order:
+      1. $YOE_KG_DATA env override (explicit)
+      2. /home/claudeuser/yonearth-gaia-chatbot/...   (production)
+      3. <repo>/data/knowledge_graph/visualization_data.json  (local)
+    Returns the first existing path, or the prod path (for the 404 message).
+    """
+    override = os.environ.get("YOE_KG_DATA")
+    if override:
+        return Path(override)
+    prod = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+    if prod.exists():
+        return prod
+    repo = Path(__file__).resolve().parents[2] / "data" / "knowledge_graph" / "visualization_data.json"
+    return repo
 
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -632,7 +654,7 @@ async def get_knowledge_graph_data():
         import json
         from pathlib import Path
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = _kg_data_file()
 
         if not data_file.exists():
             raise HTTPException(
@@ -666,7 +688,7 @@ async def get_entity_details(entity_id: str):
         # Decode URL-encoded entity_id
         entity_id = unquote(entity_id)
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = _kg_data_file()
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
@@ -700,7 +722,7 @@ async def get_entity_neighborhood(entity_id: str, depth: int = 1):
         # Decode URL-encoded entity_id
         entity_id = unquote(entity_id)
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = _kg_data_file()
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
@@ -765,7 +787,7 @@ async def search_knowledge_graph(q: str, limit: int = 20):
         if not q or len(q) < 2:
             raise HTTPException(status_code=400, detail="Query must be at least 2 characters")
 
-        data_file = Path("/home/claudeuser/yonearth-gaia-chatbot/data/knowledge_graph/visualization_data.json")
+        data_file = _kg_data_file()
 
         if not data_file.exists():
             raise HTTPException(status_code=404, detail="Knowledge graph data not found")
