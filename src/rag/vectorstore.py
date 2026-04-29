@@ -34,8 +34,13 @@ class YonEarthVectorStore:
             text_key="text"
         )
         
-        # Token counter for cost estimation
-        self.encoding = tiktoken.encoding_for_model(settings.openai_embedding_model)
+        # Token counter for cost estimation. tiktoken's encoding_for_model()
+        # doesn't auto-map text-embedding-3-* models; fall back to cl100k_base
+        # (the canonical encoding for text-embedding-3-small/large + ada-002).
+        try:
+            self.encoding = tiktoken.encoding_for_model(settings.openai_embedding_model)
+        except KeyError:
+            self.encoding = tiktoken.get_encoding("cl100k_base")
         
     def estimate_embedding_cost(self, documents: List[Document]) -> Dict[str, Any]:
         """Estimate the cost of embedding documents"""
