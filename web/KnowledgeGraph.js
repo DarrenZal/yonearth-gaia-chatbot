@@ -37,7 +37,13 @@ class KnowledgeGraphVisualization {
             // Bumped from 50 → 200 because a pillar/theme click now adds up to ~120
             // episode nodes alongside the ~30 concepts. Edge-cap + force-layout keep
             // the render legible.
-            maxNodes: this.isSimpleMode ? 200 : 1000
+            maxNodes: this.isSimpleMode ? 200 : 1000,
+            // Nodes the user has explicitly requested via chat-link click
+            // (requestResource handler). They bypass the importance + maxNodes
+            // filters so the halo always applies — otherwise a low-mc sponsor
+            // like "Bluestone Life Insurance" (mc=1, importance≈0.5) would be
+            // filtered out before highlightEntities can paint a circle.
+            pinnedNodeIds: new Set()
         };
 
         // YOE taxonomy (loaded async in loadTaxonomy()). Null until available.
@@ -535,11 +541,19 @@ class KnowledgeGraphVisualization {
         this.nodes = nodeEnter.merge(nodeSel);
 
         // Labels — only for the most-discussed nodes. Rebuild on each call (cheap).
-        const labelCandidates = preparedNodes.filter(d => d.importance > 0.3);
+        // Pinned nodes (chat-link click targets) ALWAYS get a label even if
+        // their importance is below the threshold — otherwise the haloed dot
+        // has no name next to it and the user can't tell what they clicked.
+        const pinnedSet = this.filters.pinnedNodeIds || new Set();
+        const labelCandidates = preparedNodes.filter(d => d.importance > 0.3 || pinnedSet.has(d.id));
         const labeledNodes = this.isSimpleMode
-            ? [...labelCandidates]
-                .sort((a, b) => (b.episode_count || 0) - (a.episode_count || 0))
-                .slice(0, 15)
+            ? [
+                ...preparedNodes.filter(d => pinnedSet.has(d.id)),
+                ...[...labelCandidates]
+                    .filter(d => !pinnedSet.has(d.id))
+                    .sort((a, b) => (b.episode_count || 0) - (a.episode_count || 0))
+                    .slice(0, 15),
+              ]
             : labelCandidates;
         const labelSel = this.labelsGroup
             .selectAll('text.node-label')
@@ -699,15 +713,21 @@ class KnowledgeGraphVisualization {
 
         const narrowActive = !!activePillarEpisodes || !!activeThemeEpisodes;
 
+        const pinned = this.filters.pinnedNodeIds || new Set();
+
         // Filter nodes
         let filteredNodes = this.data.nodes.filter(node => {
-            // Check importance threshold
-            if (node.importance < this.filters.minImportance) {
+            const isPinned = pinned.has(node.id);
+
+            // Check importance threshold (pinned nodes bypass — see filters comment)
+            if (!isPinned && node.importance < this.filters.minImportance) {
                 return false;
             }
 
-            // Check entity type filter
-            if (!this.filters.entityTypes.has(node.type)) {
+            // Check entity type filter (pinned nodes bypass — chat-link click
+            // already auto-added the type to the active set, but a stale cached
+            // pin could still slip through; bypass keeps the halo working)
+            if (!isPinned && !this.filters.entityTypes.has(node.type)) {
                 return false;
             }
 
@@ -750,12 +770,17 @@ class KnowledgeGraphVisualization {
             return true;
         });
 
-        // Apply hard limit on number of nodes (performance protection)
+        // Apply hard limit on number of nodes (performance protection).
+        // Pinned nodes (chat-link click targets) survive truncation — they
+        // get split out, then the rest are sorted+capped, then we re-append
+        // pinned to guarantee they're in the rendered set.
         if (filteredNodes.length > this.filters.maxNodes) {
-            // Sort by importance and take top N
-            filteredNodes = filteredNodes
+            const pinnedKept = filteredNodes.filter(n => pinned.has(n.id));
+            const remaining = filteredNodes
+                .filter(n => !pinned.has(n.id))
                 .sort((a, b) => b.importance - a.importance)
-                .slice(0, this.filters.maxNodes);
+                .slice(0, Math.max(0, this.filters.maxNodes - pinnedKept.length));
+            filteredNodes = [...pinnedKept, ...remaining];
         }
 
         // Create a set of filtered node IDs for quick lookup
@@ -1814,14 +1839,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 const node = matches.length > 0 ? pickBest(matches) : null;
                 if (node) {
-                    // If the requested node's type isn't in the current filter,
-                    // auto-include it so the halo actually has a circle to apply
-                    // to. Otherwise the default knowledge-centric simple-mode
-                    // filter hides ORGANIZATION/PERSON/PLACE/PRODUCT nodes and
-                    // chat-link clicks silently fail to highlight.
+                    // Pin the requested node so it bypasses the importance
+                    // threshold + maxNodes truncation in getFilteredData(). A
+                    // low-mc sponsor (e.g. mc=1, importance≈0.5) would otherwise
+                    // be filtered out before highlightEntities() can paint a
+                    // circle, leaving the resource card open with no halo.
+                    if (vizInstance.filters && vizInstance.filters.pinnedNodeIds) {
+                        vizInstance.filters.pinnedNodeIds.add(node.id);
+                    }
+                    let needsRerender = false;
+
+                    // Auto-include the requested type if it's not in the
+                    // current filter set (knowledge-centric default hides
+                    // ORG/PERSON/PLACE/PRODUCT). Pinning above is now the
+                    // belt-and-suspenders fallback if this somehow fails.
                     if (vizInstance.filters && vizInstance.filters.entityTypes &&
                         !vizInstance.filters.entityTypes.has(node.type)) {
                         vizInstance.filters.entityTypes.add(node.type);
+                        needsRerender = true;
+                    }
+                    // Always re-render so the new pinned id is honored.
+                    if (needsRerender || vizInstance.filters?.pinnedNodeIds?.size > 0) {
                         if (typeof vizInstance.updateVisualization === 'function') {
                             try { vizInstance.updateVisualization(); } catch (e) { console.warn('autotype updateViz failed', e); }
                         }
