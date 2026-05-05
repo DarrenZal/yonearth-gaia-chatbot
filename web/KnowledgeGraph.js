@@ -1016,9 +1016,16 @@ class KnowledgeGraphVisualization {
                 return !connectedIds.has(sourceId) || !connectedIds.has(targetId);
             });
 
-        // Pan/zoom to show highlighted nodes (optional, only if more than one match)
+        // Pan/zoom to show highlighted nodes. Run twice — once immediately
+        // (uses last simulation tick's x/y, may be slightly stale) and once
+        // after a short delay so the post-rerender simulation has had a few
+        // ticks to settle the position. The double-call is intentional: the
+        // second call corrects for drift when chat-link clicks trigger an
+        // updateVisualization() that reheats the simulation.
         if (matchedNodes.size > 0 && matchedNodes.size <= 5) {
-            this.focusOnNodes(Array.from(matchedNodes));
+            const ids = Array.from(matchedNodes);
+            this.focusOnNodes(ids);
+            setTimeout(() => this.focusOnNodes(ids), 600);
         }
 
         return matchedNames;
@@ -1301,7 +1308,7 @@ class KnowledgeGraphVisualization {
         if (strip.empty() || !this.data || !this.data.domains) return;
 
         strip.selectAll('*').remove();
-        strip.append('span').attr('class', 'strip-label').text('Show');
+        strip.append('span').attr('class', 'strip-label').text('Categories');
 
         const setActive = (domainName) => {
             strip.selectAll('.filter-chip').classed('active', function () {
@@ -1312,7 +1319,7 @@ class KnowledgeGraphVisualization {
         strip.append('button')
             .attr('class', 'filter-chip active')
             .attr('data-domain', 'all')
-            .text('All domains')
+            .text('All categories')
             .on('click', () => {
                 this.data.domains.forEach(d => this.filters.domains.add(d.name));
                 // Clear the pillar filter (pillar === domain via YOE taxonomy)
@@ -1353,7 +1360,7 @@ class KnowledgeGraphVisualization {
         }
 
         strip.selectAll('*').remove();
-        strip.append('span').attr('class', 'strip-label').text('Themes');
+        strip.append('span').attr('class', 'strip-label').text('Topics');
 
         const setActive = (themeName) => {
             strip.selectAll('.filter-chip').classed('active', function () {
@@ -1364,7 +1371,7 @@ class KnowledgeGraphVisualization {
         strip.append('button')
             .attr('class', 'filter-chip active')
             .attr('data-theme', 'all')
-            .text('All themes')
+            .text('All topics')
             .on('click', () => {
                 this.filters.themes.clear();
                 setActive('all');
@@ -1846,6 +1853,42 @@ document.addEventListener('DOMContentLoaded', () => {
                     // circle, leaving the resource card open with no halo.
                     if (vizInstance.filters && vizInstance.filters.pinnedNodeIds) {
                         vizInstance.filters.pinnedNodeIds.add(node.id);
+
+                        // Also pin 1-hop neighbors so edges to them survive the
+                        // importance/type/maxNodes filter. Without this the
+                        // clicked node renders solo with no edges (Aaron
+                        // 2026-05-04 bug report). Cap to keep visual hairball
+                        // bounded — pin top-N neighbors by edge strength.
+                        const neighborCap = 25;
+                        const myId = node.id;
+                        const neighbors = [];
+                        (vizInstance.data.links || []).forEach(link => {
+                            const sId = link.source.id || link.source;
+                            const tId = link.target.id || link.target;
+                            if (sId === myId) {
+                                neighbors.push({ id: tId, strength: link.strength || 0 });
+                            } else if (tId === myId) {
+                                neighbors.push({ id: sId, strength: link.strength || 0 });
+                            }
+                        });
+                        neighbors
+                            .sort((a, b) => b.strength - a.strength)
+                            .slice(0, neighborCap)
+                            .forEach(n => vizInstance.filters.pinnedNodeIds.add(n.id));
+
+                        // Also auto-include the neighbors' types so they pass
+                        // the entityTypes filter even in knowledge-centric mode.
+                        // Otherwise a CONCEPT clicked from chat would only
+                        // surface its CONCEPT/PRACTICE neighbors and edges to
+                        // PERSON/ORG/PLACE neighbors would still vanish.
+                        if (vizInstance.filters.entityTypes) {
+                            const pinnedSet = vizInstance.filters.pinnedNodeIds;
+                            (vizInstance.data.nodes || []).forEach(n => {
+                                if (pinnedSet.has(n.id)) {
+                                    vizInstance.filters.entityTypes.add(n.type);
+                                }
+                            });
+                        }
                     }
                     let needsRerender = false;
 

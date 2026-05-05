@@ -1,0 +1,238 @@
+{
+  "tag": "baseline-prod",
+  "timestamp": "2026-05-04T20-52-09Z",
+  "summary": {
+    "total": 8,
+    "passed": 3,
+    "failed": 5
+  },
+  "results": [
+    {
+      "id": "biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's Issue #1 \u2014 definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's Issue #2 \u2014 short theme query must surface multiple IMPACT INVESTING-tagged episodes.",
+      "passed": false,
+      "failures": [
+        "no cited episode tagged with category IMPACT INVESTING",
+        "got 0 IMPACT INVESTING-tagged citations, need >= 3"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "92",
+          "title": "Episode 92 \u2013 Aaron William Perry, Regenerative Economics & Holiday Shopping",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "27",
+          "title": "Episode 27 \u2013 Jennifer Menke \u2013 President, Regenerative Earth",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "137",
+          "title": "Episode 137 \u2013 Georgia Kelly, Founder, Praxis Peace Institute; on the Mondragon Cooperatives",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's Issue #2 \u2014 must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "passed": false,
+      "failures": [
+        "no cited episode is tagged with any of ['TECHNOLOGY & MATERIALS', 'REGEN / SOCIAL ENTERPRISE'] (cited episodes: [79])"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "79",
+          "title": "Episode 79 \u2013 Brian Dillon, Growing Spaces & Rhythms of Thriving",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 29,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "soil_werks_regression",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Regression \u2014 recently-ingested Soil Werks resource must still surface.",
+      "passed": false,
+      "failures": [
+        "response missing all of expected substrings ['Soil Werks', 'soilwerks']"
+      ],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 30,
+          "chapter_title": "\u2022 Love 425"
+        },
+        {
+          "type": "episode",
+          "episode_number": "85",
+          "title": "Episode 85 \u2013 Kate Williams, CEO, 1% for the Planet\u2026 Got 1% to Give?",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "77",
+          "title": "Episode 77 \u2013 Shelby Kaminski, Edaphic Solutions \u2013 Compost Tea for Community",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "wele_waters_regression",
+      "query": "What does Wele Waters make?",
+      "intent": "Regression \u2014 recently-ingested Wele Waters resource must still surface.",
+      "passed": false,
+      "failures": [
+        "response missing all of expected substrings ['Wele Waters', 'Wele']"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "68",
+          "title": "Episode 68 \u2013 Corona Virus Special w/ Aaron Perry & Artem Nikulkov",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "121",
+          "title": "Episode 121 \u2013 Oliver Retzloff, Co-Founder, Wild Nectar Farm Talks Flowers (w/ Eric Knutson)",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "viriditas_book_coverage",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Aaron's Issue #3 \u2014 book by Aaron must surface as a book citation.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "soil_stewardship_book_coverage",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's Issue #3 \u2014 Soil Stewardship Handbook should surface for biochar how-to (it's a topic of the book).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    },
+    {
+      "id": "y_on_earth_book_coverage",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's Issue #3 \u2014 Y on Earth book by title must cite the book.",
+      "passed": false,
+      "failures": [
+        "no cited book matches ['Y on Earth: Get Smarter, Feel Better, Heal the Planet'] (cited books: [])"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "21",
+          "title": "Episode 21 \u2013 Executive Chef Maria Cooper\u2019s \u201cHeartful Kitchen\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I apologize, dear one, but I'm having trouble accessing the wisdom right now. Please try again in a moment."
+    }
+  ]
+}

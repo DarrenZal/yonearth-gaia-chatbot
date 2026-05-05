@@ -17,6 +17,68 @@ from ..ingestion.process_episodes import process_episodes_for_ingestion
 logger = logging.getLogger(__name__)
 
 
+def _merge_unique(
+    doc_lists: List[List[Document]],
+    cap: int,
+    weights: Optional[List[int]] = None,
+) -> List[Document]:
+    """Weighted round-robin merge of document lists, dedup by chunk identity.
+
+    Each round pulls `weights[i]` items from `doc_lists[i]` (default 1 each)
+    so a higher-weighted list dominates the output. This matters because
+    theme-saturation should dominate theme queries (it's the whole point) but
+    hybrid_search must still contribute high-relevance non-theme hits like
+    resource pages (Soil Werks, Wele Waters).
+
+    Default behavior with `weights=None` is even round-robin — same as before.
+    For theme-aware retrieval, callers pass weights like [2, 1] to give
+    theme-saturation 2× hybrid's slot share.
+
+    Identity falls back through chunk_id → episode_id+content_prefix → content
+    hash so theme-saturation chunks aren't re-added by hybrid_search.
+    """
+    def _ident(doc: Document) -> str:
+        md = getattr(doc, 'metadata', {}) or {}
+        return (
+            md.get('chunk_id')
+            or md.get('id')
+            or f"ep{md.get('episode_number')}|{(doc.page_content or '')[:80]}"
+        )
+
+    if weights is None:
+        weights = [1] * len(doc_lists)
+    assert len(weights) == len(doc_lists)
+
+    seen: set[str] = set()
+    out: List[Document] = []
+    iters = [iter(lst) for lst in doc_lists]
+    list_done = [False] * len(iters)
+    while not all(list_done) and len(out) < cap:
+        progressed = False
+        for i, it in enumerate(iters):
+            if list_done[i]:
+                continue
+            for _ in range(max(1, weights[i])):
+                try:
+                    while True:
+                        doc = next(it)
+                        ident = _ident(doc)
+                        if ident in seen:
+                            continue
+                        seen.add(ident)
+                        out.append(doc)
+                        progressed = True
+                        if len(out) >= cap:
+                            return out
+                        break
+                except StopIteration:
+                    list_done[i] = True
+                    break
+        if not progressed:
+            break
+    return out
+
+
 def load_book_metadata() -> Dict[str, Dict[str, Any]]:
     """Load book metadata from JSON files"""
     book_metadata = {}
@@ -106,7 +168,7 @@ class BM25RAGChain:
         k: int = 5,
         include_sources: bool = True,
         custom_prompt: Optional[str] = None,
-        max_citations: int = 3,
+        max_citations: int = 5,
         category_threshold: float = 0.7,
         **kwargs
     ) -> Dict[str, Any]:
@@ -177,7 +239,7 @@ class BM25RAGChain:
             
             # Step 5: Add sources if requested
             if include_sources:
-                response_data['sources'] = self._format_sources(documents, max_citations)
+                response_data['sources'] = self._format_sources(documents, max_citations, query=message)
                 response_data['episode_references'] = self._extract_episode_references(documents)
             
             logger.info(f"BM25 RAG response generated successfully using {search_method} search")
@@ -193,43 +255,94 @@ class BM25RAGChain:
             }
     
     def _retrieve_documents(
-        self, 
-        query: str, 
-        search_method: str, 
+        self,
+        query: str,
+        search_method: str,
         k: int,
-        category_threshold: float = 0.7
+        category_threshold: float = 0.55
     ) -> List[Document]:
-        """Retrieve documents using specified search method"""
-        
+        """Retrieve documents using specified search method.
+
+        For methods that aren't pure BM25 / pure semantic, we run an additional
+        theme-saturation pass first (Aaron's #2 issue, 2026-05-02): if the
+        query matches a YOE theme via taxonomy, ensure every theme-tagged
+        episode and book contributes at least one chunk. The hybrid result is
+        then merged on top, deduped by chunk identity.
+        """
+
         if search_method == "bm25":
-            # Pure BM25 search
             results = self.bm25_retriever.bm25_search(query, k=k)
             documents = [doc for doc, score in results]
             self.search_stats['bm25_queries'] += 1
-            
+
         elif search_method == "semantic":
-            # Pure semantic search
             results = self.bm25_retriever.semantic_search(query, k=k)
             documents = [doc for doc, score in results]
             self.search_stats['semantic_queries'] += 1
-            
-        elif search_method in ["hybrid", "keyword_heavy", "semantic_heavy"]:
-            # Full hybrid search with RRF and reranking
-            documents = self.bm25_retriever.hybrid_search(query, k=k, category_threshold=category_threshold)
+
+        elif search_method in ["hybrid", "keyword_heavy", "semantic_heavy", "category_heavy"]:
+            theme_docs = self.bm25_retriever.theme_saturation_search(
+                query, category_threshold=category_threshold, max_chunks=k * 3
+            )
+            hybrid_docs = self.bm25_retriever.hybrid_search(
+                query, k=k, category_threshold=category_threshold
+            )
+            # Direct semantic top-K is a third channel: hybrid's category-first
+            # fusion buries non-category content (like resource_soilwerks /
+            # resource_welewaters which aren't theme-tagged), so we pull the
+            # raw vector-similarity top-K alongside as a safety net for named
+            # resources and proper nouns.
+            semantic_docs = [
+                doc for doc, _ in self.bm25_retriever.semantic_search(query, k=k)
+            ]
+            documents = _merge_unique(
+                [theme_docs, hybrid_docs, semantic_docs],
+                cap=max(k * 2, 12),
+                # Theme dominates theme queries (it's the whole point), but we
+                # still always sample 1 from each of hybrid + semantic per round.
+                weights=[2, 1, 1] if theme_docs else [1, 1, 1],
+            )
             self.search_stats['hybrid_queries'] += 1
             if self.bm25_retriever.use_reranker:
                 self.search_stats['reranked_queries'] += 1
-        
+            logger.info(
+                f"Theme-saturation contributed {len(theme_docs)} docs; "
+                f"hybrid contributed {len(hybrid_docs)}; merged to {len(documents)}"
+            )
+
         else:
-            # Fallback to hybrid
-            documents = self.bm25_retriever.hybrid_search(query, k=k, category_threshold=category_threshold)
+            # Fallback: same merge behavior under the default method
+            theme_docs = self.bm25_retriever.theme_saturation_search(
+                query, category_threshold=category_threshold, max_chunks=k * 3
+            )
+            hybrid_docs = self.bm25_retriever.hybrid_search(
+                query, k=k, category_threshold=category_threshold
+            )
+            semantic_docs = [
+                doc for doc, _ in self.bm25_retriever.semantic_search(query, k=k)
+            ]
+            documents = _merge_unique(
+                [theme_docs, hybrid_docs, semantic_docs],
+                cap=max(k * 2, 12),
+                weights=[2, 1, 1] if theme_docs else [1, 1, 1],
+            )
             self.search_stats['hybrid_queries'] += 1
-        
+
         logger.info(f"Retrieved {len(documents)} documents using {search_method} method")
         return documents
     
-    def _format_sources(self, documents: List[Document], max_citations: int = 3) -> List[Dict[str, Any]]:
-        """Format source citations from retrieved documents with deduplication by episode/book"""
+    def _format_sources(
+        self,
+        documents: List[Document],
+        max_citations: int = 3,
+        query: Optional[str] = None,
+    ) -> List[Dict[str, Any]]:
+        """Format source citations from retrieved documents with deduplication.
+
+        `query` is used only for the optional book-citation reservation pass
+        below (we want to know if the user signalled interest in a book).
+        """
+        query_for_routing = query
         sources = []
         seen_items = set()
         
@@ -378,12 +491,179 @@ class BM25RAGChain:
                 source['final_score'] = metadata['final_score']
             
             sources.append(source)
-            
+
             # Limit to configured number of unique items
             if len(sources) >= max_citations:
                 break
-        
+
+        # Book-slot reservation (Aaron's #3, refined 2026-05-04): when the
+        # user signals interest in a book — by saying "book", "handbook", or
+        # a specific YOE book title — and the natural top-N sources have no
+        # book, swap one in. We only do the swap on book-signaled queries to
+        # avoid displacing a relevant episode for theme queries like
+        # "regenerative social enterprise" where a book isn't actually being
+        # asked for.
+        # 1) If the query names a SPECIFIC book by title, ensure that book
+        # appears in citations even if another book naturally outranks it.
+        # 2) Otherwise (no specific title), only swap a book in if no book is
+        # already cited and the query signals book interest.
+        named_book_canonical = self._named_book_in_query(query_for_routing)
+        if named_book_canonical and max_citations >= 2:
+            already_cites_named = any(
+                s.get('content_type') == 'book'
+                and s.get('book_title') == named_book_canonical
+                for s in sources
+            )
+            if not already_cites_named:
+                first_book_doc = self._find_specific_book_doc(documents, named_book_canonical)
+                if first_book_doc is not None:
+                    book_source = self._format_single_source(first_book_doc)
+                    if book_source is not None:
+                        # Replace any naturally-cited book first (we want the
+                        # named book, not whichever ranked higher), else swap
+                        # the lowest-priority slot.
+                        replace_idx = next(
+                            (i for i, s in enumerate(sources)
+                             if s.get('content_type') == 'book'),
+                            None,
+                        )
+                        if replace_idx is None:
+                            if len(sources) >= max_citations:
+                                replace_idx = len(sources) - 1
+                            else:
+                                sources.append(book_source)
+                                return sources
+                        sources[replace_idx] = book_source
+                return sources
+
+        if (
+            max_citations >= 2
+            and not any(s.get('content_type') == 'book' for s in sources)
+            and self._query_signals_book(query_for_routing)
+        ):
+            first_book_doc = self._pick_book_for_reservation(documents, query_for_routing)
+            if first_book_doc is not None:
+                try:
+                    book_source = self._format_single_source(first_book_doc)
+                except Exception as e:
+                    logger.warning(f"Could not format reserved book source: {e}")
+                    book_source = None
+                if book_source is not None:
+                    # Replace the lowest-priority source with the book; keep top
+                    # episode at sources[0] (it tends to be the most relevant).
+                    if len(sources) >= max_citations:
+                        sources[-1] = book_source
+                    else:
+                        sources.append(book_source)
+
         return sources
+
+    @staticmethod
+    def _named_book_in_query(query: Optional[str]) -> Optional[str]:
+        """Return the canonical YOE book title if the query names it; else None."""
+        if not query:
+            return None
+        q = query.lower()
+        title_cues = {
+            "Y on Earth: Get Smarter, Feel Better, Heal the Planet": ("y on earth",),
+            "Soil Stewardship Handbook": ("soil stewardship",),
+            "VIRIDITAS: THE GREAT HEALING": ("viriditas",),
+        }
+        for canonical, cues in title_cues.items():
+            if any(cue in q for cue in cues):
+                return canonical
+        return None
+
+    @staticmethod
+    def _find_specific_book_doc(
+        documents: List[Document], canonical: str
+    ) -> Optional[Document]:
+        """Return the first chunk whose book_title matches `canonical`."""
+        for d in documents:
+            md = getattr(d, 'metadata', {}) or {}
+            if md.get('content_type') == 'book' and md.get('book_title') == canonical:
+                return d
+        return None
+
+    @staticmethod
+    def _pick_book_for_reservation(
+        documents: List[Document],
+        query: Optional[str],
+    ) -> Optional[Document]:
+        """Choose which book chunk to reserve when the query signals a book.
+
+        If the query names a specific YOE book (or distinctive fragment of
+        a book title), prefer a chunk from THAT book even if another book
+        outranks it in the candidate pool. Otherwise fall back to the first
+        book chunk in retrieval order.
+        """
+        book_docs = [
+            d for d in documents
+            if (getattr(d, 'metadata', {}) or {}).get('content_type') == 'book'
+        ]
+        if not book_docs:
+            return None
+
+        q = (query or "").lower()
+        title_cues = {
+            "Y on Earth: Get Smarter, Feel Better, Heal the Planet": ("y on earth",),
+            "Soil Stewardship Handbook": ("soil stewardship",),
+            "VIRIDITAS: THE GREAT HEALING": ("viriditas",),
+        }
+        for canonical, cues in title_cues.items():
+            if any(cue in q for cue in cues):
+                for d in book_docs:
+                    if (getattr(d, 'metadata', {}) or {}).get('book_title') == canonical:
+                        return d
+
+        return book_docs[0]
+
+    @staticmethod
+    def _query_signals_book(query: Optional[str]) -> bool:
+        """True if the query suggests a book citation would be relevant.
+
+        Triggers on:
+          (a) explicit book/chapter mentions ("the book says...", "in chapter 3");
+          (b) named YOE book titles;
+          (c) "how do/can I X" how-to questions, where book chapters often
+              contain the procedural detail an episode interview only summarizes;
+          (d) "what does X say about" / "tell me about" framings, which usually
+              expect quotational-style content books are good for.
+
+        Used to gate book-citation reservation so theme/discovery queries like
+        "regenerative social enterprise" don't get a book forced on them at
+        the expense of more relevant episodes.
+        """
+        if not query:
+            return False
+        q = query.lower()
+        explicit = (
+            "book", "books", "chapter", "chapters", "handbook",
+            "y on earth", "soil stewardship", "viriditas",
+        )
+        if any(s in q for s in explicit):
+            return True
+        how_to = ("how do i", "how can i", "how do you", "how to ", "how does")
+        if any(s in q for s in how_to):
+            return True
+        quotational = ("what does ", "tell me about ", "explain ")
+        if any(s in q for s in quotational):
+            return True
+        return False
+
+    def _format_single_source(self, doc: Document) -> Dict[str, Any]:
+        """Build the dict shape returned by _format_sources, for one document.
+
+        Reuses the same logic as the main loop so the reserved book slot has
+        identical metadata to a naturally-ranked book citation.
+        """
+        # Round-trip through _format_sources with max_citations=1 and a single doc
+        formatted = self._format_sources([doc], max_citations=1, query=None)
+        if not formatted:
+            raise ValueError("could not format source for doc")
+        # _format_sources also runs the book-reservation pass on a single-book
+        # input, but since the doc IS a book, that pass is a no-op.
+        return formatted[0]
     
     def _extract_episode_references(self, documents: List[Document]) -> List[str]:
         """Extract unique episode/book references from documents"""

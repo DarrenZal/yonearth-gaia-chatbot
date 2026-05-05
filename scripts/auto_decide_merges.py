@@ -60,17 +60,18 @@ NOT_A_DUPE: dict[str, set[str]] = {
     "Rodale Institute":         {"Verdeo Institute", "Land Institute"},
 }
 
-# Member names that are PHONETIC LLM TRANSCRIPTION NOISE. The user said
-# "not sure" about these — likely Whisper misheard "Y on Earth Community" but
-# we want Aaron to confirm with citation rather than auto-rejecting.
-# Force these into NEEDS_REVIEW even if heuristics would otherwise reject.
-FORCE_REVIEW = {
+# Member names that are likely PHONETIC LLM TRANSCRIPTION NOISE. We try to
+# auto-accept WITH PROVENANCE if the transcript citation returns the
+# canonical name (strong evidence the same episode referenced canonical).
+# Falls back to Aaron review only when no canonical citation can be found.
+PHONETIC_NOISE_CANDIDATES = {
     "Y-Energ community", "Y-Earth community", "Y-Earth Community",
     "Y Honors Community", "Y Honors community",
     "Wieners community", "Winers community", "Weiner Community", "Wiener Community",
     "White Honors Community", "Why Honors Community",
     "Wine and Earth Community", "Wine Community",
     "YNRF community", "Wired Earth Community Network",
+    "Y on Earth communities", "YonEarth Communities", "Y and Earth communities",
 }
 
 # Keyword patterns that signal a member is a distinct entity, not a typo.

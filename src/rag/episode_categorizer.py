@@ -2,6 +2,7 @@
 Episode Categorizer Module for RAG Search Enhancement
 Loads and parses episode categorization data from CSV to enhance search relevance
 """
+import json
 import logging
 import csv
 import pickle
@@ -22,30 +23,55 @@ class EpisodeCategory:
     guest_title: str
     location: str
     categories: Set[str]
-    
+
     def __post_init__(self):
         """Ensure categories is a set"""
         if not isinstance(self.categories, set):
             self.categories = set(self.categories) if self.categories else set()
 
 
+@dataclass
+class BookCategory:
+    """Represents a YOE book with its taxonomy categories.
+
+    Books were originally invisible to category search (Aaron's #3 issue,
+    2026-05-02). Categories come from `yoe_categories` in
+    data/books/<slug>/metadata.json — manually curated so book chapters
+    surface for theme queries.
+    """
+    book_title: str
+    author: str
+    categories: Set[str]
+
+
 class EpisodeCategorizer:
     """
-    Loads and manages episode categorization data for enhanced search scoring
+    Loads and manages episode categorization data for enhanced search scoring.
+    Also loads book-level categories so theme-based retrieval can pull both
+    podcasts and books from the YOE library.
     """
-    
-    def __init__(self, csv_path: Optional[str] = None):
+
+    def __init__(
+        self,
+        csv_path: Optional[str] = None,
+        books_dir: Optional[str] = None,
+    ):
         """
         Initialize the episode categorizer
-        
+
         Args:
-            csv_path: Path to the CSV file. If None, uses default location
+            csv_path: Path to the episode CSV. If None, uses default location.
+            books_dir: Path to the books directory (each book has a metadata.json
+                with optional `yoe_categories`). If None, uses data/books.
         """
         self.csv_path = csv_path or str(settings.data_dir / "PodcastPipelineTracking.csv")
+        self.books_dir = Path(books_dir) if books_dir else (settings.data_dir / "books")
         self.episodes: Dict[int, EpisodeCategory] = {}
+        self.books: Dict[str, BookCategory] = {}  # keyed by book_title
         self.categories: Set[str] = set()
         self.category_synonyms: Dict[str, Set[str]] = {}
         self._load_episodes()
+        self._load_books()
         self._build_category_synonyms()
     
     def _load_episodes(self):
@@ -125,6 +151,51 @@ class EpisodeCategorizer:
         except Exception as e:
             logger.error(f"Error loading episodes: {e}")
     
+    def _load_books(self):
+        """Load book-level categories from data/books/<slug>/metadata.json."""
+        if not self.books_dir.exists():
+            logger.info(f"No books dir at {self.books_dir} — skipping book categorization")
+            return
+        for book_folder in self.books_dir.iterdir():
+            if not book_folder.is_dir():
+                continue
+            meta_path = book_folder / "metadata.json"
+            if not meta_path.exists():
+                continue
+            try:
+                with meta_path.open() as f:
+                    meta = json.load(f)
+            except Exception as e:
+                logger.warning(f"Failed to read {meta_path}: {e}")
+                continue
+            title = meta.get("title")
+            if not title:
+                continue
+            cats = set(meta.get("yoe_categories") or [])
+            if not cats:
+                # No categories declared — book is reachable via direct search
+                # but won't appear in theme-saturation. That's fine.
+                continue
+            self.books[title] = BookCategory(
+                book_title=title,
+                author=meta.get("author", "Unknown"),
+                categories=cats,
+            )
+            self.categories.update(cats)
+        if self.books:
+            logger.info(
+                f"Loaded {len(self.books)} books with category metadata: "
+                f"{sorted(self.books.keys())}"
+            )
+
+    def get_books_by_category(self, category: str) -> List[str]:
+        """Return the list of book titles tagged with `category`."""
+        return [
+            title
+            for title, book in self.books.items()
+            if category in book.categories
+        ]
+
     def _build_category_synonyms(self):
         """Build category synonyms for better matching"""
         # Define synonym mappings for better query matching

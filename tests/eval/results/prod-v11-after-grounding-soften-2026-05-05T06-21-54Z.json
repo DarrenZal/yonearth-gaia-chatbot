@@ -1,0 +1,1025 @@
+{
+  "tag": "prod-v11-after-grounding-soften",
+  "timestamp": "2026-05-05T06-21-54Z",
+  "summary": {
+    "total": 25,
+    "passed": 25,
+    "failed": 0
+  },
+  "results": [
+    {
+      "id": "01_biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's #1 \u2014 definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "94",
+          "title": "Episode 94 \u2013 Tom Chi, Technologist & Eco-Investor, At One Ventures",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "96",
+          "title": "Episode 96 \u2013 John Fullerton, Founder, The Capital Institute, on Regenerative Economics",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Biochar finance involves various income streams associated with producing biochar, such as biochar carbon credits that are valued around a hundred dollars a ton. As the use of biochar expands on a larger scale, there is potential for income generation through these carbon credits. Biochar finance can also involve tapping into global carbon markets as a lever for financial sustainability and growth (\"Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar\")."
+    },
+    {
+      "id": "02_finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's #2 \u2014 short theme query must surface IMPACT INVESTING-tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "94",
+          "title": "Episode 94 \u2013 Tom Chi, Technologist & Eco-Investor, At One Ventures",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "96",
+          "title": "Episode 96 \u2013 John Fullerton, Founder, The Capital Institute, on Regenerative Economics",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 20,
+          "chapter_title": "\u2022 Earn 267"
+        },
+        {
+          "type": "episode",
+          "episode_number": "20",
+          "title": "Episode 20 \u2013 Christine Robinson \u2013 Deloitte & Touche, Sustainability Services Group",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "8",
+          "title": "Episode 08 \u2013 Mark Retzloff \u2013 Business Leader, Organic Food Brands & Systems",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "03_generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's #2 \u2014 must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "119",
+          "title": "Episode 119 \u2013 Richard Hardiman, Founder & CEO, RanMarine Technology",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "58",
+          "title": "Episode 58 \u2013 Sarah Drew, Visionary Author, Gaia Codex",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "87",
+          "title": "Episode 87 \u2013 Rennie Davis, Futurist, Activist, Philosopher, \u201cEarth Whisperer\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "93",
+          "title": "Episode 93 \u2013 Mike Lewis, Plant-based Eye Wear at Zeal Optics",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Generative technology refers to technologies that contribute to regenerative systems by nurturing and promoting life force, creating a closed loop of continual growth and restoration. These technologies help bring life force to the surface, nurture new energy, and enable the energy to decompose and be recycled, creating a sustainable and regenerative cycle. In contrast, degenerative technologies disrupt this cycle by breaking the connection between the creation and decomposition of energy, leading to a unidirectional and extractive flow of resources (\"Our Biggest Deal\", Chapter 190.0)."
+    },
+    {
+      "id": "04_biochar_at_home_book",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's #3 \u2014 how-to query must cite the Soil Stewardship Handbook (it's literally the source).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "124",
+          "title": "Episode 124 \u2013 Nick DiDomenico, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        }
+      ],
+      "response_excerpt": "To make biochar at home, you can follow these steps:\n\n1. Start by choosing a feedstock such as wood chips or other biomass material.\n2. Cook the biomass at high temperatures in a low-oxygen environment, such as in a specially designed kiln or a pit.\n3. Allow the biomass to char and turn into biochar.\n4. Once the biochar is ready, let it cool down before using it in your garden or soil.\n\nRemember to take necessary safety precautions when working with high temperatures and fire. For more detailed guidance on making biochar at home, you can refer to resources like the Biochar Handbook or consult online guides for DIY biochar production techniques."
+    },
+    {
+      "id": "05_yoe_book_daily_practices",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's #3 \u2014 query that names the book by title must cite the book.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "113",
+          "title": "Episode 113 \u2013 Stephen Brooks, Ecoversity, on Permaculture Design Certification",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "112",
+          "title": "Episode 112 \u2013 Layth Matthews, Buddhist Economics & Personal Well Being",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "resource_soilwerks",
+          "title": "Soil Werks",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 112,
+          "chapter_title": "PART One \u2022 We Are What We Eat & We Are Soil"
+        },
+        {
+          "type": "episode",
+          "episode_number": "21",
+          "title": "Episode 21 \u2013 Executive Chef Maria Cooper\u2019s \u201cHeartful Kitchen\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "The Y on Earth book recommends practices for daily life that focus on cultivating true health and well-being while aligning with global strategies for regeneration, stewardship, and sustainability. These practices include reconnecting to the soil, fostering deeper connections with one another, and promoting sustainable living. The book emphasizes the importance of becoming great stewards of our bodies, hearts, and minds to create a more sustainable culture and future. For more details on daily life practices, you can explore the Y on Earth book, particularly Chapter 34.0."
+    },
+    {
+      "id": "06_viriditas_book",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Book by title \u2014 VIRIDITAS chapters must surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 6,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 1,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "VIRIDITAS is a book that explores the concept of the Viriditas Society, a global network of Earth-tenders who collaborate with the plant kingdom for healing and wellness. Inspired by the wisdom of medieval mystic Hildegard von Bingen, the Viriditas Society focuses on regenerative healing, sustained stewardship of the Earth, and the green healing life force that flows through the plant kingdom. The book delves into the teachings and practices of the Viriditas Society, incorporating elements of herbalism, permaculture, and spiritual connection with nature (\"VIRIDITAS: THE GREAT HEALING\")."
+    },
+    {
+      "id": "07_soil_stewardship_handbook_explicit",
+      "query": "What does the Soil Stewardship Handbook say about composting?",
+      "intent": "Book by name \u2014 must cite the Soil Stewardship Handbook.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "133",
+          "title": "Episode 133 \u2013 Aaron Perry \u2013 Reflections, Updates, & Musings upon an Auspicious Milestone",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 2008,
+          "chapter_title": "World Series Champ, Philadelphia Phillies"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        },
+        {
+          "type": "episode",
+          "episode_number": "68",
+          "title": "Episode 68 \u2013 Corona Virus Special w/ Aaron Perry & Artem Nikulkov",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "In the \"Soil Stewardship Handbook,\" Chapter 10.0 by Aaron William Perry discusses composting as a critical and necessary starting point in the process of turning garbage into a garden. It emphasizes the importance of composting organic nutrients to close the loop and transform peels, scraps, leaves, and grass clippings into soil. Composting is a key practice highlighted in the handbook to accelerate the natural soil-building cycle, heal the environment, and reverse climate change."
+    },
+    {
+      "id": "08_permaculture_saturation",
+      "query": "permaculture",
+      "intent": "Theme saturation \u2014 PERMA-CULTURE has 16 tagged episodes; must surface several.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "113",
+          "title": "Episode 113 \u2013 Stephen Brooks, Ecoversity, on Permaculture Design Certification",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "44",
+          "title": "Episode 44 \u2013 Pat Frazier, NP, Biodynamic Educator & Earth Steward Par Excellence",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "115",
+          "title": "Episode 115 \u2013 Brad \u201cLights Out\u201d Lidge & Aaron William Perry re: VIRIDITAS: THE GREAT HEALING\u2026",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Our Biggest Deal",
+          "chapter_number": 372,
+          "chapter_title": "| APHORISTIC A-MUSInGS"
+        },
+        {
+          "type": "episode",
+          "episode_number": "159",
+          "title": "Episode 159 \u2013 Helen Atthowe, Author, \u201cThe Ecological Farm\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Permaculture is a design approach that integrates sustainable agriculture, ecological stewardship, and community building. It emphasizes working with natural systems to create harmonious and regenerative environments. Permaculture design principles are applied to various aspects of life, including food production, land use, water management, and energy efficiency. Permaculture aims to create resilient and self-sustaining systems that benefit both people and the planet (Episode 113 \u2013 \"Stephen Brooks, Ecoversity, on Permaculture Design Certification\")."
+    },
+    {
+      "id": "09_herbal_medicine_saturation",
+      "query": "herbal medicine",
+      "intent": "Theme saturation \u2014 HERBAL MEDICINE has 18 tagged episodes; must surface several.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "108",
+          "title": "Episode 108 \u2013 Ann Armbrecht, Author, \u201cBusiness of Botanicals\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "110",
+          "title": "Episode 110 \u2013 Brigitte Mars on Cannabis as the Tree of Life",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "32",
+          "title": "Episode 32 \u2013 Lila Sophia Tresemer, Co-Founder The Star House Temple",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "19",
+          "title": "Episode 19 \u2013 Brigitte Mars & the Power of Herbal Medicine",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "92",
+          "title": "Episode 92 \u2013 Aaron William Perry, Regenerative Economics & Holiday Shopping",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Herbal medicine involves using plants and plant extracts for medicinal purposes. It is a practice that has been used for thousands of years across various cultures and traditions. Herbal medicine can encompass a wide range of remedies, including teas, tinctures, salves, and capsules, derived from different parts of plants such as leaves, roots, flowers, and seeds. The YonEarth community has explored herbal medicine in various podcast episodes, such as Episode 108 with Ann Armbrecht, Episode 110 with Brigitte Mars, and Episode 19 with Brigitte Mars. Additionally, YonEarth sponsors like Vera Herbals Alchemy & Spagyrics (yonearth.org) are actively involved in producing herbal medicines and mushroom-based medicines."
+    },
+    {
+      "id": "10_indigenous_wisdom_saturation",
+      "query": "indigenous wisdom",
+      "intent": "Theme saturation \u2014 INDIGENOUS WISDOM has 22 tagged episodes; must surface several.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "50",
+          "title": "Episode 50 \u2013 Anita Sanchez on Women\u2019s Voices, Indigenous Wisdom & the Sacred Hoop of Life",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "160",
+          "title": "Episode 160 \u2013 Sophie Monpeyssen & Olivier Girard, Co-Founders, Le Ciel Foundation",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 29,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 100,
+          "chapter_title": "PART One \u2022 We Are What We Eat & We Are Soil"
+        },
+        {
+          "type": "episode",
+          "episode_number": "124",
+          "title": "Episode 124 \u2013 Nick DiDomenico, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Indigenous wisdom refers to the knowledge, traditions, and practices passed down through generations within native and traditional tribal communities around the world. This wisdom encompasses a deep understanding of the interconnectedness of all life, the importance of stewardship of the land and natural resources, and a holistic approach to well-being that integrates the physical, mental, emotional, and spiritual aspects of life. The YonEarth community values and respects indigenous wisdom, recognizing the vital role it plays in promoting sustainable living practices and fostering a harmonious relationship with the Earth. Various podcast episodes within the YonEarth archive, such as Episode 50 with Anita Sanchez, Episode 115 with Brad \u201cLights Out\u201d Lidge, and Episode 133 with Aaron Perry, "
+    },
+    {
+      "id": "11_biodynamic_farming_saturation",
+      "query": "biodynamic farming",
+      "intent": "Theme saturation \u2014 BIO-DYNAMICS has 11 tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "98",
+          "title": "Episode 98 \u2013 Lin Bautze, Goetheanum Section for Agriculture, Biodynamic Farming",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "3",
+          "title": "Episode 03 \u2013 Brook Le Van \u2013 Biodynamic Farming & Soil Stewardship",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "32",
+          "title": "Episode 32 \u2013 Lila Sophia Tresemer, Co-Founder The Star House Temple",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "147",
+          "title": "Episode 147 \u2013 Sheila Foster, Executive Director, Biodynamic Demeter Alliance",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "47",
+          "title": "Episode 47 \u2013 Thea Maria Carlson, Executive Director, Biodynamic Association",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Biodynamic farming is an agricultural approach that views the farm as a self-sustaining ecosystem. It incorporates holistic practices to enhance soil health, biodiversity, and overall farm vitality. Biodynamic farmers follow a specific set of principles and practices, including using biodynamic preparations, planting and harvesting based on lunar and cosmic cycles, and emphasizing the interconnectedness of all aspects of the farm. Biodynamic farming aims to create a closed-loop system that fosters healthy soils, plants, animals, and people (Episode 98 \u2013 \"Lin Bautze, Goetheanum Section for Agriculture, Biodynamic Farming\")."
+    },
+    {
+      "id": "12_green_building_saturation",
+      "query": "green building principles",
+      "intent": "Theme saturation \u2014 GREEN BUILDING has 8 tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "59",
+          "title": "Episode 59 \u2013 Stone Hunter Guides Tour of Natural, Biodynamic Inspired House",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "159",
+          "title": "Episode 159 \u2013 Helen Atthowe, Author, \u201cThe Ecological Farm\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 23,
+          "chapter_title": "\u2022 Build 331"
+        },
+        {
+          "type": "episode",
+          "episode_number": "158",
+          "title": "Episode 158 \u2013 Gabe Brown, Regenerative Farmer/Rancher & Author, \u201cDirt to Soil\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "145",
+          "title": "Episode 145 \u2013 Jerry Tinianow, CSO & Founder, Western Urban Sustainability Advisors",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Green building principles focus on creating sustainable, energy-efficient, and environmentally friendly structures. In Chapter 23.0 of \"Y on Earth: Get Smarter, Feel Better, Heal the Planet\" by Aaron William Perry, it is mentioned that the US Green Building Council and the World Green Building Council have developed comprehensive frameworks for assessing the sustainability of buildings. These frameworks guide developers, municipalities, organizations, and governments in making design and construction decisions that promote economic soundness, environmental thoughtfulness, and positive human impact. Green building standards help establish building performance based on objective scoring systems, with different levels of recognition like Bronze and Silver ratings for meeting sustainability cr"
+    },
+    {
+      "id": "13_climate_science_saturation",
+      "query": "climate science",
+      "intent": "Theme saturation \u2014 CLIMATE & SCIENCE is one of the largest themes (62 eps).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "126",
+          "title": "Episode 126 \u2013 Professor David George Haskel, \u201cSounds Wild & Broken\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "82",
+          "title": "Episode 82 \u2013 Dr. Julienne Stroeve, Climate Scientist \u2013 Snow & Ice Data",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 25,
+          "chapter_title": "\u2022 Power 355"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 356,
+          "chapter_title": "Part Three \u2022 Activity, Agency, Empowerment & Vocation"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Climate science involves the study of Earth's climate system, including its atmosphere, oceans, land surfaces, and ice. Scientists in this field examine patterns and changes in temperature, precipitation, wind patterns, and other climate indicators to understand how human activities and natural processes impact the climate. Climate science plays a crucial role in assessing the risks of climate change, developing mitigation strategies, and informing policies to address the challenges posed by a changing climate (Book: \"Y on Earth: Get Smarter, Feel Better, Heal the Planet\", Chapter 352.0)."
+    },
+    {
+      "id": "14_regenerative_social_enterprise",
+      "query": "regenerative social enterprise",
+      "intent": "Theme saturation \u2014 REGEN / SOCIAL ENTERPRISE has 37 eps; multi-word theme.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "128",
+          "title": "Episode 128 \u2013 Ruby Au, Head of North America, Ecosia Search Engine",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "137",
+          "title": "Episode 137 \u2013 Georgia Kelly, Founder, Praxis Peace Institute; on the Mondragon Cooperatives",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Our Biggest Deal",
+          "chapter_number": 342,
+          "chapter_title": "| OUR BIGGEST DEAL"
+        },
+        {
+          "type": "episode",
+          "episode_number": "136",
+          "title": "Episode 136 \u2013 Ben Raskin, Author, \u201cThe Woodchip Handbook\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "65",
+          "title": "Episode 65 \u2013 Eric Lombardi, Social Enterprise & Protecting the Commons",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Regenerative social enterprise involves businesses that go beyond traditional profit-making goals to actively contribute to the regeneration of social and environmental systems. These enterprises prioritize long-term social and environmental impact while also generating financial returns. They often operate with a triple bottom line approach, considering people, planet, and profit in their decision-making processes. The YonEarth community is actively engaged in exploring and promoting regenerative social enterprise, as discussed in various podcast episodes like Episode 65 with Eric Lombardi and Episode 71 with Karenna Gore. Organizations such as RSF | Regenerative Social Finance (founded in 1984) exemplify regenerative social enterprise by aiming to transform the way the world works with m"
+    },
+    {
+      "id": "15_what_is_biochar_definitional",
+      "query": "What is biochar?",
+      "intent": "Definitional \u2014 must ground in BIOCHAR-tagged episodes (only 4 exist) and/or Soil Stewardship Handbook. Must NOT trigger out-of-archive fallback (regression caught 2026-05-04 \u2014 over-strict grounding contract was refusing ~10% of the time on partial-coverage queries).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "124",
+          "title": "Episode 124 \u2013 Nick DiDomenico, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        }
+      ],
+      "response_excerpt": "Biochar is charcoal created from cooking biomass at high temperatures in the absence of oxygen. It is typically made from wood chips but can also be produced from other feedstocks. Biochar is known for its longevity and its potential applications in soil and agriculture due to its ability to enhance soil health and fertility (\"Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar\")."
+    },
+    {
+      "id": "16_what_is_regenerative_agriculture",
+      "query": "What is regenerative agriculture?",
+      "intent": "Definitional cross-theme \u2014 should land on FARMING & FOOD / SOIL / REGEN content.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "158",
+          "title": "Episode 158 \u2013 Gabe Brown, Regenerative Farmer/Rancher & Author, \u201cDirt to Soil\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "69",
+          "title": "Episode 69 \u2013 Corona Virus Special w/ Ryan Zinn, Dr. Bronner\u2019s Regen. Projects. Mgr.",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "150",
+          "title": "Episode 150 \u2013 Hunter Lovins on UN\u2019s COP 28 Climate Change Summit",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "89",
+          "title": "Episode 89 \u2013 Dr. Yichao Rui, Senior Soil Scientist, Rodale Institute, on Soil Regeneration",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "44",
+          "title": "Episode 44 \u2013 Pat Frazier, NP, Biodynamic Educator & Earth Steward Par Excellence",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Regenerative agriculture is an approach to farming that focuses on rebuilding and restoring soil health, biodiversity, and ecosystem resilience. It involves practices that aim to improve soil health, sequester carbon, enhance water retention, and promote overall ecosystem vitality. Regenerative agriculture moves beyond sustainable practices to actively regenerate the land and create more productive and resilient agricultural systems (\"Episode 150 \u2013 Hunter Lovins on UN\u2019s COP 28 Climate Change Summit\")."
+    },
+    {
+      "id": "17_compost_how_to",
+      "query": "How can I improve my soil with composting?",
+      "intent": "How-to \u2014 should cite Soil Stewardship Handbook and SOIL/FARMING episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "133",
+          "title": "Episode 133 \u2013 Aaron Perry \u2013 Reflections, Updates, & Musings upon an Auspicious Milestone",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "67",
+          "title": "Episode 67 \u2013 Hunter Chesnutt-Perry, Youth Responses to Climate Crisis",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 8,
+          "chapter_title": "USE COMPOST TEA AND BOKASHI (Master Level)\u2014Make or buy compost tea and bokashi."
+        },
+        {
+          "type": "episode",
+          "episode_number": "70",
+          "title": "Episode 70 \u2013 Jeff Moyer, CEO, Rodale Institute, on Regenerative Organics",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "To improve your soil with composting, you can follow these steps:\n\n1. Start by collecting organic kitchen waste, yard trimmings, and other compostable materials.\n2. Create a compost pile or use a compost bin to contain the materials.\n3. Layer brown materials (like dried leaves or cardboard) with green materials (such as fruit scraps or grass clippings) to maintain a good balance of carbon and nitrogen.\n4. Regularly turn and aerate the compost pile to speed up decomposition and prevent odors.\n5. Keep the compost pile moist but not too wet to facilitate the breakdown process.\n6. Over time, the organic materials will decompose into nutrient-rich compost that can be added to your soil to improve its structure and fertility.\n\nFor more detailed guidance on composting and using compost to improve"
+    },
+    {
+      "id": "18_biochar_guests",
+      "query": "Who has spoken about biochar on the podcast?",
+      "intent": "Person/guest discovery \u2014 must cite multiple BIOCHAR-tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 8,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "124",
+          "title": "Episode 124 \u2013 Nick DiDomenico, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        }
+      ],
+      "response_excerpt": "Several guests have discussed biochar on the podcast, including Rowdy Yeatts, the founder of High Plains Biochar (\"Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar\"), Kelpie Wilson, the author of the Biochar Handbook (\"Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)\"), and soil scientist Dr. David Laird (\"Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability\"). These episodes provide valuable insights into the science, applications, and benefits of biochar in soil health and climate stability."
+    },
+    {
+      "id": "19_soil_werks_resource",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Sponsor / community resource \u2014 Soil Werks 2026-04-30 ingest must surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "77",
+          "title": "Episode 77 \u2013 Shelby Kaminski, Edaphic Solutions \u2013 Compost Tea for Community",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 30,
+          "chapter_title": "\u2022 Love 425"
+        },
+        {
+          "type": "episode",
+          "episode_number": "resource_soilwerks",
+          "title": "Soil Werks",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "159",
+          "title": "Episode 159 \u2013 Helen Atthowe, Author, \u201cThe Ecological Farm\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Soil Werks provides regenerative soil-boosting products and services as a Social Enterprise within the Y on Earth Community ecosystem. The company's mission is to help people reduce their use of chemical fertilizers, improve soil health to grow healthy plants, and store carbon in the soil. Soil Werks collaborates with organic, Biodynamic, and Permaculture farms to offer specialty soil products derived from a network of practitioners and farmers combining traditional expertise with advanced innovation. Additionally, Soil Werks donates all of its proceeds to support the Y on Earth Community's mobilization efforts in soil stewardship, climate action, and neighborhood resiliency work. For more information on Soil Werks and its products, you can explore the dedicated episode resource on the Yon"
+    },
+    {
+      "id": "20_wele_waters_resource",
+      "query": "What does Wele Waters make?",
+      "intent": "Sponsor / community resource \u2014 Wele Waters 2026-04-30 ingest must surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "68",
+          "title": "Episode 68 \u2013 Corona Virus Special w/ Aaron Perry & Artem Nikulkov",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "126",
+          "title": "Episode 126 \u2013 Professor David George Haskel, \u201cSounds Wild & Broken\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "resource_welewaters",
+          "title": "Wele Waters \u2013 Monthly Program",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "121",
+          "title": "Episode 121 \u2013 Oliver Retzloff, Co-Founder, Wild Nectar Farm Talks Flowers (w/ Eric Knutson)",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Wele Waters is a boutique, 'farm-to-tub' purveyor of regeneratively- and Biodynamically-grown hemp-infused aromatherapy soaking salts. These soaking salts are hand-crafted in a ceremonial manner to deliver the healing power of salt, plants, and water right to your own tub. Wele Waters products are made with pure magnesium sulfate, full-spectrum organically- and Biodynamically-grown hemp phytonutrients infused in organic coconut oil, and a variety of pure essential oils. By using Wele Waters soaking salts, individuals can experience rejuvenation, relaxation, and euphoria in their own bathing experience. For special savings on Wele Waters products, individuals can visit welewaters.com and use the code \"YONEARTH.\" Wele Waters also has a monthly program where proceeds from purchases support th"
+    },
+    {
+      "id": "21_soil_climate_intersection",
+      "query": "What is the relationship between soil health and climate?",
+      "intent": "Multi-theme \u2014 should hit episodes appearing in both SOIL and CLIMATE & SCIENCE.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "123",
+          "title": "Episode 123 \u2013 Marissa Pulaski, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "162",
+          "title": "Episode 162 \u2013 Dr. Elaine Ingham, Soil Food Web School",
+          "guest_name": "Dr. Elaine Ingham"
+        },
+        {
+          "type": "episode",
+          "episode_number": "69",
+          "title": "Episode 69 \u2013 Corona Virus Special w/ Ryan Zinn, Dr. Bronner\u2019s Regen. Projects. Mgr.",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "67",
+          "title": "Episode 67 \u2013 Hunter Chesnutt-Perry, Youth Responses to Climate Crisis",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Soil health and climate are deeply interconnected. Healthy soil plays a crucial role in climate stability through carbon sequestration and water retention. By improving soil health, we can mitigate climate change by storing carbon in the soil, reducing greenhouse gas emissions, and enhancing the soil's ability to absorb and retain water.\n\nHealthy soil acts as a carbon sink, drawing carbon dioxide from the atmosphere and storing it in the soil through the process of photosynthesis. This helps reduce the amount of carbon dioxide in the atmosphere, a key greenhouse gas contributing to climate change.\n\nAdditionally, healthy soil with a diverse soil microbiome and good structure can absorb and retain more water. This helps prevent erosion, mitigate flooding, and maintain water availability for "
+    },
+    {
+      "id": "22_indigenous_food_sovereignty",
+      "query": "indigenous food sovereignty",
+      "intent": "Multi-theme \u2014 INDIGENOUS WISDOM \u2229 FARMING & FOOD content.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "123",
+          "title": "Episode 123 \u2013 Marissa Pulaski, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "57",
+          "title": "Episode 57 \u2013 Mohawk Women Leading the Three Sisters Sovereignty Project",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "124",
+          "title": "Episode 124 \u2013 Nick DiDomenico, Co-Founder, Drylands Agroecology Research",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Our Biggest Deal",
+          "chapter_number": 2003,
+          "chapter_title": "to 2011, she was on the board of Bette Midler\u2019s New York Restoration"
+        },
+        {
+          "type": "episode",
+          "episode_number": "66",
+          "title": "Episode 66 \u2013 Meadow Cook, Youth Council Leader, Three Sisters Sovereignty Project",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Indigenous food sovereignty is a concept highlighted in various episodes of the YonEarth podcast, such as Episode 123 with Marissa Pulaski and Episode 124 with Nick DiDomenico. It emphasizes the rights of Indigenous communities to clean water, healthy food, and clean air, as well as the autonomy to grow and consume traditional native foods. Projects like the one on the Shoshoni reservation, as mentioned in Episode 124, focus on supporting Indigenous communities in regaining control over their food systems and reclaiming traditional agricultural practices. Indigenous food sovereignty efforts aim to strengthen cultural identity, promote health, and ensure environmental sustainability within Indigenous communities."
+    },
+    {
+      "id": "23_out_of_archive_smartphone",
+      "query": "What's the best smartphone to buy in 2026?",
+      "intent": "Out of YOE archive \u2014 grounding contract should produce honest 'don't have that yet' fallback rather than riff from training data.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 6,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "160",
+          "title": "Episode 160 \u2013 Sophie Monpeyssen & Olivier Girard, Co-Founders, Le Ciel Foundation",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 12,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 28,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 130,
+          "chapter_title": "Part Two \u2022 Cultivating The Life We Really Want"
+        },
+        {
+          "type": "episode",
+          "episode_number": "20",
+          "title": "Episode 20 \u2013 Christine Robinson \u2013 Deloitte & Touche, Sustainability Services Group",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "The YonEarth archive does not provide specific recommendations on the best smartphone to buy in 2026. It's important to consider factors such as your personal preferences, budget, and desired features when choosing a smartphone. Researching the latest models, reading reviews, and comparing specifications can help you make an informed decision on the best smartphone to buy in 2026."
+    },
+    {
+      "id": "24_out_of_archive_chocolate_cake",
+      "query": "Give me a recipe for chocolate cake",
+      "intent": "Out of YOE archive \u2014 should not produce a generic recipe; honest fallback.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 6,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "117",
+          "title": "Episode 117 \u2013 Michael Bronner, President of Dr. Bronner\u2019s on Magic Chocolate",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "21",
+          "title": "Episode 21 \u2013 Executive Chef Maria Cooper\u2019s \u201cHeartful Kitchen\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look\nmore broadly within the YonEarth community?"
+    },
+    {
+      "id": "25_out_of_archive_taxes",
+      "query": "How do I file my US federal income taxes?",
+      "intent": "Out of YOE archive \u2014 generic personal-finance / tax procedure has no analogue in the YonEarth library. Grounding contract should fire honestly.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 7,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "105",
+          "title": "Episode 105 \u2013 NGO & Social Enterprise Accounting Intro with Aaron William Perry",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Our Biggest Deal",
+          "chapter_number": 94,
+          "chapter_title": "| STRUCTURES AnD STRATEGIES FOR PLAnETARY PROSPERITY"
+        },
+        {
+          "type": "episode",
+          "episode_number": "116",
+          "title": "David Sandoval Episode 116 \u2013 David Sandoval, Co-Founder, Purium Organic Superfood Company",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "127",
+          "title": "Episode 127 \u2013 John Perkins, Life Economy & Updated \u201cConfessions of an Economic Hit Man\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    }
+  ]
+}

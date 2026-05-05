@@ -1,3 +1,7 @@
+<!-- workstream: yoe -->
+
+> **Stream scope:** YOE / Ecoscene (this code repo + the `ecoscene` artifact workspace). Cross-stream recommendations require operator opt-in. See `~/CLAUDE.md` "Stream-scope discipline" for rule.
+
 # CLAUDE.md
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.

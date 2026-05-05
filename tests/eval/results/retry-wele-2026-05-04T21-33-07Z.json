@@ -1,0 +1,26 @@
+{
+  "tag": "retry-wele",
+  "timestamp": "2026-05-04T21-33-07Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "wele_waters_regression",
+      "query": "What does Wele Waters make?",
+      "intent": "Regression \u2014 recently-ingested Wele Waters resource must still surface.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "response missing all of expected substrings ['Wele Waters', 'Wele']",
+        "got 0 citations, need >= 1"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    }
+  ]
+}

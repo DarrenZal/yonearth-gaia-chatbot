@@ -583,11 +583,18 @@ class GaiaChat {
 
         // Add BM25-specific parameters
         if (ragType === 'bm25') {
-            requestBody.search_method = 'bm25';
-            requestBody.k = 5;
+            // 'auto' lets the chain pick the strongest strategy per-query
+            // (theme-saturation when the query hits a YOE category, hybrid
+            // semantic+BM25 otherwise) and merges in a semantic-direct channel
+            // so non-theme content like sponsor pages and books still surface.
+            // Pure 'bm25' was returning episode-only results and dropping the
+            // Soil Stewardship Handbook on definitional biochar queries
+            // (Aaron 2026-05-04 bug report).
+            requestBody.search_method = 'auto';
+            requestBody.k = maxReferences;
             requestBody.include_sources = true;
             requestBody.gaia_personality = this.personalitySelect.value;
-            requestBody.max_citations = maxReferences; // BM25 uses max_citations instead of max_references
+            requestBody.max_citations = maxReferences;
             requestBody.category_threshold = parseFloat(this.categoryThresholdSelect.value);
             requestBody.enable_voice = this.voiceEnabled;
             requestBody.voice_id = this.voiceEnabled ? this.selectedVoiceId : undefined;

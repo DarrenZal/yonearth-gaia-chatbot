@@ -1,0 +1,231 @@
+{
+  "tag": "patched-prod",
+  "timestamp": "2026-05-04T21-17-00Z",
+  "summary": {
+    "total": 8,
+    "passed": 4,
+    "failed": 4
+  },
+  "results": [
+    {
+      "id": "biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's Issue #1 \u2014 definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "In the context of biochar, \"biochar finance\" generally refers to the financial mechanisms and strategies used to fund biochar projects, research, and businesses. As discussed in Episode 120 with Rowdy Yeatts, founder of High Plains Biochar, securing funding for biochar projects can be challenging due to the innovative nature of the technology and the need for long-term investment.\n\nTo explore biochar finance options:\n1. **Government Grants and Subsidies:** Look into grants and subsidies offered by governmental agencies or environmental organizations to support biochar initiatives. These can provide valuable financial support for research and implementation.\n\n2. **Impact Investment:** Seek out impact investors who are interested in supporting sustainable solutions like biochar. These invest"
+    },
+    {
+      "id": "finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's Issue #2 \u2014 short theme query must surface multiple IMPACT INVESTING-tagged episodes.",
+      "passed": false,
+      "failures": [
+        "no cited episode tagged with category IMPACT INVESTING",
+        "got 0 IMPACT INVESTING-tagged citations, need >= 3"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 20,
+          "chapter_title": "\u2022 Earn 267"
+        },
+        {
+          "type": "episode",
+          "episode_number": "166",
+          "title": "Episode 166 \u2013 Dahr Jamail, Communications & Media Relations Lead, Home Planet Fund",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "105",
+          "title": "Episode 105 \u2013 NGO & Social Enterprise Accounting Intro with Aaron William Perry",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "In the context of finance, especially within the sustainability and environmental sector, there are several key considerations to keep in mind:\n\n1. **Financial Management:** Proper financial management is crucial for organizations and projects to thrive. As discussed in Episode 105 with Aaron William Perry, understanding financial statements like the balance sheet, profit and loss statement, and cash flow statement is essential for making informed decisions.\n\n2. **Funding Sources:** Explore various funding sources such as grants, impact investment, crowdfunding, and partnerships to support your sustainability initiatives. Each source has its own requirements and benefits, so it's essential to choose the ones that align best with your goals.\n\n3. **Impact Investing:** Impact investing focuse"
+    },
+    {
+      "id": "generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's Issue #2 \u2014 must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "passed": false,
+      "failures": [
+        "no cited episode is tagged with any of ['TECHNOLOGY & MATERIALS', 'REGEN / SOCIAL ENTERPRISE'] (cited episodes: [58, 79])"
+      ],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "58",
+          "title": "Episode 58 \u2013 Sarah Drew, Visionary Author, Gaia Codex",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "79",
+          "title": "Episode 79 \u2013 Brian Dillon, Growing Spaces & Rhythms of Thriving",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Our Biggest Deal",
+          "chapter_number": 190,
+          "chapter_title": "| VIP GUEST ESSAYS"
+        }
+      ],
+      "response_excerpt": "Generative technology refers to tools, systems, or processes that align with the principles of regenerative design and aim to enhance life and well-being for all beings. This type of technology is inspired by nature's regenerative systems, which nurture and sustain life in a closed loop of continual growth and restoration. As Brian Dillon discussed in Episode 79 of the YonEarth Podcast, regenerative technology can help us reconnect with the creative, generative force found in natural systems, akin to recreating a modern-day Garden of Eden. In the context of manufacturing and materials, there is a growing movement towards biomimicry and an ethos of precaution, stewardship, and care for life and people, as highlighted in other YonEarth episodes. If you're interested in exploring generative t"
+    },
+    {
+      "id": "soil_werks_regression",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Regression \u2014 recently-ingested Soil Werks resource must still surface.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "response missing all of expected substrings ['Soil Werks', 'soilwerks']",
+        "got 0 citations, need >= 1"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    },
+    {
+      "id": "wele_waters_regression",
+      "query": "What does Wele Waters make?",
+      "intent": "Regression \u2014 recently-ingested Wele Waters resource must still surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "resource_welewaters",
+          "title": "Wele Waters \u2013 Monthly Program",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "68",
+          "title": "Episode 68 \u2013 Corona Virus Special w/ Aaron Perry & Artem Nikulkov",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Wele Waters creates hand-crafted products in the Swadeshi tradition, including items like pure magnesium sulfate (Epsom Salt), full-spectrum organically- and Biodynamically-grown hemp phytonutrients infused in organic coconut oil, and a variety of pure essential oils. They offer products focused on herbal medicine, aromatherapy, health, well-being, and self-care."
+    },
+    {
+      "id": "viriditas_book_coverage",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Aaron's Issue #3 \u2014 book by Aaron must surface as a book citation.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 1,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "The concept of Viriditas, as discussed in various YonEarth podcast episodes, revolves around the belief that the plant kingdom embodies a healing life force and evolutionary perfection. The Viriditas Society, a global network of Earth-tenders, healers, land stewards, and community activists, intentionally collaborates with the plant kingdom for healing and wellness. This society acknowledges the ancient wisdom and healing power of plants, viewing them as elemental and angelic forces that can guide us towards a more harmonious relationship with nature and ourselves. If you're interested in exploring Viriditas further, you can delve into episodes featuring discussions on the Viriditas Society and its practices, as well as related topics such as herbalism, permaculture, and biodynamic farming"
+    },
+    {
+      "id": "soil_stewardship_book_coverage",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's Issue #3 \u2014 Soil Stewardship Handbook should surface for biochar how-to (it's a topic of the book).",
+      "passed": false,
+      "failures": [
+        "no cited book matches ['Soil Stewardship Handbook'] (cited books: [])"
+      ],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "To make biochar at home, you can follow these steps:\n\n1. **Materials Needed**:\n   - Organic biomass (wood chips, branches, leaves, etc.)\n   - Metal container with a lid (such as a metal drum)\n   - Heat source (fire pit, outdoor stove, etc.)\n   - Shovel or tongs\n\n2. **Preparing the Container**:\n   - Make sure the container is clean and free of any residues.\n   - Drill small holes in the container for air circulation.\n\n3. **Loading the Biomass**:\n   - Fill the container with organic biomass. Cut larger pieces into smaller chunks for better results.\n\n4. **Starting the Fire**:\n   - Light the biomass in the container. Allow it to burn until you see flames coming out of the top.\n\n5. **Covering the Container**:\n   - Once flames appear, cover the container with the lid to reduce oxygen flow and st"
+    },
+    {
+      "id": "y_on_earth_book_coverage",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's Issue #3 \u2014 Y on Earth book by title must cite the book.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "resource_soilwerks",
+          "title": "Soil Werks",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 34,
+          "chapter_title": "AARON WILLIAM PERRY"
+        },
+        {
+          "type": "book",
+          "book_title": "Y on Earth: Get Smarter, Feel Better, Heal the Planet",
+          "chapter_number": 112,
+          "chapter_title": "PART One \u2022 We Are What We Eat & We Are Soil"
+        }
+      ],
+      "response_excerpt": "In the \"Y on Earth\" book, the YOE community recommends incorporating the following practices into daily life:\n\n1. **Mindfulness and Awareness**:\n   - Cultivating awareness of our actions, thoughts, and impact on the world around us.\n\n2. **Healthy Living**:\n   - Prioritizing physical, mental, and emotional well-being through holistic health practices.\n\n3. **Regenerative Practices**:\n   - Engaging in regenerative activities that contribute positively to the environment and community.\n\n4. **Stewardship**:\n   - Being responsible stewards of the Earth by conserving resources and supporting sustainability.\n\n5. **Connection to Nature**:\n   - Spending time in nature, appreciating its beauty, and fostering a deeper connection to the natural world.\n\n6. **Community Engagement**:\n   - Participating in"
+    }
+  ]
+}

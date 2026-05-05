@@ -1,0 +1,206 @@
+{
+  "tag": "patched-prod-v3",
+  "timestamp": "2026-05-04T21-30-35Z",
+  "summary": {
+    "total": 8,
+    "passed": 5,
+    "failed": 3
+  },
+  "results": [
+    {
+      "id": "biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's Issue #1 \u2014 definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's Issue #2 \u2014 short theme query must surface multiple IMPACT INVESTING-tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "94",
+          "title": "Episode 94 \u2013 Tom Chi, Technologist & Eco-Investor, At One Ventures",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "96",
+          "title": "Episode 96 \u2013 John Fullerton, Founder, The Capital Institute, on Regenerative Economics",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "8",
+          "title": "Episode 08 \u2013 Mark Retzloff \u2013 Business Leader, Organic Food Brands & Systems",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's Issue #2 \u2014 must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "119",
+          "title": "Episode 119 \u2013 Richard Hardiman, Founder & CEO, RanMarine Technology",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "soil_werks_regression",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Regression \u2014 recently-ingested Soil Werks resource must still surface.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "response missing all of expected substrings ['Soil Werks', 'soilwerks']",
+        "got 0 citations, need >= 1"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    },
+    {
+      "id": "wele_waters_regression",
+      "query": "What does Wele Waters make?",
+      "intent": "Regression \u2014 recently-ingested Wele Waters resource must still surface.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "response missing all of expected substrings ['Wele Waters', 'Wele']",
+        "got 0 citations, need >= 1"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    },
+    {
+      "id": "viriditas_book_coverage",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Aaron's Issue #3 \u2014 book by Aaron must surface as a book citation.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 1,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "\"VIRIDITAS: THE GREAT HEALING\" is about the Viriditas Society, a global network of Earth-tenders who collaborate with the plant kingdom for the healing of minds, bodies, communities, and the planet. Inspired by the wisdom of Hildegard von Bingen, the society works with various systems like Biodynamic, permacultural, herbal, and ethnopharmacological practices for healing and restoration. The plant kingdom is seen as embodying a green ray of healing and love, with plants being revered for their ancient wisdom and green life-force. To learn more and become a member, you can visit viriditas-society.org."
+    },
+    {
+      "id": "soil_stewardship_book_coverage",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's Issue #3 \u2014 Soil Stewardship Handbook should surface for biochar how-to (it's a topic of the book).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 9,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "To make biochar at home, you can start by creating a simple DIY biochar kiln using a metal drum or a steel garbage can with holes drilled in it for air circulation. Fill the container with organic material like wood chips, sawdust, or agricultural waste, then heat it in a controlled environment with limited oxygen to prevent combustion. This process, called pyrolysis, will turn the organic material into biochar.\n\nFor more detailed guidance and safety tips on making biochar at home, you can refer to resources like the Biochar Handbook by Kelpie Wilson or reach out to local biochar experts and community organizations for hands-on workshops and demonstrations."
+    },
+    {
+      "id": "y_on_earth_book_coverage",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's Issue #3 \u2014 Y on Earth book by title must cite the book.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "got 0 citations, need >= 1",
+        "no cited book matches ['Y on Earth: Get Smarter, Feel Better, Heal the Planet'] (cited books: [])"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    }
+  ]
+}

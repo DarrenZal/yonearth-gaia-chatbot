@@ -1,0 +1,26 @@
+{
+  "tag": "retry-14",
+  "timestamp": "2026-05-05T00-16-21Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "14_regenerative_social_enterprise",
+      "query": "regenerative social enterprise",
+      "intent": "Theme saturation \u2014 REGEN / SOCIAL ENTERPRISE has 37 eps; multi-word theme.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "got 0 citations, need >= 3",
+        "got 0 REGEN / SOCIAL ENTERPRISE-tagged citations, need >= 2 (cited episodes: [])"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    }
+  ]
+}

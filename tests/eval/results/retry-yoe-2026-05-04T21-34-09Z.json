@@ -1,0 +1,26 @@
+{
+  "tag": "retry-yoe",
+  "timestamp": "2026-05-04T21-34-09Z",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "y_on_earth_book_coverage",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's Issue #3 \u2014 Y on Earth book by title must cite the book.",
+      "passed": false,
+      "failures": [
+        "transport error: HTTP Error 504: Gateway Time-out",
+        "got 0 citations, need >= 1",
+        "no cited book matches ['Y on Earth: Get Smarter, Feel Better, Heal the Planet'] (cited books: [])"
+      ],
+      "search_method": "?",
+      "documents_retrieved": 0,
+      "sources": [],
+      "response_excerpt": ""
+    }
+  ]
+}

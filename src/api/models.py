@@ -2,7 +2,7 @@
 Pydantic models for API requests and responses
 """
 from typing import List, Dict, Any, Optional
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 
 class ChatRequest(BaseModel):
@@ -23,11 +23,13 @@ class ChatRequest(BaseModel):
 
 class Citation(BaseModel):
     """Citation information"""
+    model_config = ConfigDict(extra="ignore")
+
     episode_number: str
     title: str
-    guest_name: str
-    url: str
-    relevance: str
+    guest_name: Optional[str] = ""
+    url: Optional[str] = ""
+    relevance: Optional[str] = ""
 
     @field_validator("episode_number", mode="before")
     @classmethod

@@ -1,0 +1,289 @@
+{
+  "_meta": {
+    "purpose": "Production regression bar for the YOE AI Guide retrieval pipeline.",
+    "origin": "Built 2026-05-04 in response to Aaron Perry's 2026-05-02 voice memo about three retrieval-quality issues. Expanded into a 25-prompt regression suite covering all major taxonomy categories, all three books, sponsor/community resources, person discovery, multi-theme queries, and out-of-archive honesty checks.",
+    "category_episode_counts": {
+      "BIOCHAR": [120, 122, 124, 165],
+      "IMPACT INVESTING": [8, 25, 88, 94, 96, 138, 168],
+      "PERMA-CULTURE": 16,
+      "HERBAL MEDICINE": 18,
+      "INDIGENOUS WISDOM": 22,
+      "BIO-DYNAMICS": 11,
+      "GREEN BUILDING": 8,
+      "ESOTERICA": 10,
+      "TECHNOLOGY & MATERIALS": 25,
+      "REGEN / SOCIAL ENTERPRISE": 37
+    },
+    "assertion_types": [
+      "response_must_not_contain_any",
+      "response_must_contain_any",
+      "response_should_signal_out_of_archive",
+      "min_citations",
+      "citations_must_include_category_any",
+      "citations_must_include_category_all",
+      "min_distinct_episodes_in_category",
+      "min_distinct_impact_investing_episodes",
+      "citations_must_include_book_any"
+    ]
+  },
+
+  "queries": [
+    {
+      "id": "01_biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's #1 — definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "category": "aaron_three_issues",
+      "assertions": {
+        "response_must_not_contain_any": ["asphalt", "road surface", "pavement"],
+        "citations_must_include_category_any": ["IMPACT INVESTING", "BIOCHAR"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "02_finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's #2 — short theme query must surface IMPACT INVESTING-tagged episodes.",
+      "category": "aaron_three_issues",
+      "assertions": {
+        "min_distinct_impact_investing_episodes": 2,
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "03_generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's #2 — must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "category": "aaron_three_issues",
+      "assertions": {
+        "citations_must_include_category_any": ["TECHNOLOGY & MATERIALS", "REGEN / SOCIAL ENTERPRISE"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "04_biochar_at_home_book",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's #3 — how-to query must cite the Soil Stewardship Handbook (it's literally the source).",
+      "category": "aaron_three_issues",
+      "assertions": {
+        "citations_must_include_book_any": ["Soil Stewardship Handbook"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "05_yoe_book_daily_practices",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's #3 — query that names the book by title must cite the book.",
+      "category": "aaron_three_issues",
+      "assertions": {
+        "citations_must_include_book_any": ["Y on Earth: Get Smarter, Feel Better, Heal the Planet"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "06_viriditas_book",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Book by title — VIRIDITAS chapters must surface.",
+      "category": "books",
+      "assertions": {
+        "citations_must_include_book_any": ["VIRIDITAS: THE GREAT HEALING"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "07_soil_stewardship_handbook_explicit",
+      "query": "What does the Soil Stewardship Handbook say about composting?",
+      "intent": "Book by name — must cite the Soil Stewardship Handbook.",
+      "category": "books",
+      "assertions": {
+        "citations_must_include_book_any": ["Soil Stewardship Handbook"],
+        "min_citations": 2
+      }
+    },
+
+    {
+      "id": "08_permaculture_saturation",
+      "query": "permaculture",
+      "intent": "Theme saturation — PERMA-CULTURE has 16 tagged episodes; must surface several.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "PERMA-CULTURE", "min": 2},
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "09_herbal_medicine_saturation",
+      "query": "herbal medicine",
+      "intent": "Theme saturation — HERBAL MEDICINE has 18 tagged episodes; must surface several.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "HERBAL MEDICINE", "min": 2},
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "10_indigenous_wisdom_saturation",
+      "query": "indigenous wisdom",
+      "intent": "Theme saturation — INDIGENOUS WISDOM has 22 tagged episodes; must surface several.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "INDIGENOUS WISDOM", "min": 2},
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "11_biodynamic_farming_saturation",
+      "query": "biodynamic farming",
+      "intent": "Theme saturation — BIO-DYNAMICS has 11 tagged episodes.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "BIO-DYNAMICS", "min": 2},
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "12_green_building_saturation",
+      "query": "green building principles",
+      "intent": "Theme saturation — GREEN BUILDING has 8 tagged episodes.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "GREEN BUILDING", "min": 1},
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "13_climate_science_saturation",
+      "query": "climate science",
+      "intent": "Theme saturation — CLIMATE & SCIENCE is one of the largest themes (62 eps).",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "CLIMATE & SCIENCE", "min": 2},
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "14_regenerative_social_enterprise",
+      "query": "regenerative social enterprise",
+      "intent": "Theme saturation — REGEN / SOCIAL ENTERPRISE has 37 eps; multi-word theme.",
+      "category": "theme_saturation",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "REGEN / SOCIAL ENTERPRISE", "min": 2},
+        "min_citations": 3
+      }
+    },
+
+    {
+      "id": "15_what_is_biochar_definitional",
+      "query": "What is biochar?",
+      "intent": "Definitional — must ground in BIOCHAR-tagged episodes (only 4 exist) and/or Soil Stewardship Handbook. Must NOT trigger out-of-archive fallback (regression caught 2026-05-04 — over-strict grounding contract was refusing ~10% of the time on partial-coverage queries).",
+      "category": "definitional",
+      "assertions": {
+        "citations_must_include_category_any": ["BIOCHAR"],
+        "min_citations": 2,
+        "response_must_not_signal_out_of_archive": true
+      }
+    },
+    {
+      "id": "16_what_is_regenerative_agriculture",
+      "query": "What is regenerative agriculture?",
+      "intent": "Definitional cross-theme — should land on FARMING & FOOD / SOIL / REGEN content.",
+      "category": "definitional",
+      "assertions": {
+        "citations_must_include_category_any": ["FARMING & FOOD", "SOIL", "REGEN / SOCIAL ENTERPRISE"],
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "17_compost_how_to",
+      "query": "How can I improve my soil with composting?",
+      "intent": "How-to — should cite Soil Stewardship Handbook and SOIL/FARMING episodes.",
+      "category": "how_to",
+      "assertions": {
+        "citations_must_include_category_any": ["SOIL", "FARMING & FOOD", "BIO-DYNAMICS"],
+        "min_citations": 2
+      }
+    },
+    {
+      "id": "18_biochar_guests",
+      "query": "Who has spoken about biochar on the podcast?",
+      "intent": "Person/guest discovery — must cite multiple BIOCHAR-tagged episodes.",
+      "category": "person_discovery",
+      "assertions": {
+        "min_distinct_episodes_in_category": {"category": "BIOCHAR", "min": 2},
+        "min_citations": 2
+      }
+    },
+
+    {
+      "id": "19_soil_werks_resource",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Sponsor / community resource — Soil Werks 2026-04-30 ingest must surface.",
+      "category": "sponsor_resource",
+      "assertions": {
+        "response_must_contain_any": ["Soil Werks", "soilwerks"],
+        "min_citations": 1
+      }
+    },
+    {
+      "id": "20_wele_waters_resource",
+      "query": "What does Wele Waters make?",
+      "intent": "Sponsor / community resource — Wele Waters 2026-04-30 ingest must surface.",
+      "category": "sponsor_resource",
+      "assertions": {
+        "response_must_contain_any": ["Wele Waters", "Wele"],
+        "min_citations": 1
+      }
+    },
+
+    {
+      "id": "21_soil_climate_intersection",
+      "query": "What is the relationship between soil health and climate?",
+      "intent": "Multi-theme — should hit episodes appearing in both SOIL and CLIMATE & SCIENCE.",
+      "category": "multi_theme",
+      "assertions": {
+        "citations_must_include_category_any": ["SOIL", "CLIMATE & SCIENCE"],
+        "min_citations": 3
+      }
+    },
+    {
+      "id": "22_indigenous_food_sovereignty",
+      "query": "indigenous food sovereignty",
+      "intent": "Multi-theme — INDIGENOUS WISDOM ∩ FARMING & FOOD content.",
+      "category": "multi_theme",
+      "assertions": {
+        "citations_must_include_category_any": ["INDIGENOUS WISDOM", "FARMING & FOOD"],
+        "min_citations": 2
+      }
+    },
+
+    {
+      "id": "23_out_of_archive_smartphone",
+      "query": "What's the best smartphone to buy in 2026?",
+      "intent": "Out of YOE archive — grounding contract should produce honest 'don't have that yet' fallback rather than riff from training data.",
+      "category": "out_of_archive",
+      "assertions": {
+        "response_should_signal_out_of_archive": true,
+        "response_must_not_contain_any": ["iPhone", "Samsung Galaxy", "Pixel 8", "Pixel 9", "specs"]
+      }
+    },
+    {
+      "id": "24_out_of_archive_chocolate_cake",
+      "query": "Give me a recipe for chocolate cake",
+      "intent": "Out of YOE archive — should not produce a generic recipe; honest fallback.",
+      "category": "out_of_archive",
+      "assertions": {
+        "response_should_signal_out_of_archive": true,
+        "response_must_not_contain_any": ["cup of flour", "baking powder", "preheat the oven", "350°F", "350 degrees"]
+      }
+    },
+    {
+      "id": "25_out_of_archive_taxes",
+      "query": "How do I file my US federal income taxes?",
+      "intent": "Out of YOE archive — generic personal-finance / tax procedure has no analogue in the YonEarth library. Grounding contract should fire honestly.",
+      "category": "out_of_archive",
+      "assertions": {
+        "response_should_signal_out_of_archive": true,
+        "response_must_not_contain_any": ["Form 1040", "TurboTax", "IRS website", "Schedule C", "April 15"]
+      }
+    }
+  ]
+}

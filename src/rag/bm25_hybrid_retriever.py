@@ -112,7 +112,7 @@ class BM25HybridRetriever:
     def _load_or_build_bm25_index(self):
         """Load existing BM25 index or build new one"""
         cache_path = self._get_bm25_cache_path()
-        
+
         try:
             if cache_path.exists():
                 logger.info("Loading BM25 index from cache...")
@@ -129,6 +129,35 @@ class BM25HybridRetriever:
             logger.error(f"Error loading BM25 cache: {e}")
             logger.info("Building new BM25 index...")
             self._build_bm25_index()
+
+        # Build secondary indexes for O(1) lookups during theme-saturation
+        # (was O(N²) doc.index() per chunk; cost the system 30-90s on long
+        # multi-theme queries). Indexes by content_type + key.
+        self._episode_chunk_indices: Dict[int, List[int]] = {}
+        self._book_chunk_indices: Dict[str, List[int]] = {}
+        for i, doc in enumerate(self.documents or []):
+            md = getattr(doc, 'metadata', {}) or {}
+            ct = md.get('content_type', 'episode')
+            if ct == 'book':
+                bt = md.get('book_title')
+                if bt:
+                    self._book_chunk_indices.setdefault(bt, []).append(i)
+                continue
+            # Episode-like (default): episode_number can be int or str
+            ep_num = md.get('episode_number')
+            if ep_num is None:
+                ep_num = md.get('episode_id')
+            try:
+                ep_id = int(str(ep_num))
+            except (TypeError, ValueError):
+                continue
+            self._episode_chunk_indices.setdefault(ep_id, []).append(i)
+        logger.info(
+            f"Built chunk indexes: {len(self._episode_chunk_indices)} episodes, "
+            f"{len(self._book_chunk_indices)} books "
+            f"({sum(len(v) for v in self._episode_chunk_indices.values())} ep chunks, "
+            f"{sum(len(v) for v in self._book_chunk_indices.values())} book chunks)"
+        )
     
     def _build_bm25_index(self):
         """Build BM25 index from vectorstore documents"""
@@ -221,25 +250,38 @@ class BM25HybridRetriever:
         except Exception as e:
             logger.error(f"Error caching BM25 index: {e}")
     
-    def analyze_query(self, query: str, category_threshold: float = 0.7) -> Dict[str, Any]:
+    def analyze_query(self, query: str, category_threshold: float = 0.55) -> Dict[str, Any]:
         """
         Analyze query to determine best search strategy
-        Based on ImplimentationPlan.md query analysis approach
+        Based on ImplimentationPlan.md query analysis approach.
+
+        Threshold default lowered from 0.7 → 0.55 (Aaron 2026-05-02): short
+        theme queries like "finance" need to land on IMPACT INVESTING even when
+        the semantic similarity isn't strong. Below the semantic threshold we
+        also union in the keyword-categorizer fallback, so "finance" reliably
+        triggers theme-saturation.
         """
         query_lower = query.lower()
-        
-        # Use semantic category matching if available
-        category_matches = {}
+
+        # Try semantic category matching first
+        category_matches: Dict[str, float] = {}
         if self.semantic_matcher:
             semantic_matches = self.semantic_matcher.get_semantic_category_matches(
-                query, 
-                threshold=category_threshold,  # Use configurable threshold
+                query,
+                threshold=category_threshold,
                 max_matches=5
             )
             category_matches = {match.category: match.similarity for match in semantic_matches}
-        elif self.categorizer:
-            # Fallback to keyword-based matching
-            category_matches = self.categorizer.analyze_query_categories(query)
+
+        # Always also union in keyword-categorizer matches. Aaron's "finance"
+        # case fails semantic similarity but matches the IMPACT INVESTING
+        # synonym set in episode_categorizer. Union, don't replace.
+        if self.categorizer:
+            keyword_matches = self.categorizer.analyze_query_categories(query)
+            for cat, score in keyword_matches.items():
+                if score > 0 and cat not in category_matches:
+                    # Normalize keyword score to similar scale (clamp to [threshold, 0.9])
+                    category_matches[cat] = max(category_threshold, min(0.9, score / 2.0))
         
         analysis = {
             'has_episode_ref': bool(re.search(r'episode\s*\d+', query_lower)),
@@ -414,50 +456,59 @@ class BM25HybridRetriever:
     def diverse_episode_search(self, query: str, episode_ids: Set[int], k: int) -> List[Tuple[Document, float]]:
         """
         Ensure all matching episodes are represented in results
-        This solves the problem where Episode 120's 31 chunks fill all k=20 slots
+        This solves the problem where Episode 120's 31 chunks fill all k=20 slots.
+
+        Optimized 2026-05-04: was O(N²) due to `self.documents.index(doc)` per
+        chunk plus per-chunk `self.bm25.get_scores()` recomputation; for queries
+        matching 5+ categories this took 3+ minutes. Now uses the precomputed
+        episode→chunk-indices map and computes BM25 scores once.
         """
         if not episode_ids:
             return []
-        
+
         logger.info(f"Performing diverse episode search across {len(episode_ids)} episodes")
-        
+
+        # Compute BM25 scores ONCE for the whole corpus
+        bm25_scores = None
+        if self.bm25:
+            tokenized_query = self._tokenize_document(query)
+            bm25_scores = self.bm25.get_scores(tokenized_query)
+
+        ep_index_map = getattr(self, '_episode_chunk_indices', {}) or {}
+
         # Step 1: Get best chunks from each episode
         episode_chunks = {}
         max_chunks_per_episode = max(3, k // len(episode_ids))  # At least 3 chunks per episode
-        
+
         for ep_id in episode_ids:
-            # Get all chunks for this episode
-            ep_docs = self._find_documents_for_episode(ep_id)
-            
-            if not ep_docs:
-                continue
-            
-            # Score each chunk against the query
-            scored_chunks = []
-            for doc in ep_docs:
-                # Calculate BM25 score
-                bm25_score = 0.0
-                if self.bm25:
-                    tokenized_query = self._tokenize_document(query)
-                    doc_idx = self.documents.index(doc) if doc in self.documents else -1
-                    if doc_idx >= 0:
-                        bm25_score = float(self.bm25.get_scores(tokenized_query)[doc_idx])
-                
-                # Calculate semantic score (would need to call vectorstore)
-                semantic_score = 0.5  # Placeholder - in production, would calculate actual semantic similarity
-                
-                # Combined score
-                combined_score = (self.keyword_weight * bm25_score + 
-                                self.semantic_weight * semantic_score + 
-                                self.category_weight * 1.0)  # Full category weight since it matched
-                
-                scored_chunks.append((doc, combined_score))
-            
-            # Keep top chunks for this episode
+            indices = ep_index_map.get(ep_id, [])
+            if not indices:
+                # Fallback: rare case where episode isn't in the prebuilt map
+                ep_docs = self._find_documents_for_episode(ep_id)
+                if not ep_docs:
+                    continue
+                indices = list(range(len(ep_docs)))
+                ep_docs_iter = ep_docs
+                index_to_doc = {i: ep_docs[i] for i in indices}
+                idx_to_score = {i: 0.0 for i in indices}
+            else:
+                index_to_doc = {i: self.documents[i] for i in indices}
+                idx_to_score = {
+                    i: float(bm25_scores[i]) if bm25_scores is not None else 0.0
+                    for i in indices
+                }
+
+            scored_chunks = [
+                (
+                    index_to_doc[i],
+                    (self.keyword_weight * idx_to_score[i]
+                     + self.semantic_weight * 0.5
+                     + self.category_weight * 1.0),
+                )
+                for i in indices
+            ]
             scored_chunks.sort(key=lambda x: x[1], reverse=True)
             episode_chunks[ep_id] = scored_chunks[:max_chunks_per_episode]
-            
-            logger.debug(f"Episode {ep_id}: selected {len(episode_chunks[ep_id])} chunks")
         
         # Step 2: Combine all chunks and sort by score
         all_chunks = []
@@ -651,7 +702,160 @@ class BM25HybridRetriever:
             logger.error(f"Error in reranking: {e}")
             return documents
     
-    def hybrid_search(self, query: str, k: int = 10, category_threshold: float = 0.7) -> List[Document]:
+    def theme_saturation_search(
+        self,
+        query: str,
+        category_threshold: float = 0.55,
+        max_chunks: int = 30,
+    ) -> List[Document]:
+        """
+        Aaron's #2 issue (2026-05-02): when a query hits a YOE theme, EVERY
+        episode (and book chapter) tagged with that theme should be reachable.
+
+        Composition rule (refined 2026-05-04 after the 25-prompt suite showed
+        large categories crowding out small ones):
+
+          1. Resolve matched categories with similarity scores.
+          2. Iterate categories in DESCENDING similarity order. Each category
+             gets a quota of `max(2, max_chunks // num_categories)` chunks,
+             but never more chunks than the category has tagged episodes.
+             Within a category, pick the highest BM25-scoring chunk per
+             episode (one chunk per episode).
+          3. Pool books across all matched categories, score by BM25, take
+             the top `min(5, max_chunks // 3)`.
+          4. Stop early when max_chunks is filled.
+
+        This means GREEN BUILDING (8 eps) and SUSTAIN-ABILITY (115 eps) both
+        get fair representation when both match — the smaller category isn't
+        flooded out.
+
+        Empty list if no category matches at the given threshold.
+        Pure BM25 — no extra OpenAI calls.
+        """
+        if not self.categorizer:
+            return []
+
+        analysis = self.analyze_query(query, category_threshold=category_threshold)
+        cat_matches: Dict[str, float] = analysis.get('category_matches') or {}
+        if not cat_matches:
+            return []
+
+        # DESCENDING by similarity so the strongest-matching category gets first dibs
+        ordered_cats = sorted(cat_matches.items(), key=lambda kv: kv[1], reverse=True)
+        logger.info(
+            f"Theme-saturation: query {query!r} matched categories "
+            f"{[(c, round(s, 2)) for c, s in ordered_cats]}"
+        )
+
+        per_cat_quota = max(2, max_chunks // max(1, len(ordered_cats)))
+        logger.info(f"Theme-saturation: per-category quota={per_cat_quota}, max_chunks={max_chunks}")
+
+        # Pre-tokenize query once for BM25 scoring
+        tokenized_query = self._tokenize_document(query) if self.bm25 else None
+        bm25_scores = self.bm25.get_scores(tokenized_query) if (self.bm25 and tokenized_query) else None
+
+        ep_index_map: Dict[int, List[int]] = getattr(self, '_episode_chunk_indices', {}) or {}
+        book_index_map: Dict[str, List[int]] = getattr(self, '_book_chunk_indices', {}) or {}
+
+        def best_chunk_for_episode(ep_id: int) -> Optional[Tuple[Document, float]]:
+            indices = ep_index_map.get(ep_id, [])
+            if not indices:
+                return None
+            if bm25_scores is None:
+                return (self.documents[indices[0]], 0.0)
+            best_idx = max(indices, key=lambda i: float(bm25_scores[i]))
+            return (self.documents[best_idx], float(bm25_scores[best_idx]))
+
+        def best_chunk_for_book(book_key: str) -> Optional[Tuple[Document, float]]:
+            indices = book_index_map.get(book_key, [])
+            if not indices:
+                return None
+            if bm25_scores is None:
+                return (self.documents[indices[0]], 0.0)
+            best_idx = max(indices, key=lambda i: float(bm25_scores[i]))
+            return (self.documents[best_idx], float(bm25_scores[best_idx]))
+
+        # Per-category episode picks with quotas (prevents large-cat flood).
+        # We collect per-category lists first, then round-robin across them so
+        # the strongest-matching category's picks lead but every matched
+        # category contributes at least one chunk before any category gets a
+        # second turn. Then we append within-category fallback after first round.
+        per_cat_lists: List[List[Tuple[Document, float, int]]] = []
+        seen_episodes: Set[int] = set()
+        for cat, sim in ordered_cats:
+            cat_eps = [
+                ep for ep in self.categorizer.get_episodes_by_category(cat)
+                if ep not in seen_episodes
+            ]
+            scored: List[Tuple[Document, float, int]] = []
+            for ep_id in cat_eps:
+                picked = best_chunk_for_episode(ep_id)
+                if picked is not None:
+                    scored.append((picked[0], picked[1], ep_id))
+            scored.sort(key=lambda x: x[1], reverse=True)
+            scored = scored[:per_cat_quota]
+            for doc, score, ep_id in scored:
+                seen_episodes.add(ep_id)
+            per_cat_lists.append(scored)
+
+        # Reserve a few slots for books so they aren't truncated by the
+        # max_chunks cap when many episodes are eligible.
+        book_reserved = max(1, min(5, max_chunks // 3))
+        episode_budget = max(1, max_chunks - book_reserved)
+
+        # Round-robin: take the i-th element from each category in turn so a
+        # rare-but-strongly-matched category isn't buried by a large category's
+        # higher BM25 scores. Within each round, categories are visited in
+        # similarity-descending order (preserved from `ordered_cats`).
+        episode_picks: List[Tuple[Document, float]] = []
+        rr_round = 0
+        while len(episode_picks) < episode_budget:
+            progressed = False
+            for cat_list in per_cat_lists:
+                if rr_round < len(cat_list):
+                    doc, score, _ep_id = cat_list[rr_round]
+                    episode_picks.append((doc, score))
+                    progressed = True
+                    if len(episode_picks) >= episode_budget:
+                        break
+            if not progressed:
+                break
+            rr_round += 1
+
+        logger.info(
+            f"Theme-saturation: collected {len(episode_picks)} episode chunks "
+            f"across {len(ordered_cats)} categories ({len(seen_episodes)} unique episodes; "
+            f"per_cat_quota={per_cat_quota})"
+        )
+
+        # Books pooled across all matched categories
+        book_keys: Set[str] = set()
+        get_books = getattr(self.categorizer, 'get_books_by_category', None)
+        if callable(get_books):
+            for cat, _ in ordered_cats:
+                book_keys.update(get_books(cat))
+        book_picks: List[Tuple[Document, float]] = []
+        for book_key in book_keys:
+            picked = best_chunk_for_book(book_key)
+            if picked is not None:
+                book_picks.append(picked)
+        book_picks.sort(key=lambda x: x[1], reverse=True)
+        book_picks = book_picks[:book_reserved]
+        logger.info(
+            f"Theme-saturation: collected {len(book_picks)} book chunks "
+            f"(reserved {book_reserved}; pool {len(book_keys)} books)"
+        )
+
+        # Final order: episode round-robin first (preserves category fairness),
+        # then book picks. NOT re-sorted by BM25 — that would un-do the
+        # quota-based composition.
+        merged: List[Tuple[Document, float]] = []
+        merged.extend(episode_picks)
+        merged.extend(book_picks)
+
+        return [doc for doc, _ in merged[:max_chunks]]
+
+    def hybrid_search(self, query: str, k: int = 10, category_threshold: float = 0.55) -> List[Document]:
         """
         Perform hybrid search combining semantic and keyword search with reranking
         Implements the complete pipeline from ImplimentationPlan.md

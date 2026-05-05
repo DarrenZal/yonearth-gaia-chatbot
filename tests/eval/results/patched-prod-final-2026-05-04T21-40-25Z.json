@@ -1,0 +1,253 @@
+{
+  "tag": "patched-prod-final",
+  "timestamp": "2026-05-04T21-40-25Z",
+  "summary": {
+    "total": 8,
+    "passed": 7,
+    "failed": 1
+  },
+  "results": [
+    {
+      "id": "biochar_finance_grounding",
+      "query": "biochar finance",
+      "intent": "Aaron's Issue #1 \u2014 definitional summary must come from YOE content, not training data (no biochar+asphalt riff).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "finance_theme_saturation",
+      "query": "finance",
+      "intent": "Aaron's Issue #2 \u2014 short theme query must surface multiple IMPACT INVESTING-tagged episodes.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "94",
+          "title": "Episode 94 \u2013 Tom Chi, Technologist & Eco-Investor, At One Ventures",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "96",
+          "title": "Episode 96 \u2013 John Fullerton, Founder, The Capital Institute, on Regenerative Economics",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "8",
+          "title": "Episode 08 \u2013 Mark Retzloff \u2013 Business Leader, Organic Food Brands & Systems",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "I don't have that in the YonEarth archive yet \u2014 would you like me to look more broadly within the YonEarth community?"
+    },
+    {
+      "id": "generative_technology_theme",
+      "query": "generative technology",
+      "intent": "Aaron's Issue #2 \u2014 must surface episodes tagged TECHNOLOGY & MATERIALS or REGEN / SOCIAL ENTERPRISE.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "120",
+          "title": "Episode 120 \u2013 Rowdy Yeatts, Founder & CEO, High Plains Biochar",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "119",
+          "title": "Episode 119 \u2013 Richard Hardiman, Founder & CEO, RanMarine Technology",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Generative technology, as mentioned in the YonEarth archive, refers to innovative solutions that contribute to regeneration, stewardship, and sustainability. These technologies aim to heal and restore the planet by creating positive impacts on the environment and communities. Examples of generative technologies discussed in the YonEarth archive include biochar technology, sustainable pet products, drone tree planting, and robotic agriculture. These technologies play a crucial role in addressing environmental challenges and promoting a more sustainable future."
+    },
+    {
+      "id": "soil_werks_regression",
+      "query": "Tell me about Soil Werks fertilizer",
+      "intent": "Regression \u2014 recently-ingested Soil Werks resource must still surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "77",
+          "title": "Episode 77 \u2013 Shelby Kaminski, Edaphic Solutions \u2013 Compost Tea for Community",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "159",
+          "title": "Episode 159 \u2013 Helen Atthowe, Author, \u201cThe Ecological Farm\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "158",
+          "title": "Episode 158 \u2013 Gabe Brown, Regenerative Farmer/Rancher & Author, \u201cDirt to Soil\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Soil Werks fertilizer is a product by Edaphic Solutions, a company founded with a mission to help people reduce their chemical fertilizer use, grow healthy plants, and store carbon in soil. Soil Werks fertilizer is designed to enhance soil health and plant growth by providing essential nutrients in a balanced and sustainable way. It is a natural alternative to chemical fertilizers, promoting healthy soil ecosystems and supporting plant vitality. You can learn more about Soil Werks fertilizer and other products by Edaphic Solutions at their website."
+    },
+    {
+      "id": "wele_waters_regression",
+      "query": "What does Wele Waters make?",
+      "intent": "Regression \u2014 recently-ingested Wele Waters resource must still surface.",
+      "passed": true,
+      "failures": [],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "68",
+          "title": "Episode 68 \u2013 Corona Virus Special w/ Aaron Perry & Artem Nikulkov",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "episode",
+          "episode_number": "126",
+          "title": "Episode 126 \u2013 Professor David George Haskel, \u201cSounds Wild & Broken\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "Wele Waters produces hemp-infused aromatherapy soaking salts that are hand-crafted in the Swadeshi tradition. These soaking salts contain pure magnesium sulfate (Epsom Salt), full-spectrum organically- and Biodynamically-grown hemp phytonutrients infused in organic coconut oil, and a variety of pure essential oils. Wele Waters soaking salts are made in a ceremonial manner to deliver the healing power of salt, plants, and water. You can experience the rejuvenation, relaxation, and euphoria of the Wele Waters soaking experience by visiting their website at welewaters.com and using the code \"YONEARTH\" for special savings."
+    },
+    {
+      "id": "viriditas_book_coverage",
+      "query": "What is VIRIDITAS about?",
+      "intent": "Aaron's Issue #3 \u2014 book by Aaron must surface as a book citation.",
+      "passed": true,
+      "failures": [],
+      "search_method": "hybrid",
+      "documents_retrieved": 5,
+      "sources": [
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 33,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 30,
+          "chapter_title": "| Aaron William Perry"
+        },
+        {
+          "type": "book",
+          "book_title": "VIRIDITAS: THE GREAT HEALING",
+          "chapter_number": 1,
+          "chapter_title": "| Aaron William Perry"
+        }
+      ],
+      "response_excerpt": "\"VIRIDITAS: THE GREAT HEALING\" is about the Viriditas Society, a global network of Earth-tenders who collaborate with the plant kingdom for the healing of minds, bodies, communities, and the planet. Inspired by the wisdom of Hildegard von Bingen, the society works with various systems like Biodynamic, permacultural, herbal, and ethnopharmacological practices for healing and restoration. The plant kingdom is seen as embodying a green ray of healing and love, with plants being revered for their ancient wisdom and green life-force. To learn more and become a member, you can visit viriditas-society.org."
+    },
+    {
+      "id": "soil_stewardship_book_coverage",
+      "query": "How do I make biochar at home?",
+      "intent": "Aaron's Issue #3 \u2014 Soil Stewardship Handbook should surface for biochar how-to (it's a topic of the book).",
+      "passed": true,
+      "failures": [],
+      "search_method": "keyword_heavy",
+      "documents_retrieved": 9,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "165",
+          "title": "Episode 165 \u2013 Kelpie Wilson, Unveiling the Mysterious Secrets of Biochar (The Biochar Handbook)",
+          "guest_name": "Kelpie Wilson"
+        },
+        {
+          "type": "book",
+          "book_title": "Soil Stewardship Handbook",
+          "chapter_number": 10,
+          "chapter_title": "AARON WILLIAM PERRY"
+        },
+        {
+          "type": "episode",
+          "episode_number": "122",
+          "title": "Episode 122 \u2013 Dr. David Laird, PhD, Biochar Science & Climate Stability",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "To make biochar at home, you can follow these basic steps:\n\n1. **Choose a Container:** Use a metal drum or a steel container with a lid to create a controlled burning environment.\n\n2. **Fill the Container:** Fill the container with organic material like wood chips, straw, or agricultural waste. Make sure the material is dry.\n\n3. **Start the Fire:** Light a fire at the bottom of the container to ignite the organic material. Let the fire burn until the material turns into charcoal.\n\n4. **Control the Oxygen:** Once the flames die down, close the lid partially to control the oxygen flow. This helps in carbonizing the material into biochar rather than burning it completely.\n\n5. **Monitor the Process:** Keep an eye on the container to ensure the material is carbonizing properly. The process migh"
+    },
+    {
+      "id": "y_on_earth_book_coverage",
+      "query": "What practices does the Y on Earth book recommend for daily life?",
+      "intent": "Aaron's Issue #3 \u2014 Y on Earth book by title must cite the book.",
+      "passed": false,
+      "failures": [
+        "no cited book matches ['Y on Earth: Get Smarter, Feel Better, Heal the Planet'] (cited books: [])"
+      ],
+      "search_method": "category_heavy",
+      "documents_retrieved": 12,
+      "sources": [
+        {
+          "type": "episode",
+          "episode_number": "21",
+          "title": "Episode 21 \u2013 Executive Chef Maria Cooper\u2019s \u201cHeartful Kitchen\u201d",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "112",
+          "title": "Episode 112 \u2013 Layth Matthews, Buddhist Economics & Personal Well Being",
+          "guest_name": "Guest"
+        },
+        {
+          "type": "episode",
+          "episode_number": "125",
+          "title": "Episode 125 \u2013 Danielle Ryan Broida, Co-Author of \u201cHealing Adaptogens\u201d",
+          "guest_name": "Guest"
+        }
+      ],
+      "response_excerpt": "In \"Y on Earth: Get Smarter, Feel Better, Heal the Planet,\" the book recommends practices for daily life that deepen our connection to the living Earth. Some of these practices include:\n1. Taking time to appreciate green foliage, soil, and the miracle of life on Earth.\n2. Holding soil in your hands and offering a prayer of gratitude.\n3. Observing content hens cooing next to the compost bin.\n4. Making these connections with nature a regular part of your daily life, similar to drinking water and praying for loved ones.\n\nThese practices are essential for fostering a sense of gratitude, connection, and reverence for the Earth, which in turn allows us to better love and serve humanity."
+    }
+  ]
+}

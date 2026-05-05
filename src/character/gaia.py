@@ -41,46 +41,70 @@ class GaiaCharacter:
         # Load personality
         self.personality_prompt = get_personality(self.personality_variant)
         
-        # Create chat prompt template
+        # Create chat prompt template. The context label is generic so book and
+        # community-resource chunks aren't mislabelled as podcast episodes.
         self.prompt = ChatPromptTemplate.from_messages([
             ("system", self.personality_prompt),
-            ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
+            ("system", "Context from the YonEarth library (podcast episodes, books, and community resources):\n{context}"),
             MessagesPlaceholder(variable_name="chat_history"),
             ("human", "{input}")
         ])
-        
+
         logger.info(f"Initialized Gaia character with '{self.personality_variant}' personality")
-    
+
+    # Context budget: top-N docs passed to the LLM, each truncated to this many
+    # chars. Aaron's #1 issue traced back to a 5-doc / 300-char budget that
+    # left the LLM too thin on YOE context to ground in.
+    CONTEXT_TOP_N = 10
+    CONTEXT_CHARS_PER_DOC = 1500
+
     def _format_context(self, retrieved_docs: List[Any]) -> str:
-        """Format retrieved documents as context for Gaia"""
+        """Format retrieved documents as context for Gaia, dispatched by content_type."""
         if not retrieved_docs:
-            return "No specific episode content found for this query."
-        
+            return "No matching content found in the YonEarth library for this query."
+
         context_parts = []
-        for i, doc in enumerate(retrieved_docs[:5]):  # Limit to top 5 results
+        for doc in retrieved_docs[: self.CONTEXT_TOP_N]:
             metadata = getattr(doc, 'metadata', {})
             content = getattr(doc, 'page_content', str(doc))
-            
-            episode_num = metadata.get('episode_number', 'Unknown')
-            title = metadata.get('title', 'Unknown Episode')
-            guest = metadata.get('guest_name', 'Guest')
-            
-            # Truncate content for context
-            content_preview = content[:300] + "..." if len(content) > 300 else content
-            
-            context_parts.append(
-                f"Episode {episode_num} - \"{title}\" with {guest}:\n{content_preview}"
-            )
-        
+            content_type = (metadata.get('content_type') or 'episode').lower()
+
+            if len(content) > self.CONTEXT_CHARS_PER_DOC:
+                content = content[: self.CONTEXT_CHARS_PER_DOC] + "..."
+
+            if content_type == 'book':
+                book_title = metadata.get('book_title', 'Unknown Book')
+                chapter_number = metadata.get('chapter_number', '?')
+                chapter_title = metadata.get('chapter_title', '')
+                author = metadata.get('author', 'Aaron William Perry')
+                header = (
+                    f"Book: \"{book_title}\", Chapter {chapter_number}"
+                    + (f" — {chapter_title}" if chapter_title else "")
+                    + f" by {author}"
+                )
+            elif content_type in ('sponsor', 'enterprise', 'community_resource', 'resource'):
+                resource_title = metadata.get('title') or metadata.get('name') or 'YOE Community Resource'
+                url = metadata.get('url', '')
+                header = f"YOE Resource: {resource_title}" + (f" ({url})" if url else "")
+            else:
+                episode_num = metadata.get('episode_number', 'Unknown')
+                title = metadata.get('title', 'Unknown Episode')
+                guest = metadata.get('guest_name', 'Guest')
+                header = f"Episode {episode_num} — \"{title}\" with {guest}"
+
+            context_parts.append(f"{header}:\n{content}")
+
         return "\n\n".join(context_parts)
     
     def _create_citation_reminder(self) -> str:
         """Create reminder about proper citation format"""
         return """
-IMPORTANT: Always cite your sources using this exact format:
-- For specific quotes: "As [Guest Name] explained in Episode [Number], '[specific quote or insight]'..."
-- For general concepts: "In Episode [Number] with [Guest Name], we learned about [topic]..."
-- Always include episode numbers and guest names when referencing information.
+IMPORTANT: Cite sources inline using these formats:
+- Episodes: "In Episode [Number] with [Guest Name], ..." or "[Guest Name] explained in Episode [Number] that ..."
+- Books: "In [Book Title], Chapter [Number], ..." (e.g. "In Soil Stewardship Handbook, Chapter 3, ...")
+- YOE community resources: "[Resource name] (yonearth.org/...)" with the URL when available.
+- Use only the citation values that appear in the Context above. Do not invent
+  episode numbers, chapter numbers, or guest names.
 """
 
     def _create_conversation_context(self, mentioned_episodes: List[Dict[str, Any]]) -> str:
@@ -135,7 +159,7 @@ IMPORTANT: Always cite your sources using this exact format:
                 # Use custom prompt instead of default personality
                 custom_chat_prompt = ChatPromptTemplate.from_messages([
                     ("system", custom_prompt),
-                    ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
+                    ("system", "Context from the YonEarth library (podcast episodes, books, and community resources):\n{context}"),
                     MessagesPlaceholder(variable_name="chat_history"),
                     ("human", "{input}")
                 ])
@@ -267,7 +291,7 @@ IMPORTANT: Always cite your sources using this exact format:
             # Update prompt template
             self.prompt = ChatPromptTemplate.from_messages([
                 ("system", self.personality_prompt),
-                ("system", "Context from YonEarth Podcast Episodes:\n{context}"),
+                ("system", "Context from the YonEarth library (podcast episodes, books, and community resources):\n{context}"),
                 MessagesPlaceholder(variable_name="chat_history"),
                 ("human", "{input}")
             ])
