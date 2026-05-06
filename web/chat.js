@@ -2019,10 +2019,20 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             `;
             this.recommendationsList.appendChild(exploreMore);
         }
-        
+
         this.recommendations.style.display = 'block';
+        // Re-anchor as last child of chat-messages so it always follows the
+        // most recent gaia response (ChatGPT/Claude pattern). Then scroll.
+        if (this.chatMessages && this.recommendations.parentElement !== this.chatMessages) {
+            this.chatMessages.appendChild(this.recommendations);
+        } else if (this.chatMessages && this.chatMessages.lastElementChild !== this.recommendations) {
+            this.chatMessages.appendChild(this.recommendations);
+        }
+        if (this.chatMessages) {
+            this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+        }
     }
-    
+
     showSmartRecommendations(currentEpisodes) {
         if (!currentEpisodes || currentEpisodes.length === 0) {
             this.recommendations.style.display = 'none';
@@ -2065,10 +2075,16 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
             `;
             this.recommendationsList.appendChild(exploreMore);
         }
-        
+
         this.recommendations.style.display = 'block';
+        if (this.chatMessages && this.chatMessages.lastElementChild !== this.recommendations) {
+            this.chatMessages.appendChild(this.recommendations);
+        }
+        if (this.chatMessages) {
+            this.chatMessages.scrollTop = this.chatMessages.scrollHeight;
+        }
     }
-    
+
     showModelComparisonRecommendations(response) {
         // Combine episodes from all models
         const allEpisodes = Object.values(response.models).flatMap(model => 

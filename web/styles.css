@@ -2192,6 +2192,14 @@ body.guide-layout .welcome-banner {
     flex: 1;
     overflow-y: auto;
     min-height: 0;
+    max-height: none;
+}
+
+/* Recommended Content sits inline as the last child of chat-messages so it
+   flows with the conversation (ChatGPT/Claude pattern) instead of fighting
+   .chat-container for vertical space. */
+.guide-chat-panel .chat-messages > .recommendations {
+    margin: 1.5rem 0 0.5rem 0;
 }
 
 /* Lean guide header: no subtitle needed */

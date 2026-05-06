@@ -15,6 +15,24 @@ from ..utils.cost_calculator import calculate_total_cost, format_cost_breakdown
 logger = logging.getLogger(__name__)
 
 
+def _is_plausible_chapter(chapter_number) -> bool:
+    """Heuristic gate for showing a chapter number on book citations.
+
+    The ingestion regex captured numbered sections (including page-numbered
+    headings) as 'chapter_number', so real chapters and chunk/page indices
+    end up in the same field. Anything ≤ 50 is plausibly a real chapter for
+    a YOE book; anything larger is almost certainly a chunk index masquerading
+    as a chapter and we suppress the label rather than mislead the reader.
+    """
+    if chapter_number is None or chapter_number == '?':
+        return False
+    try:
+        n = int(float(chapter_number))
+    except (TypeError, ValueError):
+        return False
+    return 1 <= n <= 50
+
+
 class GaiaCharacter:
     """Gaia character with personality, memory, and context awareness"""
     
@@ -77,11 +95,24 @@ class GaiaCharacter:
                 chapter_number = metadata.get('chapter_number', '?')
                 chapter_title = metadata.get('chapter_title', '')
                 author = metadata.get('author', 'Aaron William Perry')
-                header = (
-                    f"Book: \"{book_title}\", Chapter {chapter_number}"
-                    + (f" — {chapter_title}" if chapter_title else "")
-                    + f" by {author}"
+                # Only VIRIDITAS has a reliable chapter_number → real-chapter
+                # mapping (handled elsewhere via a page-range table). For other
+                # books the chapter_number on chunks is actually a chunk/page
+                # index from the ingestion regex (e.g. 306, 2015), so labeling
+                # it "Chapter N" mid-response misleads the model into echoing
+                # bogus chapter labels. Suppress in those cases.
+                show_chapter = (
+                    book_title == "VIRIDITAS: THE GREAT HEALING"
+                    or _is_plausible_chapter(chapter_number)
                 )
+                if show_chapter:
+                    header = (
+                        f"Book: \"{book_title}\", Chapter {chapter_number}"
+                        + (f" — {chapter_title}" if chapter_title else "")
+                        + f" by {author}"
+                    )
+                else:
+                    header = f"Book: \"{book_title}\" (excerpt) by {author}"
             elif content_type in ('sponsor', 'enterprise', 'community_resource', 'resource'):
                 resource_title = metadata.get('title') or metadata.get('name') or 'YOE Community Resource'
                 url = metadata.get('url', '')
@@ -101,7 +132,8 @@ class GaiaCharacter:
         return """
 IMPORTANT: Cite sources inline using these formats:
 - Episodes: "In Episode [Number] with [Guest Name], ..." or "[Guest Name] explained in Episode [Number] that ..."
-- Books: "In [Book Title], Chapter [Number], ..." (e.g. "In Soil Stewardship Handbook, Chapter 3, ...")
+- Books WITH a Chapter shown in the Context: "In [Book Title], Chapter [Number], ..." (e.g. "In Soil Stewardship Handbook, Chapter 3, ...")
+- Books shown in the Context as "(excerpt)" with no chapter: cite by title only — "In [Book Title], ..." — do NOT invent or guess a chapter number.
 - YOE community resources: "[Resource name] (yonearth.org/...)" with the URL when available.
 - Use only the citation values that appear in the Context above. Do not invent
   episode numbers, chapter numbers, or guest names.

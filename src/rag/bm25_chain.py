@@ -452,19 +452,30 @@ class BM25RAGChain:
                     audiobook_url = book_meta.get('audiobook_url', '')
                     print_url = book_meta.get('print_url', '')
                 
+                # Only show "Chapter N" when chapter_int is plausibly a real
+                # chapter. VIRIDITAS uses a page-to-chapter mapping above so
+                # chapter_int is reliable there; for other books the ingestion
+                # regex stored chunk/page indices as chapter_number (e.g. 306,
+                # 2015), so labeling those "Chapter N" misleads the reader.
+                show_chapter = (
+                    book_title == "VIRIDITAS: THE GREAT HEALING"
+                    or 1 <= chapter_int <= 50
+                )
+                citation_title = f"Chapter {chapter_int}" if show_chapter else "Excerpt"
+
                 # Create episode-compatible format
                 source = {
                     'content_type': 'book',  # Keep internal distinction
                     'episode_id': unique_id,
                     'episode_number': f"Book: {book_title}",  # Show as book identifier
-                    'title': f"Chapter {chapter_int}",
+                    'title': citation_title,
                     'guest_name': author,
                     'url': book_url,  # Default to ebook URL
                     'content_preview': doc.page_content[:200] + "..." if len(doc.page_content) > 200 else doc.page_content,
                     # Keep book-specific fields for internal use
                     'book_title': book_title,
                     'author': author,
-                    'chapter_number': chapter_int,  # Convert to int for API
+                    'chapter_number': chapter_int if show_chapter else None,
                     'chapter_title': chapter_title,
                     # Add all URL options
                     'ebook_url': book_url,
@@ -536,10 +547,20 @@ class BM25RAGChain:
                         sources[replace_idx] = book_source
                 return sources
 
+        # Generic book reservation: if a book chunk made it into the retrieved
+        # candidate pool, it's topically relevant (theme-saturation only pulls
+        # books whose yoe_categories overlap the matched categories; hybrid /
+        # semantic only surface books that score against the query).
+        # So if a book is in candidates and no book is naturally cited, reserve
+        # a slot. This replaces a brittle phrasing-based heuristic that missed
+        # discovery queries like "any good content about soil i can check out?"
         if (
             max_citations >= 2
             and not any(s.get('content_type') == 'book' for s in sources)
-            and self._query_signals_book(query_for_routing)
+            and any(
+                (getattr(d, 'metadata', {}) or {}).get('content_type') == 'book'
+                for d in documents
+            )
         ):
             first_book_doc = self._pick_book_for_reservation(documents, query_for_routing)
             if first_book_doc is not None:
@@ -618,38 +639,6 @@ class BM25RAGChain:
 
         return book_docs[0]
 
-    @staticmethod
-    def _query_signals_book(query: Optional[str]) -> bool:
-        """True if the query suggests a book citation would be relevant.
-
-        Triggers on:
-          (a) explicit book/chapter mentions ("the book says...", "in chapter 3");
-          (b) named YOE book titles;
-          (c) "how do/can I X" how-to questions, where book chapters often
-              contain the procedural detail an episode interview only summarizes;
-          (d) "what does X say about" / "tell me about" framings, which usually
-              expect quotational-style content books are good for.
-
-        Used to gate book-citation reservation so theme/discovery queries like
-        "regenerative social enterprise" don't get a book forced on them at
-        the expense of more relevant episodes.
-        """
-        if not query:
-            return False
-        q = query.lower()
-        explicit = (
-            "book", "books", "chapter", "chapters", "handbook",
-            "y on earth", "soil stewardship", "viriditas",
-        )
-        if any(s in q for s in explicit):
-            return True
-        how_to = ("how do i", "how can i", "how do you", "how to ", "how does")
-        if any(s in q for s in how_to):
-            return True
-        quotational = ("what does ", "tell me about ", "explain ")
-        if any(s in q for s in quotational):
-            return True
-        return False
 
     def _format_single_source(self, doc: Document) -> Dict[str, Any]:
         """Build the dict shape returned by _format_sources, for one document.
