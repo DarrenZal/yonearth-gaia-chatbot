@@ -2611,3 +2611,51 @@ body.guide-layout .welcome-banner {
 .resource-card.domain-ecology   { --resource-accent: #2196f3; }
 .resource-card.domain-health    { --resource-accent: #f44336; }
 
+/* ===========================================================================
+ * Embed mode (2026-05-13)
+ *
+ * Triggered by ?embed=<source> on the URL. Detection runs at the top of
+ * <body> in index.html and toggles `.embed` + `.embed-<source>` classes.
+ *
+ * Used by external surfaces that iframe the Guide and need:
+ *   1. The welcome banner suppressed (first-paint flicker hurts in iframes).
+ *   2. A lighter theme so the embedded Guide doesn't visually shout inside
+ *      a host page (e.g., Oasis map with its forest/earth/sky palette).
+ *
+ * Specific source overrides:
+ *   .embed-oasis — Mycelial Awakening palette (cream + forest tones).
+ *
+ * Non-goals: this is NOT a "light mode" for the standalone Guide. The
+ * standalone Guide stays on its dark earth palette. These overrides only
+ * apply when ?embed=... is passed (typically by iframe hosts).
+ * =========================================================================== */
+body.embed .welcome-banner {
+  display: none !important;
+}
+
+/* Tighten layout when embedded — recover the vertical space the welcome
+   banner used to take. */
+body.embed.guide-layout {
+  padding-top: 0;
+}
+
+/* Mycelial-Awakening palette overrides for Oasis-embedded Guide.
+   Mirrors agora forest-* / earth-* / sky-* tokens so the embedded
+   chat blends with the Oasis chrome. */
+body.embed-oasis {
+  --bg-page: #fefce8;        /* cream — yellow-50 */
+  --bg-panel: #ffffff;       /* white panels */
+  --bg-raised: #f0fdf4;      /* mint-50 — input fields */
+  --text-light: #1c1917;     /* stone-900 — primary text */
+  --text-muted: #57534e;     /* stone-600 — meta text */
+  --accent-primary: #15803d; /* forest-700 — CTAs */
+  --accent-secondary: #0369a1; /* sky-700 — secondary UI */
+  --accent-warm: #a16207;    /* yellow-700 — Resource label accent */
+  background: var(--bg-page) !important;
+}
+
+/* The Guide root container also sets a dark gradient inline. Override. */
+body.embed-oasis.guide-layout {
+  background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-panel) 100%) !important;
+}
+
