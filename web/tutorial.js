@@ -142,6 +142,16 @@ const Tutorial = {
     init(pageName) {
         this.pageName = pageName;
 
+        // Suppress in embed mode — iframe consumers (e.g., Oasis map) get
+        // a cleaner first paint without the "Welcome to Gaia" overlay.
+        // The host page typically has its own onboarding context, and the
+        // embedded Guide should drop the user straight into the chat.
+        // Detection mirrors the body-class set by the inline script in
+        // index.html (added 2026-05-13).
+        if (document.body.classList.contains('embed')) {
+            return;
+        }
+
         // Check if tutorial already completed for this page
         if (this.isCompleted(pageName)) {
             this.createHelpButton();
