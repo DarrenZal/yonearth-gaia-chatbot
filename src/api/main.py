@@ -4,6 +4,7 @@ FastAPI main application for YonEarth Gaia chatbot
 import time
 import logging
 import os
+import json
 from pathlib import Path
 from typing import Dict, Any, List
 from contextlib import asynccontextmanager
@@ -121,6 +122,7 @@ if not settings.debug:
 # Include BM25 RAG router (with error handling)
 try:
     app.include_router(bm25_router)
+    app.include_router(bm25_router, prefix="/api")
     logger.info("✅ BM25 router loaded successfully")
 except Exception as e:
     logger.error(f"❌ Failed to load BM25 router: {e}")
@@ -171,6 +173,45 @@ try:
     logger.info("✅ Taxonomy router loaded successfully")
 except Exception as e:
     logger.error(f"❌ Failed to load taxonomy router: {e}")
+
+
+@app.get("/YonEarth/data/top_entities.json", include_in_schema=False)
+async def top_entities_alias():
+    """Serve the legacy entity-link artifact from current KG data.
+
+    The Guide chat UI uses this path to turn response text into clickable
+    resource links. Production has historically served it as a static artifact;
+    local/dev installs can derive the same name map from visualization_data.
+    """
+    kg_path = _kg_data_file()
+    if not kg_path.exists():
+        raise HTTPException(status_code=404, detail=f"KG data not found: {kg_path}")
+
+    with kg_path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    nodes = data.get("nodes", [])
+    ranked = sorted(
+        (n for n in nodes if n.get("name")),
+        key=lambda n: (
+            n.get("mention_count") or 0,
+            n.get("episode_count") or 0,
+            n.get("importance") or 0,
+        ),
+        reverse=True,
+    )
+
+    return {
+        n["name"]: {
+            "id": n.get("id"),
+            "type": n.get("type"),
+            "aliases": n.get("aliases") or [],
+            "importance": n.get("importance"),
+            "mention_count": n.get("mention_count"),
+            "episode_count": n.get("episode_count"),
+        }
+        for n in ranked[:2000]
+    }
 
 
 def get_rag_dependency():
