@@ -78,7 +78,7 @@ Cost Breakdown                                    $0.0234
 
 When expanded:
 ┌─────────────────────────────────────────────────────────┐
-│ OpenAI LLM      gpt-3.5-turbo   874 in / 205 out   $0.0007 │
+│ OpenAI LLM      gpt-4o-mini     874 in / 205 out   $0.0007 │
 │ OpenAI Embeddings  text-embedding-3-small  220 tokens  $0.0000 │
 │ ElevenLabs Voice   eleven_multilingual_v2  780 chars   $0.0156 │
 └─────────────────────────────────────────────────────────┘
@@ -97,7 +97,7 @@ The cost breakdown is included in all chat API responses:
     "details": [
       {
         "service": "OpenAI LLM",
-        "model": "gpt-3.5-turbo",
+        "model": "gpt-4o-mini",
         "usage": "874 in / 205 out tokens",
         "cost": "$0.0007"
       },

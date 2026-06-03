@@ -284,7 +284,7 @@ POST /feedback
   "sessionId": "session_abc123",
   "personality": "warm_mother",
   "ragType": "bm25",
-  "modelType": "gpt-3.5-turbo",
+  "modelType": "gpt-4o-mini",
   "relevanceRating": 5,  # 1-5 stars
   "episodesCorrect": true,
   "detailedFeedback": "Great response with accurate citations!"

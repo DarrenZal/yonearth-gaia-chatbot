@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     
     # OpenAI Configuration
     openai_api_key: str = Field(..., description="OpenAI API key")
-    openai_model: str = Field(default="gpt-3.5-turbo", description="OpenAI model for chat")
+    openai_model: str = Field(default="gpt-4o-mini", description="OpenAI model for chat")
     openai_embedding_model: str = Field(default="text-embedding-3-small", description="OpenAI embedding model")
     
     # Alternative LLM (Optional)

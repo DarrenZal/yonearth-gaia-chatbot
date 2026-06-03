@@ -365,7 +365,7 @@ PINECONE_ENVIRONMENT=gcp-starter         # Pinecone environment
 ```bash
 ELEVENLABS_API_KEY=...                   # For voice features
 ELEVENLABS_VOICE_ID=...                  # Custom voice ID
-OPENAI_MODEL=gpt-3.5-turbo              # LLM model
+OPENAI_MODEL=gpt-4o-mini                # LLM model
 OPENAI_EMBEDDING_MODEL=text-embedding-3-small
 GAIA_PERSONALITY_VARIANT=warm_mother     # Default personality
 GAIA_TEMPERATURE=0.7                     # LLM temperature
