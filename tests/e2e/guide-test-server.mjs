@@ -21,15 +21,64 @@ const mimeTypes = new Map([
 ]);
 
 const bm25Stub = {
-  response: 'Guide test server stub: live BM25 is covered by backend/API checks.',
-  sources: [],
+  response: [
+    'Composting improves soil structure and carbon cycling.',
+    'Episode 120 discusses biochar and soil resilience.',
+    'The Soil Stewardship Handbook gives step-by-step composting practices.',
+    'Wele Waters is a Y On Earth community resource.',
+  ].join(' '),
+  sources: [
+    {
+      content_type: 'episode',
+      episode_number: '120',
+      title: 'Episode 120 - Rowdy Yeatts, Founder & CEO, High Plains Biochar',
+      guest_name: 'Rowdy Yeatts',
+      url: 'https://yonearth.org/episode-120-rowdy-yeatts/',
+      content_preview: 'Biochar and soil resilience.',
+    },
+    {
+      content_type: 'book',
+      book_title: 'Soil Stewardship Handbook',
+      author: 'Aaron William Perry',
+      chapter_number: 10,
+      chapter_title: 'Composting',
+      title: 'Soil Stewardship Handbook - Chapter 10',
+      url: 'https://yonearth.org/soil-stewardship-handbook/',
+      ebook_url: 'https://yonearth.org/soil-stewardship-handbook/',
+      audiobook_url: 'https://yonearth.org/soil-stewardship-handbook-audio/',
+      print_url: 'https://yonearth.org/soil-stewardship-handbook-print/',
+      content_preview: 'Composting as a soil-building practice.',
+    },
+  ],
   citations: [],
-  episode_references: [],
+  episode_references: ['120', 'Book: Soil Stewardship Handbook'],
   search_method_used: 'stub',
-  documents_retrieved: 0,
+  documents_retrieved: 2,
   bm25_stats: {},
   performance_stats: {},
   processing_time: 0,
+};
+
+const recommendationStub = {
+  conversation_topics: ['soil', 'composting'],
+  recommendations: [
+    {
+      content_type: 'episode',
+      episode_number: '120',
+      title: 'Episode 120 - Rowdy Yeatts, Founder & CEO, High Plains Biochar',
+      guest_name: 'Rowdy Yeatts',
+      url: 'https://yonearth.org/episode-120-rowdy-yeatts/',
+    },
+    {
+      content_type: 'book',
+      book_title: 'Soil Stewardship Handbook',
+      author: 'Aaron William Perry',
+      chapter_number: 10,
+      title: 'Soil Stewardship Handbook - Chapter 10',
+      url: 'https://yonearth.org/soil-stewardship-handbook/',
+      ebook_url: 'https://yonearth.org/soil-stewardship-handbook/',
+    },
+  ],
 };
 
 function send(res, status, body, contentType = 'text/plain; charset=utf-8') {
@@ -114,13 +163,37 @@ const server = createServer(async (req, res) => {
     return;
   }
 
+  if (urlPath === '/api/conversation-recommendations') {
+    if (req.method !== 'POST') {
+      sendJson(res, 405, { error: 'method_not_allowed' });
+      return;
+    }
+    req.resume();
+    sendJson(res, 200, recommendationStub);
+    return;
+  }
+
+  if (urlPath === '/api/feedback') {
+    if (req.method !== 'POST') {
+      sendJson(res, 405, { error: 'method_not_allowed' });
+      return;
+    }
+    req.resume();
+    sendJson(res, 200, { ok: true });
+    return;
+  }
+
   if (urlPath === '/api/stt/status') {
     sendJson(res, 200, { available: false, enabled: false });
     return;
   }
 
   if (urlPath === '/YonEarth/data/top_entities.json') {
-    sendJson(res, 200, []);
+    sendJson(res, 200, {
+      'Wele Waters': { type: 'PRODUCT' },
+      'Soil Werks': { type: 'PRODUCT' },
+      'Soil Stewardship Handbook': { type: 'BOOK' },
+    });
     return;
   }
 

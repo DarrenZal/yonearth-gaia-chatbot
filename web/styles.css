@@ -542,6 +542,7 @@ body {
 
 .message-text {
     background: var(--earth-beige);
+    color: var(--text-light);
     padding: 1rem 1.25rem;
     border-radius: var(--border-radius);
     font-size: 0.95rem;
@@ -551,6 +552,7 @@ body {
 
 .gaia-message .message-text {
     background: linear-gradient(135deg, #0b1220, #030712);
+    color: #e5e7eb;
     border-left: 3px solid var(--sage-green);
 }
 
@@ -2659,3 +2661,16 @@ body.embed-oasis.guide-layout {
   background: linear-gradient(135deg, var(--bg-page) 0%, var(--bg-panel) 100%) !important;
 }
 
+body.embed-oasis .gaia-message .message-text,
+body.embed-oasis .user-message .message-text {
+  background: var(--bg-panel);
+  color: var(--text-light);
+}
+
+body.embed-oasis .gaia-message .message-text {
+  border-left-color: var(--accent-primary);
+}
+
+body.embed-oasis .user-message .message-text {
+  border-right-color: var(--accent-secondary);
+}

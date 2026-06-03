@@ -317,6 +317,7 @@ class GaiaChat {
                 this.showConfigModal();
             }
         });
+        this.setupConfigModalForm();
         
         // Voice toggle
         this.voiceToggle.addEventListener('click', () => {
@@ -891,6 +892,56 @@ class GaiaChat {
             this.scrollToBottom();
         }
     }
+
+    isBookCitation(citation) {
+        if (!citation) return false;
+        const episodeNumber = (citation.episode_number || citation.episode_id || '').toString();
+        const contentType = (citation.content_type || citation.type || '').toString().toLowerCase();
+        return contentType === 'book'
+            || Boolean(citation.book_title || citation.metadata?.book_title)
+            || episodeNumber.startsWith('Book:')
+            || Boolean(citation.chunk_id && citation.chunk_id.includes(':'));
+    }
+
+    getCitationBookTitle(citation) {
+        const episodeNumber = (citation.episode_number || citation.episode_id || '').toString();
+        if (episodeNumber.startsWith('Book:')) {
+            return episodeNumber.substring(5).trim();
+        }
+        if (citation.book_title) return citation.book_title;
+        if (citation.metadata?.book_title) return citation.metadata.book_title;
+        if (citation.title) {
+            return citation.title.replace(/\s*-\s*Chapter\s+\d+(?:\.\d+)?\b.*$/i, '').trim();
+        }
+        return 'Book';
+    }
+
+    getCitationChapterText(citation) {
+        const chapterNumber = citation.chapter_number || citation.metadata?.chapter_number;
+        if (chapterNumber) return ` - Chapter ${chapterNumber}`;
+        const chapterMatch = citation.title?.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
+        if (chapterMatch) return ` - Chapter ${chapterMatch[1]}`;
+        const chapterTitle = citation.chapter_title || citation.metadata?.chapter_title;
+        return chapterTitle ? ` - ${chapterTitle}` : '';
+    }
+
+    getCitationBookUrl(citation) {
+        return citation.ebook_url
+            || citation.url
+            || citation.metadata?.ebook_url
+            || citation.metadata?.url
+            || citation.audiobook_url
+            || citation.print_url
+            || '';
+    }
+
+    getCitationAuthor(citation) {
+        return citation.author
+            || citation.metadata?.author
+            || citation.guest_name
+            || citation.guest
+            || 'Unknown Author';
+    }
     
     addHyperlinksToResponse(text, citations) {
         // Escape HTML to prevent XSS
@@ -904,12 +955,11 @@ class GaiaChat {
         const citationMap = new Map();
         
         citations.forEach(citation => {
-            const isBook = citation.episode_number?.toString().startsWith('Book:');
+            const isBook = this.isBookCitation(citation);
             
             if (isBook) {
-                // Extract book title from episode_number
-                const bookTitle = citation.episode_number.substring(5).trim();
-                const bookUrl = citation.ebook_url || citation.url;
+                const bookTitle = this.getCitationBookTitle(citation);
+                const bookUrl = this.getCitationBookUrl(citation);
                 if (bookUrl) {
                     // Store multiple variations of the book title for matching
                     citationMap.set(bookTitle, bookUrl);
@@ -968,8 +1018,23 @@ class GaiaChat {
             /\bY\s+on\s+Earth(?:\s*:\s*Get\s+Smarter,\s+Feel\s+Better,\s+Heal\s+the\s+Planet)?\b/gi,
             /\bWhy\s+on\s+Earth\b/gi
         ];
+
+        const preserveExistingLinks = () => {
+            const preservedLinks = [];
+            htmlText = htmlText.replace(/<a\b[^>]*>.*?<\/a>/gi, (match) => {
+                const token = `@@GAIA_LINK_${preservedLinks.length}@@`;
+                preservedLinks.push([token, match]);
+                return token;
+            });
+            return () => {
+                preservedLinks.forEach(([token, link]) => {
+                    htmlText = htmlText.replace(token, link);
+                });
+            };
+        };
         
         bookPatterns.forEach(pattern => {
+            const restoreLinks = preserveExistingLinks();
             htmlText = htmlText.replace(pattern, (match) => {
                 // Try different variations to find the URL
                 let url = citationMap.get(match) || 
@@ -992,6 +1057,7 @@ class GaiaChat {
                 }
                 return match;
             });
+            restoreLinks();
         });
         
         return this.addEntityLinksToText(htmlText);
@@ -1342,17 +1408,10 @@ class GaiaChat {
             titleDiv.className = 'citation-title';
             
             // Check if this is a book reference
-            if (citation.episode_number && citation.episode_number.toString().startsWith('Book:')) {
-                // Extract book title and clean up chapter info
-                const bookInfo = citation.episode_number.substring(5).trim(); // Remove "Book:" prefix
-                const chapterMatch = citation.title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
-                const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
-                titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
-            } else if (citation.metadata?.book_title || citation.chunk_id?.includes(':')) {
-                // Handle hybrid QA book citations
-                const bookTitle = citation.metadata?.book_title || 'Book';
-                const chapterInfo = citation.metadata?.chapter_title || citation.title || '';
-                titleDiv.textContent = `Book: ${bookTitle} - ${chapterInfo}`;
+            const isBook = this.isBookCitation(citation);
+            if (isBook) {
+                const bookTitle = this.getCitationBookTitle(citation);
+                titleDiv.textContent = `Book: ${bookTitle}${this.getCitationChapterText(citation)}`;
             } else if (citation.metadata?.episode_number) {
                 // Handle hybrid QA episode citations with metadata
                 titleDiv.textContent = `Episode ${citation.metadata.episode_number}: ${citation.title}`;
@@ -1367,31 +1426,28 @@ class GaiaChat {
             citationDiv.appendChild(titleDiv);
             
             // Only add guest info for episodes, not books
-            if (citation.guest_name && !citation.episode_number?.toString().startsWith('Book:')) {
+            if (!isBook && citation.guest_name) {
                 const guestDiv = document.createElement('div');
                 guestDiv.className = 'citation-guest';
                 guestDiv.textContent = `with ${citation.guest_name}`;
                 citationDiv.appendChild(guestDiv);
-            } else if (citation.guest_name && citation.episode_number?.toString().startsWith('Book:')) {
-                // For books, show author instead
+            } else if (isBook) {
                 const authorDiv = document.createElement('div');
                 authorDiv.className = 'citation-guest';
-                authorDiv.textContent = `Author: ${citation.guest_name}`;
+                authorDiv.textContent = `Author: ${this.getCitationAuthor(citation)}`;
                 citationDiv.appendChild(authorDiv);
             }
             
-            if (citation.url) {
+            const primaryUrl = isBook ? this.getCitationBookUrl(citation) : citation.url;
+            if (primaryUrl) {
                 const linkDiv = document.createElement('div');
                 linkDiv.className = 'citation-links';
                 
-                // Check if this is a book
-                const isBook = citation.episode_number?.toString().startsWith('Book:');
-                
                 if (isBook) {
                     // For books, show available format links
-                    if (citation.ebook_url || citation.url) {
+                    if (citation.ebook_url || citation.url || primaryUrl) {
                         const ebookLink = document.createElement('a');
-                        ebookLink.href = citation.ebook_url || citation.url;
+                        ebookLink.href = citation.ebook_url || citation.url || primaryUrl;
                         ebookLink.target = '_blank';
                         ebookLink.className = 'citation-link';
                         ebookLink.textContent = 'Read eBook →';
@@ -1424,7 +1480,7 @@ class GaiaChat {
                 } else {
                     // For episodes, show single link
                     const link = document.createElement('a');
-                    link.href = citation.url;
+                    link.href = primaryUrl;
                     link.target = '_blank';
                     link.className = 'citation-link';
                     link.textContent = 'Listen to Episode →';
@@ -1499,13 +1555,11 @@ class GaiaChat {
             titleDiv.className = 'recommendation-title';
             const episodeNum = citation.episode_number || citation.episode_id || 'Unknown';
             const title = citation.title || 'Unknown Episode';
+            const isBook = this.isBookCitation(citation);
             
             // Check if this is a book reference
-            if (episodeNum.toString().startsWith('Book:')) {
-                const bookInfo = episodeNum.substring(5).trim();
-                const chapterMatch = title.match(/Chapter\s+(\d+(?:\.\d+)?)/i);
-                const chapterText = chapterMatch ? ` - Chapter ${parseInt(chapterMatch[1])}` : '';
-                titleDiv.textContent = `Book: ${bookInfo}${chapterText}`;
+            if (isBook) {
+                titleDiv.textContent = `Book: ${this.getCitationBookTitle(citation)}${this.getCitationChapterText(citation)}`;
             } else {
                 titleDiv.textContent = `Episode ${episodeNum}: ${title}`;
             }
@@ -1513,7 +1567,7 @@ class GaiaChat {
             recDiv.appendChild(titleDiv);
             
             const guestName = citation.guest_name || citation.guest || 'Unknown Guest';
-            if (!episodeNum.toString().startsWith('Book:')) {
+            if (!isBook) {
                 const guestDiv = document.createElement('div');
                 guestDiv.className = 'recommendation-guest';
                 guestDiv.textContent = `with ${guestName}`;
@@ -1522,21 +1576,20 @@ class GaiaChat {
                 // For books, show author
                 const authorDiv = document.createElement('div');
                 authorDiv.className = 'recommendation-guest';
-                authorDiv.textContent = `Author: ${guestName}`;
+                authorDiv.textContent = `Author: ${this.getCitationAuthor(citation)}`;
                 recDiv.appendChild(authorDiv);
             }
             
-            if (citation.url) {
+            const primaryUrl = isBook ? this.getCitationBookUrl(citation) : citation.url;
+            if (primaryUrl) {
                 const linkDiv = document.createElement('div');
                 linkDiv.className = 'recommendation-links';
                 
-                const isBook = episodeNum.toString().startsWith('Book:');
-                
                 if (isBook) {
                     // For books, show available format links
-                    if (citation.ebook_url || citation.url) {
+                    if (citation.ebook_url || citation.url || primaryUrl) {
                         const ebookLink = document.createElement('a');
-                        ebookLink.href = citation.ebook_url || citation.url;
+                        ebookLink.href = citation.ebook_url || citation.url || primaryUrl;
                         ebookLink.target = '_blank';
                         ebookLink.className = 'recommendation-link';
                         ebookLink.textContent = 'Read eBook →';
@@ -1569,7 +1622,7 @@ class GaiaChat {
                 } else {
                     // For episodes, show single link
                     const link = document.createElement('a');
-                    link.href = citation.url;
+                    link.href = primaryUrl;
                     link.target = '_blank';
                     link.className = 'recommendation-link';
                     link.textContent = 'Listen Now →';
@@ -1642,10 +1695,35 @@ class GaiaChat {
             modal = this.createConfigModal();
             document.body.appendChild(modal);
         }
+        this.setupConfigModalForm(modal);
         
         // Set current API URL
-        document.getElementById('apiUrl').value = this.apiUrl;
+        modal.querySelector('#apiUrl').value = this.apiUrl;
         modal.style.display = 'flex';
+    }
+
+    setupConfigModalForm(modal = document.getElementById('configModal')) {
+        if (!modal) return;
+        const form = modal.querySelector('#configForm');
+        const apiUrlInput = modal.querySelector('#apiUrl');
+        if (apiUrlInput) {
+            apiUrlInput.type = 'text';
+            apiUrlInput.inputMode = 'url';
+            apiUrlInput.required = true;
+        }
+        if (!form || form.dataset.gaiaConfigBound === 'true') return;
+
+        form.dataset.gaiaConfigBound = 'true';
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const newUrl = apiUrlInput?.value.trim();
+            if (newUrl) {
+                this.apiUrl = newUrl;
+                localStorage.setItem('gaiaApiUrl', newUrl);
+                this.checkApiConnection();
+                modal.style.display = 'none';
+            }
+        });
     }
     
     createConfigModal() {
@@ -1659,7 +1737,7 @@ class GaiaChat {
                 <form id="configForm">
                     <div class="form-group">
                         <label for="apiUrl">API URL:</label>
-                        <input type="url" id="apiUrl" value="${this.apiUrl}" required>
+                        <input type="text" inputmode="url" id="apiUrl" value="${this.apiUrl}" required>
                     </div>
                     <div class="form-actions">
                         <button type="button" onclick="closeConfig()">Cancel</button>
@@ -1668,18 +1746,7 @@ class GaiaChat {
                 </form>
             </div>
         `;
-        
-        // Setup form handler
-        modal.querySelector('#configForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            const newUrl = document.getElementById('apiUrl').value.trim();
-            if (newUrl) {
-                this.apiUrl = newUrl;
-                localStorage.setItem('gaiaApiUrl', newUrl);
-                this.checkApiConnection();
-                modal.style.display = 'none';
-            }
-        });
+        this.setupConfigModalForm(modal);
         
         // Close on backdrop click
         modal.addEventListener('click', (e) => {
@@ -1983,7 +2050,10 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
     }
     
     showConversationRecommendations(data) {
-        if (!data.recommendations || data.recommendations.length === 0) {
+        const recommendations = Array.isArray(data.recommendations) ? data.recommendations : [];
+        const conversationTopics = Array.isArray(data.conversation_topics) ? data.conversation_topics : [];
+
+        if (recommendations.length === 0) {
             this.recommendations.style.display = 'none';
             return;
         }
@@ -1997,23 +2067,23 @@ Inspire and guide humans toward regenerative action, sharing the powerful exampl
         contextHeader.className = 'recommendations-context';
         contextHeader.innerHTML = `
             <div style="margin-bottom: 1rem; font-size: 0.9rem; color: var(--warm-gray);">
-                Based on our conversation about: ${data.conversation_topics.join(', ')}
+                Based on our conversation about: ${conversationTopics.length ? conversationTopics.join(', ') : 'this exchange'}
             </div>
         `;
         this.recommendationsList.appendChild(contextHeader);
         
         // Add recommendations
-        this.addRecommendationItems(this.recommendationsList, data.recommendations);
+        this.addRecommendationItems(this.recommendationsList, recommendations);
         
         // Add exploration suggestion if we have topics
-        if (data.conversation_topics.length > 0) {
+        if (conversationTopics.length > 0) {
             const exploreMore = document.createElement('div');
             exploreMore.className = 'explore-more';
             exploreMore.innerHTML = `
                 <div style="margin-top: 1rem; padding: 1rem; background: linear-gradient(135deg, #f0f8f0, #e8f5e8); border-radius: 8px; border-left: 3px solid var(--sage-green);">
                     <div style="font-weight: 500; color: var(--forest-green); margin-bottom: 0.5rem;">💡 Explore Related Topics</div>
                     <div style="font-size: 0.9rem; color: var(--earth-green);">
-                        Try asking about: "other content on ${data.conversation_topics[0]}" or "what else about sustainable ${data.conversation_topics[1] || 'practices'}"
+                        Try asking about: "other content on ${conversationTopics[0]}" or "what else about sustainable ${conversationTopics[1] || 'practices'}"
                     </div>
                 </div>
             `;

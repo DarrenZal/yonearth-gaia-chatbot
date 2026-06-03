@@ -47,6 +47,15 @@ async function waitForGraph(frame) {
   await expect(frame.locator('#loading-overlay')).toBeHidden();
 }
 
+async function dismissTutorialIfPresent(page) {
+  const skipTour = page.locator('.tutorial-btn-skip');
+  await skipTour.waitFor({ state: 'visible', timeout: 3_000 }).catch(() => {});
+  if (await skipTour.isVisible()) {
+    await skipTour.click();
+    await expect(page.locator('.tutorial-overlay')).toBeHidden();
+  }
+}
+
 test('Guide embed mode hides welcome chrome and renders the knowledge graph', async ({ page, isMobile }) => {
   await page.goto('/guide/?embed=oasis');
 
@@ -70,6 +79,94 @@ test('Guide embed mode hides welcome chrome and renders the knowledge graph', as
   expect(renderedNodes).toBeGreaterThan(20);
 
   await page.checkNoGuideRuntimeErrors();
+});
+
+test('full Guide mode keeps public welcome chrome and split layout available', async ({ page, isMobile }) => {
+  await page.goto('/guide/');
+
+  await expect(page.locator('body')).not.toHaveClass(/embed/);
+  await expect(page.locator('#welcomeBanner')).toBeVisible();
+  await expect(page.locator('#mainContainer')).toBeVisible();
+  await expect(page.locator('#messageInput')).toBeVisible();
+  await expect(page.locator('#kgIframe')).toBeAttached();
+
+  if (isMobile) {
+    await dismissTutorialIfPresent(page);
+    await expect(page.locator('.mobile-tabs')).toBeVisible();
+    await expect(page.locator('.mobile-tab[data-tab="chat"]')).toHaveAttribute('aria-pressed', 'true');
+    await page.locator('.mobile-tab[data-tab="explore"]').click();
+    await expect(page.locator('.mobile-tab[data-tab="explore"]')).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.locator('#kgIframe')).toBeVisible();
+  } else {
+    await expect(page.locator('#kgIframe')).toBeVisible();
+  }
+
+  await page.checkNoGuideRuntimeErrors();
+});
+
+test('chat response renders normalized episode and book citations, recommendations, and feedback controls', async ({ page }) => {
+  await page.goto('/guide/?embed=oasis');
+
+  await page.locator('#messageInput').fill('How can I improve soil with composting?');
+  await page.locator('#sendButton').click();
+
+  await expect(page.locator('.gaia-message .message-text').last()).toContainText('Soil Stewardship Handbook');
+  await expect(page.locator('.inline-citation-link', { hasText: 'Episode 120' })).toHaveAttribute(
+    'href',
+    /episode-120-rowdy-yeatts/,
+  );
+  await expect(page.locator('.inline-citation-link', { hasText: 'Soil Stewardship Handbook' })).toHaveAttribute(
+    'href',
+    /soil-stewardship-handbook/,
+  );
+  await expect(page.locator('.citation-title', { hasText: 'Episode 120' })).toBeVisible();
+  await expect(page.locator('.citation-title', { hasText: 'Book: Soil Stewardship Handbook' })).toBeVisible();
+  await expect(page.locator('.citation-link', { hasText: 'Read eBook' })).toBeVisible();
+  await expect(page.locator('.recommendations')).toBeVisible();
+  await expect(page.locator('.recommendation-title', { hasText: 'Soil Stewardship Handbook' })).toBeVisible();
+  await expect(page.locator('.feedback-section')).toBeVisible();
+
+  await page.checkNoGuideRuntimeErrors();
+});
+
+test('chat failure shows friendly error and suppresses feedback controls', async ({ page }) => {
+  await page.route('**/api/bm25/chat', async route => {
+    await route.fulfill({
+      status: 503,
+      contentType: 'application/json; charset=utf-8',
+      body: JSON.stringify({ detail: 'forced test outage' }),
+    });
+  });
+
+  await page.goto('/guide/?embed=oasis');
+  await page.locator('#messageInput').fill('Trigger an outage');
+  await page.locator('#sendButton').click();
+
+  await expect(page.locator('.gaia-message .message-text').last()).toContainText(
+    "I'm having trouble connecting",
+  );
+  await expect(page.locator('.feedback-section')).toHaveCount(0);
+  await expect(page.locator('#sendButton')).toBeEnabled();
+});
+
+test('API config modal persists custom API URL and restores it on reload', async ({ page }) => {
+  await page.goto('/guide/?embed=oasis');
+  await page.keyboard.press(process.platform === 'darwin' ? 'Control+Shift+C' : 'Control+Shift+C');
+  await expect(page.locator('#configModal')).toBeVisible();
+
+  await page.locator('#apiUrl').fill('/custom-api');
+  await page.locator('#configForm button[type="submit"]').click();
+
+  await expect(page.locator('#configModal')).toBeHidden();
+  await expect(page.locator('#status')).toContainText(/Disconnected|API Error/);
+  const storedApiUrl = await page.evaluate(() => localStorage.getItem('gaiaApiUrl'));
+  expect(storedApiUrl).toBe('/custom-api');
+
+  await page.reload();
+  await page.keyboard.press('Control+Shift+C');
+  await expect(page.locator('#apiUrl')).toHaveValue('/custom-api');
+
+  await page.evaluate(() => localStorage.removeItem('gaiaApiUrl'));
 });
 
 test('knowledge graph data keeps Wele Waters canonical and removes Waylay node links', async ({ request }) => {
