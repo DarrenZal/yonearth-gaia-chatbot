@@ -109,6 +109,10 @@ package-lock.json
 # Playwright MCP
 .playwright-mcp/
 
+# Playwright Test reports
+test-results/
+playwright-report/
+
 # Wiki outputs (generated files)
 web/wiki/
 web/soil-handbook-wiki/

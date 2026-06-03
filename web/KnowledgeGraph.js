@@ -304,8 +304,12 @@ class KnowledgeGraphVisualization {
     setupSVG() {
         // Get container dimensions
         const containerRect = this.container.node().getBoundingClientRect();
-        this.width = containerRect.width;
-        this.height = containerRect.height;
+        this.width = containerRect.width > 1
+            ? containerRect.width
+            : Math.max(window.innerWidth || this.width, 320);
+        this.height = containerRect.height > 1
+            ? containerRect.height
+            : Math.max(window.innerHeight || this.height, 320);
 
         // Re-measure + re-center on window resize (fires when the iframe's
         // parent container changes size — e.g. mobile tab switch from chat
@@ -997,7 +1001,7 @@ class KnowledgeGraphVisualization {
         this.nodes.selectAll('circle')
             .style('filter', node => matchedNodes.has(node.id) ? 'drop-shadow(0 0 14px #14b8a6) drop-shadow(0 0 22px #0d9488)' : null)
             .style('stroke', node => matchedNodes.has(node.id) ? '#5eead4' : null)
-            .style('stroke-width', node => matchedNodes.has(node.id) ? '4px' : null);
+            .style('stroke-width', node => matchedNodes.has(node.id) ? '5px' : null);
 
         // Highlight links between matched nodes
         this.links
@@ -1039,23 +1043,27 @@ class KnowledgeGraphVisualization {
      */
     focusOnNodes(nodeIds) {
         // Find the matching node data
-        const matchingNodes = this.data.nodes.filter(n => nodeIds.includes(n.id));
+        const matchingNodes = this.data.nodes.filter(n =>
+            nodeIds.includes(n.id) &&
+            Number.isFinite(n.x) &&
+            Number.isFinite(n.y)
+        );
 
         if (matchingNodes.length === 0) return;
+        this.handleResize();
+        if (!Number.isFinite(this.width) || !Number.isFinite(this.height) || this.width <= 1 || this.height <= 1) return;
 
         // Calculate bounding box of all matched nodes
         let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
         matchingNodes.forEach(node => {
-            if (node.x !== undefined && node.y !== undefined) {
-                minX = Math.min(minX, node.x);
-                maxX = Math.max(maxX, node.x);
-                minY = Math.min(minY, node.y);
-                maxY = Math.max(maxY, node.y);
-            }
+            minX = Math.min(minX, node.x);
+            maxX = Math.max(maxX, node.x);
+            minY = Math.min(minY, node.y);
+            maxY = Math.max(maxY, node.y);
         });
 
         // If we couldn't find positions, skip zooming
-        if (!isFinite(minX)) return;
+        if (![minX, maxX, minY, maxY].every(Number.isFinite)) return;
 
         // Calculate center and scale
         const centerX = (minX + maxX) / 2;
@@ -1069,6 +1077,7 @@ class KnowledgeGraphVisualization {
             this.height / boxHeight,
             2 // Max zoom level
         );
+        if (!Number.isFinite(scale) || scale <= 0) return;
 
         const x = this.width / 2 - centerX * scale;
         const y = this.height / 2 - centerY * scale;

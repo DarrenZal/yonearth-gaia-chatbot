@@ -1,0 +1,157 @@
+import { createReadStream, existsSync } from 'node:fs';
+import { readFile } from 'node:fs/promises';
+import { createServer } from 'node:http';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '../..');
+const webRoot = path.join(repoRoot, 'web');
+const kgDataPath = path.join(repoRoot, 'data/knowledge_graph/visualization_data.json');
+const port = Number(process.env.GUIDE_TEST_PORT || 8787);
+
+const mimeTypes = new Map([
+  ['.css', 'text/css; charset=utf-8'],
+  ['.html', 'text/html; charset=utf-8'],
+  ['.ico', 'image/x-icon'],
+  ['.js', 'application/javascript; charset=utf-8'],
+  ['.json', 'application/json; charset=utf-8'],
+  ['.svg', 'image/svg+xml'],
+  ['.webp', 'image/webp'],
+]);
+
+const bm25Stub = {
+  response: 'Guide test server stub: live BM25 is covered by backend/API checks.',
+  sources: [],
+  citations: [],
+  episode_references: [],
+  search_method_used: 'stub',
+  documents_retrieved: 0,
+  bm25_stats: {},
+  performance_stats: {},
+  processing_time: 0,
+};
+
+function send(res, status, body, contentType = 'text/plain; charset=utf-8') {
+  res.writeHead(status, {
+    'content-type': contentType,
+    'cache-control': 'no-store',
+  });
+  res.end(body);
+}
+
+function sendJson(res, status, body) {
+  send(res, status, JSON.stringify(body), 'application/json; charset=utf-8');
+}
+
+function sendFile(res, filePath) {
+  if (!filePath.startsWith(webRoot) && filePath !== kgDataPath) {
+    send(res, 403, 'Forbidden');
+    return;
+  }
+  if (!existsSync(filePath)) {
+    send(res, 404, 'Not found');
+    return;
+  }
+
+  const ext = path.extname(filePath);
+  res.writeHead(200, {
+    'content-type': mimeTypes.get(ext) || 'application/octet-stream',
+    'cache-control': 'no-store',
+  });
+  createReadStream(filePath).pipe(res);
+}
+
+function guideFilePath(urlPath) {
+  const rel = decodeURIComponent(urlPath.replace(/^\/guide\/?/, ''));
+  const normalizedRel = rel === '' ? 'index.html' : rel;
+  return path.normalize(path.join(webRoot, normalizedRel));
+}
+
+const server = createServer(async (req, res) => {
+  const parsed = new URL(req.url || '/', `http://${req.headers.host || '127.0.0.1'}`);
+  const urlPath = parsed.pathname;
+
+  if (req.method === 'OPTIONS') {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+
+  if (urlPath === '/') {
+    res.writeHead(302, { location: '/guide/' });
+    res.end();
+    return;
+  }
+
+  if (urlPath === '/api/knowledge-graph/data' || urlPath === '/data/knowledge_graph/visualization_data.json') {
+    sendFile(res, kgDataPath);
+    return;
+  }
+
+  if (urlPath === '/api/knowledge-graph/episodes-books') {
+    sendJson(res, 200, { episodes: [], books: [] });
+    return;
+  }
+
+  if (urlPath.startsWith('/api/knowledge-graph/search')) {
+    sendJson(res, 200, { results: [] });
+    return;
+  }
+
+  if (urlPath === '/api/bm25/health' || urlPath === '/bm25/health') {
+    sendJson(res, 200, { status: 'ok', search_method: 'stub' });
+    return;
+  }
+
+  if (urlPath === '/api/bm25/chat' || urlPath === '/bm25/chat') {
+    if (req.method !== 'POST') {
+      sendJson(res, 405, { error: 'method_not_allowed' });
+      return;
+    }
+    req.resume();
+    sendJson(res, 200, bm25Stub);
+    return;
+  }
+
+  if (urlPath === '/api/stt/status') {
+    sendJson(res, 200, { available: false, enabled: false });
+    return;
+  }
+
+  if (urlPath === '/YonEarth/data/top_entities.json') {
+    sendJson(res, 200, []);
+    return;
+  }
+
+  if (urlPath === '/guide/yoe_taxonomy.json') {
+    sendFile(res, path.join(webRoot, 'data/yoe_taxonomy.json'));
+    return;
+  }
+
+  if (urlPath === '/favicon.ico') {
+    sendFile(res, path.join(webRoot, 'favicon.ico'));
+    return;
+  }
+
+  if (urlPath.startsWith('/guide/')) {
+    const filePath = guideFilePath(urlPath);
+    sendFile(res, filePath);
+    return;
+  }
+
+  if (urlPath === '/healthz') {
+    const body = await readFile(path.join(repoRoot, 'package.json'), 'utf8');
+    sendJson(res, 200, { ok: true, package: JSON.parse(body).name });
+    return;
+  }
+
+  send(res, 404, 'Not found');
+});
+
+server.listen(port, '127.0.0.1', () => {
+  console.error(`Guide test server listening on http://127.0.0.1:${port}/guide/`);
+});
+
+process.on('SIGTERM', () => server.close(() => process.exit(0)));
+process.on('SIGINT', () => server.close(() => process.exit(0)));
