@@ -425,6 +425,8 @@ class KnowledgeGraphVisualization {
         this.selectedNode = d;
         this.highlightNode(d);
         this.showDetails(d);
+        this.focusOnNodes([d.id]);
+        setTimeout(() => this.focusOnNodes([d.id]), 350);
     }
 
     highlightNode(d) {
