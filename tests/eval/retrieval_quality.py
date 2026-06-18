@@ -65,14 +65,30 @@ def _load_golden() -> List[Dict[str, Any]]:
 # in the YonEarth archive yet — would you like me to look more broadly within
 # the YonEarth community?" — assertions match flexibly against the *signal*
 # rather than the exact wording.
+# Phrases that genuinely signal an out-of-archive *decline*. NOTE (2026-06-18):
+# the bare corpus-name phrases "yonearth archive" / "yonearth community" /
+# "yonearth library" were REMOVED — they are the name of the corpus and appear
+# constantly in *positive, grounded* answers ("Episodes within the YonEarth
+# archive explore biochar…"), producing false positives on
+# response_must_not_signal_out_of_archive items (e.g. #15 "What is biochar?").
+# The genuine decline fallback always contains "don't have that" AND "look more
+# broadly", so removing the bare names does not weaken detection of real
+# declines (verified against #23/#24/#25, which still trip on those phrases).
 OUT_OF_ARCHIVE_SIGNAL_PHRASES = (
     "don't have that",
     "do not have that",
+    # Honest partial-coverage disclaimer (added 2026-06-18): the Guide often
+    # declines the *specific* requested item while pointing to related YOE
+    # content ("I don't have a specific chocolate cake recipe in the YonEarth
+    # archive, however Episode 21 features Chef Maria Cooper…"). That genuinely
+    # signals out-of-archive scope; it just isn't the canned fallback string.
+    # Safe to recognize because the separate response_must_not_contain_any
+    # fabrication guard (e.g. "cup of flour", "preheat the oven") independently
+    # blocks any answer that actually fabricates the requested recipe/specs.
+    "don't have a specific",
+    "do not have a specific",
     "haven't covered",
     "have not covered",
-    "yonearth archive",
-    "yonearth community",
-    "yonearth library",
     "look more broadly",
     "isn't in the",
     "is not in the",

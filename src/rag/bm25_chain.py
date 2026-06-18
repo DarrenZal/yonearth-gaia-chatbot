@@ -239,8 +239,22 @@ class BM25RAGChain:
             
             # Step 5: Add sources if requested
             if include_sources:
-                response_data['sources'] = self._format_sources(documents, max_citations, query=message)
-                response_data['episode_references'] = self._extract_episode_references(documents)
+                # Suppress citations when the answer is the full out-of-archive
+                # decline fallback (2026-06-18): the retrieved docs are off-topic
+                # by definition in that branch, so attaching them produces
+                # "dangling citations" — an honest decline with episode chips that
+                # imply the archive DID cover the question. The decline marker is
+                # unique to the full-decline branch and does NOT match the
+                # partial-coverage phrasing ("...doesn't specifically cover X, but
+                # Episode Y discusses..."), which legitimately keeps its citations.
+                response_text = response_data.get('response', '') or ''
+                is_decline_fallback = "I don't have that in the YonEarth archive yet" in response_text
+                if is_decline_fallback:
+                    response_data['sources'] = []
+                    response_data['episode_references'] = []
+                else:
+                    response_data['sources'] = self._format_sources(documents, max_citations, query=message)
+                    response_data['episode_references'] = self._extract_episode_references(documents)
             
             logger.info(f"BM25 RAG response generated successfully using {search_method} search")
             return response_data
@@ -783,7 +797,7 @@ class BM25RAGChain:
                 if book_title == 'VIRIDITAS: THE GREAT HEALING' and chapter_number is not None:
                     # chapter_number field contains page numbers for VIRIDITAS book
                     try:
-                        chunk_num = int(float(chapter_num))  # Convert page number to int
+                        chunk_num = int(float(chapter_number))  # Convert page number to int
                         
                         # Map chunk numbers to actual chapters based on table of contents
                         chapter_ranges = [
@@ -837,9 +851,9 @@ class BM25RAGChain:
                         chapter_int = 1  # Default to chapter 1 if parsing fails
                 else:
                     # For non-VIRIDITAS books or if parsing fails, use original chapter number
-                    if chapter_num and chapter_num != 'Unknown':
+                    if chapter_number and chapter_number != 'Unknown':
                         try:
-                            chapter_int = int(float(chapter_num))
+                            chapter_int = int(float(chapter_number))
                         except (ValueError, TypeError):
                             chapter_int = 1
                 
